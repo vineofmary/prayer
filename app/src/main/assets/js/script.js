@@ -48,7 +48,7 @@ const psalmSelectorContainer = document.getElementById('psalm-selector-container
 
 
 // --- State Variables ---
-const SETTINGS_VERSION = '3.4'; // Updated version for psalm file path fix
+const SETTINGS_VERSION = '3.7'; // Updated for Bible data structure fix
 let currentTheme = {};
 let isSidebarCollapsed = false;
 let displayOptions = {};
@@ -112,10 +112,23 @@ const speakerKeywords = {
     english: ["Priest", "People", "All"],
     geez_script: ["ካህን", "ሕዝብ", "ኵሎሙ"],
     amharic_script: ["ካህን", "ሕዝብ", "ሁሉም"],
-    tigrinya_script: ["καህን", "ሕዝብ", "ኩሉኹም"],
+    tigrinya_script: ["ካህን", "ሕዝብ", "ኩሉኹም"],
 };
 
 // --- Functions ---
+
+// --- NEW: Debounce Utility Function ---
+// Delays invoking a function until after 'wait' ms have passed since the last time it was invoked.
+function debounce(func, wait) {
+    let timeout;
+    return function(...args) {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => {
+            func.apply(this, args);
+        }, wait);
+    };
+}
+
 function applyRubrication(text, langKey, isFirstLanguage) {
     if (!displayOptions.showRubrication) return text;
     if (displayOptions.languageColors !== 'off' && !isFirstLanguage) return text;
@@ -737,7 +750,8 @@ async function loadBibleData() {
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
-            bibleData[key] = await response.json();
+            const data = await response.json();
+            bibleData[key] = (typeof data === 'string') ? JSON.parse(data) : data;
             console.log(`${key} Bible data loaded successfully.`);
             return true;
         } catch (error) {
@@ -748,9 +762,9 @@ async function loadBibleData() {
     };
 
     const results = await Promise.all([
-        loadFile('assets/bible/NKJV_New_King_James_English_Bible_1982AD.json', 'nkjv'),
-        loadFile('assets/bible/አም54_Haile_Selassie_Amharic_Bible_1962AD_1954EC.json', 'am54'),
-        loadFile('assets/bible/RGV_Reina_Valera_Gomez_Bible_2010AD.json', 'rgv')
+        loadFile('bible/NKJV_New_King_James_English_Bible_1982AD.json', 'nkjv'),
+        loadFile('bible/አም54_Haile_Selassie_Amharic_Bible_1962AD_1954EC.json', 'am54'),
+        loadFile('bible/RGV_Reina_Valera_Gomez_Bible_2010AD.json', 'rgv')
     ]);
 
     if (results.some(res => res === true)) {
@@ -794,15 +808,54 @@ function populatePsalmSelector() {
 
 function renderSelectedPsalms() {
     if (selectedPsalms.length === 0 || !bibleData.loaded) return;
+    // Do not clear the prayerDisplay here, as it removes the main prayers.
+    // Instead, we will clear only the old psalm cards.
+    document.querySelectorAll('.psalm-card').forEach(card => card.remove());
 
-    const nkjvPsalms = bibleData.nkjv ? bibleData.nkjv.filter(v => v.book === 'Psalms') : [];
-    const am54Psalms = bibleData.am54 ? bibleData.am54.filter(v => v.book === 'መዝሙረ ዳዊት') : [];
-    const rgvPsalms = bibleData.rgv ? bibleData.rgv.filter(v => v.book === 'Salmos') : [];
+
+    const getVerses = (data, isStructured) => {
+        if (!data) return [];
+        if (isStructured) {
+            // This handles the nested structure of am54 JSON file
+            if (data.books && Array.isArray(data.books)) {
+                return data.books.flatMap(book =>
+                    book.chapters ? book.chapters.flatMap(ch =>
+                        (ch.verses || []).map((verseText, index) => ({
+                            book: book.title,
+                            chapter: ch.chapter,
+                            verse: index + 1,
+                            text: verseText
+                        }))
+                    ) : []
+                );
+            }
+            // This handles the flat structure for the RGV bible data
+            if (data.verses && Array.isArray(data.verses)) {
+                 return data.verses;
+            }
+        }
+        // This handles the flat structure of the nkjv JSON file
+        return Array.isArray(data) ? data : [];
+    };
+
+    const nkjvVersesAll = getVerses(bibleData.nkjv, false);
+    const am54VersesAll = getVerses(bibleData.am54, true);
+    const rgvVersesAll = getVerses(bibleData.rgv, true);
+
+    const psalmBookData = {
+        // Corrected: The NKJV JSON uses the book number `19` for Psalms.
+        nkjv: { name: 19, bookKey: 'book' },
+        am54: { name: 'መዝሙረ ዳዊት', bookKey: 'book' },
+        rgv: { name: 'Salmos', bookKey: 'book_name' }
+    };
+
+    const nkjvPsalms = nkjvVersesAll.filter(v => v[psalmBookData.nkjv.bookKey] === psalmBookData.nkjv.name);
+    const am54Psalms = am54VersesAll.filter(v => v[psalmBookData.am54.bookKey] === psalmBookData.am54.name);
+    const rgvPsalms = rgvVersesAll.filter(v => v[psalmBookData.rgv.bookKey] === psalmBookData.rgv.name);
 
 
-    for (const lxxChapter of selectedPsalms.sort((a, b) => a - b)) { // Sort psalms numerically
+    for (const lxxChapter of selectedPsalms.sort((a, b) => a - b)) {
         const mtChapters = convertLxxToMt(lxxChapter);
-
         let allVerses = [];
 
         mtChapters.forEach(mtChapter => {
@@ -811,37 +864,52 @@ function renderSelectedPsalms() {
             const rgvVerses = rgvPsalms.filter(v => v.chapter == mtChapter);
 
             let maxVerseNum = 0;
-            const allChapterVerses = [...nkjvVerses, ...am54Verses, ...rgvVerses];
-            allChapterVerses.forEach(v => {
-                const verseParts = String(v.verse).split('-').map(Number);
-                const endVerse = verseParts[1] || verseParts[0];
-                if (endVerse > maxVerseNum) maxVerseNum = endVerse;
+            [...nkjvVerses, ...am54Verses, ...rgvVerses].forEach(v => {
+                if (v && v.verse) {
+                    const verseParts = String(v.verse).split('-').map(Number);
+                    const endVerse = verseParts.length > 1 ? verseParts[1] : verseParts[0];
+                    if (endVerse > maxVerseNum) maxVerseNum = endVerse;
+                }
             });
 
 
             for (let i = 1; i <= maxVerseNum; i++) {
-                let verseData = { verseNum: i, nkjv: '', am54: '', rgv: '' };
-
-                let nkjvVerse = nkjvVerses.find(v => v.verse == i);
-                if (nkjvVerse) verseData.nkjv = nkjvVerse.text;
-
-                let rgvVerse = rgvVerses.find(v => v.verse == i);
-                if (rgvVerse) verseData.rgv = rgvVerse.text;
-
-                let am54Verse = am54Verses.find(v => {
-                    const verseParts = v.verse.toString().split('-').map(Number);
-                    return i >= verseParts[0] && i <= (verseParts[1] || verseParts[0]);
+                const findVerse = (verses, verseNum) => verses.find(v => {
+                    if (!v || !v.verse) return false;
+                    const parts = String(v.verse).split('-').map(Number);
+                    return verseNum >= parts[0] && verseNum <= (parts.length > 1 ? parts[1] : parts[0]);
                 });
 
+                let verseData = { verseNum: i };
+                const nkjvVerse = findVerse(nkjvVerses, i);
+                if (nkjvVerse) verseData.nkjv = nkjvVerse.text;
+
+                const rgvVerse = findVerse(rgvVerses, i);
+                if (rgvVerse) {
+                    // Replace « and » with <i> and </i>, and add a line break after.
+                    verseData.rgv = rgvVerse.text.replace(/«/g, '<i>').replace(/»/g, '</i><br>');
+                }
+
+                const am54Verse = findVerse(am54Verses, i);
                 if (am54Verse) {
                     verseData.am54 = am54Verse.text;
                 }
-                allVerses.push(verseData);
+
+                if (verseData.nkjv || verseData.rgv || verseData.am54) {
+                    allVerses.push(verseData);
+                }
             }
         });
 
-        // Render the verses for this psalm
         allVerses.forEach(verse => {
+            const hasEnglish = displayedLanguages.english && verse.nkjv;
+            const hasAmharic = displayedLanguages.amharic_script && verse.am54;
+            const hasSpanish = displayedLanguages.spanish && verse.rgv;
+
+            if (!hasEnglish && !hasAmharic && !hasSpanish) {
+                return;
+            }
+
             const prayerCard = document.createElement('div');
             prayerCard.classList.add('prayer-card', 'psalm-card');
 
@@ -851,21 +919,15 @@ function renderSelectedPsalms() {
             const prayerContent = document.createElement('div');
             prayerContent.classList.add('prayer-content', 'layout-column');
 
-            if (displayedLanguages.english && verse.nkjv) {
-                const langSection = createPsalmVerseSection('English', verse.nkjv, verse.verseNum);
-                prayerContent.appendChild(langSection);
+            if (hasEnglish) {
+                prayerContent.appendChild(createPsalmVerseSection('English', verse.nkjv, verse.verseNum));
             }
-             if (displayedLanguages.amharic_script && verse.am54) {
-                const langSection = createPsalmVerseSection('አማርኛ', verse.am54, verse.verseNum, true);
-                prayerContent.appendChild(langSection);
+            if (hasAmharic) {
+                prayerContent.appendChild(createPsalmVerseSection('አማርኛ', verse.am54, verse.verseNum, true));
             }
-            if (displayedLanguages.spanish && verse.rgv) {
-                const langSection = createPsalmVerseSection('Español', verse.rgv, verse.verseNum);
-                prayerContent.appendChild(langSection);
+            if (hasSpanish) {
+                prayerContent.appendChild(createPsalmVerseSection('Español', verse.rgv, verse.verseNum));
             }
-
-            // Only add card if it has content
-            if (prayerContent.childElementCount === 0) return;
 
             prayerCardMainContent.appendChild(prayerContent);
 
@@ -883,6 +945,7 @@ function renderSelectedPsalms() {
     }
 }
 
+
 function createPsalmVerseSection(langName, text, verseNum, isEthiopic = false) {
     const langSection = document.createElement('div');
     langSection.classList.add('language-section');
@@ -895,12 +958,19 @@ function createPsalmVerseSection(langName, text, verseNum, isEthiopic = false) {
     const langText = document.createElement('p');
     langText.classList.add('language-text');
     if (isEthiopic) langText.classList.add('lang-ethiopic-script');
-    langText.innerHTML = `<sup>${verseNum}</sup>${text || ''}`;
+
+    const sup = document.createElement('sup');
+    sup.textContent = verseNum;
+    langText.appendChild(sup);
+
+    // Use innerHTML to parse the <i> tags for italicization
+    langText.innerHTML += ` ${text || ''}`;
 
     langSection.appendChild(langHeader);
     langSection.appendChild(langText);
     return langSection;
 }
+
 
 // --- Event Listeners ---
 sidebarToggle.addEventListener('click', () => {
@@ -911,6 +981,24 @@ sidebarToggle.addEventListener('click', () => {
 });
 
 sidebarBackdrop.addEventListener('click', collapseSidebar);
+
+// --- Prevent sliders from closing sidebar when dragging ---
+const stopSliderEventPropagation = (event) => {
+    event.stopPropagation();
+};
+
+// We define the events and attach them with the passive option.
+['mousedown', 'touchstart', 'pointerdown'].forEach(eventType => {
+    geezFontSizeSlider.addEventListener(eventType, stopSliderEventPropagation);
+    englishFontSizeSlider.addEventListener(eventType, stopSliderEventPropagation);
+});
+
+// For touchmove, we add the { passive: true } option to resolve the violation.
+// This tells the browser our listener won't block scrolling, fixing the conflict.
+['touchmove', 'pointermove'].forEach(eventType => {
+    geezFontSizeSlider.addEventListener(eventType, stopSliderEventPropagation, { passive: true });
+    englishFontSizeSlider.addEventListener(eventType, stopSliderEventPropagation, { passive: true });
+});
 
 themeToggle.addEventListener('click', () => {
     currentTheme.mode = currentTheme.mode === 'light' ? 'dark' : 'light';
@@ -945,6 +1033,37 @@ englishFontSizeSlider.addEventListener('input', () => {
     clearTimeout(englishFontSizeSlider.timer);
     englishFontSizeSlider.timer = setTimeout(saveSettings, 300);
 });
+
+// --- Font Size Sliders ---
+const handleGeezFontChange = (event) => {
+    const newSize = event.target.value;
+    document.documentElement.style.setProperty('--geez-font-size', `${newSize}px`);
+    fontSizes.geez = newSize;
+    if (fontSizes.locked) {
+        document.documentElement.style.setProperty('--english-font-size', `${newSize}px`);
+        englishFontSizeSlider.value = newSize;
+        fontSizes.english = newSize;
+    }
+    saveSettings();
+};
+
+const handleEnglishFontChange = (event) => {
+    const newSize = event.target.value;
+    document.documentElement.style.setProperty('--english-font-size', `${newSize}px`);
+    fontSizes.english = newSize;
+    if (fontSizes.locked) {
+        document.documentElement.style.setProperty('--geez-font-size', `${newSize}px`);
+        geezFontSizeSlider.value = newSize;
+        fontSizes.geez = newSize;
+    }
+    saveSettings();
+};
+
+// Apply debounce with a 50ms delay
+geezFontSizeSlider.addEventListener('input', debounce(handleGeezFontChange, 50));
+englishFontSizeSlider.addEventListener('input', debounce(handleEnglishFontChange, 50));
+
+
 
 lockFontSizesToggle.addEventListener('change', () => {
     fontSizes.locked = lockFontSizesToggle.checked;

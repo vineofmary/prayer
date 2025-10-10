@@ -205,6 +205,11 @@ body {
     padding-top: var(--header-height); /* Make space for fixed header */
 }
 
+.language-text i {
+    margin-right: 0.1em; /* Adjust this value as needed */
+}
+
+
 header {
     background-color: var(--card-background);
     border-bottom: 1px solid var(--border-color);
@@ -359,8 +364,9 @@ header.search-active #search-prev, header.search-active #search-next {
     display: flex;
     flex-direction: column;
     height: calc(100vh - var(--header-height));
-    position: sticky;
+    position: fixed; /* Changed from sticky to fixed */
     top: var(--header-height);
+    left: 0; /* Added left: 0 to anchor it */
 }
 
 .sidebar.collapsed {
