@@ -104,10 +104,6 @@ For feedback, questions, or to contribute, please contact us at [vineofmary@gmai
 
 <hr/>
 
-<div align="center">
-
 > “I praise you seven times a day” ፨ “ስብዐ ለዕለትየ እሴብሐከ”
 >
 > Psalm 118:164 ፨ መዝሙር ዘዳዊት ፻፲፰፡፻፷፬
-
-</div>
