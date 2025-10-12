@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prayer | ጸሎት</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Abyssinica+SIL&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Lato&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="/icons/icon-192x192.png">
+</head>
+<body class="theme-traditional-light view-mode-card">
+<header>
+    <div class="header-content">
+        <button id="sidebar-toggle" title="Toggle Settings">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24px" height="24px"><path d="M19.43 12.98c.04-.32.07-.64.07-.98s-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98s.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12-.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61.22l2-3.46c.12-.22-.07-.49-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"/></svg>
+        </button>
+        <h1 class="ethiopic-label">Prayer | ጸሎት</h1>
+    </div>
+    <div id="search-container">
+        <input type="search" id="search-input" placeholder="Search...">
+        <span id="search-count">0/0</span>
+        <button id="search-prev" title="Previous Match">▲</button>
+        <button id="search-next" title="Next Match">▼</button>
+    </div>
+    <div class="header-actions">
+        <button id="search-toggle" title="Search">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24px" height="24px"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+        </button>
+        <button id="search-close" title="Close Search">×</button>
+        <button id="presentation-mode-toggle-header" title="Toggle Presentation Mode">
+            <svg class="pres-mode-icon-slides" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v2h8v-2h5c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 14H3V5h18v12z"/></svg>
+            <svg class="pres-mode-icon-scroll" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24" style="display: none;"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg>
+        </button>
+        <button id="layout-toggle-header" title="Toggle Row/Column Layout">
+            <svg class="layout-icon-column" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M4 18h17v-2H4v2zM4 13h17v-2H4v2zM4 6v2h17V6H4z"/></svg>
+            <svg class="layout-icon-row" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24" style="display: none;"><path d="M11 18h2v-2h-2v2zm-4 0h2v-2H7v2zm8 0h2v-2h-2v2zm-8-4h2v-2H7v2zm4 0h2v-2h-2v2zm4 0h2v-2h-2v2zm-8-4h2V8H7v2zm4 0h2V8h-2v2zm4 0h2V8h-2v2zM7 6h2V4H7v2zm4 0h2V4h-2v2zm4 0h2V4h-2v2z"/></svg>
+        </button>
+        <button id="theme-toggle" title="Toggle Dark Mode"></button>
+        <button id="help-button" title="Help">?</button>
+    </div>
+</header>
+<div class="container">
+    <aside class="sidebar">
+        <div class="settings-panel">
+            <div class="setting-group">
+                <h3>Pick Theme</h3>
+                <select id="palette-selector">
+                    <option value="traditional">Traditional</option>
+                    <option value="sepia">Sepia</option>
+                    <option value="oceanic">Oceanic</option>
+                    <option value="high-contrast">High Contrast</option>
+                </select>
+            </div>
+            <div class="setting-group">
+                <h3>Customize Fonts</h3>
+                <h4 class="settings-subtitle">Font Preview</h4>
+                <div id="font-preview">
+                    <p class="preview-english">I seal my face</p>
+                    <p class="preview-geez ethiopic-label">አአትብ ገጽየ</p>
+                    <p class="preview-phonetic">a'atib getsye</p>
+                </div>
+                <h4 class="settings-subtitle">Ge'ez Font Size</h4>
+                <input type="range" id="geez-font-size-slider" min="12" max="48" value="16">
+
+                <h4 class="settings-subtitle">English Font Size</h4>
+                <input type="range" id="english-font-size-slider" min="12" max="48" value="16">
+
+                <label style="display: block; margin-top: 0.75rem;"><input type="checkbox" id="lock-font-sizes"> <span>Lock Font Sizes</span></label>
+
+                <h4 class="settings-subtitle" style="margin-top: 1.5rem;">Ge'ez Font</h4>
+                <select id="ethiopic-font-select">
+                    <option value="'Noto Sans Ethiopic', sans-serif" selected>Noto Sans Ethiopic</option>
+                    <option value="'Abyssinica SIL', serif">Abyssinica SIL</option>
+                    <option value="serif">Serif</option>
+                </select>
+
+                <h4 class="settings-subtitle">English Font</h4>
+                <select id="english-font-select">
+                    <option value="serif">Serif</option>
+                    <option value="'Lato', sans-serif">Lato</option>
+                    <option value="'Merriweather', serif" selected>Merriweather</option>
+                    <option value="'Roboto', sans-serif">Roboto</option>
+                </select>
+            </div>
+
+            <div class="setting-group">
+                <h3>Select Languages</h3>
+                <div id="language-toggles">
+                    <label><input type="checkbox" value="english"> English</label>
+                    <label><input type="checkbox" value="spanish"> Español</label>
+                    <label class="ethiopic-label"><input type="checkbox" value="geez_script"> ግእዝ</label>
+                    <label class="ethiopic-label"><input type="checkbox" value="amharic_script"> አማርኛ</label>
+                    <label class="ethiopic-label"><input type="checkbox" value="tigrinya_script"> ትግርኛ</label>
+                    <label><i><input type="checkbox" value="geez_phonetic"> Ge'ez phonetic</i></label>
+                    <label><i><input type="checkbox" value="amharic_phonetic"> Amharic phonetic</i></label>
+                    <label><i><input type="checkbox" value="tigrinya_phonetic"> Tigrinya phonetic</i></label>
+                </div>
+            </div>
+            <div class="setting-group">
+                <h4 class="settings-subtitle">Language Order</h4>
+                <ul id="language-order-list">
+                </ul>
+                <label style="margin-top: 1rem; display: block;"><input type="checkbox" id="show-language-labels"> <span>Language Labels</span></label>
+            </div>
+            <div class="setting-group">
+                <h3>Append Psalms</h3>
+                <div id="psalm-selector-container">
+                </div>
+            </div>
+            <div class="setting-group">
+                <h3 class="settings-subtitle">Advanced Display Options</h3>
+                <div id="display-options-toggles">
+                    <label><input type="checkbox" id="show-prayer-labels"> <span>Prayer Labels</span></label>
+                    <label><input type="checkbox" id="show-speaker-labels"> <span>Speaker Labels (Beta)</span></label>
+                    <label><input type="checkbox" id="show-rubrication"> <span>Colored Holy Names (Beta)</span></label>
+                    <label id="dynamic-font-sizing-label" style="display: none;"><input type="checkbox" id="dynamic-font-sizing"> <span>Dynamic Font Sizing (Slides Mode)</span></label>
+                </div>
+                <h4 class="settings-subtitle">Language Color-Coding</h4>
+                <select id="language-color-coding-select">
+                    <option value="off">Off</option>
+                    <option value="pastel">Pastel</option>
+                    <option value="vibrant">Vibrant</option>
+                    <option value="greyscale">Greyscale</option>
+                </select>
+                <h4 class="settings-subtitle">Slide Transition</h4>
+                <select id="slide-transition-select">
+                    <option value="slide">Slide</option>
+                    <option value="fade">Fade</option>
+                    <option value="none">None</option>
+                </select>
+            </div>
+            <div class="setting-group feedback-section">
+                <button id="feedback-button">Share Feedback</button>
+            </div>
+            <div class="bible-verse-sidebar">
+                <p>“Pray without ceasing” ፨ <span class="ethiopic-label">“ወጸልዩ ወትረ”</span></p>
+                <p class="citation">(1 Thessalonians 5:17 ፨ <span class="ethiopic-label">፩ ተሰሎንቄ ፭፡፲፯</span>)</p>
+            </div>
+        </div>
+    </aside>
+    <main class="main-content">
+        <section id="prayer-display">
+        </section>
+    </main>
+</div>
+<div id="sidebar-backdrop"></div>
+<div id="copy-notification" class="notification">Prayer copied to clipboard!</div>
+
+<div id="help-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>About This App</h2>
+        <div class="bible-verse-about">
+            <p>“I praise you seven times a day” ፨ <span class="ethiopic-label">“ስብዐ ለዕለትየ እሴብሐከ”</span></p>
+            <p class="citation">Psalm 118:164 ፨ <span class="ethiopic-label">መዝሙር ዘዳዊት ፻፲፰፡፻፷፬</span></p>
+        </div>
+        <p>This application is a humble offering to the faithful of the Ethiopian Orthodox Tewahedo Church, designed to aid in the daily life of prayer. It provides access to essential daily prayers in multiple languages, including Ge'ez, Amharic, Tigrinya, and English, with phonetic transliterations to assist in learning and pronunciation.</p>
+        <p>Our hope is that this tool may serve as a companion in your spiritual journey, drawing you closer to Our Lord and Savior Jesus Christ, His Holy Mother, the Ever-Virgin Mary, and all the Saints.</p>
+        <h3>Adding to Your Home Screen</h3>
+        <p>For easy access and offline use, you can add this web page to your mobile home screen:</p>
+        <ul>
+            <li><strong>iOS (Safari):</strong> Tap the "Share" icon and then select "Add to Home Screen".</li>
+            <li><strong>Android (Chrome):</strong> Tap the three-dots menu and select "Install App" or "Add to Home screen".</li>
+        </ul>
+        <h3>A Note on Translations</h3>
+        <p>The English translations provided are a work in progress, intended to be a more accurate improvement upon the few existing English resources. We have consulted several sources, including:</p>
+        <ul>
+            <li><i>የዘወትር ጸሎት</i> by ethiopianorthodox.org</li>
+            <li><i>Book of Prayer</i> by Fr. Mebratu Kiros (PhD)</li>
+            <li><i>Daily Prayers</i> by Archdeacon Täsfa Mika’el Williams</li>
+            <li><i>The Praises of St. Mary in Ge’ez & English</i> by Living Tewahdo Ministry</li>
+            <li><i>መሠረተ ግእዝ የግእዝ ንባብ መማሪያ መጽሐፍ ክፍል ፩ በሦስት ቋንቋዎች</i> by ሊቀ ጠበብት ተክሌ ሲራክ</li>
+        </ul>
+        <p class="disclaimer">This service is made with love for the glory of God and is managed by servants of the Oakland Debre Meheret Saint Michael Ethiopian Orthodox Tewahedo Church (EOTC) under the auspices of His Grace Archbishop Theophilus in the EOTC Diocese of Northern California, Nevada, and Arizona.</p>
+    </div>
+</div>
+<div id="feedback-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>Share Your Feedback</h2>
+        <p>Thank you for your patience if a technical issue occurs. We are continuously working to improve this service, so please don't hesitate to submit your feedback below.</p>
+        <textarea id="feedback-textarea" placeholder="Enter your feedback here..."></textarea>
+        <button id="send-feedback-button">Send</button>
+    </div>
+</div>
+<div id="modal-backdrop"></div>
+
+
+<script src="js/prayers.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
