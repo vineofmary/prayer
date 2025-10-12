@@ -1,6 +1,6 @@
 <div align="center">
 
-_**TL;DR: A multi-language daily prayer web app to aid Orthodox Christians in prayer; try it out [here](https://glittery-douhua-be089d.netlify.app/).**_
+_**TL;DR: A multi-language web app to aid Orthodox Christians in daily prayer; try it out [here](https://mountofmercy-beta.netlify.app/).**_
 
 > “Pray without ceasing” ፨ “ወጸልዩ ወትረ”
 >
@@ -24,7 +24,7 @@ This web app is currently in a **beta** stage and is very much a work-in-progres
 
 ### Trying it Out
 
-You can try out the app directly in your web browser on your desktop or mobile device by visiting this temporary staging site: https://glittery-douhua-be089d.netlify.app/
+You can try out the app directly in your web browser on your desktop or mobile device by visiting this temporary staging site: https://mountofmercy-beta.netlify.app/
 
 ### Adding to Your Home Screen
 
@@ -75,7 +75,7 @@ The prayer data is currently stored in a `prayers.js` file as a JavaScript array
 
 ## ✉️ Contact
 
-For feedback, questions, or to contribute, please contact us at [vineofmary@gmail.com](mailto:vineofmary@gmail.com).
+For feedback, questions, or to contribute, please contact [vineofmary@gmail.com](mailto:vineofmary@gmail.com).
 
 ## 🚀 Future Plans & Possibilities
 
@@ -104,6 +104,10 @@ For feedback, questions, or to contribute, please contact us at [vineofmary@gmai
 
 <hr/>
 
+<div align="center">
+
 > “I praise you seven times a day” ፨ “ስብዐ ለዕለትየ እሴብሐከ”
 >
 > Psalm 118:164 ፨ መዝሙር ዘዳዊት ፻፲፰፡፻፷፬
+
+</div>
