@@ -888,7 +888,7 @@ function renderSelectedPsalms() {
                     return verseNum >= parts[0] && verseNum <= (parts.length > 1 ? parts[1] : parts[0]);
                 });
 
-                let verseData = { verseNum: i };
+                let verseData = { verseNum: i, mtChapter: mtChapter };
                 const nkjvVerse = findVerse(nkjvVerses, i);
                 if (nkjvVerse) verseData.nkjv = nkjvVerse.text;
 
@@ -943,8 +943,15 @@ function renderSelectedPsalms() {
             prayerFooter.classList.add('prayer-footer');
             const prayerLabel = document.createElement('div');
             prayerLabel.classList.add('prayer-label');
-            prayerLabel.textContent = `Psalm ${lxxChapter}:${verse.verseNum} (LXX)`;
-            //prayerLabel.textContent = `Psalm ${lxxChapter} (${mtChapter}):${verse.verseNum}`;
+
+            let labelText;
+            if (lxxChapter == verse.mtChapter) {
+                labelText = `Psalm ${lxxChapter}:${verse.verseNum}`;
+            } else {
+                labelText = `Psalm ${lxxChapter} (${verse.mtChapter}):${verse.verseNum}`;
+            }
+            prayerLabel.textContent = labelText;
+
             prayerFooter.appendChild(prayerLabel);
 
             prayerCardMainContent.appendChild(prayerFooter);
@@ -1321,7 +1328,7 @@ function handleSlideSwipe() {
     const swipeThreshold = 50;
     if (touchStartX - touchEndX > swipeThreshold) {
         nextSlide();
-    } else if (touchEndX - touchStartX > swipeThreshold) {
+    } else if (touchEndX - startX > swipeThreshold) {
         prevSlide();
     }
 }
