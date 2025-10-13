@@ -209,6 +209,9 @@ margin: 0;
     margin-right: 0.1em; /* Adjust this value as needed */
 }
 
+body.bold-text .language-text {
+    font-weight: bold;
+}
 
 header {
     background-color: var(--card-background);

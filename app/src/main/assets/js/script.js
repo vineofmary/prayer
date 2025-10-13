@@ -10,6 +10,7 @@ const paletteSelector = document.getElementById('palette-selector');
 const geezFontSizeSlider = document.getElementById('geez-font-size-slider');
 const englishFontSizeSlider = document.getElementById('english-font-size-slider');
 const lockFontSizesToggle = document.getElementById('lock-font-sizes');
+const boldTextToggle = document.getElementById('bold-text-toggle');
 const ethiopicFontSelect = document.getElementById('ethiopic-font-select');
 const englishFontSelect = document.getElementById('english-font-select');
 const languageTogglesDiv = document.getElementById('language-toggles');
@@ -49,7 +50,7 @@ const psalmSummary = document.getElementById('psalm-summary');
 
 
 // --- State Variables ---
-const SETTINGS_VERSION = '3.7'; // Updated for Bible data structure fix
+const SETTINGS_VERSION = '3.8'; // Updated for bold text feature
 let currentTheme = {};
 let isSidebarCollapsed = false;
 let displayOptions = {};
@@ -186,6 +187,10 @@ function applyTheme() {
     if (!displayOptions.showRubrication) {
         body.classList.add('rubrication-disabled');
     }
+    // Handle bold text state
+    if (displayOptions.boldText) {
+        body.classList.add('bold-text');
+    }
 
     themeToggle.innerHTML = currentTheme.mode === 'light' ? moonIcon : sunIcon;
     themeToggle.title = currentTheme.mode === 'light' ? 'Toggle Dark Mode' : 'Toggle Light Mode';
@@ -215,7 +220,7 @@ function loadSettings() {
             presentationMode: 'scroll', viewMode: 'card', layout: 'column',
             horizontalScroll: true, showPrayerLabels: true, showLanguageLabels: true,
             showSpeakerLabels: true, showRubrication: false, dynamicFontSizing: true,
-            slideTransition: 'fade', languageColors: 'off'
+            slideTransition: 'fade', languageColors: 'off', boldText: false
         },
         displayedLanguages: {
             english: true, spanish: false, geez_script: true, geez_phonetic: true,
@@ -335,6 +340,7 @@ function updateAllTogglesInSettingsPanel() {
     languageColorCodingSelect.value = displayOptions.languageColors;
     dynamicFontSizingToggle.checked = displayOptions.dynamicFontSizing;
     slideTransitionSelect.value = displayOptions.slideTransition;
+    boldTextToggle.checked = displayOptions.boldText;
     updateLayoutToggleIcon();
     updatePresentationModeToggleIcon();
 }
@@ -1174,6 +1180,12 @@ englishFontSizeSlider.addEventListener('input', debounce(handleEnglishFontChange
 
 lockFontSizesToggle.addEventListener('change', () => {
     fontSizes.locked = lockFontSizesToggle.checked;
+    saveSettings();
+});
+
+boldTextToggle.addEventListener('change', () => {
+    displayOptions.boldText = boldTextToggle.checked;
+    body.classList.toggle('bold-text', displayOptions.boldText);
     saveSettings();
 });
 
