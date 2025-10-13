@@ -205,9 +205,9 @@ function loadSettings() {
         theme: { palette: 'traditional', mode: 'light' },
         displayOptions: {
             presentationMode: 'scroll', viewMode: 'card', layout: 'column',
-            horizontalScroll: true, showPrayerLabels: false, showLanguageLabels: true,
-            showSpeakerLabels: true, showRubrication: true, dynamicFontSizing: true,
-            slideTransition: 'slide', languageColors: 'off'
+            horizontalScroll: true, showPrayerLabels: true, showLanguageLabels: true,
+            showSpeakerLabels: true, showRubrication: false, dynamicFontSizing: true,
+            slideTransition: 'fade', languageColors: 'off'
         },
         displayedLanguages: {
             english: true, spanish: false, geez_script: true, geez_phonetic: true,

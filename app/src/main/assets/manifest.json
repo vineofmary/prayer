@@ -1,7 +1,7 @@
 {
-  "name": "Prayer | ጸሎት",
-  "short_name": "Prayer",
-  "description": "A web app of prayers for Orthodox Christians and catechumens.",
+  "name": "The Mount of Mercy | ደብረ ምሕረት",
+  "short_name": "Mercy",
+  "description": "A multi-language web app to aid Orthodox Christians and catechumens in daily prayer",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#f4f4f4",
