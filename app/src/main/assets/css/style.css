@@ -196,7 +196,7 @@ body.language-colors-vibrant.theme-traditional-dark, body.language-colors-vibran
 
 body {
     font-family: var(--english-font-family, serif);
-    margin: 0;
+margin: 0;
     padding: 0;
     background-color: var(--background-color);
     color: var(--text-color);
@@ -363,7 +363,7 @@ header.search-active #search-prev, header.search-active #search-next {
     z-index: 5;
     display: flex;
     flex-direction: column;
-    height: calc(100vh - var(--header-height));
+height: calc(100vh - var(--header-height));
     position: fixed; /* Changed from sticky to fixed */
     top: var(--header-height);
     left: 0; /* Added left: 0 to anchor it */
@@ -428,15 +428,15 @@ body.sidebar-open #sidebar-backdrop {
 }
 .preview-english {
     font-family: var(--english-font-family, serif);
-    font-size: var(--english-font-size, 16px);
+font-size: var(--english-font-size, 16px);
 }
 .preview-geez {
     font-family: var(--ethiopic-font-family, 'Noto Sans Ethiopic', sans-serif);
-    font-size: var(--geez-font-size, 16px);
+font-size: var(--geez-font-size, 16px);
 }
 .preview-phonetic {
     font-family: var(--english-font-family, serif);
-    font-size: var(--english-font-size, 16px);
+font-size: var(--english-font-size, 16px);
     font-style: italic;
 }
 
@@ -531,7 +531,7 @@ input[type="range"], select {
 .main-content {
     flex-grow: 1;
     padding: 1rem 2rem;
-    min-height: calc(100vh - var(--header-height) - 2rem);
+min-height: calc(100vh - var(--header-height) - 2rem);
     position: relative; /* Needed for slide navigation arrows */
 }
 
@@ -561,11 +561,6 @@ input[type="range"], select {
     display: flex;
     flex-direction: column;
 }
-
-.prayer-card.psalm-card {
-    background-color: var(--hover-color); /* Slightly different background for distinction */
-}
-
 
 .prayer-card-main-content {
     padding: 1.5rem;
@@ -608,7 +603,7 @@ body.view-mode-unified .prayer-footer {
 
 .prayer-card.psalm-card .prayer-footer {
     border-top: none;
-    justify-content: flex-start; /* Align label to the left */
+    justify-content: space-between;
 }
 
 .prayer-label {
@@ -665,8 +660,8 @@ body.view-mode-unified .prayer-footer {
 }
 
 .prayer-content.layout-column .language-section {
-   flex: 1 1 0;
-   min-width: 200px;
+    flex: 1 1 0;
+    min-width: 200px;
 }
 .prayer-content.layout-row .language-section {
     margin-bottom: 1.5rem;
@@ -680,10 +675,10 @@ body.view-mode-unified .prayer-footer {
 
 .exit-slides-mode-btn {
     display: none; /* Hidden by default */
-    background: none !important;
-    border: none !important;
-    padding: 0.2rem !important;
-    color: var(--text-color) !important;
+    background: transparent;
+    border: none;
+    padding: 0.2rem;
+    color: var(--text-color);
     opacity: 0.6;
     cursor: pointer;
     font-size: 1.5rem;
@@ -693,22 +688,39 @@ body.view-mode-unified .prayer-footer {
 }
 .exit-slides-mode-btn:hover {
     opacity: 1;
-    background-color: var(--hover-color) !important;
+    background-color: var(--hover-color);
     border-radius: 4px;
 }
 
+.enter-slides-mode-btn {
+    display: flex;
+    background: transparent;
+    border: none;
+    padding: 0.2rem;
+    color: var(--text-color);
+    opacity: 0.6;
+    cursor: pointer;
+    transition: opacity 0.2s ease, background-color 0.2s ease;
+}
+.enter-slides-mode-btn:hover {
+    opacity: 1;
+    background-color: var(--hover-color);
+    border-radius: 4px;
+}
+
+
 .share-btn, .info-toggle {
-    background: none !important;
-    border: none !important;
-    padding: 0.2rem !important;
-    color: var(--text-color) !important;
+    background: transparent;
+    border: none;
+    padding: 0.2rem;
+    color: var(--text-color);
     opacity: 0.6;
     cursor: pointer;
     transition: opacity 0.2s ease, background-color 0.2s ease;
 }
 .share-btn:hover, .info-toggle:hover {
     opacity: 1;
-    background-color: var(--hover-color) !important;
+    background-color: var(--hover-color);
     border-radius: 4px;
 }
 .share-btn svg, .info-toggle {
@@ -760,7 +772,7 @@ body.view-mode-unified .info-panel-content {
 
 .language-text {
     white-space: pre-wrap;
-    font-size: var(--english-font-size, 16px);
+font-size: var(--english-font-size, 16px);
     line-height: 1.7;
     transition: color var(--transition-speed) ease;
 }
@@ -922,6 +934,9 @@ body.view-mode-unified .info-panel-content {
 /* --- Slides Presentation Mode --- */
 body.presentation-mode-slides {
     padding-top: 0; /* Remove padding for header */
+}
+body.presentation-mode-slides .enter-slides-mode-btn {
+    display: none;
 }
 body.presentation-mode-slides header {
     display: none; /* Hide header completely */
@@ -1119,16 +1134,16 @@ body.presentation-mode-slides .prayer-content.layout-column .language-section:no
 
     .prayer-content[data-active-columns="2"] .language-section {
         flex-basis: calc((100% - var(--mobile-column-gap)) / 2);
-    }
+}
 
-    .prayer-content[data-active-columns="3"] .language-section {
-        flex-basis: calc((100% - (var(--mobile-column-gap) * 2)) / 3);
-    }
+.prayer-content[data-active-columns="3"] .language-section {
+    flex-basis: calc((100% - (var(--mobile-column-gap) * 2)) / 3);
+}
 
-    .prayer-content[data-active-columns~="4"] .language-section,
-    .prayer-content[data-active-columns~="5"] .language-section,
-    .prayer-content[data-active-columns~="6"] .language-section,
-    .prayer-content[data-active-columns~="7"] .language-section {
-         flex-basis: 80%;
-    }
+.prayer-content[data-active-columns~="4"] .language-section,
+.prayer-content[data-active-columns~="5"] .language-section,
+.prayer-content[data-active-columns~="6"] .language-section,
+.prayer-content[data-active-columns~="7"] .language-section {
+    flex-basis: 80%;
+}
 }

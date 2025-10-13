@@ -81,7 +81,7 @@ const languageLabels = {
 
 const sunIcon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 2c-1.82 0-3.53.5-5 1.35 2.99 1.73 5 4.95 5 8.65s-2.01 6.92-5 8.65C6.47 21.5 8.18 22 10 22c5.52 0 10-4.48 10-10S15.52 2 10 2z"/></svg>`;
 const moonIcon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 2c-1.82 0-3.53.5-5 1.35 2.99 1.73 5 4.95 5 8.65s-2.01 6.92-5 8.65C6.47 21.5 8.18 22 10 22c5.52 0 10-4.48 10-10S15.52 2 10 2z"/></svg>`;
-const shareIconSVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3s3-1.34 3-3-1.34-3-3-3z"></path></svg>`;
+const shareIconSVG = `<svg xmlns="http://www.w.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3s3-1.34 3-3-1.34-3-3-3z"></path></svg>`;
 
 
 // --- Rubrication Data ---
@@ -119,9 +119,9 @@ const speakerKeywords = {
 // --- Functions ---
 function updatePsalmSummary() {
     if (selectedPsalms.length > 0) {
-        psalmSummary.textContent = `Selected: ${selectedPsalms.sort((a, b) => a - b).join(', ')}`;
+        psalmSummary.textContent = `Selected Psalms: ${selectedPsalms.sort((a, b) => a - b).join(', ')}`;
     } else {
-        psalmSummary.textContent = 'Selected: None';
+        psalmSummary.textContent = 'Selected Psalms: None';
     }
 }
 
@@ -406,9 +406,11 @@ function renderPrayers() {
         return;
     }
 
-    prayers.forEach(prayer => {
+    prayers.forEach((prayer, prayerIndex) => {
         const prayerCard = document.createElement('div');
         prayerCard.classList.add('prayer-card');
+        prayerCard.dataset.prayerIndex = prayerIndex;
+
 
         const prayerCardMainContent = document.createElement('div');
         prayerCardMainContent.classList.add('prayer-card-main-content');
@@ -481,6 +483,21 @@ function renderPrayers() {
         copyButton.addEventListener('click', () => copyPrayer(prayer));
         prayerActions.appendChild(copyButton);
 
+        const enterSlidesBtn = document.createElement('button');
+        enterSlidesBtn.classList.add('enter-slides-mode-btn');
+        enterSlidesBtn.innerHTML = `<svg class="pres-mode-icon-slides" xmlns="http://www.w.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v2h8v-2h5c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 14H3V5h18v12z"/></svg>`;
+        enterSlidesBtn.title = 'Enter Slides Mode';
+        enterSlidesBtn.addEventListener('click', (event) => {
+            const clickedCard = event.currentTarget.closest('.prayer-card');
+            const allCards = Array.from(prayerDisplay.querySelectorAll('.prayer-card'));
+            const cardIndex = allCards.indexOf(clickedCard);
+            if (cardIndex !== -1) {
+                currentSlideIndex = cardIndex;
+                togglePresentationMode();
+            }
+        });
+        prayerActions.appendChild(enterSlidesBtn);
+
         const exitSlidesBtn = document.createElement('button');
         exitSlidesBtn.classList.add('exit-slides-mode-btn');
         exitSlidesBtn.innerHTML = '&times;';
@@ -499,7 +516,7 @@ function renderPrayers() {
         const infoPanelContent = document.createElement('div');
         infoPanelContent.classList.add('info-panel-content');
         let infoHTML = `<p><strong>Reference:</strong> ${prayer.reference}</p>`;
-        if(prayer.instruction && prayer.instruction.trim().toLowerCase() !== 'n/a') {
+        if (prayer.instruction && prayer.instruction.trim().toLowerCase() !== 'n/a') {
             infoHTML += `<p><strong>Instruction:</strong> ${prayer.instruction}</p>`;
         }
         infoPanelContent.innerHTML = infoHTML;
@@ -565,7 +582,7 @@ function fallbackCopyTextToClipboard(text) {
 }
 
 function copyPrayer(prayer) {
-    let textToCopy = `Share with a Friend:\n\n`;
+    let textToCopy = ``;
     textToCopy += `፨ ${prayer.chapter} - ${prayer.stanza} ፨\n\n`;
 
     languageOrder.forEach(langKey => {
@@ -575,6 +592,45 @@ function copyPrayer(prayer) {
             textToCopy += `${rawText}\n\n`;
         }
     });
+
+    if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(textToCopy).then(() => {
+            showCopyNotification();
+        }).catch(err => {
+            console.error('Async clipboard API failed, trying fallback: ', err);
+            fallbackCopyTextToClipboard(textToCopy);
+        });
+    } else {
+        fallbackCopyTextToClipboard(textToCopy);
+    }
+}
+
+function copyPsalm(verse, lxxChapter) {
+    let textToCopy = ``;
+    let labelText;
+    if (lxxChapter == verse.mtChapter) {
+        labelText = `Psalm ${lxxChapter}:${verse.verseNum}`;
+    } else {
+        labelText = `Psalm ${lxxChapter} (${verse.mtChapter}):${verse.verseNum}`;
+    }
+    textToCopy += `፨ ${labelText} ፨\n\n`;
+
+    if (displayedLanguages.english && verse.nkjv) {
+        textToCopy += `--- English ---\n`;
+        textToCopy += `[${verse.verseNum}] ${verse.nkjv}\n\n`;
+    }
+    if (displayedLanguages.amharic_script && verse.am54) {
+        textToCopy += `--- አማርኛ ---\n`;
+        textToCopy += `[${verse.verseNum}] ${verse.am54}\n\n`;
+    }
+    if (displayedLanguages.spanish && verse.rgv) {
+        textToCopy += `--- Español ---\n`;
+        // The rgv text can have HTML, need to strip it
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = verse.rgv;
+        const spanishText = tempDiv.textContent || tempDiv.innerText || "";
+        textToCopy += `[${verse.verseNum}] ${spanishText}\n\n`;
+    }
 
     if (navigator.clipboard && window.isSecureContext) {
         navigator.clipboard.writeText(textToCopy).then(() => {
@@ -816,15 +872,11 @@ function populatePsalmSelector() {
 
 function renderSelectedPsalms() {
     if (selectedPsalms.length === 0 || !bibleData.loaded) return;
-    // Do not clear the prayerDisplay here, as it removes the main prayers.
-    // Instead, we will clear only the old psalm cards.
     document.querySelectorAll('.psalm-card').forEach(card => card.remove());
-
 
     const getVerses = (data, isStructured) => {
         if (!data) return [];
         if (isStructured) {
-            // This handles the nested structure of am54 JSON file
             if (data.books && Array.isArray(data.books)) {
                 return data.books.flatMap(book =>
                 book.chapters ? book.chapters.flatMap(ch =>
@@ -837,12 +889,10 @@ function renderSelectedPsalms() {
                 ) : []
                 );
             }
-            // This handles the flat structure for the RGV bible data
             if (data.verses && Array.isArray(data.verses)) {
                 return data.verses;
             }
         }
-        // This handles the flat structure of the nkjv JSON file
         return Array.isArray(data) ? data : [];
     };
 
@@ -851,7 +901,6 @@ function renderSelectedPsalms() {
     const rgvVersesAll = getVerses(bibleData.rgv, true);
 
     const psalmBookData = {
-        // Corrected: The NKJV JSON uses the book number `19` for Psalms.
         nkjv: { name: 19, bookKey: 'book' },
         am54: { name: 'መዝሙረ ዳዊት', bookKey: 'book' },
         rgv: { name: 'Salmos', bookKey: 'book_name' }
@@ -894,7 +943,6 @@ function renderSelectedPsalms() {
 
                 const rgvVerse = findVerse(rgvVerses, i);
                 if (rgvVerse) {
-                    // Replace « and » with <i> and </i>, and add a line break after.
                     verseData.rgv = rgvVerse.text.replace(/«/g, '<i>').replace(/»/g, '</i><br>');
                 }
 
@@ -910,13 +958,15 @@ function renderSelectedPsalms() {
         });
 
         allVerses.forEach(verse => {
-            const hasEnglish = displayedLanguages.english && verse.nkjv;
-            const hasAmharic = displayedLanguages.amharic_script && verse.am54;
-            const hasSpanish = displayedLanguages.spanish && verse.rgv;
+            const activePsalmTranslations = {
+                english: displayedLanguages.english && verse.nkjv,
+                amharic_script: displayedLanguages.amharic_script && verse.am54,
+                spanish: displayedLanguages.spanish && verse.rgv
+            };
 
-            if (!hasEnglish && !hasAmharic && !hasSpanish) {
-                return;
-            }
+            const activeLanguageCount = Object.values(activePsalmTranslations).filter(Boolean).length;
+
+            if (activeLanguageCount === 0) return;
 
             const prayerCard = document.createElement('div');
             prayerCard.classList.add('prayer-card', 'psalm-card');
@@ -925,16 +975,22 @@ function renderSelectedPsalms() {
             prayerCardMainContent.classList.add('prayer-card-main-content');
 
             const prayerContent = document.createElement('div');
-            prayerContent.classList.add('prayer-content', 'layout-column');
+            prayerContent.classList.add('prayer-content', displayOptions.layout === 'row' ? 'layout-row' : 'layout-column');
 
-            if (hasEnglish) {
-                prayerContent.appendChild(createPsalmVerseSection('English', verse.nkjv, verse.verseNum));
+            if (displayOptions.languageColors !== 'off') {
+                prayerContent.classList.add('colored-languages');
             }
-            if (hasAmharic) {
-                prayerContent.appendChild(createPsalmVerseSection('አማርኛ', verse.am54, verse.verseNum, true));
+            prayerContent.dataset.activeColumns = activeLanguageCount;
+
+
+            if (activePsalmTranslations.english) {
+                prayerContent.appendChild(createPsalmVerseSection('English', verse.nkjv, verse.verseNum, false, 'english'));
             }
-            if (hasSpanish) {
-                prayerContent.appendChild(createPsalmVerseSection('Español', verse.rgv, verse.verseNum));
+            if (activePsalmTranslations.amharic_script) {
+                prayerContent.appendChild(createPsalmVerseSection('አማርኛ', verse.am54, verse.verseNum, true, 'amharic_script'));
+            }
+            if (activePsalmTranslations.spanish) {
+                prayerContent.appendChild(createPsalmVerseSection('Español', verse.rgv, verse.verseNum, false, 'spanish'));
             }
 
             prayerCardMainContent.appendChild(prayerContent);
@@ -954,6 +1010,40 @@ function renderSelectedPsalms() {
 
             prayerFooter.appendChild(prayerLabel);
 
+            const prayerActions = document.createElement('div');
+            prayerActions.classList.add('prayer-actions');
+
+            const copyButton = document.createElement('button');
+            copyButton.classList.add('share-btn');
+            copyButton.innerHTML = shareIconSVG;
+            copyButton.title = 'Copy visible languages';
+            copyButton.addEventListener('click', () => copyPsalm(verse, lxxChapter));
+            prayerActions.appendChild(copyButton);
+
+            const enterSlidesBtn = document.createElement('button');
+            enterSlidesBtn.classList.add('enter-slides-mode-btn');
+            enterSlidesBtn.innerHTML = `<svg class="pres-mode-icon-slides" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v2h8v-2h5c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 14H3V5h18v12z"/></svg>`;
+            enterSlidesBtn.title = 'Enter Slides Mode';
+            enterSlidesBtn.addEventListener('click', (event) => {
+                const clickedCard = event.currentTarget.closest('.prayer-card');
+                const allCards = Array.from(prayerDisplay.querySelectorAll('.prayer-card'));
+                const cardIndex = allCards.indexOf(clickedCard);
+                if (cardIndex !== -1) {
+                    currentSlideIndex = cardIndex;
+                    togglePresentationMode();
+                }
+            });
+            prayerActions.appendChild(enterSlidesBtn);
+
+            const exitSlidesBtn = document.createElement('button');
+            exitSlidesBtn.classList.add('exit-slides-mode-btn');
+            exitSlidesBtn.innerHTML = '&times;';
+            exitSlidesBtn.title = 'Exit Slides Mode';
+            exitSlidesBtn.addEventListener('click', togglePresentationMode);
+            prayerActions.appendChild(exitSlidesBtn);
+
+            prayerFooter.appendChild(prayerActions);
+
             prayerCardMainContent.appendChild(prayerFooter);
             prayerCard.appendChild(prayerCardMainContent);
             prayerDisplay.appendChild(prayerCard);
@@ -962,9 +1052,11 @@ function renderSelectedPsalms() {
 }
 
 
-function createPsalmVerseSection(langName, text, verseNum, isEthiopic = false) {
+function createPsalmVerseSection(langName, text, verseNum, isEthiopic = false, langKey) {
     const langSection = document.createElement('div');
     langSection.classList.add('language-section');
+    langSection.dataset.langKey = langKey;
+
 
     const langHeader = document.createElement('h4');
     langHeader.textContent = langName;
@@ -979,7 +1071,6 @@ function createPsalmVerseSection(langName, text, verseNum, isEthiopic = false) {
     sup.textContent = verseNum;
     langText.appendChild(sup);
 
-    // Use innerHTML to parse the <i> tags for italicization
     langText.innerHTML += ` ${text || ''}`;
 
     langSection.appendChild(langHeader);
@@ -1117,21 +1208,30 @@ function toggleLayout() {
 }
 
 function togglePresentationMode() {
-    displayOptions.presentationMode = (displayOptions.presentationMode === 'slides') ? 'scroll' : 'slides';
-    currentSlideIndex = 0; // Reset index when toggling
+    const isEnteringSlides = displayOptions.presentationMode !== 'slides';
+    displayOptions.presentationMode = isEnteringSlides ? 'slides' : 'scroll';
 
-    if (displayOptions.presentationMode === 'slides') {
-        displayOptions.showPrayerLabels = true;
+    if (isEnteringSlides) {
+        displayOptions.showPrayerLabels = true; // Ensure labels are on for context
         collapseSidebar();
-    } else {
-        displayOptions.showPrayerLabels = false;
     }
 
     applyTheme();
     renderPrayers();
     updateAllTogglesInSettingsPanel();
     saveSettings();
+
+    if (!isEnteringSlides) {
+        // Exiting slides mode: scroll to the previously active card
+        setTimeout(() => {
+            const cardToView = prayerDisplay.querySelector(`.prayer-card[data-prayer-index="${currentSlideIndex}"]`);
+            if (cardToView) {
+                cardToView.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }, 100); // A slight delay ensures the DOM is ready
+    }
 }
+
 
 // Psalm Selector Listener using event delegation
 psalmSelectorContainer.addEventListener('change', (event) => {
@@ -1145,7 +1245,10 @@ psalmSelectorContainer.addEventListener('change', (event) => {
 });
 
 // Display Options Listeners
-presentationModeToggleHeader.addEventListener('click', togglePresentationMode);
+presentationModeToggleHeader.addEventListener('click', () => {
+    currentSlideIndex = 0; // Reset to start when using the header toggle
+    togglePresentationMode();
+});
 layoutToggleHeader.addEventListener('click', toggleLayout);
 
 showPrayerLabelsToggle.addEventListener('change', () => {
