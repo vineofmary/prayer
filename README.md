@@ -10,7 +10,7 @@ _**TL;DR: A multi-language web app to aid Orthodox Christians in daily prayer; t
 
 <hr/>
 
-# 🙏 Daily Prayer App
+# 🙏 The Mount of Mercy | ደብረ ምሕረት
 
 This web app is designed to aid Orthodox Christians and catachumens towards a life of unceasing prayer. It provides access to essential daily prayers in multiple languages, including Ge'ez, Amharic, Tigrinya, English, and Spanish with phonetic transliterations to assist in learning and pronunciation.
 
@@ -37,11 +37,12 @@ For easy access and offline use, you can add this web page to your mobile home s
 
 The English translations provided are a work in progress, intended to be a more accurate improvement upon the few existing English resources. We have consulted several sources, including:
 
-* *የዘወትር ጸሎት* by ethiopianorthodox.org
-* *Book of Prayer* by Fr. Mebratu Kiros (PhD)
-* *Daily Prayers* by Archdeacon Täsfa Mika’el Williams
-* *The Praises of St. Mary in Ge’ez & English* by Living Tewahdo Ministry
-* *መሠረተ ግእዝ የግእዝ ንባብ መማሪያ መጽሐፍ ክፍል ፩ በሦስት ቋንቋዎች* by ሊቀ ጠበብት ተክሌ ሲራክ
+*   *ውዳሴ ማርያም Widasie Maryam | The Praises of St. Mary: In Ge’ez & English, 3rd Edition* translated by Living Tewahdo Ministry in March 2024
+*   *Daily Prayers of the Ethiopian Orthodox Täwahedo Church, Revised Pocket Edition* translated by Archdeacon Täsfa Mika’el Williams in May 2020
+*   *Book of Prayer - መጽሐፈ ጸሎት: Theotokia (Weddase Mariam) / Selected Psalms, Litanies and Prayers from the Ethiopic Book of the Hours, Missal, and other Liturgical Sources* translated by Father Mebratu Kiros (PhD) in 2022
+*   *የዘወትር ጸሎት (The Daily Prayer)* published by ethiopianorthodox.org
+*   *መሠረተ ግእዝ የግእዝ ንባብ መማሪያ መጽሐፍ ክፍል ፩ በሦስት ቋንቋዎች (The Foundation of Ge'ez: Ge'ez Reading Textbook, 1st Edition - In 3 languages)* translated by ሊቀ ጠበብት ተክሌ ሲራክ (Liqe Tebebt Tekle Sirak)
+
 
 ## ✨ Features
 
