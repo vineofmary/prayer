@@ -79,9 +79,9 @@ const languageLabels = {
     tigrinya_phonetic: 'Tigrinya'
 };
 
-const sunIcon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45 1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zM18.36 16.95c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zM19.42 5.99c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/></svg>`;
-const moonIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 2c-1.82 0-3.53.5-5 1.35 2.99 1.73 5 4.95 5 8.65s-2.01 6.92-5 8.65C6.47 21.5 8.18 22 10 22c5.52 0 10-4.48 10-10S15.52 2 10 2z"/></svg>`;
-const shareIconSVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3s3-1.34 3-3-1.34-3-3-3z"></path></svg>`;
+const sunIcon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 2c-1.82 0-3.53.5-5 1.35 2.99 1.73 5 4.95 5 8.65s-2.01 6.92-5 8.65C6.47 21.5 8.18 22 10 22c5.52 0 10-4.48 10-10S15.52 2 10 2z"/></svg>`;
+const moonIcon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 2c-1.82 0-3.53.5-5 1.35 2.99 1.73 5 4.95 5 8.65s-2.01 6.92-5 8.65C6.47 21.5 8.18 22 10 22c5.52 0 10-4.48 10-10S15.52 2 10 2z"/></svg>`;
+const shareIconSVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3s3-1.34 3-3-1.34-3-3-3z"></path></svg>`;
 
 
 // --- Rubrication Data ---
@@ -358,7 +358,7 @@ function updateLanguageOrderList() {
             if (langKey.includes('_script')) {
                 li.querySelector('span').classList.add('ethiopic-label');
             }
-             if (langKey.includes('_phonetic')) {
+            if (langKey.includes('_phonetic')) {
                 li.querySelector('span').style.fontStyle = 'italic';
             }
             languageOrderList.appendChild(li);
@@ -462,7 +462,7 @@ function renderPrayers() {
         const prayerLabel = document.createElement('div');
         prayerLabel.classList.add('prayer-label');
         if (!displayOptions.showPrayerLabels) prayerLabel.classList.add('hidden');
-        prayerLabel.textContent = `${prayer.chapter} - ${prayer.stanza}`;
+        prayerLabel.textContent = prayer.reference;
         prayerFooter.appendChild(prayerLabel);
 
         const prayerActions = document.createElement('div');
@@ -827,19 +827,19 @@ function renderSelectedPsalms() {
             // This handles the nested structure of am54 JSON file
             if (data.books && Array.isArray(data.books)) {
                 return data.books.flatMap(book =>
-                    book.chapters ? book.chapters.flatMap(ch =>
-                        (ch.verses || []).map((verseText, index) => ({
-                            book: book.title,
-                            chapter: ch.chapter,
-                            verse: index + 1,
-                            text: verseText
-                        }))
-                    ) : []
+                book.chapters ? book.chapters.flatMap(ch =>
+                (ch.verses || []).map((verseText, index) => ({
+                    book: book.title,
+                    chapter: ch.chapter,
+                    verse: index + 1,
+                    text: verseText
+                }))
+                ) : []
                 );
             }
             // This handles the flat structure for the RGV bible data
             if (data.verses && Array.isArray(data.verses)) {
-                 return data.verses;
+                return data.verses;
             }
         }
         // This handles the flat structure of the nkjv JSON file
@@ -944,6 +944,7 @@ function renderSelectedPsalms() {
             const prayerLabel = document.createElement('div');
             prayerLabel.classList.add('prayer-label');
             prayerLabel.textContent = `Psalm ${lxxChapter}:${verse.verseNum} (LXX)`;
+            //prayerLabel.textContent = `Psalm ${lxxChapter} (${mtChapter}):${verse.verseNum}`;
             prayerFooter.appendChild(prayerLabel);
 
             prayerCardMainContent.appendChild(prayerFooter);
@@ -1129,7 +1130,7 @@ function togglePresentationMode() {
 psalmSelectorContainer.addEventListener('change', (event) => {
     if (event.target.type === 'checkbox') {
         selectedPsalms = Array.from(psalmSelectorContainer.querySelectorAll('input:checked'))
-                               .map(cb => Number(cb.value));
+            .map(cb => Number(cb.value));
         updatePsalmSummary();
         saveSettings();
         smoothRender();
@@ -1389,14 +1390,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     await loadBibleData(); // Load data on startup
     loadSettings();
     updatePsalmSummary();
-//    initializePsalmSelector();
-//    initializeLanguageToggles();
-//    initializeLanguageOrderList();
     updateLanguageOrderList();
     renderPrayers();
-    setupEventListeners();
-    //updatePsalmSummary(); // Call it on initial load
-    updateUIFromSettings();
 
     window.addEventListener('resize', () => {
         checkAndEnforceLayoutRules();
