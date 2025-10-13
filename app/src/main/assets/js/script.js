@@ -45,6 +45,7 @@ const modalBackdrop = document.getElementById('modal-backdrop');
 const sendFeedbackButton = document.getElementById('send-feedback-button');
 const fontPreview = document.getElementById('font-preview');
 const psalmSelectorContainer = document.getElementById('psalm-selector-container');
+const psalmSummary = document.getElementById('psalm-summary');
 
 
 // --- State Variables ---
@@ -116,6 +117,13 @@ const speakerKeywords = {
 };
 
 // --- Functions ---
+function updatePsalmSummary() {
+    if (selectedPsalms.length > 0) {
+        psalmSummary.textContent = `Selected: ${selectedPsalms.sort((a, b) => a - b).join(', ')}`;
+    } else {
+        psalmSummary.textContent = 'Selected: None';
+    }
+}
 
 // --- NEW: Debounce Utility Function ---
 // Delays invoking a function until after 'wait' ms have passed since the last time it was invoked.
@@ -1122,6 +1130,7 @@ psalmSelectorContainer.addEventListener('change', (event) => {
     if (event.target.type === 'checkbox') {
         selectedPsalms = Array.from(psalmSelectorContainer.querySelectorAll('input:checked'))
                                .map(cb => Number(cb.value));
+        updatePsalmSummary();
         saveSettings();
         smoothRender();
     }
@@ -1379,8 +1388,15 @@ window.addEventListener('scroll', function() {
 document.addEventListener('DOMContentLoaded', async () => {
     await loadBibleData(); // Load data on startup
     loadSettings();
+    updatePsalmSummary();
+//    initializePsalmSelector();
+//    initializeLanguageToggles();
+//    initializeLanguageOrderList();
     updateLanguageOrderList();
     renderPrayers();
+    setupEventListeners();
+    //updatePsalmSummary(); // Call it on initial load
+    updateUIFromSettings();
 
     window.addEventListener('resize', () => {
         checkAndEnforceLayoutRules();

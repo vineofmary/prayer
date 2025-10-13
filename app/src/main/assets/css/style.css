@@ -450,6 +450,13 @@ body.sidebar-open #sidebar-backdrop {
     opacity: 0.8;
 }
 
+.settings-summary {    font-size: 0.9em;
+    color: var(--speaker-label-color);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+
 input[type="range"], select {
     width: 100%;
     margin-top: 0.5rem;
