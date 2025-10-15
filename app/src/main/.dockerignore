@@ -1,0 +1,15 @@
+# .dockerignore
+
+# Exclude Docker-related files from the container
+Dockerfile
+.dockerignore
+
+# Exclude version control history
+.git
+.gitignore
+
+# Exclude any potential documentation
+README.md
+
+# Exclude the local SDK installation
+y/
