@@ -82,7 +82,7 @@ const languageLabels = {
 
 const sunIcon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 2c-1.82 0-3.53.5-5 1.35 2.99 1.73 5 4.95 5 8.65s-2.01 6.92-5 8.65C6.47 21.5 8.18 22 10 22c5.52 0 10-4.48 10-10S15.52 2 10 2z"/></svg>`;
 const moonIcon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 2c-1.82 0-3.53.5-5 1.35 2.99 1.73 5 4.95 5 8.65s-2.01 6.92-5 8.65C6.47 21.5 8.18 22 10 22c5.52 0 10-4.48 10-10S15.52 2 10 2z"/></svg>`;
-const shareIconSVG = `<svg xmlns="http://www.w.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3s3-1.34 3-3-1.34-3-3-3z"></path></svg>`;
+const shareIconSVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3s3-1.34 3-3-1.34-3-3-3z"></path></svg>`;
 
 
 // --- Rubrication Data ---
@@ -402,140 +402,169 @@ function formatPrayerText(text, langKey, query, isFirstLanguage) {
     return highlightText(processedText, query);
 }
 
+function createPrayerCardElement(prayer, prayerIndex) {
+    const searchQuery = searchInput.value;
+    const activeLanguageCount = Object.values(displayedLanguages).filter(Boolean).length;
+
+    const prayerCard = document.createElement('div');
+    prayerCard.classList.add('prayer-card');
+    prayerCard.dataset.prayerIndex = prayerIndex;
+
+    const prayerCardMainContent = document.createElement('div');
+    prayerCardMainContent.classList.add('prayer-card-main-content');
+
+    const prayerContent = document.createElement('div');
+    prayerContent.classList.add('prayer-content', displayOptions.layout === 'row' ? 'layout-row' : 'layout-column');
+
+    if (displayOptions.languageColors !== 'off') {
+        prayerContent.classList.add('colored-languages');
+    }
+
+    if (displayOptions.layout === 'column' && activeLanguageCount > 3 && displayOptions.horizontalScroll) {
+        prayerContent.classList.add('horizontal-scroll');
+    }
+    prayerContent.dataset.activeColumns = activeLanguageCount;
+
+    let isFirstLanguage = true;
+    languageOrder.forEach(langKey => {
+        if (displayedLanguages[langKey] && prayer[langKey] && prayer[langKey].trim()) {
+            const langSection = document.createElement('div');
+            langSection.classList.add('language-section');
+            if (langKey.includes('phonetic')) {
+                langSection.classList.add('lang-phonetic');
+            }
+
+            const langHeader = document.createElement('h4');
+            langHeader.textContent = languageLabels[langKey];
+            if (!displayOptions.showLanguageLabels) langHeader.classList.add('hidden');
+
+            const langText = document.createElement('p');
+            langText.classList.add('language-text');
+            langText.innerHTML = formatPrayerText(prayer[langKey], langKey, searchQuery, isFirstLanguage);
+
+            if (langKey.includes('_script')) {
+                langHeader.classList.add('ethiopic-label');
+                langText.classList.add('lang-ethiopic-script');
+            }
+
+            langSection.appendChild(langHeader);
+            langSection.appendChild(langText);
+            prayerContent.appendChild(langSection);
+
+            isFirstLanguage = false;
+        }
+    });
+    prayerCardMainContent.appendChild(prayerContent);
+
+    const prayerFooter = document.createElement('div');
+    prayerFooter.classList.add('prayer-footer');
+
+    const prayerLabel = document.createElement('div');
+    prayerLabel.classList.add('prayer-label');
+    if (!displayOptions.showPrayerLabels) prayerLabel.classList.add('hidden');
+    prayerLabel.textContent = prayer.reference;
+    prayerFooter.appendChild(prayerLabel);
+
+    const prayerActions = document.createElement('div');
+    prayerActions.classList.add('prayer-actions');
+
+    const infoToggle = document.createElement('button');
+    infoToggle.classList.add('info-toggle');
+    infoToggle.innerHTML = '&#9432;';
+    infoToggle.title = 'Show/Hide Details';
+    prayerActions.appendChild(infoToggle);
+
+    const copyButton = document.createElement('button');
+    copyButton.classList.add('share-btn');
+    copyButton.innerHTML = shareIconSVG;
+    copyButton.title = 'Copy visible languages';
+    copyButton.addEventListener('click', () => copyPrayer(prayer));
+    prayerActions.appendChild(copyButton);
+
+    const enterSlidesBtn = document.createElement('button');
+    enterSlidesBtn.classList.add('enter-slides-mode-btn');
+    enterSlidesBtn.innerHTML = `<svg class="pres-mode-icon-slides" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v2h8v-2h5c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 14H3V5h18v12z"/></svg>`;
+    enterSlidesBtn.title = 'Enter Slides Mode';
+    enterSlidesBtn.addEventListener('click', (event) => {
+        const clickedCard = event.currentTarget.closest('.prayer-card');
+        const allCards = Array.from(prayerDisplay.querySelectorAll('.prayer-card'));
+        const cardIndex = allCards.indexOf(clickedCard);
+        if (cardIndex !== -1) {
+            currentSlideIndex = cardIndex;
+            togglePresentationMode();
+        }
+    });
+    prayerActions.appendChild(enterSlidesBtn);
+
+    const exitSlidesBtn = document.createElement('button');
+    exitSlidesBtn.classList.add('exit-slides-mode-btn');
+    exitSlidesBtn.innerHTML = '&times;';
+    exitSlidesBtn.title = 'Exit Slides Mode';
+    exitSlidesBtn.addEventListener('click', togglePresentationMode);
+    prayerActions.appendChild(exitSlidesBtn);
+
+    prayerFooter.appendChild(prayerActions);
+    prayerCardMainContent.appendChild(prayerFooter);
+
+    prayerCard.appendChild(prayerCardMainContent);
+
+    const infoPanel = document.createElement('div');
+    infoPanel.classList.add('info-panel');
+
+    const infoPanelContent = document.createElement('div');
+    infoPanelContent.classList.add('info-panel-content');
+    let infoHTML = `<p><strong>Reference:</strong> ${prayer.reference}</p>`;
+    if (prayer.instruction && prayer.instruction.trim().toLowerCase() !== 'n/a') {
+        infoHTML += `<p><strong>Instruction:</strong> ${prayer.instruction}</p>`;
+    }
+    infoPanelContent.innerHTML = infoHTML;
+    infoPanel.appendChild(infoPanelContent);
+    prayerCard.appendChild(infoPanel);
+
+    infoToggle.addEventListener('click', () => infoPanel.classList.toggle('active'));
+
+    return prayerCard;
+}
+
+
 function renderPrayers() {
     prayerDisplay.innerHTML = '';
     const activeLanguageCount = Object.values(displayedLanguages).filter(Boolean).length;
-    const searchQuery = searchInput.value;
 
     if (activeLanguageCount === 0) {
         prayerDisplay.innerHTML = `<div class="empty-state-message"><p>Please select a language from the settings panel to begin.</p></div>`;
         return;
     }
 
-    prayers.forEach((prayer, prayerIndex) => {
-        const prayerCard = document.createElement('div');
-        prayerCard.classList.add('prayer-card');
-        prayerCard.dataset.prayerIndex = prayerIndex;
-
-
-        const prayerCardMainContent = document.createElement('div');
-        prayerCardMainContent.classList.add('prayer-card-main-content');
-
-        const prayerContent = document.createElement('div');
-        prayerContent.classList.add('prayer-content', displayOptions.layout === 'row' ? 'layout-row' : 'layout-column');
-
-        if (displayOptions.languageColors !== 'off') {
-            prayerContent.classList.add('colored-languages');
-        }
-
-        if (displayOptions.layout === 'column' && activeLanguageCount > 3 && displayOptions.horizontalScroll) {
-            prayerContent.classList.add('horizontal-scroll');
-        }
-        prayerContent.dataset.activeColumns = activeLanguageCount;
-
-        let isFirstLanguage = true;
-        languageOrder.forEach(langKey => {
-            if (displayedLanguages[langKey] && prayer[langKey] && prayer[langKey].trim()) {
-                const langSection = document.createElement('div');
-                langSection.classList.add('language-section');
-                if (langKey.includes('phonetic')) {
-                    langSection.classList.add('lang-phonetic');
-                }
-
-                const langHeader = document.createElement('h4');
-                langHeader.textContent = languageLabels[langKey];
-                if (!displayOptions.showLanguageLabels) langHeader.classList.add('hidden');
-
-                const langText = document.createElement('p');
-                langText.classList.add('language-text');
-                langText.innerHTML = formatPrayerText(prayer[langKey], langKey, searchQuery, isFirstLanguage);
-
-                if (langKey.includes('_script')) {
-                    langHeader.classList.add('ethiopic-label');
-                    langText.classList.add('lang-ethiopic-script');
-                }
-
-                langSection.appendChild(langHeader);
-                langSection.appendChild(langText);
-                prayerContent.appendChild(langSection);
-
-                isFirstLanguage = false;
-            }
-        });
-        prayerCardMainContent.appendChild(prayerContent);
-
-        const prayerFooter = document.createElement('div');
-        prayerFooter.classList.add('prayer-footer');
-
-        const prayerLabel = document.createElement('div');
-        prayerLabel.classList.add('prayer-label');
-        if (!displayOptions.showPrayerLabels) prayerLabel.classList.add('hidden');
-        prayerLabel.textContent = prayer.reference;
-        prayerFooter.appendChild(prayerLabel);
-
-        const prayerActions = document.createElement('div');
-        prayerActions.classList.add('prayer-actions');
-
-        const infoToggle = document.createElement('button');
-        infoToggle.classList.add('info-toggle');
-        infoToggle.innerHTML = '&#9432;';
-        infoToggle.title = 'Show/Hide Details';
-        prayerActions.appendChild(infoToggle);
-
-        const copyButton = document.createElement('button');
-        copyButton.classList.add('share-btn');
-        copyButton.innerHTML = shareIconSVG;
-        copyButton.title = 'Copy visible languages';
-        copyButton.addEventListener('click', () => copyPrayer(prayer));
-        prayerActions.appendChild(copyButton);
-
-        const enterSlidesBtn = document.createElement('button');
-        enterSlidesBtn.classList.add('enter-slides-mode-btn');
-        enterSlidesBtn.innerHTML = `<svg class="pres-mode-icon-slides" xmlns="http://www.w.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v2h8v-2h5c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 14H3V5h18v12z"/></svg>`;
-        enterSlidesBtn.title = 'Enter Slides Mode';
-        enterSlidesBtn.addEventListener('click', (event) => {
-            const clickedCard = event.currentTarget.closest('.prayer-card');
-            const allCards = Array.from(prayerDisplay.querySelectorAll('.prayer-card'));
-            const cardIndex = allCards.indexOf(clickedCard);
-            if (cardIndex !== -1) {
-                currentSlideIndex = cardIndex;
-                togglePresentationMode();
-            }
-        });
-        prayerActions.appendChild(enterSlidesBtn);
-
-        const exitSlidesBtn = document.createElement('button');
-        exitSlidesBtn.classList.add('exit-slides-mode-btn');
-        exitSlidesBtn.innerHTML = '&times;';
-        exitSlidesBtn.title = 'Exit Slides Mode';
-        exitSlidesBtn.addEventListener('click', togglePresentationMode);
-        prayerActions.appendChild(exitSlidesBtn);
-
-        prayerFooter.appendChild(prayerActions);
-        prayerCardMainContent.appendChild(prayerFooter);
-
-        prayerCard.appendChild(prayerCardMainContent);
-
-        const infoPanel = document.createElement('div');
-        infoPanel.classList.add('info-panel');
-
-        const infoPanelContent = document.createElement('div');
-        infoPanelContent.classList.add('info-panel-content');
-        let infoHTML = `<p><strong>Reference:</strong> ${prayer.reference}</p>`;
-        if (prayer.instruction && prayer.instruction.trim().toLowerCase() !== 'n/a') {
-            infoHTML += `<p><strong>Instruction:</strong> ${prayer.instruction}</p>`;
-        }
-        infoPanelContent.innerHTML = infoHTML;
-        infoPanel.appendChild(infoPanelContent);
-        prayerCard.appendChild(infoPanel);
-
-        infoToggle.addEventListener('click', () => infoPanel.classList.toggle('active'));
-
+    // 1. Render all prayers that are NOT part of the Psalms chapter
+    const mainPrayers = prayers.filter(p => p.chapter !== 'Psalms');
+    mainPrayers.forEach((prayer, prayerIndex) => {
+        const prayerCard = createPrayerCardElement(prayer, prayerIndex);
         prayerDisplay.appendChild(prayerCard);
     });
 
-    renderSelectedPsalms();
+    // 2. Conditionally render Psalm-related prayers
+    if (selectedPsalms.length > 0 && bibleData.loaded) {
+        // Render Intro Prayers
+        const psalmIntroPrayers = prayers.filter(p => p.chapter === 'Psalms' && p.stanza === 'Intro');
+        psalmIntroPrayers.forEach(prayer => {
+            const prayerCard = createPrayerCardElement(prayer, -1); // -1 index to avoid conflict
+            prayerDisplay.appendChild(prayerCard);
+        });
 
+        // Render the selected Psalms with the doxology response after each
+        renderSelectedPsalmsWithDoxology();
+
+        // Render Closing Prayers
+        const psalmClosingPrayers = prayers.filter(p => p.chapter === 'Psalms' && p.stanza === 'Closing');
+        psalmClosingPrayers.forEach(prayer => {
+            const prayerCard = createPrayerCardElement(prayer, -1);
+            prayerDisplay.appendChild(prayerCard);
+        });
+
+    }
+
+    // 3. Final setup for slides and search
     if (displayOptions.presentationMode === 'slides') {
         setupSlides();
         adjustSlideFontSize();
@@ -544,6 +573,7 @@ function renderPrayers() {
     }
     updateSearchMatches();
 }
+
 
 function smoothRender(callback) {
     prayerDisplay.classList.add('is-transitioning');
@@ -876,9 +906,8 @@ function populatePsalmSelector() {
     }
 }
 
-function renderSelectedPsalms() {
+function renderSelectedPsalmsWithDoxology() {
     if (selectedPsalms.length === 0 || !bibleData.loaded) return;
-    document.querySelectorAll('.psalm-card').forEach(card => card.remove());
 
     const getVerses = (data, isStructured) => {
         if (!data) return [];
@@ -916,6 +945,7 @@ function renderSelectedPsalms() {
     const am54Psalms = am54VersesAll.filter(v => v[psalmBookData.am54.bookKey] === psalmBookData.am54.name);
     const rgvPsalms = rgvVersesAll.filter(v => v[psalmBookData.rgv.bookKey] === psalmBookData.rgv.name);
 
+    const doxologyPrayer = prayers.find(p => p.chapter === 'Psalms' && p.stanza === 'Response');
 
     for (const lxxChapter of selectedPsalms.sort((a, b) => a - b)) {
         const mtChapters = convertLxxToMt(lxxChapter);
@@ -1054,8 +1084,15 @@ function renderSelectedPsalms() {
             prayerCard.appendChild(prayerCardMainContent);
             prayerDisplay.appendChild(prayerCard);
         });
+
+        // After rendering all verses for a psalm, add the doxology response
+        if (doxologyPrayer) {
+            const doxologyCard = createPrayerCardElement(doxologyPrayer, -1);
+            prayerDisplay.appendChild(doxologyCard);
+        }
     }
 }
+
 
 
 function createPsalmVerseSection(langName, text, verseNum, isEthiopic = false, langKey) {
