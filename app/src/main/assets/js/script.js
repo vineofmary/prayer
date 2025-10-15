@@ -86,26 +86,72 @@ const shareIconSVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24
 
 
 // --- Rubrication Data ---
-const rubricGodNames = {
-    english: ["Jesus Christ", "Holy Trinity", "Holy Spirit", "Almighty", "God", "Lord", "Father", "Son"],
-    geez_script: ["ኢየሱስ ክርስቶስ", "ቅድስት ሥላሴ", "መንፈስ ቅዱስ", "አብ", "ወልድ", "እግዚአብሔር", "እግዚኦ", "ሥሉስ"],
-    phonetic: ["Iyesus Kristos", "Kidist Silase", "Menfes Kidus", "Ab", "Weld", "Igziabher", "Igzi'o", "Silus"]
+const rubricRedWords = {
+    english: [
+        "In the Name of the Father, of the Son, and of the Holy Spirit, One God, Amen", "I seal my face", "Father", "Son", "Holy Spirit",
+        "One God", "Holy Trinity", "We thank You, Lord", "Lord", "God", "King",
+        "Our Father in Heaven", "With the Greeting of Saint Gabriel", "Lord God of hosts",
+        "Jesus Christ", "We believe in one God", "one God", "Light", "True God from True God",
+        "Virgin Mary", "Amen", "Holy, holy, holy, is the Lord of hosts", "Holy, holy, holy",
+        "Holy, Holy, Holy", "Christ", "I worship the Father, and the Son, and the Holy Spirit", "Godhead", "Glory to the Father, glory to the Son, glory to the Holy Spirit",
+        "Most High God", "Greetings to you, we say as we bow to you", "Prayer of Our Lady Mary, Virgin Bearer of God", "Savior",
+        "My soul magnifies the Lord", "Glory to the Father, to the Son, and to the Holy Spirit, forever and to the age of ages", "Praises for Our Lady Mary, Virgin, Bearer of God",
+        "O holy one, pray for us.", "Son of Man", "Only-begotten", "only-begotten", "Lover", "Good",
+        "Word of God", "Emmanuel", "Word", "God the Word", "One Spirit", "Good Father",
+        "The Angels Praise Mary", "And now in the sixth month", "peace to you", "Peace to you", "peace be unto you", "Peace be unto you", "Most High",
+        "Glory be to the Father, and to the Son, and to the Holy Spirit, forever and to the age of ages.", "Come to me, David, King of Israel", "Ask for us, Mary"
+    ],
+    geez_script: [
+        "በስመ አብ ወወልድ ወመንፈስ ቅዱስ", "አአትብ ገጽየ", "አብ", "ወልድ", "ወወልድ", "መንፈስ ቅዱስ", "አሐዱ አምላክ", "ሥላሴ",
+        "ነአኵተከ እግዚኦ", "እግዚ", "እግዚእ", "እግዚኦ", "እግዚአብሔር", "እግዚአ", "አምላክ", "ንጉሥ", "ንጉሠ", "ወንጉሠ",
+        "አቡነ ዘበሰማያት", "በሰላመ ቅዱስ ገብርኤል መልአክ", "እግዚአብሔር ጸባዖት", "እግዚአብሔር ጸባኦት", "ኢየሱስ ክርስቶስ",
+        "ንኣምን በአሐዱ አምላክ", "ነአምን በአሐዱ አምላክ", "አምላክ ዘእምአምላክ ዘበአማን", "ድንግል ማርያም", "ማርያም ድንግል", "አሜን",
+        "ቅዱስ ቅዱስ ቅዱስ እግዚአብሔር ጸባዖት", "ቅዱስ ቅዱስ ቅዱስ እግዚአብሔር ጸባኦት", "ቅዱስ ቅዱስ ቅዱስ", "ቅዱስ፣ ቅዱስ፣ ቅዱስ",
+        "ክርስቶስ", "እሰግድ ለአብ ወወልድ ወመንፈስ ቅዱስ አሐቲ ስግደት።", "መለኮት", "ስብሐት ለአብ ወወልድ ወመንፈስ ቅዱስ", "ልዑል እግዚአብሔር",
+        "እግዚአብሔር ልዑል", "ሰላም ለኪ እንዘ ንሰግድ ንብለኪ", "ጸሎተ እግዝእትነ ማርያም ድንግል ወላዲተ አምላክ", "መድኀኒየ", "ወመድኀኒየ",
+        "ታዐብዮ ነፍስየ ለእግዚአብሔር", "ስብሐት ለአብ ወወልድ ወመንፈስ ቅዱስ ለዓለም ወለዓለመ ዓለም", "ውዳሴሃ ለእግዝእትነ ማርያም ድንግል ወላዲተ አምላክ",
+        "ይዌድስዋ መላእክት ለማርያም", "ወበሳድስ ወርኅ", "ሰላም ለከ", "ሰላም ለኪ", "ልዑል", "ንዒ ኀቤየ ኦ ዳዊት ንጉሠ እስራኤል",
+        "ነዓ ኀቤየ ዳዊት ንጉሠ እሥራኤል", "ሰአሊ ለነ ማርያም"
+    ]
 };
-const rubricMaryNames = {
-    english: ["Holy Virgin Mary", "Lady Mary", "Mary"],
-    geez_script: ["ማርያም እምቅድስት ድንግል", "እግዝእትየ ማርያም", "ማርያም", "ድንግል"],
-    phonetic: ["Maryam im-Kidist Dingil", "Igz'itye Maryam", "Maryam", "Dingil"]
+
+const rubricGoldWords = {
+    english: [
+        "Mary of Zion", "Lady Mary", "Mother", "Virgin Mother of God", "Virgin Bearer of God",
+        "God-bearer", "Lady", "Holy Virgin", "Mary the Virgin", "Mary, the holy one",
+        "Mary, the praised", "Mary, the pure", "Mary, the joyous", "Mary, the beatific",
+        "Mary, the blessed", "The dwelling place of the Godhead", "The perfect Tabernacle",
+        "Sister of the angels", "mother of all people", "Peaceful one", "Mary, the embellished",
+        "The gate of the East and the Mother of Light", "Mary, the chosen and honored one", "Mary"
+    ],
+    geez_script: [
+        "ማርያም ጽዮን", "እግዝእትነ ማርያም", "እግዝእትየ ማርያም", "እም", "እመ", "ድንግል ወላዲተ አምላክ",
+        "ወላዲተ አምላክ", "እግዝእትየ", "እግዝእትነ", "ቅድስት ድንግል", "ማርያም ድንግል", "ማርያም ቅድስት",
+        "ማርያም ውድስት", "ማርያም ንጽሕት", "ማርያም ፍሥሕት", "ማርያም ብጽዕት", "ማርያም ብፅዕት",
+        "ማርያም ቡርክት", "ማኅደረ መለኮት", "ደብተራ ፍጽምት", "እኅተ መላእክት", "ወእመ ኵሉ ሕዝብ",
+        "ሰላማዊት", "ማርያም ሥርጉት", "ኆኅተ ምሥራቅ ወእሙ ለብርሃን", "ማርያም ኅሪት ወክብርት", "ማርያም"
+    ]
 };
-const buildRegex = (words) => new RegExp(`\\b(${words.join('|')})\\b`, 'gi');
-const rubricGodRegex = {
-    english: buildRegex(rubricGodNames.english),
-    geez_script: new RegExp(`(${rubricGodNames.geez_script.join('|')})`, 'g'),
-    phonetic: buildRegex(rubricGodNames.phonetic)
+
+function buildRegex(words, isGeez = false) {
+    // Sort words by length, descending, to match longer phrases first
+    const sortedWords = words.sort((a, b) => b.length - a.length);
+    if (isGeez) {
+        // For Ge'ez, handle optional prefixes (ወ, ለ, እም)
+        // The regex captures the prefix and the word separately
+        return new RegExp(`(^|\\s|\\()((?:ወ|ለ|እም)?)(${sortedWords.join('|')})(\\b|\\)|\\s|$)`, 'g');
+    }
+    // For English, use word boundaries
+    return new RegExp(`\\b(${sortedWords.join('|')})\\b`, 'g');
+}
+
+const rubricRedRegex = {
+    english: buildRegex(rubricRedWords.english),
+    geez_script: buildRegex(rubricRedWords.geez_script, true),
 };
-const rubricMaryRegex = {
-    english: buildRegex(rubricMaryNames.english),
-    geez_script: new RegExp(`(${rubricMaryNames.geez_script.join('|')})`, 'g'),
-    phonetic: buildRegex(rubricMaryNames.phonetic)
+const rubricGoldRegex = {
+    english: buildRegex(rubricGoldWords.english),
+    geez_script: buildRegex(rubricGoldWords.geez_script, true),
 };
 
 
@@ -139,24 +185,50 @@ function debounce(func, wait) {
 }
 
 function applyRubrication(text, langKey, isFirstLanguage) {
-    if (!displayOptions.showRubrication) return text;
-    if (displayOptions.languageColors !== 'off' && !isFirstLanguage) return text;
+    if (!displayOptions.showRubrication || (displayOptions.languageColors !== 'off' && !isFirstLanguage)) {
+        return text;
+    }
 
     let processedText = text;
-    const lang = langKey.split('_')[0];
-    const isPhonetic = langKey.includes('phonetic');
 
-    const godRegex = isPhonetic ? rubricGodRegex.phonetic : rubricGodRegex[lang];
-    const maryRegex = isPhonetic ? rubricMaryRegex.phonetic : rubricMaryRegex[lang];
+    if (langKey === 'geez_script') {
+        // Handle special conditional rule for ቅዱስ
+        const specialPhrase = 'ዘኒ ይትወለድ እምኔኪ ቅዱስ ውእቱ';
+        const specialRegex = new RegExp(specialPhrase.replace('ቅዱስ', '(ቅዱስ)'), 'g');
+        processedText = processedText.replace(specialRegex, (match, p1) => {
+            return match.replace(p1, `<span class="rubric-red">${p1}</span>`);
+        });
+    }
 
-    if (godRegex) {
-        processedText = processedText.replace(godRegex, '<span class="rubric-god">$&</span>');
+    // Apply Gold Rubrication first
+    const goldRegex = rubricGoldRegex[langKey];
+    if (goldRegex) {
+        if (langKey === 'geez_script') {
+            processedText = processedText.replace(goldRegex, (match, p1, p2, p3, p4) => {
+                // p1 is prefix, p2 is the word. We only color the word.
+                return `${p1}${p2}<span class="rubric-gold">${p3}</span>${p4}`;
+            });
+        } else {
+            processedText = processedText.replace(goldRegex, '<span class="rubric-gold">$1</span>');
+        }
     }
-    if (maryRegex) {
-        processedText = processedText.replace(maryRegex, '<span class="rubric-mary">$&</span>');
+
+    // Apply Red Rubrication second to take priority
+    const redRegex = rubricRedRegex[langKey];
+    if (redRegex) {
+        if (langKey === 'geez_script') {
+            processedText = processedText.replace(redRegex, (match, p1, p2, p3, p4) => {
+                // p2 is prefix, p3 is the word. We only color the word.
+                return `${p1}${p2}<span class="rubric-red">${p3}</span>${p4}`;
+            });
+        } else {
+            processedText = processedText.replace(redRegex, '<span class="rubric-red">$1</span>');
+        }
     }
+
     return processedText;
 }
+
 
 function applyTheme() {
     body.className = ''; // Clear all classes first

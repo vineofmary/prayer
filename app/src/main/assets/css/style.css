@@ -17,8 +17,8 @@ body.theme-traditional-light {
     --accent-color: #8a1c14;
     --hover-color: #f0f0f0;
     --speaker-label-color: #757575;
-    --rubric-god: #ff3131;
-    --rubric-mary: #b8860b;
+    --rubric-red: #ff3131;
+    --rubric-gold: #b8860b;
     --highlight-bg: #f5de31;
     --highlight-text: #000;
     --nav-arrow-bg: rgba(0, 0, 0, 0.3);
@@ -31,8 +31,8 @@ body.theme-traditional-dark {
     --accent-color: #e57373;
     --hover-color: #4a4a4a;
     --speaker-label-color: #bdbdbd;
-    --rubric-god: #ff5e5e;
-    --rubric-mary: #e1ad01;
+    --rubric-red: #ff5e5e;
+    --rubric-gold: #e1ad01;
     --highlight-bg: #b49600;
     --highlight-text: #fff;
     --nav-arrow-bg: rgba(255, 255, 255, 0.2);
@@ -47,8 +47,8 @@ body.theme-sepia-light {
     --accent-color: #8d6e63;
     --hover-color: #f5efe2;
     --speaker-label-color: #8d6e63;
-    --rubric-god: #c62828;
-    --rubric-mary: #b8860b;
+    --rubric-red: #c62828;
+    --rubric-gold: #b8860b;
     --highlight-bg: #f5de31;
     --highlight-text: #000;
     --nav-arrow-bg: rgba(91, 70, 54, 0.3);
@@ -61,8 +61,8 @@ body.theme-sepia-dark {
     --accent-color: #bcaaa4;
     --hover-color: #605145;
     --speaker-label-color: #bcaaa4;
-    --rubric-god: #ef9a9a;
-    --rubric-mary: #e1ad01;
+    --rubric-red: #ef9a9a;
+    --rubric-gold: #e1ad01;
     --highlight-bg: #b49600;
     --highlight-text: #fff;
     --nav-arrow-bg: rgba(211, 197, 181, 0.2);
@@ -77,8 +77,8 @@ body.theme-oceanic-light {
     --accent-color: #0277bd;
     --hover-color: #e3e8eb;
     --speaker-label-color: #546e7a;
-    --rubric-god: #d32f2f;
-    --rubric-mary: #b8860b;
+    --rubric-red: #d32f2f;
+    --rubric-gold: #b8860b;
     --highlight-bg: #f5de31;
     --highlight-text: #000;
     --nav-arrow-bg: rgba(38, 50, 56, 0.3);
@@ -91,8 +91,8 @@ body.theme-oceanic-dark {
     --accent-color: #4fc3f7;
     --hover-color: #455a64;
     --speaker-label-color: #90a4ae;
-    --rubric-god: #ef9a9a;
-    --rubric-mary: #e1ad01;
+    --rubric-red: #ef9a9a;
+    --rubric-gold: #e1ad01;
     --highlight-bg: #b49600;
     --highlight-text: #fff;
     --nav-arrow-bg: rgba(176, 190, 197, 0.2);
@@ -107,8 +107,8 @@ body.theme-high-contrast-light {
     --accent-color: #0000ff;
     --hover-color: #e0e0e0;
     --speaker-label-color: #333333;
-    --rubric-god: #ff0000;
-    --rubric-mary: #b8860b;
+    --rubric-red: #ff0000;
+    --rubric-gold: #b8860b;
     --highlight-bg: #ffff00;
     --highlight-text: #000;
     --nav-arrow-bg: rgba(0, 0, 0, 0.4);
@@ -121,8 +121,8 @@ body.theme-high-contrast-dark {
     --accent-color: #00ffff;
     --hover-color: #333333;
     --speaker-label-color: #dddddd;
-    --rubric-god: #ff4d4d;
-    --rubric-mary: #ffd700;
+    --rubric-red: #ff4d4d;
+    --rubric-gold: #ffd700;
     --highlight-bg: #ffff00;
     --highlight-text: #000;
     --nav-arrow-bg: rgba(255, 255, 255, 0.3);
@@ -653,8 +653,8 @@ body.view-mode-unified .prayer-footer {
 .colored-languages .language-section:nth-child(7) .language-text { color: var(--lang-font-color-6); }
 .colored-languages .language-section:nth-child(8) .language-text { color: var(--lang-font-color-7); }
 
-.colored-languages .language-section:not(:first-child) .rubric-god,
-.colored-languages .language-section:not(:first-child) .rubric-mary {
+.colored-languages .language-section:not(:first-child) .rubric-red,
+.colored-languages .language-section:not(:first-child) .rubric-gold {
     color: inherit;
 }
 .colored-languages .language-section:not(:first-child) .speaker-label {
@@ -797,16 +797,16 @@ font-size: var(--english-font-size, 16px);
     margin-right: 0.3em;
 }
 
-.rubric-god, .rubric-mary {
+.rubric-red, .rubric-gold {
     transition: color 0.2s ease-in-out;
 }
 
-.rubrication-disabled .rubric-god,
-.rubrication-disabled .rubric-mary {
+.rubrication-disabled .rubric-red,
+.rubrication-disabled .rubric-gold {
     color: inherit;
 }
-.rubric-god { color: var(--rubric-god); }
-.rubric-mary { color: var(--rubric-mary); }
+.rubric-red { color: var(--rubric-red); }
+.rubric-gold { color: var(--rubric-gold); }
 
 .lang-ethiopic-script, .ethiopic-label {
     font-family: var(--ethiopic-font-family, 'Noto Sans Ethiopic', sans-serif);
