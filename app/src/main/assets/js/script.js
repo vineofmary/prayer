@@ -1618,10 +1618,11 @@ window.addEventListener('scroll', function() {
 
 // --- Initial Load ---
 document.addEventListener('DOMContentLoaded', async () => {
+    await loadSettings(); // Ensure settings are loaded before anything else
     await loadBibleData(); // Load data on startup
-    loadSettings();
     updatePsalmSummary();
     updateLanguageOrderList();
+    applyTheme(); // Explicitly apply theme after settings are loaded
     renderPrayers();
 
     window.addEventListener('resize', () => {

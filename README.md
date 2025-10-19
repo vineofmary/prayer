@@ -1,6 +1,6 @@
 <div align="center">
 
-_**TL;DR: A multi-language web app to aid Orthodox Christians in daily prayer; try it out [here](https://mountofmercy-beta.netlify.app/).**_
+_**TL;DR: A multi-language web app to aid Orthodox Christians in daily prayer; try it out [here](https://mount-of-mercy-974361367981.us-west1.run.app/).**_
 
 > “Pray without ceasing” ፨ “ወጸልዩ ወትረ”
 >
@@ -24,7 +24,7 @@ This web app is currently in a **beta** stage and is very much a work-in-progres
 
 ### Trying it Out
 
-You can try out the app directly in your web browser on your desktop or mobile device by visiting this temporary staging site: https://mountofmercy-beta.netlify.app/
+You can try out the app directly in your web browser on your desktop or mobile device by visiting this temporary staging site: https://mount-of-mercy-974361367981.us-west1.run.app/
 
 ### Adding to Your Home Screen
 

@@ -196,6 +196,14 @@ body.language-colors-vibrant.theme-traditional-dark, body.language-colors-vibran
 
 body {
     font-family: var(--english-font-family, serif);
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color, #f4f4f4);
+    color: var(--text-color, #333);
+    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+    overflow-x: hidden;
+    padding-top: var(--header-height); /* Make space for fixed header */
+}
 margin: 0;
     padding: 0;
     background-color: var(--background-color);
@@ -214,8 +222,10 @@ body.bold-text .language-text {
 }
 
 header {
-    background-color: var(--card-background);
-    border-bottom: 1px solid var(--border-color);
+/*    background-color: var(--card-background);*/
+/*    border-bottom: 1px solid var(--border-color);*/
+    background-color: var(--card-background, #ffffff);
+    border-bottom: 1px solid var(--border-color, #eee);
     padding: 0 1.5rem;
     height: var(--header-height);
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
@@ -227,7 +237,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: transform 0.3s ease-in-out;
+/*    transition: transform 0.3s ease-in-out;*/
+    transition: transform 0.3s ease-in-out, background-color var(--transition-speed) ease;
 }
 
 header.header-hidden {
@@ -359,18 +370,19 @@ header.search-active #search-prev, header.search-active #search-next {
 
 .sidebar {
     width: var(--sidebar-width);
-    border-right: 1px solid var(--border-color);
-    background-color: var(--card-background);
+    border-right: 1px solid var(--border-color, #eee);
+    background-color: var(--card-background, #ffffff);
     flex-shrink: 0;
-    transition: width var(--transition-speed) ease, padding var(--transition-speed) ease, transform var(--transition-speed) ease;
+    transition: width var(--transition-speed) ease, padding var(--transition-speed) ease, transform var(--transition-speed) ease, background-color var(--transition-speed) ease;
     z-index: 5;
     display: flex;
     flex-direction: column;
-height: calc(100vh - var(--header-height));
+    height: calc(100vh - var(--header-height));
     position: fixed; /* Changed from sticky to fixed */
     top: var(--header-height);
     left: 0; /* Added left: 0 to anchor it */
 }
+
 
 .sidebar.collapsed {
     width: 0;
