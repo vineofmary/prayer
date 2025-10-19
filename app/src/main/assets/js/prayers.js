@@ -1,3 +1,5 @@
+// The source of truth for all these prayers is the open-source Orthodox Liturgy Liturgy database:
+// https://docs.google.com/spreadsheets/d/1rkagFuBr3T6wtZ6muVhcN18VW9laFTJwBfi5cS3vnUk/edit?usp=sharing
 const prayers = [
   {
     "instruction": "",
