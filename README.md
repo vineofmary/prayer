@@ -99,7 +99,7 @@ For feedback, questions, or to contribute, please contact [vineofmary@gmail.com]
     * Implement a prompt to encourage users to install the web app and "Add to Home Screen."
     * Integrate analytics to track PWA installation events and usage across platforms.
 * **Bug Fixes:**
-    * Ensure Slides Mode and its dynamic font scaling are fully compatible with the Row Layout.
+    * Ensure Slides Mode and its dynamic font scaling are fully compatible with the Row Layout
     * Correct the `line-height` rendering for Ethiopic script in Slides Mode to allow for custom vertical spacing between lines.
     * Verify Slides Mode functionality on mobile devices when dynamic font sizing is disabled.
 
