@@ -27,3 +27,7 @@ steps:
 # Tell Cloud Build which images to save after the build
 images:
   - 'gcr.io/$PROJECT_ID/mount-of-mercy:$COMMIT_SHA'
+
+# Options block to specify where to store logs
+options:
+  logging: CLOUD_LOGGING_ONLY
