@@ -1679,7 +1679,7 @@ function handleSidebarSwipe() {
     if (touchEndX < touchStartX && (touchStartX - touchEndX) > 50) { // Swipe Left
         collapseSidebar();
     }
-    if (touchEndX > touchStartX && (touchEndX - touchStartX) > 50) { // Swipe Right
+    if (touchEndX > touchStartX && (touchEndX - startX) > 50) { // Swipe Right
         if (isSidebarCollapsed) {
             isSidebarCollapsed = false;
             sidebar.classList.remove('collapsed');
@@ -1758,6 +1758,23 @@ window.addEventListener('scroll', function() {
 
 // --- Initial Load ---
 document.addEventListener('DOMContentLoaded', async () => {
+    const splashScreen = document.getElementById('splash-screen');
+    const appContainer = document.getElementById('app-container');
+
+    if (sessionStorage.getItem('splashShown')) {
+        splashScreen.classList.add('hidden');
+        appContainer.classList.remove('hidden');
+    } else {
+        setTimeout(() => {
+            splashScreen.style.opacity = '0';
+            setTimeout(() => {
+                splashScreen.classList.add('hidden');
+                appContainer.classList.remove('hidden');
+                sessionStorage.setItem('splashShown', 'true');
+            }, 750); // Match CSS transition duration
+        }, 3000); // 2-second delay
+    }
+
     await loadSettings(); // Ensure settings are loaded before anything else
     await loadBibleData(); // Load data on startup
     updatePsalmSummary();
