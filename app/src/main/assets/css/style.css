@@ -434,6 +434,16 @@ body.sidebar-open #sidebar-backdrop {
     flex-grow: 1;
 }
 
+/* Styling for links within the help modal */
+.modal-content a {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+.modal-content a:hover {
+    text-decoration: none;
+}
+
 .setting-group {
     margin-bottom: 1.5rem;
     padding-bottom: 1.5rem;
