@@ -196,11 +196,11 @@ body.language-colors-vibrant.theme-traditional-dark, body.language-colors-vibran
 
 body {
     font-family: var(--english-font-family, serif);
-    margin: 0;
+margin: 0;
     padding: 0;
-    background-color: var(--background-color, #f4f4f4);
-    color: var(--text-color, #333);
-    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+background-color: var(--background-color, #f4f4f4);
+color: var(--text-color, #333);
+transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
     overflow-x: hidden;
     padding-top: var(--header-height); /* Make space for fixed header */
 }
@@ -222,11 +222,11 @@ body.bold-text .language-text {
 }
 
 header {
-/*    background-color: var(--card-background);*/
-/*    border-bottom: 1px solid var(--border-color);*/
+/* background-color: var(--card-background);*/
+/* border-bottom: 1px solid var(--border-color);*/
     background-color: var(--card-background, #ffffff);
-    border-bottom: 1px solid var(--border-color, #eee);
-    padding: 0 1.5rem;
+border-bottom: 1px solid var(--border-color, #eee);
+padding: 0 1.5rem;
     height: var(--header-height);
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     z-index: 10;
@@ -237,7 +237,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-/*    transition: transform 0.3s ease-in-out;*/
+    /* transition: transform 0.3s ease-in-out;*/
     transition: transform 0.3s ease-in-out, background-color var(--transition-speed) ease;
 }
 
@@ -258,6 +258,10 @@ h1 {
     color: var(--accent-color);
     white-space: nowrap;
     transition: opacity var(--transition-speed) ease;
+}
+
+.ethiopic-label {
+    font-family: 'Merriweather', serif !important;
 }
 
 .header-actions {
@@ -370,14 +374,14 @@ header.search-active #search-prev, header.search-active #search-next {
 
 .sidebar {
     width: var(--sidebar-width);
-    border-right: 1px solid var(--border-color, #eee);
-    background-color: var(--card-background, #ffffff);
-    flex-shrink: 0;
+border-right: 1px solid var(--border-color, #eee);
+background-color: var(--card-background, #ffffff);
+flex-shrink: 0;
     transition: width var(--transition-speed) ease, padding var(--transition-speed) ease, transform var(--transition-speed) ease, background-color var(--transition-speed) ease;
     z-index: 5;
     display: flex;
     flex-direction: column;
-    height: calc(100vh - var(--header-height));
+height: calc(100vh - var(--header-height));
     position: fixed; /* Changed from sticky to fixed */
     top: var(--header-height);
     left: 0; /* Added left: 0 to anchor it */
@@ -562,6 +566,19 @@ min-height: calc(100vh - var(--header-height) - 2rem);
 }
 #prayer-display.is-transitioning {
     opacity: 0;
+}
+
+/* Section Title */
+.section-title {
+    font-size: 1.8rem;
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+    margin-top: 2.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent-color);
+}
+#prayer-display > .section-title:first-child {
+    margin-top: 0.5rem;
 }
 
 /* Card View Styles */
@@ -964,6 +981,17 @@ body.presentation-mode-slides .main-content {
     padding: 0;
     height: 100vh;
 }
+body.presentation-mode-slides .section-title {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0;
+    border: none;
+    font-size: 3rem;
+}
+
 
 /* Default "Slide" Transition */
 body.presentation-mode-slides #prayer-display.transition-slide {
@@ -972,6 +1000,11 @@ body.presentation-mode-slides #prayer-display.transition-slide {
     height: 100%;
     transition: transform 0.4s ease-in-out;
 }
+body.presentation-mode-slides #prayer-display.transition-slide > * {
+    width: 100%;
+    flex-shrink: 0;
+}
+
 
 /* "Fade" Transition */
 body.presentation-mode-slides #prayer-display.transition-fade {
@@ -980,7 +1013,8 @@ body.presentation-mode-slides #prayer-display.transition-fade {
     height: 100%;
 }
 
-body.presentation-mode-slides #prayer-display.transition-fade .prayer-card {
+body.presentation-mode-slides #prayer-display.transition-fade .prayer-card,
+body.presentation-mode-slides #prayer-display.transition-fade .section-title {
     position: absolute;
     top: 0;
     left: 0;
@@ -992,7 +1026,7 @@ body.presentation-mode-slides #prayer-display.transition-fade .prayer-card {
     z-index: 1;
 }
 
-body.presentation-mode-slides #prayer-display.transition-fade .prayer-card.active-slide {
+body.presentation-mode-slides #prayer-display.transition-fade .active-slide {
     opacity: 1;
     visibility: visible;
     z-index: 2;
@@ -1005,7 +1039,8 @@ body.presentation-mode-slides #prayer-display.transition-none {
     height: 100%;
 }
 
-body.presentation-mode-slides #prayer-display.transition-none .prayer-card {
+body.presentation-mode-slides #prayer-display.transition-none .prayer-card,
+body.presentation-mode-slides #prayer-display.transition-none .section-title {
     position: absolute;
     top: 0;
     left: 0;
@@ -1017,7 +1052,7 @@ body.presentation-mode-slides #prayer-display.transition-none .prayer-card {
     z-index: 1;
 }
 
-body.presentation-mode-slides #prayer-display.transition-none .prayer-card.active-slide {
+body.presentation-mode-slides #prayer-display.transition-none .active-slide {
     opacity: 1;
     visibility: visible;
     z-index: 2;
@@ -1025,9 +1060,6 @@ body.presentation-mode-slides #prayer-display.transition-none .prayer-card.activ
 
 
 body.presentation-mode-slides .prayer-card {
-    width: 100%;
-    flex-shrink: 0;
-    margin-bottom: 0;
     height: 100%;
     border-radius: 0;
     border: none;
@@ -1160,5 +1192,6 @@ body.presentation-mode-slides .prayer-content.layout-column .language-section:no
 .prayer-content[data-active-columns~="6"] .language-section,
 .prayer-content[data-active-columns~="7"] .language-section {
     flex-basis: 80%;
+}
 }
 }

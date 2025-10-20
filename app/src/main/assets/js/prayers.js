@@ -370,7 +370,7 @@ const prayers = [
     "reference": "Daily Prayer",
     "chapter": "Daily",
     "stanza": "6",
-    "english": "We bow to you Christ, with Your good heavenly Father and Your life-giving Holy Spirit for You came and saved us.",
+    "english": "We worship you Christ, with Your good heavenly Father and Your life-giving Holy Spirit for You came and saved us.",
     "geez_script": "ንስግድ ለከ ክርስቶስ ምስለ አቡከ ኄር ሰማያዊ ወመንፈስከ ቅዱስ ማኅየዊ እስመ መጻእከ ወአድኃንከነ።",
     "geez_phonetic": "nsgd leke krstos msle 'abuke hér semayawī wemenfeske ḳdus mahyewī 'isme metsa'ike we'adhankene.",
     "amharic_script": "ክርስቶስ ላንተ እንሰግድልሃለን ከሰማያዊው ከቸር አባትህ ጋር አዳኝ ከሆነው ከመንፈስ ቅዱስም ጋር እንሰግድልሃለን ወደዚህ ዓለም መጥተህ አድነኸናልና።",
@@ -789,7 +789,7 @@ const prayers = [
     "instruction": ``,
     "reference": `Intro to The Praise of Mary, attributed to Saint Ephrem the Syrian of Nisbis/Edessa (4th century)`,
     "chapter": `Daily`,
-    "stanza": `12`,
+    "stanza": `11`,
       "english": `O my Lady, loose me from the bonds of Satan. O Mother of the Savior and daughter of the Light, bless, sanctify, and cleanse me as you blessed your beloved Ephrem.`,
       "geez_script": `ኦ እግዝእትየ፣ ፍትሕኒ እማዕሠረ ሰይጣን። ኦ እም መድኀኒ ወወለተ ብርሃን፣ ባርክኒ ወቀድስኒ ወአንጽሕኒ በከመ ባረኪዮ ለቅዱስ ኤፍሬም ሶርያዊ`,
     "geez_phonetic": `o 'igz'itye, ftḥnī 'ima'isere seyṭan. 'o 'im medhanī wewelete brhan, barknī weḳedsnī we'antsḥnī bekeme barekīyo leḳdus 'éfrém soryawī`,
@@ -798,20 +798,6 @@ const prayers = [
     "tigrinya_script": ``,
     "tigrinya_phonetic": ``,
     "spanish": `Oh Señora mía, libérame de las ataduras de Satanás. Oh Madre del Salvador e hija de la Luz, bendíceme, santifícame y límpiame como bendijiste a tu amado Efraín.`
-  },
-  {
-    "instruction": `Inaudible Prayer`,
-    "reference": `Monday Praise of Mary`,
-    "chapter": `Mon`,
-    "stanza": `Intro`,
-    "english": `Praises for Our Lady Mary, Virgin, Bearer of God, that is read on Monday.`,
-    "geez_script": `ውዳሴሃ ለእግዝእትነ ማርያም ድንግል ወላዲተ አምላክ ዘይትነበብ በዕለተ ሠኑይ`,
-    "geez_phonetic": `wdaséha le'igz'itne maryam dngl weladīte 'amlak zeytnebeb be'ilete senuy`,
-    "amharic_script": ``,
-    "amharic_phonetic": ``,
-    "tigrinya_script": ``,
-    "tigrinya_phonetic": ``,
-    "spanish": `La Alabanza de Nuestra Señora, la Virgen María, la Portadora de Dios, que se lee en el Segundo Día, Lunes.`
   },
   {
     "instruction": ``,

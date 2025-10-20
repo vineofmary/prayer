@@ -129,7 +129,7 @@ const rubricGoldWords = {
         "ወላዲተ አምላክ", "እግዝእትየ", "እግዝእትነ", "ቅድስት ድንግል", "ማርያም ድንግል", "ማርያም ቅድስት",
         "ማርያም ውድስት", "ማርያም ንጽሕት", "ማርያም ፍሥሕት", "ማርያም ብጽዕት", "ማርያም ብፅዕት",
         "ማርያም ቡርክት", "ማኅደረ መለኮት", "ደብተራ ፍጽምት", "እኅተ መላእክት", "ወእመ ኵሉ ሕዝብ",
-        "ሰላማዊት", "ማርያም ሥርጉት", "ኆኅተ ምሥራቅ ወእሙ ለብርሃን", "ማርያም ኅሪት ወክብርት", "ማርያም"
+        "ሰላማዊት", "ማርያም ሥርጉት", "ኆኅተ ምሥራቅ ወእሙ ለብርሃን", "ማርያም ኅሪት ወክብርት", "마리아"
     ]
 };
 
@@ -474,6 +474,50 @@ function formatPrayerText(text, langKey, query, isFirstLanguage) {
     return highlightText(processedText, query);
 }
 
+function getPrayerLabel(prayer) {
+    const prayerKey = `${prayer.chapter}-${prayer.stanza}`;
+
+    const customLabels = {
+        "Daily-0": "Daily Prayer - Trinitarian Invocation",
+        "Daily-1": "Daily Prayer - I Seal My Face...",
+        "Daily-2": "Daily Prayer - We Thank You, Lord...",
+        "Daily-3": "Daily Prayer - Lord's Prayer",
+        "Daily-4": "Daily Prayer - Greeting of Saint Gabriel",
+        "Daily-5": "Daily Prayer - Prayer of the Faith (Creed)",
+        "Daily-6": "Daily Prayer - Holy, Holy, Holy... (Seraphic Hymn)",
+        "Daily-7": "Daily Prayer - I worship...",
+        "Daily-8": "Daily Prayer - Glory...",
+        "Daily-9": "Daily Prayer - Greetings to You, [Mary]...",
+        "Daily-10": "Daily Prayer - Prayer of Our Lady Mary",
+        "Daily-11": "Daily Prayer - The Praise of Mary"
+    };
+
+    if (customLabels[prayerKey]) {
+        return customLabels[prayerKey];
+    } else if (prayer.chapter === 'Thurs') {
+        return 'Thursday Praise of Mary';
+    } else if (prayer.chapter === 'Angels') {
+        return 'The Angels Praise Mary';
+    } else if (prayer.chapter === 'Psalms' && prayer.stanza === 'Intro') {
+        return 'Intro to the Psalms';
+    } else if (prayer.chapter === 'Psalms' && prayer.stanza === 'Closing') {
+        return 'Conclusion to the Psalms';
+    }
+
+
+    return prayer.reference; // Default fallback
+}
+
+function getSectionTitle(prayer) {
+    const label = getPrayerLabel(prayer);
+    // Use a simpler regex to extract the main title part
+    if (label.startsWith("Daily Prayer - ")) {
+        return "Daily Prayer";
+    }
+    return label.replace(/ - .*/, '');
+}
+
+
 function createPrayerCardElement(prayer, prayerIndex) {
     const searchQuery = searchInput.value;
     const activeLanguageCount = Object.values(displayedLanguages).filter(Boolean).length;
@@ -534,7 +578,7 @@ function createPrayerCardElement(prayer, prayerIndex) {
     const prayerLabel = document.createElement('div');
     prayerLabel.classList.add('prayer-label');
     if (!displayOptions.showPrayerLabels) prayerLabel.classList.add('hidden');
-    prayerLabel.textContent = prayer.reference;
+    prayerLabel.textContent = getPrayerLabel(prayer);
     prayerFooter.appendChild(prayerLabel);
 
     const prayerActions = document.createElement('div');
@@ -559,7 +603,7 @@ function createPrayerCardElement(prayer, prayerIndex) {
     enterSlidesBtn.title = 'Enter Slides Mode';
     enterSlidesBtn.addEventListener('click', (event) => {
         const clickedCard = event.currentTarget.closest('.prayer-card');
-        const allCards = Array.from(prayerDisplay.querySelectorAll('.prayer-card'));
+        const allCards = Array.from(prayerDisplay.querySelectorAll('.prayer-card, .section-title'));
         const cardIndex = allCards.indexOf(clickedCard);
         if (cardIndex !== -1) {
             currentSlideIndex = cardIndex;
@@ -608,33 +652,58 @@ function renderPrayers() {
         return;
     }
 
-    // 1. Render all prayers that are NOT part of the Psalms chapter
+    let lastSectionTitle = null;
+
+    const addSectionTitleIfNeeded = (title) => {
+        if (title && title !== lastSectionTitle) {
+            const titleEl = document.createElement('h2');
+            titleEl.classList.add('section-title');
+            titleEl.textContent = title;
+            prayerDisplay.appendChild(titleEl);
+            lastSectionTitle = title;
+        }
+    };
+
     const mainPrayers = prayers.filter(p => p.chapter !== 'Psalms');
     mainPrayers.forEach((prayer, prayerIndex) => {
-        const prayerCard = createPrayerCardElement(prayer, prayerIndex);
-        prayerDisplay.appendChild(prayerCard);
+        // Special case for "Daily Prayer" title
+        if (prayer.chapter === 'Daily' && prayer.stanza === '0') {
+            // Render the Trinitarian Invocation first
+            const prayerCard = createPrayerCardElement(prayer, prayerIndex);
+            prayerDisplay.appendChild(prayerCard);
+            // THEN add the "Daily Prayer" title
+            addSectionTitleIfNeeded("Daily Prayer");
+        } else {
+            // For all other prayers, add title before the card
+            addSectionTitleIfNeeded(getSectionTitle(prayer));
+            const prayerCard = createPrayerCardElement(prayer, prayerIndex);
+            prayerDisplay.appendChild(prayerCard);
+        }
     });
 
     // 2. Conditionally render Psalm-related prayers
     if (selectedPsalms.length > 0 && bibleData.loaded) {
-        // Render Intro Prayers
         const psalmIntroPrayers = prayers.filter(p => p.chapter === 'Psalms' && p.stanza === 'Intro');
-        psalmIntroPrayers.forEach(prayer => {
-            const prayerCard = createPrayerCardElement(prayer, -1); // -1 index to avoid conflict
-            prayerDisplay.appendChild(prayerCard);
-        });
+        if (psalmIntroPrayers.length > 0) {
+            addSectionTitleIfNeeded('Intro to the Psalms');
+            psalmIntroPrayers.forEach(prayer => {
+                const prayerCard = createPrayerCardElement(prayer, -1);
+                prayerDisplay.appendChild(prayerCard);
+            });
+        }
 
-        // Render the selected Psalms with the doxology response after each
-        renderSelectedPsalmsWithDoxology();
+        renderSelectedPsalmsWithDoxology((psalmNum) => addSectionTitleIfNeeded(`Psalm ${psalmNum}`));
 
-        // Render Closing Prayers
         const psalmClosingPrayers = prayers.filter(p => p.chapter === 'Psalms' && p.stanza === 'Closing');
-        psalmClosingPrayers.forEach(prayer => {
-            const prayerCard = createPrayerCardElement(prayer, -1);
-            prayerDisplay.appendChild(prayerCard);
-        });
-
+        if (psalmClosingPrayers.length > 0) {
+            addSectionTitleIfNeeded('Conclusion to the Psalms');
+            psalmClosingPrayers.forEach(prayer => {
+                const prayerCard = createPrayerCardElement(prayer, -1);
+                prayerDisplay.appendChild(prayerCard);
+            });
+        }
     }
+
 
     // 3. Final setup for slides and search
     if (displayOptions.presentationMode === 'slides') {
@@ -645,7 +714,6 @@ function renderPrayers() {
     }
     updateSearchMatches();
 }
-
 
 function smoothRender(callback) {
     prayerDisplay.classList.add('is-transitioning');
@@ -691,7 +759,7 @@ function fallbackCopyTextToClipboard(text) {
 
 function copyPrayer(prayer) {
     let textToCopy = ``;
-    textToCopy += `፨ ${prayer.chapter} - ${prayer.stanza} ፨\n\n`;
+    textToCopy += `፨ ${getPrayerLabel(prayer)} ፨\n\n`;
 
     languageOrder.forEach(langKey => {
         if (displayedLanguages[langKey] && prayer[langKey] && prayer[langKey].trim()) {
@@ -786,13 +854,13 @@ function setupSlides() {
 function removeSlides() {
     prayerDisplay.style.transform = '';
     prayerDisplay.className = '';
-    document.querySelectorAll('.prayer-card').forEach(card => card.classList.remove('active-slide'));
+    document.querySelectorAll('.prayer-card, .section-title').forEach(el => el.classList.remove('active-slide'));
     document.querySelectorAll('.language-text').forEach(p => p.style.fontSize = '');
 }
 
 
 function showSlide(index) {
-    const slides = prayerDisplay.querySelectorAll('.prayer-card');
+    const slides = prayerDisplay.querySelectorAll('.prayer-card, .section-title');
     if (index >= slides.length) currentSlideIndex = 0;
     if (index < 0) currentSlideIndex = slides.length - 1;
 
@@ -806,7 +874,7 @@ function showSlide(index) {
 }
 
 function nextSlide() {
-    const slides = prayerDisplay.querySelectorAll('.prayer-card');
+    const slides = prayerDisplay.querySelectorAll('.prayer-card, .section-title');
     if (slides.length > 0) {
         currentSlideIndex = (currentSlideIndex + 1) % slides.length;
         showSlide(currentSlideIndex);
@@ -814,7 +882,7 @@ function nextSlide() {
 }
 
 function prevSlide() {
-    const slides = prayerDisplay.querySelectorAll('.prayer-card');
+    const slides = prayerDisplay.querySelectorAll('.prayer-card, .section-title');
     if (slides.length > 0) {
         currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
         showSlide(currentSlideIndex);
@@ -978,7 +1046,7 @@ function populatePsalmSelector() {
     }
 }
 
-function renderSelectedPsalmsWithDoxology() {
+function renderSelectedPsalmsWithDoxology(addSectionTitleCallback) {
     if (selectedPsalms.length === 0 || !bibleData.loaded) return;
 
     const getVerses = (data, isStructured) => {
@@ -1020,6 +1088,7 @@ function renderSelectedPsalmsWithDoxology() {
     const doxologyPrayer = prayers.find(p => p.chapter === 'Psalms' && p.stanza === 'Response');
 
     for (const lxxChapter of selectedPsalms.sort((a, b) => a - b)) {
+        addSectionTitleCallback(lxxChapter);
         const mtChapters = convertLxxToMt(lxxChapter);
         let allVerses = [];
 
@@ -1134,7 +1203,7 @@ function renderSelectedPsalmsWithDoxology() {
             enterSlidesBtn.title = 'Enter Slides Mode';
             enterSlidesBtn.addEventListener('click', (event) => {
                 const clickedCard = event.currentTarget.closest('.prayer-card');
-                const allCards = Array.from(prayerDisplay.querySelectorAll('.prayer-card'));
+                const allCards = Array.from(prayerDisplay.querySelectorAll('.prayer-card, .section-title'));
                 const cardIndex = allCards.indexOf(clickedCard);
                 if (cardIndex !== -1) {
                     currentSlideIndex = cardIndex;
