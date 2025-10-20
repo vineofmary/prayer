@@ -699,19 +699,19 @@ function renderPrayers() {
     const mainPrayers = prayers.filter(p => p.chapter !== 'Psalms');
 
     mainPrayers.forEach((prayer, prayerIndex) => {
-        // Render section title based on the MAIN prayer in the loop
-        addSectionTitleIfNeeded(prayer);
-
-        // --- Insertion Point Checks ---
-
-//        // 1. At the start of the Praise of Mary
-//        if (prayer.chapter === 'Daily' && prayer.stanza === '11') {
-//            renderSequence();
-//        }
+        // Don't add a title before the Trinitarian Invocation
+        if (!(prayer.chapter === 'Daily' && prayer.stanza === '0')) {
+            addSectionTitleIfNeeded(prayer);
+        }
 
         // Render the actual prayer card from the main loop
         const prayerCard = createPrayerCardElement(prayer, prayerIndex);
         prayerDisplay.appendChild(prayerCard);
+
+        // Add the "Daily Prayer" title immediately after the Trinitarian Invocation card
+        if (prayer.chapter === 'Daily' && prayer.stanza === '0') {
+            addSectionTitleIfNeeded(prayer);
+        }
 
         // Check if this is the last prayer of a chapter to insert the sequence after
         const nextPrayer = mainPrayers[prayerIndex + 1];
