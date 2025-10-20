@@ -546,7 +546,7 @@ input[type="range"], select {
 }
 
 /* Psalm Selector Checkbox Styles */
-#psalm-selector-container {
+#psalm-selector-container, #prophet-songs-selector-container {
     max-height: 200px;
     overflow-y: auto;
     border: 1px solid var(--border-color);
@@ -555,7 +555,7 @@ input[type="range"], select {
     background-color: var(--background-color);
 }
 
-#psalm-selector-container label {
+#psalm-selector-container label, #prophet-songs-selector-container label {
     display: block;
     margin-bottom: 0.5rem;
     cursor: pointer;
@@ -564,11 +564,11 @@ input[type="range"], select {
     border-radius: 3px;
 }
 
-#psalm-selector-container label:hover {
+#psalm-selector-container label:hover, #prophet-songs-selector-container label:hover {
     background-color: var(--hover-color);
 }
 
-#psalm-selector-container input[type="checkbox"] {
+#psalm-selector-container input[type="checkbox"], #prophet-songs-selector-container input[type="checkbox"] {
     margin-right: 0.5rem;
 }
 
@@ -1255,6 +1255,7 @@ body.presentation-mode-slides .prayer-content.layout-column .language-section:no
 .prayer-content[data-active-columns~="6"] .language-section,
 .prayer-content[data-active-columns~="7"] .language-section {
     flex-basis: 80%;
+}
 }
 }
 }
