@@ -47,6 +47,7 @@ const sendFeedbackButton = document.getElementById('send-feedback-button');
 const fontPreview = document.getElementById('font-preview');
 const psalmSelectorContainer = document.getElementById('psalm-selector-container');
 const psalmSummary = document.getElementById('psalm-summary');
+const clearPsalmsButton = document.getElementById('clear-psalms-button');
 
 
 // --- State Variables ---
@@ -1432,6 +1433,16 @@ psalmSelectorContainer.addEventListener('change', (event) => {
         saveSettings();
         smoothRender();
     }
+});
+
+clearPsalmsButton.addEventListener('click', () => {
+    selectedPsalms = [];
+    document.querySelectorAll('#psalm-selector-container input[type="checkbox"]').forEach(checkbox => {
+        checkbox.checked = false;
+    });
+    updatePsalmSummary();
+    saveSettings();
+    renderPrayer();
 });
 
 // Display Options Listeners
