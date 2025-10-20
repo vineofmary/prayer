@@ -1900,7 +1900,7 @@ function handleSidebarSwipe() {
     if (touchEndX < touchStartX && (touchStartX - touchEndX) > 50) { // Swipe Left
         collapseSidebar();
     }
-    if (touchEndX > touchStartX && (touchEndX - startX) > 50) { // Swipe Right
+    if (touchEndX > touchStartX && (touchEndX - touchStartX) > 50) { // Swipe Right
         if (isSidebarCollapsed) {
             isSidebarCollapsed = false;
             sidebar.classList.remove('collapsed');
@@ -1914,7 +1914,7 @@ function handleSlideSwipe() {
     const swipeThreshold = 50;
     if (touchStartX - touchEndX > swipeThreshold) {
         nextSlide();
-    } else if (touchEndX - startX > swipeThreshold) {
+    } else if (touchEndX - touchStartX > swipeThreshold) {
         prevSlide();
     }
 }
