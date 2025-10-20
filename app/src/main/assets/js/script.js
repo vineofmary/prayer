@@ -490,7 +490,8 @@ function getPrayerLabel(prayer) {
         "Daily-8": "Daily Prayer - Glory...",
         "Daily-9": "Daily Prayer - Greetings to You, [Mary]...",
         "Daily-10": "Daily Prayer - Prayer of Our Lady Mary",
-        "Daily-11": "Daily Prayer - The Praise of Mary"
+        "Daily-11": "Daily Prayer - The Praise of Mary",
+        "Personal-0": "Prayer"
     };
 
     if (customLabels[prayerKey]) {
@@ -643,6 +644,27 @@ function createPrayerCardElement(prayer, prayerIndex) {
     return prayerCard;
 }
 
+function getStandardPrayerSequence() {
+    const personalPrayer = {
+        instruction: "The leader or priest offers a personal prayer or benediction here.",
+        reference: "Personal Prayer",
+        chapter: "Personal",
+        stanza: "0",
+        english: "[Prayer]",
+        geez_script: "[ጸሎት]",
+        geez_phonetic: "[tselot]",
+        amharic_script: "[ጸሎት]",
+        amharic_phonetic: "[tselot]",
+        tigrinya_script: "[ጸሎት]",
+        tigrinya_phonetic: "[tselot]",
+        spanish: "[Oración]"
+    };
+    const lordsPrayerParts = prayers.filter(p => p.chapter === 'Daily' && p.stanza === '3');
+    const gabrielGreetingParts = prayers.filter(p => p.chapter === 'Daily' && p.stanza === '4');
+
+    return [personalPrayer, ...lordsPrayerParts, ...gabrielGreetingParts];
+}
+
 
 function renderPrayers() {
     prayerDisplay.innerHTML = '';
@@ -654,8 +676,10 @@ function renderPrayers() {
     }
 
     let lastSectionTitle = null;
+    const prayerSequence = getStandardPrayerSequence();
 
-    const addSectionTitleIfNeeded = (title) => {
+    const addSectionTitleIfNeeded = (prayer) => {
+        const title = getSectionTitle(prayer);
         if (title && title !== lastSectionTitle) {
             const titleEl = document.createElement('h2');
             titleEl.classList.add('section-title');
@@ -665,48 +689,83 @@ function renderPrayers() {
         }
     };
 
+    const renderSequence = () => {
+        prayerSequence.forEach(p => {
+            const prayerCard = createPrayerCardElement(p, -1);
+            prayerDisplay.appendChild(prayerCard);
+        });
+    };
+
     const mainPrayers = prayers.filter(p => p.chapter !== 'Psalms');
+
     mainPrayers.forEach((prayer, prayerIndex) => {
-        // Special case for "Daily Prayer" title
-        if (prayer.chapter === 'Daily' && prayer.stanza === '0') {
-            // Render the Trinitarian Invocation first
-            const prayerCard = createPrayerCardElement(prayer, prayerIndex);
-            prayerDisplay.appendChild(prayerCard);
-            // THEN add the "Daily Prayer" title
-            addSectionTitleIfNeeded("Daily Prayer");
-        } else {
-            // For all other prayers, add title before the card
-            addSectionTitleIfNeeded(getSectionTitle(prayer));
-            const prayerCard = createPrayerCardElement(prayer, prayerIndex);
-            prayerDisplay.appendChild(prayerCard);
+        // Render section title based on the MAIN prayer in the loop
+        addSectionTitleIfNeeded(prayer);
+
+        // --- Insertion Point Checks ---
+
+//        // 1. At the start of the Praise of Mary
+//        if (prayer.chapter === 'Daily' && prayer.stanza === '11') {
+//            renderSequence();
+//        }
+
+        // Render the actual prayer card from the main loop
+        const prayerCard = createPrayerCardElement(prayer, prayerIndex);
+        prayerDisplay.appendChild(prayerCard);
+
+        // Check if this is the last prayer of a chapter to insert the sequence after
+        const nextPrayer = mainPrayers[prayerIndex + 1];
+        const isLastOfChapter = !nextPrayer || nextPrayer.chapter !== prayer.chapter;
+
+        if (isLastOfChapter) {
+            // 2. At the end of Thursday's Praise of Mary
+            if (prayer.chapter === 'Thurs') {
+                renderSequence();
+            }
+            // 3. At the end of the Angels Praise Mary
+            if (prayer.chapter === 'Angels') {
+                renderSequence();
+            }
         }
     });
 
-    // 2. Conditionally render Psalm-related prayers
+
+    // Conditionally render Psalm-related prayers
     if (selectedPsalms.length > 0 && bibleData.loaded) {
         const psalmIntroPrayers = prayers.filter(p => p.chapter === 'Psalms' && p.stanza === 'Intro');
         if (psalmIntroPrayers.length > 0) {
-            addSectionTitleIfNeeded('Intro to the Psalms');
+            addSectionTitleIfNeeded(psalmIntroPrayers[0]);
             psalmIntroPrayers.forEach(prayer => {
                 const prayerCard = createPrayerCardElement(prayer, -1);
                 prayerDisplay.appendChild(prayerCard);
             });
         }
 
-        renderSelectedPsalmsWithDoxology((psalmNum) => addSectionTitleIfNeeded(`Psalm ${psalmNum}`));
+        renderSelectedPsalmsWithDoxology((psalmNum) => {
+            const title = `Psalm ${psalmNum}`;
+            if (title !== lastSectionTitle) {
+                const titleEl = document.createElement('h2');
+                titleEl.classList.add('section-title');
+                titleEl.textContent = title;
+                prayerDisplay.appendChild(titleEl);
+                lastSectionTitle = title;
+            }
+        });
 
         const psalmClosingPrayers = prayers.filter(p => p.chapter === 'Psalms' && p.stanza === 'Closing');
         if (psalmClosingPrayers.length > 0) {
-            addSectionTitleIfNeeded('Conclusion to the Psalms');
+            addSectionTitleIfNeeded(psalmClosingPrayers[0]);
             psalmClosingPrayers.forEach(prayer => {
                 const prayerCard = createPrayerCardElement(prayer, -1);
                 prayerDisplay.appendChild(prayerCard);
             });
+            // 4. At the end of the conclusion to the psalms
+            renderSequence();
         }
     }
 
 
-    // 3. Final setup for slides and search
+    // Final setup for slides and search
     if (displayOptions.presentationMode === 'slides') {
         setupSlides();
         adjustSlideFontSize();
@@ -715,6 +774,7 @@ function renderPrayers() {
     }
     updateSearchMatches();
 }
+
 
 function smoothRender(callback) {
     prayerDisplay.classList.add('is-transitioning');
@@ -1442,7 +1502,7 @@ clearPsalmsButton.addEventListener('click', () => {
     });
     updatePsalmSummary();
     saveSettings();
-    renderPrayer();
+    renderPrayers();
 });
 
 // Display Options Listeners
