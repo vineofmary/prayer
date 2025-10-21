@@ -49,7 +49,6 @@ const psalmSelectorContainer = document.getElementById('psalm-selector-container
 const psalmSummary = document.getElementById('psalm-summary');
 const clearPsalmsButton = document.getElementById('clear-psalms-button');
 const prophetSongsSelectorContainer = document.getElementById('prophet-songs-selector-container');
-const prophetSongsSummary = document.getElementById('prophet-songs-summary');
 const clearProphetSongsButton = document.getElementById('clear-prophet-songs-button');
 const servantNameInput = document.getElementById('servant-name-input');
 const patriarchNameInput = document.getElementById('patriarch-name-input');
@@ -230,17 +229,7 @@ function updatePsalmSummary() {
     }
 }
 
-function updateProphetSongsSummary() {
-    if (selectedProphetSongs.length > 0) {
-        const songNames = selectedProphetSongs.map(key => {
-            const song = prophetSongs.find(s => s.key === key);
-            return song ? song.name : '';
-        }).join(', ');
-        prophetSongsSummary.textContent = `Selected Songs: ${songNames}`;
-    } else {
-        prophetSongsSummary.textContent = 'Selected Songs: None';
-    }
-}
+
 
 
 // --- NEW: Debounce Utility Function ---
@@ -1282,6 +1271,20 @@ function populatePsalmSelector() {
 
 function populateProphetSongsSelector() {
     prophetSongsSelectorContainer.innerHTML = '';
+
+    const selectAllLabel = document.createElement('label');
+    selectAllLabel.style.fontWeight = 'bold';
+    const selectAllCheckbox = document.createElement('input');
+    selectAllCheckbox.type = 'checkbox';
+    selectAllCheckbox.id = 'select-all-prophet-songs';
+    selectAllLabel.appendChild(selectAllCheckbox);
+    selectAllLabel.append(' Select All');
+    prophetSongsSelectorContainer.appendChild(selectAllLabel);
+
+    const separator = document.createElement('hr');
+    separator.style.margin = '0.5rem 0';
+    prophetSongsSelectorContainer.appendChild(separator);
+
     prophetSongs.forEach(song => {
         const label = document.createElement('label');
         const checkbox = document.createElement('input');
@@ -1857,9 +1860,20 @@ clearPsalmsButton.addEventListener('click', () => {
 
 prophetSongsSelectorContainer.addEventListener('change', (event) => {
     if (event.target.type === 'checkbox') {
-        selectedProphetSongs = Array.from(prophetSongsSelectorContainer.querySelectorAll('input:checked'))
-            .map(cb => cb.value);
-        updateProphetSongsSummary();
+        if (event.target.id === 'select-all-prophet-songs') {
+            const isChecked = event.target.checked;
+            const checkboxes = prophetSongsSelectorContainer.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(cb => {
+                if (cb.id !== 'select-all-prophet-songs') {
+                    cb.checked = isChecked;
+                }
+            });
+        }
+
+        selectedProphetSongs = Array.from(prophetSongsSelectorContainer.querySelectorAll('input[type="checkbox"]:checked'))
+            .map(cb => cb.value)
+            .filter(value => value !== 'on'); // Filter out the 'on' value from the select-all checkbox
+
         saveSettings();
         smoothRender();
     }
@@ -1870,7 +1884,6 @@ clearProphetSongsButton.addEventListener('click', () => {
     document.querySelectorAll('#prophet-songs-selector-container input[type="checkbox"]').forEach(checkbox => {
         checkbox.checked = false;
     });
-    updateProphetSongsSummary();
     saveSettings();
     renderPrayers();
 });
