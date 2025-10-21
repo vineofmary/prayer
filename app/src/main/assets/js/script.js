@@ -39,6 +39,7 @@ const searchCount = document.getElementById('search-count');
 const searchPrev = document.getElementById('search-prev');
 const searchNext = document.getElementById('search-next');
 const helpButton = document.getElementById('help-button');
+const expandCollapseAllButton = document.getElementById('expand-collapse-all-button');
 const feedbackButton = document.getElementById('feedback-button');
 const helpModal = document.getElementById('help-modal');
 const feedbackModal = document.getElementById('feedback-modal');
@@ -58,7 +59,7 @@ const headOfStateInput = document.getElementById('head-of-state-input');
 
 
 // --- State Variables ---
-const SETTINGS_VERSION = '4.1.1'; // Update this to force refresh load settings
+const SETTINGS_VERSION = '4.1.4'; // Update this to force refresh load settings
 let currentTheme = {};
 let isSidebarCollapsed = false;
 let displayOptions = {};
@@ -77,6 +78,7 @@ let languageOrder = [
 let searchMatches = [];
 let currentMatchIndex = -1;
 let currentSlideIndex = 0;
+let areAllSectionsCollapsed = false;
 
 
 const languageLabels = {
@@ -454,6 +456,7 @@ function loadSettings() {
     updateAllTogglesInSettingsPanel();
     populatePsalmSelector();
     populateProphetSongsSelector();
+    renderPrayers();
 }
 
 function checkAndEnforceLayoutRules() {
@@ -499,6 +502,20 @@ function updatePresentationModeToggleIcon() {
     }
 }
 
+function updateExpandCollapseAllIcon() {
+    const collapseIcon = expandCollapseAllButton.querySelector('.icon-collapse-all');
+    const expandIcon = expandCollapseAllButton.querySelector('.icon-expand-all');
+    if (areAllSectionsCollapsed) {
+        collapseIcon.style.display = 'none';
+        expandIcon.style.display = 'block';
+        expandCollapseAllButton.title = 'Expand All';
+    } else {
+        collapseIcon.style.display = 'block';
+        expandIcon.style.display = 'none';
+        expandCollapseAllButton.title = 'Collapse All';
+    }
+}
+
 
 function updateAllTogglesInSettingsPanel() {
     showPrayerLabelsToggle.checked = displayOptions.showPrayerLabels;
@@ -512,6 +529,7 @@ function updateAllTogglesInSettingsPanel() {
 
     updateLayoutToggleIcon();
     updatePresentationModeToggleIcon();
+    updateExpandCollapseAllIcon();
 }
 
 function updateLanguageToggles() {
@@ -1254,6 +1272,20 @@ function convertLxxToMt(lxxChapter) {
 
 function populatePsalmSelector() {
     psalmSelectorContainer.innerHTML = '';
+
+    const selectAllLabel = document.createElement('label');
+    selectAllLabel.style.fontWeight = 'bold';
+    const selectAllCheckbox = document.createElement('input');
+    selectAllCheckbox.type = 'checkbox';
+    selectAllCheckbox.id = 'select-all-psalms';
+    selectAllLabel.appendChild(selectAllCheckbox);
+    selectAllLabel.append(' Select All');
+    psalmSelectorContainer.appendChild(selectAllLabel);
+
+    const separator = document.createElement('hr');
+    separator.style.margin = '0.5rem 0';
+    psalmSelectorContainer.appendChild(separator);
+
     for (let i = 1; i <= 150; i++) {
         const label = document.createElement('label');
         const checkbox = document.createElement('input');
@@ -1840,8 +1872,20 @@ function togglePresentationMode() {
 // Psalm Selector Listener using event delegation
 psalmSelectorContainer.addEventListener('change', (event) => {
     if (event.target.type === 'checkbox') {
-        selectedPsalms = Array.from(psalmSelectorContainer.querySelectorAll('input:checked'))
-            .map(cb => Number(cb.value));
+        if (event.target.id === 'select-all-psalms') {
+            const isChecked = event.target.checked;
+            const checkboxes = psalmSelectorContainer.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(cb => {
+                if (cb.id !== 'select-all-psalms') {
+                    cb.checked = isChecked;
+                }
+            });
+        }
+
+        selectedPsalms = Array.from(psalmSelectorContainer.querySelectorAll('input[type="checkbox"]:checked'))
+            .map(cb => Number(cb.value))
+            .filter(value => !isNaN(value) && value > 0); // Filter out NaN from select-all
+
         updatePsalmSummary();
         saveSettings();
         smoothRender();
@@ -1895,6 +1939,25 @@ presentationModeToggleHeader.addEventListener('click', () => {
     togglePresentationMode();
 });
 layoutToggleHeader.addEventListener('click', toggleLayout);
+
+expandCollapseAllButton.addEventListener('click', () => {
+    areAllSectionsCollapsed = !areAllSectionsCollapsed;
+    const sections = document.querySelectorAll('.section-title.collapsible');
+    sections.forEach(section => {
+        const title = section.textContent;
+        const isCollapsed = areAllSectionsCollapsed;
+        section.classList.toggle('collapsed', isCollapsed);
+        collapsedSections[title] = isCollapsed;
+
+        let nextEl = section.nextElementSibling;
+        while (nextEl && !nextEl.classList.contains('section-title')) {
+            nextEl.style.display = isCollapsed ? 'none' : '';
+            nextEl = nextEl.nextElementSibling;
+        }
+    });
+    updateExpandCollapseAllIcon();
+    saveSettings();
+});
 
 showPrayerLabelsToggle.addEventListener('change', () => {
     displayOptions.showPrayerLabels = showPrayerLabelsToggle.checked;
@@ -2199,7 +2262,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     updateProphetSongsSummary();
     updateLanguageOrderList();
     applyTheme(); // Explicitly apply theme after settings are loaded
-    renderPrayers();
 
     window.addEventListener('resize', () => {
         checkAndEnforceLayoutRules();
