@@ -557,7 +557,7 @@ function getPrayerLabel(prayer) {
     } else if (prayer.chapter === 'Angels') {
         return 'The Angels Praise Mary';
     } else if (prayer.chapter === 'Psalms' && prayer.stanza === 'Intro') {
-        return 'Intro to the Psalms';
+        return 'Introductory Prayer for the Psalms and the Prophets';
     } else if (prayer.chapter === 'Psalms' && prayer.stanza === 'Closing') {
         return 'Conclusion to the Psalms and Prophets';
     }
@@ -770,7 +770,9 @@ function renderPrayers() {
 
     // Conditionally render Psalm-related prayers
     const psalmsRendered = selectedPsalms.length > 0 && bibleData.loaded;
-    if (psalmsRendered) {
+    const prophetSongsRendered = selectedProphetSongs.length > 0;
+
+    if (psalmsRendered || prophetSongsRendered) {
         const psalmIntroPrayers = prayers.filter(p => p.chapter === 'Psalms' && p.stanza === 'Intro');
         if (psalmIntroPrayers.length > 0) {
             addSectionTitleIfNeeded(psalmIntroPrayers[0]);
@@ -779,13 +781,15 @@ function renderPrayers() {
                 prayerDisplay.appendChild(prayerCard);
             });
         }
+    }
+
+    if (psalmsRendered) {
         renderSelectedPsalmsWithDoxology((psalmNum) => {
             addSectionTitle(`Psalm ${psalmNum}`);
         });
     }
 
     // Conditionally render Prophet Songs
-    const prophetSongsRendered = selectedProphetSongs.length > 0;
     if (prophetSongsRendered) {
         renderSelectedProphetSongs((songName, verseRange) => {
             const title = `${songName} ${verseRange}`;
