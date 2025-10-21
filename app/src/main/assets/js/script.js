@@ -195,6 +195,32 @@ const speakerKeywords = {
     spanish: ["Sacerdote", "Pueblo", "Todos", "Líder", "Gente"],
 };
 
+function toGeez(n) {
+    if (n <= 0) return "";
+    const geezMap = {
+        1: "፩", 2: "፪", 3: "፫", 4: "፬", 5: "፭",
+        6: "፮", 7: "፯", 8: "፰", 9: "፱", 10: "፲",
+        20: "፳", 30: "፴", 40: "፵", 50: "፶",
+        60: "፷", 70: "፸", 80: "፹", 90: "፺", 100: "፻"
+    };
+    if (geezMap[n]) return geezMap[n];
+
+    if (n > 100) {
+        const hundreds = Math.floor(n / 100);
+        const remainder = n % 100;
+        if (hundreds > 1) {
+            return toGeez(hundreds) + geezMap[100] + toGeez(remainder);
+        } else {
+            return geezMap[100] + toGeez(remainder);
+        }
+    } else if (n > 10) {
+        const tens = Math.floor(n / 10) * 10;
+        const ones = n % 10;
+        return geezMap[tens] + toGeez(ones);
+    }
+    return ""; // Should not be reached for n > 0
+}
+
 // --- Functions ---
 function updatePsalmSummary() {
     if (selectedPsalms.length > 0) {
@@ -848,7 +874,7 @@ function renderPrayers() {
 
     if (psalmsRendered) {
         renderSelectedPsalmsWithDoxology((psalmNum) => {
-            addSectionTitle(`Psalm ${psalmNum}`);
+            addSectionTitle(`Psalm ${psalmNum} | መዝሙር ዘዳዊት ${toGeez(psalmNum)}`);
         });
     }
 
@@ -1249,7 +1275,7 @@ function populatePsalmSelector() {
             checkbox.checked = true;
         }
         label.appendChild(checkbox);
-        label.append(` Psalm ${i}`);
+        label.append(` Psalm ${i} | መዝሙር ዘዳዊት ${toGeez(i)}`);
         psalmSelectorContainer.appendChild(label);
     }
 }
