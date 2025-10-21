@@ -839,9 +839,7 @@ const prayers = [
     "amharic_phonetic": `itsn tmeslalech ye'ab ḳal berswa sew honwalna`,
     "tigrinya_script": ``,
     "tigrinya_phonetic": ``,
-    "spanish": `es una semejanza de María, la Virgen que no tenía mancha.  
-El Verbo del 
-Padre se encarnó de Ella,`
+    "spanish": `es una semejanza de María, la Virgen que no tenía mancha. El Verbo del Padre se encarnó de Ella,`
   },
   {
     "instruction": ``,
@@ -862,20 +860,14 @@ Padre se encarnó de Ella,`
     "reference": `Thursday Praise of Mary`,
     "chapter": `Thurs`,
     "stanza": `1`,
-    "english": `His divinity was unchanged while becoming the Son of Man.
-The true God came and delivered us. O holy one, pray for us.`,
+    "english": `His divinity was unchanged while becoming the Son of Man. The true God came and delivered us. O holy one, pray for us.`,
     "geez_script": ``,
     "geez_phonetic": ``,
-    "amharic_script": `ሰውም ቢሆን መለኮቱ አልተለወጠም በዕውነት አምላክነውና በዕውነት አምላክ የሆነ እርሱ መጥቶ
-አዳነን።
-ቅድስት ሆይ ለምኝልን።`,
-    "amharic_phonetic": `sewm bīhon melekotu 'alteleweṭem be'iwnet 'amlaknewna be'iwnet 'amlak yehone 'irsu meṭto
-'adanen.
-ḳdst hoy lemñln.`,
+    "amharic_script": `ሰውም ቢሆን መለኮቱ አልተለወጠም በዕውነት አምላክነውና በዕውነት አምላክ የሆነ እርሱ መጥቶ አዳነን። ቅድስት ሆይ ለምኝልን።`,
+    "amharic_phonetic": `sewm bīhon melekotu 'alteleweṭem be'iwnet 'amlaknewna be'iwnet 'amlak yehone 'irsu meṭto 'adanen. ḳdst hoy lemñln.`,
     "tigrinya_script": ``,
     "tigrinya_phonetic": ``,
-    "spanish": `y la Divinidad de Él quedó sin cambio. Nuestro Dios, quien en verdad es Dios, se hizo hombre;
-Él vino y nos liberó. ¡Ruega a Él por nosotros, oh Santa!`
+    "spanish": `y la Divinidad de Él quedó sin cambio. Nuestro Dios, quien en verdad es Dios, se hizo hombre; Él vino y nos liberó. ¡Ruega a Él por nosotros, oh Santa!`
   },
   {
     "instruction": ``,
@@ -896,8 +888,7 @@ The true God came and delivered us. O holy one, pray for us.`,
     "reference": `Thursday Praise of Mary`,
     "chapter": `Thurs`,
     "stanza": `2`,
-    "english": `Through the pride of us all, the Virgin Mary, the God-bearer, the original curse that rested upon our race by the perversion which the woman committed when she ate from the tree 
-was destroyed.`,
+    "english": `Through the pride of us all, the Virgin Mary, the God-bearer, the original curse that rested upon our race by the perversion which the woman committed when she ate from the tree was destroyed.`,
     "geez_script": ``,
     "geez_phonetic": ``,
     "amharic_script": `ሔዋን እንጨት በልታ ባደረገችው ዓመፅ በባሕርያችን ያደረ የቀድሞው እርግማን በእርስዋ የጠፋልን አምላክን የወለደች ድንግል ማርያም የሁላችን መመኪያ ናት ።`,
@@ -911,8 +902,7 @@ was destroyed.`,
     "reference": `Thursday Praise of Mary`,
     "chapter": `Thurs`,
     "stanza": `2`,
-    "english": `Because of Eve the gates of paradise were shut, and through Virgin Mary they 
-were opened to us again,`,
+    "english": `Because of Eve the gates of paradise were shut, and through Virgin Mary they were opened to us again,`,
     "geez_script": ``,
     "geez_phonetic": ``,
     "amharic_script": `ስለ ሔዋን የገነት ደጅ ተዘጋ ዳግመኛም ስለ ድንግል ማርያም ተከፈተልን።`,
@@ -926,16 +916,14 @@ were opened to us again,`,
     "reference": `Thursday Praise of Mary`,
     "chapter": `Thurs`,
     "stanza": `2`,
-    "english": `He granted us to eat from the Tree of Life, that is, the Body of Christ and His precious Blood.
-Because of His love for us He came and delivered us.`,
+    "english": `He granted us to eat from the Tree of Life, that is, the Body of Christ and His precious Blood. Because of His love for us He came and delivered us.`,
     "geez_script": ``,
     "geez_phonetic": ``,
     "amharic_script": `ከዕፅ ሕይወት እንበላ ዘንድ አደለን። ይኸውም እኛን ስለመውደደ መጥቶ ያዳነን የክርስቶስ ክቡር ሥጋው ክቡር ደሙ ነው።`,
     "amharic_phonetic": `ke'its ḥywet 'inbela zend 'adelen. ykhewm 'iñan slemewdede meṭto yadanen yekrstos kbur sgaw kbur demu new.`,
     "tigrinya_script": ``,
     "tigrinya_phonetic": ``,
-    "spanish": `Nos es designado comer del Árbol de la Vida, es decir, el Cuerpo de Cristo y Su Sangre preciosa.
-Por Su amor por nosotros, Él vino y nos libró.`
+    "spanish": `Nos es designado comer del Árbol de la Vida, es decir, el Cuerpo de Cristo y Su Sangre preciosa. Por Su amor por nosotros, Él vino y nos libró.`
   },
   {
     "instruction": ``,
@@ -956,8 +944,7 @@ Por Su amor por nosotros, Él vino y nos libró.`
     "reference": `Thursday Praise of Mary`,
     "chapter": `Thurs`,
     "stanza": `2`,
-    "english": `God the lover of mankind is the One and 
-only Word of the Father Who existed in His divinity without corruption before the world.`,
+    "english": `God the lover of mankind is the One and only Word of the Father Who existed in His divinity without corruption before the world.`,
     "geez_script": ``,
     "geez_phonetic": ``,
     "amharic_script": `ሰውን የሚወድ እግዚአብሔር አንድ ብቻ የሆነ አምላክነቱ ሳይለወጥ ከዓለም በፊት የነበረ`,
@@ -978,8 +965,7 @@ only Word of the Father Who existed in His divinity without corruption before th
     "amharic_phonetic": `ye'ab ḳal ke'ab zend meṭto lyu kehonech 'inatu sew hone.`,
     "tigrinya_script": ``,
     "tigrinya_phonetic": ``,
-    "spanish": `El Hijo Unigénito 
-vino y se encarnó de la Mujer Santa, Su madre,`
+    "spanish": `El Hijo Unigénito vino y se encarnó de la Mujer Santa, Su madre,`
   },
   {
     "instruction": ``,
@@ -989,8 +975,7 @@ vino y se encarnó de la Mujer Santa, Su madre,`
     "english": `Her virginity did not perish after she gave birth to Him and thus she has been revealed as the Mother of God.`,
     "geez_script": ``,
     "geez_phonetic": ``,
-    "amharic_script": `ከወለደችው በኋላም ድንግልናዋ አልተለወጠም።
-ስለዚህ አምላክን የወለደች እንደሆነች ታወቀች።`,
+    "amharic_script": `ከወለደችው በኋላም ድንግልናዋ አልተለወጠም። ስለዚህ አምላክን የወለደች እንደሆነች ታወቀች።`,
     "amharic_phonetic": `keweledechw behwalam dnglnawa 'alteleweṭem. slezīh 'amlakn yeweledech 'indehonech taweḳech.`,
     "tigrinya_script": ``,
     "tigrinya_phonetic": ``,
@@ -1004,10 +989,8 @@ vino y se encarnó de la Mujer Santa, Su madre,`
     "english": `O, how deep is the richness of the wisdom of God, for the womb that was decreed to give birth in laborious pain, suffering, and sorrow heart,`,
     "geez_script": ``,
     "geez_phonetic": ``,
-    "amharic_script": `እግዚአብሔር የጥበቡ ስፋት ምን ይጠልቅ?
-በጻእር በምጥ በልብ ጋር ትወልድ ዘንድ የፈረደባት ማኀፀን`,
-    "amharic_phonetic": `igzī'abḥér yeṭbebu sfat mn yṭelḳ?
-betsa'ir bemṭ belb gar tweld zend yeferedebat mahatsen`,
+    "amharic_script": `እግዚአብሔር የጥበቡ ስፋት ምን ይጠልቅ? በጻእር በምጥ በልብ ጋር ትወልድ ዘንድ የፈረደባት ማኀፀን`,
+    "amharic_phonetic": `igzī'abḥér yeṭbebu sfat mn yṭelḳ? betsa'ir bemṭ belb gar tweld zend yeferedebat mahatsen`,
     "tigrinya_script": ``,
     "tigrinya_phonetic": ``,
     "spanish": `¡Oh profunda es la riqueza de la sabiduría de Dios! El vientre que Él decretó que daría a luz niños con dolor, sufrimiento y tristeza de corazón,`
@@ -1020,10 +1003,8 @@ betsa'ir bemṭ belb gar tweld zend yeferedebat mahatsen`,
     "english": `has become the fountain of life, and has brought forth without the seed of man, Him Who removed the curse from our race, and for this reason we will praise Him, saying`,
     "geez_script": ``,
     "geez_phonetic": ``,
-    "amharic_script": `የሕይወት መገኛ ሆነች ከባሕርያችን እርግማንን የሚያጠፋልንን ያለ ወንድ ዘር ወለደችልን።
-ስለዚህም ሰውን የምትወድ ሆይ ክብር ላንተ ይገባል፤`,
-    "amharic_phonetic": `yeḥywet megeña honech kebaḥryachn 'irgmann yemīyaṭefalnn yale wend zer weledechln.
-slezīhm sewn yemtwed hoy kbr lante ygebal:`,
+    "amharic_script": `የሕይወት መገኛ ሆነች ከባሕርያችን እርግማንን የሚያጠፋልንን ያለ ወንድ ዘር ወለደችልን። ስለዚህም ሰውን የምትወድ ሆይ ክብር ላንተ ይገባል፤`,
+    "amharic_phonetic": `yeḥywet megeña honech kebaḥryachn 'irgmann yemīyaṭefalnn yale wend zer weledechln. slezīhm sewn yemtwed hoy kbr lante ygebal:`,
     "tigrinya_script": ``,
     "tigrinya_phonetic": ``,
     "spanish": `se había convertido en la fuente de vida, y ha dado a luz sin la simiente del hombre a Aquel que quitó la maldición de nuestra raza. Y por esta razón le alabaremos, diciendo:`
@@ -1036,13 +1017,11 @@ slezīhm sewn yemtwed hoy kbr lante ygebal:`,
     "english": `Glory be to You, O Good Lover of mankind and Savior of our souls. O holy one, pray for us.`,
     "geez_script": ``,
     "geez_phonetic": ``,
-    "amharic_script": `ቸርና የሰውነታችን መድኃኒት ነህ እያልን እናመስግነው።
-ቅድስት ሆይ ለምኝልን።`,
+    "amharic_script": `ቸርና የሰውነታችን መድኃኒት ነህ እያልን እናመስግነው። ቅድስት ሆይ ለምኝልን።`,
     "amharic_phonetic": `cherna yesewnetachn medhanīt neh 'iyaln 'inamesgnew. ḳdst hoy lemñln.`,
     "tigrinya_script": ``,
     "tigrinya_phonetic": ``,
-    "spanish": `“Gloria a Ti, oh Tú, Amante de la humanidad, Redentor de nuestras almas.”
-¡Ruega a Él por nosotros, oh Santa!`
+    "spanish": `“Gloria a Ti, oh Tú, Amante de la humanidad, Redentor de nuestras almas.” ¡Ruega a Él por nosotros, oh Santa!`
   },
   {
     "instruction": ``,
@@ -1077,31 +1056,25 @@ slezīhm sewn yemtwed hoy kbr lante ygebal:`,
     "reference": `Thursday Praise of Mary`,
     "chapter": `Thurs`,
     "stanza": `3`,
-    "english": `That which shall be born of her is of the Holy Spirit.
-It was the Word of God Who became incarnate without change.`,
+    "english": `That which shall be born of her is of the Holy Spirit. It was the Word of God Who became incarnate without change.`,
     "geez_script": ``,
     "geez_phonetic": ``,
-    "amharic_script": `በመንፈስ ቅዱስ የሚወለደው ያለ መለወጥ ሰው የሚሆነው
-የእግዚአብሔር ቃል ነው ብሎ መስክሯልና። `,
-    "amharic_phonetic": `bemenfes ḳdus yemīweledew yale meleweṭ sew yemīhonew
-ye'igzī'abḥér ḳal new blo meskrwalna. `,
+    "amharic_script": `በመንፈስ ቅዱስ የሚወለደው ያለ መለወጥ ሰው የሚሆነው የእግዚአብሔር ቃል ነው ብሎ መስክሯልና። `,
+    "amharic_phonetic": `bemenfes ḳdus yemīweledew yale meleweṭ sew yemīhonew ye'igzī'abḥér ḳal new blo meskrwalna. `,
     "tigrinya_script": ``,
     "tigrinya_phonetic": ``,
-    "spanish": `“Lo que de ella nacerá, es del Espíritu Santo.”
-Fue el Verbo de Dios Quien se encarnó sin cambio.`
+    "spanish": `“Lo que de ella nacerá, es del Espíritu Santo.” Fue el Verbo de Dios Quien se encarnó sin cambio.`
   },
   {
     "instruction": ``,
     "reference": `Thursday Praise of Mary`,
     "chapter": `Thurs`,
     "stanza": `3`,
-    "english": `Mary brought Him forth Who is the twofold joy. And [he] said ""You shall bring forth a Son and will call His Name Emmanuel, which means God with us,""`,
+    "english": `Mary brought Him forth Who is the twofold joy. And [he] said "You shall bring forth a Son and will call His Name Emmanuel, which means God with us,"`,
     "geez_script": ``,
     "geez_phonetic": ``,
-    "amharic_script": `ማርያም የዚህ ደስታ ዕጥፍ የሆነ እርሱን ወለደችው።
-መልአኩ ልጅ ትወልጃለሽ ስሙም አማኑኤል ይባላል አላት። ትርጓሜውም እግዚአብሐር ከእኛ ጋር ሆነ ማለት ነው።`,
-    "amharic_phonetic": `maryam yezīh desta 'iṭf yehone 'irsun weledechw.
-mel'aku lj tweljalesh smum 'amanu'él ybalal 'alat. trgwaméwm 'igzī'abḥar ke'iña gar hone malet new.`,
+    "amharic_script": `ማርያም የዚህ ደስታ ዕጥፍ የሆነ እርሱን ወለደችው። መልአኩ ልጅ ትወልጃለሽ ስሙም አማኑኤል ይባላል አላት። ትርጓሜውም እግዚአብሐር ከእኛ ጋር ሆነ ማለት ነው።`,
+    "amharic_phonetic": `maryam yezīh desta 'iṭf yehone 'irsun weledechw. mel'aku lj tweljalesh smum 'amanu'él ybalal 'alat. trgwaméwm 'igzī'abḥar ke'iña gar hone malet new.`,
     "tigrinya_script": ``,
     "tigrinya_phonetic": ``,
     "spanish": `María lo dio a luz por segunda vez. Y Gabriel le dijo a ella: “Darás a luz un hijo, y le dirás por nombre Emanuel, que traducido es, Dios con nosotros.`
@@ -1111,8 +1084,7 @@ mel'aku lj tweljalesh smum 'amanu'él ybalal 'alat. trgwaméwm 'igzī'abḥar ke
     "reference": `Thursday Praise of Mary`,
     "chapter": `Thurs`,
     "stanza": `3`,
-    "english": `And moreover;
-""He shall be called Jesus, Who shall save His people from their sins.""`,
+    "english": `And moreover; "He shall be called Jesus, Who shall save His people from their sins."`,
     "geez_script": ``,
     "geez_phonetic": ``,
     "amharic_script": `ዳግመኛ ወገኖቹን ከኃጢአታቸው የሚያድናቸው ኢየሱስ ይባላል።`,
@@ -1133,8 +1105,7 @@ mel'aku lj tweljalesh smum 'amanu'él ybalal 'alat. trgwaméwm 'igzī'abḥar ke
     "amharic_phonetic": `behaylu yadnen zend haṭī'atachnnm yasteseryln zend lezele'alem kbr ygbawna sew yehone 'irsun 'amlak 'indehone betereda neger 'awḳenewalna .`,
     "tigrinya_script": ``,
     "tigrinya_phonetic": ``,
-    "spanish": `Y que Él también 
-nos salve por Su poder, y perdone nuestros pecados, porque hemos conocido en verdad que Él es el Dios que se hizo hombre.`
+    "spanish": `Y que Él también nos salve por Su poder, y perdone nuestros pecados, porque hemos conocido en verdad que Él es el Dios que se hizo hombre.`
   },
   {
     "instruction": ``,
@@ -1144,10 +1115,8 @@ nos salve por Su poder, y perdone nuestros pecados, porque hemos conocido en ver
     "english": `Praise be unto Him forever and ever, O how wonderful is the birth of God from Mary, the Holy Virgin, she bore the Word;`,
     "geez_script": ``,
     "geez_phonetic": ``,
-    "amharic_script": `ልዩ ከሆነች ድንግል ማርያም ይህ የአምላክ መወለድ ምን
-ይደንቅ ቃልን ወስነችው።`,
-    "amharic_phonetic": `lyu kehonech dngl maryam yh ye'amlak meweled mn
-ydenḳ ḳaln wesnechw.`,
+    "amharic_script": `ልዩ ከሆነች ድንግል ማርያም ይህ የአምላክ መወለድ ምን ይደንቅ ቃልን ወስነችው።`,
+    "amharic_phonetic": `lyu kehonech dngl maryam yh ye'amlak meweled mn ydenḳ ḳaln wesnechw.`,
     "tigrinya_script": ``,
     "tigrinya_phonetic": ``,
     "spanish": `Alabado sea Él por siempre. ¡Oh, qué maravilloso es el nacimiento de Dios por María, la Santísima Virgen! Ella cumplió la Palabra del Padre;`
@@ -1160,14 +1129,11 @@ ydenḳ ḳaln wesnechw.`,
     "english": `a seed did not precede His Birth and her virginity was not destroyed by His Birth, The Word went forth from the Father without weariness, and was born of the Virgin without suffering,`,
     "geez_script": ``,
     "geez_phonetic": ``,
-    "amharic_script": ` ልደቱንም ዘር አልቀደመውም። በመወለዱም ድንግልናዋን
-አልለወጠውም። ቃል ከአብ ያለ ድካም ወጣ። ከድንግልም ያለ ሕማም ተወለደ።`,
-    "amharic_phonetic": ` ldetunm zer 'alḳedemewm. bemeweledum dnglnawan
-'alleweṭewm. ḳal ke'ab yale dkam weṭa. kednglm yale ḥmam tewelede.`,
+    "amharic_script": ` ልደቱንም ዘር አልቀደመውም። በመወለዱም ድንግልናዋን አልለወጠውም። ቃል ከአብ ያለ ድካም ወጣ። ከድንግልም ያለ ሕማም ተወለደ።`,
+    "amharic_phonetic": ` ldetunm zer 'alḳedemewm. bemeweledum dnglnawan 'alleweṭewm. ḳal ke'ab yale dkam weṭa. kednglm yale ḥmam tewelede.`,
     "tigrinya_script": ``,
     "tigrinya_phonetic": ``,
-    "spanish": `la simiente no precedió de Su Nacimiento, y Su virginidad no fue destruida por Su Nacimiento.  
-El Verbo salió del Padre sin cansancio y nació de la Virgen sin sufrimiento ni dolor.`
+    "spanish": `la simiente no precedió de Su Nacimiento, y Su virginidad no fue destruida por Su Nacimiento.   El Verbo salió del Padre sin cansancio y nació de la Virgen sin sufrimiento ni dolor.`
   },
   {
     "instruction": ``,
@@ -1195,8 +1161,7 @@ El Verbo salió del Padre sin cansancio y nació de la Virgen sin sufrimiento ni
     "amharic_phonetic": `sle'iña befeḳadu leteḳebelew medañachn lehone motum kerbé 'ameṭulet.`,
     "tigrinya_script": ``,
     "tigrinya_phonetic": ``,
-    "spanish": `y mirra, que se daba por su 
-muerte que dio vida a los hombres. Y por nuestro bien aceptó la muerte por su propia voluntad.`
+    "spanish": `y mirra, que se daba por su  muerte que dio vida a los hombres. Y por nuestro bien aceptó la muerte por su propia voluntad.`
   },
   {
     "instruction": ``,
@@ -1206,10 +1171,8 @@ muerte que dio vida a los hombres. Y por nuestro bien aceptó la muerte por su p
     "english": `He is the One and only Good Lover of mankind. O holy one, pray for us.`,
     "geez_script": ``,
     "geez_phonetic": ``,
-    "amharic_script": `ቸርና ሰውን ወዳጅ የሆነ አንድ እርሱ ብቻ ነው።
-ቅድስት ሆይ ለምኝልን።`,
-    "amharic_phonetic": `cherna sewn wedaj yehone 'and 'irsu bcha new.
-ḳdst hoy lemñln.`,
+    "amharic_script": `ቸርና ሰውን ወዳጅ የሆነ አንድ እርሱ ብቻ ነው። ቅድስት ሆይ ለምኝልን።`,
+    "amharic_phonetic": `cherna sewn wedaj yehone 'and 'irsu bcha new. ḳdst hoy lemñln.`,
     "tigrinya_script": ``,
     "tigrinya_phonetic": ``,
     "spanish": `Sólo Él es el Ser Bueno, y el Amante de la humanidad. ¡Ruega a Él por nosotros, oh Santa!`
@@ -1222,10 +1185,8 @@ muerte que dio vida a los hombres. Y por nuestro bien aceptó la muerte por su p
     "english": `O how wonderful! He took a rib from the side of Adam, and fashioned from it a woman, and the whole creation of mankind.`,
     "geez_script": ``,
     "geez_phonetic": ``,
-    "amharic_script": `ከአዳም ጐን አንዲት ዐፅም ማንሣት ምን ይደንቅ?
-ከእርሱ ሴትን ፈጠረ የሰው ፍጥረትንም ሁሉ ፈጠረ።`,
-    "amharic_phonetic": `ke'adam gwen 'andīt 'atsm mansat mn ydenḳ?
-ke'irsu sétn feṭere yesew fṭretnm hulu feṭere.`,
+    "amharic_script": `ከአዳም ጐን አንዲት ዐፅም ማንሣት ምን ይደንቅ? ከእርሱ ሴትን ፈጠረ የሰው ፍጥረትንም ሁሉ ፈጠረ።`,
+    "amharic_phonetic": `ke'adam gwen 'andīt 'atsm mansat mn ydenḳ? ke'irsu sétn feṭere yesew fṭretnm hulu feṭere.`,
     "tigrinya_script": ``,
     "tigrinya_phonetic": ``,
     "spanish": `¡Oh, qué maravilloso!  Él tomó una costilla del costado de Adán, y de ella formó una mujer, y toda la creación de los hijos de los hombres fue dada a Dios,`
@@ -1238,10 +1199,8 @@ ke'irsu sétn feṭere yesew fṭretnm hulu feṭere.`,
     "english": `The Lord, the Word of the Father, was given, and was incarnate of the Holy Virgin,`,
     "geez_script": ``,
     "geez_phonetic": ``,
-    "amharic_script": `ጌታ የአብ ቃል ተሰጠ። ከልዩ ድንግልም ሰው ሆነ
-`,
-    "amharic_phonetic": `géta ye'ab ḳal teseṭe. kelyu dnglm sew hone
-`,
+    "amharic_script": `ጌታ የአብ ቃል ተሰጠ። ከልዩ ድንግልም ሰው ሆነ`,
+    "amharic_phonetic": `géta ye'ab ḳal teseṭe. kelyu dnglm sew hone`,
     "tigrinya_script": ``,
     "tigrinya_phonetic": ``,
     "spanish": `Verbo del Padre, que se encarnó de la Santísima Virgen,`
@@ -1251,16 +1210,14 @@ ke'irsu sétn feṭere yesew fṭretnm hulu feṭere.`,
     "reference": `Thursday Praise of Mary`,
     "chapter": `Thurs`,
     "stanza": `4`,
-    "english": `and was called Emmanuel for this we beseech her at all times to intercede on our behalf with her 
-beloved Son.`,
+    "english": `and was called Emmanuel for this we beseech her at all times to intercede on our behalf with her beloved Son.`,
     "geez_script": ``,
     "geez_phonetic": ``,
     "amharic_script": `አማኑኤል ተባለ ስለዚህ ሁል ጊዜ እርስዋን እንለምን፣ ከተወደደ ልጅዋ ታማልደን ዘንድ።`,
     "amharic_phonetic": `amanu'él tebale slezīh hul gīzé 'irswan 'inlemn, ketewedede ljwa tamalden zend.`,
     "tigrinya_script": ``,
     "tigrinya_phonetic": ``,
-    "spanish": `y se llama Emanuel.
-Y por eso le suplicamos que en todo tiempo luche por nosotros con su amado Hijo por el perdón de nuestros pecados.`
+    "spanish": `y se llama Emanuel. Y por eso le suplicamos que en todo tiempo luche por nosotros con su amado Hijo por el perdón de nuestros pecados.`
   },
   {
     "instruction": ``,
@@ -1270,10 +1227,8 @@ Y por eso le suplicamos que en todo tiempo luche por nosotros con su amado Hijo 
     "english": `She is good (generous) towards all the saints and the archbishops, for she brought to them that for which they waited.`,
     "geez_script": ``,
     "geez_phonetic": ``,
-    "amharic_script": `በቅዱሳንና በሊቃነ ጳጳሳት ዘንድ ቸር ናት ደጅ የሚጠኑትን ወልዳላቸዋልችና
-`,
-    "amharic_phonetic": `beḳdusanna belīḳane p̣ap̣asat zend cher nat dej yemīṭenutn weldalachewalchna
-`,
+    "amharic_script": `በቅዱሳንና በሊቃነ ጳጳሳት ዘንድ ቸር ናት ደጅ የሚጠኑትን ወልዳላቸዋልችና`,
+    "amharic_phonetic": `beḳdusanna belīḳane p̣ap̣asat zend cher nat dej yemīṭenutn weldalachewalchna`,
     "tigrinya_script": ``,
     "tigrinya_phonetic": ``,
     "spanish": `Ella fue benéfica con todos los santos y sumos sacerdotes, porque les trajo lo que esperaban,`
@@ -1297,8 +1252,7 @@ Y por eso le suplicamos que en todo tiempo luche por nosotros con su amado Hijo 
     "reference": `Thursday Praise of Mary`,
     "chapter": `Thurs`,
     "stanza": `4`,
-    "english": `And for the Apostles she brought forth Him in the Name 
-of whom they preached to ends of the world,`,
+    "english": `And for the Apostles she brought forth Him in the Name of whom they preached to ends of the world,`,
     "geez_script": ``,
     "geez_phonetic": ``,
     "amharic_script": `ለሐዋርያትም እስከ ዓለም ዳርቻ በስሙ ያስተማሩለትን ወልዳላቸዋለችና`,
@@ -1329,25 +1283,21 @@ of whom they preached to ends of the world,`,
     "english": `The wealth of the grace of His wisdom is incomprehensible. Let us seek His great mercy, for He came and delivered us. O holy one, pray for us.`,
     "geez_script": ``,
     "geez_phonetic": ``,
-    "amharic_script": `የይቅርታውን ብዛት መርምረን እንወቅ (እንፈልግ) መጥቶ አድኖናልና።
-ቅድስት ሆይ ለምኝልን።`,
-    "amharic_phonetic": `yeyḳrtawn bzat mermren 'inweḳ ('infelg) meṭto 'adnonalna.
-ḳdst hoy lemñln.`,
+    "amharic_script": `የይቅርታውን ብዛት መርምረን እንወቅ (እንፈልግ) መጥቶ አድኖናልና። ቅድስት ሆይ ለምኝልን።`,
+    "amharic_phonetic": `yeyḳrtawn bzat mermren 'inweḳ ('infelg) meṭto 'adnonalna. ḳdst hoy lemñln.`,
     "tigrinya_script": ``,
     "tigrinya_phonetic": ``,
-    "spanish": `La riqueza de la gracia de Su sabiduría es insondable. Buscaremos la grandeza de Su compasión, porque Él vino y nos libró. ¡Ruega a Él por nosotros, oh Santa!
-`
+    "spanish": `La riqueza de la gracia de Su sabiduría es insondable. Buscaremos la grandeza de Su compasión, porque Él vino y nos libró. ¡Ruega a Él por nosotros, oh Santa!`
   },
   {
     "instruction": ``,
     "reference": `Thursday Praise of Mary`,
     "chapter": `Thurs`,
     "stanza": `5`,
-    "english": `God swore to David in truth and He does not regret ""of the fruit of your loins I will set upon your throne,""`,
+    "english": `God swore to David in truth and He does not regret "of the fruit of your loins I will set upon your throne,"`,
     "geez_script": ``,
     "geez_phonetic": ``,
-    "amharic_script": `እግዚአብሔር 
-የባሕርይህን ፍሬ በዙፋንህ ላይ አኖራለሁ ብሎ ለዳዊት በእውነት ማለ አይጸጸትም።`,
+    "amharic_script": `እግዚአብሔር የባሕርይህን ፍሬ በዙፋንህ ላይ አኖራለሁ ብሎ ለዳዊት በእውነት ማለ አይጸጸትም።`,
     "amharic_phonetic": `igzī'abḥér yebaḥryhn fré bezufanh lay 'anoralehu blo ledawīt be'iwnet male 'aytsetsetm.`,
     "tigrinya_script": ``,
     "tigrinya_phonetic": ``,
@@ -1389,10 +1339,8 @@ of whom they preached to ends of the world,`,
     "english": `Behold, we have heard it in Ephrata and the dwelling-place of the God of Jacob, which is in Bethlehem, in which Emmanuel has chosen to be born in the flesh for our salvation.`,
     "geez_script": ``,
     "geez_phonetic": ``,
-    "amharic_script": `ከዚህም በኋላ እነሆ በኤፍራታ ሰማነው ብሎ በመንፈስ ቅዱስ አስምቶ ተናገረ።
-ይህቺውም አማኑኤል እኛን ለማዳን በሥጋ ይወለድባት ዘንድ የመረጣት የያዕቆብ አምላክ ማደሪያ ናት።`,
-    "amharic_phonetic": `kezīhm behwala 'ineho be'éfrata semanew blo bemenfes ḳdus 'asmto tenagere.
-yhchīwm 'amanu'él 'iñan lemadan besga yweledbat zend yemereṭat yeya'iḳob 'amlak maderīya nat.`,
+    "amharic_script": `ከዚህም በኋላ እነሆ በኤፍራታ ሰማነው ብሎ በመንፈስ ቅዱስ አስምቶ ተናገረ። ይህቺውም አማኑኤል እኛን ለማዳን በሥጋ ይወለድባት ዘንድ የመረጣት የያዕቆብ አምላክ ማደሪያ ናት።`,
+    "amharic_phonetic": `kezīhm behwala 'ineho be'éfrata semanew blo bemenfes ḳdus 'asmto tenagere. yhchīwm 'amanu'él 'iñan lemadan besga yweledbat zend yemereṭat yeya'iḳob 'amlak maderīya nat.`,
     "tigrinya_script": ``,
     "tigrinya_phonetic": ``,
     "spanish": `“He aquí, lo hemos oído en Efrata y en la morada del Dios de Jacob, que es Belén, en la cual Emanuel ha elegido para nacer en la carne para nuestra salvación.”`
@@ -1402,13 +1350,11 @@ yhchīwm 'amanu'él 'iñan lemadan besga yweledbat zend yemereṭat yeya'iḳob 
     "reference": `Thursday Praise of Mary`,
     "chapter": `Thurs`,
     "stanza": `5`,
-    "english": `And also another of the prophets has said it: ""And as for you, O Bethlehem of the land of Ephrata, you will not be the least of the kings of Judah.`,
+    "english": `And also another of the prophets has said it: "And as for you, O Bethlehem of the land of Ephrata, you will not be the least of the kings of Judah.`,
     "geez_script": ``,
     "geez_phonetic": ``,
-    "amharic_script": `ዳግመኛም ከነቢያት አንዱ ሚክያስ አንቺ የኤፍራታ ክፍል የሆንሽ ቤተልሔም ከይሁዳ ነገሥታት መሳፍንት 
-አገር አታንሺም`,
-    "amharic_phonetic": `dagmeñam kenebīyat 'andu mīkyas 'anchī ye'éfrata kfl yehonsh bételḥém keyhuda negestat mesafnt 
-'ager 'atanshīm`,
+    "amharic_script": `ዳግመኛም ከነቢያት አንዱ ሚክያስ አንቺ የኤፍራታ ክፍል የሆንሽ ቤተልሔም ከይሁዳ ነገሥታት መሳፍንት አገር አታንሺም`,
+    "amharic_phonetic": `dagmeñam kenebīyat 'andu mīkyas 'anchī ye'éfrata kfl yehonsh bételḥém keyhuda negestat mesafnt 'ager 'atanshīm`,
     "tigrinya_script": ``,
     "tigrinya_phonetic": ``,
     "spanish": `Y también lo ha dicho otro de los profetas: “Y tú, oh Belén de la tierra de Efrata, no serás la más pequeña del rey de Judá,`
@@ -1418,7 +1364,7 @@ yhchīwm 'amanu'él 'iñan lemadan besga yweledbat zend yemereṭat yeya'iḳob 
     "reference": `Thursday Praise of Mary`,
     "chapter": `Thurs`,
     "stanza": `5`,
-    "english": `For from you will come forth a King Who will shepherd My people Israel.""`,
+    "english": `For from you will come forth a King Who will shepherd My people Israel."`,
     "geez_script": ``,
     "geez_phonetic": ``,
     "amharic_script": `ወገኖቼ እሥራኤልን የሚጠብቃቸው ንጉሥ ካንቺ ይወጣልና`,
@@ -1435,10 +1381,8 @@ yhchīwm 'amanu'él 'iñan lemadan besga yweledbat zend yemereṭat yeya'iḳob 
     "english": `O how wonderful is the word of those who prophesied in One Spirit concerning Christ, to Whom be glory, together with His Good Father, and the Holy Spirit henceforth and forever. O holy one, pray for us.`,
     "geez_script": ``,
     "geez_phonetic": ``,
-    "amharic_script": `ከዛሬ ጀምሮ እስከ ዘለዓለም ድረስ ከቸር አባቱና ከመንፈስ ቅዱስ ጋር ምስጋና ስለተገባው ስለ ክርስቶስ ባንድ መንፈስ ቅዱስ ትንቢት የተናገሩት የነዚህ የሚክያስና የዳዊት ነገርምን ይረቅ?
-ቅድስት ሆይ ለምኝልን።`,
-    "amharic_phonetic": `kezaré jemro 'iske zele'alem dres kecher 'abatuna kemenfes ḳdus gar msgana sletegebaw sle krstos band menfes ḳdus tnbīt yetenagerut yenezīh yemīkyasna yedawīt negermn yreḳ?
-ḳdst hoy lemñln.`,
+    "amharic_script": `ከዛሬ ጀምሮ እስከ ዘለዓለም ድረስ ከቸር አባቱና ከመንፈስ ቅዱስ ጋር ምስጋና ስለተገባው ስለ ክርስቶስ ባንድ መንፈስ ቅዱስ ትንቢት የተናገሩት የነዚህ የሚክያስና የዳዊት ነገርምን ይረቅ? ቅድስት ሆይ ለምኝልን።`,
+    "amharic_phonetic": `kezaré jemro 'iske zele'alem dres kecher 'abatuna kemenfes ḳdus gar msgana sletegebaw sle krstos band menfes ḳdus tnbīt yetenagerut yenezīh yemīkyasna yedawīt negermn yreḳ? ḳdst hoy lemñln.`,
     "tigrinya_script": ``,
     "tigrinya_phonetic": ``,
     "spanish": `¡Oh, cuán maravillosa es la palabra de aquellos que profetizaron acerca de Cristo en un solo Espíritu, a quien sea la gloria junto con su Buen Padre y el Espíritu Santo, desde ahora y para siempre! ¡Ruega a Él por nosotros, oh Santa!`
@@ -1465,8 +1409,7 @@ yhchīwm 'amanu'él 'iñan lemadan besga yweledbat zend yemereṭat yeya'iḳob 
     "english": `Whereupon, the captains of his hosts rose up quickly and waged war in the camp of the rebels, and brought unto him that water which he wished to drink.`,
     "geez_script": ``,
     "geez_phonetic": ``,
-    "amharic_script": `የጭፍሮቹ አለቆች ፈጥነው ተነሡና በጠላቶቹ ከተማ 
-ተዋግተው ሊጠጣ የወደደውን አመጡለት።`,
+    "amharic_script": `የጭፍሮቹ አለቆች ፈጥነው ተነሡና በጠላቶቹ ከተማ ተዋግተው ሊጠጣ የወደደውን አመጡለት።`,
     "amharic_phonetic": `yechfrochu 'aleḳoch feṭnew tenesuna beṭelatochu ketema tewagtew līṭeṭa yewededewn 'ameṭulet.`,
     "tigrinya_script": ``,
     "tigrinya_phonetic": ``,
@@ -1508,10 +1451,8 @@ yhchīwm 'amanu'él 'iñan lemadan besga yweledbat zend yemereṭat yeya'iḳob 
     "english": `Truly the martyrs rejected the desire of this world, and poured out their blood for God, and endured bitter deaths for the sake of the kingdom of heaven, saying,`,
     "geez_script": ``,
     "geez_phonetic": ``,
-    "amharic_script": `ስማዕታት የዚችን ዓለም ጣዕም በዕውነት ናቁ ደማቸውንም ስለ እግዚአብሔር አፈሰሱ።
-ስለ መንግሥተ ሰማያትም መራራ ሞትን ታገሱ።`,
-    "amharic_phonetic": `sma'itat yezīchn 'alem ṭa'im be'iwnet naḳu demachewnm sle 'igzī'abḥér 'afesesu.
-sle mengste semayatm merara motn tagesu.`,
+    "amharic_script": `ስማዕታት የዚችን ዓለም ጣዕም በዕውነት ናቁ ደማቸውንም ስለ እግዚአብሔር አፈሰሱ። ስለ መንግሥተ ሰማያትም መራራ ሞትን ታገሱ።`,
+    "amharic_phonetic": `sma'itat yezīchn 'alem ṭa'im be'iwnet naḳu demachewnm sle 'igzī'abḥér 'afesesu. sle mengste semayatm merara motn tagesu.`,
     "tigrinya_script": ``,
     "tigrinya_phonetic": ``,
     "spanish": `Y en verdad de la misma manera los mártires han rechazado el deseo de este mundo, y han derramado su sangre por Dios, y han soportado amargas muertes por el Reino de los Cielos.`
@@ -1524,8 +1465,7 @@ sle mengste semayatm merara motn tagesu.`,
     "english": `have compassion upon us according to the greatness of Your compassion. O holy one, pray for us.`,
     "geez_script": ``,
     "geez_phonetic": ``,
-    "amharic_script": `እንደ ይቅርታህ ብዛት ይቅር በለን።
-ቅድስት ሆይ ለምኝልን።`,
+    "amharic_script": `እንደ ይቅርታህ ብዛት ይቅር በለን። ቅድስት ሆይ ለምኝልን።`,
     "amharic_phonetic": `inde yḳrtah bzat yḳr belen. ḳdst hoy lemñln.`,
     "tigrinya_script": ``,
     "tigrinya_phonetic": ``,
@@ -1550,12 +1490,10 @@ sle mengste semayatm merara motn tagesu.`,
     "reference": `Thursday Praise of Mary`,
     "chapter": `Thurs`,
     "stanza": `7`,
-    "english": `and became a man like us with the exception of sin alone, and He was born in Bethlehem 
-according to the teaching of the Prophets,`,
+    "english": `and became a man like us with the exception of sin alone, and He was born in Bethlehem according to the teaching of the Prophets,`,
     "geez_script": ``,
     "geez_phonetic": ``,
-    "amharic_script": `ከብቻዋ ከኃጢአት በቀርም እንደኛ ሰው ሆነ፤
-ነቢያትም ትንቢት እንደተናገሩለት በቤተልሔም ተወለደ።`,
+    "amharic_script": `ከብቻዋ ከኃጢአት በቀርም እንደኛ ሰው ሆነ፤ ነቢያትም ትንቢት እንደተናገሩለት በቤተልሔም ተወለደ።`,
     "amharic_phonetic": `kebchawa kehaṭī'at beḳerm 'indeña sew hone: nebīyatm tnbīt 'indetenagerulet bebételḥém tewelede.`,
     "tigrinya_script": ``,
     "tigrinya_phonetic": ``,
@@ -1569,17 +1507,15 @@ according to the teaching of the Prophets,`,
     "english": `He delivered us, and redeemed us and made us His own people. O holy one, pray for us.`,
     "geez_script": ``,
     "geez_phonetic": ``,
-    "amharic_script": `ፈጽሞ አዳነን ወገኖቹም አደረገን።
-ቅድስት ሆይ ለምኝልን።`,
-    "amharic_phonetic": `fetsmo 'adanen wegenochum 'aderegen.
-ḳdst hoy lemñln.`,
+    "amharic_script": `ፈጽሞ አዳነን ወገኖቹም አደረገን። ቅድስት ሆይ ለምኝልን።`,
+    "amharic_phonetic": `fetsmo 'adanen wegenochum 'aderegen. ḳdst hoy lemñln.`,
     "tigrinya_script": ``,
     "tigrinya_phonetic": ``,
     "spanish": `nos libró, nos redimió y nos hizo su pueblo por los siglos de los siglos. ¡Ruega a Él por nosotros, oh Santa!`
   },
   {
     "instruction": ``,
-    "reference": `Intro to ""The Angels Praise Mary,"" attributed to Abba Giyorgis of Segla/Gasecha (15th century)`,
+    "reference": `Intro to "The Angels Praise Mary," attributed to Abba Giyorgis of Segla/Gasecha (15th century)`,
     "chapter": `Angels`,
     "stanza": `Intro`,
     "english": `The Angels Praise Mary, composed by Abba Giyorgis the Ethiopian`,
@@ -1596,11 +1532,10 @@ according to the teaching of the Prophets,`,
     "reference": `The Angels Praise Mary`,
     "chapter": `Angels`,
     "stanza": `1`,
-    "english": `The angels praise Mary within the inner part of the curtains of the temple, and they say to her, ""Greetings to you, Mary, the new calf.""`,
+    "english": `The angels praise Mary within the inner part of the curtains of the temple, and they say to her, "Greetings to you, Mary, the new calf."`,
     "geez_script": `ይዌድስዋ መላእክት ለማርያም በውስተ ውሳጤ መንጦላዕት ወይብልዋ በሐኪ ማርያም ሐዳስዩ ጣዕዋ።`,
     "geez_phonetic": `ywédswa mela'ikt lemaryam bewste wsaṭé menṭola'it weyblwa beḥakī maryam ḥadasyu ṭa'iwa.`,
-    "amharic_script": `መላእክት ማርያምን በመንጦላዕት ውስጥ ያመሰግኗታል፤
-ሐዳስ ጣዕዋ ላንቺ ምስጋና ይገባሻል እያሉ።`,
+    "amharic_script": `መላእክት ማርያምን በመንጦላዕት ውስጥ ያመሰግኗታል፤ ሐዳስ ጣዕዋ ላንቺ ምስጋና ይገባሻል እያሉ።`,
     "amharic_phonetic": `mela'ikt maryamn bemenṭola'it wsṭ yamesegnwatal: ḥadas ṭa'iwa lanchī msgana ygebashal 'iyalu.`,
     "tigrinya_script": ``,
     "tigrinya_phonetic": ``,
@@ -1611,7 +1546,7 @@ according to the teaching of the Prophets,`,
     "reference": `The Angels Praise Mary`,
     "chapter": `Angels`,
     "stanza": `1`,
-    "english": `The angel said to Mary, ""Accept the Word that comes to you, Who will dwell in your womb.""`,
+    "english": `The angel said to Mary, "Accept the Word that comes to you, Who will dwell in your womb."`,
     "geez_script": `ይቤላ መልአክ ለማርያም ተወከፊዮ ለቃል ኅቤኪ ይመጽእ ወበማኅፀነ ዚአኪ የኅድር፤`,
     "geez_phonetic": `ybéla mel'ak lemaryam tewekefīyo leḳal hbékī ymets'i webemahtsene zī'akī yehdr:`,
     "amharic_script": `መልአክ ማርያምን ቃልን ተቀበይው አላት ካንቺ ዘንድ ይመጣልና በማኅፀንሽም ያድራል።`,
@@ -1625,8 +1560,7 @@ according to the teaching of the Prophets,`,
     "reference": `The Angels Praise Mary`,
     "chapter": `Angels`,
     "stanza": `1`,
-    "english": `How did He dwell in a poor house, like a humble man? From heaven He descended upon her, finding beauty in her, and was born from 
-her.`,
+    "english": `How did He dwell in a poor house, like a humble man? From heaven He descended upon her, finding beauty in her, and was born from her.`,
     "geez_script": `እፎ ቤተ ነዳይ ኅደረ ከመ ምስኪን እምሰማያት ወረደ ላዕሌሃ ፈቲዎ ሥነ ዚአሃ ወተወልደ እምኔሃ።`,
     "geez_phonetic": `ifo béte neday hdere keme mskīn 'imsemayat werede la'iléha fetīwo sne zī'aha wetewelde 'imnéha.`,
     "amharic_script": `እንዴት ከድሀ ቤት አደረ እንደ ምስኪን ከሰማያት ወርዶ የርስዋን ባሕርይ ባሕርይ አድርጎ ተወለደ`,
@@ -1637,8 +1571,7 @@ her.`,
   },
   {
     "instruction": ``,
-    "reference": `The Angels Praise Mary.
-Luke 1:26`,
+    "reference": `The Angels Praise Mary. Luke 1:26`,
     "chapter": `Angels`,
     "stanza": `2`,
     "english": `And now in the sixth month, the angel Gabriel, was sent by God to a city of Galilee named Nazareth,`,
@@ -1647,43 +1580,35 @@ Luke 1:26`,
     "amharic_script": `በስድስተኛውም ወር መልአኩ ገብርኤል ከእግዚአብሔር ዘንድ ስሟ ናዝሬት ወደምትባለው ወደ አንዲት የገሊላ ከተማ`,
     "amharic_phonetic": `besdsteñawm wer mel'aku gebr'él ke'igzī'abḥér zend smwa nazrét wedemtbalew wede 'andīt yegelīla ketema`,
     "tigrinya_script": `ብሻድሻይ ወርሒ መልኣኽ ገብርኤል፥ ናዝሬት ናብ እትብሃል ከተማ ገሊላ፥ ካብ ዓሌት ዳዊት ዝኾነ፥`,
-    "tigrinya_phonetic": `bshadshay werḥī mel'akh gebr'él;
-nazrét nab 'itbhal ketema gelīla; kab 'alét dawīt zkhone;`,
+    "tigrinya_phonetic": `bshadshay werḥī mel'akh gebr'él; nazrét nab 'itbhal ketema gelīla; kab 'alét dawīt zkhone;`,
     "spanish": ``
   },
   {
     "instruction": ``,
-    "reference": `The Angels Praise Mary. Luke 1:27; Isaiah 7:14;
-Matthew 1:18.`,
+    "reference": `The Angels Praise Mary. Luke 1:27; Isaiah 7:14; Matthew 1:18.`,
     "chapter": `Angels`,
     "stanza": `2`,
     "english": `to a virgin betrothed to a man whose name was Joseph, of the house of David. And the virgin's name was Mary.`,
     "geez_script": `ኅበ ድንግል እንተ ተፍኅረት ለብእሲ ዘስሙ ዮሴፍ ዘእምቤተ ዳዊት ወስማ ለይእቲ ድንግል ማርያም፤`,
     "geez_phonetic": `hbe dngl 'inte tefhret leb'isī zesmu yoséf ze'imbéte dawīt wesma ley'itī dngl maryam:`,
-    "amharic_script": `ከዳዊት ወገን ለሚሆን ዮሴፍ ለሚባል ሰው ወደ ታጨችው ወደ አንዲት ድንግል ተላከ፤
-የዚያችም ድንግል ስምዋ ማርያም ይባል ነበረ።`,
+    "amharic_script": `ከዳዊት ወገን ለሚሆን ዮሴፍ ለሚባል ሰው ወደ ታጨችው ወደ አንዲት ድንግል ተላከ፤ የዚያችም ድንግል ስምዋ ማርያም ይባል ነበረ።`,
     "amharic_phonetic": `kedawīt wegen lemīhon yoséf lemībal sew wede tachechw wede 'andīt dngl telake: yezīyachm dngl smwa maryam ybal nebere.`,
-    "tigrinya_script": `ዮሴፍ ንዝበሃል ሰብ፥ ናብ ዝተሓፀየት ናብ ሓንቲ ድንግል፥ ካብ እግዚኣብሄር ተልኣኸ፤
-ስም እታ ድንግል ከዓ ማርያም ይበሃል።`,
-    "tigrinya_phonetic": `yoséf nzbehal seb; nab zteḥatseyet nab ḥantī dngl;
-kab 'igzī'abhér tel'akhe: sm 'ita dngl ke'a maryam ybehal.`,
+    "tigrinya_script": `ዮሴፍ ንዝበሃል ሰብ፥ ናብ ዝተሓፀየት ናብ ሓንቲ ድንግል፥ ካብ እግዚኣብሄር ተልኣኸ፤ ስም እታ ድንግል ከዓ ማርያም ይበሃል።`,
+    "tigrinya_phonetic": `yoséf nzbehal seb; nab zteḥatseyet nab ḥantī dngl; kab 'igzī'abhér tel'akhe: sm 'ita dngl ke'a maryam ybehal.`,
     "spanish": ``
   },
   {
     "instruction": ``,
-    "reference": `The Angels Praise Mary. Luke 1:28;
-Daniel 9:23`,
+    "reference": `The Angels Praise Mary. Luke 1:28; Daniel 9:23`,
     "chapter": `Angels`,
     "stanza": `2`,
-    "english": `And having come in, the angel said to her, ""Rejoice, joyful one, O filled with grace, the Lord is with you; blessed are you among women!""`,
+    "english": `And having come in, the angel said to her, "Rejoice, joyful one, O filled with grace, the Lord is with you; blessed are you among women!"`,
     "geez_script": `ቦአ መልአክ ኅቤሃ ወይቤላ ተፈሥሒ ፍሥሕት ኦ ምልእተ ጸጋ እግዚአብሔር ምስሌኪ ቡርክት አንቲ እምአንስት።`,
     "geez_phonetic": `bo'a mel'ak hbéha weybéla tefesḥī fsḥt 'o ml'ite tsega 'igzī'abḥér mslékī burkt 'antī 'im'anst.`,
     "amharic_script": `መልአኩም ወደ እርስዋ ገብቶ፥ “ደስ ያለሽ፥ ጸጋንም የተመላሽ ሆይ፥ ደስ ይበልሽ፤ እግዚአብሔር ካንቺ ጋር ነው፤ ከሴቶች ተለይተሽ አንቺ የተባረክሽ ነሽ” አላት።`,
-    "amharic_phonetic": `mel'akum wede 'irswa gebto;
-“des yalesh; tseganm yetemelash hoy; des ybelsh: 'igzī'abḥér kanchī gar new: kesétoch teleytesh 'anchī yetebareksh nesh” 'alat.`,
+    "amharic_phonetic": `mel'akum wede 'irswa gebto; “des yalesh; tseganm yetemelash hoy; des ybelsh: 'igzī'abḥér kanchī gar new: kesétoch teleytesh 'anchī yetebareksh nesh” 'alat.`,
     "tigrinya_script": `እቲ መልኣኽ ናብቲ ንሳ ዘላቶ ኣትዩ፥ “ኦ ምልእተ ፀጋ ደስ ይበልኪ! እግዚኣብሄር ምሳኺ እዩ፤ ንስኺ ኻብ ኣንስቲ ዝተባረኽኪ ኢኺ” በላ።`,
-    "tigrinya_phonetic": `itī mel'akh nabtī nsa zelato 'atyu;
-“'o ml'ite tsega des ybelkī! 'igzī'abhér msakhī 'iyu: nskhī khab 'anstī ztebarekhkī 'īkhī” bela.`,
+    "tigrinya_phonetic": `itī mel'akh nabtī nsa zelato 'atyu; “'o ml'ite tsega des ybelkī! 'igzī'abhér msakhī 'iyu: nskhī khab 'anstī ztebarekhkī 'īkhī” bela.`,
     "spanish": ``
   },
   {
@@ -1691,16 +1616,13 @@ Daniel 9:23`,
     "reference": `The Angels Praise Mary. Luke 1:29, 1:12`,
     "chapter": `Angels`,
     "stanza": `2`,
-    "english": `But when she saw him, she was troubled at his saying, and she considered, saying, ""what manner of greeting is this?""`,
+    "english": `But when she saw him, she was troubled at his saying, and she considered, saying, "what manner of greeting is this?"`,
     "geez_script": `ወርእያ ደንገፀት እምቃሉ ወሐለየት ወትቤ እፎኑ ከመዝኑ እንጋ አምኃ ይትአምኁ።`,
     "geez_phonetic": `wer'iya dengetset 'imḳalu weḥaleyet wetbé 'ifonu kemeznu 'inga 'amha yt'amhu.`,
-    "amharic_script": `እርስዋም በአየችው ጊዜ ከአነጋገሩ የተነሣ ደነገጠችና “ይህ እንዴት ያለ ሰላምታ ነው?”
-ብላ ዐሰበች።`,
+    "amharic_script": `እርስዋም በአየችው ጊዜ ከአነጋገሩ የተነሣ ደነገጠችና “ይህ እንዴት ያለ ሰላምታ ነው?” ብላ ዐሰበች።`,
     "amharic_phonetic": `irswam be'ayechw gīzé ke'anegageru yetenesa denegeṭechna “yh 'indét yale selamta new?” bla 'asebech.`,
-    "tigrinya_script": `ንሳ ድማ ምስ ረአየቶ በቲ ቓሉ ደንገፀት፤
-“ከመይ ዝበለ ሰላምታ እዩ?” ኢላውን ሓሰበት።`,
-    "tigrinya_phonetic": `nsa dma ms re'ayeto betī qhalu dengetset: “kemey zbele selamta 'iyu?”
-'īlawn ḥasebet.`,
+    "tigrinya_script": `ንሳ ድማ ምስ ረአየቶ በቲ ቓሉ ደንገፀት፤ “ከመይ ዝበለ ሰላምታ እዩ?” ኢላውን ሓሰበት።`,
+    "tigrinya_phonetic": `nsa dma ms re'ayeto betī qhalu dengetset: “kemey zbele selamta 'iyu?” 'īlawn ḥasebet.`,
     "spanish": ``
   },
   {
@@ -1708,51 +1630,41 @@ Daniel 9:23`,
     "reference": `The Angels Praise Mary. Luke 1:30, 2:52`,
     "chapter": `Angels`,
     "stanza": `2`,
-    "english": `Then the angel said to her, ""Do not be afraid, Mary, for you have found favor with God.`,
+    "english": `Then the angel said to her, "Do not be afraid, Mary, for you have found favor with God.`,
     "geez_script": `ወይቤላ መልአክ ኢትፍርሂ ማርያም እስመ ረከብኪ ሞገሰ ብኅበ እግዚአብሔር።`,
     "geez_phonetic": `weybéla mel'ak 'ītfrhī maryam 'isme rekebkī mogese bhbe 'igzī'abḥér.`,
     "amharic_script": `መልአኩም እንዲህ አላት፥ “ማርያም ሆይ፥ በእግዚአብሔር ዘንድ ባለሟልነትን አግኝተሻልና አትፍሪ።`,
-    "amharic_phonetic": `mel'akum 'indīh 'alat; “maryam hoy;
-be'igzī'abḥér zend balemwalnetn 'agñteshalna 'atfrī.`,
+    "amharic_phonetic": `mel'akum 'indīh 'alat; “maryam hoy; be'igzī'abḥér zend balemwalnetn 'agñteshalna 'atfrī.`,
     "tigrinya_script": `እቲ መልኣኽ ከዓ “ኦ ማርያም፥ ኣብ ቅድሚ እግዚኣብሄር ሞገስ ረኺብኪ ኢኺ እሞ ኣይትፍርሒ።`,
-    "tigrinya_phonetic": `itī mel'akh ke'a “'o maryam;
-'ab ḳdmī 'igzī'abhér moges rekhībkī 'īkhī 'imo 'aytfrḥī.`,
+    "tigrinya_phonetic": `itī mel'akh ke'a “'o maryam; 'ab ḳdmī 'igzī'abhér moges rekhībkī 'īkhī 'imo 'aytfrḥī.`,
     "spanish": ``
   },
   {
     "instruction": ``,
-    "reference": `The Angels Praise Mary.
-Luke 1:31`,
+    "reference": `The Angels Praise Mary. Luke 1:31`,
     "chapter": `Angels`,
     "stanza": `2`,
     "english": `And behold, you will conceive in your womb and bring forth a Son, and shall call His name Jesus.`,
     "geez_script": `ወናሁ ትፀንሲ ወትወልዲ ወልደ ወትሰምዪዮ ስሞ ኢየሱስ።`,
     "geez_phonetic": `wenahu ttsensī wetweldī welde wetsemyīyo smo 'īyesus.`,
-    "amharic_script": `እነሆ፥ ትፀንሻለሽ፤
-ወንድ ልጅንም ትወልጃለሽ፤ ስሙንም ኢየሱስ ትይዋለሽ።`,
+    "amharic_script": `እነሆ፥ ትፀንሻለሽ፤ ወንድ ልጅንም ትወልጃለሽ፤ ስሙንም ኢየሱስ ትይዋለሽ።`,
     "amharic_phonetic": `ineho; ttsenshalesh: wend ljnm tweljalesh: smunm 'īyesus tywalesh.`,
-    "tigrinya_script": `እንሆ ኽትጠንሲ፥ ወዲውን ክትወልዲ ኢኺ፤
-ስሙ ድማ ኢየሱስ ክትብልዮ ኢኺ።`,
+    "tigrinya_script": `እንሆ ኽትጠንሲ፥ ወዲውን ክትወልዲ ኢኺ፤ ስሙ ድማ ኢየሱስ ክትብልዮ ኢኺ።`,
     "tigrinya_phonetic": `inho khtṭensī; wedīwn ktweldī 'īkhī: smu dma 'īyesus ktblyo 'īkhī.`,
     "spanish": ``
   },
   {
     "instruction": ``,
-    "reference": `The Angels Praise Mary.
-Luke 1:32`,
+    "reference": `The Angels Praise Mary. Luke 1:32`,
     "chapter": `Angels`,
     "stanza": `2`,
     "english": `He will be great, and will be called the Son of the Highest; and the Lord God will give Him the throne of His father David.`,
-    "geez_script": `ውእቱ ዐቢይ ወይትሰመይ ወልደ እግዚአብሔር ልዑል።
-ወይሁቦ እግዚአብሔር አምላክ መንበረ ዳዊት አቡሁ።`,
+    "geez_script": `ውእቱ ዐቢይ ወይትሰመይ ወልደ እግዚአብሔር ልዑል። ወይሁቦ እግዚአብሔር አምላክ መንበረ ዳዊት አቡሁ።`,
     "geez_phonetic": `w'itu 'abīy weytsemey welde 'igzī'abḥér l'ul. weyhubo 'igzī'abḥér 'amlak menbere dawīt 'abuhu.`,
-    "amharic_script": `እርሱም ታላቅ ነው፤
-የልዑል እግዚአብሔር ልጅም ይባላል፤ እግዚአብሔር አምላክም የአባቱን የዳዊትን ዙፋን ይሰጠዋል።`,
+    "amharic_script": `እርሱም ታላቅ ነው፤ የልዑል እግዚአብሔር ልጅም ይባላል፤ እግዚአብሔር አምላክም የአባቱን የዳዊትን ዙፋን ይሰጠዋል።`,
     "amharic_phonetic": `irsum talaḳ new: yel'ul 'igzī'abḥér ljm ybalal: 'igzī'abḥér 'amlakm ye'abatun yedawītn zufan yseṭewal.`,
-    "tigrinya_script": `ንሱ ዓብዪ ክኸውን፥ ወዲ ልዑል እግዚኣብሄርውን ክብሃል እዩ።
-እግዚኣብሄር ኣምላኽ ድማ፥ ዙፋን ኣቦኡ ዳዊት ክህቦ እዩ።`,
-    "tigrinya_phonetic": `nsu 'abyī kkhewn; wedī l'ul 'igzī'abhérwn kbhal 'iyu. 'igzī'abhér 'amlakh dma;
-zufan 'abo'u dawīt khbo 'iyu.`,
+    "tigrinya_script": `ንሱ ዓብዪ ክኸውን፥ ወዲ ልዑል እግዚኣብሄርውን ክብሃል እዩ። እግዚኣብሄር ኣምላኽ ድማ፥ ዙፋን ኣቦኡ ዳዊት ክህቦ እዩ።`,
+    "tigrinya_phonetic": `nsu 'abyī kkhewn; wedī l'ul 'igzī'abhérwn kbhal 'iyu. 'igzī'abhér 'amlakh dma; zufan 'abo'u dawīt khbo 'iyu.`,
     "spanish": ``
   },
   {
@@ -1766,8 +1678,7 @@ zufan 'abo'u dawīt khbo 'iyu.`,
     "amharic_script": `ለያዕቆብ ወገንም ለዘለዓለሙ ይነግሣል፤ ለመንግሥቱም ፍጻሜ የለውም።”`,
     "amharic_phonetic": `leya'iḳob wegenm lezele'alemu ynegsal: lemengstum ftsamé yelewm.”`,
     "tigrinya_script": `ንሱ ኣብ ቤት ያእቆብ ንዘለኣለም ክነግስ እዩ። ንመንግስቱውን መወዳእታ የብሉን” በላ።`,
-    "tigrinya_phonetic": `nsu 'ab bét ya'iḳob nzele'alem knegs 'iyu.
-nmengstuwn meweda'ita yeblun” bela.`,
+    "tigrinya_phonetic": `nsu 'ab bét ya'iḳob nzele'alem knegs 'iyu. nmengstuwn meweda'ita yeblun” bela.`,
     "spanish": ``
   },
   {
@@ -1778,13 +1689,10 @@ nmengstuwn meweda'ita yeblun” bela.`,
     "english": `Then Mary said to the angel, “How can this be, since I do not know a man?”`,
     "geez_script": `ትቤሎ ማርያም ለመልአክ እፎኑ ይከውነኒ ዝንቱ እንዘ ኢየአምር ብእሴ።`,
     "geez_phonetic": `tbélo maryam lemel'ak 'ifonu ykewnenī zntu 'inze 'īye'amr b'isé.`,
-    "amharic_script": `ማርያምም መልአኩን፥ “ወንድ ስለማላውቅ ይህ እንዴት ይሆንልኛል?”
-አለችው።`,
+    "amharic_script": `ማርያምም መልአኩን፥ “ወንድ ስለማላውቅ ይህ እንዴት ይሆንልኛል?” አለችው።`,
     "amharic_phonetic": `maryamm mel'akun; “wend slemalawḳ yh 'indét yhonlñal?” 'alechw.`,
-    "tigrinya_script": `ማርያም ድማ ነቲ መልኣኽ፥ “ኣነ ሰብኣይ ኣይፈልጥን፤ እዝ ነገር እዙይ ከመይ ኢሉ ይኸውን?”
-በለቶ።`,
-    "tigrinya_phonetic": `maryam dma netī mel'akh; “'ane seb'ay 'ayfelṭn: 'iz neger 'izuy kemey 'īlu ykhewn?”
-beleto.`,
+    "tigrinya_script": `ማርያም ድማ ነቲ መልኣኽ፥ “ኣነ ሰብኣይ ኣይፈልጥን፤ እዝ ነገር እዙይ ከመይ ኢሉ ይኸውን?” በለቶ።`,
+    "tigrinya_phonetic": `maryam dma netī mel'akh; “'ane seb'ay 'ayfelṭn: 'iz neger 'izuy kemey 'īlu ykhewn?” beleto.`,
     "spanish": ``
   },
   {
@@ -1803,46 +1711,35 @@ beleto.`,
   },
   {
     "instruction": ``,
-    "reference": `The Angels Praise Mary. 
-Luke 1:35; Hebrews 1:2,8`,
+    "reference": `The Angels Praise Mary. Luke 1:35; Hebrews 1:2,8`,
     "chapter": `Angels`,
     "stanza": `2`,
     "english": `therefore, also, that Holy One who is to be born will be called the Son of God.`,
     "geez_script": `ዘኒ ይትወለድ እምኔኪ ቅዱስ ውእቱ ወይሰመይ ወልደ እግዚአብሔር ልዑል።`,
     "geez_phonetic": `zenī ytweled 'imnékī ḳdus w'itu weysemey welde 'igzī'abḥér l'ul.`,
-    "amharic_script": `ከአንቺ የሚወለደውም ቅዱስ ነው፤
-የልዑል እግዚአብሔር ልጅም ይባላል።`,
+    "amharic_script": `ከአንቺ የሚወለደውም ቅዱስ ነው፤ የልዑል እግዚአብሔር ልጅም ይባላል።`,
     "amharic_phonetic": `ke'anchī yemīweledewm ḳdus new: yel'ul 'igzī'abḥér ljm ybalal.`,
-    "tigrinya_script": `ስለዙይ እቲ ኻባኺ ዝውለድ ቅዱስ እዩ፤
-ወዲ እግዚኣብሄርውን ክብሃል እዩ።`,
+    "tigrinya_script": `ስለዙይ እቲ ኻባኺ ዝውለድ ቅዱስ እዩ፤ ወዲ እግዚኣብሄርውን ክብሃል እዩ።`,
     "tigrinya_phonetic": `slezuy 'itī khabakhī zwled ḳdus 'iyu: wedī 'igzī'abhérwn kbhal 'iyu.`,
     "spanish": ``
   },
   {
     "instruction": ``,
-    "reference": `The Angels Praise Mary.
-Luke 1:36;`,
+    "reference": `The Angels Praise Mary. Luke 1:36;`,
     "chapter": `Angels`,
     "stanza": `2`,
     "english": `Now indeed, Elizabeth your relative has also conceived a son in her old age and in her elderliness.; and this is now the sixth month for her who was called barren.`,
-    "geez_script": `ወናሁ ኤልሳቤጥኒ እንተ እምአዝማድኪ ይእቲ ፀንሰት ወረከበት ወልደ በልኅቃቲሃ ወበርሥዐቲሃ።
-ወናሁ ሳድስ ዝንቱ ወርኅ ለእንተ ይብልዋ መካን`,
-    "geez_phonetic": `wenahu 'élsabéṭnī 'inte 'im'azmadkī y'itī tsenset werekebet welde belhḳatīha webers'atīha.
-wenahu sads zntu werh le'inte yblwa mekan`,
-    "amharic_script": `እነሆ፥ ከዘመዶችሽ ወገን የምትሆን ኤልሣቤጥም እርስዋ እንኳ በእርጅናዋ ወንድ ልጅን ፀንሳለች፤
-መካን ትባል የነበረችው ከፀነሰች እነሆ፥ ይህ ስድስተኛ ወር ነው።`,
-    "amharic_phonetic": `ineho; kezemedochsh wegen yemthon 'élsabéṭm 'irswa 'inkwa be'irjnawa wend ljn tsensalech: mekan tbal yeneberechw ketsenesech 'ineho;
-yh sdsteña wer new.`,
-    "tigrinya_script": `እንሆ እታ ዘመድኪ ኤልሳቤጥ እኳ፥ ኣብ እርጋና ወዲ ጠኒሳ ኣላ፤
-እታ መኻን ዝተብሃለት እዙይ ሻድሻይ ወርሓ እዩ፤`,
-    "tigrinya_phonetic": `inho 'ita zemedkī 'élsabéṭ 'ikwa;
-'ab 'irgana wedī ṭenīsa 'ala: 'ita mekhan ztebhalet 'izuy shadshay werḥa 'iyu:`,
+    "geez_script": `ወናሁ ኤልሳቤጥኒ እንተ እምአዝማድኪ ይእቲ ፀንሰት ወረከበት ወልደ በልኅቃቲሃ ወበርሥዐቲሃ። ወናሁ ሳድስ ዝንቱ ወርኅ ለእንተ ይብልዋ መካን`,
+    "geez_phonetic": `wenahu 'élsabéṭnī 'inte 'im'azmadkī y'itī tsenset werekebet welde belhḳatīha webers'atīha. wenahu sads zntu werh le'inte yblwa mekan`,
+    "amharic_script": `እነሆ፥ ከዘመዶችሽ ወገን የምትሆን ኤልሣቤጥም እርስዋ እንኳ በእርጅናዋ ወንድ ልጅን ፀንሳለች፤ መካን ትባል የነበረችው ከፀነሰች እነሆ፥ ይህ ስድስተኛ ወር ነው።`,
+    "amharic_phonetic": `ineho; kezemedochsh wegen yemthon 'élsabéṭm 'irswa 'inkwa be'irjnawa wend ljn tsensalech: mekan tbal yeneberechw ketsenesech 'ineho; yh sdsteña wer new.`,
+    "tigrinya_script": `እንሆ እታ ዘመድኪ ኤልሳቤጥ እኳ፥ ኣብ እርጋና ወዲ ጠኒሳ ኣላ፤ እታ መኻን ዝተብሃለት እዙይ ሻድሻይ ወርሓ እዩ፤`,
+    "tigrinya_phonetic": `inho 'ita zemedkī 'élsabéṭ 'ikwa; 'ab 'irgana wedī ṭenīsa 'ala: 'ita mekhan ztebhalet 'izuy shadshay werḥa 'iyu:`,
     "spanish": ``
   },
   {
     "instruction": ``,
-    "reference": `The Angels Praise Mary. Luke 1:37; Genesis 18:14;
-Jeremiah 32:17`,
+    "reference": `The Angels Praise Mary. Luke 1:37; Genesis 18:14; Jeremiah 32:17`,
     "chapter": `Angels`,
     "stanza": `2`,
     "english": `For with God nothing will be impossible.”`,
@@ -1862,11 +1759,9 @@ Jeremiah 32:17`,
     "english": `Then Mary said, “Behold the maidservant of the Lord! Let it be to me according to your word.”`,
     "geez_script": `ትቤሎ ማርያም ለመልአክ ነየ አመተ ለእግዚአብሔር ይኩነኒ በከመ ትቤለኒ።`,
     "geez_phonetic": `tbélo maryam lemel'ak neye 'amete le'igzī'abḥér ykunenī bekeme tbélenī.`,
-    "amharic_script": `ማርያምም መልአኩን፥ “እነሆኝ፥ የእግዚአብሔር ባሪያው አለሁ፤
-እንደ ቃልህ ይሁንልኝ” አለችው፤`,
+    "amharic_script": `ማርያምም መልአኩን፥ “እነሆኝ፥ የእግዚአብሔር ባሪያው አለሁ፤ እንደ ቃልህ ይሁንልኝ” አለችው፤`,
     "amharic_phonetic": `maryamm mel'akun; “'inehoñ; ye'igzī'abḥér barīyaw 'alehu: 'inde ḳalh yhunlñ” 'alechw:`,
-    "tigrinya_script": `ማርያም ድማ “እኒሀኹ፥ ኣነ ባርያ እግዚኣብሄር እየ፤
-ከምቲ ዝበልካኒ ይኹነለይ” በለቶ።`,
+    "tigrinya_script": `ማርያም ድማ “እኒሀኹ፥ ኣነ ባርያ እግዚኣብሄር እየ፤ ከምቲ ዝበልካኒ ይኹነለይ” በለቶ።`,
     "tigrinya_phonetic": `maryam dma “'inīhakhu; 'ane barya 'igzī'abhér 'iye: kemtī zbelkanī ykhuneley” beleto.`,
     "spanish": ``
   },
@@ -1876,19 +1771,15 @@ Jeremiah 32:17`,
     "chapter": `Angels`,
     "stanza": `3`,
     "english": `Leader: The angel said to her:
-፨
-People: peace to you.`,
+፨ People: peace to you.`,
     "geez_script": `መሪሕ፤ ይቤላ መልአክ
 ፨ ሕዝብ፤ ሰላም ለኪ።`,
     "geez_phonetic": `merīḥ: ybéla mel'ak
-፨
-ḥzb: selam lekī.`,
+፨ ḥzb: selam lekī.`,
     "amharic_script": `መሪ፣ መልአኩ ገብርኤል ማርያም ድንግል ላንቺ ክብር ምስጋና ይገባሻል አላት።
-፨ ሕዝብ፤
-ላንቺ ክብር ምስጋና ይገባሻል።`,
+፨ ሕዝብ፤ ላንቺ ክብር ምስጋና ይገባሻል።`,
     "amharic_phonetic": `merī, mel'aku gebr'él maryam dngl lanchī kbr msgana ygebashal 'alat.
-፨
-ḥzb: lanchī kbr msgana ygebashal.`,
+፨ ḥzb: lanchī kbr msgana ygebashal.`,
     "tigrinya_script": ``,
     "tigrinya_phonetic": ``,
     "spanish": ``
@@ -1901,15 +1792,13 @@ People: peace to you.`,
     "english": `Leader: Gabriel said to her
 ፨ People: peace to you.`,
     "geez_script": `መሪሕ፤ ይቤላ ገብርኤል
-፨ ሕዝብ፤
-ሰላም ለኪ።`,
+፨ ሕዝብ፤ ሰላም ለኪ።`,
     "geez_phonetic": `merīḥ: ybéla gebr'él
 ፨ ḥzb: selam lekī.`,
     "amharic_script": `መሪ፣ 
 ፨ ሕዝብ፤ ላንቺ ክብር ምስጋና ይገባሻል።`,
     "amharic_phonetic": `merī, 
-፨
-ḥzb: lanchī kbr msgana ygebashal.`,
+፨ ḥzb: lanchī kbr msgana ygebashal.`,
     "tigrinya_script": ``,
     "tigrinya_phonetic": ``,
     "spanish": ``
@@ -1922,15 +1811,13 @@ People: peace to you.`,
     "english": `Leader: Mary the Virgin,
 ፨ People: peace to you.`,
     "geez_script": `መሪሕ፤ ማርያም ድንግል
-፨ ሕዝብ፤
-ሰላም ለኪ።`,
+፨ ሕዝብ፤ ሰላም ለኪ።`,
     "geez_phonetic": `merīḥ: maryam dngl
 ፨ ḥzb: selam lekī.`,
     "amharic_script": `መሪ፣ ማርያም ድንግል
 ፨ ሕዝብ፤ ላንቺ ክብር ምስጋና ይገባሻል።`,
     "amharic_phonetic": `merī, maryam dngl
-፨
-ḥzb: lanchī kbr msgana ygebashal.`,
+፨ ḥzb: lanchī kbr msgana ygebashal.`,
     "tigrinya_script": ``,
     "tigrinya_phonetic": ``,
     "spanish": ``
@@ -1943,15 +1830,13 @@ People: peace to you.`,
     "english": `Leader: The Bearer of God,
 ፨ People: peace to you.`,
     "geez_script": `መሪሕ፤ ወላዲተ አምላክ
-፨ ሕዝብ፤
-ሰላም ለኪ።`,
+፨ ሕዝብ፤ ሰላም ለኪ።`,
     "geez_phonetic": `merīḥ: weladīte 'amlak
 ፨ ḥzb: selam lekī.`,
     "amharic_script": `መሪ፣ ወላዲተ አምላክ
 ፨ ሕዝብ፤ ላንቺ ክብር ምስጋና ይገባሻል።`,
     "amharic_phonetic": `merī, weladīte 'amlak
-፨
-ḥzb: lanchī kbr msgana ygebashal.`,
+፨ ḥzb: lanchī kbr msgana ygebashal.`,
     "tigrinya_script": ``,
     "tigrinya_phonetic": ``,
     "spanish": ``
@@ -1964,15 +1849,13 @@ People: peace to you.`,
     "english": `Leader: Mary, the holy one,
 ፨ People: peace to you.`,
     "geez_script": `መሪሕ፤ ማርያም ቅድስት
-፨ ሕዝብ፤
-ሰላም ለኪ።`,
+፨ ሕዝብ፤ ሰላም ለኪ።`,
     "geez_phonetic": `merīḥ: maryam ḳdst
 ፨ ḥzb: selam lekī.`,
     "amharic_script": `መሪ፣ ቅድስት ነሽና
 ፨ ሕዝብ፤ ላንቺ ክብር ምስጋና ይገባሻል።`,
     "amharic_phonetic": `merī, ḳdst neshna
-፨
-ḥzb: lanchī kbr msgana ygebashal.`,
+፨ ḥzb: lanchī kbr msgana ygebashal.`,
     "tigrinya_script": ``,
     "tigrinya_phonetic": ``,
     "spanish": ``
@@ -1985,15 +1868,13 @@ People: peace to you.`,
     "english": `Leader: Mary, the praised,
 ፨ People: peace to you.`,
     "geez_script": `መሪሕ፤ ማርያም ውድስት
-፨ ሕዝብ፤
-ሰላም ለኪ።`,
+፨ ሕዝብ፤ ሰላም ለኪ።`,
     "geez_phonetic": `merīḥ: maryam wdst
 ፨ ḥzb: selam lekī.`,
     "amharic_script": `መሪ፣ 
 ፨ ሕዝብ፤ ላንቺ ክብር ምስጋና ይገባሻል።`,
     "amharic_phonetic": `merī, 
-፨
-ḥzb: lanchī kbr msgana ygebashal.`,
+፨ ḥzb: lanchī kbr msgana ygebashal.`,
     "tigrinya_script": ``,
     "tigrinya_phonetic": ``,
     "spanish": ``
@@ -2006,15 +1887,13 @@ People: peace to you.`,
     "english": `Leader: Mary, the pure,
 ፨ People: peace to you.`,
     "geez_script": `መሪሕ፤ ማርያም ንጽሕት
-፨ ሕዝብ፤
-ሰላም ለኪ።`,
+፨ ሕዝብ፤ ሰላም ለኪ።`,
     "geez_phonetic": `merīḥ: maryam ntsḥt
 ፨ ḥzb: selam lekī.`,
     "amharic_script": `መሪ፣ 
 ፨ ሕዝብ፤ ላንቺ ክብር ምስጋና ይገባሻል።`,
     "amharic_phonetic": `merī, 
-፨
-ḥzb: lanchī kbr msgana ygebashal.`,
+፨ ḥzb: lanchī kbr msgana ygebashal.`,
     "tigrinya_script": ``,
     "tigrinya_phonetic": ``,
     "spanish": ``
@@ -2027,15 +1906,13 @@ People: peace to you.`,
     "english": `Leader: Mary, the joyous,
 ፨ People: peace to you.`,
     "geez_script": `መሪሕ፤ ማርያም ፍሥሕት
-፨ ሕዝብ፤
-ሰላም ለኪ።`,
+፨ ሕዝብ፤ ሰላም ለኪ።`,
     "geez_phonetic": `merīḥ: maryam fsḥt
 ፨ ḥzb: selam lekī.`,
     "amharic_script": `መሪ፣ 
 ፨ ሕዝብ፤ ላንቺ ክብር ምስጋና ይገባሻል።`,
     "amharic_phonetic": `merī, 
-፨
-ḥzb: lanchī kbr msgana ygebashal.`,
+፨ ḥzb: lanchī kbr msgana ygebashal.`,
     "tigrinya_script": ``,
     "tigrinya_phonetic": ``,
     "spanish": ``
@@ -2048,15 +1925,13 @@ People: peace to you.`,
     "english": `Leader: Mary, the beatific,
 ፨ People: peace to you.`,
     "geez_script": `መሪሕ፤ ማርያም ብፅዕት
-፨ ሕዝብ፤
-ሰላም ለኪ።`,
+፨ ሕዝብ፤ ሰላም ለኪ።`,
     "geez_phonetic": `merīḥ: maryam bts'it
 ፨ ḥzb: selam lekī.`,
     "amharic_script": `መሪ፣ 
 ፨ ሕዝብ፤ ላንቺ ክብር ምስጋና ይገባሻል።`,
     "amharic_phonetic": `merī, 
-፨
-ḥzb: lanchī kbr msgana ygebashal.`,
+፨ ḥzb: lanchī kbr msgana ygebashal.`,
     "tigrinya_script": ``,
     "tigrinya_phonetic": ``,
     "spanish": ``
@@ -2069,15 +1944,13 @@ People: peace to you.`,
     "english": `Leader: Mary, the blessed,
 ፨ People: peace to you.`,
     "geez_script": `መሪሕ፤ ማርያም ቡርክት
-፨ ሕዝብ፤
-ሰላም ለኪ።`,
+፨ ሕዝብ፤ ሰላም ለኪ።`,
     "geez_phonetic": `merīḥ: maryam burkt
 ፨ ḥzb: selam lekī.`,
     "amharic_script": `መሪ፣ 
 ፨ ሕዝብ፤ ላንቺ ክብር ምስጋና ይገባሻል።`,
     "amharic_phonetic": `merī, 
-፨
-ḥzb: lanchī kbr msgana ygebashal.`,
+፨ ḥzb: lanchī kbr msgana ygebashal.`,
     "tigrinya_script": ``,
     "tigrinya_phonetic": ``,
     "spanish": ``
@@ -2090,15 +1963,13 @@ People: peace to you.`,
     "english": `Leader: The dwelling place of the Godhead,
 ፨ People: peace to you.`,
     "geez_script": `መሪሕ፤ ማኅደረ መለኮት
-፨
-ሕዝብ፤ ሰላም ለኪ።`,
+፨ ሕዝብ፤ ሰላም ለኪ።`,
     "geez_phonetic": `merīḥ: mahdere melekot
 ፨ ḥzb: selam lekī.`,
     "amharic_script": `መሪ፣ የመለኮት ማደሪያ ነሽና
 ፨ ሕዝብ፤ ላንቺ ክብር ምስጋና ይገባሻል።`,
     "amharic_phonetic": `merī, yemelekot maderīya neshna
-፨
-ḥzb: lanchī kbr msgana ygebashal.`,
+፨ ḥzb: lanchī kbr msgana ygebashal.`,
     "tigrinya_script": ``,
     "tigrinya_phonetic": ``,
     "spanish": ``
@@ -2111,15 +1982,13 @@ People: peace to you.`,
     "english": `Leader: The perfect Tabernacle,
 ፨ People: peace to you.`,
     "geez_script": `መሪሕ፤ ደብተራ ፍጽምት
-፨ ሕዝብ፤
-ሰላም ለኪ።`,
+፨ ሕዝብ፤ ሰላም ለኪ።`,
     "geez_phonetic": `merīḥ: debtera ftsmt
 ፨ ḥzb: selam lekī.`,
     "amharic_script": `መሪ፣ የተሸለምሽ ድንኳን ነሽና
 ፨ ሕዝብ፤ ላንቺ ክብር ምስጋና ይገባሻል።`,
     "amharic_phonetic": `merī, yeteshelemsh dnkwan neshna
-፨
-ḥzb: lanchī kbr msgana ygebashal.`,
+፨ ḥzb: lanchī kbr msgana ygebashal.`,
     "tigrinya_script": ``,
     "tigrinya_phonetic": ``,
     "spanish": ``
@@ -2132,15 +2001,13 @@ People: peace to you.`,
     "english": `Leader: Sister of the angels,
 ፨ People: peace to you.`,
     "geez_script": `መሪሕ፤ እኅተ መላእክት
-፨ ሕዝብ፤
-ሰላም ለኪ።`,
+፨ ሕዝብ፤ ሰላም ለኪ።`,
     "geez_phonetic": `merīḥ: 'ihte mela'ikt
 ፨ ḥzb: selam lekī.`,
     "amharic_script": `መሪ፣ የመላእክት እኅት ነሽና
 ፨ ሕዝብ፤ ላንቺ ክብር ምስጋና ይገባሻል።`,
     "amharic_phonetic": `merī, yemela'ikt 'iht neshna
-፨
-ḥzb: lanchī kbr msgana ygebashal.`,
+፨ ḥzb: lanchī kbr msgana ygebashal.`,
     "tigrinya_script": ``,
     "tigrinya_phonetic": ``,
     "spanish": ``
@@ -2153,13 +2020,11 @@ People: peace to you.`,
     "english": `Leader: And mother of all people,
 ፨ People: peace to you.`,
     "geez_script": `መሪሕ፤ ወእመ ኵሉ ሕዝብ
-፨
-ሕዝብ፤ ሰላም ለኪ።`,
+፨ ሕዝብ፤ ሰላም ለኪ።`,
     "geez_phonetic": `merīḥ: we'ime kwlu ḥzb
 ፨ ḥzb: selam lekī.`,
     "amharic_script": `መሪ፣ የሕዝቡ ሁሉ እናት ነሽና
-፨ ሕዝብ፤
-ላንቺ ክብር ምስጋና ይገባሻል።`,
+፨ ሕዝብ፤ ላንቺ ክብር ምስጋና ይገባሻል።`,
     "amharic_phonetic": `merī, yeḥzbu hulu 'inat neshna
 ፨ ḥzb: lanchī kbr msgana ygebashal.`,
     "tigrinya_script": ``,
@@ -2172,15 +2037,13 @@ People: peace to you.`,
     "chapter": `Angels`,
     "stanza": `3`,
     "english": `Leader: Our Lady Mary,
-፨
-People: peace to you.`,
+፨ People: peace to you.`,
     "geez_script": `መሪሕ፤ እግዝእትነ ማርያም
 ፨ ሕዝብ፤ ሰላም ለኪ።`,
     "geez_phonetic": `merīḥ: 'igz'itne maryam
 ፨ ḥzb: selam lekī.`,
     "amharic_script": `መሪ፣ የሁሉ እመቤት ማርያም
-፨ ሕዝብ፤
-ላንቺ ክብር ምስጋና ይገባሻል።`,
+፨ ሕዝብ፤ ላንቺ ክብር ምስጋና ይገባሻል።`,
     "amharic_phonetic": `merī, yehulu 'imebét maryam
 ፨ ḥzb: lanchī kbr msgana ygebashal.`,
     "tigrinya_script": ``,
@@ -2193,15 +2056,13 @@ People: peace to you.`,
     "chapter": `Angels`,
     "stanza": `3`,
     "english": `Leader: Peaceful one,
-፨
-People: peace to you.`,
+፨ People: peace to you.`,
     "geez_script": `መሪሕ፤ ሰላማዊት
 ፨ ሕዝብ፤ ሰላም ለኪ።`,
     "geez_phonetic": `merīḥ: selamawīt
 ፨ ḥzb: selam lekī.`,
     "amharic_script": `መሪ፣ የሁሉ ሰላም ማርያም
-፨ ሕዝብ፤
-ላንቺ ክብር ምስጋና ይገባሻል።`,
+፨ ሕዝብ፤ ላንቺ ክብር ምስጋና ይገባሻል።`,
     "amharic_phonetic": `merī, yehulu selam maryam
 ፨ ḥzb: lanchī kbr msgana ygebashal.`,
     "tigrinya_script": ``,
@@ -2220,8 +2081,7 @@ People: peace to you.`,
     "geez_phonetic": `merīḥ: ḳedesekī lemahderu l'ul
 ፨ ḥzb: selam lekī.`,
     "amharic_script": `መሪ፣ 
-፨ ሕዝብ፤
-ላንቺ ክብር ምስጋና ይገባሻል።`,
+፨ ሕዝብ፤ ላንቺ ክብር ምስጋና ይገባሻል።`,
     "amharic_phonetic": `merī, 
 ፨ ḥzb: lanchī kbr msgana ygebashal.`,
     "tigrinya_script": ``,
@@ -2238,13 +2098,11 @@ People: peace to you.`,
     "geez_script": `መሪሕ፤ አብደረኪ ወኅረየኪ ከመ ትኩኒዮ ማኅደሮ
 ፨ ሕዝብ፤ ሰላም ለኪ።`,
     "geez_phonetic": `merīḥ: 'abderekī wehreyekī keme tkunīyo mahdero
-፨
-ḥzb: selam lekī.`,
+፨ ḥzb: selam lekī.`,
     "amharic_script": `መሪ፣ ልዑል ማደሪያው ትሆኝ ዘንድ መርጦሻልና
 ፨ ሕዝብ፤ ላንቺ ክብር ምስጋና ይገባሻል።`,
     "amharic_phonetic": `merī, l'ul maderīyaw thoñ zend merṭoshalna
-፨
-ḥzb: lanchī kbr msgana ygebashal.`,
+፨ ḥzb: lanchī kbr msgana ygebashal.`,
     "tigrinya_script": ``,
     "tigrinya_phonetic": ``,
     "spanish": ``
@@ -2255,15 +2113,13 @@ People: peace to you.`,
     "chapter": `Angels`,
     "stanza": `3`,
     "english": `Leader: You are clothed and embellished in gold garment.
-፨
-People: Peace to you.`,
+፨ People: Peace to you.`,
     "geez_script": `መሪሕ፤ በአልባሰ ወርቅ ዑፅፍት ወኁብርት
 ፨ ሕዝብ፤ ሰላም ለኪ።`,
     "geez_phonetic": `merīḥ: be'albase werḳ 'utsft wehubrt
 ፨ ḥzb: selam lekī.`,
     "amharic_script": `መሪ፣ በወርቅ የተሸለምሽ
-፨
-ሕዝብ፤ ላንቺ ክብር ምስጋና ይገባሻል።`,
+፨ ሕዝብ፤ ላንቺ ክብር ምስጋና ይገባሻል።`,
     "amharic_phonetic": `merī, bewerḳ yeteshelemsh
 ፨ ḥzb: lanchī kbr msgana ygebashal.`,
     "tigrinya_script": ``,
@@ -2280,13 +2136,11 @@ People: Peace to you.`,
     "geez_script": `መሪሕ፤ ክነፈ ርግብ በብሩር ዘግቡር
 ፨ ሕዝብ፤ ሰላም ለኪ።`,
     "geez_phonetic": `merīḥ: knefe rgb bebrur zegbur
-፨
-ḥzb: selam lekī.`,
+፨ ḥzb: selam lekī.`,
     "amharic_script": `መሪ፣ የርግብ ክንፍ በብር ያጌጥሽ
 ፨ ሕዝብ፤ ላንቺ ክብር ምስጋና ይገባሻል።`,
     "amharic_phonetic": `merī, yergb knf bebr yagéṭsh
-፨
-ḥzb: lanchī kbr msgana ygebashal.`,
+፨ ḥzb: lanchī kbr msgana ygebashal.`,
     "tigrinya_script": ``,
     "tigrinya_phonetic": ``,
     "spanish": ``
@@ -2297,18 +2151,15 @@ People: Peace to you.`,
     "chapter": `Angels`,
     "stanza": `3`,
     "english": `Leader: And your waist is adorned with greenish gold, Mary, the embellished,
-፨
-People: Peace to you.`,
+፨ People: Peace to you.`,
     "geez_script": `መሪሕ፤ ወገበዋቲሃኒ በሐመልማለ ወርቅ ማርያም ሥርጉት
 ፨ ሕዝብ፤ ሰላም ለኪ።`,
     "geez_phonetic": `merīḥ: wegebewatīhanī beḥamelmale werḳ maryam srgut
-፨
-ḥzb: selam lekī.`,
+፨ ḥzb: selam lekī.`,
     "amharic_script": `መሪ፣ ጎኖችሽ በወርቅ አመልማሎ የተሸለሙ 
 ፨ ሕዝብ፤ ላንቺ ክብር ምስጋና ይገባሻል።`,
     "amharic_phonetic": `merī, gonochsh bewerḳ 'amelmalo yeteshelemu 
-፨
-ḥzb: lanchī kbr msgana ygebashal.`,
+፨ ḥzb: lanchī kbr msgana ygebashal.`,
     "tigrinya_script": ``,
     "tigrinya_phonetic": ``,
     "spanish": ``
@@ -2319,18 +2170,15 @@ People: Peace to you.`,
     "chapter": `Angels`,
     "stanza": `3`,
     "english": `Leader: The gate of the East and the Mother of Light,
-፨
-People: Peace to you.`,
+፨ People: Peace to you.`,
     "geez_script": `መሪሕ፤ ኆኅተ ምሥራቅ ወእሙ ለብርሃን
 ፨ ሕዝብ፤ ሰላም ለኪ።`,
     "geez_phonetic": `merīḥ: hohte msraḳ we'imu lebrhan
-፨
-ḥzb: selam lekī.`,
+፨ ḥzb: selam lekī.`,
     "amharic_script": `መሪ፣ የምሥራቅ ደጃፍ የብርሃን እናቱ
 ፨ ሕዝብ፤ ላንቺ ክብር ምስጋና ይገባሻል።`,
     "amharic_phonetic": `merī, yemsraḳ dejaf yebrhan 'inatu
-፨
-ḥzb: lanchī kbr msgana ygebashal.`,
+፨ ḥzb: lanchī kbr msgana ygebashal.`,
     "tigrinya_script": ``,
     "tigrinya_phonetic": ``,
     "spanish": ``
@@ -2345,14 +2193,11 @@ People: Peace to you.`,
     "geez_script": `መሪሕ፤ ትበርሂ እምፀሐይ ወትትሌዐሊ እምአድባር
 ፨ ሕዝብ፤ ሰላም ለኪ።`,
     "geez_phonetic": `merīḥ: tberhī 'imtseḥay wettlé'alī 'im'adbar
-፨
-ḥzb: selam lekī.`,
+፨ ḥzb: selam lekī.`,
     "amharic_script": `መሪ፣ ከፀሐይ ሰባት እጅ የምታበሪ ክብርሽ ከአድባራቱ ሁሉ ከፍ ከፍ ያለ
-፨ ሕዝብ፤
-ላንቺ ክብር ምስጋና ይገባሻል።`,
+፨ ሕዝብ፤ ላንቺ ክብር ምስጋና ይገባሻል።`,
     "amharic_phonetic": `merī, ketseḥay sebat 'ij yemtaberī kbrsh ke'adbaratu hulu kef kef yale
-፨
-ḥzb: lanchī kbr msgana ygebashal.`,
+፨ ḥzb: lanchī kbr msgana ygebashal.`,
     "tigrinya_script": ``,
     "tigrinya_phonetic": ``,
     "spanish": ``
@@ -2364,17 +2209,14 @@ People: Peace to you.`,
     "stanza": `3`,
     "english": `Leader: Mary, the chosen and honored one,
 ፨ People: Peace to you.`,
-    "geez_script": `መሪሕ፤
-ማርያም ኅሪት ወክብርት
+    "geez_script": `መሪሕ፤ ማርያም ኅሪት ወክብርት
 ፨ ሕዝብ፤ ሰላም ለኪ።`,
     "geez_phonetic": `merīḥ: maryam hrīt wekbrt
 ፨ ḥzb: selam lekī.`,
     "amharic_script": `መሪ፣ ማርያም ሆይ ከተመረጡ የተመረጥሽ ከተከበሩ የተከበርሽ
-፨ ሕዝብ፤
-ላንቺ ክብር ምስጋና ይገባሻል።`,
+፨ ሕዝብ፤ ላንቺ ክብር ምስጋና ይገባሻል።`,
     "amharic_phonetic": `merī, maryam hoy ketemereṭu yetemereṭsh ketekeberu yetekebersh
-፨
-ḥzb: lanchī kbr msgana ygebashal.`,
+፨ ḥzb: lanchī kbr msgana ygebashal.`,
     "tigrinya_script": ``,
     "tigrinya_phonetic": ``,
     "spanish": ``
@@ -2398,8 +2240,7 @@ People: Peace to you.`,
     "reference": `The Angels Praise Mary`,
     "chapter": `Angels`,
     "stanza": `3`,
-    "english": `When He places the 
-sheep on His right and the goats on His left,`,
+    "english": `When He places the sheep on His right and the goats on His left,`,
     "geez_script": `አመ ያቀውም አባግዐ በየማኑ ወአጣሌ በፀጋሙ፥`,
     "geez_phonetic": `ame yaḳewm 'abag'a beyemanu we'aṭalé betsegamu;`,
     "amharic_script": `ጻድቅንን በቀኙ ኃጥአንን በግራው ባቆመ ጊዜ`,
@@ -2414,10 +2255,8 @@ sheep on His right and the goats on His left,`,
     "chapter": `Angels`,
     "stanza": `3`,
     "english": `may He place us on His right with Saint Stephen the Martyr, Saint John the Baptist, and all of the saints and martyrs to the age of ages, Amen.`,
-    "geez_script": `ያቁመነ በየማኑ ምስለ እስጢፋኖስ ሰማዕት ወዮሐንስ መጥምቅ።
-ወምስለ ኵሎሙ ቅዱሳን ወሰማዕት ለዓለመ ዓለም። አሜን።`,
-    "geez_phonetic": `yaḳumene beyemanu msle 'isṭīfanos sema'it weyoḥans meṭmḳ. wemsle kwlomu ḳdusan wesema'it le'aleme 'alem.
-'amén.`,
+    "geez_script": `ያቁመነ በየማኑ ምስለ እስጢፋኖስ ሰማዕት ወዮሐንስ መጥምቅ። ወምስለ ኵሎሙ ቅዱሳን ወሰማዕት ለዓለመ ዓለም። አሜን።`,
+    "geez_phonetic": `yaḳumene beyemanu msle 'isṭīfanos sema'it weyoḥans meṭmḳ. wemsle kwlomu ḳdusan wesema'it le'aleme 'alem. 'amén.`,
     "amharic_script": `እኛን ከሰማዕት እንጢፋኖስ ከመጥምቁ ዮሐንስ እና ከሁሉ ቅዱሳን ከሰማዕታትም ጋር ያቆመን ዘንድ ለምኝልን ለዓለመ ዓለም አሜን፤`,
     "amharic_phonetic": `iñan kesema'it 'inṭīfanos kemeṭmḳu yoḥans 'ina kehulu ḳdusan kesema'itatm gar yaḳomen zend lemñln le'aleme 'alem 'amén:`,
     "tigrinya_script": ``,
@@ -2445,8 +2284,7 @@ sheep on His right and the goats on His left,`,
     "stanza": `3`,
     "english": `May the prayers of Mary and her intercession save Patriarch {{PATRIARCH NAME}} from the wrath of her Son.`,
     "geez_script": `ጸሎታ ለማርያም ወስእለታ ለርእሰ ሊቃነ ጳጳሳት አባ {{PATRIARCH NAME}} ይዕቀቦ እመዓተ ወልዳ`,
-    "geez_phonetic": `tselota lemaryam wes'ileta ler'ise līḳane p̣ap̣asat 'aba {{PATRIARCH NAME}} y'iḳebo 'ime'ate 
-welda`,
+    "geez_phonetic": `tselota lemaryam wes'ileta ler'ise līḳane p̣ap̣asat 'aba {{PATRIARCH NAME}} y'iḳebo 'ime'ate welda`,
     "amharic_script": ``,
     "amharic_phonetic": ``,
     "tigrinya_script": ``,
@@ -2486,8 +2324,7 @@ welda`,
     "reference": `The Angels Praise Mary`,
     "chapter": `Angels`,
     "stanza": `3`,
-    "english": `May the prayers of Mary 
-and her intercession save {{Servant's Names}}, and all Christian people from the wrath of her Son.`,
+    "english": `May the prayers of Mary and her intercession save {{Servant's Names}}, and all Christian people from the wrath of her Son.`,
     "geez_script": `ጸሎታ ለማርያም ወስእለታ ለደብርነ {{Servant's Names}} ይዕቀባ እመዓተ ወልዳ።`,
     "geez_phonetic": `tselota lemaryam wes'ileta ledebrne {{Servant's Names}} y'iḳeba 'ime'ate welda.`,
     "amharic_script": ``,
