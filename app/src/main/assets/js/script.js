@@ -344,9 +344,10 @@ function saveSettings() {
 
 
 function loadSettings() {
+    const isMobile = window.innerWidth < 900;
     const savedVersion = localStorage.getItem('settingsVersion');
     const defaultSettings = {
-        sidebarCollapsed: window.innerWidth < 900,
+        sidebarCollapsed: isMobile,
         theme: { palette: 'traditional', mode: 'dark' },
         displayOptions: {
             presentationMode: 'scroll',
@@ -364,12 +365,12 @@ function loadSettings() {
         },
         displayedLanguages: {
             english: true,
-            spanish: false,
+            spanish: !isMobile,
             geez_script: true,
-            geez_phonetic: true,
-            amharic_script: false,
+            geez_phonetic: false,
+            amharic_script: !isMobile,
             amharic_phonetic: false,
-            tigrinya_script: false,
+            tigrinya_script: !isMobile,
             tigrinya_phonetic: false
         },
         fontSizes: {
