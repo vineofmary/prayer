@@ -1156,7 +1156,7 @@ body.presentation-mode-slides .prayer-card-main-content {
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    padding-bottom: 1rem;
+    padding: 1.5rem 1.5rem 2.5rem; /* Adjusted padding for better spacing */
 }
 
 body.presentation-mode-slides .prayer-content {

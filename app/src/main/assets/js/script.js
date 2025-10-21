@@ -1064,48 +1064,87 @@ function adjustSlideFontSize() {
         document.querySelectorAll('.language-text').forEach(p => { p.style.fontSize = ''; });
         return;
     }
+
     const prayerCards = prayerDisplay.querySelectorAll('.prayer-card');
     prayerCards.forEach(card => {
+        // Use a small timeout to ensure the DOM is ready for measurement
         setTimeout(() => {
-            const langSections = card.querySelectorAll('.language-section');
-            if (langSections.length === 0) return;
-
             const prayerContent = card.querySelector('.prayer-content');
             if (!prayerContent) return;
 
-            // Reset all font sizes first
+            const langSections = card.querySelectorAll('.language-section');
+            if (langSections.length === 0) return;
+
+            // Reset all font sizes first to get accurate measurements
             langSections.forEach(section => {
                 const textP = section.querySelector('p.language-text');
                 if (textP) textP.style.fontSize = '';
             });
 
-            let minSize = 12, maxSize = 250, bestSize = minSize;
+            let finalSize = 12; // Default minimum size
 
-            while (minSize <= maxSize) {
-                let midSize = Math.floor((minSize + maxSize) / 2);
+            // Check if we are in column layout
+            if (prayerContent.classList.contains('layout-column')) {
+                let minBestSize = 250; // Start with a large potential font size
 
-                // Apply the test font size to all sections
+                // Find the best font size for each column and take the minimum
                 langSections.forEach(section => {
                     const textP = section.querySelector('p.language-text');
-                    if (textP) textP.style.fontSize = midSize + 'px';
+                    if (!textP) return;
+
+                    let minSize = 12, maxSize = 250, bestSize = minSize;
+                    const availableHeight = prayerContent.clientHeight;
+
+                    while (minSize <= maxSize) {
+                        let midSize = Math.floor((minSize + maxSize) / 2);
+                        textP.style.fontSize = midSize + 'px';
+
+                        // Check if the text overflows its container's height
+                        if (textP.scrollHeight <= availableHeight) {
+                            bestSize = midSize; // This size fits
+                            minSize = midSize + 1; // Try for a larger size
+                        } else {
+                            maxSize = midSize - 1; // Too big, try smaller
+                        }
+                    }
+                    // Keep track of the smallest font size that fits any column
+                    if (bestSize < minBestSize) {
+                        minBestSize = bestSize;
+                    }
                 });
 
-                // Check if the container overflows
-                if (prayerContent.scrollHeight <= prayerContent.clientHeight && prayerContent.scrollWidth <= prayerContent.clientWidth) {
-                    bestSize = midSize;
-                    minSize = midSize + 1;
-                } else {
-                    maxSize = midSize - 1;
+                finalSize = minBestSize;
+
+            } else { // This is the original logic for 'row' layout
+                let minSize = 12, maxSize = 250, bestSize = minSize;
+
+                while (minSize <= maxSize) {
+                    let midSize = Math.floor((minSize + maxSize) / 2);
+
+                    // Apply the test font size to all sections
+                    langSections.forEach(section => {
+                        const textP = section.querySelector('p.language-text');
+                        if (textP) textP.style.fontSize = midSize + 'px';
+                    });
+
+                    // Check if the container overflows
+                    if (prayerContent.scrollHeight <= prayerContent.clientHeight && prayerContent.scrollWidth <= prayerContent.clientWidth) {
+                        bestSize = midSize;
+                        minSize = midSize + 1;
+                    } else {
+                        maxSize = midSize - 1;
+                    }
                 }
+                finalSize = bestSize;
             }
 
-            // Apply the best font size
+            // Apply the final calculated font size to all sections for uniformity
             langSections.forEach(section => {
                 const textP = section.querySelector('p.language-text');
-                if (textP) textP.style.fontSize = bestSize + 'px';
+                if (textP) textP.style.fontSize = finalSize + 'px';
             });
 
-        }, 50);
+        }, 50); // End of setTimeout
     });
 }
 
