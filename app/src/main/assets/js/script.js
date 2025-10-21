@@ -612,8 +612,8 @@ function getPrayerLabel(prayer) {
         "Daily-8": "Daily Prayer | ጸሎተ ዘዘወትር - Glory...",
         "Daily-9": "Daily Prayer | ጸሎተ ዘዘወትር - Greetings to You, [Mary]...",
         "Daily-10": "Daily Prayer | ጸሎተ ዘዘወትር - Prayer of Our Lady Mary",
-        "Daily-11": "Praise of Mary | ውዳሴ ማርያም",
-        "Daily-12": "Praise of Mary | ውዳሴ ማርያም - O my Lady, loose me...",
+        "Daily-11": "Prayer of Saint Ephraim: Praise of Mary | ውዳሴ ማርያም",
+        "Daily-12": "Prayer of Saint Ephraim: Praise of Mary | ውዳሴ ማርያም - O my Lady, loose me...",
         "Personal-0": "Prayer"
     };
 
@@ -622,7 +622,7 @@ function getPrayerLabel(prayer) {
     } else if (prayer.chapter === 'Thurs') {
         return 'Thursday | ሐሙስ';
     } else if (prayer.chapter === 'Angels') {
-        return 'The Angels Praise Mary | ይዌድስዋ መላእክት ለማርያም';
+        return 'Prayer of Abba Giyorgis: The Angels Praise Mary | ይዌድስዋ መላእክት ለማርያም';
     } else if (prayer.chapter === 'Psalms' && prayer.stanza === 'Intro') {
         return 'Opening Prayer for the Psalms and the Songs of the Prophets | ነዓ ኀቤየ ዳዊት';
     } else if (prayer.chapter === 'Psalms' && prayer.stanza === 'Closing') {
@@ -2262,6 +2262,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     updateProphetSongsSummary();
     updateLanguageOrderList();
     applyTheme(); // Explicitly apply theme after settings are loaded
+    renderPrayers();
 
     window.addEventListener('resize', () => {
         checkAndEnforceLayoutRules();

@@ -787,10 +787,10 @@ const prayers = [
   },
     {
         "instruction": ``,
-        "reference": `The Praise of Mary, attributed to Saint Ephrem the Syrian of Nisbis/Edessa (4th century)`,
+        "reference": `The Praise of Mary, attributed to Saint Ephraim the Syrian of Nisbis/Edessa (4th century)`,
         "chapter": `Daily`,
         "stanza": `12`,
-        "english": `O my Lady, loose me from the bonds of Satan. O Mother of the Savior and daughter of the Light, bless, sanctify, and cleanse me as you blessed your beloved Ephrem.`,
+        "english": `O my Lady, loose me from the bonds of Satan. O Mother of the Savior and daughter of the Light, bless, sanctify, and cleanse me as you blessed your beloved Ephraim.`,
         "geez_script": `ኦ እግዝእትየ፣ ፍትሕኒ እማዕሠረ ሰይጣን። ኦ እም መድኀኒ ወወለተ ብርሃን፣ ባርክኒ ወቀድስኒ ወአንጽሕኒ በከመ ባረኪዮ ለቅዱስ ኤፍሬም ሶርያዊ`,
         "geez_phonetic": `o 'igz'itye, ftḥnī 'ima'isere seyṭan. 'o 'im medhanī wewelete brhan, barknī weḳedsnī we'antsḥnī bekeme barekīyo leḳdus 'éfrém soryawī`,
         "amharic_script": ``,
