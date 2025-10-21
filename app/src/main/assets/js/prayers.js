@@ -3,7 +3,7 @@
 const prayers = [
   {
     "instruction": "",
-    "reference": "Daily Prayer",
+    "reference": "Trinitarian Invocation",
     "chapter": "Daily",
     "stanza": "0",
     "english": "In the Name of the Father, and of the Son, and of the Holy Spirit, One God, Amen",

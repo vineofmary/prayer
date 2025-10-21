@@ -92,21 +92,21 @@ const languageLabels = {
 };
 
 const prophetSongs = [
-    { key: 'songOfSongs', name: 'Song of Songs of Solomon', verseRange: '(Songs of Songs 1:1-5:16)', refs: { nkjv: { book: 22, bookName: 'Song of Solomon', chapters: [1, 2, 3, 4, 5] }, rgv: { book: 'Canción de canciones', chapters: [1, 2, 3, 4, 5] }, am54: { book: 'መኃልየ መኃልይ ዘሰሎሞን', chapters: ['1', '2', '3', '4', '5'] } } },
-    { key: 'firstSongOfMoses', name: 'First Song of Moses', verseRange: '(Exodus 15:1–19)', refs: { nkjv: { book: 2, bookName: 'Exodus', chapter: 15, verses: { start: 1, end: 19 } }, rgv: { book: 'Éxodo', chapter: 15, verses: { start: 1, end: 19 } }, am54: { book: 'ኦሪት ዘጸአት', chapter: '15', verses: { start: 1, end: 19 } } } },
-    { key: 'secondSongOfMoses', name: 'Second Song of Moses', verseRange: '(Deuteronomy 32:1–21)', refs: { nkjv: { book: 5, bookName: 'Deuteronomy', chapter: 32, verses: { start: 1, end: 21 } }, rgv: { book: 'Deuteronomio', chapter: 32, verses: { start: 1, end: 21 } }, am54: { book: 'ኦሪት ዘዳግም', chapter: '32', verses: { start: 1, end: 21 } } } },
-    { key: 'thirdSongOfMoses', name: 'Third Song of Moses', verseRange: '(Deuteronomy 32:22–43)', refs: { nkjv: { book: 5, bookName: 'Deuteronomy', chapter: 32, verses: { start: 22, end: 43 } }, rgv: { book: 'Deuteronomio', chapter: 32, verses: { start: 22, end: 43 } }, am54: { book: 'ኦሪት ዘዳግም', chapter: '32', verses: { start: 22, end: 43 } } } },
-    { key: 'prayerOfHannah', name: 'Prayer of Hannah the Mother of Samuel the Prophet', verseRange: '(1 Kingdoms 2:1-10 LXX, 1 Samuel 2:1–10 NKJV)', refs: { nkjv: { book: 9, bookName: '1 Samuel', chapter: 2, verses: { start: 1, end: 10 } }, rgv: { book: '1 Samuel', chapter: 2, verses: { start: 1, end: 10 } }, am54: { book: 'መጽሐፈ ሳሙኤል ቀዳማዊ', chapter: '2', verses: { start: 1, end: 10 } } } },
-    { key: 'prayerOfHezekiah', name: 'Prayer of Hezekiah', verseRange: '(Isaiah 38:10–20)', refs: { nkjv: { book: 23, bookName: 'Isaiah', chapter: 38, verses: { start: 10, end: 20 } }, rgv: { book: 'Isaías', chapter: 38, verses: { start: 10, end: 20 } }, am54: { book: 'ትንቢተ ኢሳይያስ', chapter: '38', verses: { start: 10, end: 20 } } } },
-    { key: 'prayerOfManasseh', name: 'Prayer of King Manasseh', verseRange: '(2 Chronicles 36 LXX)', refs: { prayerKey: 'Manasseh' } },
-    { key: 'firstPrayerOfThreeYouths', name: 'First Prayer of the Three Youths', verseRange: '(Daniel 3:26–45 LXX)', refs: { prayerKey: 'ThreeYouths1' } },
-    { key: 'secondPrayerOfThreeYouths', name: 'Second Prayer of the Three Youths', verseRange: '(Daniel 3:52–56 LXX)', refs: { prayerKey: 'ThreeYouths2' } },
-    { key: 'thirdPrayerOfThreeYouths', name: 'Third Prayer of the Three Youths', verseRange: '(Daniel 3:57–88 LXX)', refs: { prayerKey: 'ThreeYouths3' } },
-    { key: 'prayerOfHabakkuk', name: 'Prayer of Habakkuk the Prophet', verseRange: '(Habakkuk 3:1–19)', refs: { nkjv: { book: 35, bookName: 'Habakkuk', chapter: 3, verses: { start: 1, end: 19 } }, rgv: { book: 'Habacuc', chapter: 3, verses: { start: 1, end: 19 } }, am54: { book: 'ትንቢተ ዕንባቆም', chapter: '3', verses: { start: 1, end: 19 } } } },
-    { key: 'prayerOfIsaiah', name: 'Prayer of Isaiah the Prophet', verseRange: '(Isaiah 26:9–20)', refs: { nkjv: { book: 23, bookName: 'Isaiah', chapter: 26, verses: { start: 9, end: 20 } }, rgv: { book: 'Isaías', chapter: 26, verses: { start: 9, end: 20 } }, am54: { book: 'ትንቢተ ኢሳይያስ', chapter: '26', verses: { start: 9, end: 20 } } } },
-    { key: 'prayerOfMary', name: 'Prayer of Mary the Bearer of God', verseRange: '(Luke 1:46–55)', refs: { nkjv: { book: 42, bookName: 'Luke', chapter: 1, verses: { start: 46, end: 55 } }, rgv: { book: 'Lucas', chapter: 1, verses: { start: 46, end: 55 } }, am54: { book: 'የሉቃስ ወንጌል', chapter: '1', verses: { start: 46, end: 55 } } } },
-    { key: 'songOfZachariah', name: 'Song of Zachariah the Prophet', verseRange: '(Luke 1:68–79)', refs: { nkjv: { book: 42, bookName: 'Luke', chapter: 1, verses: { start: 68, end: 79 } }, rgv: { book: 'Lucas', chapter: 1, verses: { start: 68, end: 79 } }, am54: { book: 'የሉቃስ ወንጌል', chapter: '1', verses: { start: 68, end: 79 } } } },
-    { key: 'prayerOfSimeon', name: 'Prayer of Simeon the Elder', verseRange: '(Luke 2:29–32)', refs: { nkjv: { book: 42, bookName: 'Luke', chapter: 2, verses: { start: 29, end: 32 } }, rgv: { book: 'Lucas', chapter: 2, verses: { start: 29, end: 32 } }, am54: { book: 'የሉቃስ ወንጌል', chapter: '2', verses: { start: 29, end: 32 } } } },
+    { key: 'songOfSongs', name: 'Song of Songs of King Solomon | ማሓለየ ማሓለይ ዘሰሎሞን', verseRange: '(Songs of Songs 1:1-5:16)', refs: { nkjv: { book: 22, bookName: 'Song of Solomon', chapters: [1, 2, 3, 4, 5] }, rgv: { book: 'Canción de canciones', chapters: [1, 2, 3, 4, 5] }, am54: { book: 'መኃልየ መኃልይ ዘሰሎሞን', chapters: ['1', '2', '3', '4', '5'] } } },
+    { key: 'firstSongOfMoses', name: 'First Song of Moses the Prophet | ጸሎተ ሙሴ ቀዳማዊ', verseRange: '(Exodus 15:1–19)', refs: { nkjv: { book: 2, bookName: 'Exodus', chapter: 15, verses: { start: 1, end: 19 } }, rgv: { book: 'Éxodo', chapter: 15, verses: { start: 1, end: 19 } }, am54: { book: 'ኦሪት ዘጸአት', chapter: '15', verses: { start: 1, end: 19 } } } },
+    { key: 'secondSongOfMoses', name: 'Second Song of Moses the Prophet | ጸሎተ ሙሴ ካልእ', verseRange: '(Deuteronomy 32:1–21)', refs: { nkjv: { book: 5, bookName: 'Deuteronomy', chapter: 32, verses: { start: 1, end: 21 } }, rgv: { book: 'Deuteronomio', chapter: 32, verses: { start: 1, end: 21 } }, am54: { book: 'ኦሪት ዘዳግም', chapter: '32', verses: { start: 1, end: 21 } } } },
+    { key: 'thirdSongOfMoses', name: 'Third Song of Moses the Prophet | ጸሎተ ሙሴ ሣልስ', verseRange: '(Deuteronomy 32:22–43)', refs: { nkjv: { book: 5, bookName: 'Deuteronomy', chapter: 32, verses: { start: 22, end: 43 } }, rgv: { book: 'Deuteronomio', chapter: 32, verses: { start: 22, end: 43 } }, am54: { book: 'ኦሪት ዘዳግም', chapter: '32', verses: { start: 22, end: 43 } } } },
+    { key: 'prayerOfHannah', name: 'Prayer of Hannah the Mother of Samuel the Prophet | ጸሎተ ሐና እመ ሳሙኤል ነቢይ', verseRange: '(1 Kingdoms 2:1-10 LXX, 1 Samuel 2:1–10 NKJV)', refs: { nkjv: { book: 9, bookName: '1 Samuel', chapter: 2, verses: { start: 1, end: 10 } }, rgv: { book: '1 Samuel', chapter: 2, verses: { start: 1, end: 10 } }, am54: { book: 'መጽሐፈ ሳሙኤል ቀዳማዊ', chapter: '2', verses: { start: 1, end: 10 } } } },
+    { key: 'prayerOfHezekiah', name: 'Prayer of King Hezekiah | ጸሎተ ሕዝቅያስ', verseRange: '(Isaiah 38:10–20)', refs: { nkjv: { book: 23, bookName: 'Isaiah', chapter: 38, verses: { start: 10, end: 20 } }, rgv: { book: 'Isaías', chapter: 38, verses: { start: 10, end: 20 } }, am54: { book: 'ትንቢተ ኢሳይያስ', chapter: '38', verses: { start: 10, end: 20 } } } },
+    { key: 'prayerOfManasseh', name: 'Prayer of King Manasseh | ጸሎተ ምናሴ', verseRange: '(2 Chronicles 36 LXX)', refs: { prayerKey: 'Manasseh' } },
+    { key: 'firstPrayerOfThreeYouths', name: 'First Prayer of the Three Youths | ጸሎተ ፫ ደቂቅ ቀዳማዊ', verseRange: '(Daniel 3:26–45 LXX)', refs: { prayerKey: 'ThreeYouths1' } },
+    { key: 'secondPrayerOfThreeYouths', name: 'Second Prayer of the Three Youths | ጸሎተ ፫ ደቂቅ ካልእ', verseRange: '(Daniel 3:52–56 LXX)', refs: { prayerKey: 'ThreeYouths2' } },
+    { key: 'thirdPrayerOfThreeYouths', name: 'Third Prayer of the Three Youths | ጸሎተ ፫ ደቂቅ ሣልስ', verseRange: '(Daniel 3:57–88 LXX)', refs: { prayerKey: 'ThreeYouths3' } },
+    { key: 'prayerOfHabakkuk', name: 'Prayer of Habakkuk the Prophet | ጸሎተ ዕንባቆም ነቢይ', verseRange: '(Habakkuk 3:1–19)', refs: { nkjv: { book: 35, bookName: 'Habakkuk', chapter: 3, verses: { start: 1, end: 19 } }, rgv: { book: 'Habacuc', chapter: 3, verses: { start: 1, end: 19 } }, am54: { book: 'ትንቢተ ዕንባቆም', chapter: '3', verses: { start: 1, end: 19 } } } },
+    { key: 'prayerOfIsaiah', name: 'Prayer of Isaiah the Prophet | ጸሎተ ኢሳይያስ ነቢይ', verseRange: '(Isaiah 26:9–20)', refs: { nkjv: { book: 23, bookName: 'Isaiah', chapter: 26, verses: { start: 9, end: 20 } }, rgv: { book: 'Isaías', chapter: 26, verses: { start: 9, end: 20 } }, am54: { book: 'ትንቢተ ኢሳይያስ', chapter: '26', verses: { start: 9, end: 20 } } } },
+    { key: 'prayerOfMary', name: 'Prayer of Mary the Bearer of God | ጸሎተ ማርያም ወላዲተ አምላክ', verseRange: '(Luke 1:46–55)', refs: { nkjv: { book: 42, bookName: 'Luke', chapter: 1, verses: { start: 46, end: 55 } }, rgv: { book: 'Lucas', chapter: 1, verses: { start: 46, end: 55 } }, am54: { book: 'የሉቃስ ወንጌል', chapter: '1', verses: { start: 46, end: 55 } } } },
+    { key: 'songOfZachariah', name: 'Song of Zachariah the Prophet | ጸሎተ ዘካርያስ ነቢይ', verseRange: '(Luke 1:68–79)', refs: { nkjv: { book: 42, bookName: 'Luke', chapter: 1, verses: { start: 68, end: 79 } }, rgv: { book: 'Lucas', chapter: 1, verses: { start: 68, end: 79 } }, am54: { book: 'የሉቃስ ወንጌል', chapter: '1', verses: { start: 68, end: 79 } } } },
+    { key: 'prayerOfSimeon', name: 'Prayer of Simeon the Elder | ጸሎተ ስምዖን አረጋዊ', verseRange: '(Luke 2:29–32)', refs: { nkjv: { book: 42, bookName: 'Luke', chapter: 2, verses: { start: 29, end: 32 } }, rgv: { book: 'Lucas', chapter: 2, verses: { start: 29, end: 32 } }, am54: { book: 'የሉቃስ ወንጌል', chapter: '2', verses: { start: 29, end: 32 } } } },
 ];
 
 
@@ -568,39 +568,41 @@ function getPrayerLabel(prayer) {
     const prayerKey = `${prayer.chapter}-${prayer.stanza}`;
     const customLabels = {
         "Daily-0": "",
-        "Daily-1": "Daily Prayer - I Seal My Face...",
-        "Daily-2": "Daily Prayer - We Thank You, Lord...",
-        "Daily-3": "Daily Prayer - Lord's Prayer",
-        "Daily-4": "Daily Prayer - Greeting of Saint Gabriel",
-        "Daily-5": "Daily Prayer - Prayer of the Faith (Creed)",
-        "Daily-6": "Daily Prayer - Holy, Holy, Holy... (Seraphic Hymn)",
-        "Daily-7": "Daily Prayer - I worship...",
-        "Daily-8": "Daily Prayer - Glory...",
-        "Daily-9": "Daily Prayer - Greetings to You, [Mary]...",
-        "Daily-10": "Daily Prayer - Prayer of Our Lady Mary",
-        "Daily-11": "Intro to The Praise of Mary",
-        "Daily-12": "Intro to The Praise of Mary - Prayer",
+        "Daily-1": "Daily Prayer | ጸሎተ ዘዘወትር - I Seal My Face...",
+        "Daily-2": "Daily Prayer | ጸሎተ ዘዘወትር - We Thank You, Lord...",
+        "Daily-3": "Daily Prayer | ጸሎተ ዘዘወትር - Lord's Prayer",
+        "Daily-4": "Daily Prayer | ጸሎተ ዘዘወትር - Greeting of Saint Gabriel",
+        "Daily-5": "Daily Prayer | ጸሎተ ዘዘወትር - Prayer of the Faith (Creed)",
+        "Daily-6": "Daily Prayer | ጸሎተ ዘዘወትር - Holy, Holy, Holy... (Seraphic Hymn)",
+        "Daily-7": "Daily Prayer | ጸሎተ ዘዘወትር - I worship...",
+        "Daily-8": "Daily Prayer | ጸሎተ ዘዘወትር - Glory...",
+        "Daily-9": "Daily Prayer | ጸሎተ ዘዘወትር - Greetings to You, [Mary]...",
+        "Daily-10": "Daily Prayer | ጸሎተ ዘዘወትር - Prayer of Our Lady Mary",
+        "Daily-11": "Praise of Mary | ውዳሴ ማርያም",
+        "Daily-12": "Praise of Mary | ውዳሴ ማርያም - O my Lady, loose me...",
         "Personal-0": "Prayer"
     };
 
     if (customLabels[prayerKey]) {
         return customLabels[prayerKey];
     } else if (prayer.chapter === 'Thurs') {
-        return 'Thursday Praise of Mary';
+        return 'Thursday | ሐሙስ';
     } else if (prayer.chapter === 'Angels') {
-        return 'The Angels Praise Mary';
+        return 'The Angels Praise Mary | ይዌድስዋ መላእክት ለማርያም';
     } else if (prayer.chapter === 'Psalms' && prayer.stanza === 'Intro') {
-        return 'Opening Prayer for the Psalms and the Songs of the Prophets';
+        return 'Opening Prayer for the Psalms and the Songs of the Prophets | ነዓ ኀቤየ ዳዊት';
     } else if (prayer.chapter === 'Psalms' && prayer.stanza === 'Closing') {
-        return 'Closing Prayer for the Psalms and Songs of the Prophets';
+        return 'Closing Prayer for the Psalms and Songs of the Prophets | ሰአሊ ለነ ማርያም';
     }
     return prayer.reference; // Default fallback
 }
 
 function getSectionTitle(prayer) {
     const label = getPrayerLabel(prayer);
-    if (label.startsWith("Daily Prayer - ")) {
-        return "Daily Prayer";
+    if (label.startsWith("Daily Prayer | ጸሎተ ዘዘወትር - ")) {
+        return "Daily Prayer | ጸሎተ ዘዘወትር";
+    } else if (label === "Trinitarian Invocation") {
+        return "";
     }
     return label.replace(/ - .*/, '');
 }
