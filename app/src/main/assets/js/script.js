@@ -188,10 +188,11 @@ const rubricGoldRegex = {
 
 // --- Speaker Label Data ---
 const speakerKeywords = {
-    english: ["Priest", "People", "All"],
-    geez_script: ["ካህን", "ሕዝብ", "ኵሎሙ"],
-    amharic_script: ["ካህን", "ሕዝብ", "ሁሉም"],
-    tigrinya_script: ["ካህን", "ሕዝብ", "ኩሉኹም"],
+    english: ["Priest", "People", "All", "Leader"],
+    geez_script: ["ካህን", "ሕዝብ", "ኵሎሙ", "መሪሕ"],
+    amharic_script: ["ካህን", "ሕዝብ", "ሁሉም", "መሪ"],
+    tigrinya_script: ["ካህን", "ሕዝብ", "ኩሉኹም", "መራሒ"],
+    spanish: ["Sacerdote", "Pueblo", "Todos", "Líder", "Gente"],
 };
 
 // --- Functions ---
@@ -547,11 +548,10 @@ function formatPrayerText(text, langKey, query, isFirstLanguage) {
     processedText = processedText.replace(/\{\{COUNTRY\}\}/g, customNames.country || '');
     processedText = processedText.replace(/\{\{Leader \/ President \/ Emperor\}\}/g, customNames.headOfState || '');
 
-    const lang = langKey.split('_')[0];
-    const keywords = speakerKeywords[lang];
+    const keywords = speakerKeywords[langKey];
 
     if (keywords) {
-        const regex = new RegExp(`(፨ )?(${keywords.join('|')})([:፤])`, 'g');
+        const regex = new RegExp(`(፨ )?(${keywords.join('|')})([:፤፣])`, 'g');
         processedText = processedText.replace(regex, (match) => {
             if (displayOptions.showSpeakerLabels) {
                 return `<span class="speaker-label">${match}</span>`;
