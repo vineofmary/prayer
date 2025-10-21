@@ -2702,7 +2702,7 @@ and her intercession save {{Servant's Names}}, and all Christian people from the
         "reference": "Conclusion to praying the Psalms of David",
         "chapter": "Psalms",
         "stanza": "Closing",
-        "english": "(and also) for me, for Your servants and for Your maidservants, [names],",
+        "english": "(and also) for me, for Your servants and for Your maidservants, {{Servant's Names}},",
         "geez_script": "ሊተ፣ ለአግበርቲከ ወለአእማቲከ {እገሌ፣ እገሊት}",
         "geez_phonetic": "līte, le'agbertīke wele'a'imatīke {'igelé, 'igelīt}",
         "amharic_script": "",

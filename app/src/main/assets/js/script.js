@@ -59,7 +59,7 @@ const headOfStateInput = document.getElementById('head-of-state-input');
 
 
 // --- State Variables ---
-const SETTINGS_VERSION = '4.1'; // Update this to force refresh load settings
+const SETTINGS_VERSION = '4.1.1'; // Update this to force refresh load settings
 let currentTheme = {};
 let isSidebarCollapsed = false;
 let displayOptions = {};
@@ -365,10 +365,10 @@ function loadSettings() {
         selectedProphetSongs: [],
         // Default Custom Names
         customNames: {
-            servant: 'me',
-            patriarch: 'አባ ማትያስ ቀዳማዊ (Abba Mathias I)',
-            bishop: 'አባ ቴዎፍሎስ (Abba Theophilus)',
-            country: 'Ethiopia, Eritrea, America',
+            servant: '{Names}',
+            patriarch: 'Abba Mathias I (አባ ማትያስ ቀዳማዊ)',
+            bishop: 'Abba Theophilus (አባ ቴዎፍሎስ)',
+            country: 'Ethiopia, Eritrea, and America',
             headOfState: '...'
         },
         collapsedSections: {}
@@ -385,6 +385,7 @@ function loadSettings() {
         englishFontSelect.value = defaultSettings.englishFont;
         selectedPsalms = defaultSettings.selectedPsalms;
         selectedProphetSongs = defaultSettings.selectedProphetSongs;
+        customNames = defaultSettings.customNames; // Use defaults
         collapsedSections = defaultSettings.collapsedSections;
     } else {
         // Load saved settings and merge with defaults to ensure all keys exist
@@ -412,11 +413,9 @@ function loadSettings() {
         const savedCustomNames = JSON.parse(localStorage.getItem('customNames')) || {};
         customNames = { ...defaultSettings.customNames, ...savedCustomNames };
         collapsedSections = JSON.parse(localStorage.getItem('collapsedSections')) || defaultSettings.collapsedSections;
-
-        // Always ensure the main Daily Prayer section is expanded by default
-        collapsedSections['Daily Prayer'] = false;
     }
 
+    // Set UI elements from the loaded/default settings
     servantNameInput.value = customNames.servant;
     patriarchNameInput.value = customNames.patriarch;
     bishopNameInput.value = customNames.bishop;
