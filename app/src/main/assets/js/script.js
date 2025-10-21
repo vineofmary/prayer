@@ -1263,15 +1263,28 @@ function renderSelectedPsalmsWithDoxology(addSectionTitleCallback) {
             }
             prayerContent.dataset.activeColumns = activeLanguageCount;
 
-            if (activePsalmTranslations.english) {
-                prayerContent.appendChild(createPsalmVerseSection('English', verse.nkjv, verse.verseNum, false, 'english'));
-            }
-            if (activePsalmTranslations.amharic_script) {
-                prayerContent.appendChild(createPsalmVerseSection('አማርኛ', verse.am54, verse.verseNum, true, 'amharic_script'));
-            }
-            if (activePsalmTranslations.spanish) {
-                prayerContent.appendChild(createPsalmVerseSection('Español', verse.rgv, verse.verseNum, false, 'spanish'));
-            }
+            const langKeyToPsalmVerseProp = {
+                'english': 'nkjv',
+                'amharic_script': 'am54',
+                'spanish': 'rgv'
+            };
+            const langKeyToIsEthiopic = {
+                'english': false,
+                'amharic_script': true,
+                'spanish': false
+            };
+            const langKeyToLangName = {
+                'english': 'English',
+                'amharic_script': 'አማርኛ',
+                'spanish': 'Español'
+            };
+
+            languageOrder.forEach(langKey => {
+                const prop = langKeyToPsalmVerseProp[langKey];
+                if (prop && activePsalmTranslations[langKey]) {
+                    prayerContent.appendChild(createPsalmVerseSection(langKeyToLangName[langKey], verse[prop], verse.verseNum, langKeyToIsEthiopic[langKey], langKey));
+                }
+            });
 
             prayerCardMainContent.appendChild(prayerContent);
 
@@ -1389,16 +1402,15 @@ function renderSelectedProphetSongs(addSectionTitleCallback) {
                 return false;
             }) : [];
 
-            let rgvVerses = [];
-            if (bibleData.rgv?.books && rgvRef) {
-                const rgvBook = bibleData.rgv.books.find(b => b.book_name === rgvRef.book);
-                if (rgvBook?.chapters) {
-                    rgvVerses = rgvBook.chapters
-                        .filter(c => (rgvRef.chapters && rgvRef.chapters.includes(c.chapter)) || c.chapter === rgvRef.chapter)
-                        .flatMap(c => (c.verses || []).map(v => ({ ...v, chapter: c.chapter })))
-                        .filter(v => !rgvRef.verses || (v.verse >= rgvRef.verses.start && v.verse <= rgvRef.verses.end));
+            const rgvVerses = bibleData.rgv?.verses ? bibleData.rgv.verses.filter(v => {
+                if (!rgvRef) return false;
+                if (rgvRef.chapters) {
+                    return v.book_name === rgvRef.book && rgvRef.chapters.includes(v.chapter);
+                } else if (rgvRef.chapter && rgvRef.verses) {
+                    return v.book_name === rgvRef.book && v.chapter === rgvRef.chapter && v.verse >= rgvRef.verses.start && v.verse <= rgvRef.verses.end;
                 }
-            }
+                return false;
+            }) : [];
 
             let am54Verses = [];
             if (bibleData.am54?.books && am54Ref) {
