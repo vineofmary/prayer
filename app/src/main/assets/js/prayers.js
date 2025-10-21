@@ -6,7 +6,7 @@ const prayers = [
     "reference": "Daily Prayer",
     "chapter": "Daily",
     "stanza": "0",
-    "english": "In the Name of the Father, of the Son, and of the Holy Spirit, One God, Amen",
+    "english": "In the Name of the Father, and of the Son, and of the Holy Spirit, One God, Amen",
     "geez_script": "በስመ አብ ወወልድ ወመንፈስ ቅዱስ አሐዱ አምላክ፣ አሜን",
     "geez_phonetic": "besme 'ab weweld wemenfes ḳdus 'aḥadu 'amlak, 'amén",
     "amharic_script": "በስመ አብ ወወልድ ወመንፈስ ቅዱስ አሐዱ አምላክ፣ አሜን",

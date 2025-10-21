@@ -54,7 +54,7 @@ const clearProphetSongsButton = document.getElementById('clear-prophet-songs-but
 
 
 // --- State Variables ---
-const SETTINGS_VERSION = '3.9.1'; // Updated for Songs of the Prophets feature
+const SETTINGS_VERSION = '4.0'; // Updated for Songs of the Prophets feature
 let currentTheme = {};
 let isSidebarCollapsed = false;
 let displayOptions = {};
@@ -111,7 +111,7 @@ const shareIconSVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24
 // --- Rubrication Data ---
 const rubricRedWords = {
     english: [
-        "In the Name of the Father, of the Son, and of the Holy Spirit, One God, Amen", "I seal my face", "Father", "Son", "Holy Spirit", "One God",
+        "In the Name of the Father, and of the Son, and of the Holy Spirit, One God, Amen", "I seal my face", "Father", "Son", "Holy Spirit", "One God",
         "Holy Trinity", "We thank You, Lord", "Lord", "God", "King", "Our Father in Heaven",
         "With the Greeting of Saint Gabriel", "Lord God of hosts", "Jesus Christ", "We believe in one God", "one God",
         "Light", "True God from True God", "Virgin Mary", "Amen", "Holy, holy, holy, is the Lord of hosts", "Holy, holy, holy", "Holy, Holy, Holy", "Christ",
@@ -810,9 +810,13 @@ function renderPrayers() {
         const psalmIntroPrayers = prayers.filter(p => p.chapter === 'Psalms' && p.stanza === 'Intro');
         if (psalmIntroPrayers.length > 0) {
             addSectionTitleIfNeeded(psalmIntroPrayers[0]);
+            psalmIntroPrayers.forEach(prayer => {
+                const prayerCard = createPrayerCardElement(prayer, -1);
+                prayerDisplay.appendChild(prayerCard);
                 if (displayOptions.presentationMode !== 'slides' && lastSectionTitle && collapsedSections[lastSectionTitle]) {
                     prayerCard.style.display = 'none';
                 }
+            });
         }
     }
 
