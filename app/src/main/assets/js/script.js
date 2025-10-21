@@ -125,28 +125,29 @@ const rubricRedWords = {
         "Come to me, David, King of Israel", "Ask for us, Mary"
     ],
     geez_script: [
-        "በስመ አብ ወወልድ ወመንፈስ ቅዱስ", "አአትብ ገጽየ", "አብ", "ወልድ", "ወወልድ", "መንፈስ ቅዱስ", "አሐዱ አምላክ",
+        "በስመ አብ ወወልድ ወመንፈስ ቅዱስ", "አአትብ ገጽየ", "አብ", "ወልድ", "ወወልድ", "መንፈስ ቅዱስ", "አሐዱ አምላክ", "አሐዱ አምላክ፣",
         "ሥላሴ", "ነአኵተከ እግዚኦ", "እግዚ", "እግዚእ", "እግዚኦ", "እግዚአብሔር", "እግዚአ", "አምላክ", "ንጉሥ", "ንጉሠ", "ወንጉሠ", "አቡነ ዘበሰማያት",
         "በሰላመ ቅዱስ ገብርኤል መልአክ", "እግዚአብሔር ጸባዖት", "እግዚአብሔር ጸባዖት", "ኢየሱስ ክርስቶስ",
         "ንኣምን በአሐዱ አምላክ", "ነአምን በአሐዱ አምላክ", "አምላክ ዘእምአምላክ ዘበአማን", "ድንግል ማርያም", "ማርያም ድንግል", "አሜን", "ቅዱስ ቅዱስ ቅዱስ እግዚአብሔር ጸባዖት",
         "ቅዱስ ቅዱስ ቅዱስ እግዚአብሔር ጸባዖት", "ቅዱስ ቅዱስ ቅዱስ", "ቅዱስ፣ ቅዱስ፣ ቅዱስ", "ክርስቶስ", "እሰግድ ለአብ ወወልድ ወመንፈስ ቅዱስ አሐቲ ስግደት።", "መለኮት",
-        "ስብሐት ለአብ ወወልድ ወመንፈስ ቅዱስ", "ልዑል እግዚአብሔር", "እግዚአብሔር ልዑል", "ሰላም ለኪ እንዘ ንሰግድ ንብለኪ",
+        "ስብሐት ለአብ ወወልድ ወመንፈስ ቅዱስ", "ልዑል እግዚአብሔር", "እግዚአብሔር ልዑል", "ሰላም ለኪ እንዘ ንሰግድ ንብለኪ", "ሰላም ለኪ",
         "ጸሎተ እግዝእትነ ማርያም ድንግል ወላዲተ አምላክ", "መድኀኒየ", "ወመድኀኒየ", "ታዐብዮ ነፍስየ ለእግዚአብሔር",
         "ስብሐት ለአብ ወወልድ ወመንፈስ ቅዱስ ለዓለም ወለዓለመ ዓለም", "ውዳሴሃ ለእግዝእትነ ማርያም ድንግል ወላዲተ አምላክ", "ይዌድስዋ መላእክት ለማርያም",
-        "ወበሳድስ ወርኅ", "ሰላም ለከ", "ሰላም ለኪ", "ልዑል", "ንዒ ኀቤየ ኦ ዳዊት ንጉሠ እስራኤል", "ነዓ ኀቤየ ዳዊት ንጉሠ እሥራኤል", "ሰአሊ ለነ ማርያም"
+        "ወበሳድስ ወርኅ", "ሰላም ለከ", "ሰላም ለኪ", "ልዑል", "ንዒ ኀቤየ ኦ ዳዊት ንጉሠ እስራኤል", "ነዓ ኀቤየ ዳዊት ንጉሠ እሥራኤል", "ሰአሊ ለነ ማርያም",
+        "ወእግዚአ", "አምላከ", "ወልድከ"
     ]
 };
 
 const rubricGoldWords = {
     english: [
-        "Mary of Zion", "Lady Mary", "Mother", "Virgin Mother of God", "Virgin Bearer of God", "God-bearer",
+        "Mary of Zion", "Lady Mary", "Virgin Mother of God", "Virgin Bearer of God", "God-bearer",
         "Lady", "Holy Virgin", "Mary the Virgin", "Mary, the holy one", "Mary, the praised", "Mary, the pure",
         "Mary, the joyous", "Mary, the beatific", "Mary, the blessed", "The dwelling place of the Godhead",
         "The perfect Tabernacle", "Sister of the angels", "mother of all people", "Peaceful one", "Mary, the embellished",
         "The gate of the East and the Mother of Light", "Mary, the chosen and honored one", "Mary"
     ],
     geez_script: [
-        "ማርያም ጽዮን", "እግዝእትነ ማርያም", "እግዝእትየ ማርያም", "እም", "እመ", "ድንግል ወላዲተ አምላክ", "ወላዲተ አምላክ", "እግዝእትየ", "እግዝእትነ",
+        "ማርያም ጽዮን", "እግዝእትነ ማርያም", "እግዝእትየ ማርያም", "ድንግል ወላዲተ አምላክ", "ወላዲተ አምላክ", "እግዝእትየ", "እግዝእትነ",
         "ቅድስት ድንግል", "ማርያም ድንግል", "ማርያም ቅድስት", "ማርያም ውድስት", "ማርያም ንጽሕት", "ማርያም ፍሥሕት", "ማርያም ብጽዕት", "ማርያም ብፅዕት", "ማርያም ቡርክት",
         "ማኅደረ መለኮት", "ደብተራ ፍጽምት", "እኅተ መላእክት", "ወእመ ኵሉ ሕዝብ", "ሰላማዊት", "ማርያም ሥርጉት",
         "ኆኅተ ምሥራቅ ወእሙ ለብርሃን", "ማርያም ኅሪት ወክብርት", "마리아"
@@ -155,14 +156,18 @@ const rubricGoldWords = {
 
 function buildRegex(words, isGeez = false) {
     // Sort words by length, descending, to match longer phrases first
-    const sortedWords = words.sort((a, b) => b.length - a.length);
+    const sortedWords = words.sort((a, b) => b.length - a.length)
+        .map(word => word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')); // Escape regex special chars
+
+    const regexString = sortedWords.join('|');
+
     if (isGeez) {
-        // For Ge'ez, handle optional prefixes (ወ, ለ, እም)
-        // The regex captures the prefix and the word separately
-        return new RegExp(`(^|\\s|\\()((?:ወ|ለ|እም)?)(${sortedWords.join('|')})(\\b|\\)|\\s|$)`, 'g');
+        // For Ge'ez, handle optional prefixes (ወ, ለ, እም) and ensure it's not part of a larger word.
+        // The regex uses a lookahead to ensure the match is followed by a boundary character.
+        return new RegExp(`(^|\\s|\\()((?:ወ|ለ|እም)?)(${regexString})(?=[\\s.,:;!?\\)]|$)`, 'g');
     }
-    // For English, use word boundaries
-    return new RegExp(`\\b(${sortedWords.join('|')})\\b`, 'g');
+    // For English, match whole words or phrases, ensuring they are bounded by spaces or punctuation.
+    return new RegExp(`(^|\\s|\\()(${regexString})(?=[\\s.,:;!?\\)]|$)`, 'gi');
 }
 
 const rubricRedRegex = {
@@ -224,39 +229,28 @@ function applyRubrication(text, langKey, isFirstLanguage) {
     }
     let processedText = text;
 
-    if (langKey === 'geez_script') {
-        // Handle special conditional rule for ቅዱስ
-        const specialPhrase = 'ዘኒ ይትወለድ እምኔኪ ቅዱስ ውእቱ';
-        const specialRegex = new RegExp(specialPhrase.replace('ቅዱስ', '(ቅዱስ)'), 'g');
-        processedText = processedText.replace(specialRegex, (match, p1) => {
-            return match.replace(p1, `<span class="rubric-red">${p1}</span>`);
-        });
-    }
-
     // Apply Gold Rubrication first
     const goldRegex = rubricGoldRegex[langKey];
     if (goldRegex) {
-        if (langKey === 'geez_script') {
-            processedText = processedText.replace(goldRegex, (match, p1, p2, p3, p4) => {
-                // p1 is prefix, p2 is the word. We only color the word.
-                return `${p1}${p2}<span class="rubric-gold">${p3}</span>${p4}`;
-            });
-        } else {
-            processedText = processedText.replace(goldRegex, '<span class="rubric-gold">$1</span>');
-        }
+        processedText = processedText.replace(goldRegex, (match, p1, p2, p3) => {
+            if (langKey === 'geez_script') {
+                // p1 is the leading boundary, p2 is the optional prefix, p3 is the word
+                return `${p1}${p2}<span class="rubric-gold">${p3}</span>`;
+            }
+            // p1 is the leading boundary, p2 is the word
+            return `${p1}<span class="rubric-gold">${p2}</span>`;
+        });
     }
 
-    // Apply Red Rubrication second to take priority
+    // Apply Red Rubrication second
     const redRegex = rubricRedRegex[langKey];
     if (redRegex) {
-        if (langKey === 'geez_script') {
-            processedText = processedText.replace(redRegex, (match, p1, p2, p3, p4) => {
-                // p2 is prefix, p3 is the word. We only color the word.
-                return `${p1}${p2}<span class="rubric-red">${p3}</span>${p4}`;
-            });
-        } else {
-            processedText = processedText.replace(redRegex, '<span class="rubric-red">$1</span>');
-        }
+        processedText = processedText.replace(redRegex, (match, p1, p2, p3) => {
+            if (langKey === 'geez_script') {
+                return `${p1}${p2}<span class="rubric-red">${p3}</span>`;
+            }
+            return `${p1}<span class="rubric-red">${p2}</span>`;
+        });
     }
 
     return processedText;

@@ -20,7 +20,7 @@ const prayers = [
     "reference": "Daily Prayer",
     "chapter": "Daily",
     "stanza": "1",
-    "english": "I seal my face and all of myself with the sign of the Cross. In the Name of the Father and of the Son and of the Holy Spirit, One God.",
+    "english": "I seal my face and all of myself with the sign of the Cross. In the Name of the Father, and of the Son, and of the Holy Spirit, One God.",
     "geez_script": "አአትብ ገጽየ ወኵለንታየ በትእምርተ መስቀል። በስመ አብ ወወልድ ወመንፈስ ቅዱስ አሐዱ አምላክ።",
     "geez_phonetic": "a'atb getsye wekwlentaye bet'imrte mesḳel. besme 'ab weweld wemenfes ḳdus 'aḥadu 'amlak.",
     "amharic_script": "አንድ አምላክ በሆኑ በአብ በወልድ በመንፈስ ቅዱስ ስም ንጹሕ ልዩ ክቡር ጽሩይ በሆኑ",
