@@ -59,7 +59,7 @@ const headOfStateInput = document.getElementById('head-of-state-input');
 
 
 // --- State Variables ---
-const SETTINGS_VERSION = '4.1.4'; // Update this to force refresh load settings
+const SETTINGS_VERSION = '4.1.5'; // Update this to force refresh load settings
 let currentTheme = {};
 let isSidebarCollapsed = false;
 let displayOptions = {};
@@ -347,7 +347,7 @@ function loadSettings() {
     const savedVersion = localStorage.getItem('settingsVersion');
     const defaultSettings = {
         sidebarCollapsed: window.innerWidth < 900,
-        theme: { palette: 'traditional', mode: 'light' },
+        theme: { palette: 'traditional', mode: 'dark' },
         displayOptions: {
             presentationMode: 'scroll',
             viewMode: 'card',
@@ -356,7 +356,7 @@ function loadSettings() {
             showPrayerLabels: true,
             showLanguageLabels: true,
             showSpeakerLabels: true,
-            showRubrication: false,
+            showRubrication: true,
             dynamicFontSizing: true,
             slideTransition: 'fade',
             languageColors: 'off',
