@@ -1049,31 +1049,38 @@ function adjustSlideFontSize() {
             const prayerContent = card.querySelector('.prayer-content');
             if (!prayerContent) return;
 
-            const verticalPadding = 10;
-            const availableContentHeight = prayerContent.clientHeight - verticalPadding;
-
+            // Reset all font sizes first
             langSections.forEach(section => {
                 const textP = section.querySelector('p.language-text');
-                const headerH4 = section.querySelector('h4');
-                if (!textP || !headerH4) return;
-
-                textP.style.fontSize = '';
-                const availableWidth = section.clientWidth;
-                const sectionAvailableHeight = availableContentHeight - headerH4.offsetHeight;
-
-                let minSize = 12, maxSize = 250, bestSize = minSize;
-                while (minSize <= maxSize) {
-                    let midSize = Math.floor((minSize + maxSize) / 2);
-                    textP.style.fontSize = midSize + 'px';
-                    if (textP.scrollHeight <= sectionAvailableHeight && textP.scrollWidth <= availableWidth) {
-                        bestSize = midSize;
-                        minSize = midSize + 1;
-                    } else {
-                        maxSize = midSize - 1;
-                    }
-                }
-                textP.style.fontSize = bestSize + 'px';
+                if (textP) textP.style.fontSize = '';
             });
+
+            let minSize = 12, maxSize = 250, bestSize = minSize;
+
+            while (minSize <= maxSize) {
+                let midSize = Math.floor((minSize + maxSize) / 2);
+
+                // Apply the test font size to all sections
+                langSections.forEach(section => {
+                    const textP = section.querySelector('p.language-text');
+                    if (textP) textP.style.fontSize = midSize + 'px';
+                });
+
+                // Check if the container overflows
+                if (prayerContent.scrollHeight <= prayerContent.clientHeight && prayerContent.scrollWidth <= prayerContent.clientWidth) {
+                    bestSize = midSize;
+                    minSize = midSize + 1;
+                } else {
+                    maxSize = midSize - 1;
+                }
+            }
+
+            // Apply the best font size
+            langSections.forEach(section => {
+                const textP = section.querySelector('p.language-text');
+                if (textP) textP.style.fontSize = bestSize + 'px';
+            });
+
         }, 50);
     });
 }

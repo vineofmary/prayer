@@ -1179,6 +1179,14 @@ body.presentation-mode-slides .prayer-content.layout-column .language-section:no
     padding-right: var(--column-gap);
 }
 
+body.presentation-mode-slides .prayer-content.layout-row {
+    gap: 10px;
+}
+
+body.presentation-mode-slides .prayer-content.layout-row .language-section {
+    margin-bottom: 0;
+}
+
 
 /* --- MOBILE STYLES --- */
 @media (max-width: 900px) {
