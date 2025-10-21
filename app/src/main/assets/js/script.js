@@ -566,9 +566,9 @@ function getPrayerLabel(prayer) {
     } else if (prayer.chapter === 'Angels') {
         return 'The Angels Praise Mary';
     } else if (prayer.chapter === 'Psalms' && prayer.stanza === 'Intro') {
-        return 'Introductory Prayer for the Psalms and the Prophets';
+        return 'Opening Prayer for the Psalms and the Songs of the Prophets';
     } else if (prayer.chapter === 'Psalms' && prayer.stanza === 'Closing') {
-        return 'Conclusion to the Psalms and Prophets';
+        return 'Closing Prayer for the Psalms and Songs of the Prophets';
     }
     return prayer.reference; // Default fallback
 }
