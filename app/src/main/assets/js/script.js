@@ -51,10 +51,15 @@ const clearPsalmsButton = document.getElementById('clear-psalms-button');
 const prophetSongsSelectorContainer = document.getElementById('prophet-songs-selector-container');
 const prophetSongsSummary = document.getElementById('prophet-songs-summary');
 const clearProphetSongsButton = document.getElementById('clear-prophet-songs-button');
+const servantNameInput = document.getElementById('servant-name-input');
+const patriarchNameInput = document.getElementById('patriarch-name-input');
+const bishopNameInput = document.getElementById('bishop-name-input');
+const countryNameInput = document.getElementById('country-name-input');
+const headOfStateInput = document.getElementById('head-of-state-input');
 
 
 // --- State Variables ---
-const SETTINGS_VERSION = '4.0'; // Updated for Songs of the Prophets feature
+const SETTINGS_VERSION = '4.1'; // Update this to force refresh load settings
 let currentTheme = {};
 let isSidebarCollapsed = false;
 let displayOptions = {};
@@ -62,6 +67,7 @@ let displayedLanguages = {};
 let fontSizes = {};
 let selectedPsalms = [];
 let selectedProphetSongs = [];
+let customNames = {};
 let bibleData = { nkjv: null, am54: null, rgv: null, loaded: false };
 
 let languageOrder = [
@@ -314,6 +320,7 @@ function saveSettings() {
     localStorage.setItem('languageOrder', JSON.stringify(languageOrder));
     localStorage.setItem('selectedPsalms', JSON.stringify(selectedPsalms));
     localStorage.setItem('selectedProphetSongs', JSON.stringify(selectedProphetSongs));
+    localStorage.setItem('customNames', JSON.stringify(customNames));
     localStorage.setItem('collapsedSections', JSON.stringify(collapsedSections));
 }
 
@@ -356,6 +363,14 @@ function loadSettings() {
         englishFont: "'Merriweather', serif",
         selectedPsalms: [12, 15, 22, 50, 90, 102, 135], // Default LXX Psalms
         selectedProphetSongs: [],
+        // Default Custom Names
+        customNames: {
+            servant: 'me',
+            patriarch: 'አባ ማትያስ ቀዳማዊ (Abba Mathias I)',
+            bishop: 'አባ ቴዎፍሎስ (Abba Theophilus)',
+            country: 'Ethiopia, Eritrea, America',
+            headOfState: '...'
+        },
         collapsedSections: {}
     };
 
@@ -394,11 +409,19 @@ function loadSettings() {
 
         selectedPsalms = JSON.parse(localStorage.getItem('selectedPsalms')) || defaultSettings.selectedPsalms;
         selectedProphetSongs = JSON.parse(localStorage.getItem('selectedProphetSongs')) || defaultSettings.selectedProphetSongs;
+        const savedCustomNames = JSON.parse(localStorage.getItem('customNames')) || {};
+        customNames = { ...defaultSettings.customNames, ...savedCustomNames };
         collapsedSections = JSON.parse(localStorage.getItem('collapsedSections')) || defaultSettings.collapsedSections;
 
         // Always ensure the main Daily Prayer section is expanded by default
         collapsedSections['Daily Prayer'] = false;
     }
+
+    servantNameInput.value = customNames.servant;
+    patriarchNameInput.value = customNames.patriarch;
+    bishopNameInput.value = customNames.bishop;
+    countryNameInput.value = customNames.country;
+    headOfStateInput.value = customNames.headOfState;
 
     if (isSidebarCollapsed) {
         sidebar.classList.add('collapsed');
@@ -517,6 +540,14 @@ function highlightText(text, query) {
 
 function formatPrayerText(text, langKey, query, isFirstLanguage) {
     let processedText = text;
+
+    // Replace custom name placeholders
+    processedText = processedText.replace(/\{\{Servant's Names\}\}/g, customNames.servant || '');
+    processedText = processedText.replace(/\{\{PATRIARCH NAME\}\}/g, customNames.patriarch || '');
+    processedText = processedText.replace(/\{\{BISHOP NAME\}\}/g, customNames.bishop || '');
+    processedText = processedText.replace(/\{\{COUNTRY\}\}/g, customNames.country || '');
+    processedText = processedText.replace(/\{\{Leader \/ President \/ Emperor\}\}/g, customNames.headOfState || '');
+
     const lang = langKey.split('_')[0];
     const keywords = speakerKeywords[lang];
 
@@ -1657,6 +1688,36 @@ ethiopicFontSelect.addEventListener('change', () => {
 englishFontSelect.addEventListener('change', () => {
     updateFontStylesAndPreview();
     saveSettings();
+});
+
+servantNameInput.addEventListener('input', () => {
+    customNames.servant = servantNameInput.value;
+    saveSettings();
+    renderPrayers();
+});
+
+patriarchNameInput.addEventListener('input', () => {
+    customNames.patriarch = patriarchNameInput.value;
+    saveSettings();
+    renderPrayers();
+});
+
+bishopNameInput.addEventListener('input', () => {
+    customNames.bishop = bishopNameInput.value;
+    saveSettings();
+    renderPrayers();
+});
+
+countryNameInput.addEventListener('input', () => {
+    customNames.country = countryNameInput.value;
+    saveSettings();
+    renderPrayers();
+});
+
+headOfStateInput.addEventListener('input', () => {
+    customNames.headOfState = headOfStateInput.value;
+    saveSettings();
+    renderPrayers();
 });
 
 
