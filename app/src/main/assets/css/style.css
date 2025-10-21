@@ -323,7 +323,7 @@ h1 {
     gap: 0.5rem;
 }
 
-#sidebar-toggle, #theme-toggle, #search-toggle, #help-button, #layout-toggle-header, #presentation-mode-toggle-header, #search-close {
+#sidebar-toggle, #theme-toggle, #search-toggle, #help-button, #layout-toggle-header, #presentation-mode-toggle-header, #search-close, #expand-collapse-all-button {
     background: none;
     border: none;
     font-size: 1.5rem;
@@ -336,10 +336,10 @@ h1 {
     align-items: center;
     justify-content: center;
 }
-#sidebar-toggle:hover, #theme-toggle:hover, #search-toggle:hover, #help-button:hover, #layout-toggle-header:hover, #presentation-mode-toggle-header:hover, #search-close:hover {
+#sidebar-toggle:hover, #theme-toggle:hover, #search-toggle:hover, #help-button:hover, #layout-toggle-header:hover, #presentation-mode-toggle-header:hover, #search-close:hover, #expand-collapse-all-button:hover {
     background-color: var(--hover-color);
 }
-#sidebar-toggle svg, #theme-toggle svg, #search-toggle svg, #layout-toggle-header svg, #presentation-mode-toggle-header svg {
+#sidebar-toggle svg, #theme-toggle svg, #search-toggle svg, #layout-toggle-header svg, #presentation-mode-toggle-header svg, #expand-collapse-all-button svg {
     width: 24px;
     height: 24px;
     fill: currentColor;
