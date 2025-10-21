@@ -631,7 +631,12 @@ min-height: calc(100vh - var(--header-height) - 2rem);
     opacity: 0;
 }
 
-/* Section Title */
+.section-title.collapsible {
+    cursor: pointer;
+    position: relative;
+    padding-right: 2rem; /* Space for the arrow */
+}
+
 .section-title {
     font-size: 1.8rem;
     color: var(--accent-color);
@@ -640,9 +645,23 @@ min-height: calc(100vh - var(--header-height) - 2rem);
     padding-bottom: 0.5rem;
     border-bottom: 2px solid var(--accent-color);
 }
-#prayer-display > .section-title:first-child {
-    margin-top: 0.5rem;
+
+.section-title.collapsible::before {
+    content: "-";
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--accent-color);
 }
+
+.section-title.collapsible.collapsed::before {
+    content: "+";
+}
+
+
 
 /* Card View Styles */
 .prayer-card {

@@ -54,7 +54,7 @@ const clearProphetSongsButton = document.getElementById('clear-prophet-songs-but
 
 
 // --- State Variables ---
-const SETTINGS_VERSION = '3.9'; // Updated for Songs of the Prophets feature
+const SETTINGS_VERSION = '3.9.1'; // Updated for Songs of the Prophets feature
 let currentTheme = {};
 let isSidebarCollapsed = false;
 let displayOptions = {};
@@ -320,6 +320,7 @@ function saveSettings() {
     localStorage.setItem('languageOrder', JSON.stringify(languageOrder));
     localStorage.setItem('selectedPsalms', JSON.stringify(selectedPsalms));
     localStorage.setItem('selectedProphetSongs', JSON.stringify(selectedProphetSongs));
+    localStorage.setItem('collapsedSections', JSON.stringify(collapsedSections));
 }
 
 
@@ -360,7 +361,8 @@ function loadSettings() {
         ethiopicFont: "'Noto Sans Ethiopic', sans-serif",
         englishFont: "'Merriweather', serif",
         selectedPsalms: [12, 15, 22, 50, 90, 102, 135], // Default LXX Psalms
-        selectedProphetSongs: []
+        selectedProphetSongs: [],
+        collapsedSections: {}
     };
 
     if (savedVersion !== SETTINGS_VERSION) {
@@ -374,6 +376,7 @@ function loadSettings() {
         englishFontSelect.value = defaultSettings.englishFont;
         selectedPsalms = defaultSettings.selectedPsalms;
         selectedProphetSongs = defaultSettings.selectedProphetSongs;
+        collapsedSections = defaultSettings.collapsedSections;
     } else {
         // Load saved settings and merge with defaults to ensure all keys exist
         currentTheme = JSON.parse(localStorage.getItem('theme')) || defaultSettings.theme;
@@ -397,6 +400,10 @@ function loadSettings() {
 
         selectedPsalms = JSON.parse(localStorage.getItem('selectedPsalms')) || defaultSettings.selectedPsalms;
         selectedProphetSongs = JSON.parse(localStorage.getItem('selectedProphetSongs')) || defaultSettings.selectedProphetSongs;
+        collapsedSections = JSON.parse(localStorage.getItem('collapsedSections')) || defaultSettings.collapsedSections;
+
+        // Always ensure the main Daily Prayer section is expanded by default
+        collapsedSections['Daily Prayer'] = false;
     }
 
     if (isSidebarCollapsed) {
@@ -536,7 +543,7 @@ function formatPrayerText(text, langKey, query, isFirstLanguage) {
 function getPrayerLabel(prayer) {
     const prayerKey = `${prayer.chapter}-${prayer.stanza}`;
     const customLabels = {
-        "Daily-0": "Daily Prayer - Trinitarian Invocation",
+        "Daily-0": "",
         "Daily-1": "Daily Prayer - I Seal My Face...",
         "Daily-2": "Daily Prayer - We Thank You, Lord...",
         "Daily-3": "Daily Prayer - Lord's Prayer",
@@ -547,6 +554,8 @@ function getPrayerLabel(prayer) {
         "Daily-8": "Daily Prayer - Glory...",
         "Daily-9": "Daily Prayer - Greetings to You, [Mary]...",
         "Daily-10": "Daily Prayer - Prayer of Our Lady Mary",
+        "Daily-11": "Intro to The Praise of Mary",
+        "Daily-12": "Intro to The Praise of Mary - Prayer",
         "Personal-0": "Prayer"
     };
 
@@ -566,7 +575,6 @@ function getPrayerLabel(prayer) {
 
 function getSectionTitle(prayer) {
     const label = getPrayerLabel(prayer);
-    // Use a simpler regex to extract the main title part
     if (label.startsWith("Daily Prayer - ")) {
         return "Daily Prayer";
     }
@@ -722,6 +730,8 @@ function getStandardPrayerSequence() {
     return [personalPrayer, ...lordsPrayerParts, ...gabrielGreetingParts];
 }
 
+let collapsedSections = {};
+
 function renderPrayers() {
     prayerDisplay.innerHTML = '';
     const activeLanguageCount = Object.values(displayedLanguages).filter(Boolean).length;
@@ -731,11 +741,30 @@ function renderPrayers() {
     }
 
     let lastSectionTitle = null;
-    const addSectionTitle = (title) => {
+    const addSectionTitle = (title, isCollapsible = true) => {
         if (title && title !== lastSectionTitle) {
             const titleEl = document.createElement('h2');
             titleEl.classList.add('section-title');
             titleEl.textContent = title;
+
+            if (isCollapsible) {
+                titleEl.classList.add('collapsible');
+                if (collapsedSections[title]) {
+                    titleEl.classList.add('collapsed');
+                }
+                titleEl.addEventListener('click', () => {
+                    const isCollapsed = titleEl.classList.toggle('collapsed');
+                    collapsedSections[title] = isCollapsed;
+                    saveSettings();
+
+                    let nextEl = titleEl.nextElementSibling;
+                    while (nextEl && !nextEl.classList.contains('section-title')) {
+                        nextEl.style.display = isCollapsed ? 'none' : '';
+                        nextEl = nextEl.nextElementSibling;
+                    }
+                });
+            }
+
             prayerDisplay.appendChild(titleEl);
             lastSectionTitle = title;
         }
@@ -743,9 +772,8 @@ function renderPrayers() {
 
     const addSectionTitleIfNeeded = (prayer) => {
         const title = getSectionTitle(prayer);
-        addSectionTitle(title);
+        addSectionTitle(title, true);
     };
-
 
     const renderSequence = () => {
         const prayerSequence = getStandardPrayerSequence();
@@ -758,13 +786,19 @@ function renderPrayers() {
     // Render main prayers (non-Psalms, non-Prophet Songs)
     const mainPrayers = prayers.filter(p => p.chapter !== 'Psalms' && p.chapter !== 'ProphetSong');
     mainPrayers.forEach((prayer, prayerIndex) => {
-        if (!(prayer.chapter === 'Daily' && prayer.stanza === '0')) {
-            addSectionTitleIfNeeded(prayer);
-        }
-        const prayerCard = createPrayerCardElement(prayer, prayerIndex);
-        prayerDisplay.appendChild(prayerCard);
         if (prayer.chapter === 'Daily' && prayer.stanza === '0') {
+            const prayerCard = createPrayerCardElement(prayer, prayerIndex);
+            prayerDisplay.appendChild(prayerCard);
             addSectionTitleIfNeeded(prayer);
+        } else {
+            addSectionTitleIfNeeded(prayer);
+            const prayerCard = createPrayerCardElement(prayer, prayerIndex);
+            prayerDisplay.appendChild(prayerCard);
+
+            // Apply initial collapsed state after the card is added
+            if (displayOptions.presentationMode !== 'slides' && lastSectionTitle && collapsedSections[lastSectionTitle]) {
+                prayerCard.style.display = 'none';
+            }
         }
     });
 
@@ -776,10 +810,9 @@ function renderPrayers() {
         const psalmIntroPrayers = prayers.filter(p => p.chapter === 'Psalms' && p.stanza === 'Intro');
         if (psalmIntroPrayers.length > 0) {
             addSectionTitleIfNeeded(psalmIntroPrayers[0]);
-            psalmIntroPrayers.forEach(prayer => {
-                const prayerCard = createPrayerCardElement(prayer, -1);
-                prayerDisplay.appendChild(prayerCard);
-            });
+                if (displayOptions.presentationMode !== 'slides' && lastSectionTitle && collapsedSections[lastSectionTitle]) {
+                    prayerCard.style.display = 'none';
+                }
         }
     }
 
@@ -805,6 +838,9 @@ function renderPrayers() {
             closingPrayers.forEach(prayer => {
                 const prayerCard = createPrayerCardElement(prayer, -1);
                 prayerDisplay.appendChild(prayerCard);
+                if (displayOptions.presentationMode !== 'slides' && lastSectionTitle && collapsedSections[lastSectionTitle]) {
+                    prayerCard.style.display = 'none';
+                }
             });
         }
     }
