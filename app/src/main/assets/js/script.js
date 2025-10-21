@@ -2245,14 +2245,13 @@ document.addEventListener('DOMContentLoaded', async () => {
         splashScreen.classList.add('hidden');
         appContainer.classList.remove('hidden');
     } else {
-        setTimeout(() => {
-            splashScreen.style.opacity = '0';
-            setTimeout(() => {
-                splashScreen.classList.add('hidden');
-                appContainer.classList.remove('hidden');
-                sessionStorage.setItem('splashShown', 'true');
-            }, 750); // Match CSS transition duration
-        }, 3000); // 2-second delay
+        splashScreen.addEventListener('transitionend', () => {
+            splashScreen.classList.add('hidden');
+            appContainer.classList.remove('hidden');
+            sessionStorage.setItem('splashShown', 'true');
+        }, { once: true });
+
+        splashScreen.style.opacity = '0';
     }
 
     await loadSettings(); // Ensure settings are loaded before anything else
