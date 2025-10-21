@@ -468,14 +468,14 @@ const prayers = [
     "reference": "Daily Prayer",
     "chapter": "Daily",
     "stanza": "8",
-    "english": "Leader: Glory to our Lady Mary, the Virgin Bearer of God.\n፨\nPeople: It is due to our Lady Mary, the Virgin Bearer of God.",
+    "english": "Leader: Glory to our Lady Mary, the Virgin Bearer of God.\n፨ People: It is due to our Lady Mary, the Virgin Bearer of God.",
     "geez_script": "መሪሕ፤ ስብሐት ለእግዝእትነ ማርያም ድንግል ወላዲተ አምላክ።\n፨ ሕዝብ፤ ይደልዋ ለእግዝእትነ ማርያም ድንግል ወላዲተ አምላክ።",
     "geez_phonetic": "merīḥ: sbḥat le'igz'itne maryam dngl weladīte 'amlak.\n፨ ḥzb: ydelwa le'igz'itne maryam dngl weladīte 'amlak.",
     "amharic_script": "መሪ፤ አምላክን ለወለደች ለእመቤታችን ለድንግል ማርያም ምስጋና ይገባል። \n፨ ሕዝብ፤ አምላክን ለወለደች ለእመቤታችን ለድንግል ማርያም ምስጋና ይገባል። ",
     "amharic_phonetic": "merī: 'amlakn leweledech le'imebétachn ledngl maryam msgana ygebal. \n፨ ḥzb: 'amlakn leweledech le'imebétachn ledngl maryam msgana ygebal. ",
     "tigrinya_script": "መራሒ፤ ምስጋና ንእግዝእትነ ማርያም ድንግል ወላዲት ኣምላኽ ይኹን።\n፨ ሕዝብ፤ ንእግዝእትነ ማርያም ድንግል ወላዲት ኣምላኽ ምስጋና ይግባእ።",
     "tigrinya_phonetic": "meraḥī: msgana n'igz'itne maryam dngl weladīt 'amlakh ykhun.\n፨ ḥzb: n'igz'itne maryam dngl weladīt 'amlakh msgana ygba'i.",
-    "spanish": "Líder: Gloria a Nuestra Señora María, Virgen y Madre de Dios... \n፨ Gente: Es debido a Nuestra Señora María, Virgen y Portadora de Dios."
+    "spanish": "Líder: Gloria a Nuestra Señora María, Virgen y Madre de Dios. \n፨ Gente: Es debido a Nuestra Señora María, Virgen y Portadora de Dios."
   },
   {
     "instruction": "",
@@ -513,8 +513,8 @@ const prayers = [
     "english": "Leader: May He awaken us to glorification of His Name.\n፨ People: Amen.\nLeader: And may He strengthen us in His worship. \n፨ People: Amen.",
     "geez_script": "መሪሕ፤ ለሰብሖተ ስሙ ያንቅሀነ።\n፨ ሕዝብ፤ አሜን።\nመሪሕ፤ ወበአምልኮቱ ያጽንአነ።\n፨ ሕዝብ፤ አሜን።",
     "geez_phonetic": "merīḥ: lesebḥote smu yanḳhane.\n፨ ḥzb: 'amén.\nmerīḥ: webe'amlkotu yatsn'ane.\n፨ ḥzb: 'amén.",
-    "amharic_script": "\nመሪ፤ ስሙን ለማመስገን ያነቃን ዘንድ \n፨ ሕዝብ፤ አሜን።\nመሪ፤ እርሱንም በማምለክ ያጸናን ዘንድ \n፨ ሕዝብ፤ አሜን።",
-    "amharic_phonetic": "\nmerī: smun lemamesgen yaneḳan zend \n፨ ḥzb: 'amén.\nmerī: 'irsunm bemamlek yatsenan zend \n፨ ḥzb: 'amén.",
+    "amharic_script": "መሪ፤ ስሙን ለማመስገን ያነቃን ዘንድ \n፨ ሕዝብ፤ አሜን።\nመሪ፤ እርሱንም በማምለክ ያጸናን ዘንድ \n፨ ሕዝብ፤ አሜን።",
+    "amharic_phonetic": "merī: smun lemamesgen yaneḳan zend \n፨ ḥzb: 'amén.\nmerī: 'irsunm bemamlek yatsenan zend \n፨ ḥzb: 'amén.",
     "tigrinya_script": "መራሒ፤ ስሙ ንምምስጋን የንቅሓና።\n፨ ሕዝብ፤ ኣሜን።\nመራሒ፤ ኣብ ኣምልኾቱ የጽንዓና።\n፨ ሕዝብ፤ ኣሜን።",
     "tigrinya_phonetic": "meraḥī: smu nmmsgan yenḳḥana.\n፨ ḥzb: 'amén.\nmeraḥī: 'ab 'amlkhotu yetsn'ana.\n፨ ḥzb: 'amén.",
     "spanish": "Líder: Que nos despierte para agradecer su nombre.\n፨ Gente: Amén.\nLíder: Que nos fortalezca en su adoración.\n፨ Gente: Amén."
