@@ -602,16 +602,16 @@ function getPrayerLabel(prayer) {
     const prayerKey = `${prayer.chapter}-${prayer.stanza}`;
     const customLabels = {
         "Daily-0": "",
-        "Daily-1": "Daily Prayer | ዘዘወትር ጸሎት -  - I Seal My Face...",
-        "Daily-2": "Daily Prayer | ዘዘወትር ጸሎት -  - We Thank You, Lord...",
-        "Daily-3": "Daily Prayer | ዘዘወትር ጸሎት -  - Lord's Prayer",
-        "Daily-4": "Daily Prayer | ዘዘወትር ጸሎት -  - Greeting of Saint Gabriel",
-        "Daily-5": "Daily Prayer | ዘዘወትር ጸሎት -  - Prayer of the Faith (Creed)",
-        "Daily-6": "Daily Prayer | ዘዘወትር ጸሎት -  - Holy, Holy, Holy... (Seraphic Hymn)",
-        "Daily-7": "Daily Prayer | ዘዘወትር ጸሎት -  - I worship...",
-        "Daily-8": "Daily Prayer | ዘዘወትር ጸሎት -  - Glory...",
-        "Daily-9": "Daily Prayer | ዘዘወትር ጸሎት -  - Greetings to You, [Mary]...",
-        "Daily-10": "Daily Prayer | ዘዘወትር ጸሎት -  - Prayer of Our Lady Mary",
+        "Daily-1": "Daily Prayer | ዘዘወትር ጸሎት - I Seal My Face...",
+        "Daily-2": "Daily Prayer | ዘዘወትር ጸሎት - We Thank You, Lord...",
+        "Daily-3": "Daily Prayer | ዘዘወትር ጸሎት - Lord's Prayer",
+        "Daily-4": "Daily Prayer | ዘዘወትር ጸሎት - Greeting of Saint Gabriel",
+        "Daily-5": "Daily Prayer | ዘዘወትር ጸሎት - Prayer of the Faith (Creed)",
+        "Daily-6": "Daily Prayer | ዘዘወትር ጸሎት - Holy, Holy, Holy... (Seraphic Hymn)",
+        "Daily-7": "Daily Prayer | ዘዘወትር ጸሎት - I worship...",
+        "Daily-8": "Daily Prayer | ዘዘወትር ጸሎት - Glory...",
+        "Daily-9": "Daily Prayer | ዘዘወትር ጸሎት - Greetings to You, [Mary]...",
+        "Daily-10": "Daily Prayer | ዘዘወትር ጸሎት - Prayer of Our Lady Mary",
         "Daily-11": "Prayer of Saint Ephraim: Praise of Mary | ውዳሴ ማርያም",
         "Daily-12": "Prayer of Saint Ephraim: Praise of Mary | ውዳሴ ማርያም - O my Lady, loose me...",
         "Personal-0": "Prayer"
@@ -633,8 +633,8 @@ function getPrayerLabel(prayer) {
 
 function getSectionTitle(prayer) {
     const label = getPrayerLabel(prayer);
-    if (label.startsWith("Daily Prayer | ዘዘወትር ጸሎት -  - ")) {
-        return "Daily Prayer | ዘዘወትር ጸሎት - ";
+    if (label.startsWith("Daily Prayer | ዘዘወትር ጸሎት - ")) {
+        return "Daily Prayer | ዘዘወትር ጸሎት";
     } else if (label === "Trinitarian Invocation") {
         return "";
     }
