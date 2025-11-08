@@ -532,6 +532,7 @@ font-size: var(--english-font-size, 16px);
     opacity: 0.8;
 }
 
+
 .settings-summary {    font-size: 0.9em;
     color: var(--speaker-label-color);
     margin-bottom: 0.75rem;
@@ -1286,4 +1287,50 @@ body.presentation-mode-slides .prayer-content.layout-row .language-section {
 }
 }
 }
+}
+
+/* Ensure the section title slide itself is a positioning context and takes full space */
+body.presentation-mode-slides .section-title.active-slide {
+    position: relative; /* Establishes positioning context for absolute children */
+    width: 100%;
+    height: 100%;
+    display: flex; /* Use flexbox to center the title text */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px; /* Add some padding around the title text */
+    box-sizing: border-box; /* Include padding in width/height */
+}
+
+/* Style and position the prayer-actions container within the section title slide */
+body.presentation-mode-slides .section-title.active-slide .prayer-actions {
+    position: absolute; /* Position relative to the .section-title.active-slide */
+    bottom: 50px; /* Distance from the bottom */
+    right: 50px;  /* Distance from the right */
+    z-index: 100; /* Ensure it's above other content */
+    display: flex; /* Use flexbox for its own children (the button) */
+    gap: 10px; /* Space between buttons if there were more */
+}
+
+/* Style the exit button specifically */
+body.presentation-mode-slides .section-title.active-slide .prayer-actions .section-title-exit-btn {
+    font-size: 1.5em; /* Example size */
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    color: white; /* Example color */
+    border: none;
+    border-radius: 50%; /* Make it round */
+    width: 50px; /* Example width */
+    height: 50px; /* Example height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    padding: 0; /* Remove default button padding */
+}
+
+/* Hide the prayer-actions container for section titles in scroll mode */
+.section-title .prayer-actions {
+    display: none;
 }

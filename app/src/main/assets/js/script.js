@@ -59,7 +59,7 @@ const headOfStateInput = document.getElementById('head-of-state-input');
 
 
 // --- State Variables ---
-const SETTINGS_VERSION = '4.1.5'; // Update this to force refresh load settings
+const SETTINGS_VERSION = '4.1.6'; // Update this to force refresh load settings
 let currentTheme = {};
 let isSidebarCollapsed = false;
 let displayOptions = {};
@@ -812,7 +812,11 @@ function renderPrayers() {
                 if (collapsedSections[title]) {
                     titleEl.classList.add('collapsed');
                 }
-                titleEl.addEventListener('click', () => {
+                titleEl.addEventListener('click', (event) => {
+                    // Prevent collapsing when clicking on buttons inside the title
+                    if (event.target.closest('.prayer-actions')) {
+                        return;
+                    }
                     const isCollapsed = titleEl.classList.toggle('collapsed');
                     collapsedSections[title] = isCollapsed;
                     saveSettings();
@@ -824,6 +828,19 @@ function renderPrayers() {
                     }
                 });
             }
+
+            // Add action buttons for slide mode functionality
+            const prayerActions = document.createElement('div');
+            prayerActions.classList.add('prayer-actions');
+
+            const exitSlidesBtn = document.createElement('button');
+            exitSlidesBtn.classList.add('exit-slides-mode-btn', 'section-title-exit-btn'); // Added new class
+            exitSlidesBtn.innerHTML = '&times;';
+            exitSlidesBtn.title = 'Exit Slides Mode';
+            exitSlidesBtn.addEventListener('click', togglePresentationMode);
+            prayerActions.appendChild(exitSlidesBtn);
+
+            titleEl.appendChild(prayerActions);
 
             prayerDisplay.appendChild(titleEl);
             lastSectionTitle = title;
