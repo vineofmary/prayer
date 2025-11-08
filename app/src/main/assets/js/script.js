@@ -56,10 +56,11 @@ const patriarchNameInput = document.getElementById('patriarch-name-input');
 const bishopNameInput = document.getElementById('bishop-name-input');
 const countryNameInput = document.getElementById('country-name-input');
 const headOfStateInput = document.getElementById('head-of-state-input');
+const anglicizeNamesToggle = document.getElementById('anglicize-names-toggle');
 
 
 // --- State Variables ---
-const SETTINGS_VERSION = '4.1.8'; // Update this to force refresh load settings
+const SETTINGS_VERSION = '4.1.9'; // Update this to force refresh load settings
 let currentTheme = {};
 let isSidebarCollapsed = false;
 let displayOptions = {};
@@ -115,6 +116,64 @@ const sunIcon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fil
 const moonIcon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 2c-1.82 0-3.53.5-5 1.35 2.99 1.73 5 4.95 5 8.65s-2.01 6.92-5 8.65C6.47 21.5 8.18 22 10 22c5.52 0 10-4.48 10-10S15.52 2 10 2z"/></svg>`;
 const shareIconSVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3s3-1.34 3-3-1.34-3-3-3z"></path></svg>`;
 
+// --- Anglicization Data ---
+const anglicizedNameMap = {
+    "Mary": "Maryam",
+    "Zion": "Tsion",
+//    "Gabriel": "Gebriel",
+    "Jesus Christ": "Iyesus Kristos",
+    "Jesus": "Iyesus",
+    "Christ": "Kristos",
+    "Pontius Pilate": "Pontios Pilatos",
+    "Church": "Béte Kristiyan",
+    "Bearer of God": "Theotokos",
+    "Mother of God": "Theotokos",
+//    "Amen": "Amen",
+    "Anne": "Hanna",
+    "Joachim": "Iyaqém",
+//    "Israel": "Israel",
+//    "Abraham": "Abraham",
+//    "Ephraim": "Ephrem",
+//    "Ephrem": "Ephrem",
+    "Moses": "Musé",
+    "Eve": "Héwan",
+    "Joseph": "Yoséf",
+    "Emmanuel": "Amanuel",
+//    "Adam": "Adam",
+    "David": "Dawit",
+    "Ephrata": "Efrata",
+    "Jacob": "Ya'qob",
+    "Bethlehem": "Bételehém",
+    "Judah": "Yihuda",
+    "Galilee": "Gelila",
+    "Nazareth": "Nazrét",
+    "Elizabeth": "Elsabét",
+    "Stephen": "Estifanos",
+    "John": "Yohannes",
+//    "Abba Giyorgis": "Abba Giyorgis",
+//    "Emperor Naod": "Emperor Naod",
+//    "Abba Ze-Mikael (Amda Hawaryat)": "Abba Ze-Mikael (Amda Hawaryat)"
+};
+
+function applyAnglicization(text, langKey) {
+    if (langKey !== 'english' || !displayOptions.anglicizeNames) {
+        return text;
+    }
+
+    let processedText = text;
+    // Sort keys by length descending to match longer phrases first
+    const sortedKeys = Object.keys(anglicizedNameMap).sort((a, b) => b.length - a.length);
+
+    sortedKeys.forEach(nameToReplace => {
+        const anglicizedName = anglicizedNameMap[nameToReplace];
+        // Use a regex to replace whole words only, case-insensitively
+        const regex = new RegExp(`\\b${nameToReplace}\\b`, 'gi');
+        processedText = processedText.replace(regex, `<i class="anglicized-name">${anglicizedName}</i>`);
+    });
+
+    return processedText;
+}
+
 // --- Rubrication Data ---
 const rubricRedWords = {
     english: [
@@ -135,7 +194,7 @@ const rubricRedWords = {
         "በስመ አብ ወወልድ ወመንፈስ ቅዱስ", "አአትብ ገጽየ", "አብ", "ወልድ", "ወወልድ", "መንፈስ ቅዱስ", "አሐዱ አምላክ", "አሐዱ አምላክ፣",
         "ሥላሴ", "ነአኵተከ እግዚኦ", "እግዚ", "እግዚእ", "እግዚኦ", "እግዚአብሔር", "እግዚአ", "አምላክ", "ንጉሥ", "ንጉሠ", "ወንጉሠ", "አቡነ ዘበሰማያት",
         "በሰላመ ቅዱስ ገብርኤል መልአክ", "እግዚአብሔር ጸባዖት", "እግዚአብሔር ጸባዖት", "ኢየሱስ ክርስቶስ",
-        "ንኣምን በአሐዱ አምላክ", "ነአምን በአሐዱ አምላክ", "አምላክ ዘእምአምላክ ዘበአማን", "ድንግል ማርያም", "ማርያም ድንግል", "አሜን", "ቅዱስ ቅዱስ ቅዱስ እግዚአብሔር ጸባዖት",
+        "ንኣምን በአሐዱ አምላክ", "ነአምን በአሐዱ አምላክ", "አምላክ ዘእምአምላክ ዘበአማን", "ድንግል ማርያም", "ማርያም ድንግል", "አሜን", "ቅዱስ ቅዱስ ቅዱስ እግዚአብሔር ጸባኦት",
         "ቅዱስ ቅዱስ ቅዱስ እግዚአብሔር ጸባዖት", "ቅዱስ ቅዱስ ቅዱስ", "ቅዱስ፣ ቅዱስ፣ ቅዱስ", "ክርስቶስ", "እሰግድ ለአብ ወወልድ ወመንፈስ ቅዱስ አሐቲ ስግደት።", "መለኮት",
         "ስብሐት ለአብ ወወልድ ወመንፈስ ቅዱስ", "ልዑል እግዚአብሔር", "እግዚአብሔር ልዑል", "ሰላም ለኪ እንዘ ንሰግድ ንብለኪ", "ሰላም ለኪ",
         "ጸሎተ እግዝእትነ ማርያም ድንግል ወላዲተ አምላክ", "መድኀኒየ", "ወመድኀኒየ", "ታዐብዮ ነፍስየ ለእግዚአብሔር",
@@ -305,9 +364,11 @@ function applyTheme() {
 
     // Handle sidebar state
     if (isSidebarCollapsed) {
+        sidebar.classList.add('collapsed');
         body.classList.remove('sidebar-open');
         header.classList.remove('sidebar-visible-in-mobile');
     } else {
+        sidebar.classList.remove('collapsed');
         body.classList.add('sidebar-open');
         header.classList.add('sidebar-visible-in-mobile');
     }
@@ -361,7 +422,8 @@ function loadSettings() {
             dynamicFontSizing: true,
             slideTransition: 'fade',
             languageColors: 'off',
-            boldText: false
+            boldText: false,
+            anglicizeNames: false
         },
         displayedLanguages: {
             english: true,
@@ -440,10 +502,6 @@ function loadSettings() {
     bishopNameInput.value = customNames.bishop;
     countryNameInput.value = customNames.country;
     headOfStateInput.value = customNames.headOfState;
-
-    if (isSidebarCollapsed) {
-        sidebar.classList.add('collapsed');
-    }
 
     geezFontSizeSlider.value = fontSizes.geez;
     englishFontSizeSlider.value = fontSizes.english;
@@ -527,6 +585,7 @@ function updateAllTogglesInSettingsPanel() {
     dynamicFontSizingToggle.checked = displayOptions.dynamicFontSizing;
     slideTransitionSelect.value = displayOptions.slideTransition;
     boldTextToggle.checked = displayOptions.boldText;
+    anglicizeNamesToggle.checked = displayOptions.anglicizeNames;
 
     updateLayoutToggleIcon();
     updatePresentationModeToggleIcon();
@@ -574,6 +633,9 @@ function highlightText(text, query) {
 
 function formatPrayerText(text, langKey, query, isFirstLanguage) {
     let processedText = text;
+
+    // Apply Anglicization first
+    processedText = applyAnglicization(processedText, langKey);
 
     // Replace custom name placeholders
     processedText = processedText.replace(/\{\{Servant's Names\}\}/g, customNames.servant || '');
@@ -1721,10 +1783,12 @@ const stopSliderEventPropagation = (event) => {
 };
 
 // We define the events and attach them with the passive option.
-['mousedown', 'touchstart', 'pointerdown'].forEach(eventType => {
+['mousedown', 'pointerdown'].forEach(eventType => {
     geezFontSizeSlider.addEventListener(eventType, stopSliderEventPropagation);
     englishFontSizeSlider.addEventListener(eventType, stopSliderEventPropagation);
 });
+geezFontSizeSlider.addEventListener('touchstart', stopSliderEventPropagation, { passive: true });
+englishFontSizeSlider.addEventListener('touchstart', stopSliderEventPropagation, { passive: true });
 
 // For touchmove, we add the { passive: true } option to resolve the violation.
 // This tells the browser our listener won't block scrolling, fixing the conflict.
@@ -2034,11 +2098,16 @@ dynamicFontSizingToggle.addEventListener('change', () => {
 slideTransitionSelect.addEventListener('change', () => {
     displayOptions.slideTransition = slideTransitionSelect.value;
     if (displayOptions.presentationMode === 'slides') {
-        renderPrayers(); // Re-render to apply new transition classes
+        setupSlides(); // Re-apply slide classes
     }
     saveSettings();
 });
 
+anglicizeNamesToggle.addEventListener('change', () => {
+    displayOptions.anglicizeNames = anglicizeNamesToggle.checked;
+    renderPrayers();
+    saveSettings();
+});
 
 // Search Listeners
 searchToggle.addEventListener('click', () => {
@@ -2249,9 +2318,6 @@ document.addEventListener('touchend', handleTouchEnd, { passive: true });
 // --- Hide Header on Scroll ---
 let lastScrollTop = 0;
 window.addEventListener('scroll', function() {
-    if (displayOptions.presentationMode !== 'slides' && !isSidebarCollapsed) {
-        collapseSidebar();
-    }
     if (displayOptions.presentationMode === 'slides') {
         header.classList.remove('header-hidden');
         return;
@@ -2289,7 +2355,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     await loadBibleData(); // Load data on startup
 
     updatePsalmSummary();
-    updateProphetSongsSummary();
     updateLanguageOrderList();
     applyTheme(); // Explicitly apply theme after settings are loaded
     renderPrayers();

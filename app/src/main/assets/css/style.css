@@ -614,8 +614,15 @@ input[type="range"], select {
 .main-content {
     flex-grow: 1;
     padding: 1rem 2rem;
-min-height: calc(100vh - var(--header-height) - 2rem);
+    min-height: calc(100vh - var(--header-height) - 2rem);
     position: relative; /* Needed for slide navigation arrows */
+    transition: margin-left var(--transition-speed) ease;
+}
+
+@media (min-width: 901px) {
+    body.sidebar-open .main-content {
+        margin-left: var(--sidebar-width);
+    }
 }
 
 .empty-state-message {
@@ -624,7 +631,6 @@ min-height: calc(100vh - var(--header-height) - 2rem);
     color: var(--text-color);
     opacity: 0.7;
 }
-
 #prayer-display {
     transition: opacity 0.2s ease-out;
 }
@@ -1040,10 +1046,19 @@ body.view-mode-unified .info-panel-content {
 
 /* Highlighted Text */
 .highlight {
-    background-color: var(--highlight-bg);
-    color: var(--highlight-text);
-    border-radius: 2px;
+    background-color: var(--highlight-bg-color);
+    color: var(--highlight-text-color);
+    border-radius: 3px;
+    padding: 1px 3px;
 }
+
+.anglicized-name {
+    font-style: italic;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   SETTINGS PANEL
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 .highlight.current {
     outline: 2px solid var(--accent-color);
 }
