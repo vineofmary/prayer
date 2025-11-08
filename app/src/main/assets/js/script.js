@@ -1167,7 +1167,7 @@ function adjustSlideFontSize() {
                     }
                 });
 
-                finalSize = minBestSize;
+                finalSize = Math.floor(minBestSize);
 
             } else { // This is the original logic for 'row' layout
                 let minSize = 12, maxSize = 250, bestSize = minSize;
@@ -1189,7 +1189,7 @@ function adjustSlideFontSize() {
                         maxSize = midSize - 1;
                     }
                 }
-                finalSize = bestSize;
+                finalSize = Math.floor(bestSize);
             }
 
             // Apply the final calculated font size to all sections for uniformity

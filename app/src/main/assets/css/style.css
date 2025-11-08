@@ -887,9 +887,11 @@ body.view-mode-unified .info-panel-content {
 
 .language-text {
     white-space: pre-wrap;
-font-size: var(--english-font-size, 16px);
+    font-size: var(--english-font-size, 16px);
     line-height: 1.7;
     transition: color var(--transition-speed) ease;
+    overflow-wrap: break-word; /* Break long words */
+    word-break: break-word; /* For Safari and older browsers */
 }
 
 .language-text sup {
