@@ -1154,7 +1154,7 @@ function adjustSlideFontSize() {
                         textP.style.fontSize = midSize + 'px';
 
                         // Check if the text overflows its container's height or width, with a small buffer
-                        if (textP.scrollHeight <= availableHeight && textP.scrollWidth <= (section.clientWidth - 2)) {
+                        if (textP.scrollHeight <= availableHeight && textP.scrollWidth <= section.clientWidth) {
                             bestSize = midSize; // This size fits
                             minSize = midSize + 1; // Try for a larger size
                         } else {
