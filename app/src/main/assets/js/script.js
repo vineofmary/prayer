@@ -2391,7 +2391,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 
         const backButton = document.createElement('button');
-        backButton.innerHTML = '← Back';
+        backButton.innerHTML = '←';
         backButton.style.fontSize = '1rem';
         backButton.style.fontWeight = 'bold';
         backButton.style.cursor = 'pointer';
@@ -2459,8 +2459,6 @@ document.addEventListener('DOMContentLoaded', async () => {
             prayerCard.appendChild(prayerCardMainContent);
             prayerDisplay.appendChild(prayerCard);
         });
-
-        collapseSidebar();
     }
 
     function goBackToMainView() {
@@ -2471,14 +2469,15 @@ document.addEventListener('DOMContentLoaded', async () => {
             servantsHeader.remove();
         }
 
-        document.querySelector('.header-content').style.display = '';
-        document.querySelector('.header-actions').style.display = '';
+        document.querySelector('.header-content').style.display = 'flex';
+        document.querySelector('.header-actions').style.display = 'flex';
 
         renderPrayers();
     }
 
 
     bibleVerseSidebar.addEventListener('click', () => {
-        renderServantsCorner();
+        collapseSidebar();
+        setTimeout(renderServantsCorner, 350);
     });
 });
