@@ -59,7 +59,7 @@ const headOfStateInput = document.getElementById('head-of-state-input');
 
 
 // --- State Variables ---
-const SETTINGS_VERSION = '4.1.6'; // Update this to force refresh load settings
+const SETTINGS_VERSION = '4.1.7'; // Update this to force refresh load settings
 let currentTheme = {};
 let isSidebarCollapsed = false;
 let displayOptions = {};
@@ -1565,10 +1565,22 @@ function renderSelectedProphetSongs(addSectionTitleCallback) {
 
                 if (songVerses && songVerses.length > 0) {
                     songVerses.forEach(verseData => {
-                        const versePrayer = { ...verseData }; // Create a copy
+                        const versePrayer = {
+                            english: verseData.english || '',
+                            spanish: verseData.spanish || '',
+                            amharic_script: verseData.amharic_script || '',
+                            geez_script: verseData.geez_script || '',
+                            geez_phonetic: verseData.geez_phonetic || '',
+                            tigrinya_script: verseData.tigrinya_script || '',
+                            tigrinya_phonetic: verseData.tigrinya_phonetic || '',
+                            reference: verseData.reference,
+                            chapter: verseData.chapter,
+                            stanza: verseData.stanza,
+                            instruction: verseData.instruction
+                        };
 
                         // Extract verse number from the 'reference' string
-                        const verseMatch = versePrayer.reference.match(/:(\d+)$/);
+                        const verseMatch = (versePrayer.reference || '').match(/:(\d+)$/);
                         if (verseMatch && verseMatch[1]) {
                             versePrayer.verseNum = verseMatch[1];
                         }
