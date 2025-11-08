@@ -2401,7 +2401,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         backButton.addEventListener('click', goBackToMainView);
 
         const newTitle = document.createElement('h1');
-        newTitle.textContent = "Servant's Corner";
+        newTitle.textContent = "Prayers for Servants | ጸሎታት ለአግብርት";
         newTitle.classList.add('ethiopic-label');
 
 
