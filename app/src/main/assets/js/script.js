@@ -120,7 +120,7 @@ const shareIconSVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24
 const anglicizedNameMap = {
     "Mary": "Maryam",
     "Zion": "Tsion",
-//    "Gabriel": "Gebriel",
+    "Mary of Zion": "Maryam Tsion",
     "Jesus Christ": "Iyesus Kristos",
     "Jesus": "Iyesus",
     "Christ": "Kristos",
@@ -128,18 +128,13 @@ const anglicizedNameMap = {
     "Church": "Béte Kristiyan",
     "Bearer of God": "Theotokos",
     "Mother of God": "Theotokos",
-//    "Amen": "Amen",
+//    "Amen": "Amén",
     "Anne": "Hanna",
     "Joachim": "Iyaqém",
-//    "Israel": "Israel",
-//    "Abraham": "Abraham",
-//    "Ephraim": "Ephrem",
-//    "Ephrem": "Ephrem",
     "Moses": "Musé",
     "Eve": "Héwan",
     "Joseph": "Yoséf",
     "Emmanuel": "Amanuel",
-//    "Adam": "Adam",
     "David": "Dawit",
     "Ephrata": "Efrata",
     "Jacob": "Ya'qob",
@@ -150,9 +145,6 @@ const anglicizedNameMap = {
     "Elizabeth": "Elsabét",
     "Stephen": "Estifanos",
     "John": "Yohannes",
-//    "Abba Giyorgis": "Abba Giyorgis",
-//    "Emperor Naod": "Emperor Naod",
-//    "Abba Ze-Mikael (Amda Hawaryat)": "Abba Ze-Mikael (Amda Hawaryat)"
 };
 
 function applyAnglicization(text, langKey) {
