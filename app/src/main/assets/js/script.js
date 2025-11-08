@@ -2433,7 +2433,10 @@ document.addEventListener('DOMContentLoaded', async () => {
             const langHeader = document.createElement('h4');
             langHeader.textContent = prayer.title;
             langHeader.style.borderBottom = 'none';
-            langHeader.style.marginBottom = '1rem';
+            langHeader.style.marginBottom = '1.5rem'; // Increased margin
+            langHeader.style.fontSize = '1.2rem'; // Larger font size
+            langHeader.style.fontWeight = 'bold'; // Bold text
+            langHeader.style.color = 'var(--accent-color)'; // Accent color
 
 
             const langText = document.createElement('p');
