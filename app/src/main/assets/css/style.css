@@ -1303,34 +1303,26 @@ body.presentation-mode-slides .section-title.active-slide {
     box-sizing: border-box; /* Include padding in width/height */
 }
 
-/* Style and position the prayer-actions container within the section title slide */
-body.presentation-mode-slides .section-title.active-slide .prayer-actions {
-    position: absolute; /* Position relative to the .section-title.active-slide */
-    bottom: 50px; /* Distance from the bottom */
-    right: 50px;  /* Distance from the right */
-    z-index: 100; /* Ensure it's above other content */
-    display: flex; /* Use flexbox for its own children (the button) */
-    gap: 10px; /* Space between buttons if there were more */
-}
-
-/* Style the exit button specifically */
-body.presentation-mode-slides .section-title.active-slide .prayer-actions .section-title-exit-btn {
-    font-size: 1.5em; /* Example size */
-    background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
-    color: white; /* Example color */
+/* Style and position the exit button directly within the section title slide */
+body.presentation-mode-slides .section-title.active-slide .section-title-exit-btn {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    z-index: 100;
+    font-size: 1.5em;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
     border: none;
-    border-radius: 50%; /* Make it round */
-    width: 50px; /* Example width */
-    height: 50px; /* Example height */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    padding: 0; /* Remove default button padding */
+    padding: 0;
 }
 
-/* Hide the prayer-actions container for section titles in scroll mode */
-.section-title .prayer-actions {
-    display: none;
-}
+/* The .exit-slides-mode-btn class already handles hiding/showing the button
+   in scroll vs. slides mode, so we don't need extra rules for a container. */

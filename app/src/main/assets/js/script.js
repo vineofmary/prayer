@@ -812,11 +812,8 @@ function renderPrayers() {
                 if (collapsedSections[title]) {
                     titleEl.classList.add('collapsed');
                 }
-                titleEl.addEventListener('click', (event) => {
-                    // Prevent collapsing when clicking on buttons inside the title
-                    if (event.target.closest('.prayer-actions')) {
-                        return;
-                    }
+                titleEl.addEventListener('click', () => {
+                    // The button's own listener will stop propagation
                     const isCollapsed = titleEl.classList.toggle('collapsed');
                     collapsedSections[title] = isCollapsed;
                     saveSettings();
@@ -830,17 +827,15 @@ function renderPrayers() {
             }
 
             // Add action buttons for slide mode functionality
-            const prayerActions = document.createElement('div');
-            prayerActions.classList.add('prayer-actions');
-
             const exitSlidesBtn = document.createElement('button');
-            exitSlidesBtn.classList.add('exit-slides-mode-btn', 'section-title-exit-btn'); // Added new class
+            exitSlidesBtn.classList.add('exit-slides-mode-btn', 'section-title-exit-btn');
             exitSlidesBtn.innerHTML = '&times;';
             exitSlidesBtn.title = 'Exit Slides Mode';
-            exitSlidesBtn.addEventListener('click', togglePresentationMode);
-            prayerActions.appendChild(exitSlidesBtn);
-
-            titleEl.appendChild(prayerActions);
+            exitSlidesBtn.addEventListener('click', (e) => {
+                e.stopPropagation(); // Prevent the h2's click listener from firing
+                togglePresentationMode();
+            });
+            titleEl.appendChild(exitSlidesBtn);
 
             prayerDisplay.appendChild(titleEl);
             lastSectionTitle = title;
@@ -1094,6 +1089,7 @@ function showSlide(index) {
     } else { // Default is 'slide'
         prayerDisplay.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
     }
+    adjustSlideFontSize();
 }
 
 function nextSlide() {
