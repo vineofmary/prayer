@@ -179,13 +179,13 @@ const rubricRedWords = {
     english: [
         "In the Name of the Father, and of the Son, and of the Holy Spirit, One God, Amen", "I seal my face", "Father", "Son", "Holy Spirit", "One God",
         "Holy Trinity", "We thank You, Lord", "Lord", "God", "King", "Our Father in Heaven",
-        "With the Greeting of Saint Gabriel", "Lord God of hosts", "Jesus Christ", "We believe in one God", "one God",
+        "With the Greeting of Saint Gabriel", "Lord God of hosts", "Jesus Christ", "Iyesus Kristos", "Iyesus", "We believe in one God", "one God",
         "Light", "True God from True God", "Virgin Mary", "Amen", "Holy, holy, holy, is the Lord of hosts", "Holy, holy, holy", "Holy, Holy, Holy", "Christ",
         "I worship the Father, and the Son, and the Holy Spirit", "Godhead", "Glory to the Father, glory to the Son, glory to the Holy Spirit",
         "Most High God", "Greetings to you, we say as we bow to you", "Prayer of Our Lady Mary, Virgin Bearer of God",
         "Savior", "My soul magnifies the Lord", "Glory to the Father, to the Son, and to the Holy Spirit, forever and to the age of ages",
         "Praises for Our Lady Mary, Virgin, Bearer of God", "O holy one, pray for us.", "Son of Man", "Only-begotten", "only-begotten", "Lover", "Good",
-        "Word of God", "Emmanuel", "Word", "God the Word", "One Spirit", "Good Father", "The Angels Praise Mary",
+        "Word of God", "Emmanuel", "Amanuel", "Word", "God the Word", "One Spirit", "Good Father", "The Angels Praise Mary",
         "And now in the sixth month", "peace to you", "Peace to you", "peace be unto you", "Peace be unto you", "Most High",
         "Glory be to the Father, and to the Son, and to the Holy Spirit, forever and to the age of ages.",
         "Come to me, David, King of Israel", "Ask for us, Mary"
@@ -206,11 +206,11 @@ const rubricRedWords = {
 
 const rubricGoldWords = {
     english: [
-        "Mary of Zion", "Lady Mary", "Virgin Mother of God", "Virgin Bearer of God", "God-bearer",
+        "Mary of Zion", "Lady Mary", "Virgin Mother of God", "Virgin Bearer of God", "God-bearer", "Theotokos",
         "Lady", "Holy Virgin", "Mary the Virgin", "Mary, the holy one", "Mary, the praised", "Mary, the pure",
         "Mary, the joyous", "Mary, the beatific", "Mary, the blessed", "The dwelling place of the Godhead",
         "The perfect Tabernacle", "Sister of the angels", "mother of all people", "Peaceful one", "Mary, the embellished",
-        "The gate of the East and the Mother of Light", "Mary, the chosen and honored one", "Mary"
+        "The gate of the East and the Mother of Light", "Mary, the chosen and honored one", "Mary", "Mariam"
     ],
     geez_script: [
         "ማርያም ጽዮን", "እግዝእትነ ማርያም", "እግዝእትየ ማርያም", "ድንግል ወላዲተ አምላክ", "ወላዲተ አምላክ", "እግዝእትየ", "እግዝእትነ",
