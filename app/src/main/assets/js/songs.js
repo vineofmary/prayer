@@ -213,222 +213,259 @@ const songs = [
         "chapter": "ProphetSong",
         "stanza": "ThreeYouths2",
         "english": "“Blessed are You, O Lord God of our fathers, For You are praiseworthy And exalted beyond measure unto the ages. Blessed is Your name and the temple of your glory, And You are praised exceedingly And exalted beyond measure unto the ages.",
+        "spanish": "Bendito eres tú, oh Señor Dios de nuestros padres, y serás alabado y exaltado por encima de todo por siempre. Bendito es tu glorioso y santo nombre, y serás alabado y exaltado por encima de todo por siempre.",
         "reference": "Song of the Three Holy Youths - Daniel 3:52"
     },
     {
         "chapter": "ProphetSong",
         "stanza": "ThreeYouths2",
         "english": "You are blessed in the holy temple of Your glory, And are highly praised And exceedingly glorious unto the ages.",
+        "spanish": "Bendito eres tú en el templo de tu santa gloria, y serás alabado y glorificado por encima de todo por siempre.",
         "reference": "Song of the Three Holy Youths - Daniel 3:53"
     },
     {
         "chapter": "ProphetSong",
         "stanza": "ThreeYouths2",
         "english": "Blessed are You on the throne of Your kingdom, And You are praised And exalted beyond measure unto the ages.",
+        "spanish": "Bendito eres tú en el glorioso trono de tu reino, y serás alabado y glorificado por encima de todo por siempre.",
         "reference": "Song of the Three Holy Youths - Daniel 3:54"
     },
     {
         "chapter": "ProphetSong",
         "stanza": "ThreeYouths2",
         "english": "“Blessed are You who behold the depths And sit upon the cherubim. You are praiseworthy And exalted beyond measure unto the ages.",
+        "spanish": "Bendito eres tú, que contemplas las profundidades y te sientas sobre los querubines, y serás alabado y exaltado por encima de todo por siempre.",
         "reference": "Song of the Three Holy Youths - Daniel 3:55"
     },
     {
         "chapter": "ProphetSong",
         "stanza": "ThreeYouths2",
         "english": "Blessed are You in the firmament of heaven, For You are praised and glorified unto the ages.",
+        "spanish": "Bendito eres tú en el firmamento del cielo, y por encima de todo serás alabado y glorificado por siempre.",
         "reference": "Song of the Three Holy Youths - Daniel 3:56"
     },
     {
         "chapter": "ProphetSong",
         "stanza": "ThreeYouths3",
         "english": "Bless the Lord, all you works of the Lord, And sing a hymn to the Lord, And exalt Him beyond measure unto the ages.",
+        "spanish": "¡Oh, todas las creaciones del Señor, alaben al Señor! Alábenlo y exáltenlo por sobre todo para siempre.",
         "reference": "Song of the Three Holy Youths - Daniel 3:57"
     },
     {
         "chapter": "ProphetSong",
         "stanza": "ThreeYouths3",
         "english": "Bless the Lord, you angels of the Lord, And sing a hymn to Him, And exalt Him beyond measure unto the ages.",
+        "spanish": "¡Ángeles del Señor, alaben al Señor! Alábenlo y exáltenlo por sobre todo para siempre.",
         "reference": "Song of the Three Holy Youths - Daniel 3:58"
     },
     {
         "chapter": "ProphetSong",
         "stanza": "ThreeYouths3",
         "english": "Bless the Lord, you heavens, And sing a hymn to Him, And exalt Him beyond measure unto the ages.",
+        "spanish": "¡Cielos, alaben al Señor! Alábenlo y exáltenlo por sobre todo para siempre.",
         "reference": "Song of the Three Holy Youths - Daniel 3:59"
     },
     {
         "chapter": "ProphetSong",
         "stanza": "ThreeYouths3",
         "english": "Bless the Lord, all you waters above heaven, And sing a hymn to Him, And exalt Him beyond measure unto the ages.",
+        "spanish": "¡Aguas que están sobre los cielos, alaben al Señor! Alábenlo y exáltenlo por sobre todo para siempre.",
         "reference": "Song of the Three Holy Youths - Daniel 3:60"
     },
     {
         "chapter": "ProphetSong",
         "stanza": "ThreeYouths3",
         "english": "Bless the Lord, all you powers of the Lord, And sing a hymn to Him, And exalt Him beyond measure unto the ages.",
+        "spanish": "¡Poderes del Señor, alaben al Señor! Alábenlo y exáltenlo por sobre todo para siempre.",
         "reference": "Song of the Three Holy Youths - Daniel 3:61"
     },
     {
         "chapter": "ProphetSong",
         "stanza": "ThreeYouths3",
         "english": "“Bless the Lord, you sun and moon, And sing a hymn to Him, And exalt Him beyond measure unto the ages.",
+        "spanish": "¡Sol y luna, alaben al Señor! Alábenlo y exáltenlo por sobre todo para siempre.",
         "reference": "Song of the Three Holy Youths - Daniel 3:62"
     },
     {
         "chapter": "ProphetSong",
         "stanza": "ThreeYouths3",
         "english": "Bless the Lord, you stars of heaven, And sing a hymn to Him, And exalt Him beyond measure unto the ages.",
+        "spanish": "¡Estrellas del cielo, alaben al Señor! Alábenlo y exáltenlo por sobre todo para siempre.",
         "reference": "Song of the Three Holy Youths - Daniel 3:63"
     },
     {
         "chapter": "ProphetSong",
         "stanza": "ThreeYouths3",
         "english": "Bless the Lord, every shower and dew, And sing a hymn to Him, And exalt Him beyond measure unto the ages.",
+        "spanish": "¡Lluvias y rocíos, alaben al Señor! Alábenlo y exáltenlo por sobre todo para siempre.",
         "reference": "Song of the Three Holy Youths - Daniel 3:64"
     },
     {
         "chapter": "ProphetSong",
         "stanza": "ThreeYouths3",
         "english": "Bless the Lord, all you winds, And sing a hymn to Him, And exalt Him beyond measure unto the ages.",
+        "spanish": "¡Vientos, alaben al Señor! Alábenlo y exáltenlo por sobre todo para siempre.",
         "reference": "Song of the Three Holy Youths - Daniel 3:65"
     },
     {
         "chapter": "ProphetSong",
         "stanza": "ThreeYouths3",
         "english": "Bless the Lord, you fire and heat, And sing a hymn to Him, And exalt Him beyond measure unto the ages.",
+        "spanish": "¡Fuego y calor, alaben al Señor! Alábenlo y exáltenlo por sobre todo para siempre.",
         "reference": "Song of the Three Holy Youths - Daniel 3:66"
     },
     {
         "chapter": "ProphetSong",
         "stanza": "ThreeYouths3",
         "english": "“Bless the Lord, you winter cold and summer heat, And sing a hymn to Him, And exalt Him beyond measure unto the ages.",
+        "spanish": "¡Invierno y verano, alaben al Señor! Alábenlo y exáltenlo por sobre todo para siempre.",
         "reference": "Song of the Three Holy Youths - Daniel 3:67"
     },
     {
         "chapter": "ProphetSong",
         "stanza": "ThreeYouths3",
         "english": "Bless the Lord, you dews and snows, And sing a hymn to Him, And exalt Him beyond measure unto the ages.",
+        "spanish": "¡Rocíos y tormentas de nieve, alaben al Señor! Alábenlo y exáltenlo por sobre todo para siempre.",
         "reference": "Song of the Three Holy Youths - Daniel 3:68"
     },
     {
         "chapter": "ProphetSong",
         "stanza": "ThreeYouths3",
         "english": "Bless the Lord, you frost and cold, And sing a hymn to Him, And exalt Him beyond measure unto the ages.",
+        "spanish": "¡Hielo y frío, alaben al Señor! Alábenlo y exáltenlo por sobre todo para siempre.",
         "reference": "Song of the Three Holy Youths - Daniel 3:69"
     },
     {
         "chapter": "ProphetSong",
         "stanza": "ThreeYouths3",
         "english": "Bless the Lord, you hoarfrosts and snows, And sing a hymn to Him, And exalt Him beyond measure unto the ages.",
+        "spanish": "¡Escarcha y nieve, alaben al Señor! Alábenlo y exáltenlo por sobre todo para siempre.",
         "reference": "Song of the Three Holy Youths - Daniel 3:70"
     },
     {
         "chapter": "ProphetSong",
         "stanza": "ThreeYouths3",
         "english": "Bless the Lord, you night and day, And sing a hymn to Him, And exalt Him beyond measure unto the ages.",
+        "spanish": "¡Noches y días, alaben al Señor! Alábenlo y exáltenlo por sobre todo para siempre.",
         "reference": "Song of the Three Holy Youths - Daniel 3:71"
     },
     {
         "chapter": "ProphetSong",
         "stanza": "ThreeYouths3",
         "english": "Bless the Lord, you light and darkness, And sing a hymn to Him, And exalt Him beyond measure unto the ages.",
+        "spanish": "¡Luz y oscuridad, alaben al Señor! Alábenlo y exáltenlo por sobre todo para siempre.",
         "reference": "Song of the Three Holy Youths - Daniel 3:72"
     },
     {
         "chapter": "ProphetSong",
         "stanza": "ThreeYouths3",
         "english": "“Bless the Lord, you lightning and clouds, And sing a hymn to Him, And exalt Him beyond measure unto the ages.",
+        "spanish": "¡Relámpagos y nubes, alaben al Señor! Alábenlo y exáltenlo por sobre todo para siempre.",
         "reference": "Song of the Three Holy Youths - Daniel 3:73"
     },
     {
         "chapter": "ProphetSong",
         "stanza": "ThreeYouths3",
         "english": "Let the earth bless the Lord, And let it sing a hymn to Him, And exalt Him beyond measure unto the ages.",
+        "spanish": "¡Tierra, alaba al Señor! Alábenlo y exáltenlo por sobre todo para siempre.",
         "reference": "Song of the Three Holy Youths - Daniel 3:74"
     },
     {
         "chapter": "ProphetSong",
         "stanza": "ThreeYouths3",
         "english": "Bless the Lord, you mountains and hills, And sing a hymn to Him, And exalt Him beyond measure unto the ages.",
+        "spanish": "¡Montañas y colinas, alaben al Señor! Alábenlo y exáltenlo por sobre todo para siempre.",
         "reference": "Song of the Three Holy Youths - Daniel 3:75"
     },
     {
         "chapter": "ProphetSong",
         "stanza": "ThreeYouths3",
         "english": "Bless the Lord, all you things growing on the earth, And sing a hymn to Him, And exalt Him beyond measure unto the ages.",
+        "spanish": "¡Todo lo que crece en la tierra, alabe al Señor! Alábenlo y exáltenlo por sobre todo para siempre.",
         "reference": "Song of the Three Holy Youths - Daniel 3:76"
     },
     {
         "chapter": "ProphetSong",
         "stanza": "ThreeYouths3",
         "english": "Bless the Lord, you springs, And sing a hymn to Him, And exalt Him beyond measure unto the ages.",
+        "spanish": "¡Montañas, alaben al Señor! Alábenlo y exáltenlo por sobre todo para siempre.",
         "reference": "Song of the Three Holy Youths - Daniel 3:77"
     },
     {
         "chapter": "ProphetSong",
         "stanza": "ThreeYouths3",
         "english": "Bless the Lord, you seas and rivers, And sing a hymn to Him, And exalt Him beyond measure unto the ages.",
+        "spanish": "¡Mares y ríos, alaben al Señor! Alábenlo y exáltenlo por sobre todo para siempre.",
         "reference": "Song of the Three Holy Youths - Daniel 3:78"
     },
     {
         "chapter": "ProphetSong",
         "stanza": "ThreeYouths3",
         "english": "“Bless the Lord, you sea-monsters and every thing that moves in the waters, And sing a hymn to Him, And exalt Him beyond measure unto the ages.",
+        "spanish": "¡Ballenas y todo lo que se mueve en las aguas, alaben al Señor! Alábenlo y exáltenlo por sobre todo para siempre.",
         "reference": "Song of the Three Holy Youths - Daniel 3:79"
     },
     {
         "chapter": "ProphetSong",
         "stanza": "ThreeYouths3",
         "english": "Bless the Lord, all you birds of heaven, And sing a hymn to Him, And exalt Him beyond measure unto the ages.",
+        "spanish": "¡Aves del aire, alaben al Señor! Alábenlo y exáltenlo por sobre todo para siempre.",
         "reference": "Song of the Three Holy Youths - Daniel 3:80"
     },
     {
         "chapter": "ProphetSong",
         "stanza": "ThreeYouths3",
         "english": "Bless the Lord, all you wild animals and cattle, And sing a hymn to Him, And exalt Him beyond measure unto the ages.",
+        "spanish": "¡Bestias y ganado, alaben al Señor! Alábenlo y exáltenlo por sobre todo para siempre.",
         "reference": "Song of the Three Holy Youths - Daniel 3:81"
     },
     {
         "chapter": "ProphetSong",
         "stanza": "ThreeYouths3",
         "english": "Bless the Lord, O children of men, And sing a hymn to Him, And exalt Him beyond. O Israel, And sing a hymn to Him, And exalt Him beyond measure unto the ages.",
+        "spanish": "¡Hijos de los hombres, alaben al Señor! Alábenlo y exáltenlo por sobre todo para siempre.",
         "reference": "Song of the Three Holy Youths - Daniel 3:82"
     },
     {
         "chapter": "ProphetSong",
         "stanza": "ThreeYouths3",
         "english": "Bless the Lord, O Israel, And sing a hymn to Him, And exalt Him beyond measure unto the ages.",
+        "spanish": "¡Israel, alaba al Señor! Alábenlo y exáltenlo por sobre todo para siempre.",
         "reference": "Song of the Three Holy Youths - Daniel 3:83"
     },
     {
         "chapter": "ProphetSong",
         "stanza": "ThreeYouths3",
         "english": "Bless the Lord, O priests of the Lord, And sing a hymn to Him, And exalt Him beyond measure unto the ages.",
+        "spanish": "¡Sacerdotes del Señor, alaben al Señor! Alábenlo y exáltenlo por sobre todo para siempre.",
         "reference": "Song of the Three Holy Youths - Daniel 3:84"
     },
     {
         "chapter": "ProphetSong",
         "stanza": "ThreeYouths3",
         "english": "Bless the Lord, O servants of the Lord, And sing a hymn to Him, And exalt Him beyond measure unto the ages.",
+        "spanish": "¡Siervos del Señor, alaben al Señor! Alábenlo y exáltenlo por sobre todo para siempre.",
         "reference": "Song of the Three Holy Youths - Daniel 3:85"
     },
     {
         "chapter": "ProphetSong",
         "stanza": "ThreeYouths3",
         "english": "Bless the Lord, O spirits and souls of the righteous, And sing a hymn to Him, And exalt Him beyond measure unto the ages. †",
+        "spanish": "¡Espíritus y almas de los justos, alaben al Señor! Alábenlo y exáltenlo por sobre todo para siempre.",
         "reference": "Song of the Three Holy Youths - Daniel 3:86"
     },
     {
         "chapter": "ProphetSong",
         "stanza": "ThreeYouths3",
         "english": "Bless the Lord, O holy ones and humble in heart, And sing a hymn to Him, And exalt Him beyond measure unto the ages.",
+        "spanish": "¡Hombres santos y humildes de corazón, alaben al Señor! Alábenlo y exáltenlo por sobre todo para siempre.",
         "reference": "Song of the Three Holy Youths - Daniel 3:87"
     },
     {
         "chapter": "ProphetSong",
         "stanza": "ThreeYouths3",
         "english": "“Bless the Lord, O Hananiah, Azariah, and Mishael, And sing a hymn to Him, And exalt Him beyond measure unto the ages; For He delivered us from Hades And saved us from the hand of death. He rescued us from the midst of the burning fiery furnace And saved us from the midst of the fire.",
+        "spanish": "¡Ananías, Azarías y Misael, alaben al Señor! Alábenlo y exáltenlo por sobre todo para siempre.",
         "reference": "Song of the Three Holy Youths - Daniel 3:88"
     }
 ];
