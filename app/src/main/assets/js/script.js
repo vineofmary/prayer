@@ -57,12 +57,14 @@ const bishopNameInput = document.getElementById('bishop-name-input');
 const countryNameInput = document.getElementById('country-name-input');
 const headOfStateInput = document.getElementById('head-of-state-input');
 const anglicizeNamesToggle = document.getElementById('anglicize-names-toggle');
+const bibleVerseSidebar = document.querySelector('.bible-verse-sidebar');
 
 
 // --- State Variables ---
 const SETTINGS_VERSION = '4.1.9'; // Update this to force refresh load settings
 let currentTheme = {};
 let isSidebarCollapsed = false;
+let isServantsCornerActive = false;
 let displayOptions = {};
 let displayedLanguages = {};
 let fontSizes = {};
@@ -847,6 +849,7 @@ function getStandardPrayerSequence() {
 let collapsedSections = {};
 
 function renderPrayers() {
+    if (isServantsCornerActive) return;
     prayerDisplay.innerHTML = '';
     const activeLanguageCount = Object.values(displayedLanguages).filter(Boolean).length;
     if (activeLanguageCount === 0) {
@@ -2324,7 +2327,6 @@ window.addEventListener('scroll', function() {
     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
 }, false);
 
-
 // --- Initial Load ---
 document.addEventListener('DOMContentLoaded', async () => {
     const splashScreen = document.getElementById('splash-screen');
@@ -2366,4 +2368,114 @@ document.addEventListener('DOMContentLoaded', async () => {
                 .catch(err => console.log('Service worker registration failed: ', err));
         });
     }
+
+    function renderServantsCorner() {
+        isServantsCornerActive = true;
+        prayerDisplay.innerHTML = '';
+
+        const headerContent = document.querySelector('.header-content');
+        const headerActions = document.querySelector('.header-actions');
+
+        // Hide original header content, but store it
+        headerContent.style.display = 'none';
+        headerActions.style.display = 'none';
+
+        // Create a new temporary header
+        const servantsHeader = document.createElement('div');
+        servantsHeader.id = 'servants-header';
+        servantsHeader.style.display = 'flex';
+        servantsHeader.style.justifyContent = 'space-between';
+        servantsHeader.style.alignItems = 'center';
+        servantsHeader.style.width = '100%';
+        servantsHeader.style.padding = '0 1rem';
+
+
+        const backButton = document.createElement('button');
+        backButton.innerHTML = '← Back';
+        backButton.style.fontSize = '1rem';
+        backButton.style.fontWeight = 'bold';
+        backButton.style.cursor = 'pointer';
+        backButton.style.border = 'none';
+        backButton.style.background = 'none';
+        backButton.style.color = 'var(--text-color)';
+        backButton.addEventListener('click', goBackToMainView);
+
+        const newTitle = document.createElement('h1');
+        newTitle.textContent = "Servant's Corner";
+        newTitle.classList.add('ethiopic-label');
+
+
+        servantsHeader.appendChild(backButton);
+        servantsHeader.appendChild(newTitle);
+        
+        // Add a placeholder on the right to keep title centered
+        const placeholder = document.createElement('div');
+        placeholder.style.width = backButton.offsetWidth + 'px';
+        servantsHeader.appendChild(placeholder);
+
+
+        header.insertBefore(servantsHeader, header.firstChild);
+
+
+        servantsPrayers.forEach(prayer => {
+            const prayerCard = document.createElement('div');
+            prayerCard.classList.add('prayer-card');
+
+            const prayerCardMainContent = document.createElement('div');
+            prayerCardMainContent.classList.add('prayer-card-main-content');
+
+            const prayerContent = document.createElement('div');
+            prayerContent.classList.add('prayer-content', 'layout-row');
+
+            const langSection = document.createElement('div');
+            langSection.classList.add('language-section');
+
+            const langHeader = document.createElement('h4');
+            langHeader.textContent = prayer.title;
+            langHeader.style.borderBottom = 'none';
+            langHeader.style.marginBottom = '1rem';
+
+
+            const langText = document.createElement('p');
+            langText.classList.add('language-text');
+            langText.style.whiteSpace = 'pre-wrap';
+            langText.textContent = prayer.prayer.join('\n\n');
+
+            const reference = document.createElement('p');
+            reference.style.fontSize = '0.8rem';
+            reference.style.fontStyle = 'italic';
+            reference.style.opacity = '0.7';
+            reference.style.marginTop = '1rem';
+            reference.textContent = prayer.reference;
+
+            langSection.appendChild(langHeader);
+            langSection.appendChild(langText);
+            langSection.appendChild(reference);
+            prayerContent.appendChild(langSection);
+            prayerCardMainContent.appendChild(prayerContent);
+            prayerCard.appendChild(prayerCardMainContent);
+            prayerDisplay.appendChild(prayerCard);
+        });
+
+        collapseSidebar();
+    }
+
+    function goBackToMainView() {
+        isServantsCornerActive = false;
+
+        const servantsHeader = document.getElementById('servants-header');
+        if (servantsHeader) {
+            servantsHeader.remove();
+        }
+
+        document.querySelector('.header-content').style.display = '';
+        document.querySelector('.header-actions').style.display = '';
+
+        renderPrayers();
+    }
+
+
+    bibleVerseSidebar.addEventListener('click', () => {
+        renderServantsCorner();
+    });
 });
