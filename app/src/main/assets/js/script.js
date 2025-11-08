@@ -2370,6 +2370,16 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     function renderServantsCorner() {
+        // Force exit from slide mode to ensure this view is always a scrollable list
+        if (displayOptions.presentationMode === 'slides') {
+            displayOptions.presentationMode = 'scroll';
+            applyTheme();
+            updateAllTogglesInSettingsPanel();
+            saveSettings();
+        }
+        // It's also crucial to clean up any lingering slide-specific classes/styles
+        removeSlides();
+
         isServantsCornerActive = true;
         prayerDisplay.innerHTML = '';
 
