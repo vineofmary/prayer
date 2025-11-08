@@ -59,7 +59,7 @@ const headOfStateInput = document.getElementById('head-of-state-input');
 
 
 // --- State Variables ---
-const SETTINGS_VERSION = '4.1.7'; // Update this to force refresh load settings
+const SETTINGS_VERSION = '4.1.8'; // Update this to force refresh load settings
 let currentTheme = {};
 let isSidebarCollapsed = false;
 let displayOptions = {};

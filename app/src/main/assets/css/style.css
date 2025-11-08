@@ -1262,7 +1262,7 @@ body.presentation-mode-slides .prayer-content.layout-row .language-section {
         gap: var(--mobile-column-gap);
     }
     .colored-languages.layout-column .language-section:not(:first-child) {
-        padding: 0.5rem;
+        padding: 0 0.5rem 0.5rem;
     }
 
     .prayer-content.layout-column.horizontal-scroll {
