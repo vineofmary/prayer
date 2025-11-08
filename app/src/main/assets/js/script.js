@@ -813,6 +813,11 @@ function renderPrayers() {
                     titleEl.classList.add('collapsed');
                 }
                 titleEl.addEventListener('click', () => {
+                    // Do not allow collapsing/expanding in slides mode
+                    if (displayOptions.presentationMode === 'slides') {
+                        return;
+                    }
+
                     // The button's own listener will stop propagation
                     const isCollapsed = titleEl.classList.toggle('collapsed');
                     collapsedSections[title] = isCollapsed;
