@@ -1375,7 +1375,7 @@ body.presentation-mode-slides .hareg-ornament {
 .holy-trinity-icon {
   display: block;
   width: 100%; /* Default for mobile/narrow screens */
-/*  max-width: 150px; *//* Prevents it from being too large */
+/*  max-width: 350px; *//* Prevents it from being too large */
   margin-left: auto;
   margin-right: auto;
   margin-top: 1rem;
@@ -1384,6 +1384,23 @@ body.presentation-mode-slides .hareg-ornament {
 
 @media (min-width: 901px) { /* For desktop/larger screens */
   .holy-trinity-icon {
+    width: 50%;
+  }
+}
+
+/* Styling for the Section Icons */
+.section-icon {
+  display: block;
+  width: 100%; /* Default for mobile/narrow screens */
+/*  max-width: 350px; *//* Prevents it from being too large */
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 901px) { /* For desktop/larger screens */
+  .section-icon {
     width: 50%;
   }
 }

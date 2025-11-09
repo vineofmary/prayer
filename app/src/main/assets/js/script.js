@@ -906,6 +906,24 @@ function renderPrayers() {
                 iconImg.alt = 'Holy Trinity Icon';
                 iconImg.classList.add('holy-trinity-icon'); // Add a class for styling
                 prayerDisplay.appendChild(iconImg);
+            } else if (title === "Prayer of Saint Ephraim: Praise of Mary | ውዳሴ ማርያም") {
+                const iconImg = document.createElement('img');
+                iconImg.src = 'img/Mary-Blesses-Ephraim.svg';
+                iconImg.alt = 'Mary Blesses Ephraim Icon';
+                iconImg.classList.add('section-icon');
+                prayerDisplay.appendChild(iconImg);
+            } else if (title === "Thursday | ሐሙስ") {
+                const iconImg = document.createElement('img');
+                iconImg.src = 'img/Ephraim-and-Mary-on-Thursday.svg';
+                iconImg.alt = 'Ephraim and Mary on Thursday Icon';
+                iconImg.classList.add('section-icon');
+                prayerDisplay.appendChild(iconImg);
+            } else if (title === "Prayer of Abba Giyorgis: The Angels Praise Mary | ይዌድስዋ መላእክት ለማርያም") {
+                const iconImg = document.createElement('img');
+                iconImg.src = 'img/Mary-with-her-beloved-Son.svg';
+                iconImg.alt = 'Mary with her beloved Son Icon';
+                iconImg.classList.add('section-icon');
+                prayerDisplay.appendChild(iconImg);
             }
             lastSectionTitle = title;
         }
