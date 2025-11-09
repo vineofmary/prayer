@@ -1371,23 +1371,19 @@ body.presentation-mode-slides .hareg-ornament {
   margin-bottom: 0.05rem; /* Space below the ornament */
 }
 
-/* Base class for all Hareg ornaments */
-.hareg-ornament {
+/* Styling for the Holy Trinity Icon */
+.holy-trinity-icon {
   display: block;
-  width: 100%;
-/*  max-width: 350px; *//* Prevents it from being too large on desktops */
+  width: 100%; /* Default for mobile/narrow screens */
+/*  max-width: 150px; *//* Prevents it from being too large */
   margin-left: auto;
   margin-right: auto;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
 }
 
-/* Specific spacing for the header */
-.hareg-header {
-  margin-top: 0.05rem;   /* Space above the ornament */
-  margin-bottom: 0.5rem;  /* Space between ornament and first card */
-}
-
-/* Specific spacing for the footer */
-.hareg-footer {
-  margin-top: 0.05rem;   /* Space above the ornament */
-  margin-bottom: 0.05rem; /* Space below the ornament */
+@media (min-width: 901px) { /* For desktop/larger screens */
+  .holy-trinity-icon {
+    width: 50%;
+  }
 }

@@ -900,6 +900,13 @@ function renderPrayers() {
             titleEl.appendChild(exitSlidesBtn);
 
             prayerDisplay.appendChild(titleEl);
+            if (title === "Daily Prayer | ዘዘወትር ጸሎት") {
+                const iconImg = document.createElement('img');
+                iconImg.src = 'img/Silus-Kidus.svg';
+                iconImg.alt = 'Holy Trinity Icon';
+                iconImg.classList.add('holy-trinity-icon'); // Add a class for styling
+                prayerDisplay.appendChild(iconImg);
+            }
             lastSectionTitle = title;
         }
     };
