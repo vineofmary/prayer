@@ -2441,7 +2441,7 @@ const prayers = [
         "reference": "Conclusion to praying the Psalms of David",
         "chapter": "Psalms",
         "stanza": "Closing",
-        "english": "Ask for us, Mary, for the mercy of your Son, may He watch over us from the Seventh Heaven (Aryam).",
+        "english": "Ask for us, Mary, for the mercy of your Son, may He watch over us from the Seventh Heaven.",
         "geez_script": "ሰአሊ ለነ ማርያም፤ ምሕረተ ወልድኪ፥ የሐውጸነ እምአርያም",
         "geez_phonetic": "se'alī lene maryam: mḥrete weldkī; yeḥawtsene 'im'aryam",
         "amharic_script": "",

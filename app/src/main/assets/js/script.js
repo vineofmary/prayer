@@ -147,6 +147,8 @@ const anglicizedNameMap = {
     "Elizabeth": "Elsabét",
     "Stephen": "Estifanos",
     "John": "Yohannes",
+    "Seventh Heaven": "Aryam",
+    "the Seventh Heaven": "Aryam",
 };
 
 function applyAnglicization(text, langKey) {
@@ -922,6 +924,18 @@ function renderPrayers() {
                 const iconImg = document.createElement('img');
                 iconImg.src = 'img/Mary-with-her-beloved-Son.svg';
                 iconImg.alt = 'Mary with her beloved Son Icon';
+                iconImg.classList.add('section-icon');
+                prayerDisplay.appendChild(iconImg);
+            } else if (title === "Opening Prayer for the Psalms and the Songs of the Prophets | ነዓ ኀቤየ ዳዊት") {
+                const iconImg = document.createElement('img');
+                iconImg.src = 'img/Covenant-of-Mercy.svg';
+                iconImg.alt = 'Covenant of Mercy Icon';
+                iconImg.classList.add('section-icon');
+                prayerDisplay.appendChild(iconImg);
+            } else if (title === "Closing Prayer for the Psalms and Songs of the Prophets | ሰአሊ ለነ ማርያም") {
+                const iconImg = document.createElement('img');
+                iconImg.src = 'img/Covenant-of-Mercy-with-Psalm.svg';
+                iconImg.alt = 'Covenant of Mercy with Psalm Icon';
                 iconImg.classList.add('section-icon');
                 prayerDisplay.appendChild(iconImg);
             }
