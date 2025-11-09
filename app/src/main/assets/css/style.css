@@ -1346,3 +1346,48 @@ body.presentation-mode-slides .section-title.active-slide .section-title-exit-bt
 
 /* The .exit-slides-mode-btn class already handles hiding/showing the button
    in scroll vs. slides mode, so we don't need extra rules for a container. */
+body.presentation-mode-slides .hareg-ornament {
+    display: none;
+}
+
+/* Base class for all Hareg ornaments */
+.hareg-ornament {
+  display: block;
+  width: 100%;
+/*  max-width: 350px; *//* Prevents it from being too large on desktops */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Specific spacing for the header */
+.hareg-header {
+  margin-top: 0.05rem;   /* Space above the ornament */
+  margin-bottom: 0.5rem;  /* Space between ornament and first card */
+}
+
+/* Specific spacing for the footer */
+.hareg-footer {
+  margin-top: 0.05rem;   /* Space above the ornament */
+  margin-bottom: 0.05rem; /* Space below the ornament */
+}
+
+/* Base class for all Hareg ornaments */
+.hareg-ornament {
+  display: block;
+  width: 100%;
+/*  max-width: 350px; *//* Prevents it from being too large on desktops */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Specific spacing for the header */
+.hareg-header {
+  margin-top: 0.05rem;   /* Space above the ornament */
+  margin-bottom: 0.5rem;  /* Space between ornament and first card */
+}
+
+/* Specific spacing for the footer */
+.hareg-footer {
+  margin-top: 0.05rem;   /* Space above the ornament */
+  margin-bottom: 0.05rem; /* Space below the ornament */
+}
