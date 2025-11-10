@@ -1,14 +1,14 @@
 const servantsPrayers = [
     {
         "title": "A prayer of the spiritual servant",
-        "reference": "H.H. Pope Shenouda III (Feed My Sheep, pg. 56)",
+        "reference": "H.H. Pope Shenouda III (Feed My Sheep: A Servant's Handbook to a Spiritual Service, pg. 56)",
         "prayer": [
             "This service, O Lord, is Your work and not mine. Undoubtedly, You will work by me or another. I am only an onlooker, contemplating Your work, and become happy and rejoice at this (John 3:29). Truly \"neither he who plants is anything, nor he who waters, but God who gives the increase\" (1 Cor. 3:7). Therefore, Lord, perform Your work, and make the hearts of Your children glad. Do not hold from them the grace of Your Holy Spirit because of my sins, weaknesses, or shortcomings."
         ]
     },
   {
     "title": "Another prayer of the spiritual servant",
-    "reference": "H.H. Pope Shenouda III (Feed My Sheep, pg. 28)",
+    "reference": "H.H. Pope Shenouda III (Feed My Sheep: A Servant's Handbook to a Spiritual Service, pg. 28)",
     "prayer": [
       "The world is hard as You can see, and full of much devised corruption; who am I to resist those who are attracted to it?",
       "You, O Lord, are the One Who grants me strength, and to these listeners.",
@@ -17,7 +17,7 @@ const servantsPrayers = [
   },
   {
     "title": "Another prayer of the spiritual servant",
-    "reference": "H.H. Pope Shenouda III (Feed My Sheep, pg. 76-77)",
+    "reference": "H.H. Pope Shenouda III (Feed My Sheep: A Servant's Handbook to a Spiritual Service, pg. 76-77)",
     "prayer": [
       "Lord do not keep Your grace from them because of my personal sins and my distance from Your Holy Spirit. What fault is it of theirs?",
       "Give to them, not for my sake, but for the sake of Your love, give to them. For the sake of You being their Father. For the sake that You care about their eternity. For the sake of the need of these young ones of You, given to them through me, or through another. For the servant is not of importance, but the importance is that You give to them. Work in their hearts when I talk to them, and work in their hearts even when I do not talk to them.",
