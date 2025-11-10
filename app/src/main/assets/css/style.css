@@ -1139,6 +1139,11 @@ body.presentation-mode-slides #prayer-display.transition-none {
     height: 100%;
 }
 
+body.presentation-mode-slides .holy-trinity-icon,
+body.presentation-mode-slides .section-icon {
+    display: none;
+}
+
 body.presentation-mode-slides #prayer-display.transition-none .prayer-card,
 body.presentation-mode-slides #prayer-display.transition-none .section-title {
     position: absolute;
