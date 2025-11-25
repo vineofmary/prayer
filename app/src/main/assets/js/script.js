@@ -71,7 +71,7 @@ let fontSizes = {};
 let selectedPsalms = [];
 let selectedProphetSongs = [];
 let customNames = {};
-let bibleData = { nkjv: null, am54: null, rgv: null, loaded: false };
+let bibleData = { nkjv: null, am54: null, rgv: null, geez_psalms: null, loaded: false };
 
 let languageOrder = [
     'english', 'spanish', 'geez_script', 'geez_phonetic',
@@ -1117,6 +1117,10 @@ function copyPsalm(verse, lxxChapter) {
         textToCopy += `--- English ---\n`;
         textToCopy += `[${verse.verseNum}] ${verse.nkjv}\n\n`;
     }
+    if (displayedLanguages.geez_script && verse.geez_psalms) {
+        textToCopy += `--- ግእዝ ---\n`;
+        textToCopy += `[${verse.verseNum}] ${verse.geez_psalms}\n\n`;
+    }
     if (displayedLanguages.amharic_script && verse.am54) {
         textToCopy += `--- አማርኛ ---\n`;
         textToCopy += `[${verse.verseNum}] ${verse.am54}\n\n`;
@@ -1362,7 +1366,8 @@ async function loadBibleData() {
     const results = await Promise.all([
         loadFile('bible/NKJV_New_King_James_English_Bible_1982AD.json', 'nkjv'),
         loadFile('bible/አም54_Haile_Selassie_Amharic_Bible_1962AD_1954EC.json', 'am54'),
-        loadFile('bible/RGV_Reina_Valera_Gomez_Bible_2010AD.json', 'rgv')
+        loadFile('bible/RGV_Reina_Valera_Gomez_Bible_2010AD.json', 'rgv'),
+        loadFile('bible/ግእዝ_Psalms_1-151_with_Songs_of_the_Prophets.json', 'geez_psalms')
     ]);
 
     if (results.some(res => res === true)) {
@@ -1473,6 +1478,7 @@ function renderSelectedPsalmsWithDoxology(addSectionTitleCallback) {
     const nkjvVersesAll = getVerses(bibleData.nkjv, false);
     const am54VersesAll = getVerses(bibleData.am54, true);
     const rgvVersesAll = getVerses(bibleData.rgv, true);
+    const geezPsalmsAll = getVerses(bibleData.geez_psalms, true);
 
     const psalmBookData = {
         nkjv: { name: 19, bookKey: 'book' },
@@ -1496,20 +1502,24 @@ function renderSelectedPsalmsWithDoxology(addSectionTitleCallback) {
             const nkjvVerses = nkjvPsalms.filter(v => v.chapter == mtChapter);
             const am54Verses = am54Psalms.filter(v => v.chapter == mtChapter);
             const rgvVerses = rgvPsalms.filter(v => v.chapter == mtChapter);
+            const geezPsalmChapter = geezPsalmsAll.find(c => c.id === lxxChapter);
+            const geezVerses = geezPsalmChapter ? geezPsalmChapter.verses : [];
+
 
             let maxVerseNum = 0;
-            [...nkjvVerses, ...am54Verses, ...rgvVerses].forEach(v => {
-                if (v && v.verse) {
-                    const verseParts = String(v.verse).split('-').map(Number);
+            [...nkjvVerses, ...am54Verses, ...rgvVerses, ...geezVerses].forEach(v => {
+                if (v && (v.verse || v.verse_number)) {
+                    const verseNum = v.verse || v.verse_number;
+                    const verseParts = String(verseNum).split('-').map(Number);
                     const endVerse = verseParts.length > 1 ? verseParts[1] : verseParts[0];
                     if (endVerse > maxVerseNum) maxVerseNum = endVerse;
                 }
             });
 
             for (let i = 1; i <= maxVerseNum; i++) {
-                const findVerse = (verses, verseNum) => verses.find(v => {
-                    if (!v || !v.verse) return false;
-                    const parts = String(v.verse).split('-').map(Number);
+                const findVerse = (verses, verseNum, verseKey = 'verse') => verses.find(v => {
+                    if (!v || !v[verseKey]) return false;
+                    const parts = String(v[verseKey]).split('-').map(Number);
                     return verseNum >= parts[0] && verseNum <= (parts.length > 1 ? parts[1] : parts[0]);
                 });
 
@@ -1527,7 +1537,10 @@ function renderSelectedPsalmsWithDoxology(addSectionTitleCallback) {
                     verseData.am54 = am54Verse.text;
                 }
 
-                if (verseData.nkjv || verseData.rgv || verseData.am54) {
+                const geezVerse = findVerse(geezVerses, i, 'verse_number');
+                if (geezVerse) verseData.geez_psalms = geezVerse.text;
+
+                if (verseData.nkjv || verseData.rgv || verseData.am54 || verseData.geez_psalms) {
                     allVerses.push(verseData);
                 }
             }
@@ -1537,7 +1550,8 @@ function renderSelectedPsalmsWithDoxology(addSectionTitleCallback) {
             const activePsalmTranslations = {
                 english: displayedLanguages.english && verse.nkjv,
                 amharic_script: displayedLanguages.amharic_script && verse.am54,
-                spanish: displayedLanguages.spanish && verse.rgv
+                spanish: displayedLanguages.spanish && verse.rgv,
+                geez_script: displayedLanguages.geez_script && verse.geez_psalms
             };
             const activeLanguageCount = Object.values(activePsalmTranslations).filter(Boolean).length;
             if (activeLanguageCount === 0) return;
@@ -1558,17 +1572,20 @@ function renderSelectedPsalmsWithDoxology(addSectionTitleCallback) {
             const langKeyToPsalmVerseProp = {
                 'english': 'nkjv',
                 'amharic_script': 'am54',
-                'spanish': 'rgv'
+                'spanish': 'rgv',
+                'geez_script': 'geez_psalms'
             };
             const langKeyToIsEthiopic = {
                 'english': false,
                 'amharic_script': true,
-                'spanish': false
+                'spanish': false,
+                'geez_script': true
             };
             const langKeyToLangName = {
                 'english': 'English',
                 'amharic_script': 'አማርኛ',
-                'spanish': 'Español'
+                'spanish': 'Español',
+                'geez_script': 'ግእዝ'
             };
 
             languageOrder.forEach(langKey => {
