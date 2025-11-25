@@ -609,117 +609,90 @@
         "verse_number": 21,
         "verse_geez": "፳፩",
         "text": "ለምንት እግዚኦ ቆምከ እምርሑቅ፤ ወትትዔወር በጊዜ ምንዳቤ።"
-      }
-    ]
-  },
-  {
-    "id": 10,
-    "chapter_geez": "፲",
-    "title_geez": "",
-    "verses": [
-      {
-        "verse_number": 1,
-        "verse_geez": "፩",
-        "text": "ለምንት እግዚኦ ቆምከ እምርሑቅ፤ ወትትዔወር በጊዜ ምንዳቤ።"
       },
       {
-        "verse_number": 2,
-        "verse_geez": "፪",
+        "verse_number": 22,
+        "verse_geez": "፳፪",
         "text": "በትዕቢቱ ለኃጥእ ይውዒ ነዳይ፤ ወይሠገሩ በውዴቶሙ እንተ ሐለዩ።"
       },
       {
-        "verse_number": 3,
-        "verse_geez": "፫",
+        "verse_number": 23,
+        "verse_geez": "፳፫",
         "text": "እስመ ይትዌደስ ኃጥእ በፍትወተ ነፍሱ፤ ወዐማፂኒ ይትባረክ"
       },
       {
-        "verse_number": 4,
-        "verse_geez": "፬",
-        "text": "ወሐኮ ኃጥእ ለእግዚአብሔር። ወኢተኃሥሦ በከመ ብዝኀ መዐቱ፤"
+        "verse_number": 24,
+        "verse_geez": "፳፬",
+        "text": "ወሐኮ ኃጥእ ለእግዚአብሔር። ወኢተኃሥሦ በከመ ብዝኀ መዐቱ፤ ወአልቦ እግዚአብሔር በቅድሜሁ።"
       },
       {
-        "verse_number": 5,
-        "verse_geez": "፭",
-        "text": "ወአልቦ እግዚአብሔር በቅድሜሁ። ወርኩስ ኵሉ ፍናዊሁ"
+        "verse_number": 25,
+        "verse_geez": "፳፭",
+        "text": "ወርኩስ ኵሉ ፍናዊሁ ወንሡት ኵነኔከ በቅድሜሁ፤ ወይቀንዮሙ ለኵሎሙ ጸላእቱ።"
       },
       {
-        "verse_number": 6,
-        "verse_geez": "፮",
-        "text": "ወንሡት ኵነኔከ በቅድሜሁ፤ ወይቀንዮሙ ለኵሎሙ ጸላእቱ።"
-      },
-      {
-        "verse_number": 7,
-        "verse_geez": "፯",
+        "verse_number": 26,
+        "verse_geez": "፳፮",
         "text": "ወይብል በልቡ ኢይትሀወክ፤ ለትውልደ ትውልድ ኢይረክበኒ እኩይ።"
       },
       {
-        "verse_number": 8,
-        "verse_geez": "፰",
+        "verse_number": 27,
+        "verse_geez": "፳፯",
         "text": "ምሉእ አፉሁ መርገመ ወጽልሑተ፤ ወታሕተ ልሳኑ ጻማ ወሕማም።"
       },
       {
-        "verse_number": 9,
-        "verse_geez": "፱",
-        "text": "ወይጸንሕ ወይንዑ ምስለ ብዑላን ከመ ይቅትሎ ለንጹሕ በጽሚት፤"
+        "verse_number": 28,
+        "verse_geez": "፳፰",
+        "text": "ወይጸንሕ ወይንዑ ምስለ ብዑላን ከመ ይቅትሎ ለንጹሕ በጽሚት፤ ወአዕይንቲሁኒ ኀበ ነዳይ ያስትሐይጻ። "
       },
       {
-        "verse_number": 10,
-        "verse_geez": "፲",
-        "text": "ወአዕይንቲሁኒ ኀበ ነዳይ ያስትሐይጻ። ይጸንሕ ወይትኀባእ ከመ አንበሳ ውስተ ግብ"
+        "verse_number": 29,
+        "verse_geez": "፳፱",
+        "text": "ይጸንሕ ወይትኀባእ ከመ አንበሳ ውስተ ግብ ወይጸንሕ ከመ ይምስጦ ለነዳይ፤ ወይመስጦ ለነዳይ ወይስሕቦ"
       },
       {
-        "verse_number": 11,
-        "verse_geez": "፲፩",
-        "text": "ወይጸንሕ ከመ ይምስጦ ለነዳይ፤ ወይመስጦ ለነዳይ ወይስሕቦ"
-      },
-      {
-        "verse_number": 12,
-        "verse_geez": "፲፪",
+        "verse_number": 30,
+        "verse_geez": "፴",
         "text": "ወያኀስሮ በመሥገርቱ። ይትቀጻዕ ወይወድቅ ሶበ ቀነዮ ለነዳይ።"
       },
       {
-        "verse_number": 13,
-        "verse_geez": "፲፫",
+        "verse_number": 31,
+        "verse_geez": "፴፩",
         "text": "ወይብል በልቡ ይረስዐኒ እግዚአብሔር፤ ወሜጠ ገጾ ከመ ኢይርአይ ለግሙራ።"
       },
       {
-        "verse_number": 14,
-        "verse_geez": "፲፬",
+        "verse_number": 32,
+        "verse_geez": "፴፪",
         "text": "ተንሥእ እግዚኦ አምላክየ ወትትሌዐል እዴከ፤ ወኢትርስዖሙ ለነዳያን።"
       },
       {
-        "verse_number": 15,
-        "verse_geez": "፲፭",
+        "verse_number": 33,
+        "verse_geez": "፴፫",
         "text": "በእንተ ምንት አምዕዖ ኃጥእ ለእግዚአብሔር፤ እስመ ይብል በልቡ ኢይትኃሠሠኒ።"
       },
       {
-        "verse_number": 16,
-        "verse_geez": "፲፮",
-        "text": "ትሬኢኑ ከመ ለሊከ ትኔጽር ጻማ ወመዐተ፤ ወከመ ትመጥዎ ውስተ እዴከ፤"
+        "verse_number": 34,
+        "verse_geez": "፴፬",
+        "text": "ትሬኢኑ ከመ ለሊከ ትኔጽር ጻማ ወመዐተ፤ ወከመ ትመጥዎ ውስተ እዴከ፤ ላዕሌከኑ እንከ ተገድፈ ነዳይ፤ ወአንተኑ ረዳኢሁ ለእጓለ ማውታ።"
       },
       {
-        "verse_number": 17,
-        "verse_geez": "፲፯",
-        "text": "ላዕሌከኑ እንከ ተገድፈ ነዳይ፤ ወአንተኑ ረዳኢሁ ለእጓለ ማውታ።"
-      },
-      {
-        "verse_number": 18,
-        "verse_geez": "፲፰",
+        "verse_number": 35,
+        "verse_geez": "፴፭",
         "text": "ቀጥቅጥ መዝራዕቶ ለኃጥእ ወለእኩይ፤ ወትትኀሠሥ ኀጢአቱ በእንቲአሁ ወኢትትረከብ።"
       },
       {
-        "verse_number": 19,
-        "verse_geez": "፲፱",
+        "verse_number": 36,
+        "verse_geez": "፴፮",
         "text": "ይነግሥ እግዚአብሔር ለዓለም ወለዓለመ ዓለም፤ ወይትሐጕሉ አሕዛብ እምድር።"
       },
       {
-        "verse_number": 20,
-        "verse_geez": "፳",
+        "verse_number": 37,
+        "verse_geez": "፴፯",
         "text": "ፍትወቶሙ ለነዳያን ሰምዐ እግዚአብሔር፤ ወሕሊና ልቦሙኒ አፅምአት እዝኑ።"
       },
       {
-        "verse_number": 21,
-        "verse_geez": "፳፩",
+        "verse_number": 38,
+        "verse_geez": "፴፰",
         "text": "ፍትሑ ለነዳይ ወለእጓለ ማውታ፤ ከመ ኢይድግሙ እንከ እጓለ እምሕያው አዕብዮ አፉሆሙ በዲበ ምድር።"
       }
     ]
