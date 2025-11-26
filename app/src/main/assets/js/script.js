@@ -1460,12 +1460,12 @@ function renderSelectedPsalmsWithDoxology(addSectionTitleCallback) {
         if (isStructured) {
             if (data.books && Array.isArray(data.books)) {
                 return data.books.flatMap(book =>
-                book.chapters ? book.chapters.flatMap(ch => (ch.verses || []).map((verseText, index) => ({
-                    book: book.title,
-                    chapter: ch.chapter,
-                    verse: index + 1,
-                    text: verseText
-                }))) : []
+                    book.chapters ? book.chapters.flatMap(ch => (ch.verses || []).map((verseText, index) => ({
+                        book: book.title,
+                        chapter: ch.chapter,
+                        verse: index + 1,
+                        text: verseText
+                    }))) : []
                 );
             }
             if (data.verses && Array.isArray(data.verses)) {
@@ -1494,57 +1494,100 @@ function renderSelectedPsalmsWithDoxology(addSectionTitleCallback) {
 
     for (const lxxChapter of selectedPsalms.sort((a, b) => a - b)) {
         addSectionTitleCallback(lxxChapter);
-        const mtChapters = convertLxxToMt(lxxChapter);
-
         let allVerses = [];
 
-        mtChapters.forEach(mtChapter => {
-            const nkjvVerses = nkjvPsalms.filter(v => v.chapter == mtChapter);
-            const am54Verses = am54Psalms.filter(v => v.chapter == mtChapter);
-            const rgvVerses = rgvPsalms.filter(v => v.chapter == mtChapter);
-            const geezPsalmChapter = geezPsalmsAll.find(c => c.id === lxxChapter);
+        // Special handling for LXX Psalm 9
+        if (lxxChapter === 9) {
+            const nkjv9 = nkjvPsalms.filter(v => v.chapter == 9);
+            const nkjv10 = nkjvPsalms.filter(v => v.chapter == 10);
+            const am54_9 = am54Psalms.filter(v => v.chapter == 9);
+            const am54_10 = am54Psalms.filter(v => v.chapter == 10);
+            const rgv9 = rgvPsalms.filter(v => v.chapter == 9);
+            const rgv10 = rgvPsalms.filter(v => v.chapter == 10);
+            const geezPsalmChapter = geezPsalmsAll.find(c => c.id === 9);
             const geezVerses = geezPsalmChapter ? geezPsalmChapter.verses : [];
 
+            for (let lxxVerseNum = 1; lxxVerseNum <= 38; lxxVerseNum++) {
+                let mtChapter, mtVerseNum;
+                let nkjvSrc, am54Src, rgvSrc;
 
-            let maxVerseNum = 0;
-            [...nkjvVerses, ...am54Verses, ...rgvVerses, ...geezVerses].forEach(v => {
-                if (v && (v.verse || v.verse_number)) {
-                    const verseNum = v.verse || v.verse_number;
-                    const verseParts = String(verseNum).split('-').map(Number);
-                    const endVerse = verseParts.length > 1 ? verseParts[1] : verseParts[0];
-                    if (endVerse > maxVerseNum) maxVerseNum = endVerse;
-                }
-            });
-
-            for (let i = 1; i <= maxVerseNum; i++) {
-                const findVerse = (verses, verseNum, verseKey = 'verse') => verses.find(v => {
-                    if (!v || !v[verseKey]) return false;
-                    const parts = String(v[verseKey]).split('-').map(Number);
-                    return verseNum >= parts[0] && verseNum <= (parts.length > 1 ? parts[1] : parts[0]);
-                });
-
-                let verseData = { verseNum: i, mtChapter: mtChapter };
-                const nkjvVerse = findVerse(nkjvVerses, i);
-                if (nkjvVerse) verseData.nkjv = nkjvVerse.text;
-
-                const rgvVerse = findVerse(rgvVerses, i);
-                if (rgvVerse) {
-                    verseData.rgv = rgvVerse.text.replace(/«/g, '<i>').replace(/»/g, '</i><br>');
+                if (lxxVerseNum <= 20) {
+                    mtChapter = 9;
+                    mtVerseNum = lxxVerseNum;
+                    nkjvSrc = nkjv9;
+                    am54Src = am54_9;
+                    rgvSrc = rgv9;
+                } else {
+                    mtChapter = 10;
+                    mtVerseNum = lxxVerseNum - 20;
+                    nkjvSrc = nkjv10;
+                    am54Src = am54_10;
+                    rgvSrc = rgv10;
                 }
 
-                const am54Verse = findVerse(am54Verses, i);
-                if (am54Verse) {
-                    verseData.am54 = am54Verse.text;
-                }
+                const findVerse = (verses, verseNum, key = 'verse') => verses.find(v => v && v[key] == verseNum);
 
-                const geezVerse = findVerse(geezVerses, i, 'verse_number');
-                if (geezVerse) verseData.geez_psalms = geezVerse.text;
+                const nkjvVerse = findVerse(nkjvSrc, mtVerseNum);
+                const am54Verse = findVerse(am54Src, mtVerseNum);
+                const rgvVerse = findVerse(rgvSrc, mtVerseNum);
+                const geezVerse = findVerse(geezVerses, lxxVerseNum, 'verse_number');
 
-                if (verseData.nkjv || verseData.rgv || verseData.am54 || verseData.geez_psalms) {
-                    allVerses.push(verseData);
+                if (nkjvVerse || am54Verse || rgvVerse || geezVerse) {
+                    allVerses.push({
+                        verseNum: lxxVerseNum, // LXX verse number
+                        mtChapter: mtChapter,
+                        mtVerseNum: mtVerseNum,
+                        nkjv: nkjvVerse ? nkjvVerse.text : '',
+                        am54: am54Verse ? am54Verse.text : '',
+                        rgv: rgvVerse ? rgvVerse.text.replace(/«/g, '<i>').replace(/»/g, '</i><br>') : '',
+                        geez_psalms: geezVerse ? geezVerse.text : '',
+                    });
                 }
             }
-        });
+        } else {
+            // Original logic for all other psalms
+            const mtChapters = convertLxxToMt(lxxChapter);
+            mtChapters.forEach(mtChapter => {
+                const nkjvVerses = nkjvPsalms.filter(v => v.chapter == mtChapter);
+                const am54Verses = am54Psalms.filter(v => v.chapter == mtChapter);
+                const rgvVerses = rgvPsalms.filter(v => v.chapter == mtChapter);
+
+                let maxVerseNum = 0;
+                [...nkjvVerses, ...am54Verses, ...rgvVerses].forEach(v => {
+                    if (v && v.verse) {
+                        const verseParts = String(v.verse).split('-').map(Number);
+                        const endVerse = verseParts.length > 1 ? verseParts[1] : verseParts[0];
+                        if (endVerse > maxVerseNum) maxVerseNum = endVerse;
+                    }
+                });
+
+                for (let i = 1; i <= maxVerseNum; i++) {
+                    const findVerse = (verses, verseNum) => verses.find(v => {
+                        if (!v || !v.verse) return false;
+                        const parts = String(v.verse).split('-').map(Number);
+                        return verseNum >= parts[0] && verseNum <= (parts.length > 1 ? parts[1] : parts[0]);
+                    });
+
+                    let verseData = { verseNum: i, mtChapter: mtChapter, mtVerseNum: i };
+                    const nkjvVerse = findVerse(nkjvVerses, i);
+                    if (nkjvVerse) verseData.nkjv = nkjvVerse.text;
+
+                    const rgvVerse = findVerse(rgvVerses, i);
+                    if (rgvVerse) {
+                        verseData.rgv = rgvVerse.text.replace(/«/g, '<i>').replace(/»/g, '</i><br>');
+                    }
+
+                    const am54Verse = findVerse(am54Verses, i);
+                    if (am54Verse) {
+                        verseData.am54 = am54Verse.text;
+                    }
+
+                    if (verseData.nkjv || verseData.rgv || verseData.am54) {
+                        allVerses.push(verseData);
+                    }
+                }
+            });
+        }
 
         allVerses.forEach(verse => {
             const activePsalmTranslations = {
@@ -1570,22 +1613,13 @@ function renderSelectedPsalmsWithDoxology(addSectionTitleCallback) {
             prayerContent.dataset.activeColumns = activeLanguageCount;
 
             const langKeyToPsalmVerseProp = {
-                'english': 'nkjv',
-                'amharic_script': 'am54',
-                'spanish': 'rgv',
-                'geez_script': 'geez_psalms'
+                'english': 'nkjv', 'amharic_script': 'am54', 'spanish': 'rgv', 'geez_script': 'geez_psalms'
             };
             const langKeyToIsEthiopic = {
-                'english': false,
-                'amharic_script': true,
-                'spanish': false,
-                'geez_script': true
+                'english': false, 'amharic_script': true, 'spanish': false, 'geez_script': true
             };
             const langKeyToLangName = {
-                'english': 'English',
-                'amharic_script': 'አማርኛ',
-                'spanish': 'Español',
-                'geez_script': 'ግእዝ'
+                'english': 'English', 'amharic_script': 'አማርኛ', 'spanish': 'Español', 'geez_script': 'ግእዝ'
             };
 
             languageOrder.forEach(langKey => {
@@ -1594,33 +1628,37 @@ function renderSelectedPsalmsWithDoxology(addSectionTitleCallback) {
                     prayerContent.appendChild(createPsalmVerseSection(langKeyToLangName[langKey], verse[prop], verse.verseNum, langKeyToIsEthiopic[langKey], langKey));
                 }
             });
-
             prayerCardMainContent.appendChild(prayerContent);
-
             const prayerFooter = document.createElement('div');
             prayerFooter.classList.add('prayer-footer');
-
             const prayerLabel = document.createElement('div');
             prayerLabel.classList.add('prayer-label');
+            
             let labelText;
-            if (lxxChapter == verse.mtChapter) {
-                labelText = `Psalm ${lxxChapter}:${verse.verseNum}`;
+            if (lxxChapter === 9) {
+                if (verse.mtChapter === 9) {
+                    labelText = `Psalm 9:${verse.verseNum}`;
+                } else { // mtChapter is 10
+                    labelText = `Psalm 9:${verse.verseNum} (10:${verse.mtVerseNum})`;
+                }
             } else {
-                labelText = `Psalm ${lxxChapter} (${verse.mtChapter}):${verse.verseNum}`;
+                if (lxxChapter == verse.mtChapter) {
+                    labelText = `Psalm ${lxxChapter}:${verse.verseNum}`;
+                } else {
+                    labelText = `Psalm ${lxxChapter} (${verse.mtChapter}):${verse.verseNum}`;
+                }
             }
             prayerLabel.textContent = labelText;
-            prayerFooter.appendChild(prayerLabel);
 
+            prayerFooter.appendChild(prayerLabel);
             const prayerActions = document.createElement('div');
             prayerActions.classList.add('prayer-actions');
-
             const copyButton = document.createElement('button');
             copyButton.classList.add('share-btn');
             copyButton.innerHTML = shareIconSVG;
             copyButton.title = 'Copy visible languages';
             copyButton.addEventListener('click', () => copyPsalm(verse, lxxChapter));
             prayerActions.appendChild(copyButton);
-
             const enterSlidesBtn = document.createElement('button');
             enterSlidesBtn.classList.add('enter-slides-mode-btn');
             enterSlidesBtn.innerHTML = `<svg class="pres-mode-icon-slides" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v2h8v-2h5c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 14H3V5h18v12z"/></svg>`;
@@ -1635,21 +1673,18 @@ function renderSelectedPsalmsWithDoxology(addSectionTitleCallback) {
                 }
             });
             prayerActions.appendChild(enterSlidesBtn);
-
             const exitSlidesBtn = document.createElement('button');
             exitSlidesBtn.classList.add('exit-slides-mode-btn');
             exitSlidesBtn.innerHTML = '&times;';
             exitSlidesBtn.title = 'Exit Slides Mode';
             exitSlidesBtn.addEventListener('click', togglePresentationMode);
             prayerActions.appendChild(exitSlidesBtn);
-
             prayerFooter.appendChild(prayerActions);
             prayerCardMainContent.appendChild(prayerFooter);
             prayerCard.appendChild(prayerCardMainContent);
             prayerDisplay.appendChild(prayerCard);
         });
 
-        // After rendering all verses for a psalm, add the doxology response
         if (doxologyPrayer) {
             const doxologyCard = createPrayerCardElement(doxologyPrayer, -1);
             prayerDisplay.appendChild(doxologyCard);
