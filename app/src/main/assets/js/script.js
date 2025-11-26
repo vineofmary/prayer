@@ -61,7 +61,7 @@ const bibleVerseSidebar = document.querySelector('.bible-verse-sidebar');
 
 
 // --- State Variables ---
-const SETTINGS_VERSION = '4.1.11'; // Update this to force refresh load settings
+const SETTINGS_VERSION = '4.1.12'; // Update this to force refresh load settings
 let currentTheme = {};
 let isSidebarCollapsed = false;
 let isServantsCornerActive = false;
