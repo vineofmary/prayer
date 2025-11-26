@@ -1,4 +1,4 @@
-const CACHE_NAME = 'divine-liturgy-cache-v1';
+const CACHE_NAME = 'divine-liturgy-cache-v2';
 const urlsToCache = [
   './',
   './index.html',
@@ -21,14 +21,24 @@ self.addEventListener('install', event => {
 
 self.addEventListener('fetch', event => {
   event.respondWith(
-    caches.match(event.request)
-      .then(response => {
-        if (response) {
-          return response;
-        }
-        return fetch(event.request);
-      }
-    )
+    caches.open(CACHE_NAME).then(cache => {
+      return cache.match(event.request).then(response => {
+        const fetchPromise = fetch(event.request).then(networkResponse => {
+          // If we got a valid response, update the cache
+          if (networkResponse && networkResponse.status === 200) {
+            cache.put(event.request, networkResponse.clone());
+          }
+          return networkResponse;
+        }).catch(error => {
+          console.error('Fetch failed: ', error);
+          // If network fetch fails, and there's no cache, or cache fetch also fails, we can throw or return a fallback
+          // For now, let's just let it return undefined if both fail.
+        });
+
+        // Return the cached response if it exists, otherwise wait for the network
+        return response || fetchPromise;
+      });
+    })
   );
 });
 
