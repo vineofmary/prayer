@@ -267,11 +267,11 @@ const rubricRedWords = {
         "I worship the Father, and the Son, and the Holy Spirit", "Godhead", "Glory to the Father, glory to the Son, glory to the Holy Spirit",
         "Most High God", "Greetings to you, we say as we bow to you", "Prayer of Our Lady Mary, Virgin Bearer of God",
         "Savior", "My soul magnifies the Lord", "Glory to the Father, to the Son, and to the Holy Spirit, forever and to the age of ages",
-        "Praises for Our Lady Mary, Virgin, Bearer of God", "O holy one, pray for us.", "Son of Man", "Only-begotten", "only-begotten", "Lover", "Good",
+        "Praises for Our Lady Mary, Virgin, Bearer of God", "O holy one (Mary), pray for us.", "Son of Man", "Only-begotten", "only-begotten",
         "Word of God", "Emmanuel", "Amanuel", "Word", "God the Word", "One Spirit", "Good Father", "The Angels Praise Mary",
         "And now in the sixth month", "peace to you", "Peace to you", "peace be unto you", "Peace be unto you", "Most High",
         "Glory be to the Father, and to the Son, and to the Holy Spirit, forever and to the age of ages.",
-        "Come to me, David, King of Israel", "Ask for us, Mary"
+        "Come to me, David, King of Israel", "Ask for us, Mary", "For His mercy endures forever"
     ],
     geez_script: [
         "በስመ አብ ወወልድ ወመንፈስ ቅዱስ", "አአትብ ገጽየ", "አብ", "ወልድ", "ወወልድ", "መንፈስ ቅዱስ", "አሐዱ አምላክ", "አሐዱ አምላክ፣",
@@ -309,14 +309,22 @@ function buildRegex(words, isGeez = false) {
         .map(word => word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')); // Escape regex special chars
 
     const regexString = sortedWords.join('|');
+    
+    // Improved boundary pattern: space, start of line, or common punctuation (including Ethiopic)
+    // We use a non-capturing group for the leading boundary to avoid index shifts in replace
+    const leadBoundary = '(?:^|[\\s\\(\\)\\[\\]\\{\\}.,:;!?፨።፤፣፥<])';
+    const trailBoundary = '(?=[\\s\\(\\)\\[\\]\\{\\}.,:;!?፨።፤፣፥>]|$)';
 
     if (isGeez) {
-        // For Ge'ez, handle optional prefixes (ወ, ለ, እም) and ensure it's not part of a larger word.
-        // The regex uses a lookahead to ensure the match is followed by a boundary character.
-        return new RegExp(`(^|\\s|\\()((?:ወ|ለ|እም)?)(${regexString})(?=[\\s.,:;!?\\)]|$)`, 'g');
+        // For Ge'ez, handle optional prefixes (ወ, ለ, እም)
+        // Group 1: Prefix (ወ, ለ, or እም)
+        // Group 2: The actual word match
+        return new RegExp(`(${leadBoundary})((?:ወ|ለ|እም)?)(?:${regexString})${trailBoundary}`, 'g');
     }
-    // For English, match whole words or phrases, ensuring they are bounded by spaces or punctuation.
-    return new RegExp(`(^|\\s|\\()(${regexString})(?=[\\s.,:;!?\\)]|$)`, 'gi');
+    // For English/Spanish, match whole words/phrases using standard boundaries
+    // Group 1: The boundary
+    // Group 2: The word match
+    return new RegExp(`(${leadBoundary})(${regexString})${trailBoundary}`, 'gi');
 }
 
 const rubricRedRegex = {
@@ -398,12 +406,17 @@ function applyRubrication(text, langKey, isFirstLanguage) {
     // Apply Gold Rubrication first
     const goldRegex = rubricGoldRegex[langKey];
     if (goldRegex) {
-        processedText = processedText.replace(goldRegex, (match, p1, p2, p3) => {
+        processedText = processedText.replace(goldRegex, (fullMatch, p1, p2) => {
+            // Find which word from the list matched
+            const matchIndex = fullMatch.indexOf(p2, p1.length);
+            const actualMatchedWord = fullMatch.substring(p1.length);
+            
             if (langKey === 'geez_script') {
-                // p1 is the leading boundary, p2 is the optional prefix, p3 is the word
-                return `${p1}${p2}<span class="rubric-gold">${p3}</span>`;
+                // p1 is leading boundary, p2 is prefix
+                // actualMatchedWord includes prefix + root
+                return `${p1}<span class="rubric-gold">${actualMatchedWord}</span>`;
             }
-            // p1 is the leading boundary, p2 is the word
+            // p1 is leading boundary, p2 is main word
             return `${p1}<span class="rubric-gold">${p2}</span>`;
         });
     }
@@ -411,9 +424,10 @@ function applyRubrication(text, langKey, isFirstLanguage) {
     // Apply Red Rubrication second
     const redRegex = rubricRedRegex[langKey];
     if (redRegex) {
-        processedText = processedText.replace(redRegex, (match, p1, p2, p3) => {
+        processedText = processedText.replace(redRegex, (fullMatch, p1, p2) => {
+            const actualMatchedWord = fullMatch.substring(p1.length);
             if (langKey === 'geez_script') {
-                return `${p1}${p2}<span class="rubric-red">${p3}</span>`;
+                return `${p1}<span class="rubric-red">${actualMatchedWord}</span>`;
             }
             return `${p1}<span class="rubric-red">${p2}</span>`;
         });
