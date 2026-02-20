@@ -61,7 +61,7 @@ const bibleVerseSidebar = document.querySelector('.bible-verse-sidebar');
 
 
 // --- State Variables ---
-const SETTINGS_VERSION = '4.1.14'; // Update this to force refresh load settings
+const SETTINGS_VERSION = '4.1.15'; // Update this to force refresh load settings
 let currentTheme = {};
 let isSidebarCollapsed = false;
 let isServantsCornerActive = false;
@@ -70,6 +70,7 @@ let displayedLanguages = {};
 let fontSizes = {};
 let selectedPsalms = [];
 let selectedProphetSongs = [];
+let selectedSeatatLectionaryDay = 'None';
 let customNames = {};
 let bibleData = { nkjv: null, am54: null, rgv: null, geez_psalms: null, coptic: null, loaded: false };
 
@@ -83,6 +84,91 @@ let currentMatchIndex = -1;
 let currentSlideIndex = 0;
 let areAllSectionsCollapsed = false;
 
+function getSeatatLiturgicalDay() {
+    const now = new Date();
+    const hours = now.getHours();
+    let dayIndex = now.getDay(); // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
+
+    // Liturgical day starts at 6 PM (18:00)
+    if (hours >= 18) {
+        dayIndex = (dayIndex + 1) % 7;
+    }
+
+    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    return days[dayIndex];
+}
+
+const BIBLE_BOOK_MAPPING = {
+    '1 Thessalonians': { nkjv: 52, am54: '1ኛ ወደ ተሰሎንቄ ሰዎች', rgv: '1 Tesalonicenses' },
+    '1 Peter': { nkjv: 60, am54: '1ኛ የጴጥሮስ መልእክት', rgv: '1 Pedro' },
+    'Acts': { nkjv: 44, am54: 'የሐዋርያት ሥራ', rgv: 'Hechos' },
+    'Matthew': { nkjv: 40, am54: 'የማቴዎስ ወንጌል', rgv: 'Mateo' },
+    'Galatians': { nkjv: 48, am54: 'ወደ ገላትያ ሰዎች', rgv: 'Gálatas' },
+    'Mark': { nkjv: 41, am54: 'የማርቆስ ወንጌል', rgv: 'Marcos' },
+    'Ephesians': { nkjv: 49, am54: 'ወደ ኤፌሶን ሰዎች', rgv: 'Efesios' },
+    '2 Peter': { nkjv: 61, am54: '2ኛ የጴጥሮስ መልእክት', rgv: '2 Pedro' },
+    'Luke': { nkjv: 42, am54: 'የሉቃስ ወንጌል', rgv: 'Lucas' },
+    '2 Corinthians': { nkjv: 47, am54: '2ኛ ወደ ቆሮንቶስ ሰዎች', rgv: '2 Corintios' },
+    'Romans': { nkjv: 45, am54: 'ወደ ሮሜ ሰዎች', rgv: 'Romanos' },
+    'Leviticus': { nkjv: 3, am54: 'ኦሪት ዘሌዋውያን', rgv: 'Levítico' },
+    'Jeremiah': { nkjv: 24, am54: 'ትንቢተ ኤርምያስ', rgv: 'Jeremías' },
+    'John': { nkjv: 43, am54: 'የዮሐንስ ወንጌል', rgv: 'Juan' },
+    '1 Corinthians': { nkjv: 46, am54: '1ኛ ወደ ቆሮንቶስ ሰዎች', rgv: '1 Corintios' },
+    '1 John': { nkjv: 62, am54: '1ኛ የዮሐንስ መልእክት', rgv: '1 Juan' },
+    'Psalms': { nkjv: 19, am54: 'መዝሙረ ዳዊት', rgv: 'Salmos' }
+};
+
+const SEATAT_LECTIONARY_DATA = {
+    'Monday': [
+        { type: 'Pauline Epistle (1 Thessalonians 4:15-18) | መልእክተ ጳውሎስ ዘሰዓታት', book: '1 Thessalonians', chapter: 4, verses: '15-18' },
+        { type: 'Universal Epistle (1 Peter 5:5-12) | መልእክተ ካልእ ዘሰዓታት', book: '1 Peter', chapter: 5, verses: '5-12' },
+        { type: 'Acts of the Apostles (Acts 16:25-35) | ግብረ ሐዋርያት ዘሰዓታት', book: 'Acts', chapter: 16, verses: '25-35' },
+        { type: 'Psalm (Psalm 1:2-3) | ምስባክ ዘሰዓታት', book: 'Psalms', chapter: 1, verses: '2-3', customEnglish: '[2] And in His law he meditates day and night. [3] He shall be like a tree planted by the rivers of water, that brings forth its fruit in its season.', customGeez: '[2] ወዘሕጎ ያነብብ መዕልተ ወሌሊተ። [3] ወየከውን ከመ ዕፅ እንተ ትክልት ኀበ ሙሓዘ ማይ፤ እንተ ትሁብ ፍሬሃ በበጊዜሃ፤' },
+        { type: 'Gospel (Matthew 25:1-14) | ወንጌል ዘሰዓታት', book: 'Matthew', chapter: 25, verses: '1-14' }
+    ],
+    'Tuesday': [
+        { type: 'Pauline Epistle (Galatians 5:13-26) | መልእክተ ጳውሎስ ዘሰዓታት', book: 'Galatians', chapter: 5, verses: '13-26' },
+        { type: 'Universal Epistle (1 Peter 1:13-25) | መልእክተ ካልእ ዘሰዓታት', book: '1 Peter', chapter: 1, verses: '13-25' },
+        { type: 'Acts of the Apostles (Acts 5:17-31) | ግብረ ሐዋርያት ዘሰዓታት', book: 'Acts', chapter: 5, verses: '17-31' },
+        { type: 'Psalm (Psalm 118:62-63) | ምስባክ ዘሰዓታት', book: 'Psalms', chapter: 118, verses: '62-63', customEnglish: '[62] At midnight I will rise to give thanks to You, Because of Your righteous judgments. [63] I am a companion of all who fear You...', customGeez: '[62] መንፍቀ ሌሊት እትነሣእ ከመ እግነይ ለከ፤ በእንተ ኵነኔ ጽድቅከ። [63] ከማሆሙ አነ ለኵሎሙ እለ ይፈርሁከ፤' },
+        { type: 'Gospel (Mark 13:32-37) | ወንጌል ዘሰዓታት', book: 'Mark', chapter: 13, verses: '32-37' }
+    ],
+    'Wednesday': [
+        { type: 'Pauline Epistle (Ephesians 6:10-21) | መልእክተ ጳውሎስ ዘሰዓታት', book: 'Ephesians', chapter: 6, verses: '10-21' },
+        { type: 'Universal Epistle (2 Peter 2:9-22) | መልእክተ ካልእ ዘሰዓታት', book: '2 Peter', chapter: 2, verses: '9-22' },
+        { type: 'Acts of the Apostles (Acts 12:1-12) | ግብረ ሐዋርያት ዘሰዓታት', book: 'Acts', chapter: 12, verses: '1-12' },
+        { type: 'Psalm (Psalm 138:12) | ምስባክ ዘሰዓታት', book: 'Psalms', chapter: 138, verses: '12', customEnglish: 'Indeed, the darkness shall not hide from You, But the night shines as the day; The darkness and the light are both alike to You.', customGeez: 'እስመ ጽልመትኒ ኢይጸልም በኀቤከ፤ ወሌሊትኒ ብሩህ ከመ መዐልት፤ በአምጣነ ጽልመታ ከማሁ ብርሃነ።' },
+        { type: 'Gospel (Luke 13:23-31) | ወንጌል ዘሰዓታት', book: 'Luke', chapter: 13, verses: '23-31' }
+    ],
+    'Thursday': [
+        { type: 'Pauline Epistle (2 Corinthians 8:1-16) | መልእክተ ጳውሎስ ዘሰዓታት', book: '2 Corinthians', chapter: 8, verses: '1-16' },
+        { type: 'Universal Epistle (1 Peter 4:12-19) | መልእክተ ካልእ ዘሰዓታት', book: '1 Peter', chapter: 4, verses: '12-19' },
+        { type: 'Acts of the Apostles (Acts 16:35-40) | ግብረ ሐዋርያት ዘሰዓታት', book: 'Acts', chapter: 16, verses: '35-40' },
+        { type: 'Psalm (Psalm 87:1-2) | ምስባክ ዘሰዓታት', book: 'Psalms', chapter: 87, verses: '1-2', customEnglish: '[1] O Lord, God of my salvation, I have cried out day and night before You. [2] Let my prayer come before You...', customGeez: '[1] እግዚአብሔር አምላከ መድኀኒትየ፤ ዕለትየ ጸራኅኩ ኀቤከ ወሌሊትየኒ ቅድሜከ። [2] ለትባእ ጸሎትየ ቅድሜከ፤' },
+        { type: 'Gospel (Matthew 24:36-51) | ወንጌል ዘሰዓታት', book: 'Matthew', chapter: 24, verses: '36-51' }
+    ],
+    'Friday': [
+        { type: 'Pauline Epistle (Romans 13:11-14) | መልእክተ ጳውሎስ ዘሰዓታት', book: 'Romans', chapter: 13, verses: '11-14' },
+        { type: 'Universal Epistle (2 Peter 3:8-14) | መልእክተ ካልእ ዘሰዓታት', book: '2 Peter', chapter: 3, verses: '8-14' },
+        { type: 'Acts of the Apostles (Acts 8:26-40) | ግብረ ሐዋርያት ዘሰዓታት', book: 'Acts', chapter: 8, verses: '26-40' },
+        { type: 'Psalm (Psalm 118:55-56) | ምስባክ ዘሰዓታት', book: 'Psalms', chapter: 118, verses: '55-56', customEnglish: '[55] I remember Your name in the night, O Lord, And I keep Your law. [56] This has become mine...', customGeez: '[55] ተዘከርኩ በሌሊት ስመከ እግዚኦ፤ ወዐቀብኩ ሕገከ። [56] ወይእቲ ኮነተኒ፤' },
+        { type: 'Gospel (Luke 12:35-49) | ወንጌል ዘሰዓታት', book: 'Luke', chapter: 12, verses: '35-49' }
+    ],
+    'Saturday': [
+        { type: 'Torah (Lev 23:1-4) | ኦሪት ዘሰዓታት', book: 'Leviticus', chapter: 23, verses: '1-4' },
+        { type: 'Prophecy (Jer 17:26-27) | ትንቢት ዘሰዓታት', book: 'Jeremiah', chapter: 17, verses: '26-27' },
+        { type: 'Acts of the Apostles (Acts 17:2-5) | ግብረ ሐዋርያት ዘሰዓታት', book: 'Acts', chapter: 17, verses: '2-5' },
+        { type: 'Psalm (Psalm 133:2-3) | ምስባክ ዘሰዓታት', book: 'Psalms', chapter: 133, verses: '2-3', customEnglish: '[2] Lift up your hands in the sanctuary, and bless the Lord. [3] The Lord who made heaven and earth bless you from Zion!', customGeez: '[2] በሌሊት አንሥኡ እደዊክሙ በቤተ መቅደስ፤ ወባርክዎ ለእግዚአብሔር። [3] ይባርከከ እግዚአብሔር እምጽዮን፤' },
+        { type: 'Gospel (John 5:5-23) | ወንጌል ዘሰዓታት', book: 'John', chapter: 5, verses: '5-23' }
+    ],
+    'Sunday': [
+        { type: 'Pauline Epistle (1 Cor 15:51-16:3) | መልእክተ ጳውሎስ ዘሰዓታት', book: '1 Corinthians', chapter: 15, verses: '51-58', extra: { book: '1 Corinthians', chapter: 16, verses: '1-3' } },
+        { type: 'Universal Epistle (1 John 1:1-10) | መልእክተ ካልእ ዘሰዓታት', book: '1 John', chapter: 1, verses: '1-10' },
+        { type: 'Acts of the Apostles (Acts 20:7-12) | ግብረ ሐዋርያት ዘሰዓታት', book: 'Acts', chapter: 20, verses: '7-12' },
+        { type: 'Psalm (Psalm 125:2) | ምስባክ ዘሰዓታት', book: 'Psalms', chapter: 125, verses: '2', customEnglish: 'Then our mouth was filled with laughter, And our tongue with singing. Then they said among the nations...', customGeez: 'አሜሃ መልአ ፍሥሓ አፉነ፤ ወተሐሥየ ልሳንነ፤ አሜሃ ይቤሉ አሕዛብ፦' },
+        { type: 'Gospel (John 3:1-22) | ወንጌል ዘሰዓታት', book: 'John', chapter: 3, verses: '1-22' }
+    ]
+};
 
 const languageLabels = {
     english: 'English',
@@ -396,6 +482,7 @@ function saveSettings() {
     localStorage.setItem('languageOrder', JSON.stringify(languageOrder));
     localStorage.setItem('selectedPsalms', JSON.stringify(selectedPsalms));
     localStorage.setItem('selectedProphetSongs', JSON.stringify(selectedProphetSongs));
+    localStorage.setItem('selectedSeatatLectionaryDay', selectedSeatatLectionaryDay);
     localStorage.setItem('customNames', JSON.stringify(customNames));
     localStorage.setItem('collapsedSections', JSON.stringify(collapsedSections));
 }
@@ -442,6 +529,7 @@ function loadSettings() {
         englishFont: "'Merriweather', serif",
         selectedPsalms: [12, 15, 22, 50, 90, 102, 135], // Default LXX Psalms
         selectedProphetSongs: [],
+        selectedSeatatLectionaryDay: getSeatatLiturgicalDay(),
         // Default Custom Names
         customNames: {
             servant: '{Names}',
@@ -464,6 +552,7 @@ function loadSettings() {
         englishFontSelect.value = defaultSettings.englishFont;
         selectedPsalms = defaultSettings.selectedPsalms;
         selectedProphetSongs = defaultSettings.selectedProphetSongs;
+        selectedSeatatLectionaryDay = defaultSettings.selectedSeatatLectionaryDay;
         customNames = defaultSettings.customNames; // Use defaults
         collapsedSections = defaultSettings.collapsedSections;
     } else {
@@ -489,6 +578,7 @@ function loadSettings() {
 
         selectedPsalms = JSON.parse(localStorage.getItem('selectedPsalms')) || defaultSettings.selectedPsalms;
         selectedProphetSongs = JSON.parse(localStorage.getItem('selectedProphetSongs')) || defaultSettings.selectedProphetSongs;
+        selectedSeatatLectionaryDay = localStorage.getItem('selectedSeatatLectionaryDay') || defaultSettings.selectedSeatatLectionaryDay;
         const savedCustomNames = JSON.parse(localStorage.getItem('customNames')) || {};
         customNames = { ...defaultSettings.customNames, ...savedCustomNames };
         collapsedSections = JSON.parse(localStorage.getItem('collapsedSections')) || defaultSettings.collapsedSections;
@@ -585,6 +675,14 @@ function updateAllTogglesInSettingsPanel() {
     boldTextToggle.checked = displayOptions.boldText;
     anglicizeNamesToggle.checked = displayOptions.anglicizeNames;
 
+    // Seatat Lectionary Selector
+    const lectionaryRadios = document.querySelectorAll('input[name="seatat-lectionary-day"]');
+    lectionaryRadios.forEach(radio => {
+        if (radio.value === selectedSeatatLectionaryDay) {
+            radio.checked = true;
+        }
+    });
+
     updateLayoutToggleIcon();
     updatePresentationModeToggleIcon();
     updateExpandCollapseAllIcon();
@@ -679,6 +777,8 @@ function getPrayerLabel(prayer) {
 
     if (customLabels[prayerKey]) {
         return customLabels[prayerKey];
+    } else if (prayer.chapter === 'SeatatLectionary') {
+        return prayer.reference;
     } else if (prayer.chapter === 'Thurs') {
         return 'Thursday | ሐሙስ';
     } else if (prayer.chapter === 'Angels') {
@@ -1023,6 +1123,9 @@ function renderPrayers() {
             });
         }
     }
+
+    // Render Se'atat Lectionary Scripture Readings
+    renderSelectedSeatatLectionary(addSectionTitle);
 
     // Always render the standard prayer sequence at the very end
     renderSequence();
@@ -1890,8 +1993,164 @@ function createPsalmVerseSection(langName, text, verseNum, isEthiopic = false, l
     return langSection;
 }
 
+function getSeatatBibleVerses(bookKey, chapter, rangeString, customEnglish = null, customGeez = null) {
+    if (!bibleData.loaded) return [];
+    
+    const mapping = BIBLE_BOOK_MAPPING[bookKey];
+    if (!mapping) return [];
+
+    let startVerse = 1, endVerse = 1;
+    if (String(rangeString).includes('-')) {
+        [startVerse, endVerse] = String(rangeString).split('-').map(Number);
+    } else {
+        startVerse = endVerse = Number(rangeString);
+    }
+
+    const verseResults = [];
+    const mtChapters = (bookKey === 'Psalms') ? convertLxxToMt(chapter) : [chapter];
+
+    for (let vNum = startVerse; vNum <= endVerse; vNum++) {
+        const verseObj = { 
+            verseNum: vNum, 
+            chapter: chapter, 
+            book: bookKey,
+            reference: `${bookKey} ${chapter}:${vNum}`,
+            english: '',
+            amharic_script: '',
+            spanish: '',
+            geez_script: '', // Usually empty for NT
+            coptic: '',
+            tigrinya_script: ''
+        };
+
+        const mtChapter = mtChapters[0];
+
+        // NKJV
+        if (bibleData.nkjv) {
+            const v = bibleData.nkjv.find(v => v.book === mapping.nkjv && v.chapter === mtChapter && v.verse === vNum);
+            if (v) verseObj.english = v.text;
+        }
+
+        // AM54
+        if (bibleData.am54 && bibleData.am54.books) {
+            const book = bibleData.am54.books.find(b => b.title === mapping.am54);
+            if (book && book.chapters) {
+                const ch = book.chapters.find(c => Number(c.chapter) === mtChapter);
+                if (ch && ch.verses && ch.verses[vNum - 1]) {
+                    verseObj.amharic_script = ch.verses[vNum - 1];
+                }
+            }
+        }
+
+        // RGV
+        if (bibleData.rgv && bibleData.rgv.verses) {
+            const v = bibleData.rgv.verses.find(v => v.book_name === mapping.rgv && v.chapter === mtChapter && v.verse === vNum);
+            if (v) verseObj.spanish = v.text;
+        }
+
+        // Ge'ez Psalms
+        if (bookKey === 'Psalms' && bibleData.geez_psalms) {
+            if (customGeez) {
+                const regex = new RegExp(`\\[${vNum}\\]\\s*([^\\[]+)`);
+                const match = customGeez.match(regex);
+                if (match && match[1]) {
+                    verseObj.geez_script = match[1].trim();
+                } else if (!customGeez.includes('[')) {
+                    verseObj.geez_script = customGeez;
+                }
+            } else {
+                const ch = bibleData.geez_psalms.find(c => c.id === chapter);
+                if (ch && ch.verses) {
+                    const v = ch.verses.find(gv => gv.verse_number === vNum);
+                    if (v) verseObj.geez_script = v.text;
+                }
+            }
+        }
+
+        // Handle Custom English for Psalms portions
+        if (bookKey === 'Psalms' && customEnglish) {
+            // If customEnglish contains bracketed numbers, extract the right one
+            const regex = new RegExp(`\\[${vNum}\\]\\s*([^\\[]+)`);
+            const match = customEnglish.match(regex);
+            if (match && match[1]) {
+                verseObj.english = match[1].trim();
+            } else if (!customEnglish.includes('[')) {
+                // If no brackets, assume the whole string is for this verse (if it's a single verse range)
+                verseObj.english = customEnglish;
+            }
+        }
+
+        if (verseObj.english || verseObj.amharic_script || verseObj.spanish) {
+            verseResults.push(verseObj);
+        }
+    }
+    return verseResults;
+}
+
+function renderSelectedSeatatLectionary(addSectionTitleCallback) {
+    if (selectedSeatatLectionaryDay === 'None' || !SEATAT_LECTIONARY_DATA[selectedSeatatLectionaryDay]) return;
+
+    const readings = SEATAT_LECTIONARY_DATA[selectedSeatatLectionaryDay];
+    
+    readings.forEach(reading => {
+        addSectionTitleCallback(reading.type);
+        
+        let verses = getSeatatBibleVerses(reading.book, reading.chapter, reading.verses, reading.customEnglish, reading.customGeez);
+        
+        // Handle Sunday special case for 1 Cor 16:1-3
+        if (reading.extra) {
+            const extraVerses = getSeatatBibleVerses(reading.extra.book, reading.extra.chapter, reading.extra.verses);
+            verses = [...verses, ...extraVerses];
+        }
+
+        if (reading.type === 'Psalm of David' && verses.length > 1) {
+            // Combine all Psalm verses into one card
+            const combined = {
+                chapter: 'SeatatLectionary',
+                stanza: reading.type,
+                reference: verses[0].reference + (verses.length > 1 ? '-' + verses[verses.length-1].verseNum : ''),
+                english: verses.map(v => reading.customEnglish && reading.customEnglish.includes('[') ? v.english : `<sup>${v.verseNum}</sup> ${v.english}`).join(' '),
+                geez_script: verses.map(v => reading.customGeez && reading.customGeez.includes('[') ? v.geez_script : `<sup>${v.verseNum}</sup> ${v.geez_script}`).join(' '),
+                amharic_script: verses.map(v => `<sup>${v.verseNum}</sup> ${v.amharic_script}`).join(' '),
+                spanish: verses.map(v => `<sup>${v.verseNum}</sup> ${v.spanish}`).join(' '),
+                coptic: '',
+                tigrinya_script: ''
+            };
+            // If custom text already had [n] markers, we don't add <sup> tags to avoid duplication
+            if (reading.customEnglish && reading.customEnglish.includes('[')) {
+                combined.english = reading.customEnglish;
+            }
+            if (reading.customGeez && reading.customGeez.includes('[')) {
+                combined.geez_script = reading.customGeez;
+            }
+
+            const card = createPrayerCardElement(combined, -1);
+            prayerDisplay.appendChild(card);
+        } else {
+            verses.forEach(v => {
+                // Map keys for createPrayerCardElement
+                const prayerData = {
+                    ...v,
+                    chapter: 'SeatatLectionary',
+                    stanza: reading.type
+                };
+                const card = createPrayerCardElement(prayerData, -1);
+                prayerDisplay.appendChild(card);
+            });
+        }
+    });
+}
+
 
 // --- Event Listeners ---
+document.querySelectorAll('input[name="seatat-lectionary-day"]').forEach(radio => {
+    radio.addEventListener('change', (event) => {
+        selectedSeatatLectionaryDay = event.target.value;
+        saveSettings();
+        renderPrayers();
+    });
+});
+
 sidebarToggle.addEventListener('click', () => {
     isSidebarCollapsed = !isSidebarCollapsed;
     sidebar.classList.toggle('collapsed');
