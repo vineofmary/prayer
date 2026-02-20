@@ -127,7 +127,7 @@ const SEATAT_LECTIONARY_DATA = {
         { type: 'Gospel (Matthew 25:1-14) | ወንጌል ዘሰዓታት', book: 'Matthew', chapter: 25, verses: '1-14' }
     ],
     'Tuesday': [
-        { type: 'Pauline Epistle (Galatians 5:13-26) | መልእክተ ጳውሎስ ዘሰዓታት', book: 'Galatians', chapter: 5, verses: '13-26' },
+        { type: 'Pauline Epistle (Galations 5:13-26) | መልእክተ ጳውሎስ ዘሰዓታት', book: 'Galatians', chapter: 5, verses: '13-26' },
         { type: 'Universal Epistle (1 Peter 1:13-25) | መልእክተ ካልእ ዘሰዓታት', book: '1 Peter', chapter: 1, verses: '13-25' },
         { type: 'Acts of the Apostles (Acts 5:17-31) | ግብረ ሐዋርያት ዘሰዓታት', book: 'Acts', chapter: 5, verses: '17-31' },
         { type: 'Psalm (Psalm 118:62-63) | ምስባክ ዘሰዓታት', book: 'Psalms', chapter: 118, verses: '62-63', customEnglish: '[62] At midnight I will rise to give thanks to You, Because of Your righteous judgments. [63] I am a companion of all who fear You...', customGeez: '[62] መንፍቀ ሌሊት እትነሣእ ከመ እግነይ ለከ፤ በእንተ ኵነኔ ጽድቅከ። [63] ከማሆሙ አነ ለኵሎሙ እለ ይፈርሁከ፤' },
@@ -145,7 +145,7 @@ const SEATAT_LECTIONARY_DATA = {
         { type: 'Universal Epistle (1 Peter 4:12-19) | መልእክተ ካልእ ዘሰዓታት', book: '1 Peter', chapter: 4, verses: '12-19' },
         { type: 'Acts of the Apostles (Acts 16:35-40) | ግብረ ሐዋርያት ዘሰዓታት', book: 'Acts', chapter: 16, verses: '35-40' },
         { type: 'Psalm (Psalm 87:1-2) | ምስባክ ዘሰዓታት', book: 'Psalms', chapter: 87, verses: '1-2', customEnglish: '[1] O Lord, God of my salvation, I have cried out day and night before You. [2] Let my prayer come before You...', customGeez: '[1] እግዚአብሔር አምላከ መድኀኒትየ፤ ዕለትየ ጸራኅኩ ኀቤከ ወሌሊትየኒ ቅድሜከ። [2] ለትባእ ጸሎትየ ቅድሜከ፤' },
-        { type: 'Gospel (Matthew 24:36-51) | ወንጌል ዘሰዓታት', book: 'Matthew', chapter: 24, verses: '36-51' }
+        { type: 'Gospel (Matt 24:36-51) | ወንጌል ዘሰዓታት', book: 'Matthew', chapter: 24, verses: '36-51' }
     ],
     'Friday': [
         { type: 'Pauline Epistle (Romans 13:11-14) | መልእክተ ጳውሎስ ዘሰዓታት', book: 'Romans', chapter: 13, verses: '11-14' },
@@ -155,14 +155,14 @@ const SEATAT_LECTIONARY_DATA = {
         { type: 'Gospel (Luke 12:35-49) | ወንጌል ዘሰዓታት', book: 'Luke', chapter: 12, verses: '35-49' }
     ],
     'Saturday': [
-        { type: 'Torah (Lev 23:1-4) | ኦሪት ዘሰዓታት', book: 'Leviticus', chapter: 23, verses: '1-4' },
-        { type: 'Prophecy (Jer 17:26-27) | ትንቢት ዘሰዓታት', book: 'Jeremiah', chapter: 17, verses: '26-27' },
+        { type: 'Torah (Leviticus 23:1-4) | ኦሪት ዘሰዓታት', book: 'Leviticus', chapter: 23, verses: '1-4' },
+        { type: 'Prophecy (Jeremiah 17:26-27) | ትንቢት ዘሰዓታት', book: 'Jeremiah', chapter: 17, verses: '26-27' },
         { type: 'Acts of the Apostles (Acts 17:2-5) | ግብረ ሐዋርያት ዘሰዓታት', book: 'Acts', chapter: 17, verses: '2-5' },
         { type: 'Psalm (Psalm 133:2-3) | ምስባክ ዘሰዓታት', book: 'Psalms', chapter: 133, verses: '2-3', customEnglish: '[2] Lift up your hands in the sanctuary, and bless the Lord. [3] The Lord who made heaven and earth bless you from Zion!', customGeez: '[2] በሌሊት አንሥኡ እደዊክሙ በቤተ መቅደስ፤ ወባርክዎ ለእግዚአብሔር። [3] ይባርከከ እግዚአብሔር እምጽዮን፤' },
         { type: 'Gospel (John 5:5-23) | ወንጌል ዘሰዓታት', book: 'John', chapter: 5, verses: '5-23' }
     ],
     'Sunday': [
-        { type: 'Pauline Epistle (1 Cor 15:51-16:3) | መልእክተ ጳውሎስ ዘሰዓታት', book: '1 Corinthians', chapter: 15, verses: '51-58', extra: { book: '1 Corinthians', chapter: 16, verses: '1-3' } },
+        { type: 'Pauline Epistle (1 Corinthians 15:51-16:3) | መልእክተ ጳውሎስ ዘሰዓታት', book: '1 Corinthians', chapter: 15, verses: '51-58', extra: { book: '1 Corinthians', chapter: 16, verses: '1-3' } },
         { type: 'Universal Epistle (1 John 1:1-10) | መልእክተ ካልእ ዘሰዓታት', book: '1 John', chapter: 1, verses: '1-10' },
         { type: 'Acts of the Apostles (Acts 20:7-12) | ግብረ ሐዋርያት ዘሰዓታት', book: 'Acts', chapter: 20, verses: '7-12' },
         { type: 'Psalm (Psalm 125:2) | ምስባክ ዘሰዓታት', book: 'Psalms', chapter: 125, verses: '2', customEnglish: 'Then our mouth was filled with laughter, And our tongue with singing. Then they said among the nations...', customGeez: 'አሜሃ መልአ ፍሥሓ አፉነ፤ ወተሐሥየ ልሳንነ፤ አሜሃ ይቤሉ አሕዛብ፦' },
@@ -271,7 +271,7 @@ const rubricRedWords = {
         "Word of God", "Emmanuel", "Amanuel", "Word", "God the Word", "One Spirit", "Good Father", "The Angels Praise Mary",
         "And now in the sixth month", "peace to you", "Peace to you", "peace be unto you", "Peace be unto you", "Most High",
         "Glory be to the Father, and to the Son, and to the Holy Spirit, forever and to the age of ages.",
-        "Come to me, David, King of Israel", "Ask for us, Mary", "For His mercy endures forever"
+        "Come to me, David, King of Israel", "Ask for us, Mary", "For His mercy endures forever", "For His mercy <i>endures</i> forever"
     ],
     geez_script: [
         "በስመ አብ ወወልድ ወመንፈስ ቅዱስ", "አአትብ ገጽየ", "አብ", "ወልድ", "ወወልድ", "መንፈስ ቅዱስ", "አሐዱ አምላክ", "አሐዱ አምላክ፣",
@@ -306,25 +306,21 @@ const rubricGoldWords = {
 function buildRegex(words, isGeez = false) {
     // Sort words by length, descending, to match longer phrases first
     const sortedWords = words.sort((a, b) => b.length - a.length)
-        .map(word => word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')); // Escape regex special chars
+        .map(word => word.replace(/[.*+?^${}()|[\]\\\/]/g, '\\$&')); // Escape regex special chars including /
 
     const regexString = sortedWords.join('|');
     
-    // Improved boundary pattern: space, start of line, or common punctuation (including Ethiopic)
-    // We use a non-capturing group for the leading boundary to avoid index shifts in replace
-    const leadBoundary = '(?:^|[\\s\\(\\)\\[\\]\\{\\}.,:;!?፨።፤፣፥<])';
-    const trailBoundary = '(?=[\\s\\(\\)\\[\\]\\{\\}.,:;!?፨።፤፣፥>]|$)';
+    // Improved boundary pattern: space, start of line, or common punctuation
+    // leadBoundary matches character before word (e.g. > in <i>Word)
+    // trailBoundary looks ahead for character after word (e.g. < in Word</i>)
+    const leadBoundary = '(?:^|[\\s\\(\\)\\[\\]\\{\\}.,:;!?፨።፤፣፥<>])';
+    const trailBoundary = '(?=[\\s\\(\\)\\[\\]\\{\\}.,:;!?፨።፤፣፥<>]|$)';
 
     if (isGeez) {
-        // For Ge'ez, handle optional prefixes (ወ, ለ, እም)
-        // Group 1: Prefix (ወ, ለ, or እም)
-        // Group 2: The actual word match
         return new RegExp(`(${leadBoundary})((?:ወ|ለ|እም)?)(?:${regexString})${trailBoundary}`, 'g');
     }
-    // For English/Spanish, match whole words/phrases using standard boundaries
-    // Group 1: The boundary
-    // Group 2: The word match
-    return new RegExp(`(${leadBoundary})(${regexString})${trailBoundary}`, 'gi');
+    // No 'i' flag here to ensure case-sensitivity for English/Spanish
+    return new RegExp(`(${leadBoundary})(${regexString})${trailBoundary}`, 'g');
 }
 
 const rubricRedRegex = {
@@ -397,10 +393,16 @@ function debounce(func, wait) {
 }
 
 
-function applyRubrication(text, langKey, isFirstLanguage) {
+function applyRubrication(text, langKey, isFirstLanguage, chapter = null) {
     if (!displayOptions.showRubrication || (displayOptions.languageColors !== 'off' && !isFirstLanguage)) {
         return text;
     }
+
+    // Disable rubrication for Ge'ez Psalms and Se'atat Lectionary as requested
+    if (langKey === 'geez_script' && (chapter === 'Psalms' || chapter === 'SeatatLectionary')) {
+        return text;
+    }
+
     let processedText = text;
 
     // Apply Gold Rubrication first
@@ -741,7 +743,7 @@ function highlightText(text, query) {
     return text.replace(regex, '<mark class="highlight">$1</mark>');
 }
 
-function formatPrayerText(text, langKey, query, isFirstLanguage) {
+function formatPrayerText(text, langKey, query, isFirstLanguage, chapter = null) {
     let processedText = text;
 
     // Apply Anglicization first
@@ -766,7 +768,7 @@ function formatPrayerText(text, langKey, query, isFirstLanguage) {
         }).trim();
     }
 
-    processedText = applyRubrication(processedText, langKey, isFirstLanguage);
+    processedText = applyRubrication(processedText, langKey, isFirstLanguage, chapter);
     return highlightText(processedText, query);
 }
 
@@ -858,7 +860,7 @@ function createPrayerCardElement(prayer, prayerIndex) {
                 sup.textContent = prayer.verseNum;
                 langText.appendChild(sup);
             }
-            langText.innerHTML += formatPrayerText(prayer[langKey], langKey, searchQuery, isFirstLanguage);
+            langText.innerHTML += formatPrayerText(prayer[langKey], langKey, searchQuery, isFirstLanguage, prayer.chapter);
 
             if (langKey.includes('_script')) {
                 langHeader.classList.add('ethiopic-label');
@@ -1777,10 +1779,13 @@ function renderSelectedPsalmsWithDoxology(addSectionTitleCallback) {
                 'english': 'English', 'amharic_script': 'አማርኛ', 'spanish': 'Español', 'geez_script': 'ግእዝ', 'coptic': 'ϯⲙⲉⲧⲣⲉⲙⲛ̀ⲭⲏⲙⲓ'
             };
 
+            const firstVisibleLang = languageOrder.find(langKey => activePsalmTranslations[langKey]);
+
             languageOrder.forEach(langKey => {
                 const prop = langKeyToPsalmVerseProp[langKey];
                 if (prop && activePsalmTranslations[langKey]) {
-                    prayerContent.appendChild(createPsalmVerseSection(langKeyToLangName[langKey], verse[prop], verse.verseNum, langKeyToIsEthiopic[langKey], langKey));
+                    const isFirstLanguage = (langKey === firstVisibleLang);
+                    prayerContent.appendChild(createPsalmVerseSection(langKeyToLangName[langKey], verse[prop], verse.verseNum, langKeyToIsEthiopic[langKey], langKey, isFirstLanguage));
                 }
             });
             prayerCardMainContent.appendChild(prayerContent);
@@ -1982,7 +1987,7 @@ function renderSelectedProphetSongs(addSectionTitleCallback) {
 }
 
 
-function createPsalmVerseSection(langName, text, verseNum, isEthiopic = false, langKey) {
+function createPsalmVerseSection(langName, text, verseNum, isEthiopic = false, langKey, isFirstLanguage = false) {
     const langSection = document.createElement('div');
     langSection.classList.add('language-section');
     langSection.dataset.langKey = langKey;
@@ -1999,7 +2004,10 @@ function createPsalmVerseSection(langName, text, verseNum, isEthiopic = false, l
     const sup = document.createElement('sup');
     sup.textContent = verseNum;
     langText.appendChild(sup);
-    langText.innerHTML += ` ${text || ''}`;
+    
+    // Call formatPrayerText to apply rubrication and other formatting
+    const formattedText = formatPrayerText(text || '', langKey, searchInput.value, isFirstLanguage, 'Psalms');
+    langText.innerHTML += ` ${formattedText}`;
 
     langSection.appendChild(langHeader);
     langSection.appendChild(langText);
