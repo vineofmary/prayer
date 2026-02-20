@@ -1368,6 +1368,7 @@ async function loadBibleData() {
         loadFile('bible/አም54_Haile_Selassie_Amharic_Bible_1962AD_1954EC.json', 'am54'),
         loadFile('bible/RGV_Reina_Valera_Gomez_Bible_2010AD.json', 'rgv'),
         loadFile('bible/ግእዝ_Psalms_1-151_with_Songs_of_the_Prophets.json', 'geez_psalms')
+//        loadFile('bible/ግእዝ1988_Psalms_1-150_Geez_Bible_1988AD_1980EC_Corrected_Formatted.json', 'geez_psalms')
     ]);
 
     if (results.some(res => res === true)) {
