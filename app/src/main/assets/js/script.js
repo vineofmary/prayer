@@ -61,7 +61,7 @@ const bibleVerseSidebar = document.querySelector('.bible-verse-sidebar');
 
 
 // --- State Variables ---
-const SETTINGS_VERSION = '4.1.13'; // Update this to force refresh load settings
+const SETTINGS_VERSION = '4.1.14'; // Update this to force refresh load settings
 let currentTheme = {};
 let isSidebarCollapsed = false;
 let isServantsCornerActive = false;
@@ -71,12 +71,12 @@ let fontSizes = {};
 let selectedPsalms = [];
 let selectedProphetSongs = [];
 let customNames = {};
-let bibleData = { nkjv: null, am54: null, rgv: null, geez_psalms: null, loaded: false };
+let bibleData = { nkjv: null, am54: null, rgv: null, geez_psalms: null, coptic: null, loaded: false };
 
 let languageOrder = [
-    'english', 'spanish', 'geez_script', 'geez_phonetic',
-    'amharic_script', 'amharic_phonetic',
-    'tigrinya_script', 'tigrinya_phonetic'
+    'english', 'spanish', 'geez_script',
+    'amharic_script', 'tigrinya_script', 'coptic',
+    'geez_phonetic', 'amharic_phonetic', 'tigrinya_phonetic'
 ];
 let searchMatches = [];
 let currentMatchIndex = -1;
@@ -92,7 +92,8 @@ const languageLabels = {
     amharic_script: 'አማርኛ',
     amharic_phonetic: 'Amharic',
     tigrinya_script: 'ትግርኛ',
-    tigrinya_phonetic: 'Tigrinya'
+    tigrinya_phonetic: 'Tigrinya',
+    coptic: 'ϯⲙⲉⲧⲣⲉⲙⲛ̀ⲭⲏⲙⲓ'
 };
 
 const prophetSongs = [
@@ -429,7 +430,8 @@ function loadSettings() {
             amharic_script: !isMobile,
             amharic_phonetic: false,
             tigrinya_script: !isMobile,
-            tigrinya_phonetic: false
+            tigrinya_phonetic: false,
+            coptic: false
         },
         fontSizes: {
             geez: 16,
@@ -1125,6 +1127,10 @@ function copyPsalm(verse, lxxChapter) {
         textToCopy += `--- አማርኛ ---\n`;
         textToCopy += `[${verse.verseNum}] ${verse.am54}\n\n`;
     }
+    if (displayedLanguages.coptic && verse.coptic) {
+        textToCopy += `--- ϯⲙⲉⲧⲣⲉⲙⲛ̀ⲭⲏⲙⲓ ---\n`;
+        textToCopy += `[${verse.verseNum}] ${verse.coptic}\n\n`;
+    }
     if (displayedLanguages.spanish && verse.rgv) {
         textToCopy += `--- Español ---\n`;
         // The rgv text can have HTML, need to strip it
@@ -1367,7 +1373,8 @@ async function loadBibleData() {
         loadFile('bible/NKJV_New_King_James_English_Bible_1982AD.json', 'nkjv'),
         loadFile('bible/አም54_Haile_Selassie_Amharic_Bible_1962AD_1954EC.json', 'am54'),
         loadFile('bible/RGV_Reina_Valera_Gomez_Bible_2010AD.json', 'rgv'),
-        loadFile('bible/ግእዝ_Psalms_1-151_with_Songs_of_the_Prophets.json', 'geez_psalms')
+        loadFile('bible/ግእዝ_Psalms_1-151_with_Songs_of_the_Prophets.json', 'geez_psalms'),
+        loadFile('bible/COPTIC2025_Psalms_Bohairic_Coptic_Scriptorium_Corpora_2025.json', 'coptic')
 //        loadFile('bible/ግእዝ1988_Psalms_1-150_Geez_Bible_1988AD_1980EC_Corrected_Formatted.json', 'geez_psalms')
     ]);
 
@@ -1480,6 +1487,7 @@ function renderSelectedPsalmsWithDoxology(addSectionTitleCallback) {
     const am54VersesAll = getVerses(bibleData.am54, true);
     const rgvVersesAll = getVerses(bibleData.rgv, true);
     const geezPsalmsAll = getVerses(bibleData.geez_psalms, true);
+    const copticPsalmsAll = getVerses(bibleData.coptic, true);
 
     const psalmBookData = {
         nkjv: { name: 19, bookKey: 'book' },
@@ -1507,6 +1515,8 @@ function renderSelectedPsalmsWithDoxology(addSectionTitleCallback) {
             const rgv10 = rgvPsalms.filter(v => v.chapter == 10);
             const geezPsalmChapter = geezPsalmsAll.find(c => c.id === 9);
             const geezVerses = geezPsalmChapter ? geezPsalmChapter.verses : [];
+            const copticPsalmChapter = copticPsalmsAll.find(c => c.chapter === 9);
+            const copticVerses = copticPsalmChapter ? copticPsalmChapter.verses : [];
 
             for (let lxxVerseNum = 1; lxxVerseNum <= 38; lxxVerseNum++) {
                 let mtChapter, mtVerseNum;
@@ -1532,8 +1542,9 @@ function renderSelectedPsalmsWithDoxology(addSectionTitleCallback) {
                 const am54Verse = findVerse(am54Src, mtVerseNum);
                 const rgvVerse = findVerse(rgvSrc, mtVerseNum);
                 const geezVerse = findVerse(geezVerses, lxxVerseNum, 'verse_number');
+                const copticVerse = findVerse(copticVerses, String(lxxVerseNum), 'verse');
 
-                if (nkjvVerse || am54Verse || rgvVerse || geezVerse) {
+                if (nkjvVerse || am54Verse || rgvVerse || geezVerse || copticVerse) {
                     allVerses.push({
                         verseNum: lxxVerseNum, // LXX verse number
                         mtChapter: mtChapter,
@@ -1542,6 +1553,7 @@ function renderSelectedPsalmsWithDoxology(addSectionTitleCallback) {
                         am54: am54Verse ? am54Verse.text : '',
                         rgv: rgvVerse ? rgvVerse.text.replace(/«/g, '<i>').replace(/»/g, '</i><br>') : '',
                         geez_psalms: geezVerse ? geezVerse.text : '',
+                        coptic: copticVerse ? copticVerse.text_coptic : '',
                     });
                 }
             }
@@ -1550,6 +1562,8 @@ function renderSelectedPsalmsWithDoxology(addSectionTitleCallback) {
             const mtChapters = convertLxxToMt(lxxChapter);
             const geezPsalmChapter = geezPsalmsAll.find(c => c.id === lxxChapter);
             const geezVerses = geezPsalmChapter ? geezPsalmChapter.verses : [];
+            const copticPsalmChapter = copticPsalmsAll.find(c => c.chapter === lxxChapter);
+            const copticVerses = copticPsalmChapter ? copticPsalmChapter.verses : [];
 
             mtChapters.forEach(mtChapter => {
                 const nkjvVerses = nkjvPsalms.filter(v => v.chapter == mtChapter);
@@ -1565,9 +1579,13 @@ function renderSelectedPsalmsWithDoxology(addSectionTitleCallback) {
                     }
                 });
 
-                // If maxVerseNum is still 0 but we have geezVerses, use that
-                if (maxVerseNum === 0 && geezVerses.length > 0) {
-                    maxVerseNum = Math.max(...geezVerses.map(v => v.verse_number));
+                // If maxVerseNum is still 0 but we have geezVerses or copticVerses, use that
+                if (maxVerseNum === 0) {
+                    if (geezVerses.length > 0) {
+                        maxVerseNum = Math.max(...geezVerses.map(v => v.verse_number));
+                    } else if (copticVerses.length > 0) {
+                        maxVerseNum = Math.max(...copticVerses.map(v => Number(v.verse)));
+                    }
                 }
 
                 for (let i = 1; i <= maxVerseNum; i++) {
@@ -1596,7 +1614,12 @@ function renderSelectedPsalmsWithDoxology(addSectionTitleCallback) {
                         verseData.geez_psalms = geezVerse.text;
                     }
 
-                    if (verseData.nkjv || verseData.rgv || verseData.am54 || verseData.geez_psalms) {
+                    const copticVerse = copticVerses.find(v => v.verse == String(i));
+                    if (copticVerse) {
+                        verseData.coptic = copticVerse.text_coptic;
+                    }
+
+                    if (verseData.nkjv || verseData.rgv || verseData.am54 || verseData.geez_psalms || verseData.coptic) {
                         allVerses.push(verseData);
                     }
                 }
@@ -1608,7 +1631,8 @@ function renderSelectedPsalmsWithDoxology(addSectionTitleCallback) {
                 english: displayedLanguages.english && verse.nkjv,
                 amharic_script: displayedLanguages.amharic_script && verse.am54,
                 spanish: displayedLanguages.spanish && verse.rgv,
-                geez_script: displayedLanguages.geez_script && verse.geez_psalms
+                geez_script: displayedLanguages.geez_script && verse.geez_psalms,
+                coptic: displayedLanguages.coptic && verse.coptic
             };
             const activeLanguageCount = Object.values(activePsalmTranslations).filter(Boolean).length;
             if (activeLanguageCount === 0) return;
@@ -1627,13 +1651,13 @@ function renderSelectedPsalmsWithDoxology(addSectionTitleCallback) {
             prayerContent.dataset.activeColumns = activeLanguageCount;
 
             const langKeyToPsalmVerseProp = {
-                'english': 'nkjv', 'amharic_script': 'am54', 'spanish': 'rgv', 'geez_script': 'geez_psalms'
+                'english': 'nkjv', 'amharic_script': 'am54', 'spanish': 'rgv', 'geez_script': 'geez_psalms', 'coptic': 'coptic'
             };
             const langKeyToIsEthiopic = {
-                'english': false, 'amharic_script': true, 'spanish': false, 'geez_script': true
+                'english': false, 'amharic_script': true, 'spanish': false, 'geez_script': true, 'coptic': false
             };
             const langKeyToLangName = {
-                'english': 'English', 'amharic_script': 'አማርኛ', 'spanish': 'Español', 'geez_script': 'ግእዝ'
+                'english': 'English', 'amharic_script': 'አማርኛ', 'spanish': 'Español', 'geez_script': 'ግእዝ', 'coptic': 'ϯⲙⲉⲧⲣⲉⲙⲛ̀ⲭⲏⲙⲓ'
             };
 
             languageOrder.forEach(langKey => {
