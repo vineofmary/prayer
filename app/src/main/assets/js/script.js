@@ -1548,6 +1548,9 @@ function renderSelectedPsalmsWithDoxology(addSectionTitleCallback) {
         } else {
             // Original logic for all other psalms
             const mtChapters = convertLxxToMt(lxxChapter);
+            const geezPsalmChapter = geezPsalmsAll.find(c => c.id === lxxChapter);
+            const geezVerses = geezPsalmChapter ? geezPsalmChapter.verses : [];
+
             mtChapters.forEach(mtChapter => {
                 const nkjvVerses = nkjvPsalms.filter(v => v.chapter == mtChapter);
                 const am54Verses = am54Psalms.filter(v => v.chapter == mtChapter);
@@ -1561,6 +1564,11 @@ function renderSelectedPsalmsWithDoxology(addSectionTitleCallback) {
                         if (endVerse > maxVerseNum) maxVerseNum = endVerse;
                     }
                 });
+
+                // If maxVerseNum is still 0 but we have geezVerses, use that
+                if (maxVerseNum === 0 && geezVerses.length > 0) {
+                    maxVerseNum = Math.max(...geezVerses.map(v => v.verse_number));
+                }
 
                 for (let i = 1; i <= maxVerseNum; i++) {
                     const findVerse = (verses, verseNum) => verses.find(v => {
@@ -1583,7 +1591,12 @@ function renderSelectedPsalmsWithDoxology(addSectionTitleCallback) {
                         verseData.am54 = am54Verse.text;
                     }
 
-                    if (verseData.nkjv || verseData.rgv || verseData.am54) {
+                    const geezVerse = geezVerses.find(v => v.verse_number == i);
+                    if (geezVerse) {
+                        verseData.geez_psalms = geezVerse.text;
+                    }
+
+                    if (verseData.nkjv || verseData.rgv || verseData.am54 || verseData.geez_psalms) {
                         allVerses.push(verseData);
                     }
                 }
