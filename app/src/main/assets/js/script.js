@@ -2125,8 +2125,8 @@ function renderSelectedSeatatLectionary(addSectionTitleCallback) {
             verses = [...verses, ...extraVerses];
         }
 
-        if (reading.type === 'Psalm of David' && verses.length > 1) {
-            // Combine all Psalm verses into one card
+        if (reading.book === 'Psalms' && verses.length > 0) {
+            // Combine all Psalm verses into one card for Se'atat lectionary
             const combined = {
                 chapter: 'SeatatLectionary',
                 stanza: reading.type,
