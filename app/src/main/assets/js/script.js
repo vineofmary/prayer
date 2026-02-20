@@ -2493,8 +2493,36 @@ document.addEventListener('DOMContentLoaded', async () => {
     if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
             navigator.serviceWorker.register('./service-worker.js')
-                .then(reg => console.log('Service worker registered successfully', reg))
+                .then(reg => {
+                    console.log('Service worker registered successfully', reg);
+                    
+                    // Check for updates
+                    reg.onupdatefound = () => {
+                        const installingWorker = reg.installing;
+                        installingWorker.onstatechange = () => {
+                            if (installingWorker.state === 'installed') {
+                                if (navigator.serviceWorker.controller) {
+                                    // New content is available; please refresh.
+                                    console.log('New content is available; please refresh.');
+                                    // We could trigger a UI notification here
+                                } else {
+                                    // Content is cached for offline use.
+                                    console.log('Content is cached for offline use.');
+                                }
+                            }
+                        };
+                    };
+                })
                 .catch(err => console.log('Service worker registration failed: ', err));
+        });
+
+        // Handle the case where the service worker controller changes (e.g. after skipWaiting)
+        let refreshing = false;
+        navigator.serviceWorker.addEventListener('controllerchange', () => {
+            if (!refreshing) {
+                window.location.reload();
+                refreshing = true;
+            }
         });
     }
 
