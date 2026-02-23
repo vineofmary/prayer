@@ -2637,20 +2637,27 @@ function addDragAndDropListeners() {
 
 // --- Swipe Gestures & Taps for Navigation ---
 let touchStartX = 0;
+let touchStartY = 0;
 let touchEndX = 0;
+let touchEndY = 0;
 
 function handleTouchStart(e) {
+    const touch = e.changedTouches[0];
     if (displayOptions.presentationMode === 'slides' && !e.target.closest('.sidebar')) {
-        touchStartX = e.changedTouches[0].screenX;
+        touchStartX = touch.screenX;
+        touchStartY = touch.screenY;
         return;
     }
     if (e.target.closest('.sidebar:not(.collapsed)')) return;
-    touchStartX = e.changedTouches[0].screenX;
+    touchStartX = touch.screenX;
+    touchStartY = touch.screenY;
 }
 
 function handleTouchEnd(e) {
     if (touchStartX === 0) return;
-    touchEndX = e.changedTouches[0].screenX;
+    const touch = e.changedTouches[0];
+    touchEndX = touch.screenX;
+    touchEndY = touch.screenY;
 
     if (displayOptions.presentationMode === 'slides' && !e.target.closest('.sidebar')) {
         handleSlideSwipe();
@@ -2658,29 +2665,43 @@ function handleTouchEnd(e) {
         handleSidebarSwipe();
     }
     touchStartX = 0;
+    touchStartY = 0;
     touchEndX = 0;
+    touchEndY = 0;
 }
 
 function handleSidebarSwipe() {
-    if (touchEndX < touchStartX && (touchStartX - touchEndX) > 50) { // Swipe Left
-        collapseSidebar();
-    }
-    if (touchEndX > touchStartX && (touchEndX - touchStartX) > 50) { // Swipe Right
-        if (isSidebarCollapsed) {
-            isSidebarCollapsed = false;
-            sidebar.classList.remove('collapsed');
-            applyTheme();
-            saveSettings();
+    const deltaX = touchEndX - touchStartX;
+    const deltaY = touchEndY - touchStartY;
+    const swipeThreshold = 70; // Increased from 50 for sidebar
+
+    // Ensure horizontal movement is dominant and exceeds threshold
+    if (Math.abs(deltaX) > Math.abs(deltaY) * 1.5 && Math.abs(deltaX) > swipeThreshold) {
+        if (deltaX < -swipeThreshold) { // Swipe Left
+            collapseSidebar();
+        } else if (deltaX > swipeThreshold) { // Swipe Right
+            if (isSidebarCollapsed) {
+                isSidebarCollapsed = false;
+                sidebar.classList.remove('collapsed');
+                applyTheme();
+                saveSettings();
+            }
         }
     }
 }
 
 function handleSlideSwipe() {
+    const deltaX = touchEndX - touchStartX;
+    const deltaY = touchEndY - touchStartY;
     const swipeThreshold = 50;
-    if (touchStartX - touchEndX > swipeThreshold) {
-        nextSlide();
-    } else if (touchEndX - touchStartX > swipeThreshold) {
-        prevSlide();
+
+    // Ensure horizontal movement is dominant
+    if (Math.abs(deltaX) > Math.abs(deltaY) * 1.5 && Math.abs(deltaX) > swipeThreshold) {
+        if (deltaX < -swipeThreshold) { // Swipe Left (next)
+            nextSlide();
+        } else if (deltaX > swipeThreshold) { // Swipe Right (prev)
+            prevSlide();
+        }
     }
 }
 
