@@ -1,5 +1,21 @@
 // --- DOM Elements ---
 const body = document.body;
+// --- Firebase Configuration ---
+const firebaseConfig = {
+  apiKey: "AIzaSyAu50q3NfDNaZUWsxU0-YIlql3bQsc6_QQ",
+  authDomain: "mount-of-mercy.firebaseapp.com",
+  projectId: "mount-of-mercy",
+  storageBucket: "mount-of-mercy.firebasestorage.app",
+  messagingSenderId: "974361367981",
+  appId: "1:974361367981:web:752f9a6fb815e208f4fd24"
+};
+
+// Initialize Firebase (Compat)
+firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth();
+const db = firebase.firestore();
+
+// --- Application Logic ---
 const header = document.querySelector('header');
 const sidebar = document.querySelector('.sidebar');
 const mainContent = document.querySelector('.main-content');
@@ -43,7 +59,15 @@ const expandCollapseAllButton = document.getElementById('expand-collapse-all-but
 const feedbackButton = document.getElementById('feedback-button');
 const helpModal = document.getElementById('help-modal');
 const feedbackModal = document.getElementById('feedback-modal');
+const scribeLoginModal = document.getElementById('scribe-login-modal');
+const scribeEditorModal = document.getElementById('scribe-editor-modal');
 const modalBackdrop = document.getElementById('modal-backdrop');
+
+// Scribe State
+let isScribeLoggedIn = false;
+let isScribeModeActive = false;
+let currentScribeUser = null;
+let prayersFromFirestore = []; // Cache for Firestore data
 const sendFeedbackButton = document.getElementById('send-feedback-button');
 const fontPreview = document.getElementById('font-preview');
 const psalmSelectorContainer = document.getElementById('psalm-selector-container');
@@ -823,6 +847,17 @@ function createPrayerCardElement(prayer, prayerIndex) {
     const prayerCard = document.createElement('div');
     prayerCard.classList.add('prayer-card');
     prayerCard.dataset.prayerIndex = prayerIndex;
+
+    // Scribe Edit Button
+    const editBtn = document.createElement('button');
+    editBtn.classList.add('edit-stanza-btn');
+    editBtn.innerHTML = '&#9998;'; // Pencil icon
+    editBtn.title = 'Edit Stanza (Scribe Mode)';
+    editBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        window.openScribeEditor(prayer.stanza, prayer.chapter);
+    });
+    prayerCard.appendChild(editBtn);
 
     const prayerCardMainContent = document.createElement('div');
     prayerCardMainContent.classList.add('prayer-card-main-content');
@@ -2545,6 +2580,8 @@ function openModal(modal) {
 function closeModal() {
     helpModal.style.display = 'none';
     feedbackModal.style.display = 'none';
+    if (scribeLoginModal) scribeLoginModal.style.display = 'none';
+    if (scribeEditorModal) scribeEditorModal.style.display = 'none';
     modalBackdrop.style.display = 'none';
     body.style.overflow = 'auto';
 }
@@ -2949,4 +2986,204 @@ document.addEventListener('DOMContentLoaded', async () => {
         collapseSidebar();
         setTimeout(renderServantsCorner, 350);
     });
+
+    // --- Scribe System Logic ---
+    const scribeLoginLink = document.getElementById('scribe-login-link');
+    const scribeLoginBtn = document.getElementById('scribe-login-btn');
+    const scribeEmailInput = document.getElementById('scribe-email');
+    const scribePasswordInput = document.getElementById('scribe-password');
+    const scribeLoginError = document.getElementById('scribe-login-error');
+    const scribeEditorRef = document.getElementById('scribe-editor-ref');
+    const scribeEditorFields = document.getElementById('scribe-editor-fields');
+    const scribeSaveBtn = document.getElementById('scribe-save-btn');
+    const scribeStatusSelect = document.getElementById('scribe-status-select');
+
+    // Handle Login Click
+    scribeLoginLink.addEventListener('click', (e) => {
+        console.log('Scribe Login link clicked');
+        e.preventDefault();
+        if (isScribeLoggedIn) {
+            if (confirm('Logout from Scribe Mode?')) {
+                auth.signOut();
+            }
+        } else {
+            console.log('Opening scribe login modal');
+            openModal(scribeLoginModal);
+        }
+    });
+
+    // Handle Login Submission
+    scribeLoginBtn.addEventListener('click', async () => {
+        const email = scribeEmailInput.value;
+        const password = scribePasswordInput.value;
+        scribeLoginError.classList.add('hidden');
+
+        try {
+            await auth.signInWithEmailAndPassword(email, password);
+            closeModal();
+            scribeEmailInput.value = '';
+            scribePasswordInput.value = '';
+        } catch (error) {
+            scribeLoginError.textContent = error.message;
+            scribeLoginError.classList.remove('hidden');
+        }
+    });
+
+    // Listen for Auth State Changes
+    auth.onAuthStateChanged(user => {
+        if (user) {
+            isScribeLoggedIn = true;
+            currentScribeUser = user;
+            scribeLoginLink.textContent = 'Scribe Logout (' + user.email.split('@')[0] + ')';
+            document.body.classList.add('scribe-mode-active');
+            isScribeModeActive = true;
+            
+            // Check if user is a verified Scribe in the database
+            checkScribePermissions(user.uid);
+            
+            // Start fetching live data
+            subscribeToPrayers();
+        } else {
+            isScribeLoggedIn = false;
+            isScribeModeActive = false;
+            currentScribeUser = null;
+            scribeLoginLink.textContent = 'Scribe Login';
+            document.body.classList.remove('scribe-mode-active');
+            renderPrayers(); // Re-render to remove edit buttons
+        }
+    });
+
+    async function checkScribePermissions(uid) {
+        try {
+            const scribeDoc = await db.collection('scribes').doc(uid).get();
+            if (!scribeDoc.exists) {
+                console.warn('User is not a verified Scribe. View-only mode.');
+                // In a real app, you might auto-logout or restrict access further
+            }
+        } catch (e) {
+            console.error('Error checking scribe permissions:', e);
+        }
+    }
+
+    // Live Subscription to Firestore Prayers
+    function subscribeToPrayers() {
+        db.collection('prayers')
+          .where('status', 'in', isScribeModeActive ? ['published', 'draft'] : ['published'])
+          .onSnapshot(snapshot => {
+            prayersFromFirestore = snapshot.docs.map(doc => ({
+                id: doc.id,
+                ...doc.data()
+            }));
+            
+            // Merge firestore data into our local prayers array
+            updateLocalPrayers();
+            renderPrayers();
+          }, err => {
+            console.error('Firestore subscription error:', err);
+          });
+    }
+
+    function updateLocalPrayers() {
+        // If we have firestore data, we use it to override or append to local data
+        // For now, let's just make sure the UI knows to render edit buttons
+    }
+
+    // Surgical Editor: Open Modal
+    window.openScribeEditor = function(stanzaId, chapter) {
+        // Find the prayer card data
+        const prayer = prayers.find(p => p.chapter === chapter && p.stanza === stanzaId) || 
+                       prayersFromFirestore.find(p => p.stanza === stanzaId && p.chapter === chapter);
+        
+        if (!prayer) return;
+
+        scribeEditorRef.textContent = `Editing: ${prayer.chapter} - Stanza ${prayer.stanza} (${prayer.reference})`;
+        scribeEditorFields.innerHTML = '';
+
+        // Generate fields for all languages
+        const languages = [
+            'english', 'geez_script', 'geez_phonetic', 
+            'amharic_script', 'amharic_phonetic', 
+            'tigrinya_script', 'tigrinya_phonetic', 'spanish', 'coptic'
+        ];
+
+        languages.forEach(lang => {
+            if (prayer.hasOwnProperty(lang)) {
+                const group = document.createElement('div');
+                group.classList.add('editor-field-group');
+                
+                const label = document.createElement('label');
+                label.textContent = lang.replace('_', ' ').toUpperCase();
+                
+                const textarea = document.createElement('textarea');
+                textarea.id = `edit-${lang}`;
+                textarea.value = prayer[lang];
+                
+                group.appendChild(label);
+                group.appendChild(textarea);
+                scribeEditorFields.appendChild(group);
+            }
+        });
+
+        scribeStatusSelect.value = prayer.status || 'published';
+        
+        // Store current ID on the button for the save handler
+        scribeSaveBtn.dataset.stanzaId = stanzaId;
+        scribeSaveBtn.dataset.chapter = chapter;
+        scribeSaveBtn.dataset.docId = prayer.id || ''; // Use firestore ID if it exists
+
+        openModal(scribeEditorModal);
+    };
+
+    // Save Changes to Firestore
+    scribeSaveBtn.addEventListener('click', async () => {
+        const stanzaId = scribeSaveBtn.dataset.stanzaId;
+        const chapter = scribeSaveBtn.dataset.chapter;
+        const docId = scribeSaveBtn.dataset.docId;
+        
+        const updatedData = {
+            stanza: stanzaId,
+            chapter: chapter,
+            status: scribeStatusSelect.value,
+            lastEditedBy: currentScribeUser.uid,
+            lastEditedAt: firebase.firestore.FieldValue.serverTimestamp()
+        };
+
+        const languages = [
+            'english', 'geez_script', 'geez_phonetic', 
+            'amharic_script', 'amharic_phonetic', 
+            'tigrinya_script', 'tigrinya_phonetic', 'spanish', 'coptic'
+        ];
+
+        languages.forEach(lang => {
+            const el = document.getElementById(`edit-${lang}`);
+            if (el) updatedData[lang] = el.value;
+        });
+
+        scribeSaveBtn.disabled = true;
+        scribeSaveBtn.textContent = 'Saving...';
+
+        try {
+            if (docId) {
+                await db.collection('prayers').doc(docId).update(updatedData);
+            } else {
+                // If it doesn't exist in Firestore yet (it's only in prayers.js), create it
+                // We use a custom ID to prevent duplicates: chapter_stanza
+                const customId = `${chapter}_${stanzaId}`.replace(/\s+/g, '_');
+                await db.collection('prayers').doc(customId).set(updatedData);
+            }
+            closeModal();
+            showCopyNotification('Scribe changes saved live!');
+        } catch (error) {
+            alert('Error saving: ' + error.message);
+        } finally {
+            scribeSaveBtn.disabled = false;
+            scribeSaveBtn.textContent = 'Save Changes';
+        }
+    });
+
+    // Close Modals on close button click
+    document.getElementById('close-help-modal').addEventListener('click', closeModal);
+    document.getElementById('close-feedback-modal').addEventListener('click', closeModal);
+    document.getElementById('close-scribe-login-modal').addEventListener('click', closeModal);
+    document.getElementById('close-scribe-editor-modal').addEventListener('click', closeModal);
 });

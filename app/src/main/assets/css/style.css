@@ -1409,3 +1409,143 @@ body.presentation-mode-slides .hareg-ornament {
     width: 50%;
   }
 }
+
+/* --- Scribe System Styles --- */
+.scribe-entry-point {
+    margin-top: 3rem; /* Increased spacing */
+    opacity: 0.15;
+    transition: opacity 0.3s ease;
+}
+.scribe-entry-point:hover {
+    opacity: 0.8;
+}
+#scribe-login-link {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 0.7rem;
+    cursor: pointer;
+    text-decoration: underline;
+    padding: 0;
+}
+
+.scribe-login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+.scribe-login-form input {
+    padding: 0.8rem;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+    background: var(--background-color);
+    color: var(--text-color);
+}
+#scribe-login-btn {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 0.8rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.error-text {
+    color: #ff5252;
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+}
+
+/* Scribe Mode Visual Indicators */
+.scribe-mode-active .prayer-card {
+    border: 1px solid var(--accent-color);
+}
+
+.edit-stanza-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 0.8rem;
+    z-index: 10;
+    opacity: 0.8;
+}
+.edit-stanza-btn:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+.scribe-mode-active .edit-stanza-btn {
+    display: flex;
+}
+
+/* Scribe Editor Modal */
+.scribe-editor-content {
+    max-width: 800px;
+    width: 90%;
+}
+#scribe-editor-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+    max-height: 60vh;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+}
+.editor-field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.editor-field-group label {
+    font-weight: bold;
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+.editor-field-group textarea {
+    width: 100%;
+    min-height: 80px;
+    padding: 0.6rem;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+    background: var(--background-color);
+    color: var(--text-color);
+    font-family: inherit;
+    resize: vertical;
+}
+
+.scribe-editor-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--border-color);
+    padding-top: 1.5rem;
+    margin-top: 1rem;
+}
+#scribe-status-select {
+    width: auto;
+    padding: 0.5rem;
+}
+#scribe-save-btn {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+#scribe-save-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
