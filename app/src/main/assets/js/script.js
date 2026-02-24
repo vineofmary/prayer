@@ -86,7 +86,7 @@ const bibleVerseSidebar = document.querySelector('.bible-verse-sidebar');
 
 
 // --- State Variables ---
-const SETTINGS_VERSION = '4.1.17'; // Update this to force refresh load settings
+const SETTINGS_VERSION = '4.1.18'; // Update this to force refresh load settings
 let currentTheme = {};
 let isSidebarCollapsed = false;
 let isServantsCornerActive = false;
@@ -557,6 +557,21 @@ function saveSettings() {
 function loadSettings() {
     const isMobile = window.innerWidth < 900;
     const savedVersion = localStorage.getItem('settingsVersion');
+    
+    // Auto-generate default languages from the registry
+    const defaultLanguages = {};
+    Object.keys(LANGUAGE_REGISTRY).forEach(id => {
+        const cfg = LANGUAGE_REGISTRY[id];
+        // By default, turn on main scripts but leave auto-translations and phonetics off for new users
+        if (cfg.category === 'main' && !cfg.isAuto && !id.includes('phonetic')) {
+            defaultLanguages[id] = true;
+        } else if (id === 'spanish') {
+            defaultLanguages[id] = !isMobile;
+        } else {
+            defaultLanguages[id] = false;
+        }
+    });
+
     const defaultSettings = {
         sidebarCollapsed: isMobile,
         theme: { palette: 'traditional', mode: 'dark' },
@@ -575,17 +590,7 @@ function loadSettings() {
             boldText: false,
             anglicizeNames: false
         },
-        displayedLanguages: {
-            english: true,
-            spanish: !isMobile,
-            geez_script: true,
-            geez_phonetic: false,
-            amharic_script: !isMobile,
-            amharic_phonetic: false,
-            tigrinya_script: !isMobile,
-            tigrinya_phonetic: false,
-            coptic: false
-        },
+        displayedLanguages: defaultLanguages,
         fontSizes: {
             geez: 16,
             english: 16,
@@ -3154,18 +3159,17 @@ document.addEventListener('DOMContentLoaded', async () => {
             // Check if user is a verified Scribe in the database
             checkScribePermissions(user.uid);
             
-            // Start fetching live data
+            // Re-subscribe with Scribe permissions (includes drafts)
             subscribeToPrayers();
-
-            // Force a re-render so edit buttons appear immediately
-            renderPrayers();
         } else {
             isScribeLoggedIn = false;
             isScribeModeActive = false;
             currentScribeUser = null;
             scribeLoginLink.textContent = 'Scribe Login';
             document.body.classList.remove('scribe-mode-active');
-            renderPrayers(); // Re-render to remove edit buttons
+            
+            // Re-subscribe with normal permissions (published only)
+            subscribeToPrayers();
         }
     });
 
@@ -3174,16 +3178,20 @@ document.addEventListener('DOMContentLoaded', async () => {
             const scribeDoc = await db.collection('scribes').doc(uid).get();
             if (!scribeDoc.exists) {
                 console.warn('User is not a verified Scribe. View-only mode.');
-                // In a real app, you might auto-logout or restrict access further
             }
         } catch (e) {
             console.error('Error checking scribe permissions:', e);
         }
     }
 
+    let unsubscribePrayers = null;
+
     // Live Subscription to Firestore Prayers
     function subscribeToPrayers() {
-        db.collection('prayers')
+        // Cancel existing subscription if any
+        if (unsubscribePrayers) unsubscribePrayers();
+
+        unsubscribePrayers = db.collection('prayers')
           .where('status', 'in', isScribeModeActive ? ['published', 'draft'] : ['published'])
           .onSnapshot(snapshot => {
             prayersFromFirestore = snapshot.docs.map(doc => ({
@@ -3191,8 +3199,9 @@ document.addEventListener('DOMContentLoaded', async () => {
                 ...doc.data()
             }));
             
-            // Merge firestore data into our local prayers array
+            // Merge firestore data into our local arrays
             updateLocalPrayers();
+            updateLanguageToggles(); // Refresh sidebar indicators (Verified/Scribe status)
             renderPrayers();
           }, err => {
             console.error('Firestore subscription error:', err);
@@ -3200,9 +3209,36 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     function updateLocalPrayers() {
-        // If we have firestore data, we use it to override or append to local data
-        // For now, let's just make sure the UI knows to render edit buttons
+        if (!prayersFromFirestore.length) return;
+
+        prayersFromFirestore.forEach(fsItem => {
+            const updateAllMatches = (array, criteria) => {
+                const matches = array.filter(criteria);
+                matches.forEach(m => Object.assign(m, fsItem));
+            };
+
+            if (fsItem.chapter === 'Servant') {
+                updateAllMatches(servantsPrayers, p => p.title === fsItem.stanza);
+            } else if (fsItem.chapter === 'Psalms' || fsItem.chapter === 'ProphetSong' || fsItem.chapter === 'Bible') {
+                updateAllMatches(songs, p => 
+                    p.chapter === fsItem.chapter && 
+                    p.stanza == fsItem.stanza && 
+                    p.reference === fsItem.reference &&
+                    p.english === fsItem.english
+                );
+            } else {
+                updateAllMatches(prayers, p => 
+                    p.chapter === fsItem.chapter && 
+                    p.stanza == fsItem.stanza && 
+                    p.reference === fsItem.reference &&
+                    p.english === fsItem.english
+                );
+            }
+        });
     }
+
+    // Initial subscription for all users
+    subscribeToPrayers();
 
     // Surgical Editor: Open Modal
     window.openScribeEditor = function(stanzaId, chapter) {
@@ -3233,7 +3269,9 @@ document.addEventListener('DOMContentLoaded', async () => {
         const languages = [
             'english', 'geez_script', 'geez_phonetic', 
             'amharic_script', 'amharic_phonetic', 
-            'tigrinya_script', 'tigrinya_phonetic', 'spanish', 'coptic'
+            'tigrinya_script', 'tigrinya_phonetic', 
+            'spanish', 'french', 'arabic', 'greek', 'hebrew', 'malayalam',
+            'oromoo', 'syriac', 'armenian', 'coptic'
         ];
 
         languages.forEach(lang => {
@@ -3241,14 +3279,35 @@ document.addEventListener('DOMContentLoaded', async () => {
                 const group = document.createElement('div');
                 group.classList.add('editor-field-group');
                 
+                const headerRow = document.createElement('div');
+                headerRow.classList.add('editor-field-header');
+                
                 const label = document.createElement('label');
                 label.textContent = lang.replace('_', ' ').toUpperCase();
+                
+                // Add Official/Verified Toggle for manual control
+                if (lang !== 'english') {
+                    const verifiedLabel = document.createElement('label');
+                    verifiedLabel.classList.add('verified-toggle-label');
+                    
+                    const checkbox = document.createElement('input');
+                    checkbox.type = 'checkbox';
+                    checkbox.id = `verify-${lang}`;
+                    checkbox.checked = prayer[`${lang}_is_official`] === true;
+                    
+                    verifiedLabel.appendChild(checkbox);
+                    verifiedLabel.appendChild(document.createTextNode(' Verified'));
+                    headerRow.appendChild(label);
+                    headerRow.appendChild(verifiedLabel);
+                } else {
+                    headerRow.appendChild(label);
+                }
                 
                 const textarea = document.createElement('textarea');
                 textarea.id = `edit-${lang}`;
                 textarea.value = prayer[lang];
                 
-                group.appendChild(label);
+                group.appendChild(headerRow);
                 group.appendChild(textarea);
                 scribeEditorFields.appendChild(group);
             }
@@ -3279,12 +3338,20 @@ document.addEventListener('DOMContentLoaded', async () => {
         const languages = [
             'english', 'geez_script', 'geez_phonetic', 
             'amharic_script', 'amharic_phonetic', 
-            'tigrinya_script', 'tigrinya_phonetic', 'spanish', 'coptic'
+            'tigrinya_script', 'tigrinya_phonetic', 'spanish', 'coptic',
+            'french', 'arabic', 'greek', 'hebrew', 'malayalam', 'oromoo', 'syriac', 'armenian'
         ];
 
         languages.forEach(lang => {
             const el = document.getElementById(`edit-${lang}`);
-            if (el) updatedData[lang] = el.value;
+            if (el) {
+                updatedData[lang] = el.value;
+                // Read the manual checkbox state
+                const verifyCheckbox = document.getElementById(`verify-${lang}`);
+                if (verifyCheckbox) {
+                    updatedData[`${lang}_is_official`] = verifyCheckbox.checked;
+                }
+            }
         });
 
         scribeSaveBtn.disabled = true;

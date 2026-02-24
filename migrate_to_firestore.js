@@ -26,14 +26,29 @@ async function migrate() {
         }
 
         const fileContent = fs.readFileSync(filePath, 'utf8');
+        
+        // Improved extraction: Find the first '[' and the last ']'
+        const startIndex = fileContent.indexOf('[');
+        const endIndex = fileContent.lastIndexOf(']');
+        
+        if (startIndex === -1 || endIndex === -1) {
+            console.error(`Could not find the array in ${fileInfo.path}. Skipping...`);
+            continue;
+        }
+
+        const jsonString = fileContent.substring(startIndex, endIndex + 1);
         let data;
         try {
-            // Flexible evaluation to handle JS variables
-            const scriptToEval = fileContent.replace(`const ${fileInfo.varName}`, 'data') + '; data;';
-            data = eval(scriptToEval);
+            data = JSON.parse(jsonString);
         } catch (e) {
-            console.error(`Failed to evaluate ${fileInfo.path}:`, e);
-            continue;
+            console.log(`Failed to parse JSON from ${fileInfo.path}. Attempting eval fallback...`);
+            try {
+                // Use a safe evaluation by wrapping in parentheses
+                data = eval('(' + jsonString + ')');
+            } catch (evalErr) {
+                console.error(`Eval fallback failed for ${fileInfo.path}:`, evalErr);
+                continue;
+            }
         }
 
         if (!Array.isArray(data)) {
@@ -49,12 +64,15 @@ async function migrate() {
             const chunk = data.slice(i, i + batchSize);
 
             chunk.forEach(item => {
-                // Ensure every item has a chapter and stanza for the ID
                 const chapter = item.chapter || 'Servant';
                 const stanza = item.stanza || item.title || 'stanza';
                 const ref = item.reference || 'ref';
+                const english = item.english || '';
                 
-                const docId = `${chapter}_${stanza}_${ref}`.replace(/[^a-zA-Z0-9]/g, '_').substring(0, 100);
+                // Create a content hash to ensure uniqueness even if metadata is identical
+                const contentHash = Buffer.from(english).toString('base64').substring(0, 10);
+                
+                const docId = `${chapter}_${stanza}_${ref}_${contentHash}`.replace(/[^a-zA-Z0-9]/g, '_').substring(0, 100);
                 const docRef = db.collection('prayers').doc(docId);
                 
                 batch.set(docRef, {

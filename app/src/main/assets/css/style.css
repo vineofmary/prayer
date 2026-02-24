@@ -1410,7 +1410,7 @@ body.presentation-mode-slides .hareg-ornament {
   }
 }
 
-/* --- Scribe System Styles --- */
+.editor-field-header {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    margin-bottom: 0.5rem;\n}\n\n.verified-toggle-label {\n    font-size: 0.75rem;\n    color: var(--rubric-red);\n    cursor: pointer;\n    display: flex;\n    align-items: center;\n    gap: 5px;\n    font-weight: bold;\n}\n\n.verified-toggle-label input {\n    cursor: pointer;\n}\n\n/* --- Scribe System Styles --- */
 .scribe-entry-point {
     margin-top: 3rem; /* Increased spacing */
     opacity: 0.15;
