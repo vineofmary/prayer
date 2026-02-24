@@ -794,6 +794,9 @@ function updateLanguageToggles() {
                                     prayersFromFirestore.some(p => p[id] && p[id].trim());
             
             if (!hasTranslations) {
+                // If no translations and not a scribe, hide it entirely
+                if (!isScribeLoggedIn) return;
+                
                 label.style.opacity = '0.5';
                 // label.title = 'No translations yet. Seeking Scribes!';
             }
@@ -827,7 +830,16 @@ function updateLanguageOrderList() {
     languageOrderList.innerHTML = '';
     languageOrder.forEach(langKey => {
         const langCfg = LANGUAGE_REGISTRY[langKey] || { category: 'main' };
+        
+        // Skip unofficial languages for non-scribes
         if (langCfg.category === 'unofficial' && !isScribeLoggedIn) return;
+
+        // Skip empty 'seeking scribe' languages for non-scribes
+        if (langCfg.isSeekingScribe && !isScribeLoggedIn) {
+            const hasTranslations = prayers.some(p => p[langKey] && p[langKey].trim()) || 
+                                    prayersFromFirestore.some(p => p[langKey] && p[langKey].trim());
+            if (!hasTranslations) return;
+        }
 
         if (displayedLanguages[langKey]) {
             const li = document.createElement('li');
