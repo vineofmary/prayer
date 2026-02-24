@@ -30,6 +30,7 @@ const boldTextToggle = document.getElementById('bold-text-toggle');
 const ethiopicFontSelect = document.getElementById('ethiopic-font-select');
 const englishFontSelect = document.getElementById('english-font-select');
 const languageTogglesDiv = document.getElementById('language-toggles');
+const unofficialLanguageTogglesDiv = document.getElementById('unofficial-language-toggles');
 const prayerDisplay = document.getElementById('prayer-display');
 const languageOrderList = document.getElementById('language-order-list');
 const copyNotification = document.getElementById('copy-notification');
@@ -85,7 +86,7 @@ const bibleVerseSidebar = document.querySelector('.bible-verse-sidebar');
 
 
 // --- State Variables ---
-const SETTINGS_VERSION = '4.1.15'; // Update this to force refresh load settings
+const SETTINGS_VERSION = '4.1.17'; // Update this to force refresh load settings
 let currentTheme = {};
 let isSidebarCollapsed = false;
 let isServantsCornerActive = false;
@@ -98,9 +99,41 @@ let selectedSeatatLectionaryDay = 'None';
 let customNames = {};
 let bibleData = { nkjv: null, am54: null, rgv: null, geez_psalms: null, coptic: null, loaded: false };
 
+// --- Language Registry ---
+const LANGUAGE_REGISTRY = {
+    // Main Section
+    'english': { name: 'English', category: 'main', isAuto: false },
+    'geez_script': { name: 'ግእዝ (Ge\'ez)', category: 'main', isAuto: false, isEthiopic: true },
+    'geez_phonetic': { name: 'Ge\'ez Phonetic', category: 'main', isAuto: false },
+    'amharic_script': { name: 'አማርኛ (Amharic)', category: 'main', isAuto: false, isEthiopic: true },
+    'amharic_phonetic': { name: 'Amharic Phonetic', category: 'main', isAuto: false },
+    'oromoo': { name: 'ኦሮምኛ (Oromo)**', category: 'main', isAuto: false, isEthiopic: true, isSeekingScribe: true },
+    'tigrinya_script': { name: 'ትግርኛ (Tigrinya)', category: 'main', isAuto: false, isEthiopic: true },
+    'tigrinya_phonetic': { name: 'Tigrinya Phonetic', category: 'main', isAuto: false },
+    'spanish': { name: 'Español (Spanish)*', category: 'main', isAuto: true }, 
+    'coptic': { name: 'ϯⲙⲉⲧⲣⲉⲙⲛ̀ⲭⲏⲙⲓ (Coptic)', category: 'main', isAuto: false },
+    'syriac': { name: 'ܣܘܪܝܝܐ (Syriac)**', category: 'main', isAuto: false, isSeekingScribe: true },
+    'armenian': { name: 'Հայերեն (Armenian)**', category: 'main', isAuto: false, isSeekingScribe: true },
+    
+    // Phonetics (Main Section)
+    // (Note: Already moved above for grouping but keeping IDs consistent)
+
+    // Unofficial Section (Advanced)
+    'french': { name: 'Français (French)*', category: 'unofficial', isAuto: true },
+    'arabic': { name: 'العربية (Arabic)*', category: 'unofficial', isAuto: true },
+    'greek': { name: 'Ελληνικά (Greek)*', category: 'unofficial', isAuto: true },
+    'hebrew': { name: 'עברית (Hebrew)*', category: 'unofficial', isAuto: true },
+    'malayalam': { name: 'മലയാളം (Malayalam)*', category: 'unofficial', isAuto: true }
+};
+
+const languageLabels = Object.fromEntries(
+    Object.entries(LANGUAGE_REGISTRY).map(([id, cfg]) => [id, cfg.name])
+);
+
 let languageOrder = [
-    'english', 'spanish', 'geez_script',
-    'amharic_script', 'tigrinya_script', 'coptic',
+    'english', 'geez_script', 'amharic_script', 'oromoo', 'tigrinya_script', 
+    'spanish', 'french', 'arabic', 'greek', 'hebrew', 'malayalam',
+    'syriac', 'armenian', 'coptic',
     'geez_phonetic', 'amharic_phonetic', 'tigrinya_phonetic'
 ];
 let searchMatches = [];
@@ -192,18 +225,6 @@ const SEATAT_LECTIONARY_DATA = {
         { type: 'Psalm (Psalm 125:2) | ምስባክ ዘሰዓታት', book: 'Psalms', chapter: 125, verses: '2', customEnglish: 'Then our mouth was filled with laughter, And our tongue with singing. Then they said among the nations...', customGeez: 'አሜሃ መልአ ፍሥሓ አፉነ፤ ወተሐሥየ ልሳንነ፤ አሜሃ ይቤሉ አሕዛብ፦' },
         { type: 'Gospel (John 3:1-22) | ወንጌል ዘሰዓታት', book: 'John', chapter: 3, verses: '1-22' }
     ]
-};
-
-const languageLabels = {
-    english: 'English',
-    spanish: 'Español',
-    geez_script: 'ግእዝ',
-    geez_phonetic: 'Ge\'ez',
-    amharic_script: 'አማርኛ',
-    amharic_phonetic: 'Amharic',
-    tigrinya_script: 'ትግርኛ',
-    tigrinya_phonetic: 'Tigrinya',
-    coptic: 'ϯⲙⲉⲧⲣⲉⲙⲛ̀ⲭⲏⲙⲓ'
 };
 
 const prophetSongs = [
@@ -734,10 +755,57 @@ function updateAllTogglesInSettingsPanel() {
 }
 
 function updateLanguageToggles() {
-    languageTogglesDiv.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
-        if (displayedLanguages.hasOwnProperty(checkbox.value)) {
-            checkbox.checked = displayedLanguages[checkbox.value];
+    languageTogglesDiv.innerHTML = '';
+    unofficialLanguageTogglesDiv.innerHTML = '';
+    
+    Object.entries(LANGUAGE_REGISTRY).forEach(([id, cfg]) => {
+        const label = document.createElement('label');
+        if (cfg.isEthiopic) label.classList.add('ethiopic-label');
+        
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.value = id;
+        checkbox.checked = displayedLanguages[id] || false;
+        
+        const span = document.createElement('span');
+        if (id.includes('phonetic')) {
+            const italic = document.createElement('i');
+            italic.textContent = cfg.name;
+            span.appendChild(italic);
+        } else {
+            span.textContent = cfg.name;
         }
+
+        // Handle "Seeking Scribes" graying out
+        if (cfg.isSeekingScribe) {
+            // Check if there is ANY translation for this language in the current view
+            const hasTranslations = prayers.some(p => p[id] && p[id].trim()) || 
+                                    prayersFromFirestore.some(p => p[id] && p[id].trim());
+            
+            if (!hasTranslations) {
+                label.style.opacity = '0.5';
+                // label.title = 'No translations yet. Seeking Scribes!';
+            }
+        }
+
+        label.appendChild(checkbox);
+        label.appendChild(document.createTextNode(' '));
+        label.appendChild(span);
+
+        // Sort into respective containers
+        if (cfg.category === 'unofficial') {
+            label.style.display = 'block'; // One per line
+            unofficialLanguageTogglesDiv.appendChild(label);
+        } else {
+            languageTogglesDiv.appendChild(label);
+        }
+
+        checkbox.addEventListener('change', () => {
+            displayedLanguages[id] = checkbox.checked;
+            updateLanguageOrderList();
+            saveSettings();
+            renderPrayers();
+        });
     });
 }
 
@@ -891,6 +959,7 @@ function createPrayerCardElement(prayer, prayerIndex) {
     let isFirstLanguage = true;
     languageOrder.forEach(langKey => {
         if (displayedLanguages[langKey] && prayer[langKey] && prayer[langKey].trim()) {
+            const langCfg = LANGUAGE_REGISTRY[langKey] || { name: langKey, isAuto: false };
             const langSection = document.createElement('div');
             langSection.classList.add('language-section');
             if (langKey.includes('phonetic')) {
@@ -898,7 +967,19 @@ function createPrayerCardElement(prayer, prayerIndex) {
             }
 
             const langHeader = document.createElement('h4');
-            langHeader.textContent = languageLabels[langKey];
+            let labelText = langCfg.name.replace(/\*+$/, ''); // Strip all asterisks from name for the card label
+            
+            // Check if this specific stanza translation is official/verified
+            // Default to true for Manual languages, false for Auto languages
+            const isOfficial = prayer[`${langKey}_is_official`] !== undefined ? 
+                               prayer[`${langKey}_is_official`] : !langCfg.isAuto;
+
+            // Only append "Unofficial" if it's an auto-language AND NOT official
+            if (langCfg.isAuto && !isOfficial) {
+                labelText += ' [Unofficial Translation]';
+            }
+
+            langHeader.textContent = labelText;
             if (!displayOptions.showLanguageLabels) langHeader.classList.add('hidden');
 
             const langText = document.createElement('p');
@@ -911,7 +992,7 @@ function createPrayerCardElement(prayer, prayerIndex) {
             }
             langText.innerHTML += formatPrayerText(prayer[langKey], langKey, searchQuery, isFirstLanguage, prayer.chapter);
 
-            if (langKey.includes('_script')) {
+            if (langCfg.isEthiopic) {
                 langHeader.classList.add('ethiopic-label');
                 langText.classList.add('lang-ethiopic-script');
             }

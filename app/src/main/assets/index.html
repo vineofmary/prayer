@@ -110,15 +110,7 @@
                 <div class="setting-group">
                     <h3>Select Languages</h3>
                     <div id="language-toggles">
-                        <label><input type="checkbox" value="english"> English</label>
-                        <label><input type="checkbox" value="spanish"> Español</label>
-                        <label class="ethiopic-label"><input type="checkbox" value="geez_script"> ግእዝ</label>
-                        <label class="ethiopic-label"><input type="checkbox" value="amharic_script"> አማርኛ</label>
-                        <label class="ethiopic-label"><input type="checkbox" value="tigrinya_script"> ትግርኛ</label>
-                        <label><input type="checkbox" value="coptic"> ϯⲙⲉⲧⲣⲉⲙⲛ̀ⲭⲏⲙⲓ (Coptic)</label>
-                        <label><i><input type="checkbox" value="geez_phonetic"> Ge'ez phonetic</i></label>
-                        <label><i><input type="checkbox" value="amharic_phonetic"> Amharic phonetic</i></label>
-                        <label><i><input type="checkbox" value="tigrinya_phonetic"> Tigrinya phonetic</i></label>
+                        <!-- Languages will be injected here dynamically from LANGUAGE_REGISTRY -->
                     </div>
                 </div>
                 <div class="setting-group">
@@ -184,6 +176,20 @@
                         <option value="none">None</option>
                     </select>
                 </div>
+
+                <div class="setting-group">
+                    <h3>Translations*</h3>
+                    <div id="unofficial-language-toggles">
+                        <!-- Dynamic -->
+                    </div>
+                    <p class="settings-subtitle" style="font-size: 0.7rem; margin-top: 1rem; opacity: 0.8; font-weight: normal; font-style: italic; line-height: 1.4;">
+                        *Includes unofficial translations (generated from English) via Google Translate APIs which require thorough review for theological accuracy, but is an important first step towards future officially approved translations of liturgical prayers.
+                    </p>
+                    <p class="settings-subtitle" style="font-size: 0.7rem; margin-top: 0.5rem; opacity: 0.8; font-weight: normal; font-style: italic; line-height: 1.4;">
+                        **Seeking scribes to help insert prayers/Scriptures in these languages.
+                    </p>
+                </div>
+
                 <div class="setting-group feedback-section">
                     <button id="feedback-button">Share Feedback</button>
                     <div class="scribe-entry-point">
