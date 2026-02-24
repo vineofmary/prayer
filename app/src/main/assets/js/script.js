@@ -472,6 +472,11 @@ function applyTheme() {
     // Add view mode
     body.classList.add(`view-mode-${displayOptions.viewMode}`);
 
+    // Preserve Scribe Mode
+    if (isScribeModeActive) {
+        body.classList.add('scribe-mode-active');
+    }
+
     // Add language color class if active
     if (displayOptions.languageColors !== 'off') {
         body.classList.add(`language-colors-${displayOptions.languageColors}`);
@@ -848,16 +853,25 @@ function createPrayerCardElement(prayer, prayerIndex) {
     prayerCard.classList.add('prayer-card');
     prayerCard.dataset.prayerIndex = prayerIndex;
 
-    // Scribe Edit Button
-    const editBtn = document.createElement('button');
-    editBtn.classList.add('edit-stanza-btn');
-    editBtn.innerHTML = '&#9998;'; // Pencil icon
-    editBtn.title = 'Edit Stanza (Scribe Mode)';
-    editBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        window.openScribeEditor(prayer.stanza, prayer.chapter);
-    });
-    prayerCard.appendChild(editBtn);
+    // Scribe Edit Button (Only for Scribable content)
+    // We exclude most Bible-based content (Psalms, Bible, SeatatLectionary) 
+    // and Songs of the Prophets (except for Manasseh)
+    const isScribable = prayer.chapter !== 'Psalms' && 
+                        prayer.chapter !== 'Bible' && 
+                        prayer.chapter !== 'SeatatLectionary' &&
+                        (prayer.chapter !== 'ProphetSong' || prayer.stanza === 'Manasseh');
+
+    if (isScribeModeActive && isScribable) {
+        const editBtn = document.createElement('button');
+        editBtn.classList.add('edit-stanza-btn');
+        editBtn.innerHTML = '&#9998;'; // Pencil icon
+        editBtn.title = 'Edit Stanza (Scribe Mode)';
+        editBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            window.openScribeEditor(prayer.stanza, prayer.chapter);
+        });
+        prayerCard.appendChild(editBtn);
+    }
 
     const prayerCardMainContent = document.createElement('div');
     prayerCardMainContent.classList.add('prayer-card-main-content');
@@ -2963,6 +2977,20 @@ document.addEventListener('DOMContentLoaded', async () => {
             prayerContent.appendChild(langSection);
             prayerCardMainContent.appendChild(prayerContent);
             prayerCard.appendChild(prayerCardMainContent);
+
+            if (isScribeModeActive) {
+                const editBtnCorner = document.createElement('button');
+                editBtnCorner.classList.add('edit-stanza-btn');
+                editBtnCorner.style.display = 'flex';
+                editBtnCorner.innerHTML = '&#9998;';
+                editBtnCorner.title = 'Edit Servant Prayer';
+                editBtnCorner.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    window.openScribeEditor(prayer.title, 'Servant');
+                });
+                prayerCard.appendChild(editBtnCorner);
+            }
+
             prayerDisplay.appendChild(prayerCard);
         });
     }
@@ -2977,6 +3005,10 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         document.querySelector('.header-content').style.display = 'flex';
         document.querySelector('.header-actions').style.display = 'flex';
+
+        if (isScribeModeActive) {
+            document.body.classList.add('scribe-mode-active');
+        }
 
         renderPrayers();
     }
@@ -3093,13 +3125,21 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // Surgical Editor: Open Modal
     window.openScribeEditor = function(stanzaId, chapter) {
-        // Find the prayer card data
-        const prayer = prayers.find(p => p.chapter === chapter && p.stanza === stanzaId) || 
-                       prayersFromFirestore.find(p => p.stanza === stanzaId && p.chapter === chapter);
+        console.log('Opening editor for:', chapter, stanzaId);
         
-        if (!prayer) return;
+        // Comprehensive search across all possible sources
+        const prayer = 
+            prayersFromFirestore.find(p => p.stanza == stanzaId && p.chapter == chapter) ||
+            prayers.find(p => p.chapter === chapter && p.stanza == stanzaId) || 
+            songs.find(p => p.chapter === chapter && p.stanza == stanzaId) ||
+            (chapter === 'Servant' ? servantsPrayers.find(p => p.title == stanzaId) : null);
+        
+        if (!prayer) {
+            console.warn('Scribe Error: Prayer not found in any source.');
+            return;
+        }
 
-        scribeEditorRef.textContent = `Editing: ${prayer.chapter} - Stanza ${prayer.stanza}`;
+        scribeEditorRef.textContent = `Editing: ${chapter} - ${stanzaId}`;
         scribeEditorFields.innerHTML = '';
 
         // Populate Metadata Fields
