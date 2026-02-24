@@ -31,6 +31,7 @@ const ethiopicFontSelect = document.getElementById('ethiopic-font-select');
 const englishFontSelect = document.getElementById('english-font-select');
 const languageTogglesDiv = document.getElementById('language-toggles');
 const unofficialLanguageTogglesDiv = document.getElementById('unofficial-language-toggles');
+const unofficialLanguagesSection = document.getElementById('unofficial-languages-section');
 const prayerDisplay = document.getElementById('prayer-display');
 const languageOrderList = document.getElementById('language-order-list');
 const copyNotification = document.getElementById('copy-notification');
@@ -86,7 +87,7 @@ const bibleVerseSidebar = document.querySelector('.bible-verse-sidebar');
 
 
 // --- State Variables ---
-const SETTINGS_VERSION = '4.1.18'; // Update this to force refresh load settings
+const SETTINGS_VERSION = '4.1.19'; // Update this to force refresh load settings
 let currentTheme = {};
 let isSidebarCollapsed = false;
 let isServantsCornerActive = false;
@@ -763,6 +764,11 @@ function updateLanguageToggles() {
     languageTogglesDiv.innerHTML = '';
     unofficialLanguageTogglesDiv.innerHTML = '';
     
+    // Toggle visibility of the unofficial section container
+    if (unofficialLanguagesSection) {
+        unofficialLanguagesSection.style.display = isScribeLoggedIn ? 'block' : 'none';
+    }
+
     Object.entries(LANGUAGE_REGISTRY).forEach(([id, cfg]) => {
         const label = document.createElement('label');
         if (cfg.isEthiopic) label.classList.add('ethiopic-label');
@@ -799,6 +805,9 @@ function updateLanguageToggles() {
 
         // Sort into respective containers
         if (cfg.category === 'unofficial') {
+            // Extra safety: only show unofficial languages if scribe is logged in
+            if (!isScribeLoggedIn) return;
+            
             label.style.display = 'block'; // One per line
             unofficialLanguageTogglesDiv.appendChild(label);
         } else {
@@ -817,6 +826,9 @@ function updateLanguageToggles() {
 function updateLanguageOrderList() {
     languageOrderList.innerHTML = '';
     languageOrder.forEach(langKey => {
+        const langCfg = LANGUAGE_REGISTRY[langKey] || { category: 'main' };
+        if (langCfg.category === 'unofficial' && !isScribeLoggedIn) return;
+
         if (displayedLanguages[langKey]) {
             const li = document.createElement('li');
             li.draggable = true;
@@ -963,8 +975,12 @@ function createPrayerCardElement(prayer, prayerIndex) {
 
     let isFirstLanguage = true;
     languageOrder.forEach(langKey => {
+        const langCfg = LANGUAGE_REGISTRY[langKey] || { name: langKey, isAuto: false };
+        
+        // HIDDEN: skip unofficial languages for non-scribes (except Spanish)
+        if (langCfg.category === 'unofficial' && !isScribeLoggedIn) return;
+
         if (displayedLanguages[langKey] && prayer[langKey] && prayer[langKey].trim()) {
-            const langCfg = LANGUAGE_REGISTRY[langKey] || { name: langKey, isAuto: false };
             const langSection = document.createElement('div');
             langSection.classList.add('language-section');
             if (langKey.includes('phonetic')) {
@@ -3161,6 +3177,10 @@ document.addEventListener('DOMContentLoaded', async () => {
             
             // Re-subscribe with Scribe permissions (includes drafts)
             subscribeToPrayers();
+
+            // Refresh UI immediately
+            updateLanguageToggles();
+            renderPrayers();
         } else {
             isScribeLoggedIn = false;
             isScribeModeActive = false;
@@ -3170,6 +3190,10 @@ document.addEventListener('DOMContentLoaded', async () => {
             
             // Re-subscribe with normal permissions (published only)
             subscribeToPrayers();
+
+            // Refresh UI immediately
+            updateLanguageToggles();
+            renderPrayers();
         }
     });
 
