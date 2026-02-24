@@ -3043,6 +3043,9 @@ document.addEventListener('DOMContentLoaded', async () => {
             
             // Start fetching live data
             subscribeToPrayers();
+
+            // Force a re-render so edit buttons appear immediately
+            renderPrayers();
         } else {
             isScribeLoggedIn = false;
             isScribeModeActive = false;
@@ -3096,8 +3099,14 @@ document.addEventListener('DOMContentLoaded', async () => {
         
         if (!prayer) return;
 
-        scribeEditorRef.textContent = `Editing: ${prayer.chapter} - Stanza ${prayer.stanza} (${prayer.reference})`;
+        scribeEditorRef.textContent = `Editing: ${prayer.chapter} - Stanza ${prayer.stanza}`;
         scribeEditorFields.innerHTML = '';
+
+        // Populate Metadata Fields
+        document.getElementById('edit-chapter').value = prayer.chapter || '';
+        document.getElementById('edit-stanza').value = prayer.stanza || '';
+        document.getElementById('edit-reference').value = prayer.reference || '';
+        document.getElementById('edit-instruction').value = prayer.instruction || '';
 
         // Generate fields for all languages
         const languages = [
@@ -3126,23 +3135,21 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         scribeStatusSelect.value = prayer.status || 'published';
         
-        // Store current ID on the button for the save handler
-        scribeSaveBtn.dataset.stanzaId = stanzaId;
-        scribeSaveBtn.dataset.chapter = chapter;
-        scribeSaveBtn.dataset.docId = prayer.id || ''; // Use firestore ID if it exists
+        // Store current IDs for the save handler
+        scribeSaveBtn.dataset.docId = prayer.id || ''; 
 
         openModal(scribeEditorModal);
     };
 
     // Save Changes to Firestore
     scribeSaveBtn.addEventListener('click', async () => {
-        const stanzaId = scribeSaveBtn.dataset.stanzaId;
-        const chapter = scribeSaveBtn.dataset.chapter;
         const docId = scribeSaveBtn.dataset.docId;
         
         const updatedData = {
-            stanza: stanzaId,
-            chapter: chapter,
+            chapter: document.getElementById('edit-chapter').value,
+            stanza: document.getElementById('edit-stanza').value,
+            reference: document.getElementById('edit-reference').value,
+            instruction: document.getElementById('edit-instruction').value,
             status: scribeStatusSelect.value,
             lastEditedBy: currentScribeUser.uid,
             lastEditedAt: firebase.firestore.FieldValue.serverTimestamp()
@@ -3166,9 +3173,8 @@ document.addEventListener('DOMContentLoaded', async () => {
             if (docId) {
                 await db.collection('prayers').doc(docId).update(updatedData);
             } else {
-                // If it doesn't exist in Firestore yet (it's only in prayers.js), create it
-                // We use a custom ID to prevent duplicates: chapter_stanza
-                const customId = `${chapter}_${stanzaId}`.replace(/\s+/g, '_');
+                // Use metadata values for the new document ID
+                const customId = `${updatedData.chapter}_${updatedData.stanza}_${updatedData.reference}`.replace(/[^a-zA-Z0-9]/g, '_');
                 await db.collection('prayers').doc(customId).set(updatedData);
             }
             closeModal();

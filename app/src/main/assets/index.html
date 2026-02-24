@@ -262,6 +262,9 @@
     <div id="scribe-login-modal" class="modal">
         <div class="modal-content">
             <span class="close-button" id="close-scribe-login-modal">&times;</span>
+            <div style="text-align: center; margin-bottom: 1rem;">
+                <img src="img/dimyanos_cropped.jpg" alt="Dimyanos the Scribe" style="width: 180px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.3);">
+            </div>
             <h2>Scribe's Entrance</h2>
             <p>Enter your credentials to enter the Scribe's Chamber.</p>
             <div class="scribe-login-form">
@@ -278,9 +281,29 @@
         <div class="modal-content scribe-editor-content">
             <span class="close-button" id="close-scribe-editor-modal">&times;</span>
             <h2>Scribe's Chamber</h2>
-            <p id="scribe-editor-ref" style="font-size: 0.8rem; opacity: 0.7;"></p>
+            <p id="scribe-editor-ref" style="font-size: 0.8rem; opacity: 0.7; margin-bottom: 1rem;"></p>
+            
+            <div id="scribe-editor-metadata" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border-color);">
+                <div class="editor-field-group">
+                    <label>Chapter</label>
+                    <input type="text" id="edit-chapter" style="padding: 0.5rem; border: 1px solid var(--border-color); background: var(--background-color); color: var(--text-color); border-radius: 4px;">
+                </div>
+                <div class="editor-field-group">
+                    <label>Stanza Index</label>
+                    <input type="text" id="edit-stanza" style="padding: 0.5rem; border: 1px solid var(--border-color); background: var(--background-color); color: var(--text-color); border-radius: 4px;">
+                </div>
+                <div class="editor-field-group">
+                    <label>Reference</label>
+                    <input type="text" id="edit-reference" style="padding: 0.5rem; border: 1px solid var(--border-color); background: var(--background-color); color: var(--text-color); border-radius: 4px;">
+                </div>
+                <div class="editor-field-group">
+                    <label>Instruction</label>
+                    <input type="text" id="edit-instruction" style="padding: 0.5rem; border: 1px solid var(--border-color); background: var(--background-color); color: var(--text-color); border-radius: 4px;">
+                </div>
+            </div>
+
             <div id="scribe-editor-fields">
-                <!-- Fields for each language will be injected here -->
+                <!-- Translation fields injected here -->
             </div>
             <div class="scribe-editor-actions">
                 <select id="scribe-status-select">

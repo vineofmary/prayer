@@ -30,6 +30,11 @@ self.addEventListener('install', event => {
 });
 
 self.addEventListener('fetch', event => {
+  // Fix: Only cache GET requests. Firebase uses POST for many operations.
+  if (event.request.method !== 'GET') {
+    return;
+  }
+
   event.respondWith(
     caches.open(CACHE_NAME).then(cache => {
       return cache.match(event.request).then(response => {
