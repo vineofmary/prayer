@@ -2706,13 +2706,19 @@ function openModal(modal) {
 }
 
 function closeModal() {
-    helpModal.style.display = 'none';
-    feedbackModal.style.display = 'none';
-    if (scribeLoginModal) scribeLoginModal.style.display = 'none';
-    if (scribeEditorModal) scribeEditorModal.style.display = 'none';
+    document.querySelectorAll('.modal').forEach(modal => {
+        modal.style.display = 'none';
+    });
     modalBackdrop.style.display = 'none';
     body.style.overflow = 'auto';
 }
+
+// Global listener for closing modals when clicking outside modal-content
+document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('modal')) {
+        closeModal();
+    }
+});
 
 helpButton.addEventListener('click', () => openModal(helpModal));
 feedbackButton.addEventListener('click', () => openModal(feedbackModal));
@@ -3189,6 +3195,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             
             // Re-subscribe with Scribe permissions (includes drafts)
             subscribeToPrayers();
+            subscribeToIconMetadata();
 
             // Refresh UI immediately
             updateLanguageToggles();
@@ -3202,6 +3209,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             
             // Re-subscribe with normal permissions (published only)
             subscribeToPrayers();
+            subscribeToIconMetadata();
 
             // Refresh UI immediately
             updateLanguageToggles();
@@ -3275,6 +3283,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // Initial subscription for all users
     subscribeToPrayers();
+    subscribeToIconMetadata();
 
     // Surgical Editor: Open Modal
     window.openScribeEditor = function(stanzaId, chapter) {
@@ -3357,6 +3366,144 @@ document.addEventListener('DOMContentLoaded', async () => {
         openModal(scribeEditorModal);
     };
 
+    // --- Icon Metadata Logic ---
+    const iconMetadataModal = document.getElementById('icon-metadata-modal');
+    const scribeIconEditorModal = document.getElementById('scribe-icon-editor-modal');
+    const iconScribeEditSection = document.getElementById('icon-scribe-edit-section');
+    const editIconBtn = document.getElementById('edit-icon-btn');
+    const scribeSaveIconBtn = document.getElementById('scribe-save-icon-btn');
+
+    let currentIconKey = null;
+    let iconsFromFirestore = {};
+
+    // Event delegation for icon clicks (handles static and dynamic icons)
+    document.addEventListener('click', (e) => {
+        const icon = e.target.closest('.holy-trinity-icon, .section-icon, .hareg-ornament');
+        if (icon) {
+            const src = icon.getAttribute('src');
+            if (!src) return;
+            const iconFileName = src.split('/').pop();
+            console.log('Icon clicked:', iconFileName);
+            openIconMetadata(iconFileName);
+        }
+    });
+
+    // Subscribe to Icon Metadata in Firestore
+    function subscribeToIconMetadata() {
+        db.collection('icon_metadata').onSnapshot(snapshot => {
+            snapshot.docs.forEach(doc => {
+                iconsFromFirestore[doc.id] = doc.data();
+            });
+        });
+    }
+
+    window.openIconMetadata = function(iconKey) {
+        console.log('Opening icon metadata for:', iconKey);
+        currentIconKey = iconKey;
+        const baseData = ICON_METADATA[iconKey];
+        
+        if (!baseData) {
+            console.warn('Metadata not found for key:', iconKey);
+            return;
+        }
+
+        const firestoreData = iconsFromFirestore[baseData.id || iconKey.replace(/\./g, '_')] || {};
+        const data = { ...baseData, ...firestoreData };
+
+        // Populate Modal
+        document.getElementById('icon-title-geez').textContent = data.title?.geez || '';
+        document.getElementById('icon-title-translit').textContent = data.title?.transliteration || '';
+        document.getElementById('icon-title-english').textContent = data.title?.english || '';
+        
+        const originalImg = document.getElementById('icon-original-img');
+        originalImg.src = data.originalImage || data.src || '';
+        originalImg.style.display = (data.originalImage || data.src) ? 'block' : 'none';
+
+        document.getElementById('icon-desc-amharic').textContent = data.description?.amharic || '';
+        document.getElementById('icon-desc-english').textContent = data.description?.english || '';
+
+        // Bible References
+        const bibleRefsContainer = document.getElementById('icon-bible-refs');
+        bibleRefsContainer.innerHTML = '';
+        if (data.bibleReferences && data.bibleReferences.length > 0) {
+            const label = document.createElement('strong');
+            label.textContent = 'Bible References: ';
+            bibleRefsContainer.appendChild(label);
+            bibleRefsContainer.append(data.bibleReferences.join(', '));
+            bibleRefsContainer.style.display = 'block';
+        } else {
+            bibleRefsContainer.style.display = 'none';
+        }
+
+        // Source Citation with technical formatting and links
+        const sourceContainer = document.getElementById('icon-source-citation');
+        sourceContainer.innerHTML = '<strong>Source:</strong> ';
+        if (data.source) {
+            let sourceText = data.source;
+            if (data.link) {
+                const link = document.createElement('a');
+                link.href = data.link;
+                link.target = '_blank';
+                link.textContent = ' [Permalink]';
+                sourceContainer.append(sourceText);
+                sourceContainer.appendChild(link);
+            } else {
+                sourceContainer.append(sourceText);
+            }
+        }
+
+        // Show/Hide Scribe Edit Section
+        if (isScribeModeActive) {
+            iconScribeEditSection.classList.remove('hidden');
+        } else {
+            iconScribeEditSection.classList.add('hidden');
+        }
+
+        openModal(iconMetadataModal);
+    };
+
+    editIconBtn.addEventListener('click', () => {
+        const baseData = ICON_METADATA[currentIconKey];
+        const firestoreData = iconsFromFirestore[baseData?.id || currentIconKey] || {};
+        const data = { ...baseData, ...firestoreData };
+
+        document.getElementById('edit-icon-desc-amharic').value = data.description?.amharic || '';
+        document.getElementById('edit-icon-desc-english').value = data.description?.english || '';
+        document.getElementById('edit-icon-source').value = data.source || '';
+
+        closeModal();
+        setTimeout(() => openModal(scribeIconEditorModal), 300);
+    });
+
+    scribeSaveIconBtn.addEventListener('click', async () => {
+        const baseData = ICON_METADATA[currentIconKey];
+        const docId = baseData?.id || currentIconKey.replace(/\./g, '_');
+        
+        const updatedData = {
+            description: {
+                amharic: document.getElementById('edit-icon-desc-amharic').value,
+                english: document.getElementById('edit-icon-desc-english').value
+            },
+            source: document.getElementById('edit-icon-source').value,
+            lastEditedBy: currentScribeUser?.uid || 'unknown',
+            lastEditedAt: firebase.firestore.FieldValue.serverTimestamp()
+        };
+
+        scribeSaveIconBtn.disabled = true;
+        scribeSaveIconBtn.textContent = 'Saving...';
+
+        try {
+            await db.collection('icon_metadata').doc(docId).set(updatedData, { merge: true });
+            closeModal();
+            showCopyNotification('Icon metadata updated successfully!');
+        } catch (error) {
+            alert('Error saving icon metadata: ' + error.message);
+        } finally {
+            scribeSaveIconBtn.disabled = false;
+            scribeSaveIconBtn.textContent = 'Save Icon Metadata';
+        }
+    });
+
     // Save Changes to Firestore
     scribeSaveBtn.addEventListener('click', async () => {
         const docId = scribeSaveBtn.dataset.docId;
@@ -3416,4 +3563,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     document.getElementById('close-feedback-modal').addEventListener('click', closeModal);
     document.getElementById('close-scribe-login-modal').addEventListener('click', closeModal);
     document.getElementById('close-scribe-editor-modal').addEventListener('click', closeModal);
+    document.getElementById('close-icon-metadata-modal').addEventListener('click', closeModal);
+    document.getElementById('close-scribe-icon-editor-modal').addEventListener('click', closeModal);
 });

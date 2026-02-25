@@ -1549,3 +1549,119 @@ body.presentation-mode-slides .hareg-ornament {
     opacity: 0.5;
     cursor: not-allowed;
 }
+
+/* Icon Metadata Modal Styles */
+.icon-metadata-content {
+    max-width: 800px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.icon-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.icon-header h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.icon-header h3 {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    font-weight: normal;
+}
+
+.icon-image-container {
+    width: 100%;
+    margin-bottom: 2rem;
+    text-align: center;
+    background: #000;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.icon-image-container img {
+    max-width: 100%;
+    max-height: 60vh;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+.icon-description-section {
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.icon-description-section p {
+    margin-bottom: 1rem;
+}
+
+.icon-metadata-detail {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background: var(--hover-color);
+    border-radius: 4px;
+    border-left: 4px solid var(--accent-color);
+}
+
+.icon-source-section {
+    font-size: 0.85rem;
+    opacity: 0.8;
+    border-top: 1px dashed var(--border-color);
+    padding-top: 1.5rem;
+    margin-top: 1rem;
+    line-height: 1.6;
+}
+
+.icon-source-section a {
+    color: var(--accent-color);
+    text-decoration: underline;
+    word-break: break-all;
+}
+
+.icon-metadata-content .close-button {
+    position: sticky;
+    top: 0;
+    right: 0;
+    z-index: 10;
+}
+
+.scribe-editor-fields textarea {
+    min-height: 100px;
+}
+
+/* Scribe Save Icon Button */
+#scribe-save-icon-btn {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+#scribe-save-icon-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Make icons clickable */
+.holy-trinity-icon, .section-icon, .hareg-ornament {
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.holy-trinity-icon:hover, .section-icon:hover, .hareg-ornament:hover {
+    transform: scale(1.02);
+}

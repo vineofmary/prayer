@@ -321,6 +321,58 @@
         </div>
     </div>
 
+    <!-- Icon Metadata Modal -->
+    <div id="icon-metadata-modal" class="modal">
+        <div class="modal-content icon-metadata-content">
+            <span class="close-button" id="close-icon-metadata-modal">&times;</span>
+            <div id="icon-metadata-body">
+                <div class="icon-header">
+                    <h2 id="icon-title-geez" class="ethiopic-label"></h2>
+                    <p id="icon-title-translit" style="font-style: italic; opacity: 0.8;"></p>
+                    <h3 id="icon-title-english"></h3>
+                </div>
+                <div class="icon-image-container">
+                    <img id="icon-original-img" src="" alt="Original Icon Image">
+                </div>
+                <div id="icon-description-container" class="icon-description-section">
+                    <p id="icon-desc-english"></p>
+                    <p id="icon-desc-amharic" class="ethiopic-label"></p>
+                </div>
+                <div id="icon-bible-refs" class="icon-metadata-detail"></div>
+                <div id="icon-source-citation" class="icon-source-section"></div>
+                
+                <div id="icon-scribe-edit-section" class="hidden" style="margin-top: 2rem; border-top: 1px solid var(--border-color); padding-top: 1rem;">
+                    <button id="edit-icon-btn" class="settings-button">Edit Icon Metadata (Scribe)</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scribe Icon Editor Modal -->
+    <div id="scribe-icon-editor-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" id="close-scribe-icon-editor-modal">&times;</span>
+            <h2>Scribe's Icon Chamber</h2>
+            <div id="scribe-icon-fields" class="scribe-editor-fields">
+                <div class="editor-field-group">
+                    <label>Description (Amharic)</label>
+                    <textarea id="edit-icon-desc-amharic" class="ethiopic-label"></textarea>
+                </div>
+                <div class="editor-field-group">
+                    <label>Description (English)</label>
+                    <textarea id="edit-icon-desc-english"></textarea>
+                </div>
+                <div class="editor-field-group">
+                    <label>Source / Citation</label>
+                    <textarea id="edit-icon-source"></textarea>
+                </div>
+            </div>
+            <div class="scribe-editor-actions">
+                <button id="scribe-save-icon-btn">Save Icon Metadata</button>
+            </div>
+        </div>
+    </div>
+
     <div id="modal-backdrop"></div>
 </div>
 
@@ -329,6 +381,7 @@
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
 
+<script src="js/icons.js"></script>
 <script src="js/prayers.js"></script>
 <script src="js/songs.js"></script>
 <script src="js/servants.js"></script>
