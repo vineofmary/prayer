@@ -378,6 +378,12 @@ const rubricRedWords = {
         "ስብሐት ለአብ ወወልድ ወመንፈስ ቅዱስ ለዓለም ወለዓለመ ዓለም", "ውዳሴሃ ለእግዝእትነ ማርያም ድንግል ወላዲተ አምላክ", "ይዌድስዋ መላእክት ለማርያም",
         "ወበሳድስ ወርኅ", "ሰላም ለከ", "ሰላም ለኪ", "ልዑል", "ንዒ ኀቤየ ኦ ዳዊት ንጉሠ እስራኤል", "ነዓ ኀቤየ ዳዊት ንጉሠ እሥራኤል", "ሰአሊ ለነ ማርያም",
         "ወእግዚአ", "አምላከ", "ወልድከ"
+    ],
+    spanish: [
+        "En el nombre del Padre, del Hijo y del Espíritu Santo, un solo Dios, Amén", "Padre", "Hijo", "Espíritu Santo", "un solo Dios",
+        "Santísima Trinidad", "Te damos gracias, Señor", "Señor", "Dios", "Rey", "Padre nuestro que estás en los cielos",
+        "Jesucristo", "Amén", "Santo, santo, santo", "Cristo", "Salvador", "Virgen María", "María",
+        "porque para siempre es su misericordia", "porque para siempre [es] su misericordia"
     ]
 };
 
@@ -394,6 +400,9 @@ const rubricGoldWords = {
         "ቅድስት ድንግል", "ማርያም ድንግል", "ማርያም ቅድስት", "ማርያም ውድስት", "ማርያም ንጽሕት", "ማርያም ፍሥሕት", "ማርያም ብጽዕት", "ማርያም ብፅዕት", "ማርያም ቡርክት",
         "ማኅደረ መለኮት", "ደብተራ ፍጽምት", "እኅተ መላእክት", "ወእመ ኵሉ ሕዝብ", "ሰላማዊት", "ማርያም ሥርጉት",
         "ኆኅተ ምሥራቅ ወእሙ ለብርሃን", "ማርያም ኅሪት ወክብርት", "마리아"
+    ],
+    spanish: [
+        "María de Sión", "Nuestra Señora María", "Virgen Madre de Dios", "Santa Virgen", "María la Virgen", "Llena de gracia"
     ]
 };
 
@@ -407,8 +416,9 @@ function buildRegex(words, isGeez = false) {
     // Improved boundary pattern: space, start of line, or common punctuation
     // leadBoundary matches character before word (e.g. > in <i>Word)
     // trailBoundary looks ahead for character after word (e.g. < in Word</i>)
-    const leadBoundary = '(?:^|[\\s\\(\\)\\[\\]\\{\\}.,:;!?፨።፤፣፥<>])';
-    const trailBoundary = '(?=[\\s\\(\\)\\[\\]\\{\\}.,:;!?፨።፤፣፥<>]|$)';
+    // Added em-dash (—), en-dash (–), and hyphen (-) to boundaries
+    const leadBoundary = '(?:^|[\\s\\(\\)\\[\\]\\{\\}.,:;!?፨።፤፣፥<>—–-])';
+    const trailBoundary = '(?=[\\s\\(\\)\\[\\]\\{\\}.,:;!?፨።፤፣፥<>—–-]|$)';
 
     if (isGeez) {
         return new RegExp(`(${leadBoundary})((?:ወ|ለ|እም)?)(?:${regexString})${trailBoundary}`, 'g');
@@ -420,10 +430,12 @@ function buildRegex(words, isGeez = false) {
 const rubricRedRegex = {
     english: buildRegex(rubricRedWords.english),
     geez_script: buildRegex(rubricRedWords.geez_script, true),
+    spanish: buildRegex(rubricRedWords.spanish),
 };
 const rubricGoldRegex = {
     english: buildRegex(rubricGoldWords.english),
     geez_script: buildRegex(rubricGoldWords.geez_script, true),
+    spanish: buildRegex(rubricGoldWords.spanish),
 };
 
 
