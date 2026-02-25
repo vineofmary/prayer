@@ -39,9 +39,16 @@ const ICON_METADATA = {
     },
     'Mary-Blesses-Ephraim.svg': {
         id: 'mary_blesses_ephraim',
-        title: { english: 'Saint Mary Blesses Saint Ephraim the Syrian' },
-        description: { english: 'Icon depicting the Blessed Virgin Mary appearing to Saint Ephraim the Syrian, who is credited with writing the Weddase Maryam (Praises of Mary).' },
-        source: 'Ethiopian Orthodox Tradition.'
+        title: {
+            geez: 'ዘከመ በረከቶ እግዝእትነ ማርያም ለቅዱስ ኤፍሬም',
+            english: 'How our Lady Mary blessed Saint Ephrem'
+        },
+        description: { 
+            english: 'This 18th century icon depicts the moment Our Lady Mary blesses Saint Ephrem (Ephraim) the Syrian in the 4th century. Saint Ephrem is traditionally credited with composing the Praise of Mary (ውዳሴ ማርያም -- Widasé Maryam) after the Blessed Virgin appeared to him. The icon shows the Virgin Mary, Saint Ephrem, and angels.'
+        },
+        originalImage: 'img/18th-19th-century-Mary-blesses-Ephrem-original-unedited.jpg',
+        source: 'Berlin Staatsbibliothek, Ethiopic Collection, Manuscript No. 74, f. 60v (dated 1750-1849). Princeton Ethiopian, Eritrean, and Egyptian Miracles of Mary (PEMM) Project.',
+        link: 'https://pemm.princeton.edu/en-us/paintings/BerOrOct1302_71'
     },
     'Ephraim-and-Mary-on-Thursday.svg': {
         id: 'ephraim_mary_thursday',

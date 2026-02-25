@@ -3444,7 +3444,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 const link = document.createElement('a');
                 link.href = data.link;
                 link.target = '_blank';
-                link.textContent = ' [Permalink]';
+                link.textContent = ' [Link]';
                 sourceContainer.append(sourceText);
                 sourceContainer.appendChild(link);
             } else {
