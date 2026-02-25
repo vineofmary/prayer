@@ -1576,21 +1576,32 @@ body.presentation-mode-slides .hareg-ornament {
     font-weight: normal;
 }
 
-.icon-image-container {
+.icon-images-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
     width: 100%;
     margin-bottom: 2rem;
-    text-align: center;
     background: #000;
     padding: 1rem;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    box-sizing: border-box;
 }
 
-.icon-image-container img {
+.metadata-original-img {
+    flex: 1 1 300px;
     max-width: 100%;
     max-height: 60vh;
     object-fit: contain;
     border-radius: 4px;
+}
+
+@media (min-width: 601px) {
+    .metadata-original-img {
+        max-width: calc(50% - 0.5rem);
+    }
 }
 
 .icon-description-section {

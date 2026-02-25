@@ -3415,9 +3415,24 @@ document.addEventListener('DOMContentLoaded', async () => {
         document.getElementById('icon-title-translit').textContent = data.title?.transliteration || '';
         document.getElementById('icon-title-english').textContent = data.title?.english || '';
         
-        const originalImg = document.getElementById('icon-original-img');
-        originalImg.src = data.originalImage || data.src || '';
-        originalImg.style.display = (data.originalImage || data.src) ? 'block' : 'none';
+        // Populate Images
+        const imagesContainer = document.getElementById('icon-original-images-container');
+        imagesContainer.innerHTML = ''; // Clear previous images
+        
+        const imagePaths = Array.isArray(data.originalImage) ? data.originalImage : (data.originalImage ? [data.originalImage] : []);
+        
+        if (imagePaths.length > 0) {
+            imagePaths.forEach(path => {
+                const img = document.createElement('img');
+                img.src = path;
+                img.alt = data.title?.english || 'Original Icon Image';
+                img.className = 'metadata-original-img';
+                imagesContainer.appendChild(img);
+            });
+            imagesContainer.style.display = 'flex';
+        } else {
+            imagesContainer.style.display = 'none';
+        }
 
         document.getElementById('icon-desc-amharic').textContent = data.description?.amharic || '';
         document.getElementById('icon-desc-english').textContent = data.description?.english || '';
