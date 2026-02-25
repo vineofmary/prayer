@@ -98,6 +98,7 @@ let fontSizes = {};
 let selectedPsalms = [];
 let selectedProphetSongs = [];
 let selectedSeatatLectionaryDay = 'None';
+let selectedWidaseMaryamDay = 'All';
 let customNames = {};
 let bibleData = { nkjv: null, am54: null, rgv: null, geez_psalms: null, coptic: null, loaded: false };
 
@@ -612,6 +613,7 @@ function saveSettings() {
     localStorage.setItem('selectedPsalms', JSON.stringify(selectedPsalms));
     localStorage.setItem('selectedProphetSongs', JSON.stringify(selectedProphetSongs));
     localStorage.setItem('selectedSeatatLectionaryDay', selectedSeatatLectionaryDay);
+    localStorage.setItem('selectedWidaseMaryamDay', selectedWidaseMaryamDay);
     localStorage.setItem('customNames', JSON.stringify(customNames));
     localStorage.setItem('collapsedSections', JSON.stringify(collapsedSections));
 }
@@ -664,6 +666,7 @@ function loadSettings() {
         selectedPsalms: [12, 15, 22, 50, 90, 102, 135], // Default LXX Psalms
         selectedProphetSongs: [],
         selectedSeatatLectionaryDay: getSeatatLiturgicalDay(),
+        selectedWidaseMaryamDay: getSeatatLiturgicalDay(),
         // Default Custom Names
         customNames: {
             servant: '{Names}',
@@ -713,6 +716,7 @@ function loadSettings() {
         selectedPsalms = JSON.parse(localStorage.getItem('selectedPsalms')) || defaultSettings.selectedPsalms;
         selectedProphetSongs = JSON.parse(localStorage.getItem('selectedProphetSongs')) || defaultSettings.selectedProphetSongs;
         selectedSeatatLectionaryDay = localStorage.getItem('selectedSeatatLectionaryDay') || defaultSettings.selectedSeatatLectionaryDay;
+        selectedWidaseMaryamDay = localStorage.getItem('selectedWidaseMaryamDay') || defaultSettings.selectedWidaseMaryamDay;
         const savedCustomNames = JSON.parse(localStorage.getItem('customNames')) || {};
         customNames = { ...defaultSettings.customNames, ...savedCustomNames };
         collapsedSections = JSON.parse(localStorage.getItem('collapsedSections')) || defaultSettings.collapsedSections;
@@ -813,6 +817,13 @@ function updateAllTogglesInSettingsPanel() {
     const lectionaryRadios = document.querySelectorAll('input[name="seatat-lectionary-day"]');
     lectionaryRadios.forEach(radio => {
         if (radio.value === selectedSeatatLectionaryDay) {
+            radio.checked = true;
+        }
+    });
+
+    const maryRadios = document.querySelectorAll('input[name="praise-of-mary-day"]');
+    maryRadios.forEach(radio => {
+        if (radio.value === selectedWidaseMaryamDay) {
             radio.checked = true;
         }
     });
@@ -979,12 +990,22 @@ function getPrayerLabel(prayer) {
         "Personal-0": "Prayer"
     };
 
+    const dayTitles = {
+        'Sun': 'Sunday | ዘእሁድ',
+        'Mon': 'Monday | ዘሰኑይ',
+        'Tue': 'Tuesday | ዘሠሉስ',
+        'Wed': 'Wednesday | ዘረቡዕ',
+        'Thurs': 'Thursday | ዘሐሙስ',
+        'Fri': 'Friday | ዘዓርብ',
+        'Sat': 'Saturday | ዘቀዳሚት'
+    };
+
     if (customLabels[prayerKey]) {
         return customLabels[prayerKey];
     } else if (prayer.chapter === 'SeatatLectionary') {
         return prayer.reference;
-    } else if (prayer.chapter === 'Thurs') {
-        return 'Thursday | ሐሙስ';
+    } else if (dayTitles[prayer.chapter]) {
+        return dayTitles[prayer.chapter];
     } else if (prayer.chapter === 'Angels') {
         return 'Prayer of Abba Giyorgis: The Angels Praise Mary | ይዌድስዋ መላእክት ለማርያም';
     } else if (prayer.chapter === 'Psalms' && prayer.stanza === 'Intro') {
@@ -1275,7 +1296,7 @@ function renderPrayers() {
                 iconImg.alt = 'Mary Blesses Ephraim Icon';
                 iconImg.classList.add('section-icon');
                 prayerDisplay.appendChild(iconImg);
-            } else if (title === "Thursday | ሐሙስ") {
+            } else if (title === "Thursday | ዘሐሙስ") {
                 const iconImg = document.createElement('img');
                 iconImg.src = 'img/Ephraim-and-Mary-on-Thursday.svg';
                 iconImg.alt = 'Ephraim and Mary on Thursday Icon';
@@ -1318,7 +1339,30 @@ function renderPrayers() {
     };
 
     // Render main prayers (non-Psalms, non-Prophet Songs)
-    const mainPrayers = prayers.filter(p => p.chapter !== 'Psalms' && p.chapter !== 'ProphetSong');
+    const widaseMaryamChapters = {
+        'Sunday': ['Sun'],
+        'Monday': ['Mon'],
+        'Tuesday': ['Tue'],
+        'Wednesday': ['Wed'],
+        'Thursday': ['Thurs', 'Angels'],
+        'Friday': ['Fri'],
+        'Saturday': ['Sat']
+    };
+
+    const mainPrayers = prayers.filter(p => {
+        if (p.chapter === 'Psalms' || p.chapter === 'ProphetSong') return false;
+        
+        // Always include Daily prayers
+        if (p.chapter === 'Daily') return true;
+
+        // Filter Praise of Mary (and related) based on selection
+        if (selectedWidaseMaryamDay === 'None') return false;
+        if (selectedWidaseMaryamDay === 'All') return true;
+        
+        const targetChapters = widaseMaryamChapters[selectedWidaseMaryamDay] || [];
+        return targetChapters.includes(p.chapter);
+    });
+
     mainPrayers.forEach((prayer, prayerIndex) => {
         if (prayer.chapter === 'Daily' && prayer.stanza === '0') {
             const prayerCard = createPrayerCardElement(prayer, prayerIndex);
@@ -2423,6 +2467,14 @@ function renderSelectedSeatatLectionary(addSectionTitleCallback) {
 document.querySelectorAll('input[name="seatat-lectionary-day"]').forEach(radio => {
     radio.addEventListener('change', (event) => {
         selectedSeatatLectionaryDay = event.target.value;
+        saveSettings();
+        renderPrayers();
+    });
+});
+
+document.querySelectorAll('input[name="praise-of-mary-day"]').forEach(radio => {
+    radio.addEventListener('change', (event) => {
+        selectedWidaseMaryamDay = event.target.value;
         saveSettings();
         renderPrayers();
     });
