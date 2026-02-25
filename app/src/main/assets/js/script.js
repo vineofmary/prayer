@@ -942,8 +942,37 @@ function highlightText(text, query) {
     return text.replace(regex, '<mark class="highlight">$1</mark>');
 }
 
-function formatPrayerText(text, langKey, query, isFirstLanguage, chapter = null) {
+function formatPrayerText(text, langKey, query, isFirstLanguage, chapter = null, verseNum = null) {
     let processedText = text;
+
+    // Apply superscription formatting for Psalms, Songs of the Prophets, and Lectionary readings
+    if (chapter === 'Psalms' || chapter === 'ProphetSong' || chapter === 'SeatatLectionary') {
+        const supTag = verseNum ? `<sup>${verseNum}</sup> ` : '';
+        
+        if (langKey === 'spanish') {
+            // Match leading Spanish superscriptions (using both literal « and Unicode \u00ab, and handle variations)
+            // Some entries might use literal characters or escaped sequences.
+            const rgvSuperscriptionRegex = /^([«\u00ab](.*?)[»\u00bb])/;
+            if (rgvSuperscriptionRegex.test(processedText)) {
+                // Use $2 to capture only the text content, effectively removing the markers
+                processedText = processedText.replace(rgvSuperscriptionRegex, '<span class="psalm-superscription">$2</span><br>' + supTag);
+            } else {
+                processedText = supTag + processedText;
+            }
+        } else if (langKey === 'english') {
+            // Match leading English superscriptions
+            // Handles stray trailing </i> tags found in some NKJV data
+            const nkjvSuperscriptionRegex = /^(<i>.*?<\/i>(\s*<\/i>)?)/;
+            if (nkjvSuperscriptionRegex.test(processedText)) {
+                processedText = processedText.replace(nkjvSuperscriptionRegex, '<span class="psalm-superscription">$1</span><br>' + supTag);
+            } else {
+                processedText = supTag + processedText;
+            }
+        } else {
+            // For other languages, just prepend the verse number if provided
+            processedText = supTag + processedText;
+        }
+    }
 
     // Apply Anglicization first
     processedText = applyAnglicization(processedText, langKey);
@@ -1103,13 +1132,9 @@ function createPrayerCardElement(prayer, prayerIndex) {
 
             const langText = document.createElement('p');
             langText.classList.add('language-text');
-            // MODIFIED: Check for verse number in the prayer object itself
-            if (prayer.verseNum) {
-                const sup = document.createElement('sup');
-                sup.textContent = prayer.verseNum;
-                langText.appendChild(sup);
-            }
-            langText.innerHTML += formatPrayerText(prayer[langKey], langKey, searchQuery, isFirstLanguage, prayer.chapter);
+            
+            // Pass the verseNum to formatPrayerText so it can intelligently place it (after superscription if one exists)
+            langText.innerHTML = formatPrayerText(prayer[langKey], langKey, searchQuery, isFirstLanguage, prayer.chapter, prayer.verseNum);
 
             if (langCfg.isEthiopic) {
                 langHeader.classList.add('ethiopic-label');
@@ -1968,7 +1993,7 @@ function renderSelectedPsalmsWithDoxology(addSectionTitleCallback) {
                         mtVerseNum: mtVerseNum,
                         nkjv: nkjvVerse ? nkjvVerse.text : '',
                         am54: am54Verse ? am54Verse.text : '',
-                        rgv: rgvVerse ? rgvVerse.text.replace(/«/g, '<i>').replace(/»/g, '</i><br>') : '',
+                        rgv: rgvVerse ? rgvVerse.text : '',
                         geez_psalms: geezVerse ? geezVerse.text : '',
                         coptic: copticVerse ? copticVerse.text_coptic : '',
                     });
@@ -2018,7 +2043,7 @@ function renderSelectedPsalmsWithDoxology(addSectionTitleCallback) {
 
                     const rgvVerse = findVerse(rgvVerses, i);
                     if (rgvVerse) {
-                        verseData.rgv = rgvVerse.text.replace(/«/g, '<i>').replace(/»/g, '</i><br>');
+                        verseData.rgv = rgvVerse.text;
                     }
 
                     const am54Verse = findVerse(am54Verses, i);
@@ -2299,13 +2324,9 @@ function createPsalmVerseSection(langName, text, verseNum, isEthiopic = false, l
     langText.classList.add('language-text');
     if (isEthiopic) langText.classList.add('lang-ethiopic-script');
 
-    const sup = document.createElement('sup');
-    sup.textContent = verseNum;
-    langText.appendChild(sup);
-    
-    // Call formatPrayerText to apply rubrication and other formatting
-    const formattedText = formatPrayerText(text || '', langKey, searchInput.value, isFirstLanguage, 'Psalms');
-    langText.innerHTML += ` ${formattedText}`;
+    // We pass the verseNum to formatPrayerText so it can intelligently place it (after superscription if one exists)
+    const formattedText = formatPrayerText(text || '', langKey, searchInput.value, isFirstLanguage, 'Psalms', verseNum);
+    langText.innerHTML = formattedText;
 
     langSection.appendChild(langHeader);
     langSection.appendChild(langText);
