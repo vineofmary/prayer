@@ -467,5 +467,69 @@ const songs = [
         "english": "“Bless the Lord, O Hananiah, Azariah, and Mishael, And sing a hymn to Him, And exalt Him beyond measure unto the ages; For He delivered us from Hades And saved us from the hand of death. He rescued us from the midst of the burning fiery furnace And saved us from the midst of the fire.",
         "spanish": "¡Ananías, Azarías y Misael, alaben al Señor! Alábenlo y exáltenlo por sobre todo para siempre.",
         "reference": "Song of the Three Holy Youths - Daniel 3:88"
+    },
+    {
+        "chapter": "ProphetSong",
+        "stanza": "Jonah",
+        "geez_script": "ወይቤ ጸራኅኩ ኀበ እግዚአብሔር አምላኪየ በምንዳቤየ ወሰምዐኒ፤ ወእምከርሠ ሲኦል ጸራኅኩ ወሰማዕከ ቃለ ጽራኅየ።",
+        "amharic_script": "እንዲህም አለ፦ በመከራዬ ሆኜ ወደ እግዚአብሔር ጮኽሁ፥ እርሱም ሰማኝ፤ በሲኦልም ሆድ ውስጥ ሆኜ ጮኽሁ፥ ቃሌንም ሰማህ።",
+        "english": "And he said: “I cried out to the LORD because of my affliction, And He answered me. “Out of the belly of Sheol I cried, And You heard my voice.",
+        "reference": "The Prayer of Jonah - 2:2"
+    },
+    {
+        "chapter": "ProphetSong",
+        "stanza": "Jonah",
+        "geez_script": "ወወደይከኒ ውስተ ዓሚቅ ውስተ ልበ ባሕር፤ ወአፍላግ ከበቡኒ፤ ወኵሉ ማዕበልከ ወሞገድከ በላዕሌየ ሐለፈ።",
+        "amharic_script": "ወደ ጥልቁ ወደ ባሕር ልብ ጣልኸኝ፥ ፈሳሾችም ከበቡኝ፤ ማዕበልህና ሞገድህ ሁሉ በላዬ አለፉ።",
+        "english": "For You cast me into the deep, Into the heart of the seas, And the floods surrounded me; All Your billows and Your waves passed over me.",
+        "reference": "The Prayer of Jonah - 2:3"
+    },
+    {
+        "chapter": "ProphetSong",
+        "stanza": "Jonah",
+        "geez_script": "ወአነ እቤ ተሰደድኩ እምቅድመ አዕይንቲከ፤ ወአዲ እሬኢ ኀበ መቅደስከ ቅዱስ።",
+        "amharic_script": "እኔም፦ ከዓይንህ ፊት ተጣልሁ፤ ነገር ግን ወደ ቅዱስ መቅደስህ ደግሜ እመለከታለሁ አልሁ።",
+        "english": "Then I said, ‘I have been cast out of Your sight; Yet I will look again toward Your holy temple.’",
+        "reference": "The Prayer of Jonah - 2:4"
+    },
+    {
+        "chapter": "ProphetSong",
+        "stanza": "Jonah",
+        "geez_script": "ከበበኒ ማይ እስከ ነፍስየ፤ ወዓሚቅ ከበበኒ፤ ወሠርጸ ባሕር ተጠምጥመ በዲበ ርእስየ።",
+        "amharic_script": "ውኃ እስከ ነፍሴ ድረስ ከበበኝ፤ ጥልቁም በዙሪያዬ ነበረ፤ የባሕር ሣር በራሴ ላይ ተጠመጠመ።",
+        "english": "The waters surrounded me, even to my soul; The deep closed around me; Weeds were wrapped around my head.",
+        "reference": "The Prayer of Jonah - 2:5"
+    },
+    {
+        "chapter": "ProphetSong",
+        "stanza": "Jonah",
+        "geez_script": "ወረድኩ ውስተ መሠረተ አድባር፤ ወምድር ኀተመት መናሥግቲሃ ላዕሌየ ለዓለም፤ ወአውጻእከ እምሙስና ሕይወትየ እግዚአብሔር አምላኪየ።",
+        "amharic_script": "ወደ ተራሮች መሠረት ወረድሁ፤ የምድር መወርወሪያዎች ለዘላለም በላዬ ተዘጉ፤ አንተ ግን፥ አምላኬ እግዚአብሔር ሆይ፥ ሕይወቴን ከጉድጓዱ አወጣሃት።",
+        "english": "I went down to the moorings of the mountains; The earth with its bars closed behind me forever; Yet You have brought up my life from the pit, O LORD, my God.",
+        "reference": "The Prayer of Jonah - 2:6"
+    },
+    {
+        "chapter": "ProphetSong",
+        "stanza": "Jonah",
+        "geez_script": "ሶበ ሐለፈት ነፍስየ እምኔየ ተዘከርክዎ ለእግዚአብሔር፤ ወትብጻሕ ጸሎትየ ኀቤከ ውስተ መቅደስከ ቅዱስ።",
+        "amharic_script": "ነፍሴ በላዬ በዛለች ጊዜ እግዚአብሔርን አሰብሁት፤ ጸሎቴም ወደ አንተ ወደ ቅዱስ መቅደስህ ገባች።",
+        "english": "“When my soul fainted within me, I remembered the LORD; And my prayer went up to You, Into Your holy temple.",
+        "reference": "The Prayer of Jonah - 2:7"
+    },
+    {
+        "chapter": "ProphetSong",
+        "stanza": "Jonah",
+        "geez_script": "እለ የዓቅቡ ከንቶ ወሐሰተ ምሕረቶሙ ኀደጉ።",
+        "amharic_script": "ከንቱነትንና ሐሰትን የሚጠብቁ ምሕረታቸውን ትተዋል።",
+        "english": "“Those who regard worthless idols Forsake their own Mercy.",
+        "reference": "The Prayer of Jonah - 2:8"
+    },
+    {
+        "chapter": "ProphetSong",
+        "stanza": "Jonah",
+        "geez_script": "ወአነሰ በቃለ ስብሐት ወአሚን እሠውዕ ለከ፤ ወዘተሳልኩ እሁብ ለከ፤ መድኃኒት ዘእግዚአብሔር ውእቱ።",
+        "amharic_script": "እኔ ግን በምስጋና ቃል እሠዋልሃለሁ፤ የተሳልሁትንም እከፍላለሁ፤ ደኅንነት ከእግዚአብሔር ዘንድ ነው።",
+        "english": "But I will sacrifice to You With the voice of thanksgiving; I will pay what I have vowed. Salvation is of the LORD.”",
+        "reference": "The Prayer of Jonah - 2:9"
     }
 ];

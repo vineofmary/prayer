@@ -229,27 +229,73 @@ const SEATAT_LECTIONARY_DATA = {
 };
 
 const prophetSongs = [
-    { key: 'songOfSongs', name: 'Song of Songs of King Solomon | ማሓለየ ማሓለይ ዘሰሎሞን', verseRange: '(Songs of Songs 1:1-5:16)', refs: { nkjv: { book: 22, bookName: 'Song of Solomon', chapters: [1, 2, 3, 4, 5] }, rgv: { book: 'Canción de canciones', chapters: [1, 2, 3, 4, 5] }, am54: { book: 'መኃልየ መኃልይ ዘሰሎሞን', chapters: ['1', '2', '3', '4', '5'] } } },
-    { key: 'firstSongOfMoses', name: 'First Song of Moses the Prophet | ጸሎተ ሙሴ ቀዳማዊ', verseRange: '(Exodus 15:1–19)', refs: { nkjv: { book: 2, bookName: 'Exodus', chapter: 15, verses: { start: 1, end: 19 } }, rgv: { book: 'Éxodo', chapter: 15, verses: { start: 1, end: 19 } }, am54: { book: 'ኦሪት ዘጸአት', chapter: '15', verses: { start: 1, end: 19 } } } },
-    { key: 'secondSongOfMoses', name: 'Second Song of Moses the Prophet | ጸሎተ ሙሴ ካልእ', verseRange: '(Deuteronomy 32:1–21)', refs: { nkjv: { book: 5, bookName: 'Deuteronomy', chapter: 32, verses: { start: 1, end: 21 } }, rgv: { book: 'Deuteronomio', chapter: 32, verses: { start: 1, end: 21 } }, am54: { book: 'ኦሪት ዘዳግም', chapter: '32', verses: { start: 1, end: 21 } } } },
-    { key: 'thirdSongOfMoses', name: 'Third Song of Moses the Prophet | ጸሎተ ሙሴ ሣልስ', verseRange: '(Deuteronomy 32:22–43)', refs: { nkjv: { book: 5, bookName: 'Deuteronomy', chapter: 32, verses: { start: 22, end: 43 } }, rgv: { book: 'Deuteronomio', chapter: 32, verses: { start: 22, end: 43 } }, am54: { book: 'ኦሪት ዘዳግም', chapter: '32', verses: { start: 22, end: 43 } } } },
-    { key: 'prayerOfHannah', name: 'Prayer of Hannah the Mother of Samuel the Prophet | ጸሎተ ሐና እመ ሳሙኤል ነቢይ', verseRange: '(1 Kingdoms 2:1-10 LXX, 1 Samuel 2:1–10 NKJV)', refs: { nkjv: { book: 9, bookName: '1 Samuel', chapter: 2, verses: { start: 1, end: 10 } }, rgv: { book: '1 Samuel', chapter: 2, verses: { start: 1, end: 10 } }, am54: { book: 'መጽሐፈ ሳሙኤል ቀዳማዊ', chapter: '2', verses: { start: 1, end: 10 } } } },
-    { key: 'prayerOfHezekiah', name: 'Prayer of King Hezekiah | ጸሎተ ሕዝቅያስ', verseRange: '(Isaiah 38:10–20)', refs: { nkjv: { book: 23, bookName: 'Isaiah', chapter: 38, verses: { start: 10, end: 20 } }, rgv: { book: 'Isaías', chapter: 38, verses: { start: 10, end: 20 } }, am54: { book: 'ትንቢተ ኢሳይያስ', chapter: '38', verses: { start: 10, end: 20 } } } },
-    { key: 'prayerOfManasseh', name: 'Prayer of King Manasseh | ጸሎተ ምናሴ', verseRange: '(2 Chronicles 36 LXX)', refs: { prayerKey: 'Manasseh' } },
-    { key: 'firstPrayerOfThreeYouths', name: 'First Prayer of the Three Youths | ጸሎተ ፫ ደቂቅ ቀዳማዊ', verseRange: '(Daniel 3:26–45 LXX)', refs: { prayerKey: 'ThreeYouths1' } },
-    { key: 'secondPrayerOfThreeYouths', name: 'Second Prayer of the Three Youths | ጸሎተ ፫ ደቂቅ ካልእ', verseRange: '(Daniel 3:52–56 LXX)', refs: { prayerKey: 'ThreeYouths2' } },
-    { key: 'thirdPrayerOfThreeYouths', name: 'Third Prayer of the Three Youths | ጸሎተ ፫ ደቂቅ ሣልስ', verseRange: '(Daniel 3:57–88 LXX)', refs: { prayerKey: 'ThreeYouths3' } },
-    { key: 'prayerOfHabakkuk', name: 'Prayer of Habakkuk the Prophet | ጸሎተ ዕንባቆም ነቢይ', verseRange: '(Habakkuk 3:1–19)', refs: { nkjv: { book: 35, bookName: 'Habakkuk', chapter: 3, verses: { start: 1, end: 19 } }, rgv: { book: 'Habacuc', chapter: 3, verses: { start: 1, end: 19 } }, am54: { book: 'ትንቢተ ዕንባቆም', chapter: '3', verses: { start: 1, end: 19 } } } },
-    { key: 'prayerOfIsaiah', name: 'Prayer of Isaiah the Prophet | ጸሎተ ኢሳይያስ ነቢይ', verseRange: '(Isaiah 26:9–20)', refs: { nkjv: { book: 23, bookName: 'Isaiah', chapter: 26, verses: { start: 9, end: 20 } }, rgv: { book: 'Isaías', chapter: 26, verses: { start: 9, end: 20 } }, am54: { book: 'ትንቢተ ኢሳይያስ', chapter: '26', verses: { start: 9, end: 20 } } } },
-    { key: 'prayerOfMary', name: 'Prayer of Mary the Bearer of God | ጸሎተ ማርያም ወላዲተ አምላክ', verseRange: '(Luke 1:46–55)', refs: { nkjv: { book: 42, bookName: 'Luke', chapter: 1, verses: { start: 46, end: 55 } }, rgv: { book: 'Lucas', chapter: 1, verses: { start: 46, end: 55 } }, am54: { book: 'የሉቃስ ወንጌል', chapter: '1', verses: { start: 46, end: 55 } } } },
-    { key: 'songOfZachariah', name: 'Song of Zachariah the Prophet | ጸሎተ ዘካርያስ ነቢይ', verseRange: '(Luke 1:68–79)', refs: { nkjv: { book: 42, bookName: 'Luke', chapter: 1, verses: { start: 68, end: 79 } }, rgv: { book: 'Lucas', chapter: 1, verses: { start: 68, end: 79 } }, am54: { book: 'የሉቃስ ወንጌል', chapter: '1', verses: { start: 68, end: 79 } } } },
-    { key: 'prayerOfSimeon', name: 'Prayer of Simeon the Elder | ጸሎተ ስምዖን አረጋዊ', verseRange: '(Luke 2:29–32)', refs: { nkjv: { book: 42, bookName: 'Luke', chapter: 2, verses: { start: 29, end: 32 } }, rgv: { book: 'Lucas', chapter: 2, verses: { start: 29, end: 32 } }, am54: { book: 'የሉቃስ ወንጌል', chapter: '2', verses: { start: 29, end: 32 } } } },
+    { key: 'songOfSongs', name: 'Song of Songs of King Solomon | ማሓለየ ማሓለይ ዘሰሎሞን', verseRange: '(Songs of Songs 1:1-5:16)', time: 'Saturday', purpose: 'Spiritual communion and expression of divine love.', refs: { nkjv: { book: 22, bookName: 'Song of Solomon', chapters: [1, 2, 3, 4, 5] }, rgv: { book: 'Canción de canciones', chapters: [1, 2, 3, 4, 5] }, am54: { book: 'መኃልየ መኃልይ ዘሰሎሞን', chapters: ['1', '2', '3', '4', '5'] } } },
+    { key: 'firstSongOfMoses', name: 'First Song of Moses the Prophet | ጸሎተ ሙሴ ቀዳማዊ', verseRange: '(Exodus 15:1–19)', time: 'Monday – 9 a.m.', purpose: 'For sickness, hopelessness, and feeling of weakness.', refs: { nkjv: { book: 2, bookName: 'Exodus', chapter: 15, verses: { start: 1, end: 19 } }, rgv: { book: 'Éxodo', chapter: 15, verses: { start: 1, end: 19 } }, am54: { book: 'ኦሪት ዘጸአት', chapter: '15', verses: { start: 1, end: 19 } } } },
+    { key: 'secondSongOfMoses', name: 'Second Song of Moses the Prophet | ጸሎተ ሙሴ ካልእ', verseRange: '(Deuteronomy 32:1–21)', time: 'Monday – Noon', purpose: 'For sickness, hopelessness, and feeling of weakness.', refs: { nkjv: { book: 5, bookName: 'Deuteronomy', chapter: 32, verses: { start: 1, end: 21 } }, rgv: { book: 'Deuteronomio', chapter: 32, verses: { start: 1, end: 21 } }, am54: { book: 'ኦሪት ዘዳግም', chapter: '32', verses: { start: 1, end: 21 } } } },
+    { key: 'thirdSongOfMoses', name: 'Third Song of Moses the Prophet | ጸሎተ ሙሴ ሣልስ', verseRange: '(Deuteronomy 32:22–43)', time: 'Monday – 3 p.m.', purpose: 'For sickness, hopelessness, feeling of weakness; also for safe maternity.', refs: { nkjv: { book: 5, bookName: 'Deuteronomy', chapter: 32, verses: { start: 22, end: 43 } }, rgv: { book: 'Deuteronomio', chapter: 32, verses: { start: 22, end: 43 } }, am54: { book: 'ኦሪት ዘዳግም', chapter: '32', verses: { start: 22, end: 43 } } } },
+    { key: 'prayerOfHannah', name: 'Prayer of Hannah the Mother of Samuel the Prophet | ጸሎተ ሐና እመ ሳሙኤል ነቢይ', verseRange: '(1 Kingdoms 2:1-10 LXX, 1 Samuel 2:1–10 NKJV)', time: 'Tuesday – 9 a.m.', purpose: 'For safe maternity and for sudden sickness.', refs: { nkjv: { book: 9, bookName: '1 Samuel', chapter: 2, verses: { start: 1, end: 10 } }, rgv: { book: '1 Samuel', chapter: 2, verses: { start: 1, end: 10 } }, am54: { book: 'መጽሐፈ ሳሙኤል ቀዳማዊ', chapter: '2', verses: { start: 1, end: 10 } } } },
+    { key: 'prayerOfHezekiah', name: 'Prayer of King Hezekiah | ጸሎተ ሕዝቅያስ', verseRange: '(Isaiah 38:10–20)', time: 'Tuesday – Noon', purpose: 'For sudden sickness, for safe maternity, and for trouble in finding missing property or ideas.', refs: { nkjv: { book: 23, bookName: 'Isaiah', chapter: 38, verses: { start: 10, end: 20 } }, rgv: { book: 'Isaías', chapter: 38, verses: { start: 10, end: 20 } }, am54: { book: 'ትንቢተ ኢሳይያስ', chapter: '38', verses: { start: 10, end: 20 } } } },
+    { key: 'prayerOfManasseh', name: 'Prayer of King Manasseh | ጸሎተ ምናሴ', verseRange: '(2 Chronicles 36 LXX)', time: 'Tuesday – 3 p.m.', purpose: 'For sickness or trouble in finding missing property or ideas.', refs: { prayerKey: 'Manasseh' } },
+    { key: 'firstPrayerOfThreeYouths', name: 'First Prayer of the Three Youths | ጸሎተ ፫ ደቂቅ ቀዳማዊ', verseRange: '(Daniel 3:26–45 LXX)', aka: 'The Prayer/Song of Azarias', time: 'Wednesday – Noon', purpose: 'For protecting oneself and wealth from evil.', refs: { prayerKey: 'ThreeYouths1' } },
+    { key: 'secondPrayerOfThreeYouths', name: 'Second Prayer of the Three Youths | ጸሎተ ፫ ደቂቅ ካልእ', verseRange: '(Daniel 3:52–56 LXX)', aka: 'The Blessing of Ananias, Azarias, and Misael', time: 'Thursday – 9 a.m.', purpose: 'Used during moments of frustration.', refs: { prayerKey: 'ThreeYouths2' } },
+    { key: 'thirdPrayerOfThreeYouths', name: 'Third Prayer of the Three Youths | ጸሎተ ፫ ደቂቅ ሣልስ', verseRange: '(Daniel 3:57–88 LXX)', aka: 'The Song of the Three Holy Children', time: 'Wednesday – 3 p.m.', purpose: 'Used during moments of frustration.', refs: { prayerKey: 'ThreeYouths3' } },
+    { key: 'prayerOfHabakkuk', name: 'Prayer of Habakkuk the Prophet | ጸሎተ ዕንባቆም ነቢይ', verseRange: '(Habakkuk 3:1–19)', time: 'Thursday – Noon', purpose: 'For finding missing property or ideas.', refs: { nkjv: { book: 35, bookName: 'Habakkuk', chapter: 3, verses: { start: 1, end: 19 } }, rgv: { book: 'Habacuc', chapter: 3, verses: { start: 1, end: 19 } }, am54: { book: 'ትንቢተ ዕንባቆም', chapter: '3', verses: { start: 1, end: 19 } } } },
+    { key: 'prayerOfIsaiah', name: 'Prayer of Isaiah the Prophet | ጸሎተ ኢሳይያስ ነቢይ', verseRange: '(Isaiah 26:9–20)', time: 'Thursday – 3 p.m.', purpose: 'For achieving a brighter tomorrow.', refs: { nkjv: { book: 23, bookName: 'Isaiah', chapter: 26, verses: { start: 9, end: 20 } }, rgv: { book: 'Isaías', chapter: 26, verses: { start: 9, end: 20 } }, am54: { book: 'ትንቢተ ኢሳይያስ', chapter: '26', verses: { start: 9, end: 20 } } } },
+    { key: 'prayerOfMary', name: 'Prayer of Mary the Bearer of God | ጸሎተ ማርያም ወላዲተ አምላክ', verseRange: '(Luke 1:46–55)', aka: 'The Magnificat', time: 'Friday – 9 a.m.', purpose: 'For those who are grieving.', refs: { nkjv: { book: 42, bookName: 'Luke', chapter: 1, verses: { start: 46, end: 55 } }, rgv: { book: 'Lucas', chapter: 1, verses: { start: 46, end: 55 } }, am54: { book: 'የሉቃስ ወንጌል', chapter: '1', verses: { start: 46, end: 55 } } } },
+    { key: 'songOfZachariah', name: 'Song of Zachariah the Prophet | ጸሎተ ዘካርያስ ነቢይ', verseRange: '(Luke 1:68–79)', aka: 'The Benedictus', time: 'Friday – Noon', purpose: 'For offering a worthy service to God.', refs: { nkjv: { book: 42, bookName: 'Luke', chapter: 1, verses: { start: 68, end: 79 } }, rgv: { book: 'Lucas', chapter: 1, verses: { start: 68, end: 79 } }, am54: { book: 'የሉቃስ ወንጌል', chapter: '1', verses: { start: 68, end: 79 } } } },
+    { key: 'prayerOfSimeon', name: 'Prayer of Simeon the Elder | ጸሎተ ስምዖን አረጋዊ', verseRange: '(Luke 2:29–32)', aka: 'Nunc dimittis', time: 'Friday – 3 p.m.', purpose: 'For building up faith in God.', refs: { nkjv: { book: 42, bookName: 'Luke', chapter: 2, verses: { start: 29, end: 32 } }, rgv: { book: 'Lucas', chapter: 2, verses: { start: 29, end: 32 } }, am54: { book: 'የሉቃስ ወንጌል', chapter: '2', verses: { start: 29, end: 32 } } } },
+    { key: 'prayerOfJonah', name: 'The Prayer of Jonah the Prophet | ጸሎተ ዮናስ ነቢይ', verseRange: '(Jonah 2:2–9)', time: 'Wednesday – 9 a.m.', purpose: 'For sickness or trouble in finding missing property or ideas.', refs: { prayerKey: 'Jonah' } },
 ];
 
 
 const sunIcon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24px" height="24px"><path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0 8c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zM2 13h2v-2H2v2zm18 0h2v-2h-2v2zM11 2v2h2V2h-2zm0 18v2h2v-2h-2zM4.22 5.64l1.42-1.42L7.05 5.64 5.64 7.05 4.22 5.64zM16.95 18.36l1.42-1.42L19.78 18.36l-1.41 1.41-1.42-1.41zM18.36 5.64l1.42 1.41L18.36 8.46l-1.42-1.41L18.36 5.64zM5.64 18.36l1.41 1.41L8.46 18.36l-1.41-1.42L5.64 18.36z"/></svg>`;
 const moonIcon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 2c-1.82 0-3.53.5-5 1.35 2.99 1.73 5 4.95 5 8.65s-2.01 6.92-5 8.65C6.47 21.5 8.18 22 10 22c5.52 0 10-4.48 10-10S15.52 2 10 2z"/></svg>`;
 const shareIconSVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3s3-1.34 3-3-1.34-3-3-3z"></path></svg>`;
+
+function getDefaultProphetSongsForCurrentTime() {
+    const now = new Date();
+    const day = now.getDay(); // 0 = Sunday, 1 = Monday, ...
+    const hour = now.getHours();
+
+    if (day === 0) { // Sunday
+        return prophetSongs.map(s => s.key);
+    }
+    if (day === 6) { // Saturday
+        return ['songOfSongs'];
+    }
+
+    const is9am = hour >= 6 && hour < 12; // Broadened to include early morning until noon
+    const isNoon = hour >= 12 && hour < 15;
+    const is3pm = hour >= 15 || hour < 6; // Afternoon until early morning next day
+
+    if (day === 1) { // Monday
+        if (is9am) return ['firstSongOfMoses'];
+        if (isNoon) return ['secondSongOfMoses'];
+        if (is3pm) return ['thirdSongOfMoses'];
+    }
+    if (day === 2) { // Tuesday
+        if (is9am) return ['prayerOfHannah'];
+        if (isNoon) return ['prayerOfHezekiah'];
+        if (is3pm) return ['prayerOfManasseh'];
+    }
+    if (day === 3) { // Wednesday
+        if (is9am) return ['prayerOfJonah'];
+        if (isNoon) return ['firstPrayerOfThreeYouths'];
+        if (is3pm) return ['thirdPrayerOfThreeYouths'];
+    }
+    if (day === 4) { // Thursday
+        if (is9am) return ['secondPrayerOfThreeYouths'];
+        if (isNoon) return ['prayerOfHabakkuk'];
+        if (is3pm) return ['prayerOfIsaiah'];
+    }
+    if (day === 5) { // Friday
+        if (is9am) return ['prayerOfMary'];
+        if (isNoon) return ['songOfZachariah'];
+        if (is3pm) return ['prayerOfSimeon'];
+    }
+
+    return [];
+}
 
 // --- Anglicization Data ---
 const anglicizedNameMap = {
@@ -1141,7 +1187,7 @@ function renderPrayers() {
     }
 
     let lastSectionTitle = null;
-    const addSectionTitle = (title, isCollapsible = true) => {
+    const addSectionTitle = (title, isCollapsible = true, metadata = null) => {
         if (title && title !== lastSectionTitle) {
             const titleEl = document.createElement('h2');
             titleEl.classList.add('section-title');
@@ -1183,6 +1229,24 @@ function renderPrayers() {
             titleEl.appendChild(exitSlidesBtn);
 
             prayerDisplay.appendChild(titleEl);
+
+            if (metadata) {
+                const metadataEl = document.createElement('div');
+                metadataEl.className = 'section-metadata';
+
+                let parts = [];
+                if (metadata.aka) parts.push(`Commonly known as: ${metadata.aka}`);
+                if (metadata.time) parts.push(`Time: ${metadata.time}`);
+                if (metadata.purpose) parts.push(`Purpose: ${metadata.purpose}`);
+                
+                metadataEl.innerHTML = parts.join('<br>');
+                prayerDisplay.appendChild(metadataEl);
+
+                if (isCollapsible && collapsedSections[title]) {
+                    metadataEl.style.display = 'none';
+                }
+            }
+
             if (title === "Daily Prayer | ዘዘወትር ጸሎት") {
                 const iconImg = document.createElement('img');
                 iconImg.src = 'img/Silus-Kidus.svg';
@@ -1282,9 +1346,9 @@ function renderPrayers() {
 
     // Conditionally render Prophet Songs
     if (prophetSongsRendered) {
-        renderSelectedProphetSongs((songName, verseRange) => {
-            const title = `${songName} ${verseRange}`;
-            addSectionTitle(title);
+        renderSelectedProphetSongs((song) => {
+            const title = `${song.name} ${song.verseRange || ''}`;
+            addSectionTitle(title, true, { aka: song.aka, time: song.time, purpose: song.purpose });
         });
     }
 
@@ -2027,7 +2091,7 @@ function renderSelectedProphetSongs(addSectionTitleCallback) {
         const song = prophetSongs.find(s => s.key === songKey);
         if (!song) return;
 
-        addSectionTitleCallback(song.name, song.verseRange || '');
+        addSectionTitleCallback(song);
 
         if (song.refs.prayerKey) {
             // This is a manually added prayer from songs.js
@@ -2948,6 +3012,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     await loadSettings(); // Ensure settings are loaded before anything else
+    
+    // Default Prophet Songs based on current day and time if nothing else selected
+    if (!localStorage.getItem('selectedProphetSongs') || selectedProphetSongs.length === 0) {
+        selectedProphetSongs = getDefaultProphetSongsForCurrentTime();
+    }
+    
     await loadBibleData(); // Load data on startup
 
     updatePsalmSummary();
