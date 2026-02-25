@@ -429,11 +429,11 @@ const rubricGoldRegex = {
 
 // --- Speaker Label Data ---
 const speakerKeywords = {
-    english: ["Priest", "People", "All", "Leader"],
-    geez_script: ["ካህን", "ሕዝብ", "ኵሎሙ", "መሪሕ"],
-    amharic_script: ["ካህን", "ሕዝብ", "ሁሉም", "መሪ"],
-    tigrinya_script: ["ካህን", "ሕዝብ", "ኩሉኹም", "መራሒ"],
-    spanish: ["Sacerdote", "Pueblo", "Todos", "Líder", "Gente"],
+    english: ["Priest", "People", "All", "Leader", "Reader"],
+    geez_script: ["ካህን", "ሕዝብ", "ኵሎሙ", "መሪሕ", "አንባቤ"],
+    amharic_script: ["ካህን", "ሕዝብ", "ሁሉም", "መሪ", "አንባቢ"],
+    tigrinya_script: ["ካህን", "ሕዝብ", "ኩሉኹም", "መራሒ", "ነባቢ"],
+    spanish: ["Sacerdote", "Pueblo", "Todos", "Líder", "Gente", "Lector"],
 };
 
 function toGeez(n) {

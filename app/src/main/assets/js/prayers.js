@@ -678,14 +678,14 @@ const prayers = [
     "reference": "Daily Prayer - The Song of Mary.",
     "chapter": "Daily",
     "stanza": "10",
-    "english": "Prayer of Our Lady Mary, Virgin Bearer of God\n(Luke 1:46-55)",
-    "geez_script": "ጸሎተ እግዝእትነ ማርያም ድንግል ወላዲተ አምላክ\n(ሉቃ ፩ : ፵፮ - ፶፭)",
-    "geez_phonetic": "tselote 'igz'itne maryam dngl weladīte 'amlak\n(luḳa ahadu : arb'asidistu - hamsahamistu)",
+    "english": "፨ Lead: Prayer of Our Lady Mary, Virgin Bearer of God\n(Luke 1:46-55)",
+    "geez_script": "፨ መሪሕ፤ ጸሎተ እግዝእትነ ማርያም ድንግል ወላዲተ አምላክ\n(ሉቃ ፩ : ፵፮ - ፶፭)",
+    "geez_phonetic": "፨ merih: tselote 'igz'itne maryam dngl weladīte 'amlak\n(luḳa ahadu : arb'asidistu - hamsahamistu)",
     "amharic_script": "",
     "amharic_phonetic": "",
     "tigrinya_script": "",
     "tigrinya_phonetic": "",
-    "spanish": "Oración de Nuestra Señora María, Virgen Portadora de Dios\n(Lucas 1:46-55)"
+    "spanish": "፨ Lector: Oración de Nuestra Señora María, Virgen Portadora de Dios\n(Lucas 1:46-55)"
   },
   {
     "instruction": "",
@@ -776,14 +776,14 @@ const prayers = [
     "reference": `Intro to The Praise of Mary`,
     "chapter": `Daily`,
     "stanza": `11`,
-    "english": `The Praise of Mary of the 7 days composed by Saint Ephraim the Syrian.`,
-    "geez_script": `ውዳሴ ማርያም ዘ፯ቱ ዕለታት ዘደረሰ ቅዱስ ኤፍሬም ሶርያዊ`,
-    "geez_phonetic": `wdasé maryam zeseb'atutu 'iletat zederese ḳdus 'éfrém soryawī`,
+    "english": `፨ Lead: The Praise of Mary of the 7 days composed by Saint Ephraim the Syrian.`,
+    "geez_script": `፨ መሪሕ፤ ውዳሴ ማርያም ዘ፯ቱ ዕለታት ዘደረሰ ቅዱስ ኤፍሬም ሶርያዊ`,
+    "geez_phonetic": `፨ merih: wdasé maryam zeseb'atutu 'iletat zederese ḳdus 'éfrém soryawī`,
     "amharic_script": ``,
     "amharic_phonetic": ``,
     "tigrinya_script": ``,
     "tigrinya_phonetic": ``,
-    "spanish": `La Alabanza de María de los 7 días, compuesta por San Efraín el Sirio.`
+    "spanish": `፨ Lector: La Alabanza de María de los 7 días, compuesta por San Efraín el Sirio.`
   },
     {
         "instruction": ``,
@@ -818,14 +818,14 @@ const prayers = [
     "reference": `Thursday Praise of Mary`,
     "chapter": `Thurs`,
     "stanza": `1`,
-    "english": `The bush which Moses saw burning with fire in the wilderness, whose branches were not consumed,`,
+    "english": `፨ Reader: The bush which Moses saw burning with fire in the wilderness, whose branches were not consumed,`,
     "geez_script": ``,
     "geez_phonetic": ``,
-    "amharic_script": `ርኩሰት የሌለባት ድንግል ማርያም ሙሴ በበረሀ በነደ እሳት ጫፎቿ ሳይቃጠሉ ያያት`,
-    "amharic_phonetic": `rkuset yelélebat dngl maryam musé bebereha benede 'isat chafochwa sayḳaṭelu yayat`,
+    "amharic_script": `፨ አንባቢ፤ ርኩሰት የሌለባት ድንግል ማርያም ሙሴ በበረሀ በነደ እሳት ጫፎቿ ሳይቃጠሉ ያያት`,
+    "amharic_phonetic": `፨ anbabi: rkuset yelélebat dngl maryam musé bebereha benede 'isat chafochwa sayḳaṭelu yayat`,
     "tigrinya_script": ``,
     "tigrinya_phonetic": ``,
-    "spanish": `La zarza que vio Moisés en llamas de fuego en el desierto, cuya madera no se consumía,`
+    "spanish": `፨ Lector: La zarza que vio Moisés en llamas de fuego en el desierto, cuya madera no se consumía,`
   },
   {
     "instruction": ``,
@@ -874,14 +874,14 @@ const prayers = [
     "reference": `Thursday Praise of Mary`,
     "chapter": `Thurs`,
     "stanza": `2`,
-    "english": `We all magnify you, O our Lady the God-bearer, that your compassion may be over us all.`,
+    "english": `፨ Reader: We all magnify you, O our Lady the God-bearer, that your compassion may be over us all.`,
     "geez_script": ``,
     "geez_phonetic": ``,
-    "amharic_script": `አምላክን የወለድሽ እመቤታችን ሆይሁላችን እናገንሻለን። ይቅርታሽ ለሁላችን ይሆን ዘንድ ነውና።`,
-    "amharic_phonetic": `amlakn yeweledsh 'imebétachn hoyhulachn 'inagenshalen. yḳrtash lehulachn yhon zend newna.`,
+    "amharic_script": `፨ አንባቢ፤ አምላክን የወለድሽ እመቤታችን ሆይሁላችን እናገንሻለን። ይቅርታሽ ለሁላችን ይሆን ዘንድ ነውና።`,
+    "amharic_phonetic": `፨ anbabi: amlakn yeweledsh 'imebétachn hoyhulachn 'inagenshalen. yḳrtash lehulachn yhon zend newna.`,
     "tigrinya_script": ``,
     "tigrinya_phonetic": ``,
-    "spanish": `Todos te engrandecemos, oh Nuestra Señora, la Portadora de Dios, para que tu compasión sea sobre todos nosotros.`
+    "spanish": `፨ Lector: Todos te engrandecemos, oh Nuestra Señora, la Portadora de Dios, para que tu compasión sea sobre todos nosotros.`
   },
   {
     "instruction": ``,
@@ -1028,14 +1028,14 @@ const prayers = [
     "reference": `Thursday Praise of Mary`,
     "chapter": `Thurs`,
     "stanza": `3`,
-    "english": `O how wonderful and marvelous is this, the power of the womb of the Virgin, the Bearer of God without seed!`,
+    "english": `፨ Reader: O how wonderful and marvelous is this, the power of the womb of the Virgin, the Bearer of God without seed!`,
     "geez_script": ``,
     "geez_phonetic": ``,
-    "amharic_script": `ያለወንድ ዘር አምላክን የወለደች ድንግል የማኀፀንዋ ሥራ ምን ይደንቅ?`,
-    "amharic_phonetic": `yalewend zer 'amlakn yeweledech dngl yemahatsenwa sra mn ydenḳ?`,
+    "amharic_script": `፨ አንባቢ፤ ያለወንድ ዘር አምላክን የወለደች ድንግል የማኀፀንዋ ሥራ ምን ይደንቅ?`,
+    "amharic_phonetic": `፨ anbabi: yalewend zer 'amlakn yeweledech dngl yemahatsenwa sra mn ydenḳ?`,
     "tigrinya_script": ``,
     "tigrinya_phonetic": ``,
-    "spanish": `¡Oh, cuán maravilloso y poderoso fue el vientre de la Virgen, que dio a luz a Dios sin simiente!`
+    "spanish": `፨ Lector: ¡Oh, cuán maravilloso y poderoso fue el vientre de la Virgen, que dio a luz a Dios sin simiente!`
   },
   {
     "instruction": ``,
@@ -1182,14 +1182,14 @@ const prayers = [
     "reference": `Thursday Praise of Mary`,
     "chapter": `Thurs`,
     "stanza": `4`,
-    "english": `O how wonderful! He took a rib from the side of Adam, and fashioned from it a woman, and the whole creation of mankind.`,
+    "english": `፨ Reader: O how wonderful! He took a rib from the side of Adam, and fashioned from it a woman, and the whole creation of mankind.`,
     "geez_script": ``,
     "geez_phonetic": ``,
-    "amharic_script": `ከአዳም ጐን አንዲት ዐፅም ማንሣት ምን ይደንቅ? ከእርሱ ሴትን ፈጠረ የሰው ፍጥረትንም ሁሉ ፈጠረ።`,
-    "amharic_phonetic": `ke'adam gwen 'andīt 'atsm mansat mn ydenḳ? ke'irsu sétn feṭere yesew fṭretnm hulu feṭere.`,
+    "amharic_script": `፨ አንባቢ፤ ከአዳም ጐን አንዲት ዐፅም ማንሣት ምን ይደንቅ? ከእርሱ ሴትን ፈጠረ የሰው ፍጥረትንም ሁሉ ፈጠረ።`,
+    "amharic_phonetic": `፨ anbabi: ke'adam gwen 'andīt 'atsm mansat mn ydenḳ? ke'irsu sétn feṭere yesew fṭretnm hulu feṭere.`,
     "tigrinya_script": ``,
     "tigrinya_phonetic": ``,
-    "spanish": `¡Oh, qué maravilloso!  Él tomó una costilla del costado de Adán, y de ella formó una mujer, y toda la creación de los hijos de los hombres fue dada a Dios,`
+    "spanish": `፨ Lector: ¡Oh, qué maravilloso!  Él tomó una costilla del costado de Adán, y de ella formó una mujer, y toda la creación de los hijos de los hombres fue dada a Dios,`
   },
   {
     "instruction": ``,
@@ -1294,14 +1294,14 @@ const prayers = [
     "reference": `Thursday Praise of Mary`,
     "chapter": `Thurs`,
     "stanza": `5`,
-    "english": `God swore to David in truth and He does not regret "of the fruit of your loins I will set upon your throne,"`,
+    "english": `፨ Reader: God swore to David in truth and He does not regret "of the fruit of your loins I will set upon your throne,"`,
     "geez_script": ``,
     "geez_phonetic": ``,
-    "amharic_script": `እግዚአብሔር የባሕርይህን ፍሬ በዙፋንህ ላይ አኖራለሁ ብሎ ለዳዊት በእውነት ማለ አይጸጸትም።`,
-    "amharic_phonetic": `igzī'abḥér yebaḥryhn fré bezufanh lay 'anoralehu blo ledawīt be'iwnet male 'aytsetsetm.`,
+    "amharic_script": `፨ አንባቢ፤ እግዚአብሔር የባሕርይህን ፍሬ በዙፋንህ ላይ አኖራለሁ ብሎ ለዳዊት በእውነት ማለ አይጸጸትም።`,
+    "amharic_phonetic": `፨ anbabi: igzī'abḥér yebaḥryhn fré bezufanh lay 'anoralehu blo ledawīt be'iwnet male 'aytsetsetm.`,
     "tigrinya_script": ``,
     "tigrinya_phonetic": ``,
-    "spanish": `Dios juró a David en rectitud y no se arrepentirá: “Del fruto de tu vientre me sentaré en tu trono.”`
+    "spanish": `፨ Lector: Dios juró a David en rectitud y no se arrepentirá: “Del fruto de tu vientre me sentaré en tu trono.”`
   },
   {
     "instruction": ``,
@@ -1392,14 +1392,14 @@ const prayers = [
     "reference": `Thursday Praise of Mary`,
     "chapter": `Thurs`,
     "stanza": `6`,
-    "english": `When the lawless rose up against David When the enemies revolted against David who reigned for Israel, he wished to drink water from the pool of Bethlehem.`,
+    "english": `፨ Reader: When the lawless rose up against David When the enemies revolted against David who reigned for Israel, he wished to drink water from the pool of Bethlehem.`,
     "geez_script": ``,
     "geez_phonetic": ``,
-    "amharic_script": `ለእስራኤል የነገሠ ዳዊት ጠላቶቹ በተነሡበት ጊዜ ከቤተልሔም ምንጭ ውኃ ይጠጣ ዘንድ ወደደ`,
-    "amharic_phonetic": `le'isra'él yenegese dawīt ṭelatochu betenesubet gīzé kebételḥém mnch wha yṭeṭa zend wedede`,
+    "amharic_script": `፨ አንባቢ፤ ለእስራኤል የነገሠ ዳዊት ጠላቶቹ በተነሡበት ጊዜ ከቤተልሔም ምንጭ ውኃ ይጠጣ ዘንድ ወደደ`,
+    "amharic_phonetic": `፨ anbabi: le'isra'él yenegese dawīt ṭelatochu betenesubet gīzé kebételḥém mnch wha yṭeṭa zend wedede`,
     "tigrinya_script": ``,
     "tigrinya_phonetic": ``,
-    "spanish": `David, que reinaba sobre Israel, quiso beber del agua del estanque de Belén,`
+    "spanish": `፨ Lector: David, que reinaba sobre Israel, quiso beber del agua del estanque de Belén,`
   },
   {
     "instruction": ``,
@@ -1476,14 +1476,14 @@ const prayers = [
     "reference": `Thursday Praise of Mary`,
     "chapter": `Thurs`,
     "stanza": `7`,
-    "english": `One from the Holy Trinity, saw our lowly state, bowed the heaven of heavens, He came and dwelt in the womb of the Virgin,`,
+    "english": `፨ Reader: One from the Holy Trinity, saw our lowly state, bowed the heaven of heavens, He came and dwelt in the womb of the Virgin,`,
     "geez_script": ``,
     "geez_phonetic": ``,
-    "amharic_script": `ከቅድስት ሥላሴ አንዱ ወልድ መዋረዳችንን አይቶ ከሰማየ ሰማያት ወርዶ ባሕርዩን ዝቅ አደረገና መጥቶ በድንግል ማሕፀን አደረ።`,
-    "amharic_phonetic": `keḳdst slasé 'andu weld mewaredachnn 'ayto kesemaye semayat werdo baḥryun zḳ 'aderegena meṭto bedngl maḥtsen 'adere.`,
+    "amharic_script": `፨ አንባቢ፤ ከቅድስት ሥላሴ አንዱ ወልድ መዋረዳችንን አይቶ ከሰማየ ሰማያት ወርዶ ባሕርዩን ዝቅ አደረገና መጥቶ በድንግል ማሕፀን አደረ።`,
+    "amharic_phonetic": `፨ anbabi: keḳdst slasé 'andu weld mewaredachnn 'ayto kesemaye semayat werdo baḥryun zḳ 'aderegena meṭto bedngl maḥtsen 'adere.`,
     "tigrinya_script": ``,
     "tigrinya_phonetic": ``,
-    "spanish": `Uno de la Santísima Trinidad vio nuestro estado bajo, inclinó el cielo de los cielos, vino y habitó en el vientre de la Virgen,`
+    "spanish": `፨ Lector: Uno de la Santísima Trinidad vio nuestro estado bajo, inclinó el cielo de los cielos, vino y habitó en el vientre de la Virgen,`
   },
   {
     "instruction": ``,
