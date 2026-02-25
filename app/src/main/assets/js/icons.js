@@ -104,16 +104,18 @@ const ICON_METADATA = {
     'Covenant-of-Mercy-with-Psalm.svg': {
         id: 'covenant_mercy_psalm',
         title: {
-            geez: 'ኪዳነ ምሕረት ምስ መዝሙረ ዳዊት',
-            transliteration: 'Kidane Meheret mis Mezmure Dawit',
-            english: 'Kidane Meheret (Psalter Header)'
+            geez: 'እንዘ ይብል ዳዊት አቡሃ ስምዒ ወለትየ ወርእዪ ወአጽምዒ እዝነኪ ርስዒ ሕዝበኪ ወቤተ አቡኪ እስመ ፈተወ ንጉሥ ሥነኪ እስመ ውእቱ እግዚእኪ ፡',
+            transliteration: 'Inze yibil Dawit abuha: Sim’ī weletye wer’iyī we’atsm’ī izneki, ris’ī hizbeki webéte abuki, isme fetewe nigus sineki isme wi’itu igzī’iki.',
+            english: 'While David her ancestor said "Listen, my daughter, and see and incline your ear. Forget your people and the house of your father because the king adores your grace because he is your Lord" (Psalm 44:11-12).'
         },
         description: { 
-            english: 'This icon represents the Covenant of Mercy as it appears as a header for the Book of Psalms (Mezmure Dawit). It symbolizes the protection and intercession of Saint Mary over the prayer life of the faithful.'
+            english: 'This icon depicts the Covenant of Mercy. This specific icon (PEMM Story ID 7045) is from a manuscript taken from King Tewodros’s royal library in Magdala, dated to 1667-1682 (British Library, Orient Collection, MS 641, f. 15r). \n\nIt depicts Virgin Mary receiving the Covenant of Mercy from Jesus Christ, accompanied by King David the Psalmist (her ancestor), angels, and a congregation of prophets. The caption quotes Psalm 45:10: "Listen, my daughter, and see and incline your ear. Forget your people and the house of your father because the king adores your grace because he is your Lord."'
         },
         originalImage: [
             'img/Magdala-17th-century-kidane-mihret-original-unedited.png'
         ],
-        source: 'Ethiopian Orthodox Tradition.'
+        bibleReferences: ['Psalm 44:11-12 LXX (45:10-11 NKJV)'],
+        source: 'British Library, "Orient" Collection, Manuscript No. 641 (f. 15r). King Tewodros’s Royal Library, Magdala.',
+        link: 'https://pemm.princeton.edu/en-us/paintings/BLorient641_657'
     }
 };
