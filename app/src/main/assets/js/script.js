@@ -1281,10 +1281,6 @@ function renderPrayers() {
                 
                 metadataEl.innerHTML = parts.join('<br>');
                 titleEl.appendChild(metadataEl);
-
-                if (isCollapsible && collapsedSections[title]) {
-                    metadataEl.style.display = 'none';
-                }
             }
 
             if (title === "Daily Prayer | ዘዘወትር ጸሎት") {
