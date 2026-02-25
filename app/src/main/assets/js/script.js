@@ -1280,7 +1280,7 @@ function renderPrayers() {
                 if (metadata.purpose) parts.push(`Purpose: ${metadata.purpose}`);
                 
                 metadataEl.innerHTML = parts.join('<br>');
-                prayerDisplay.appendChild(metadataEl);
+                titleEl.appendChild(metadataEl);
 
                 if (isCollapsible && collapsedSections[title]) {
                     metadataEl.style.display = 'none';
