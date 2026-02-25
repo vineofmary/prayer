@@ -87,15 +87,19 @@ const ICON_METADATA = {
     'Covenant-of-Mercy.svg': {
         id: 'covenant_mercy',
         title: {
-            geez: 'ኪዳነ ምሕረት',
-            transliteration: 'Kidane Meheret',
-            english: 'The Covenant of Mercy (Kidane Meheret)'
+            geez: 'ዘከመ አሰፈዋ ተስፋ እግዚእነ ለማርያም። ዳዊት ዘከመ ዘመረ።',
+            transliteration: 'Zekeme asefewa tesfa Igzi’ine le-Maryam. Dawit zekeme zemere.',
+            english: 'How our Lord made a promise to Mary and how David sang.'
         },
         description: { 
-            english: 'The "Covenant of Mercy" (Kidane Meheret) commemorates the promise given by Our Lord Jesus Christ to His Mother, Saint Mary, that He would show mercy to those who intercede through her name and remember her departure. It is a central feast and theme of devotion in the Ethiopian Orthodox Tewahedo Church.',
-            amharic: 'ኪዳነ ምሕረት ጌታችን መድኃኒታችን ኢየሱስ ክርስቶስ ለእመቤታችን ለቅድስት ድንግል ማርያም የገባላት የምሕረት ቃል ኪዳን ነው።'
+            english: 'Two icons depicting the Covenant of Mercy and Mary with Her Beloved Son. \n\nLeft Icon: From a manuscript dated 1667-1706 (Art Institute of Chicago, Manuscript No. 2002.4, f. 48r). It depicts the Virgin Mary receiving the Covenant of Mercy from Jesus Christ, surrounded by the Psalmist David with a harp, prophets, angels, and saints. \n\nRight Icon: From a 19th-century manuscript likely made in Gojjam, Ethiopia (EMDA Manuscript No. 10). The scene features Virgin Mary and Jesus Christ with martyrs, Saint Ephrem, the Prophet David, and other prophets. Objects depicted include a throne, pottery, and a harp.'
         },
-        source: 'Ethiopian Orthodox Tradition.'
+        originalImage: [
+            'img/17th-century-kidane-mihret1-original-unedited.jpg',
+            'img/gojam-19th-century-mary-with-her-beloved-son-original-unedited.jpg'
+        ],
+        source: 'PEMM Project. Art Institute of Chicago & HMML Project ID EMDA (Gojjam).',
+        link: 'https://pemm.princeton.edu/en-us/paintings/CIA20024_1791'
     },
     'Covenant-of-Mercy-with-Psalm.svg': {
         id: 'covenant_mercy_psalm',
@@ -105,9 +109,11 @@ const ICON_METADATA = {
             english: 'Kidane Meheret (Psalter Header)'
         },
         description: { 
-            english: 'This icon represents the Covenant of Mercy as it appears as a header for the Book of Psalms (Mezmure Dawit). It symbolizes the protection and intercession of Saint Mary over the prayer life of the faithful.',
-            amharic: 'ይህ ምስል በመዝሙረ ዳዊት መጀመሪያ ላይ የሚገኝ የኪዳነ ምሕረት ሥዕል ሲሆን፣ የምእመናንን የጸሎት ሕይወት የሚያመለክት ነው።'
+            english: 'This icon represents the Covenant of Mercy as it appears as a header for the Book of Psalms (Mezmure Dawit). It symbolizes the protection and intercession of Saint Mary over the prayer life of the faithful.'
         },
+        originalImage: [
+            'img/Magdala-17th-century-kidane-mihret-original-unedited.png'
+        ],
         source: 'Ethiopian Orthodox Tradition.'
     }
 };
