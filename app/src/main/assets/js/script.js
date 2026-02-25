@@ -1022,6 +1022,9 @@ function getSectionTitle(prayer) {
         return "Daily Prayer | ዘዘወትር ጸሎት";
     } else if (label === "Trinitarian Invocation") {
         return "";
+    } else if (label.startsWith("Prayer of Saint Ephraim: Praise of Mary | ውዳሴ ማርያም") && (selectedWidaseMaryamDay === 'None' || selectedWidaseMaryamDay === 'All')) {
+        // Hide the section title if None is selected (or All, until we have multiple days)
+        return "";
     }
     return label.replace(/ - .*/, '');
 }
