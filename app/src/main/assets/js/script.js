@@ -1009,6 +1009,17 @@ function formatPrayerText(text, langKey, query, isFirstLanguage, chapter = null,
     }
 
     processedText = applyRubrication(processedText, langKey, isFirstLanguage, chapter);
+
+    // Specific formatting: Place English Psalm 135 refrain on a new line
+    if (chapter === 'Psalms' && langKey === 'english') {
+        // A much simpler and more robust regex: just find "For His mercy" (with or without the red span)
+        // and insert a line break before it. We use \s* to consume any preceding spaces.
+        const refrainRegex = /\s*(<span class="rubric-red">)?For His mercy/gi;
+        processedText = processedText.replace(refrainRegex, (match, p1) => {
+            return '<br>' + (p1 || '') + 'For His mercy';
+        });
+    }
+
     return highlightText(processedText, query);
 }
 
