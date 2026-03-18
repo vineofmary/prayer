@@ -357,7 +357,7 @@ const rubricRedWords = {
         "In the Name of the Father, and of the Son, and of the Holy Spirit, One God, Amen", "I seal my face", "Father", "Son", "Son of God", "Son of the Highest", "Holy Spirit", "Holy One", "One God",
         "Holy Trinity", "We thank You, Lord", "Lord", "God", "King", "Jesus", "Our Father in Heaven",
         "With the Greeting of Saint Gabriel", "Lord God of hosts", "Jesus Christ", "Iyesus Kristos", "Iyesus", "We believe in one God", "one God",
-        "Light", "True God from True God", "Virgin Mary", "Amen", "Holy, holy, holy, is the Lord of hosts", "Holy, holy, holy", "Holy, Holy, Holy", "Christ",
+        "Light", "True God from True God", "Amen", "Holy, holy, holy, is the Lord of hosts", "Holy, holy, holy", "Holy, Holy, Holy", "Christ",
         "I worship the Father, and the Son, and the Holy Spirit", "Godhead", "Glory to the Father, glory to the Son, glory to the Holy Spirit",
         "Most High God", "Greetings to you, we say as we bow to you", "Prayer of Our Lady Mary, Virgin Bearer of God",
         "Savior", "My soul magnifies the Lord", "Glory to the Father, to the Son, and to the Holy Spirit, forever and to the age of ages",
@@ -392,11 +392,11 @@ const rubricRedWords = {
 
 const rubricGoldWords = {
     english: [
-        "Mary of Zion", "Lady Mary", "Virgin Mother of God", "Virgin Bearer of God", "God-bearer", "Theotokos",
+        "Virgin Mary", "Mary of Zion", "Lady Mary", "Virgin Mother of God", "Virgin Bearer of God", "God-bearer", "Theotokos",
         "Lady", "Holy Virgin", "Mary the Virgin", "Mary, the holy one", "Mary, the praised", "Mary, the pure",
         "Mary, the joyous", "Mary, the beatific", "Mary, the blessed", "The dwelling place of the Godhead",
         "The perfect Tabernacle", "Sister of the angels", "mother of all people", "Peaceful one", "Mary, the embellished",
-        "The gate of the East and the Mother of Light", "Mary, the chosen and honored one", "Mary", "Mariam", "Virgin Mary"
+        "The gate of the East and the Mother of Light", "Mary, the chosen and honored one", "Mary", "Mariam"
     ],
     geez_script: [
         "ማርያም ጽዮን", "እግዝእትነ ማርያም", "እግዝእትየ ማርያም", "ድንግል ወላዲተ አምላክ", "ወላዲተ አምላክ", "እግዝእትየ", "እግዝእትነ",
@@ -990,7 +990,10 @@ function formatPrayerText(text, langKey, query, isFirstLanguage, chapter = null,
         }
     }
 
-    // Apply Anglicization first
+    // Apply Rubrication before Anglicization to ensure fixed sacred phrases match correctly
+    processedText = applyRubrication(processedText, langKey, isFirstLanguage, chapter);
+
+    // Apply Anglicization
     processedText = applyAnglicization(processedText, langKey);
 
     // Replace custom name placeholders
@@ -1011,8 +1014,6 @@ function formatPrayerText(text, langKey, query, isFirstLanguage, chapter = null,
             return '';
         }).trim();
     }
-
-    processedText = applyRubrication(processedText, langKey, isFirstLanguage, chapter);
 
     // Specific formatting: Place English Psalm 135, Three Holy Youth, and Praise of Mary refrains on a new line
     if ((chapter === 'Psalms' || chapter === 'ProphetSong' || chapter === 'Thurs') && langKey === 'english') {
