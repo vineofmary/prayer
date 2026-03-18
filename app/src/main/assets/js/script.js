@@ -365,7 +365,10 @@ const rubricRedWords = {
         "Word of God", "Emmanuel", "Amanuel", "Word", "God the Word", "One Spirit", "Good Father", "The Angels Praise Mary",
         "And now in the sixth month", "peace to you", "Peace to you", "peace be unto you", "Peace be unto you", "Most High",
         "Glory be to the Father, and to the Son, and to the Holy Spirit, forever and to the age of ages.",
-        "Come to me, David, King of Israel", "Ask for us, Mary", "For His mercy endures forever", "For His mercy <i>endures</i> forever", "LORD"
+        "Come to me, David, King of Israel", "Ask for us, Mary", "For His mercy endures forever", "For His mercy <i>endures</i> forever", "LORD",
+        "And sing a hymn to Him, And exalt Him beyond measure unto the ages.",
+        "And sing a hymn to the Lord, And exalt Him beyond measure unto the ages.",
+        "And let it sing a hymn to Him, And exalt Him beyond measure unto the ages."
     ],
     geez_script: [
         "በስመ አብ ወወልድ ወመንፈስ ቅዱስ", "አአትብ ገጽየ", "አብ", "ወልድ", "ወወልድ", "መንፈስ ቅዱስ", "አሐዱ አምላክ", "አሐዱ አምላክ፣",
@@ -1011,13 +1014,14 @@ function formatPrayerText(text, langKey, query, isFirstLanguage, chapter = null,
 
     processedText = applyRubrication(processedText, langKey, isFirstLanguage, chapter);
 
-    // Specific formatting: Place English Psalm 135 refrain on a new line
-    if (chapter === 'Psalms' && langKey === 'english') {
-        // A much simpler and more robust regex: just find "For His mercy" (with or without the red span)
-        // and insert a line break before it. We use \s* to consume any preceding spaces.
-        const refrainRegex = /\s*(<span class="rubric-red">)?For His mercy/gi;
-        processedText = processedText.replace(refrainRegex, (match, p1) => {
-            return '<br>' + (p1 || '') + 'For His mercy';
+    // Specific formatting: Place English Psalm 135 and Three Holy Youth refrains on a new line
+    if ((chapter === 'Psalms' || chapter === 'ProphetSong') && langKey === 'english') {
+        // Find refrains (with or without the red span) and insert a line break before them.
+        // Handles "For His mercy endures forever" and the Three Holy Youth variations.
+        const refrainRegex = /\s*(<span class="rubric-red">)?(For His mercy|And (?:sing a hymn|let it sing a hymn))/gi;
+        processedText = processedText.replace(refrainRegex, (match, p1, p2) => {
+            // p1 is the optional span tag, p2 is the matched start of the refrain
+            return '<br>' + (p1 || '') + match.trim();
         });
     }
 
