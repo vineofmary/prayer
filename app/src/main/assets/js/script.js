@@ -972,10 +972,11 @@ function formatPrayerText(text, langKey, query, isFirstLanguage, chapter = null,
                 processedText = supTag + processedText;
             }
         } else if (langKey === 'english') {
-            // Match leading English superscriptions
-            // Handles stray trailing </i> tags found in some NKJV data
-            const nkjvSuperscriptionRegex = /^(<i>.*?<\/i>(\s*<\/i>)?)/;
-            if (nkjvSuperscriptionRegex.test(processedText)) {
+            // Match leading English superscriptions for Psalms and specific other categories
+            // Restricted to verse 1 to avoid misidentifying leading italicized words in later verses
+            // Handles nested <i> tags and stray trailing </i> tags found in some NKJV data
+            const nkjvSuperscriptionRegex = /^((?:<i>(?:<i>.*?<\/i>|.)*?<\/i>(?:\s*<\/i>)*\s*)+)/;
+            if (verseNum === 1 && nkjvSuperscriptionRegex.test(processedText)) {
                 processedText = processedText.replace(nkjvSuperscriptionRegex, '<span class="psalm-superscription">$1</span><br>' + supTag);
             } else {
                 processedText = supTag + processedText;
