@@ -422,7 +422,7 @@ const songs = [
     {
         "chapter": "ProphetSong",
         "stanza": "ThreeYouths3",
-        "english": "Bless the Lord, O children of men, And sing a hymn to Him, And exalt Him beyond. O Israel, And sing a hymn to Him, And exalt Him beyond measure unto the ages.",
+        "english": "Bless the Lord, O children of men, And sing a hymn to Him, And exalt Him beyond measure unto the ages.",
         "spanish": "¡Hijos de los hombres, alaben al Señor! Alábenlo y exáltenlo por sobre todo para siempre.",
         "reference": "Song of the Three Holy Youths - Daniel 3:82"
     },
@@ -450,7 +450,7 @@ const songs = [
     {
         "chapter": "ProphetSong",
         "stanza": "ThreeYouths3",
-        "english": "Bless the Lord, O spirits and souls of the righteous, And sing a hymn to Him, And exalt Him beyond measure unto the ages. †",
+        "english": "Bless the Lord, O spirits and souls of the righteous, And sing a hymn to Him, And exalt Him beyond measure unto the ages.",
         "spanish": "¡Espíritus y almas de los justos, alaben al Señor! Alábenlo y exáltenlo por sobre todo para siempre.",
         "reference": "Song of the Three Holy Youths - Daniel 3:86"
     },
