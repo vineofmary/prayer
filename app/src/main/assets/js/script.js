@@ -62,6 +62,9 @@ const expandCollapseAllButton = document.getElementById('expand-collapse-all-but
 const feedbackButton = document.getElementById('feedback-button');
 const helpModal = document.getElementById('help-modal');
 const feedbackModal = document.getElementById('feedback-modal');
+const ephremStoryModal = document.getElementById('ephrem-story-modal');
+const ephremStoryInfoBtn = document.getElementById('ephrem-story-info-btn');
+const closeEphremModal = document.getElementById('close-ephrem-modal');
 const scribeLoginModal = document.getElementById('scribe-login-modal');
 const scribeEditorModal = document.getElementById('scribe-editor-modal');
 const modalBackdrop = document.getElementById('modal-backdrop');
@@ -3811,8 +3814,49 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Close Modals on close button click
     document.getElementById('close-help-modal').addEventListener('click', closeModal);
     document.getElementById('close-feedback-modal').addEventListener('click', closeModal);
+    document.getElementById('close-ephrem-modal').addEventListener('click', closeModal);
     document.getElementById('close-scribe-login-modal').addEventListener('click', closeModal);
     document.getElementById('close-scribe-editor-modal').addEventListener('click', closeModal);
     document.getElementById('close-icon-metadata-modal').addEventListener('click', closeModal);
     document.getElementById('close-scribe-icon-editor-modal').addEventListener('click', closeModal);
+
+    // Ephrem Story Modal Logic
+    if (ephremStoryInfoBtn) {
+        ephremStoryInfoBtn.addEventListener('click', () => {
+            // Update all servant name placeholders in the story modal
+            const storyNameSpans = ephremStoryModal.querySelectorAll('.story-servant-name');
+            storyNameSpans.forEach(span => {
+                span.textContent = customNames.servant || '{Names}';
+            });
+            openModal(ephremStoryModal);
+        });
+    }
+
+    // Story Tabs Logic
+    const tabBtns = document.querySelectorAll('.story-tab-btn');
+    const tabPanes = document.querySelectorAll('.story-day-pane');
+
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const day = btn.getAttribute('data-day');
+            
+            // Toggle buttons
+            tabBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            
+            // Toggle panes
+            tabPanes.forEach(p => p.classList.remove('active'));
+            document.getElementById(`story-${day}`).classList.add('active');
+        });
+    });
+
+    // Technical Context Collapsible Logic
+    const techToggleBtn = document.getElementById('toggle-technical-context');
+    const techContent = document.getElementById('technical-context-content');
+    if (techToggleBtn && techContent) {
+        techToggleBtn.addEventListener('click', () => {
+            const isCollapsed = techContent.classList.toggle('collapsed');
+            techToggleBtn.classList.toggle('active', !isCollapsed);
+        });
+    }
 });

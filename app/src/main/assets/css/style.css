@@ -1048,6 +1048,302 @@ body.view-mode-unified .info-panel-content {
     font-weight: bold; cursor: pointer;
 }
 .close-button:hover, .close-button:focus { color: var(--text-color); }
+
+/* Ephrem Story Modal Specifics */
+.ephrem-story-content {
+    max-width: 800px;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    max-height: 90vh;
+}
+
+.ephrem-story-content h2 {
+    margin-bottom: 0.5rem;
+}
+
+.story-header {
+    padding: 2rem;
+    text-align: center;
+    background-color: var(--hover-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.story-main-icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1rem;
+}
+
+.story-subtitle {
+    font-style: italic;
+    opacity: 0.8;
+}
+
+.story-body {
+    padding: 2rem;
+    overflow-y: auto;
+    flex: 1;
+}
+
+.story-section {
+    margin-bottom: 2rem;
+}
+
+.summary-box, .homily-box, .intro-box {
+    background-color: var(--hover-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--accent-color);
+}
+
+.summary-box h3, .homily-box h3, .intro-box h3 {
+    margin-top: 0;
+    font-size: 1.1rem;
+}
+
+.story-inner-title {
+    font-family: var(--ethiopic-font-family, serif);
+    color: var(--accent-color);
+    text-align: center;
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+    line-height: 1.4;
+    border-bottom: 1px double var(--border-color);
+    padding-bottom: 1rem;
+}
+
+.story-tabs-nav {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.story-tab-btn {
+    background: transparent;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    color: var(--text-color);
+    opacity: 0.6;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.story-tab-btn:hover {
+    background-color: var(--hover-color);
+    opacity: 1;
+}
+
+.story-tab-btn.active {
+    background-color: var(--accent-color);
+    color: white;
+    opacity: 1;
+}
+
+.story-day-pane {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.story-day-pane.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.story-day-pane h4 {
+    margin-top: 0;
+    color: var(--accent-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.story-body blockquote {
+    margin: 1.5rem 0;
+    padding: 1rem 1.5rem;
+    border-left: 2px solid var(--border-color);
+    font-style: italic;
+    line-height: 1.6;
+    background-color: var(--hover-color);
+}
+
+.story-blessing {
+    margin-top: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.story-servant-name {
+    color: var(--rubric-red);
+}
+
+.technical-context h3 {
+    font-size: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.tech-item strong {
+    display: block;
+    font-size: 0.8rem;
+    opacity: 0.7;
+    margin-bottom: 0.25rem;
+}
+
+.tech-item span {
+    font-size: 0.9rem;
+}
+
+.tech-item.full-width {
+    grid-column: 1 / -1;
+}
+
+.geez-text {
+    line-height: 1.8;
+}
+
+.notes-section h3 {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.story-notes {
+    font-size: 0.85rem;
+    opacity: 0.8;
+    padding-left: 1.2rem;
+}
+
+.story-notes li {
+    margin-bottom: 0.5rem;
+}
+
+.sup-ref {
+    vertical-align: super;
+    font-size: 0.7rem;
+    text-decoration: none;
+    margin-left: 2px;
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+.story-citation {
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px dashed var(--border-color);
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+.citation-detail {
+    margin-top: 0.5rem;
+    font-style: italic;
+}
+
+/* Info Toggle Alignment */
+.title-with-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.title-with-info h3 {
+    margin: 0;
+}
+
+.info-toggle-btn {
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    color: var(--text-color);
+    opacity: 0.6;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s;
+}
+
+.info-toggle-btn:hover {
+    opacity: 1;
+}
+
+.info-toggle-btn svg {
+    fill: currentColor;
+}
+
+/* Collapsible Technical Context */
+.technical-toggle-btn {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--hover-color);
+    border: 1px solid var(--border-color);
+    padding: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    color: var(--text-color);
+    font-weight: bold;
+    font-family: inherit;
+    transition: background-color 0.2s;
+}
+
+.technical-toggle-btn:hover {
+    background-color: var(--border-color);
+}
+
+.technical-content-pane {
+    padding: 1.5rem;
+    border: 1px solid var(--border-color);
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    background-color: var(--background-color);
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease;
+}
+
+.technical-content-pane.collapsed {
+    display: none;
+}
+
+.toggle-icon {
+    transition: transform 0.3s ease;
+}
+
+.technical-toggle-btn.active .toggle-icon {
+    transform: rotate(180deg);
+}
+
+.summary-sub-box {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px dashed var(--border-color);
+}
+
+.summary-sub-box strong {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--accent-color);
+}
+
 #modal-backdrop {
     display: none; position: fixed; top: 0; left: 0;
     width: 100%; height: 100%; background-color: rgba(0,0,0,0.5);
