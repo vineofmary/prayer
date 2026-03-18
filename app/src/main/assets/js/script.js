@@ -1014,11 +1014,12 @@ function formatPrayerText(text, langKey, query, isFirstLanguage, chapter = null,
 
     processedText = applyRubrication(processedText, langKey, isFirstLanguage, chapter);
 
-    // Specific formatting: Place English Psalm 135 and Three Holy Youth refrains on a new line
-    if ((chapter === 'Psalms' || chapter === 'ProphetSong') && langKey === 'english') {
+    // Specific formatting: Place English Psalm 135, Three Holy Youth, and Praise of Mary refrains on a new line
+    if ((chapter === 'Psalms' || chapter === 'ProphetSong' || chapter === 'Thurs') && langKey === 'english') {
         // Find refrains (with or without the red span) and insert a line break before them.
-        // Handles "For His mercy endures forever" and the Three Holy Youth variations.
-        const refrainRegex = /\s*(<span class="rubric-red">)?(For His mercy|And (?:sing a hymn|let it sing a hymn))/gi;
+        // Handles "For His mercy endures forever", the Three Holy Youth variations, 
+        // and "O holy one (Mary), pray for us."
+        const refrainRegex = /\s*(<span class="rubric-red">)?(For His mercy|And (?:sing a hymn|let it sing a hymn)|O holy one)/gi;
         processedText = processedText.replace(refrainRegex, (match, p1, p2) => {
             // p1 is the optional span tag, p2 is the matched start of the refrain
             return '<br>' + (p1 || '') + match.trim();
