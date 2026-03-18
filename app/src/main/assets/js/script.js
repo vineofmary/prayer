@@ -44,6 +44,7 @@ const layoutIconRow = layoutToggleHeader.querySelector('.layout-icon-row');
 const showPrayerLabelsToggle = document.getElementById('show-prayer-labels');
 const showLanguageLabelsToggle = document.getElementById('show-language-labels');
 const showSpeakerLabelsToggle = document.getElementById('show-speaker-labels');
+const paragraphModeToggle = document.getElementById('paragraph-mode');
 const showRubricationToggle = document.getElementById('show-rubrication');
 const languageColorCodingSelect = document.getElementById('language-color-coding-select');
 const dynamicFontSizingLabel = document.getElementById('dynamic-font-sizing-label');
@@ -611,6 +612,12 @@ function applyTheme() {
         body.classList.add('bold-text');
     }
 
+    // Handle Paragraph Mode
+    const activeLanguageCount = Object.values(displayedLanguages).filter(Boolean).length;
+    if (displayOptions.paragraphMode && activeLanguageCount === 1 && displayOptions.presentationMode === 'scroll') {
+        body.classList.add('paragraph-mode');
+    }
+
     themeToggle.innerHTML = currentTheme.mode === 'light' ? moonIcon : sunIcon;
     themeToggle.title = currentTheme.mode === 'light' ? 'Toggle Dark Mode' : 'Toggle Light Mode';
 }
@@ -665,6 +672,7 @@ function loadSettings() {
             showSpeakerLabels: true,
             showRubrication: true,
             dynamicFontSizing: true,
+            paragraphMode: false,
             slideTransition: 'fade',
             languageColors: 'off',
             boldText: false,
@@ -776,6 +784,7 @@ function checkAndEnforceLayoutRules() {
             }
         }
     }
+    applyTheme();
     updateAllTogglesInSettingsPanel();
 }
 
@@ -821,6 +830,9 @@ function updateAllTogglesInSettingsPanel() {
     showPrayerLabelsToggle.checked = displayOptions.showPrayerLabels;
     showLanguageLabelsToggle.checked = displayOptions.showLanguageLabels;
     showSpeakerLabelsToggle.checked = displayOptions.showSpeakerLabels;
+    paragraphModeToggle.checked = displayOptions.paragraphMode;
+    const activeLanguageCount = Object.values(displayedLanguages).filter(Boolean).length;
+    paragraphModeToggle.parentElement.style.display = (activeLanguageCount === 1 && displayOptions.presentationMode === 'scroll') ? 'block' : 'none';
     showRubricationToggle.checked = displayOptions.showRubrication;
     languageColorCodingSelect.value = displayOptions.languageColors;
     dynamicFontSizingToggle.checked = displayOptions.dynamicFontSizing;
@@ -2845,6 +2857,13 @@ showLanguageLabelsToggle.addEventListener('change', () => {
 
 showSpeakerLabelsToggle.addEventListener('change', () => {
     displayOptions.showSpeakerLabels = showSpeakerLabelsToggle.checked;
+    renderPrayers();
+    saveSettings();
+});
+
+paragraphModeToggle.addEventListener('change', () => {
+    displayOptions.paragraphMode = paragraphModeToggle.checked;
+    applyTheme();
     renderPrayers();
     saveSettings();
 });

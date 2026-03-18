@@ -739,6 +739,38 @@ body.view-mode-unified #prayer-display > .prayer-card:last-child {
     margin-bottom: 0;
 }
 
+/* Paragraph Mode Styles */
+body.paragraph-mode .prayer-card {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    margin-bottom: 0;
+}
+
+body.paragraph-mode .prayer-card-main-content {
+    padding: 0.5rem 0;
+}
+
+body.paragraph-mode .prayer-footer {
+    display: none;
+}
+
+body.paragraph-mode .language-section h4 {
+    display: none; /* Usually only one language, so title is redundant per stanza */
+}
+
+body.paragraph-mode .language-text {
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+body.paragraph-mode .section-icon, 
+body.paragraph-mode .holy-trinity-icon {
+    max-width: 100px;
+    margin: 1rem auto;
+}
+
 .prayer-footer {
     display: flex;
     justify-content: space-between;
