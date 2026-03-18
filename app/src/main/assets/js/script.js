@@ -361,7 +361,7 @@ const rubricRedWords = {
         "I worship the Father, and the Son, and the Holy Spirit", "Godhead", "Glory to the Father, glory to the Son, glory to the Holy Spirit",
         "Most High God", "Greetings to you, we say as we bow to you", "Prayer of Our Lady Mary, Virgin Bearer of God",
         "Savior", "My soul magnifies the Lord", "Glory to the Father, to the Son, and to the Holy Spirit, forever and to the age of ages",
-        "Praises for Our Lady Mary, Virgin, Bearer of God", "O holy one (Mary), pray for us.", "Son of Man", "Only-begotten", "only-begotten",
+        "Praises for Our Lady Mary, Virgin, Bearer of God", "O holy one (", "), pray for us.", "Son of Man", "Only-begotten", "only-begotten",
         "Word of God", "Emmanuel", "Amanuel", "Word", "God the Word", "One Spirit", "Good Father", "The Angels Praise Mary",
         "And now in the sixth month", "peace to you", "Peace to you", "peace be unto you", "Peace be unto you", "Most High",
         "Glory be to the Father, and to the Son, and to the Holy Spirit, forever and to the age of ages.",
