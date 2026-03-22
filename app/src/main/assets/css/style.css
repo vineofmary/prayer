@@ -2033,3 +2033,91 @@ body.presentation-mode-slides .hareg-ornament {
 .holy-trinity-icon:hover, .section-icon:hover, .hareg-ornament:hover {
     transform: scale(1.02);
 }
+
+.eusebius-content {
+    max-width: 800px;
+}
+
+.eusebius-body {
+    padding-top: 1rem;
+}
+
+.modal-image-container {
+    margin: 0 0 1.5rem 0;
+    text-align: center;
+}
+
+.modal-image-container img {
+    max-width: 100%;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.modal-image-container figcaption {
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+    opacity: 0.8;
+    font-style: italic;
+}
+
+.modal-tabs {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+.modal-tab-btn {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    opacity: 0.6;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.modal-tab-btn.active {
+    opacity: 1;
+    background: var(--accent-color);
+    color: white;
+}
+
+.modal-pane {
+    display: none;
+    line-height: 1.6;
+}
+
+.modal-pane.active {
+    display: block;
+}
+
+.modal-pane p {
+    margin-bottom: 1rem;
+}
+
+.footnotes-separator {
+    margin: 2rem 0 1rem 0;
+    border: 0;
+    border-top: 1px solid var(--border-color);
+    opacity: 0.5;
+}
+
+.modal-footnotes {
+    font-size: 0.85rem;
+    opacity: 0.9;
+    line-height: 1.4;
+}
+
+.footnote-item {
+    margin-bottom: 0.75rem;
+}
+
+.footnote-backref {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 0.25rem;
+}

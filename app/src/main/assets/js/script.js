@@ -65,6 +65,9 @@ const feedbackModal = document.getElementById('feedback-modal');
 const ephremStoryModal = document.getElementById('ephrem-story-modal');
 const ephremStoryInfoBtn = document.getElementById('ephrem-story-info-btn');
 const closeEphremModal = document.getElementById('close-ephrem-modal');
+const eusebiusModal = document.getElementById('eusebius-modal');
+const eusebiusInfoBtn = document.getElementById('eusebius-info-btn');
+const closeEusebiusModal = document.getElementById('close-eusebius-modal');
 const scribeLoginModal = document.getElementById('scribe-login-modal');
 const scribeEditorModal = document.getElementById('scribe-editor-modal');
 const modalBackdrop = document.getElementById('modal-backdrop');
@@ -3402,22 +3405,27 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     });
 
-    // Handle Login Submission
-    scribeLoginBtn.addEventListener('click', async () => {
-        const email = scribeEmailInput.value;
-        const password = scribePasswordInput.value;
-        scribeLoginError.classList.add('hidden');
+    const scribeLoginForm = document.getElementById('scribe-login-form');
 
-        try {
-            await auth.signInWithEmailAndPassword(email, password);
-            closeModal();
-            scribeEmailInput.value = '';
-            scribePasswordInput.value = '';
-        } catch (error) {
-            scribeLoginError.textContent = error.message;
-            scribeLoginError.classList.remove('hidden');
-        }
-    });
+    // Handle Login Submission
+    if (scribeLoginForm) {
+        scribeLoginForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = scribeEmailInput.value;
+            const password = scribePasswordInput.value;
+            scribeLoginError.classList.add('hidden');
+
+            try {
+                await auth.signInWithEmailAndPassword(email, password);
+                closeModal();
+                scribeEmailInput.value = '';
+                scribePasswordInput.value = '';
+            } catch (error) {
+                scribeLoginError.textContent = error.message;
+                scribeLoginError.classList.remove('hidden');
+            }
+        });
+    }
 
     // Listen for Auth State Changes
     auth.onAuthStateChanged(user => {
@@ -3819,6 +3827,32 @@ document.addEventListener('DOMContentLoaded', async () => {
     document.getElementById('close-scribe-editor-modal').addEventListener('click', closeModal);
     document.getElementById('close-icon-metadata-modal').addEventListener('click', closeModal);
     document.getElementById('close-scribe-icon-editor-modal').addEventListener('click', closeModal);
+    document.getElementById('close-eusebius-modal').addEventListener('click', closeModal);
+
+    // Eusebius Modal Logic
+    if (eusebiusInfoBtn) {
+        eusebiusInfoBtn.addEventListener('click', () => {
+            openModal(eusebiusModal);
+        });
+    }
+
+    // Eusebius Tabs Logic
+    const eusebiusTabBtns = document.querySelectorAll('.modal-tab-btn');
+    const eusebiusTabPanes = document.querySelectorAll('.modal-pane');
+
+    eusebiusTabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const lang = btn.getAttribute('data-lang');
+            
+            // Toggle buttons
+            eusebiusTabBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            
+            // Toggle panes
+            eusebiusTabPanes.forEach(p => p.classList.remove('active'));
+            document.getElementById(`eusebius-${lang}`).classList.add('active');
+        });
+    });
 
     // Ephrem Story Modal Logic
     if (ephremStoryInfoBtn) {

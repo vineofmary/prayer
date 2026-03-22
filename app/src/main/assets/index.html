@@ -141,7 +141,12 @@
                     </div>
                 </div>
                 <div class="setting-group">
-                    <h3>Add Psalms</h3>
+                    <div class="title-with-info">
+                        <h3>Add Psalms</h3>
+                        <button id="eusebius-info-btn" class="info-toggle-btn" title="About the Psalms (Eusebius)">
+                            <svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                        </button>
+                    </div>
                     <div id="psalm-selector-container"></div>
                     <div id="psalm-summary" class="settings-summary"></div>
                     <button id="clear-psalms-button" class="settings-button">Clear Psalms</button>
@@ -479,12 +484,12 @@
             </div>
             <h2>Scribe's Entrance</h2>
             <p>Enter your credentials to enter the Scribe's Chamber.</p>
-            <div class="scribe-login-form">
+            <form class="scribe-login-form" id="scribe-login-form">
                 <input type="email" id="scribe-email" placeholder="Email" required>
                 <input type="password" id="scribe-password" placeholder="Password" required>
-                <button id="scribe-login-btn">Login</button>
+                <button type="submit" id="scribe-login-btn">Login</button>
                 <p id="scribe-login-error" class="error-text hidden"></p>
-            </div>
+            </form>
         </div>
     </div>
 
@@ -579,6 +584,103 @@
         </div>
     </div>
 
+    <div id="eusebius-modal" class="modal">
+        <div class="modal-content eusebius-content">
+            <span class="close-button" id="close-eusebius-modal">&times;</span>
+            <div class="eusebius-body">
+                <figure class="modal-image-container">
+                    <img src="img/14th-century-intro-to-psalms-folio5r-Ethiopic-Manuscripts-No.6-St-Catherine-Mt-Sinai.jpg" alt="Ethiopic Manuscript Folio 5r">
+                    <figcaption>Folio 5r, Ethiopic Manuscript No. 6, St. Catherine's Monastery, Mt. Sinai (14th Century).</figcaption>
+                </figure>
+
+                <div class="modal-tabs">
+                    <button class="modal-tab-btn active" data-lang="english">English</button>
+                    <button class="modal-tab-btn" data-lang="geez">ግእዝ (Ge'ez)</button>
+                    <button class="modal-tab-btn" data-lang="greek">Ελληνικά (Greek)</button>
+                </div>
+
+                <div class="modal-tab-content">
+                    <div id="eusebius-english" class="modal-pane active">
+                        <p>The arrangement of the order of Eusebius the Palestinian (c. 260 - 339 AD), who wrote <i>about</i> the Psalms and its arrangement, according to how it is present <i>and</i> how it was written in the Hebrew, and also how he translated <i>it</i>.</p>
+
+                        <p><i>The children of the Hebrews divide the whole book of the Psalms into five parts. The first part runs from the 1st psalm to the 40th; the second part runs from the 41st psalm to the 71st. The third part runs from the 72nd psalm to Psalm 88th; the fourth part runs from the 89th psalm to the 105th; and the fifth part runs from the 106th psalm until the end.</i> There are 19 psalms that are without superscriptions.</p>
+
+                        <p>For those whose arrangement is written:</p>
+                        <ul>
+                            <li>72 of David.</li>
+                            <li>11 of the Sons of Korah.</li>
+                            <li><i>12</i> of Asaph.</li>
+                            <li>1 of Ethan the Israelite.</li>
+                            <li>2 of Solomon.</li>
+                            <li>1 of Moses.</li>
+                            <li><i>17</i> which have no name.</li>
+                            <li>And <i>15</i> with Hallelujah.</li>
+                            <li>And these (<i>19</i>) are those which have no title, but they are written in the book.</li>
+                        </ul>
+
+                        <p>And the sum of all of them is 150. Those which are within the book are of David, specifically those he sang; but there are those by other prophets who prophesied in song. And therefore, that which is in the Hebrew is not all written by David, yet the whole was named the Book of Psalms. <b>And the purpose of this book is the fear of God and keeping distant from evil.</b><sup><a href="#fn1" id="ref1">[1]</a></sup></p>
+                    </div>
+
+                    <div id="eusebius-geez" class="modal-pane">
+                        <p class="ethiopic-label">ግጻዌ ሥርዐት ዘአውሳብዮስ ፍልስጥናዊ ዘወ ጽሐፈ መዝሙር ወግጻዌሁ ዘበህልወ ዘከመ ተጽሕፈ ዘበ ዕብራይስጢ ወዘከመ ሂ አዕለወ።</p>
+                        <p class="ethiopic-label">ወ እለ ኢኮኑ ጽሑፋነ ፲፱።</p>
+
+                        <p class="ethiopic-label">ለእለ ጽሑፍ ግጻዌሆሙ ከወዘ። ፻፴ወ፬</p>
+                        <ul class="ethiopic-label">
+                            <li>ዘዳዊት። ፸፪</li>
+                            <li>ዘደቂቀ ቆሬ። ፲፪</li>
+                            <li>ዘአሳፍ። ፲፪</li>
+                            <li>ዘኢታን እስራኤላዊ። ፩</li>
+                            <li>ዘሰሎሞን። ፪</li>
+                            <li>ዘሙሴ። ፩</li>
+                            <li>እለ ስመ አልቦሙ ዘኢታን። ፴፰ <sup><a href="#fn2" id="ref2">[2]</a></sup></li>
+                            <li>ወ ዘበ ሃሌ ሉያ። ፳ <sup><a href="#fn2" id="ref3">[2]</a></sup></li>
+                        </ul>
+
+                        <p class="ethiopic-label">ወእሉ እለ ስመ አልቦሙ ወባሕቱ ጽሑፋት በውስተ ወባሕቱ አልቦሙ ስመ ወኢ ይብሉ ዘእገሌ።</p>
+                        <p class="ethiopic-label">ወክብ ኵሎሙ ፻ወ፶።</p>
+                        <p class="ethiopic-label">እለ ዘየውስተ ዘዳዊት ባሕቱ ዘዘመረ እለ በካልአን ነቢያት እለ በዘምሮ ተነበዩ ወበእንተዝ ዘበ ዕብራይስጢ አኮ ኵሉ ዘተጽሕፈ ለዳዊት ወኵሉ መጽሐፈ መዝሙር ተሰምየ ወዝንቱ ውእቱ ፍርሀተ እግዚአብሔር ወአርሐቀ እምፀራይ።</p>
+                    </div>
+
+                    <div id="eusebius-greek" class="modal-pane">
+                        <p>Τῆς βίβλου τῶν Ψαλμῶν ἥδε ἂν εἴη ἡ διαίρεσις, ὡς τὰ ἀκριβῆ τῶν ἀντιγράφων αὐτό τε τὸ Ἑβραϊκὸν περιέχει·</p>
+                        <p>Εἰς πέντε δὲ μέρη τὴν πᾶσαν τῶν ψαλμῶν βίβλον παῖδες Ἑβραίων διαίρουσιν· πρῶτον, εἰς τοὺς ἀπὸ πρώτου μέχρις τεσσαρακοστοῦ· δεύτερον, εἰς τοὺς ἀπὸ τεσσαρακοστοῦ πρώτου μέχρις ἑβδομηκοστοῦ πρώτου· τρίτον, εἰς τοὺς ἀπὸ ἑβδομηκοστοῦ δευτέρου μέχρις ὀγδοηκοστοῦ ὀγδόου· τέταρτον, εἰς τοὺς ἀπὸ ὀγδοηκοστοῦ ἐνάτου μέχρις ἑκατοστοῦ πέμπτου· πέμπτον, εἰς τοὺς ἀπὸ ἑκατοστοῦ ἕκτου μέχρις τέλους τοῦ βιβλίου.</p>
+                        <p>Ἀνεπίγραφοι δέ εἰσι ψαλμοὶ ιθʹ</p>
+
+                        <p>Τῶν ἐπιγεγραμμένων δέ εἰσιν οὕτως αἱ διαιρέσεις፡</p>
+                        <ul>
+                            <li>τοῦ μὲν Δαυῒδ οβʹ</li>
+                            <li>τῶν υἱῶν Κορὲ ιαʹ</li>
+                            <li>τοῦ Ἀσὰφ ιβʹ</li>
+                            <li>Αἰθὰμ τοῦ Ἰσραηλίτου αʹ</li>
+                            <li>Σολομῶντος βʹ</li>
+                            <li>Μωϋσέως αʹ</li>
+                            <li>ἀνώνυμοι ιζʹ</li>
+                            <li>καὶ τῶν εἰς τὸ Ἀλληλούϊα ιεʹ</li>
+                        </ul>
+
+                        <p>Εἰσὶ δὲ ἀνώνυμοι ὅσοι ἐπιγραφὰς μὲν ἔχουσιν, οὐ μὴν δηλοῦσι τίνος εἰσίν.</p>
+                        <p>ὁμοῦ ρνʹ.</p>
+                        <p>οὐχ ὡς ἄν τις ὑπολάβοι, οἱ πάντες εἰсὶ τοῦ Δαυῒδ οἱ ψαλμοὶ, ἀλλὰ καὶ ἑτέρων προφητῶν ἐν τῷ ψάλλειν προφητευόντων. διόπερ ἡ πᾶσα γραφὴ παρ’ Ἑβραίοις οὐ τοῦ Δαυῒδ ἐπιγράφει, ἀλλ’ ἀδιορίστως «Βίβλος ψαλμῶν» ὀνομάζεται.<sup><a href="#fn3" id="ref3">[3]</a></sup></p>
+                    </div>
+                </div>
+
+                <hr class="footnotes-separator">
+                <section class="modal-footnotes">
+                    <div id="fn1" class="footnote-item">
+                        <a href="#ref1" class="footnote-backref">1.</a> Bold text indicates phrasing unique to the Ge'ez manuscript above. Italic text indicates historical context preserved in the original Greek but absent from the cited Ge'ez manuscript.
+                    </div>
+                    <div id="fn2" class="footnote-item">
+                        <a href="#ref2" class="footnote-backref">2.</a> Note on Ge'ez Numerals: The internal mathematical counts in this specific manuscript total 177 rather than the standard 150. Specifically, the counts of 38 anonymous Psalms (፴፰) and 20 Hallelujah Psalms (፳) differ from the original Greek which lists 17 and 15 respectively. This is a common occurrence in ancient manuscripts resulting from scribal transcription errors or fading ink over centuries.
+                    </div>
+                    <div id="fn3" class="footnote-item">
+                        <a href="#ref3" class="footnote-backref">3.</a> Greek Translation Reference: "On the Division of the Psalter and Psalms," translated from the Greek by Fr. Justinus.
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
     <div id="modal-backdrop"></div>
 </div>
 
@@ -587,10 +689,10 @@
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
 
-<script src="js/icons.js"></script>
-<script src="js/prayers.js"></script>
-<script src="js/songs.js"></script>
-<script src="js/servants.js"></script>
-<script src="js/script.js"></script>
+    <script src="js/icons.js"></script>
+    <script src="js/prayers.js"></script>
+    <script src="js/songs.js"></script>
+    <script src="js/servants.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
