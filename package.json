@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@google-cloud/translate": "^9.3.0",
+    "firebase-admin": "^13.6.1"
+  }
+}

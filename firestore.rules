@@ -1,0 +1,29 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Default: Deny all
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Icon Metadata: Publicly readable, Scribe writable
+    match /icon_metadata/{iconId} {
+      allow read: if true;
+      allow write: if request.auth != null && exists(/databases/$(database)/documents/scribes/$(request.auth.uid));
+    }
+
+    // Prayers: Publicly readable (published only), Scribe writable (all)
+    match /prayers/{prayerId} {
+      allow read: if true; // The app uses .where('status', '==', 'published') for non-scribes
+      allow write: if request.auth != null && exists(/databases/$(database)/documents/scribes/$(request.auth.uid));
+    }
+
+    // Scribes: Restricted to self and authenticated users
+    match /scribes/{uid} {
+      allow read: if request.auth != null;
+      allow write: if false; // Only admin can add scribes
+    }
+  }
+}

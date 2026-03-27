@@ -28,4 +28,5 @@ local.properties
 # Log files, emulators, etc.
 *.log
 .DS_Store
-*.iml
+*.iml\n# Local development secrets and context files\nicon-context.md\nprevious-chat-history-for-context.md\nservice-account.json\nlocal.properties
+functions/node_modules/
