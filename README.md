@@ -51,7 +51,7 @@ This app is built with modern web technologies to provide a rich and customizabl
 ### Core Features:
 
 * **Multi-Lingual Support:** Display prayers in Ge'ez, Amharic, Tigrinya, English, and Spanish.
-* **Integrated Bible Support:** Full support for the Psalms and Songs of the Prophets in multiple versions, including Ge'ez (1988), Amharic (አም54), English (NKJV), Spanish (RGV), and Coptic (Bohairic).
+* **Integrated Bible Support:** Full support for the Psalms and Songs of the Prophets in multiple versions, including Ge'ez (1954 ዓ፡ም), Amharic (1954 ዓ፡ም), English (NKJV), Spanish (RGV), and Coptic (Bohairic).
 * **Phonetic Transliteration:** Ge'ez, Amharic and Tigrinya phonetic scripts are available to aid in pronunciation and learning.
 * **Rich Metadata & Historical Context:** 
     * **Eusebius Psalm Arrangement:** A detailed, multi-lingual modal (English, Ge'ez, Greek) explaining the ancient arrangement of the Psalter.
@@ -88,15 +88,27 @@ The app is built using HTML, CSS, and vanilla JavaScript, focusing on a responsi
 ## 🚀 Future Plans & Possibilities
 
 * **Expanded Content:**
-    * Continue adding more prayers, including the full Liturgy of the Hours (`Se'atat`).
+    * Continue adding more prayers. 
+      * The Prayers of the Hours (e.g., The Praise of Mary) for all days of the week.
+      * The Divine Liturgy (e.g., The Order of Liturgy, Anaphora of the Apostles, Anaphora of Our Lady Mary).
+    * Add a user-friendly prescription guide for the Psalms and Songs of the Prophets according to Saint Athanasius' "Letter to Marcellinus on the Interpretation of the Psalms." 
     * Implement a dedicated side-by-side Bible viewer for full book browsing.
+    * Fix bugginess of the Scribe's Chamber so that surgical / typo fixes can be made by authorized scribes within the app.
 * **Audio & Media:**
-    * Add background instrumental Ethiopian harp (Begena/Krar) music and professional audio recordings of prayers.
+    * Improve branding, particularly the welcome splash screen and app icon/logo.
+    * Add more sacred images from manuscripts with their respective metadata and citations.
+    * Add background instrumental Ethiopian harp (Begena/Krar) music and professional audio recordings or pronounciations of select prayers.
 * **Enhanced UI/UX:**
+    * Introduce a new and intuitive home screen with options to enter the different sections of the app (e.g., `Kidasé`, `Se'atat`, Bible, Learn, etc). 
+      * Improve the settings panel and customization experience so it's less overwhelming and long.
+        * Consider utilizing collapsable panels on both the left and right side of the screens, similar to Coptic Reader.
+      * For the new "Learn" section of the app, add Quizlet-style learning games and a Biblehub-style interlinear features to aid in learning the Ge'ez language.
+    * Add an announcement feature which allows the user to quickly type and display a custom, full-screen announcement (e.g., "License Plate 1234567 MOVE YOUR CAR!")
     * Introduce preset modes for "Individual" vs. "Group" prayer.
     * Implement "Deacon Mode" and "Priest Mode" views for liturgical roles.
-    * Finalize and refine the Scribe editor for high-resolution manuscript image management.
-* **App Store Release:** Prepare for official release on the Google Play Store and Apple App Store.
+* **App Store Release:** Prepare for release on the Google Play Store and Apple App Store.
+    * Add tests for accessibility and usability.
+    * 
 
 <hr/>
 
