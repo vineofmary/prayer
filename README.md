@@ -51,57 +51,52 @@ This app is built with modern web technologies to provide a rich and customizabl
 ### Core Features:
 
 * **Multi-Lingual Support:** Display prayers in Ge'ez, Amharic, Tigrinya, English, and Spanish.
+* **Integrated Bible Support:** Full support for the Psalms and Songs of the Prophets in multiple versions, including Ge'ez (1988), Amharic (አም54), English (NKJV), Spanish (RGV), and Coptic (Bohairic).
 * **Phonetic Transliteration:** Ge'ez, Amharic and Tigrinya phonetic scripts are available to aid in pronunciation and learning.
+* **Rich Metadata & Historical Context:** 
+    * **Eusebius Psalm Arrangement:** A detailed, multi-lingual modal (English, Ge'ez, Greek) explaining the ancient arrangement of the Psalter.
+    * **St. Ephrem the Syrian:** A tabbed narrative modal exploring the story of St. Ephrem and the composition of the *Weddase Maryam*.
+    * **Iconographic Citations:** Detailed metadata for sacred icons, including original manuscript sources, historical descriptions, and biblical references.
 * **Customizable Display:**
     * **Themes:** Choose from Traditional, Sepia, Oceanic, and High-Contrast color palettes with both light and dark modes.
     * **Fonts:** Adjust font sizes for both Ethiopic and English scripts independently or lock them together. Select from multiple Ethiopic and English font families.
     * **Language Selection & Order:** Toggle which languages are visible and re-order them using a drag-and-drop interface.
     * **Layouts:** Switch between a card view, a column view, or a row view for displaying the prayer text.
-* **Presentation Mode:** A full-screen "slides" mode for services or group prayer, with options for dynamic font sizing and slide transitions.
+    * **Language Color-Coding:** Assign distinct colors (Pastel, Vibrant, or Greyscale) to each language for easier reading.
+* **Scribe's Chamber:** A secure backend interface (via Firebase) allowing authorized servants to edit prayer text, icon metadata, and references directly within the app.
+* **Presentation Mode:** A full-screen "slides" or "scroll" mode for services or group prayer, with options for dynamic font sizing and slide transitions.
 * **Progressive Web App (PWA):** Install the app on your mobile device or desktop for an app-like experience with offline access.
-* **Search Functionality:** Search for specific words or phrases within the prayers.
-* **Copy to Clipboard:** Easily copy and share prayers with others.
+* **Search Functionality:** Robust search with navigation through matches across all displayed languages.
+* **Copy to Clipboard:** Easily copy and share prayers or specific verses with others.
 
 ### Advanced Display Options:
 
-* **Prayer & Speaker Labels:** Toggle the visibility of prayer references and speaker labels (e.g., "Priest", "People").
-* **Rubrication:** Enable colored text for Holy Names (Beta feature).
-* **Language Color-Coding:** Assign distinct colors to each language for easier reading.
+* **Prayer & Speaker Labels:** Toggle the visibility of prayer references and speaker labels (e.g., "Leader", "Reader", "Priest", "People").
+* **Rubrication & Anglicization:** 
+    * **Colored Holy Names (Beta):** Enable traditional red-text rubrication for Holy Names.
+    * **Anglicized Names (Beta):** Display italicized, Anglicized versions of names (e.g., *Iyesus*, *Maryam*) within English translations.
+* **Paragraph Mode:** Toggle between verse-by-verse and paragraph layouts for single-language views.
 
 ## 💻 Technical Overview
 
-The app is built using HTML, CSS, and vanilla JavaScript, with a focus on creating a responsive and performant user experience. It leverages modern browser features like the Web Animations API for smooth transitions and is configured as a Progressive Web App (PWA) with a service worker for offline functionality.
+The app is built using HTML, CSS, and vanilla JavaScript, focusing on a responsive and performant user experience. 
 
-The prayer data is currently stored in a `prayers.js` file as a JavaScript array of objects, which allows for easy iteration and rendering. User settings are saved to the browser's `localStorage` to persist customizations across sessions.
-
-## ✉️ Contact
-
-For feedback, questions, or to contribute, please contact [vineofmary@gmail.com](mailto:vineofmary@gmail.com).
+* **Backend:** Leverages **Firebase (Authentication and Firestore)** for the Scribe's Chamber, enabling real-time data updates and secure content management.
+* **Data Storage:** Prayer data is managed via a combination of local JavaScript objects and remote Firestore collections. Bible data is stored in optimized JSON assets.
+* **Performance:** Uses the Web Animations API for smooth UI transitions and a Service Worker for reliable offline functionality as a Progressive Web App (PWA).
 
 ## 🚀 Future Plans & Possibilities
 
-* **Backend & Data Management:** Transition from a local JavaScript file for prayers to a more robust backend solution, potentially using a database to allow for easier updates and additions.
 * **Expanded Content:**
-    * Add more prayers, including the Liturgy of the Hours (`Se'atat`), a selection of Psalms, and other services.
-    * Introduce a side-by-side Bible viewer with English (NKJV), Amharic (አም54), and Spanish (RGV) versions.
-* **Audio & App Store Version:**
-    * Add exclusive features, like background instrumental Ethiopian harp music, to provide additional value and prepare for a potential App Store release.
-* **Enhanced Customization & UI:**
+    * Continue adding more prayers, including the full Liturgy of the Hours (`Se'atat`).
+    * Implement a dedicated side-by-side Bible viewer for full book browsing.
+* **Audio & Media:**
+    * Add background instrumental Ethiopian harp (Begena/Krar) music and professional audio recordings of prayers.
+* **Enhanced UI/UX:**
     * Introduce preset modes for "Individual" vs. "Group" prayer.
-    * Add a "Bold All Text" toggle for enhanced visibility, especially for presentations on large screens.
-    * Implement an option to display *italicized*, Anglicized versions of names (e.g., *Iyesus*, *Maryam*, *Abba Giyorgis*) in the English text.
-    * Provide customizable, accessibility-focused color palettes for color-coding languages.
-    * Introduce different views for liturgical roles (e.g., "Deacon Mode," "Priest Mode").
-* **Improved Navigation & Presentation:**
-    * Enhance search functionality and provide more intuitive ways to navigate between prayers.
-    * Allow users to jump directly into Slides Mode from any prayer in the main view and ensure the app returns to their previous position upon exiting.
-* **PWA & Analytics:**
-    * Implement a prompt to encourage users to install the web app and "Add to Home Screen."
-    * Integrate analytics to track PWA installation events and usage across platforms.
-* **Bug Fixes:**
-    * Ensure Slides Mode and its dynamic font scaling are fully compatible with the Row Layout.
-    * Correct the `line-height` rendering for Ethiopic script in Slides Mode to allow for custom vertical spacing between lines.
-    * Verify Slides Mode functionality on mobile devices when dynamic font sizing is disabled.
+    * Implement "Deacon Mode" and "Priest Mode" views for liturgical roles.
+    * Finalize and refine the Scribe editor for high-resolution manuscript image management.
+* **App Store Release:** Prepare for official release on the Google Play Store and Apple App Store.
 
 <hr/>
 
