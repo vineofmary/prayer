@@ -108,7 +108,6 @@ The app is built using HTML, CSS, and vanilla JavaScript, focusing on a responsi
     * Implement "Deacon Mode" and "Priest Mode" views for liturgical roles.
 * **App Store Release:** Prepare for release on the Google Play Store and Apple App Store.
     * Add tests for accessibility and usability.
-    * 
 
 <hr/>
 
