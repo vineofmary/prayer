@@ -1506,8 +1506,11 @@ let collapsedSections = {};
 function renderSelectedKidase(addSectionTitleCallback) {
     if (!isKidaseModeActive || typeof kidaseData === 'undefined') return;
 
-    // 1. Order of the Liturgy
-    const titleContainer = addSectionTitleCallback("Order of the Liturgy | ሥርዓተ ቅዳሴ");
+    const allOrderPrayers = kidaseData.order;
+
+    // 1. Psalm & Gospel of The Morning | ምስባክ ወወንጌል ዘነግህ
+    // Range: 3-179 to 3-211 (Indices 0 to 78 approx based on marker analysis)
+    const titleContainer = addSectionTitleCallback("Psalm & Gospel of The Morning | ምስባክ ወወንጌል ዘነግህ");
     
     // Add "Copy Entire Liturgy" button next to the first section title
     if (titleContainer) {
@@ -1522,30 +1525,22 @@ function renderSelectedKidase(addSectionTitleCallback) {
         });
         titleContainer.appendChild(copyBtn);
     }
-    
-    let orderPrayers = kidaseData.order;
-    
-    // Filtering for Quiet Prayers
-    if (quietPrayersVisibility === 'congregation') {
-        orderPrayers = orderPrayers.filter(p => !p.instruction.toLowerCase().includes("inaudible"));
-    }
+    const morningGospelPrayers = allOrderPrayers.slice(0, 79);
+    renderKidaseSection(morningGospelPrayers);
 
-    orderPrayers.forEach(p => {
-        // Handle Covenant Prayer selection
-        if (p.chapter === 'Kidan') {
-            if (selectedCovenantPrayer === 'none') return;
-            // Part1: Midnight, Part2: Morning, Part3: Afternoon
-            if (p.stanza === 'Part1' && selectedCovenantPrayer !== 'midnight') return;
-            if (p.stanza === 'Part2' && selectedCovenantPrayer !== 'morning') return;
-            if (p.stanza === 'Part3' && selectedCovenantPrayer !== 'afternoon') return;
-            // Intro is included for any selection
-        }
-        
-        const card = createPrayerCardElement(p, -1, true);
-        prayerDisplay.appendChild(card);
-    });
+    // 2. Prayer of the Covenant | ጸሎተ ኪዳን
+    // Range: Kidan-Intro to 3-174 (Indices 79 to 179 approx)
+    addSectionTitleCallback("Prayer of the Covenant | ጸሎተ ኪዳን");
+    const covenantPrayers = allOrderPrayers.slice(79, 180);
+    renderKidaseSection(covenantPrayers, true); // true for covenant-specific filtering
 
-    // 2. Anaphora
+    // 3. Order of the Liturgy | ሥርዓተ ቅዳሴ
+    // Range: index 180 to end (4-62)
+    addSectionTitleCallback("Order of the Liturgy | ሥርዓተ ቅዳሴ");
+    const liturgyOrderPrayers = allOrderPrayers.slice(180);
+    renderKidaseSection(liturgyOrderPrayers);
+
+    // 4. Anaphora
     const anaphoraMap = {
         'apostles': { name: 'Anaphora of the Apostles | ቅዳሴ ሐዋርያት', data: kidaseData.apostles },
         'mary': { name: 'Anaphora of Our Lady Mary | ቅዳሴ ማርያም', data: kidaseData.mary }
@@ -1554,11 +1549,25 @@ function renderSelectedKidase(addSectionTitleCallback) {
     const anaphora = anaphoraMap[selectedAnaphora];
     if (anaphora) {
         addSectionTitleCallback(anaphora.name);
-        let anaphoraPrayers = anaphora.data;
+        renderKidaseSection(anaphora.data);
+    }
+
+    // Helper to render a chunk of kidase prayers with current filters
+    function renderKidaseSection(prayers, isCovenant = false) {
+        let filtered = prayers;
+        
         if (quietPrayersVisibility === 'congregation') {
-            anaphoraPrayers = anaphoraPrayers.filter(p => !p.instruction.toLowerCase().includes("inaudible"));
+            filtered = filtered.filter(p => !p.instruction.toLowerCase().includes("inaudible"));
         }
-        anaphoraPrayers.forEach(p => {
+
+        filtered.forEach(p => {
+            if (isCovenant && p.chapter === 'Kidan') {
+                if (selectedCovenantPrayer === 'none') return;
+                if (p.stanza === 'Part1' && selectedCovenantPrayer !== 'midnight') return;
+                if (p.stanza === 'Part2' && selectedCovenantPrayer !== 'morning') return;
+                if (p.stanza === 'Part3' && selectedCovenantPrayer !== 'afternoon') return;
+            }
+            
             const card = createPrayerCardElement(p, -1, true);
             prayerDisplay.appendChild(card);
         });
@@ -1853,30 +1862,37 @@ function copyEntireLiturgy() {
 
     const formatEntry = (p) => {
         let entryText = "";
-        visibleLangs.forEach(langKey => {
-            if (p[langKey]) {
-                // Skip if only speaker keywords
-                if (!hasActualContent(p[langKey], langKey)) return;
+        // Content check: skip if only speaker labels
+        const filteredLangs = visibleLangs.filter(langKey => hasActualContent(p[langKey], langKey));
+        if (filteredLangs.length === 0) return "";
 
-                const langCfg = LANGUAGE_REGISTRY[langKey];
-                const label = langCfg ? langCfg.name : langKey;
-                let rawText = p[langKey];
-                // Strip HTML and replace placeholders
-                let cleanText = rawText.replace(/<[^>]*>?/gm, '');
-                cleanText = formatPrayerText(cleanText, langKey, null, false);
-                entryText += `--- ${label} ---\n${cleanText}\n\n`;
-            }
+        filteredLangs.forEach(langKey => {
+            const langCfg = LANGUAGE_REGISTRY[langKey];
+            const label = langCfg ? langCfg.name : langKey;
+            let rawText = p[langKey];
+            // Format for clipboard: strip HTML and replace placeholders
+            let cleanText = rawText.replace(/<[^>]*>?/gm, '');
+            cleanText = formatPrayerText(cleanText, langKey, null, false, p.chapter, p.stanza);
+            entryText += `--- ${label} ---\n${cleanText}\n\n`;
         });
         return entryText;
     };
 
-    // 1. Order
-    textToCopy += `### Order of the Liturgy | ሥርዓተ ቅዳሴ ###\n\n`;
-    let orderPrayers = kidaseData.order;
-    if (quietPrayersVisibility === 'congregation') {
-        orderPrayers = orderPrayers.filter(p => !p.instruction.toLowerCase().includes("inaudible"));
-    }
-    orderPrayers.forEach(p => {
+    const allOrderPrayers = kidaseData.order;
+
+    // 1. Psalm & Gospel
+    textToCopy += `### Psalm & Gospel of The Morning | ምስባክ ወወንጌል ዘነግህ ###\n\n`;
+    const morningGospelPrayers = allOrderPrayers.slice(0, 79);
+    morningGospelPrayers.forEach(p => {
+        if (quietPrayersVisibility === 'congregation' && p.instruction.toLowerCase().includes("inaudible")) return;
+        textToCopy += formatEntry(p);
+    });
+
+    // 2. Covenant
+    textToCopy += `### Prayer of the Covenant | ጸሎተ ኪዳን ###\n\n`;
+    const covenantPrayers = allOrderPrayers.slice(79, 180);
+    covenantPrayers.forEach(p => {
+        if (quietPrayersVisibility === 'congregation' && p.instruction.toLowerCase().includes("inaudible")) return;
         if (p.chapter === 'Kidan') {
             if (selectedCovenantPrayer === 'none') return;
             if (p.stanza === 'Part1' && selectedCovenantPrayer !== 'midnight') return;
@@ -1886,7 +1902,15 @@ function copyEntireLiturgy() {
         textToCopy += formatEntry(p);
     });
 
-    // 2. Anaphora
+    // 3. Order
+    textToCopy += `### Order of the Liturgy | ሥርዓተ ቅዳሴ ###\n\n`;
+    const liturgyOrderPrayers = allOrderPrayers.slice(180);
+    liturgyOrderPrayers.forEach(p => {
+        if (quietPrayersVisibility === 'congregation' && p.instruction.toLowerCase().includes("inaudible")) return;
+        textToCopy += formatEntry(p);
+    });
+
+    // 4. Anaphora
     const anaphoraMap = {
         'apostles': { name: 'Anaphora of the Apostles | ቅዳሴ ሐዋርያት', data: kidaseData.apostles },
         'mary': { name: 'Anaphora of Our Lady Mary | ቅዳሴ ማርያም', data: kidaseData.mary }
@@ -1895,10 +1919,8 @@ function copyEntireLiturgy() {
     if (anaphora) {
         textToCopy += `### ${anaphora.name} ###\n\n`;
         let anaphoraPrayers = anaphora.data;
-        if (quietPrayersVisibility === 'congregation') {
-            anaphoraPrayers = anaphoraPrayers.filter(p => !p.instruction.toLowerCase().includes("inaudible"));
-        }
         anaphoraPrayers.forEach(p => {
+            if (quietPrayersVisibility === 'congregation' && p.instruction.toLowerCase().includes("inaudible")) return;
             textToCopy += formatEntry(p);
         });
     }
