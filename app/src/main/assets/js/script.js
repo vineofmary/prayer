@@ -111,7 +111,7 @@ const kidaseGospelRefInput = document.getElementById('kidase-gospel-ref');
 
 
 // --- State Variables ---
-const SETTINGS_VERSION = '4.2.0'; // Update this to force refresh load settings
+const SETTINGS_VERSION = '4.2.1'; // Update this to force refresh load settings
 let currentTheme = {};
 let isSidebarCollapsed = false;
 let isServantsCornerActive = false;
@@ -733,8 +733,8 @@ function loadSettings() {
         isKidaseModeActive: false,
         selectedAnaphora: 'apostles',
         showPreLiturgyKidan: true,
-        selectedCovenantPrayer: 'none',
-        quietPrayersVisibility: 'all',
+        selectedCovenantPrayer: 'morning',
+        quietPrayersVisibility: 'congregation',
         // Default Custom Names
         customNames: {
             servant: '{Names}',
