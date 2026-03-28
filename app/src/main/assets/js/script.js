@@ -89,6 +89,7 @@ const kidaseGatedSection = document.getElementById('kidase-gated-section');
 const kidaseModeToggle = document.getElementById('kidase-mode-toggle');
 const kidaseSettings = document.getElementById('kidase-settings');
 const anaphoraSelector = document.getElementById('anaphora-selector');
+const showPreLiturgyKidanToggle = document.getElementById('show-pre-liturgy-kidan');
 const covenantPrayerSelector = document.getElementById('covenant-prayer-selector');
 const quietPrayersVisibilitySelector = document.getElementById('quiet-prayers-visibility');
 const roleHighlightingSelector = document.getElementById('role-highlighting');
@@ -125,6 +126,7 @@ let selectedSeatatLectionaryDay = 'None';
 let selectedWidaseMaryamDay = 'All';
 let isKidaseModeActive = false;
 let selectedAnaphora = 'apostles';
+let showPreLiturgyKidan = true;
 let selectedCovenantPrayer = 'none';
 let quietPrayersVisibility = 'all';
 let roleHighlighting = 'none';
@@ -673,6 +675,7 @@ function saveSettings() {
     localStorage.setItem('selectedWidaseMaryamDay', selectedWidaseMaryamDay);
     localStorage.setItem('isKidaseModeActive', isKidaseModeActive);
     localStorage.setItem('selectedAnaphora', selectedAnaphora);
+    localStorage.setItem('showPreLiturgyKidan', showPreLiturgyKidan);
     localStorage.setItem('selectedCovenantPrayer', selectedCovenantPrayer);
     localStorage.setItem('quietPrayersVisibility', quietPrayersVisibility);
     localStorage.setItem('roleHighlighting', roleHighlighting);
@@ -733,6 +736,7 @@ function loadSettings() {
         selectedWidaseMaryamDay: getSeatatLiturgicalDay(),
         isKidaseModeActive: false,
         selectedAnaphora: 'apostles',
+        showPreLiturgyKidan: true,
         selectedCovenantPrayer: 'none',
         quietPrayersVisibility: 'all',
         roleHighlighting: 'none',
@@ -793,6 +797,7 @@ function loadSettings() {
         selectedWidaseMaryamDay = localStorage.getItem('selectedWidaseMaryamDay') || defaultSettings.selectedWidaseMaryamDay;
         isKidaseModeActive = localStorage.getItem('isKidaseModeActive') === 'true';
         selectedAnaphora = localStorage.getItem('selectedAnaphora') || defaultSettings.selectedAnaphora;
+        showPreLiturgyKidan = localStorage.getItem('showPreLiturgyKidan') !== null ? localStorage.getItem('showPreLiturgyKidan') === 'true' : defaultSettings.showPreLiturgyKidan;
         selectedCovenantPrayer = localStorage.getItem('selectedCovenantPrayer') || defaultSettings.selectedCovenantPrayer;
         quietPrayersVisibility = localStorage.getItem('quietPrayersVisibility') || defaultSettings.quietPrayersVisibility;
         roleHighlighting = localStorage.getItem('roleHighlighting') || defaultSettings.roleHighlighting;
@@ -928,6 +933,7 @@ function updateAllTogglesInSettingsPanel() {
     kidaseModeToggle.checked = isKidaseModeActive;
     kidaseSettings.style.display = isKidaseModeActive ? 'block' : 'none';
     anaphoraSelector.value = selectedAnaphora;
+    showPreLiturgyKidanToggle.checked = showPreLiturgyKidan;
     covenantPrayerSelector.value = selectedCovenantPrayer;
     quietPrayersVisibilitySelector.value = quietPrayersVisibility;
     roleHighlightingSelector.value = roleHighlighting;
@@ -1509,7 +1515,7 @@ function renderSelectedKidase(addSectionTitleCallback) {
     const allOrderPrayers = kidaseData.order;
 
     // 1. Psalm & Gospel of The Morning | ምስባክ ወወንጌል ዘነግህ
-    // Range: 3-179 to 3-211 (Indices 0 to 78 approx based on marker analysis)
+    // Range: index 0 to 78 (3-179 to 3-211)
     const titleContainer = addSectionTitleCallback("Psalm & Gospel of The Morning | ምስባክ ወወንጌል ዘነግህ");
     
     // Add "Copy Entire Liturgy" button next to the first section title
@@ -1525,20 +1531,37 @@ function renderSelectedKidase(addSectionTitleCallback) {
         });
         titleContainer.appendChild(copyBtn);
     }
-    const morningGospelPrayers = allOrderPrayers.slice(0, 79);
-    renderKidaseSection(morningGospelPrayers);
+    renderKidaseSection(allOrderPrayers.slice(0, 79));
 
-    // 2. Prayer of the Covenant | ጸሎተ ኪዳን
-    // Range: Kidan-Intro to 3-174 (Indices 79 to 179 approx)
-    addSectionTitleCallback("Prayer of the Covenant | ጸሎተ ኪዳን");
-    const covenantPrayers = allOrderPrayers.slice(79, 180);
-    renderKidaseSection(covenantPrayers, true); // true for covenant-specific filtering
+    // 2. Pre-Liturgy Prayer of the Covenant | ጸሎተ ኪዳን
+    // Range: index 79 to 179 (Kidan-Intro to end of Gabriel Greeting/Hymn)
+    if (showPreLiturgyKidan) {
+        addSectionTitleCallback("Prayer of the Covenant | ጸሎተ ኪዳን");
+        renderKidaseSection(allOrderPrayers.slice(79, 180)); // No version filtering here
+    }
 
     // 3. Order of the Liturgy | ሥርዓተ ቅዳሴ
     // Range: index 180 to end (4-62)
     addSectionTitleCallback("Order of the Liturgy | ሥርዓተ ቅዳሴ");
     const liturgyOrderPrayers = allOrderPrayers.slice(180);
-    renderKidaseSection(liturgyOrderPrayers);
+    
+    liturgyOrderPrayers.forEach((p, relativeIdx) => {
+        const absoluteIdx = 180 + relativeIdx;
+        
+        // Handle Liturgy-embedded Covenant Prayer filtering
+        // Range within liturgy order: 503 to 592
+        if (absoluteIdx >= 503 && absoluteIdx <= 592 && p.chapter === 'Kidan') {
+            if (selectedCovenantPrayer === 'none') return;
+            if (p.stanza === 'Part1' && selectedCovenantPrayer !== 'midnight') return;
+            if (p.stanza === 'Part2' && selectedCovenantPrayer !== 'morning') return;
+            if (p.stanza === 'Part3' && selectedCovenantPrayer !== 'afternoon') return;
+        }
+
+        if (quietPrayersVisibility === 'congregation' && p.instruction.toLowerCase().includes("inaudible")) return;
+        
+        const card = createPrayerCardElement(p, -1, true);
+        prayerDisplay.appendChild(card);
+    });
 
     // 4. Anaphora
     const anaphoraMap = {
@@ -1553,7 +1576,7 @@ function renderSelectedKidase(addSectionTitleCallback) {
     }
 
     // Helper to render a chunk of kidase prayers with current filters
-    function renderKidaseSection(prayers, isCovenant = false) {
+    function renderKidaseSection(prayers) {
         let filtered = prayers;
         
         if (quietPrayersVisibility === 'congregation') {
@@ -1561,13 +1584,6 @@ function renderSelectedKidase(addSectionTitleCallback) {
         }
 
         filtered.forEach(p => {
-            if (isCovenant && p.chapter === 'Kidan') {
-                if (selectedCovenantPrayer === 'none') return;
-                if (p.stanza === 'Part1' && selectedCovenantPrayer !== 'midnight') return;
-                if (p.stanza === 'Part2' && selectedCovenantPrayer !== 'morning') return;
-                if (p.stanza === 'Part3' && selectedCovenantPrayer !== 'afternoon') return;
-            }
-            
             const card = createPrayerCardElement(p, -1, true);
             prayerDisplay.appendChild(card);
         });
@@ -1888,25 +1904,32 @@ function copyEntireLiturgy() {
         textToCopy += formatEntry(p);
     });
 
-    // 2. Covenant
-    textToCopy += `### Prayer of the Covenant | ጸሎተ ኪዳን ###\n\n`;
-    const covenantPrayers = allOrderPrayers.slice(79, 180);
-    covenantPrayers.forEach(p => {
+    // 2. Pre-Liturgy Covenant
+    if (showPreLiturgyKidan) {
+        textToCopy += `### Prayer of the Covenant | ጸሎተ ኪዳን ###\n\n`;
+        const covenantPrayers = allOrderPrayers.slice(79, 180);
+        covenantPrayers.forEach(p => {
+            if (quietPrayersVisibility === 'congregation' && p.instruction.toLowerCase().includes("inaudible")) return;
+            textToCopy += formatEntry(p);
+        });
+    }
+
+    // 3. Order
+    textToCopy += `### Order of the Liturgy | ሥርዓተ ቅዳሴ ###\n\n`;
+    const liturgyOrderPrayers = allOrderPrayers.slice(180);
+    liturgyOrderPrayers.forEach((p, relativeIdx) => {
+        const absoluteIdx = 180 + relativeIdx;
+        
         if (quietPrayersVisibility === 'congregation' && p.instruction.toLowerCase().includes("inaudible")) return;
-        if (p.chapter === 'Kidan') {
+
+        // Apply version filtering only to Liturgy-embedded Covenant
+        if (absoluteIdx >= 503 && absoluteIdx <= 592 && p.chapter === 'Kidan') {
             if (selectedCovenantPrayer === 'none') return;
             if (p.stanza === 'Part1' && selectedCovenantPrayer !== 'midnight') return;
             if (p.stanza === 'Part2' && selectedCovenantPrayer !== 'morning') return;
             if (p.stanza === 'Part3' && selectedCovenantPrayer !== 'afternoon') return;
         }
-        textToCopy += formatEntry(p);
-    });
-
-    // 3. Order
-    textToCopy += `### Order of the Liturgy | ሥርዓተ ቅዳሴ ###\n\n`;
-    const liturgyOrderPrayers = allOrderPrayers.slice(180);
-    liturgyOrderPrayers.forEach(p => {
-        if (quietPrayersVisibility === 'congregation' && p.instruction.toLowerCase().includes("inaudible")) return;
+        
         textToCopy += formatEntry(p);
     });
 
@@ -3104,6 +3127,12 @@ kidaseModeToggle.addEventListener('change', () => {
 
 anaphoraSelector.addEventListener('change', () => {
     selectedAnaphora = anaphoraSelector.value;
+    saveSettings();
+    smoothRender();
+});
+
+showPreLiturgyKidanToggle.addEventListener('change', () => {
+    showPreLiturgyKidan = showPreLiturgyKidanToggle.checked;
     saveSettings();
     smoothRender();
 });

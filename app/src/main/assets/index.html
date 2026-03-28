@@ -180,32 +180,18 @@
                     <h3>Add Divine Liturgy (<i>Ḳidasé</i>)</h3>
                     <label style="display: block; margin-bottom: 0.5rem;"><input type="checkbox" id="kidase-mode-toggle"> <span>Enable Ḳidasé Mode</span></label>
                     <div id="kidase-settings" style="display: none; margin-left: 1rem; border-left: 2px solid var(--accent-color); padding-left: 1rem;">
-                        <h4 class="settings-subtitle">Eucharistic Prayer (Anaphora)</h4>
-                        <select id="anaphora-selector" class="settings-select">
-                            <option value="apostles">Apostles | ሐዋርያት</option>
-                            <option value="mary">Our Lady Mary | ማርያም</option>
-                        </select>
-                        <h4 class="settings-subtitle" style="margin-top: 0.75rem;">Prayer of the Covenant</h4>
+                        <h4 class="settings-subtitle">Pre-Liturgy Kidan</h4>
+                        <label style="display: block; margin-bottom: 0.5rem;"><input type="checkbox" id="show-pre-liturgy-kidan"> <span>Show Full Pre-Liturgy Covenant Prayer</span></label>
+
+                        <h4 class="settings-subtitle" style="margin-top: 0.75rem;">Liturgy Kidan Version</h4>
                         <select id="covenant-prayer-selector" class="settings-select">
                             <option value="none">None | አልቦ</option>
                             <option value="morning">Morning | ዘነግህ</option>
                             <option value="midnight">Midnight | ዘመንፈቀ ሌሊት</option>
                             <option value="afternoon">Afternoon | ዘሠርክ</option>
                         </select>
-                        <h4 class="settings-subtitle" style="margin-top: 0.75rem;">Quiet Prayers (<i>በልኁሳስ</i>)</h4>
-                        <select id="quiet-prayers-visibility" class="settings-select">
-                            <option value="all">Show all prayers</option>
-                            <option value="congregation">Congregation-only</option>
-                        </select>
 
-                        <h4 class="settings-subtitle" style="margin-top: 0.75rem;">Role Highlighting</h4>
-                        <select id="role-highlighting" class="settings-select">
-                            <option value="none">None</option>
-                            <option value="priest">Highlight Priest</option>
-                            <option value="deacon">Highlight Deacon</option>
-                            <option value="people">Highlight People</option>
-                        </select>
-
+<!--                        TO-DO: Add this feature back in once the full year's lectionary is obtained-->
                         <h4 class="settings-subtitle" style="margin-top: 1rem; border-top: 1px solid var(--border-color); padding-top: 0.75rem;">Ḳidasé Bible Readings</h4>
                         <button id="set-today-kidase-readings" class="settings-button" style="margin-bottom: 0.5rem; font-size: 0.8rem;">Set to Today's Readings</button>
                         
@@ -229,6 +215,26 @@
                             <h5 class="settings-subtitle">Liturgy Gospel</h5>
                             <input type="text" id="kidase-gospel-ref" class="settings-input" placeholder="e.g. John 1:1-5">
                         </div>
+
+                        <h4 class="settings-subtitle" style="margin-top: 0.75rem;">Eucharistic Prayer (Anaphora)</h4>
+                        <select id="anaphora-selector" class="settings-select">
+                            <option value="apostles">Apostles | ሐዋርያት</option>
+                            <option value="mary">Our Lady Mary | ማርያም</option>
+                        </select>
+
+                        <h4 class="settings-subtitle" style="margin-top: 1rem; border-top: 1px solid var(--border-color); padding-top: 0.75rem;">Quiet Prayers (<i>በልኁሳስ</i>)</h4>
+                        <select id="quiet-prayers-visibility" class="settings-select">
+                            <option value="all">Show all prayers</option>
+                            <option value="congregation">Congregation-only</option>
+                        </select>
+
+                        <h4 class="settings-subtitle" style="margin-top: 0.75rem;">Role Highlighting</h4>
+                        <select id="role-highlighting" class="settings-select">
+                            <option value="none">None</option>
+                            <option value="priest">Highlight Priest</option>
+                            <option value="deacon">Highlight Deacon</option>
+                            <option value="people">Highlight People</option>
+                        </select>
                     </div>
                 </div>
                 <div class="setting-group">
