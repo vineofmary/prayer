@@ -1059,12 +1059,12 @@ function highlightText(text, query) {
     return text.replace(regex, '<mark class="highlight">$1</mark>');
 }
 
-function getBibleVersesFromRef(ref, langKey) {
-    if (!ref || !bibleData.loaded) return "";
+function getBibleVersesFromRef(ref) {
+    if (!ref || !bibleData.loaded) return null;
     
     // Simple parser for "Book Chapter:Verse-Verse" or "Book Chapter:Verse"
     const match = ref.match(/^(.+?)\s+(\d+):(\d+)(?:-(\d+))?$/);
-    if (!match) return "";
+    if (!match) return null;
     
     const bookName = match[1];
     const chapterNum = parseInt(match[2]);
@@ -1072,27 +1072,47 @@ function getBibleVersesFromRef(ref, langKey) {
     const endVerse = match[4] ? parseInt(match[4]) : startVerse;
     
     const bookCfg = BIBLE_BOOK_MAPPING[bookName];
-    if (!bookCfg) {
-        // Fallback for Psalms if not in mapping or specified as "Psalm"
-        if (bookName.toLowerCase().startsWith("psalm")) {
-            return getPsalmVerses(chapterNum, startVerse, endVerse, langKey);
+    const results = {};
+
+    // 1. English (NKJV) - Flat list
+    if (bookCfg && bibleData.nkjv) {
+        results.english = bibleData.nkjv
+            .filter(v => v.book === bookCfg.nkjv && v.chapter === chapterNum && v.verse >= startVerse && v.verse <= endVerse)
+            .map(v => ({ verseNum: v.verse, text: v.text }));
+    }
+
+    // 2. Amharic (am54) - Nested structure
+    if (bookCfg && bibleData.am54 && bibleData.am54.books) {
+        const amBook = bibleData.am54.books.find(b => b.title === bookCfg.am54);
+        if (amBook) {
+            const amChapter = amBook.chapters.find(ch => parseInt(ch.chapter) === chapterNum);
+            if (amChapter && amChapter.verses) {
+                results.amharic_script = [];
+                for (let v = startVerse; v <= endVerse; v++) {
+                    const verseText = amChapter.verses[v - 1]; // 0-indexed
+                    if (verseText) {
+                        results.amharic_script.push({ verseNum: v, text: verseText });
+                    }
+                }
+            }
         }
-        return "";
+    }
+
+    // 3. Ge'ez Psalms - Nested structure
+    if (bookName === 'Psalms' && bibleData.geez_psalms) {
+        const chapter = bibleData.geez_psalms.find(ch => ch.id === chapterNum);
+        if (chapter && chapter.verses) {
+            results.geez_script = chapter.verses
+                .filter(v => v.verse_number >= startVerse && v.verse_number <= endVerse)
+                .map(v => ({ verseNum: v.verse_number, text: v.text }));
+        }
     }
     
-    let verses = [];
-    if (langKey === 'english' && bibleData.nkjv) {
-        verses = bibleData.nkjv.filter(v => v.book === bookCfg.nkjv && v.chapter === chapterNum && v.verse >= startVerse && v.verse <= endVerse);
-    } else if (langKey === 'amharic_script' && bibleData.am54) {
-        verses = bibleData.am54.filter(v => v.book === bookCfg.am54 && v.chapter === chapterNum && v.verse >= startVerse && v.verse <= endVerse);
-    } else if (langKey === 'geez_script' && bookName === 'Psalms' && bibleData.geez_psalms) {
-        return getPsalmVerses(chapterNum, startVerse, endVerse, 'geez_script');
-    }
-    
-    return verses.map(v => `[${v.verse}] ${v.text}`).join(" ");
+    return results;
 }
 
 function getPsalmVerses(chapterNum, start, end, langKey) {
+    // This is now redundant with getBibleVersesFromRef but keeping for backwards compat if needed elsewhere
     if (!bibleData.geez_psalms) return "";
     const chapter = bibleData.geez_psalms.find(ch => ch.id === chapterNum);
     if (!chapter) return "";
@@ -1101,22 +1121,28 @@ function getPsalmVerses(chapterNum, start, end, langKey) {
     return verses.map(v => `[${v.verse_number}] ${v.text}`).join(" ");
 }
 
-function replaceKidasePlaceholders(text, langKey) {
+function replaceKidasePlaceholders(text, langKey, isFirstLanguage) {
     let processed = text;
-    const mapping = {
-        '{{TODAY\'S PAULINE EPISTLE READING}}': kidaseLectionaryRefs.pauline,
-        '{{TODAY\'S UNIVERSAL EPISTLE READING}}': kidaseLectionaryRefs.universal,
-        '{{TODAY\'S ACTS READING}}': kidaseLectionaryRefs.acts,
-        '{{TODAY\'S PSALMS READING}}': kidaseLectionaryRefs.psalm,
-        '{{TODAY\'S GOSPEL READING}}': kidaseLectionaryRefs.gospel,
-        '{{MORNING PSALMS READING}}': kidaseLectionaryRefs.morningPsalm,
-        '{{MORNING GOSPEL READING}}': kidaseLectionaryRefs.morningGospel
-    };
+    const placeholders = [
+        '{{TODAY\'S PAULINE EPISTLE READING}}',
+        '{{TODAY\'S UNIVERSAL EPISTLE READING}}',
+        '{{TODAY\'S ACTS READING}}',
+        '{{TODAY\'S PSALMS READING}}',
+        '{{TODAY\'S GOSPEL READING}}',
+        '{{MORNING PSALMS READING}}',
+        '{{MORNING GOSPEL READING}}'
+    ];
     
-    for (const [placeholder, ref] of Object.entries(mapping)) {
+    for (const placeholder of placeholders) {
         if (processed.includes(placeholder)) {
-            const versesText = getBibleVersesFromRef(ref, langKey);
-            processed = processed.replace(placeholder, versesText || `[Reading: ${ref}]`);
+            // If we get here, it means renderKidaseSection failed to split the card 
+            // (e.g. search results or other non-standard rendering).
+            // We show a simple label instead of the whole block.
+            if (isFirstLanguage) {
+                return processed.replace(placeholder, `[Bible Reading]`);
+            } else {
+                return ""; // Keep other columns clean if the first one already has the label
+            }
         }
     }
     return processed;
@@ -1140,7 +1166,7 @@ function formatPrayerText(text, langKey, query, isFirstLanguage, chapter = null,
     let processedText = text;
 
     // Replace Kidase placeholders
-    processedText = replaceKidasePlaceholders(processedText, langKey);
+    processedText = replaceKidasePlaceholders(processedText, langKey, isFirstLanguage);
 
     // Replace Date placeholders
     const geezDateInfo = getGeezDateInfo();
@@ -1590,6 +1616,16 @@ function renderSelectedKidase(addSectionTitleCallback) {
 
     // Helper to render a chunk of kidase prayers with current filters
     function renderKidaseSection(prayers) {
+        const placeholderMap = {
+            '{{TODAY\'S PAULINE EPISTLE READING}}': kidaseLectionaryRefs.pauline,
+            '{{TODAY\'S UNIVERSAL EPISTLE READING}}': kidaseLectionaryRefs.universal,
+            '{{TODAY\'S ACTS READING}}': kidaseLectionaryRefs.acts,
+            '{{TODAY\'S PSALMS READING}}': kidaseLectionaryRefs.psalm,
+            '{{TODAY\'S GOSPEL READING}}': kidaseLectionaryRefs.gospel,
+            '{{MORNING PSALMS READING}}': kidaseLectionaryRefs.morningPsalm,
+            '{{MORNING GOSPEL READING}}': kidaseLectionaryRefs.morningGospel
+        };
+
         let filtered = prayers;
         
         if (quietPrayersVisibility === 'congregation') {
@@ -1597,6 +1633,47 @@ function renderSelectedKidase(addSectionTitleCallback) {
         }
 
         filtered.forEach(p => {
+            // Check if this prayer contains a reading placeholder
+            let activePlaceholder = null;
+            let activeRef = null;
+            for (const [placeholder, ref] of Object.entries(placeholderMap)) {
+                if (p.english.includes(placeholder) || p.geez_script.includes(placeholder) || (p.amharic_script && p.amharic_script.includes(placeholder))) {
+                    activePlaceholder = placeholder;
+                    activeRef = ref;
+                    break;
+                }
+            }
+
+            if (activePlaceholder && activeRef) {
+                const bibleResults = getBibleVersesFromRef(activeRef);
+                if (bibleResults) {
+                    const verseCounts = Object.values(bibleResults).map(arr => arr.length);
+                    const maxVerses = Math.max(0, ...verseCounts);
+
+                    if (maxVerses > 0) {
+                        for (let i = 0; i < maxVerses; i++) {
+                            const versePrayer = { ...p };
+                            languageOrder.forEach(langKey => {
+                                if (bibleResults[langKey] && bibleResults[langKey][i]) {
+                                    const v = bibleResults[langKey][i];
+                                    const verseText = `[${v.verseNum}] ${v.text}`;
+                                    if (i === 0) {
+                                        versePrayer[langKey] = p[langKey].replace(activePlaceholder, verseText);
+                                    } else {
+                                        versePrayer[langKey] = verseText;
+                                    }
+                                } else if (displayedLanguages[langKey]) {
+                                    if (i > 0) versePrayer[langKey] = "";
+                                }
+                            });
+                            const card = createPrayerCardElement(versePrayer, -1, true);
+                            prayerDisplay.appendChild(card);
+                        }
+                        return;
+                    }
+                }
+            }
+            
             const card = createPrayerCardElement(p, -1, true);
             prayerDisplay.appendChild(card);
         });
@@ -1889,9 +1966,53 @@ function copyEntireLiturgy() {
     let textToCopy = `፨ DIVINE LITURGY (ቅዳሴ) ፨\n\n`;
     const visibleLangs = languageOrder.filter(id => displayedLanguages[id]);
 
+    const placeholderMap = {
+        '{{TODAY\'S PAULINE EPISTLE READING}}': kidaseLectionaryRefs.pauline,
+        '{{TODAY\'S UNIVERSAL EPISTLE READING}}': kidaseLectionaryRefs.universal,
+        '{{TODAY\'S ACTS READING}}': kidaseLectionaryRefs.acts,
+        '{{TODAY\'S PSALMS READING}}': kidaseLectionaryRefs.psalm,
+        '{{TODAY\'S GOSPEL READING}}': kidaseLectionaryRefs.gospel,
+        '{{MORNING PSALMS READING}}': kidaseLectionaryRefs.morningPsalm,
+        '{{MORNING GOSPEL READING}}': kidaseLectionaryRefs.morningGospel
+    };
+
     const formatEntry = (p) => {
         let entryText = "";
-        // Content check: skip if only speaker labels
+
+        // Check if this entry is a reading block
+        let activePlaceholder = null;
+        let activeRef = null;
+        for (const [placeholder, ref] of Object.entries(placeholderMap)) {
+            if (p.english.includes(placeholder) || p.geez_script.includes(placeholder) || (p.amharic_script && p.amharic_script.includes(placeholder))) {
+                activePlaceholder = placeholder;
+                activeRef = ref;
+                break;
+            }
+        }
+
+        if (activePlaceholder && activeRef) {
+            const bibleResults = getBibleVersesFromRef(activeRef);
+            if (bibleResults) {
+                const verseCounts = Object.values(bibleResults).map(arr => arr.length);
+                const maxVerses = Math.max(0, ...verseCounts);
+                for (let vIdx = 0; vIdx < maxVerses; vIdx++) {
+                    visibleLangs.forEach(langKey => {
+                        if (bibleResults[langKey] && bibleResults[langKey][vIdx]) {
+                            const v = bibleResults[langKey][vIdx];
+                            const label = LANGUAGE_REGISTRY[langKey].name;
+                            let line = `[${v.verseNum}] ${v.text}`;
+                            if (vIdx === 0) {
+                                line = p[langKey].replace(activePlaceholder, line);
+                            }
+                            entryText += `--- ${label} ---\n${line}\n\n`;
+                        }
+                    });
+                }
+                return entryText;
+            }
+        }
+
+        // Standard entry
         const filteredLangs = visibleLangs.filter(langKey => hasActualContent(p[langKey], langKey));
         if (filteredLangs.length === 0) return "";
 
@@ -1899,7 +2020,6 @@ function copyEntireLiturgy() {
             const langCfg = LANGUAGE_REGISTRY[langKey];
             const label = langCfg ? langCfg.name : langKey;
             let rawText = p[langKey];
-            // Format for clipboard: strip HTML and replace placeholders
             let cleanText = rawText.replace(/<[^>]*>?/gm, '');
             cleanText = formatPrayerText(cleanText, langKey, null, false, p.chapter, p.stanza);
             entryText += `--- ${label} ---\n${cleanText}\n\n`;
