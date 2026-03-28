@@ -978,6 +978,39 @@ body.view-mode-unified .info-panel-content {
     margin-right: 0.3em;
 }
 
+.kidase-lectionary-item {
+    margin-top: 0.75rem;
+    padding: 0.5rem;
+    background-color: var(--hover-color);
+    border-radius: 4px;
+}
+
+.kidase-lectionary-item .settings-subtitle {
+    margin-top: 0;
+    font-size: 0.8rem;
+    color: var(--accent-color);
+}
+
+.settings-input {
+    width: 100%;
+    padding: 0.4rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--card-background);
+    color: var(--text-color);
+    font-family: inherit;
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
+}
+
+#kidase-settings {
+    background-color: var(--card-background);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-top: 0.5rem;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.05);
+}
+
 .rubric-red, .rubric-gold {
     transition: color 0.2s ease-in-out;
 }

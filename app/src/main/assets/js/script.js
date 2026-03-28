@@ -85,17 +85,34 @@ const clearPsalmsButton = document.getElementById('clear-psalms-button');
 const prophetSongsSelectorContainer = document.getElementById('prophet-songs-selector-container');
 const prophetSongsSummary = document.getElementById('prophet-songs-summary');
 const clearProphetSongsButton = document.getElementById('clear-prophet-songs-button');
+const kidaseGatedSection = document.getElementById('kidase-gated-section');
+const kidaseModeToggle = document.getElementById('kidase-mode-toggle');
+const kidaseSettings = document.getElementById('kidase-settings');
+const anaphoraSelector = document.getElementById('anaphora-selector');
+const covenantPrayerSelector = document.getElementById('covenant-prayer-selector');
+const quietPrayersVisibilitySelector = document.getElementById('quiet-prayers-visibility');
+const roleHighlightingSelector = document.getElementById('role-highlighting');
 const servantNameInput = document.getElementById('servant-name-input');
 const patriarchNameInput = document.getElementById('patriarch-name-input');
 const bishopNameInput = document.getElementById('bishop-name-input');
+const attendingBishopsInput = document.getElementById('attending-bishops-input');
+const churchNameInput = document.getElementById('church-name-input');
 const countryNameInput = document.getElementById('country-name-input');
 const headOfStateInput = document.getElementById('head-of-state-input');
 const anglicizeNamesToggle = document.getElementById('anglicize-names-toggle');
 const bibleVerseSidebar = document.querySelector('.bible-verse-sidebar');
 
+// Kidase Lectionary Inputs
+const kidasePaulineRefInput = document.getElementById('kidase-pauline-ref');
+const kidaseUniversalRefInput = document.getElementById('kidase-universal-ref');
+const kidaseActsRefInput = document.getElementById('kidase-acts-ref');
+const kidasePsalmRefInput = document.getElementById('kidase-psalm-ref');
+const kidaseGospelRefInput = document.getElementById('kidase-gospel-ref');
+const setTodayKidaseReadingsButton = document.getElementById('set-today-kidase-readings');
+
 
 // --- State Variables ---
-const SETTINGS_VERSION = '4.1.19'; // Update this to force refresh load settings
+const SETTINGS_VERSION = '4.2.0'; // Update this to force refresh load settings
 let currentTheme = {};
 let isSidebarCollapsed = false;
 let isServantsCornerActive = false;
@@ -106,6 +123,18 @@ let selectedPsalms = [];
 let selectedProphetSongs = [];
 let selectedSeatatLectionaryDay = 'None';
 let selectedWidaseMaryamDay = 'All';
+let isKidaseModeActive = false;
+let selectedAnaphora = 'apostles';
+let selectedCovenantPrayer = 'none';
+let quietPrayersVisibility = 'all';
+let roleHighlighting = 'none';
+let kidaseLectionaryRefs = {
+    pauline: 'Romans 1:1-7',
+    universal: '1 Peter 1:1-5',
+    acts: 'Acts 1:1-8',
+    psalm: 'Psalm 1:1-2',
+    gospel: 'John 1:1-5'
+};
 let customNames = {};
 let bibleData = { nkjv: null, am54: null, rgv: null, geez_psalms: null, coptic: null, loaded: false };
 
@@ -451,11 +480,11 @@ const rubricGoldRegex = {
 
 // --- Speaker Label Data ---
 const speakerKeywords = {
-    english: ["Priest", "People", "All", "Leader", "Reader"],
-    geez_script: ["ካህን", "ሕዝብ", "ኵሎሙ", "መሪሕ", "አንባቤ"],
-    amharic_script: ["ካህን", "ሕዝብ", "ሁሉም", "መሪ", "አንባቢ"],
-    tigrinya_script: ["ካህን", "ሕዝብ", "ኩሉኹም", "መራሒ", "ነባቢ"],
-    spanish: ["Sacerdote", "Pueblo", "Todos", "Líder", "Gente", "Lector"],
+    english: ["Priest", "Deacon", "People", "Subdeacon", "All", "Leader", "Reader"],
+    geez_script: ["ካህን", "ዲያቆን", "ሕዝብ", "ንፍቀ ዲያቆን", "ኵሎሙ", "መሪሕ", "አንባቤ"],
+    amharic_script: ["ካህን", "ዲያቆን", "ሕዝብ", "ንፍቀ ዲያቆን", "ሁሉም", "መሪ", "አንባቢ"],
+    tigrinya_script: ["ካህን", "ዲያቆን", "ሕዝብ", "ንፍቀ ዲያቆን", "ኩሉኹም", "መራሒ", "ነባቢ"],
+    spanish: ["Sacerdote", "Diácono", "Pueblo", "Subdiácono", "Todos", "Líder", "Gente", "Lector"],
 };
 
 function toGeez(n) {
@@ -642,6 +671,12 @@ function saveSettings() {
     localStorage.setItem('selectedProphetSongs', JSON.stringify(selectedProphetSongs));
     localStorage.setItem('selectedSeatatLectionaryDay', selectedSeatatLectionaryDay);
     localStorage.setItem('selectedWidaseMaryamDay', selectedWidaseMaryamDay);
+    localStorage.setItem('isKidaseModeActive', isKidaseModeActive);
+    localStorage.setItem('selectedAnaphora', selectedAnaphora);
+    localStorage.setItem('selectedCovenantPrayer', selectedCovenantPrayer);
+    localStorage.setItem('quietPrayersVisibility', quietPrayersVisibility);
+    localStorage.setItem('roleHighlighting', roleHighlighting);
+    localStorage.setItem('kidaseLectionaryRefs', JSON.stringify(kidaseLectionaryRefs));
     localStorage.setItem('customNames', JSON.stringify(customNames));
     localStorage.setItem('collapsedSections', JSON.stringify(collapsedSections));
 }
@@ -696,6 +731,11 @@ function loadSettings() {
         selectedProphetSongs: [],
         selectedSeatatLectionaryDay: getSeatatLiturgicalDay(),
         selectedWidaseMaryamDay: getSeatatLiturgicalDay(),
+        isKidaseModeActive: false,
+        selectedAnaphora: 'apostles',
+        selectedCovenantPrayer: 'none',
+        quietPrayersVisibility: 'all',
+        roleHighlighting: 'none',
         // Default Custom Names
         customNames: {
             servant: '{Names}',
@@ -719,6 +759,11 @@ function loadSettings() {
         selectedPsalms = defaultSettings.selectedPsalms;
         selectedProphetSongs = defaultSettings.selectedProphetSongs;
         selectedSeatatLectionaryDay = defaultSettings.selectedSeatatLectionaryDay;
+        selectedWidaseMaryamDay = defaultSettings.selectedWidaseMaryamDay;
+        isKidaseModeActive = defaultSettings.isKidaseModeActive;
+        selectedAnaphora = defaultSettings.selectedAnaphora;
+        selectedCovenantPrayer = defaultSettings.selectedCovenantPrayer;
+        quietPrayersVisibility = defaultSettings.quietPrayersVisibility;
         customNames = defaultSettings.customNames; // Use defaults
         collapsedSections = defaultSettings.collapsedSections;
     } else {
@@ -746,6 +791,13 @@ function loadSettings() {
         selectedProphetSongs = JSON.parse(localStorage.getItem('selectedProphetSongs')) || defaultSettings.selectedProphetSongs;
         selectedSeatatLectionaryDay = localStorage.getItem('selectedSeatatLectionaryDay') || defaultSettings.selectedSeatatLectionaryDay;
         selectedWidaseMaryamDay = localStorage.getItem('selectedWidaseMaryamDay') || defaultSettings.selectedWidaseMaryamDay;
+        isKidaseModeActive = localStorage.getItem('isKidaseModeActive') === 'true';
+        selectedAnaphora = localStorage.getItem('selectedAnaphora') || defaultSettings.selectedAnaphora;
+        selectedCovenantPrayer = localStorage.getItem('selectedCovenantPrayer') || defaultSettings.selectedCovenantPrayer;
+        quietPrayersVisibility = localStorage.getItem('quietPrayersVisibility') || defaultSettings.quietPrayersVisibility;
+        roleHighlighting = localStorage.getItem('roleHighlighting') || defaultSettings.roleHighlighting;
+        const savedKidaseLectionaryRefs = JSON.parse(localStorage.getItem('kidaseLectionaryRefs')) || {};
+        kidaseLectionaryRefs = { ...defaultSettings.kidaseLectionaryRefs, ...savedKidaseLectionaryRefs };
         const savedCustomNames = JSON.parse(localStorage.getItem('customNames')) || {};
         customNames = { ...defaultSettings.customNames, ...savedCustomNames };
         collapsedSections = JSON.parse(localStorage.getItem('collapsedSections')) || defaultSettings.collapsedSections;
@@ -755,8 +807,16 @@ function loadSettings() {
     servantNameInput.value = customNames.servant;
     patriarchNameInput.value = customNames.patriarch;
     bishopNameInput.value = customNames.bishop;
+    attendingBishopsInput.value = customNames.attendingBishops || '';
+    churchNameInput.value = customNames.churchName || '';
     countryNameInput.value = customNames.country;
     headOfStateInput.value = customNames.headOfState;
+
+    kidasePaulineRefInput.value = kidaseLectionaryRefs.pauline;
+    kidaseUniversalRefInput.value = kidaseLectionaryRefs.universal;
+    kidaseActsRefInput.value = kidaseLectionaryRefs.acts;
+    kidasePsalmRefInput.value = kidaseLectionaryRefs.psalm;
+    kidaseGospelRefInput.value = kidaseLectionaryRefs.gospel;
 
     geezFontSizeSlider.value = fontSizes.geez;
     englishFontSizeSlider.value = fontSizes.english;
@@ -860,6 +920,17 @@ function updateAllTogglesInSettingsPanel() {
             radio.checked = true;
         }
     });
+
+    // Kidase Settings
+    if (kidaseGatedSection) {
+        kidaseGatedSection.style.display = isScribeLoggedIn ? 'block' : 'none';
+    }
+    kidaseModeToggle.checked = isKidaseModeActive;
+    kidaseSettings.style.display = isKidaseModeActive ? 'block' : 'none';
+    anaphoraSelector.value = selectedAnaphora;
+    covenantPrayerSelector.value = selectedCovenantPrayer;
+    quietPrayersVisibilitySelector.value = quietPrayersVisibility;
+    roleHighlightingSelector.value = roleHighlighting;
 
     updateLayoutToggleIcon();
     updatePresentationModeToggleIcon();
@@ -975,8 +1046,98 @@ function highlightText(text, query) {
     return text.replace(regex, '<mark class="highlight">$1</mark>');
 }
 
+function getBibleVersesFromRef(ref, langKey) {
+    if (!ref || !bibleData.loaded) return "";
+    
+    // Simple parser for "Book Chapter:Verse-Verse" or "Book Chapter:Verse"
+    const match = ref.match(/^(.+?)\s+(\d+):(\d+)(?:-(\d+))?$/);
+    if (!match) return "";
+    
+    const bookName = match[1];
+    const chapterNum = parseInt(match[2]);
+    const startVerse = parseInt(match[3]);
+    const endVerse = match[4] ? parseInt(match[4]) : startVerse;
+    
+    const bookCfg = BIBLE_BOOK_MAPPING[bookName];
+    if (!bookCfg) {
+        // Fallback for Psalms if not in mapping or specified as "Psalm"
+        if (bookName.toLowerCase().startsWith("psalm")) {
+            return getPsalmVerses(chapterNum, startVerse, endVerse, langKey);
+        }
+        return "";
+    }
+    
+    let verses = [];
+    if (langKey === 'english' && bibleData.nkjv) {
+        verses = bibleData.nkjv.filter(v => v.book === bookCfg.nkjv && v.chapter === chapterNum && v.verse >= startVerse && v.verse <= endVerse);
+    } else if (langKey === 'amharic_script' && bibleData.am54) {
+        verses = bibleData.am54.filter(v => v.book === bookCfg.am54 && v.chapter === chapterNum && v.verse >= startVerse && v.verse <= endVerse);
+    } else if (langKey === 'geez_script' && bookName === 'Psalms' && bibleData.geez_psalms) {
+        return getPsalmVerses(chapterNum, startVerse, endVerse, 'geez_script');
+    }
+    
+    return verses.map(v => `[${v.verse}] ${v.text}`).join(" ");
+}
+
+function getPsalmVerses(chapterNum, start, end, langKey) {
+    if (!bibleData.geez_psalms) return "";
+    const chapter = bibleData.geez_psalms.find(ch => ch.id === chapterNum);
+    if (!chapter) return "";
+    
+    const verses = chapter.verses.filter(v => v.verse_number >= start && v.verse_number <= end);
+    return verses.map(v => `[${v.verse_number}] ${v.text}`).join(" ");
+}
+
+function replaceKidasePlaceholders(text, langKey) {
+    let processed = text;
+    const mapping = {
+        '{{TODAY\'S PAULINE EPISTLE READING}}': kidaseLectionaryRefs.pauline,
+        '{{TODAY\'S UNIVERSAL EPISTLE READING}}': kidaseLectionaryRefs.universal,
+        '{{TODAY\'S ACTS READING}}': kidaseLectionaryRefs.acts,
+        '{{TODAY\'S PSALMS READING}}': kidaseLectionaryRefs.psalm,
+        '{{TODAY\'S GOSPEL READING}}': kidaseLectionaryRefs.gospel,
+        '{{MORNING PSALMS READING}}': kidaseLectionaryRefs.psalm, // Reusing for now
+        '{{MORNING GOSPEL READING}}': kidaseLectionaryRefs.gospel  // Reusing for now
+    };
+    
+    for (const [placeholder, ref] of Object.entries(mapping)) {
+        if (processed.includes(placeholder)) {
+            const versesText = getBibleVersesFromRef(ref, langKey);
+            processed = processed.replace(placeholder, versesText || `[Reading: ${ref}]`);
+        }
+    }
+    return processed;
+}
+
+
+function getGeezDateInfo() {
+    // Basic implementation for now - could be expanded with a real calendar conversion
+    return {
+        month: "Current",
+        date: "Today",
+        year: "Year",
+        dayOfWeekGeez: "ዕለተ",
+        geezMonth: "ወርኅ",
+        geezDate: "ዕለት",
+        geezYear: "ዓመት"
+    };
+}
+
 function formatPrayerText(text, langKey, query, isFirstLanguage, chapter = null, verseNum = null) {
     let processedText = text;
+
+    // Replace Kidase placeholders
+    processedText = replaceKidasePlaceholders(processedText, langKey);
+
+    // Replace Date placeholders
+    const geezDateInfo = getGeezDateInfo();
+    processedText = processedText.replace(/\{\{GE'EZ MONTH\}\}/g, geezDateInfo.month);
+    processedText = processedText.replace(/\{\{GE'EZ DATE\}\}/g, geezDateInfo.date);
+    processedText = processedText.replace(/\{\{GE'EZ YEAR\}\}/g, geezDateInfo.year);
+    processedText = processedText.replace(/\{\{ዕለት ዘሰሙን\}\}/g, geezDateInfo.dayOfWeekGeez);
+    processedText = processedText.replace(/\{\{ወርኅ\}\}/g, geezDateInfo.geezMonth);
+    processedText = processedText.replace(/\{\{ዕለት\}\}/g, geezDateInfo.geezDate);
+    processedText = processedText.replace(/\{\{ዓመት\}\}/g, geezDateInfo.geezYear);
 
     // Apply superscription formatting for Psalms, Songs of the Prophets, and Lectionary readings
     if (chapter === 'Psalms' || chapter === 'ProphetSong' || chapter === 'SeatatLectionary') {
@@ -1020,14 +1181,18 @@ function formatPrayerText(text, langKey, query, isFirstLanguage, chapter = null,
     processedText = processedText.replace(/\{\{BISHOP NAME\}\}/g, customNames.bishop || '');
     processedText = processedText.replace(/\{\{COUNTRY\}\}/g, customNames.country || '');
     processedText = processedText.replace(/\{\{Leader \/ President \/ Emperor\}\}/g, customNames.headOfState || '');
+    processedText = processedText.replace(/\{\{BISHOP(S) IN ATTENDANCE\}\}/g, customNames.attendingBishops || '');
+    processedText = processedText.replace(/\{\{CHURCH NAME\}\}/g, customNames.churchName || '');
 
     const keywords = speakerKeywords[langKey];
 
     if (keywords) {
         const regex = new RegExp(`(፨ )?(${keywords.join('|')})([:፤፣])`, 'g');
-        processedText = processedText.replace(regex, (match) => {
+        processedText = processedText.replace(regex, (match, p1, speaker) => {
+            const isTarget = roleHighlighting !== 'none' && speaker.toLowerCase().includes(roleHighlighting.toLowerCase());
+            const highlightClass = isTarget ? 'role-highlight' : '';
             if (displayOptions.showSpeakerLabels) {
-                return `<span class="speaker-label">${match}</span>`;
+                return `<span class="speaker-label ${highlightClass}">${match}</span>`;
             }
             return '';
         }).trim();
@@ -1290,6 +1455,69 @@ function getStandardPrayerSequence() {
 
 let collapsedSections = {};
 
+function renderSelectedKidase(addSectionTitleCallback) {
+    if (!isKidaseModeActive || typeof kidaseData === 'undefined') return;
+
+    // 1. Order of the Liturgy
+    const titleContainer = addSectionTitleCallback("Order of the Liturgy | ሥርዓተ ቅዳሴ");
+    
+    // Add "Copy Entire Liturgy" button next to the first section title
+    if (titleContainer) {
+        const copyBtn = document.createElement('button');
+        copyBtn.className = 'copy-section-button';
+        copyBtn.innerHTML = shareIconSVG;
+        copyBtn.title = 'Copy Entire Liturgy';
+        copyBtn.style.marginLeft = '1rem';
+        copyBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            copyEntireLiturgy();
+        });
+        titleContainer.appendChild(copyBtn);
+    }
+    
+    let orderPrayers = kidaseData.order;
+    
+    // Filtering for Quiet Prayers
+    if (quietPrayersVisibility === 'congregation') {
+        orderPrayers = orderPrayers.filter(p => !p.instruction.toLowerCase().includes("inaudible"));
+    }
+
+    orderPrayers.forEach(p => {
+        // Handle Covenant Prayer selection
+        if (p.chapter === 'Kidan') {
+            if (selectedCovenantPrayer === 'none') return;
+            // Part1: Midnight, Part2: Morning, Part3: Afternoon
+            if (p.stanza === 'Part1' && selectedCovenantPrayer !== 'midnight') return;
+            if (p.stanza === 'Part2' && selectedCovenantPrayer !== 'morning') return;
+            if (p.stanza === 'Part3' && selectedCovenantPrayer !== 'afternoon') return;
+            // Intro is included for any selection
+        }
+        
+        const card = createPrayerCardElement(p, -1);
+        prayerDisplay.appendChild(card);
+    });
+
+    // 2. Anaphora
+    const anaphoraMap = {
+        'apostles': { name: 'Anaphora of the Apostles | ቅዳሴ ሐዋርያት', data: kidaseData.apostles },
+        'mary': { name: 'Anaphora of Our Lady Mary | ቅዳሴ ማርያም', data: kidaseData.mary }
+    };
+
+    const anaphora = anaphoraMap[selectedAnaphora];
+    if (anaphora) {
+        addSectionTitleCallback(anaphora.name);
+        let anaphoraPrayers = anaphora.data;
+        if (quietPrayersVisibility === 'congregation') {
+            anaphoraPrayers = anaphoraPrayers.filter(p => !p.instruction.toLowerCase().includes("inaudible"));
+        }
+        anaphoraPrayers.forEach(p => {
+            const card = createPrayerCardElement(p, -1);
+            prayerDisplay.appendChild(card);
+        });
+    }
+}
+
+
 function renderPrayers() {
     if (isServantsCornerActive) return;
     prayerDisplay.innerHTML = '';
@@ -1502,6 +1730,9 @@ function renderPrayers() {
     // Render Se'atat Lectionary Scripture Readings
     renderSelectedSeatatLectionary(addSectionTitle);
 
+    // Render Kidase (Divine Liturgy)
+    renderSelectedKidase(addSectionTitle);
+
     // Always render the standard prayer sequence at the very end
     renderSequence();
 
@@ -1559,14 +1790,80 @@ function fallbackCopyTextToClipboard(text) {
     document.body.removeChild(textArea);
 }
 
+function copyEntireLiturgy() {
+    let textToCopy = `፨ DIVINE LITURGY (ቅዳሴ) ፨\n\n`;
+    const visibleLangs = languageOrder.filter(id => displayedLanguages[id]);
+
+    const formatEntry = (p) => {
+        let entryText = "";
+        visibleLangs.forEach(langKey => {
+            if (p[langKey]) {
+                const langCfg = LANGUAGE_REGISTRY[langKey];
+                const label = langCfg ? langCfg.name : langKey;
+                let rawText = p[langKey];
+                // Strip HTML and replace placeholders
+                let cleanText = rawText.replace(/<[^>]*>?/gm, '');
+                cleanText = formatPrayerText(cleanText, langKey, null, false);
+                entryText += `--- ${label} ---\n${cleanText}\n\n`;
+            }
+        });
+        return entryText;
+    };
+
+    // 1. Order
+    textToCopy += `### Order of the Liturgy | ሥርዓተ ቅዳሴ ###\n\n`;
+    let orderPrayers = kidaseData.order;
+    if (quietPrayersVisibility === 'congregation') {
+        orderPrayers = orderPrayers.filter(p => !p.instruction.toLowerCase().includes("inaudible"));
+    }
+    orderPrayers.forEach(p => {
+        if (p.chapter === 'Kidan') {
+            if (selectedCovenantPrayer === 'none') return;
+            if (p.stanza === 'Part1' && selectedCovenantPrayer !== 'midnight') return;
+            if (p.stanza === 'Part2' && selectedCovenantPrayer !== 'morning') return;
+            if (p.stanza === 'Part3' && selectedCovenantPrayer !== 'afternoon') return;
+        }
+        textToCopy += formatEntry(p);
+    });
+
+    // 2. Anaphora
+    const anaphoraMap = {
+        'apostles': { name: 'Anaphora of the Apostles | ቅዳሴ ሐዋርያት', data: kidaseData.apostles },
+        'mary': { name: 'Anaphora of Our Lady Mary | ቅዳሴ ማርያም', data: kidaseData.mary }
+    };
+    const anaphora = anaphoraMap[selectedAnaphora];
+    if (anaphora) {
+        textToCopy += `### ${anaphora.name} ###\n\n`;
+        let anaphoraPrayers = anaphora.data;
+        if (quietPrayersVisibility === 'congregation') {
+            anaphoraPrayers = anaphoraPrayers.filter(p => !p.instruction.toLowerCase().includes("inaudible"));
+        }
+        anaphoraPrayers.forEach(p => {
+            textToCopy += formatEntry(p);
+        });
+    }
+
+    if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(textToCopy).then(() => {
+            showCopyNotification('Entire Liturgy copied to clipboard!');
+        });
+    } else {
+        fallbackCopyTextToClipboard(textToCopy);
+    }
+}
+
+
 function copyPrayer(prayer) {
     let textToCopy = ``;
     textToCopy += `፨ ${getPrayerLabel(prayer)} ፨\n\n`;
     languageOrder.forEach(langKey => {
         if (displayedLanguages[langKey] && prayer[langKey] && prayer[langKey].trim()) {
             textToCopy += `--- ${languageLabels[langKey]} ---\n`;
-            const rawText = prayer[langKey];
-            textToCopy += `${rawText}\n\n`;
+            let rawText = prayer[langKey];
+            // Format for clipboard: strip HTML and replace placeholders
+            let cleanText = rawText.replace(/<[^>]*>?/gm, '');
+            cleanText = formatPrayerText(cleanText, langKey, null, false, prayer.chapter, prayer.stanza);
+            textToCopy += `${cleanText}\n\n`;
         }
     });
 
@@ -2684,6 +2981,18 @@ bishopNameInput.addEventListener('input', () => {
     renderPrayers();
 });
 
+attendingBishopsInput.addEventListener('input', () => {
+    customNames.attendingBishops = attendingBishopsInput.value;
+    saveSettings();
+    renderPrayers();
+});
+
+churchNameInput.addEventListener('input', () => {
+    customNames.churchName = churchNameInput.value;
+    saveSettings();
+    renderPrayers();
+});
+
 countryNameInput.addEventListener('input', () => {
     customNames.country = countryNameInput.value;
     saveSettings();
@@ -2694,6 +3003,94 @@ headOfStateInput.addEventListener('input', () => {
     customNames.headOfState = headOfStateInput.value;
     saveSettings();
     renderPrayers();
+});
+
+
+// --- Kidase (Liturgy) Event Listeners ---
+kidaseModeToggle.addEventListener('change', () => {
+    isKidaseModeActive = kidaseModeToggle.checked;
+    kidaseSettings.style.display = isKidaseModeActive ? 'block' : 'none';
+    saveSettings();
+    smoothRender();
+});
+
+anaphoraSelector.addEventListener('change', () => {
+    selectedAnaphora = anaphoraSelector.value;
+    saveSettings();
+    smoothRender();
+});
+
+covenantPrayerSelector.addEventListener('change', () => {
+    selectedCovenantPrayer = covenantPrayerSelector.value;
+    saveSettings();
+    smoothRender();
+});
+
+quietPrayersVisibilitySelector.addEventListener('change', () => {
+    quietPrayersVisibility = quietPrayersVisibilitySelector.value;
+    saveSettings();
+    smoothRender();
+});
+
+roleHighlightingSelector.addEventListener('change', () => {
+    roleHighlighting = roleHighlightingSelector.value;
+    saveSettings();
+    renderPrayers();
+});
+
+kidasePaulineRefInput.addEventListener('input', () => {
+    kidaseLectionaryRefs.pauline = kidasePaulineRefInput.value;
+    saveSettings();
+    renderPrayers();
+});
+
+kidaseUniversalRefInput.addEventListener('input', () => {
+    kidaseLectionaryRefs.universal = kidaseUniversalRefInput.value;
+    saveSettings();
+    renderPrayers();
+});
+
+kidaseActsRefInput.addEventListener('input', () => {
+    kidaseLectionaryRefs.acts = kidaseActsRefInput.value;
+    saveSettings();
+    renderPrayers();
+});
+
+kidasePsalmRefInput.addEventListener('input', () => {
+    kidaseLectionaryRefs.psalm = kidasePsalmRefInput.value;
+    saveSettings();
+    renderPrayers();
+});
+
+kidaseGospelRefInput.addEventListener('input', () => {
+    kidaseLectionaryRefs.gospel = kidaseGospelRefInput.value;
+    saveSettings();
+    renderPrayers();
+});
+
+setTodayKidaseReadingsButton.addEventListener('click', () => {
+    const day = getSeatatLiturgicalDay();
+    const readings = SEATAT_LECTIONARY_DATA[day];
+    if (readings) {
+        // Map Seatat readings to Kidase lectionary refs
+        // This is a heuristic mapping
+        kidaseLectionaryRefs.pauline = `${readings[0].book} ${readings[0].chapter}:${readings[0].verses}`;
+        kidaseLectionaryRefs.universal = `${readings[1].book} ${readings[1].chapter}:${readings[1].verses}`;
+        kidaseLectionaryRefs.acts = `${readings[2].book} ${readings[2].chapter}:${readings[2].verses}`;
+        kidaseLectionaryRefs.psalm = `${readings[3].book} ${readings[3].chapter}:${readings[3].verses}`;
+        kidaseLectionaryRefs.gospel = `${readings[4].book} ${readings[4].chapter}:${readings[4].verses}`;
+
+        // Update UI
+        kidasePaulineRefInput.value = kidaseLectionaryRefs.pauline;
+        kidaseUniversalRefInput.value = kidaseLectionaryRefs.universal;
+        kidaseActsRefInput.value = kidaseLectionaryRefs.acts;
+        kidasePsalmRefInput.value = kidaseLectionaryRefs.psalm;
+        kidaseGospelRefInput.value = kidaseLectionaryRefs.gospel;
+
+        saveSettings();
+        renderPrayers();
+        showCopyNotification('Kidase readings set to Today!');
+    }
 });
 
 
@@ -3445,14 +3842,23 @@ document.addEventListener('DOMContentLoaded', async () => {
 
             // Refresh UI immediately
             updateLanguageToggles();
+            if (kidaseGatedSection) kidaseGatedSection.style.display = 'block';
+            
+            // Restore kidase mode from localStorage if it was active
+            isKidaseModeActive = localStorage.getItem('isKidaseModeActive') === 'true';
+            
             renderPrayers();
-        } else {
+            } else {
             isScribeLoggedIn = false;
             isScribeModeActive = false;
             currentScribeUser = null;
             scribeLoginLink.textContent = 'Scribe Login';
             document.body.classList.remove('scribe-mode-active');
-            
+
+            if (kidaseGatedSection) kidaseGatedSection.style.display = 'none';
+            // Also turn off kidase mode if it was active to be safe
+            isKidaseModeActive = false;
+
             // Re-subscribe with normal permissions (published only)
             subscribeToPrayers();
             subscribeToIconMetadata();
@@ -3460,7 +3866,8 @@ document.addEventListener('DOMContentLoaded', async () => {
             // Refresh UI immediately
             updateLanguageToggles();
             renderPrayers();
-        }
+            }
+
     });
 
     async function checkScribePermissions(uid) {

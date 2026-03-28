@@ -176,16 +176,76 @@
                         *According to the certified <i>Se'atat</i> liturgical tradition of <i>Debre Abay Abune Samuel Ze-Waldiba</i> Monastery, for the Prayer—or Liturgy—of the Hours (ጸሎተ ሰዓታት).
                     </p>
                 </div>
+                <div id="kidase-gated-section" class="setting-group" style="display: none;">
+                    <h3>Add Divine Liturgy (<i>Ḳidasé</i>)</h3>
+                    <label style="display: block; margin-bottom: 0.5rem;"><input type="checkbox" id="kidase-mode-toggle"> <span>Enable Ḳidasé Mode</span></label>
+                    <div id="kidase-settings" style="display: none; margin-left: 1rem; border-left: 2px solid var(--accent-color); padding-left: 1rem;">
+                        <h4 class="settings-subtitle">Eucharistic Prayer (Anaphora)</h4>
+                        <select id="anaphora-selector" class="settings-select">
+                            <option value="apostles">Apostles | ሐዋርያት</option>
+                            <option value="mary">Our Lady Mary | ማርያም</option>
+                        </select>
+                        <h4 class="settings-subtitle" style="margin-top: 0.75rem;">Prayer of the Covenant</h4>
+                        <select id="covenant-prayer-selector" class="settings-select">
+                            <option value="none">None | አልቦ</option>
+                            <option value="morning">Morning | ዘነግህ</option>
+                            <option value="midnight">Midnight | ዘመንፈቀ ሌሊት</option>
+                            <option value="afternoon">Afternoon | ዘሠርክ</option>
+                        </select>
+                        <h4 class="settings-subtitle" style="margin-top: 0.75rem;">Quiet Prayers (<i>በልኁሳስ</i>)</h4>
+                        <select id="quiet-prayers-visibility" class="settings-select">
+                            <option value="all">Show all prayers</option>
+                            <option value="congregation">Congregation-only</option>
+                        </select>
+
+                        <h4 class="settings-subtitle" style="margin-top: 0.75rem;">Role Highlighting</h4>
+                        <select id="role-highlighting" class="settings-select">
+                            <option value="none">None</option>
+                            <option value="priest">Highlight Priest</option>
+                            <option value="deacon">Highlight Deacon</option>
+                            <option value="people">Highlight People</option>
+                        </select>
+
+                        <h4 class="settings-subtitle" style="margin-top: 1rem; border-top: 1px solid var(--border-color); padding-top: 0.75rem;">Ḳidasé Bible Readings</h4>
+                        <button id="set-today-kidase-readings" class="settings-button" style="margin-bottom: 0.5rem; font-size: 0.8rem;">Set to Today's Readings</button>
+                        
+                        <div class="kidase-lectionary-item">
+                            <h5 class="settings-subtitle">Pauline Epistle</h5>
+                            <input type="text" id="kidase-pauline-ref" class="settings-input" placeholder="e.g. Romans 1:1-7">
+                        </div>
+                        <div class="kidase-lectionary-item">
+                            <h5 class="settings-subtitle">Universal Epistle</h5>
+                            <input type="text" id="kidase-universal-ref" class="settings-input" placeholder="e.g. 1 Peter 1:1-5">
+                        </div>
+                        <div class="kidase-lectionary-item">
+                            <h5 class="settings-subtitle">Acts</h5>
+                            <input type="text" id="kidase-acts-ref" class="settings-input" placeholder="e.g. Acts 1:1-8">
+                        </div>
+                        <div class="kidase-lectionary-item">
+                            <h5 class="settings-subtitle">Liturgy Psalm (Misbak)</h5>
+                            <input type="text" id="kidase-psalm-ref" class="settings-input" placeholder="e.g. Psalm 1:1-2">
+                        </div>
+                        <div class="kidase-lectionary-item">
+                            <h5 class="settings-subtitle">Liturgy Gospel</h5>
+                            <input type="text" id="kidase-gospel-ref" class="settings-input" placeholder="e.g. John 1:1-5">
+                        </div>
+                    </div>
+                </div>
                 <div class="setting-group">
                     <h3>Customize Names</h3>
                     <p class="settings-subtitle" style="font-size: 0.8rem; margin-bottom: 1rem;">These names will be dynamically inserted into prayers which include parts to intercede and pray for others.</p>
                     <h4 class="settings-subtitle">Servant's Name(s)</h4>
                     <input type="text" id="servant-name-input" placeholder="e.g. John, Jane, etc.">
                     <h4 class="settings-subtitle">Patriarch</h4>
-                    <input type="text" id="patriarch-name-input" placeholder="e.g. Abune Mathias">
+                    <input type="text" id="patriarch-name-input" placeholder="e.g. Abba Mathias I">
                     <h4 class="settings-subtitle">Bishop</h4>
-                    <input type="text" id="bishop-name-input" placeholder="e.g. Abune Theophilus">
+                    <input type="text" id="bishop-name-input" placeholder="e.g. Abba Theophilus">
+                    <h4 class="settings-subtitle">Bishop(s) in Attendance</h4>
+                    <input type="text" id="attending-bishops-input" placeholder="e.g. Abba ...">
+                    <h4 class="settings-subtitle">Church Name</h4>
+                    <input type="text" id="church-name-input" placeholder="e.g. St. Michael EOTC">
                     <h4 class="settings-subtitle">Country</h4>
+
                     <input type="text" id="country-name-input" placeholder="e.g. Ethiopia, USA, etc.">
                     <h4 class="settings-subtitle">Head of State</h4>
                     <input type="text" id="head-of-state-input" placeholder="e.g. President, Emperor, etc.">
@@ -694,6 +754,7 @@
     <script src="js/prayers.js"></script>
     <script src="js/songs.js"></script>
     <script src="js/servants.js"></script>
+    <script src="js/kidase.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
