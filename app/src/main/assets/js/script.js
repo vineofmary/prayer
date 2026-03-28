@@ -92,7 +92,6 @@ const anaphoraSelector = document.getElementById('anaphora-selector');
 const showPreLiturgyKidanToggle = document.getElementById('show-pre-liturgy-kidan');
 const covenantPrayerSelector = document.getElementById('covenant-prayer-selector');
 const quietPrayersVisibilitySelector = document.getElementById('quiet-prayers-visibility');
-const roleHighlightingSelector = document.getElementById('role-highlighting');
 const servantNameInput = document.getElementById('servant-name-input');
 const patriarchNameInput = document.getElementById('patriarch-name-input');
 const bishopNameInput = document.getElementById('bishop-name-input');
@@ -109,7 +108,6 @@ const kidaseUniversalRefInput = document.getElementById('kidase-universal-ref');
 const kidaseActsRefInput = document.getElementById('kidase-acts-ref');
 const kidasePsalmRefInput = document.getElementById('kidase-psalm-ref');
 const kidaseGospelRefInput = document.getElementById('kidase-gospel-ref');
-const setTodayKidaseReadingsButton = document.getElementById('set-today-kidase-readings');
 
 
 // --- State Variables ---
@@ -129,7 +127,6 @@ let selectedAnaphora = 'apostles';
 let showPreLiturgyKidan = true;
 let selectedCovenantPrayer = 'none';
 let quietPrayersVisibility = 'all';
-let roleHighlighting = 'none';
 let kidaseLectionaryRefs = {
     pauline: 'Romans 1:1-7',
     universal: '1 Peter 1:1-5',
@@ -678,7 +675,6 @@ function saveSettings() {
     localStorage.setItem('showPreLiturgyKidan', showPreLiturgyKidan);
     localStorage.setItem('selectedCovenantPrayer', selectedCovenantPrayer);
     localStorage.setItem('quietPrayersVisibility', quietPrayersVisibility);
-    localStorage.setItem('roleHighlighting', roleHighlighting);
     localStorage.setItem('kidaseLectionaryRefs', JSON.stringify(kidaseLectionaryRefs));
     localStorage.setItem('customNames', JSON.stringify(customNames));
     localStorage.setItem('collapsedSections', JSON.stringify(collapsedSections));
@@ -739,7 +735,6 @@ function loadSettings() {
         showPreLiturgyKidan: true,
         selectedCovenantPrayer: 'none',
         quietPrayersVisibility: 'all',
-        roleHighlighting: 'none',
         // Default Custom Names
         customNames: {
             servant: '{Names}',
@@ -800,7 +795,6 @@ function loadSettings() {
         showPreLiturgyKidan = localStorage.getItem('showPreLiturgyKidan') !== null ? localStorage.getItem('showPreLiturgyKidan') === 'true' : defaultSettings.showPreLiturgyKidan;
         selectedCovenantPrayer = localStorage.getItem('selectedCovenantPrayer') || defaultSettings.selectedCovenantPrayer;
         quietPrayersVisibility = localStorage.getItem('quietPrayersVisibility') || defaultSettings.quietPrayersVisibility;
-        roleHighlighting = localStorage.getItem('roleHighlighting') || defaultSettings.roleHighlighting;
         const savedKidaseLectionaryRefs = JSON.parse(localStorage.getItem('kidaseLectionaryRefs')) || {};
         kidaseLectionaryRefs = { ...defaultSettings.kidaseLectionaryRefs, ...savedKidaseLectionaryRefs };
         const savedCustomNames = JSON.parse(localStorage.getItem('customNames')) || {};
@@ -936,7 +930,6 @@ function updateAllTogglesInSettingsPanel() {
     showPreLiturgyKidanToggle.checked = showPreLiturgyKidan;
     covenantPrayerSelector.value = selectedCovenantPrayer;
     quietPrayersVisibilitySelector.value = quietPrayersVisibility;
-    roleHighlightingSelector.value = roleHighlighting;
 
     updateLayoutToggleIcon();
     updatePresentationModeToggleIcon();
@@ -1194,11 +1187,9 @@ function formatPrayerText(text, langKey, query, isFirstLanguage, chapter = null,
 
     if (keywords) {
         const regex = new RegExp(`(፨ )?(${keywords.join('|')})([:፤፣])`, 'g');
-        processedText = processedText.replace(regex, (match, p1, speaker) => {
-            const isTarget = roleHighlighting !== 'none' && speaker.toLowerCase().includes(roleHighlighting.toLowerCase());
-            const highlightClass = isTarget ? 'role-highlight' : '';
+        processedText = processedText.replace(regex, (match) => {
             if (displayOptions.showSpeakerLabels) {
-                return `<span class="speaker-label ${highlightClass}">${match}</span>`;
+                return `<span class="speaker-label">${match}</span>`;
             }
             return '';
         }).trim();
@@ -3149,12 +3140,6 @@ quietPrayersVisibilitySelector.addEventListener('change', () => {
     smoothRender();
 });
 
-roleHighlightingSelector.addEventListener('change', () => {
-    roleHighlighting = roleHighlightingSelector.value;
-    saveSettings();
-    renderPrayers();
-});
-
 kidasePaulineRefInput.addEventListener('input', () => {
     kidaseLectionaryRefs.pauline = kidasePaulineRefInput.value;
     saveSettings();
@@ -3183,31 +3168,6 @@ kidaseGospelRefInput.addEventListener('input', () => {
     kidaseLectionaryRefs.gospel = kidaseGospelRefInput.value;
     saveSettings();
     renderPrayers();
-});
-
-setTodayKidaseReadingsButton.addEventListener('click', () => {
-    const day = getSeatatLiturgicalDay();
-    const readings = SEATAT_LECTIONARY_DATA[day];
-    if (readings) {
-        // Map Seatat readings to Kidase lectionary refs
-        // This is a heuristic mapping
-        kidaseLectionaryRefs.pauline = `${readings[0].book} ${readings[0].chapter}:${readings[0].verses}`;
-        kidaseLectionaryRefs.universal = `${readings[1].book} ${readings[1].chapter}:${readings[1].verses}`;
-        kidaseLectionaryRefs.acts = `${readings[2].book} ${readings[2].chapter}:${readings[2].verses}`;
-        kidaseLectionaryRefs.psalm = `${readings[3].book} ${readings[3].chapter}:${readings[3].verses}`;
-        kidaseLectionaryRefs.gospel = `${readings[4].book} ${readings[4].chapter}:${readings[4].verses}`;
-
-        // Update UI
-        kidasePaulineRefInput.value = kidaseLectionaryRefs.pauline;
-        kidaseUniversalRefInput.value = kidaseLectionaryRefs.universal;
-        kidaseActsRefInput.value = kidaseLectionaryRefs.acts;
-        kidasePsalmRefInput.value = kidaseLectionaryRefs.psalm;
-        kidaseGospelRefInput.value = kidaseLectionaryRefs.gospel;
-
-        saveSettings();
-        renderPrayers();
-        showCopyNotification('Kidase readings set to Today!');
-    }
 });
 
 
