@@ -1285,16 +1285,51 @@ function getSectionTitle(prayer) {
     return label.replace(/ - .*/, '');
 }
 
+function hasActualContent(text, langKey) {
+    if (!text || !text.trim()) return false;
+    
+    let cleanText = text.replace(/<[^>]*>?/gm, ''); // Strip HTML
+    
+    // Remove speaker keywords for this language
+    let keywords = speakerKeywords[langKey];
+    if (keywords) {
+        // Sort keywords by length descending to match longer phrases first (e.g. "ካህን ንፍቅ" before "ካህን")
+        const sortedKeywords = [...keywords].sort((a, b) => b.length - a.length);
+        // Create regex to match keywords followed by common separators (including Ethiopic ones)
+        const regex = new RegExp(`(፨ )?(${sortedKeywords.join('|')})([:፡።፤፣\\s]*)`, 'g');
+        cleanText = cleanText.replace(regex, '');
+    }
+    
+    // Remove other common structural characters and whitespace
+    // Added Ethiopic full stop (።) and word separator (፡)
+    cleanText = cleanText.replace(/[፨:፡።፤፣\\s\\.\\!\\?\\-]/g, '').trim();
+    
+    return cleanText.length > 0;
+}
+
 function createPrayerCardElement(prayer, prayerIndex, isKidase = false) {
     const searchQuery = searchInput.value;
-    const activeLanguageCount = Object.values(displayedLanguages).filter(Boolean).length;
+    
+    // Filter languages that actually have content for THIS specific card
+    const languagesToDisplay = languageOrder.filter(langKey => {
+        const langCfg = LANGUAGE_REGISTRY[langKey] || { name: langKey, isAuto: false, category: 'main' };
+        
+        // Basic global visibility checks
+        if (!displayedLanguages[langKey]) return false;
+        if (langCfg.category === 'unofficial' && !isScribeLoggedIn) return false;
+        if (!prayer[langKey] || !prayer[langKey].trim()) return false;
+        
+        // Smart content check: hide if it ONLY contains speaker keywords
+        return hasActualContent(prayer[langKey], langKey);
+    });
+
+    const cardVisibleLanguageCount = languagesToDisplay.length;
+    
     const prayerCard = document.createElement('div');
     prayerCard.classList.add('prayer-card');
     prayerCard.dataset.prayerIndex = prayerIndex;
 
     // Scribe Edit Button (Only for Scribable content)
-    // We exclude most Bible-based content (Psalms, Bible, SeatatLectionary) 
-    // and Songs of the Prophets (except for Manasseh)
     const isScribable = prayer.chapter !== 'Psalms' && 
                         prayer.chapter !== 'Bible' && 
                         prayer.chapter !== 'SeatatLectionary' &&
@@ -1322,57 +1357,48 @@ function createPrayerCardElement(prayer, prayerIndex, isKidase = false) {
         prayerContent.classList.add('colored-languages');
     }
 
-    if (displayOptions.layout === 'column' && activeLanguageCount > 3 && displayOptions.horizontalScroll) {
+    if (displayOptions.layout === 'column' && cardVisibleLanguageCount > 3 && displayOptions.horizontalScroll) {
         prayerContent.classList.add('horizontal-scroll');
     }
-    prayerContent.dataset.activeColumns = activeLanguageCount;
+    prayerContent.dataset.activeColumns = cardVisibleLanguageCount;
 
     let isFirstLanguage = true;
-    languageOrder.forEach(langKey => {
-        const langCfg = LANGUAGE_REGISTRY[langKey] || { name: langKey, isAuto: false };
+    languagesToDisplay.forEach(langKey => {
+        const langCfg = LANGUAGE_REGISTRY[langKey];
         
-        // HIDDEN: skip unofficial languages for non-scribes (except Spanish)
-        if (langCfg.category === 'unofficial' && !isScribeLoggedIn) return;
-
-        if (displayedLanguages[langKey] && prayer[langKey] && prayer[langKey].trim()) {
-            const langSection = document.createElement('div');
-            langSection.classList.add('language-section');
-            if (langKey.includes('phonetic')) {
-                langSection.classList.add('lang-phonetic');
-            }
-
-            const langHeader = document.createElement('h4');
-            let labelText = langCfg.name.replace(/\*+$/, ''); // Strip all asterisks from name for the card label
-            
-            // Check if this specific stanza translation is official/verified
-            // Default to true for Manual languages, false for Auto languages
-            const isOfficial = prayer[`${langKey}_is_official`] !== undefined ? 
-                               prayer[`${langKey}_is_official`] : !langCfg.isAuto;
-
-            // Only append "Unofficial" if it's an auto-language AND NOT official
-            if (langCfg.isAuto && !isOfficial) {
-                labelText += ' [Unofficial Translation]';
-            }
-
-            langHeader.textContent = labelText;
-            if (!displayOptions.showLanguageLabels) langHeader.classList.add('hidden');
-
-            const langText = document.createElement('p');
-            langText.classList.add('language-text');
-            
-            // Pass the verseNum to formatPrayerText so it can intelligently place it (after superscription if one exists)
-            langText.innerHTML = formatPrayerText(prayer[langKey], langKey, searchQuery, isFirstLanguage, prayer.chapter, prayer.verseNum);
-
-            if (langCfg.isEthiopic) {
-                langHeader.classList.add('ethiopic-label');
-                langText.classList.add('lang-ethiopic-script');
-            }
-
-            langSection.appendChild(langHeader);
-            langSection.appendChild(langText);
-            prayerContent.appendChild(langSection);
-            isFirstLanguage = false;
+        const langSection = document.createElement('div');
+        langSection.classList.add('language-section');
+        if (langKey.includes('phonetic')) {
+            langSection.classList.add('lang-phonetic');
         }
+
+        const langHeader = document.createElement('h4');
+        let labelText = langCfg.name.replace(/\*+$/, '');
+        
+        const isOfficial = prayer[`${langKey}_is_official`] !== undefined ? 
+                           prayer[`${langKey}_is_official`] : !langCfg.isAuto;
+
+        if (langCfg.isAuto && !isOfficial) {
+            labelText += ' [Unofficial Translation]';
+        }
+
+        langHeader.textContent = labelText;
+        if (!displayOptions.showLanguageLabels) langHeader.classList.add('hidden');
+
+        const langText = document.createElement('p');
+        langText.classList.add('language-text');
+        
+        langText.innerHTML = formatPrayerText(prayer[langKey], langKey, searchQuery, isFirstLanguage, prayer.chapter, prayer.verseNum);
+
+        if (langCfg.isEthiopic) {
+            langHeader.classList.add('ethiopic-label');
+            langText.classList.add('lang-ethiopic-script');
+        }
+
+        langSection.appendChild(langHeader);
+        langSection.appendChild(langText);
+        prayerContent.appendChild(langSection);
+        isFirstLanguage = false;
     });
 
     prayerCardMainContent.appendChild(prayerContent);
@@ -1829,6 +1855,9 @@ function copyEntireLiturgy() {
         let entryText = "";
         visibleLangs.forEach(langKey => {
             if (p[langKey]) {
+                // Skip if only speaker keywords
+                if (!hasActualContent(p[langKey], langKey)) return;
+
                 const langCfg = LANGUAGE_REGISTRY[langKey];
                 const label = langCfg ? langCfg.name : langKey;
                 let rawText = p[langKey];
@@ -1888,7 +1917,13 @@ function copyPrayer(prayer) {
     let textToCopy = ``;
     textToCopy += `፨ ${getPrayerLabel(prayer)} ፨\n\n`;
     languageOrder.forEach(langKey => {
+        const langCfg = LANGUAGE_REGISTRY[langKey] || { category: 'main' };
+        if (langCfg.category === 'unofficial' && !isScribeLoggedIn) return;
+
         if (displayedLanguages[langKey] && prayer[langKey] && prayer[langKey].trim()) {
+            // Check for actual content
+            if (!hasActualContent(prayer[langKey], langKey)) return;
+
             textToCopy += `--- ${languageLabels[langKey]} ---\n`;
             let rawText = prayer[langKey];
             // Format for clipboard: strip HTML and replace placeholders
