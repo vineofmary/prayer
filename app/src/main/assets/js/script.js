@@ -480,10 +480,10 @@ const rubricGoldRegex = {
 
 // --- Speaker Label Data ---
 const speakerKeywords = {
-    english: ["Priest", "Deacon", "People", "Subdeacon", "All", "Leader", "Reader"],
-    geez_script: ["ካህን", "ዲያቆን", "ሕዝብ", "ንፍቀ ዲያቆን", "ኵሎሙ", "መሪሕ", "አንባቤ"],
-    amharic_script: ["ካህን", "ዲያቆን", "ሕዝብ", "ንፍቀ ዲያቆን", "ሁሉም", "መሪ", "አንባቢ"],
-    tigrinya_script: ["ካህን", "ዲያቆን", "ሕዝብ", "ንፍቀ ዲያቆን", "ኩሉኹም", "መራሒ", "ነባቢ"],
+    english: ["Priest", "Asst. Priest", "Deacon", "People", "Subdeacon", "All", "ALL", "Leader", "Reader"],
+    geez_script: ["ካህን", "ካህን ንፍቅ", "ዲያቆን", "ሕዝብ", "ንፍቀ ዲያቆን", "ኵሎሙ", "መሪሕ", "አንባቤ"],
+    amharic_script: ["ካህን", "ካህን ንፍቅ", "ዲያቆን", "ሕዝብ", "ንፍቀ ዲያቆን", "ሁሉም", "መሪ", "አንባቢ"],
+    tigrinya_script: ["ካህን", "ካህን ንፍቅ", "ዲያቆን", "ሕዝብ", "ንፍቀ ዲያቆን", "ኩሉኹም", "መራሒ", "ነባቢ"],
     spanish: ["Sacerdote", "Diácono", "Pueblo", "Subdiácono", "Todos", "Líder", "Gente", "Lector"],
 };
 
