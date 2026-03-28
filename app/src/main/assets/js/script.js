@@ -1214,6 +1214,15 @@ function formatPrayerText(text, langKey, query, isFirstLanguage, chapter = null,
 }
 
 function getPrayerLabel(prayer) {
+    // Detect Kidase prayers (Liturgy)
+    const isKidaseChapter = /^\d+$/.test(prayer.chapter) || ['Kidan', 'order', 'apostles', 'mary'].includes(prayer.chapter);
+    
+    if (isKidaseChapter && prayer.chapter && prayer.stanza) {
+        const source = `${prayer.chapter}-${prayer.stanza}`;
+        const instruction = (prayer.instruction && prayer.instruction.trim() && prayer.instruction.trim().toLowerCase() !== 'n/a') ? prayer.instruction.trim() : "";
+        return instruction ? `${source} ፨ ${instruction}` : source;
+    }
+
     const prayerKey = `${prayer.chapter}-${prayer.stanza}`;
     const customLabels = {
         "Daily-0": "",
@@ -1271,7 +1280,7 @@ function getSectionTitle(prayer) {
     return label.replace(/ - .*/, '');
 }
 
-function createPrayerCardElement(prayer, prayerIndex) {
+function createPrayerCardElement(prayer, prayerIndex, isKidase = false) {
     const searchQuery = searchInput.value;
     const activeLanguageCount = Object.values(displayedLanguages).filter(Boolean).length;
     const prayerCard = document.createElement('div');
@@ -1493,7 +1502,7 @@ function renderSelectedKidase(addSectionTitleCallback) {
             // Intro is included for any selection
         }
         
-        const card = createPrayerCardElement(p, -1);
+        const card = createPrayerCardElement(p, -1, true);
         prayerDisplay.appendChild(card);
     });
 
@@ -1511,10 +1520,19 @@ function renderSelectedKidase(addSectionTitleCallback) {
             anaphoraPrayers = anaphoraPrayers.filter(p => !p.instruction.toLowerCase().includes("inaudible"));
         }
         anaphoraPrayers.forEach(p => {
-            const card = createPrayerCardElement(p, -1);
+            const card = createPrayerCardElement(p, -1, true);
             prayerDisplay.appendChild(card);
         });
     }
+}
+
+
+function renderSequence() {
+    const sequence = getStandardPrayerSequence();
+    sequence.forEach(p => {
+        const card = createPrayerCardElement(p, -1, false);
+        prayerDisplay.appendChild(card);
+    });
 }
 
 
@@ -2561,7 +2579,7 @@ function renderSelectedProphetSongs(addSectionTitleCallback) {
                             versePrayer.verseNum = verseMatch[1];
                         }
 
-                        const prayerCard = createPrayerCardElement(versePrayer, -1);
+                        const prayerCard = createPrayerCardElement(versePrayer, -1, false);
                         prayerDisplay.appendChild(prayerCard);
                     });
                 }
@@ -2820,7 +2838,7 @@ function renderSelectedSeatatLectionary(addSectionTitleCallback) {
                     chapter: 'SeatatLectionary',
                     stanza: reading.type
                 };
-                const card = createPrayerCardElement(prayerData, -1);
+                const card = createPrayerCardElement(prayerData, -1, false);
                 prayerDisplay.appendChild(card);
             });
         }
