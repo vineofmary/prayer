@@ -1219,8 +1219,13 @@ function getPrayerLabel(prayer) {
     
     if (isKidaseChapter && prayer.chapter && prayer.stanza) {
         const source = `${prayer.chapter}-${prayer.stanza}`;
+        const reference = (prayer.reference && prayer.reference.trim() && prayer.reference.trim().toLowerCase() !== 'n/a') ? prayer.reference.trim() : "";
         const instruction = (prayer.instruction && prayer.instruction.trim() && prayer.instruction.trim().toLowerCase() !== 'n/a') ? prayer.instruction.trim() : "";
-        return instruction ? `${source} ፨ ${instruction}` : source;
+        
+        let label = source;
+        if (reference) label += ` ፨ ${reference}`;
+        if (instruction) label += ` ፨ ${instruction}`;
+        return label;
     }
 
     const prayerKey = `${prayer.chapter}-${prayer.stanza}`;
@@ -1427,10 +1432,18 @@ function createPrayerCardElement(prayer, prayerIndex, isKidase = false) {
     infoPanel.classList.add('info-panel');
     const infoPanelContent = document.createElement('div');
     infoPanelContent.classList.add('info-panel-content');
-    let infoHTML = `<p><strong>Reference:</strong> ${prayer.reference}</p>`;
-    if (prayer.instruction && prayer.instruction.trim().toLowerCase() !== 'n/a') {
-        infoHTML += `<p><strong>Instruction:</strong> ${prayer.instruction}</p>`;
+    
+    let infoHTML = "";
+    const isKidaseChapter = /^\d+$/.test(prayer.chapter) || ['Kidan', 'order', 'apostles', 'mary'].includes(prayer.chapter);
+    const isKidasePrayer = isKidase || (isKidaseChapter && prayer.chapter && prayer.stanza);
+
+    if (!isKidasePrayer) {
+        infoHTML = `<p><strong>Reference:</strong> ${prayer.reference}</p>`;
+        if (prayer.instruction && prayer.instruction.trim().toLowerCase() !== 'n/a') {
+            infoHTML += `<p><strong>Instruction:</strong> ${prayer.instruction}</p>`;
+        }
     }
+    
     infoPanelContent.innerHTML = infoHTML;
     infoPanel.appendChild(infoPanelContent);
     prayerCard.appendChild(infoPanel);
