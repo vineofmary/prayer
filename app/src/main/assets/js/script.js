@@ -88,6 +88,10 @@ const clearProphetSongsButton = document.getElementById('clear-prophet-songs-but
 const kidaseGatedSection = document.getElementById('kidase-gated-section');
 const kidaseModeToggle = document.getElementById('kidase-mode-toggle');
 const kidaseSettings = document.getElementById('kidase-settings');
+const showMorningPsalmGospelToggle = document.getElementById('show-morning-psalm-gospel');
+const morningPsalmGospelSettings = document.getElementById('morning-psalm-gospel-settings');
+const morningPsalmRefInput = document.getElementById('morning-psalm-ref');
+const morningGospelRefInput = document.getElementById('morning-gospel-ref');
 const anaphoraSelector = document.getElementById('anaphora-selector');
 const showPreLiturgyKidanToggle = document.getElementById('show-pre-liturgy-kidan');
 const covenantPrayerSelector = document.getElementById('covenant-prayer-selector');
@@ -111,7 +115,7 @@ const kidaseGospelRefInput = document.getElementById('kidase-gospel-ref');
 
 
 // --- State Variables ---
-const SETTINGS_VERSION = '4.2.1'; // Update this to force refresh load settings
+const SETTINGS_VERSION = '4.2.2'; // Update this to force refresh load settings
 let currentTheme = {};
 let isSidebarCollapsed = false;
 let isServantsCornerActive = false;
@@ -124,10 +128,13 @@ let selectedSeatatLectionaryDay = 'None';
 let selectedWidaseMaryamDay = 'All';
 let isKidaseModeActive = false;
 let selectedAnaphora = 'apostles';
+let showMorningPsalmGospel = false;
 let showPreLiturgyKidan = true;
-let selectedCovenantPrayer = 'none';
-let quietPrayersVisibility = 'all';
+let selectedCovenantPrayer = 'morning';
+let quietPrayersVisibility = 'congregation';
 let kidaseLectionaryRefs = {
+    morningPsalm: 'Psalm 1:1-2',
+    morningGospel: 'John 1:1-5',
     pauline: 'Romans 1:1-7',
     universal: '1 Peter 1:1-5',
     acts: 'Acts 1:1-8',
@@ -672,6 +679,7 @@ function saveSettings() {
     localStorage.setItem('selectedWidaseMaryamDay', selectedWidaseMaryamDay);
     localStorage.setItem('isKidaseModeActive', isKidaseModeActive);
     localStorage.setItem('selectedAnaphora', selectedAnaphora);
+    localStorage.setItem('showMorningPsalmGospel', showMorningPsalmGospel);
     localStorage.setItem('showPreLiturgyKidan', showPreLiturgyKidan);
     localStorage.setItem('selectedCovenantPrayer', selectedCovenantPrayer);
     localStorage.setItem('quietPrayersVisibility', quietPrayersVisibility);
@@ -732,6 +740,7 @@ function loadSettings() {
         selectedWidaseMaryamDay: getSeatatLiturgicalDay(),
         isKidaseModeActive: false,
         selectedAnaphora: 'apostles',
+        showMorningPsalmGospel: false,
         showPreLiturgyKidan: true,
         selectedCovenantPrayer: 'morning',
         quietPrayersVisibility: 'congregation',
@@ -792,6 +801,7 @@ function loadSettings() {
         selectedWidaseMaryamDay = localStorage.getItem('selectedWidaseMaryamDay') || defaultSettings.selectedWidaseMaryamDay;
         isKidaseModeActive = localStorage.getItem('isKidaseModeActive') === 'true';
         selectedAnaphora = localStorage.getItem('selectedAnaphora') || defaultSettings.selectedAnaphora;
+        showMorningPsalmGospel = localStorage.getItem('showMorningPsalmGospel') === 'true';
         showPreLiturgyKidan = localStorage.getItem('showPreLiturgyKidan') !== null ? localStorage.getItem('showPreLiturgyKidan') === 'true' : defaultSettings.showPreLiturgyKidan;
         selectedCovenantPrayer = localStorage.getItem('selectedCovenantPrayer') || defaultSettings.selectedCovenantPrayer;
         quietPrayersVisibility = localStorage.getItem('quietPrayersVisibility') || defaultSettings.quietPrayersVisibility;
@@ -811,6 +821,8 @@ function loadSettings() {
     countryNameInput.value = customNames.country;
     headOfStateInput.value = customNames.headOfState;
 
+    morningPsalmRefInput.value = kidaseLectionaryRefs.morningPsalm || 'Psalm 1:1-2';
+    morningGospelRefInput.value = kidaseLectionaryRefs.morningGospel || 'John 1:1-5';
     kidasePaulineRefInput.value = kidaseLectionaryRefs.pauline;
     kidaseUniversalRefInput.value = kidaseLectionaryRefs.universal;
     kidaseActsRefInput.value = kidaseLectionaryRefs.acts;
@@ -927,6 +939,8 @@ function updateAllTogglesInSettingsPanel() {
     kidaseModeToggle.checked = isKidaseModeActive;
     kidaseSettings.style.display = isKidaseModeActive ? 'block' : 'none';
     anaphoraSelector.value = selectedAnaphora;
+    showMorningPsalmGospelToggle.checked = showMorningPsalmGospel;
+    morningPsalmGospelSettings.style.display = showMorningPsalmGospel ? 'block' : 'none';
     showPreLiturgyKidanToggle.checked = showPreLiturgyKidan;
     covenantPrayerSelector.value = selectedCovenantPrayer;
     quietPrayersVisibilitySelector.value = quietPrayersVisibility;
@@ -1095,8 +1109,8 @@ function replaceKidasePlaceholders(text, langKey) {
         '{{TODAY\'S ACTS READING}}': kidaseLectionaryRefs.acts,
         '{{TODAY\'S PSALMS READING}}': kidaseLectionaryRefs.psalm,
         '{{TODAY\'S GOSPEL READING}}': kidaseLectionaryRefs.gospel,
-        '{{MORNING PSALMS READING}}': kidaseLectionaryRefs.psalm, // Reusing for now
-        '{{MORNING GOSPEL READING}}': kidaseLectionaryRefs.gospel  // Reusing for now
+        '{{MORNING PSALMS READING}}': kidaseLectionaryRefs.morningPsalm,
+        '{{MORNING GOSPEL READING}}': kidaseLectionaryRefs.morningGospel
     };
     
     for (const [placeholder, ref] of Object.entries(mapping)) {
@@ -1504,36 +1518,44 @@ function renderSelectedKidase(addSectionTitleCallback) {
     if (!isKidaseModeActive || typeof kidaseData === 'undefined') return;
 
     const allOrderPrayers = kidaseData.order;
+    let isFirstSection = true;
+
+    const addCopyButtonIfFirst = (container) => {
+        if (isFirstSection && container) {
+            const copyBtn = document.createElement('button');
+            copyBtn.className = 'copy-section-button';
+            copyBtn.innerHTML = shareIconSVG;
+            copyBtn.title = 'Copy Entire Liturgy';
+            copyBtn.style.marginLeft = '1rem';
+            copyBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                copyEntireLiturgy();
+            });
+            container.appendChild(copyBtn);
+            isFirstSection = false;
+        }
+    };
 
     // 1. Psalm & Gospel of The Morning | ምስባክ ወወንጌል ዘነግህ
     // Range: index 0 to 78 (3-179 to 3-211)
-    const titleContainer = addSectionTitleCallback("Psalm & Gospel of The Morning | ምስባክ ወወንጌል ዘነግህ");
-    
-    // Add "Copy Entire Liturgy" button next to the first section title
-    if (titleContainer) {
-        const copyBtn = document.createElement('button');
-        copyBtn.className = 'copy-section-button';
-        copyBtn.innerHTML = shareIconSVG;
-        copyBtn.title = 'Copy Entire Liturgy';
-        copyBtn.style.marginLeft = '1rem';
-        copyBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            copyEntireLiturgy();
-        });
-        titleContainer.appendChild(copyBtn);
+    if (showMorningPsalmGospel) {
+        const titleContainer = addSectionTitleCallback("Psalm & Gospel of The Morning | ምስባክ ወወንጌል ዘነግህ");
+        addCopyButtonIfFirst(titleContainer);
+        renderKidaseSection(allOrderPrayers.slice(0, 79));
     }
-    renderKidaseSection(allOrderPrayers.slice(0, 79));
 
     // 2. Pre-Liturgy Prayer of the Covenant | ጸሎተ ኪዳን
     // Range: index 79 to 179 (Kidan-Intro to end of Gabriel Greeting/Hymn)
     if (showPreLiturgyKidan) {
-        addSectionTitleCallback("Prayer of the Covenant | ጸሎተ ኪዳን");
+        const titleContainer = addSectionTitleCallback("Prayer of the Covenant | ጸሎተ ኪዳን");
+        addCopyButtonIfFirst(titleContainer);
         renderKidaseSection(allOrderPrayers.slice(79, 180)); // No version filtering here
     }
 
     // 3. Order of the Liturgy | ሥርዓተ ቅዳሴ
     // Range: index 180 to end (4-62)
-    addSectionTitleCallback("Order of the Liturgy | ሥርዓተ ቅዳሴ");
+    const liturgyTitleContainer = addSectionTitleCallback("Order of the Liturgy | ሥርዓተ ቅዳሴ");
+    addCopyButtonIfFirst(liturgyTitleContainer);
     const liturgyOrderPrayers = allOrderPrayers.slice(180);
     
     liturgyOrderPrayers.forEach((p, relativeIdx) => {
@@ -1888,12 +1910,14 @@ function copyEntireLiturgy() {
     const allOrderPrayers = kidaseData.order;
 
     // 1. Psalm & Gospel
-    textToCopy += `### Psalm & Gospel of The Morning | ምስባክ ወወንጌል ዘነግህ ###\n\n`;
-    const morningGospelPrayers = allOrderPrayers.slice(0, 79);
-    morningGospelPrayers.forEach(p => {
-        if (quietPrayersVisibility === 'congregation' && p.instruction.toLowerCase().includes("inaudible")) return;
-        textToCopy += formatEntry(p);
-    });
+    if (showMorningPsalmGospel) {
+        textToCopy += `### Psalm & Gospel of The Morning | ምስባክ ወወንጌል ዘነግህ ###\n\n`;
+        const morningGospelPrayers = allOrderPrayers.slice(0, 79);
+        morningGospelPrayers.forEach(p => {
+            if (quietPrayersVisibility === 'congregation' && p.instruction.toLowerCase().includes("inaudible")) return;
+            textToCopy += formatEntry(p);
+        });
+    }
 
     // 2. Pre-Liturgy Covenant
     if (showPreLiturgyKidan) {
@@ -3114,6 +3138,25 @@ kidaseModeToggle.addEventListener('change', () => {
     kidaseSettings.style.display = isKidaseModeActive ? 'block' : 'none';
     saveSettings();
     smoothRender();
+});
+
+showMorningPsalmGospelToggle.addEventListener('change', () => {
+    showMorningPsalmGospel = showMorningPsalmGospelToggle.checked;
+    morningPsalmGospelSettings.style.display = showMorningPsalmGospel ? 'block' : 'none';
+    saveSettings();
+    smoothRender();
+});
+
+morningPsalmRefInput.addEventListener('input', () => {
+    kidaseLectionaryRefs.morningPsalm = morningPsalmRefInput.value;
+    saveSettings();
+    renderPrayers();
+});
+
+morningGospelRefInput.addEventListener('input', () => {
+    kidaseLectionaryRefs.morningGospel = morningGospelRefInput.value;
+    saveSettings();
+    renderPrayers();
 });
 
 anaphoraSelector.addEventListener('change', () => {
