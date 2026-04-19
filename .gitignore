@@ -28,5 +28,25 @@ local.properties
 # Log files, emulators, etc.
 *.log
 .DS_Store
-*.iml\n# Local development secrets and context files\nicon-context.md\nprevious-chat-history-for-context.md\nservice-account.json\nlocal.properties
+*.iml
+
+# Local development secrets and context files
+icon-context.md
+previous-chat-history-for-context.md
+service-account.json
+
+# Dependencies
 functions/node_modules/
+node_modules/
+
+# Legacy app and data
+kidase-creator-legacy-app/
+
+# Scripts
+convert_kidase_v2.js
+
+# Firebase configs
+firebase/
+
+# Project configuration
+GEMINI.md
