@@ -95,7 +95,7 @@ const morningGospelRefInput = document.getElementById('morning-gospel-ref');
 const anaphoraSelector = document.getElementById('anaphora-selector');
 const showPreLiturgyKidanToggle = document.getElementById('show-pre-liturgy-kidan');
 const covenantPrayerSelector = document.getElementById('covenant-prayer-selector');
-const quietPrayersVisibilitySelector = document.getElementById('quiet-prayers-visibility');
+const hideQuietPrayersToggle = document.getElementById('hide-quiet-prayers');
 const servantNameInput = document.getElementById('servant-name-input');
 const patriarchNameInput = document.getElementById('patriarch-name-input');
 const bishopNameInput = document.getElementById('bishop-name-input');
@@ -131,7 +131,7 @@ let selectedAnaphora = 'apostles';
 let showMorningPsalmGospel = false;
 let showPreLiturgyKidan = true;
 let selectedCovenantPrayer = 'morning';
-let quietPrayersVisibility = 'congregation';
+let hideQuietPrayers = true;
 let kidaseLectionaryRefs = {
     morningPsalm: 'Psalm 1:1-2',
     morningGospel: 'John 1:1-5',
@@ -682,7 +682,7 @@ function saveSettings() {
     localStorage.setItem('showMorningPsalmGospel', showMorningPsalmGospel);
     localStorage.setItem('showPreLiturgyKidan', showPreLiturgyKidan);
     localStorage.setItem('selectedCovenantPrayer', selectedCovenantPrayer);
-    localStorage.setItem('quietPrayersVisibility', quietPrayersVisibility);
+    localStorage.setItem('hideQuietPrayers', hideQuietPrayers);
     localStorage.setItem('kidaseLectionaryRefs', JSON.stringify(kidaseLectionaryRefs));
     localStorage.setItem('customNames', JSON.stringify(customNames));
     localStorage.setItem('collapsedSections', JSON.stringify(collapsedSections));
@@ -743,7 +743,7 @@ function loadSettings() {
         showMorningPsalmGospel: false,
         showPreLiturgyKidan: true,
         selectedCovenantPrayer: 'morning',
-        quietPrayersVisibility: 'congregation',
+        hideQuietPrayers: true,
         // Default Custom Names
         customNames: {
             servant: '{Names}',
@@ -804,7 +804,7 @@ function loadSettings() {
         showMorningPsalmGospel = localStorage.getItem('showMorningPsalmGospel') === 'true';
         showPreLiturgyKidan = localStorage.getItem('showPreLiturgyKidan') !== null ? localStorage.getItem('showPreLiturgyKidan') === 'true' : defaultSettings.showPreLiturgyKidan;
         selectedCovenantPrayer = localStorage.getItem('selectedCovenantPrayer') || defaultSettings.selectedCovenantPrayer;
-        quietPrayersVisibility = localStorage.getItem('quietPrayersVisibility') || defaultSettings.quietPrayersVisibility;
+        hideQuietPrayers = localStorage.getItem('hideQuietPrayers') !== null ? localStorage.getItem('hideQuietPrayers') === 'true' : defaultSettings.hideQuietPrayers;
         const savedKidaseLectionaryRefs = JSON.parse(localStorage.getItem('kidaseLectionaryRefs')) || {};
         kidaseLectionaryRefs = { ...defaultSettings.kidaseLectionaryRefs, ...savedKidaseLectionaryRefs };
         const savedCustomNames = JSON.parse(localStorage.getItem('customNames')) || {};
@@ -943,7 +943,7 @@ function updateAllTogglesInSettingsPanel() {
     morningPsalmGospelSettings.style.display = showMorningPsalmGospel ? 'block' : 'none';
     showPreLiturgyKidanToggle.checked = showPreLiturgyKidan;
     covenantPrayerSelector.value = selectedCovenantPrayer;
-    quietPrayersVisibilitySelector.value = quietPrayersVisibility;
+    hideQuietPrayersToggle.checked = hideQuietPrayers;
 
     updateLayoutToggleIcon();
     updatePresentationModeToggleIcon();
@@ -1650,24 +1650,7 @@ function renderSelectedKidase(addSectionTitleCallback) {
     const liturgyTitleContainer = addSectionTitleCallback("Order of the Liturgy | ሥርዓተ ቅዳሴ");
     addCopyButtonIfFirst(liturgyTitleContainer);
     const liturgyOrderPrayers = allOrderPrayers.slice(180);
-    
-    liturgyOrderPrayers.forEach((p, relativeIdx) => {
-        const absoluteIdx = 180 + relativeIdx;
-        
-        // Handle Liturgy-embedded Covenant Prayer filtering
-        // Range within liturgy order: 503 to 592
-        if (absoluteIdx >= 503 && absoluteIdx <= 592 && p.chapter === 'Kidan') {
-            if (selectedCovenantPrayer === 'none') return;
-            if (p.stanza === 'Part1' && selectedCovenantPrayer !== 'midnight') return;
-            if (p.stanza === 'Part2' && selectedCovenantPrayer !== 'morning') return;
-            if (p.stanza === 'Part3' && selectedCovenantPrayer !== 'afternoon') return;
-        }
-
-        if (quietPrayersVisibility === 'congregation' && p.instruction.toLowerCase().includes("inaudible")) return;
-        
-        const card = createPrayerCardElement(p, -1, true);
-        prayerDisplay.appendChild(card);
-    });
+    renderKidaseSection(liturgyOrderPrayers, true); // true means apply covenant version filtering if applicable
 
     // 4. Anaphora
     const anaphoraMap = {
@@ -1682,14 +1665,24 @@ function renderSelectedKidase(addSectionTitleCallback) {
     }
 
     // Helper to render a chunk of kidase prayers with current filters
-    function renderKidaseSection(prayers) {
+    function renderKidaseSection(prayers, isLiturgyCore = false) {
         let filtered = prayers;
         
-        if (quietPrayersVisibility === 'congregation') {
-            filtered = filtered.filter(p => !p.instruction.toLowerCase().includes("inaudible"));
+        if (hideQuietPrayers) {
+            filtered = filtered.filter(p => !p.instruction.includes("Inaudible Prayer"));
         }
 
-        filtered.forEach(p => {
+        filtered.forEach((p, relativeIdx) => {
+            // Handle Liturgy-embedded Covenant Prayer filtering (only for Core)
+            if (isLiturgyCore) {
+                const absoluteIdx = 180 + relativeIdx;
+                if (absoluteIdx >= 503 && absoluteIdx <= 592 && p.chapter === 'Kidan') {
+                    if (selectedCovenantPrayer === 'none') return;
+                    if (p.stanza === 'Part1' && selectedCovenantPrayer !== 'midnight') return;
+                    if (p.stanza === 'Part2' && selectedCovenantPrayer !== 'morning') return;
+                    if (p.stanza === 'Part3' && selectedCovenantPrayer !== 'afternoon') return;
+                }
+            }
             // Check if this prayer contains a reading placeholder from the config
             let activeCfg = null;
             for (const cfg of LITURGY_LECTIONARY_CONFIG) {
@@ -2094,7 +2087,7 @@ function copyEntireLiturgy() {
         textToCopy += `### Psalm & Gospel of The Morning | ምስባክ ወወንጌል ዘነግህ ###\n\n`;
         const morningGospelPrayers = allOrderPrayers.slice(0, 79);
         morningGospelPrayers.forEach(p => {
-            if (quietPrayersVisibility === 'congregation' && p.instruction.toLowerCase().includes("inaudible")) return;
+            if (hideQuietPrayers && p.instruction.includes("Inaudible Prayer")) return;
             textToCopy += formatEntry(p);
         });
     }
@@ -2104,7 +2097,7 @@ function copyEntireLiturgy() {
         textToCopy += `### Prayer of the Covenant | ጸሎተ ኪዳን ###\n\n`;
         const covenantPrayers = allOrderPrayers.slice(79, 180);
         covenantPrayers.forEach(p => {
-            if (quietPrayersVisibility === 'congregation' && p.instruction.toLowerCase().includes("inaudible")) return;
+            if (hideQuietPrayers && p.instruction.includes("Inaudible Prayer")) return;
             textToCopy += formatEntry(p);
         });
     }
@@ -2115,7 +2108,7 @@ function copyEntireLiturgy() {
     liturgyOrderPrayers.forEach((p, relativeIdx) => {
         const absoluteIdx = 180 + relativeIdx;
         
-        if (quietPrayersVisibility === 'congregation' && p.instruction.toLowerCase().includes("inaudible")) return;
+        if (hideQuietPrayers && p.instruction.includes("Inaudible Prayer")) return;
 
         // Apply version filtering only to Liturgy-embedded Covenant
         if (absoluteIdx >= 503 && absoluteIdx <= 592 && p.chapter === 'Kidan') {
@@ -2138,7 +2131,7 @@ function copyEntireLiturgy() {
         textToCopy += `### ${anaphora.name} ###\n\n`;
         let anaphoraPrayers = anaphora.data;
         anaphoraPrayers.forEach(p => {
-            if (quietPrayersVisibility === 'congregation' && p.instruction.toLowerCase().includes("inaudible")) return;
+            if (hideQuietPrayers && p.instruction.includes("Inaudible Prayer")) return;
             textToCopy += formatEntry(p);
         });
     }
@@ -3357,8 +3350,8 @@ covenantPrayerSelector.addEventListener('change', () => {
     smoothRender();
 });
 
-quietPrayersVisibilitySelector.addEventListener('change', () => {
-    quietPrayersVisibility = quietPrayersVisibilitySelector.value;
+hideQuietPrayersToggle.addEventListener('change', () => {
+    hideQuietPrayers = hideQuietPrayersToggle.checked;
     saveSettings();
     smoothRender();
 });
