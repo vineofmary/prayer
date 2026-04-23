@@ -2,12 +2,12 @@
 const body = document.body;
 // --- Firebase Configuration ---
 const firebaseConfig = {
-  apiKey: "AIzaSyAu50q3NfDNaZUWsxU0-YIlql3bQsc6_QQ",
-  authDomain: "mount-of-mercy.firebaseapp.com",
-  projectId: "mount-of-mercy",
-  storageBucket: "mount-of-mercy.firebasestorage.app",
-  messagingSenderId: "974361367981",
-  appId: "1:974361367981:web:752f9a6fb815e208f4fd24"
+    apiKey: "AIzaSyAu50q3NfDNaZUWsxU0-YIlql3bQsc6_QQ",
+    authDomain: "mount-of-mercy.firebaseapp.com",
+    projectId: "mount-of-mercy",
+    storageBucket: "mount-of-mercy.firebasestorage.app",
+    messagingSenderId: "974361367981",
+    appId: "1:974361367981:web:752f9a6fb815e208f4fd24"
 };
 
 // Initialize Firebase (Compat)
@@ -155,11 +155,11 @@ const LANGUAGE_REGISTRY = {
     'oromoo': { name: 'ኦሮምኛ (Oromo)**', category: 'main', isAuto: false, isEthiopic: true, isSeekingScribe: true },
     'tigrinya_script': { name: 'ትግርኛ (Tigrinya)', category: 'main', isAuto: false, isEthiopic: true },
     'tigrinya_phonetic': { name: 'Tigrinya Phonetic', category: 'main', isAuto: false },
-    'spanish': { name: 'Español (Spanish)*', category: 'main', isAuto: true }, 
+    'spanish': { name: 'Español (Spanish)*', category: 'main', isAuto: true },
     'coptic': { name: 'ϯⲙⲉⲧⲣⲉⲙⲛ̀ⲭⲏⲙⲓ (Coptic)', category: 'main', isAuto: false },
     'syriac': { name: 'ܣܘܪܝܝܐ (Syriac)**', category: 'main', isAuto: false, isSeekingScribe: true },
     'armenian': { name: 'Հայերեն (Armenian)**', category: 'main', isAuto: false, isSeekingScribe: true },
-    
+
     // Phonetics (Main Section)
     // (Note: Already moved above for grouping but keeping IDs consistent)
 
@@ -176,7 +176,7 @@ const languageLabels = Object.fromEntries(
 );
 
 let languageOrder = [
-    'english', 'geez_script', 'amharic_script', 'oromoo', 'tigrinya_script', 
+    'english', 'geez_script', 'amharic_script', 'oromoo', 'tigrinya_script',
     'spanish', 'french', 'arabic', 'greek', 'hebrew', 'malayalam',
     'syriac', 'armenian', 'coptic',
     'geez_phonetic', 'amharic_phonetic', 'tigrinya_phonetic'
@@ -353,7 +353,7 @@ const anglicizedNameMap = {
     "Church": "Béte Kristiyan",
     "Bearer of God": "Theotokos",
     "Mother of God": "Theotokos",
-//    "Amen": "Amén",
+    //    "Amen": "Amén",
     "Anne": "Hanna",
     "Joachim": "Iyaqém",
     "Moses": "Musé",
@@ -396,7 +396,7 @@ function applyAnglicization(text, langKey) {
 // --- Rubrication Data ---
 const rubricRedWords = {
     english: [
-        "In the Name of the Father, and of the Son, and of the Holy Spirit, One God, Amen", "I seal my face", "Father", "Son", "Son of God", "Son of the Highest", "Holy Spirit", "Holy One", "One God",
+        "In the Name of the Father, and of the Son, and of the Holy Spirit, One God, Amen", "I seal my face", "Father", "Son", "Son's", "Son of God", "Son of the Highest", "Holy Spirit", "Holy One", "One God",
         "Holy Trinity", "We thank You, Lord", "Lord", "God", "King", "Jesus", "Our Father in Heaven",
         "With the Greeting of Saint Gabriel", "Lord God of hosts", "Jesus Christ", "Iyesus Kristos", "Iyesus", "We believe in one God", "one God",
         "Light", "True God from True God", "Amen", "Holy, holy, holy, is the Lord of hosts", "Holy, holy, holy", "Holy, Holy, Holy", "Christ",
@@ -457,7 +457,7 @@ function buildRegex(words, isGeez = false) {
         .map(word => word.replace(/[.*+?^${}()|[\]\\\/]/g, '\\$&')); // Escape regex special chars including /
 
     const regexString = sortedWords.join('|');
-    
+
     // Improved boundary pattern: space, start of line, or common punctuation
     // leadBoundary matches character before word (e.g. > in <i>Word)
     // trailBoundary looks ahead for character after word (e.g. < in Word</i>)
@@ -550,7 +550,7 @@ function updateProphetSongsSummary() {
 // Delays invoking a function until after 'wait' ms have passed since the last time it was invoked.
 function debounce(func, wait) {
     let timeout;
-    return function(...args) {
+    return function (...args) {
         clearTimeout(timeout);
         timeout = setTimeout(() => {
             func.apply(this, args);
@@ -578,7 +578,7 @@ function applyRubrication(text, langKey, isFirstLanguage, chapter = null) {
             // Find which word from the list matched
             const matchIndex = fullMatch.indexOf(p2, p1.length);
             const actualMatchedWord = fullMatch.substring(p1.length);
-            
+
             if (langKey === 'geez_script') {
                 // p1 is leading boundary, p2 is prefix
                 // actualMatchedWord includes prefix + root
@@ -692,7 +692,7 @@ function saveSettings() {
 function loadSettings() {
     const isMobile = window.innerWidth < 900;
     const savedVersion = localStorage.getItem('settingsVersion');
-    
+
     // Auto-generate default languages from the registry
     const defaultLanguages = {};
     Object.keys(LANGUAGE_REGISTRY).forEach(id => {
@@ -953,7 +953,7 @@ function updateAllTogglesInSettingsPanel() {
 function updateLanguageToggles() {
     languageTogglesDiv.innerHTML = '';
     unofficialLanguageTogglesDiv.innerHTML = '';
-    
+
     // Toggle visibility of the unofficial section container
     if (unofficialLanguagesSection) {
         unofficialLanguagesSection.style.display = isScribeLoggedIn ? 'block' : 'none';
@@ -962,12 +962,12 @@ function updateLanguageToggles() {
     Object.entries(LANGUAGE_REGISTRY).forEach(([id, cfg]) => {
         const label = document.createElement('label');
         if (cfg.isEthiopic) label.classList.add('ethiopic-label');
-        
+
         const checkbox = document.createElement('input');
         checkbox.type = 'checkbox';
         checkbox.value = id;
         checkbox.checked = displayedLanguages[id] || false;
-        
+
         const span = document.createElement('span');
         if (id.includes('phonetic')) {
             const italic = document.createElement('i');
@@ -980,13 +980,13 @@ function updateLanguageToggles() {
         // Handle "Seeking Scribes" graying out
         if (cfg.isSeekingScribe) {
             // Check if there is ANY translation for this language in the current view
-            const hasTranslations = prayers.some(p => p[id] && p[id].trim()) || 
-                                    prayersFromFirestore.some(p => p[id] && p[id].trim());
-            
+            const hasTranslations = prayers.some(p => p[id] && p[id].trim()) ||
+                prayersFromFirestore.some(p => p[id] && p[id].trim());
+
             if (!hasTranslations) {
                 // If no translations and not a scribe, hide it entirely
                 if (!isScribeLoggedIn) return;
-                
+
                 label.style.opacity = '0.5';
                 // label.title = 'No translations yet. Seeking Scribes!';
             }
@@ -1000,7 +1000,7 @@ function updateLanguageToggles() {
         if (cfg.category === 'unofficial') {
             // Extra safety: only show unofficial languages if scribe is logged in
             if (!isScribeLoggedIn) return;
-            
+
             label.style.display = 'block'; // One per line
             unofficialLanguageTogglesDiv.appendChild(label);
         } else {
@@ -1020,14 +1020,14 @@ function updateLanguageOrderList() {
     languageOrderList.innerHTML = '';
     languageOrder.forEach(langKey => {
         const langCfg = LANGUAGE_REGISTRY[langKey] || { category: 'main' };
-        
+
         // Skip unofficial languages for non-scribes
         if (langCfg.category === 'unofficial' && !isScribeLoggedIn) return;
 
         // Skip empty 'seeking scribe' languages for non-scribes
         if (langCfg.isSeekingScribe && !isScribeLoggedIn) {
-            const hasTranslations = prayers.some(p => p[langKey] && p[langKey].trim()) || 
-                                    prayersFromFirestore.some(p => p[langKey] && p[langKey].trim());
+            const hasTranslations = prayers.some(p => p[langKey] && p[langKey].trim()) ||
+                prayersFromFirestore.some(p => p[langKey] && p[langKey].trim());
             if (!hasTranslations) return;
         }
 
@@ -1061,16 +1061,16 @@ function highlightText(text, query) {
 
 function getBibleVersesFromRef(ref) {
     if (!ref || !bibleData.loaded) return null;
-    
+
     // Simple parser for "Book Chapter:Verse-Verse" or "Book Chapter:Verse"
     const match = ref.match(/^(.+?)\s+(\d+):(\d+)(?:-(\d+))?$/);
     if (!match) return null;
-    
+
     const bookName = match[1];
     const chapterNum = parseInt(match[2]);
     const startVerse = parseInt(match[3]);
     const endVerse = match[4] ? parseInt(match[4]) : startVerse;
-    
+
     const bookCfg = BIBLE_BOOK_MAPPING[bookName];
     const results = {};
 
@@ -1107,7 +1107,7 @@ function getBibleVersesFromRef(ref) {
                 .map(v => ({ verseNum: v.verse_number, text: v.text }));
         }
     }
-    
+
     return results;
 }
 
@@ -1116,7 +1116,7 @@ function getPsalmVerses(chapterNum, start, end, langKey) {
     if (!bibleData.geez_psalms) return "";
     const chapter = bibleData.geez_psalms.find(ch => ch.id === chapterNum);
     if (!chapter) return "";
-    
+
     const verses = chapter.verses.filter(v => v.verse_number >= start && v.verse_number <= end);
     return verses.map(v => `[${v.verse_number}] ${v.text}`).join(" ");
 }
@@ -1190,7 +1190,7 @@ const LITURGY_LECTIONARY_CONFIG = [
 
 function replaceKidasePlaceholders(text, langKey, isFirstLanguage) {
     let processed = text;
-    
+
     for (const cfg of LITURGY_LECTIONARY_CONFIG) {
         // Check all language placeholders for this config
         for (const [pLang, placeholder] of Object.entries(cfg.placeholders)) {
@@ -1245,7 +1245,7 @@ function formatPrayerText(text, langKey, query, isFirstLanguage, chapter = null,
     // Apply superscription formatting for Psalms, Songs of the Prophets, and Lectionary readings
     if (chapter === 'Psalms' || chapter === 'ProphetSong' || chapter === 'SeatatLectionary') {
         const supTag = verseNum ? `<sup>${verseNum}</sup> ` : '';
-        
+
         if (langKey === 'spanish') {
             // Match leading Spanish superscriptions (using both literal « and Unicode \u00ab, and handle variations)
             // Some entries might use literal characters or escaped sequences.
@@ -1317,12 +1317,12 @@ function formatPrayerText(text, langKey, query, isFirstLanguage, chapter = null,
 function getPrayerLabel(prayer) {
     // Detect Kidase prayers (Liturgy)
     const isKidaseChapter = /^\d+$/.test(prayer.chapter) || ['Kidan', 'order', 'apostles', 'mary'].includes(prayer.chapter);
-    
+
     if (isKidaseChapter && prayer.chapter && prayer.stanza) {
         const source = `${prayer.chapter}-${prayer.stanza}`;
         const reference = (prayer.reference && prayer.reference.trim() && prayer.reference.trim().toLowerCase() !== 'n/a') ? prayer.reference.trim() : "";
         const instruction = (prayer.instruction && prayer.instruction.trim() && prayer.instruction.trim().toLowerCase() !== 'n/a') ? prayer.instruction.trim() : "";
-        
+
         let label = source;
         if (reference) label += ` ፨ ${reference}`;
         if (instruction) label += ` ፨ ${instruction}`;
@@ -1388,12 +1388,12 @@ function getSectionTitle(prayer) {
 
 function hasActualContent(text, langKey) {
     if (!text || !text.trim()) return false;
-    
+
     // If it contains a placeholder, it has content
     if (text.includes('{{') && text.includes('}}')) return true;
 
     let cleanText = text.replace(/<[^>]*>?/gm, ''); // Strip HTML
-    
+
     // Remove speaker keywords for this language
     let keywords = speakerKeywords[langKey];
     if (keywords) {
@@ -1403,41 +1403,41 @@ function hasActualContent(text, langKey) {
         const regex = new RegExp(`(፨ )?(${sortedKeywords.join('|')})([:፡።፤፣\\s]*)`, 'g');
         cleanText = cleanText.replace(regex, '');
     }
-    
+
     // Remove other common structural characters and whitespace
     // Added Ethiopic full stop (።) and word separator (፡)
     cleanText = cleanText.replace(/[፨:፡።፤፣\\s\\.\\!\\?\\-]/g, '').trim();
-    
+
     return cleanText.length > 0;
 }
 
 function createPrayerCardElement(prayer, prayerIndex, isKidase = false) {
     const searchQuery = searchInput.value;
-    
+
     // Filter languages that actually have content for THIS specific card
     const languagesToDisplay = languageOrder.filter(langKey => {
         const langCfg = LANGUAGE_REGISTRY[langKey] || { name: langKey, isAuto: false, category: 'main' };
-        
+
         // Basic global visibility checks
         if (!displayedLanguages[langKey]) return false;
         if (langCfg.category === 'unofficial' && !isScribeLoggedIn) return false;
         if (!prayer[langKey] || !prayer[langKey].trim()) return false;
-        
+
         // Smart content check: hide if it ONLY contains speaker keywords
         return hasActualContent(prayer[langKey], langKey);
     });
 
     const cardVisibleLanguageCount = languagesToDisplay.length;
-    
+
     const prayerCard = document.createElement('div');
     prayerCard.classList.add('prayer-card');
     prayerCard.dataset.prayerIndex = prayerIndex;
 
     // Scribe Edit Button (Only for Scribable content)
-    const isScribable = prayer.chapter !== 'Psalms' && 
-                        prayer.chapter !== 'Bible' && 
-                        prayer.chapter !== 'SeatatLectionary' &&
-                        (prayer.chapter !== 'ProphetSong' || prayer.stanza === 'Manasseh');
+    const isScribable = prayer.chapter !== 'Psalms' &&
+        prayer.chapter !== 'Bible' &&
+        prayer.chapter !== 'SeatatLectionary' &&
+        (prayer.chapter !== 'ProphetSong' || prayer.stanza === 'Manasseh');
 
     if (isScribeModeActive && isScribable) {
         const editBtn = document.createElement('button');
@@ -1469,7 +1469,7 @@ function createPrayerCardElement(prayer, prayerIndex, isKidase = false) {
     let isFirstLanguage = true;
     languagesToDisplay.forEach(langKey => {
         const langCfg = LANGUAGE_REGISTRY[langKey];
-        
+
         const langSection = document.createElement('div');
         langSection.classList.add('language-section');
         if (langKey.includes('phonetic')) {
@@ -1478,9 +1478,9 @@ function createPrayerCardElement(prayer, prayerIndex, isKidase = false) {
 
         const langHeader = document.createElement('h4');
         let labelText = langCfg.name.replace(/\*+$/, '');
-        
-        const isOfficial = prayer[`${langKey}_is_official`] !== undefined ? 
-                           prayer[`${langKey}_is_official`] : !langCfg.isAuto;
+
+        const isOfficial = prayer[`${langKey}_is_official`] !== undefined ?
+            prayer[`${langKey}_is_official`] : !langCfg.isAuto;
 
         if (langCfg.isAuto && !isOfficial) {
             labelText += ' [Unofficial Translation]';
@@ -1491,7 +1491,7 @@ function createPrayerCardElement(prayer, prayerIndex, isKidase = false) {
 
         const langText = document.createElement('p');
         langText.classList.add('language-text');
-        
+
         langText.innerHTML = formatPrayerText(prayer[langKey], langKey, searchQuery, isFirstLanguage, prayer.chapter, prayer.verseNum);
 
         if (langCfg.isEthiopic) {
@@ -1562,7 +1562,7 @@ function createPrayerCardElement(prayer, prayerIndex, isKidase = false) {
     infoPanel.classList.add('info-panel');
     const infoPanelContent = document.createElement('div');
     infoPanelContent.classList.add('info-panel-content');
-    
+
     let infoHTML = "";
     const isKidaseChapter = /^\d+$/.test(prayer.chapter) || ['Kidan', 'order', 'apostles', 'mary'].includes(prayer.chapter);
     const isKidasePrayer = isKidase || (isKidaseChapter && prayer.chapter && prayer.stanza);
@@ -1573,7 +1573,7 @@ function createPrayerCardElement(prayer, prayerIndex, isKidase = false) {
             infoHTML += `<p><strong>Instruction:</strong> ${prayer.instruction}</p>`;
         }
     }
-    
+
     infoPanelContent.innerHTML = infoHTML;
     infoPanel.appendChild(infoPanelContent);
     prayerCard.appendChild(infoPanel);
@@ -1583,6 +1583,121 @@ function createPrayerCardElement(prayer, prayerIndex, isKidase = false) {
     return prayerCard;
 }
 
+
+function getSupplicatoryPrayers() {
+    return [
+        {
+            instruction: "Repeated 3 times.",
+            reference: "Supplications | ምሕላ",
+            chapter: "Supplications",
+            stanza: "1",
+            geez_script: "መሪሕ: እግዚኦ መሐረነ ክርስቶስ<br><br>፨ ሕዝብ: እግዚኦ መሐረነ ክርስቶስ (፫)",
+            geez_phonetic: "Merīḥ: 'Igzī'o meḥarene Krstos<br><br>፨ Ḥizb: 'Igzī'o meḥarene Krstos (3x)",
+            english: "Leader: O Lord, have compassion upon us, O Christ.<br><br>፨ People: O Lord, have compassion upon us, O Christ. (3x)",
+            amharic_script: "መሪ: አቤቱ ክርስቶስ ሆይ ማረን።<br><br>፨ ሕዝብ: አቤቱ ክርስቶስ ሆይ ማረን። (፫)",
+            tigrinya_script: "መራሒ: ጐይታይ ክርስቶስ መሓረና።<br><br>፨ ሕዝብ: ጐይታይ ክርስቶስ መሓረና። (፫)"
+        },
+        {
+            instruction: "Repeated 3 times.",
+            reference: "Supplications | ምሕላ",
+            chapter: "Supplications",
+            stanza: "2",
+            geez_script: "መሪሕ: በእንተ ማርያም መሐረነ ክርስቶስ<br><br>፨ ሕዝብ: በእንተ ማርያም መሐረነ ክርስቶስ (፫)",
+            geez_phonetic: "Merīḥ: Be'inte Maryam meḥarene Krstos<br><br>፨ Ḥizb: Be'inte Maryam meḥarene Krstos (3x)",
+            english: "Leader: For the sake of Mary, have compassion upon us, O Christ.<br><br>፨ People: For the sake of Mary, have compassion upon us, O Christ. (3x)",
+            amharic_script: "መሪ: ስለ ማርያም ብለህ ክርስቶስ ሆይ ማረን።<br><br>፨ ሕዝብ: ስለ ማርያም ብለህ ክርስቶስ ሆይ ማረን። (፫)",
+            tigrinya_script: "መራሒ: ምእንቲ ማርያም ኢልካ ክርስቶስ መሓረና።<br><br>፨ ሕዝብ: ምእንቲ ማርያም ኢልካ ክርስቶስ መሓረና። (፫)"
+        },
+        {
+            instruction: "Repeated 3 times.",
+            reference: "Supplications | ምሕላ",
+            chapter: "Supplications",
+            stanza: "3",
+            geez_script: "መሪሕ: ኪርያላይሶን<br><br>፨ ሕዝብ: ኪርያላይሶን (፫)",
+            geez_phonetic: "Merīḥ: Kīryalayson<br><br>፨ Ḥizb: Kīryalayson (3x)",
+            english: "Leader: Lord, have mercy.<br><br>፨ People: Lord, have mercy. (3x)",
+            amharic_script: "መሪ: ጌታ ሆይ ማረን (ኪርያላይሶን)።<br><br>፨ ሕዝብ: ጌታ ሆይ ማረን (ኪርያላይሶን)። (፫)",
+            tigrinya_script: "መራሒ: ጐይታይ መሓረና (ኪርያላይሶን)።<br><br>፨ ሕዝብ: ጐይታይ መሓረና (ኪርያላይሶን)። (፫)"
+        },
+        {
+            instruction: "Repeated 3 times.",
+            reference: "Supplications | ምሕላ",
+            chapter: "Supplications",
+            stanza: "4",
+            geez_script: "መሪሕ: ኦ አምላክ<br><br>፨ ሕዝብ: ኦ አምላክ (፫)",
+            geez_phonetic: "Merīḥ: 'O 'Amlak<br><br>፨ Ḥizb: 'O 'Amlak (3x)",
+            english: "Leader: O God.<br><br>፨ People: O God. (3x)",
+            amharic_script: "መሪ: አምላክ ሆይ።<br><br>፨ ሕዝብ: አምላክ ሆይ። (፫)",
+            tigrinya_script: "መራሒ: ኦ ኣምላኽ።<br><br>፨ ሕዝብ: ኦ ኣምላኽ። (፫)"
+        },
+        {
+            instruction: "Repeated 3 times.",
+            reference: "Supplications | ምሕላ",
+            chapter: "Supplications",
+            stanza: "5",
+            geez_script: "መሪሕ: ኦ ክርስቶስ<br><br>፨ ሕዝብ: ኦ ክርስቶስ (፫)",
+            geez_phonetic: "Merīḥ: 'O Krstos<br><br>፨ Ḥizb: 'O Krstos (3x)",
+            english: "Leader: O Christ.<br><br>፨ People: O Christ. (3x)",
+            amharic_script: "መሪ: ክርስቶስ ሆይ።<br><br>፨ ሕዝብ: ክርስቶስ ሆይ። (፫)",
+            tigrinya_script: "መራሒ: ኦ ክርስቶስ።<br><br>፨ ሕዝብ: ኦ ክርስቶስ። (፫)"
+        },
+        {
+            instruction: "Repeated 3 times.",
+            reference: "Supplications | ምሕላ",
+            chapter: "Supplications",
+            stanza: "6",
+            geez_script: "መሪሕ: ያድኅነነ እመዓቱ ይሰውረነ በምሕረቱ በእንተ ማርያም ወላዲቱ<br><br>፨ ሕዝብ: ያድኅነነ እመዓቱ ይሰውረነ በምሕረቱ በእንተ ማርያም ወላዲቱ (፫)",
+            geez_phonetic: "Merīḥ: Yadḥnene 'ime'atu, yisewrene bemiḥretu, be'inte Maryam weladītu.<br><br>፨ Ḥizb: Yadḥnene 'ime'atu, yisewrene bemiḥretu, be'inte Maryam weladītu. (3x)",
+            english: "Leader: May He save us from His wrath and shield us with His mercy, for the sake of Mary, His mother.<br><br>፨ People: May He save us from His wrath and shield us with His mercy, for the sake of Mary, His mother. (3x)",
+            amharic_script: "መሪ: ከቁጣው ያድነን፣ በምሕረቱ ይሰውረን፣ ስለ ወለደችው ስለ ማርያም።<br><br>፨ ሕዝብ: ከቁጣው ያድነን፣ በምሕረቱ ይሰውረን፣ ስለ ወለደችው ስለ ማርያም። (፫)",
+            tigrinya_script: "መራሒ: ካብ ቚጥዓኡ የድሕነና፡ ብምሕረቱ ይሰውረና፡ ምእንቲታ ዝወለደቶ ማርያም።<br><br>፨ ሕዝብ: ካብ ቚጥዓኡ የድሕነና፡ ብምሕረቱ ይሰውረና፡ ምእንቲታ ዝወለደቶ ማርያም። (፫)"
+        },
+        {
+            instruction: "Repeated 3 times.",
+            reference: "Supplications | ምሕላ",
+            chapter: "Supplications",
+            stanza: "7",
+            geez_script: "መሪሕ: ስማዐነ አምላክነ ወመድኃኒነ<br><br>፨ ሕዝብ: ስማዐነ አምላክነ ወመድኃኒነ (፫)",
+            geez_phonetic: "Merīḥ: Sma'ane 'Amlakine wemedḥanīne.<br><br>፨ Ḥizb: Sma'ane 'Amlakine wemedḥanīne. (3x)",
+            english: "Leader: Hear us, our God and our Savior.<br><br>፨ People: Hear us, our God and our Savior. (3x)",
+            amharic_script: "መሪ: አምላካችንና መድኃኒታችን ሆይ ስማን።<br><br>፨ ሕዝብ: አምላካችንና መድኃኒታችን ሆይ ስማን። (፫)",
+            tigrinya_script: "መራሒ: ኣምላኽናን መድሓኒናን ስምዓና።<br><br>፨ ሕዝብ: ኣምላኽናን መድሓኒናን ስምዓና። (፫)"
+        },
+        {
+            instruction: "",
+            reference: "Supplications | ምሕላ",
+            chapter: "Supplications",
+            stanza: "8",
+            geez_script: "፨ ኵሎሙ: ሰአሊ ለነ ማርያም ምሕረተ ወልድኪ የሐውጸነ እምአርያም።",
+            geez_phonetic: "፨ Kwllomu: Se'alī lene Maryam mḥrete weldkī yeḥewtsene 'im'aryam.",
+            english: "፨ ALL: Pray for us, Mary, that the mercy of your Son may visit us from the highest heaven.",
+            amharic_script: "፨ ሁሉም: ማርያም ሆይ ለምኚልን፣ የልጅሽ ምሕረት ከአርያም ይጎበኘን ዘንድ።",
+            tigrinya_script: "፨ ኩሉኹም: ማርያም ለምንልና፡ ምሕረት ወድኺ ካብ ኣርያም ምእንቲ ክበጽሓና።"
+        },
+        {
+            instruction: "",
+            reference: "Supplications | ምሕላ",
+            chapter: "Supplications",
+            stanza: "9",
+            geez_script: "፨ ኵሎሙ: ሰአሊ ለነ ማርያም ለለሰዓቱ፣ ተግባረ እደዊሁ ለወልድኪ ኢንጥፋእ በከንቱ።",
+            geez_phonetic: "፨ Kwllomu: Se'alī lene Maryam lelese'atu, tigbare 'idewīhu leweldkī īnṭfa' bekentu.",
+            english: "፨ ALL: Pray for us, Mary, at every hour, that we, the work of your Son's hands, may not perish in vain.",
+            amharic_script: "፨ ሁሉም: ማርያም ሆይ በየሰዓቱ ለምኚልን፣ የልጅሽ የእጆቹ ሥራ የሆንን እኛ በከንቱ እንዳንጠፋ።",
+            tigrinya_script: "፨ ኩሉኹም: ማርያም ኣብ ኵሉ ሰዓት ለምንልና፡ ንሕና ግብሪ ኣእዳው ወድኺ ዝኾንና ብኸንቱ ምእንቲ ኸይነጥፍእ።"
+        },
+        {
+            instruction: "",
+            reference: "Supplications | ምሕላ",
+            chapter: "Supplications",
+            stanza: "10",
+            geez_script: "፨ ኵሎሙ: ኵሎ መዓልተ ወኵሎ ሌሊተ ብዙኃ ኃጢአተ ዘገበርነ፣ በእንተ ማርያም እምከ ተማኅፀነ። ስምዐነ እግዚኦ ከመ ታድኅነነ።",
+            geez_phonetic: "፨ Kwllomu: Kwllo me'alte wekwllo lēlīte bizuḫa ḫaṭī'ate zegeberne, be'inte Maryam 'imike temaḫtsenne. Sim'ane 'Igzī'o keme tadḥnene.",
+            english: "፨ ALL: All day and all night, the many sins we have committed, for the sake of Mary Your mother we take refuge. Hear us, O Lord, that You may save us.",
+            amharic_script: "፨ ሁሉም: ቀኑን ሁሉና ሌሊቱን ሁሉ የሠራነውን ብዙ ኃጢአት (ይቅር ትለን ዘንድ)፣ ስለ እናትህ ስለ ማርያም ተማጸንን። አቤቱ ጌታ ሆይ ታድነን ዘንድ ስማን።",
+            tigrinya_script: "፨ ኩሉኹም: ምሉእ መዓልትን ምሉእ ለይትን ዝገበርናዮ ብዙሕ ኃጢኣት፡ ምእንቲ ኣዴኻ ማርያም ኢልና ተማሕጸንና። ኦ ጐይታ ከተድሕነና ስምዓና።"
+        }
+    ];
+}
 
 function getStandardPrayerSequence() {
     const personalPrayer = {
@@ -1667,7 +1782,7 @@ function renderSelectedKidase(addSectionTitleCallback) {
     // Helper to render a chunk of kidase prayers with current filters
     function renderKidaseSection(prayers, isLiturgyCore = false) {
         let filtered = prayers;
-        
+
         if (hideQuietPrayers) {
             filtered = filtered.filter(p => !p.instruction.includes("Inaudible Prayer"));
         }
@@ -1686,12 +1801,12 @@ function renderSelectedKidase(addSectionTitleCallback) {
             // Check if this prayer contains a reading placeholder from the config
             let activeCfg = null;
             for (const cfg of LITURGY_LECTIONARY_CONFIG) {
-                const hasPlaceholder = Object.values(cfg.placeholders).some(ph => 
-                    p.english.includes(ph) || 
-                    p.geez_script.includes(ph) || 
+                const hasPlaceholder = Object.values(cfg.placeholders).some(ph =>
+                    p.english.includes(ph) ||
+                    p.geez_script.includes(ph) ||
                     (p.amharic_script && p.amharic_script.includes(ph))
                 );
-                
+
                 if (hasPlaceholder) {
                     activeCfg = cfg;
                     break;
@@ -1731,7 +1846,7 @@ function renderSelectedKidase(addSectionTitleCallback) {
                     }
                 }
             }
-            
+
             const card = createPrayerCardElement(p, -1, true);
             prayerDisplay.appendChild(card);
         });
@@ -1809,7 +1924,7 @@ function renderPrayers() {
                 if (metadata.aka) parts.push(`Commonly known as: ${metadata.aka}`);
                 if (metadata.time) parts.push(`Time: ${metadata.time}`);
                 if (metadata.purpose) parts.push(`Purpose: ${metadata.purpose}`);
-                
+
                 metadataEl.innerHTML = parts.join('<br>');
                 titleEl.appendChild(metadataEl);
             }
@@ -1881,14 +1996,14 @@ function renderPrayers() {
 
     const mainPrayers = prayers.filter(p => {
         if (p.chapter === 'Psalms' || p.chapter === 'ProphetSong') return false;
-        
+
         // Always include Daily prayers
         if (p.chapter === 'Daily') return true;
 
         // Filter Praise of Mary (and related) based on selection
         if (selectedWidaseMaryamDay === 'None') return false;
         if (selectedWidaseMaryamDay === 'All') return true;
-        
+
         const targetChapters = widaseMaryamChapters[selectedWidaseMaryamDay] || [];
         return targetChapters.includes(p.chapter);
     });
@@ -1963,6 +2078,17 @@ function renderPrayers() {
     // Render Kidase (Divine Liturgy)
     renderSelectedKidase(addSectionTitle);
 
+    // Render Supplicatory Prayers
+    const supplications = getSupplicatoryPrayers();
+    addSectionTitle("Supplications | ምሕላ");
+    supplications.forEach((prayer, index) => {
+        const prayerCard = createPrayerCardElement(prayer, index);
+        prayerDisplay.appendChild(prayerCard);
+        if (displayOptions.presentationMode !== 'slides' && lastSectionTitle && collapsedSections[lastSectionTitle]) {
+            prayerCard.style.display = 'none';
+        }
+    });
+
     // Always render the standard prayer sequence at the very end
     renderSequence();
 
@@ -2030,12 +2156,12 @@ function copyEntireLiturgy() {
         // Check if this entry is a reading block
         let activeCfg = null;
         for (const cfg of LITURGY_LECTIONARY_CONFIG) {
-            const hasPlaceholder = Object.values(cfg.placeholders).some(ph => 
-                p.english.includes(ph) || 
-                p.geez_script.includes(ph) || 
+            const hasPlaceholder = Object.values(cfg.placeholders).some(ph =>
+                p.english.includes(ph) ||
+                p.geez_script.includes(ph) ||
                 (p.amharic_script && p.amharic_script.includes(ph))
             );
-            
+
             if (hasPlaceholder) {
                 activeCfg = cfg;
                 break;
@@ -2107,7 +2233,7 @@ function copyEntireLiturgy() {
     const liturgyOrderPrayers = allOrderPrayers.slice(180);
     liturgyOrderPrayers.forEach((p, relativeIdx) => {
         const absoluteIdx = 180 + relativeIdx;
-        
+
         if (hideQuietPrayers && p.instruction.includes("Inaudible Prayer")) return;
 
         // Apply version filtering only to Liturgy-embedded Covenant
@@ -2117,7 +2243,7 @@ function copyEntireLiturgy() {
             if (p.stanza === 'Part2' && selectedCovenantPrayer !== 'morning') return;
             if (p.stanza === 'Part3' && selectedCovenantPrayer !== 'afternoon') return;
         }
-        
+
         textToCopy += formatEntry(p);
     });
 
@@ -2449,7 +2575,7 @@ async function loadBibleData() {
         loadFile('bible/RGV_Reina_Valera_Gomez_Bible_2010AD.json', 'rgv'),
         loadFile('bible/ግእዝ_Psalms_1-151_with_Songs_of_the_Prophets.json', 'geez_psalms'),
         loadFile('bible/COPTIC2025_Psalms_Bohairic_Coptic_Scriptorium_Corpora_2025.json', 'coptic')
-//        loadFile('bible/ግእዝ1988_Psalms_1-150_Geez_Bible_1988AD_1980EC_Corrected_Formatted.json', 'geez_psalms')
+        //        loadFile('bible/ግእዝ1988_Psalms_1-150_Geez_Bible_1988AD_1980EC_Corrected_Formatted.json', 'geez_psalms')
     ]);
 
     if (results.some(res => res === true)) {
@@ -2760,7 +2886,7 @@ function renderSelectedPsalmsWithDoxology(addSectionTitleCallback) {
             prayerFooter.classList.add('prayer-footer');
             const prayerLabel = document.createElement('div');
             prayerLabel.classList.add('prayer-label');
-            
+
             let labelText;
             if (lxxChapter === 9) {
                 if (verse.mtChapter === 9) {
@@ -2902,10 +3028,10 @@ function renderSelectedProphetSongs(addSectionTitleCallback) {
                     am54Verses = am54Book.chapters
                         .filter(c => (am54Ref.chapters && am54Ref.chapters.includes(c.chapter)) || c.chapter === am54Ref.chapter)
                         .flatMap(c => (c.verses || []).map((text, verseIndex) => ({
-                        verse: verseIndex + 1,
-                        text: text,
-                        chapter: c.chapter
-                    })))
+                            verse: verseIndex + 1,
+                            text: text,
+                            chapter: c.chapter
+                        })))
                         .filter(v => !am54Ref.verses || (v.verse >= am54Ref.verses.start && v.verse <= am54Ref.verses.end));
                 }
             }
@@ -2980,7 +3106,7 @@ function createPsalmVerseSection(langName, text, verseNum, isEthiopic = false, l
 
 function getSeatatBibleVerses(bookKey, chapter, rangeString, customEnglish = null, customGeez = null) {
     if (!bibleData.loaded) return [];
-    
+
     const mapping = BIBLE_BOOK_MAPPING[bookKey];
     if (!mapping) return [];
 
@@ -2995,9 +3121,9 @@ function getSeatatBibleVerses(bookKey, chapter, rangeString, customEnglish = nul
     const mtChapters = (bookKey === 'Psalms') ? convertLxxToMt(chapter) : [chapter];
 
     for (let vNum = startVerse; vNum <= endVerse; vNum++) {
-        const verseObj = { 
-            verseNum: vNum, 
-            chapter: chapter, 
+        const verseObj = {
+            verseNum: vNum,
+            chapter: chapter,
             book: bookKey,
             reference: `${bookKey} ${chapter}:${vNum}`,
             english: '',
@@ -3076,12 +3202,12 @@ function renderSelectedSeatatLectionary(addSectionTitleCallback) {
     if (selectedSeatatLectionaryDay === 'None' || !SEATAT_LECTIONARY_DATA[selectedSeatatLectionaryDay]) return;
 
     const readings = SEATAT_LECTIONARY_DATA[selectedSeatatLectionaryDay];
-    
+
     readings.forEach(reading => {
         addSectionTitleCallback(reading.type);
-        
+
         let verses = getSeatatBibleVerses(reading.book, reading.chapter, reading.verses, reading.customEnglish, reading.customGeez);
-        
+
         // Handle Sunday special case for 1 Cor 16:1-3
         if (reading.extra) {
             const extraVerses = getSeatatBibleVerses(reading.extra.book, reading.extra.chapter, reading.extra.verses);
@@ -3093,7 +3219,7 @@ function renderSelectedSeatatLectionary(addSectionTitleCallback) {
             const combined = {
                 chapter: 'SeatatLectionary',
                 stanza: reading.type,
-                reference: verses[0].reference + (verses.length > 1 ? '-' + verses[verses.length-1].verseNum : ''),
+                reference: verses[0].reference + (verses.length > 1 ? '-' + verses[verses.length - 1].verseNum : ''),
                 english: verses.map(v => reading.customEnglish && reading.customEnglish.includes('[') ? v.english : `<sup>${v.verseNum}</sup> ${v.english}`).join(' '),
                 geez_script: verses.map(v => reading.customGeez && reading.customGeez.includes('[') ? v.geez_script : `<sup>${v.verseNum}</sup> ${v.geez_script}`).join(' '),
                 amharic_script: verses.map(v => `<sup>${v.verseNum}</sup> ${v.amharic_script}`).join(' '),
@@ -3838,7 +3964,7 @@ document.addEventListener('touchend', handleTouchEnd, { passive: true });
 
 // --- Hide Header on Scroll ---
 let lastScrollTop = 0;
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', function () {
     if (displayOptions.presentationMode === 'slides') {
         header.classList.remove('header-hidden');
         return;
@@ -3872,12 +3998,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     await loadSettings(); // Ensure settings are loaded before anything else
-    
+
     // Default Prophet Songs based on current day and time if nothing else selected
     if (!localStorage.getItem('selectedProphetSongs') || selectedProphetSongs.length === 0) {
         selectedProphetSongs = getDefaultProphetSongsForCurrentTime();
     }
-    
+
     await loadBibleData(); // Load data on startup
 
     updatePsalmSummary();
@@ -3899,7 +4025,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             navigator.serviceWorker.register('./service-worker.js')
                 .then(reg => {
                     console.log('Service worker registered successfully', reg);
-                    
+
                     // Check for updates
                     reg.onupdatefound = () => {
                         const installingWorker = reg.installing;
@@ -3978,7 +4104,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         servantsHeader.appendChild(backButton);
         servantsHeader.appendChild(newTitle);
-        
+
         // Add a placeholder on the right to keep title centered
         const placeholder = document.createElement('div');
         placeholder.style.width = backButton.offsetWidth + 'px';
@@ -4125,10 +4251,10 @@ document.addEventListener('DOMContentLoaded', async () => {
             scribeLoginLink.textContent = 'Scribe Logout (' + user.email.split('@')[0] + ')';
             document.body.classList.add('scribe-mode-active');
             isScribeModeActive = true;
-            
+
             // Check if user is a verified Scribe in the database
             checkScribePermissions(user.uid);
-            
+
             // Re-subscribe with Scribe permissions (includes drafts)
             subscribeToPrayers();
             subscribeToIconMetadata();
@@ -4136,12 +4262,12 @@ document.addEventListener('DOMContentLoaded', async () => {
             // Refresh UI immediately
             updateLanguageToggles();
             if (kidaseGatedSection) kidaseGatedSection.style.display = 'block';
-            
+
             // Restore kidase mode from localStorage if it was active
             isKidaseModeActive = localStorage.getItem('isKidaseModeActive') === 'true';
-            
+
             renderPrayers();
-            } else {
+        } else {
             isScribeLoggedIn = false;
             isScribeModeActive = false;
             currentScribeUser = null;
@@ -4159,7 +4285,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             // Refresh UI immediately
             updateLanguageToggles();
             renderPrayers();
-            }
+        }
 
     });
 
@@ -4182,20 +4308,20 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (unsubscribePrayers) unsubscribePrayers();
 
         unsubscribePrayers = db.collection('prayers')
-          .where('status', 'in', isScribeModeActive ? ['published', 'draft'] : ['published'])
-          .onSnapshot(snapshot => {
-            prayersFromFirestore = snapshot.docs.map(doc => ({
-                id: doc.id,
-                ...doc.data()
-            }));
-            
-            // Merge firestore data into our local arrays
-            updateLocalPrayers();
-            updateLanguageToggles(); // Refresh sidebar indicators (Verified/Scribe status)
-            renderPrayers();
-          }, err => {
-            console.error('Firestore subscription error:', err);
-          });
+            .where('status', 'in', isScribeModeActive ? ['published', 'draft'] : ['published'])
+            .onSnapshot(snapshot => {
+                prayersFromFirestore = snapshot.docs.map(doc => ({
+                    id: doc.id,
+                    ...doc.data()
+                }));
+
+                // Merge firestore data into our local arrays
+                updateLocalPrayers();
+                updateLanguageToggles(); // Refresh sidebar indicators (Verified/Scribe status)
+                renderPrayers();
+            }, err => {
+                console.error('Firestore subscription error:', err);
+            });
     }
 
     function updateLocalPrayers() {
@@ -4210,16 +4336,16 @@ document.addEventListener('DOMContentLoaded', async () => {
             if (fsItem.chapter === 'Servant') {
                 updateAllMatches(servantsPrayers, p => p.title === fsItem.stanza);
             } else if (fsItem.chapter === 'Psalms' || fsItem.chapter === 'ProphetSong' || fsItem.chapter === 'Bible') {
-                updateAllMatches(songs, p => 
-                    p.chapter === fsItem.chapter && 
-                    p.stanza == fsItem.stanza && 
+                updateAllMatches(songs, p =>
+                    p.chapter === fsItem.chapter &&
+                    p.stanza == fsItem.stanza &&
                     p.reference === fsItem.reference &&
                     p.english === fsItem.english
                 );
             } else {
-                updateAllMatches(prayers, p => 
-                    p.chapter === fsItem.chapter && 
-                    p.stanza == fsItem.stanza && 
+                updateAllMatches(prayers, p =>
+                    p.chapter === fsItem.chapter &&
+                    p.stanza == fsItem.stanza &&
                     p.reference === fsItem.reference &&
                     p.english === fsItem.english
                 );
@@ -4232,16 +4358,16 @@ document.addEventListener('DOMContentLoaded', async () => {
     subscribeToIconMetadata();
 
     // Surgical Editor: Open Modal
-    window.openScribeEditor = function(stanzaId, chapter) {
+    window.openScribeEditor = function (stanzaId, chapter) {
         console.log('Opening editor for:', chapter, stanzaId);
-        
+
         // Comprehensive search across all possible sources
-        const prayer = 
+        const prayer =
             prayersFromFirestore.find(p => p.stanza == stanzaId && p.chapter == chapter) ||
-            prayers.find(p => p.chapter === chapter && p.stanza == stanzaId) || 
+            prayers.find(p => p.chapter === chapter && p.stanza == stanzaId) ||
             songs.find(p => p.chapter === chapter && p.stanza == stanzaId) ||
             (chapter === 'Servant' ? servantsPrayers.find(p => p.title == stanzaId) : null);
-        
+
         if (!prayer) {
             console.warn('Scribe Error: Prayer not found in any source.');
             return;
@@ -4258,9 +4384,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         // Generate fields for all languages
         const languages = [
-            'english', 'geez_script', 'geez_phonetic', 
-            'amharic_script', 'amharic_phonetic', 
-            'tigrinya_script', 'tigrinya_phonetic', 
+            'english', 'geez_script', 'geez_phonetic',
+            'amharic_script', 'amharic_phonetic',
+            'tigrinya_script', 'tigrinya_phonetic',
             'spanish', 'french', 'arabic', 'greek', 'hebrew', 'malayalam',
             'oromoo', 'syriac', 'armenian', 'coptic'
         ];
@@ -4269,23 +4395,23 @@ document.addEventListener('DOMContentLoaded', async () => {
             if (prayer.hasOwnProperty(lang)) {
                 const group = document.createElement('div');
                 group.classList.add('editor-field-group');
-                
+
                 const headerRow = document.createElement('div');
                 headerRow.classList.add('editor-field-header');
-                
+
                 const label = document.createElement('label');
                 label.textContent = lang.replace('_', ' ').toUpperCase();
-                
+
                 // Add Official/Verified Toggle for manual control
                 if (lang !== 'english') {
                     const verifiedLabel = document.createElement('label');
                     verifiedLabel.classList.add('verified-toggle-label');
-                    
+
                     const checkbox = document.createElement('input');
                     checkbox.type = 'checkbox';
                     checkbox.id = `verify-${lang}`;
                     checkbox.checked = prayer[`${lang}_is_official`] === true;
-                    
+
                     verifiedLabel.appendChild(checkbox);
                     verifiedLabel.appendChild(document.createTextNode(' Verified'));
                     headerRow.appendChild(label);
@@ -4293,11 +4419,11 @@ document.addEventListener('DOMContentLoaded', async () => {
                 } else {
                     headerRow.appendChild(label);
                 }
-                
+
                 const textarea = document.createElement('textarea');
                 textarea.id = `edit-${lang}`;
                 textarea.value = prayer[lang];
-                
+
                 group.appendChild(headerRow);
                 group.appendChild(textarea);
                 scribeEditorFields.appendChild(group);
@@ -4305,9 +4431,9 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
 
         scribeStatusSelect.value = prayer.status || 'published';
-        
+
         // Store current IDs for the save handler
-        scribeSaveBtn.dataset.docId = prayer.id || ''; 
+        scribeSaveBtn.dataset.docId = prayer.id || '';
 
         openModal(scribeEditorModal);
     };
@@ -4343,11 +4469,11 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     }
 
-    window.openIconMetadata = function(iconKey) {
+    window.openIconMetadata = function (iconKey) {
         console.log('Opening icon metadata for:', iconKey);
         currentIconKey = iconKey;
         const baseData = ICON_METADATA[iconKey];
-        
+
         if (!baseData) {
             console.warn('Metadata not found for key:', iconKey);
             return;
@@ -4360,13 +4486,13 @@ document.addEventListener('DOMContentLoaded', async () => {
         document.getElementById('icon-title-geez').textContent = data.title?.geez || '';
         document.getElementById('icon-title-translit').textContent = data.title?.transliteration || '';
         document.getElementById('icon-title-english').textContent = data.title?.english || '';
-        
+
         // Populate Images
         const imagesContainer = document.getElementById('icon-original-images-container');
         imagesContainer.innerHTML = ''; // Clear previous images
-        
+
         const imagePaths = Array.isArray(data.originalImage) ? data.originalImage : (data.originalImage ? [data.originalImage] : []);
-        
+
         if (imagePaths.length > 0) {
             imagePaths.forEach(path => {
                 const img = document.createElement('img');
@@ -4439,7 +4565,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     scribeSaveIconBtn.addEventListener('click', async () => {
         const baseData = ICON_METADATA[currentIconKey];
         const docId = baseData?.id || currentIconKey.replace(/\./g, '_');
-        
+
         const updatedData = {
             description: {
                 amharic: document.getElementById('edit-icon-desc-amharic').value,
@@ -4468,7 +4594,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Save Changes to Firestore
     scribeSaveBtn.addEventListener('click', async () => {
         const docId = scribeSaveBtn.dataset.docId;
-        
+
         const updatedData = {
             chapter: document.getElementById('edit-chapter').value,
             stanza: document.getElementById('edit-stanza').value,
@@ -4480,8 +4606,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         };
 
         const languages = [
-            'english', 'geez_script', 'geez_phonetic', 
-            'amharic_script', 'amharic_phonetic', 
+            'english', 'geez_script', 'geez_phonetic',
+            'amharic_script', 'amharic_phonetic',
             'tigrinya_script', 'tigrinya_phonetic', 'spanish', 'coptic',
             'french', 'arabic', 'greek', 'hebrew', 'malayalam', 'oromoo', 'syriac', 'armenian'
         ];
@@ -4543,11 +4669,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     eusebiusTabBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             const lang = btn.getAttribute('data-lang');
-            
+
             // Toggle buttons
             eusebiusTabBtns.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
-            
+
             // Toggle panes
             eusebiusTabPanes.forEach(p => p.classList.remove('active'));
             document.getElementById(`eusebius-${lang}`).classList.add('active');
@@ -4573,11 +4699,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     tabBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             const day = btn.getAttribute('data-day');
-            
+
             // Toggle buttons
             tabBtns.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
-            
+
             // Toggle panes
             tabPanes.forEach(p => p.classList.remove('active'));
             document.getElementById(`story-${day}`).classList.add('active');
