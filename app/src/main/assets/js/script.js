@@ -663,6 +663,98 @@ function applyTheme() {
     themeToggle.title = currentTheme.mode === 'light' ? 'Toggle Dark Mode' : 'Toggle Light Mode';
 }
 
+// --- Deep Hashing (URL State Persistence) ---
+
+// Unicode-safe Base64 encoding
+function toBase64(str) {
+    try {
+        return btoa(new TextEncoder().encode(str).reduce((data, byte) => data + String.fromCharCode(byte), ''));
+    } catch (e) {
+        console.error("Base64 encoding failed:", e);
+        return "";
+    }
+}
+
+// Unicode-safe Base64 decoding
+function fromBase64(str) {
+    try {
+        return new TextDecoder().decode(Uint8Array.from(atob(str), c => c.charCodeAt(0)));
+    } catch (e) {
+        console.error("Base64 decoding failed:", e);
+        return "";
+    }
+}
+
+function syncStateToUrl() {
+    try {
+        const state = {
+            v: '1', // State Version
+            k: isKidaseModeActive,
+            a: selectedAnaphora,
+            c: selectedCovenantPrayer,
+            hq: hideQuietPrayers,
+            ps: selectedPsalms,
+            ss: selectedProphetSongs,
+            sd: selectedSeatatLectionaryDay,
+            wd: selectedWidaseMaryamDay,
+            l: Object.keys(displayedLanguages).filter(lang => displayedLanguages[lang]),
+            t: currentTheme,
+            do: displayOptions,
+            fs: fontSizes,
+            lo: languageOrder,
+            cn: customNames,
+            cs: collapsedSections
+        };
+        const encoded = toBase64(JSON.stringify(state));
+        if (encoded) {
+            history.replaceState(null, null, "#s=" + encoded);
+        }
+    } catch (e) {
+        console.error("Failed to sync state to URL:", e);
+    }
+}
+
+function loadStateFromUrl() {
+    const hash = window.location.hash;
+    if (!hash.startsWith('#s=')) return false;
+
+    try {
+        const encoded = hash.substring(3);
+        const jsonStr = fromBase64(encoded);
+        if (!jsonStr) return false;
+        
+        const state = JSON.parse(jsonStr);
+
+        if (state.k !== undefined) isKidaseModeActive = state.k;
+        if (state.a !== undefined) selectedAnaphora = state.a;
+        if (state.c !== undefined) selectedCovenantPrayer = state.c;
+        if (state.hq !== undefined) hideQuietPrayers = state.hq;
+        if (state.ps !== undefined) selectedPsalms = state.ps;
+        if (state.ss !== undefined) selectedProphetSongs = state.ss;
+        if (state.sd !== undefined) selectedSeatatLectionaryDay = state.sd;
+        if (state.wd !== undefined) selectedWidaseMaryamDay = state.wd;
+
+        if (state.l !== undefined) {
+            Object.keys(displayedLanguages).forEach(lang => displayedLanguages[lang] = state.l.includes(lang));
+        }
+
+        if (state.t !== undefined) currentTheme = { ...currentTheme, ...state.t };
+        if (state.do !== undefined) displayOptions = { ...displayOptions, ...state.do };
+        if (state.fs !== undefined) fontSizes = { ...fontSizes, ...state.fs };
+        if (state.lo !== undefined && Array.isArray(state.lo) && state.lo.length === languageOrder.length) {
+            languageOrder = state.lo;
+        }
+        if (state.cn !== undefined) customNames = { ...customNames, ...state.cn };
+        if (state.cs !== undefined) collapsedSections = state.cs;
+
+        console.log("State successfully loaded from URL");
+        return true;
+    } catch (e) {
+        console.error("Failed to load state from URL:", e);
+        return false;
+    }
+}
+
 function saveSettings() {
     localStorage.setItem('settingsVersion', SETTINGS_VERSION);
     localStorage.setItem('theme', JSON.stringify(currentTheme));
@@ -686,6 +778,7 @@ function saveSettings() {
     localStorage.setItem('kidaseLectionaryRefs', JSON.stringify(kidaseLectionaryRefs));
     localStorage.setItem('customNames', JSON.stringify(customNames));
     localStorage.setItem('collapsedSections', JSON.stringify(collapsedSections));
+    syncStateToUrl();
 }
 
 
@@ -811,6 +904,9 @@ function loadSettings() {
         customNames = { ...defaultSettings.customNames, ...savedCustomNames };
         collapsedSections = JSON.parse(localStorage.getItem('collapsedSections')) || defaultSettings.collapsedSections;
     }
+
+    // Override settings from URL if present
+    loadStateFromUrl();
 
     // Set UI elements from the loaded/default settings
     servantNameInput.value = customNames.servant;
@@ -4724,4 +4820,23 @@ document.addEventListener('DOMContentLoaded', async () => {
             techToggleBtn.classList.toggle('active', !isCollapsed);
         });
     }
+
+    // Handle back/forward and manual hash changes
+    window.addEventListener('hashchange', () => {
+        if (loadStateFromUrl()) {
+            applyTheme();
+            updateLanguageToggles();
+            updateAllTogglesInSettingsPanel();
+            renderPrayers();
+            // Update UI inputs
+            servantNameInput.value = customNames.servant || '';
+            patriarchNameInput.value = customNames.patriarch || '';
+            bishopNameInput.value = customNames.bishop || '';
+            countryNameInput.value = customNames.country || '';
+            headOfStateInput.value = customNames.headOfState || '';
+            geezFontSizeSlider.value = fontSizes.geez || 16;
+            englishFontSizeSlider.value = fontSizes.english || 16;
+            lockFontSizesToggle.checked = fontSizes.locked;
+        }
+    });
 });
