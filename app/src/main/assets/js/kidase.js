@@ -1587,7 +1587,7 @@ const kidaseData = {
       "tigrinya_phonetic": "kahn:"
     },
     {
-      "instruction": "For morning services",
+      "instruction": "For morning services. Inaudible Prayer.",
       "reference": "Morning Prayer of the Covenant (\"God the Father...\")",
       "chapter": "Kidan",
       "stanza": "Part2",
@@ -1600,7 +1600,7 @@ const kidaseData = {
       "tigrinya_phonetic": "kahn:"
     },
     {
-      "instruction": "For morning services. Inaudible Prayer.",
+      "instruction": "For morning services",
       "reference": "Morning Prayer of the Covenant",
       "chapter": "Kidan",
       "stanza": "Part2",
@@ -1691,7 +1691,7 @@ const kidaseData = {
       "tigrinya_phonetic": "kahn:"
     },
     {
-      "instruction": "For morning services",
+      "instruction": "For morning services. Inaudible Prayer.",
       "reference": "Morning Prayer of the Covenant (\"O Lord Jesus Christ...\")",
       "chapter": "Kidan",
       "stanza": "Part2",
@@ -1704,7 +1704,7 @@ const kidaseData = {
       "tigrinya_phonetic": "kahn:"
     },
     {
-      "instruction": "For morning services. Inaudible Prayer.",
+      "instruction": "For morning services",
       "reference": "Prayer of the Covenant",
       "chapter": "Kidan",
       "stanza": "Part2",
@@ -1821,7 +1821,7 @@ const kidaseData = {
       "tigrinya_phonetic": "kahn: nay 'igzī'abḥér tsega msakhum ykhun.\n፨ ḥzb: ms menfeska"
     },
     {
-      "instruction": "For afternoon/evening services. Inaudible Prayer.",
+      "instruction": "For afternoon/evening services.",
       "reference": "Afternoon/Evening Prayer of the Covenant",
       "chapter": "Kidan",
       "stanza": "Part3",
@@ -1886,7 +1886,7 @@ const kidaseData = {
       "tigrinya_phonetic": ""
     },
     {
-      "instruction": "For afternoon/evening services.",
+      "instruction": "For afternoon/evening services. Inaudible Prayer.",
       "reference": "Afternoon/Evening Prayer of the Covenant",
       "chapter": "Kidan",
       "stanza": "Part3",
@@ -1899,7 +1899,7 @@ const kidaseData = {
       "tigrinya_phonetic": ""
     },
     {
-      "instruction": "For afternoon/evening services. Inaudible Prayer.",
+      "instruction": "For afternoon/evening services.",
       "reference": "Afternoon/Evening Prayer of the Covenant",
       "chapter": "Kidan",
       "stanza": "Part3",
@@ -1951,7 +1951,7 @@ const kidaseData = {
       "tigrinya_phonetic": ""
     },
     {
-      "instruction": "For afternoon/evening services.",
+      "instruction": "For afternoon/evening services. Inaudible Prayer.",
       "reference": "Afternoon/Evening Prayer of the Covenant",
       "chapter": "Kidan",
       "stanza": "Part3",
@@ -1990,7 +1990,7 @@ const kidaseData = {
       "tigrinya_phonetic": ""
     },
     {
-      "instruction": "For afternoon/evening services. Inaudible Prayer.",
+      "instruction": "For afternoon/evening services.",
       "reference": "Afternoon/Evening Prayer of the Covenant",
       "chapter": "Kidan",
       "stanza": "Part3",
@@ -2068,7 +2068,7 @@ const kidaseData = {
       "tigrinya_phonetic": ""
     },
     {
-      "instruction": "",
+      "instruction": "For afternoon/evening services. Inaudible Prayer.",
       "reference": "Afternoon/Evening Prayer of the Covenant",
       "chapter": "Kidan",
       "stanza": "Part3",
@@ -2081,7 +2081,7 @@ const kidaseData = {
       "tigrinya_phonetic": ""
     },
     {
-      "instruction": "",
+      "instruction": "For afternoon/evening services. Inaudible Prayer.",
       "reference": "Afternoon/Evening Prayer of the Covenant",
       "chapter": "Kidan",
       "stanza": "Part3",
@@ -2094,7 +2094,7 @@ const kidaseData = {
       "tigrinya_phonetic": ""
     },
     {
-      "instruction": "",
+      "instruction": "For afternoon/evening services.",
       "reference": "Afternoon/Evening Prayer of the Covenant",
       "chapter": "Kidan",
       "stanza": "Part3",
@@ -7606,7 +7606,7 @@ const kidaseData = {
       "tigrinya_phonetic": ""
     },
     {
-      "instruction": "For afternoon/evening services. Inaudible Prayer.",
+      "instruction": "For afternoon/evening services.",
       "reference": "Afternoon/Evening Prayer of the Covenant",
       "chapter": "Kidan",
       "stanza": "Part3",

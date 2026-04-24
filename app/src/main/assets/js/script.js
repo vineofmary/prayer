@@ -1783,21 +1783,26 @@ function renderSelectedKidase(addSectionTitleCallback) {
     function renderKidaseSection(prayers, isLiturgyCore = false) {
         let filtered = prayers;
 
+        // Apply Liturgy-embedded Covenant Prayer filtering (only for Core) BEFORE hideQuietPrayers
+        // We use the original relative index before any filtering shifts the array
+        if (isLiturgyCore) {
+            filtered = filtered.filter((p, relativeIdx) => {
+                const absoluteIdx = 180 + relativeIdx;
+                if (absoluteIdx >= 503 && absoluteIdx <= 592 && p.chapter === 'Kidan') {
+                    if (selectedCovenantPrayer === 'none') return false;
+                    if (p.stanza === 'Part1' && selectedCovenantPrayer !== 'midnight') return false;
+                    if (p.stanza === 'Part2' && selectedCovenantPrayer !== 'morning') return false;
+                    if (p.stanza === 'Part3' && selectedCovenantPrayer !== 'afternoon') return false;
+                }
+                return true;
+            });
+        }
+
         if (hideQuietPrayers) {
             filtered = filtered.filter(p => !p.instruction.includes("Inaudible Prayer"));
         }
 
         filtered.forEach((p, relativeIdx) => {
-            // Handle Liturgy-embedded Covenant Prayer filtering (only for Core)
-            if (isLiturgyCore) {
-                const absoluteIdx = 180 + relativeIdx;
-                if (absoluteIdx >= 503 && absoluteIdx <= 592 && p.chapter === 'Kidan') {
-                    if (selectedCovenantPrayer === 'none') return;
-                    if (p.stanza === 'Part1' && selectedCovenantPrayer !== 'midnight') return;
-                    if (p.stanza === 'Part2' && selectedCovenantPrayer !== 'morning') return;
-                    if (p.stanza === 'Part3' && selectedCovenantPrayer !== 'afternoon') return;
-                }
-            }
             // Check if this prayer contains a reading placeholder from the config
             let activeCfg = null;
             for (const cfg of LITURGY_LECTIONARY_CONFIG) {
