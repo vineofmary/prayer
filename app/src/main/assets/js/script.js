@@ -58,6 +58,7 @@ const searchCount = document.getElementById('search-count');
 const searchPrev = document.getElementById('search-prev');
 const searchNext = document.getElementById('search-next');
 const helpButton = document.getElementById('help-button');
+const showSupplicationsToggle = document.getElementById('show-supplications-toggle');
 const expandCollapseAllButton = document.getElementById('expand-collapse-all-button');
 const feedbackButton = document.getElementById('feedback-button');
 const helpModal = document.getElementById('help-modal');
@@ -863,7 +864,8 @@ function loadSettings() {
             slideTransition: 'fade',
             languageColors: 'off',
             boldText: false,
-            anglicizeNames: false
+            anglicizeNames: false,
+            showSupplications: true
         },
         displayedLanguages: defaultLanguages,
         fontSizes: {
@@ -1052,6 +1054,7 @@ function updateAllTogglesInSettingsPanel() {
     slideTransitionSelect.value = displayOptions.slideTransition;
     boldTextToggle.checked = displayOptions.boldText;
     anglicizeNamesToggle.checked = displayOptions.anglicizeNames;
+    showSupplicationsToggle.checked = displayOptions.showSupplications;
 
     // Seatat Lectionary Selector
     const lectionaryRadios = document.querySelectorAll('input[name="seatat-lectionary-day"]');
@@ -1070,7 +1073,7 @@ function updateAllTogglesInSettingsPanel() {
 
     // Kidase Settings
     if (kidaseGatedSection) {
-        kidaseGatedSection.style.display = isScribeLoggedIn ? 'block' : 'none';
+        kidaseGatedSection.style.display = 'block';
     }
     kidaseModeToggle.checked = isKidaseModeActive;
     kidaseSettings.style.display = isKidaseModeActive ? 'block' : 'none';
@@ -2474,15 +2477,17 @@ function renderPrayers() {
     renderSelectedKidase(addSectionTitle);
 
     // Render Supplicatory Prayers
-    const supplications = getSupplicatoryPrayers();
-    addSectionTitle("Supplications | ምሕላ");
-    supplications.forEach((prayer, index) => {
-        const prayerCard = createPrayerCardElement(prayer, index);
-        prayerDisplay.appendChild(prayerCard);
-        if (displayOptions.presentationMode !== 'slides' && lastSectionTitle && collapsedSections[lastSectionTitle]) {
-            prayerCard.style.display = 'none';
-        }
-    });
+    if (!isKidaseModeActive && displayOptions.showSupplications) {
+        const supplications = getSupplicatoryPrayers();
+        addSectionTitle("Supplications | ምሕላ");
+        supplications.forEach((prayer, index) => {
+            const prayerCard = createPrayerCardElement(prayer, index);
+            prayerDisplay.appendChild(prayerCard);
+            if (displayOptions.presentationMode !== 'slides' && lastSectionTitle && collapsedSections[lastSectionTitle]) {
+                prayerCard.style.display = 'none';
+            }
+        });
+    }
 
     // Always render the standard prayer sequence at the very end
     renderSequence();
@@ -4080,6 +4085,12 @@ slideTransitionSelect.addEventListener('change', () => {
 anglicizeNamesToggle.addEventListener('change', () => {
     displayOptions.anglicizeNames = anglicizeNamesToggle.checked;
     renderPrayers();
+    saveSettings();
+});
+
+showSupplicationsToggle.addEventListener('change', () => {
+    displayOptions.showSupplications = showSupplicationsToggle.checked;
+    smoothRender();
     saveSettings();
 });
 
