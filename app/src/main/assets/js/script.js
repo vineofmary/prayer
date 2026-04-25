@@ -1842,7 +1842,7 @@ function createPrayerCardElement(prayer, prayerIndex, isKidase = false) {
         const langCfg = LANGUAGE_REGISTRY[langKey];
 
         const langSection = document.createElement('div');
-        langSection.classList.add('language-section');
+        langSection.classList.add('language-section', `lang-${langKey}`);
         if (langKey.includes('phonetic')) {
             langSection.classList.add('lang-phonetic');
         }

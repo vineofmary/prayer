@@ -163,6 +163,49 @@ body.theme-high-contrast-dark {
     --nav-arrow-bg: rgba(255, 255, 255, 0.3);
 }
 
+/* --- Legacy Palette --- */
+body.theme-legacy-light, body.theme-legacy-dark {
+    --text-color: #ffffff;
+    --background-color: #000000;
+    --card-background: #000000;
+    --border-color: #333333;
+    --accent-color: #ffff00;
+    --hover-color: #1a1a1a;
+    --speaker-label-color: #cccccc;
+    --rubric-red: #ff3131;
+    --rubric-gold: #ffff00;
+    --highlight-bg: #444444;
+    --highlight-text: #fff;
+    --nav-arrow-bg: rgba(255, 255, 255, 0.2);
+}
+
+/* Specific language colors for Legacy theme */
+body.theme-legacy-light .language-section.lang-geez_script .language-text,
+body.theme-legacy-dark .language-section.lang-geez_script .language-text,
+body.theme-legacy-light .language-section.lang-geez_phonetic .language-text,
+body.theme-legacy-dark .language-section.lang-geez_phonetic .language-text {
+    color: #ffff00 !important;
+}
+
+body.theme-legacy-light .language-section.lang-english .language-text,
+body.theme-legacy-dark .language-section.lang-english .language-text {
+    color: #ffffff !important;
+}
+
+body.theme-legacy-light .language-section.lang-amharic_script .language-text,
+body.theme-legacy-dark .language-section.lang-amharic_script .language-text,
+body.theme-legacy-light .language-section.lang-amharic_phonetic .language-text,
+body.theme-legacy-dark .language-section.lang-amharic_phonetic .language-text {
+    color: #00ffff !important;
+}
+
+body.theme-legacy-light .language-section.lang-tigrinya_script .language-text,
+body.theme-legacy-dark .language-section.lang-tigrinya_script .language-text,
+body.theme-legacy-light .language-section.lang-tigrinya_phonetic .language-text,
+body.theme-legacy-dark .language-section.lang-tigrinya_phonetic .language-text {
+    color: #00ff00 !important;
+}
+
 /* --- Language FONT Color Palettes --- */
 /* Greyscale (Light) */
 body.language-colors-greyscale {
