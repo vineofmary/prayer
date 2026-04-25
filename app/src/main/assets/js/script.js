@@ -849,7 +849,7 @@ function loadSettings() {
 
     const defaultSettings = {
         sidebarCollapsed: isMobile,
-        theme: { palette: 'traditional', mode: 'dark' },
+        theme: { palette: 'legacy', mode: 'dark' },
         displayOptions: {
             presentationMode: 'scroll',
             viewMode: 'card',
@@ -862,7 +862,7 @@ function loadSettings() {
             dynamicFontSizing: true,
             paragraphMode: false,
             slideTransition: 'fade',
-            languageColors: 'off',
+            languageColors: 'vibrant',
             boldText: false,
             anglicizeNames: false,
             showSupplications: true
