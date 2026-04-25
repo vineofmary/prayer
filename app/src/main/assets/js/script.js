@@ -4641,9 +4641,9 @@ document.addEventListener('DOMContentLoaded', async () => {
             scribeLoginLink.textContent = 'Scribe Login';
             document.body.classList.remove('scribe-mode-active');
 
-            if (kidaseGatedSection) kidaseGatedSection.style.display = 'none';
-            // Also turn off kidase mode if it was active to be safe
-            isKidaseModeActive = false;
+            // Preserve kidase mode and visibility for all users
+            if (kidaseGatedSection) kidaseGatedSection.style.display = 'block';
+            isKidaseModeActive = localStorage.getItem('isKidaseModeActive') === 'true';
 
             // Re-subscribe with normal permissions (published only)
             subscribeToPrayers();
