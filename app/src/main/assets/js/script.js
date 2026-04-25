@@ -1264,6 +1264,11 @@ const LITURGY_LECTIONARY_CONFIG = [
             geez_script: '{{ዮም አንበበ መልእክተ ጳውሎስ}}',
             amharic_script: '{{የዛሬው የቅዱስ ጳውሎስ መልእክት ይነበባል}}',
             tigrinya_script: '{{ናይ ሎሚ ንባብ መልእኽቲ ጳውሎስ}}'
+        },
+        prefixes: {
+            english: 'Epistle: ',
+            amharic_script: 'መልእክት፤ ',
+            geez_script: 'መልእክት፤ '
         }
     },
     {
@@ -1273,6 +1278,11 @@ const LITURGY_LECTIONARY_CONFIG = [
             geez_script: '{{ዮም አንበበ መልእክተ ካቶሊካ}}',
             amharic_script: '{{የዛሬው የሁለተኛው መልእክት ይነበባል}}',
             tigrinya_script: '{{ናይ ሎሚ ካልኣይ ንባብ መልእኽቲ}}'
+        },
+        prefixes: {
+            english: 'Epistle: ',
+            amharic_script: 'መልእክት፤ ',
+            geez_script: 'መልእክት፤ '
         }
     },
     {
@@ -1282,7 +1292,8 @@ const LITURGY_LECTIONARY_CONFIG = [
             geez_script: '{{ዮም አንበበ ግብረ ሐዋርያት}}',
             amharic_script: '{{የዛሬው የሐዋርያት ስራ ንባብ}}',
             tigrinya_script: '{{ናይ ሎሚ ግብሪ ሃዋርያት ንባብ}}'
-        }
+        },
+        prefixes: {}
     },
     {
         ref: () => kidaseLectionaryRefs.psalm,
@@ -1291,6 +1302,10 @@ const LITURGY_LECTIONARY_CONFIG = [
             geez_script: '{{ዮም ምስባክ}}',
             amharic_script: '{{የዛሬው ምስባክ}}',
             tigrinya_script: '{{ናይ ሎሚ ንባብ መዝሙር ዳዊት}}'
+        },
+        prefixes: {
+            amharic_script: 'ምስባክ፤ ',
+            geez_script: 'ምስባክ፤ '
         }
     },
     {
@@ -1300,6 +1315,9 @@ const LITURGY_LECTIONARY_CONFIG = [
             geez_script: '{{ዮም አንበበ ወንጌል}}',
             amharic_script: '{{የዛሬው ወንጌል ንባብ}}',
             tigrinya_script: '{{ናይ ሎሚ ንባብ ወንጌል}}'
+        },
+        prefixes: {
+            english: 'Gospel of '
         }
     },
     {
@@ -1309,6 +1327,10 @@ const LITURGY_LECTIONARY_CONFIG = [
             geez_script: '{{ዮም ምስባክ ዘነግህ}}',
             amharic_script: '{{የዛሬው ምስባክ ዘነግህ}}',
             tigrinya_script: '{{ናይ ንግሆ ንባብ መዝሙር ዳዊት}}'
+        },
+        prefixes: {
+            amharic_script: 'ምስባክ፤ ',
+            geez_script: 'ምስባክ፤ '
         }
     },
     {
@@ -1318,6 +1340,9 @@ const LITURGY_LECTIONARY_CONFIG = [
             geez_script: '{{ዮም አንበበ ወንጌል ዘነግህ}}',
             amharic_script: '{{የዛሬው ወንጌል ዘነግህ ንባብ}}',
             tigrinya_script: '{{ናይ ንግሆ ንባብ ወንጌል}}'
+        },
+        prefixes: {
+            english: 'Gospel of '
         }
     }
 ];
@@ -2091,8 +2116,27 @@ function renderSelectedKidase(addSectionTitleCallback) {
                                     const v = bibleResults[langKey][i];
                                     const verseText = `[${v.verseNum}] ${v.text}`;
                                     if (i === 0) {
+                                        // Construct localized header
+                                        const refStr = activeCfg.ref();
+                                        const match = refStr.match(/^(.+?)\s+(\d+:\d+(?:-\d+)?)$/);
+                                        let header = refStr;
+                                        if (match) {
+                                            const bookName = match[1];
+                                            const range = match[2];
+                                            const bookCfg = BIBLE_BOOK_MAPPING[bookName];
+                                            if (bookCfg) {
+                                                if (langKey === 'amharic_script' || langKey === 'geez_script') {
+                                                    header = `${bookCfg.am54} ${range}`;
+                                                } else if (langKey === 'spanish') {
+                                                    header = `${bookCfg.rgv} ${range}`;
+                                                }
+                                            }
+                                        }
+                                        const prefix = (activeCfg.prefixes && activeCfg.prefixes[langKey]) || "";
+                                        const fullText = `${prefix}${header}\n${verseText}`;
+
                                         // Replace the language-specific placeholder
-                                        versePrayer[langKey] = p[langKey].replace(langPlaceholder, verseText);
+                                        versePrayer[langKey] = p[langKey].replace(langPlaceholder, fullText);
                                     } else {
                                         versePrayer[langKey] = verseText;
                                     }
