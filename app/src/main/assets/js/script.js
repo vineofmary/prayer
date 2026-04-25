@@ -90,8 +90,8 @@ const kidaseModeToggle = document.getElementById('kidase-mode-toggle');
 const kidaseSettings = document.getElementById('kidase-settings');
 const showMorningPsalmGospelToggle = document.getElementById('show-morning-psalm-gospel');
 const morningPsalmGospelSettings = document.getElementById('morning-psalm-gospel-settings');
-const morningPsalmRefInput = document.getElementById('morning-psalm-ref');
-const morningGospelRefInput = document.getElementById('morning-gospel-ref');
+const morningPsalmRefContainer = document.getElementById('morning-psalm-ref-container');
+const morningGospelRefContainer = document.getElementById('morning-gospel-ref-container');
 const anaphoraSelector = document.getElementById('anaphora-selector');
 const showPreLiturgyKidanToggle = document.getElementById('show-pre-liturgy-kidan');
 const covenantPrayerSelector = document.getElementById('covenant-prayer-selector');
@@ -107,11 +107,11 @@ const anglicizeNamesToggle = document.getElementById('anglicize-names-toggle');
 const bibleVerseSidebar = document.querySelector('.bible-verse-sidebar');
 
 // Kidase Lectionary Inputs
-const kidasePaulineRefInput = document.getElementById('kidase-pauline-ref');
-const kidaseUniversalRefInput = document.getElementById('kidase-universal-ref');
-const kidaseActsRefInput = document.getElementById('kidase-acts-ref');
-const kidasePsalmRefInput = document.getElementById('kidase-psalm-ref');
-const kidaseGospelRefInput = document.getElementById('kidase-gospel-ref');
+const kidasePaulineRefContainer = document.getElementById('kidase-pauline-ref-container');
+const kidaseUniversalRefContainer = document.getElementById('kidase-universal-ref-container');
+const kidaseActsRefContainer = document.getElementById('kidase-acts-ref-container');
+const kidasePsalmRefContainer = document.getElementById('kidase-psalm-ref-container');
+const kidaseGospelRefContainer = document.getElementById('kidase-gospel-ref-container');
 
 
 // --- State Variables ---
@@ -201,23 +201,67 @@ function getSeatatLiturgicalDay() {
 }
 
 const BIBLE_BOOK_MAPPING = {
-    '1 Thessalonians': { nkjv: 52, am54: '1ኛ ወደ ተሰሎንቄ ሰዎች', rgv: '1 Tesalonicenses' },
-    '1 Peter': { nkjv: 60, am54: '1ኛ የጴጥሮስ መልእክት', rgv: '1 Pedro' },
-    'Acts': { nkjv: 44, am54: 'የሐዋርያት ሥራ', rgv: 'Hechos' },
     'Matthew': { nkjv: 40, am54: 'የማቴዎስ ወንጌል', rgv: 'Mateo' },
-    'Galatians': { nkjv: 48, am54: 'ወደ ገላትያ ሰዎች', rgv: 'Gálatas' },
     'Mark': { nkjv: 41, am54: 'የማርቆስ ወንጌል', rgv: 'Marcos' },
-    'Ephesians': { nkjv: 49, am54: 'ወደ ኤፌሶን ሰዎች', rgv: 'Efesios' },
-    '2 Peter': { nkjv: 61, am54: '2ኛ የጴጥሮስ መልእክት', rgv: '2 Pedro' },
     'Luke': { nkjv: 42, am54: 'የሉቃስ ወንጌል', rgv: 'Lucas' },
-    '2 Corinthians': { nkjv: 47, am54: '2ኛ ወደ ቆሮንቶስ ሰዎች', rgv: '2 Corintios' },
-    'Romans': { nkjv: 45, am54: 'ወደ ሮሜ ሰዎች', rgv: 'Romanos' },
-    'Leviticus': { nkjv: 3, am54: 'ኦሪት ዘሌዋውያን', rgv: 'Levítico' },
-    'Jeremiah': { nkjv: 24, am54: 'ትንቢተ ኤርምያስ', rgv: 'Jeremías' },
     'John': { nkjv: 43, am54: 'የዮሐንስ ወንጌል', rgv: 'Juan' },
+    'Acts': { nkjv: 44, am54: 'የሐዋርያት ሥራ', rgv: 'Hechos' },
+    'Romans': { nkjv: 45, am54: 'ወደ ሮሜ ሰዎች', rgv: 'Romanos' },
     '1 Corinthians': { nkjv: 46, am54: '1ኛ ወደ ቆሮንቶስ ሰዎች', rgv: '1 Corintios' },
+    '2 Corinthians': { nkjv: 47, am54: '2ኛ ወደ ቆሮንቶስ ሰዎች', rgv: '2 Corintios' },
+    'Galatians': { nkjv: 48, am54: 'ወደ ገላትያ ሰዎች', rgv: 'Gálatas' },
+    'Ephesians': { nkjv: 49, am54: 'ወደ ኤፌሶን ሰዎች', rgv: 'Efesios' },
+    'Philippians': { nkjv: 50, am54: 'ወደ ፊልጵስዩስ ሰዎች', rgv: 'Filipenses' },
+    'Colossians': { nkjv: 51, am54: 'ወደ ቆላስይስ ሰዎች', rgv: 'Colosenses' },
+    '1 Thessalonians': { nkjv: 52, am54: '1ኛ ወደ ተሰሎንቄ ሰዎች', rgv: '1 Tesalonicenses' },
+    '2 Thessalonians': { nkjv: 53, am54: '2ኛ ወደ ተሰሎንቄ ሰዎች', rgv: '2 Tesalonicenses' },
+    '1 Timothy': { nkjv: 54, am54: '1ኛ ወደ ጢሞቴዎስ', rgv: '1 Timoteo' },
+    '2 Timothy': { nkjv: 55, am54: '2ኛ ወደ ጢሞቴዎስ', rgv: '2 Timoteo' },
+    'Titus': { nkjv: 56, am54: 'ወደ ቲቶ', rgv: 'Tito' },
+    'Philemon': { nkjv: 57, am54: 'ወደ ፊልሞና', rgv: 'Filemón' },
+    'Hebrews': { nkjv: 58, am54: 'ወደ ዕብራውያን', rgv: 'Hebreos' },
+    'James': { nkjv: 59, am54: 'የያዕቆብ መልእክት', rgv: 'Santiago' },
+    '1 Peter': { nkjv: 60, am54: '1ኛ የጴጥሮስ መልእክት', rgv: '1 Pedro' },
+    '2 Peter': { nkjv: 61, am54: '2ኛ የጴጥሮስ መልእክት', rgv: '2 Pedro' },
     '1 John': { nkjv: 62, am54: '1ኛ የዮሐንስ መልእክት', rgv: '1 Juan' },
-    'Psalms': { nkjv: 19, am54: 'መዝሙረ ዳዊት', rgv: 'Salmos' }
+    '2 John': { nkjv: 63, am54: '2ኛ የዮሐንስ መልእክት', rgv: '2 Juan' },
+    '3 John': { nkjv: 64, am54: '3ኛ የዮሐንስ መልእክት', rgv: '3 Juan' },
+    'Jude': { nkjv: 65, am54: 'የይሁዳ መልእክት', rgv: 'Judas' },
+    'Revelation': { nkjv: 66, am54: 'የዮሐንስ ራእይ', rgv: 'Apocalipsis' },
+    'Psalms': { nkjv: 19, am54: 'መዝሙረ ዳዊት', rgv: 'Salmos' },
+    'Leviticus': { nkjv: 3, am54: 'ኦሪት ዘሌዋውያን', rgv: 'Levítico' },
+    'Jeremiah': { nkjv: 24, am54: 'ትንቢተ ኤርምያስ', rgv: 'Jeremías' }
+};
+
+const BIBLE_METADATA = {
+    'Matthew': { chapters: 28, maxVerses: 80 },
+    'Mark': { chapters: 16, maxVerses: 80 },
+    'Luke': { chapters: 24, maxVerses: 80 },
+    'John': { chapters: 21, maxVerses: 80 },
+    'Acts': { chapters: 28, maxVerses: 47 },
+    'Romans': { chapters: 16, maxVerses: 33 },
+    '1 Corinthians': { chapters: 16, maxVerses: 33 },
+    '2 Corinthians': { chapters: 13, maxVerses: 33 },
+    'Galatians': { chapters: 6, maxVerses: 33 },
+    'Ephesians': { chapters: 6, maxVerses: 33 },
+    'Philippians': { chapters: 4, maxVerses: 33 },
+    'Colossians': { chapters: 4, maxVerses: 33 },
+    '1 Thessalonians': { chapters: 5, maxVerses: 33 },
+    '2 Thessalonians': { chapters: 3, maxVerses: 33 },
+    '1 Timothy': { chapters: 6, maxVerses: 33 },
+    '2 Timothy': { chapters: 4, maxVerses: 33 },
+    'Titus': { chapters: 3, maxVerses: 33 },
+    'Philemon': { chapters: 1, maxVerses: 33 },
+    'Hebrews': { chapters: 13, maxVerses: 33 },
+    'James': { chapters: 5, maxVerses: 22 },
+    '1 Peter': { chapters: 5, maxVerses: 22 },
+    '2 Peter': { chapters: 3, maxVerses: 22 },
+    '1 John': { chapters: 5, maxVerses: 22 },
+    '2 John': { chapters: 1, maxVerses: 22 },
+    '3 John': { chapters: 1, maxVerses: 22 },
+    'Jude': { chapters: 1, maxVerses: 26 },
+    'Revelation': { chapters: 22, maxVerses: 26 },
+    'Psalms': { chapters: 150, maxVerses: 176 }
 };
 
 const SEATAT_LECTIONARY_DATA = {
@@ -917,13 +961,7 @@ function loadSettings() {
     countryNameInput.value = customNames.country;
     headOfStateInput.value = customNames.headOfState;
 
-    morningPsalmRefInput.value = kidaseLectionaryRefs.morningPsalm || 'Psalm 1:1-2';
-    morningGospelRefInput.value = kidaseLectionaryRefs.morningGospel || 'John 1:1-5';
-    kidasePaulineRefInput.value = kidaseLectionaryRefs.pauline;
-    kidaseUniversalRefInput.value = kidaseLectionaryRefs.universal;
-    kidaseActsRefInput.value = kidaseLectionaryRefs.acts;
-    kidasePsalmRefInput.value = kidaseLectionaryRefs.psalm;
-    kidaseGospelRefInput.value = kidaseLectionaryRefs.gospel;
+    initializeLectionaryPickers();
 
     geezFontSizeSlider.value = fontSizes.geez;
     englishFontSizeSlider.value = fontSizes.english;
@@ -1283,6 +1321,128 @@ const LITURGY_LECTIONARY_CONFIG = [
         }
     }
 ];
+
+function createLectionaryPicker(containerId, lectionaryKey, bookOptions = []) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+
+    container.innerHTML = ''; // Clear
+
+    // 1. Book Selection (if multiple)
+    let bookSelect = null;
+    if (bookOptions.length > 1) {
+        bookSelect = document.createElement('select');
+        bookSelect.className = 'lectionary-picker-book-select settings-select';
+        bookOptions.forEach(bookName => {
+            const opt = document.createElement('option');
+            opt.value = bookName;
+            opt.textContent = bookName;
+            bookSelect.appendChild(opt);
+        });
+        container.appendChild(bookSelect);
+    }
+
+    // 2. Row for Chapter, Start, End
+    const row = document.createElement('div');
+    row.className = 'lectionary-picker-row';
+
+    const createField = (label, className) => {
+        const field = document.createElement('div');
+        field.className = `picker-field ${className}`;
+        const lbl = document.createElement('label');
+        lbl.textContent = label;
+        const sel = document.createElement('select');
+        sel.className = 'settings-select';
+        field.appendChild(lbl);
+        field.appendChild(sel);
+        return { field, sel };
+    };
+
+    const chapterField = createField('Ch', 'chapter-field');
+    const startField = createField('Start', 'start-field');
+    const endField = createField('End', 'end-field');
+
+    row.appendChild(chapterField.field);
+    row.appendChild(startField.field);
+    row.appendChild(endField.field);
+    container.appendChild(row);
+
+    const updateRefs = () => {
+        const book = bookOptions.length === 1 ? bookOptions[0] : bookSelect.value;
+        const ch = chapterField.sel.value;
+        const start = startField.sel.value;
+        const end = endField.sel.value;
+        kidaseLectionaryRefs[lectionaryKey] = `${book} ${ch}:${start}-${end}`;
+        saveSettings();
+        renderPrayers();
+    };
+
+    const populateSelect = (select, max, selected) => {
+        select.innerHTML = '';
+        for (let i = 1; i <= max; i++) {
+            const opt = document.createElement('option');
+            opt.value = i;
+            opt.textContent = i;
+            if (i == selected) opt.selected = true;
+            select.appendChild(opt);
+        }
+    };
+
+    const syncPicker = () => {
+        const currentRef = kidaseLectionaryRefs[lectionaryKey] || "";
+        const match = currentRef.match(/^(.+?)\s+(\d+):(\d+)(?:-(\d+))?$/);
+        
+        let book = bookOptions[0];
+        let ch = 1;
+        let start = 1;
+        let end = 1;
+
+        if (match) {
+            book = match[1];
+            ch = parseInt(match[2]);
+            start = parseInt(match[3]);
+            end = match[4] ? parseInt(match[4]) : start;
+        }
+
+        if (bookSelect) bookSelect.value = book;
+        
+        const metadata = BIBLE_METADATA[book] || { chapters: 50, maxVerses: 100 };
+        populateSelect(chapterField.sel, metadata.chapters, ch);
+        populateSelect(startField.sel, metadata.maxVerses, start);
+        populateSelect(endField.sel, metadata.maxVerses, end);
+    };
+
+    // Listeners
+    if (bookSelect) {
+        bookSelect.addEventListener('change', () => {
+            const metadata = BIBLE_METADATA[bookSelect.value] || { chapters: 50, maxVerses: 100 };
+            populateSelect(chapterField.sel, metadata.chapters, 1);
+            populateSelect(startField.sel, metadata.maxVerses, 1);
+            populateSelect(endField.sel, metadata.maxVerses, 1);
+            updateRefs();
+        });
+    }
+
+    chapterField.sel.addEventListener('change', updateRefs);
+    startField.sel.addEventListener('change', updateRefs);
+    endField.sel.addEventListener('change', updateRefs);
+
+    // Initial sync
+    syncPicker();
+
+    // Store sync function on container for external calls (like applySettingsToUI)
+    container.syncPicker = syncPicker;
+}
+
+function initializeLectionaryPickers() {
+    createLectionaryPicker('morning-psalm-ref-container', 'morningPsalm', ['Psalms']);
+    createLectionaryPicker('morning-gospel-ref-container', 'morningGospel', ['Matthew', 'Mark', 'Luke', 'John']);
+    createLectionaryPicker('kidase-pauline-ref-container', 'pauline', ['Romans', '1 Corinthians', '2 Corinthians', 'Galatians', 'Ephesians', 'Philippians', 'Colossians', '1 Thessalonians', '2 Thessalonians', '1 Timothy', '2 Timothy', 'Titus', 'Philemon', 'Hebrews']);
+    createLectionaryPicker('kidase-universal-ref-container', 'universal', ['James', '1 Peter', '2 Peter', '1 John', '2 John', '3 John', 'Jude', 'Revelation']);
+    createLectionaryPicker('kidase-acts-ref-container', 'acts', ['Acts']);
+    createLectionaryPicker('kidase-psalm-ref-container', 'psalm', ['Psalms']);
+    createLectionaryPicker('kidase-gospel-ref-container', 'gospel', ['Matthew', 'Mark', 'Luke', 'John']);
+}
 
 function replaceKidasePlaceholders(text, langKey, isFirstLanguage) {
     let processed = text;
@@ -3547,17 +3707,7 @@ showMorningPsalmGospelToggle.addEventListener('change', () => {
     smoothRender();
 });
 
-morningPsalmRefInput.addEventListener('input', () => {
-    kidaseLectionaryRefs.morningPsalm = morningPsalmRefInput.value;
-    saveSettings();
-    renderPrayers();
-});
 
-morningGospelRefInput.addEventListener('input', () => {
-    kidaseLectionaryRefs.morningGospel = morningGospelRefInput.value;
-    saveSettings();
-    renderPrayers();
-});
 
 anaphoraSelector.addEventListener('change', () => {
     selectedAnaphora = anaphoraSelector.value;
@@ -3583,35 +3733,6 @@ hideQuietPrayersToggle.addEventListener('change', () => {
     smoothRender();
 });
 
-kidasePaulineRefInput.addEventListener('input', () => {
-    kidaseLectionaryRefs.pauline = kidasePaulineRefInput.value;
-    saveSettings();
-    renderPrayers();
-});
-
-kidaseUniversalRefInput.addEventListener('input', () => {
-    kidaseLectionaryRefs.universal = kidaseUniversalRefInput.value;
-    saveSettings();
-    renderPrayers();
-});
-
-kidaseActsRefInput.addEventListener('input', () => {
-    kidaseLectionaryRefs.acts = kidaseActsRefInput.value;
-    saveSettings();
-    renderPrayers();
-});
-
-kidasePsalmRefInput.addEventListener('input', () => {
-    kidaseLectionaryRefs.psalm = kidasePsalmRefInput.value;
-    saveSettings();
-    renderPrayers();
-});
-
-kidaseGospelRefInput.addEventListener('input', () => {
-    kidaseLectionaryRefs.gospel = kidaseGospelRefInput.value;
-    saveSettings();
-    renderPrayers();
-});
 
 
 languageTogglesDiv.addEventListener('change', (event) => {
