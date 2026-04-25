@@ -201,36 +201,36 @@ function getSeatatLiturgicalDay() {
 }
 
 const BIBLE_BOOK_MAPPING = {
-    'Matthew': { nkjv: 40, am54: 'የማቴዎስ ወንጌል', rgv: 'Mateo' },
-    'Mark': { nkjv: 41, am54: 'የማርቆስ ወንጌል', rgv: 'Marcos' },
-    'Luke': { nkjv: 42, am54: 'የሉቃስ ወንጌል', rgv: 'Lucas' },
-    'John': { nkjv: 43, am54: 'የዮሐንስ ወንጌል', rgv: 'Juan' },
-    'Acts': { nkjv: 44, am54: 'የሐዋርያት ሥራ', rgv: 'Hechos' },
-    'Romans': { nkjv: 45, am54: 'ወደ ሮሜ ሰዎች', rgv: 'Romanos' },
-    '1 Corinthians': { nkjv: 46, am54: '1ኛ ወደ ቆሮንቶስ ሰዎች', rgv: '1 Corintios' },
-    '2 Corinthians': { nkjv: 47, am54: '2ኛ ወደ ቆሮንቶስ ሰዎች', rgv: '2 Corintios' },
-    'Galatians': { nkjv: 48, am54: 'ወደ ገላትያ ሰዎች', rgv: 'Gálatas' },
-    'Ephesians': { nkjv: 49, am54: 'ወደ ኤፌሶን ሰዎች', rgv: 'Efesios' },
-    'Philippians': { nkjv: 50, am54: 'ወደ ፊልጵስዩስ ሰዎች', rgv: 'Filipenses' },
-    'Colossians': { nkjv: 51, am54: 'ወደ ቆላስይስ ሰዎች', rgv: 'Colosenses' },
-    '1 Thessalonians': { nkjv: 52, am54: '1ኛ ወደ ተሰሎንቄ ሰዎች', rgv: '1 Tesalonicenses' },
-    '2 Thessalonians': { nkjv: 53, am54: '2ኛ ወደ ተሰሎንቄ ሰዎች', rgv: '2 Tesalonicenses' },
-    '1 Timothy': { nkjv: 54, am54: '1ኛ ወደ ጢሞቴዎስ', rgv: '1 Timoteo' },
-    '2 Timothy': { nkjv: 55, am54: '2ኛ ወደ ጢሞቴዎስ', rgv: '2 Timoteo' },
-    'Titus': { nkjv: 56, am54: 'ወደ ቲቶ', rgv: 'Tito' },
-    'Philemon': { nkjv: 57, am54: 'ወደ ፊልሞና', rgv: 'Filemón' },
-    'Hebrews': { nkjv: 58, am54: 'ወደ ዕብራውያን', rgv: 'Hebreos' },
-    'James': { nkjv: 59, am54: 'የያዕቆብ መልእክት', rgv: 'Santiago' },
-    '1 Peter': { nkjv: 60, am54: '1ኛ የጴጥሮስ መልእክት', rgv: '1 Pedro' },
-    '2 Peter': { nkjv: 61, am54: '2ኛ የጴጥሮስ መልእክት', rgv: '2 Pedro' },
-    '1 John': { nkjv: 62, am54: '1ኛ የዮሐንስ መልእክት', rgv: '1 Juan' },
-    '2 John': { nkjv: 63, am54: '2ኛ የዮሐንስ መልእክት', rgv: '2 Juan' },
-    '3 John': { nkjv: 64, am54: '3ኛ የዮሐንስ መልእክት', rgv: '3 Juan' },
-    'Jude': { nkjv: 65, am54: 'የይሁዳ መልእክት', rgv: 'Judas' },
-    'Revelation': { nkjv: 66, am54: 'የዮሐንስ ራእይ', rgv: 'Apocalipsis' },
-    'Psalms': { nkjv: 19, am54: 'መዝሙረ ዳዊት', rgv: 'Salmos' },
-    'Leviticus': { nkjv: 3, am54: 'ኦሪት ዘሌዋውያን', rgv: 'Levítico' },
-    'Jeremiah': { nkjv: 24, am54: 'ትንቢተ ኤርምያስ', rgv: 'Jeremías' }
+    'Matthew': { nkjv: 40, am54: 'የማቴዎስ ወንጌል', rgv: 'Mateo', geez: 'ማቴዎስ' },
+    'Mark': { nkjv: 41, am54: 'የማርቆስ ወንጌል', rgv: 'Marcos', geez: 'ማርቆስ' },
+    'Luke': { nkjv: 42, am54: 'የሉቃስ ወንጌል', rgv: 'Lucas', geez: 'ሉቃስ' },
+    'John': { nkjv: 43, am54: 'የዮሐንስ ወንጌል', rgv: 'Juan', geez: 'ዮሐንስ' },
+    'Acts': { nkjv: 44, am54: 'የሐዋርያት ሥራ', rgv: 'Hechos', geez: 'ግብረ ሐዋርያት' },
+    'Romans': { nkjv: 45, am54: 'ወደ ሮሜ ሰዎች', rgv: 'Romanos', geez: 'ሮሜ' },
+    '1 Corinthians': { nkjv: 46, am54: '1ኛ ወደ ቆሮንቶስ ሰዎች', rgv: '1 Corintios', geez: 'ቆሮንቶስ ቀዳማዊ' },
+    '2 Corinthians': { nkjv: 47, am54: '2ኛ ወደ ቆሮንቶስ ሰዎች', rgv: '2 Corintios', geez: 'ቆሮንቶስ ዳግማዊ' },
+    'Galatians': { nkjv: 48, am54: 'ወደ ገላትያ ሰዎች', rgv: 'Gálatas', geez: 'ገላትያ' },
+    'Ephesians': { nkjv: 49, am54: 'ወደ ኤፌሶን ሰዎች', rgv: 'Efesios', geez: 'ኤፌሶን' },
+    'Philippians': { nkjv: 50, am54: 'ወደ ፊልጵስዩስ ሰዎች', rgv: 'Filipenses', geez: 'ፊልጵስዩስ' },
+    'Colossians': { nkjv: 51, am54: 'ወደ ቆላስይስ ሰዎች', rgv: 'Colosenses', geez: 'ቆላስይስ' },
+    '1 Thessalonians': { nkjv: 52, am54: '1ኛ ወደ ተሰሎንቄ ሰዎች', rgv: '1 Tesalonicenses', geez: 'ተሰሎንቄ ቀዳማዊ' },
+    '2 Thessalonians': { nkjv: 53, am54: '2ኛ ወደ ተሰሎንቄ ሰዎች', rgv: '2 Tesalonicenses', geez: 'ተሰሎንቄ ዳግማዊ' },
+    '1 Timothy': { nkjv: 54, am54: '1ኛ ወደ ጢሞቴዎስ', rgv: '1 Timoteo', geez: 'ጢሞቴዎስ ቀዳማዊ' },
+    '2 Timothy': { nkjv: 55, am54: '2ኛ ወደ ጢሞቴዎስ', rgv: '2 Timoteo', geez: 'ጢሞቴዎስ ዳግማዊ' },
+    'Titus': { nkjv: 56, am54: 'ወደ ቲቶ', rgv: 'Tito', geez: 'ቲቶ' },
+    'Philemon': { nkjv: 57, am54: 'ወደ ፊልሞና', rgv: 'Filemón', geez: 'ፊልሞና' },
+    'Hebrews': { nkjv: 58, am54: 'ወደ ዕብራውያን', rgv: 'Hebreos', geez: 'ዕብራውያን' },
+    'James': { nkjv: 59, am54: 'የያዕቆብ መልእክት', rgv: 'Santiago', geez: 'ያዕቆብ' },
+    '1 Peter': { nkjv: 60, am54: '1ኛ የጴጥሮስ መልእክት', rgv: '1 Pedro', geez: 'ጴጥሮስ ቀዳማዊ' },
+    '2 Peter': { nkjv: 61, am54: '2ኛ የጴጥሮስ መልእክት', rgv: '2 Pedro', geez: 'ጴጥሮስ ዳግማዊ' },
+    '1 John': { nkjv: 62, am54: '1ኛ የዮሐንስ መልእክት', rgv: '1 Juan', geez: 'ዮሐንስ ቀዳማዊ' },
+    '2 John': { nkjv: 63, am54: '2ኛ የዮሐንስ መልእክት', rgv: '2 Juan', geez: 'ዮሐንስ ዳግማዊ' },
+    '3 John': { nkjv: 64, am54: '3ኛ የዮሐንስ መልእክት', rgv: '3 Juan', geez: 'ዮሐንስ ሣልሳዊ' },
+    'Jude': { nkjv: 65, am54: 'የይሁዳ መልእክት', rgv: 'Judas', geez: 'ይሁዳ' },
+    'Revelation': { nkjv: 66, am54: 'የዮሐንስ ራእይ', rgv: 'Apocalipsis', geez: 'ራእይ' },
+    'Psalms': { nkjv: 19, am54: 'መዝሙረ ዳዊት', rgv: 'Salmos', geez: 'መዝሙረ ዳዊት' },
+    'Leviticus': { nkjv: 3, am54: 'ኦሪት ዘሌዋውያን', rgv: 'Levítico', geez: 'ዘሌዋውያን' },
+    'Jeremiah': { nkjv: 24, am54: 'ትንቢተ ኤርምያስ', rgv: 'Jeremías', geez: 'ኤርምያስ' }
 };
 
 const BIBLE_METADATA = {
@@ -1197,13 +1197,16 @@ function getBibleVersesFromRef(ref) {
     if (!ref || !bibleData.loaded) return null;
 
     // Simple parser for "Book Chapter:Verse-Verse" or "Book Chapter:Verse"
-    const match = ref.match(/^(.+?)\s+(\d+):(\d+)(?:-(\d+))?$/);
+    const match = ref.match(/^(.+?)\s+(\d+):(\d+)(?:-(End|\d+))?$/);
     if (!match) return null;
 
     const bookName = match[1];
     const chapterNum = parseInt(match[2]);
     const startVerse = parseInt(match[3]);
-    const endVerse = match[4] ? parseInt(match[4]) : startVerse;
+    let endVerse = startVerse;
+    if (match[4]) {
+        endVerse = match[4] === 'End' ? 999 : parseInt(match[4]);
+    }
 
     const bookCfg = BIBLE_BOOK_MAPPING[bookName];
     const results = {};
@@ -1347,6 +1350,31 @@ const LITURGY_LECTIONARY_CONFIG = [
     }
 ];
 
+function toGeezNumeral(n) {
+    if (n === 0) return "";
+    const ones = ["", "፩", "፪", "፫", "፬", "፭", "፮", "፯", "፰", "፱"];
+    const tens = ["", "፲", "፳", "፴", "፵", "፶", "፷", "፸", "፹", "፺"];
+    
+    let result = "";
+    if (n >= 100) {
+        let hundreds = Math.floor(n / 100);
+        if (hundreds > 1) result += toGeezNumeral(hundreds);
+        result += "፻";
+        n %= 100;
+    }
+    
+    if (n >= 10) {
+        result += tens[Math.floor(n / 10)];
+        n %= 10;
+    }
+    
+    if (n > 0) {
+        result += ones[n];
+    }
+    
+    return result;
+}
+
 function createLectionaryPicker(containerId, lectionaryKey, bookOptions = []) {
     const container = document.getElementById(containerId);
     if (!container) return;
@@ -1361,7 +1389,9 @@ function createLectionaryPicker(containerId, lectionaryKey, bookOptions = []) {
         bookOptions.forEach(bookName => {
             const opt = document.createElement('option');
             opt.value = bookName;
-            opt.textContent = bookName;
+            const bookCfg = BIBLE_BOOK_MAPPING[bookName];
+            const geezName = bookCfg ? bookCfg.geez : "";
+            opt.textContent = geezName ? `${bookName} | ${geezName}` : bookName;
             bookSelect.appendChild(opt);
         });
         container.appendChild(bookSelect);
@@ -1402,14 +1432,21 @@ function createLectionaryPicker(containerId, lectionaryKey, bookOptions = []) {
         renderPrayers();
     };
 
-    const populateSelect = (select, max, selected) => {
+    const populateSelect = (select, max, selected, isEndField = false) => {
         select.innerHTML = '';
         for (let i = 1; i <= max; i++) {
             const opt = document.createElement('option');
             opt.value = i;
-            opt.textContent = i;
+            opt.textContent = `${i}  ${toGeezNumeral(i)}`;
             if (i == selected) opt.selected = true;
             select.appendChild(opt);
+        }
+        if (isEndField) {
+            const endOpt = document.createElement('option');
+            endOpt.value = 'End';
+            endOpt.textContent = 'End | ፍጻሜ';
+            if (selected === 'End') endOpt.selected = true;
+            select.appendChild(endOpt);
         }
     };
 
@@ -1434,7 +1471,7 @@ function createLectionaryPicker(containerId, lectionaryKey, bookOptions = []) {
         const metadata = BIBLE_METADATA[book] || { chapters: 50, maxVerses: 100 };
         populateSelect(chapterField.sel, metadata.chapters, ch);
         populateSelect(startField.sel, metadata.maxVerses, start);
-        populateSelect(endField.sel, metadata.maxVerses, end);
+        populateSelect(endField.sel, metadata.maxVerses, end, true);
     };
 
     // Listeners
@@ -1443,7 +1480,7 @@ function createLectionaryPicker(containerId, lectionaryKey, bookOptions = []) {
             const metadata = BIBLE_METADATA[bookSelect.value] || { chapters: 50, maxVerses: 100 };
             populateSelect(chapterField.sel, metadata.chapters, 1);
             populateSelect(startField.sel, metadata.maxVerses, 1);
-            populateSelect(endField.sel, metadata.maxVerses, 1);
+            populateSelect(endField.sel, metadata.maxVerses, 1, true);
             updateRefs();
         });
     }

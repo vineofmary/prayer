@@ -184,16 +184,49 @@
                         <label style="display: block; margin-bottom: 0.5rem;"><input type="checkbox" id="show-morning-psalm-gospel"> <span>Add Morning Psalm & Gospel</span></label>
                         <div id="morning-psalm-gospel-settings" style="display: none; margin-bottom: 1rem; margin-left: 1rem; border-left: 1px solid var(--border-color); padding-left: 0.5rem;">
                             <div class="kidase-lectionary-item" style="margin-top: 0.5rem;">
-                                <h5 class="settings-subtitle">Morning Psalm</h5>
+                                <h5 class="settings-subtitle">Morning Psalm | ምስባክ ዘነግህ</h5>
                                 <div id="morning-psalm-ref-container" class="lectionary-picker-container"></div>
                             </div>
                             <div class="kidase-lectionary-item" style="margin-top: 0.5rem;">
-                                <h5 class="settings-subtitle">Morning Gospel</h5>
+                                <h5 class="settings-subtitle">Morning Gospel | ወንጌል ዘነግህ</h5>
                                 <div id="morning-gospel-ref-container" class="lectionary-picker-container"></div>
                             </div>
                         </div>
 
                         <label style="display: block; margin-bottom: 0.5rem;"><input type="checkbox" id="show-pre-liturgy-kidan"> <span>Add Prayer of Covenant</span></label>
+
+
+                        <h4 class="settings-subtitle" style="margin-top: 1rem; border-top: 1px solid var(--border-color); padding-top: 0.75rem;">ḲIDASÉ BIBLE READINGS</h4>
+                        
+                        <div class="kidase-lectionary-item">
+                            <h5 class="settings-subtitle">Pauline Epistle | መልእክተ ጳውሎስ</h5>
+                            <div id="kidase-pauline-ref-container" class="lectionary-picker-container"></div>
+                        </div>
+                        <div class="kidase-lectionary-item">
+                            <h5 class="settings-subtitle">Universal Epistle | መልእክተ ካቶሊካ</h5>
+                            <div id="kidase-universal-ref-container" class="lectionary-picker-container"></div>
+                        </div>
+                        <div class="kidase-lectionary-item">
+                            <h5 class="settings-subtitle">Acts | ግብረ ሐዋርያት</h5>
+                            <div id="kidase-acts-ref-container" class="lectionary-picker-container"></div>
+                        </div>
+                        <div class="kidase-lectionary-item">
+                            <h5 class="settings-subtitle">Liturgy Psalm (Misbak) | ምስባክ</h5>
+                            <div id="kidase-psalm-ref-container" class="lectionary-picker-container"></div>
+                        </div>
+                        <div class="kidase-lectionary-item">
+                            <h5 class="settings-subtitle">Liturgy Gospel | ወንጌል ዘቅዳሴ</h5>
+                            <div id="kidase-gospel-ref-container" class="lectionary-picker-container"></div>
+                        </div>
+
+                        <h4 class="settings-subtitle" style="margin-top: 0.75rem;">Eucharistic Prayer (Anaphora) | አኰቴተ ቍርባን</h4>
+                        <select id="anaphora-selector" class="settings-select">
+                            <option value="apostles">Apostles | ሐዋርያት</option>
+                            <option value="mary">Our Lady Mary | ማርያም</option>
+                        </select>
+
+                        <h4 class="settings-subtitle" style="margin-top: 1rem; border-top: 1px solid var(--border-color); padding-top: 0.75rem;">Quiet Prayers | ጸሎት በልኁሳስ</h4>
+                        <label style="display: block; margin-bottom: 0.5rem;"><input type="checkbox" id="hide-quiet-prayers"> <span>Hide quiet prayers</span></label>
 
                         <h4 class="settings-subtitle" style="margin-top: 0.75rem;">TIME OF ḲIDASÉ</h4>
                         <select id="covenant-prayer-selector" class="settings-select">
@@ -202,38 +235,6 @@
                             <option value="midnight">Midnight | ዘመንፈቀ ሌሊት</option>
                             <option value="afternoon">Afternoon | ዘሠርክ</option>
                         </select>
-
-                        <h4 class="settings-subtitle" style="margin-top: 1rem; border-top: 1px solid var(--border-color); padding-top: 0.75rem;">ḲIDASÉ BIBLE READINGS</h4>
-                        
-                        <div class="kidase-lectionary-item">
-                            <h5 class="settings-subtitle">Pauline Epistle</h5>
-                            <div id="kidase-pauline-ref-container" class="lectionary-picker-container"></div>
-                        </div>
-                        <div class="kidase-lectionary-item">
-                            <h5 class="settings-subtitle">Universal Epistle</h5>
-                            <div id="kidase-universal-ref-container" class="lectionary-picker-container"></div>
-                        </div>
-                        <div class="kidase-lectionary-item">
-                            <h5 class="settings-subtitle">Acts</h5>
-                            <div id="kidase-acts-ref-container" class="lectionary-picker-container"></div>
-                        </div>
-                        <div class="kidase-lectionary-item">
-                            <h5 class="settings-subtitle">Liturgy Psalm (Misbak)</h5>
-                            <div id="kidase-psalm-ref-container" class="lectionary-picker-container"></div>
-                        </div>
-                        <div class="kidase-lectionary-item">
-                            <h5 class="settings-subtitle">Liturgy Gospel</h5>
-                            <div id="kidase-gospel-ref-container" class="lectionary-picker-container"></div>
-                        </div>
-
-                        <h4 class="settings-subtitle" style="margin-top: 0.75rem;">Eucharistic Prayer (Anaphora)</h4>
-                        <select id="anaphora-selector" class="settings-select">
-                            <option value="apostles">Apostles | ሐዋርያት</option>
-                            <option value="mary">Our Lady Mary | ማርያም</option>
-                        </select>
-
-                        <h4 class="settings-subtitle" style="margin-top: 1rem; border-top: 1px solid var(--border-color); padding-top: 0.75rem;">Quiet Prayers (<i>በልኁሳስ</i>)</h4>
-                        <label style="display: block; margin-bottom: 0.5rem;"><input type="checkbox" id="hide-quiet-prayers"> <span>Hide quiet prayers</span></label>
                     </div>
                 </div>
                 <div class="setting-group">
