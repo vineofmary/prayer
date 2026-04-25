@@ -1036,6 +1036,20 @@ body.view-mode-unified .info-panel-content {
     font-weight: bold;
 }
 
+.typical-psalms-select {
+    width: 100%;
+    font-size: 0.8rem;
+    padding: 0.4rem;
+    max-width: 100%;
+}
+
+.lectionary-separator {
+    margin: 0.75rem 0;
+    border: 0;
+    border-top: 1px solid var(--border-color);
+    opacity: 0.3;
+}
+
 #kidase-settings {
     background-color: var(--card-background);
     border-radius: 8px;
