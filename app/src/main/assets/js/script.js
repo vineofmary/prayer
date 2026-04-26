@@ -98,6 +98,7 @@ const showPreLiturgyKidanToggle = document.getElementById('show-pre-liturgy-kida
 const covenantPrayerSelector = document.getElementById('covenant-prayer-selector');
 const hideQuietPrayersToggle = document.getElementById('hide-quiet-prayers');
 const servantNameInput = document.getElementById('servant-name-input');
+const shareLinkButton = document.getElementById('share-link-button');
 const patriarchNameInput = document.getElementById('patriarch-name-input');
 const bishopNameInput = document.getElementById('bishop-name-input');
 const attendingBishopsInput = document.getElementById('attending-bishops-input');
@@ -736,7 +737,7 @@ function fromBase64(str) {
 function syncStateToUrl() {
     try {
         const state = {
-            v: '1', // State Version
+            v: '2', // State Version
             k: isKidaseModeActive,
             a: selectedAnaphora,
             c: selectedCovenantPrayer,
@@ -751,7 +752,8 @@ function syncStateToUrl() {
             fs: fontSizes,
             lo: languageOrder,
             cn: customNames,
-            cs: collapsedSections
+            cs: serializeCollapsedSections(),
+            ac: areAllSectionsCollapsed // All Collapsed flag
         };
         const encoded = toBase64(JSON.stringify(state));
         if (encoded) {
@@ -762,16 +764,82 @@ function syncStateToUrl() {
     }
 }
 
-function loadStateFromUrl() {
+const SECTION_SLUGS = {
+    "Daily Prayer | ዘዘወትር ጸሎት": "dp",
+    "Prayer of Saint Ephraim: Praise of Mary | ውዳሴ ማርያም": "pm",
+    "Opening Prayer for the Psalms and the Songs of the Prophets | ነዓ ኀቤየ ዳዊት": "ps_in",
+    "Closing Prayer for the Psalms and Songs of the Prophets | ሰአሊ ለነ ማርያም": "ps_out",
+    "Prayer of Abba Giyorgis: The Angels Praise Mary | ይዌድስዋ መላእክት ለማርያም": "ap",
+    "Order of the Liturgy | ሥርዐተ ቅዳሴ": "ok",
+    "Anaphora of the Apostles | አኰቴተ ቍርባን ዘሐዋርያት": "aa",
+    "Anaphora of Our Lady Mary | አኰቴተ ቍርባን ዘእግዝእትነ ማርያም": "am",
+    "Sunday | ዘእሁድ": "d_sun",
+    "Monday | ዘሰኑይ": "d_mon",
+    "Tuesday | ዘሠሉስ": "d_tue",
+    "Wednesday | ዘረቡዕ": "d_wed",
+    "Thursday | ዘሐሙስ": "d_thu",
+    "Friday | ዘዓርብ": "d_fri",
+    "Saturday | ዘቀዳሚት": "d_sat"
+};
+
+function slugifyTitle(title) {
+    if (!title) return "";
+    if (SECTION_SLUGS[title]) return SECTION_SLUGS[title];
+    return title.split('|')[0].trim().toLowerCase().replace(/[^a-z0-9]/g, '').substring(0, 12);
+}
+
+function serializeCollapsedSections() {
+    if (areAllSectionsCollapsed) return {}; // No need to list them all if ac flag is true
+    const serialized = {};
+    Object.entries(collapsedSections).forEach(([title, isCollapsed]) => {
+        if (isCollapsed) {
+            serialized[slugifyTitle(title)] = true;
+        }
+    });
+    return serialized;
+}
+
+function deserializeCollapsedSections(serialized, version) {
+    const deserialized = {};
+    if (!serialized) return deserialized;
+    
+    if (version === '1') return serialized; // Legacy version
+
+    // Version 2: Map slugs back to titles (or at least keep slugs as keys)
+    // Actually, since we render titles dynamically, we need to make sure 
+    // addSectionTitle can find its state.
+    return serialized;
+}
+
+async function loadStateFromUrl() {
     const hash = window.location.hash;
-    if (!hash.startsWith('#s=')) return false;
+    if (!hash) return false;
 
     try {
-        const encoded = hash.substring(3);
-        const jsonStr = fromBase64(encoded);
-        if (!jsonStr) return false;
+        let state = null;
+        let v = '1';
 
-        const state = JSON.parse(jsonStr);
+        if (hash.startsWith('#s=')) {
+            const encoded = hash.substring(3);
+            const jsonStr = fromBase64(encoded);
+            if (!jsonStr) return false;
+            state = JSON.parse(jsonStr);
+            v = state.v || '1';
+        } else if (hash.startsWith('#id=')) {
+            const id = hash.substring(4);
+            const doc = await db.collection('short_links').doc(id).get();
+            if (doc.exists) {
+                state = JSON.parse(doc.data().state);
+                v = state.v || '2';
+            } else {
+                console.warn("Short link not found");
+                return false;
+            }
+        } else {
+            return false;
+        }
+
+        if (!state) return false;
 
         if (state.k !== undefined) isKidaseModeActive = state.k;
         if (state.a !== undefined) selectedAnaphora = state.a;
@@ -793,13 +861,62 @@ function loadStateFromUrl() {
             languageOrder = state.lo;
         }
         if (state.cn !== undefined) customNames = { ...customNames, ...state.cn };
-        if (state.cs !== undefined) collapsedSections = state.cs;
+        
+        if (state.ac !== undefined) areAllSectionsCollapsed = state.ac;
+        if (state.cs !== undefined) {
+            collapsedSections = deserializeCollapsedSections(state.cs, v);
+        }
 
-        console.log("State successfully loaded from URL");
+        console.log("State successfully loaded from URL (V" + v + ")");
         return true;
     } catch (e) {
         console.error("Failed to load state from URL:", e);
         return false;
+    }
+}
+
+async function generateShortLink() {
+    if (!shareLinkButton) return;
+    const originalContent = shareLinkButton.innerHTML;
+    shareLinkButton.innerHTML = '<span>Generating...</span>';
+    shareLinkButton.disabled = true;
+
+    try {
+        const state = {
+            v: '2',
+            k: isKidaseModeActive,
+            a: selectedAnaphora,
+            c: selectedCovenantPrayer,
+            hq: hideQuietPrayers,
+            ps: selectedPsalms,
+            ss: selectedProphetSongs,
+            sd: selectedSeatatLectionaryDay,
+            wd: selectedWidaseMaryamDay,
+            l: Object.keys(displayedLanguages).filter(lang => displayedLanguages[lang]),
+            t: currentTheme,
+            do: displayOptions,
+            fs: fontSizes,
+            lo: languageOrder,
+            cn: customNames,
+            cs: {}, // Empty collapsed sections
+            ac: true // Recipients see everything collapsed by default as requested
+        };
+
+        const stateJson = JSON.stringify(state);
+        const docRef = await db.collection('short_links').add({
+            state: stateJson,
+            createdAt: firebase.firestore.FieldValue.serverTimestamp()
+        });
+
+        const shortUrl = `${window.location.origin}${window.location.pathname}#id=${docRef.id}`;
+        await navigator.clipboard.writeText(shortUrl);
+        showCopyNotification('Short link copied to clipboard!');
+    } catch (e) {
+        console.error("Failed to generate short link:", e);
+        showCopyNotification('Failed to generate link.', 3000);
+    } finally {
+        shareLinkButton.innerHTML = originalContent;
+        shareLinkButton.disabled = false;
     }
 }
 
@@ -830,7 +947,7 @@ function saveSettings() {
 }
 
 
-function loadSettings() {
+async function loadSettings() {
     const isMobile = window.innerWidth < 900;
     const savedVersion = localStorage.getItem('settingsVersion');
 
@@ -955,7 +1072,7 @@ function loadSettings() {
     }
 
     // Override settings from URL if present
-    loadStateFromUrl();
+    await loadStateFromUrl();
 
     // Set UI elements from the loaded/default settings
     servantNameInput.value = customNames.servant;
@@ -1823,6 +1940,11 @@ function createPrayerCardElement(prayer, prayerIndex, isKidase = false) {
     prayerCard.classList.add('prayer-card');
     prayerCard.dataset.prayerIndex = prayerIndex;
 
+    // Handle initial collapse state (from renderPrayers context)
+    if (window.isRenderingCollapsed) {
+        prayerCard.style.display = 'none';
+    }
+
     // Scribe Edit Button (Only for Scribable content)
     const isScribable = prayer.chapter !== 'Psalms' &&
         prayer.chapter !== 'Bible' &&
@@ -2365,8 +2487,13 @@ function renderPrayers() {
 
             if (isCollapsible) {
                 titleEl.classList.add('collapsible');
-                if (collapsedSections[title]) {
+                const slug = slugifyTitle(title);
+                const isCollapsed = areAllSectionsCollapsed || collapsedSections[title] || collapsedSections[slug];
+                
+                if (isCollapsed) {
                     titleEl.classList.add('collapsed');
+                    // We need to actually hide the elements initially if they are collapsed
+                    // This was missing in the previous version
                 }
                 titleEl.addEventListener('click', () => {
                     // Do not allow collapsing/expanding in slides mode
@@ -2400,6 +2527,13 @@ function renderPrayers() {
 
             prayerDisplay.appendChild(titleEl);
 
+            // NEW: Initial visibility state based on collapse status
+            const slug = slugifyTitle(title);
+            const isInitiallyCollapsed = areAllSectionsCollapsed || collapsedSections[title] || collapsedSections[slug];
+            
+            // This is a marker to help createPrayerCardElement know if it should be hidden
+            titleEl.dataset.isCollapsed = isInitiallyCollapsed;
+
             if (metadata) {
                 const metadataEl = document.createElement('div');
                 metadataEl.className = 'section-metadata';
@@ -2418,39 +2552,46 @@ function renderPrayers() {
                 iconImg.src = 'img/Silus-Kidus.svg';
                 iconImg.alt = 'Holy Trinity Icon';
                 iconImg.classList.add('holy-trinity-icon'); // Add a class for styling
+                if (isInitiallyCollapsed) iconImg.style.display = 'none';
                 prayerDisplay.appendChild(iconImg);
             } else if (title === "Prayer of Saint Ephraim: Praise of Mary | ውዳሴ ማርያም") {
                 const iconImg = document.createElement('img');
                 iconImg.src = 'img/Mary-Blesses-Ephraim.svg';
                 iconImg.alt = 'Mary Blesses Ephraim Icon';
                 iconImg.classList.add('section-icon');
+                if (isInitiallyCollapsed) iconImg.style.display = 'none';
                 prayerDisplay.appendChild(iconImg);
             } else if (title === "Thursday | ዘሐሙስ") {
                 const iconImg = document.createElement('img');
                 iconImg.src = 'img/Ephraim-and-Mary-on-Thursday.svg';
                 iconImg.alt = 'Ephraim and Mary on Thursday Icon';
                 iconImg.classList.add('section-icon');
+                if (isInitiallyCollapsed) iconImg.style.display = 'none';
                 prayerDisplay.appendChild(iconImg);
             } else if (title === "Prayer of Abba Giyorgis: The Angels Praise Mary | ይዌድስዋ መላእክት ለማርያም") {
                 const iconImg = document.createElement('img');
                 iconImg.src = 'img/Mary-with-her-beloved-Son.svg';
                 iconImg.alt = 'Mary with her beloved Son Icon';
                 iconImg.classList.add('section-icon');
+                if (isInitiallyCollapsed) iconImg.style.display = 'none';
                 prayerDisplay.appendChild(iconImg);
             } else if (title === "Opening Prayer for the Psalms and the Songs of the Prophets | ነዓ ኀቤየ ዳዊት") {
                 const iconImg = document.createElement('img');
                 iconImg.src = 'img/Covenant-of-Mercy.svg';
                 iconImg.alt = 'Covenant of Mercy Icon';
                 iconImg.classList.add('section-icon');
+                if (isInitiallyCollapsed) iconImg.style.display = 'none';
                 prayerDisplay.appendChild(iconImg);
             } else if (title === "Closing Prayer for the Psalms and Songs of the Prophets | ሰአሊ ለነ ማርያም") {
                 const iconImg = document.createElement('img');
                 iconImg.src = 'img/Covenant-of-Mercy-with-Psalm.svg';
                 iconImg.alt = 'Covenant of Mercy with Psalm Icon';
                 iconImg.classList.add('section-icon');
+                if (isInitiallyCollapsed) iconImg.style.display = 'none';
                 prayerDisplay.appendChild(iconImg);
             }
             lastSectionTitle = title;
+            window.isRenderingCollapsed = isInitiallyCollapsed;
         }
     };
 
@@ -2458,6 +2599,9 @@ function renderPrayers() {
         const title = getSectionTitle(prayer);
         addSectionTitle(title, true);
     };
+    
+    // Reset rendering context at start of renderPrayers
+    window.isRenderingCollapsed = false;
 
     const renderSequence = () => {
         const prayerSequence = getStandardPrayerSequence();
@@ -4118,6 +4262,10 @@ showPrayerLabelsToggle.addEventListener('change', () => {
     saveSettings();
 });
 
+if (shareLinkButton) {
+    shareLinkButton.addEventListener('click', generateShortLink);
+}
+
 showLanguageLabelsToggle.addEventListener('change', () => {
     displayOptions.showLanguageLabels = showLanguageLabelsToggle.checked;
     renderPrayers();
@@ -4714,11 +4862,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 
             // Refresh UI immediately
             updateLanguageToggles();
+            // Restore kidase mode visibility in settings (state is already managed by loadSettings)
             if (kidaseGatedSection) kidaseGatedSection.style.display = 'block';
-
-            // Restore kidase mode from localStorage if it was active
-            isKidaseModeActive = localStorage.getItem('isKidaseModeActive') === 'true';
-
+            
             renderPrayers();
         } else {
             isScribeLoggedIn = false;
@@ -4727,9 +4873,8 @@ document.addEventListener('DOMContentLoaded', async () => {
             scribeLoginLink.textContent = 'Scribe Login';
             document.body.classList.remove('scribe-mode-active');
 
-            // Preserve kidase mode and visibility for all users
+            // Preserve kidase mode visibility for all users
             if (kidaseGatedSection) kidaseGatedSection.style.display = 'block';
-            isKidaseModeActive = localStorage.getItem('isKidaseModeActive') === 'true';
 
             // Re-subscribe with normal permissions (published only)
             subscribeToPrayers();
