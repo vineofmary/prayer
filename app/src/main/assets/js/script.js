@@ -153,13 +153,13 @@ const LANGUAGE_REGISTRY = {
     'geez_phonetic': { name: 'Ge\'ez Phonetic', category: 'main', isAuto: false },
     'amharic_script': { name: 'አማርኛ (Amharic)', category: 'main', isAuto: false, isEthiopic: true },
     'amharic_phonetic': { name: 'Amharic Phonetic', category: 'main', isAuto: false },
-    'oromoo': { name: 'ኦሮምኛ (Oromo)**', category: 'main', isAuto: false, isEthiopic: true, isSeekingScribe: true },
+    'oromoo': { name: 'ኦሮምኛ (Oromo)**', category: 'unofficial', isAuto: false, isEthiopic: true, isSeekingScribe: true },
     'tigrinya_script': { name: 'ትግርኛ (Tigrinya)', category: 'main', isAuto: false, isEthiopic: true },
     'tigrinya_phonetic': { name: 'Tigrinya Phonetic', category: 'main', isAuto: false },
     'spanish': { name: 'Español (Spanish)*', category: 'main', isAuto: true },
     'coptic': { name: 'ϯⲙⲉⲧⲣⲉⲙⲛ̀ⲭⲏⲙⲓ (Coptic)', category: 'main', isAuto: false },
-    'syriac': { name: 'ܣܘܪܝܝܐ (Syriac)**', category: 'main', isAuto: false, isSeekingScribe: true },
-    'armenian': { name: 'Հայերեն (Armenian)**', category: 'main', isAuto: false, isSeekingScribe: true },
+    'syriac': { name: 'ܣܘܪܝܝܐ (Syriac)**', category: 'unofficial', isAuto: false, isSeekingScribe: true },
+    'armenian': { name: 'Հայերեն (Armenian)**', category: 'unofficial', isAuto: false, isSeekingScribe: true },
 
     // Phonetics (Main Section)
     // (Note: Already moved above for grouping but keeping IDs consistent)
@@ -230,6 +230,7 @@ const BIBLE_BOOK_MAPPING = {
     'Jude': { nkjv: 65, am54: 'የይሁዳ መልእክት', rgv: 'Judas', geez: 'ይሁዳ' },
     'Revelation': { nkjv: 66, am54: 'የዮሐንስ ራእይ', rgv: 'Apocalipsis', geez: 'ራእይ' },
     'Psalms': { nkjv: 19, am54: 'መዝሙረ ዳዊት', rgv: 'Salmos', geez: 'መዝሙረ ዳዊት' },
+    'Psalm': { nkjv: 19, am54: 'መዝሙረ ዳዊት', rgv: 'Salmos', geez: 'መዝሙረ ዳዊት' },
     'Leviticus': { nkjv: 3, am54: 'ኦሪት ዘሌዋውያን', rgv: 'Levítico', geez: 'ዘሌዋውያን' },
     'Jeremiah': { nkjv: 24, am54: 'ትንቢተ ኤርምያስ', rgv: 'Jeremías', geez: 'ኤርምያስ' }
 };
@@ -1227,7 +1228,17 @@ function getBibleVersesFromRef(ref) {
     if (bookCfg && bibleData.am54 && bibleData.am54.books) {
         const amBook = bibleData.am54.books.find(b => b.title === bookCfg.am54);
         if (amBook) {
-            const amChapter = amBook.chapters.find(ch => parseInt(ch.chapter) === chapterNum);
+            // Find chapter by matching numeric value, or fallback to index if label is non-numeric
+            let amChapter = amBook.chapters.find(ch => {
+                const chNum = parseInt(ch.chapter);
+                return !isNaN(chNum) && chNum === chapterNum;
+            });
+            
+            // Special case for non-numeric labels (like Luke 24 which is "እነሆ" in our data)
+            if (!amChapter && amBook.chapters[chapterNum - 1]) {
+                amChapter = amBook.chapters[chapterNum - 1];
+            }
+
             if (amChapter && amChapter.verses) {
                 results.amharic_script = [];
                 for (let v = startVerse; v <= endVerse; v++) {
@@ -1241,7 +1252,7 @@ function getBibleVersesFromRef(ref) {
     }
 
     // 3. Ge'ez Psalms - Nested structure
-    if (bookName === 'Psalms' && bibleData.geez_psalms) {
+    if ((bookName === 'Psalms' || bookName === 'Psalm') && bibleData.geez_psalms) {
         const chapter = bibleData.geez_psalms.find(ch => ch.id === chapterNum);
         if (chapter && chapter.verses) {
             results.geez_script = chapter.verses
@@ -1251,6 +1262,11 @@ function getBibleVersesFromRef(ref) {
     }
 
     return results;
+}
+
+function findTypicalPsalm(book, chapter, start, end) {
+    if (book !== 'Psalms' && book !== 'Psalm') return null;
+    return TYPICAL_PSALMS.find(p => p.mc === chapter && p.ms === start && p.me === end);
 }
 
 function getPsalmVerses(chapterNum, start, end, langKey) {
@@ -2199,46 +2215,116 @@ function renderSelectedKidase(addSectionTitleCallback) {
                     const maxVerses = Math.max(0, ...verseCounts);
 
                     if (maxVerses > 0) {
-                        for (let i = 0; i < maxVerses; i++) {
-                            const versePrayer = { ...p };
-                            languageOrder.forEach(langKey => {
-                                // Find the specific placeholder used for this language in the config
-                                const langPlaceholder = activeCfg.placeholders[langKey] || activeCfg.placeholders.english;
+                        const refStr = activeCfg.ref();
+                        const match = refStr.match(/^(.+?)\s+(\d+):(\d+)(?:-(End|\d+))?$/);
+                        const bookName = match ? match[1] : "";
+                        const chapter = match ? parseInt(match[2]) : 0;
+                        const start = match ? parseInt(match[3]) : 0;
+                        const end = match ? (match[4] === 'End' ? 999 : (match[4] ? parseInt(match[4]) : start)) : start;
 
-                                if (bibleResults[langKey] && bibleResults[langKey][i]) {
-                                    const v = bibleResults[langKey][i];
-                                    const verseText = `[${v.verseNum}] ${v.text}`;
-                                    if (i === 0) {
-                                        // Construct localized header
-                                        const refStr = activeCfg.ref();
-                                        const match = refStr.match(/^(.+?)\s+(\d+:\d+(?:-\d+)?)$/);
-                                        let header = refStr;
-                                        if (match) {
-                                            const bookName = match[1];
-                                            const range = match[2];
+                        if (bookName === 'Psalms' || bookName === 'Psalm') {
+                            // Combine all verses into one card for Psalm chants
+                            const versePrayer = { ...p };
+                            const typical = findTypicalPsalm(bookName, chapter, start, end);
+                            
+                            // Only populate languages that are currently enabled
+                            const visibleLangs = languageOrder.filter(id => displayedLanguages[id]);
+                            visibleLangs.forEach(langKey => {
+                                const langPlaceholder = activeCfg.placeholders[langKey] || activeCfg.placeholders.english;
+                                let combinedText = "";
+                                
+                                if (langKey === 'geez_script' && typical) {
+                                    combinedText = typical.g;
+                                } else if (bibleResults[langKey]) {
+                                    // Remove verse numbers in brackets for Psalm chants
+                                    combinedText = bibleResults[langKey].map(v => v.text).join("\n");
+                                }
+                                
+                                // Construct localized header
+                                let header = refStr;
+                                const bookCfg = BIBLE_BOOK_MAPPING[bookName];
+                                const rangeSuffix = `${start}${end !== start && end !== 999 ? '-' + end : (end === 999 ? '-End' : '')}`;
+                                
+                                if (langKey === 'geez_script') {
+                                    // Ge'ez Column: መዝሙር ዘዳዊት ፲፩፥፭ (ግእዝ፲፱፻፹)
+                                    let gCh = chapter, gS = start, gE = end;
+                                    if (typical) {
+                                        gCh = typical.lc; gS = typical.ls; gE = typical.le;
+                                    }
+                                    const chG = toGeezNumeral(gCh);
+                                    const sG = toGeezNumeral(gS);
+                                    const eG = (gE !== gS && gE !== 999) ? '-' + toGeezNumeral(gE) : (gE === 999 ? '-ፍጻሜ' : '');
+                                    header = `መዝሙር ዘዳዊት ${chG}፥${sG}${eG} (ግእዝ${toGeezNumeral(1980)})`;
+                                } else if (langKey === 'english') {
+                                    // English Column: Psalm 94:7-8 OSB (95:7-8 NKJV) OR Psalm 12:5 (NKJV)
+                                    if (typical) {
+                                        const lxxRange = `${typical.ls}${typical.le !== typical.ls ? '-' + typical.le : ''}`;
+                                        const mcRange = `${typical.ms}${typical.me !== typical.ms ? '-' + typical.me : ''}`;
+                                        header = `Psalm ${typical.lc}:${lxxRange} OSB (${typical.mc}:${mcRange} NKJV)`;
+                                    } else {
+                                        header = `Psalm ${chapter}:${rangeSuffix} (NKJV)`;
+                                    }
+                                } else if (bookCfg) {
+                                    // Others (Amharic, etc.)
+                                    if (langKey === 'amharic_script') {
+                                        header = `${bookCfg.am54} ${chapter}:${rangeSuffix} (አም1954)`;
+                                    } else if (langKey === 'spanish') {
+                                        header = `${bookCfg.rgv} ${chapter}:${rangeSuffix}`;
+                                    }
+                                }
+                                
+                                // For Psalm chants, we replace the entire card content to remove the Deacon prompt
+                                versePrayer[langKey] = `${header}\n${combinedText}`;
+                            });
+                            
+                            const card = createPrayerCardElement(versePrayer, -1, true);
+                            prayerDisplay.appendChild(card);
+                        } else {
+                            // Split into multiple cards for Gospel/Epistles
+                            for (let i = 0; i < maxVerses; i++) {
+                                const versePrayer = { ...p };
+                                const visibleLangs = languageOrder.filter(id => displayedLanguages[id]);
+                                visibleLangs.forEach(langKey => {
+                                    const langPlaceholder = activeCfg.placeholders[langKey] || activeCfg.placeholders.english;
+
+                                    if (bibleResults[langKey] && bibleResults[langKey][i]) {
+                                        const v = bibleResults[langKey][i];
+                                        const verseText = `[${v.verseNum}] ${v.text}`;
+                                        if (i === 0) {
+                                            // Construct localized header
+                                            const range = match ? match[2] + ":" + match[3] + (match[4] ? "-" + match[4] : "") : "";
+                                            let header = refStr;
                                             const bookCfg = BIBLE_BOOK_MAPPING[bookName];
                                             if (bookCfg) {
-                                                if (langKey === 'amharic_script' || langKey === 'geez_script') {
-                                                    header = `${bookCfg.am54} ${range}`;
+                                                if (langKey === 'geez_script') {
+                                                    header = `${bookCfg.am54} ${range} (ግእዝ${toGeezNumeral(1980)})`;
+                                                } else if (langKey === 'amharic_script') {
+                                                    header = `${bookCfg.am54} ${range} (አም1954)`;
+                                                } else if (langKey === 'english') {
+                                                    header = `${bookName} ${range} (NKJV)`;
                                                 } else if (langKey === 'spanish') {
                                                     header = `${bookCfg.rgv} ${range}`;
                                                 }
                                             }
-                                        }
-                                        const prefix = (activeCfg.prefixes && activeCfg.prefixes[langKey]) || "";
-                                        const fullText = `${prefix}${header}\n${verseText}`;
+                                            const prefix = (activeCfg.prefixes && activeCfg.prefixes[langKey]) || "";
+                                            const fullText = `${prefix}${header}\n${verseText}`;
 
-                                        // Replace the language-specific placeholder
-                                        versePrayer[langKey] = p[langKey].replace(langPlaceholder, fullText);
+                                            // Replace the language-specific placeholder
+                                            if (p[langKey]) {
+                                                versePrayer[langKey] = p[langKey].replace(langPlaceholder, fullText);
+                                            } else {
+                                                versePrayer[langKey] = fullText;
+                                            }
+                                        } else {
+                                            versePrayer[langKey] = verseText;
+                                        }
                                     } else {
-                                        versePrayer[langKey] = verseText;
+                                        if (i > 0) versePrayer[langKey] = "";
                                     }
-                                } else if (displayedLanguages[langKey]) {
-                                    if (i > 0) versePrayer[langKey] = "";
-                                }
-                            });
-                            const card = createPrayerCardElement(versePrayer, -1, true);
-                            prayerDisplay.appendChild(card);
+                                });
+                                const card = createPrayerCardElement(versePrayer, -1, true);
+                                prayerDisplay.appendChild(card);
+                            }
                         }
                         return;
                     }
