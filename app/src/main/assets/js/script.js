@@ -2127,7 +2127,8 @@ function createPrayerCardElement(prayer, prayerIndex, isKidase = false) {
     prayerCard.dataset.prayerIndex = prayerIndex;
 
     // Handle initial collapse state (from renderPrayers context)
-    if (window.isRenderingCollapsed) {
+    // IMPORTANT: Do not hide cards in slides mode even if the section is collapsed
+    if (window.isRenderingCollapsed && displayOptions.presentationMode !== 'slides') {
         prayerCard.style.display = 'none';
     }
 
@@ -3103,6 +3104,9 @@ function adjustSlideFontSize() {
 
     const prayerCards = prayerDisplay.querySelectorAll('.prayer-card');
     prayerCards.forEach(card => {
+        // Skip hidden cards to avoid unnecessary processing and potential issues with measurement
+        if (card.style.display === 'none' || card.offsetParent === null) return;
+
         // Use a small timeout to ensure the DOM is ready for measurement
         setTimeout(() => {
             const prayerContent = card.querySelector('.prayer-content');
