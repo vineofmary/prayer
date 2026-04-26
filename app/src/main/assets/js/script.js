@@ -1467,6 +1467,7 @@ function getPsalmVerses(chapterNum, start, end, langKey) {
 // --- Liturgy Lectionary Config ---
 const LITURGY_LECTIONARY_CONFIG = [
     {
+        id: 'pauline',
         ref: () => kidaseLectionaryRefs.pauline,
         placeholders: {
             english: '{{TODAY\'S PAULINE EPISTLE READING}}',
@@ -1481,6 +1482,7 @@ const LITURGY_LECTIONARY_CONFIG = [
         }
     },
     {
+        id: 'universal',
         ref: () => kidaseLectionaryRefs.universal,
         placeholders: {
             english: '{{TODAY\'S UNIVERSAL EPISTLE READING}}',
@@ -1495,6 +1497,7 @@ const LITURGY_LECTIONARY_CONFIG = [
         }
     },
     {
+        id: 'acts',
         ref: () => kidaseLectionaryRefs.acts,
         placeholders: {
             english: '{{TODAY\'S ACTS READING}}',
@@ -1505,6 +1508,7 @@ const LITURGY_LECTIONARY_CONFIG = [
         prefixes: {}
     },
     {
+        id: 'psalm',
         ref: () => kidaseLectionaryRefs.psalm,
         placeholders: {
             english: '{{TODAY\'S PSALMS READING}}',
@@ -1518,6 +1522,7 @@ const LITURGY_LECTIONARY_CONFIG = [
         }
     },
     {
+        id: 'gospel',
         ref: () => kidaseLectionaryRefs.gospel,
         placeholders: {
             english: '{{TODAY\'S GOSPEL READING}}',
@@ -1530,6 +1535,7 @@ const LITURGY_LECTIONARY_CONFIG = [
         }
     },
     {
+        id: 'morningPsalm',
         ref: () => kidaseLectionaryRefs.morningPsalm,
         placeholders: {
             english: '{{MORNING PSALMS READING}}',
@@ -1543,6 +1549,7 @@ const LITURGY_LECTIONARY_CONFIG = [
         }
     },
     {
+        id: 'morningGospel',
         ref: () => kidaseLectionaryRefs.morningGospel,
         placeholders: {
             english: '{{MORNING GOSPEL READING}}',
@@ -2597,6 +2604,7 @@ function renderSelectedKidase(addSectionTitleCallback) {
                             });
 
                             const card = createPrayerCardElement(versePrayer, -1, true);
+                            card.dataset.readingType = activeCfg.id;
                             prayerDisplay.appendChild(card);
                         } else {
                             // Split into multiple cards for Gospel/Epistles
@@ -2642,6 +2650,7 @@ function renderSelectedKidase(addSectionTitleCallback) {
                                     }
                                 });
                                 const card = createPrayerCardElement(versePrayer, -1, true);
+                                if (i === 0) card.dataset.readingType = activeCfg.id;
                                 prayerDisplay.appendChild(card);
                             }
                         }
@@ -4792,6 +4801,49 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (displayOptions.presentationMode === 'slides') {
             adjustSlideFontSize();
         }
+    });
+
+    // Setup Bible Reading Navigation from Settings
+    document.querySelectorAll('.clickable-reading-title').forEach(title => {
+        title.addEventListener('click', () => {
+            const targetId = title.dataset.readingTarget;
+            
+            // 1. Collapse sidebar first
+            collapseSidebar();
+
+            // 2. Wait for sidebar to close (300ms) and layout to settle
+            setTimeout(() => {
+                const card = document.querySelector(`.prayer-card[data-reading-type="${targetId}"]`);
+                if (card) {
+                    // 3. Ensure the section containing the card is expanded
+                    let prev = card.previousElementSibling;
+                    while (prev) {
+                        if (prev.classList.contains('section-title')) {
+                            if (prev.classList.contains('collapsed')) {
+                                prev.click(); // Trigger expansion
+                            }
+                            break;
+                        }
+                        prev = prev.previousElementSibling;
+                    }
+
+                    // 4. Perform the scroll in the next tick to ensure visibility shift is accounted for
+                    requestAnimationFrame(() => {
+                        card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        card.classList.add('highlight-reading');
+                        setTimeout(() => card.classList.remove('highlight-reading'), 2000);
+                    });
+                } else {
+                    // Feedback if not found
+                    const kidaseToggle = document.getElementById('kidase-mode-toggle');
+                    if (kidaseToggle && !kidaseToggle.checked) {
+                        showCopyNotification("Please enable 'Liturgy Mode' first.", 3000);
+                    } else {
+                        showCopyNotification("Reading card not found. Ensure it is enabled in settings.", 3000);
+                    }
+                }
+            }, 500); 
+        });
     });
 
     // PWA Service Worker Registration

@@ -615,6 +615,29 @@ font-size: var(--english-font-size, 16px);
     opacity: 0.8;
 }
 
+.clickable-reading-title {
+    cursor: pointer;
+    transition: all 0.2s ease;
+    padding: 2px 4px;
+    border-radius: 4px;
+    margin-left: -4px;
+}
+
+.clickable-reading-title:hover {
+    color: var(--accent-color);
+    background-color: var(--hover-color);
+    opacity: 1;
+}
+
+@keyframes reading-highlight {
+    0% { background-color: var(--highlight-bg); }
+    100% { background-color: transparent; }
+}
+
+.highlight-reading {
+    animation: reading-highlight 2s ease-out;
+}
+
 
 .settings-summary {    font-size: 0.9em;
     color: var(--speaker-label-color);
@@ -734,6 +757,7 @@ input[type="range"], select {
     margin-top: 2.5rem;
     padding-bottom: 0.5rem;
     border-bottom: 2px solid var(--accent-color);
+    scroll-margin-top: calc(var(--header-height) + 1.5rem);
 }
 
 .section-metadata {
@@ -781,6 +805,7 @@ input[type="range"], select {
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    scroll-margin-top: calc(var(--header-height) + 1rem);
 }
 
 .prayer-card-main-content {
