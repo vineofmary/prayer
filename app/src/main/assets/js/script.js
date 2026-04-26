@@ -1705,37 +1705,57 @@ function createLectionaryPicker(containerId, lectionaryKey, bookOptions = [], ty
         }
     };
 
-    const syncPicker = () => {
-        const currentRef = kidaseLectionaryRefs[lectionaryKey] || "";
-        const match = currentRef.match(/^(.+?)\s+(\d+):(\d+)(?:-(\d+))?$/);
+    // 4. Typical Psalms Dropdown
+    let typicalSelect = null;
+    if (typicalPsalms) {
+        const typicalContainer = document.createElement('div');
+        typicalContainer.className = 'typical-psalms-container';
+        typicalContainer.style.marginTop = '0.5rem';
 
-        let book = bookOptions[0];
-        let ch = 1;
-        let start = 1;
-        let end = 1;
+        typicalSelect = document.createElement('select');
+        typicalSelect.className = 'settings-select typical-psalms-select';
 
-        if (match) {
-            book = match[1];
-            ch = parseInt(match[2]);
-            start = match[3];
-            end = match[4] || 'End';
-        }
+        const placeholder = document.createElement('option');
+        placeholder.value = "";
+        placeholder.textContent = "Typical Psalm Chants...";
+        typicalSelect.appendChild(placeholder);
 
-        if (bookSelect) bookSelect.value = book;
+        typicalPsalms.forEach((p, idx) => {
+            const opt = document.createElement('option');
+            opt.value = idx;
 
-        let metadataKey = book;
-        if (book === 'Psalm') metadataKey = 'Psalms';
-        const metadata = BIBLE_METADATA[metadataKey] || { chapters: 50, maxVerses: 100 };
-        const actualMax = getActualVerseCount(book, ch) || metadata.maxVerses;
-        
-        populateSelect(chapterField.sel, metadata.chapters, ch);
-        populateSelect(startField.sel, actualMax, start);
-        populateSelect(endField.sel, actualMax, end, true);
-        
-        // Ensure "End" text is synced initially
-        updateRefs();
-    };
+            // Format: Phonetic... [Masoretic (NKJV) | LXX (OSB)] Ge'ez... [Ge'ez Numerals LXX (ግእዝ)]
+            const masoretic = `${p.mc}:${p.ms}${p.me !== p.ms ? '-' + p.me : ''}`;
+            const lxx = `${p.lc}:${p.ls}${p.le !== p.ls ? '-' + p.le : ''}`;
+            const geezLxx = `${toGeezNumeral(p.lc)}:${toGeezNumeral(p.ls)}${p.le !== p.ls ? '-' + toGeezNumeral(p.le) : ''}`;
 
+            // Clip Ge'ez to first 5 words as incipit
+            const geezWords = p.g.split(/\s+/);
+            const geezIncipit = geezWords.slice(0, 5).join(' ');
+            const gDisplay = geezWords.length > 5 ? `${geezIncipit}...` : p.g;
+
+            opt.textContent = `${p.p}... (${masoretic} (NKJV) | ${lxx} (OSB)) ${gDisplay} (${geezLxx} (ግእዝ))`;
+            typicalSelect.appendChild(opt);
+        });
+
+        typicalSelect.addEventListener('change', () => {
+            const idx = typicalSelect.value;
+            if (idx === "") return;
+            const data = typicalPsalms[idx];
+
+            if (bookSelect) bookSelect.value = "Psalms";
+
+            const metadata = BIBLE_METADATA["Psalms"];
+            populateSelect(chapterField.sel, metadata.chapters, data.mc);
+            populateSelect(startField.sel, metadata.maxVerses, data.ms);
+            populateSelect(endField.sel, metadata.maxVerses, data.me, true);
+
+            updateRefs();
+        });
+
+        typicalContainer.appendChild(typicalSelect);
+        container.appendChild(typicalContainer);
+    }
     // Listeners
     if (bookSelect) {
         bookSelect.addEventListener('change', () => {
@@ -1787,61 +1807,64 @@ function createLectionaryPicker(containerId, lectionaryKey, bookOptions = [], ty
     // Restore shortened text on blur if End is still selected
     endField.sel.addEventListener('blur', updateRefs);
 
+    const syncPicker = () => {
+        const currentRef = kidaseLectionaryRefs[lectionaryKey] || "";
+        // More robust regex to handle book names with spaces/numbers
+        const match = currentRef.match(/^(.+?)\s+(\d+):(\d+)(?:-(\d+|End))?$/);
+
+        let book = bookOptions[0];
+        let ch = 1;
+        let start = 1;
+        let end = 'End';
+
+        if (match) {
+            book = match[1].trim();
+            ch = parseInt(match[2]);
+            start = match[3];
+            end = match[4] || 'End';
+        }
+
+        if (bookSelect) {
+            // Find option that matches book name
+            for (let i = 0; i < bookSelect.options.length; i++) {
+                if (bookSelect.options[i].value === book) {
+                    bookSelect.selectedIndex = i;
+                    break;
+                }
+            }
+        }
+
+        let metadataKey = (book === 'Psalm') ? 'Psalms' : book;
+        const metadata = BIBLE_METADATA[metadataKey] || { chapters: 50, maxVerses: 100 };
+        const actualMax = getActualVerseCount(book, ch) || metadata.maxVerses;
+        
+        populateSelect(chapterField.sel, metadata.chapters, ch);
+        populateSelect(startField.sel, actualMax, start);
+        populateSelect(endField.sel, actualMax, end, true);
+        
+        // Sync Typical Psalm Dropdown if available
+        if (typicalSelect && typicalPsalms) {
+            // Resolve 'End' for matching
+            const numericEnd = (end === 'End') ? actualMax : parseInt(end);
+            const foundIdx = typicalPsalms.findIndex(p => 
+                (book === 'Psalms' || book === 'Psalm') && 
+                p.mc === ch && p.ms === parseInt(start) && p.me === numericEnd
+            );
+            if (foundIdx !== -1) {
+                typicalSelect.value = foundIdx;
+            } else {
+                typicalSelect.value = "";
+            }
+        }
+
+        // Final sync of internal refs and UI text
+        updateRefs();
+    };
+
     // Initial sync
     syncPicker();
 
-    // 4. Typical Psalms Dropdown
-    if (typicalPsalms) {
-        const typicalContainer = document.createElement('div');
-        typicalContainer.className = 'typical-psalms-container';
-        typicalContainer.style.marginTop = '0.5rem';
-
-        const typicalSelect = document.createElement('select');
-        typicalSelect.className = 'settings-select typical-psalms-select';
-
-        const placeholder = document.createElement('option');
-        placeholder.value = "";
-        placeholder.textContent = "Typical Psalm Chants...";
-        typicalSelect.appendChild(placeholder);
-
-        typicalPsalms.forEach((p, idx) => {
-            const opt = document.createElement('option');
-            opt.value = idx;
-
-            // Format: Phonetic... [Masoretic (NKJV) | LXX (OSB)] Ge'ez... [Ge'ez Numerals LXX (ግእዝ)]
-            const masoretic = `${p.mc}:${p.ms}${p.me !== p.ms ? '-' + p.me : ''}`;
-            const lxx = `${p.lc}:${p.ls}${p.le !== p.ls ? '-' + p.le : ''}`;
-            const geezLxx = `${toGeezNumeral(p.lc)}:${toGeezNumeral(p.ls)}${p.le !== p.ls ? '-' + toGeezNumeral(p.le) : ''}`;
-
-            // Clip Ge'ez to first 5 words as incipit
-            const geezWords = p.g.split(/\s+/);
-            const geezIncipit = geezWords.slice(0, 5).join(' ');
-            const gDisplay = geezWords.length > 5 ? `${geezIncipit}...` : p.g;
-
-            opt.textContent = `${p.p}... (${masoretic} (NKJV) | ${lxx} (OSB)) ${gDisplay} (${geezLxx} (ግእዝ))`;
-            typicalSelect.appendChild(opt);
-        });
-
-        typicalSelect.addEventListener('change', () => {
-            const idx = typicalSelect.value;
-            if (idx === "") return;
-            const data = typicalPsalms[idx];
-
-            if (bookSelect) bookSelect.value = "Psalms";
-
-            const metadata = BIBLE_METADATA["Psalms"];
-            populateSelect(chapterField.sel, metadata.chapters, data.mc);
-            populateSelect(startField.sel, metadata.maxVerses, data.ms);
-            populateSelect(endField.sel, metadata.maxVerses, data.me, true);
-
-            updateRefs();
-        });
-
-        typicalContainer.appendChild(typicalSelect);
-        container.appendChild(typicalContainer);
-    }
-
-    // Store sync function on container for external calls (like applySettingsToUI)
+    // Store sync function on container for external calls
     container.syncPicker = syncPicker;
 }
 
