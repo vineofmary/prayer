@@ -784,6 +784,9 @@ function syncStateToUrl() {
             ss: selectedProphetSongs,
             sd: selectedSeatatLectionaryDay,
             wd: selectedWidaseMaryamDay,
+            lr: kidaseLectionaryRefs,
+            sm: showMorningPsalmGospel,
+            sk: showPreLiturgyKidan,
             l: Object.keys(displayedLanguages).filter(lang => displayedLanguages[lang]),
             t: currentTheme,
             do: displayOptions,
@@ -887,6 +890,9 @@ async function loadStateFromUrl() {
         if (state.ss !== undefined) selectedProphetSongs = state.ss;
         if (state.sd !== undefined) selectedSeatatLectionaryDay = state.sd;
         if (state.wd !== undefined) selectedWidaseMaryamDay = state.wd;
+        if (state.lr !== undefined) kidaseLectionaryRefs = { ...kidaseLectionaryRefs, ...state.lr };
+        if (state.sm !== undefined) showMorningPsalmGospel = state.sm;
+        if (state.sk !== undefined) showPreLiturgyKidan = state.sk;
 
         if (state.l !== undefined) {
             Object.keys(displayedLanguages).forEach(lang => displayedLanguages[lang] = state.l.includes(lang));
@@ -930,6 +936,9 @@ async function generateShortLink() {
             ss: selectedProphetSongs,
             sd: selectedSeatatLectionaryDay,
             wd: selectedWidaseMaryamDay,
+            lr: kidaseLectionaryRefs,
+            sm: showMorningPsalmGospel,
+            sk: showPreLiturgyKidan,
             l: Object.keys(displayedLanguages).filter(lang => displayedLanguages[lang]),
             t: currentTheme,
             do: displayOptions,
