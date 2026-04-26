@@ -171,7 +171,23 @@ body.theme-high-contrast-dark {
 }
 
 /* --- Legacy Palette --- */
-body.theme-legacy-light, body.theme-legacy-dark {
+body.theme-legacy-light {
+    --text-color: #000000;
+    --background-color: #ffffff;
+    --card-background: #ffffff;
+    --border-color: #cccccc;
+    --accent-color: #8a1c14;
+    --hover-color: #f0f0f0;
+    --speaker-label-color: #555555;
+    --rubric-red: #d32f2f;
+    --rubric-gold: #b8860b;
+    --highlight-bg: #f5de31;
+    --highlight-text: #000;
+    --nav-arrow-bg: rgba(0, 0, 0, 0.3);
+    --accent-text-color: #ffffff;
+}
+
+body.theme-legacy-dark {
     --text-color: #ffffff;
     --background-color: #000000;
     --card-background: #000000;
@@ -188,30 +204,42 @@ body.theme-legacy-light, body.theme-legacy-dark {
 }
 
 /* Specific language colors for Legacy theme - only when color coding is active */
-body[class*="language-colors-"].theme-legacy-light .language-section.lang-geez_script .language-text,
 body[class*="language-colors-"].theme-legacy-dark .language-section.lang-geez_script .language-text,
-body[class*="language-colors-"].theme-legacy-light .language-section.lang-geez_phonetic .language-text,
 body[class*="language-colors-"].theme-legacy-dark .language-section.lang-geez_phonetic .language-text {
     color: #ffff00 !important;
 }
 
-body[class*="language-colors-"].theme-legacy-light .language-section.lang-english .language-text,
+body[class*="language-colors-"].theme-legacy-light .language-section.lang-geez_script .language-text,
+body[class*="language-colors-"].theme-legacy-light .language-section.lang-geez_phonetic .language-text {
+    color: #b8860b !important; /* Gold on light */
+}
+
 body[class*="language-colors-"].theme-legacy-dark .language-section.lang-english .language-text {
     color: #ffffff !important;
 }
 
-body[class*="language-colors-"].theme-legacy-light .language-section.lang-amharic_script .language-text,
+body[class*="language-colors-"].theme-legacy-light .language-section.lang-english .language-text {
+    color: #000000 !important;
+}
+
 body[class*="language-colors-"].theme-legacy-dark .language-section.lang-amharic_script .language-text,
-body[class*="language-colors-"].theme-legacy-light .language-section.lang-amharic_phonetic .language-text,
 body[class*="language-colors-"].theme-legacy-dark .language-section.lang-amharic_phonetic .language-text {
     color: #00ffff !important;
 }
 
-body[class*="language-colors-"].theme-legacy-light .language-section.lang-tigrinya_script .language-text,
+body[class*="language-colors-"].theme-legacy-light .language-section.lang-amharic_script .language-text,
+body[class*="language-colors-"].theme-legacy-light .language-section.lang-amharic_phonetic .language-text {
+    color: #0000ff !important; /* Darker blue on light */
+}
+
 body[class*="language-colors-"].theme-legacy-dark .language-section.lang-tigrinya_script .language-text,
-body[class*="language-colors-"].theme-legacy-light .language-section.lang-tigrinya_phonetic .language-text,
 body[class*="language-colors-"].theme-legacy-dark .language-section.lang-tigrinya_phonetic .language-text {
     color: #00ff00 !important;
+}
+
+body[class*="language-colors-"].theme-legacy-light .language-section.lang-tigrinya_script .language-text,
+body[class*="language-colors-"].theme-legacy-light .language-section.lang-tigrinya_phonetic .language-text {
+    color: #008000 !important; /* Darker green on light */
 }
 
 /* --- Language FONT Color Palettes --- */
