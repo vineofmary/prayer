@@ -1532,6 +1532,32 @@ const LITURGY_LECTIONARY_CONFIG = [
     }
 ];
 
+function getActualVerseCount(bookName, chapterNum) {
+    if (!bibleData.loaded) return null;
+    const bookCfg = BIBLE_BOOK_MAPPING[bookName];
+    if (!bookCfg) return null;
+
+    // Try NKJV (flat array)
+    if (bibleData.nkjv) {
+        const nkjvName = bookCfg.nkjv;
+        const chapterVerses = bibleData.nkjv.filter(v => v.book === nkjvName && v.chapter === chapterNum);
+        if (chapterVerses.length > 0) {
+            return Math.max(...chapterVerses.map(v => v.verse));
+        }
+    }
+
+    // Try AM54 (structured)
+    if (bibleData.am54 && bibleData.am54.books) {
+        const am54Name = bookCfg.am54;
+        const book = bibleData.am54.books.find(b => b.title === am54Name);
+        if (book && book.chapters && book.chapters[chapterNum - 1]) {
+            return book.chapters[chapterNum - 1].verses.length;
+        }
+    }
+
+    return null;
+}
+
 function toGeezNumeral(n) {
     if (n === 0) return "";
     const ones = ["", "፩", "፪", "፫", "፬", "፭", "፮", "፯", "፰", "፱"];
@@ -1606,9 +1632,26 @@ function createLectionaryPicker(containerId, lectionaryKey, bookOptions = [], ty
 
     const updateRefs = () => {
         const book = bookOptions.length === 1 ? bookOptions[0] : bookSelect.value;
-        const ch = chapterField.sel.value;
+        const ch = parseInt(chapterField.sel.value);
         const start = startField.sel.value;
         const end = endField.sel.value;
+
+        // Sync "End" option display text
+        const endOptions = endField.sel.options;
+        const endOpt = endOptions[endOptions.length - 1];
+        if (endOpt && endOpt.value === 'End') {
+            const actualMax = getActualVerseCount(book, ch);
+            if (actualMax) {
+                if (end === 'End') {
+                    endOpt.textContent = `${actualMax}  ${toGeezNumeral(actualMax)}`;
+                } else {
+                    endOpt.textContent = `End (${actualMax}) | ፍጻሜ (${toGeezNumeral(actualMax)})`;
+                }
+            } else {
+                endOpt.textContent = 'End | ፍጻሜ';
+            }
+        }
+
         kidaseLectionaryRefs[lectionaryKey] = `${book} ${ch}:${start}-${end}`;
         saveSettings();
         renderPrayers();
@@ -1616,11 +1659,17 @@ function createLectionaryPicker(containerId, lectionaryKey, bookOptions = [], ty
 
     const populateSelect = (select, max, selected, isEndField = false) => {
         select.innerHTML = '';
+        
+        let cappedSelected = selected;
+        if (selected !== 'End' && !isNaN(parseInt(selected)) && parseInt(selected) > max) {
+            cappedSelected = max;
+        }
+
         for (let i = 1; i <= max; i++) {
             const opt = document.createElement('option');
             opt.value = i;
             opt.textContent = `${i}  ${toGeezNumeral(i)}`;
-            if (i == selected) opt.selected = true;
+            if (i == cappedSelected) opt.selected = true;
             select.appendChild(opt);
         }
         if (isEndField) {
@@ -1644,32 +1693,73 @@ function createLectionaryPicker(containerId, lectionaryKey, bookOptions = [], ty
         if (match) {
             book = match[1];
             ch = parseInt(match[2]);
-            start = parseInt(match[3]);
-            end = match[4] ? parseInt(match[4]) : start;
+            start = match[3];
+            end = match[4] || 'End';
         }
 
         if (bookSelect) bookSelect.value = book;
 
         const metadata = BIBLE_METADATA[book] || { chapters: 50, maxVerses: 100 };
+        const actualMax = getActualVerseCount(book, ch) || metadata.maxVerses;
+        
         populateSelect(chapterField.sel, metadata.chapters, ch);
-        populateSelect(startField.sel, metadata.maxVerses, start);
-        populateSelect(endField.sel, metadata.maxVerses, end, true);
+        populateSelect(startField.sel, actualMax, start);
+        populateSelect(endField.sel, actualMax, end, true);
+        
+        // Ensure "End" text is synced initially
+        updateRefs();
     };
 
     // Listeners
     if (bookSelect) {
         bookSelect.addEventListener('change', () => {
-            const metadata = BIBLE_METADATA[bookSelect.value] || { chapters: 50, maxVerses: 100 };
+            const book = bookSelect.value;
+            const metadata = BIBLE_METADATA[book] || { chapters: 50, maxVerses: 100 };
+            const actualMax = getActualVerseCount(book, 1) || metadata.maxVerses;
+            
             populateSelect(chapterField.sel, metadata.chapters, 1);
-            populateSelect(startField.sel, metadata.maxVerses, 1);
-            populateSelect(endField.sel, metadata.maxVerses, 1, true);
+            populateSelect(startField.sel, actualMax, 1);
+            populateSelect(endField.sel, actualMax, 'End', true);
             updateRefs();
         });
     }
 
-    chapterField.sel.addEventListener('change', updateRefs);
+    chapterField.sel.addEventListener('change', () => {
+        const book = bookOptions.length === 1 ? bookOptions[0] : bookSelect.value;
+        const ch = parseInt(chapterField.sel.value);
+        const metadata = BIBLE_METADATA[book] || { chapters: 50, maxVerses: 100 };
+        const actualMax = getActualVerseCount(book, ch) || metadata.maxVerses;
+        
+        const currentStart = startField.sel.value;
+        const currentEnd = endField.sel.value;
+        
+        populateSelect(startField.sel, actualMax, currentStart);
+        populateSelect(endField.sel, actualMax, currentEnd, true);
+        
+        updateRefs();
+    });
+    
     startField.sel.addEventListener('change', updateRefs);
     endField.sel.addEventListener('change', updateRefs);
+
+    // Restore full "End" text when the user clicks to choose
+    endField.sel.addEventListener('mousedown', () => {
+        const book = bookOptions.length === 1 ? bookOptions[0] : bookSelect.value;
+        const ch = parseInt(chapterField.sel.value);
+        const endOptions = endField.sel.options;
+        const endOpt = endOptions[endOptions.length - 1];
+        if (endOpt && endOpt.value === 'End') {
+            const actualMax = getActualVerseCount(book, ch);
+            if (actualMax) {
+                endOpt.textContent = `End (${actualMax}) | ፍጻሜ (${toGeezNumeral(actualMax)})`;
+            } else {
+                endOpt.textContent = 'End | ፍጻሜ';
+            }
+        }
+    });
+
+    // Restore shortened text on blur if End is still selected
+    endField.sel.addEventListener('blur', updateRefs);
 
     // Initial sync
     syncPicker();
