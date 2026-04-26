@@ -63,6 +63,7 @@ const helpButton = document.getElementById('help-button');
 const showSupplicationsToggle = document.getElementById('show-supplications-toggle');
 const autoProphetSongsToggle = document.getElementById('auto-prophet-songs-toggle');
 const showDailyPrayerToggle = document.getElementById('show-daily-prayer-toggle');
+const showGeezPhoneticChantsToggle = document.getElementById('show-geez-phonetic-chants');
 const expandCollapseAllButton = document.getElementById('expand-collapse-all-button');
 const feedbackButton = document.getElementById('feedback-button');
 const helpModal = document.getElementById('help-modal');
@@ -1036,7 +1037,8 @@ async function loadSettings() {
             anglicizeNames: false,
             showSupplications: true,
             autoProphetSongs: false,
-            showDailyPrayer: true
+            showDailyPrayer: true,
+            showGeezPhoneticChants: false
         },
         displayedLanguages: defaultLanguages,
         fontSizes: {
@@ -1238,6 +1240,7 @@ function updateAllTogglesInSettingsPanel() {
     showSupplicationsToggle.checked = displayOptions.showSupplications;
     autoProphetSongsToggle.checked = displayOptions.autoProphetSongs;
     showDailyPrayerToggle.checked = displayOptions.showDailyPrayer;
+    if (showGeezPhoneticChantsToggle) showGeezPhoneticChantsToggle.checked = displayOptions.showGeezPhoneticChants;
 
     // Seatat Lectionary Selector
     const lectionaryRadios = document.querySelectorAll('input[name="seatat-lectionary-day"]');
@@ -2104,6 +2107,22 @@ function hasActualContent(text, langKey) {
     return cleanText.length > 0;
 }
 
+function isChantStanza(prayer) {
+    if (!prayer) return false;
+    const chantKeywords = ['People', 'ALL', 'All', 'ሕዝብ', 'ኵሎሙ', 'ሁሉም', 'ኩሉኹም', 'Pueblo', 'Todos', 'Gente'];
+
+    for (const langKey in speakerKeywords) {
+        const keywords = speakerKeywords[langKey];
+        const relevantKeywords = keywords.filter(k => chantKeywords.includes(k));
+
+        if (relevantKeywords.length > 0 && prayer[langKey]) {
+            const regex = new RegExp(`(፨ )?(${relevantKeywords.join('|')})([:፤፣፡])`);
+            if (regex.test(prayer[langKey])) return true;
+        }
+    }
+    return false;
+}
+
 function createPrayerCardElement(prayer, prayerIndex, isKidase = false) {
     const searchQuery = searchInput.value;
 
@@ -2191,7 +2210,19 @@ function createPrayerCardElement(prayer, prayerIndex, isKidase = false) {
         const langText = document.createElement('p');
         langText.classList.add('language-text');
 
-        langText.innerHTML = formatPrayerText(prayer[langKey], langKey, searchQuery, isFirstLanguage, prayer.chapter, prayer.verseNum);
+        let content = formatPrayerText(prayer[langKey], langKey, searchQuery, isFirstLanguage, prayer.chapter, prayer.verseNum);
+
+        // Append Ge'ez Phonetics to Ge'ez Script if setting is active and this is a chant
+        if (langKey === 'geez_script' && displayOptions.showGeezPhoneticChants && isChantStanza(prayer)) {
+            const phoneticText = prayer['geez_phonetic'];
+            if (phoneticText && phoneticText.trim()) {
+                // We format the phonetic text too (for highlighting, etc.)
+                const formattedPhonetic = formatPrayerText(phoneticText, 'geez_phonetic', searchQuery, false, prayer.chapter, prayer.verseNum);
+                content += `<br><i class="geez-phonetic-append">${formattedPhonetic}</i>`;
+            }
+        }
+
+        langText.innerHTML = content;
 
         if (langCfg.isEthiopic) {
             langHeader.classList.add('ethiopic-label');
@@ -2962,8 +2993,18 @@ function copyPrayer(prayer) {
             let cleanText = rawText.replace(/<br\s*\/?>/gi, '\n').replace(/<[^>]*>?/gm, '');
             cleanText = formatPrayerText(cleanText, langKey, null, false, prayer.chapter, prayer.stanza);
 
-            // Strip any HTML tags added by formatPrayerText (speaker labels, rubrication, etc.)
             cleanText = cleanText.replace(/<br\s*\/?>/gi, '\n').replace(/<[^>]*>?/gm, '');
+
+            // Append Ge'ez Phonetics for chants if option is on
+            if (langKey === 'geez_script' && displayOptions.showGeezPhoneticChants && isChantStanza(prayer)) {
+                const phoneticText = prayer['geez_phonetic'];
+                if (phoneticText && phoneticText.trim()) {
+                    let cleanPhonetic = phoneticText.replace(/<br\s*\/?>/gi, '\n').replace(/<[^>]*>?/gm, '');
+                    cleanPhonetic = formatPrayerText(cleanPhonetic, 'geez_phonetic', null, false, prayer.chapter, prayer.stanza);
+                    cleanPhonetic = cleanPhonetic.replace(/<br\s*\/?>/gi, '\n').replace(/<[^>]*>?/gm, '');
+                    cleanText += `\n(${cleanPhonetic})`;
+                }
+            }
 
             textToCopy += `${cleanText}\n\n`;
         }
@@ -4430,6 +4471,14 @@ showDailyPrayerToggle.addEventListener('change', () => {
     smoothRender();
     saveSettings();
 });
+
+if (showGeezPhoneticChantsToggle) {
+    showGeezPhoneticChantsToggle.addEventListener('change', () => {
+        displayOptions.showGeezPhoneticChants = showGeezPhoneticChantsToggle.checked;
+        smoothRender();
+        saveSettings();
+    });
+}
 
 // Search Listeners
 searchToggle.addEventListener('click', () => {

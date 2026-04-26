@@ -1043,6 +1043,15 @@ body.view-mode-unified .info-panel-content {
     font-style: italic;
 }
 
+.geez-phonetic-append {
+    font-size: 0.9em;
+    opacity: 0.8;
+    display: block;
+    margin-top: 0.4rem;
+    font-style: italic;
+    font-family: var(--english-font-family, serif);
+}
+
 .speaker-label {
     color: var(--speaker-label-color);
     font-style: italic;
