@@ -87,6 +87,13 @@ const fontPreview = document.getElementById('font-preview');
 const psalmSelectorContainer = document.getElementById('psalm-selector-container');
 const psalmSummary = document.getElementById('psalm-summary');
 const clearPsalmsButton = document.getElementById('clear-psalms-button');
+const psalmCombinationsSelect = document.getElementById('psalm-combinations-select');
+const PSALM_COMBINATIONS = { 
+    'daily': { 
+        name: 'Daily Prayer', 
+        psalms: [12, 15, 22, 50, 90, 102, 135] 
+    } 
+};
 const prophetSongsSelectorContainer = document.getElementById('prophet-songs-selector-container');
 const prophetSongsSummary = document.getElementById('prophet-songs-summary');
 const clearProphetSongsButton = document.getElementById('clear-prophet-songs-button');
@@ -578,6 +585,31 @@ function updatePsalmSummary() {
         psalmSummary.textContent = `Selected Psalms: ${selectedPsalms.sort((a, b) => a - b).join(', ')}`;
     } else {
         psalmSummary.textContent = 'Selected Psalms: None';
+    }
+
+    // Sync Typical Psalm Combinations dropdown
+    let matchedCombination = "";
+    const sortedSelected = [...selectedPsalms].sort((a, b) => a - b).join(',');
+    for (const [key, combo] of Object.entries(PSALM_COMBINATIONS)) {
+        const sortedCombo = [...combo.psalms].sort((a, b) => a - b).join(',');
+        if (sortedSelected === sortedCombo) {
+            matchedCombination = key;
+            break;
+        }
+    }
+    if (psalmCombinationsSelect) {
+        psalmCombinationsSelect.value = matchedCombination;
+        // Shorten the selected text if a combination is matched
+        for (let opt of psalmCombinationsSelect.options) {
+            const combo = PSALM_COMBINATIONS[opt.value];
+            if (combo) {
+                if (opt.value === matchedCombination) {
+                    opt.text = combo.name;
+                } else {
+                    opt.text = `${combo.name} (${combo.psalms.join(', ')})`;
+                }
+            }
+        }
     }
 }
 
@@ -4046,11 +4078,43 @@ psalmSelectorContainer.addEventListener('change', (event) => {
     }
 });
 
+psalmCombinationsSelect.addEventListener('change', () => {
+    const comboKey = psalmCombinationsSelect.value;
+    if (comboKey && PSALM_COMBINATIONS[comboKey]) {
+        selectedPsalms = [...PSALM_COMBINATIONS[comboKey].psalms];
+        // Update checkboxes
+        const checkboxes = psalmSelectorContainer.querySelectorAll('input[type="checkbox"]');
+        checkboxes.forEach(cb => {
+            cb.checked = selectedPsalms.includes(Number(cb.value));
+        });
+        // Check "Select All" if all 150 are selected (unlikely for a preset but for completeness)
+        const selectAllCheckbox = document.getElementById('select-all-psalms');
+        if (selectAllCheckbox) {
+            selectAllCheckbox.checked = selectedPsalms.length === 150;
+        }
+        
+        updatePsalmSummary();
+        saveSettings();
+        smoothRender();
+    }
+});
+
+// Restore full text with psalm numbers when the user clicks the dropdown to see options
+psalmCombinationsSelect.addEventListener('mousedown', () => {
+    for (let opt of psalmCombinationsSelect.options) {
+        const combo = PSALM_COMBINATIONS[opt.value];
+        if (combo) {
+            opt.text = `${combo.name} (${combo.psalms.join(', ')})`;
+        }
+    }
+});
+
 clearPsalmsButton.addEventListener('click', () => {
     selectedPsalms = [];
     document.querySelectorAll('#psalm-selector-container input[type="checkbox"]').forEach(checkbox => {
         checkbox.checked = false;
     });
+    if (psalmCombinationsSelect) psalmCombinationsSelect.value = "";
     updatePsalmSummary();
     saveSettings();
     renderPrayers();
