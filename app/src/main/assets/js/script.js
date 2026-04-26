@@ -145,6 +145,7 @@ let showMorningPsalmGospel = false;
 let showPreLiturgyKidan = true;
 let selectedCovenantPrayer = 'morning';
 let hideQuietPrayers = true;
+let isInitializing = true;
 let kidaseLectionaryRefs = {
     morningPsalm: 'Psalms 34:7-8',
     morningGospel: 'Matthew 24:30-36',
@@ -773,6 +774,7 @@ function fromBase64(str) {
 }
 
 function syncStateToUrl() {
+    if (isInitializing) return;
     try {
         const state = {
             v: '2', // State Version
@@ -968,6 +970,7 @@ async function generateShortLink() {
 }
 
 function saveSettings() {
+    if (isInitializing) return;
     localStorage.setItem('settingsVersion', SETTINGS_VERSION);
     localStorage.setItem('theme', JSON.stringify(currentTheme));
     localStorage.setItem('sidebarCollapsed', isSidebarCollapsed);
@@ -4703,6 +4706,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     await loadBibleData(); // Load data on startup
 
+    isInitializing = false;
+    saveSettings();
+    syncStateToUrl();
     updatePsalmSummary();
     updateProphetSongsSummary();
     updateLanguageOrderList();
