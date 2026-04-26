@@ -128,7 +128,7 @@ const kidaseGospelRefContainer = document.getElementById('kidase-gospel-ref-cont
 
 
 // --- State Variables ---
-const SETTINGS_VERSION = '4.2.3'; // Update this to force refresh load settings
+const SETTINGS_VERSION = '4.2.4'; // Update this to force refresh load settings
 let currentTheme = {};
 let isSidebarCollapsed = false;
 let isServantsCornerActive = false;
@@ -146,13 +146,13 @@ let showPreLiturgyKidan = true;
 let selectedCovenantPrayer = 'morning';
 let hideQuietPrayers = true;
 let kidaseLectionaryRefs = {
-    morningPsalm: 'Psalm 1:1-2',
-    morningGospel: 'John 1:1-5',
-    pauline: 'Romans 1:1-7',
-    universal: '1 Peter 1:1-5',
-    acts: 'Acts 1:1-8',
-    psalm: 'Psalm 1:1-2',
-    gospel: 'John 1:1-5'
+    morningPsalm: 'Psalms 34:7-8',
+    morningGospel: 'Matthew 24:30-36',
+    pauline: 'Romans 9:17-30',
+    universal: 'Jude 1:6-14',
+    acts: 'Acts 10:3-9',
+    psalm: 'Psalms 33:16-17',
+    gospel: 'Luke 18:1-9'
 };
 let customNames = {};
 let bibleData = { nkjv: null, am54: null, rgv: null, geez_psalms: null, coptic: null, loaded: false };
@@ -254,30 +254,30 @@ const BIBLE_METADATA = {
     'Mark': { chapters: 16, maxVerses: 80 },
     'Luke': { chapters: 24, maxVerses: 80 },
     'John': { chapters: 21, maxVerses: 80 },
-    'Acts': { chapters: 28, maxVerses: 47 },
-    'Romans': { chapters: 16, maxVerses: 33 },
-    '1 Corinthians': { chapters: 16, maxVerses: 33 },
-    '2 Corinthians': { chapters: 13, maxVerses: 33 },
-    'Galatians': { chapters: 6, maxVerses: 33 },
-    'Ephesians': { chapters: 6, maxVerses: 33 },
-    'Philippians': { chapters: 4, maxVerses: 33 },
-    'Colossians': { chapters: 4, maxVerses: 33 },
-    '1 Thessalonians': { chapters: 5, maxVerses: 33 },
-    '2 Thessalonians': { chapters: 3, maxVerses: 33 },
-    '1 Timothy': { chapters: 6, maxVerses: 33 },
-    '2 Timothy': { chapters: 4, maxVerses: 33 },
-    'Titus': { chapters: 3, maxVerses: 33 },
-    'Philemon': { chapters: 1, maxVerses: 33 },
-    'Hebrews': { chapters: 13, maxVerses: 33 },
-    'James': { chapters: 5, maxVerses: 22 },
-    '1 Peter': { chapters: 5, maxVerses: 22 },
-    '2 Peter': { chapters: 3, maxVerses: 22 },
-    '1 John': { chapters: 5, maxVerses: 22 },
-    '2 John': { chapters: 1, maxVerses: 22 },
-    '3 John': { chapters: 1, maxVerses: 22 },
-    'Jude': { chapters: 1, maxVerses: 26 },
-    'Revelation': { chapters: 22, maxVerses: 26 },
-    'Psalms': { chapters: 150, maxVerses: 176 }
+    'Acts': { chapters: 28, maxVerses: 60 },
+    'Romans': { chapters: 16, maxVerses: 40 },
+    '1 Corinthians': { chapters: 16, maxVerses: 40 },
+    '2 Corinthians': { chapters: 13, maxVerses: 35 },
+    'Galatians': { chapters: 6, maxVerses: 35 },
+    'Ephesians': { chapters: 6, maxVerses: 35 },
+    'Philippians': { chapters: 4, maxVerses: 35 },
+    'Colossians': { chapters: 4, maxVerses: 35 },
+    '1 Thessalonians': { chapters: 5, maxVerses: 35 },
+    '2 Thessalonians': { chapters: 3, maxVerses: 35 },
+    '1 Timothy': { chapters: 6, maxVerses: 35 },
+    '2 Timothy': { chapters: 4, maxVerses: 35 },
+    'Titus': { chapters: 3, maxVerses: 35 },
+    'Philemon': { chapters: 1, maxVerses: 35 },
+    'Hebrews': { chapters: 13, maxVerses: 45 },
+    'James': { chapters: 5, maxVerses: 30 },
+    '1 Peter': { chapters: 5, maxVerses: 30 },
+    '2 Peter': { chapters: 3, maxVerses: 30 },
+    '1 John': { chapters: 5, maxVerses: 30 },
+    '2 John': { chapters: 1, maxVerses: 30 },
+    '3 John': { chapters: 1, maxVerses: 30 },
+    'Jude': { chapters: 1, maxVerses: 25 },
+    'Revelation': { chapters: 22, maxVerses: 35 },
+    'Psalms': { chapters: 151, maxVerses: 176 }
 };
 
 const SEATAT_LECTIONARY_DATA = {
@@ -1052,7 +1052,16 @@ async function loadSettings() {
             country: 'Ethiopia, Eritrea, and America',
             headOfState: '...'
         },
-        collapsedSections: {}
+        collapsedSections: {},
+        kidaseLectionaryRefs: {
+            morningPsalm: 'Psalms 34:7-8',
+            morningGospel: 'Matthew 24:30-36',
+            pauline: 'Romans 9:17-30',
+            universal: 'Jude 1:6-14',
+            acts: 'Acts 10:3-9',
+            psalm: 'Psalms 33:16-17',
+            gospel: 'Luke 18:1-9'
+        }
     };
 
     if (savedVersion !== SETTINGS_VERSION) {
@@ -1534,7 +1543,11 @@ const LITURGY_LECTIONARY_CONFIG = [
 
 function getActualVerseCount(bookName, chapterNum) {
     if (!bibleData.loaded) return null;
-    const bookCfg = BIBLE_BOOK_MAPPING[bookName];
+    
+    let lookupName = bookName;
+    if (bookName === 'Psalm') lookupName = 'Psalms';
+    
+    const bookCfg = BIBLE_BOOK_MAPPING[lookupName];
     if (!bookCfg) return null;
 
     // Try NKJV (flat array)
@@ -1672,7 +1685,9 @@ function createLectionaryPicker(containerId, lectionaryKey, bookOptions = [], ty
             if (i == cappedSelected) opt.selected = true;
             select.appendChild(opt);
         }
+        
         if (isEndField) {
+            // Check if "End" is already functionally represented by the last number
             const endOpt = document.createElement('option');
             endOpt.value = 'End';
             endOpt.textContent = 'End | ፍጻሜ';
@@ -1699,7 +1714,9 @@ function createLectionaryPicker(containerId, lectionaryKey, bookOptions = [], ty
 
         if (bookSelect) bookSelect.value = book;
 
-        const metadata = BIBLE_METADATA[book] || { chapters: 50, maxVerses: 100 };
+        let metadataKey = book;
+        if (book === 'Psalm') metadataKey = 'Psalms';
+        const metadata = BIBLE_METADATA[metadataKey] || { chapters: 50, maxVerses: 100 };
         const actualMax = getActualVerseCount(book, ch) || metadata.maxVerses;
         
         populateSelect(chapterField.sel, metadata.chapters, ch);
@@ -3214,10 +3231,19 @@ async function loadBibleData() {
 
     if (results.some(res => res === true)) {
         bibleData.loaded = true;
+        refreshLectionaryPickers(); // Sync all pickers with actual counts
     } else {
         bibleData.loaded = false;
         console.error("All Bible data files failed to load.");
     }
+}
+
+function refreshLectionaryPickers() {
+    document.querySelectorAll('.lectionary-picker-container').forEach(container => {
+        if (typeof container.syncPicker === 'function') {
+            container.syncPicker();
+        }
+    });
 }
 
 function convertLxxToMt(lxxChapter) {
