@@ -1770,13 +1770,26 @@ body.presentation-mode-slides .prayer-content {
 }
 
 body.presentation-mode-slides .language-text {
-    position: relative;
-    top: -1.3em;
+    line-height: 1.2;
+    margin: 0;
 }
 
 body.presentation-mode-slides .lang-ethiopic-script .language-text {
-    line-height: 1.0;
-    top: -0.5em;
+    line-height: 1.1;
+}
+
+
+body.presentation-mode-slides .prayer-content.layout-column {
+    align-items: stretch;
+    height: 100%;
+}
+
+body.presentation-mode-slides .prayer-content.layout-column .language-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
 }
 
 body.presentation-mode-slides .prayer-content.layout-column .language-section:not(:last-child) {
@@ -1785,12 +1798,21 @@ body.presentation-mode-slides .prayer-content.layout-column .language-section:no
 }
 
 body.presentation-mode-slides .prayer-content.layout-row {
-    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center the whole group of prayers vertically */
+    gap: 0.5rem;
+    height: 100%;
 }
 
+
 body.presentation-mode-slides .prayer-content.layout-row .language-section {
+    flex: 0 0 auto; /* Let each section take its natural height */
     margin-bottom: 0;
+    width: 100%;
 }
+
+
 
 
 /* --- MOBILE STYLES --- */
