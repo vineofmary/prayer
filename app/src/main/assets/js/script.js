@@ -59,6 +59,8 @@ const searchPrev = document.getElementById('search-prev');
 const searchNext = document.getElementById('search-next');
 const helpButton = document.getElementById('help-button');
 const showSupplicationsToggle = document.getElementById('show-supplications-toggle');
+const autoProphetSongsToggle = document.getElementById('auto-prophet-songs-toggle');
+const showDailyPrayerToggle = document.getElementById('show-daily-prayer-toggle');
 const expandCollapseAllButton = document.getElementById('expand-collapse-all-button');
 const feedbackButton = document.getElementById('feedback-button');
 const helpModal = document.getElementById('help-modal');
@@ -983,7 +985,9 @@ async function loadSettings() {
             languageColors: 'vibrant',
             boldText: false,
             anglicizeNames: false,
-            showSupplications: true
+            showSupplications: true,
+            autoProphetSongs: false,
+            showDailyPrayer: true
         },
         displayedLanguages: defaultLanguages,
         fontSizes: {
@@ -1173,6 +1177,8 @@ function updateAllTogglesInSettingsPanel() {
     boldTextToggle.checked = displayOptions.boldText;
     anglicizeNamesToggle.checked = displayOptions.anglicizeNames;
     showSupplicationsToggle.checked = displayOptions.showSupplications;
+    autoProphetSongsToggle.checked = displayOptions.autoProphetSongs;
+    showDailyPrayerToggle.checked = displayOptions.showDailyPrayer;
 
     // Seatat Lectionary Selector
     const lectionaryRadios = document.querySelectorAll('input[name="seatat-lectionary-day"]');
@@ -2626,7 +2632,7 @@ function renderPrayers() {
         if (p.chapter === 'Psalms' || p.chapter === 'ProphetSong') return false;
 
         // Always include Daily prayers
-        if (p.chapter === 'Daily') return true;
+        if (p.chapter === 'Daily') return displayOptions.showDailyPrayer;
 
         // Filter Praise of Mary (and related) based on selection
         if (selectedWidaseMaryamDay === 'None') return false;
@@ -3270,16 +3276,6 @@ function populateProphetSongsSelector() {
     selectAllLabel.appendChild(selectAllCheckbox);
     selectAllLabel.append(' Select All');
     prophetSongsSelectorContainer.appendChild(selectAllLabel);
-
-    const autoSelectLabel = document.createElement('label');
-    autoSelectLabel.style.fontWeight = 'bold';
-    autoSelectLabel.style.color = 'var(--accent-color)';
-    const autoSelectCheckbox = document.createElement('input');
-    autoSelectCheckbox.type = 'checkbox';
-    autoSelectCheckbox.id = 'auto-select-prophet-songs';
-    autoSelectLabel.appendChild(autoSelectCheckbox);
-    autoSelectLabel.append(' Auto-Select (Sync with Current Time)');
-    prophetSongsSelectorContainer.appendChild(autoSelectLabel);
 
     const separator = document.createElement('hr');
     separator.style.margin = '0.5rem 0';
@@ -4190,23 +4186,10 @@ prophetSongsSelectorContainer.addEventListener('change', (event) => {
             const isChecked = event.target.checked;
             const checkboxes = prophetSongsSelectorContainer.querySelectorAll('input[type="checkbox"]');
             checkboxes.forEach(cb => {
-                if (cb.id !== 'select-all-prophet-songs' && cb.id !== 'auto-select-prophet-songs') {
+                if (cb.id !== 'select-all-prophet-songs') {
                     cb.checked = isChecked;
                 }
             });
-        } else if (event.target.id === 'auto-select-prophet-songs') {
-            if (event.target.checked) {
-                selectedProphetSongs = getDefaultProphetSongsForCurrentTime();
-                const checkboxes = prophetSongsSelectorContainer.querySelectorAll('input[type="checkbox"]');
-                checkboxes.forEach(cb => {
-                    if (cb.id !== 'select-all-prophet-songs' && cb.id !== 'auto-select-prophet-songs') {
-                        cb.checked = selectedProphetSongs.includes(cb.value);
-                    }
-                });
-                // Uncheck auto-select after it's applied to keep it as a one-time reset action
-                // OR keep it checked? Let's uncheck it after a moment for better UX feedback
-                setTimeout(() => { event.target.checked = false; }, 500);
-            }
         }
 
         selectedProphetSongs = Array.from(prophetSongsSelectorContainer.querySelectorAll('input[type="checkbox"]:checked'))
@@ -4324,6 +4307,23 @@ anglicizeNamesToggle.addEventListener('change', () => {
 
 showSupplicationsToggle.addEventListener('change', () => {
     displayOptions.showSupplications = showSupplicationsToggle.checked;
+    smoothRender();
+    saveSettings();
+});
+
+autoProphetSongsToggle.addEventListener('change', () => {
+    displayOptions.autoProphetSongs = autoProphetSongsToggle.checked;
+    if (displayOptions.autoProphetSongs && selectedProphetSongs.length === 0) {
+        selectedProphetSongs = getDefaultProphetSongsForCurrentTime();
+        updateProphetSongsSummary();
+        populateProphetSongsSelector();
+    }
+    smoothRender();
+    saveSettings();
+});
+
+showDailyPrayerToggle.addEventListener('change', () => {
+    displayOptions.showDailyPrayer = showDailyPrayerToggle.checked;
     smoothRender();
     saveSettings();
 });
@@ -4601,7 +4601,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     await loadSettings(); // Ensure settings are loaded before anything else
 
     // Default Prophet Songs based on current day and time if nothing else selected
-    if (!localStorage.getItem('selectedProphetSongs') || selectedProphetSongs.length === 0) {
+    if (displayOptions.autoProphetSongs && (!localStorage.getItem('selectedProphetSongs') || selectedProphetSongs.length === 0)) {
         selectedProphetSongs = getDefaultProphetSongsForCurrentTime();
     }
 
