@@ -804,7 +804,7 @@ function serializeCollapsedSections() {
 function deserializeCollapsedSections(serialized, version) {
     const deserialized = {};
     if (!serialized) return deserialized;
-    
+
     if (version === '1') return serialized; // Legacy version
 
     // Version 2: Map slugs back to titles (or at least keep slugs as keys)
@@ -863,7 +863,7 @@ async function loadStateFromUrl() {
             languageOrder = state.lo;
         }
         if (state.cn !== undefined) customNames = { ...customNames, ...state.cn };
-        
+
         if (state.ac !== undefined) areAllSectionsCollapsed = state.ac;
         if (state.cs !== undefined) {
             collapsedSections = deserializeCollapsedSections(state.cs, v);
@@ -1356,7 +1356,7 @@ function getBibleVersesFromRef(ref) {
                 const chNum = parseInt(ch.chapter);
                 return !isNaN(chNum) && chNum === chapterNum;
             });
-            
+
             // Special case for non-numeric labels (like Luke 24 which is "እነሆ" in our data)
             if (!amChapter && amBook.chapters[chapterNum - 1]) {
                 amChapter = amBook.chapters[chapterNum - 1];
@@ -2244,44 +2244,23 @@ function renderSelectedKidase(addSectionTitleCallback) {
     if (!isKidaseModeActive || typeof kidaseData === 'undefined') return;
 
     const allOrderPrayers = kidaseData.order;
-    let isFirstSection = true;
-
-    const addCopyButtonIfFirst = (container) => {
-        if (isFirstSection && container) {
-            const copyBtn = document.createElement('button');
-            copyBtn.className = 'copy-section-button';
-            copyBtn.innerHTML = shareIconSVG;
-            copyBtn.title = 'Copy Entire Liturgy';
-            copyBtn.style.marginLeft = '1rem';
-            copyBtn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                copyEntireLiturgy();
-            });
-            container.appendChild(copyBtn);
-            isFirstSection = false;
-        }
-    };
-
     // 1. Psalm & Gospel of The Morning | ምስባክ ወወንጌል ዘነግህ
     // Range: index 0 to 78 (3-179 to 3-211)
     if (showMorningPsalmGospel) {
-        const titleContainer = addSectionTitleCallback("Psalm & Gospel of The Morning | ምስባክ ወወንጌል ዘነግህ");
-        addCopyButtonIfFirst(titleContainer);
+        addSectionTitleCallback("Psalm & Gospel of The Morning | ምስባክ ወወንጌል ዘነግህ");
         renderKidaseSection(allOrderPrayers.slice(0, 79));
     }
 
     // 2. Pre-Liturgy Prayer of the Covenant | ጸሎተ ኪዳን
     // Range: index 79 to 179 (Kidan-Intro to end of Gabriel Greeting/Hymn)
     if (showPreLiturgyKidan) {
-        const titleContainer = addSectionTitleCallback("Prayer of the Covenant | ጸሎተ ኪዳን");
-        addCopyButtonIfFirst(titleContainer);
+        addSectionTitleCallback("Prayer of the Covenant | ጸሎተ ኪዳን");
         renderKidaseSection(allOrderPrayers.slice(79, 180)); // No version filtering here
     }
 
     // 3. Order of the Liturgy | ሥርዓተ ቅዳሴ
     // Range: index 180 to end (4-62)
-    const liturgyTitleContainer = addSectionTitleCallback("Order of the Liturgy | ሥርዓተ ቅዳሴ");
-    addCopyButtonIfFirst(liturgyTitleContainer);
+    addSectionTitleCallback("Order of the Liturgy | ሥርዓተ ቅዳሴ");
     const liturgyOrderPrayers = allOrderPrayers.slice(180);
     renderKidaseSection(liturgyOrderPrayers, true); // true means apply covenant version filtering if applicable
 
@@ -2354,25 +2333,25 @@ function renderSelectedKidase(addSectionTitleCallback) {
                             // Combine all verses into one card for Psalm chants
                             const versePrayer = { ...p };
                             const typical = findTypicalPsalm(bookName, chapter, start, end);
-                            
+
                             // Only populate languages that are currently enabled
                             const visibleLangs = languageOrder.filter(id => displayedLanguages[id]);
                             visibleLangs.forEach(langKey => {
                                 const langPlaceholder = activeCfg.placeholders[langKey] || activeCfg.placeholders.english;
                                 let combinedText = "";
-                                
+
                                 if (langKey === 'geez_script' && typical) {
                                     combinedText = typical.g;
                                 } else if (bibleResults[langKey]) {
                                     // Remove verse numbers in brackets for Psalm chants
                                     combinedText = bibleResults[langKey].map(v => v.text).join("\n");
                                 }
-                                
+
                                 // Construct localized header
                                 let header = refStr;
                                 const bookCfg = BIBLE_BOOK_MAPPING[bookName];
                                 const rangeSuffix = `${start}${end !== start && end !== 999 ? '-' + end : (end === 999 ? '-End' : '')}`;
-                                
+
                                 if (langKey === 'geez_script') {
                                     // Ge'ez Column: መዝሙር ዘዳዊት ፲፩፥፭ (ግእዝ፲፱፻፹)
                                     let gCh = chapter, gS = start, gE = end;
@@ -2400,11 +2379,11 @@ function renderSelectedKidase(addSectionTitleCallback) {
                                         header = `${bookCfg.rgv} ${chapter}:${rangeSuffix}`;
                                     }
                                 }
-                                
+
                                 // For Psalm chants, we replace the entire card content to remove the Deacon prompt
                                 versePrayer[langKey] = `${header}\n${combinedText}`;
                             });
-                            
+
                             const card = createPrayerCardElement(versePrayer, -1, true);
                             prayerDisplay.appendChild(card);
                         } else {
@@ -2495,7 +2474,7 @@ function renderPrayers() {
                 titleEl.classList.add('collapsible');
                 const slug = slugifyTitle(title);
                 const isCollapsed = areAllSectionsCollapsed || collapsedSections[title] || collapsedSections[slug];
-                
+
                 if (isCollapsed) {
                     titleEl.classList.add('collapsed');
                     // We need to actually hide the elements initially if they are collapsed
@@ -2536,7 +2515,7 @@ function renderPrayers() {
             // NEW: Initial visibility state based on collapse status
             const slug = slugifyTitle(title);
             const isInitiallyCollapsed = areAllSectionsCollapsed || collapsedSections[title] || collapsedSections[slug];
-            
+
             // This is a marker to help createPrayerCardElement know if it should be hidden
             titleEl.dataset.isCollapsed = isInitiallyCollapsed;
 
@@ -2605,7 +2584,7 @@ function renderPrayers() {
         const title = getSectionTitle(prayer);
         addSectionTitle(title, true);
     };
-    
+
     // Reset rendering context at start of renderPrayers
     window.isRenderingCollapsed = false;
 
@@ -2782,130 +2761,7 @@ function fallbackCopyTextToClipboard(text) {
     document.body.removeChild(textArea);
 }
 
-function copyEntireLiturgy() {
-    let textToCopy = `፨ DIVINE LITURGY (ቅዳሴ) ፨\n\n`;
-    const visibleLangs = languageOrder.filter(id => displayedLanguages[id]);
 
-    const formatEntry = (p) => {
-        let entryText = "";
-
-        // Check if this entry is a reading block
-        let activeCfg = null;
-        for (const cfg of LITURGY_LECTIONARY_CONFIG) {
-            const hasPlaceholder = Object.values(cfg.placeholders).some(ph =>
-                p.english.includes(ph) ||
-                p.geez_script.includes(ph) ||
-                (p.amharic_script && p.amharic_script.includes(ph))
-            );
-
-            if (hasPlaceholder) {
-                activeCfg = cfg;
-                break;
-            }
-        }
-
-        if (activeCfg) {
-            const bibleResults = getBibleVersesFromRef(activeCfg.ref());
-            if (bibleResults) {
-                const verseCounts = Object.values(bibleResults).map(arr => arr.length);
-                const maxVerses = Math.max(0, ...verseCounts);
-                for (let vIdx = 0; vIdx < maxVerses; vIdx++) {
-                    visibleLangs.forEach(langKey => {
-                        if (bibleResults[langKey] && bibleResults[langKey][vIdx]) {
-                            const v = bibleResults[langKey][vIdx];
-                            const label = LANGUAGE_REGISTRY[langKey].name;
-                            let line = `[${v.verseNum}] ${v.text}`;
-                            if (vIdx === 0) {
-                                const langPlaceholder = activeCfg.placeholders[langKey] || activeCfg.placeholders.english;
-                                line = p[langKey].replace(langPlaceholder, line);
-                            }
-                            entryText += `--- ${label} ---\n${line}\n\n`;
-                        }
-                    });
-                }
-                return entryText;
-            }
-        }
-
-        // Standard entry
-        const filteredLangs = visibleLangs.filter(langKey => hasActualContent(p[langKey], langKey));
-        if (filteredLangs.length === 0) return "";
-
-        filteredLangs.forEach(langKey => {
-            const langCfg = LANGUAGE_REGISTRY[langKey];
-            const label = langCfg ? langCfg.name : langKey;
-            let rawText = p[langKey];
-            let cleanText = rawText.replace(/<[^>]*>?/gm, '');
-            cleanText = formatPrayerText(cleanText, langKey, null, false, p.chapter, p.stanza);
-            entryText += `--- ${label} ---\n${cleanText}\n\n`;
-        });
-        return entryText;
-    };
-
-    const allOrderPrayers = kidaseData.order;
-
-    // 1. Psalm & Gospel
-    if (showMorningPsalmGospel) {
-        textToCopy += `### Psalm & Gospel of The Morning | ምስባክ ወወንጌል ዘነግህ ###\n\n`;
-        const morningGospelPrayers = allOrderPrayers.slice(0, 79);
-        morningGospelPrayers.forEach(p => {
-            if (hideQuietPrayers && p.instruction.includes("Inaudible Prayer")) return;
-            textToCopy += formatEntry(p);
-        });
-    }
-
-    // 2. Pre-Liturgy Covenant
-    if (showPreLiturgyKidan) {
-        textToCopy += `### Prayer of the Covenant | ጸሎተ ኪዳን ###\n\n`;
-        const covenantPrayers = allOrderPrayers.slice(79, 180);
-        covenantPrayers.forEach(p => {
-            if (hideQuietPrayers && p.instruction.includes("Inaudible Prayer")) return;
-            textToCopy += formatEntry(p);
-        });
-    }
-
-    // 3. Order
-    textToCopy += `### Order of the Liturgy | ሥርዓተ ቅዳሴ ###\n\n`;
-    const liturgyOrderPrayers = allOrderPrayers.slice(180);
-    liturgyOrderPrayers.forEach((p, relativeIdx) => {
-        const absoluteIdx = 180 + relativeIdx;
-
-        if (hideQuietPrayers && p.instruction.includes("Inaudible Prayer")) return;
-
-        // Apply version filtering only to Liturgy-embedded Covenant
-        if (absoluteIdx >= 503 && absoluteIdx <= 592 && p.chapter === 'Kidan') {
-            if (selectedCovenantPrayer === 'none') return;
-            if (p.stanza === 'Part1' && selectedCovenantPrayer !== 'midnight') return;
-            if (p.stanza === 'Part2' && selectedCovenantPrayer !== 'morning') return;
-            if (p.stanza === 'Part3' && selectedCovenantPrayer !== 'afternoon') return;
-        }
-
-        textToCopy += formatEntry(p);
-    });
-
-    // 4. Anaphora
-    const anaphoraMap = {
-        'apostles': { name: 'Anaphora of the Apostles | ቅዳሴ ሐዋርያት', data: kidaseData.apostles },
-        'mary': { name: 'Anaphora of Our Lady Mary | ቅዳሴ ማርያም', data: kidaseData.mary }
-    };
-    const anaphora = anaphoraMap[selectedAnaphora];
-    if (anaphora) {
-        textToCopy += `### ${anaphora.name} ###\n\n`;
-        let anaphoraPrayers = anaphora.data;
-        anaphoraPrayers.forEach(p => {
-            if (hideQuietPrayers && p.instruction.includes("Inaudible Prayer")) return;
-            textToCopy += formatEntry(p);
-        });
-    }
-
-    if (navigator.clipboard && window.isSecureContext) {
-        navigator.clipboard.writeText(textToCopy).then(() => {
-            showCopyNotification('Entire Liturgy copied to clipboard!');
-        });
-    } else {
-        fallbackCopyTextToClipboard(textToCopy);
-    }
-}
 
 
 function copyPrayer(prayer) {
@@ -2921,9 +2777,13 @@ function copyPrayer(prayer) {
 
             textToCopy += `--- ${languageLabels[langKey]} ---\n`;
             let rawText = prayer[langKey];
-            // Format for clipboard: strip HTML and replace placeholders
-            let cleanText = rawText.replace(/<[^>]*>?/gm, '');
+            // Format for clipboard: replace <br> with newlines, strip HTML and replace placeholders
+            let cleanText = rawText.replace(/<br\s*\/?>/gi, '\n').replace(/<[^>]*>?/gm, '');
             cleanText = formatPrayerText(cleanText, langKey, null, false, prayer.chapter, prayer.stanza);
+
+            // Strip any HTML tags added by formatPrayerText (speaker labels, rubrication, etc.)
+            cleanText = cleanText.replace(/<br\s*\/?>/gi, '\n').replace(/<[^>]*>?/gm, '');
+
             textToCopy += `${cleanText}\n\n`;
         }
     });
@@ -4864,7 +4724,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             updateLanguageToggles();
             // Restore kidase mode visibility in settings (state is already managed by loadSettings)
             if (kidaseGatedSection) kidaseGatedSection.style.display = 'block';
-            
+
             renderPrayers();
         } else {
             isScribeLoggedIn = false;
