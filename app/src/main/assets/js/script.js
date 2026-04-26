@@ -49,6 +49,8 @@ const showRubricationToggle = document.getElementById('show-rubrication');
 const languageColorCodingSelect = document.getElementById('language-color-coding-select');
 const dynamicFontSizingLabel = document.getElementById('dynamic-font-sizing-label');
 const dynamicFontSizingToggle = document.getElementById('dynamic-font-sizing');
+const forceUniformFontSizeLabel = document.getElementById('force-uniform-font-size-label');
+const forceUniformFontSizeToggle = document.getElementById('force-uniform-font-size');
 const slideTransitionSelect = document.getElementById('slide-transition-select');
 const searchContainer = document.getElementById('search-container');
 const searchToggle = document.getElementById('search-toggle');
@@ -119,7 +121,7 @@ const kidaseGospelRefContainer = document.getElementById('kidase-gospel-ref-cont
 
 
 // --- State Variables ---
-const SETTINGS_VERSION = '4.2.2'; // Update this to force refresh load settings
+const SETTINGS_VERSION = '4.2.3'; // Update this to force refresh load settings
 let currentTheme = {};
 let isSidebarCollapsed = false;
 let isServantsCornerActive = false;
@@ -679,8 +681,10 @@ function applyTheme() {
     if (displayOptions.presentationMode === 'slides') {
         body.classList.add('presentation-mode-slides');
         dynamicFontSizingLabel.style.display = 'block';
+        forceUniformFontSizeLabel.style.display = 'block';
     } else {
         dynamicFontSizingLabel.style.display = 'none';
+        forceUniformFontSizeLabel.style.display = 'none';
     }
 
     // Handle sidebar state
@@ -980,6 +984,7 @@ async function loadSettings() {
             showSpeakerLabels: true,
             showRubrication: true,
             dynamicFontSizing: true,
+            forceUniformFontSize: false,
             paragraphMode: false,
             slideTransition: 'fade',
             languageColors: 'vibrant',
@@ -1173,6 +1178,7 @@ function updateAllTogglesInSettingsPanel() {
     showRubricationToggle.checked = displayOptions.showRubrication;
     languageColorCodingSelect.value = displayOptions.languageColors;
     dynamicFontSizingToggle.checked = displayOptions.dynamicFontSizing;
+    forceUniformFontSizeToggle.checked = displayOptions.forceUniformFontSize;
     slideTransitionSelect.value = displayOptions.slideTransition;
     boldTextToggle.checked = displayOptions.boldText;
     anglicizeNamesToggle.checked = displayOptions.anglicizeNames;
@@ -2937,13 +2943,12 @@ function adjustSlideFontSize() {
                 if (textP) textP.style.fontSize = '';
             });
 
-            let finalSize = 12; // Default minimum size
-
             // Check if we are in column layout
             if (prayerContent.classList.contains('layout-column')) {
-                let minBestSize = 250; // Start with a large potential font size
+                let minBestSize = 250; // Used for uniform sizing
+                let bestSizes = [];
 
-                // Find the best font size for each column and take the minimum
+                // Find the best font size for each column
                 langSections.forEach(section => {
                     const textP = section.querySelector('p.language-text');
                     if (!textP) return;
@@ -2963,15 +2968,28 @@ function adjustSlideFontSize() {
                             maxSize = midSize - 1; // Too big, try smaller
                         }
                     }
+                    
+                    bestSizes.push({ textP, size: bestSize });
+                    
                     // Keep track of the smallest font size that fits any column
                     if (bestSize < minBestSize) {
                         minBestSize = bestSize;
                     }
                 });
 
-                finalSize = Math.floor(minBestSize);
+                // Apply font sizes
+                if (displayOptions.forceUniformFontSize) {
+                    const finalSize = Math.floor(minBestSize);
+                    bestSizes.forEach(item => {
+                        item.textP.style.fontSize = finalSize + 'px';
+                    });
+                } else {
+                    bestSizes.forEach(item => {
+                        item.textP.style.fontSize = item.size + 'px';
+                    });
+                }
 
-            } else { // This is the original logic for 'row' layout
+            } else { // This is the original logic for 'row' layout (always uniform as they share height)
                 let minSize = 12, maxSize = 250, bestSize = minSize;
 
                 while (minSize <= maxSize) {
@@ -2991,14 +3009,12 @@ function adjustSlideFontSize() {
                         maxSize = midSize - 1;
                     }
                 }
-                finalSize = Math.floor(bestSize);
+                const finalSize = Math.floor(bestSize);
+                langSections.forEach(section => {
+                    const textP = section.querySelector('p.language-text');
+                    if (textP) textP.style.fontSize = finalSize + 'px';
+                });
             }
-
-            // Apply the final calculated font size to all sections for uniformity
-            langSections.forEach(section => {
-                const textP = section.querySelector('p.language-text');
-                if (textP) textP.style.fontSize = finalSize + 'px';
-            });
 
         }, 50); // End of setTimeout
     });
@@ -4147,6 +4163,14 @@ dynamicFontSizingToggle.addEventListener('change', () => {
     displayOptions.dynamicFontSizing = dynamicFontSizingToggle.checked;
     if (displayOptions.presentationMode === 'slides') {
         renderPrayers();
+    }
+    saveSettings();
+});
+
+forceUniformFontSizeToggle.addEventListener('change', () => {
+    displayOptions.forceUniformFontSize = forceUniformFontSizeToggle.checked;
+    if (displayOptions.presentationMode === 'slides') {
+        adjustSlideFontSize();
     }
     saveSettings();
 });
