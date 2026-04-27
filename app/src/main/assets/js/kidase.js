@@ -1,32 +1,6 @@
 const kidaseData = {
   "order": [
     {
-      "instruction": "",
-      "reference": "The preparatory service is done (prayer of penance, Psalms, prayers over the holy altar vessels, and more prayers).",
-      "chapter": "",
-      "stanza": "",
-      "english": "",
-      "geez_script": "፨ {{GE'EZ MONTH}} {{GE'EZ DATE}}፣ {{GE'EZ YEAR}} ፨",
-      "geez_phonetic": "፨ {{GE'EZ MONTH}} {{GE'EZ DATE}}, {{GE'EZ YEAR}} ፨",
-      "amharic_script": "",
-      "amharic_phonetic": "",
-      "tigrinya_script": "",
-      "tigrinya_phonetic": ""
-    },
-    {
-      "instruction": "",
-      "reference": "",
-      "chapter": "",
-      "stanza": "",
-      "english": "፨ HYMN ፨",
-      "geez_script": "፨ ማሕሌት ፨",
-      "geez_phonetic": "፨ maḥlét ፨",
-      "amharic_script": "፨ ማሕሌት ፨",
-      "amharic_phonetic": "፨ maḥlét ፨",
-      "tigrinya_script": "፨ ማሕሌት ፨",
-      "tigrinya_phonetic": "፨ maḥlét ፨"
-    },
-    {
       "instruction": "Inaudible Prayer",
       "reference": "",
       "chapter": "1",

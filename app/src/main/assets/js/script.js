@@ -2506,25 +2506,56 @@ function renderSelectedKidase(addSectionTitleCallback) {
     if (!isKidaseModeActive || typeof kidaseData === 'undefined') return;
 
     const allOrderPrayers = kidaseData.order;
-    // 1. Psalm & Gospel of The Morning | ምስባክ ወወንጌል ዘነግህ
-    // Range: index 0 to 78 (3-179 to 3-211)
+
+    // 1. Find dynamic markers to divide the sequence
+    // Morning Gospel Section starts specifically at 3-181
+    const mGospelIdx = allOrderPrayers.findIndex(p => p.chapter === '3' && p.stanza === '181');
+    
+    // Pre-Liturgy Kidan starts at the first occurrence of Chapter "Kidan"
+    const kStartIdx = allOrderPrayers.findIndex(p => p.chapter === 'Kidan');
+    
+    // Order of the Liturgy starts at the specific "Start of the Liturgy of the Word" marker
+    const lStartIdx = allOrderPrayers.findIndex(p => p.reference && p.reference.includes("Start of the Liturgy of the Word"));
+
+    // Default fallbacks for safety if markers are missing
+    const mGospelStart = mGospelIdx !== -1 ? mGospelIdx : 476;
+    const kidanStart = kStartIdx !== -1 ? kStartIdx : 549;
+    const liturgyStart = lStartIdx !== -1 ? lStartIdx : 650;
+
+    // 2. Prepare chunks
+    const morningGospelChunk = allOrderPrayers.slice(mGospelStart, kidanStart);
+    const preLiturgyKidanChunk = allOrderPrayers.slice(kidanStart, liturgyStart);
+    
+    // "Order of the Liturgy" is the catch-all for everything else (Prep + Main Liturgy)
+    const mainLiturgyArray = [];
+    
+    // Add Preparatory prayers (everything before Morning Gospel start 3-181)
+    mainLiturgyArray.push(...allOrderPrayers.slice(0, mGospelStart));
+
+    // 3. Render Sections
+
+    // A. Psalm & Gospel of The Morning | ምስባክ ወወንጌል ዘነግህ
     if (showMorningPsalmGospel) {
         addSectionTitleCallback("Psalm & Gospel of The Morning | ምስባክ ወወንጌል ዘነግህ");
-        renderKidaseSection(allOrderPrayers.slice(0, 79));
+        renderKidaseSection(morningGospelChunk);
+    } else {
+        // If hidden, include these prayers in the main flow
+        mainLiturgyArray.push(...morningGospelChunk);
     }
 
-    // 2. Pre-Liturgy Prayer of the Covenant | ጸሎተ ኪዳን
-    // Range: index 79 to 179 (Kidan-Intro to end of Gabriel Greeting/Hymn)
+    // B. Pre-Liturgy Prayer of the Covenant | ጸሎተ ኪዳን
     if (showPreLiturgyKidan) {
         addSectionTitleCallback("Prayer of the Covenant | ጸሎተ ኪዳን");
-        renderKidaseSection(allOrderPrayers.slice(79, 180)); // No version filtering here
+        renderKidaseSection(preLiturgyKidanChunk);
+    } else {
+        // If hidden, include these prayers in the main flow
+        mainLiturgyArray.push(...preLiturgyKidanChunk);
     }
 
-    // 3. Order of the Liturgy | ሥርዓተ ቅዳሴ
-    // Range: index 180 to end (4-62)
+    // C. Order of the Liturgy | ሥርዓተ ቅዳሴ
     addSectionTitleCallback("Order of the Liturgy | ሥርዓተ ቅዳሴ");
-    const liturgyOrderPrayers = allOrderPrayers.slice(180);
-    renderKidaseSection(liturgyOrderPrayers, true); // true means apply covenant version filtering if applicable
+    mainLiturgyArray.push(...allOrderPrayers.slice(liturgyStart));
+    renderKidaseSection(mainLiturgyArray, true); // true means apply version filtering to any embedded Kidan
 
     // 4. Anaphora
     const anaphoraMap = {
@@ -2543,11 +2574,9 @@ function renderSelectedKidase(addSectionTitleCallback) {
         let filtered = prayers;
 
         // Apply Liturgy-embedded Covenant Prayer filtering (only for Core) BEFORE hideQuietPrayers
-        // We use the original relative index before any filtering shifts the array
         if (isLiturgyCore) {
-            filtered = filtered.filter((p, relativeIdx) => {
-                const absoluteIdx = 180 + relativeIdx;
-                if (absoluteIdx >= 503 && absoluteIdx <= 592 && p.chapter === 'Kidan') {
+            filtered = filtered.filter((p) => {
+                if (p.chapter === 'Kidan') {
                     if (selectedCovenantPrayer === 'none') return false;
                     if (p.stanza === 'Part1' && selectedCovenantPrayer !== 'midnight') return false;
                     if (p.stanza === 'Part2' && selectedCovenantPrayer !== 'morning') return false;
