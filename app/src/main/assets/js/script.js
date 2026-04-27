@@ -76,6 +76,10 @@ const eusebiusInfoBtn = document.getElementById('eusebius-info-btn');
 const closeEusebiusModal = document.getElementById('close-eusebius-modal');
 const scribeLoginModal = document.getElementById('scribe-login-modal');
 const scribeEditorModal = document.getElementById('scribe-editor-modal');
+const changelogModal = document.getElementById('changelog-modal');
+const changelogList = document.getElementById('changelog-list');
+const closeChangelogModal = document.getElementById('close-changelog-modal');
+const appVersionContainer = document.getElementById('app-version-container');
 const modalBackdrop = document.getElementById('modal-backdrop');
 
 // Scribe State
@@ -130,6 +134,14 @@ const kidaseGospelRefContainer = document.getElementById('kidase-gospel-ref-cont
 
 // --- State Variables ---
 const SETTINGS_VERSION = '4.2.4'; // Update this to force refresh load settings
+const APP_VERSION = '0.8.2-beta';
+const STATIC_CHANGELOG = [
+    { date: '2026-04-26', message: 'fix: clear verse prayer content when language data is empty', author: 'vineofmary' },
+    { date: '2026-04-26', message: 'fix: constrain language-specific rubrication colors to legacy theme', author: 'vineofmary' },
+    { date: '2026-04-26', message: 'feat: add interactive navigation to jump to prayer cards', author: 'vineofmary' },
+    { date: '2026-04-26', message: 'refactor: optimize layout and font-size scaling for presentation mode', author: 'vineofmary' },
+    { date: '2026-04-26', message: 'feat: add toggle setting for Ge\'ez phonetics for chants', author: 'vineofmary' }
+];
 let currentTheme = {};
 let isSidebarCollapsed = false;
 let isServantsCornerActive = false;
@@ -5501,6 +5513,80 @@ document.addEventListener('DOMContentLoaded', async () => {
     document.getElementById('close-icon-metadata-modal').addEventListener('click', closeModal);
     document.getElementById('close-scribe-icon-editor-modal').addEventListener('click', closeModal);
     document.getElementById('close-eusebius-modal').addEventListener('click', closeModal);
+    if (closeChangelogModal) closeChangelogModal.addEventListener('click', closeModal);
+
+    // App Version & Changelog Logic
+    if (appVersionContainer) {
+        appVersionContainer.textContent = APP_VERSION;
+        appVersionContainer.addEventListener('click', () => {
+            openModal(changelogModal);
+            fetchGithubCommits();
+        });
+    }
+
+    async function fetchGithubCommits() {
+        if (!changelogList) return;
+        
+        // Show loading state
+        changelogList.innerHTML = '<div class="changelog-loading">Fetching recent updates...</div>';
+
+        try {
+            const response = await fetch('https://api.github.com/repos/vineofmary/prayer/commits?per_page=10');
+            if (!response.ok) throw new Error('Private repository or API limit');
+            
+            const commits = await response.json();
+            renderChangelog(commits.map(c => ({
+                date: c.commit.author.date,
+                message: c.commit.message.split('\n')[0],
+                author: c.commit.author.name,
+                url: c.html_url
+            })));
+        } catch (error) {
+            console.warn('GitHub API unavailable, using static fallback:', error);
+            renderChangelog(STATIC_CHANGELOG);
+        }
+    }
+
+    function renderChangelog(commits) {
+        if (!changelogList) return;
+        changelogList.innerHTML = '';
+
+        commits.forEach(commit => {
+            const date = new Date(commit.date).toLocaleDateString(undefined, { 
+                year: 'numeric', 
+                month: 'short', 
+                day: 'numeric' 
+            });
+
+            const item = document.createElement('div');
+            item.classList.add('changelog-item');
+            
+            const dateEl = document.createElement('span');
+            dateEl.classList.add('commit-date');
+            dateEl.textContent = date;
+
+            const messageEl = document.createElement('div');
+            messageEl.classList.add('commit-message');
+            messageEl.textContent = commit.message;
+
+            const authorEl = document.createElement('div');
+            authorEl.classList.add('commit-author');
+            authorEl.textContent = `by ${commit.author}`;
+
+            item.appendChild(dateEl);
+            item.appendChild(messageEl);
+            item.appendChild(authorEl);
+            
+            if (commit.url) {
+                item.style.cursor = 'pointer';
+                item.addEventListener('click', () => {
+                    window.open(commit.url, '_blank');
+                });
+            }
+
+            changelogList.appendChild(item);
+        });
+    }
 
     // Eusebius Modal Logic
     if (eusebiusInfoBtn) {

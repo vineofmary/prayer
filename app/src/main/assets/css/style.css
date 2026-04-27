@@ -2420,3 +2420,113 @@ body.presentation-mode-slides .hareg-ornament {
     font-weight: bold;
     margin-right: 0.25rem;
 }
+
+/* --- App Version & Changelog Styles --- */
+.app-version-section {
+    text-align: center;
+    padding-top: 1rem !important;
+    border-top: 1px dashed var(--border-color);
+    margin-top: 2rem !important;
+}
+
+#app-version-container {
+    display: inline-block;
+    font-size: 0.75rem;
+    color: var(--text-color);
+    opacity: 0.4;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    font-family: var(--english-font-family, serif);
+}
+
+#app-version-container:hover {
+    opacity: 0.9;
+    background-color: var(--hover-color);
+    color: var(--accent-color);
+}
+
+.changelog-content {
+    max-width: 600px;
+}
+
+.changelog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.changelog-header h2 {
+    margin: 0;
+    font-size: 1.25rem;
+    color: var(--accent-color);
+}
+
+.active-badge {
+    background-color: #4caf50;
+    color: white;
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 12px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.changelog-intro {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    opacity: 0.8;
+}
+
+.changelog-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-height: 50vh;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+}
+
+.changelog-item {
+    padding: 0.75rem;
+    background-color: var(--background-color);
+    border-left: 3px solid var(--accent-color);
+    border-radius: 4px;
+}
+
+.changelog-item .commit-date {
+    font-size: 0.7rem;
+    opacity: 0.6;
+    margin-bottom: 0.25rem;
+    display: block;
+}
+
+.changelog-item .commit-message {
+    font-size: 0.9rem;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.changelog-item .commit-author {
+    font-size: 0.75rem;
+    margin-top: 0.5rem;
+    opacity: 0.7;
+    font-style: italic;
+}
+
+.changelog-loading, .changelog-error {
+    text-align: center;
+    padding: 2rem;
+    font-style: italic;
+    opacity: 0.7;
+}
+
+.changelog-error {
+    color: var(--rubric-red);
+}
