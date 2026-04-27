@@ -647,9 +647,26 @@ function debounce(func, wait) {
 
 
 function applyRubrication(text, langKey, isFirstLanguage, chapter = null) {
-    if (!displayOptions.showRubrication || (displayOptions.languageColors !== 'off' && !isFirstLanguage)) {
-        return text;
+    if (!displayOptions.showRubrication) return text;
+
+    let isColored = false;
+    if (displayOptions.languageColors !== 'off') {
+        if (currentTheme.palette === 'legacy') {
+            // Legacy palette: only Ge'ez, Amharic, Tigrinya are colored. 
+            // Others like English, Spanish are white/black.
+            const coloredLegacyLangs = ['geez_script', 'geez_phonetic', 'amharic_script', 'amharic_phonetic', 'tigrinya_script', 'tigrinya_phonetic'];
+            if (coloredLegacyLangs.includes(langKey)) {
+                isColored = true;
+            }
+        } else {
+            // Standard palettes: only the first language is white/black (base color).
+            if (!isFirstLanguage) {
+                isColored = true;
+            }
+        }
     }
+
+    if (isColored) return text;
 
     // Disable rubrication for Ge'ez Psalms and Se'atat Lectionary as requested
     if (langKey === 'geez_script' && (chapter === 'Psalms' || chapter === 'SeatatLectionary')) {

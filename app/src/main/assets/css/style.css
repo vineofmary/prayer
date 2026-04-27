@@ -242,6 +242,21 @@ body[class*="language-colors-"].theme-legacy-light .language-section.lang-tigrin
     color: #008000 !important; /* Darker green on light */
 }
 
+/* In Legacy theme, English and Spanish retain their unique colors for rubrication and labels regardless of position */
+body[class*="theme-legacy-"] .language-section.lang-english .rubric-red,
+body[class*="theme-legacy-"] .language-section.lang-spanish .rubric-red {
+    color: var(--rubric-red) !important;
+}
+body[class*="theme-legacy-"] .language-section.lang-english .rubric-gold,
+body[class*="theme-legacy-"] .language-section.lang-spanish .rubric-gold {
+    color: var(--rubric-gold) !important;
+}
+body[class*="theme-legacy-"] .language-section.lang-english .speaker-label,
+body[class*="theme-legacy-"] .language-section.lang-spanish .speaker-label {
+    color: var(--speaker-label-color) !important;
+    opacity: 1 !important;
+}
+
 /* --- Language FONT Color Palettes --- */
 /* Greyscale (Light) */
 body.language-colors-greyscale {
