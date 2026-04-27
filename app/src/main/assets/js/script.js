@@ -2617,7 +2617,12 @@ function renderSelectedKidase(addSectionTitleCallback) {
                                 }
 
                                 // For Psalm chants, we replace the entire card content to remove the Deacon prompt
-                                versePrayer[langKey] = `${header}\n${combinedText}`;
+                                // But only if we have actual content for this language
+                                if (combinedText && combinedText.trim()) {
+                                    versePrayer[langKey] = `${header}\n${combinedText}`;
+                                } else {
+                                    versePrayer[langKey] = "";
+                                }
                             });
 
                             const card = createPrayerCardElement(versePrayer, -1, true);
@@ -2663,7 +2668,8 @@ function renderSelectedKidase(addSectionTitleCallback) {
                                             versePrayer[langKey] = verseText;
                                         }
                                     } else {
-                                        if (i > 0) versePrayer[langKey] = "";
+                                        // If no results for this language, clear it so it doesn't show placeholders/empty columns
+                                        versePrayer[langKey] = "";
                                     }
                                 });
                                 const card = createPrayerCardElement(versePrayer, -1, true);
