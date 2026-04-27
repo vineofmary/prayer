@@ -2046,12 +2046,26 @@ function formatPrayerText(text, langKey, query, isFirstLanguage, chapter = null,
     return highlightText(processedText, query);
 }
 
-function getPrayerLabel(prayer) {
+function getPrayerLabel(prayer, isKidase = false) {
     // Detect Kidase prayers (Liturgy)
-    const isKidaseChapter = /^\d+$/.test(prayer.chapter) || ['Kidan', 'order', 'apostles', 'mary'].includes(prayer.chapter);
+    const kidaseChapters = ['Kidan', 'order', 'Apostles', 'St.Mary', 'Chrysostom', 'The300', 'mary', 'apostles'];
+    const chapter = prayer.chapter || '';
+    const isNumericChapter = /^\d+$/.test(chapter);
+    const isKidaseChapter = isKidase || isNumericChapter || kidaseChapters.some(c => c.toLowerCase() === chapter.toLowerCase());
 
-    if (isKidaseChapter && prayer.chapter && prayer.stanza) {
-        const source = `${prayer.chapter}-${prayer.stanza}`;
+    if (isKidaseChapter && (chapter || prayer.stanza)) {
+        let chapterPrefix = chapter;
+        if (isNumericChapter) {
+            chapterPrefix = chapter; // Keep number as per user request
+        } else if (chapter.toLowerCase() === 'st.mary' || chapter.toLowerCase() === 'mary') {
+            chapterPrefix = 'Mary';
+        } else if (chapter.toLowerCase() === 'apostles') {
+            chapterPrefix = 'Apostles';
+        } else if (!chapter && isKidase) {
+            chapterPrefix = 'Liturgy';
+        }
+        
+        const source = prayer.stanza ? `${chapterPrefix}-${prayer.stanza}` : chapterPrefix;
         const reference = (prayer.reference && prayer.reference.trim() && prayer.reference.trim().toLowerCase() !== 'n/a') ? prayer.reference.trim() : "";
         const instruction = (prayer.instruction && prayer.instruction.trim() && prayer.instruction.trim().toLowerCase() !== 'n/a') ? prayer.instruction.trim() : "";
 
@@ -2279,7 +2293,7 @@ function createPrayerCardElement(prayer, prayerIndex, isKidase = false) {
     const prayerLabel = document.createElement('div');
     prayerLabel.classList.add('prayer-label');
     if (!displayOptions.showPrayerLabels) prayerLabel.classList.add('hidden');
-    prayerLabel.textContent = getPrayerLabel(prayer);
+    prayerLabel.textContent = getPrayerLabel(prayer, isKidase);
     prayerFooter.appendChild(prayerLabel);
 
     const prayerActions = document.createElement('div');
@@ -2330,7 +2344,7 @@ function createPrayerCardElement(prayer, prayerIndex, isKidase = false) {
     infoPanelContent.classList.add('info-panel-content');
 
     let infoHTML = "";
-    const isKidaseChapter = /^\d+$/.test(prayer.chapter) || ['Kidan', 'order', 'apostles', 'mary'].includes(prayer.chapter);
+    const isKidaseChapter = /^\d+$/.test(prayer.chapter) || ['Kidan', 'order', 'Apostles', 'St.Mary', 'Chrysostom', 'The300', 'mary', 'apostles'].some(c => c.toLowerCase() === (prayer.chapter || '').toLowerCase());
     const isKidasePrayer = isKidase || (isKidaseChapter && prayer.chapter && prayer.stanza);
 
     if (!isKidasePrayer) {
