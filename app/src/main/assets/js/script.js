@@ -64,6 +64,7 @@ const showSupplicationsToggle = document.getElementById('show-supplications-togg
 const autoProphetSongsToggle = document.getElementById('auto-prophet-songs-toggle');
 const showDailyPrayerToggle = document.getElementById('show-daily-prayer-toggle');
 const showGeezPhoneticChantsToggle = document.getElementById('show-geez-phonetic-chants');
+const showLoanwordOriginsToggle = document.getElementById('show-loanword-origins');
 const expandCollapseAllButton = document.getElementById('expand-collapse-all-button');
 const feedbackButton = document.getElementById('feedback-button');
 const helpModal = document.getElementById('help-modal');
@@ -447,6 +448,46 @@ const anglicizedNameMap = {
     "Seventh Heaven": "Aryam",
     "the Seventh Heaven": "Aryam",
 };
+
+const LOANWORD_MAPPING = {
+    "አውሎግዮስ": { original: "(\u03b5\u03c5\u03bb\u03cc\u03b3\u03b9\u03bf\u03c2)", phonetic: "ev-lo-gi-os", meaning: "Blessed", geez: "ቡሩክ" },
+    "ጌርዮስ": { original: "(\u03ba\u03cd\u03c1\u03b9\u03bf\u03c2)", phonetic: "ky-ri-os", meaning: "Lord", geez: "እግዚእ" },
+    "አግዮስ": { original: "(\u1f03\u03b3\u03b9\u03bf\u03c2)", phonetic: "ha-gi-os", meaning: "Holy", geez: "ቅዱስ" },
+    "ማንጦን": { original: "(\u03c0\u03ac\u03bd\u03c4\u03c9\u03bd)", phonetic: "pan-ton", meaning: "of all", geez: "ዘኵሉ" },
+    "ፖንዋማንጦን": { original: "(\u03c0\u03bd\u03b5\u03c5\u03bc\u03ac\u03c4\u03c9\u03bd)", phonetic: "pnev-ma-ton", meaning: "of spirits", geez: "ዘመንፈሳት" },
+    "አላቲኖን": { original: "(\u1f00\u03bb\u03b7\u03b8\u03b9\u03bd\u03cc\u03bd)", phonetic: "a-le-thi-non", meaning: "True", geez: "አማናዊ (በአማን)" },
+    "ኪርያላይሶን": { original: "(\u039a\u03cd\u03c1\u03b9\u03b5 \u1f10\u03bb\u03ad\u03b7\u03c3\u03bf\u03bd)", phonetic: "ky-ri-e e-le-i-son", meaning: "Lord have mercy", geez: "እግዚኦ ተሣሃለነ" },
+    "ጵርስፎራ": { original: "(\u03c0\u03c1\u03bf\u03c3\u03c6\u03bf\u03c1\u03ac)", phonetic: "pros-fo-ra", meaning: "The Sacrificial/Eucharistic Offering", geez: "ቍርባን (መባዕ)" },
+    "እንፎራ": { original: "(\u1f00\u03bd\u03b1\u03c6\u03bf\u03c1\u03ac)", phonetic: "a-na-fo-ra", meaning: "The Lifting Up (of the offering)", geez: "አኰቴተ ቍርባን" },
+    "ጳራቅሊጦስ": { original: "(\u03a0\u03b1\u03c1\u03ac\u03ba\u03bb\u03b7\u03c4\u03bf\u03c2)", phonetic: "pa-ra-kli-tos", meaning: "Paraclete (Advocate, Helper, Comforter)", geez: "ናዛዚ" },
+    "አምንስቲቲ ሙኪርያ": { original: "(\u039c\u03bd\u03ae\u03c3\u03b8\u03b7\u03c4\u03af \u03bc\u03bf\u03c5, \u039a\u03cd\u03c1\u03b9\u03b5)", phonetic: "mni-sthi-ti mou ky-ri-e", meaning: "Remember me, O Lord", geez: "ተዘከረኒ እግዚኦ" },
+    "አንቲ ፋሲልያሱ": { original: "(\u1f10\u03bd \u03c4\u1fc7 \u03b2\u03b1\u03c3\u03b9\u03bb\u03b5\u03af\u1fb3 \u03c3\u03bf\u03c5)", phonetic: "en ti va-si-li-a sou", meaning: "in your kingdom", geez: "በመንግሥትከ" }
+};
+
+function applyLoanwordOrigins(text, langKey) {
+    if (!displayOptions.showLoanwordOrigins || (langKey !== 'geez_script' && langKey !== 'geez_phonetic')) {
+        return text;
+    }
+
+    let transformedText = text;
+    
+    // Build a single regex to match all loanwords in one pass to avoid nested replacements
+    const sortedKeys = Object.keys(LOANWORD_MAPPING).sort((a, b) => b.length - a.length);
+    const pattern = sortedKeys.map(k => k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|');
+    const regex = new RegExp(`(${pattern})([\\s\\:\\፡\\፡\\፤\\፨\\።]?)`, 'g');
+
+    transformedText = transformedText.replace(regex, (match, p1, p2) => {
+        const data = LOANWORD_MAPPING[p1];
+        return `<span class="loanword-origin" 
+            data-word="${p1}" 
+            data-original="${data.original.replace(/[()]/g, '')}" 
+            data-phonetic="${data.phonetic}" 
+            data-meaning="${data.meaning}" 
+            data-geez="${data.geez}">${p1} ${data.original}</span>${p2}`;
+    });
+
+    return transformedText;
+}
 
 function applyAnglicization(text, langKey) {
     if (langKey !== 'english' || !displayOptions.anglicizeNames) {
@@ -1067,7 +1108,8 @@ async function loadSettings() {
             showSupplications: true,
             autoProphetSongs: false,
             showDailyPrayer: true,
-            showGeezPhoneticChants: false
+            showGeezPhoneticChants: false,
+            showLoanwordOrigins: false
         },
         displayedLanguages: defaultLanguages,
         fontSizes: {
@@ -1270,6 +1312,7 @@ function updateAllTogglesInSettingsPanel() {
     autoProphetSongsToggle.checked = displayOptions.autoProphetSongs;
     showDailyPrayerToggle.checked = displayOptions.showDailyPrayer;
     if (showGeezPhoneticChantsToggle) showGeezPhoneticChantsToggle.checked = displayOptions.showGeezPhoneticChants;
+    if (showLoanwordOriginsToggle) showLoanwordOriginsToggle.checked = displayOptions.showLoanwordOrigins;
 
     // Seatat Lectionary Selector
     const lectionaryRadios = document.querySelectorAll('input[name="seatat-lectionary-day"]');
@@ -2010,6 +2053,9 @@ function formatPrayerText(text, langKey, query, isFirstLanguage, chapter = null,
     // Apply Anglicization
     processedText = applyAnglicization(processedText, langKey);
 
+    // Apply Loanword Origins
+    processedText = applyLoanwordOrigins(processedText, langKey);
+
     // Replace custom name placeholders
     processedText = processedText.replace(/\{\{Servant's Names\}\}/g, customNames.servant || '');
     processedText = processedText.replace(/\{\{PATRIARCH NAME\}\}/g, customNames.patriarch || '');
@@ -2538,18 +2584,12 @@ function renderSelectedKidase(addSectionTitleCallback) {
     if (showMorningPsalmGospel) {
         addSectionTitleCallback("Psalm & Gospel of The Morning | ምስባክ ወወንጌል ዘነግህ");
         renderKidaseSection(morningGospelChunk);
-    } else {
-        // If hidden, include these prayers in the main flow
-        mainLiturgyArray.push(...morningGospelChunk);
     }
 
     // B. Pre-Liturgy Prayer of the Covenant | ጸሎተ ኪዳን
     if (showPreLiturgyKidan) {
         addSectionTitleCallback("Prayer of the Covenant | ጸሎተ ኪዳን");
         renderKidaseSection(preLiturgyKidanChunk);
-    } else {
-        // If hidden, include these prayers in the main flow
-        mainLiturgyArray.push(...preLiturgyKidanChunk);
     }
 
     // C. Order of the Liturgy | ሥርዓተ ቅዳሴ

@@ -2530,3 +2530,88 @@ body.presentation-mode-slides .hareg-ornament {
 .changelog-error {
     color: var(--rubric-red);
 }
+/* Greek Loanword Origins Feature */
+.loanword-origin {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    cursor: help;
+    border-bottom: 1px dotted var(--accent-color);
+    transition: all 0.2s ease;
+    text-decoration: none;
+    color: inherit;
+}
+
+.loanword-origin:hover {
+    background-color: var(--hover-color);
+    border-bottom: 1px solid var(--accent-color);
+}
+
+.loanword-tooltip {
+    position: fixed;
+    z-index: 2000;
+    background: var(--sidebar-bg-color);
+    border: 1px solid var(--accent-color);
+    border-radius: 12px;
+    padding: 1.25rem;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    width: 280px;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transform: translateY(10px);
+}
+
+.loanword-tooltip.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.tooltip-title {
+    display: block;
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    margin-bottom: 0.25rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.tooltip-phonetic {
+    display: block;
+    font-size: 0.9rem;
+    font-style: italic;
+    opacity: 0.7;
+    text-align: center;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.75rem;
+}
+
+.tooltip-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    gap: 1rem;
+}
+
+.tooltip-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    opacity: 0.6;
+    font-weight: 600;
+}
+
+.tooltip-value {
+    font-size: 0.95rem;
+    text-align: right;
+    font-weight: 500;
+}
+
+.tooltip-geez {
+    color: var(--accent-color);
+    font-size: 1.1rem;
+}

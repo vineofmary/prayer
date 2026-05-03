@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,796 +8,1050 @@
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Abyssinica+SIL&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Lato&family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Lato&family=Roboto&display=swap"
+        rel="stylesheet">
     <link rel="manifest" href="manifest.json">
     <link rel="icon" href="/icons/icon-192x192.png">
     <meta property="og:image" content="img/With-her-beloved-Son.png">
 </head>
+
 <body class="theme-traditional-light view-mode-card">
-<div id="splash-screen">
-    <img src="img/With-her-beloved-Son.png" alt="Splash Screen">
-</div>
-<div id="app-container" class="hidden">
-    <header>
-        <div class="header-content">
-            <button id="sidebar-toggle" title="Toggle Settings">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24px" height="24px"><path d="M19.43 12.98c.04-.32.07-.64.07-.98s-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98s.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12-.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61.22l2-3.46c.12-.22-.07-.49-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"/></svg>
-            </button>
-            <h1 class="ethiopic-label">Mount of Mercy</h1>
-        </div>
-        <div id="search-container">
-            <input type="search" id="search-input" placeholder="Search...">
-            <span id="search-count">0/0</span>
-            <button id="search-prev" title="Previous Match">▲</button>
-            <button id="search-next" title="Next Match">▼</button>
-        </div>
-        <div class="header-actions">
-            <button id="search-toggle" title="Search">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24px" height="24px"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
-            </button>
-            <button id="search-close" title="Close Search">×</button>
-            <button id="presentation-mode-toggle-header" title="Toggle Presentation Mode">
-                <svg class="pres-mode-icon-slides" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v2h8v-2h5c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 14H3V5h18v12z"/></svg>
-                <svg class="pres-mode-icon-scroll" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24" style="display: none;"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg>
-            </button>
-            <button id="layout-toggle-header" title="Toggle Row/Column Layout">
-                <svg class="layout-icon-column" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M4 18h17v-2H4v2zM4 13h17v-2H4v2zM4 6v2h17V6H4z"/></svg>
-                <svg class="layout-icon-row" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24" style="display: none;"><path d="M11 18h2v-2h-2v2zm-4 0h2v-2H7v2zm8 0h2v-2h-2v2zm-8-4h2v-2H7v2zm4 0h2v-2h-2v2zm4 0h2v-2h-2v2zm-8-4h2V8H7v2zm4 0h2V8h-2v2zm4 0h2V8h-2v2zM7 6h2V4H7v2zm4 0h2V4h-2v2zm4 0h2V4h-2v2z"/></svg>
-            </button>
-            <button id="expand-collapse-all-button" title="Collapse All">
-                <svg class="icon-collapse-all" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="currentColor"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M7.41 18.59L12 14l4.59 4.59L18 17.17l-6-6-6 6zM7.41 6.59L12 2l4.59 4.59L18 5.17l-6-6-6 6z"/></svg>
-                <svg class="icon-expand-all" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="currentColor" style="display: none;"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M12 5.83L15.17 9l1.41-1.41L12 3 7.41 7.59 8.83 9 12 5.83zm0 12.34L8.83 15l-1.41 1.41L12 21l4.59-4.59L15.17 15 12 18.17z"/></svg>
-            </button>
-            <button id="theme-toggle" title="Toggle Dark Mode"></button>
-            <button id="help-button" title="Help">?</button>
-        </div>
-    </header>
-    <div class="container">
-        <aside class="sidebar">
-            <div class="settings-panel">
-                <div class="setting-group">
-                    <h3>Pick Theme</h3>
-                    <select id="palette-selector">
-                        <option value="traditional">Traditional</option>
-                        <option value="sepia">Brown</option>
-                        <option value="oceanic">Ocean</option>
-                        <option value="legacy">Legacy</option>
-                        <option value="high-contrast">Simple</option>
-                    </select>
-                    <h4 class="settings-subtitle" style="margin-top: 1.5rem;">Language Color-Coding</h4>
-                    <select id="language-color-coding-select">
-                        <option value="off">Off</option>
-                        <option value="pastel">Soft</option>
-                        <option value="vibrant">Bright</option>
-                        <option value="greyscale">Grey</option>
-                    </select>
-                    <label style="margin-top: 1rem; display: block;"><input type="checkbox" id="show-rubrication"> <span>Colored Holy Names (Beta)</span></label>
-                    <label style="margin-top: 0.5rem; display: block;"><input type="checkbox" id="anglicize-names-toggle"> <span>Anglicize Names (Beta)</span></label>
-                </div>
-                <div class="setting-group">
-                    <h3>Customize Fonts</h3>
-                    <h4 class="settings-subtitle">Font Preview</h4>
-                    <div id="font-preview">
-                        <p class="preview-english">I seal my face</p>
-                        <p class="preview-geez ethiopic-label">አአትብ ገጽየ</p>
-                        <p class="preview-phonetic">a'atib getsye</p>
+    <div id="splash-screen">
+        <img src="img/With-her-beloved-Son.png" alt="Splash Screen">
+    </div>
+    <div id="app-container" class="hidden">
+        <header>
+            <div class="header-content">
+                <button id="sidebar-toggle" title="Toggle Settings">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24px"
+                        height="24px">
+                        <path
+                            d="M19.43 12.98c.04-.32.07-.64.07-.98s-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98s.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12-.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61.22l2-3.46c.12-.22-.07-.49-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z" />
+                    </svg>
+                </button>
+                <h1 class="ethiopic-label">Mount of Mercy</h1>
+            </div>
+            <div id="search-container">
+                <input type="search" id="search-input" placeholder="Search...">
+                <span id="search-count">0/0</span>
+                <button id="search-prev" title="Previous Match">▲</button>
+                <button id="search-next" title="Next Match">▼</button>
+            </div>
+            <div class="header-actions">
+                <button id="search-toggle" title="Search">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24px"
+                        height="24px">
+                        <path
+                            d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+                    </svg>
+                </button>
+                <button id="search-close" title="Close Search">×</button>
+                <button id="presentation-mode-toggle-header" title="Toggle Presentation Mode">
+                    <svg class="pres-mode-icon-slides" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                        fill="currentColor" width="24" height="24">
+                        <path
+                            d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v2h8v-2h5c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 14H3V5h18v12z" />
+                    </svg>
+                    <svg class="pres-mode-icon-scroll" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                        fill="currentColor" width="24" height="24" style="display: none;">
+                        <path
+                            d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z" />
+                    </svg>
+                </button>
+                <button id="layout-toggle-header" title="Toggle Row/Column Layout">
+                    <svg class="layout-icon-column" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                        fill="currentColor" width="24" height="24">
+                        <path d="M4 18h17v-2H4v2zM4 13h17v-2H4v2zM4 6v2h17V6H4z" />
+                    </svg>
+                    <svg class="layout-icon-row" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                        fill="currentColor" width="24" height="24" style="display: none;">
+                        <path
+                            d="M11 18h2v-2h-2v2zm-4 0h2v-2H7v2zm8 0h2v-2h-2v2zm-8-4h2v-2H7v2zm4 0h2v-2h-2v2zm4 0h2v-2h-2v2zm-8-4h2V8H7v2zm4 0h2V8h-2v2zm4 0h2V8h-2v2zM7 6h2V4H7v2zm4 0h2V4h-2v2zm4 0h2V4h-2v2z" />
+                    </svg>
+                </button>
+                <button id="expand-collapse-all-button" title="Collapse All">
+                    <svg class="icon-collapse-all" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24"
+                        width="24px" fill="currentColor">
+                        <path d="M0 0h24v24H0V0z" fill="none" />
+                        <path
+                            d="M7.41 18.59L12 14l4.59 4.59L18 17.17l-6-6-6 6zM7.41 6.59L12 2l4.59 4.59L18 5.17l-6-6-6 6z" />
+                    </svg>
+                    <svg class="icon-expand-all" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24"
+                        width="24px" fill="currentColor" style="display: none;">
+                        <path d="M0 0h24v24H0V0z" fill="none" />
+                        <path
+                            d="M12 5.83L15.17 9l1.41-1.41L12 3 7.41 7.59 8.83 9 12 5.83zm0 12.34L8.83 15l-1.41 1.41L12 21l4.59-4.59L15.17 15 12 18.17z" />
+                    </svg>
+                </button>
+                <button id="theme-toggle" title="Toggle Dark Mode"></button>
+                <button id="help-button" title="Help">?</button>
+            </div>
+        </header>
+        <div class="container">
+            <aside class="sidebar">
+                <div class="settings-panel">
+                    <div class="setting-group">
+                        <h3>Pick Theme</h3>
+                        <select id="palette-selector">
+                            <option value="traditional">Traditional</option>
+                            <option value="sepia">Brown</option>
+                            <option value="oceanic">Ocean</option>
+                            <option value="legacy">Legacy</option>
+                            <option value="high-contrast">Simple</option>
+                        </select>
+                        <h4 class="settings-subtitle" style="margin-top: 1.5rem;">Language Color-Coding</h4>
+                        <select id="language-color-coding-select">
+                            <option value="off">Off</option>
+                            <option value="pastel">Soft</option>
+                            <option value="vibrant">Bright</option>
+                            <option value="greyscale">Grey</option>
+                        </select>
+                        <label style="margin-top: 1rem; display: block;"><input type="checkbox" id="show-rubrication">
+                            <span>Colored Holy Names (Beta)</span></label>
+                        <label style="margin-top: 0.5rem; display: block;"><input type="checkbox"
+                                id="anglicize-names-toggle"> <span>Anglicize Names (Beta)</span></label>
                     </div>
-                    <h4 class="settings-subtitle">Ge'ez Font Size</h4>
-                    <input type="range" id="geez-font-size-slider" min="12" max="48" value="16">
+                    <div class="setting-group">
+                        <h3>Customize Fonts</h3>
+                        <h4 class="settings-subtitle">Font Preview</h4>
+                        <div id="font-preview">
+                            <p class="preview-english">I seal my face</p>
+                            <p class="preview-geez ethiopic-label">አአትብ ገጽየ</p>
+                            <p class="preview-phonetic">a'atib getsye</p>
+                        </div>
+                        <h4 class="settings-subtitle">Ge'ez Font Size</h4>
+                        <input type="range" id="geez-font-size-slider" min="12" max="48" value="16">
 
-                    <h4 class="settings-subtitle">English Font Size</h4>
-                    <input type="range" id="english-font-size-slider" min="12" max="48" value="16">
+                        <h4 class="settings-subtitle">English Font Size</h4>
+                        <input type="range" id="english-font-size-slider" min="12" max="48" value="16">
 
-                    <div style="display: flex; gap: 1rem; margin-top: 0.75rem;">
-                        <label><input type="checkbox" id="lock-font-sizes"> <span>Lock Font Sizes</span></label>
-                        <label><input type="checkbox" id="bold-text-toggle"> <span>Bold Text</span></label>
+                        <div style="display: flex; gap: 1rem; margin-top: 0.75rem;">
+                            <label><input type="checkbox" id="lock-font-sizes"> <span>Lock Font Sizes</span></label>
+                            <label><input type="checkbox" id="bold-text-toggle"> <span>Bold Text</span></label>
+                        </div>
+
+                        <h4 class="settings-subtitle" style="margin-top: 1.5rem;">Ge'ez Font</h4>
+                        <select id="ethiopic-font-select">
+                            <option value="'Noto Sans Ethiopic', sans-serif" selected>Modern</option>
+                            <option value="'Abyssinica SIL', serif">Ancient</option>
+                            <option value="serif">Standard</option>
+                        </select>
+
+                        <h4 class="settings-subtitle">English Font</h4>
+                        <select id="english-font-select">
+                            <option value="serif">Elegant</option>
+                            <option value="'Lato', sans-serif">Modern</option>
+                            <option value="'Merriweather', serif" selected>Classic</option>
+                            <option value="'Roboto', sans-serif">Basic</option>
+                        </select>
                     </div>
 
-                    <h4 class="settings-subtitle" style="margin-top: 1.5rem;">Ge'ez Font</h4>
-                    <select id="ethiopic-font-select">
-                        <option value="'Noto Sans Ethiopic', sans-serif" selected>Modern</option>
-                        <option value="'Abyssinica SIL', serif">Ancient</option>
-                        <option value="serif">Standard</option>
-                    </select>
-
-                    <h4 class="settings-subtitle">English Font</h4>
-                    <select id="english-font-select">
-                        <option value="serif">Elegant</option>
-                        <option value="'Lato', sans-serif">Modern</option>
-                        <option value="'Merriweather', serif" selected>Classic</option>
-                        <option value="'Roboto', sans-serif">Basic</option>
-                    </select>
-                </div>
-
-                <div class="setting-group">
-                    <h3>Select Languages</h3>
-                    <div id="language-toggles">
-                        <!-- Languages will be injected here dynamically from LANGUAGE_REGISTRY -->
-                    </div>
-                </div>
-                <div class="setting-group">
-                    <h4 class="settings-subtitle">Language Order</h4>
-                    <ul id="language-order-list">
-                    </ul>
-                    <label style="margin-top: 1rem; display: block;"><input type="checkbox" id="show-language-labels"> <span>Language Labels</span></label>
-                </div>
-                <div class="setting-group">
-                    <div class="title-with-info">
-                        <h3>Add Praise of Mary</h3>
-                        <button id="ephrem-story-info-btn" class="info-toggle-btn" title="The Story of the Syrian Potter">
-                            <svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
-                        </button>
-                    </div>
-                    <div id="praise-of-mary-selector-container">
-                        <div style="display: block; margin-top: 0.5rem;">
-                            <label style="display: block; margin-bottom: 0.25rem; opacity: 0.5; cursor: not-allowed;"><input type="radio" name="praise-of-mary-day" value="Sunday" disabled> Sunday | ዘእሁድ</label>
-                            <label style="display: block; margin-bottom: 0.25rem; opacity: 0.5; cursor: not-allowed;"><input type="radio" name="praise-of-mary-day" value="Monday" disabled> Monday | ዘሰኑይ</label>
-                            <label style="display: block; margin-bottom: 0.25rem; opacity: 0.5; cursor: not-allowed;"><input type="radio" name="praise-of-mary-day" value="Tuesday" disabled> Tuesday | ዘሠሉስ</label>
-                            <label style="display: block; margin-bottom: 0.25rem; opacity: 0.5; cursor: not-allowed;"><input type="radio" name="praise-of-mary-day" value="Wednesday" disabled> Wednesday | ዘረቡዕ</label>
-                            <label style="display: block; margin-bottom: 0.25rem;"><input type="radio" name="praise-of-mary-day" value="Thursday"> Thursday | ዘሐሙስ</label>
-                            <label style="display: block; margin-bottom: 0.25rem; opacity: 0.5; cursor: not-allowed;"><input type="radio" name="praise-of-mary-day" value="Friday" disabled> Friday | ዘዓርብ</label>
-                            <label style="display: block; margin-bottom: 0.25rem; opacity: 0.5; cursor: not-allowed;"><input type="radio" name="praise-of-mary-day" value="Saturday" disabled> Saturday | ዘቀዳሚት</label>
-                            <label style="display: block; margin-bottom: 0.25rem; opacity: 0.5; cursor: not-allowed;"><input type="radio" name="praise-of-mary-day" value="All" disabled> All days | ኩሉ</label>
-                            <label style="display: block; margin-bottom: 0.25rem;"><input type="radio" name="praise-of-mary-day" value="None"> None | አልቦ</label>
+                    <div class="setting-group">
+                        <h3>Select Languages</h3>
+                        <div id="language-toggles">
+                            <!-- Languages will be injected here dynamically from LANGUAGE_REGISTRY -->
                         </div>
                     </div>
-                </div>
-                <div class="setting-group">
-                    <div class="title-with-info">
-                        <h3>Add Psalms</h3>
-                        <button id="eusebius-info-btn" class="info-toggle-btn" title="About the Psalms (Eusebius)">
-                            <svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
-                        </button>
+                    <div class="setting-group">
+                        <h4 class="settings-subtitle">Language Order</h4>
+                        <ul id="language-order-list">
+                        </ul>
+                        <label style="margin-top: 1rem; display: block;"><input type="checkbox"
+                                id="show-language-labels"> <span>Language Labels</span></label>
                     </div>
-                    <div id="psalm-selector-container"></div>
-                    <select id="psalm-combinations-select" class="settings-select">
-                        <option value="">Typical Psalm Combinations...</option>
-                        <option value="daily">Daily Prayer (12, 15, 22, 50, 90, 102, 135)</option>
-                    </select>
-
-                    <div id="psalm-summary" class="settings-summary"></div>
-                    <button id="clear-psalms-button" class="settings-button">Clear Psalms</button>
-                </div>
-
-                <div class="setting-group">
-                    <h3>Add Songs of the Prophets</h3>
-                    <div id="prophet-songs-selector-container"></div>
-                    <div id="prophet-songs-summary" class="settings-summary"></div>
-                    <button id="clear-prophet-songs-button" class="settings-button">Clear Songs</button>
-                </div>
-                <div class="setting-group">
-                    <h3>Add Scriptures (<i>Ze-Se'atat*</i>)</h3>
-                    <div id="seatat-lectionary-selector-container">
-                        <div class="lectionary-day-selector">
-                            <label style="display: block; margin-bottom: 0.25rem;"><input type="radio" name="seatat-lectionary-day" value="Sunday"> Sunday | ዘእሁድ</label>
-                            <label style="display: block; margin-bottom: 0.25rem;"><input type="radio" name="seatat-lectionary-day" value="Monday"> Monday | ዘሰኑይ</label>
-                            <label style="display: block; margin-bottom: 0.25rem;"><input type="radio" name="seatat-lectionary-day" value="Tuesday"> Tuesday | ዘሠሉስ</label>
-                            <label style="display: block; margin-bottom: 0.25rem;"><input type="radio" name="seatat-lectionary-day" value="Wednesday"> Wednesday | ዘረቡዕ</label>
-                            <label style="display: block; margin-bottom: 0.25rem;"><input type="radio" name="seatat-lectionary-day" value="Thursday"> Thursday | ዘሐሙስ</label>
-                            <label style="display: block; margin-bottom: 0.25rem;"><input type="radio" name="seatat-lectionary-day" value="Friday"> Friday | ዘዓርብ</label>
-                            <label style="display: block; margin-bottom: 0.25rem;"><input type="radio" name="seatat-lectionary-day" value="Saturday"> Saturday | ዘቀዳሚት</label>
-                            <label style="display: block; margin-bottom: 0.25rem;"><input type="radio" name="seatat-lectionary-day" value="None"> None | አልቦ</label>
+                    <div class="setting-group">
+                        <div class="title-with-info">
+                            <h3>Add Praise of Mary</h3>
+                            <button id="ephrem-story-info-btn" class="info-toggle-btn"
+                                title="The Story of the Syrian Potter">
+                                <svg viewBox="0 0 24 24" width="18" height="18">
+                                    <path
+                                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div id="praise-of-mary-selector-container">
+                            <div style="display: block; margin-top: 0.5rem;">
+                                <label
+                                    style="display: block; margin-bottom: 0.25rem; opacity: 0.5; cursor: not-allowed;"><input
+                                        type="radio" name="praise-of-mary-day" value="Sunday" disabled> Sunday |
+                                    ዘእሁድ</label>
+                                <label
+                                    style="display: block; margin-bottom: 0.25rem; opacity: 0.5; cursor: not-allowed;"><input
+                                        type="radio" name="praise-of-mary-day" value="Monday" disabled> Monday |
+                                    ዘሰኑይ</label>
+                                <label
+                                    style="display: block; margin-bottom: 0.25rem; opacity: 0.5; cursor: not-allowed;"><input
+                                        type="radio" name="praise-of-mary-day" value="Tuesday" disabled> Tuesday |
+                                    ዘሠሉስ</label>
+                                <label
+                                    style="display: block; margin-bottom: 0.25rem; opacity: 0.5; cursor: not-allowed;"><input
+                                        type="radio" name="praise-of-mary-day" value="Wednesday" disabled> Wednesday |
+                                    ዘረቡዕ</label>
+                                <label style="display: block; margin-bottom: 0.25rem;"><input type="radio"
+                                        name="praise-of-mary-day" value="Thursday"> Thursday | ዘሐሙስ</label>
+                                <label
+                                    style="display: block; margin-bottom: 0.25rem; opacity: 0.5; cursor: not-allowed;"><input
+                                        type="radio" name="praise-of-mary-day" value="Friday" disabled> Friday |
+                                    ዘዓርብ</label>
+                                <label
+                                    style="display: block; margin-bottom: 0.25rem; opacity: 0.5; cursor: not-allowed;"><input
+                                        type="radio" name="praise-of-mary-day" value="Saturday" disabled> Saturday |
+                                    ዘቀዳሚት</label>
+                                <label
+                                    style="display: block; margin-bottom: 0.25rem; opacity: 0.5; cursor: not-allowed;"><input
+                                        type="radio" name="praise-of-mary-day" value="All" disabled> All days |
+                                    ኩሉ</label>
+                                <label style="display: block; margin-bottom: 0.25rem;"><input type="radio"
+                                        name="praise-of-mary-day" value="None"> None | አልቦ</label>
+                            </div>
                         </div>
                     </div>
-                    <p class="settings-subtitle lectionary-disclaimer" style="font-size: 0.75rem; margin-top: 0.5rem; opacity: 0.8;">
-                        *According to the certified <i>Se'atat</i> liturgical tradition of <i>Debre Abay Abune Samuel Ze-Waldiba</i> Monastery, for the Prayer—or Liturgy—of the Hours (ጸሎተ ሰዓታት).
-                    </p>
-                </div>
-                <div id="kidase-gated-section" class="setting-group">
-                    <h3>Add Liturgy</h3>
-                    <label style="display: block; margin-bottom: 0.5rem;"><input type="checkbox" id="kidase-mode-toggle"> <span>Liturgy Mode</span></label>
-                    <div id="kidase-settings" style="display: none; margin-left: 1rem; border-left: 2px solid var(--accent-color); padding-left: 1rem;">
-                        <h4 class="settings-subtitle">PRE-LITURGY</h4>
-                        <label style="display: block; margin-bottom: 0.5rem;"><input type="checkbox" id="show-morning-psalm-gospel"> <span>Add Morning Psalm & Gospel</span></label>
-                        <div id="morning-psalm-gospel-settings" style="display: none; margin-bottom: 1rem; margin-left: 1rem; border-left: 1px solid var(--border-color); padding-left: 0.5rem;">
-                            <div class="kidase-lectionary-item" style="margin-top: 0.5rem;">
-                                <h5 class="settings-subtitle clickable-reading-title" data-reading-target="morningPsalm">Morning Psalm (NKJV) | ምስባክ ዘነግህ</h5>
-                                <div id="morning-psalm-ref-container" class="lectionary-picker-container"></div>
+                    <div class="setting-group">
+                        <div class="title-with-info">
+                            <h3>Add Psalms</h3>
+                            <button id="eusebius-info-btn" class="info-toggle-btn" title="About the Psalms (Eusebius)">
+                                <svg viewBox="0 0 24 24" width="18" height="18">
+                                    <path
+                                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div id="psalm-selector-container"></div>
+                        <select id="psalm-combinations-select" class="settings-select">
+                            <option value="">Typical Psalm Combinations...</option>
+                            <option value="daily">Daily Prayer (12, 15, 22, 50, 90, 102, 135)</option>
+                        </select>
+
+                        <div id="psalm-summary" class="settings-summary"></div>
+                        <button id="clear-psalms-button" class="settings-button">Clear Psalms</button>
+                    </div>
+
+                    <div class="setting-group">
+                        <h3>Add Songs of the Prophets</h3>
+                        <div id="prophet-songs-selector-container"></div>
+                        <div id="prophet-songs-summary" class="settings-summary"></div>
+                        <button id="clear-prophet-songs-button" class="settings-button">Clear Songs</button>
+                    </div>
+                    <div class="setting-group">
+                        <h3>Add Scriptures (<i>Ze-Se'atat*</i>)</h3>
+                        <div id="seatat-lectionary-selector-container">
+                            <div class="lectionary-day-selector">
+                                <label style="display: block; margin-bottom: 0.25rem;"><input type="radio"
+                                        name="seatat-lectionary-day" value="Sunday"> Sunday | ዘእሁድ</label>
+                                <label style="display: block; margin-bottom: 0.25rem;"><input type="radio"
+                                        name="seatat-lectionary-day" value="Monday"> Monday | ዘሰኑይ</label>
+                                <label style="display: block; margin-bottom: 0.25rem;"><input type="radio"
+                                        name="seatat-lectionary-day" value="Tuesday"> Tuesday | ዘሠሉስ</label>
+                                <label style="display: block; margin-bottom: 0.25rem;"><input type="radio"
+                                        name="seatat-lectionary-day" value="Wednesday"> Wednesday | ዘረቡዕ</label>
+                                <label style="display: block; margin-bottom: 0.25rem;"><input type="radio"
+                                        name="seatat-lectionary-day" value="Thursday"> Thursday | ዘሐሙስ</label>
+                                <label style="display: block; margin-bottom: 0.25rem;"><input type="radio"
+                                        name="seatat-lectionary-day" value="Friday"> Friday | ዘዓርብ</label>
+                                <label style="display: block; margin-bottom: 0.25rem;"><input type="radio"
+                                        name="seatat-lectionary-day" value="Saturday"> Saturday | ዘቀዳሚት</label>
+                                <label style="display: block; margin-bottom: 0.25rem;"><input type="radio"
+                                        name="seatat-lectionary-day" value="None"> None | አልቦ</label>
+                            </div>
+                        </div>
+                        <p class="settings-subtitle lectionary-disclaimer"
+                            style="font-size: 0.75rem; margin-top: 0.5rem; opacity: 0.8;">
+                            *According to the certified <i>Se'atat</i> liturgical tradition of <i>Debre Abay Abune
+                                Samuel Ze-Waldiba</i> Monastery, for the Prayer—or Liturgy—of the Hours (ጸሎተ ሰዓታት).
+                        </p>
+                    </div>
+                    <div id="kidase-gated-section" class="setting-group">
+                        <h3>Add Liturgy</h3>
+                        <label style="display: block; margin-bottom: 0.5rem;"><input type="checkbox"
+                                id="kidase-mode-toggle"> <span>Liturgy Mode</span></label>
+                        <div id="kidase-settings"
+                            style="display: none; margin-left: 1rem; border-left: 2px solid var(--accent-color); padding-left: 1rem;">
+                            <h4 class="settings-subtitle">PRE-LITURGY</h4>
+                            <label style="display: block; margin-bottom: 0.5rem;"><input type="checkbox"
+                                    id="show-morning-psalm-gospel"> <span>Add Morning Psalm & Gospel</span></label>
+                            <div id="morning-psalm-gospel-settings"
+                                style="display: none; margin-bottom: 1rem; margin-left: 1rem; border-left: 1px solid var(--border-color); padding-left: 0.5rem;">
+                                <div class="kidase-lectionary-item" style="margin-top: 0.5rem;">
+                                    <h5 class="settings-subtitle clickable-reading-title"
+                                        data-reading-target="morningPsalm">Morning Psalm (NKJV) | ምስባክ ዘነግህ</h5>
+                                    <div id="morning-psalm-ref-container" class="lectionary-picker-container"></div>
+                                </div>
+                                <hr class="lectionary-separator">
+                                <div class="kidase-lectionary-item" style="margin-top: 0.5rem;">
+                                    <h5 class="settings-subtitle clickable-reading-title"
+                                        data-reading-target="morningGospel">Morning Gospel | ወንጌል ዘነግህ</h5>
+                                    <div id="morning-gospel-ref-container" class="lectionary-picker-container"></div>
+                                </div>
+                            </div>
+
+                            <label style="display: block; margin-bottom: 0.5rem;"><input type="checkbox"
+                                    id="show-pre-liturgy-kidan"> <span>Add Prayer of Covenant</span></label>
+
+
+                            <h4 class="settings-subtitle"
+                                style="margin-top: 1rem; border-top: 1px solid var(--border-color); padding-top: 0.75rem;">
+                                SELECT LECTIONARY</h4>
+
+                            <div class="kidase-lectionary-item">
+                                <h5 class="settings-subtitle clickable-reading-title" data-reading-target="pauline">
+                                    Pauline Epistle | መልእክተ ጳውሎስ</h5>
+                                <div id="kidase-pauline-ref-container" class="lectionary-picker-container"></div>
                             </div>
                             <hr class="lectionary-separator">
-                            <div class="kidase-lectionary-item" style="margin-top: 0.5rem;">
-                                <h5 class="settings-subtitle clickable-reading-title" data-reading-target="morningGospel">Morning Gospel | ወንጌል ዘነግህ</h5>
-                                <div id="morning-gospel-ref-container" class="lectionary-picker-container"></div>
+                            <div class="kidase-lectionary-item">
+                                <h5 class="settings-subtitle clickable-reading-title" data-reading-target="universal">
+                                    Universal Epistle | መልእክተ ካቶሊካ</h5>
+                                <div id="kidase-universal-ref-container" class="lectionary-picker-container"></div>
+                            </div>
+                            <hr class="lectionary-separator">
+                            <div class="kidase-lectionary-item">
+                                <h5 class="settings-subtitle clickable-reading-title" data-reading-target="acts">Acts of
+                                    the Apostles | ግብረ ሐዋርያት</h5>
+                                <div id="kidase-acts-ref-container" class="lectionary-picker-container"></div>
+                            </div>
+                            <hr class="lectionary-separator">
+                            <div class="kidase-lectionary-item">
+                                <h5 class="settings-subtitle clickable-reading-title" data-reading-target="psalm">
+                                    Liturgy Psalm (NKJV) | ምስባክ ዘቅዳሴ</h5>
+                                <div id="kidase-psalm-ref-container" class="lectionary-picker-container"></div>
+                            </div>
+                            <hr class="lectionary-separator">
+                            <div class="kidase-lectionary-item">
+                                <h5 class="settings-subtitle clickable-reading-title" data-reading-target="gospel">
+                                    Liturgy Gospel | ወንጌል ዘቅዳሴ</h5>
+                                <div id="kidase-gospel-ref-container" class="lectionary-picker-container"></div>
+                            </div>
+
+                            <h4 class="settings-subtitle" style="margin-top: 0.75rem;">Eucharistic Prayer (Anaphora) |
+                                አኰቴተ ቍርባን</h4>
+                            <select id="anaphora-selector" class="settings-select">
+                                <option value="apostles">Apostles | ሐዋርያት</option>
+                                <option value="mary">Our Lady Mary | ማርያም</option>
+                            </select>
+
+                            <h4 class="settings-subtitle"
+                                style="margin-top: 1rem; border-top: 1px solid var(--border-color); padding-top: 0.75rem;">
+                                Quiet Prayers | ጸሎት በልኁሳስ</h4>
+                            <label style="display: block; margin-bottom: 0.5rem;"><input type="checkbox"
+                                    id="hide-quiet-prayers"> <span>Hide quiet prayers</span></label>
+
+                            <h4 class="settings-subtitle"
+                                style="margin-top: 1rem; border-top: 1px solid var(--border-color); padding-top: 0.75rem;">
+                                TIME OF ḲIDASÉ</h4>
+                            <select id="covenant-prayer-selector" class="settings-select">
+                                <option value="none">None | አልቦ</option>
+                                <option value="morning" selected>Morning | ዘነግህ</option>
+                                <option value="midnight">Midnight | ዘመንፈቀ ሌሊት</option>
+                                <option value="afternoon">Afternoon | ዘሠርክ</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="setting-group">
+                        <h3>Customize Names</h3>
+                        <p class="settings-subtitle" style="font-size: 0.8rem; margin-bottom: 1rem;">These names will be
+                            dynamically inserted into prayers which include parts to intercede and pray for others.</p>
+                        <h4 class="settings-subtitle">Servant's Name(s)</h4>
+                        <input type="text" id="servant-name-input" placeholder="e.g. John, Jane, etc.">
+                        <h4 class="settings-subtitle">Patriarch</h4>
+                        <input type="text" id="patriarch-name-input" placeholder="e.g. Abba Mathias I">
+                        <h4 class="settings-subtitle">Bishop</h4>
+                        <input type="text" id="bishop-name-input" placeholder="e.g. Abba Theophilus">
+                        <h4 class="settings-subtitle">Bishop(s) in Attendance</h4>
+                        <input type="text" id="attending-bishops-input" placeholder="e.g. Abba ...">
+                        <h4 class="settings-subtitle">Church Name</h4>
+                        <input type="text" id="church-name-input" placeholder="e.g. St. Michael EOTC">
+                        <h4 class="settings-subtitle">Country</h4>
+
+                        <input type="text" id="country-name-input" placeholder="e.g. Ethiopia, USA, etc.">
+                        <h4 class="settings-subtitle">Head of State</h4>
+                        <input type="text" id="head-of-state-input" placeholder="e.g. President, Emperor, etc.">
+                    </div>
+                    <div class="setting-group">
+                        <h3 class="settings-subtitle">Advanced Display Options</h3>
+                        <div id="display-options-toggles">
+                            <label><input type="checkbox" id="show-prayer-labels"> <span>Prayer Labels</span></label>
+                            <label><input type="checkbox" id="show-speaker-labels"> <span>Speaker Labels
+                                    (Beta)</span></label>
+                            <label><input type="checkbox" id="paragraph-mode"> <span>Paragraph Mode (Single Language
+                                    only)</span></label>
+                            <label id="dynamic-font-sizing-label" style="display: none;"><input type="checkbox"
+                                    id="dynamic-font-sizing"> <span>Dynamic Font Sizing (Slides Mode)</span></label>
+                            <label id="force-uniform-font-size-label" style="display: none;"><input type="checkbox"
+                                    id="force-uniform-font-size"> <span>Force Uniform Font Sizes (Slides
+                                    Mode)</span></label>
+                            <label><input type="checkbox" id="show-supplications-toggle"> <span>Supplications | ምሕላ (for
+                                    fasting times)</span></label>
+                            <label
+                                title="Automatically add the Song of the Prophet corresponding to the current time."><input
+                                    type="checkbox" id="auto-prophet-songs-toggle"> <span>Auto-selected Song of the
+                                    Prophets</span></label>
+                            <label><input type="checkbox" id="show-daily-prayer-toggle"> <span>Add Daily Prayer
+                                    Section</span></label>
+                            <label><input type="checkbox" id="show-geez-phonetic-chants"> <span>Ge'ez Phonetics for
+                                    Chants</span></label>
+                            <label title="Show original Greek/Coptic forms in parentheses for Ge'ez loanwords."><input
+                                    type="checkbox" id="show-loanword-origins"> <span>Show Loanword Origins
+                                    (Beta)</span></label>
+                        </div>
+                        <h4 class="settings-subtitle">Slide Transition</h4>
+                        <select id="slide-transition-select">
+                            <option value="slide">Slide</option>
+                            <option value="fade">Fade</option>
+                            <option value="none">None</option>
+                        </select>
+                    </div>
+
+                    <div class="setting-group" id="unofficial-languages-section" style="display: none;">
+                        <h3>Translations*</h3>
+                        <div id="unofficial-language-toggles">
+                            <!-- Dynamic -->
+                        </div>
+                        <p class="settings-subtitle"
+                            style="font-size: 0.7rem; margin-top: 1rem; opacity: 0.8; font-weight: normal; font-style: italic; line-height: 1.4;">
+                            *Includes unofficial translations (generated from English) via Google Translate APIs which
+                            require thorough review for theological accuracy, but is an important first step towards
+                            future officially approved translations of liturgical prayers.
+                        </p>
+                        <p class="settings-subtitle"
+                            style="font-size: 0.7rem; margin-top: 0.5rem; opacity: 0.8; font-weight: normal; font-style: italic; line-height: 1.4;">
+                            **Seeking scribes to help insert prayers/Scriptures in these languages.
+                        </p>
+                    </div>
+
+                    <div class="setting-group feedback-section">
+                        <button id="share-link-button" class="settings-button share-button">
+                            <svg viewBox="0 0 24 24" width="18" height="18"
+                                style="margin-right: 8px; vertical-align: middle;">
+                                <path fill="currentColor"
+                                    d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92c0-1.61-1.31-2.92-2.92-2.92z" />
+                            </svg>
+                            <span>Share Link</span>
+                        </button>
+                        <p class="share-hint"><i>Shares all your current settings and filters.</i></p>
+                        <hr class="settings-divider">
+                        <button id="feedback-button">Share Feedback</button>
+                        <div class="scribe-entry-point">
+                            <button id="scribe-login-link">Scribe Login</button>
+                        </div>
+                    </div>
+                    <div class="bible-verse-sidebar">
+                        <p>“Pray without ceasing”</p>
+                        <p class="ethiopic-label">“ወጸልዩ ወትረ”</p>
+                        <p class="citation">(1 Thessalonians 5:17 ፨ <span class="ethiopic-label">፩ ተሰሎንቄ ፭፡፲፯</span>)
+                        </p>
+                    </div>
+                    <div class="setting-group app-version-section">
+                        <div id="app-version-container">v0.8.2-beta</div>
+                    </div>
+                </div>
+            </aside>
+
+            <main class="main-content">
+                <img src="img/hareg-header-ornament1.svg" class="hareg-ornament hareg-header" alt="(Header Ornament)">
+                <section id="prayer-display">
+                </section>
+                <img src="img/hareg-footer-ornament1.svg" class="hareg-ornament hareg-footer" alt="(Footer Ornament)">
+            </main>
+        </div>
+        <div id="sidebar-backdrop"></div>
+        <div id="copy-notification" class="notification">Copied to clipboard!</div>
+
+        <div id="ephrem-story-modal" class="modal">
+            <div class="modal-content ephrem-story-content">
+                <span class="close-button" id="close-ephrem-modal">&times;</span>
+                <div class="story-body">
+                    <h2 class="story-inner-title">The Story of Saint Ephrem the Syrian Potter Who Composed the Praise
+                        Hymn Called “Weddase Maryam” Over Seven Days</h2>
+
+                    <section class="story-section intro-box">
+                        <h3>Introduction</h3>
+                        <p>A miracle [performed] by Our Lady Mary, Holy Twofold Virgin, the Mother of God, may her
+                            prayers and blessings be with her servant(s) <span class="story-servant-name">{{Servant's
+                                Names}}</span> in the morning and evening, forever and ever, amen.</p>
+                        <p>Listen, my fathers and brothers, so that we might tell you about the great miracle that Our
+                            Lady Mary, Holy Twofold Virgin, the Mother of God, performed. As God is my witness, the holy
+                            fathers told us about this miracle, and I’ve added nothing nor taken anything away from the
+                            story.</p>
+                        <p>The holy fathers told us about a God-fearing potter living in Syria who loved Our Lady Mary,
+                            Holy Twofold Virgin, the Mother of God. He praised her from the depths of his heart.</p>
+                    </section>
+
+                    <div class="story-tabs-nav">
+                        <button class="story-tab-btn active" data-day="monday">Mon</button>
+                        <button class="story-tab-btn" data-day="tuesday">Tue</button>
+                        <button class="story-tab-btn" data-day="wednesday">Wed</button>
+                        <button class="story-tab-btn" data-day="thursday">Thu</button>
+                        <button class="story-tab-btn" data-day="friday">Fri</button>
+                        <button class="story-tab-btn" data-day="saturday">Sat</button>
+                        <button class="story-tab-btn" data-day="sunday">Sun</button>
+                    </div>
+
+                    <div class="story-tabs-content">
+                        <div id="story-monday" class="story-day-pane active">
+                            <h4>Monday</h4>
+                            <p>Early Monday morning, Our Lady Mary, Holy Twofold Virgin, the Mother of God, appeared to
+                                that potter with great majesty, clothed in light and with angels encircling her.</p>
+                            <p>She said to the potter, “My dear beloved one, and my son’s beloved one, peace be upon
+                                you. I have come to you now so that you may praise me abundantly, which will be how I
+                                will be remembered forever.”</p>
+                            <p>The potter replied, “My dear Lady, I am weak and useless. Am I [even] able to praise you?
+                                Instead, bless me with your holy hand, dear Treasury of Blessing.”</p>
+                            <p>Mary said, “May the blessing of the Holy Spirit be with you, amen.”</p>
+                            <p>When she said this, the grace of the Holy Spirit filled him, and the potter opened his
+                                mouth and said:</p>
+                            <blockquote>
+                                “The Lord wanted to free Adam, whose heart was sad and despairing,<br>
+                                To return Adam to his previous seat. . . .”
+                            </blockquote>
+                            <p>[In this way,] he effortlessly composed the Praise of Mary for Monday, while the Holy
+                                Spirit spoke with the potter’s mouth.</p>
+                            <p>And once he had completed her praise, Our Lady Mary, Holy Twofold Virgin, the Mother of
+                                God, blessed him, thanked him, and gave him peace.</p>
+                            <p>Then Mary ascended to heaven while being loudly praised [by the angels].</p>
+                        </div>
+
+                        <div id="story-tuesday" class="story-day-pane">
+                            <h4>Tuesday</h4>
+                            <p>On Tuesday, Mary came to him again, saying to Ephrem, “Peace be upon you, my dear beloved
+                                one! Please praise me today, just as the Holy Spirit inspired you [to do before].”</p>
+                            <p>He replied, “Bless me [first].”</p>
+                            <p>So she blessed him, and he opened his mouth and said:</p>
+                            <blockquote>
+                                “The crown of our praise, the beginning of our rescue, the foundation of our purity,<br>
+                                [All] happened through Our Lady Mary, Holy Twofold Virgin, the Mother of God. . . .”
+                            </blockquote>
+                            <p>[He composed the Praise of Mary for Tuesday] through to the end.</p>
+                            <p>Then Mary rejoiced, blessed him, and gave him peace. Then she ascended to heaven while
+                                being loudly praised [by the angels].</p>
+                        </div>
+
+                        <div id="story-wednesday" class="story-day-pane">
+                            <h4>Wednesday</h4>
+                            <p>On Wednesday, Our Lady Mary, Holy Twofold Virgin, the Mother of God, came to Ephrem
+                                again.</p>
+                            <p>She said to him, “Peace be upon you, dear man of God,” and she blessed him.</p>
+                            <p>She continued, [saying,] “Praise me, just as you have been.”</p>
+                            <p>Ephrem opened his mouth and said:</p>
+                            <blockquote>
+                                “All the heavenly hosts declare that you are blessed,<br>
+                                Our Lady Mary, Holy Twofold Virgin, the Mother of God, the Second Heaven. . . .”
+                            </blockquote>
+                            <p>[Thus, he composed the Praise of Mary for Wednesday] through to the end.</p>
+                        </div>
+
+                        <div id="story-thursday" class="story-day-pane">
+                            <h4>Thursday</h4>
+                            <p>Likewise, on Thursday, she came to him, and he praised her, saying:</p>
+                            <blockquote>
+                                “Our Lady Mary, Holy Twofold Virgin, the Mother of God, resembles the burning bush that
+                                Moses saw in the wilderness.<br>
+                                Whose branches were not burned up. . . .”<a href="#note-1" class="sup-ref">1</a>
+                            </blockquote>
+                            <p>[Thus, he composed the Praise of Mary for Thursday] through to the end.</p>
+                        </div>
+
+                        <div id="story-friday" class="story-day-pane">
+                            <h4>Friday</h4>
+                            <p>Then, on Friday, Our Lady Mary, Holy Twofold Virgin, the Mother of God, appeared to him
+                                again, sitting upon a glowing throne.</p>
+                            <p>She said to him, “Peace be upon you, my dear beloved one. Please praise him with your
+                                sweet melody.”</p>
+                            <p>He replied:</p>
+                            <blockquote>
+                                “Blessed are you among women, and blessed is the fruit of your womb,<br>
+                                Dear Virgin, Mother of God. . . .”<a href="#note-2" class="sup-ref">2</a>
+                            </blockquote>
+                            <p>[Thus, he composed the Praise of Mary for Friday] through to the end.</p>
+                            <p>Then she blessed him, made him happy, and ascended into heaven while being loudly praised
+                                [by the angels].</p>
+                        </div>
+
+                        <div id="story-saturday" class="story-day-pane">
+                            <h4>Saturday</h4>
+                            <p>Likewise, on Saturday, Our Lady Mary, Holy Twofold Virgin, the Mother of God, came to
+                                Ephrem, saying, “May joy and peace be with you, my dear beloved one!”</p>
+                            <p>After he got up [from his bed], he bowed down to her.</p>
+                            <p>She said to him, “Please praise me today, just as the Holy Spirit inspired you [to do
+                                before].”</p>
+                            <p>He replied, “Bless me [first].”</p>
+                            <p>So she blessed him, and he opened his mouth and said:</p>
+                            <blockquote>
+                                “You are considered pure and luminous and holy by everyone,<br>
+                                You who cradled the Lord with your arms.<br>
+                                All of creation rejoices with you, shouting and declaring,<br>
+                                ‘Rejoice, Full of Grace! Rejoice, for you have found favor! Rejoice, for God is with
+                                you!’”
+                            </blockquote>
+                            <p>[Thus, he composed the Praise of Mary for Saturday through to the end.]</p>
+                            <p>When he had finished praising her, she thanked him and ascended into heaven while being
+                                loudly praised [by the angels].</p>
+                        </div>
+
+                        <div id="story-sunday" class="story-day-pane">
+                            <h4>Sunday</h4>
+                            <p>Early Sunday morning, he drank [a little too much] wine and fell asleep.</p>
+                            <p>In the middle of Sunday night, Our Lady Mary, Holy Twofold Virgin, the Mother of God,
+                                showed up, saying to him, “Why didn’t you praise me today?! This is the most important
+                                day of the week. Today’s praise ought to be the best of all of them!”</p>
+                            <p>Ephrem said to her, “My dear Lady, today is Sunday, the day of rest. Christians do not
+                                work on Sundays.”</p>
+                            <p>Mary replied, “Don’t worry [about what you will say. Just] get out of bed, stand at your
+                                workplace, and say whatever the Holy Spirit inspires you to say.”</p>
+                            <p>After he got up, she blessed him, and then he kissed the cross in her hand.<a
+                                    href="#note-3" class="sup-ref">3</a></p>
+                            <p>He stood at his workplace, where he made pottery, and opened his mouth, saying:</p>
+                            <blockquote>
+                                “You are called love, dear blessed one among women!<br>
+                                You are the second chamber, called the Holy of Holies, housing the tablet of the
+                                covenant. . . .”
+                            </blockquote>
+                            <p>Then he began to praise her [by singing the lyrics] with the three melodies[, which are
+                                called Ge’ez, Ezel, Araray].<a href="#note-4" class="sup-ref">4</a></p>
+                            <p>He continued until it was morning.</p>
+                            <p>At daybreak, Mary blessed Ephrem, saying, “My dear beloved one, may joy be with you, just
+                                as you have brought me joy. Just as you have praised me on earth, I will delight you in
+                                the kingdom of heaven. Just as you have toiled on earth to commemorate me with praise, I
+                                will give you a reward in the kingdom of heaven for your toil, which is endless joy.”
+                            </p>
+                            <p>It happened just as she had promised him.</p>
+                        </div>
+                    </div>
+
+                    <section class="story-section homily-box">
+                        <h3>Conclusion</h3>
+                        <p>So now, my beloved brothers, look at the extent of the love of God, and the love of Our Lady
+                            Mary, Holy Twofold Virgin, the Mother of God, for humanity. She will come down from heaven
+                            for a few good works, and she will bless those who love her and commemorate her.</p>
+                        <p>Now, let’s love Our Lady Mary, the Holy Virgin, and praise her as much as we can! And let’s
+                            show mercy to the poor for the sake of Our Lady Mary, the Holy Virgin. Let’s do good works
+                            and love one another. Let’s pray to Our Lord and Savior Jesus Christ and Our Lady Mary, the
+                            Holy Virgin.</p>
+                        <p class="story-blessing">May the prayer and blessings of Our Lady Mary, Holy Twofold Virgin,
+                            the Mother of God, be with her servant(s) <span class="story-servant-name">{{Servant's
+                                Names}}</span> who loves her without limits, forever and ever, amen.</p>
+                    </section>
+
+                    <section class="story-section technical-context-collapsible">
+                        <button id="toggle-technical-context" class="technical-toggle-btn">
+                            <span>Technical & Historic Context</span>
+                            <svg class="toggle-icon" viewBox="0 0 24 24" width="20" height="20">
+                                <path d="M7 10l5 5 5-5z" />
+                            </svg>
+                        </button>
+                        <div id="technical-context-content" class="technical-content-pane collapsed">
+                            <div class="summary-sub-box">
+                                <strong>Summary:</strong>
+                                <p>In Syria there was a potter named Ephrem who feared God and loved Mary. Every evening
+                                    for six days, Mary visited and blessed him. After each blessing, inspired with the
+                                    Holy Spirit, Ephrem recited hymns of praise in her honor. On the seventh day, he
+                                    fell asleep after drinking wine. Mary visited him at midnight and demanded to know
+                                    why he had not composed anything for her, on the very day when he should have the
+                                    most praise. Ephrem replied that it was the Sabbath, during which the faithful are
+                                    commanded not to work. Mary told him to go to his pottery workshop and to say
+                                    whatever words came to him there. Ephrem obeyed Mary, and once in his workshop he
+                                    praised her through the night. Pleased, Mary promised him never-ending joy in
+                                    heaven.</p>
+                            </div>
+                            <div class="tech-grid">
+                                <div class="tech-item">
+                                    <strong>Amharic Title:</strong>
+                                    <span>ውዳሴ ማርያምን በሰባት ቀናት የደረሰው ሶርያዊው ሸክላ ሠሪ ኤፍሬም</span>
+                                </div>
+                                <div class="tech-item">
+                                    <strong>Manuscript Info:</strong>
+                                    <span>This story, with the short title "The Syrian Potter's Poems," is very old: the
+                                        earliest PEMM manuscript in which this story appears is from around 1451. (ይህ
+                                        ታሪክ፣ በፐም የተሰጠው አጭር ርእስ, ከዐጭር ርእስ ጋር "የሸክላ ሠሪው ኤፍሬም መጽሐፍ ", ነው። በጣም የቆየ : ታሪኩ
+                                        ለመጀመሪያ ጊዜ የተገኘበት ብራና የተጻፈበት ጊዜ 1451።)</span>
+                                </div>
+                                <div class="tech-item">
+                                    <strong>Liturgical Reading:</strong>
+                                    <span>Read in Church on the 15th day of Hamle.</span>
+                                </div>
+                                <div class="tech-item full-width">
+                                    <strong>Ge’ez Incipit:</strong>
+                                    <span class="geez-text">ስምዑ፡ አበውየ፡ ወአኃውየ፡ ከመ፡ ንንግርክሙ፡ ተአምረ፡ ዐባየ፡ ዘኮነ፡ ለእግዝእትነ፡ ቅድስት፡
+                                        ድንግል፡ ማርያም፡ ዘነገሩ፡ አበው፡ ቅዱሳን፡ ሰማዕትየ፡ እግዚአብሔር፡ ከመ፡ ኢይዌስክ፡ ወኢያነትግ። ይቤሉነ፡ ነበረ፡ በምድረ፡
+                                        ሶርያ፡ አሐዱ፡ ብእሲ፡ ለባሓዊ፡ ፈራሄ፡ እግዚአብሔር።</span>
+                                </div>
+                            </div>
+                            <div class="notes-sub-section"
+                                style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px dashed var(--border-color);">
+                                <strong>Notes:</strong>
+                                <ol class="story-notes" style="margin-top: 0.5rem;">
+                                    <li id="note-1">An allusion to Exodus 3.</li>
+                                    <li id="note-2">An allusion to Luke 1:42.</li>
+                                    <li id="note-3">Her behavior toward Ephrem is that of a priest, blessing him, and
+                                        offering her cross to be kissed.</li>
+                                    <li id="note-4">These three melodies are used for the liturgy: ግዕዝ (Ge’ez), ዕዝል
+                                        (Ezel), and ዓራራይ (Araray).</li>
+                                </ol>
                             </div>
                         </div>
+                    </section>
 
-                        <label style="display: block; margin-bottom: 0.5rem;"><input type="checkbox" id="show-pre-liturgy-kidan"> <span>Add Prayer of Covenant</span></label>
+                    <footer class="story-citation">
+                        <p>Source: <a href="https://pemm.princeton.edu/stories/14" target="_blank">PEMM Princeton: ID
+                                14: The Syrian Potter's Poems</a></p>
+                        <p class="citation-detail">Translated by Jeremy Brown & Dawit Muluneh with Wendy Laura Belcher
+                            (2024).</p>
+                    </footer>
+                </div>
+            </div>
+        </div>
 
+        <div id="help-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-button" id="close-help-modal">&times;</span>
+                <h2>The Mount of Mercy | ደብረ ምሕረት</h2>
+                <div class="bible-verse-about">
+                    <p>“I praise you seven times a day” ፨ <span class="ethiopic-label">“ስብዐ ለዕለትየ እሴብሐከ”</span></p>
+                    <p class="citation">Psalm 118:164 ፨ <span class="ethiopic-label">መዝሙር ዘዳዊት ፻፲፰፡፻፷፬</span></p>
+                </div>
+                <p>This web app is designed to aid Orthodox Christians and catachumens towards a life of unceasing
+                    prayer. It provides access to essential daily prayers in multiple languages, including Amharic,
+                    English, Ge'ez, Spanish, and Tigrinya with phonetic transliterations to assist in learning and
+                    pronunciation.</p>
+                <h3>📱 Install App to Your Phone</h3>
+                <p>For easy access and offline use, you can install this web app to your mobile home screen:</p>
+                <ul>
+                    <li><strong>iOS (Safari):</strong> Tap the "Share" icon and then select "Add to Home Screen".</li>
+                    <li><strong>Android (Chrome):</strong> Tap the three-dots menu and select "Install App" or "Add to
+                        Home screen".</li>
+                </ul>
+                <h3>💻 Install App to Your Computer</h3>
+                <p>For easy access and offline use, you can also install this web app on your desktop computer:</p>
+                <ul>
+                    <li><strong>Chrome:</strong>
+                        <ul>
+                            <li>Look for the "Install" icon (a computer with a down arrow) in the address bar on the
+                                right side, and click "Install".</li>
+                            <li>Alternatively, tap the three-dots menu in the top right, then click "Cast, Save, &
+                                Share" then "Install".</li>
+                        </ul>
+                    </li>
+                    <li><strong>Safari (macOS):</strong> Go to "File" in the menu bar and select "Add to Dock".</li>
+                </ul>
+                <h3>📖 Translations</h3>
+                <p>The English translations of the daily prayers in this app are a work-in-progress and not yet approved
+                    by clergy. This English translation is intended to be a more accurate improvement upon the few
+                    existing English resources. Several sources are actively being consulted, including:</p>
+                <ul>
+                    <li><a href="https://a.co/d/h5TO3sz" target="_blank" rel="noopener noreferrer">ውዳሴ ማርያም Widasie
+                            Maryam | The Praises of St. Mary: In Ge’ez & English, 3rd Edition</a> translated by Living
+                        Tewahdo Ministry in March 2024</li>
+                    <li>Daily Prayers of the Ethiopian Orthodox <i>Täwaḥədo</i> Church, Revised Pocket Edition
+                        translated by Archdeacon Täsfa Mika’el Williams in May 2020</li>
+                    <li><a href="https://a.co/d/3aUZYDE" target="_blank" rel="noopener noreferrer">Book of Prayer - መጽሐፈ
+                            ጸሎት: Theotokia (Weddase Mariam) / Selected Psalms, Litanies and Prayers from the Ethiopic
+                            Book of the Hours, Missal, and other Liturgical Sources</i></a> translated by Father Mebratu
+                        Kiros (PhD) in 2022</li>
+                    <li><a href="https://www.ethiopianorthodox.org/amharic/yeqolotbet/lessons/daily.pdf" target="_blank"
+                            rel="noopener noreferrer">የየዘወትር ጸሎት (The Daily Prayer)</a> published by
+                        ethiopianorthodox.org</li>
+                    <li>መሠረተ ግእዝ የግእዝ ንባብ መማሪያ መጽሐፍ ክፍል ፩ በሦስት ቋንቋዎች (The Foundation of Gə'əz: Gə'əz Reading Textbook,
+                        1st Edition - In 3 languages) translated by ሊቀ ጠበብት ተክሌ ሲራክ (Liqe Tebebt Tekle Sirak) in 2023
+                    </li>
+                    <li><a href="https://docs.google.com/document/d/1s_OJBJBn89wM9LeXhpUFQJbEA3P-IWUA/edit?usp=sharing&ouid=105972657992870961553&rtpof=true&sd=true"
+                            target="_blank" rel="noopener noreferrer">Libro de Oraciones (Book of Prayers)</a> published
+                        by the Puerto Rico Debre Besrat Kidus Gebriel Iglesia Ortodoxa Tewahedo de Etiopía in 2025</li>
+                </ul>
+                <h3>⚠️ This is a Beta Version / Work-in-Progress!</h3>
+                <p>This web app is currently in a beta stage and is very much a work-in-progress. We are continuously
+                    working to improve this spiritual service and appreciate your patience with any technical issues
+                    that may occur. Your feedback is invaluable to us! Please use the "Share Feedback" button within the
+                    app to let us know your thoughts, suggestions, or any bugs you encounter.</p>
+                <textarea id="feedback-textarea" placeholder="Enter your feedback here..."></textarea>
+                <button id="send-feedback-button">Send</button>
+                <p class="disclaimer">This service is made with love for the glory of God and is managed by servants of
+                    the Oakland Debre Meheret Saint Michael Ethiopian Orthodox Tewahedo Church (EOTC) under the
+                    spiritual guidance of Father Nebiyou Elias and under the auspices of His Grace Archbishop Theophilus
+                    in the EOTC Diocese of Northern California, Nevada, and Arizona.</p>
+            </div>
+        </div>
+        <div id="feedback-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-button" id="close-feedback-modal">&times;</span>
+                <h2>Share Your Feedback</h2>
+                <p>Thank you for your patience if a technical issue occurs. We are continuously working to improve this
+                    service, so please don't hesitate to submit your feedback below.</p>
+                <textarea id="feedback-textarea" placeholder="Enter your feedback here..."></textarea>
+                <button id="send-feedback-button">Send</button>
+            </div>
+        </div>
 
-                        <h4 class="settings-subtitle" style="margin-top: 1rem; border-top: 1px solid var(--border-color); padding-top: 0.75rem;">SELECT LECTIONARY</h4>
-                        
-                        <div class="kidase-lectionary-item">
-                            <h5 class="settings-subtitle clickable-reading-title" data-reading-target="pauline">Pauline Epistle | መልእክተ ጳውሎስ</h5>
-                            <div id="kidase-pauline-ref-container" class="lectionary-picker-container"></div>
-                        </div>
-                        <hr class="lectionary-separator">
-                        <div class="kidase-lectionary-item">
-                            <h5 class="settings-subtitle clickable-reading-title" data-reading-target="universal">Universal Epistle | መልእክተ ካቶሊካ</h5>
-                            <div id="kidase-universal-ref-container" class="lectionary-picker-container"></div>
-                        </div>
-                        <hr class="lectionary-separator">
-                        <div class="kidase-lectionary-item">
-                            <h5 class="settings-subtitle clickable-reading-title" data-reading-target="acts">Acts of the Apostles | ግብረ ሐዋርያት</h5>
-                            <div id="kidase-acts-ref-container" class="lectionary-picker-container"></div>
-                        </div>
-                        <hr class="lectionary-separator">
-                        <div class="kidase-lectionary-item">
-                            <h5 class="settings-subtitle clickable-reading-title" data-reading-target="psalm">Liturgy Psalm (NKJV) | ምስባክ ዘቅዳሴ</h5>
-                            <div id="kidase-psalm-ref-container" class="lectionary-picker-container"></div>
-                        </div>
-                        <hr class="lectionary-separator">
-                        <div class="kidase-lectionary-item">
-                            <h5 class="settings-subtitle clickable-reading-title" data-reading-target="gospel">Liturgy Gospel | ወንጌል ዘቅዳሴ</h5>
-                            <div id="kidase-gospel-ref-container" class="lectionary-picker-container"></div>
-                        </div>
+        <!-- Scribe Login Modal -->
+        <div id="scribe-login-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-button" id="close-scribe-login-modal">&times;</span>
+                <div style="text-align: center; margin-bottom: 1rem;">
+                    <img src="img/dimyanos_cropped.jpg" alt="Dimyanos the Scribe"
+                        style="width: 180px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.3);">
+                </div>
+                <h2>Scribe's Entrance</h2>
+                <p>Enter your credentials to enter the Scribe's Chamber.</p>
+                <form class="scribe-login-form" id="scribe-login-form">
+                    <input type="email" id="scribe-email" placeholder="Email" required>
+                    <input type="password" id="scribe-password" placeholder="Password" required>
+                    <button type="submit" id="scribe-login-btn">Login</button>
+                    <p id="scribe-login-error" class="error-text hidden"></p>
+                </form>
+            </div>
+        </div>
 
-                        <h4 class="settings-subtitle" style="margin-top: 0.75rem;">Eucharistic Prayer (Anaphora) | አኰቴተ ቍርባን</h4>
-                        <select id="anaphora-selector" class="settings-select">
-                            <option value="apostles">Apostles | ሐዋርያት</option>
-                            <option value="mary">Our Lady Mary | ማርያም</option>
-                        </select>
+        <!-- Scribe's Chamber (Editor Modal) -->
+        <div id="scribe-editor-modal" class="modal">
+            <div class="modal-content scribe-editor-content">
+                <span class="close-button" id="close-scribe-editor-modal">&times;</span>
+                <h2>Scribe's Chamber</h2>
+                <p id="scribe-editor-ref" style="font-size: 0.8rem; opacity: 0.7; margin-bottom: 1rem;"></p>
 
-                        <h4 class="settings-subtitle" style="margin-top: 1rem; border-top: 1px solid var(--border-color); padding-top: 0.75rem;">Quiet Prayers | ጸሎት በልኁሳስ</h4>
-                        <label style="display: block; margin-bottom: 0.5rem;"><input type="checkbox" id="hide-quiet-prayers"> <span>Hide quiet prayers</span></label>
-
-                        <h4 class="settings-subtitle" style="margin-top: 1rem; border-top: 1px solid var(--border-color); padding-top: 0.75rem;">TIME OF ḲIDASÉ</h4>
-                        <select id="covenant-prayer-selector" class="settings-select">
-                            <option value="none">None | አልቦ</option>
-                            <option value="morning" selected>Morning | ዘነግህ</option>
-                            <option value="midnight">Midnight | ዘመንፈቀ ሌሊት</option>
-                            <option value="afternoon">Afternoon | ዘሠርክ</option>
-                        </select>
+                <div id="scribe-editor-metadata"
+                    style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border-color);">
+                    <div class="editor-field-group">
+                        <label>Chapter</label>
+                        <input type="text" id="edit-chapter"
+                            style="padding: 0.5rem; border: 1px solid var(--border-color); background: var(--background-color); color: var(--text-color); border-radius: 4px;">
+                    </div>
+                    <div class="editor-field-group">
+                        <label>Stanza Index</label>
+                        <input type="text" id="edit-stanza"
+                            style="padding: 0.5rem; border: 1px solid var(--border-color); background: var(--background-color); color: var(--text-color); border-radius: 4px;">
+                    </div>
+                    <div class="editor-field-group">
+                        <label>Reference</label>
+                        <input type="text" id="edit-reference"
+                            style="padding: 0.5rem; border: 1px solid var(--border-color); background: var(--background-color); color: var(--text-color); border-radius: 4px;">
+                    </div>
+                    <div class="editor-field-group">
+                        <label>Instruction</label>
+                        <input type="text" id="edit-instruction"
+                            style="padding: 0.5rem; border: 1px solid var(--border-color); background: var(--background-color); color: var(--text-color); border-radius: 4px;">
                     </div>
                 </div>
-                <div class="setting-group">
-                    <h3>Customize Names</h3>
-                    <p class="settings-subtitle" style="font-size: 0.8rem; margin-bottom: 1rem;">These names will be dynamically inserted into prayers which include parts to intercede and pray for others.</p>
-                    <h4 class="settings-subtitle">Servant's Name(s)</h4>
-                    <input type="text" id="servant-name-input" placeholder="e.g. John, Jane, etc.">
-                    <h4 class="settings-subtitle">Patriarch</h4>
-                    <input type="text" id="patriarch-name-input" placeholder="e.g. Abba Mathias I">
-                    <h4 class="settings-subtitle">Bishop</h4>
-                    <input type="text" id="bishop-name-input" placeholder="e.g. Abba Theophilus">
-                    <h4 class="settings-subtitle">Bishop(s) in Attendance</h4>
-                    <input type="text" id="attending-bishops-input" placeholder="e.g. Abba ...">
-                    <h4 class="settings-subtitle">Church Name</h4>
-                    <input type="text" id="church-name-input" placeholder="e.g. St. Michael EOTC">
-                    <h4 class="settings-subtitle">Country</h4>
 
-                    <input type="text" id="country-name-input" placeholder="e.g. Ethiopia, USA, etc.">
-                    <h4 class="settings-subtitle">Head of State</h4>
-                    <input type="text" id="head-of-state-input" placeholder="e.g. President, Emperor, etc.">
+                <div id="scribe-editor-fields">
+                    <!-- Translation fields injected here -->
                 </div>
-                <div class="setting-group">
-                    <h3 class="settings-subtitle">Advanced Display Options</h3>
-                    <div id="display-options-toggles">
-                        <label><input type="checkbox" id="show-prayer-labels"> <span>Prayer Labels</span></label>
-                        <label><input type="checkbox" id="show-speaker-labels"> <span>Speaker Labels (Beta)</span></label>
-                        <label><input type="checkbox" id="paragraph-mode"> <span>Paragraph Mode (Single Language only)</span></label>
-                        <label id="dynamic-font-sizing-label" style="display: none;"><input type="checkbox" id="dynamic-font-sizing"> <span>Dynamic Font Sizing (Slides Mode)</span></label>
-                        <label id="force-uniform-font-size-label" style="display: none;"><input type="checkbox" id="force-uniform-font-size"> <span>Force Uniform Font Sizes (Slides Mode)</span></label>
-                        <label><input type="checkbox" id="show-supplications-toggle"> <span>Supplications | ምሕላ (for fasting times)</span></label>
-                        <label title="Automatically add the Song of the Prophet corresponding to the current time."><input type="checkbox" id="auto-prophet-songs-toggle"> <span>Auto-selected Song of the Prophets</span></label>
-                        <label><input type="checkbox" id="show-daily-prayer-toggle"> <span>Add Daily Prayer Section</span></label>
-                        <label><input type="checkbox" id="show-geez-phonetic-chants"> <span>Ge'ez Phonetics for Chants</span></label>
-                    </div>
-                    <h4 class="settings-subtitle">Slide Transition</h4>
-                    <select id="slide-transition-select">
-                        <option value="slide">Slide</option>
-                        <option value="fade">Fade</option>
-                        <option value="none">None</option>
+                <div class="scribe-editor-actions">
+                    <select id="scribe-status-select">
+                        <option value="published">Published</option>
+                        <option value="draft">Draft</option>
                     </select>
-                </div>
-
-                <div class="setting-group" id="unofficial-languages-section" style="display: none;">
-                    <h3>Translations*</h3>
-                    <div id="unofficial-language-toggles">
-                        <!-- Dynamic -->
-                    </div>
-                    <p class="settings-subtitle" style="font-size: 0.7rem; margin-top: 1rem; opacity: 0.8; font-weight: normal; font-style: italic; line-height: 1.4;">
-                        *Includes unofficial translations (generated from English) via Google Translate APIs which require thorough review for theological accuracy, but is an important first step towards future officially approved translations of liturgical prayers.
-                    </p>
-                    <p class="settings-subtitle" style="font-size: 0.7rem; margin-top: 0.5rem; opacity: 0.8; font-weight: normal; font-style: italic; line-height: 1.4;">
-                        **Seeking scribes to help insert prayers/Scriptures in these languages.
-                    </p>
-                </div>
-
-                <div class="setting-group feedback-section">
-                    <button id="share-link-button" class="settings-button share-button">
-                        <svg viewBox="0 0 24 24" width="18" height="18" style="margin-right: 8px; vertical-align: middle;"><path fill="currentColor" d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92c0-1.61-1.31-2.92-2.92-2.92z"/></svg>
-                        <span>Share Link</span>
-                    </button>
-                    <p class="share-hint"><i>Shares all your current settings and filters.</i></p>
-                    <hr class="settings-divider">
-                    <button id="feedback-button">Share Feedback</button>
-                    <div class="scribe-entry-point">
-                        <button id="scribe-login-link">Scribe Login</button>
-                    </div>
-                </div>
-                <div class="bible-verse-sidebar">
-                    <p>“Pray without ceasing”</p>
-                    <p class="ethiopic-label">“ወጸልዩ ወትረ”</p>
-                    <p class="citation">(1 Thessalonians 5:17 ፨ <span class="ethiopic-label">፩ ተሰሎንቄ ፭፡፲፯</span>)</p>
-                </div>
-                <div class="setting-group app-version-section">
-                    <div id="app-version-container">v0.8.2-beta</div>
+                    <button id="scribe-save-btn">Save Changes</button>
                 </div>
             </div>
-        </aside>
+        </div>
 
-        <main class="main-content">
-            <img src="img/hareg-header-ornament1.svg" class="hareg-ornament hareg-header" alt="(Header Ornament)">
-            <section id="prayer-display">
-            </section>
-            <img src="img/hareg-footer-ornament1.svg" class="hareg-ornament hareg-footer" alt="(Footer Ornament)">
-        </main>
-    </div>
-    <div id="sidebar-backdrop"></div>
-    <div id="copy-notification" class="notification">Copied to clipboard!</div>
-
-    <div id="ephrem-story-modal" class="modal">
-        <div class="modal-content ephrem-story-content">
-            <span class="close-button" id="close-ephrem-modal">&times;</span>
-            <div class="story-body">
-                <h2 class="story-inner-title">The Story of Saint Ephrem the Syrian Potter Who Composed the Praise Hymn Called “Weddase Maryam” Over Seven Days</h2>
-
-                <section class="story-section intro-box">
-                    <h3>Introduction</h3>
-                    <p>A miracle [performed] by Our Lady Mary, Holy Twofold Virgin, the Mother of God, may her prayers and blessings be with her servant(s) <span class="story-servant-name">{{Servant's Names}}</span> in the morning and evening, forever and ever, amen.</p>
-                    <p>Listen, my fathers and brothers, so that we might tell you about the great miracle that Our Lady Mary, Holy Twofold Virgin, the Mother of God, performed. As God is my witness, the holy fathers told us about this miracle, and I’ve added nothing nor taken anything away from the story.</p>
-                    <p>The holy fathers told us about a God-fearing potter living in Syria who loved Our Lady Mary, Holy Twofold Virgin, the Mother of God. He praised her from the depths of his heart.</p>
-                </section>
-
-                <div class="story-tabs-nav">
-                    <button class="story-tab-btn active" data-day="monday">Mon</button>
-                    <button class="story-tab-btn" data-day="tuesday">Tue</button>
-                    <button class="story-tab-btn" data-day="wednesday">Wed</button>
-                    <button class="story-tab-btn" data-day="thursday">Thu</button>
-                    <button class="story-tab-btn" data-day="friday">Fri</button>
-                    <button class="story-tab-btn" data-day="saturday">Sat</button>
-                    <button class="story-tab-btn" data-day="sunday">Sun</button>
-                </div>
-
-                <div class="story-tabs-content">
-                    <div id="story-monday" class="story-day-pane active">
-                        <h4>Monday</h4>
-                        <p>Early Monday morning, Our Lady Mary, Holy Twofold Virgin, the Mother of God, appeared to that potter with great majesty, clothed in light and with angels encircling her.</p>
-                        <p>She said to the potter, “My dear beloved one, and my son’s beloved one, peace be upon you. I have come to you now so that you may praise me abundantly, which will be how I will be remembered forever.”</p>
-                        <p>The potter replied, “My dear Lady, I am weak and useless. Am I [even] able to praise you? Instead, bless me with your holy hand, dear Treasury of Blessing.”</p>
-                        <p>Mary said, “May the blessing of the Holy Spirit be with you, amen.”</p>
-                        <p>When she said this, the grace of the Holy Spirit filled him, and the potter opened his mouth and said:</p>
-                        <blockquote>
-                            “The Lord wanted to free Adam, whose heart was sad and despairing,<br>
-                            To return Adam to his previous seat. . . .”
-                        </blockquote>
-                        <p>[In this way,] he effortlessly composed the Praise of Mary for Monday, while the Holy Spirit spoke with the potter’s mouth.</p>
-                        <p>And once he had completed her praise, Our Lady Mary, Holy Twofold Virgin, the Mother of God, blessed him, thanked him, and gave him peace.</p>
-                        <p>Then Mary ascended to heaven while being loudly praised [by the angels].</p>
+        <!-- Icon Metadata Modal -->
+        <div id="icon-metadata-modal" class="modal">
+            <div class="modal-content icon-metadata-content">
+                <span class="close-button" id="close-icon-metadata-modal">&times;</span>
+                <div id="icon-metadata-body">
+                    <div class="icon-header">
+                        <h2 id="icon-title-geez" class="ethiopic-label"></h2>
+                        <p id="icon-title-translit" style="font-style: italic; opacity: 0.8;"></p>
+                        <h3 id="icon-title-english"></h3>
                     </div>
-
-                    <div id="story-tuesday" class="story-day-pane">
-                        <h4>Tuesday</h4>
-                        <p>On Tuesday, Mary came to him again, saying to Ephrem, “Peace be upon you, my dear beloved one! Please praise me today, just as the Holy Spirit inspired you [to do before].”</p>
-                        <p>He replied, “Bless me [first].”</p>
-                        <p>So she blessed him, and he opened his mouth and said:</p>
-                        <blockquote>
-                            “The crown of our praise, the beginning of our rescue, the foundation of our purity,<br>
-                            [All] happened through Our Lady Mary, Holy Twofold Virgin, the Mother of God. . . .”
-                        </blockquote>
-                        <p>[He composed the Praise of Mary for Tuesday] through to the end.</p>
-                        <p>Then Mary rejoiced, blessed him, and gave him peace. Then she ascended to heaven while being loudly praised [by the angels].</p>
+                    <div id="icon-original-images-container" class="icon-images-container">
+                        <!-- Images will be inserted here dynamically -->
                     </div>
-
-                    <div id="story-wednesday" class="story-day-pane">
-                        <h4>Wednesday</h4>
-                        <p>On Wednesday, Our Lady Mary, Holy Twofold Virgin, the Mother of God, came to Ephrem again.</p>
-                        <p>She said to him, “Peace be upon you, dear man of God,” and she blessed him.</p>
-                        <p>She continued, [saying,] “Praise me, just as you have been.”</p>
-                        <p>Ephrem opened his mouth and said:</p>
-                        <blockquote>
-                            “All the heavenly hosts declare that you are blessed,<br>
-                            Our Lady Mary, Holy Twofold Virgin, the Mother of God, the Second Heaven. . . .”
-                        </blockquote>
-                        <p>[Thus, he composed the Praise of Mary for Wednesday] through to the end.</p>
+                    <div id="icon-description-container" class="icon-description-section">
+                        <p id="icon-desc-english"></p>
+                        <p id="icon-desc-amharic" class="ethiopic-label"></p>
                     </div>
+                    <div id="icon-bible-refs" class="icon-metadata-detail"></div>
+                    <div id="icon-source-citation" class="icon-source-section"></div>
 
-                    <div id="story-thursday" class="story-day-pane">
-                        <h4>Thursday</h4>
-                        <p>Likewise, on Thursday, she came to him, and he praised her, saying:</p>
-                        <blockquote>
-                            “Our Lady Mary, Holy Twofold Virgin, the Mother of God, resembles the burning bush that Moses saw in the wilderness.<br>
-                            Whose branches were not burned up. . . .”<a href="#note-1" class="sup-ref">1</a>
-                        </blockquote>
-                        <p>[Thus, he composed the Praise of Mary for Thursday] through to the end.</p>
-                    </div>
-
-                    <div id="story-friday" class="story-day-pane">
-                        <h4>Friday</h4>
-                        <p>Then, on Friday, Our Lady Mary, Holy Twofold Virgin, the Mother of God, appeared to him again, sitting upon a glowing throne.</p>
-                        <p>She said to him, “Peace be upon you, my dear beloved one. Please praise him with your sweet melody.”</p>
-                        <p>He replied:</p>
-                        <blockquote>
-                            “Blessed are you among women, and blessed is the fruit of your womb,<br>
-                            Dear Virgin, Mother of God. . . .”<a href="#note-2" class="sup-ref">2</a>
-                        </blockquote>
-                        <p>[Thus, he composed the Praise of Mary for Friday] through to the end.</p>
-                        <p>Then she blessed him, made him happy, and ascended into heaven while being loudly praised [by the angels].</p>
-                    </div>
-
-                    <div id="story-saturday" class="story-day-pane">
-                        <h4>Saturday</h4>
-                        <p>Likewise, on Saturday, Our Lady Mary, Holy Twofold Virgin, the Mother of God, came to Ephrem, saying, “May joy and peace be with you, my dear beloved one!”</p>
-                        <p>After he got up [from his bed], he bowed down to her.</p>
-                        <p>She said to him, “Please praise me today, just as the Holy Spirit inspired you [to do before].”</p>
-                        <p>He replied, “Bless me [first].”</p>
-                        <p>So she blessed him, and he opened his mouth and said:</p>
-                        <blockquote>
-                            “You are considered pure and luminous and holy by everyone,<br>
-                            You who cradled the Lord with your arms.<br>
-                            All of creation rejoices with you, shouting and declaring,<br>
-                            ‘Rejoice, Full of Grace! Rejoice, for you have found favor! Rejoice, for God is with you!’”
-                        </blockquote>
-                        <p>[Thus, he composed the Praise of Mary for Saturday through to the end.]</p>
-                        <p>When he had finished praising her, she thanked him and ascended into heaven while being loudly praised [by the angels].</p>
-                    </div>
-
-                    <div id="story-sunday" class="story-day-pane">
-                        <h4>Sunday</h4>
-                        <p>Early Sunday morning, he drank [a little too much] wine and fell asleep.</p>
-                        <p>In the middle of Sunday night, Our Lady Mary, Holy Twofold Virgin, the Mother of God, showed up, saying to him, “Why didn’t you praise me today?! This is the most important day of the week. Today’s praise ought to be the best of all of them!”</p>
-                        <p>Ephrem said to her, “My dear Lady, today is Sunday, the day of rest. Christians do not work on Sundays.”</p>
-                        <p>Mary replied, “Don’t worry [about what you will say. Just] get out of bed, stand at your workplace, and say whatever the Holy Spirit inspires you to say.”</p>
-                        <p>After he got up, she blessed him, and then he kissed the cross in her hand.<a href="#note-3" class="sup-ref">3</a></p>
-                        <p>He stood at his workplace, where he made pottery, and opened his mouth, saying:</p>
-                        <blockquote>
-                            “You are called love, dear blessed one among women!<br>
-                            You are the second chamber, called the Holy of Holies, housing the tablet of the covenant. . . .”
-                        </blockquote>
-                        <p>Then he began to praise her [by singing the lyrics] with the three melodies[, which are called Ge’ez, Ezel, Araray].<a href="#note-4" class="sup-ref">4</a></p>
-                        <p>He continued until it was morning.</p>
-                        <p>At daybreak, Mary blessed Ephrem, saying, “My dear beloved one, may joy be with you, just as you have brought me joy. Just as you have praised me on earth, I will delight you in the kingdom of heaven. Just as you have toiled on earth to commemorate me with praise, I will give you a reward in the kingdom of heaven for your toil, which is endless joy.”</p>
-                        <p>It happened just as she had promised him.</p>
+                    <div id="icon-scribe-edit-section" class="hidden"
+                        style="margin-top: 2rem; border-top: 1px solid var(--border-color); padding-top: 1rem;">
+                        <button id="edit-icon-btn" class="settings-button">Edit Icon Metadata (Scribe)</button>
                     </div>
                 </div>
+            </div>
+        </div>
 
-                <section class="story-section homily-box">
-                    <h3>Conclusion</h3>
-                    <p>So now, my beloved brothers, look at the extent of the love of God, and the love of Our Lady Mary, Holy Twofold Virgin, the Mother of God, for humanity. She will come down from heaven for a few good works, and she will bless those who love her and commemorate her.</p>
-                    <p>Now, let’s love Our Lady Mary, the Holy Virgin, and praise her as much as we can! And let’s show mercy to the poor for the sake of Our Lady Mary, the Holy Virgin. Let’s do good works and love one another. Let’s pray to Our Lord and Savior Jesus Christ and Our Lady Mary, the Holy Virgin.</p>
-                    <p class="story-blessing">May the prayer and blessings of Our Lady Mary, Holy Twofold Virgin, the Mother of God, be with her servant(s) <span class="story-servant-name">{{Servant's Names}}</span> who loves her without limits, forever and ever, amen.</p>
-                </section>
+        <!-- Scribe Icon Editor Modal -->
+        <div id="scribe-icon-editor-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-button" id="close-scribe-icon-editor-modal">&times;</span>
+                <h2>Scribe's Icon Chamber</h2>
+                <div id="scribe-icon-fields" class="scribe-editor-fields">
+                    <div class="editor-field-group">
+                        <label>Description (Amharic)</label>
+                        <textarea id="edit-icon-desc-amharic" class="ethiopic-label"></textarea>
+                    </div>
+                    <div class="editor-field-group">
+                        <label>Description (English)</label>
+                        <textarea id="edit-icon-desc-english"></textarea>
+                    </div>
+                    <div class="editor-field-group">
+                        <label>Source / Citation</label>
+                        <textarea id="edit-icon-source"></textarea>
+                    </div>
+                </div>
+                <div class="scribe-editor-actions">
+                    <button id="scribe-save-icon-btn">Save Icon Metadata</button>
+                </div>
+            </div>
+        </div>
 
-                <section class="story-section technical-context-collapsible">
-                    <button id="toggle-technical-context" class="technical-toggle-btn">
-                        <span>Technical & Historic Context</span>
-                        <svg class="toggle-icon" viewBox="0 0 24 24" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
-                    </button>
-                    <div id="technical-context-content" class="technical-content-pane collapsed">
-                        <div class="summary-sub-box">
-                            <strong>Summary:</strong>
-                            <p>In Syria there was a potter named Ephrem who feared God and loved Mary. Every evening for six days, Mary visited and blessed him. After each blessing, inspired with the Holy Spirit, Ephrem recited hymns of praise in her honor. On the seventh day, he fell asleep after drinking wine. Mary visited him at midnight and demanded to know why he had not composed anything for her, on the very day when he should have the most praise. Ephrem replied that it was the Sabbath, during which the faithful are commanded not to work. Mary told him to go to his pottery workshop and to say whatever words came to him there. Ephrem obeyed Mary, and once in his workshop he praised her through the night. Pleased, Mary promised him never-ending joy in heaven.</p>
+        <div id="eusebius-modal" class="modal">
+            <div class="modal-content eusebius-content">
+                <span class="close-button" id="close-eusebius-modal">&times;</span>
+                <div class="eusebius-body">
+                    <h2 class="story-inner-title">About the Psalms, according to Eusebius (c. 335 AD)</h2>
+                    <figure class="modal-image-container">
+                        <img src="img/14th-century-intro-to-psalms-folio5r-Ethiopic-Manuscripts-No.6-St-Catherine-Mt-Sinai.jpg"
+                            alt="Ethiopic Manuscript Folio 5r">
+                        <figcaption>Folio 5r, Ethiopic Manuscript No. 6, St. Catherine's Monastery, Mt. Sinai (14th
+                            Century).</figcaption>
+                    </figure>
+
+                    <div class="modal-tabs">
+                        <button class="modal-tab-btn active" data-lang="english">English<sup><a href="#fn1"
+                                    id="ref1">[1]</a></sup></button>
+                        <button class="modal-tab-btn" data-lang="geez">ግእዝ (Ge'ez)<sup><a href="#fn2"
+                                    id="ref2">[2]</a></sup></button>
+                        <button class="modal-tab-btn" data-lang="greek">Ελληνικά (Greek)<sup><a href="#fn3"
+                                    id="ref3">[3]</a></sup></button>
+                    </div>
+
+                    <div class="modal-tab-content">
+                        <div id="eusebius-english" class="modal-pane active">
+                            <p>The arrangement of the order of Eusebius the Palestinian (c. 260 - 339 AD), who wrote
+                                <i>about</i> the Psalms and its arrangement, according to how it is present <i>and</i>
+                                how it was written in the Hebrew, and also how he translated <i>it</i>.</p>
+
+                            <p><i>The children of the Hebrews divide the whole book of the Psalms into five parts. The
+                                    first part runs from the 1st psalm to the 40th; the second part runs from the 41st
+                                    psalm to the 71st. The third part runs from the 72nd psalm to Psalm 88th; the fourth
+                                    part runs from the 89th psalm to the 105th; and the fifth part runs from the 106th
+                                    psalm until the end.</i> There are 19 psalms that are without superscriptions.</p>
+
+                            <p>For those whose arrangement is written:</p>
+                            <ul>
+                                <li>72 of David.</li>
+                                <li>11 of the Sons of Korah.</li>
+                                <li><i>12</i> of Asaph.</li>
+                                <li>1 of Ethan the Israelite.</li>
+                                <li>2 of Solomon.</li>
+                                <li>1 of Moses.</li>
+                                <li><i>17</i> which have no name.</li>
+                                <li>And <i>15</i> with Hallelujah.</li>
+                                <li>And these (<i>19</i>) are those which have no title, but they are written in the
+                                    book.</li>
+                            </ul>
+
+                            <p>And the sum of all of them is 150. Those which are within the book are of David,
+                                specifically those he sang; but there are those by other prophets who prophesied in
+                                song. And therefore, that which is in the Hebrew is not all written by David, yet the
+                                whole was named the Book of Psalms. <b>And the purpose of this book is the fear of God
+                                    and keeping distant from evil.</b></p>
                         </div>
-                        <div class="tech-grid">
-                            <div class="tech-item">
-                                <strong>Amharic Title:</strong>
-                                <span>ውዳሴ ማርያምን በሰባት ቀናት የደረሰው ሶርያዊው ሸክላ ሠሪ ኤፍሬም</span>
-                            </div>
-                            <div class="tech-item">
-                                <strong>Manuscript Info:</strong>
-                                <span>This story, with the short title "The Syrian Potter's Poems," is very old: the earliest PEMM manuscript in which this story appears is from around 1451. (ይህ ታሪክ፣ በፐም የተሰጠው አጭር ርእስ, ከዐጭር ርእስ ጋር "የሸክላ ሠሪው ኤፍሬም መጽሐፍ ", ነው። በጣም የቆየ : ታሪኩ ለመጀመሪያ ጊዜ የተገኘበት ብራና የተጻፈበት ጊዜ 1451።)</span>
-                            </div>
-                            <div class="tech-item">
-                                <strong>Liturgical Reading:</strong>
-                                <span>Read in Church on the 15th day of Hamle.</span>
-                            </div>
-                            <div class="tech-item full-width">
-                                <strong>Ge’ez Incipit:</strong>
-                                <span class="geez-text">ስምዑ፡ አበውየ፡ ወአኃውየ፡ ከመ፡ ንንግርክሙ፡ ተአምረ፡ ዐባየ፡ ዘኮነ፡ ለእግዝእትነ፡ ቅድስት፡ ድንግል፡ ማርያም፡ ዘነገሩ፡ አበው፡ ቅዱሳን፡ ሰማዕትየ፡ እግዚአብሔር፡ ከመ፡ ኢይዌስክ፡ ወኢያነትግ። ይቤሉነ፡ ነበረ፡ በምድረ፡ ሶርያ፡ አሐዱ፡ ብእሲ፡ ለባሓዊ፡ ፈራሄ፡ እግዚአብሔር።</span>
-                            </div>
+
+                        <div id="eusebius-geez" class="modal-pane">
+                            <p class="ethiopic-label">ግጻዌ ሥርዐት ዘአውሳብዮስ ፍልስጥናዊ ዘወ ጽሐፈ መዝሙር ወግጻዌሁ ዘበህልወ ዘከመ ተጽሕፈ ዘበ ዕብራይስጢ
+                                ወዘከመ ሂ አዕለወ።</p>
+                            <p class="ethiopic-label">ወ እለ ኢኮኑ ጽሑፋነ ፲፱።</p>
+
+                            <p class="ethiopic-label">ለእለ ጽሑፍ ግጻዌሆሙ ከወዘ። ፻፴ወ፬</p>
+                            <ul class="ethiopic-label">
+                                <li>ዘዳዊት። ፸፪</li>
+                                <li>ዘደቂቀ ቆሬ። ፲፪</li>
+                                <li>ዘአሳፍ። ፲፪</li>
+                                <li>ዘኢታን እስራኤላዊ። ፩</li>
+                                <li>ዘሰሎሞን። ፪</li>
+                                <li>ዘሙሴ። ፩</li>
+                                <li>እለ ስመ አልቦሙ ዘኢታን። ፴፰ <sup><a href="#fn2" id="ref2">[2]</a></sup></li>
+                                <li>ወ ዘበ ሃሌ ሉያ። ፳ <sup><a href="#fn2" id="ref3">[2]</a></sup></li>
+                            </ul>
+
+                            <p class="ethiopic-label">ወእሉ እለ ስመ አልቦሙ ወባሕቱ ጽሑፋት በውስተ ወባሕቱ አልቦሙ ስመ ወኢ ይብሉ ዘእገሌ።</p>
+                            <p class="ethiopic-label">ወክብ ኵሎሙ ፻ወ፶።</p>
+                            <p class="ethiopic-label">እለ ዘየውስተ ዘዳዊት ባሕቱ ዘዘመረ እለ በካልአን ነቢያት እለ በዘምሮ ተነበዩ ወበእንተዝ ዘበ ዕብራይስጢ
+                                አኮ ኵሉ ዘተጽሕፈ ለዳዊት ወኵሉ መጽሐፈ መዝሙር ተሰምየ ወዝንቱ ውእቱ ፍርሀተ እግዚአብሔር ወአርሐቀ እምፀራይ።</p>
                         </div>
-                        <div class="notes-sub-section" style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px dashed var(--border-color);">
-                            <strong>Notes:</strong>
-                            <ol class="story-notes" style="margin-top: 0.5rem;">
-                                <li id="note-1">An allusion to Exodus 3.</li>
-                                <li id="note-2">An allusion to Luke 1:42.</li>
-                                <li id="note-3">Her behavior toward Ephrem is that of a priest, blessing him, and offering her cross to be kissed.</li>
-                                <li id="note-4">These three melodies are used for the liturgy: ግዕዝ (Ge’ez), ዕዝል (Ezel), and ዓራራይ (Araray).</li>
-                            </ol>
+
+                        <div id="eusebius-greek" class="modal-pane">
+                            <p>Τῆς βίβλου τῶν Ψαλμῶν ἥδε ἂν εἴη ἡ διαίρεσις, ὡς τὰ ἀκριβῆ τῶν ἀντιγράφων αὐτό τε τὸ
+                                Ἑβραϊκὸν περιέχει·</p>
+                            <p>Εἰς πέντε δὲ μέρη τὴν πᾶσαν τῶν ψαλμῶν βίβλον παῖδες Ἑβραίων διαίρουσιν· πρῶτον, εἰς τοὺς
+                                ἀπὸ πρώτου μέχρις τεσσαρακοστοῦ· δεύτερον, εἰς τοὺς ἀπὸ τεσσαρακοστοῦ πρώτου μέχρις
+                                ἑβδομηκοστοῦ πρώτου· τρίτον, εἰς τοὺς ἀπὸ ἑβδομηκοστοῦ δευτέρου μέχρις ὀγδοηκοστοῦ
+                                ὀγδόου· τέταρτον, εἰς τοὺς ἀπὸ ὀγδοηκοστοῦ ἐνάτου μέχρις ἑκατοστοῦ πέμπτου· πέμπτον, εἰς
+                                τοὺς ἀπὸ ἑκατοστοῦ ἕκτου μέχρις τέλους τοῦ βιβλίου.</p>
+                            <p>Ἀνεπίγραφοι δέ εἰσι ψαλμοὶ ιθʹ</p>
+
+                            <p>Τῶν ἐπιγεγραμμένων δέ εἰσιν οὕτως αἱ διαιρέσεις፡</p>
+                            <ul>
+                                <li>τοῦ μὲν Δαυῒδ οβʹ</li>
+                                <li>τῶν υἱῶν Κορὲ ιαʹ</li>
+                                <li>τοῦ Ἀσὰφ ιβʹ</li>
+                                <li>Αἰθὰμ τοῦ Ἰσραηλίτου αʹ</li>
+                                <li>Σολομῶντος βʹ</li>
+                                <li>Μωϋσέως αʹ</li>
+                                <li>ἀνώνυμοι ιζʹ</li>
+                                <li>καὶ τῶν εἰς τὸ Ἀλληλούϊα ιεʹ</li>
+                            </ul>
+
+                            <p>Εἰσὶ δὲ ἀνώνυμοι ὅσοι ἐπιγραφὰς μὲν ἔχουσιν, οὐ μὴν δηλοῦσι τίνος εἰσίν.</p>
+                            <p>ὁμοῦ ρνʹ.</p>
+                            <p>οὐχ ὡς ἄν τις ὑπολάβοι, οἱ πάντες εἰсὶ τοῦ Δαυῒδ οἱ ψαλμοὶ, ἀλλὰ καὶ ἑτέρων προφητῶν ἐν
+                                τῷ ψάλλειν προφητευόντων. διόπερ ἡ πᾶσα γραφὴ παρ’ Ἑβραίοις οὐ τοῦ Δαυῒδ ἐπιγράφει, ἀλλ’
+                                ἀδιορίστως «Βίβλος ψαλμῶν» ὀνομάζεται.</p>
                         </div>
                     </div>
-                </section>
 
-                <footer class="story-citation">
-                    <p>Source: <a href="https://pemm.princeton.edu/stories/14" target="_blank">PEMM Princeton: ID 14: The Syrian Potter's Poems</a></p>
-                    <p class="citation-detail">Translated by Jeremy Brown & Dawit Muluneh with Wendy Laura Belcher (2024).</p>
-                </footer>
-            </div>
-        </div>
-    </div>
-
-    <div id="help-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-button" id="close-help-modal">&times;</span>
-            <h2>The Mount of Mercy | ደብረ ምሕረት</h2>
-            <div class="bible-verse-about">
-                <p>“I praise you seven times a day” ፨ <span class="ethiopic-label">“ስብዐ ለዕለትየ እሴብሐከ”</span></p>
-                <p class="citation">Psalm 118:164 ፨ <span class="ethiopic-label">መዝሙር ዘዳዊት ፻፲፰፡፻፷፬</span></p>
-            </div>
-            <p>This web app is designed to aid Orthodox Christians and catachumens towards a life of unceasing prayer. It provides access to essential daily prayers in multiple languages, including Amharic, English, Ge'ez, Spanish, and Tigrinya with phonetic transliterations to assist in learning and pronunciation.</p>
-            <h3>📱 Install App to Your Phone</h3>
-            <p>For easy access and offline use, you can install this web app to your mobile home screen:</p>
-            <ul>
-                <li><strong>iOS (Safari):</strong> Tap the "Share" icon and then select "Add to Home Screen".</li>
-                <li><strong>Android (Chrome):</strong> Tap the three-dots menu and select "Install App" or "Add to Home screen".</li>
-            </ul>
-            <h3>💻 Install App to Your Computer</h3>
-            <p>For easy access and offline use, you can also install this web app on your desktop computer:</p>
-            <ul>
-                <li><strong>Chrome:</strong>
-                    <ul>
-                        <li>Look for the "Install" icon (a computer with a down arrow) in the address bar on the right side, and click "Install".</li>
-                        <li>Alternatively, tap the three-dots menu in the top right, then click "Cast, Save, & Share" then "Install".</li>
-                    </ul>
-                </li>
-                <li><strong>Safari (macOS):</strong> Go to "File" in the menu bar and select "Add to Dock".</li>
-            </ul>
-            <h3>📖 Translations</h3>
-            <p>The English translations of the daily prayers in this app are a work-in-progress and not yet approved by clergy. This English translation is intended to be a more accurate improvement upon the few existing English resources. Several sources are actively being consulted, including:</p>
-            <ul>
-                <li><a href="https://a.co/d/h5TO3sz" target="_blank" rel="noopener noreferrer">ውዳሴ ማርያም Widasie Maryam | The Praises of St. Mary: In Ge’ez & English, 3rd Edition</a> translated by Living Tewahdo Ministry in March 2024</li>
-                <li>Daily Prayers of the Ethiopian Orthodox <i>Täwaḥədo</i> Church, Revised Pocket Edition translated by Archdeacon Täsfa Mika’el Williams in May 2020</li>
-                <li><a href="https://a.co/d/3aUZYDE" target="_blank" rel="noopener noreferrer">Book of Prayer - መጽሐፈ ጸሎት: Theotokia (Weddase Mariam) / Selected Psalms, Litanies and Prayers from the Ethiopic Book of the Hours, Missal, and other Liturgical Sources</i></a> translated by Father Mebratu Kiros (PhD) in 2022</li>
-                <li><a href="https://www.ethiopianorthodox.org/amharic/yeqolotbet/lessons/daily.pdf" target="_blank" rel="noopener noreferrer">የየዘወትር ጸሎት (The Daily Prayer)</a> published by ethiopianorthodox.org</li>
-                <li>መሠረተ ግእዝ የግእዝ ንባብ መማሪያ መጽሐፍ ክፍል ፩ በሦስት ቋንቋዎች (The Foundation of Gə'əz: Gə'əz Reading Textbook, 1st Edition - In 3 languages) translated by ሊቀ ጠበብት ተክሌ ሲራክ (Liqe Tebebt Tekle Sirak) in 2023</li>
-                <li><a href="https://docs.google.com/document/d/1s_OJBJBn89wM9LeXhpUFQJbEA3P-IWUA/edit?usp=sharing&ouid=105972657992870961553&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer">Libro de Oraciones (Book of Prayers)</a> published by the Puerto Rico Debre Besrat Kidus Gebriel Iglesia Ortodoxa Tewahedo de Etiopía in 2025</li>
-            </ul>
-            <h3>⚠️ This is a Beta Version / Work-in-Progress!</h3>
-            <p>This web app is currently in a beta stage and is very much a work-in-progress. We are continuously working to improve this spiritual service and appreciate your patience with any technical issues that may occur. Your feedback is invaluable to us! Please use the "Share Feedback" button within the app to let us know your thoughts, suggestions, or any bugs you encounter.</p>
-            <textarea id="feedback-textarea" placeholder="Enter your feedback here..."></textarea>
-            <button id="send-feedback-button">Send</button>
-            <p class="disclaimer">This service is made with love for the glory of God and is managed by servants of the Oakland Debre Meheret Saint Michael Ethiopian Orthodox Tewahedo Church (EOTC) under the spiritual guidance of Father Nebiyou Elias and under the auspices of His Grace Archbishop Theophilus in the EOTC Diocese of Northern California, Nevada, and Arizona.</p>
-        </div>
-    </div>
-    <div id="feedback-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-button" id="close-feedback-modal">&times;</span>
-            <h2>Share Your Feedback</h2>
-            <p>Thank you for your patience if a technical issue occurs. We are continuously working to improve this service, so please don't hesitate to submit your feedback below.</p>
-            <textarea id="feedback-textarea" placeholder="Enter your feedback here..."></textarea>
-            <button id="send-feedback-button">Send</button>
-        </div>
-    </div>
-
-    <!-- Scribe Login Modal -->
-    <div id="scribe-login-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-button" id="close-scribe-login-modal">&times;</span>
-            <div style="text-align: center; margin-bottom: 1rem;">
-                <img src="img/dimyanos_cropped.jpg" alt="Dimyanos the Scribe" style="width: 180px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.3);">
-            </div>
-            <h2>Scribe's Entrance</h2>
-            <p>Enter your credentials to enter the Scribe's Chamber.</p>
-            <form class="scribe-login-form" id="scribe-login-form">
-                <input type="email" id="scribe-email" placeholder="Email" required>
-                <input type="password" id="scribe-password" placeholder="Password" required>
-                <button type="submit" id="scribe-login-btn">Login</button>
-                <p id="scribe-login-error" class="error-text hidden"></p>
-            </form>
-        </div>
-    </div>
-
-    <!-- Scribe's Chamber (Editor Modal) -->
-    <div id="scribe-editor-modal" class="modal">
-        <div class="modal-content scribe-editor-content">
-            <span class="close-button" id="close-scribe-editor-modal">&times;</span>
-            <h2>Scribe's Chamber</h2>
-            <p id="scribe-editor-ref" style="font-size: 0.8rem; opacity: 0.7; margin-bottom: 1rem;"></p>
-            
-            <div id="scribe-editor-metadata" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border-color);">
-                <div class="editor-field-group">
-                    <label>Chapter</label>
-                    <input type="text" id="edit-chapter" style="padding: 0.5rem; border: 1px solid var(--border-color); background: var(--background-color); color: var(--text-color); border-radius: 4px;">
-                </div>
-                <div class="editor-field-group">
-                    <label>Stanza Index</label>
-                    <input type="text" id="edit-stanza" style="padding: 0.5rem; border: 1px solid var(--border-color); background: var(--background-color); color: var(--text-color); border-radius: 4px;">
-                </div>
-                <div class="editor-field-group">
-                    <label>Reference</label>
-                    <input type="text" id="edit-reference" style="padding: 0.5rem; border: 1px solid var(--border-color); background: var(--background-color); color: var(--text-color); border-radius: 4px;">
-                </div>
-                <div class="editor-field-group">
-                    <label>Instruction</label>
-                    <input type="text" id="edit-instruction" style="padding: 0.5rem; border: 1px solid var(--border-color); background: var(--background-color); color: var(--text-color); border-radius: 4px;">
-                </div>
-            </div>
-
-            <div id="scribe-editor-fields">
-                <!-- Translation fields injected here -->
-            </div>
-            <div class="scribe-editor-actions">
-                <select id="scribe-status-select">
-                    <option value="published">Published</option>
-                    <option value="draft">Draft</option>
-                </select>
-                <button id="scribe-save-btn">Save Changes</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Icon Metadata Modal -->
-    <div id="icon-metadata-modal" class="modal">
-        <div class="modal-content icon-metadata-content">
-            <span class="close-button" id="close-icon-metadata-modal">&times;</span>
-            <div id="icon-metadata-body">
-                <div class="icon-header">
-                    <h2 id="icon-title-geez" class="ethiopic-label"></h2>
-                    <p id="icon-title-translit" style="font-style: italic; opacity: 0.8;"></p>
-                    <h3 id="icon-title-english"></h3>
-                </div>
-                <div id="icon-original-images-container" class="icon-images-container">
-                    <!-- Images will be inserted here dynamically -->
-                </div>
-                <div id="icon-description-container" class="icon-description-section">
-                    <p id="icon-desc-english"></p>
-                    <p id="icon-desc-amharic" class="ethiopic-label"></p>
-                </div>
-                <div id="icon-bible-refs" class="icon-metadata-detail"></div>
-                <div id="icon-source-citation" class="icon-source-section"></div>
-                
-                <div id="icon-scribe-edit-section" class="hidden" style="margin-top: 2rem; border-top: 1px solid var(--border-color); padding-top: 1rem;">
-                    <button id="edit-icon-btn" class="settings-button">Edit Icon Metadata (Scribe)</button>
+                    <hr class="footnotes-separator">
+                    <section class="modal-footnotes">
+                        <div id="fn1" class="footnote-item">
+                            <a href="#ref1" class="footnote-backref">1.</a> Bold text indicates phrasing unique to the
+                            Ge'ez manuscript above. Italic text indicates historical context preserved in the original
+                            Greek but absent from the cited Ge'ez manuscript.
+                        </div>
+                        <div id="fn2" class="footnote-item">
+                            <a href="#ref2" class="footnote-backref">2.</a> Note on Ge'ez Numerals: The internal
+                            mathematical counts in this specific manuscript total 177 rather than the standard 150.
+                            Specifically, the counts of 38 anonymous Psalms (፴፰) and 20 Hallelujah Psalms (፳) differ
+                            from the original Greek which lists 17 and 15 respectively. This is a common occurrence in
+                            ancient manuscripts resulting from scribal transcription errors or fading ink over
+                            centuries.
+                        </div>
+                        <div id="fn3" class="footnote-item">
+                            <a href="#ref3" class="footnote-backref">3.</a> Greek Translation Reference: "On the
+                            Division of the Psalter and Psalms," translated from the Greek by Fr. Justinus.
+                        </div>
+                    </section>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Scribe Icon Editor Modal -->
-    <div id="scribe-icon-editor-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-button" id="close-scribe-icon-editor-modal">&times;</span>
-            <h2>Scribe's Icon Chamber</h2>
-            <div id="scribe-icon-fields" class="scribe-editor-fields">
-                <div class="editor-field-group">
-                    <label>Description (Amharic)</label>
-                    <textarea id="edit-icon-desc-amharic" class="ethiopic-label"></textarea>
+        <div id="changelog-modal" class="modal">
+            <div class="modal-content changelog-content">
+                <span class="close-button" id="close-changelog-modal">&times;</span>
+                <div class="changelog-header">
+                    <h2>Mount of Mercy Changelog</h2>
+                    <div class="active-badge">Active Maintenance</div>
                 </div>
-                <div class="editor-field-group">
-                    <label>Description (English)</label>
-                    <textarea id="edit-icon-desc-english"></textarea>
+                <p class="changelog-intro">Recent updates and improvements to the project. Interested in contributing?
+                    Visit our <a href="https://github.com/vineofmary/prayer" target="_blank">GitHub repository</a>.</p>
+                <div id="changelog-list" class="changelog-list">
+                    <!-- Commits will be injected here -->
+                    <div class="changelog-loading">Fetching recent updates...</div>
                 </div>
-                <div class="editor-field-group">
-                    <label>Source / Citation</label>
-                    <textarea id="edit-icon-source"></textarea>
-                </div>
-            </div>
-            <div class="scribe-editor-actions">
-                <button id="scribe-save-icon-btn">Save Icon Metadata</button>
             </div>
         </div>
+
+        <div id="modal-backdrop"></div>
+
     </div>
 
-    <div id="eusebius-modal" class="modal">
-        <div class="modal-content eusebius-content">
-            <span class="close-button" id="close-eusebius-modal">&times;</span>
-            <div class="eusebius-body">
-                <h2 class="story-inner-title">About the Psalms, according to Eusebius (c. 335 AD)</h2>
-                <figure class="modal-image-container">
-                    <img src="img/14th-century-intro-to-psalms-folio5r-Ethiopic-Manuscripts-No.6-St-Catherine-Mt-Sinai.jpg" alt="Ethiopic Manuscript Folio 5r">
-                    <figcaption>Folio 5r, Ethiopic Manuscript No. 6, St. Catherine's Monastery, Mt. Sinai (14th Century).</figcaption>
-                </figure>
-
-                <div class="modal-tabs">
-                    <button class="modal-tab-btn active" data-lang="english">English<sup><a href="#fn1" id="ref1">[1]</a></sup></button>
-                    <button class="modal-tab-btn" data-lang="geez">ግእዝ (Ge'ez)<sup><a href="#fn2" id="ref2">[2]</a></sup></button>
-                    <button class="modal-tab-btn" data-lang="greek">Ελληνικά (Greek)<sup><a href="#fn3" id="ref3">[3]</a></sup></button>
-                </div>
-
-                <div class="modal-tab-content">
-                    <div id="eusebius-english" class="modal-pane active">
-                        <p>The arrangement of the order of Eusebius the Palestinian (c. 260 - 339 AD), who wrote <i>about</i> the Psalms and its arrangement, according to how it is present <i>and</i> how it was written in the Hebrew, and also how he translated <i>it</i>.</p>
-
-                        <p><i>The children of the Hebrews divide the whole book of the Psalms into five parts. The first part runs from the 1st psalm to the 40th; the second part runs from the 41st psalm to the 71st. The third part runs from the 72nd psalm to Psalm 88th; the fourth part runs from the 89th psalm to the 105th; and the fifth part runs from the 106th psalm until the end.</i> There are 19 psalms that are without superscriptions.</p>
-
-                        <p>For those whose arrangement is written:</p>
-                        <ul>
-                            <li>72 of David.</li>
-                            <li>11 of the Sons of Korah.</li>
-                            <li><i>12</i> of Asaph.</li>
-                            <li>1 of Ethan the Israelite.</li>
-                            <li>2 of Solomon.</li>
-                            <li>1 of Moses.</li>
-                            <li><i>17</i> which have no name.</li>
-                            <li>And <i>15</i> with Hallelujah.</li>
-                            <li>And these (<i>19</i>) are those which have no title, but they are written in the book.</li>
-                        </ul>
-
-                        <p>And the sum of all of them is 150. Those which are within the book are of David, specifically those he sang; but there are those by other prophets who prophesied in song. And therefore, that which is in the Hebrew is not all written by David, yet the whole was named the Book of Psalms. <b>And the purpose of this book is the fear of God and keeping distant from evil.</b></p>
-                    </div>
-
-                    <div id="eusebius-geez" class="modal-pane">
-                        <p class="ethiopic-label">ግጻዌ ሥርዐት ዘአውሳብዮስ ፍልስጥናዊ ዘወ ጽሐፈ መዝሙር ወግጻዌሁ ዘበህልወ ዘከመ ተጽሕፈ ዘበ ዕብራይስጢ ወዘከመ ሂ አዕለወ።</p>
-                        <p class="ethiopic-label">ወ እለ ኢኮኑ ጽሑፋነ ፲፱።</p>
-
-                        <p class="ethiopic-label">ለእለ ጽሑፍ ግጻዌሆሙ ከወዘ። ፻፴ወ፬</p>
-                        <ul class="ethiopic-label">
-                            <li>ዘዳዊት። ፸፪</li>
-                            <li>ዘደቂቀ ቆሬ። ፲፪</li>
-                            <li>ዘአሳፍ። ፲፪</li>
-                            <li>ዘኢታን እስራኤላዊ። ፩</li>
-                            <li>ዘሰሎሞን። ፪</li>
-                            <li>ዘሙሴ። ፩</li>
-                            <li>እለ ስመ አልቦሙ ዘኢታን። ፴፰ <sup><a href="#fn2" id="ref2">[2]</a></sup></li>
-                            <li>ወ ዘበ ሃሌ ሉያ። ፳ <sup><a href="#fn2" id="ref3">[2]</a></sup></li>
-                        </ul>
-
-                        <p class="ethiopic-label">ወእሉ እለ ስመ አልቦሙ ወባሕቱ ጽሑፋት በውስተ ወባሕቱ አልቦሙ ስመ ወኢ ይብሉ ዘእገሌ።</p>
-                        <p class="ethiopic-label">ወክብ ኵሎሙ ፻ወ፶።</p>
-                        <p class="ethiopic-label">እለ ዘየውስተ ዘዳዊት ባሕቱ ዘዘመረ እለ በካልአን ነቢያት እለ በዘምሮ ተነበዩ ወበእንተዝ ዘበ ዕብራይስጢ አኮ ኵሉ ዘተጽሕፈ ለዳዊት ወኵሉ መጽሐፈ መዝሙር ተሰምየ ወዝንቱ ውእቱ ፍርሀተ እግዚአብሔር ወአርሐቀ እምፀራይ።</p>
-                    </div>
-
-                    <div id="eusebius-greek" class="modal-pane">
-                        <p>Τῆς βίβλου τῶν Ψαλμῶν ἥδε ἂν εἴη ἡ διαίρεσις, ὡς τὰ ἀκριβῆ τῶν ἀντιγράφων αὐτό τε τὸ Ἑβραϊκὸν περιέχει·</p>
-                        <p>Εἰς πέντε δὲ μέρη τὴν πᾶσαν τῶν ψαλμῶν βίβλον παῖδες Ἑβραίων διαίρουσιν· πρῶτον, εἰς τοὺς ἀπὸ πρώτου μέχρις τεσσαρακοστοῦ· δεύτερον, εἰς τοὺς ἀπὸ τεσσαρακοστοῦ πρώτου μέχρις ἑβδομηκοστοῦ πρώτου· τρίτον, εἰς τοὺς ἀπὸ ἑβδομηκοστοῦ δευτέρου μέχρις ὀγδοηκοστοῦ ὀγδόου· τέταρτον, εἰς τοὺς ἀπὸ ὀγδοηκοστοῦ ἐνάτου μέχρις ἑκατοστοῦ πέμπτου· πέμπτον, εἰς τοὺς ἀπὸ ἑκατοστοῦ ἕκτου μέχρις τέλους τοῦ βιβλίου.</p>
-                        <p>Ἀνεπίγραφοι δέ εἰσι ψαλμοὶ ιθʹ</p>
-
-                        <p>Τῶν ἐπιγεγραμμένων δέ εἰσιν οὕτως αἱ διαιρέσεις፡</p>
-                        <ul>
-                            <li>τοῦ μὲν Δαυῒδ οβʹ</li>
-                            <li>τῶν υἱῶν Κορὲ ιαʹ</li>
-                            <li>τοῦ Ἀσὰφ ιβʹ</li>
-                            <li>Αἰθὰμ τοῦ Ἰσραηλίτου αʹ</li>
-                            <li>Σολομῶντος βʹ</li>
-                            <li>Μωϋσέως αʹ</li>
-                            <li>ἀνώνυμοι ιζʹ</li>
-                            <li>καὶ τῶν εἰς τὸ Ἀλληλούϊα ιεʹ</li>
-                        </ul>
-
-                        <p>Εἰσὶ δὲ ἀνώνυμοι ὅσοι ἐπιγραφὰς μὲν ἔχουσιν, οὐ μὴν δηλοῦσι τίνος εἰσίν.</p>
-                        <p>ὁμοῦ ρνʹ.</p>
-                        <p>οὐχ ὡς ἄν τις ὑπολάβοι, οἱ πάντες εἰсὶ τοῦ Δαυῒδ οἱ ψαλμοὶ, ἀλλὰ καὶ ἑτέρων προφητῶν ἐν τῷ ψάλλειν προφητευόντων. διόπερ ἡ πᾶσα γραφὴ παρ’ Ἑβραίοις οὐ τοῦ Δαυῒδ ἐπιγράφει, ἀλλ’ ἀδιορίστως «Βίβλος ψαλμῶν» ὀνομάζεται.</p>
-                    </div>
-                </div>
-
-                <hr class="footnotes-separator">
-                <section class="modal-footnotes">
-                    <div id="fn1" class="footnote-item">
-                        <a href="#ref1" class="footnote-backref">1.</a> Bold text indicates phrasing unique to the Ge'ez manuscript above. Italic text indicates historical context preserved in the original Greek but absent from the cited Ge'ez manuscript.
-                    </div>
-                    <div id="fn2" class="footnote-item">
-                        <a href="#ref2" class="footnote-backref">2.</a> Note on Ge'ez Numerals: The internal mathematical counts in this specific manuscript total 177 rather than the standard 150. Specifically, the counts of 38 anonymous Psalms (፴፰) and 20 Hallelujah Psalms (፳) differ from the original Greek which lists 17 and 15 respectively. This is a common occurrence in ancient manuscripts resulting from scribal transcription errors or fading ink over centuries.
-                    </div>
-                    <div id="fn3" class="footnote-item">
-                        <a href="#ref3" class="footnote-backref">3.</a> Greek Translation Reference: "On the Division of the Psalter and Psalms," translated from the Greek by Fr. Justinus.
-                    </div>
-                </section>
-            </div>
-        </div>
-    </div>
-
-    <div id="changelog-modal" class="modal">
-        <div class="modal-content changelog-content">
-            <span class="close-button" id="close-changelog-modal">&times;</span>
-            <div class="changelog-header">
-                <h2>Mount of Mercy Changelog</h2>
-                <div class="active-badge">Active Maintenance</div>
-            </div>
-            <p class="changelog-intro">Recent updates and improvements to the project. Interested in contributing? Visit our <a href="https://github.com/vineofmary/prayer" target="_blank">GitHub repository</a>.</p>
-            <div id="changelog-list" class="changelog-list">
-                <!-- Commits will be injected here -->
-                <div class="changelog-loading">Fetching recent updates...</div>
-            </div>
-        </div>
-    </div>
-
-    <div id="modal-backdrop"></div>
-
-</div>
-
-<!-- Firebase SDKs (Compat) -->
-<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+    <!-- Firebase SDKs (Compat) -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
 
     <script src="js/icons.js"></script>
     <script src="js/prayers.js"></script>
@@ -805,4 +1060,5 @@
     <script src="js/kidase.js"></script>
     <script src="js/script.js"></script>
 </body>
+
 </html>
