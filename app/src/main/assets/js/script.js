@@ -461,7 +461,43 @@ const LOANWORD_MAPPING = {
     "እንፎራ": { lang: "Greek", original: "(\u1f00\u03bd\u03b1\u03c6\u03bf\u03c1\u03ac)", phonetic: "a-na-fo-ra", meaning: "The Lifting Up (of the offering)", geez: "አኰቴተ ቍርባን" },
     "ጳራቅሊጦስ": { lang: "Greek", original: "(\u03a0\u03b1\u03c1\u03ac\u03ba\u03bb\u03b7\u03c4\u03bf\u03c2)", phonetic: "pa-ra-kli-tos", meaning: "Paraclete (Advocate, Helper, Comforter)", geez: "ናዛዚ" },
     "አምንስቲቲ ሙኪርያ": { lang: "Greek", original: "(\u039c\u03bd\u03ae\u03c3\u03b8\u03b7\u03c4\u03af \u03bc\u03bf\u03c5, \u039a\u03cd\u03c1\u03b9\u03b5)", phonetic: "mni-sthi-ti mou ky-ri-e", meaning: "Remember me, O Lord", geez: "ተዘከረኒ እግዚኦ" },
-    "አንቲ ፋሲልያሱ": { lang: "Greek", original: "(\u1f10\u03bd \u03c4\u1fc7 \u03b2\u03b1\u03c3\u03b9\u03bb\u03b5\u03af\u1fb3 \u03c3\u03bf\u03c5)", phonetic: "en ti va-si-li-a sou", meaning: "in your kingdom", geez: "በመንግሥትከ" }
+    "አንቲ ፋሲልያሱ": { lang: "Greek", original: "(\u1f10\u03bd \u03c4\u1fc7 \u03b2\u03b1\u03c3\u03b9\u03bb\u03b5\u03af\u1fb3 \u03c3\u03bf\u03c5)", phonetic: "en ti va-si-li-a sou", meaning: "in your kingdom", geez: "በመንግሥትከ" },
+    
+    // Additional Liturgical & Theological Terms
+    "ሃሌ ሉያ": { lang: "Hebrew", original: "(\u05d4\u05b7\u05dc\u05b0\u05dc\u05d5\u05bc-\u05d9\u05b8\u05d4\u05bc)", phonetic: "ha-le-lu-yah", meaning: "Praise the Lord", geez: "ስብሐት ለእግዚአብሔር" },
+    "አሜን": { lang: "Hebrew", original: "(\u05d0\u05b8\u05de\u05b5\u05df)", phonetic: "a-men", meaning: "Verily / So be it", geez: "ለይኩን (በአማን)" },
+    "ወንጌል": { lang: "Greek", original: "(\u03b5\u1f50\u03b1\u03b3\u03b3\u03ad\u03bb\u03b9\u03bf\u03bd)", phonetic: "ev-an-ge-li-on", meaning: "Good News / Gospel", geez: "ብሥራት" },
+    "ኦሪት": { lang: "Aramaic", original: "(\u05d0\u05d5\u05b9\u05e8\u05b8\u05d9\u05b0\u05ea\u05b8\u05d0)", phonetic: "o-ray-ta", meaning: "Law / Instruction", geez: "ሕግ" },
+    "ታቦት": { lang: "Hebrew", original: "(\u05ea\u05bc\u05b5\u05d9\u05d1\u05b8\u05d4)", phonetic: "tey-vah", meaning: "Ark / Chest", geez: "ሣጥን (ማኅደር)" },
+    "መሲሕ": { lang: "Hebrew", original: "(\u05de\u05b8\u05e9\u05b4\u05c1\u05d9\u05d7\u05b7)", phonetic: "ma-shi-ach", meaning: "Anointed One", geez: "ቅቡዕ" },
+    "ሰይጣን": { lang: "Hebrew", original: "(\u05e9\u05c2\u05b8\u05d8\u05b8\u05df)", phonetic: "sa-tan", meaning: "Adversary / Accuser", geez: "ጸላኢ (ጋኔን)" },
+    "ቀሲስ": { lang: "Syriac", original: "(\u072a\u072b\u072a\u072b\u0710)", phonetic: "qa-shshi-sha", meaning: "Elder / Priest", geez: "ካህን (ሊቅ)" },
+    "ዲያቆን": { lang: "Greek", original: "(\u03b4\u03b9\u03ac\u03ba\u03bf\u03bd\u03bf\u03c2)", phonetic: "di-a-ko-nos", meaning: "Servant / Minister", geez: "ላእክ" },
+    "ኤጲስ ቆጶስ": { lang: "Greek", original: "(\u1f10\u03c0\u03af\u03c3\u03ba\u03bf\u03c0\u03bf\u03c2)", phonetic: "e-pis-ko-pos", meaning: "Overseer / Bishop", geez: "ጳጳስ (ሐዋርያ)" },
+    "ፓትርያርክ": { lang: "Greek", original: "(\u03c0\u03b1\u03c4\u03c1\u03b9\u03ac\u03c1\u03c7\u03b7\u03c2)", phonetic: "pa-tri-ar-khes", meaning: "Chief Father / Patriarch", geez: "ርእሰ አበው" },
+
+    // Names & Entities
+    "ኢየሱስ": { lang: "Hebrew", original: "(\u05d9\u05b5\u05e9\u05c1\u05d5\u05bc\u05e2\u05b7)", phonetic: "ye-shu-a", meaning: "Yahweh is Salvation", geez: "መድኃኒት" },
+    "ክርስቶስ": { lang: "Greek", original: "(\u03a7\u03c1\u03b9\u03c3\u03c4\u03cc\u03c2)", phonetic: "khris-tos", meaning: "Anointed One", geez: "መሲሕ (ቅቡዕ)" },
+    "አማኑኤል": { lang: "Hebrew", original: "(\u05e2\u05b4\u05de\u05bc\u05b8\u05e0\u05d5\u05bc\u05d0\u05b5\u05dc)", phonetic: "im-ma-nu-el", meaning: "God with us", geez: "እግዚአብሔር ምስሌነ" },
+    "ማርያም": { lang: "Hebrew", original: "(\u05de\u05b4\u05e8\u05b0\u05d9\u05b8\u05dd)", phonetic: "mir-yam", meaning: "Beloved / Exalted One", geez: "እግዝእት" },
+    "ሚካኤል": { lang: "Hebrew", original: "(\u05de\u05b4\u05d9\u05db\u05b8\u05d0\u05b5\u05dc)", phonetic: "mi-kha-el", meaning: "Who is like God?", geez: "መኑ ከመ እግዚአብሔር" },
+    "ገብርኤል": { lang: "Hebrew", original: "(\u05d2\u05bc\u05b7\u05d1\u05b0\u05e8\u05b4\u05d9\u05d0\u05b5\u05dc)", phonetic: "gav-ri-el", meaning: "God is my strength", geez: "ኃይሌ እግዚአብሔር" },
+    "ሱራፌል": { lang: "Hebrew", original: "(\u05e9\u05c2\u05b0\u05e8\u05b8\u05e4\u05b4\u05d9\u05dd)", phonetic: "se-ra-fim", meaning: "Burning Ones", geez: "መላእክት" },
+    "ኪሩቤል": { lang: "Hebrew", original: "(\u05db\u05bc\u05b0\u05e8\u05d5\u05bc\u05d1\u05b4\u05d9\u05dd)", phonetic: "ke-ru-vim", meaning: "Guardian Ones", geez: "መላእክት" },
+    "ጽዮን": { lang: "Hebrew", original: "(\u05e6\u05b4\u05d9\u05bc\u05d5\u05b9\u05df)", phonetic: "tsi-yon", meaning: "Fortress", geez: "አምባ" },
+
+    // Notable Figures
+    "አቤል": { lang: "Hebrew", original: "(\u05d4\u05b6\u05d1\u05b6\u05dc)", phonetic: "he-vel", meaning: "Breath / Vanity", geez: "ትነት" },
+    "ኖኅ": { lang: "Hebrew", original: "(\u05e0\u05b9\u05d7\u05b7)", phonetic: "no-ach", meaning: "Rest", geez: "ዕረፍት" },
+    "አብርሃም": { lang: "Hebrew", original: "(\u05d0\u05b7\u05d1\u05b0\u05e8\u05b8\u05d4\u05b8\u05dd)", phonetic: "av-ra-ham", meaning: "Father of a Multitude", geez: "አበ ብዙኃን" },
+    "ይስሐቅ": { lang: "Hebrew", original: "(\u05d9\u05b4\u05e6\u05b0\u05d7\u05b8\u05e7)", phonetic: "yits-chak", meaning: "He will laugh", geez: "ስሕቅ" },
+    "ያዕቆብ": { lang: "Hebrew", original: "(\u05d9\u05b7\u05e2\u05b2\u05e7\u05b9\u05d1)", phonetic: "ya-a-kov", meaning: "Supplanter", geez: "አታላይ" },
+    "ዮሴፍ": { lang: "Hebrew", original: "(\u05d9\u05d5\u05b9\u05e1\u05b5\u05e3)", phonetic: "yo-sef", meaning: "He will add", geez: "ይስክ (ይጨምር)" },
+    "ዳዊት": { lang: "Hebrew", original: "(\u05d3\u05bc\u05b8\u05d5\u05b4\u05d3)", phonetic: "da-vid", meaning: "Beloved", geez: "ፍቁር" },
+    "ሰሎሞን": { lang: "Hebrew", original: "(\u05e9\u05b0\u05c1\u05dc\u05b9\u05de\u05b9\u05d4)", phonetic: "shlo-mo", meaning: "Peaceable", geez: "ሰላማዊ" },
+    "ጳውሎስ": { lang: "Latin", original: "(Paulus)", phonetic: "pau-lus", meaning: "Small / Humble", geez: "ንኡስ (ትሑት)" },
+    "ጴጥሮስ": { lang: "Greek", original: "(\u03a0\u03ad\u03c4\u03c1\u03bf\u03c2)", phonetic: "pe-tros", meaning: "Rock / Stone", geez: "ኰኵሕ (ዕብን)" }
 };
 
 function applyLoanwordOrigins(text, langKey) {
