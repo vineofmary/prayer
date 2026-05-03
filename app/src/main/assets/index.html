@@ -704,70 +704,135 @@
         <div id="help-modal" class="modal">
             <div class="modal-content">
                 <span class="close-button" id="close-help-modal">&times;</span>
-                <h2>The Mount of Mercy | ደብረ ምሕረት</h2>
-                <div class="bible-verse-about">
-                    <p>“I praise you seven times a day” ፨ <span class="ethiopic-label">“ስብዐ ለዕለትየ እሴብሐከ”</span></p>
-                    <p class="citation">Psalm 118:164 ፨ <span class="ethiopic-label">መዝሙር ዘዳዊት ፻፲፰፡፻፷፬</span></p>
+                <div class="help-header">
+                    <h2>The Mount of Mercy | ደብረ ምሕረት</h2>
+                    <div class="bible-verse-about">
+                        <p>“I praise you seven times a day” ፨ <span class="ethiopic-label">“ስብዐ ለዕለትየ እሴብሐከ”</span></p>
+                        <p class="citation">Psalm 118:164 ፨ <span class="ethiopic-label">መዝሙር ዘዳዊት ፻፲፰፡፻፷፬</span></p>
+                    </div>
                 </div>
-                <p>This web app is designed to aid Orthodox Christians and catachumens towards a life of unceasing
-                    prayer. It provides access to essential daily prayers in multiple languages, including Amharic,
-                    English, Ge'ez, Spanish, and Tigrinya with phonetic transliterations to assist in learning and
-                    pronunciation.</p>
-                <h3>📱 Install App to Your Phone</h3>
-                <p>For easy access and offline use, you can install this web app to your mobile home screen:</p>
-                <ul>
-                    <li><strong>iOS (Safari):</strong> Tap the "Share" icon and then select "Add to Home Screen".</li>
-                    <li><strong>Android (Chrome):</strong> Tap the three-dots menu and select "Install App" or "Add to
-                        Home screen".</li>
-                </ul>
-                <h3>💻 Install App to Your Computer</h3>
-                <p>For easy access and offline use, you can also install this web app on your desktop computer:</p>
-                <ul>
-                    <li><strong>Chrome:</strong>
+
+                <div class="modal-tabs help-tabs">
+                    <button class="help-tab-btn active" data-tab="general">General</button>
+                    <button class="help-tab-btn" data-tab="translations">Translations</button>
+                    <button class="help-tab-btn" data-tab="beta">Feedback</button>
+                </div>
+
+                <div class="help-tab-content">
+                    <div id="help-general" class="help-pane active">
+                        <p>This web app is designed to aid Orthodox Christians and catachumens towards a life of
+                            unceasing
+                            prayer. It provides access to essential daily prayers and the Divine Liturgy (Kidasé) in
+                            multiple languages, including Amharic,
+                            English, Ge'ez, Spanish, and Tigrinya with phonetic transliterations to assist in learning
+                            and
+                            pronunciation.</p>
+                        <h3>📱 Install App to Your Phone</h3>
+                        <p>For easy access and offline use, you can install this web app to your mobile home screen:</p>
                         <ul>
-                            <li>Look for the "Install" icon (a computer with a down arrow) in the address bar on the
-                                right side, and click "Install".</li>
-                            <li>Alternatively, tap the three-dots menu in the top right, then click "Cast, Save, &
-                                Share" then "Install".</li>
+                            <li><strong>iOS (Safari):</strong> Tap the "Share" icon and then select "Add to Home
+                                Screen".</li>
+                            <li><strong>Android (Chrome):</strong> Tap the three-dots menu and select "Install App" or
+                                "Add to
+                                Home screen".</li>
                         </ul>
-                    </li>
-                    <li><strong>Safari (macOS):</strong> Go to "File" in the menu bar and select "Add to Dock".</li>
-                </ul>
-                <h3>📖 Translations</h3>
-                <p>The English translations of the daily prayers in this app are a work-in-progress and not yet approved
-                    by clergy. This English translation is intended to be a more accurate improvement upon the few
-                    existing English resources. Several sources are actively being consulted, including:</p>
-                <ul>
-                    <li><a href="https://a.co/d/h5TO3sz" target="_blank" rel="noopener noreferrer">ውዳሴ ማርያም Widasie
-                            Maryam | The Praises of St. Mary: In Ge’ez & English, 3rd Edition</a> translated by Living
-                        Tewahdo Ministry in March 2024</li>
-                    <li>Daily Prayers of the Ethiopian Orthodox <i>Täwaḥədo</i> Church, Revised Pocket Edition
-                        translated by Archdeacon Täsfa Mika’el Williams in May 2020</li>
-                    <li><a href="https://a.co/d/3aUZYDE" target="_blank" rel="noopener noreferrer">Book of Prayer - መጽሐፈ
-                            ጸሎት: Theotokia (Weddase Mariam) / Selected Psalms, Litanies and Prayers from the Ethiopic
-                            Book of the Hours, Missal, and other Liturgical Sources</i></a> translated by Father Mebratu
-                        Kiros (PhD) in 2022</li>
-                    <li><a href="https://www.ethiopianorthodox.org/amharic/yeqolotbet/lessons/daily.pdf" target="_blank"
-                            rel="noopener noreferrer">የየዘወትር ጸሎት (The Daily Prayer)</a> published by
-                        ethiopianorthodox.org</li>
-                    <li>መሠረተ ግእዝ የግእዝ ንባብ መማሪያ መጽሐፍ ክፍል ፩ በሦስት ቋንቋዎች (The Foundation of Gə'əz: Gə'əz Reading Textbook,
-                        1st Edition - In 3 languages) translated by ሊቀ ጠበብት ተክሌ ሲራክ (Liqe Tebebt Tekle Sirak) in 2023
-                    </li>
-                    <li><a href="https://docs.google.com/document/d/1s_OJBJBn89wM9LeXhpUFQJbEA3P-IWUA/edit?usp=sharing&ouid=105972657992870961553&rtpof=true&sd=true"
-                            target="_blank" rel="noopener noreferrer">Libro de Oraciones (Book of Prayers)</a> published
-                        by the Puerto Rico Debre Besrat Kidus Gebriel Iglesia Ortodoxa Tewahedo de Etiopía in 2025</li>
-                </ul>
-                <h3>⚠️ This is a Beta Version / Work-in-Progress!</h3>
-                <p>This web app is currently in a beta stage and is very much a work-in-progress. We are continuously
-                    working to improve this spiritual service and appreciate your patience with any technical issues
-                    that may occur. Your feedback is invaluable to us! Please use the "Share Feedback" button within the
-                    app to let us know your thoughts, suggestions, or any bugs you encounter.</p>
-                <textarea id="feedback-textarea" placeholder="Enter your feedback here..."></textarea>
-                <button id="send-feedback-button">Send</button>
-                <p class="disclaimer">This service is made with love for the glory of God and is managed by servants of
-                    the Oakland Debre Meheret Saint Michael Ethiopian Orthodox Tewahedo Church (EOTC) under the
-                    spiritual guidance of Father Nebiyou Elias and under the auspices of His Grace Archbishop Theophilus
-                    in the EOTC Diocese of Northern California, Nevada, and Arizona.</p>
+                        <h3>💻 Install App to Your Computer</h3>
+                        <p>For easy access and offline use, you can also install this web app on your desktop computer:
+                        </p>
+                        <ul>
+                            <li><strong>Chrome:</strong>
+                                <ul>
+                                    <li>Look for the "Install" icon (a computer with a down arrow) in the address bar on
+                                        the
+                                        right side, and click "Install".</li>
+                                    <li>Alternatively, tap the three-dots menu in the top right, then click "Cast, Save,
+                                        &
+                                        Share" then "Install".</li>
+                                </ul>
+                            </li>
+                            <li><strong>Safari (macOS):</strong> Go to "File" in the menu bar and select "Add to Dock".
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div id="help-translations" class="help-pane">
+                        <h3>📖 Translations</h3>
+                        <p>The English translations of the prayers in this app are a work-in-progress and not yet
+                            approved
+                            by clergy. This English translation is intended to be a more accurate improvement upon the
+                            few
+                            existing English resources. Several sources are actively being consulted, including:</p>
+                        <ul>
+                            <li><a href="https://a.co/d/h5TO3sz" target="_blank" rel="noopener noreferrer">ውዳሴ ማርያም
+                                    Widasie
+                                    Maryam | The Praises of St. Mary: In Ge’ez & English, 3rd Edition</a> translated by
+                                Living
+                                Tewahdo Ministry in March 2024</li>
+                            <li>Daily Prayers of the Ethiopian Orthodox <i>Täwaḥədo</i> Church, Revised Pocket Edition
+                                translated by Archdeacon Täsfa Mika’el Williams in May 2020</li>
+                            <li><a href="https://a.co/d/3aUZYDE" target="_blank" rel="noopener noreferrer">Book of
+                                    Prayer - መጽሐፈ
+                                    ጸሎት: Theotokia (Weddase Mariam) / Selected Psalms, Litanies and Prayers from the
+                                    Ethiopic
+                                    Book of the Hours, Missal, and other Liturgical Sources</i></a> translated by Father
+                                Mebratu
+                                Kiros (PhD) in 2022</li>
+                            <li><a href="https://www.ethiopianorthodox.org/amharic/yeqolotbet/lessons/daily.pdf"
+                                    target="_blank" rel="noopener noreferrer">የየዘወትር ጸሎት (The Daily Prayer)</a>
+                                published by
+                                ethiopianorthodox.org</li>
+                            <li>መሠረተ ግእዝ የግእዝ ንባብ መማሪያ መጽሐፍ ክፍል ፩ በሦስት ቋንቋዎች (The Foundation of Gə'əz: Gə'əz Reading
+                                Textbook,
+                                1st Edition - In 3 languages) translated by ሊቀ ጠበብት ተክሌ ሲራክ (Liqe Tebebt Tekle Sirak) in
+                                2023
+                            </li>
+                            <li><a href="https://docs.google.com/document/d/1s_OJBJBn89wM9LeXhpUFQJbEA3P-IWUA/edit?usp=sharing&ouid=105972657992870961553&rtpof=true&sd=true"
+                                    target="_blank" rel="noopener noreferrer">Libro de Oraciones (Book of Prayers)</a>
+                                published
+                                by the Puerto Rico Debre Besrat Kidus Gebriel Iglesia Ortodoxa Tewahedo de Etiopía in
+                                2025</li>
+                        </ul>
+
+                        <h4>Divine Liturgy (Kidasé)</h4>
+                        <p>The liturgical texts are sourced from several authoritative trilingual and bilingual
+                            editions:</p>
+                        <ul>
+                            <li><strong>Ge'ez, Amharic, & English:</strong> <a href="https://drive.google.com/file/d/1rJnkR9fMNXvc874SuOMs2Tt1fhG3-8V_/view?usp=drive_link" target="_blank" rel="noopener noreferrer"><i>“መጽሐፈ ቅዳሴ በግእዝ፣ በአማርኛና በእንግሊዝኛ (Metshafe Kidasie beGe'ez, beAmarigna'na, beEngleezgna): The Liturgy of the Ethiopian Orthodox Church”</i></a> published by Tensae Publishing House (Addis Ababa, Ethiopia, 2010).</li>
+                            <li><strong>Ge'ez Transcription:</strong> <a href="https://drive.google.com/drive/folders/1svbvMVFW4GIcEFuonaNHHYwixjAEo3Eg?usp=drive_link" target="_blank" rel="noopener noreferrer"><i>Digitized Liturgical Ge'ez Text</i></a> transcribed by wandering poetry students (<span class="ethiopic-label">ቆሎ ተማሪ</span> - <i>Qolo Temari</i>) in Bahir Dar, Ethiopia (October 2024). Licensed under <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC 4.0</a>.</li>
+                            <li><strong>Tigrinya:</strong> <a href="https://drive.google.com/file/d/1MNPhpbj7eUrj7I0-mXXVcja42sF7RbYt/view?usp=drive_link" target="_blank" rel="noopener noreferrer"><i>“መጽሐፈ ቅዳሴ። በግዕዝ ምስ ምልክቱን በትግርኛን (Metshafe Kidasie beGe'ez, mis milktun beTigrignan)”</i></a> published by ኤርትራ ኦርቶዶክስ ተዋሕዶ ሲኖዶስ (Eritrean Orthodox Tewahdo Synod) (Asmera, Eritrea 1993).</li>
+                            <li><strong>Arabic & English Translations:</strong> <a href="https://drive.google.com/file/d/1HkR7LD-G517w_5jLuypm9eJl0zNNvZm2/view?usp=drive_link" target="_blank" rel="noopener noreferrer"><i>“The Liturgy of the Ethiopian Church”</i></a> by Fr. Marcos Daoud and H.E. Blatta Marsie Hazen, published by The Egyptian Book Press (Cairo, Egypt 1959).</li>
+                        </ul>
+
+                        <h4>Expanding Horizons</h4>
+                        <p>We are actively seeking authoritative translations in <strong>Afaan Oromoo</strong> and
+                            aspire to include unofficial yet reliable translations in <strong>Spanish, Greek, Hebrew,
+                                Aramaic/Syriac, and Armenian</strong> to foster deeper connections across Orthodox
+                            traditions.</p>
+                        <p>If you are a scholar, deacon, priest, or coder who wish to collaborate, please contact us at
+                            <strong>KidaseCreator@gmail.com</strong>.</p>
+                    </div>
+
+                    <div id="help-beta" class="help-pane">
+                        <h3>⚠️ Beta Version / Work-in-Progress</h3>
+                        <p>This web app is currently in a beta stage and is very much a work-in-progress. We appreciate
+                            your patience with any technical issues. Your feedback is invaluable!</p>
+
+                        <div class="feedback-form-container" style="margin-top: 1.5rem;">
+                            <textarea id="feedback-textarea-help" placeholder="Enter your feedback here..."
+                                style="width: 100%; min-height: 120px; padding: 0.8rem; border-radius: 8px; border: 1px solid var(--border-color); background: var(--background-color); color: var(--text-color); margin-bottom: 1rem;"></textarea>
+                            <button id="send-feedback-button-help" class="settings-button"
+                                style="width: auto; padding: 0.6rem 2rem;">Send Feedback</button>
+                        </div>
+
+                        <p class="disclaimer"
+                            style="margin-top: 2rem; font-size: 0.85rem; opacity: 0.8; font-style: italic;">
+                            This service is made with love for the glory of God and is managed by servants of the
+                            Oakland Debre Meheret Saint Michael Ethiopian Orthodox Tewahedo Church (EOTC) under the
+                            spiritual guidance of Father Nebiyou Elias and under the auspices of His Grace Archbishop
+                            Theophilus in the EOTC Diocese of Northern California, Nevada, and Arizona.
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
         <div id="feedback-modal" class="modal">
@@ -922,7 +987,8 @@
                         <div id="eusebius-english" class="modal-pane active">
                             <p>The arrangement of the order of Eusebius the Palestinian (c. 260 - 339 AD), who wrote
                                 <i>about</i> the Psalms and its arrangement, according to how it is present <i>and</i>
-                                how it was written in the Hebrew, and also how he translated <i>it</i>.</p>
+                                how it was written in the Hebrew, and also how he translated <i>it</i>.
+                            </p>
 
                             <p><i>The children of the Hebrews divide the whole book of the Psalms into five parts. The
                                     first part runs from the 1st psalm to the 40th; the second part runs from the 41st

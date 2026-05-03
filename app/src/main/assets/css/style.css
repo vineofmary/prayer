@@ -2361,40 +2361,115 @@ body.presentation-mode-slides .hareg-ornament {
 
 .modal-tabs {
     display: flex;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 0.5rem;
+    justify-content: center;
+    gap: 0.4rem;
+    margin-bottom: 2rem;
+    padding: 4px;
+    background: var(--hover-color);
+    border-radius: 12px;
 }
 
-.modal-tab-btn {
-    background: none;
+.modal-tab-btn, .help-tab-btn, .story-tab-btn {
+    background: transparent;
     border: none;
     color: var(--text-color);
-    padding: 0.5rem 1rem;
+    padding: 0.6rem 1rem;
     cursor: pointer;
-    opacity: 0.6;
-    font-weight: bold;
-    border-radius: 4px;
+    opacity: 0.7;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    font-size: 0.85rem;
+    flex: 1;
+    text-align: center;
+    white-space: nowrap;
 }
 
-.modal-tab-btn.active {
+.modal-tab-btn:hover, .help-tab-btn:hover, .story-tab-btn:hover {
+    opacity: 1;
+    background: rgba(128, 128, 128, 0.1);
+}
+
+.modal-tab-btn.active, .help-tab-btn.active, .story-tab-btn.active {
     opacity: 1;
     background: var(--accent-color);
     color: var(--accent-text-color);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
-.modal-pane {
+.modal-pane, .help-pane, .story-day-pane {
     display: none;
     line-height: 1.6;
 }
 
-.modal-pane.active {
+.modal-pane.active, .help-pane.active, .story-day-pane.active {
     display: block;
 }
 
 .modal-pane p {
     margin-bottom: 1rem;
+}
+
+/* --- Help Modal Specific Styles --- */
+.help-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.help-header h2 {
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+.help-tabs {
+    background: var(--hover-color);
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 6px;
+    border-radius: 14px;
+    border: 1px solid var(--border-color);
+    display: flex;
+    gap: 4px;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.help-tab-btn {
+    font-size: 0.85rem !important;
+    padding: 0.6rem 0.5rem !important;
+}
+
+.help-pane h3 {
+    color: var(--accent-color);
+    margin: 1.5rem 0 1rem 0;
+    font-size: 1.2rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.3rem;
+}
+
+.help-pane h4 {
+    margin: 1.2rem 0 0.5rem 0;
+    font-size: 1rem;
+    color: var(--text-color);
+    opacity: 0.9;
+}
+
+.help-pane ul {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+}
+
+.help-pane li {
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+.license-box strong {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--accent-color);
 }
 
 .footnotes-separator {

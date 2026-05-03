@@ -88,7 +88,8 @@ let isScribeLoggedIn = false;
 let isScribeModeActive = false;
 let currentScribeUser = null;
 let prayersFromFirestore = []; // Cache for Firestore data
-const sendFeedbackButton = document.getElementById('send-feedback-button');
+const sendFeedbackButtonHelp = document.getElementById('send-feedback-button-help');
+const sendFeedbackButtonModal = document.getElementById('send-feedback-button'); // feedback-modal one
 const fontPreview = document.getElementById('font-preview');
 const psalmSelectorContainer = document.getElementById('psalm-selector-container');
 const psalmSummary = document.getElementById('psalm-summary');
@@ -4816,17 +4817,35 @@ feedbackButton.addEventListener('click', () => openModal(feedbackModal));
 modalBackdrop.addEventListener('click', closeModal);
 document.querySelectorAll('.close-button').forEach(btn => btn.addEventListener('click', closeModal));
 
-sendFeedbackButton.addEventListener('click', () => {
-    const feedbackText = document.getElementById('feedback-textarea').value;
-    if (feedbackText.trim()) {
-        const mailtoLink = `mailto:vineofmary@gmail.com?subject=Feedback for Prayer App&body=${encodeURIComponent(feedbackText)}`;
-        window.location.href = mailtoLink;
-        showCopyNotification('Feedback sent!', 3000);
-        closeModal();
-    } else {
-        alert('Please enter your feedback before sending.');
+    // Help Modal Feedback
+    if (sendFeedbackButtonHelp) {
+        sendFeedbackButtonHelp.addEventListener('click', () => {
+            const feedbackText = document.getElementById('feedback-textarea-help').value;
+            if (feedbackText.trim()) {
+                const mailtoLink = `mailto:vineofmary@gmail.com?subject=Feedback for Prayer App&body=${encodeURIComponent(feedbackText)}`;
+                window.location.href = mailtoLink;
+                showCopyNotification('Feedback sent!', 3000);
+                closeModal();
+            } else {
+                alert('Please enter your feedback before sending.');
+            }
+        });
     }
-});
+
+    // Feedback Modal Feedback
+    if (sendFeedbackButtonModal) {
+        sendFeedbackButtonModal.addEventListener('click', () => {
+            const feedbackText = document.getElementById('feedback-textarea').value;
+            if (feedbackText.trim()) {
+                const mailtoLink = `mailto:vineofmary@gmail.com?subject=Feedback for Prayer App&body=${encodeURIComponent(feedbackText)}`;
+                window.location.href = mailtoLink;
+                showCopyNotification('Feedback sent!', 3000);
+                closeModal();
+            } else {
+                alert('Please enter your feedback before sending.');
+            }
+        });
+    }
 
 
 // --- Drag and Drop Logic ---
@@ -5835,6 +5854,24 @@ document.addEventListener('DOMContentLoaded', async () => {
             // Toggle panes
             eusebiusTabPanes.forEach(p => p.classList.remove('active'));
             document.getElementById(`eusebius-${lang}`).classList.add('active');
+        });
+    });
+
+    // Help Tabs Logic
+    const helpTabBtns = document.querySelectorAll('.help-tab-btn');
+    const helpTabPanes = document.querySelectorAll('.help-pane');
+
+    helpTabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const tab = btn.getAttribute('data-tab');
+
+            // Toggle buttons
+            helpTabBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            // Toggle panes
+            helpTabPanes.forEach(p => p.classList.remove('active'));
+            document.getElementById(`help-${tab}`).classList.add('active');
         });
     });
 
