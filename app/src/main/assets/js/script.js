@@ -450,18 +450,18 @@ const anglicizedNameMap = {
 };
 
 const LOANWORD_MAPPING = {
-    "አውሎግዮስ": { original: "(\u03b5\u03c5\u03bb\u03cc\u03b3\u03b9\u03bf\u03c2)", phonetic: "ev-lo-gi-os", meaning: "Blessed", geez: "ቡሩክ" },
-    "ጌርዮስ": { original: "(\u03ba\u03cd\u03c1\u03b9\u03bf\u03c2)", phonetic: "ky-ri-os", meaning: "Lord", geez: "እግዚእ" },
-    "አግዮስ": { original: "(\u1f03\u03b3\u03b9\u03bf\u03c2)", phonetic: "ha-gi-os", meaning: "Holy", geez: "ቅዱስ" },
-    "ማንጦን": { original: "(\u03c0\u03ac\u03bd\u03c4\u03c9\u03bd)", phonetic: "pan-ton", meaning: "of all", geez: "ዘኵሉ" },
-    "ፖንዋማንጦን": { original: "(\u03c0\u03bd\u03b5\u03c5\u03bc\u03ac\u03c4\u03c9\u03bd)", phonetic: "pnev-ma-ton", meaning: "of spirits", geez: "ዘመንፈሳት" },
-    "አላቲኖን": { original: "(\u1f00\u03bb\u03b7\u03b8\u03b9\u03bd\u03cc\u03bd)", phonetic: "a-le-thi-non", meaning: "True", geez: "አማናዊ (በአማን)" },
-    "ኪርያላይሶን": { original: "(\u039a\u03cd\u03c1\u03b9\u03b5 \u1f10\u03bb\u03ad\u03b7\u03c3\u03bf\u03bd)", phonetic: "ky-ri-e e-le-i-son", meaning: "Lord have mercy", geez: "እግዚኦ ተሣሃለነ" },
-    "ጵርስፎራ": { original: "(\u03c0\u03c1\u03bf\u03c3\u03c6\u03bf\u03c1\u03ac)", phonetic: "pros-fo-ra", meaning: "The Sacrificial/Eucharistic Offering", geez: "ቍርባን (መባዕ)" },
-    "እንፎራ": { original: "(\u1f00\u03bd\u03b1\u03c6\u03bf\u03c1\u03ac)", phonetic: "a-na-fo-ra", meaning: "The Lifting Up (of the offering)", geez: "አኰቴተ ቍርባን" },
-    "ጳራቅሊጦስ": { original: "(\u03a0\u03b1\u03c1\u03ac\u03ba\u03bb\u03b7\u03c4\u03bf\u03c2)", phonetic: "pa-ra-kli-tos", meaning: "Paraclete (Advocate, Helper, Comforter)", geez: "ናዛዚ" },
-    "አምንስቲቲ ሙኪርያ": { original: "(\u039c\u03bd\u03ae\u03c3\u03b8\u03b7\u03c4\u03af \u03bc\u03bf\u03c5, \u039a\u03cd\u03c1\u03b9\u03b5)", phonetic: "mni-sthi-ti mou ky-ri-e", meaning: "Remember me, O Lord", geez: "ተዘከረኒ እግዚኦ" },
-    "አንቲ ፋሲልያሱ": { original: "(\u1f10\u03bd \u03c4\u1fc7 \u03b2\u03b1\u03c3\u03b9\u03bb\u03b5\u03af\u1fb3 \u03c3\u03bf\u03c5)", phonetic: "en ti va-si-li-a sou", meaning: "in your kingdom", geez: "በመንግሥትከ" }
+    "አውሎግዮስ": { lang: "Greek", original: "(\u03b5\u03c5\u03bb\u03cc\u03b3\u03b9\u03bf\u03c2)", phonetic: "ev-lo-gi-os", meaning: "Blessed", geez: "ቡሩክ" },
+    "ጌርዮስ": { lang: "Greek", original: "(\u03ba\u03cd\u03c1\u03b9\u03bf\u03c2)", phonetic: "ky-ri-os", meaning: "Lord", geez: "እግዚእ" },
+    "አግዮስ": { lang: "Greek", original: "(\u1f03\u03b3\u03b9\u03bf\u03c2)", phonetic: "ha-gi-os", meaning: "Holy", geez: "ቅዱስ" },
+    "ማንጦን": { lang: "Greek", original: "(\u03c0\u03ac\u03bd\u03c4\u03c9\u03bd)", phonetic: "pan-ton", meaning: "of all", geez: "ዘኵሉ" },
+    "ፖንዋማንጦን": { lang: "Greek", original: "(\u03c0\u03bd\u03b5\u03c5\u03bc\u03ac\u03c4\u03c9\u03bd)", phonetic: "pnev-ma-ton", meaning: "of spirits", geez: "ዘመንፈሳት" },
+    "አላቲኖን": { lang: "Greek", original: "(\u1f00\u03bb\u03b7\u03b8\u03b9\u03bd\u03cc\u03bd)", phonetic: "a-le-thi-non", meaning: "True", geez: "አማናዊ (በአማን)" },
+    "ኪርያላይሶን": { lang: "Greek", original: "(\u039a\u03cd\u03c1\u03b9\u03b5 \u1f10\u03bb\u03ad\u03b7\u03c3\u03bf\u03bd)", phonetic: "ky-ri-e e-le-i-son", meaning: "Lord have mercy", geez: "እግዚኦ ተሣሃለነ" },
+    "ጵርስፎራ": { lang: "Greek", original: "(\u03c0\u03c1\u03bf\u03c3\u03c6\u03bf\u03c1\u03ac)", phonetic: "pros-fo-ra", meaning: "The Sacrificial/Eucharistic Offering", geez: "ቍርባን (መባዕ)" },
+    "እንፎራ": { lang: "Greek", original: "(\u1f00\u03bd\u03b1\u03c6\u03bf\u03c1\u03ac)", phonetic: "a-na-fo-ra", meaning: "The Lifting Up (of the offering)", geez: "አኰቴተ ቍርባን" },
+    "ጳራቅሊጦስ": { lang: "Greek", original: "(\u03a0\u03b1\u03c1\u03ac\u03ba\u03bb\u03b7\u03c4\u03bf\u03c2)", phonetic: "pa-ra-kli-tos", meaning: "Paraclete (Advocate, Helper, Comforter)", geez: "ናዛዚ" },
+    "አምንስቲቲ ሙኪርያ": { lang: "Greek", original: "(\u039c\u03bd\u03ae\u03c3\u03b8\u03b7\u03c4\u03af \u03bc\u03bf\u03c5, \u039a\u03cd\u03c1\u03b9\u03b5)", phonetic: "mni-sthi-ti mou ky-ri-e", meaning: "Remember me, O Lord", geez: "ተዘከረኒ እግዚኦ" },
+    "አንቲ ፋሲልያሱ": { lang: "Greek", original: "(\u1f10\u03bd \u03c4\u1fc7 \u03b2\u03b1\u03c3\u03b9\u03bb\u03b5\u03af\u1fb3 \u03c3\u03bf\u03c5)", phonetic: "en ti va-si-li-a sou", meaning: "in your kingdom", geez: "በመንግሥትከ" }
 };
 
 function applyLoanwordOrigins(text, langKey) {
@@ -480,6 +480,7 @@ function applyLoanwordOrigins(text, langKey) {
         const data = LOANWORD_MAPPING[p1];
         return `<span class="loanword-origin" 
             data-word="${p1}" 
+            data-lang="${data.lang}"
             data-original="${data.original.replace(/[()]/g, '')}" 
             data-phonetic="${data.phonetic}" 
             data-meaning="${data.meaning}" 
@@ -487,6 +488,93 @@ function applyLoanwordOrigins(text, langKey) {
     });
 
     return transformedText;
+}
+
+function createLoanwordTooltip() {
+    let tooltip = document.querySelector('.loanword-tooltip');
+    if (!tooltip) {
+        tooltip = document.createElement('div');
+        tooltip.className = 'loanword-tooltip';
+        tooltip.innerHTML = `
+            <div class="tooltip-title"></div>
+            <div class="tooltip-phonetic"></div>
+            <div class="tooltip-row">
+                <div class="tooltip-label">English</div>
+                <div class="tooltip-value tooltip-meaning"></div>
+            </div>
+            <div class="tooltip-row">
+                <div class="tooltip-label tooltip-lang-label">Original</div>
+                <div class="tooltip-value tooltip-original"></div>
+            </div>
+            <div class="tooltip-row">
+                <div class="tooltip-label">Ge'ez</div>
+                <div class="tooltip-value tooltip-geez"></div>
+            </div>
+        `;
+        document.body.appendChild(tooltip);
+    }
+    return tooltip;
+}
+
+function showLoanwordTooltip(element) {
+    const tooltip = createLoanwordTooltip();
+    const word = element.getAttribute('data-word');
+    const lang = element.getAttribute('data-lang');
+    const original = element.getAttribute('data-original');
+    const phonetic = element.getAttribute('data-phonetic');
+    const meaning = element.getAttribute('data-meaning');
+    const geez = element.getAttribute('data-geez');
+
+    tooltip.querySelector('.tooltip-title').textContent = word;
+    tooltip.querySelector('.tooltip-phonetic').innerHTML = `From ${lang}, <i>${phonetic}</i>`;
+    tooltip.querySelector('.tooltip-meaning').textContent = meaning;
+    tooltip.querySelector('.tooltip-original').textContent = original;
+    tooltip.querySelector('.tooltip-geez').textContent = geez;
+    tooltip.querySelector('.tooltip-lang-label').textContent = lang.toUpperCase();
+
+    // Show but keep transparent to measure
+    tooltip.style.display = 'block';
+    tooltip.style.opacity = '0';
+    tooltip.style.visibility = 'visible';
+    tooltip.classList.remove('active'); // Ensure no transition yet
+
+    // Positioning
+    const rect = element.getBoundingClientRect();
+    const tooltipHeight = tooltip.offsetHeight;
+    const tooltipWidth = tooltip.offsetWidth;
+    
+    let top = rect.top - tooltipHeight - 15;
+    let left = rect.left + (rect.width / 2) - (tooltipWidth / 2);
+
+    // Boundary checks
+    if (top < 10) {
+        top = rect.bottom + 15;
+    }
+    
+    if (left < 10) left = 10;
+    if (left + tooltipWidth > window.innerWidth - 10) {
+        left = window.innerWidth - tooltipWidth - 10;
+    }
+
+    tooltip.style.top = `${top}px`;
+    tooltip.style.left = `${left}px`;
+    
+    // Clean up manual styles and let CSS transition take over
+    tooltip.style.display = '';
+    tooltip.style.opacity = '';
+    tooltip.style.visibility = '';
+    
+    // Force reflow
+    void tooltip.offsetWidth;
+    
+    tooltip.classList.add('active');
+}
+
+function hideLoanwordTooltip() {
+    const tooltip = document.querySelector('.loanword-tooltip');
+    if (tooltip) {
+        tooltip.classList.remove('active');
+    }
 }
 
 function applyAnglicization(text, langKey) {
@@ -4626,6 +4714,14 @@ if (showGeezPhoneticChantsToggle) {
     });
 }
 
+if (showLoanwordOriginsToggle) {
+    showLoanwordOriginsToggle.addEventListener('change', () => {
+        displayOptions.showLoanwordOrigins = showLoanwordOriginsToggle.checked;
+        renderPrayers();
+        saveSettings();
+    });
+}
+
 // Search Listeners
 searchToggle.addEventListener('click', () => {
     header.classList.add('search-active');
@@ -4666,6 +4762,16 @@ function closeModal() {
 document.addEventListener('click', (e) => {
     if (e.target.classList.contains('modal')) {
         closeModal();
+    }
+
+    // Loanword Origin Tooltip Handling
+    const loanwordEl = e.target.closest('.loanword-origin');
+    if (loanwordEl) {
+        e.preventDefault();
+        e.stopPropagation();
+        showLoanwordTooltip(loanwordEl);
+    } else if (!e.target.closest('.loanword-tooltip')) {
+        hideLoanwordTooltip();
     }
 });
 

@@ -2550,13 +2550,12 @@ body.presentation-mode-slides .hareg-ornament {
 .loanword-tooltip {
     position: fixed;
     z-index: 2000;
-    background: var(--sidebar-bg-color);
+    background-color: var(--card-background, #ffffff);
     border: 1px solid var(--accent-color);
     border-radius: 12px;
     padding: 1.25rem;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
     width: 280px;
-    pointer-events: none;
     opacity: 0;
     visibility: hidden;
     transition: all 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
