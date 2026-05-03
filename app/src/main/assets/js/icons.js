@@ -37,7 +37,7 @@ const ICON_METADATA = {
             english: 'Interwoven Lace Design ("Hareg")'
         },
         description: { 
-            english: 'This is an intricate interwoven lace design known as "hareg" in Ge’ez (meaning "vine"), commonly used to frame sacred texts and icons in Ethiopian manuscripts. This specific footer motif is sourced from the introductory rite (Maṣḥafa śerʻat, መጽሐፈ ፡ ሥርዓት) of a 17th-century manuscript of the Miracles of Mary (ተአምረ ፡ ማርያም) from the Gunda Gunde Monastery (Debre Gerizan Kidist Maryam) in Tigray, Ethiopia. This part of the manuscript (GG 044) was copied for Abune Wolde Yohannes (አቡነ፡ ወልደ፡ ዮሐንስ). The monastery name translates to the Mount Gerizim Saint Mary Monastery; for more on the original Mount Gerizim (גְּרִዝִይም) in ancient Samaria, see Bible References below.'
+            english: 'This is an intricate interwoven lace design known as "hareg" in Ge’ez (meaning "vine"), commonly used to frame sacred texts and icons in Ethiopian manuscripts. This specific footer motif is sourced from the introductory rite (Maṣḥafa śerʻat, መጽሐፈ ፡ ሥርዓት) of a 17th-century manuscript of the Miracles of Mary (ተአምረ ፡ ማርያም) from the Gunda Gunde Monastery (Debre Gerizan Kidist Maryam) in Tigray, Ethiopia. This part of the manuscript (GG 044) was copied for Abune Wolde Yohannes (አቡነ፡ ወልደ፡ ዮሐንስ). The monastery name translates to the Mount Gerizim Saint Mary Monastery; for more on the original Mount Gerizim (גְּרִזִים) in ancient Samaria, see Bible References below.'
         },
         originalImage: ['img/Gwinda-Gwinde-17th-century-Miracles-of-Mary-Intro-with-Hareg.png'],
         source: 'Gunda Gunde 044, f. 1r. Debre Gerizan Kidist Maryam Monastery, Tigray, Ethiopia. 17th-18th Century.',
