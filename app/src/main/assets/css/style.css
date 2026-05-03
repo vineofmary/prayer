@@ -1812,6 +1812,8 @@ body.presentation-mode-slides .prayer-content {
 body.presentation-mode-slides .language-text {
     line-height: 1.2;
     margin: 0;
+    padding-top: 0.1em;
+    padding-bottom: 0.15em;
 }
 
 body.presentation-mode-slides .lang-ethiopic-script .language-text {

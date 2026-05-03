@@ -3415,6 +3415,8 @@ function adjustSlideFontSize() {
             const isColumn = prayerContent.classList.contains('layout-column');
             let bestSizes = [];
 
+            const HEIGHT_BUFFER = 24; // Pixels buffer to prevent clipping descenders/labels
+
             if (isColumn) {
                 // Column Layout: Each column is independent
                 let minOverallBest = 250;
@@ -3426,7 +3428,7 @@ function adjustSlideFontSize() {
                     while (minSize <= maxSize) {
                         let midSize = Math.floor((minSize + maxSize) / 2);
                         textP.style.fontSize = midSize + 'px';
-                        if (textP.scrollHeight <= prayerContent.clientHeight && textP.scrollWidth <= section.clientWidth) {
+                        if (textP.scrollHeight <= (prayerContent.clientHeight - HEIGHT_BUFFER) && textP.scrollWidth <= section.clientWidth) {
                             bestSize = midSize;
                             minSize = midSize + 1;
                         } else {
@@ -3458,7 +3460,7 @@ function adjustSlideFontSize() {
                             const p = s.querySelector('p.language-text');
                             return p && p.scrollWidth > s.clientWidth;
                         });
-                        const heightOverflow = prayerContent.scrollHeight > prayerContent.clientHeight;
+                        const heightOverflow = prayerContent.scrollHeight > (prayerContent.clientHeight - HEIGHT_BUFFER);
 
                         if (!widthOverflow && !heightOverflow) {
                             bestSize = midSize;
@@ -3491,8 +3493,8 @@ function adjustSlideFontSize() {
                                 textP.style.fontSize = nextSize + 'px';
 
                                 // Check if this section overflows its width or the total container overflows height
-                                // Use a small buffer (1px) for height to account for sub-pixel rendering
-                                if (textP.scrollWidth <= section.clientWidth && prayerContent.scrollHeight <= maxAvailableHeight + 1) {
+                                // Use a small buffer to prevent clipping of labels and descenders
+                                if (textP.scrollWidth <= section.clientWidth && prayerContent.scrollHeight <= (maxAvailableHeight - HEIGHT_BUFFER)) {
                                     currentSizes[i] = nextSize;
                                     growing = true;
                                 } else {
