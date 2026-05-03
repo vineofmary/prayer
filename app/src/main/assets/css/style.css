@@ -1809,6 +1809,11 @@ body.presentation-mode-slides .prayer-content {
     overflow: hidden;
 }
 
+body.presentation-mode-slides .language-section h4 {
+    padding-top: 0.2rem;
+}
+
+
 body.presentation-mode-slides .language-text {
     line-height: 1.2;
     margin: 0;

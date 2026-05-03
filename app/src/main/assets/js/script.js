@@ -3415,7 +3415,7 @@ function adjustSlideFontSize() {
             const isColumn = prayerContent.classList.contains('layout-column');
             let bestSizes = [];
 
-            const HEIGHT_BUFFER = 24; // Pixels buffer to prevent clipping descenders/labels
+            const HEIGHT_BUFFER = 48; // Pixels buffer to prevent clipping descenders/labels
 
             if (isColumn) {
                 // Column Layout: Each column is independent
