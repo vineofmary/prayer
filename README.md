@@ -12,7 +12,7 @@ _**TL;DR: A multi-language web app to aid Orthodox Christians in daily prayer; t
 
 # 🙏 The Mount of Mercy | ደብረ ምሕረት
 
-This web app is designed to aid Orthodox Christians and catachumens towards a life of unceasing prayer. It provides access to essential daily prayers in multiple languages, including Ge'ez, Amharic, Tigrinya, English, and Spanish with phonetic transliterations to assist in learning and pronunciation.
+This web app is designed to aid Orthodox Christians and catachumens towards a life of unceasing prayer. It provides access to essential daily prayers and the Divine Liturgy (Kidasé) in multiple languages, including Ge'ez, Amharic, Tigrinya, English, and Spanish with phonetic transliterations to assist in learning and pronunciation.
 
 This spiritual service is made with love for the glory of God and is managed by servants of the Oakland Debre Meheret Saint Michael Ethiopian Orthodox Tewahedo Church (EOTC) under the auspices of His Grace Archbishop Theophilus in the EOTC Diocese of Northern California, Nevada, and Arizona.
 
@@ -51,8 +51,11 @@ This app is built with modern web technologies to provide a rich and customizabl
 ### Core Features:
 
 * **Multi-Lingual Support:** Display prayers in Ge'ez, Amharic, Tigrinya, English, and Spanish.
+* **Divine Liturgy (Kidasé) Mode:** Access the Order of the Liturgy and selected Anaphoras (e.g., Anaphora of the Apostles). We are actively working on adding more Anaphoras and full translations in all supported languages.
 * **Integrated Bible Support:** Full support for the Psalms and Songs of the Prophets in multiple versions, including Ge'ez (1954 ዓ፡ም), Amharic (1954 ዓ፡ም), English (NKJV), Spanish (RGV), and Coptic (Bohairic).
-* **Phonetic Transliteration:** Ge'ez, Amharic and Tigrinya phonetic scripts are available to aid in pronunciation and learning.
+* **Phonetic Transliteration & Interactive Tooltips:** 
+    * Ge'ez, Amharic, and Tigrinya phonetic scripts are available to aid in pronunciation and learning.
+    * **Loanword Etymology:** Discover the origins and meanings of ancient loanwords (from Greek, Hebrew, Aramaic, Syriac etc.) directly within the liturgical text via interactive tooltips.
 * **Rich Metadata & Historical Context:** 
     * **Eusebius Psalm Arrangement:** A detailed, multi-lingual modal (English, Ge'ez, Greek) explaining the ancient arrangement of the Psalter.
     * **St. Ephrem the Syrian:** A tabbed narrative modal exploring the story of St. Ephrem and the composition of the *Weddase Maryam*.
@@ -90,7 +93,7 @@ The app is built using HTML, CSS, and vanilla JavaScript, focusing on a responsi
 * **Expanded Content:**
     * Continue adding more prayers. 
       * The Prayers of the Hours (e.g., The Praise of Mary) for all days of the week.
-      * The Divine Liturgy (e.g., The Order of Liturgy, Anaphora of the Apostles, Anaphora of Our Lady Mary).
+      * The Divine Liturgy (e.g., expanding to all 14 Anaphoras like Anaphora of Our Lady Mary, Anaphora of St. John Chrysostom, etc., with full language coverage).
     * Add a user-friendly prescription guide for the Psalms and Songs of the Prophets according to Saint Athanasius' "Letter to Marcellinus on the Interpretation of the Psalms." 
     * Implement a dedicated side-by-side Bible viewer for full book browsing.
     * Fix bugginess of the Scribe's Chamber so that surgical / typo fixes can be made by authorized scribes within the app.
