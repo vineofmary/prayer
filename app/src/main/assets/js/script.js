@@ -3855,6 +3855,11 @@ function renderSelectedPsalmsWithDoxology(addSectionTitleCallback) {
             const prayerCard = document.createElement('div');
             prayerCard.classList.add('prayer-card', 'psalm-card');
 
+            // Handle initial collapse state
+            if (window.isRenderingCollapsed && displayOptions.presentationMode !== 'slides') {
+                prayerCard.style.display = 'none';
+            }
+
             const prayerCardMainContent = document.createElement('div');
             prayerCardMainContent.classList.add('prayer-card-main-content');
 
@@ -4085,7 +4090,7 @@ function renderSelectedProphetSongs(addSectionTitleCallback) {
 
 function createPsalmVerseSection(langName, text, verseNum, isEthiopic = false, langKey, isFirstLanguage = false) {
     const langSection = document.createElement('div');
-    langSection.classList.add('language-section');
+    langSection.classList.add('language-section', `lang-${langKey}`);
     langSection.dataset.langKey = langKey;
 
     const langHeader = document.createElement('h4');
