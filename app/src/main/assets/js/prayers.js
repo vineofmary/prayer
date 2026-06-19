@@ -1728,7 +1728,7 @@ const prayers = [
     "reference": `The Angels Praise Mary. Luke 1:36;`,
     "chapter": `Angels`,
     "stanza": `2`,
-    "english": `Now indeed, Elizabeth your relative has also conceived a son in her old age and in her elderliness.; and this is now the sixth month for her who was called barren.`,
+    "english": `Now indeed, Elizabeth your relative has also conceived a son in her old age and in her elderliness; and this is now the sixth month for her who was called barren.`,
     "geez_script": `ወናሁ ኤልሳቤጥኒ እንተ እምአዝማድኪ ይእቲ ፀንሰት ወረከበት ወልደ በልኅቃቲሃ ወበርሥዐቲሃ። ወናሁ ሳድስ ዝንቱ ወርኅ ለእንተ ይብልዋ መካን`,
     "geez_phonetic": `wenahu 'élsabéṭnī 'inte 'im'azmadkī y'itī tsenset werekebet welde belhḳatīha webers'atīha. wenahu sads zntu werh le'inte yblwa mekan`,
     "amharic_script": `እነሆ፥ ከዘመዶችሽ ወገን የምትሆን ኤልሣቤጥም እርስዋ እንኳ በእርጅናዋ ወንድ ልጅን ፀንሳለች፤ መካን ትባል የነበረችው ከፀነሰች እነሆ፥ ይህ ስድስተኛ ወር ነው።`,
