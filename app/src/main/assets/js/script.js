@@ -2385,7 +2385,7 @@ function createPrayerCardElement(prayer, prayerIndex, isKidase = false) {
         editBtn.title = 'Edit Stanza (Scribe Mode)';
         editBtn.addEventListener('click', (e) => {
             e.stopPropagation();
-            window.openScribeEditor(prayer.stanza, prayer.chapter);
+            window.openScribeEditor(prayer);
         });
         prayerCard.appendChild(editBtn);
     }
@@ -5276,7 +5276,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 editBtnCorner.title = 'Edit Servant Prayer';
                 editBtnCorner.addEventListener('click', (e) => {
                     e.stopPropagation();
-                    window.openScribeEditor(prayer.title, 'Servant');
+                    window.openScribeEditor(prayer);
                 });
                 prayerCard.appendChild(editBtnCorner);
             }
@@ -5434,6 +5434,16 @@ document.addEventListener('DOMContentLoaded', async () => {
             });
     }
 
+    function generateDocId(p) {
+        const chapter = p.chapter || 'Servant';
+        const stanza = p.stanza || p.title || 'stanza';
+        const ref = p.reference || 'ref';
+        const english = p.english || '';
+        const contentHash = btoa(unescape(encodeURIComponent(english))).substring(0, 10);
+        const rawId = `${chapter}_${stanza}_${ref}_${contentHash}`;
+        return rawId.replace(/[^a-zA-Z0-9]/g, '_').substring(0, 100);
+    }
+
     function updateLocalPrayers() {
         if (!prayersFromFirestore.length) return;
 
@@ -5444,16 +5454,14 @@ document.addEventListener('DOMContentLoaded', async () => {
             };
 
             if (fsItem.chapter === 'Servant') {
-                updateAllMatches(servantsPrayers, p => p.title === fsItem.stanza);
+                updateAllMatches(servantsPrayers, p => generateDocId(p) === fsItem.id);
             } else if (fsItem.chapter === 'Psalms' || fsItem.chapter === 'ProphetSong' || fsItem.chapter === 'Bible') {
                 updateAllMatches(songs, p =>
                     p.chapter === fsItem.chapter &&
                     p.stanza == fsItem.stanza
                 );
             } else {
-                const criteria = p =>
-                    p.chapter === fsItem.chapter &&
-                    p.stanza == fsItem.stanza;
+                const criteria = p => generateDocId(p) === fsItem.id;
 
                 updateAllMatches(prayers, criteria);
 
@@ -5472,27 +5480,15 @@ document.addEventListener('DOMContentLoaded', async () => {
     subscribeToIconMetadata();
 
     // Surgical Editor: Open Modal
-    window.openScribeEditor = function (stanzaId, chapter) {
-        console.log('Opening editor for:', chapter, stanzaId);
-
-        // Comprehensive search across all possible sources
-        const prayer =
-            prayersFromFirestore.find(p => p.stanza == stanzaId && p.chapter == chapter) ||
-            prayers.find(p => p.chapter === chapter && p.stanza == stanzaId) ||
-            songs.find(p => p.chapter === chapter && p.stanza == stanzaId) ||
-            (typeof kidaseData !== 'undefined' ? (
-                kidaseData.order.find(p => p.chapter === chapter && p.stanza == stanzaId) ||
-                kidaseData.apostles.find(p => p.chapter === chapter && p.stanza == stanzaId) ||
-                kidaseData.mary.find(p => p.chapter === chapter && p.stanza == stanzaId)
-            ) : null) ||
-            (chapter === 'Servant' ? servantsPrayers.find(p => p.title == stanzaId) : null);
+    window.openScribeEditor = function (prayer) {
+        console.log('Opening editor for:', prayer.chapter, prayer.stanza);
 
         if (!prayer) {
-            console.warn('Scribe Error: Prayer not found in any source.');
+            console.warn('Scribe Error: Prayer not provided.');
             return;
         }
 
-        scribeEditorRef.textContent = `Editing: ${chapter} - ${stanzaId}`;
+        scribeEditorRef.textContent = `Editing: ${prayer.chapter} - ${prayer.stanza}`;
         scribeEditorFields.innerHTML = '';
 
         // Populate Metadata Fields
@@ -5552,7 +5548,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         scribeStatusSelect.value = prayer.status || 'published';
 
         // Store current IDs for the save handler
-        scribeSaveBtn.dataset.docId = prayer.id || '';
+        scribeSaveBtn.dataset.docId = prayer.id || generateDocId(prayer);
 
         openModal(scribeEditorModal);
     };

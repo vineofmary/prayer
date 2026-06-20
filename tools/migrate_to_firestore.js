@@ -2,7 +2,7 @@ const admin = require('firebase-admin');
 const fs = require('fs');
 const path = require('path');
 
-const serviceAccount = require('./service-account.json');
+const serviceAccount = require('../service-account.json');
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount)
@@ -11,9 +11,9 @@ admin.initializeApp({
 const db = admin.firestore();
 
 const filesToMigrate = [
-    { path: 'app/src/main/assets/js/prayers.js', varName: 'prayers' },
-    { path: 'app/src/main/assets/js/songs.js', varName: 'songs' },
-    { path: 'app/src/main/assets/js/servants.js', varName: 'servantsPrayers' }
+    { path: '../app/src/main/assets/js/prayers.js', varName: 'prayers' },
+    { path: '../app/src/main/assets/js/songs.js', varName: 'songs' },
+    { path: '../app/src/main/assets/js/servants.js', varName: 'servantsPrayers' }
 ];
 
 async function migrate() {
