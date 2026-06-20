@@ -3540,7 +3540,6 @@ const kidaseData = {
       "spanish": "",
       "coptic": ""
     },
-
     {
       "instruction": "Inaudible Prayer",
       "reference": "",
@@ -7062,7 +7061,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አቤቱ ፈጣሪያችን እግዚአብሔር ኢየሱስ ክርስቶስ ሆይ! ክቡራን ንጹሐን ለሚሆኑ ደቀ መዝሙሮችህ እንዲህ ያልካቸው፥",
       "amharic_phonetic": "kahn: 'abétu feṭarīyachn 'igzī'abḥér 'īyesus krstos hoy! kburan ntsuḥan lemīhonu deḳe mezmurochh 'indīh yalkachew;",
       "tigrinya_script": "፨ ናይ ወንጌል ጸሎት ፨\nካህን፤ ኦ ጐይታና እግዚኣብሔር ኢየሱስ ክርስቶስ ኣምላኽና…",
-      "tigrinya_phonetic": "፨ nay wengél tselot ፨\nkahn: 'o gweytana 'igzī'abḥér 'īyesus krstos 'amlakhna…"
+      "tigrinya_phonetic": "፨ nay wengél tselot ፨\nkahn: 'o gweytana 'igzī'abḥér 'īyesus krstos 'amlakhna…",
+      "spanish": "፨ ORACIÓN DEL EVANGELIO ፨\nSacerdote: Oh Señor Jesucristo, Dios nuestro, que dijiste a tus santos discípulos y a tus puros apóstoles:"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -7075,7 +7075,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ እናንተ የምታዩትን ያዩ ዘንድ ብዙ ነቢያት ጻድቃን ወደዱ፤ አላዩም። እናንተ የምትሰሙትን ወደዱ፤ አልሰሙም።",
       "amharic_phonetic": "kahn: 'inante yemtayutn yayu zend bzu nebīyat tsadḳan wededu: 'alayum. 'inante yemtsemutn wededu: 'alsemum.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Muchos profetas y justos desearon ver lo que vosotros veis, y no las vieron, y quisieron oír lo que vosotros oís, y no las oyeron;"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -7088,7 +7089,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ የእናንተ ያዩ ዓይኖቻችሁና የሰሙ ጆሮቻችሁ ግን የተመሰገኑ ናቸው።",
       "amharic_phonetic": "kahn: ye'inante yayu 'aynochachhuna yesemu jorochachhu gn yetemesegenu nachew.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: pero tú, bienaventurados tus ojos que vieron y tus oídos que oyeron;"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -7101,7 +7103,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ እኛንም እንደ እነሱ የበቃን አድርገን፤ በቅዱሳን ጸሎት የከበረ የወንጌልን ቃል ሰምተን እንሠራ ዘንድ።",
       "amharic_phonetic": "kahn: 'iñanm 'inde 'inesu yebeḳan 'adrgen: beḳdusan tselot yekebere yewengéln ḳal semten 'insera zend.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Haz que también nosotros, como ellos, podamos escuchar y practicar la Palabra de tu Santo Evangelio mediante la oración de los santos."
     },
     {
       "instruction": "",
@@ -7114,7 +7117,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ ክቡር ስለሚሆን ወንጌል ጸልዩ\n፨ ሕዝብ፤ ወንጌልን ለመስማት የበቃን ያድርገን",
       "amharic_phonetic": "dīyaḳon: kbur slemīhon wengél tselyu\n፨ ḥzb: wengéln lemesmat yebeḳan yadrgen",
       "tigrinya_script": "ዲያቆን፤ ምእንቲ ቅዱስ ወንጌል ጸልዩ።\n፨ ሕዝብ፤ ቃል ቅዱስ ወንጌል ንምስማዕ ድልዋት ግበረና።",
-      "tigrinya_phonetic": "dīyaḳon: m'intī ḳdus wengél tselyu.\n፨ ḥzb: ḳal ḳdus wengél nmsma'i dlwat gberena."
+      "tigrinya_phonetic": "dīyaḳon: m'intī ḳdus wengél tselyu.\n፨ ḥzb: ḳal ḳdus wengél nmsma'i dlwat gberena.",
+      "spanish": "Diácono: Ora por el Santo Evangelio.\n፨ Pueblo: Que Él nos haga aptos para escuchar el Santo Evangelio."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -7127,7 +7131,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ዳግመኛ አቤቱ ካንተ ዘንድ የምንሻውን በምንለምንበትና በምን ጸልይበት ጊዜ እና ስባቸው ዘንድ አስቡን ያሉንን ዳግመኛ አስብ፤",
       "amharic_phonetic": "kahn: dagmeña 'abétu kante zend yemnshawn bemnlemnbetna bemn tselybet gīzé 'ina sbachew zend 'asbun yalunn dagmeña 'asb:",
       "tigrinya_script": "ካህን፤ ኦ ጐይታ ካባኻ እንደልዮ ክንረክብ፡ ኣብ እንጽልየሉ ጊዜ ክንዝክሮም ዘክሩና",
-      "tigrinya_phonetic": "kahn: 'o gweyta kabakha 'indelyo knrekb 'ab 'intslyelu gīzé knzkrom zekruna"
+      "tigrinya_phonetic": "kahn: 'o gweyta kabakha 'indelyo knrekb 'ab 'intslyelu gīzé knzkrom zekruna",
+      "spanish": "Sacerdote: Acuérdate de nuevo, Señor, de aquellos que nos han ordenado recordarlos en el momento de nuestras oraciones y súplicas con las que te pedimos."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -7140,7 +7145,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አቤቱ አምላካችን እግዚአብሔር ሆይ ከኛ አስቀድመው የሞቱትን አሳርፋቸው፣ የታመሙትንም ፈጥነህ አድና ቸው፣ የሁላችን ሕይወት የሁላችንም ተስፋ",
       "amharic_phonetic": "kahn: 'abétu 'amlakachn 'igzī'abḥér hoy keña 'asḳedmew yemotutn 'asarfachew, yetamemutnm feṭneh 'adna chew, yehulachn ḥywet yehulachnm tesfa",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Señor Dios nuestro, da descanso a los que durmieron delante de nosotros, sana prontamente a los enfermos, porque tú eres la vida de todos nosotros, la esperanza de todos nosotros,"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -7153,7 +7159,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ የሁላችንም አዳኝ የሁላ ችንም አስነሽ አንተ ነህና፣ ላንተ ምስጋናን እስከ አርያም ድረስ እንልካለን፤ ለዘለዓለሙ አሜን",
       "amharic_phonetic": "kahn: yehulachnm 'adañ yehula chnm 'asnesh 'ante nehna, lante msganan 'iske 'aryam dräres 'inlkalen: lezele'alemu 'amén",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: libertador de todos nosotros, y levantador de todos nosotros, y a ti elevamos acción de gracias hasta el cielo más alto, por los siglos de los siglos."
     },
     {
       "instruction": "",
@@ -7166,7 +7173,8 @@ const kidaseData = {
       "amharic_script": "{{የዛሬው ምስባክ ዘነግህ}}",
       "amharic_phonetic": "{{yezaréw msbak zenegh}}",
       "tigrinya_script": "{{ናይ ንግሆ ንባብ መዝሙር ዳዊት}}",
-      "tigrinya_phonetic": "{{nay ngho nbab mezmur dawīt}}"
+      "tigrinya_phonetic": "{{nay ngho nbab mezmur dawīt}}",
+      "spanish": "፨ Diácono (la gente repite):\n{{LECTURA DE LOS SALMOS DE LA MAÑANA}}"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -7179,7 +7187,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ልዑል እግዚአብሔር ሁላችንን ይባርክ፣ በመንፈሳዊ በረከት ሁሉ ያክብረን፣",
       "amharic_phonetic": "kahn: l'ul 'igzī'abḥér hulachnn ybark, bemenfesawī beräreket hulu yakbrären,",
       "tigrinya_script": "ካህን፤ ልዑል እግዚኣብሔር ብመንፈሳዊ በረኸት ንዅልና ይባርኸናን ይቐድሰናን …",
-      "tigrinya_phonetic": "kahn: l'ul 'igzī'abḥér bmenfesawī berekhet nዅlna ybarkhenan yqhedsenan …"
+      "tigrinya_phonetic": "kahn: l'ul 'igzī'abḥér bmenfesawī berekhet nዅlna ybarkhenan yqhedsenan …",
+      "spanish": "Sacerdote: Oh Dios, Altísimo, bendícenos a todos y santifícanos con toda bendición espiritual,"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -7192,7 +7201,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ወደ ቅድስት ቤተ ክርስቲያን መግባታች ንንም ዘወትር በመፍራ ትና በመንቀጥቀጥ ከሚያገለግሉት ከቅዱሳን መላእክት ጋራ በአንድነት ያድርግ፣",
       "amharic_phonetic": "kahn: wede ḳdst béte krstīyan megbatach nnm zewetr bemefra tna bemenḳeṭḳeṭ kemīyageleglut keḳdusan mela'ikt gara be'andnet yadrg ,",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: y llévanos a la Santa Iglesia para unirnos a Sus Santos Ángeles que le sirven siempre con temor y temblor,"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -7205,7 +7215,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ በየጊዜውና በየሰዓቱም ሁሉ ከሚያመሰግኑት ከቅዱሳን መላእክት ጋራ በአንድነት ያድርግ፣ ዛሬም ዘወትርም ለዘለዓለሙ አሜን።",
       "amharic_phonetic": "kahn: beyegīzéwna beyese'atum hulu kemīyamesegnut keḳdusan mela'ikt gara be'andnet yadrg, zarém zewetrm lezele'alemu 'amén",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: y glorifícale en todo tiempo y en toda hora, ahora y siempre y por los siglos de los siglos. Amén."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -7218,7 +7229,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አምላካችንና መድኃኒታችን ሰውንም የምትወድ እግዚአብሔር ሆይ፣ ቅዱሳን የሚሆኑ ደቀ መዛሙርትህንና አገልጋዮችህን፣",
       "amharic_phonetic": "kahn: 'amlakachnna medhanītachn sewnm yemtwed 'igzī'abḥér hoy, ḳdusan yemīhonu deḳe mezamurthnna 'agelgayochhn,",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Señor Dios nuestro, Salvador nuestro y amante del hombre, Tú eres Quien envió a Tus santos discípulos y ministros,"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -7231,7 +7243,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ንጹሐን ሐዋርያትን ወደ ዓለም ሁሉ ዳርቻ የሰደድሃቸው አንተ ነህ፣ የመንግሥትህን ወንጌል ይሰብኩና ያስተምሩ ዘንድ፣",
       "amharic_phonetic": "kahn: ntsuḥan ḥawaryatn wede 'alem hulu darcha yesededhachew 'ante neh, yemengsthn wengél ysebkuna yastemru zend,",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: y Tus apóstoles puros hasta todos los confines del mundo para predicar y enseñar el Evangelio de Tu Reino,"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -7244,7 +7257,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ በሕዝብህ ውስጥ ያለውን ደዌውን ሁሉ በሽታውንም  ሁሉ ያድኑ ዘንድ፣ ከዓለም አስ ቀድሞ የነበረውን የተሰወረውን ምሥጢርህንም ያስተምሩ ዘንድ ፧",
       "amharic_phonetic": "kahn: beḥzbh wsṭ yalewn dewéwn hulu beshtawnm  hulu yadnu zend , ke'alem 'as ḳedmo yeneberärewn yetesewerärewn msṭīrhnm yastemru zend ?",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: y para sanar todas las dolencias y dolencias que hay entre tu pueblo, y para proclamar el misterio escondido desde antes del principio del mundo."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -7257,7 +7271,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አሁንም ጌታችን አምላካችን ሆይ፣ ብርሃንህና ጽድቅህን ላክልን፣ ያሳባችንና የልቡናችንን ዓይኖች አብራልን",
       "amharic_phonetic": "kahn: 'ahunm gétachn 'amlakachn hoy , brhanhna tsdḳhn lakln, yasabachnna yelbunachnn 'aynoch 'abraln",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Ahora también, Señor nuestro y Dios nuestro, envía sobre nosotros tu luz y tu justicia, e ilumina los ojos de nuestro corazón y de nuestro entendimiento;"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -7270,7 +7285,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ የከበረ የወንጌልህን ቃል በመጨከን እንሰማ ዘንድ የበቃን አድርገን፣ የምንሰማ ብቻ አይደለም፣ እንደ ሰማን ልንሠራም ነው እንጂ፣ ስለ",
       "amharic_phonetic": "kahn: yekeberäre yewengélhn ḳal bemecheken 'insema zend yebeḳan 'adrgen, yemnsema bcha 'aydelem, 'inde seman lnseram new 'injī, sle",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: haznos dignos de perseverar en la escucha de la Palabra de tu Santo Evangelio, y no sólo de oír sino de hacer según lo que oímos, para que dé buen fruto en nosotros,"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -7283,7 +7299,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አንዱ ፈንታ ሠላሳና ስድሳ መቶም ያማረ ፍሬ በላያችን ያፈራ ዘንድ የወገኖችህን ኃጢአት ታስተሠርይ ዘንድ ለመንግሥተ ሰማያትም የበቃን እንሆን ዘንድ ፧",
       "amharic_phonetic": "kahn: 'andu fenta selasana sdsa metom yamaräre fré belayachn yafera zend yewegenochhn haṭī'at tastesery zend lemengste semayatm yebeḳan 'inhon zend ?",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: permaneciendo no sólo uno sino aumentando treinta, sesenta y cien veces; y perdónanos nuestros pecados, a nosotros pueblo tuyo, para que seamos dignos del Reino de los Cielos."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -7296,7 +7313,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ሁሉን የያዘ እግዚአብሔር አብ\nቡሩክ ነው፣ \nካህን ንፍቅ፤  አብን አመስግኑት፡",
       "amharic_phonetic": "kahn: hulun yeyaze 'igzī'abḥér 'ab\nburuk new , \nkahn nfḳ:  'abn 'amesgnut",
       "tigrinya_script": "ካህን፤ ኵሉ ዚኃዘ እግዚኣብሔር ኣብ ቡሩኽ እዩ።\nካህን ንፍቅ፤ ንኣብ ኣመስግንዎ",
-      "tigrinya_phonetic": "kahn: kwlu zīhaze 'igzī'abḥér 'ab burukh 'iyu.\nkahn nfḳ: n'ab 'amesgnwo"
+      "tigrinya_phonetic": "kahn: kwlu zīhaze 'igzī'abḥér 'ab burukh 'iyu.\nkahn nfḳ: n'ab 'amesgnwo",
+      "spanish": "Sacerdote: Bendito sea Dios, Padre Todopoderoso.\nAsistente. Sacerdote: Dad gracias al Padre."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -7309,7 +7327,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ወልድ ዋሕድ ጌታችን ኢየሱስ ክርስቶስም ቡሩክ ነው!\nካህን ንፍቅ፤ ወልድን አመስግኑት፣",
       "amharic_phonetic": "kahn: weld waḥd gétachn 'īyesus krstosm buruk new!\nkahn nfḳ: weldn 'amesgnut ,",
       "tigrinya_script": "ካህን፤ ወልድ ዋሕድ ኢየሱስ ክርስቶስውን ቡሩኽ እዩ\nካህን ንፍቅ፤ ንወልድ ኣመስግንዎ",
-      "tigrinya_phonetic": "kahn: weld waḥd 'īyesus krstoswn burukh 'iyu\nkahn nfḳ: nweld 'amesgnwo"
+      "tigrinya_phonetic": "kahn: weld waḥd 'īyesus krstoswn burukh 'iyu\nkahn nfḳ: nweld 'amesgnwo",
+      "spanish": "Sacerdote: Y bendito sea el Hijo unigénito nuestro Señor Jesucristo.\nAsistente. Sacerdote: Dad gracias al Hijo."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -7322,7 +7341,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤  አጽናኝ መንፈስ ቅዱስም ቡሩክ ነው፣ \nካህን ንፍቅ፤ መንፈስ ቅዱስን አመስግኑት ፡",
       "amharic_phonetic": "kahn:  'atsnañ menfes ḳdusm buruk new , \nkahn nfḳ: menfes ḳdusn 'amesgnut",
       "tigrinya_script": "ካህን፤ ጰራቅሊጦስ መንፈስ ቅዱስውን ቡሩኽ እዩ።\nካህን ንፍቅ፤ ንመንፈስ ቅዱስ ኣመስግንዎ",
-      "tigrinya_phonetic": "kahn: p̣eraḳlīṭos menfes ḳduswn burukh 'iyu.\nkahn nfḳ: nmenfes ḳdus 'amesgnwo"
+      "tigrinya_phonetic": "kahn: p̣eraḳlīṭos menfes ḳduswn burukh 'iyu.\nkahn nfḳ: nmenfes ḳdus 'amesgnwo",
+      "spanish": "Sacerdote: Y bendito sea el Espíritu Santo Paráclito.\nAsistente. Sacerdote: Dad gracias al Espíritu Santo."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -7335,7 +7355,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ ሃሌ ሉያ! ጌታችን መድኃኒታችን ኢየሱስ ክርስቶስ የተናገረውን ቅዱስ ወንጌል ቁማችሁ ስሙ",
       "amharic_phonetic": "dīyaḳon: halé luya! gétachn medhanītachn 'īyesus krstos yetenagerärewn ḳdus wengél ḳumachhu smu",
       "tigrinya_script": "፨ ዲያቆን፤ ሃሌ ሉያ ናይ ጐይታናን ምድኃኒናን ኢየሱስ ክርስቶስ ዜና ቅዱስ ወንጌል ቌምኩም ስምዑ።",
-      "tigrinya_phonetic": "፨ dīyaḳon: halé luya nay gweytanan mdhanīnan 'īyesus krstos zéna ḳdus wengél ḳwémkum sm'u."
+      "tigrinya_phonetic": "፨ dīyaḳon: halé luya nay gweytanan mdhanīnan 'īyesus krstos zéna ḳdus wengél ḳwémkum sm'u.",
+      "spanish": "Diácono: Aleluya, levántate para escuchar el Santo Evangelio, el mensaje de nuestro Señor y Salvador Jesucristo."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -7348,7 +7369,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ እግዚአብሔር አድሮባችሁ ይኑር\n፨ ሕዝብ፤ ከመንፈስህ ጋራ",
       "amharic_phonetic": "kahn: 'igzī'abḥér 'adrobachhu ynur\n፨ ḥzb: kemenfesh gara",
       "tigrinya_script": "ካህን፤ እግዚኣብሔር ምስ ኵልኹም ይኹን።\n፨ ሕዝብ፤ ምስ መንፈስካ።",
-      "tigrinya_phonetic": "kahn: 'igzī'abḥér ms kwlkhum ykhun.\n፨ ḥzb: ms menfeska."
+      "tigrinya_phonetic": "kahn: 'igzī'abḥér ms kwlkhum ykhun.\n፨ ḥzb: ms menfeska.",
+      "spanish": "Sacerdote: El Señor esté con todos vosotros.\n፨ Pueblo: y con Tu Espíritu."
     },
     {
       "instruction": "For the Gospel of John",
@@ -7361,7 +7383,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ዮሐንስ የሰበከው የተናገረው የእግዚአብሔር ቃል የሚሆን ቅዱስ ወንጌል",
       "amharic_phonetic": "kahn: yoḥans yesebekew yetenagerärew ye'igzī'abḥér ḳal yemīhon ḳdus wengél",
       "tigrinya_script": "ካህን፤ ወንጌል ኣብ ዮሓንስ ዝሰበኸ። ይበሃል።",
-      "tigrinya_phonetic": "kahn: wengél 'ab yoḥans zsebekhe. ybehal."
+      "tigrinya_phonetic": "kahn: wengél 'ab yoḥans zsebekhe. ybehal.",
+      "spanish": "Sacerdote: El Santo Evangelio que predicó Juan, la Palabra del Hijo de Dios."
     },
     {
       "instruction": "For the Gospel of Matthew/Mark/Luke",
@@ -7374,7 +7397,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ማቴዎስ / ማርቆስ / ሉቃስ የተናገረው የእግዚአብሔር ቃል የሚሆን ቅዱስ ወንጌል",
       "amharic_phonetic": "kahn: matéwos / marḳos / luḳas yetenagerärew ye'igzī'abḥér ḳal yemīhon ḳdus wengél",
       "tigrinya_script": "ካህን፤ ወንጌል ኣብ ማቴዎስ / ማርቆስ / ሉቃስ፡ ዘዘንተወ፡ ይበሃል።",
-      "tigrinya_phonetic": "kahn: wengél 'ab matéwos / marḳos / luḳas zezentewe ybehal."
+      "tigrinya_phonetic": "kahn: wengél 'ab matéwos / marḳos / luḳas zezentewe ybehal.",
+      "spanish": "Sacerdote: El Santo Evangelio que {{AUTOR DEL EVANGELIO DE LA MAÑANA}} proclamó."
     },
     {
       "instruction": "",
@@ -7387,7 +7411,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ ጌታዬ አምላኬ ሆይ ሁልጊዜ ለአንተ ምስጋና ይገባል።",
       "amharic_phonetic": "፨ ḥzb: gétayé 'amlaké hoy hulgīzé le'ante msgana ygebal.",
       "tigrinya_script": "፨ ሕዝብ፤ ኦ ጐይታይን ኣምላኸይን ክርስቶስ። ንኣኻ ኵሉ ጊዜ ምስጋና ይዅን።",
-      "tigrinya_phonetic": "፨ ḥzb: 'o gweytayn 'amlakheyn krstos. n'akha kwlu gīzé msgana yዅn."
+      "tigrinya_phonetic": "፨ ḥzb: 'o gweytayn 'amlakheyn krstos. n'akha kwlu gīzé msgana yዅn.",
+      "spanish": "፨ Pueblo: Gloria a Ti, Cristo mi Señor y mi Dios, en todo tiempo."
     },
     {
       "instruction": "For non-fasting periods",
@@ -7400,7 +7425,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ በረዳን በእግዚአብሔር ደስ ይበላችሁ የያዕቆብንም አምላክ አመስግኑ መዝሙሩን ያዙ ከበሮውንም ስጡ ከበገና ጋር የተስማማ ነው።",
       "amharic_phonetic": "፨ ḥzb: beräredan be'igzī'abḥér des ybelachhu yeya'iḳobnm 'amlak 'amesgnu mezmurun yazu keberownm sṭu kebegena gar yetesmama new.",
       "tigrinya_script": "፨ ሕዝብ፤ ብዝረድኣና ብእግዚኣብሔር ደስ ይበልኩም ንኣምላኽ ያዕቆብውን ዕልል በሉሉ። ከበሮ ሃቡ መዝሙር መሰንቆ ጥዑም እዩ።",
-      "tigrinya_phonetic": "፨ ḥzb: bzred'ana b'igzī'abḥér des ybelkum n'amlakh ya'iḳobwn 'ill belulu. kebero habu mezmur mesenḳo ṭ'um 'iyu."
+      "tigrinya_phonetic": "፨ ḥzb: bzred'ana b'igzī'abḥér des ybelkum n'amlakh ya'iḳobwn 'ill belulu. kebero habu mezmur mesenḳo ṭ'um 'iyu.",
+      "spanish": "(Salmo 80:1-2)\n፨ Pueblo: [1] Alegraos en Dios nuestro ayudador; Alegraos grandemente en el Dios vivo. [2] Tomad salmo y tocad pandero, salterio agradable con arpa;"
     },
     {
       "instruction": "For fasting periods",
@@ -7413,7 +7439,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ በወንጌል መራኸን በነቢያትም አጸናኸን በአቀረብክልን ክብር ምስጋና ይገባል።",
       "amharic_phonetic": "፨ ḥzb: bewengél merakhen benebīyatm 'atsenakhen be'aḳerärebkln kbr msgana ygebal.",
       "tigrinya_script": "፨ ሕዝብ፤ ብወንጌል መራሕካና፡ ብነብያትውን ናዘዝካና ባዕልኻ ንዘቕረብካና ምስጋና ንኣኻ ይኹን።",
-      "tigrinya_phonetic": "፨ ḥzb: bwengél meraḥkana bnebyatwn nazezkana ba'ilkha nzeqhrebkana msgana n'akha ykhun."
+      "tigrinya_phonetic": "፨ ḥzb: bwengél meraḥkana bnebyatwn nazezkana ba'ilkha nzeqhrebkana msgana n'akha ykhun.",
+      "spanish": "፨ Pueblo: Tú nos guiaste con el Evangelio, nos consolaste con estos profetas y nos acercaste a Ti. Gloria a Ti."
     },
     {
       "instruction": "",
@@ -7426,7 +7453,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ወደ መንግሥተ ሰማያት የምታገባ ወንጌል እነሆ\nካህን ንፍቅ፤ መንግሥቱንና ጽድቁን የሰጠኝን ሰጠሁ",
       "amharic_phonetic": "kahn: wede mengste semayat yemtageba wengél 'ineho\nkahn nfḳ: mengstunna tsdḳun yeseṭeñn seṭehu",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: He aquí el Evangelio del Reino de los Cielos.\nAsistente. Sacerdote: Su Reino y su justicia que me entregó, yo os la entrego."
     },
     {
       "instruction": "",
@@ -7439,7 +7467,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ መንግሥተ ሰማያት ቀርባለችና ንስሓ ግቡ",
       "amharic_phonetic": "dīyaḳon: mengste semayat ḳerbalechna nsḥa gbu",
       "tigrinya_script": "ዲያቆን፤",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Diácono: Arrepiéntete, porque el Reino de los Cielos está cerca."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -7452,7 +7481,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: Oh tú que estás lejos de la ira, abundante en misericordia y verdaderamente justo, acepta nuestra oración y súplica diaria,"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -7465,7 +7495,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: y acepta nuestra penitencia y nuestra humildad y nuestro servicio ante tu altar santo, celestial, inmaculado e inmaculado."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -7478,7 +7509,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: Haznos reunirnos para escuchar la Palabra de Tu Santo Evangelio y para guardar Tus mandamientos, Tu ley y Tu testimonio,"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -7491,7 +7523,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: y bendícenos para que llevemos fruto, no siendo uno solo, sino creciendo a treinta, a sesenta y a ciento por uno, por Jesucristo nuestro Señor."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -7504,7 +7537,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: Acuérdate, Señor, de los enfermos de tu pueblo: visítalos en tu misericordia y sánalos en tu compasión."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -7517,7 +7551,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: Acuérdate, Señor, de nuestros padres y de nuestros hermanos que viajaron y permanecieron para comerciar; tráelos de regreso a su morada en seguridad y paz."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -7530,7 +7565,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: Acuérdate, Señor, del rocío del aire y de los frutos de la tierra, bendícelos y guárdalos sin pérdida."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -7543,7 +7579,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: Acuérdate, Señor, del descenso de las lluvias y de las aguas y de los ríos, y bendícelos."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -7556,7 +7593,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: Acuérdate, Señor, de las plantas, de las semillas y de los frutos de los campos de cada año, bendícelos y hazlos abundantes."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -7569,7 +7607,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: Recuerda, Señor, la seguridad de tu Santa Iglesia y de todas las ciudades y países de nuestros padres ortodoxos los apóstoles."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -7582,7 +7621,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: Acuérdate, Señor, de la seguridad del hombre y de la bestia y de mí, tu siervo pecador."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -7595,7 +7635,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: Acuérdate, Señor, de nuestra patria {{PAÍS}} la amada del Señor Dios, y guárdala por muchos años y largos días, en buena manera y en paz."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -7608,7 +7649,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: Acuérdate, Señor, de nuestros padres y de nuestros hermanos y hermanas que se han quedado dormidos y han ido a descansar en la fe ortodoxa."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -7621,7 +7663,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: Acuérdate, Señor, de los que te han presentado esta ofrenda y este incienso, y de aquellos en nombre de quienes hacen la ofrenda, y de aquellos de quienes los han traído:"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -7634,7 +7677,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: concédeles una buena recompensa en el cielo y consuélales a todos en su angustia."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -7647,7 +7691,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: Acuérdate, Señor, de los cautivos de tu pueblo, y tráelos de nuevo en paz a sus moradas."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -7660,7 +7705,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: Acuérdate, Señor, de los afligidos y angustiados."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -7673,7 +7719,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: Acuérdate, Señor, de los catecúmenos cristianos de tu pueblo, muéstrales tu piedad y ten misericordia de ellos, y confírmalos en la recta fe;"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -7686,7 +7733,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: destierra de sus corazones todo resto de idolatría: confirma en sus corazones tu ley, tu mandamiento, tu temor y tu ordenanza:"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -7699,7 +7747,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: para que conozcan el poder de la palabra en la que han sido instruidos,"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -7712,7 +7761,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: y en el tiempo señalado haz que todos estén preparados para el nuevo nacimiento y para la remisión de sus pecados y prepáralos para ser arca del Espíritu Santo."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -7725,7 +7775,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: Acuérdate, Señor, de tus siervos, de los pobres que están bajo opresión, ten piedad de ellos y confírmalos en la recta fe."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -7738,7 +7789,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: y haz de ellos morada del Espíritu Santo mediante el gozo espiritual y el amor del hombre,"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -7751,7 +7803,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: Por tu Hijo unigénito, Señor nuestro, Dios y Salvador nuestro, Jesucristo,"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -7764,7 +7817,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: por quien a ti, con él y con el Espíritu Santo, sea la gloria y el imperio, ahora y siempre y por los siglos de los siglos. Amén."
     },
     {
       "instruction": "For the Gospel of Matthew/Mark/Luke",
@@ -7777,7 +7831,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Awlogios Kyrios (\"Bendito sea el Señor\" en griego). Bendice, oh Señor, la porción del Evangelio de {{AUTOR DEL EVANGELIO}} el discípulo y apóstol de nuestro Señor Jesucristo, el Hijo del Dios Vivo;"
     },
     {
       "instruction": "For the Gospel of Matthew/Mark/Luke",
@@ -7790,7 +7845,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: a Él sea la gloria continuamente y por los siglos de los siglos. Amén."
     },
     {
       "instruction": "For the Gospel of John",
@@ -7803,7 +7859,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Esta es la Palabra de nuestro Señor y Salvador Jesucristo para honra de Su Reino, gloria a ÉL por los siglos."
     },
     {
       "instruction": "ALL SHALL STAND IN THE FEAR OF GOD TO HEAR THE GOSPEL IN SILENCE AND AWE.",
@@ -7816,7 +7873,8 @@ const kidaseData = {
       "amharic_script": "{{የዛሬው ወንጌል ዘነግህ ንባብ}}",
       "amharic_phonetic": "{{yezaréw wengél zenegh nbab}}",
       "tigrinya_script": "{{ናይ ንግሆ ንባብ ወንጌል}}",
-      "tigrinya_phonetic": "{{nay ngho nbab wengél}}"
+      "tigrinya_phonetic": "{{nay ngho nbab wengél}}",
+      "spanish": "{{LECTURA DEL EVANGELIO DE LA MAÑANA}}"
     },
     {
       "instruction": "For the Gospel of Matthew",
@@ -7829,7 +7887,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "(Mateo 24:35)\nSacerdote: \"El cielo y la tierra pasarán, pero mis palabras no pasarán\", dijo el Señor a su discípulo."
     },
     {
       "instruction": "For the Gospel of Matthew",
@@ -7842,7 +7901,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ አብን በእውነት እናምናለን ወልድንም በእውነት እናምናለን መንፈስ ቅዱስንም በእውነት እናምናለን የማይለወጥ ሦስትነታቸውንም እናምናለን",
       "amharic_phonetic": "፨ ḥzb: 'abn be'iwnet 'inamnalen weldnm be'iwnet 'inamnalen menfes ḳdusnm be'iwnet 'inamnalen yemayleweṭ sostnetachewnm 'inamnalen",
       "tigrinya_script": "፨ ሕዝብ፤ ብሓቂ ንዝእመን ኣብ ነኣምን፡ ብሓቂ ንዚእመን ወልድ ነኣምን፡ ብሓቂ ንዚእመን መንፈስ ቅዱስውን ነኣምን። ህልው ዝኾነ ሠለስትነቶም ነኣምን።",
-      "tigrinya_phonetic": "፨ ḥzb: bḥaḳī nz'imen 'ab ne'amn bḥaḳī nzī'imen weld ne'amn bḥaḳī nzī'imen menfes ḳduswn ne'amn. hlw zkhone selestnetom ne'amn."
+      "tigrinya_phonetic": "፨ ḥzb: bḥaḳī nz'imen 'ab ne'amn bḥaḳī nzī'imen weld ne'amn bḥaḳī nzī'imen menfes ḳduswn ne'amn. hlw zkhone selestnetom ne'amn.",
+      "spanish": "፨ Pueblo: Creemos en el mismo Padre, creemos en el mismo Hijo, y creemos en el mismo Espíritu Santo, creemos en su Trinidad inmutable."
     },
     {
       "instruction": "For the Gospel of Mark",
@@ -7855,7 +7915,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "(Marcos 4:9)\nSacerdote: \"¡El que tiene oídos para oír, que oiga!\""
     },
     {
       "instruction": "For the Gospel of Mark",
@@ -7868,7 +7929,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ እሊህ ኪሩቤልና ሱራፌል ምስጋናን ያቀርቡለታል አብ ወልድ መንፈስ ቅዱስን ቅዱስ ቅዱስ ቅዱስ አንተ እግዚአብሔር ነህ እያሉ",
       "amharic_phonetic": "፨ ḥzb: 'ilīh kīrubélna surafél msganan yaḳerbuletal 'ab weld menfes ḳdusn ḳdus ḳdus ḳdus 'ante 'igzī'abḥér neh 'iyalu",
       "tigrinya_script": "፨ ሕዝብ፤ ኪሩቤልን ሱራፌልን እግዚኣብሔር ኣብን ወልድን መንፈስ ቅዱስን። ቅዱስ ቅዱስ ቅዱስ ኢኻ እናበሉ ምስጋና የቕርቡሉ።",
-      "tigrinya_phonetic": "፨ ḥzb: kīrubéln suraféln 'igzī'abḥér 'abn weldn menfes ḳdusn. ḳdus ḳdus ḳdus 'īkha 'inabelu msgana yeqhrbulu."
+      "tigrinya_phonetic": "፨ ḥzb: kīrubéln suraféln 'igzī'abḥér 'abn weldn menfes ḳdusn. ḳdus ḳdus ḳdus 'īkha 'inabelu msgana yeqhrbulu.",
+      "spanish": "፨ Pueblo: Esos Querubines y Serafines le ofrecen gloria diciendo: \"Santo, Santo, Santo eres Dios, Padre, Hijo y Espíritu Santo\"."
     },
     {
       "instruction": "For the Gospel of Luke",
@@ -7881,7 +7943,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "(Lucas 16:17)\nSacerdote: “Es más fácil que pasen el cielo y la tierra, que que falte una tilde de la ley”"
     },
     {
       "instruction": "For the Gospel of Luke",
@@ -7894,7 +7957,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ አቤቱ ከአማልክት ወገን የሚመስልህ ማነው፤ ታምራቱን የምታደርግ አንተ ነህ፤ ለወገኖችህ ኃይልህን አሳየሃቸው ወገኖችህንም በክንድህ አዳንሃቸው፤",
       "amharic_phonetic": "፨ ḥzb: 'abétu ke'amalkt wegen yemīmeslh manew: tamratun yemtaderg 'ante neh: lewegenochh haylhn 'asayehachew wegenochhnm bekndh 'adanhachew:",
       "tigrinya_script": "፨ ሕዝብ፤ ኦ ጐይታ ካብ ኣማልኽቲ ዚመስለካ መን እዩ? ተኣምራት እትገብር ንስኻ ኢካ፡ ንሕዝብኻ ኃይልኻ ኣርኣኻዮም፡ ብቕልጽምካውን ንሕዝብኻ ኣድኃንካዮም፡",
-      "tigrinya_phonetic": "፨ ḥzb: 'o gweyta kab 'amalkhtī zīmesleka men 'iyu? te'amrat 'itgebr nskha 'īka nḥzbkha haylkha 'ar'akhayom bqhltsmkawn nḥzbkha 'adhankayom"
+      "tigrinya_phonetic": "፨ ḥzb: 'o gweyta kab 'amalkhtī zīmesleka men 'iyu? te'amrat 'itgebr nskha 'īka nḥzbkha haylkha 'ar'akhayom bqhltsmkawn nḥzbkha 'adhankayom",
+      "spanish": "፨ Pueblo: ¿Quién como tú, oh Señor, entre los dioses? Tú eres el Dios que hace maravillas: has declarado tu fuerza entre los pueblos. Con tu brazo redimiste a tu pueblo."
     },
     {
       "instruction": "For the Gospel of Luke",
@@ -7907,7 +7971,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ ወደ ሲዖል ሄደህ በዚያ ምርኮን አወጣህ፤ ዳግመኛምማንድ ጊዜ ነጻነትን ሰጠኸን መጥተህ አድነኸናልና",
       "amharic_phonetic": "፨ ḥzb: wede sī'ol hédeh bezīya mrkon 'aweṭah: dagmeñammand gīzé netsanetn seṭekhen meṭteh 'adnekhenalna",
       "tigrinya_script": "፨ ሕዝብ፤ ናብ ሲኦል ከድካ፡ ካብኡውን ምርኮ ኣውጻእካ፡ ሓንሳእውን ዕጽፊ ሓርነት ሃብካና፡ መጺእካ ስለ ዘድኃንካና፡ ነመስግነካ ኣሎና።",
-      "tigrinya_phonetic": "፨ ḥzb: nab sī'ol kedka kab'uwn mrko 'awtsa'ika ḥansa'iwn 'itsfī ḥarnet habkana metsī'ika sle zedhankana nemesgneka 'alona."
+      "tigrinya_phonetic": "፨ ḥzb: nab sī'ol kedka kab'uwn mrko 'awtsa'ika ḥansa'iwn 'itsfī ḥarnet habkana metsī'ika sle zedhankana nemesgneka 'alona.",
+      "spanish": "፨ Pueblo: Tú fuiste al Hades y los cautivos se levantaron de allí, y nos concediste nuevamente la libertad, porque viniste y nos salvaste."
     },
     {
       "instruction": "For the Gospel of Luke",
@@ -7920,7 +7985,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ ስለዚህ እናመሰግንሃለን አቤቱ ኢየሱስ ሆይ ብሩክ ነህ እያልን እንጮኻለን መጥተህ አድነኸናልና",
       "amharic_phonetic": "፨ ḥzb: slezīh 'inamesegnhalen 'abétu 'īyesus hoy bruk neh 'iyaln 'inchokhalen meṭteh 'adnekhenalna",
       "tigrinya_script": "፨ ሕዝብ፤ ኦ ጐይታ ኢየሱስ ክርስቶስ መጺእካ ኣድኂንካና ኢኻ እሞ፡ ቡሩኽ ኢኻ እናበልናውን ዓው ኢልና ነመስግነካ ኣሎና።",
-      "tigrinya_phonetic": "፨ ḥzb: 'o gweyta 'īyesus krstos metsī'ika 'adhīnkana 'īkha 'imo burukh 'īkha 'inabelnawn 'aw 'īlna nemesgneka 'alona."
+      "tigrinya_phonetic": "፨ ḥzb: 'o gweyta 'īyesus krstos metsī'ika 'adhīnkana 'īkha 'imo burukh 'īkha 'inabelnawn 'aw 'īlna nemesgneka 'alona.",
+      "spanish": "፨ Pueblo: Por esta causa, te glorificamos y clamamos a ti diciendo: “Bendito eres, Señor Jesucristo, porque viniste y nos salvaste."
     },
     {
       "instruction": "For the Gospel of John",
@@ -7933,7 +7999,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "(Juan 3:36)\nSacerdote: \"El que cree en el Hijo tiene vida eterna\"."
     },
     {
       "instruction": "For the Gospel of John",
@@ -7946,7 +8013,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ ቃል በቅድሚያ ነበር ይህ ቃል እግዚአብሔር አብ ቃል ነው፤",
       "amharic_phonetic": "፨ ḥzb: ḳal beḳdmīya neber yh ḳal 'igzī'abḥér 'ab ḳal new:",
       "tigrinya_script": "፨ ሕዝብ፤ ቃል ብቕድሙ ነበረ፡ እቲ ቃል ናይ እግዚኣብሔር ቃል እዩ።",
-      "tigrinya_phonetic": "፨ ḥzb: ḳal bqhdmu nebere 'itī ḳal nay 'igzī'abḥér ḳal 'iyu."
+      "tigrinya_phonetic": "፨ ḥzb: ḳal bqhdmu nebere 'itī ḳal nay 'igzī'abḥér ḳal 'iyu.",
+      "spanish": "፨ Pueblo: En el principio era el Verbo, el Verbo era el Verbo de Dios:"
     },
     {
       "instruction": "For the Gospel of John",
@@ -7959,7 +8027,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ ያ ቃል ሥጋ ሆነ በባህርያችን ተዋሀደ በአባቱ እንደ አንድ ልጅ የሚሆን ክብሩንም አየን፥",
       "amharic_phonetic": "፨ ḥzb: ya ḳal sga hone bebahryachn tewahade be'abatu 'inde 'and lj yemīhon kbrunm 'ayen;",
       "tigrinya_script": "፨ ሕዝብ፤ እቲ ቃል ሰብ ኮነ ኣባና ድማ ኃደረ፡ ከም ክብሪ ሓደ ወዲ ነቦኡ ዝኾነ ክብሩውን ረኣና።",
-      "tigrinya_phonetic": "፨ ḥzb: 'itī ḳal seb kone 'abana dma hadere kem kbrī ḥade wedī nebo'u zkhone kbruwn re'ana."
+      "tigrinya_phonetic": "፨ ḥzb: 'itī ḳal seb kone 'abana dma hadere kem kbrī ḥade wedī nebo'u zkhone kbruwn re'ana.",
+      "spanish": "(Juan 1:14)\n፨ Pueblo: \"El Verbo se hizo carne y habitó entre nosotros, y contemplamos su gloria, gloria como del unigénito del Padre\"."
     },
     {
       "instruction": "For the Gospel of John",
@@ -7972,7 +8041,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ የሕያው የአብ ቃል ነው፥ ቃልም ሕይወትን የሚሰጥ ነው። የእግዚአብሔር ቃል ተነሣ፥ ሥጋውም አልጠፋም።",
       "amharic_phonetic": "፨ ḥzb: yeḥyaw ye'ab ḳal new; ḳalm ḥywetn yemīseṭ new. ye'igzī'abḥér ḳal tenesa; sgawm 'alṭefam.",
       "tigrinya_script": "፨ ሕዝብ፤ ናይ ሕያው ኣብ ቃል እዩ መሕወዪውን እዩ: ናይ እግዚኣብሔር ቃል ተንስአ ሥጋኡውን ኣይማሰነን።",
-      "tigrinya_phonetic": "፨ ḥzb: nay ḥyaw 'ab ḳal 'iyu meḥweyīwn 'iyu: nay 'igzī'abḥér ḳal tens'a sga'uwn 'aymasenen."
+      "tigrinya_phonetic": "፨ ḥzb: nay ḥyaw 'ab ḳal 'iyu meḥweyīwn 'iyu: nay 'igzī'abḥér ḳal tens'a sga'uwn 'aymasenen.",
+      "spanish": "፨ Pueblo: el Verbo del Padre vivo y el Verbo vivificante, el Verbo de Dios, resucitó y Su carne no se corrompió."
     },
     {
       "instruction": "",
@@ -7985,7 +8055,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤",
       "amharic_phonetic": "፨ ḥzb:",
       "tigrinya_script": "፨ ሕዝብ፤ ብቃል ወንጌል ንኣምን።",
-      "tigrinya_phonetic": "፨ ḥzb: bḳal wengél n'amn."
+      "tigrinya_phonetic": "፨ ḥzb: bḳal wengél n'amn.",
+      "spanish": "፨ Pueblo (al besar el Evangelio): Creemos en la Palabra del Santo Evangelio."
     },
     {
       "instruction": "Inaudible Prayer?",
@@ -7998,7 +8069,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asst Sacerdote: Gloria a Ti, Señor nuestro Dios Todopoderoso, que nos has hecho aptos para escuchar la Palabra de Tu Santo Evangelio y saludarla y alegrarnos en ella,"
     },
     {
       "instruction": "Inaudible Prayer?",
@@ -8011,7 +8083,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asst Sacerdote: nuevamente te pedimos y suplicamos que escribas la Palabra de Tu Evangelio en nuestros corazones,"
     },
     {
       "instruction": "Inaudible Prayer?",
@@ -8024,7 +8097,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asst Sacerdote: y acepta nuestra oración en este templo donde ha entrado nuestro Señor Jesucristo,"
     },
     {
       "instruction": "Inaudible Prayer?",
@@ -8037,7 +8111,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: y envía Tu misericordia y Tu compasión sobre nosotros y sobre Tu pueblo, por medio de Tu Hijo unigénito, porque Tuya es la gloria y el poder del mundo sin fin. Amén."
     },
     {
       "instruction": "",
@@ -8050,7 +8125,8 @@ const kidaseData = {
       "amharic_script": "፨ ማሕሌት ፨",
       "amharic_phonetic": "፨ maḥlét ፨",
       "tigrinya_script": "፨ ማሕሌት ፨",
-      "tigrinya_phonetic": "፨ maḥlét ፨"
+      "tigrinya_phonetic": "፨ maḥlét ፨",
+      "spanish": "፨ HIMNO ፨"
     },
     {
       "instruction": "Chanted in Araray tone.",
@@ -8063,7 +8139,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ቅዱስ።\n፨ ሕዝብ፤ ቅዱስ እግዚአብሔር ቅዱስ ኃያል ቅዱስ ሕያው የማይሞት ከቅድስት ድንግል ማርያም የተወለደ፥ አቤቱ ይቅር በለን።",
       "amharic_phonetic": "kahn: ḳdus.\n፨ ḥzb: ḳdus 'igzī'abḥér ḳdus hayal ḳdus ḥyaw yemaymot keḳdst dngl maryam yetewelede; 'abétu yḳr belen.",
       "tigrinya_script": "ካህን፤ ቅዱስ።\n፨ ሕዝብ፤ ካብ ቅድስቲ ድንግል ማርያም ዝተወልደ፡ ኦ ጐይታ ይቕረ በለልና፡ ቅዱስ እግዚኣብሔር ቅዱስ ኃያል ቅዱስ ዘይመውት ሕያው፥",
-      "tigrinya_phonetic": "kahn: ḳdus.\n፨ ḥzb: kab ḳdstī dngl maryam ztewelde 'o gweyta yqhre belelna ḳdus 'igzī'abḥér ḳdus hayal ḳdus zeymewt ḥyaw;"
+      "tigrinya_phonetic": "kahn: ḳdus.\n፨ ḥzb: kab ḳdstī dngl maryam ztewelde 'o gweyta yqhre belelna ḳdus 'igzī'abḥér ḳdus hayal ḳdus zeymewt ḥyaw;",
+      "spanish": "፨ ORACIÓN DE LA PACTO ፨\nSacerdote: Santo...\n፨ Pueblo:...Dios, Santo Fuerte, Santo Inmortal, que naciste de la Santísima Virgen María, ten piedad de nosotros, Señor."
     },
     {
       "instruction": "Chanted in Araray tone.",
@@ -8076,7 +8153,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ ቅዱስ እግዚአብሔር ቅዱስ ኃያል ቅዱስ ሕያው የማይሞት በዮርዳኖስ የተጠመቀ፥ በመስቀል ላይ የተሰቀለ አቤቱ ይቅር በለን።",
       "amharic_phonetic": "፨ ḥzb: ḳdus 'igzī'abḥér ḳdus hayal ḳdus ḥyaw yemaymot beyordanos yeteṭemeḳe; bemesḳel lay yeteseḳele 'abétu yḳr belen.",
       "tigrinya_script": "፨ ሕዝብ፤ ኣብ ዮርዳኖስ ዝተጠምቀ፡ ኣብ ልዕሊ ዕንፀይቲ መስቀል ዝተሰቕለ ኦ ጐይታ ይቕረ በለልና።",
-      "tigrinya_phonetic": "፨ ḥzb: 'ab yordanos zteṭemḳe 'ab l'ilī 'intseytī mesḳel zteseqhle 'o gweyta yqhre belelna."
+      "tigrinya_phonetic": "፨ ḥzb: 'ab yordanos zteṭemḳe 'ab l'ilī 'intseytī mesḳel zteseqhle 'o gweyta yqhre belelna.",
+      "spanish": "፨ Pueblo: Santo Dios, Santo Fuerte, Santo Inmortal que fue bautizado en el Jordán y fue crucificado en el madero de la Cruz; ten piedad de nosotros, Señor."
     },
     {
       "instruction": "Chanted in Araray tone.",
@@ -8089,7 +8167,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ ቅዱስ እግዚአብሔር ቅዱስ ኃያል ቅዱስ ሕያው የማይሞት በሦስተኛው ቀን ከሙታን ተለይቶ የተነሳ በምስጋና ወደ ሰማይ ወጣ",
       "amharic_phonetic": "፨ ḥzb: ḳdus 'igzī'abḥér ḳdus hayal ḳdus ḥyaw yemaymot besosteñaw ḳen kemutan teleyto yetenesa bemsgana wede semay weṭa",
       "tigrinya_script": "፨ ሕዝብ፤ ቅዱስ እግዚኣብሔር ቅዱስ ኃያል ቅዱስ ዘይመውት ሕያው፡ ኣብ ሣልሳይ መዓልቲ ካብ ምውታት ተፈልዩ ዝተንሥአ፡ ብምስጋና ናብ ሰማይ ዝዐረገ፡",
-      "tigrinya_phonetic": "፨ ḥzb: ḳdus 'igzī'abḥér ḳdus hayal ḳdus zeymewt ḥyaw 'ab salsay me'altī kab mwtat tefelyu ztens'a bmsgana nab semay z'arege"
+      "tigrinya_phonetic": "፨ ḥzb: ḳdus 'igzī'abḥér ḳdus hayal ḳdus zeymewt ḥyaw 'ab salsay me'altī kab mwtat tefelyu ztens'a bmsgana nab semay z'arege",
+      "spanish": "፨ Pueblo: Santo Dios, Santo Fuerte, Santo Inmortal que resucitó de entre los muertos al tercer día, ascendió al cielo en gloria,"
     },
     {
       "instruction": "Chanted in Araray tone.",
@@ -8102,7 +8181,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ በአባቱም ቀኝ ተቀመጠ ዳግመኛም ይመጣል በሕያዋንና በሙታን ይፈርድ ዘንድ፥ አቤቱ ይቅር በለን።",
       "amharic_phonetic": "፨ ḥzb: be'abatum ḳeñ teḳemeṭe dagmeñam ymeṭal beḥyawanna bemutan yferd zend; 'abétu yḳr belen.",
       "tigrinya_script": "፨ ሕዝብ፤ ኣብ የማን ኣቦኡ ዝተቐመጠ፡ ንሕያዋንን ምዉታትን ኪፈርድ ከም ብሓድሽ ኪመጽእ እዩ።",
-      "tigrinya_phonetic": "፨ ḥzb: 'ab yeman 'abo'u zteqhemeṭe nḥyawann mwutatn kīferd kem bḥadሽ kīmets'i 'iyu."
+      "tigrinya_phonetic": "፨ ḥzb: 'ab yeman 'abo'u zteqhemeṭe nḥyawann mwutatn kīferd kem bḥadሽ kīmets'i 'iyu.",
+      "spanish": "፨ Pueblo: está sentado a la diestra del Padre y vendrá nuevamente en gloria para juzgar a los vivos y a los muertos; ten piedad de nosotros, Señor."
     },
     {
       "instruction": "Chanted in Araray tone.",
@@ -8115,7 +8195,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ ለአብ ምስጋና ይሁን ለወልድም ምስጋና ይሁን ለመንፈስ ቅዱስ ምስጋና ይሁን ዛሬም ዘወትርም ለዘለዓለሙ",
       "amharic_phonetic": "፨ ḥzb: le'ab msgana yhun leweldm msgana yhun lemenfes ḳdus msgana yhun zarém zewetrm lezele'alemu",
       "tigrinya_script": "፨ ሕዝብ፤ ምስጋና ንኣብ፡ ምስጋና ንወልድ፡ ምስጋና ንመንፈስ ቅዱስ ይኹን፡ ሎምን ኵሉ ሳዕን ንዘልዓለም ዓለም",
-      "tigrinya_phonetic": "፨ ḥzb: msgana n'ab msgana nweld msgana nmenfes ḳdus ykhun lomn kwlu sa'in nzel'alem 'alem"
+      "tigrinya_phonetic": "፨ ḥzb: msgana n'ab msgana nweld msgana nmenfes ḳdus ykhun lomn kwlu sa'in nzel'alem 'alem",
+      "spanish": "፨ Pueblo: Gloria al Padre, Gloria al Hijo, Gloria al Espíritu Santo, ahora y siempre y por los siglos de los siglos."
     },
     {
       "instruction": "Chanted in Araray tone.",
@@ -8128,7 +8209,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ አሜን አሜን ይሁን ይሁን። ልዩ ሦስት ሕያው እግዚአብሔር ሆይ ይቅር በለን",
       "amharic_phonetic": "፨ ḥzb: 'amén 'amén yhun yhun. lyu sost ḥyaw 'igzī'abḥér hoy yḳr belen",
       "tigrinya_script": "፨ ሕዝብ፤ ኣሜን ኣሜን ይኹን ይኹነልና ይኹነልና። ቅዱስ ሥሉስ፤ ሕያው እግዚኣብሔር ይቕረ በለልና።",
-      "tigrinya_phonetic": "፨ ḥzb: 'amén 'amén ykhun ykhunelna ykhunelna. ḳdus slus: ḥyaw 'igzī'abḥér yqhre belelna."
+      "tigrinya_phonetic": "፨ ḥzb: 'amén 'amén ykhun ykhunelna ykhunelna. ḳdus slus: ḥyaw 'igzī'abḥér yqhre belelna.",
+      "spanish": "፨ Pueblo: Amén Amén, que así sea, que así sea. Oh Santísima Trinidad, Dios vivo, ten piedad de nosotros."
     },
     {
       "instruction": "For Liturgies starting at midnight (e.g. Pascha, Nativity, etc).",
@@ -8141,7 +8223,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ለእግዚአብሔር ምስጋና ይሁን፣\n፨ ሕዝብ፤ እውነት ነው ይገባል፣",
       "amharic_phonetic": "kahn: le'igzī'abḥér msgana yhun,\n፨ ḥzb: 'iwnet new yge bal,",
       "tigrinya_script": "ካህን፤ ምስጋና ንእግዚኣብሔር ይኹን።\n፨ ሕዝብ፤ ብሓቂ ይግባእ እዩ።",
-      "tigrinya_phonetic": "kahn: msgana n'igzī'abḥér ykhun.\n፨ ḥzb: bḥaḳī ygba'i 'iyu."
+      "tigrinya_phonetic": "kahn: msgana n'igzī'abḥér ykhun.\n፨ ḥzb: bḥaḳī ygba'i 'iyu.",
+      "spanish": "፨ ORACIÓN DE MEDIANOCHE DE LA PACTO ፨\nSacerdote: Gloria a Dios. \n፨ Pueblo: Está bien, es justo."
     },
     {
       "instruction": "For Liturgies starting at midnight (e.g. Pascha, Nativity, etc). Inaudible Prayer.",
@@ -8154,7 +8237,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አቤቱ ሁሉን ለፈጠርህ ለማትመረመር አምላክ ለአንተ ሰውነታችንን እናስገዛለን፣ አቤቱ የነግህ ምስጋናንም እናቀርብልሃለን፣",
       "amharic_phonetic": "kahn: 'abétu hulun lefeṭerh lematmeremer 'amlak le'ante sewnetachnn 'inasgezalen, 'abétu yenegh msgananm 'inaḳerblhalen,",
       "tigrinya_script": "ካህን፤ ኦ ጐይታ፡ ንኣኻ ኵሉ ንዝፈጠርካ\nንዘይትርአ ኣምላኸ፡ ብዅለንትናና ነምልኸካ ኣሎና። ናይ ንግሆ ምስጋና ንውፍየልካ ኣሎና።",
-      "tigrinya_phonetic": "kahn: 'o gweyta  n'akha kwlu nzfeṭerka\nnzeytr'a 'amlakhe  bዅlentnana nemlkheka 'alona. nay ngho msgana nwfyelka 'alona."
+      "tigrinya_phonetic": "kahn: 'o gweyta  n'akha kwlu nzfeṭerka\nnzeytr'a 'amlakhe  bዅlentnana nemlkheka 'alona. nay ngho msgana nwfyelka 'alona.",
+      "spanish": "Sacerdote: Oh Señor, Hacedor de todo, Dios invisible, extendemos nuestra alma hacia Ti y te ofrecemos la oración de la mañana."
     },
     {
       "instruction": "For Liturgies starting at midnight (e.g. Pascha, Nativity, etc). Inaudible Prayer.",
@@ -8167,7 +8251,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ የሁሉ ዕውቀት ኃያል የምትሆን፣ ይቅርታህ የበዛ አምላክ፣ ነፍስን የፈጠርሃት፣ ከዓለም አስቀድሞ ከአብ የተወለድህ አንተን እናመሰግንሃለን፣",
       "amharic_phonetic": "kahn: yehulu 'iwḳet hayal yemthon, yḳrtah yebeza 'amlak, nefsn yefeṭerhat, ke'alem 'asḳedmo ke'ab yeteweledh 'anten 'inamesegnhalen,",
       "tigrinya_script": "ካህን፤ ኦ ንኵሉ ጥበብ ኃያል ዝኾንካ ጐይታ፡ ብዓል ብዙኅ ምሕረት፡ ናይ ነፍሲ ፈጣሪኣ ዝኾንካ ኣምላኽ፡ ቅድሚ ምፍጣር ዓለም ካብ ኣብ ንዝተወለድካ ነመስግነካ ኣሎና።",
-      "tigrinya_phonetic": "kahn: 'o nkwlu ṭbeb hayal zkhonka gweyta  b'al bzuh mḥret  nay nefsī feṭarī'a zkhonka 'amlakh  ḳdmī mfṭar 'alem kab 'ab nzteweledka nemesgneka 'alona."
+      "tigrinya_phonetic": "kahn: 'o nkwlu ṭbeb hayal zkhonka gweyta  b'al bzuh mḥret  nay nefsī feṭarī'a zkhonka 'amlakh  ḳdmī mfṭar 'alem kab 'ab nzteweledka nemesgneka 'alona.",
+      "spanish": "Sacerdote: Oh Señor, poderosa Sabiduría de todos, Dios abundante en misericordia, Hacedor del alma, te glorificamos, engendrado del Padre antes de la creación del mundo;"
     },
     {
       "instruction": "For Liturgies starting at midnight (e.g. Pascha, Nativity, etc). Inaudible Prayer.",
@@ -8180,7 +8265,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ የብቻው ቃል የምትሆን በቅዱሳን አድሮባቸው የሚኖር፣ አርምሞ በሌለበት ምስጋና አለቆች ካሏቸው ሠራዊተ መላእክትም የምትመሰገን፣",
       "amharic_phonetic": "kahn: yebchaw ḳal yemthon beḳdusan 'adrobachew yemīnor, 'armmo belélebet msgana 'aleḳoch kalwachew serawīte mela'iktm yemtmesegen,",
       "tigrinya_script": "ካህን፤ ኣብ ቅዱሳኑ ዚዓርፍ ናይ ብሕቱ ቓል ኢኻ። ንስኻ ብዘየቋርጽ ምስጋናን ብኣሕሉቕ ሠራዊት መላእኸትን እትምስገን ኢኻ።",
-      "tigrinya_phonetic": "kahn: 'ab ḳdusanu zī'arf nay bḥtu qhal 'īkha. nskha bzeyeḳwarts msganan b'aḥluqh serawīt mela'ikhetn 'itmsgen 'īkha."
+      "tigrinya_phonetic": "kahn: 'ab ḳdusanu zī'arf nay bḥtu qhal 'īkha. nskha bzeyeḳwarts msganan b'aḥluqh serawīt mela'ikhetn 'itmsgen 'īkha.",
+      "spanish": "Sacerdote; Tú, que eres la única Palabra y descansas en Tus santos, eres alabado por los arcángeles con glorias incesantes."
     },
     {
       "instruction": "For Liturgies starting at midnight (e.g. Pascha, Nativity, etc). Inaudible Prayer.",
@@ -8193,7 +8279,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ በእጅ ያልተፈጠርህ የተሠወሩትን የፈጠርህ፣ የማትታይ ንጹሕ ቅዱስ የምስጋናህን ኅቡእ ጥበብን ያስረዳንን የተናገርህ",
       "amharic_phonetic": "kahn: be'ij yaltefeṭerh yetesewerutn yefeṭerh, yemattay ntsuḥ ḳdus yemsganahn hbu'i ṭbebn yasredann yetenagerh",
       "tigrinya_script": "ካህን፤ ብኢድ ዘይተፈጠርካ፡ ኅቡኣት ዝፈጠርካ ንጹሕን ቅዱስን ዘይትምርመር ኢኻ። ናይ ምስጋናኻ ሥዉር ጥበብ ዝነገርካና መምህር ኢኻ።",
-      "tigrinya_phonetic": "kahn: b'īd zeytefeṭerka  hbu'at zfeṭerka ntsuḥn ḳdusn zeytmrmer 'īkha. nay msganakha swur ṭbeb znegerkana memhr 'īkha."
+      "tigrinya_phonetic": "kahn: b'īd zeytefeṭerka  hbu'at zfeṭerka ntsuḥn ḳdusn zeytmrmer 'īkha. nay msganakha swur ṭbeb znegerkana memhr 'īkha.",
+      "spanish": "Sacerdote: Tú no fuiste creado con manos sino que eres Creador de las cosas ocultas; Tú eres el invisible, puro y santo, y el anunciador que nos habló de la sabiduría de Tu gloria escondida."
     },
     {
       "instruction": "For Liturgies starting at midnight (e.g. Pascha, Nativity, etc). Inaudible Prayer.",
@@ -8206,7 +8293,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ የማይጠፋ ብርሃንን ለእኛ ተስፋ ያስደረግከን፣ አቤቱ ፍጹም ምስጋናን ንጹሕ ምስጋናንም ለአንተ እናቀርባለን፣ እኛ የአንተ አገልጋዮች እና መሰግንሃለን፣ ሕዝቡም አንተን ያመሰግናሉ፣",
       "amharic_phonetic": "kahn: yemayṭefa brhann le'iña tesfa yasderegken, 'abétu ftsum msganan ntsuḥ msgananm le'ante 'inaḳerbalen , 'iña ye'ante 'agelgayoch 'ina mesegnhalen, ḥzbum 'anten yamesegnalu,",
       "tigrinya_script": "ካህን፤ ዘይጠፍእ ብርሃንውን ኣተስፎኻና። ንኣኻ ምስጋናን ክብርን ቅድስናን ነቕርብ ኣሎና። ኦ ጐይታ፡ ንሕና ባሮትካ ንጹሕ ምስጋና ንውፊ ኣሎና ንብል፡ ሕዝቢ ኸኣ ንኣኻ የመስግኑ ኣለዉ።",
-      "tigrinya_phonetic": "kahn: zeyṭef'i brhanwn 'atesfokhana. n'akha msganan kbrn ḳdsnan neqhrb 'alona. 'o gweyta  nḥna barotka ntsuḥ msgana nwfī 'alona nbl  ḥzbī khe'a n'akha yemesgnu 'alewu."
+      "tigrinya_phonetic": "kahn: zeyṭef'i brhanwn 'atesfokhana. n'akha msganan kbrn ḳdsnan neqhrb 'alona. 'o gweyta  nḥna barotka ntsuḥ msgana nwfī 'alona nbl  ḥzbī khe'a n'akha yemesgnu 'alewu.",
+      "spanish": "Sacerdote: Nos has hecho esperar la luz inextinguible; y nosotros, Tus siervos, te ofrecemos gloria, acción de gracias y santidad; y el pueblo te glorifica."
     },
     {
       "instruction": "For Liturgies starting at midnight (e.g. Pascha, Nativity, etc).",
@@ -8219,7 +8307,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ አቤቱ አንተን እናመሰግናለን፣",
       "amharic_phonetic": "፨ ḥzb: 'abétu 'anten 'inamesegnalen,",
       "tigrinya_script": "፨ ሕዝብ፤ ኦ ጐይታ፡ ንኣኻ ነመስግን ኣሎና",
-      "tigrinya_phonetic": "፨ ḥzb: 'o gweyta  n'akha nemesgn 'alona"
+      "tigrinya_phonetic": "፨ ḥzb: 'o gweyta  n'akha nemesgn 'alona",
+      "spanish": "፨ Pueblo: Oh Señor, te glorificamos."
     },
     {
       "instruction": "For Liturgies starting at midnight (e.g. Pascha, Nativity, etc). Inaudible Prayer.",
@@ -8232,7 +8321,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ የብርሃን አምላክ ሆይ የሕይወት መገኛ፣ የዕውቀት መጀመሪያ ጸጋን በፍጹም ጸጋ የሚሰጥ፣",
       "amharic_phonetic": "kahn: yebrhan 'amlak hoy yeḥywet megeña, ye'iwḳet mejemerīya tsegan beftsum tsega yemīseṭ,",
       "tigrinya_script": "ካህን፤ ኦ ኣምላኸ ብርሃን፡ ሕይወት ዝፈጠርካ፡ ካብ ፍጹም ጸጋ ወሃብ ጸጋ ዝኾንካ፡ ርእሲ ኣእምሮ፡",
-      "tigrinya_phonetic": "kahn: 'o 'amlakhe brhan  ḥywet zfeṭerka  kab ftsum tsega wehab tsega zkhonka  r'isī 'a'imro"
+      "tigrinya_phonetic": "kahn: 'o 'amlakhe brhan  ḥywet zfeṭerka  kab ftsum tsega wehab tsega zkhonka  r'isī 'a'imro",
+      "spanish": "Sacerdote: Oh Dios de luz, Tú eres la fuente de la vida, la Cabeza del conocimiento, el Dador de la gracia procedente de la gracia perfecta,"
     },
     {
       "instruction": "For Liturgies starting at midnight (e.g. Pascha, Nativity, etc). Inaudible Prayer.",
@@ -8245,7 +8335,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ነፍስን የፈጠረ፣ መንፈስ ቅዱስን በመስጠት የሚጠቅም፣ የጥበብ መገኛ፣ የቅዱሳን መምህርና የዓለም መሠረት፣ የንጹሐንን ጸሎት የሚቀበል፤",
       "amharic_phonetic": "kahn: nefsn yefeṭere, menfes ḳdusn bemesṭet yemīṭeḳm, yeṭbeb megeña, yeḳdusan memhrna ye'alem meseret, yentsuḥann tselot yemīḳebel:",
       "tigrinya_script": "ካህን፤ ንነፍሲ ዝፈጠረ፡ መዝገብ ጥበብ ረዳኢ፡ መንፈስ ቅዱስ ብምሃብ ዜሀብትም። መምህር ቅዱሳንን መሠረት ዓለምን ዝኾንካ። ጸሎት ንጹሓን እትቕበል።",
-      "tigrinya_phonetic": "kahn: nnefsī zfeṭere  mezgeb ṭbeb reda'ī  menfes ḳdus bmhab zéhabtm. memhr ḳdusann meseret 'alemn zkhonka. tselot ntsuḥan 'itqhbel."
+      "tigrinya_phonetic": "kahn: nnefsī zfeṭere  mezgeb ṭbeb reda'ī  menfes ḳdus bmhab zéhabtm. memhr ḳdusann meseret 'alemn zkhonka. tselot ntsuḥan 'itqhbel.",
+      "spanish": "Sacerdote: el Hacedor del alma, Dador del bien, Dador del Espíritu Santo, Tesoro de la sabiduría, Auxiliador, Maestro de los santos, Fundamento del mundo, que acepta la oración de los santos."
     },
     {
       "instruction": "For Liturgies starting at midnight (e.g. Pascha, Nativity, etc). Inaudible Prayer.",
@@ -8258,7 +8349,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ወልድ ዋሕድ አንተን እናመሰግናለን፣ ቀዳሜ በኵር የምትሆን የአብ ቃል፣ ለምንጠራህ ለእኛ ለሁሉ የሚሆን የአንተን ጸጋ የሰጠኸን፣",
       "amharic_phonetic": "kahn: weld waḥd 'anten 'inamesegnalen, ḳedamé bekwr yemthon ye'ab ḳal, lemnṭerah le'iña lehulu yemīhon ye'anten tsega yeseṭekhen,",
       "tigrinya_script": "ካህን፤ ኦ ወልድ ዋሕድ፥ ንኣኻ ነመስግን ኣሎና። ቀዳማይ በዅሪ ናይ ኣብ ቃል፡ ነዞም እንጽውዓካ ንኣና ንዅሉ ዚኸውን ናትካ ጸጋ ዝሃብካና ንስኻ ኢኻ።",
-      "tigrinya_phonetic": "kahn: 'o weld waḥd; n'akha nemesgn 'alona. ḳedamay beዅrī nay 'ab ḳal  nezom 'intsw'aka n'ana nዅlu zīkhewn natka tsega zhabkana nskha 'īkha."
+      "tigrinya_phonetic": "kahn: 'o weld waḥd; n'akha nemesgn 'alona. ḳedamay beዅrī nay 'ab ḳal  nezom 'intsw'aka n'ana nዅlu zīkhewn natka tsega zhabkana nskha 'īkha.",
+      "spanish": "Sacerdote: Te glorificamos, oh Hijo unigénito, Verbo primogénito del Padre; Nos has concedido tu gracia universal a los que te invocamos."
     },
     {
       "instruction": "For Liturgies starting at midnight (e.g. Pascha, Nativity, etc). Inaudible Prayer.",
@@ -8271,7 +8363,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ነውር የሌለብህ ንጹሕ አባት፣ ብል ነቀዝ የማያበላሸው ገንዘብ ያለህ፣ በፍጹም ልቡናቸው ለሚያምኑብህ የምትሰጥ፣",
       "amharic_phonetic": "kahn: newr yelélebh ntsuḥ 'abat, bl neḳez yemayabelaሸw genzeb yaleh, beftsum lbunachew lemīyamnubh yemtseṭ,",
       "tigrinya_script": "ካህን፤ ኦ ነውሪ ዘይብሉ ንጹሕ ኣቦ፡ ጻጸን ቍንቍነን ዘየበላሽዎ ሃብቲ ዘለዎ። ነቶም ብፍጹም ልቢ ዚኣምኑኻ እትህብ።",
-      "tigrinya_phonetic": "kahn: 'o newrī zeyblu ntsuḥ 'abo  tsatsen ḳwnḳwnen zeyebelaሽwo habtī zelewo. netom bftsum lbī zī'amnukha 'ithb."
+      "tigrinya_phonetic": "kahn: 'o newrī zeyblu ntsuḥ 'abo  tsatsen ḳwnḳwnen zeyebelaሽwo habtī zelewo. netom bftsum lbī zī'amnukha 'ithb.",
+      "spanish": "Sacerdote: Oh Padre puro e irreprensible, Tú tienes los tesoros que la polilla y el orín no corrompen, y que das a aquellos que confían en Ti en todos sus pensamientos."
     },
     {
       "instruction": "For Liturgies starting at midnight (e.g. Pascha, Nativity, etc). Inaudible Prayer.",
@@ -8284,7 +8377,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ዓለም ሳይፈጠር የነበረውን ብርሃን ያዩት ዘንድ መላእክትን ደስ የሚያሰኛቸው፤ የማይለወጥ ጠባቂያችን፤",
       "amharic_phonetic": "kahn: 'alem sayfeṭer yeneberewn brhan yayut zend mela'iktn des yemīyaseñachew: yemayleweṭ ṭebaḳīyachn:",
       "tigrinya_script": "ካህን፤ ንመላእኸቲ ኬመስግንዎ ዜፍትዎም። ዓለም ከይተፈጥረ ዝነበረ ዘይጠፍእ ሓላዊና ብርሃን ኢኻ።",
-      "tigrinya_phonetic": "kahn: nmela'ikhetī kémesgnwo zéftwom. 'alem keytefeṭre znebere zeyṭef'i ḥalawīna brhan 'īkha."
+      "tigrinya_phonetic": "kahn: nmela'ikhetī kémesgnwo zéftwom. 'alem keytefeṭre znebere zeyṭef'i ḥalawīna brhan 'īkha.",
+      "spanish": "Sacerdote: Tú hiciste que los ángeles desearan visitar la Luz que estaba ante el mundo, y Tú eres nuestro Guardián inmutable."
     },
     {
       "instruction": "For Liturgies starting at midnight (e.g. Pascha, Nativity, etc). Inaudible Prayer.",
@@ -8297,7 +8391,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ በእኛ የነበረውን ጨለማ በአባትህ ፈቃድ አራቅህልን፣ ከጨለማ ወደ ብርሃን አወጣኸን፣",
       "amharic_phonetic": "kahn: be'iña yeneberewn chelema be'abath feḳad 'araḳhln, kechelema wede brhan 'aweṭakhen,",
       "tigrinya_script": "ካህን፤ ነቲ ኣባና ዝነበረ መዝገብ ጽልመት ኣርሒቕካ ብፍቓድ ኣቦኻ ኣብራህካልና። ካብ መዓሙቝ ጸልማት ናብ ብርሃን ኣውፃእካና።",
-      "tigrinya_phonetic": "kahn: netī 'abana znebere mezgeb tslmet 'arḥīqhka bfqhad 'abokha 'abrahkalna. kab me'amuḳhw tselmat nab brhan 'awtsa'ikana."
+      "tigrinya_phonetic": "kahn: netī 'abana znebere mezgeb tslmet 'arḥīqhka bfqhad 'abokha 'abrahkalna. kab me'amuḳhw tselmat nab brhan 'awtsa'ikana.",
+      "spanish": "Sacerdote: Por la voluntad de tu Padre nos has iluminado, a nosotros que atesorábamos las tinieblas, a nosotros a quienes nos has sacado de las tinieblas a la luz,"
     },
     {
       "instruction": "For Liturgies starting at midnight (e.g. Pascha, Nativity, etc). Inaudible Prayer.",
@@ -8310,7 +8405,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ከሞት አድነህ ሕይወትን ሰጠኸን፣ ከመገዛት ነጻ አወጣኸን፣",
       "amharic_phonetic": "kahn: kemot 'adneh ḥywetn seṭekhen, kemegezat netsa 'aweṭakhen,",
       "tigrinya_script": "ካህን፤ ካብ ሞት ኣድኂንካ ሕይወት ሃብካና። ካብ ባርነት ሓራ ኣውፃእካና።",
-      "tigrinya_phonetic": "kahn: kab mot 'adhīnka ḥywet habkana. kab barnet ḥara 'awtsa'ikana."
+      "tigrinya_phonetic": "kahn: kab mot 'adhīnka ḥywet habkana. kab barnet ḥara 'awtsa'ikana.",
+      "spanish": "Sacerdote: y nos concedió la vida después de la muerte, y nos concedió la libertad de la esclavitud."
     },
     {
       "instruction": "For Liturgies starting at midnight (e.g. Pascha, Nativity, etc). Inaudible Prayer.",
@@ -8323,7 +8419,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ በመስቀልህ በሰማይ ወዳለው ወደ አባትህ ያቀረብከን፣ አቤቱ በወንጌል መራኸን፣ በነቢያት አረጋጋ ኸን፣ ያቀረብከን አምላክ አንተ ነህ፣",
       "amharic_phonetic": "kahn: bemesḳelh besemay wedalew wede 'abath yaḳerebken, 'abétu bewengél merakhen, benebīyat 'aregaga khen, yaḳerebken 'amlak 'ante neh,",
       "tigrinya_script": "ካህን፤ ብመስቀልካ ናብቲ ኣብ ሰማያት ዘሎ ኣቦኻ ኣቕረብካና። ብወንጌል መራሕካና፡ ብነቢያትውን ናዘዝካና። ኦ ኣምላኽ ባዕልኻ ኢኻ ዘቕረብካና።",
-      "tigrinya_phonetic": "kahn: bmesḳelka nabtī 'ab semayat zelo 'abokha 'aqhrebkana. bwengél meraḥkana  bnebīyatwn nazezkana. 'o 'amlakh ba'ilkha 'īkha zeqhrebkana."
+      "tigrinya_phonetic": "kahn: bmesḳelka nabtī 'ab semayat zelo 'abokha 'aqhrebkana. bwengél meraḥkana  bnebīyatwn nazezkana. 'o 'amlakh ba'ilkha 'īkha zeqhrebkana.",
+      "spanish": "Sacerdote: Con Tu cruz nos has acercado a Tu Padre que está en el cielo. Con el Evangelio nos has guiado y con los profetas nos has consolado, a nosotros, a quienes has acercado, oh Dios."
     },
     {
       "instruction": "For Liturgies starting at midnight (e.g. Pascha, Nativity, etc). Inaudible Prayer.",
@@ -8336,7 +8433,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ዳግመኛ አቤቱ ዕውቀትን ግለጽልን፣ ለአንተ ለአምላካችን ምስጋናን እናቀርባለን፣ አርምሞ በሌለበት ምስጋና እኛ ያንተ አገልጋዮች እናመሰግንሃለን፣ ሕዝቡም አንተን ያመሰግናሉ፤",
       "amharic_phonetic": "kahn: dagmeña 'abétu 'iwḳetn gletsln, le'ante le'amlakachn msganan 'inaḳerbalen, 'armmo belélebet msgana 'iña yante 'agelgayoch 'inamesegnhalen, ḥzbum 'anten yamesegnalu:",
       "tigrinya_script": "ካህን፤ ስለዚ ኦ ጐይታ፡ ንሕና ባሮትካ ንኣኻ ንኣምላኸና ክንውድስን ብዘይ ምቍራጽ ኵሉ ሳዕ ከነመስግንን ብርሃን ሃበና። ሕዝቢውን ንኣኻ ይውድሱ ኣለዉ።",
-      "tigrinya_phonetic": "kahn: slezī 'o gweyta  nḥna barotka n'akha n'amlakhena knwdsn bzey mḳwrats kwlu sa'i kenemesgnn brhan habena. ḥzbīwn n'akha ywdsu 'alewu."
+      "tigrinya_phonetic": "kahn: slezī 'o gweyta  nḥna barotka n'akha n'amlakhena knwdsn bzey mḳwrats kwlu sa'i kenemesgnn brhan habena. ḥzbīwn n'akha ywdsu 'alewu.",
+      "spanish": "Sacerdote: Danos, oh Dios, luz. Te alabamos, oh Dios nuestro, para que con incesante acción de gracias podamos decir que somos tus siervos; y el pueblo te alaba."
     },
     {
       "instruction": "For Liturgies starting at midnight (e.g. Pascha, Nativity, etc).",
@@ -8349,7 +8447,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ አቤቱ አንተን እናመሰግናለን።",
       "amharic_phonetic": "፨ ḥzb: 'abétu 'anten 'inamesegnalen",
       "tigrinya_script": "፨ ሕዝብ፤ ኦ ጐይታ፡ ንኣኻ ንውድስ ኣሎና",
-      "tigrinya_phonetic": "፨ ḥzb: 'o gweyta  n'akha nwds 'alona"
+      "tigrinya_phonetic": "፨ ḥzb: 'o gweyta  n'akha nwds 'alona",
+      "spanish": "፨ Pueblo: Oh Señor, te alabamos."
     },
     {
       "instruction": "For Liturgies starting at midnight (e.g. Pascha, Nativity, etc). Inaudible Prayer.",
@@ -8362,7 +8461,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ከሁሉ በላይ የምትሆን የእግዚአብሔር ልጁ ኢየሱስ ክርስቶስ ሆይ ጌትነትህ ለዘለዓለም ከሚሆን መንግሥትህ ጋራ በቃላችን ይህነን ምስጋና ሦስተኛ ጊዜ ለአንተ እናቀርባለን፣",
       "amharic_phonetic": "kahn: kehulu belay yemthon ye'igzī'abḥér lju 'īyesus krstos hoy gétneth lezele'alem kemīhon mengsth gara beḳalachn yhnen msgana sosteña gīzé le'ante 'inaḳerbalen,",
       "tigrinya_script": "ካህን፤ ምስ ኣቦ ልዕሊ ዅሉ ንዝኾንካ\nኢየሱስ ወዲ እግዚኣብሔር፡ ምስቲ ናይ ዘለዓለም መንግሥትኻ እዚ ምስጋና እዚ ንሣልሳይ ጊዜ ካብ ኣፍና ነቕርብ ኣሎና።",
-      "tigrinya_phonetic": "kahn: ms 'abo l'ilī ዅlu nzkhonka\n'īyesus wedī 'igzī'abḥér  mstī nay zele'alem mengstkha 'izī msgana 'izī nsalsay gīzé kab 'afna neqhrb 'alona."
+      "tigrinya_phonetic": "kahn: ms 'abo l'ilī ዅlu nzkhonka\n'īyesus wedī 'igzī'abḥér  mstī nay zele'alem mengstkha 'izī msgana 'izī nsalsay gīzé kab 'afna neqhrb 'alona.",
+      "spanish": "Sacerdote: Oh Jesús, Hijo de Dios, que estás sobre todo, tres veces más, te ofrecemos acción de gracias con tu Padre en tu reino eterno."
     },
     {
       "instruction": "For Liturgies starting at midnight (e.g. Pascha, Nativity, etc). Inaudible Prayer.",
@@ -8375,7 +8475,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ፍጥረት ሁሉ በመራድ (በመንቀጥቀጥ) በመፍራት ያመሰግንሃል፣",
       "amharic_phonetic": "kahn: fṭret hulu bemerad (bemenḳeṭḳeṭ) bemefrat yamesegnhal,",
       "tigrinya_script": "ካህን፤ ኵሉ ፍጥረት ድማ ብምርዓድን ብመን ፈስ ፍርሃትን የመስግነካ ኣሎ።",
-      "tigrinya_phonetic": "kahn: kwlu fṭret dma bmr'adn bmen fes frhatn yemesgneka 'alo."
+      "tigrinya_phonetic": "kahn: kwlu fṭret dma bmr'adn bmen fes frhatn yemesgneka 'alo.",
+      "spanish": "Sacerdote: y todas las criaturas te glorifican en temblor y temor de alma."
     },
     {
       "instruction": "For Liturgies starting at midnight (e.g. Pascha, Nativity, etc). Inaudible Prayer.",
@@ -8388,7 +8489,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ነፍስ ሁሉ የሚፈራው የሚያ መልከው፣ የጻድቃን ነፍሳት በአንተ ጸንተው ይኖራሉ፣ መናፍስት ያመጡትን የጐርፉን ፈሳሽነት ከእኛ ጸጥ ያደረግህልን፣",
       "amharic_phonetic": "kahn: nefs hulu yemīferaw yemīya melkew, yetsadḳan nefsat be'ante tsentew ynoralu, menafst yameṭutn yegwerfun fesaሽnet ke'iña tseṭ yadereghln,",
       "tigrinya_script": "ካህን፤ ኦ ኵሉ ነፍሲ ዚፈርሆ፡ ኵሎም ነፍሳት ጻድቃን ብኣኻ ጸኒዖም ዚነብሩ። መናፍስቲ ዘምጽእዎም ወሓዝቲ ማዕበላት ካባና ዘህዳ እካ።",
-      "tigrinya_phonetic": "kahn: 'o kwlu nefsī zīferho  kwlom nefsat tsadḳan b'akha tsenī'om zīnebru. menafstī zemts'iwom weḥaztī ma'ibelat kabana zehda 'ika."
+      "tigrinya_phonetic": "kahn: 'o kwlu nefsī zīferho  kwlom nefsat tsadḳan b'akha tsenī'om zīnebru. menafstī zemts'iwom weḥaztī ma'ibelat kabana zehda 'ika.",
+      "spanish": "Sacerdote: Toda alma te teme y todas las almas de los justos confían en Ti, que calmaste las tormentas de los espíritus malignos por nuestro bien."
     },
     {
       "instruction": "For Liturgies starting at midnight (e.g. Pascha, Nativity, etc). Inaudible Prayer.",
@@ -8401,7 +8503,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ከጥፋት አድነህ የሕይወት ወደብ የሆንከን፣ የዘለዓለም ድኅነት አለኝታ ያለበት መሸሻ የሆንከን፣ በባሕር የተጨነቁትን የምታድን፣",
       "amharic_phonetic": "kahn: keṭfat 'adneh yeḥywet wedeb yehonken, yezele'alem dhnet 'aleñta yalebet meሸሻ yehonken, bebaḥr yetecheneḳutn yemtadn,",
       "tigrinya_script": "ካህን፤ ካብ ጥፍኣት፡ ወደብ ሕይወት ዝኾንካና ንስኻ ኢኻ። ናብቲ ናይ ዘለዓለም ተስፋ ምድኃን ዘለዎ ጸግዒውን መጕየዪ ዝኾንካና ንስኻ ኢኻ። ነቶም ኣብ ባሕሪ ዚጭነቑ እተድኅን።",
-      "tigrinya_phonetic": "kahn: kab ṭf'at  wedeb ḥywet zkhonkana nskha 'īkha. nabtī nay zele'alem tesfa mdhan zelewo tseg'īwn megwyeyī zkhonkana nskha 'īkha. netom 'ab baḥrī zīchneqhu 'itedhn."
+      "tigrinya_phonetic": "kahn: kab ṭf'at  wedeb ḥywet zkhonkana nskha 'īkha. nabtī nay zele'alem tesfa mdhan zelewo tseg'īwn megwyeyī zkhonkana nskha 'īkha. netom 'ab baḥrī zīchneqhu 'itedhn.",
+      "spanish": "Sacerdote: y quien se hizo para nosotros vida de la destrucción, y refugio en donde está la esperanza de la salvación eterna; Tú salvas a los que están atribulados en el mar,"
     },
     {
       "instruction": "For Liturgies starting at midnight (e.g. Pascha, Nativity, etc). Inaudible Prayer.",
@@ -8414,7 +8517,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ በምድረበዳ ያሉትንም የምታድን በጽኑ እሥራት ካሉትም ጋራ አብረሃቸው የምትኖር ከሞት ማሠሪያ የፈታኸን፣",
       "amharic_phonetic": "kahn: bemdrebeda yalutnm yemtadn betsnu 'israt kalutm gara 'abrehachew yemtnor kemot maserīya yefetakhen,",
       "tigrinya_script": "ካህን፤ ነቶም ኣብ ምድረ በዳ ዘለዉ ኸኣ ብጸጋኻ እተሕዊ፡ ነቶም ኣብ ጽኑዕ ማእሰርቲ ዘለዉኸኣ ምስኣቶም እትነብር። ካብ ማእሰር ሞት ዝፈታሕካና፡",
-      "tigrinya_phonetic": "kahn: netom 'ab mdre beda zelewu khe'a btsegakha 'iteḥwī  netom 'ab tsnu'i ma'isertī zelewukhe'a ms'atom 'itnebr. kab ma'iser mot zfetaḥkana"
+      "tigrinya_phonetic": "kahn: netom 'ab mdre beda zelewu khe'a btsegakha 'iteḥwī  netom 'ab tsnu'i ma'isertī zelewukhe'a ms'atom 'itnebr. kab ma'iser mot zfetaḥkana",
+      "spanish": "Sacerdote: Acompañaste a aquellos cuyo encarcelamiento es muy duro; Así que libéranos de la atadura de la muerte."
     },
     {
       "instruction": "For Liturgies starting at midnight (e.g. Pascha, Nativity, etc). Inaudible Prayer.",
@@ -8427,7 +8531,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ችግረኞችንና የሚያለቅሱትን የሚያረጋጋቸው፣ የደከሙትን በመስቀሉ የሚያድን፣ ከአመንበት ከእኛ መዓቱን ሁሉ የሚያርቅ፣",
       "amharic_phonetic": "kahn: chgreñochnna yemīyaleḳsutn yemīyaregagachew, yedekemutn bemesḳelu yemīyadn, ke'amenbet ke'iña me'atun hulu yemīyarḳ,",
       "tigrinya_script": "ካህን፤ ንመሳኺንን ንዚበኸዩን ዚናዝዞም፡ ነቶም ዝጻመዉ ድማ ብመስቀሉ ዚብጀዎም። ነቶም ኣብኡ ዝተወከልና ኵሉ መዓት ካባና ዚመልስን ዜርሕቕን ንስኻ ኢኻ።",
-      "tigrinya_phonetic": "kahn: nmesakhīnn nzībekheyun zīnazzom  netom ztsamewu dma bmesḳelu zībjewom. netom 'ab'u ztewekelna kwlu me'at kabana zīmelsn zérḥqhn nskha 'īkha."
+      "tigrinya_phonetic": "kahn: nmesakhīnn nzībekheyun zīnazzom  netom ztsamewu dma bmesḳelu zībjewom. netom 'ab'u ztewekelna kwlu me'at kabana zīmelsn zérḥqhn nskha 'īkha.",
+      "spanish": "Sacerdote: Tú consuelas a los miserables y a los que lloran, salvas a los débiles con tu cruz, quitas y quitas toda ira de los que en ti hemos confiado."
     },
     {
       "instruction": "For Liturgies starting at midnight (e.g. Pascha, Nativity, etc). Inaudible Prayer.",
@@ -8440,7 +8545,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ነቢያትና ሐዋርያት በኅቡእ ያመሰገኑህን አንተን አቤቱ እናመሰግናለን፣ ለአንተ ምስጋና እናቀርባለን፣ አንተን አምነን በመንግሥተ ሰማያት እናርፍ ዘንድ፣",
       "amharic_phonetic": "kahn: nebīyatna ḥawaryat behbu'i yamesegenuhn 'anten 'abétu 'inamesegnalen, le'ante msgana 'inaḳerbalen, 'anten 'amnen bemengste semayat 'inarf zend,",
       "tigrinya_script": "ካህን፤ ኦ ጐይታ፡ ነቢያትን ሓዋርያትን ብኅቡእ ንዜመስግኑኻ ንኣኻ ንውድስን ነመስግነካን ኣሎና። ኣብ ማኅደር ሕይወት ምእንቲ ኸነዕርፍ፡ ብኣኻ ኣሚንና",
-      "tigrinya_phonetic": "kahn: 'o gweyta  nebīyatn ḥawaryatn bhbu'i nzémesgnukha n'akha nwdsn nemesgnekan 'alona. 'ab mahder ḥywet m'intī khene'irf  b'akha 'amīnna"
+      "tigrinya_phonetic": "kahn: 'o gweyta  nebīyatn ḥawaryatn bhbu'i nzémesgnukha n'akha nwdsn nemesgnekan 'alona. 'ab mahder ḥywet m'intī khene'irf  b'akha 'amīnna",
+      "spanish": "Sacerdote: Oh Señor, a quien los profetas y los apóstoles agradecieron en secreto, nosotros te damos gracias. Te glorificamos, para que, creyendo en Ti y cumpliendo Tu voluntad, descansemos en la morada de la vida."
     },
     {
       "instruction": "For Liturgies starting at midnight (e.g. Pascha, Nativity, etc). Inaudible Prayer.",
@@ -8453,7 +8559,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ፈቃድህንም እየሠራን በትእዛዝህ እንድንሄድ አድርገን፣ ሁሉንም በቸርነትህ ጎብኝ፣ ትንንሾችንም ትልልቆችንም፣ ገዢውንና ሕዝቡን ጠባቂውንና መንጋውን፣",
       "amharic_phonetic": "kahn: feḳadhnm 'iyeseran bet'izazh 'indnhéd 'adrgen, hulunm becherneth gobñ, tnnሾchnm tllḳochnm, gezhīwnna ḥzbun ṭebaḳīwnna mengawn,",
       "tigrinya_script": "ካህን፤ ፍቓድካ እናገበርና ብትእዛዝካ ከም እንመላለስ ግበረና። ኦ ጐይታ፡ ንዅሉ ንናእሽቱን ንዓበይትን፡ ንመመኃደርን ንሕዝቡን፡ ንጓሳን ንመጓሴኡን፡ ብምሕረትካ ሓሉ።",
-      "tigrinya_phonetic": "kahn: fqhadka 'inageberna bt'izazka kem 'inmelales gberena. 'o gweyta  nዅlu nna'iሽtun n'abeytn  nmemehadern nḥzbun  ngwasan nmegwasé'un  bmḥretka ḥalu."
+      "tigrinya_phonetic": "kahn: fqhadka 'inageberna bt'izazka kem 'inmelales gberena. 'o gweyta  nዅlu nna'iሽtun n'abeytn  nmemehadern nḥzbun  ngwasan nmegwasé'un  bmḥretka ḥalu.",
+      "spanish": "Sacerdote: Concédenos caminar según Tu orden. Oh Señor, por Tu misericordia visita a todos: pequeños y grandes; gobernantes y pueblo; pastor y rebaño."
     },
     {
       "instruction": "For Liturgies starting at midnight (e.g. Pascha, Nativity, etc). Inaudible Prayer.",
@@ -8466,7 +8573,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አቤቱ አምላካችን ሆይ፣ ክቡር መንግሥት የአንተ ነውና",
       "amharic_phonetic": "kahn: 'abétu 'amlakachn hoy, kbur mengst ye'ante newna",
       "tigrinya_script": "ካህን፤ ኦ ጐይታናን ኣምላኸናን ቡሩኸ መንግሥቲ ናትካ እዩ እሞ፡",
-      "tigrinya_phonetic": "kahn: 'o gweytanan 'amlakhenan burukhe mengstī natka 'iyu 'imo"
+      "tigrinya_phonetic": "kahn: 'o gweytanan 'amlakhenan burukhe mengstī natka 'iyu 'imo",
+      "spanish": "Sacerdote: Porque tuyo es el Reino, oh bendito Señor Dios nuestro."
     },
     {
       "instruction": "For Liturgies starting at midnight (e.g. Pascha, Nativity, etc).",
@@ -8479,7 +8587,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ከዓለም አስ ቀድሞ ምስጋና ለአብ ለወልድ ለመንፈስ ቅዱስ ይገባል ዛሬም ዘወትርም ለልጅ ልጅ ለዘለዓለሙ የማይፈጸም፤\n፨ ሕዝብ፤ አሜን።",
       "amharic_phonetic": "kahn: ke'alem 'as ḳedmo msgana le'ab leweld lemenfes ḳdus ygebal zarém zewetrm lelj lj lezele'alemu yemayfetsem:\n፨ ḥzb: 'amén.",
       "tigrinya_script": "ካህን፤ ቅድሚ ዓለም፡ ምስጋና ንኣብን ንወልድን ንመንፈስ ቅዱስን ይግባእ። ሎምን ኵሉ ሳዕን ንውሉድ ወለዶን ዘይውዳእ፡ ንዘለዓለም ዓለም።\n፨ ሕዝብ፤ ኣሜን።",
-      "tigrinya_phonetic": "kahn: ḳdmī 'alem  msgana n'abn nweldn nmenfes ḳdusn ygba'i. lomn kwlu sa'in nwlud weledon zeywda'i  nzele'alem 'alem.\n፨ ḥzb: 'amén."
+      "tigrinya_phonetic": "kahn: ḳdmī 'alem  msgana n'abn nweldn nmenfes ḳdusn ygba'i. lomn kwlu sa'in nwlud weledon zeywda'i  nzele'alem 'alem.\n፨ ḥzb: 'amén.",
+      "spanish": "Sacerdote: Gloria al Padre, al Hijo y al Espíritu Santo, antes de la creación del mundo, ahora y siempre, y de generación en generación y en el mundo sin fin.\n፨ Pueblo: Amén."
     },
     {
       "instruction": "For morning services",
@@ -8492,7 +8601,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ የእግዚአብሔር ጸጋ ከናንተ ጋራ ይሁን\n፨ ሕዝብ፤ ከመንፈስህ ጋር",
       "amharic_phonetic": "kahn: ye'igzī'abḥér tsega kenante gara yhun\n፨ ḥzb: kemenfesh gar",
       "tigrinya_script": "ካህን፤ ናይ እግዚኣብሔር ጸጋ ምሳኹም ይኹን።\n፨ ሕዝብ፤ ምስ መንፈስካ",
-      "tigrinya_phonetic": "kahn: nay 'igzī'abḥér tsega msakhum ykhun.\n፨ ḥzb: ms menfeska"
+      "tigrinya_phonetic": "kahn: nay 'igzī'abḥér tsega msakhum ykhun.\n፨ ḥzb: ms menfeska",
+      "spanish": "፨ ORACIÓN DE LA MAÑANA DE LA PACTO ፨\nSacerdote: La Gracia de Dios esté con vosotros.\n፨ Pueblo: y con Tu Espíritu."
     },
     {
       "instruction": "For morning services",
@@ -8505,7 +8615,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ፈጣሪያችንን እናመስግን\n፨ ሕዝብ፤ እውነት ነው ይገባል\nካህን፤ የልባችሁን ሃሳብ አጽኑ",
       "amharic_phonetic": "kahn: feṭarīyachnn 'inamesgn\n፨ ḥzb: 'iwnet new ygebal\nkahn: yelbachhun hasab 'atsnu",
       "tigrinya_script": "ካህን፤ ንኣምላኽና ነመስግኖ፡\n፨ ሕዝብ፤ ብሓቂ ይግባእ እዩ።\nካህን፤ ሕሊና ልብኹም ኣጽንዑ።",
-      "tigrinya_phonetic": "kahn: n'amlakhna nemesgno \n፨ ḥzb: bḥaḳī ygba'i 'iyu.\nkahn: ḥlīna lbkhum 'atsn'u."
+      "tigrinya_phonetic": "kahn: n'amlakhna nemesgno \n፨ ḥzb: bḥaḳī ygba'i 'iyu.\nkahn: ḥlīna lbkhum 'atsn'u.",
+      "spanish": "Sacerdote: Glorifiquemos a nuestro Dios.\n፨ Pueblo: Está bien, es justo.\nSacerdote: Fortalece el pensamiento de tu corazón."
     },
     {
       "instruction": "For morning services",
@@ -8518,7 +8629,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ ከእግዚአብሔር ዘንድ አለን። አባታችን ሆይ አባታችን ሆይ አባታችን ሆይ አቤቱ ወደ ፈተና አታግባን።",
       "amharic_phonetic": "፨ ḥzb: ke'igzī'abḥér zend 'alen. 'abatachn hoy 'abatachn hoy 'abatachn hoy 'abétu wede fetena 'atagban.",
       "tigrinya_script": "፨ ሕዝብ፤ ኣብ እግዚአብሔር ኣቦና ኣሎና፡ ኣብ ሰማያት እትነብር ኣቦና፡ ኣብ ሰማያት እትነብር ኣቦና፡ ኣብ ሰማያት እትነብር ኣቦና፡ ናብ ፈተና ኣይተእትወና።",
-      "tigrinya_phonetic": "፨ ḥzb: 'ab 'igzī'abḥér 'abona 'alona 'ab semayat 'itnebr 'abona 'ab semayat 'itnebr 'abona 'ab semayat 'itnebr 'abona nab fetena 'ayte'itwena."
+      "tigrinya_phonetic": "፨ ḥzb: 'ab 'igzī'abḥér 'abona 'alona 'ab semayat 'itnebr 'abona 'ab semayat 'itnebr 'abona 'ab semayat 'itnebr 'abona nab fetena 'ayte'itwena.",
+      "spanish": "፨ Pueblo: Los elevamos al Señor. Padre nuestro que estás en los cielos, Padre nuestro que estás en los cielos, Padre nuestro que estás en los cielos, no nos dejes caer en la tentación."
     },
     {
       "instruction": "For morning services. Inaudible Prayer.",
@@ -8531,7 +8643,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ብርሃንን የሚስጥ እግዚአብሔር አብ ኃይል የሚሆን ነፍስን ሁሉ የሚጎበኝ ከቀድሞ ጀምሮ የነበረ ብርሃን",
       "amharic_phonetic": "kahn: brhann yemīsṭ 'igzī'abḥér 'ab hayl yemīhon nefsn hulu yemīgobeñ keḳedmo jemro yeneberäre brhan",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Oh Dios Padre, Dador de luz, Poder de todo, Visitador de toda alma, Luz que era antes, Creador del mundo,"
     },
     {
       "instruction": "For morning services. Inaudible Prayer.",
@@ -8544,7 +8657,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ዓለምን የፈጠረ፣ ወደ ሕይወት የሚመራ፣ የማያልፈውን ተድላ የሚሰጥ ነው፣\nከጨለማ መሰናክል አውጥተህ የማይገኝ ብርሃንን የሰጠ ኸን፣",
       "amharic_phonetic": "kahn: 'alemn yefeṭeräre, wede ḥywet yemīmera, yemayalfewn tedla yemīseṭ new ,\nkechelema mesenakl 'awṭteh yemaygeñ brhann yeseṭe khen,",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Líder de la vida y Dador de la felicidad inmortal: Tú nos sacaste de las trampas de las tinieblas y nos concediste la luz inescrutable."
     },
     {
       "instruction": "For morning services. Inaudible Prayer.",
@@ -8557,7 +8671,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ያመንብህ እኛን ከማዕሠረ ክሕደት አውጥተህ በሃይማኖት ያከበርከን",
       "amharic_phonetic": "kahn: yamenbh 'iñan kema'iseräre kḥdet 'awṭteh behaymanot yakeberken",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Tú nos desataste a los que creemos en Ti, y nos cubriste de fe."
     },
     {
       "instruction": "For morning services. Inaudible Prayer.",
@@ -8570,7 +8685,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ከአገልጋዮቹ የማይርቅ የማይለይ፣ ዘወትር ከነርሱ ጋራ የሚኖር፣ በፍርሃት በረዓድ የምትለምነውን ነፍስ ቸል የማይል፣",
       "amharic_phonetic": "kahn: ke'agelgayochu yemayrḳ yemayley, zewetr kenersu gara yemīnor, befrhat beräre'ad yemtlemnewn nefs chel yemayl,",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: No estás lejos de Tus siervos sino que estás siempre con ellos. No descuidaste el alma que te suplica con temor y temblor."
     },
     {
       "instruction": "For morning services. Inaudible Prayer.",
@@ -8583,7 +8699,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ከሕሊና አስቀድሞ ሁሉን የሚያውቅ፣ ከአሳብ አስቀድሞ የሚመረ ምር፣ ሳንለምነው የምንሻውን ዐውቆ የሚሰጠን፣ ሳንጠራጠር የምንለምነውን የሚሰማን፣",
       "amharic_phonetic": "kahn: keḥlīna 'asḳedmo hulun yemīyawḳ, ke'asab 'asḳedmo yemīmeräre mr, sanlemnew yemnshawn 'awḳo yemīseṭen, sanṭeraṭer yemnlemnewn yemīseman,",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Lo sabes todo antes de pensarlo. Por Tu Voluntad Suples nuestras necesidades antes de que te las pidamos; Tú nos escuchas que te invocamos sin dudar."
     },
     {
       "instruction": "For morning services. Inaudible Prayer.",
@@ -8596,7 +8713,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ የማይመረመር ብርሃን፣ በሰማያት ያሉ የመላእክት ንጉሥ አድሮባቸው የሚኖር ሊቃነ መላእክት ያቀረቡትን ምስጋና የሚቀበል፣",
       "amharic_phonetic": "kahn: yemaymeräremer brhan , besemayat yalu yemela'ikt ngus 'adrobachew yemīnor līḳane mela'ikt yaḳerärebutn msgana yemīḳebel ,",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Tú eres la luz inescrutable y el Rey de las huestes celestiales, oyente del cántico glorioso de los arcángeles sobre quienes descansas."
     },
     {
       "instruction": "For morning services. Inaudible Prayer.",
@@ -8609,7 +8727,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤አቤቱ የምን ለምንህን ስማን፣ አርምሞ የሌለበትን ቃል በሃይማኖት ስጠን፣ አንተን ፈጽሞ እናመሰግን ዘንድ አንተን እናከብር ዘንድ፧",
       "amharic_phonetic": "kahn:'abétu yemn lemnhn sman, 'armmo yelélebetn ḳal behaymanot sṭen, 'anten fetsmo 'inamesegn zend 'anten 'inakebr zend?",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Oh Señor, te rogamos que nos escuches. Concédenos la Palabra incesante en confianza. Te glorificamos, te damos gracias y te bendecimos."
     },
     {
       "instruction": "For morning services. Inaudible Prayer.",
@@ -8622,7 +8741,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤  በአንተም ጸንተን እንኖር ዘንድ፣ አቤቱ እኛ አገልጋዮችህ እና መሰግንሃለን፣",
       "amharic_phonetic": "kahn:  be'antem tsenten 'innor zend, 'abétu 'iña 'agelgayochh 'ina mesegnhalen ,",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Oh Señor, nosotros, Tus siervos, te glorificamos porque dependemos de Ti."
     },
     {
       "instruction": "For morning services",
@@ -8635,7 +8755,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ አቤቱ አንተን እናመሰግንሃለን",
       "amharic_phonetic": "፨ ḥzb: 'abétu 'anten 'inamesegnhalen",
       "tigrinya_script": "፨ ሕዝብ፤ ኦ ጐይታ ንኣኻ ነመስግን።",
-      "tigrinya_phonetic": "፨ ḥzb: 'o gweyta n'akha nemesgn."
+      "tigrinya_phonetic": "፨ ḥzb: 'o gweyta n'akha nemesgn.",
+      "spanish": "፨ Pueblo: Oh Señor, te glorificamos."
     },
     {
       "instruction": "For morning services. Inaudible Prayer.",
@@ -8648,7 +8769,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አቤቱ ኢየሱስ ክርስቶስ ሆይ ቊርጥ ልመናችንን ስማን፣ ድዳ ለነበሩት ቃል፣ ለተሰበሩት ምርኩዝ፣ ለዕውራን ብርሃን ለሐንካሶች, መሄጃ፣ ለምጻሙን የሚያነጻ ሆናቸው፣",
       "amharic_phonetic": "kahn: 'abétu 'īyesus krstos hoy ḳwīrṭ lmenachnn sman , dda leneberut ḳal, leteseberut mrkuz, le'iwran brhan leḥankasoch, mehéja , lemtsamun yemīyanetsa honachew,",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Oh Señor, Jesucristo, Santo, Tú nos has oído. Te convertiste en palabra para los mudos, en bastón para los quebrantados, en luz para los ciegos, en camino para los cojos y en purificador de los leprosos."
     },
     {
       "instruction": "For morning services. Inaudible Prayer.",
@@ -8661,7 +8783,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አዳንህ፣ ደንቆሮችን ፈወስህ፣ ሞትን ዘለፈው፣ ጨለማንም ሣቀ",
       "amharic_phonetic": "kahn: 'adanh, denḳorochn fewesh, motn zelefew, chelemanm saḳe",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Oh Señor, Tú sanaste a los enfermos y curaste a los sordos. Reprendiste la muerte y destruiste las tinieblas."
     },
     {
       "instruction": "For morning services. Inaudible Prayer.",
@@ -8674,7 +8797,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤  ሣቀየወ ብርሃንን የፈጠረ  ኅልፈት የሌለበት ፀሐይ፣ የማይጠፋ ፋኖስ፣ በቅዱሳን ላይ ዘወትር የሚያበራ ፀሐይ፣",
       "amharic_phonetic": "kahn:  saḳeyewe brhann yefeṭeräre  hlfet yelélebet tseḥay, yemayṭefa fanos, beḳdusan lay zewetr yemīyabera tseḥay,",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Tú creaste la luz del sol que no se pone, la luz inextinguible, el Sol que siempre brilla sobre los santos,"
     },
     {
       "instruction": "For morning services. Inaudible Prayer.",
@@ -8687,7 +8811,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤በተወሰነ በቊርጥ ፈቃድ ለዓለም ጌጥ ሁሉን የፈጠረ፣ ሰውን ለማዳን ለሁሉ ተገለጽህ፣ ነፍስን የመለስሃት አንተ ነህ፣",
       "amharic_phonetic": "kahn:betewesene beḳwīrṭ feḳad le'alem géṭ hulun yefeṭeräre , sewn lemadan lehulu tegeletsh , nefsn yemeleshat 'ante neh ,",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Tú estableciste todo a través de Tu Voluntad fija para la decoración del mundo. Tú apareciste claramente a todos para salvar al hombre, Tú eres el restaurador del alma,"
     },
     {
       "instruction": "For morning services. Inaudible Prayer.",
@@ -8700,7 +8825,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ሁሉን እንደሚገባ ማሰብን አስቀደምህ መላእክትን የፈጠርህ፣ የሁሉ አባት፣ የሁሉ ጌታ፤ የዓለም ጌጥ፣ ምድርን የፈጠርሃት",
       "amharic_phonetic": "kahn: hulun 'indemīgeba masebn 'asḳedemh mela'iktn yefeṭerh, yehulu 'abat , yehulu géta: ye'alem géṭ, mdrn yefeṭerhat",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: y Tú fuiste de antemano para determinar correctamente todas las cosas. Oh Tú, Creador de los ángeles, Padre de todos, adorno del mundo y hacedor de la tierra,"
     },
     {
       "instruction": "For morning services. Inaudible Prayer.",
@@ -8713,7 +8839,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ዓለም ሳይፈጠር የነበረ፣ ጥበብና ዕውቀት, ከአብ ወደ ዓለም ተላከ፣ ይህ አኗኗር የማይለወጥ፣ የማይፈርስ የማይመረመር  ነው፣",
       "amharic_phonetic": "kahn: 'alem sayfeṭer yeneberäre , ṭbebna 'iwḳet, ke'ab wede 'alem telake , yh 'anwanwar yemayleweṭ , yemayfers yemaymeräremer  new,",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: La Sabiduría y el Conocimiento fueron enviados al mundo por el Padre que era antes. Esta existencia es inmutable, inescrutable e invisible en espíritu."
     },
     {
       "instruction": "For morning services. Inaudible Prayer.",
@@ -8726,7 +8853,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ የማይታይ መንፈስ ነው፣ ይህን የተናገርህ አንተ ምስጉን ነህ፣ምስክርነትህም የተደነቀ ነው  ስለዚህ እኛ አገልጋዮችህ እናመሰግንሃለን፣",
       "amharic_phonetic": "kahn: yemaytay menfes new, yhn yetenagerh 'ante msgun neh ,mskrnethm yetedeneḳe new  slezīh 'iña 'agelgayochh 'inamesegnhalen ,",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Tú eres el glorioso anunciador y Tu nombre es maravilloso. Por eso nosotros, tus siervos, te alabamos, oh Señor."
     },
     {
       "instruction": "For morning services",
@@ -8739,7 +8867,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ አቤቱ አንተን እናወድስሃለን",
       "amharic_phonetic": "፨ ḥzb: 'abétu 'anten 'inawedshalen",
       "tigrinya_script": "፨ ሕዝብ፤ ኦ ጐይታ ንኣኻ ንውድስ።",
-      "tigrinya_phonetic": "፨ ḥzb: 'o gweyta n'akha nwds."
+      "tigrinya_phonetic": "፨ ḥzb: 'o gweyta n'akha nwds.",
+      "spanish": "፨ Pueblo: Oh Señor, te alabamos."
     },
     {
       "instruction": "For morning services. Inaudible Prayer.",
@@ -8752,7 +8881,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ የማይለወጥ ባንተ ማመንን የስጠኸን አቤቱ ይህን ክቡር ምስጋና ሦስተኛ ጊዜ እናቀርብልሃለን፣ የሞት ማሠሪያ ክሕደትን በሃይማኖት ድል እንድንነሣው ያደረግ ህልን፣",
       "amharic_phonetic": "kahn: yemayleweṭ bante mamenn yesṭekhen 'abétu yhn kbur msgana sosteña gīzé 'inaḳerblhalen , yemot maserīya kḥdetn behaymanot dl 'indnnesaw yaderäreg hln,",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Tres veces más te ofrecemos esta santa gloria, que nos has dado tu fe inmutable con la que nos has hecho romper las ataduras de la muerte."
     },
     {
       "instruction": "For morning services. Inaudible Prayer.",
@@ -8765,7 +8895,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ለሚያምኑብህ ቅን ልቡናን የፈጠርህ፣ ከስው ወገን አማልክት ይባሉ ዘንድ፤",
       "amharic_phonetic": "kahn: lemīyamnubh ḳn lbunan yefeṭerh, kesw wegen 'amalkt ybalu zend:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Tú creaste la mente recta de los que creen en Ti, para que sean llamados dioses entre los hombres."
     },
     {
       "instruction": "For morning services. Inaudible Prayer.",
@@ -8778,7 +8909,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ በመንፈስ የጠላትን ኃይል ሁሉ እንረግጥ ዘንድ የሰጠ ኸን፣ የማይፈታውን እንፈታ ዘንድ",
       "amharic_phonetic": "kahn: bemenfes yeṭelatn hayl hulu 'inräregṭ zend yeseṭe khen, yemayfetawn 'infeta zend",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Tú nos has concedido hollar todas las potencias del enemigo mediante el Espíritu, para que desate lo que no puede ser desatado."
     },
     {
       "instruction": "For morning services. Inaudible Prayer.",
@@ -8791,7 +8923,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ከአባትህ ዘንድ ፍቅርን አደረግህልን፣ በመካከላችንም ሆነህ አስታረቅኸን፣ አቤቱ የሚለምኑህን ስማቸው",
       "amharic_phonetic": "kahn: ke'abath zend fḳrn 'aderäreghln , bemekakelachnm honeh 'astaräreḳkhen , 'abétu yemīlemnuhn smachew",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Tú nos has hecho eficaz el amor hacia tu Padre y has hecho la reconciliación entre nosotros y Él. Oh Señor, escucha a los que te suplican."
     },
     {
       "instruction": "For morning services. Inaudible Prayer.",
@@ -8804,7 +8937,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አቤቱ የምንለምንህ እኛ አንከ ስስ፤ በመከስስ ጊዜ በጠላ ታችን ላይ እንኑርበት እንጂ ዘወትር እንድንጸልይ አድርገን፣ ከጠላታችን ማታለል እንጠበቅ ዘንድ",
       "amharic_phonetic": "kahn: 'abétu yemnlemnh 'iña 'anke ss: bemekess gīzé beṭela tachn lay 'innurbet 'injī zewetr 'indntsely 'adrgen, keṭelatachn matalel 'inṭebeḳ zend",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Oh Señor, que nosotros, los que te suplicamos, no caigamos en pecado, sino vindicadnos contra nuestros enemigos, nuestros acusadores. Concédenos oración continua para que no seamos devorados por el enemigo."
     },
     {
       "instruction": "For morning services. Inaudible Prayer.",
@@ -8817,7 +8951,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ የዘለዓለም ንጉሥ ሆይ ስማ ባልቴቲቱን አረጋጋት፣ አባት እናት የሞቱበትን ልጅ ተቀበል የታለሉትን በቸርነትህ አንጻ፣",
       "amharic_phonetic": "kahn: yezele'alem ngus hoy sma baltétītun 'aräregagat, 'abat 'inat yemotubetn lj teḳebel yetalelutn becherneth 'antsa,",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Oh Rey eterno, escucha; Consuela a las viudas, acoge a los huérfanos, purifica a los inmundos con tu misericordia,"
     },
     {
       "instruction": "For afternoon/evening services.",
@@ -8830,7 +8965,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ሰነ ፎችን አስብ አዋቂ አድርጋቸው፣ የጠፉትን መልስ፣ በግዞት ያሉትን አድናቸው፣ ለሁላችንም መጠጊያ ሁነን አቤቱ አምላካችን ክቡር መንግሥት ያንተ ነውና፤\r\nይ.ሕ. አሜን።\n፨ ሕዝብ፤ አሜን።",
       "amharic_phonetic": "kahn: sene fochn 'asb 'awaḳī 'adrgachew, yeṭefutn mels, begzot yalutn 'adnachew, lehulachnm meṭegīya hunen 'abétu 'amlakachn kbur mengst yante newna:\r\ny.ḥ. 'amén   \n፨ ḥzb: 'amén.",
       "tigrinya_script": "ካህን፤...\n፨ ሕዝብ፤ ኣሜን።",
-      "tigrinya_phonetic": "kahn:...\n፨ ḥzb: 'amén."
+      "tigrinya_phonetic": "kahn:...\n፨ ḥzb: 'amén.",
+      "spanish": "Sacerdote: concede sabiduría a los necios, restaura a los perdidos, salva a los cautivos y sé refugio para todos nosotros, porque tuyo es el Reino bendito, oh Señor Dios nuestro.\n፨ Pueblo: Amén."
     },
     {
       "instruction": "For afternoon/evening services.",
@@ -8843,7 +8979,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ የእግዚአብሔር ጸጋ ከናንተ ጋራ ይሁን\n፨ ሕዝብ፤ ከመንፈስህ ጋር",
       "amharic_phonetic": "kahn: ye'igzī'abḥér tsega kenante gara yhun\n፨ ḥzb: kemenfesh gar",
       "tigrinya_script": "ካህን፤ ናይ እግዚኣብሔር ጸጋ ምሳኹም ይኹን።\n፨ ሕዝብ፤ ምስ መንፈስካ",
-      "tigrinya_phonetic": "kahn: nay 'igzī'abḥér tsega msakhum ykhun.\n፨ ḥzb: ms menfeska"
+      "tigrinya_phonetic": "kahn: nay 'igzī'abḥér tsega msakhum ykhun.\n፨ ḥzb: ms menfeska",
+      "spanish": "፨ ORACIÓN DE LA TARDE DE LA PACTO ፨\nSacerdote: La Gracia de Dios esté con vosotros.\n፨ Pueblo: y con Tu Espíritu."
     },
     {
       "instruction": "For afternoon/evening services.",
@@ -8856,7 +8993,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤...\n፨ ሕዝብ፤ እውነት ነው ይገባል",
       "amharic_phonetic": "kahn:...\n፨ ḥzb: 'iwnet new ygebal",
       "tigrinya_script": "ካህን፤...\n፨ ሕዝብ፤ ብሓቂ ይግባእ እዩ።",
-      "tigrinya_phonetic": "kahn:...\n፨ ḥzb: bḥaḳī ygba'i 'iyu."
+      "tigrinya_phonetic": "kahn:...\n፨ ḥzb: bḥaḳī ygba'i 'iyu.",
+      "spanish": "Sacerdote: Das gracias a nuestro Dios.\n፨ Pueblo: Está bien, es justo."
     },
     {
       "instruction": "For afternoon/evening services. Inaudible Prayer.",
@@ -8869,7 +9007,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ የማትለወጥ አንተን\r\nአብን የነፍሳችን መድኃኒት\r\nየምትሆን፣ የጥበባት መሠረት፣\r\nየልቡናችን ጠባቂ፣",
       "amharic_phonetic": "kahn: yematleweṭ 'anten\r\n'abn yenefsachn medhanīt\r\nyemthon, yeṭbebat meseräret,\r\nyelbunachn ṭebaḳī ,",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Oh Padre inmortal, Salvador de nuestra alma, Fundamento de la sabiduría, Custodio de nuestros corazones,"
     },
     {
       "instruction": "For afternoon/evening services. Inaudible Prayer.",
@@ -8882,7 +9021,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ውሳጣዊ ዓይናችንን ብሩህ ያደረግህልን የሕሊናችንን\nጨለማ አርቀህ ከአንተ በሚገኝ ዕውቀት አከበርከን፤",
       "amharic_phonetic": "kahn: wsaṭawī 'aynachnn bruh yaderäreghln yeḥlīnachnn\nchelema 'arḳeh ke'ante bemīgeñ 'iwḳet 'akeberken:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Tú has concedido luz a nuestros ojos interiores y nos has cubierto con Tu conocimiento contra la oscuridad de nuestra mente."
     },
     {
       "instruction": "For afternoon/evening services. Inaudible Prayer.",
@@ -8895,7 +9035,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ለጥፋት የተሰጠ የቀደመ ሰው አዳምን በልጅህ መስቀል አዳንህ፣ በማይለወጥ አደስከው፣",
       "amharic_phonetic": "kahn: leṭfat yeteseṭe yeḳedeme sew 'adamn beljh mesḳel 'adanh, bemayleweṭ 'adeskew,",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Tú salvaste al primer hombre, que fue entregado a la destrucción, por la cruz de Tu Unigénito, y lo renovaste por las cosas inmortales."
     },
     {
       "instruction": "For afternoon/evening services. Inaudible Prayer.",
@@ -8908,7 +9049,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ስሕተቶች በትእዛዝህ ጠፉ፣ በልጅህ ሞት አዳንህ፣ የጠፋውን ፈለግህ፣",
       "amharic_phonetic": "kahn: sḥtetoch bet'izazh ṭefu, beljh mot 'adanh , yeṭefawn felegh ,",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Las iniquidades desaparecieron por tu mandamiento, y tú hiciste la redención por la muerte de tu Hijo y buscaste al perdido."
     },
     {
       "instruction": "For afternoon/evening services. Inaudible Prayer.",
@@ -8921,7 +9063,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ስለዚህ እኛ አገልጋዮችህ እናመሰግንሃለን፣",
       "amharic_phonetic": "kahn: slezīh 'iña 'agelgayochh 'inamesegnhalen ,",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Por eso nosotros, tus siervos, te glorificamos, oh Señor."
     },
     {
       "instruction": "For afternoon/evening services.",
@@ -8934,7 +9077,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ አቤቱ አንተን እናመሰግንሃለን",
       "amharic_phonetic": "፨ ḥzb: 'abétu 'anten 'inamesegnhalen",
       "tigrinya_script": "፨ ሕዝብ፤ ኦ ጐይታ ንኣኻ ነመስግን።",
-      "tigrinya_phonetic": "፨ ḥzb: 'o gweyta n'akha nemesgn."
+      "tigrinya_phonetic": "፨ ḥzb: 'o gweyta n'akha nemesgn.",
+      "spanish": "፨ Pueblo: Oh Señor, te glorificamos."
     },
     {
       "instruction": "For afternoon/evening services. Inaudible Prayer.",
@@ -8947,7 +9091,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ሳናቋርጥ አርምሞ ጽርዓት በሌለበት ቃል ሊቃነ መላእክት ለሚያመሰግኑህ ለአንተ ከምስጋና የሚበልጥ ምስጋናን እናቀርብልሃለን፣",
       "amharic_phonetic": "kahn: sanaḳwarṭ 'armmo tsr'at belélebet ḳal līḳane mela'ikt lemīyamesegnuh le'ante kemsgana yemībelṭ msganan 'inaḳerblhalen ,",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Te alabamos, oh Señor, con cántico glorioso, a Ti a quien los arcángeles glorifican siempre, sin cesar y sin descanso,"
     },
     {
       "instruction": "For afternoon/evening services. Inaudible Prayer.",
@@ -8960,7 +9105,8 @@ const kidaseData = {
       "amharic_script": "ያውም መላእክት የሚያመሰግ ኑት ምስጋና ነው፣",
       "amharic_phonetic": "yawm mela'ikt yemīyameseg nut msgana new ,",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: y a quien los señores alaban cantando con alabanza de gloria y acción de gracias."
     },
     {
       "instruction": "For afternoon/evening services. Inaudible Prayer.",
@@ -8973,7 +9119,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤  አቤቱ አንተን በማኅሌት ያመሰግኑ ሃል፣ ያንተ ምክር፣ ያንተ ቃል፣ ያንተ ጥበብ፣ ያንተ መጎብኘት የላክኸው ወልድ",
       "amharic_phonetic": "kahn:  'abétu 'anten bemahlét yamesegnu hal, yante mkr, yante ḳal, yante ṭbeb, yante megobñet yelakkhew weld",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Oh Señor, Tú has enviado Tu consejo, Tu Palabra, Tu sabiduría y Tu visitación,"
     },
     {
       "instruction": "For afternoon/evening services. Inaudible Prayer.",
@@ -8986,7 +9133,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ከቀድሞ ጀምሮ ካንተ ጋራ የነበረ፣ ዓለም ሳይፈጠር ያልተ ፈጠረ፣",
       "amharic_phonetic": "kahn: keḳedmo jemro kante gara yeneberäre, 'alem sayfeṭer yalte feṭeräre,",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: que estuvo contigo antes del principio del mundo, sin ser creado; ese es el Verbo que no fue creado,"
     },
     {
       "instruction": "For afternoon/evening services. Inaudible Prayer.",
@@ -8999,7 +9147,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ባሕርየ ሰብእን ለማዳን በሥጋ የተገለጸ ቃል ልጅህ ወዳጅህ ጌታችን ኢየሱስ ከኃጢአት ቀንበር ነጻ አደረገን፣",
       "amharic_phonetic": "kahn: baḥrye seb'in lemadan besga yetegeletse ḳal ljh wedajh gétachn 'īyesus kehaṭī'at ḳenber netsa 'aderäregen,",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Quien apareció en carne para la salvación de la humanidad. Tu amado Hijo, nuestro Señor Jesús, nos ha liberado del yugo del pecado."
     },
     {
       "instruction": "For afternoon/evening services. Inaudible Prayer.",
@@ -9012,7 +9161,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አቤቱ ስለዚህ እኛ አገልጋዮችህ እናመሰግንሃለን፣",
       "amharic_phonetic": "kahn: 'abétu slezīh 'iña 'agelgayochh 'inamesegnhalen ,",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Por eso nosotros, tus siervos, te alabamos, oh Señor."
     },
     {
       "instruction": "For afternoon/evening services.",
@@ -9025,7 +9175,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ አቤቱ አንተን እናወድስሃለን",
       "amharic_phonetic": "፨ ḥzb: 'abétu 'anten 'inawedshalen",
       "tigrinya_script": "፨ ሕዝብ፤ ኦ ጐይታ ንኣኻ ንውድስ።",
-      "tigrinya_phonetic": "፨ ḥzb: 'o gweyta n'akha nwds."
+      "tigrinya_phonetic": "፨ ḥzb: 'o gweyta n'akha nwds.",
+      "spanish": "፨ Pueblo: Oh Señor, te alabamos."
     },
     {
       "instruction": "For afternoon/evening services. Inaudible Prayer.",
@@ -9038,7 +9189,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ይ.ካ. ምስጋናን ሦስተኛ ጊዜ ከልባችን ለአንተ እናቀርባለን፣ ሕይወትን የምትሰጥ አቤቱ፣",
       "amharic_phonetic": "kahn: y.ka. msganan sosteña gīzé kelbachn le'ante 'inaḳerbalen, ḥywetn yemtseṭ 'abétu,",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: De corazón te ofrecemos tres veces más alabanza, oh Señor, Dador de vida."
     },
     {
       "instruction": "For afternoon/evening services. Inaudible Prayer.",
@@ -9051,7 +9203,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ የትሑታንን ሰውነት የሚጎበኝ፣ የተቸገረውን ሰውነት ቸል የማይል፣",
       "amharic_phonetic": "kahn: yetḥutann sewnet yemīgobeñ, yetechegerärewn sewnet chel yemayl,",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Visitaste el alma de los humildes y no despreciaste el alma atribulada."
     },
     {
       "instruction": "For afternoon/evening services. Inaudible Prayer.",
@@ -9064,7 +9217,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ከሀገራቸው የተሰደዱትን የሚቀበላቸው የሚረዳቸው፣ በመከራ ያሉ ትን የሚያድን፣",
       "amharic_phonetic": "kahn: kehagerachew yetesededutn yemīḳebelachew yemīräredachew, bemekera yalu tn yemīyadn,",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Tú aceptaste a los perseguidos y los ayudaste, salvaste a los que estaban en dificultades."
     },
     {
       "instruction": "For afternoon/evening services. Inaudible Prayer.",
@@ -9077,7 +9231,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ለተራቡት የሚያስብላቸው፣ ለተበደሉ የሚበቀልላቸው፣ የምእመናን ወዳጅ ለጻድቃን የሚመሰክርላቸው የንጹሐን ማደሪያቸው፣",
       "amharic_phonetic": "kahn: leterabut yemīyasblachew, letebedelu yemībeḳellachew, yem'imenan wedaj letsadḳan yemīmesekrlachew yentsuḥan maderīyachew,",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Tú sí pensaste en los hambrientos y vengaste a aquellos contra quienes se cometió el pecado. Tú eres el Amigo de los fieles, Portavoz de los justos, morada de los puros;"
     },
     {
       "instruction": "For afternoon/evening services. Inaudible Prayer.",
@@ -9090,7 +9245,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤  በእው ነት የሚለምኑትን የሚሰማ፣ ባልቴቲቱን የሚሠውር፣ አባት እናት የሞቱበትን የሚያድን፣",
       "amharic_phonetic": "kahn:  be'iw net yemīlemnutn yemīsema, baltétītun yemīsewr, 'abat 'inat yemotubetn yemīyadn,",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Tú escuchas a los que te invocan con justicia, protege a la viuda, salva al huérfano,"
     },
     {
       "instruction": "For afternoon/evening services. Inaudible Prayer.",
@@ -9103,7 +9259,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ የሃይማኖት ክብር ምስጋና ማረፊያ ላደረጋት ለቤተ ክርስቲያን ቅን መሪ የሚሰጥ፣ ሀብት ጸጋ ኃይልም የመንፈስ ቅዱስ ጉባኤ የምትሆን፣",
       "amharic_phonetic": "kahn: yehaymanot kbr msgana marärefīya laderäregat lebéte krstīyan ḳn merī yemīseṭ , habt tsega haylm yemenfes ḳdus guba'é yemthon ,",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: concede el recto liderazgo a la iglesia de la que has hecho morada de la fe gloriosa, consejo del espíritu, don de gracia y de poder."
     },
     {
       "instruction": "For afternoon/evening services. Inaudible Prayer.",
@@ -9116,7 +9273,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አንተን ስናመሰግን ዘወትርም ሳናርፍ የመንግሥትህን ነገር በልቡናችን እናውቃለን አንተ ስለ ገለጽህልን፤",
       "amharic_phonetic": "kahn: 'anten snamesegn zewetrm sanarf yemengsthn neger belbunachn 'inawḳalen 'ante sle geletshln:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Mientras te alabamos sin descanso, conocemos en nuestro corazón tu reino que tú nos declaraste."
     },
     {
       "instruction": "For afternoon/evening services.",
@@ -9129,7 +9287,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ልጅህ ወዳጅህ ጌታችን ኢየሱስም ስለ ገለጸልን፤ ምስጋና ጽንዕ ያለው ለዘለዓለሙ",
       "amharic_phonetic": "kahn: ljh wedajh gétachn 'īyesusm sle geletseln: msgana tsn'i yalew lezele'alemu",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: y a tu amado Hijo, nuestro Señor Jesús, por quien a ti sea la gloria y el dominio por los siglos de los siglos.\n፨ Pueblo: Amén."
     },
     {
       "instruction": "",
@@ -9142,7 +9301,8 @@ const kidaseData = {
       "amharic_script": "፨ ሁሉም፤ አባታችን ሆይ፥ በሰማይ የምትኖር፥ ስምህ ይቀደስ፥ መንግሥትህ ትምጣ፥ ፈቃድህ በሰማይ እንደሆነ እንዲሁም በምድር ይሁን።",
       "amharic_phonetic": "፨ hulum: 'abatachn hoy; besemay yemtnor; smh yḳedes; mengsth tmṭa; feḳadh besemay 'indehone 'indīhum bemdr yhun.",
       "tigrinya_script": "፨ ኣብ ሰማያት እትነብር ኣቦና ፨\n፨ ኩሉኹም፤ ኣብ ሰማያት እትነብር ኣቦና ስምካ ይቀደስ፥ መንግስትኻ ትምጻእ፥ ፈቓድካ ከምቲ ኣብ ሰማያት ከምኡ'ውን ኣብ ምድሪ ይኹን፥",
-      "tigrinya_phonetic": "፨ 'ab semayat 'itnebr 'abona ፨\n፨ kulukhum: 'ab semayat 'itnebr 'abona smka yḳedes; mengstkha tmtsa'i; feqhadka kemtī 'ab semayat kem'u'wn 'ab mdrī ykhun;"
+      "tigrinya_phonetic": "፨ 'ab semayat 'itnebr 'abona ፨\n፨ kulukhum: 'ab semayat 'itnebr 'abona smka yḳedes; mengstkha tmtsa'i; feqhadka kemtī 'ab semayat kem'u'wn 'ab mdrī ykhun;",
+      "spanish": "፨ EL PADRE NUESTRO ፨\n፨ TODOS: Padre Nuestro que estás en los Cielos; santificado sea tu nombre. Venga tu Reino. Hágase tu voluntad, tanto en la Tierra como en el Cielo."
     },
     {
       "instruction": "",
@@ -9155,7 +9315,8 @@ const kidaseData = {
       "amharic_script": "፨ ሁሉም፤ የዕለት እንጀራችንን ስጠን ለዛሬ፥ በደላችንን ይቅር በለን፥ እኛም የበደሉንን ይቅር እንደምንል፥",
       "amharic_phonetic": "፨ hulum: ye'ilet 'injerachnn sṭen lezaré; bedelachnn yḳr belen; 'iñam yebedelunn yḳr 'indemnl;",
       "tigrinya_script": "፨ ኩሉኹም፤ ናይ ዕለት እንጌራና ሎሚ ሃበና፥ ንሕና ንዝበደሉና በደሎም ከም እንኃደግናሎም በደልና ኅደገልና፥",
-      "tigrinya_phonetic": "፨ kulukhum: nay 'ilet 'ingérana lomī habena; nḥna nzbedeluna bedelom kem 'inhadegnalom bedelna hdegelna;"
+      "tigrinya_phonetic": "፨ kulukhum: nay 'ilet 'ingérana lomī habena; nḥna nzbedeluna bedelom kem 'inhadegnalom bedelna hdegelna;",
+      "spanish": "፨ TODOS: Danos hoy nuestro pan de cada día. Y perdónanos nuestros pecados y ofensas, como también nosotros perdonamos a los que nos ofenden."
     },
     {
       "instruction": "",
@@ -9168,7 +9329,8 @@ const kidaseData = {
       "amharic_script": "፨ ሁሉም፤ አቤቱ ወደ ፈተና አታግባን፥ ከክፉ ሁሉ አድነን እንጂ፥ መንግሥት ያንተ ናትና። ኃይል፥ ክብር፥ ምስጋና ለዘለዓለም አሜን።",
       "amharic_phonetic": "፨ hulum: 'abétu wede fetena 'atagban; kekfu hulu 'adnen 'injī; mengst yante natna. hayl; kbr; msgana lezele'alem 'amén.",
       "tigrinya_script": "፨ ኩሉኹም፤ ካብ ክፉእ ኣድኅነና እምበር ኣብ ፈተና ኣይተእትወና፥ መንግስትን፡ ኃይልን ፡ክብርን ንዘለዓለም ናትካ እዩ፡ አሜን።",
-      "tigrinya_phonetic": "፨ kulukhum: kab kfu'i 'adhnena 'imber 'ab fetena 'ayte'itwena; mengstn hayln kbrn nzele'alem natka 'iyu 'amén."
+      "tigrinya_phonetic": "፨ kulukhum: kab kfu'i 'adhnena 'imber 'ab fetena 'ayte'itwena; mengstn hayln kbrn nzele'alem natka 'iyu 'amén.",
+      "spanish": "፨ TODOS: Y no nos dejes caer en la tentación, Señor, sino líbranos del mal. Porque tuyo es el Reino, el Poder y la Gloria, por siempre. Amén."
     },
     {
       "instruction": "",
@@ -9181,7 +9343,8 @@ const kidaseData = {
       "amharic_script": "፨ ሁሉም፤ እመቤታችን ቅድስት ድንግል ማርያም ሆይ፥ በመልአኩ በቅዱስ ገብርኤል ሰላምታ ሰላም እንልሻለን።",
       "amharic_phonetic": "፨ hulum: 'imebétachn ḳdst dngl maryam hoy; bemel'aku beḳdus gebr'él selamta selam 'inlሻlen.",
       "tigrinya_script": "፨ ብናይ ቅዱስ ገብርኤል መልኣኽ ሰላምታ ፨\n፨ ኩሉኹም፤ ኦ እግዝእትየ ማርያም ብናይ ቅዱስ ገብርኤል መልኣኽ ሰላምታ ሰላም እብለኪ፡",
-      "tigrinya_phonetic": "፨ bnay ḳdus gebr'él mel'akh selamta ፨\n፨ kulukhum: 'o 'igz'itye maryam bnay ḳdus gebr'él mel'akh selamta selam 'iblekī"
+      "tigrinya_phonetic": "፨ bnay ḳdus gebr'él mel'akh selamta ፨\n፨ kulukhum: 'o 'igz'itye maryam bnay ḳdus gebr'él mel'akh selamta selam 'iblekī",
+      "spanish": "፨ EL SALUDO A SAN GABRIEL ፨\n፨ TODOS: Con el saludo de San Gabriel Ángel, Oh mi Señora María, la paz sea con vosotros."
     },
     {
       "instruction": "",
@@ -9194,7 +9357,8 @@ const kidaseData = {
       "amharic_script": "፨ ሁሉም፤ በሃሳብሽ ድንግል ነሽ፥ በሥጋሽም ድንግል ነሽ። የአሸናፊ የእግዚአብሔር እናት ሆይ ሰላምታ ላንቺ ይገባሻል።",
       "amharic_phonetic": "፨ hulum: behasabሽ dngl neሽ; besgaሽm dngl neሽ. ye'aሸnafī ye'igzī'abḥér 'inat hoy selamta lanchī ygebaሻl.",
       "tigrinya_script": "፨ ኩሉኹም፤ ብሕልናኺ ድንግል ኢኺ፡ ብሥጋኺ'ውን ድንግል ኢኺ። ኣደ እግዚአብሔር ፀባዖት (ጎይታ ሠራዊት) ሰላም እብለኪ ኣለኹ።",
-      "tigrinya_phonetic": "፨ kulukhum: bḥlnakhī dngl 'īkhī bsgakhī'wn dngl 'īkhī. 'ade 'igzī'abḥér tseba'ot (goyta serawīt) selam 'iblekī 'alekhu."
+      "tigrinya_phonetic": "፨ kulukhum: bḥlnakhī dngl 'īkhī bsgakhī'wn dngl 'īkhī. 'ade 'igzī'abḥér tseba'ot (goyta serawīt) selam 'iblekī 'alekhu.",
+      "spanish": "፨ TODOS: Eres virgen en tus pensamientos y virgen en tu carne. La Madre del Señor Dios de los Ejércitos, la paz sea con vosotros."
     },
     {
       "instruction": "",
@@ -9207,7 +9371,8 @@ const kidaseData = {
       "amharic_script": "፨ ሁሉም፤ ከሴቶች ሁሉ ተለይተሽ አንቺ የተባረክሽ ነሽ፥ የማሕፀንሽም ፍሬ የተባረከ ነዉ። ጸጋን የተመላሽ ሆይ! ደስ ይበልሽ፣ እግዚአብሔር ካንቺ ጋር ነዉና።",
       "amharic_phonetic": "፨ hulum: kesétoch hulu teleyteሽ 'anchī yetebarekሽ neሽ; yemaḥtsenሽm fré yetebareke newu. tsegan yetemelaሽ hoy! des ybelሽ, 'igzī'abḥér kanchī gar newuna.",
       "tigrinya_script": "፨ ኩሉኹም፤ ንስኺ ካብ ኣንስቲ ብርኽቲ ኢኺ፡ ፍረ ከርሥኺ'ውን ብሩኽ እዩ። ኦ ምልእተ ጸጋ እግዚአብሔር ምሳኺ እዩ፡ ኦ ፍሥሕት ደስ ይበልኪ፡",
-      "tigrinya_phonetic": "፨ kulukhum: nskhī kab 'anstī brkhtī 'īkhī fre kerskhī'wn brukh 'iyu. 'o ml'ite tsega 'igzī'abḥér msakhī 'iyu 'o fsḥt des ybelkī"
+      "tigrinya_phonetic": "፨ kulukhum: nskhī kab 'anstī brkhtī 'īkhī fre kerskhī'wn brukh 'iyu. 'o ml'ite tsega 'igzī'abḥér msakhī 'iyu 'o fsḥt des ybelkī",
+      "spanish": "፨ TODOS: Bendita tú entre las mujeres y bendito el fruto de tu vientre. Alégrate, gozoso, oh lleno de gracia, el Señor está contigo."
     },
     {
       "instruction": "",
@@ -9220,7 +9385,8 @@ const kidaseData = {
       "amharic_script": "፨ ሁሉም፤ ከተወደደዉ ልጅሽ ከጌታችን ከመድኃኒታችን ከኢየሱስ ክርስቶስ ዘንድ ይቅርታን ለምኝልን ኃጢአታችንን ያስተሰርይልን ዘንድ። ለዘለዓለም አሜን።",
       "amharic_phonetic": "፨ hulum: ketewededewu ljሽ kegétachn kemedhanītachn ke'īyesus krstos zend yḳrtan lemñln haṭī'atachnn yasteseryln zend. lezele'alem 'amén.",
       "tigrinya_script": "፨ ኩሉኹም፤ ኃጢኣትና ኪሠርየልና ናብ ፍቁር ወድኺ ኢየሱስ ክርስቶስ ምእንታና ምሕረት ለምንልና። አሜን።",
-      "tigrinya_phonetic": "፨ kulukhum: haṭī'atna kīseryelna nab fḳur wedkhī 'īyesus krstos m'intana mḥret lemnlna. 'amén."
+      "tigrinya_phonetic": "፨ kulukhum: haṭī'atna kīseryelna nab fḳur wedkhī 'īyesus krstos m'intana mḥret lemnlna. 'amén.",
+      "spanish": "፨ TODOS: Suplica y ruega nuestra misericordia hacia tu amado Hijo, Jesucristo, para que nos perdone nuestros pecados. Amén."
     },
     {
       "instruction": "",
@@ -9233,7 +9399,8 @@ const kidaseData = {
       "amharic_script": "፨ ጸሎት ፨",
       "amharic_phonetic": "፨ tselot ፨",
       "tigrinya_script": "፨ ጸሎት ፨",
-      "tigrinya_phonetic": "፨ tselot ፨"
+      "tigrinya_phonetic": "፨ tselot ፨",
+      "spanish": "፨ ORACIÓN ፨"
     },
     {
       "instruction": "",
@@ -9246,7 +9413,8 @@ const kidaseData = {
       "amharic_script": "",
       "amharic_phonetic": "",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "፨ TODOS (12x): Oh Señor, ten compasión de nosotros, Cristo.\n፨ TODOS (12x): Por amor de María, ten compasión de nosotros, Cristo."
     },
     {
       "instruction": "",
@@ -9259,7 +9427,8 @@ const kidaseData = {
       "amharic_script": "፨ ጸሎት ፨",
       "amharic_phonetic": "፨ tselot ፨",
       "tigrinya_script": "፨ ጸሎት ፨",
-      "tigrinya_phonetic": "፨ tselot ፨"
+      "tigrinya_phonetic": "፨ tselot ፨",
+      "spanish": "፨ ORACIÓN ፨"
     },
     {
       "instruction": "",
@@ -9272,7 +9441,8 @@ const kidaseData = {
       "amharic_script": "፨ ሁሉም፤ አባታችን ሆይ፥ በሰማይ የምትኖር፥ ስምህ ይቀደስ፥ መንግሥትህ ትምጣ፥ ፈቃድህ በሰማይ እንደሆነ እንዲሁም በምድር ይሁን።",
       "amharic_phonetic": "፨ hulum: 'abatachn hoy; besemay yemtnor; smh yḳedes; mengsth tmṭa; feḳadh besemay 'indehone 'indīhum bemdr yhun.",
       "tigrinya_script": "፨ ኣብ ሰማያት እትነብር ኣቦና ፨\n፨ ኩሉኹም፤ ኣብ ሰማያት እትነብር ኣቦና ስምካ ይቀደስ፥ መንግስትኻ ትምጻእ፥ ፈቓድካ ከምቲ ኣብ ሰማያት ከምኡ'ውን ኣብ ምድሪ ይኹን፥",
-      "tigrinya_phonetic": "፨ 'ab semayat 'itnebr 'abona ፨\n፨ kulukhum: 'ab semayat 'itnebr 'abona smka yḳedes; mengstkha tmtsa'i; feqhadka kemtī 'ab semayat kem'u'wn 'ab mdrī ykhun;"
+      "tigrinya_phonetic": "፨ 'ab semayat 'itnebr 'abona ፨\n፨ kulukhum: 'ab semayat 'itnebr 'abona smka yḳedes; mengstkha tmtsa'i; feqhadka kemtī 'ab semayat kem'u'wn 'ab mdrī ykhun;",
+      "spanish": "፨ EL PADRE NUESTRO ፨\n፨ TODOS: Padre Nuestro que estás en los Cielos; santificado sea tu nombre. Venga tu Reino. Hágase tu voluntad, tanto en la Tierra como en el Cielo."
     },
     {
       "instruction": "",
@@ -9285,7 +9455,8 @@ const kidaseData = {
       "amharic_script": "፨ ሁሉም፤ የዕለት እንጀራችንን ስጠን ለዛሬ፥ በደላችንን ይቅር በለን፥ እኛም የበደሉንን ይቅር እንደምንል፥",
       "amharic_phonetic": "፨ hulum: ye'ilet 'injerachnn sṭen lezaré; bedelachnn yḳr belen; 'iñam yebedelunn yḳr 'indemnl;",
       "tigrinya_script": "፨ ኩሉኹም፤ ናይ ዕለት እንጌራና ሎሚ ሃበና፥ ንሕና ንዝበደሉና በደሎም ከም እንኃደግናሎም በደልና ኅደገልና፥",
-      "tigrinya_phonetic": "፨ kulukhum: nay 'ilet 'ingérana lomī habena; nḥna nzbedeluna bedelom kem 'inhadegnalom bedelna hdegelna;"
+      "tigrinya_phonetic": "፨ kulukhum: nay 'ilet 'ingérana lomī habena; nḥna nzbedeluna bedelom kem 'inhadegnalom bedelna hdegelna;",
+      "spanish": "፨ TODOS: Danos hoy nuestro pan de cada día. Y perdónanos nuestros pecados y ofensas, como también nosotros perdonamos a los que nos ofenden."
     },
     {
       "instruction": "",
@@ -9298,7 +9469,8 @@ const kidaseData = {
       "amharic_script": "፨ ሁሉም፤ አቤቱ ወደ ፈተና አታግባን፥ ከክፉ ሁሉ አድነን እንጂ፥ መንግሥት ያንተ ናትና። ኃይል፥ ክብር፥ ምስጋና ለዘለዓለም አሜን።",
       "amharic_phonetic": "፨ hulum: 'abétu wede fetena 'atagban; kekfu hulu 'adnen 'injī; mengst yante natna. hayl; kbr; msgana lezele'alem 'amén.",
       "tigrinya_script": "፨ ኩሉኹም፤ ካብ ክፉእ ኣድኅነና እምበር ኣብ ፈተና ኣይተእትወና፥ መንግስትን፡ ኃይልን ፡ክብርን ንዘለዓለም ናትካ እዩ፡ አሜን።",
-      "tigrinya_phonetic": "፨ kulukhum: kab kfu'i 'adhnena 'imber 'ab fetena 'ayte'itwena; mengstn hayln kbrn nzele'alem natka 'iyu 'amén."
+      "tigrinya_phonetic": "፨ kulukhum: kab kfu'i 'adhnena 'imber 'ab fetena 'ayte'itwena; mengstn hayln kbrn nzele'alem natka 'iyu 'amén.",
+      "spanish": "፨ TODOS: Y no nos dejes caer en la tentación, Señor, sino líbranos del mal. Porque tuyo es el Reino, el Poder y la Gloria, por siempre. Amén."
     },
     {
       "instruction": "",
@@ -9311,7 +9483,8 @@ const kidaseData = {
       "amharic_script": "፨ ሁሉም፤ እመቤታችን ቅድስት ድንግል ማርያም ሆይ፥ በመልአኩ በቅዱስ ገብርኤል ሰላምታ ሰላም እንልሻለን።",
       "amharic_phonetic": "፨ hulum: 'imebétachn ḳdst dngl maryam hoy; bemel'aku beḳdus gebr'él selamta selam 'inlሻlen.",
       "tigrinya_script": "፨ ብናይ ቅዱስ ገብርኤል መልኣኽ ሰላምታ ፨\n፨ ኩሉኹም፤ ኦ እግዝእትየ ማርያም ብናይ ቅዱስ ገብርኤል መልኣኽ ሰላምታ ሰላም እብለኪ፡",
-      "tigrinya_phonetic": "፨ bnay ḳdus gebr'él mel'akh selamta ፨\n፨ kulukhum: 'o 'igz'itye maryam bnay ḳdus gebr'él mel'akh selamta selam 'iblekī"
+      "tigrinya_phonetic": "፨ bnay ḳdus gebr'él mel'akh selamta ፨\n፨ kulukhum: 'o 'igz'itye maryam bnay ḳdus gebr'él mel'akh selamta selam 'iblekī",
+      "spanish": "፨ EL SALUDO A SAN GABRIEL ፨\n፨ TODOS: Con el saludo de San Gabriel Ángel, Oh mi Señora María, la paz sea con vosotros."
     },
     {
       "instruction": "",
@@ -9324,7 +9497,8 @@ const kidaseData = {
       "amharic_script": "፨ ሁሉም፤ በሃሳብሽ ድንግል ነሽ፥ በሥጋሽም ድንግል ነሽ። የአሸናፊ የእግዚአብሔር እናት ሆይ ሰላምታ ላንቺ ይገባሻል።",
       "amharic_phonetic": "፨ hulum: behasabሽ dngl neሽ; besgaሽm dngl neሽ. ye'aሸnafī ye'igzī'abḥér 'inat hoy selamta lanchī ygebaሻl.",
       "tigrinya_script": "፨ ኩሉኹም፤ ብሕልናኺ ድንግል ኢኺ፡ ብሥጋኺ'ውን ድንግል ኢኺ። ኣደ እግዚአብሔር ፀባዖት (ጎይታ ሠራዊት) ሰላም እብለኪ ኣለኹ።",
-      "tigrinya_phonetic": "፨ kulukhum: bḥlnakhī dngl 'īkhī bsgakhī'wn dngl 'īkhī. 'ade 'igzī'abḥér tseba'ot (goyta serawīt) selam 'iblekī 'alekhu."
+      "tigrinya_phonetic": "፨ kulukhum: bḥlnakhī dngl 'īkhī bsgakhī'wn dngl 'īkhī. 'ade 'igzī'abḥér tseba'ot (goyta serawīt) selam 'iblekī 'alekhu.",
+      "spanish": "፨ TODOS: Eres virgen en tus pensamientos y virgen en tu carne. La Madre del Señor Dios de los Ejércitos, la paz sea con vosotros."
     },
     {
       "instruction": "",
@@ -9337,7 +9511,8 @@ const kidaseData = {
       "amharic_script": "፨ ሁሉም፤ ከሴቶች ሁሉ ተለይተሽ አንቺ የተባረክሽ ነሽ፥ የማሕፀንሽም ፍሬ የተባረከ ነዉ። ጸጋን የተመላሽ ሆይ! ደስ ይበልሽ፣ እግዚአብሔር ካንቺ ጋር ነዉና።",
       "amharic_phonetic": "፨ hulum: kesétoch hulu teleyteሽ 'anchī yetebarekሽ neሽ; yemaḥtsenሽm fré yetebareke newu. tsegan yetemelaሽ hoy! des ybelሽ, 'igzī'abḥér kanchī gar newuna.",
       "tigrinya_script": "፨ ኩሉኹም፤ ንስኺ ካብ ኣንስቲ ብርኽቲ ኢኺ፡ ፍረ ከርሥኺ'ውን ብሩኽ እዩ። ኦ ምልእተ ጸጋ እግዚአብሔር ምሳኺ እዩ፡ ኦ ፍሥሕት ደስ ይበልኪ፡",
-      "tigrinya_phonetic": "፨ kulukhum: nskhī kab 'anstī brkhtī 'īkhī fre kerskhī'wn brukh 'iyu. 'o ml'ite tsega 'igzī'abḥér msakhī 'iyu 'o fsḥt des ybelkī"
+      "tigrinya_phonetic": "፨ kulukhum: nskhī kab 'anstī brkhtī 'īkhī fre kerskhī'wn brukh 'iyu. 'o ml'ite tsega 'igzī'abḥér msakhī 'iyu 'o fsḥt des ybelkī",
+      "spanish": "፨ TODOS: Bendita tú entre las mujeres y bendito el fruto de tu vientre. Alégrate, gozoso, oh lleno de gracia, el Señor está contigo."
     },
     {
       "instruction": "",
@@ -9350,7 +9525,8 @@ const kidaseData = {
       "amharic_script": "፨ ሁሉም፤ ከተወደደዉ ልጅሽ ከጌታችን ከመድኃኒታችን ከኢየሱስ ክርስቶስ ዘንድ ይቅርታን ለምኝልን ኃጢአታችንን ያስተሰርይልን ዘንድ። ለዘለዓለም አሜን።",
       "amharic_phonetic": "፨ hulum: ketewededewu ljሽ kegétachn kemedhanītachn ke'īyesus krstos zend yḳrtan lemñln haṭī'atachnn yasteseryln zend. lezele'alem 'amén.",
       "tigrinya_script": "፨ ኩሉኹም፤ ኃጢኣትና ኪሠርየልና ናብ ፍቁር ወድኺ ኢየሱስ ክርስቶስ ምእንታና ምሕረት ለምንልና። አሜን።",
-      "tigrinya_phonetic": "፨ kulukhum: haṭī'atna kīseryelna nab fḳur wedkhī 'īyesus krstos m'intana mḥret lemnlna. 'amén."
+      "tigrinya_phonetic": "፨ kulukhum: haṭī'atna kīseryelna nab fḳur wedkhī 'īyesus krstos m'intana mḥret lemnlna. 'amén.",
+      "spanish": "፨ TODOS: Suplica y ruega nuestra misericordia hacia tu amado Hijo, Jesucristo, para que nos perdone nuestros pecados. Amén."
     },
     {
       "instruction": "",
@@ -9363,7 +9539,8 @@ const kidaseData = {
       "amharic_script": "፨ ማሕሌት ፨",
       "amharic_phonetic": "፨ maḥlét ፨",
       "tigrinya_script": "፨ ማሕሌት ፨",
-      "tigrinya_phonetic": "፨ maḥlét ፨"
+      "tigrinya_phonetic": "፨ maḥlét ፨",
+      "spanish": "፨ HIMNO ፨"
     },
     {
       "instruction": "",
@@ -9376,7 +9553,8 @@ const kidaseData = {
       "amharic_script": "፨ የቅዳሴ ሥርዓተ ፨\nበስመ አብ ወወልድ ወመንፈስ ቅዱስ አሐዱ አምላክ፣ አሜን",
       "amharic_phonetic": "፨ yeḳdasé sr'ate ፨\nbesme 'ab weweld wemenfes ḳdus 'aḥadu 'amlak, 'amén",
       "tigrinya_script": "፨ ሥርዓተ ቅዳሴ ፨\nብስም ኣብን ወልድን መንፈስ ቅዱስን ሓደ ኣምላኽ፣ ኣሜን።",
-      "tigrinya_phonetic": "፨ sr'ate ḳdasé ፨\nbsm 'abn weldn menfes ḳdusn ḥade 'amlakh, 'amén."
+      "tigrinya_phonetic": "፨ sr'ate ḳdasé ፨\nbsm 'abn weldn menfes ḳdusn ḥade 'amlakh, 'amén.",
+      "spanish": "፨ EL ORDEN DE LA LITURGIA ፨\nEn el Nombre del Padre, del Hijo y del Espíritu Santo, un solo Dios, Amén."
     },
     {
       "instruction": "For Mondays, Tuesdays, Wednesdays, Thursdays, Fridays",
@@ -9389,7 +9567,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ ሰላም ላንቺ ይሁን፤ እናታችን ቅድስት ቤተ ክርስቲያን። ግድግዳዎችሽ በጳዝዮን እንቁ የተጌጡ ናቸው፤ እናታችን ቅድስት ቤተ ክርስቲያን።",
       "amharic_phonetic": "፨ ḥzb: selam lanchī yhun: 'inatachn ḳdst béte krstīyan. gdgdawochሽ bep̣azyon 'inḳu yetegéṭu nachew: 'inatachn ḳdst béte krstīyan.",
       "tigrinya_script": "፨ ሕዝብ፤",
-      "tigrinya_phonetic": "፨ ḥzb:"
+      "tigrinya_phonetic": "፨ ḥzb:",
+      "spanish": "፨ Pueblo: Paz a ti, madre nuestra, oh honorable iglesia. Tus paredes están bordadas de Topacio. Paz a ti, madre nuestra, oh honorable iglesia."
     },
     {
       "instruction": "For Saturdays",
@@ -9402,7 +9581,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ መስቀል አበራ! በኮከቦች ሰማይን አስጌጠ። ከሁሉም ፀሐይን አሳየ። በኮከቦች ሰማይን አስጌጠ።",
       "amharic_phonetic": "፨ ḥzb: mesḳel 'abera! bekokeboch semayn 'asgéṭe. kehulum tseḥayn 'asaye. bekokeboch semayn 'asgéṭe.",
       "tigrinya_script": "፨ ሕዝብ፤",
-      "tigrinya_phonetic": "፨ ḥzb:"
+      "tigrinya_phonetic": "፨ ḥzb:",
+      "spanish": "፨ Pueblo: La Cruz brillaba y tenía el cielo bordado de estrellas. De todo se ve el sol. La Cruz brillaba y tenía el cielo bordado de estrellas."
     },
     {
       "instruction": "For Sundays",
@@ -9415,7 +9595,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ ጽድቅን የሠራ ሰንበትን ያከበረም ሰው ሁሉ ጻድቅ ነው። ወደ እግዚአብሔርም አምልኮት የገባ ከምዕመናን ይለየኝ ይሆን ፈጽሞ አይበል።",
       "amharic_phonetic": "፨ ḥzb: tsdḳn yesera senbetn yakeberem sew hulu tsadḳ new. wede 'igzī'abḥérm 'amlkot yegeba kem'imenan yleyeñ yhon fetsmo 'aybel.",
       "tigrinya_script": "፨ ሕዝብ፤",
-      "tigrinya_phonetic": "፨ ḥzb:"
+      "tigrinya_phonetic": "፨ ḥzb:",
+      "spanish": "፨ Pueblo: Bienaventurado el que hace obras benditas y honra el sábado. No le permita preguntarse si será excluido de las multitudes si quiere entrar en la adoración de Dios."
     },
     {
       "instruction": "For Sundays",
@@ -9428,7 +9609,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ ጽድቅን የሠራ ሰንበትን ያከበረም ሰው ሁሉ ጻድቅ ነው።",
       "amharic_phonetic": "፨ ḥzb: tsdḳn yesera senbetn yakeberem sew hulu tsadḳ new.",
       "tigrinya_script": "፨ ሕዝብ፤",
-      "tigrinya_phonetic": "፨ ḥzb:"
+      "tigrinya_phonetic": "፨ ḥzb:",
+      "spanish": "፨ Pueblo: Bienaventurado el que hace obras benditas y honra el sábado."
     },
     {
       "instruction": "",
@@ -9441,7 +9623,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ይህች ቀን ምን ያህል የምታስፈራ ናት፤ ይህች ሰዓትስ ምን ያህል የምታስጨንቅ ናት፤ መንፈስ ቅዱስ ከሰማየ ሰማያት የሚወርድባት ናት፤ ይህን መስዋዕቱን የሚሰውርባትና የሚያከብርባት።",
       "amharic_phonetic": "kahn: yhch ḳen mn yahl yemtasfera nat: yhch se'ats mn yahl yemtaschenḳ nat: menfes ḳdus kesemaye semayat yemīwerdbat nat: yhn meswa'itun yemīsewrbatna yemīyakebrbat.",
       "tigrinya_script": "ካህን፤ መንፈስ ቅዱስ ብኣኣ ካብ ሰማየ ሰማያት ወሪዱ ነዚ መሥዋዕቲ እዚ ዜጽልለላን ዚቕድሰላን፡ እዛ ዕለት እዚኣ ክንደይ እተፍርህ እያ፥",
-      "tigrinya_phonetic": "kahn: menfes ḳdus b'a'a kab semaye semayat werīdu nezī meswa'itī 'izī zétsllelan zīqhdselan 'iza 'ilet 'izī'a kndey 'itefrh 'iya;"
+      "tigrinya_phonetic": "kahn: menfes ḳdus b'a'a kab semaye semayat werīdu nezī meswa'itī 'izī zétsllelan zīqhdselan 'iza 'ilet 'izī'a kndey 'itefrh 'iya;",
+      "spanish": "Sacerdote: Qué terrible (lleno de asombro) es este día y qué maravillosa esta hora en la que el Espíritu Santo descenderá del cielo y cubrirá y santificará este sacrificio."
     },
     {
       "instruction": "",
@@ -9454,7 +9637,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ በጽሞናና በመፍራት ቁሙ፤ የእግዚአብሔር ሰላም ከእኔና ከእናንተ ጋራ ይሆን ዘንድ ጸልዩ።\n፨ ሕዝብ፤ አሜን።",
       "amharic_phonetic": "kahn: betsmonana bemefrat ḳumu: ye'igzī'abḥér selam ke'inéna ke'inante gara yhon zend tselyu.\n፨ ḥzb: 'amén",
       "tigrinya_script": "ካህን፤ በጽሙና ወበፍርሀት ቁሙ ወጸልዩ ከመ ሰላሙ ለእግዚአብሔር የሀሉ ምስሌየ ወምስለ ኵልክሙ።\n፨ ሕዝብ፤ አሜን።",
-      "tigrinya_phonetic": "kahn: betsmuna webefrhat ḳumu wetselyu keme selamu le'igzī'abḥér yehalu msléye wemsle kwlkmu.\n፨ ḥzb: 'amén"
+      "tigrinya_phonetic": "kahn: betsmuna webefrhat ḳumu wetselyu keme selamu le'igzī'abḥér yehalu msléye wemsle kwlkmu.\n፨ ḥzb: 'amén",
+      "spanish": "Sacerdote: En tranquilidad y con temor levántate y ora para que la paz de Dios esté conmigo y con todos vosotros.\n፨ Pueblo: Amén."
     },
     {
       "instruction": "For the days between the Pentecost and the Resurrection",
@@ -9467,7 +9651,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ ሃሌ ሉያ በቅዳሴ ጊዜ ከምእመናን ወገን ወደ ቤተ ክርስቲያን የገባ ሰው ቢኖር ቅዱሳን መጻሕፍትን ሰምቶ",
       "amharic_phonetic": "፨ ḥzb: halé luya beḳdasé gīzé kem'imenan wegen wede béte krstīyan yegeba sew bīnor ḳdusan metsaḥftn semto",
       "tigrinya_script": "፨ ሕዝብ፤ ሃሌ ሉያ ኣብ ጊዜ ቅዳሴ ካብ ምእመናን ናብ ቤተ ክርስቲያን ዝኣተወ እንተሎ፡ ቅዱሳት መጻሕፍቲ እንተዘይሰምዐ፡",
-      "tigrinya_phonetic": "፨ ḥzb: halé luya 'ab gīzé ḳdasé kab m'imenan nab béte krstīyan z'atewe 'intelo ḳdusat metsaḥftī 'intezeysem'a"
+      "tigrinya_phonetic": "፨ ḥzb: halé luya 'ab gīzé ḳdasé kab m'imenan nab béte krstīyan z'atewe 'intelo ḳdusat metsaḥftī 'intezeysem'a",
+      "spanish": "፨ Pueblo: ¡Aleluya! Si alguno de los fieles ha entrado en la iglesia a la hora de misa y no ha oído las Sagradas Escrituras,"
     },
     {
       "instruction": "For the days between the Pentecost and the Resurrection",
@@ -9480,7 +9665,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ የቅዳሴውንም ጸሎት እስኪጨርሱ ባይታገሥ ከቁርባን ባይቀበል ከቤተ ክርስቲያን ይውጣ የእግዚአብሔርን ሕግ አፍርሷልና፣",
       "amharic_phonetic": "፨ ḥzb: yeḳdaséwnm tselot 'iskīchersu baytages keḳurban bayḳebel kebéte krstīyan ywṭa",
       "tigrinya_script": "፨ ሕዝብ፤ ጸሎት ቅዳሴ ክሳዕ ዚፍጸም ከኣ እንተዘይተዓገሠ፡ ካብ ቁርባንውን እንተ ዘይተቐበለ፡",
-      "tigrinya_phonetic": "፨ ḥzb: tselot ḳdasé ksa'i zīftsem ke'a 'intezeyte'agese kab ḳurbanwn 'inte zeyteqhebele"
+      "tigrinya_phonetic": "፨ ḥzb: tselot ḳdasé ksa'i zīftsem ke'a 'intezeyte'agese kab ḳurbanwn 'inte zeyteqhebele",
+      "spanish": "፨ Pueblo: y no ha esperado a que terminen la oración de la Misa, y no ha recibido la Sagrada Comunión, que lo expulsen de la iglesia porque ha violado la ley de Dios."
     },
     {
       "instruction": "For the days between the Pentecost and the Resurrection",
@@ -9493,7 +9679,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤  የነፍስና የሥጋ ንጉሥ በሚሆን በሰማያዊ ንጉሥ በክርስቶስ ፊት መቆምን አቃሏልና ሐዋርያት በሲኖዶሳቸው እንዲህ ሲሉ አስተማሩን::",
       "amharic_phonetic": "፨ ḥzb:  yenefsna yesga ngus bemīhon besemayawī ngus bekrstos fīt meḳomn 'aḳalwalna ḥawaryat besīnodosachew 'indīh sīlu 'astemarun::",
       "tigrinya_script": "፨ ሕዝብ፤ ሕጊ እግዚኣብሔር ኣፍሪሱ እዩ እሞ፡ ኣብ ቅድሚ እቲ ንጉሥ ሥጋን መንፈስን ዝኾነ ሰማያዊ ንጉሥ፡ ሙቛሙ ኣቃሊሉ እዩ። ሓዋርያት ከኣ ብሲኖዶሶም ከምዚ ኢሎም ስለ ዝመሃሩና፡ ካብ ቤተ ክርስቲያን ይፈለ።",
-      "tigrinya_phonetic": "፨ ḥzb: ḥgī 'igzī'abḥér 'afrīsu 'iyu 'imo 'ab ḳdmī 'itī ngus sgan menfesn zkhone semayawī ngus muḳhwamu 'aḳalīlu 'iyu. ḥawaryat ke'a bsīnodosom kemzī 'īlom sle zmeharuna kab béte krstīyan yfele."
+      "tigrinya_phonetic": "፨ ḥzb: ḥgī 'igzī'abḥér 'afrīsu 'iyu 'imo 'ab ḳdmī 'itī ngus sgan menfesn zkhone semayawī ngus muḳhwamu 'aḳalīlu 'iyu. ḥawaryat ke'a bsīnodosom kemzī 'īlom sle zmeharuna kab béte krstīyan yfele.",
+      "spanish": "፨ Pueblo: y desdeñó presentarse ante el Rey celestial, el Rey del cuerpo y del espíritu. Los Apóstoles nos lo han enseñado en sus cánones."
     },
     {
       "instruction": "For the days between the Pentecost and the Resurrection",
@@ -9506,7 +9693,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ ሃሌሉያ ዮሴፍና ኒቆዲሞስ ድንቅ በሚሆን ጥበብ ከሙታን ተለይቶ የተነሣ ኢየሱስን በበፍታ ገነዙት።",
       "amharic_phonetic": "፨ ḥzb: haléluya yoséfna nīḳodīmos dnḳ bemīhon ṭbeb kemutan teleyto yetenesa 'īyesusn bebefta genezut",
       "tigrinya_script": "፨ ሕዝብ፤ ሃሌ ሉያ ዮሴፍን ኒቆዲሞስን ነዚ ብዜደንቕ ጥበብ ካብ ሙታን ዝተንሥአ ኢየሱስ ብበፍታ ገነዝዎ",
-      "tigrinya_phonetic": "፨ ḥzb: halé luya yoséfn nīḳodīmosn nezī bzédenqh ṭbeb kab mutan ztens'a 'īyesus bbefta genezwo"
+      "tigrinya_phonetic": "፨ ḥzb: halé luya yoséfn nīḳodīmosn nezī bzédenqh ṭbeb kab mutan ztens'a 'īyesus bbefta genezwo",
+      "spanish": "፨ Pueblo: Aleluya, José y Nicodemo envueltos en lienzos Jesús que resucitó de entre los muertos de manera maravillosa."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -9519,7 +9707,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አቤቱ ይህን ቊርባን ያቀረቡልህን አስብ፣ ስለነሱ ያመጡትንም ለሁሉም በሰማያት የሚገኝ ዋጋቸውን ስጣቸው ፧",
       "amharic_phonetic": "kahn: 'abétu yhn ḳwīrban yaḳerärebulhn 'asb, slenesu yameṭutnm lehulum besemayat yemīgeñ wagachewn sṭachew ?",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Acuérdate, Señor, de quienes te ofrecieron esta ofrenda y de aquellos por quienes fue ofrecida. Dales a todos la recompensa celestial."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -9532,7 +9721,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ይልቁንም በዚች ቀን ያመጣልህን የአገልጋይህን ቊርባን ተቀበልለት፣ የጻድቁን የአቤልን ቊርባን",
       "amharic_phonetic": "kahn: ylḳunm bezīch ḳen yameṭalhn ye'agelgayhn ḳwīrban teḳebellet, yetsadḳun ye'abéln ḳwīrban",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Y sobre todo acepta delante de ti a tu siervo que te lo ha ofrecido hoy, como aceptaste el sacrificio de Abel el justo,"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -9545,7 +9735,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ያባታችንን የአብርሃምንም መሥዋዕት፤ የድኃዪቱንም ሁለት መሐለቅ እንደ ተቀበልህ፤",
       "amharic_phonetic": "kahn: yabatachnn ye'abrhamnm meswa'it: yedhayītunm hulet meḥaleḳ 'inde teḳebelh :",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: y el sacrificio de nuestro padre Abraham, y las dos blancas de la viuda,"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -9558,7 +9749,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ እንደነሱ የአገልጋዮችህን እጅ መንሻቸውን ብዙውንና ጥቂቱን የተሰወረውንና የተገለጠውን ተቀበል፣ ከበጎነትህ ሁሉ ቤታቸውን ምላላቸው፣",
       "amharic_phonetic": "kahn: 'indenesu ye'agelgayochhn 'ij menshachewn bzuwnna ṭḳītun yetesewerärewnna yetegeleṭewn teḳebel, kebegoneth hulu bétachewn mlalachew,",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Acepta, pues, las dádivas de tus siervos, sean grandes o pequeñas, en secreto o en público, y llena sus casas con todos tus bienes;"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -9571,7 +9763,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ በምድርላይ ቅዱስ ስምህን እንዳሰቡ በሰማያዊ መንግሥትህ አስባቸው፣ በዚህም ዓለም ለዘለዓለሙ አትለያቸው።",
       "amharic_phonetic": "kahn: bemdrlay ḳdus smhn 'indasebu besemayawī mengsth 'asbachew, bezīhm 'alem lezele'alemu 'atleyachew",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: y como se acordaron de tu santo nombre en la tierra, acuérdate de ellos en tu reino celestial; y en este mundo no los abandones para siempre."
     },
     {
       "instruction": "",
@@ -9584,7 +9777,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ የተሰወረ መና በውስጧ ያለባት የወርቅ መሶብ አንቺ ነሽ። ከሰማያት የወረደ ኅብስት ለሰው ሁሉ ድኅነት የሚሰጥ",
       "amharic_phonetic": "፨ ḥzb: yeteseweräre mena bewsṭwa yalebat yewerḳ mesob 'anchī nesh. kesemayat yewerärede hbst lesew hulu dhnet yemīseṭ",
       "tigrinya_script": "፨ ሕዝብ፤ ንዅሉ ዓለም ሕይወት ዚህብ ካብ ሰማይ ዝወረደ ኅቡእ መና ኅብስቲ ኣብ ውሽጣ ዘለዋ መሶብ ወርቂ ንስኺ ኢኺ።",
-      "tigrinya_phonetic": "፨ ḥzb: nዅlu 'alem ḥywet zīhb kab semay zwerede hbu'i mena hbstī 'ab wሽṭa zelewa mesob werḳī nskhī 'īkhī."
+      "tigrinya_phonetic": "፨ ḥzb: nዅlu 'alem ḥywet zīhb kab semay zwerede hbu'i mena hbstī 'ab wሽṭa zelewa mesob werḳī nskhī 'īkhī.",
+      "spanish": "፨ Pueblo: Tú eres la vasija de oro puro en la que está escondido el maná, el pan que descendió del cielo dando vida a todo el mundo."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -9597,7 +9791,8 @@ const kidaseData = {
       "amharic_script": "ካህን (መዝሙር ዘዳዊት 27)፤ [8] ፊትህን ሻሁ፣ አቤቱ ያንተን ፊት እሻለሁ፣",
       "amharic_phonetic": "kahn (mezmur zedawīt 27): [8] fīthn shahu, 'abétu yanten fīt 'ishalehu,",
       "tigrinya_script": "ካህን (መዝሙር ዘዳዊት 27)፤ [8]",
-      "tigrinya_phonetic": "kahn (mezmur zedawīt 27): [8]"
+      "tigrinya_phonetic": "kahn (mezmur zedawīt 27): [8]",
+      "spanish": "Sacerdote (Salmos 26): [8] mi rostro te busca; Tu rostro, oh Señor, buscaré."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -9610,7 +9805,8 @@ const kidaseData = {
       "amharic_script": "ካህን (መዝሙር ዘዳዊት 27)፤ [9] ፊትህን ከኔ አትመልስ፣ ተቈጥተህ ከአገልጋይህ አትለይ፣ ረዳት ሁነኝ አትጣለኝ አምላኬ መድኃኒቴም ቸል አትበለኝ።",
       "amharic_phonetic": "kahn (mezmur zedawīt 27): [9] fīthn kené 'atmels, teḳweṭteh ke'agelgayh 'atley, räredat huneñ 'atṭaleñ 'amlaké medhanītém chel 'atbeleñ",
       "tigrinya_script": "ካህን (መዝሙር ዘዳዊት 27)፤ [9]",
-      "tigrinya_phonetic": "kahn (mezmur zedawīt 27): [9]"
+      "tigrinya_phonetic": "kahn (mezmur zedawīt 27): [9]",
+      "spanish": "Sacerdote (Salmos 26): [9] No apartes de mí tu rostro; No te apartes con ira de tu siervo; Sé mi ayuda; No me deseches del todo, ni me desampares, oh Dios mi salvador."
     },
     {
       "instruction": "Inaudible Prayer in Coptic: \"ⲉⲩⲗⲟⲅⲓⲟⲥ ⲕⲩⲣⲓⲟⲥ ⲓⲏⲥⲟⲩⲥ ⲡⲓⲭⲣⲓⲥⲧⲟⲥ, ... , ⲁ̀ⲅⲓⲟⲥ, ⲡⲁⲛⲧⲱⲛ, Ponwamanṭon, ⲁⲗⲏⲑⲓⲛⲟⲛ\"",
@@ -9623,7 +9819,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ የሕያው እግዚአብሔር ልጅ ኢየሱስ ክርስቶስ በእውነት አውሎግዮስ ጌርዮስ አግዮስ ማንጦን ፓን ዋማንጦን አላቲኖን ነው፣ አሜን፤",
       "amharic_phonetic": "kahn: yeḥyaw 'igzī'abḥér lj 'īyesus krstos be'iwnet 'awlogyos géryos 'agyos manṭon pan wamanṭon 'alatīnon new, 'amén :",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Bendito Señor Jesucristo, Hijo del Dios vivo, Santo, de todos, de los espíritus, el Verdadero, de verdad, Amén."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -9636,7 +9833,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ በእውነት አምላካችን ኢየሱስ ክርስቶስ በቀኝህ እተብ በእጅህም ባርክ፣ በኃይልህም አክብር በመንፈስህም አጽና፣",
       "amharic_phonetic": "kahn: be'iwnet 'amlakachn 'īyesus krstos beḳeñh 'iteb be'ijhm bark , behaylhm 'akbr bemenfeshm 'atsna,",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Cristo, Dios nuestro, firma con tu diestra, bendice con tu mano, santifica con tu poder y fortalece con tu Espíritu,"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -9649,7 +9847,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ይህ ኅብስት የሕዝብህ የኃጢአታቸው ማስተሥረያ ይሆን ዘንድ አሜን ፧",
       "amharic_phonetic": "kahn: yh hbst yeḥzbh yehaṭī'atachew mastesräreya yhon zend 'amén ?",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: para que este Pan sea para remisión de los pecados de Tu pueblo. Amén."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -9662,7 +9861,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤ ኢየሱስ ክርስቶስ ሆይ፣ የሴፍና ኒቆዲሞስ በበፍታ ልብስና በሽቱ እንደ ገነዙህ እንደ ወደድህላቸውም እንዲሁ ውደድልን፤",
       "amharic_phonetic": "kahn nfḳ: 'īyesus krstos hoy, yeséfna nīḳodīmos bebefta lbsna beshtu 'inde genezuh 'inde wededhlachewm 'indīhu wdedln :",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: Jesucristo, Sumo Sacerdote, así como José y Nicodemo te envolvieron en lienzos y especias aromáticas, y te complaceste en ellos, así también te complaces en nosotros."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -9675,7 +9875,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ የሚቀበሉት ቅዳሴ ምስጋናና ክብር ለኃጢአት ማስተሥረያ ከእግዚአብሔር አብ የተገኘ ነው፣ አሜን፣",
       "amharic_phonetic": "kahn: yemīḳebelut ḳdasé msganana kbr lehaṭī'at mastesräreya ke'igzī'abḥér 'ab yetegeñe new, 'amén ,",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: La santificación, la acción de gracias y la exaltación pueden ser aceptadas por Dios Padre para la remisión de los pecados. Amén:"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -9688,7 +9889,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ኃይል በረከትና ደገኛ ብርሃን ለዚህች ቤተ ክርስቲያን ክብርይሁን ፧",
       "amharic_phonetic": "kahn: hayl beräreketna degeña brhan lezīhch béte krstīyan kbryhun ?",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Que el poder, la bendición, la gran luz y la santidad sean para esta iglesia."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -9701,7 +9903,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አምላካችን እግዚአብሔርበምድረ በዳ የአቤልን ቊርባን የተቀበልህ፣ የኖኅን በመርከብ ውስጥ የአብርሃምንም በተራራ ላይ፣",
       "amharic_phonetic": "kahn: 'amlakachn 'igzī'abḥérbemdräre beda ye'abéln ḳwīrban yeteḳebelh, yenohn bemerkeb wsṭ ye'abrhamnm beterara lay,",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Señor nuestro Dios, que aceptaste la ofrenda de Abel en el desierto, de Noé dentro del arca y de Abraham en la cumbre del monte,"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -9714,7 +9917,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ የኤልያስንም በቀርሜሎስ ተራራ፣ የዳዊትንም የኤያቡስ ወገን በምትሆን በኦርና ዐደባባይ የድኃዪቱንም መሐለቅ በቤተ መቅደስ የተቀበልህ፣",
       "amharic_phonetic": "kahn: ye'élyasnm beḳermélos terara, yedawītnm ye'éyabus wegen bemthon be'orna 'adebabay yedhayītunm meḥaleḳ bebéte meḳdes yeteḳebelh ,",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: y de Elías en la cima del Carmelo, y de David en la era de Ornán jebuseo, y de la blanca de la viuda en el santuario:"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -9727,7 +9931,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ለቅዱስ ስምህ ያቀረበውን የኃጥእ አገልጋይህን መባና ቊርባን እንደርሱ ተቀበል፣ የኃጢአቱም ቤዛ ይሁን",
       "amharic_phonetic": "kahn: leḳdus smh yaḳerärebewn yehaṭ'i 'agelgayhn mebana ḳwīrban 'indersu teḳebel, yehaṭī'atum béza yhun",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: acepta igualmente la oblación y ofrenda de tu siervo pecador que ha traído a tu santo nombre y sea para expiación de sus pecados;"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -9740,7 +9945,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ በዚህ ዓለም በጎ ዋጋን ስጠው፣ በሚመጣውም ዓለም ዛሬም ዘወትርም ለዘለ ዓለሙ አሜን፤",
       "amharic_phonetic": "kahn: bezīh 'alem bego wagan sṭew, bemīmeṭawm 'alem zarém zewetrm lezele 'alemu 'amén :",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: recompensadle con una buena recompensa en este mundo y en el venidero, ahora y siempre y en el mundo sin fin. Amén."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -9753,7 +9959,8 @@ const kidaseData = {
       "amharic_script": "(መዝሙር ዘዳዊት 23)\nዲያቆን፤",
       "amharic_phonetic": "(mezmur zedawīt 23)\ndīyaḳon:",
       "tigrinya_script": "(መዝሙር ዘዳዊት 23)\nዲያቆን፤",
-      "tigrinya_phonetic": "(mezmur zedawīt 23)\ndīyaḳon:"
+      "tigrinya_phonetic": "(mezmur zedawīt 23)\ndīyaḳon:",
+      "spanish": "(Salmo 22)\nDiácono: [1] El SEÑOR es mi pastor; No me faltará. [2]En verdes pastos me hace descansar; Me lleva junto a aguas tranquilas."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -9766,7 +9973,8 @@ const kidaseData = {
       "amharic_script": "(መዝሙር ዘዳዊት 23)\nዲያቆን፤",
       "amharic_phonetic": "(mezmur zedawīt 23)\ndīyaḳon:",
       "tigrinya_script": "(መዝሙር ዘዳዊት 23)\nዲያቆን፤",
-      "tigrinya_phonetic": "(mezmur zedawīt 23)\ndīyaḳon:"
+      "tigrinya_phonetic": "(mezmur zedawīt 23)\ndīyaḳon:",
+      "spanish": "(Salmo 22)\nDiácono: [3] Él restaura mi alma; Él me guía por sendas de justicia por amor de su nombre."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -9779,7 +9987,8 @@ const kidaseData = {
       "amharic_script": "(መዝሙር ዘዳዊት 23)\nዲያቆን፤",
       "amharic_phonetic": "(mezmur zedawīt 23)\ndīyaḳon:",
       "tigrinya_script": "(መዝሙር ዘዳዊት 23)\nዲያቆን፤",
-      "tigrinya_phonetic": "(mezmur zedawīt 23)\ndīyaḳon:"
+      "tigrinya_phonetic": "(mezmur zedawīt 23)\ndīyaḳon:",
+      "spanish": "(Salmo 22)\nDiácono: [4] Sí, aunque ande en valle de sombra de muerte, no temeré mal alguno, porque tú estás conmigo; Tu vara y tu cayado me consuelan."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -9792,7 +10001,8 @@ const kidaseData = {
       "amharic_script": "(መዝሙር ዘዳዊት 23)\nዲያቆን፤",
       "amharic_phonetic": "(mezmur zedawīt 23)\ndīyaḳon:",
       "tigrinya_script": "(መዝሙር ዘዳዊት 23)\nዲያቆን፤",
-      "tigrinya_phonetic": "(mezmur zedawīt 23)\ndīyaḳon:"
+      "tigrinya_phonetic": "(mezmur zedawīt 23)\ndīyaḳon:",
+      "spanish": "(Salmo 22)\nDiácono: [5] Tú preparas una mesa delante de mí en presencia de mis enemigos; Unges mi cabeza con aceite; Tu copa se rebosa."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -9805,7 +10015,8 @@ const kidaseData = {
       "amharic_script": "(መዝሙር ዘዳዊት 23)\nዲያቆን፤",
       "amharic_phonetic": "(mezmur zedawīt 23)\ndīyaḳon:",
       "tigrinya_script": "(መዝሙር ዘዳዊት 23)\nዲያቆን፤",
-      "tigrinya_phonetic": "(mezmur zedawīt 23)\ndīyaḳon:"
+      "tigrinya_phonetic": "(mezmur zedawīt 23)\ndīyaḳon:",
+      "spanish": "(Salmo 22)\nDiácono: [6] Ciertamente el bien y la misericordia me seguirán Todos los días de mi vida; Y habitaré en la casa del Señor hasta el fin de mis días."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -9818,7 +10029,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ እውነተኛ አምላካችን ጌታችን ክርስቶስ ሆይ፣ የገሊላ አውራጃ በምትሆን በቃና በጠሩህ ጊዜ ወደ ስርግ የሄድህ",
       "amharic_phonetic": "kahn: 'iwneteña 'amlakachn gétachn krstos hoy, yegelīla 'awraja bemthon beḳana beṭeruh gīzé wede srg yehédh",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Cristo nuestro Dios, que verdaderamente eres nuestro Señor, que fuiste a las bodas cuando te llamaron en Caná de Galilea,"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -9831,7 +10043,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ውሃውንም ባርከህ ጠጅ ያደረግህላቸው፣ በፊትህ የተቀመጠ ይህንን \"እማሬ\" ወይን እንደርሱ አድርገው",
       "amharic_phonetic": "kahn: whawnm barkeh ṭej yaderäreghlachew, befīth yeteḳemeṭe yhnn \"'imaré\" weyn 'indersu 'adrgew",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: y les bendijiste el agua y la convertiste en vino, haz lo mismo con este vino que tienes delante."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -9844,7 +10057,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አሁንም ባርከው፤ አክብረውም፣ አንጻውም፣ ሁል ጊዜ የሥጋችንና የነፍሳችን የልቡናችንም ሕይወት ይሆን ዘንድ፤",
       "amharic_phonetic": "kahn: 'ahunm barkew: 'akbrärewm, 'antsawm, hul gīzé yesgachnna yenefsachn yelbunachnm ḥywet yhon zend:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Ahora también bendícela, santifícala y purifícala, para que llegue a ser vida para nuestra alma, cuerpo y espíritu en todo tiempo."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -9857,7 +10071,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አብ ወልድ መንፈስ ቅዱስ ከኛ ጋር ኑር፣ ለተድላና ለደስታ የሚሆን ወይኑንም ለበጎ ነገር ምላው፣ ለሕይወትና ለመድኃኒት፤",
       "amharic_phonetic": "kahn: 'ab weld menfes ḳdus keña gar nur, letedlana ledesta yemīhon weynunm lebego neger mlaw, leḥywetna lemedhanīt:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Padre, Hijo y Espíritu Santo, sé con nosotros; y llenar el Vino de alegría y felicidad, por el bien, por la vida, por la salvación."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -9870,7 +10085,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ለኃጢአትም ማስተሥረያ፤ ለማስተዋል ለደኅንነት ለመንፈስ ቅዱስም ምክር ዛሬም ዘወትርም ለዘለዓለሙ አሜን፤",
       "amharic_phonetic": "kahn: lehaṭī'atm mastesräreya: lemastewal ledehnnet lemenfes ḳdusm mkr zarém zewetrm lezele'alemu 'amén :",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: y para la remisión de los pecados, para la comprensión, para la curación, para el consejo del Espíritu Santo, ahora y siempre y por los siglos de los siglos. Amén."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -9883,7 +10099,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤፣ በእውነት ሰው የሆንህ አምላክ ሆይ፣ ንጽሕ ጣዕም በረከትም ከክቡርደምህ ለሚጠጡ ይሁን፣ አሜን፤",
       "amharic_phonetic": "kahn: , be'iwnet sew yehonh 'amlak hoy, ntsḥ ṭa'im beräreketm kekburdemh lemīṭeṭu yhun, 'amén:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Pureza, dulzura y bendición sean para aquellos que verdaderamente beben de tu preciosa Sangre. Amén."
     },
     {
       "instruction": "",
@@ -9896,7 +10113,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ዓለምን የያዘ እግዚአብሔር አብ ብሩክ ነው።\n፨ ሕዝብ፤ አሜን።",
       "amharic_phonetic": "kahn: 'alemn yeyaze 'igzī'abḥér 'ab bruk new.\n፨ ḥzb: 'amén.",
       "tigrinya_script": "ካህን፤ ኵሉ ዝኃዘ እግዚኣብሔር ኣምላኽና ቡሩኽ እዩ።\n፨ ሕዝብ፤ አሜን",
-      "tigrinya_phonetic": "kahn: kwlu zhaze 'igzī'abḥér 'amlakhna burukh 'iyu.\n፨ ḥzb: 'amén"
+      "tigrinya_phonetic": "kahn: kwlu zhaze 'igzī'abḥér 'amlakhna burukh 'iyu.\n፨ ḥzb: 'amén",
+      "spanish": "Sacerdote: Bendito sea el Señor, Padre Todopoderoso, que sostiene todo el mundo, nuestro Dios.\n፨ Pueblo: Amén."
     },
     {
       "instruction": "",
@@ -9909,7 +10127,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ጌታችን መድኃኒታችን ኢየሱስ ክርስቶስ ወልድ ዋሕድም ቡሩክ ነው።\n፨ ሕዝብ፤ አሜን።",
       "amharic_phonetic": "kahn: gétachn medhanītachn 'īyesus krstos weld waḥdm buruk new.\n፨ ḥzb: 'amén.",
       "tigrinya_script": "ካህን፤ ወልድ ዋሕድ ጐይታናን መድኃኒናን ኢየሱስ ክርስቶስውን ቡሩኽ እዩ።\n፨ ሕዝብ፤ አሜን",
-      "tigrinya_phonetic": "kahn: weld waḥd gweytanan medhanīnan 'īyesus krstoswn burukh 'iyu.\n፨ ḥzb: 'amén"
+      "tigrinya_phonetic": "kahn: weld waḥd gweytanan medhanīnan 'īyesus krstoswn burukh 'iyu.\n፨ ḥzb: 'amén",
+      "spanish": "Sacerdote: Y bendito sea el único Hijo, nuestro Señor y Salvador nuestro Jesucristo.\n፨ Pueblo: Amén."
     },
     {
       "instruction": "",
@@ -9922,7 +10141,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ሁሉንም የሚያነጻ፣ የሚያጸና መንፈስ ቅዱስም ቡሩክ ነው።\n፨ ሕዝብ፤ አሜን።",
       "amharic_phonetic": "kahn: hulunm yemīyanetsa, yemīyatsena menfes ḳdusm buruk new.\n፨ ḥzb: 'amén.",
       "tigrinya_script": "ካህን፤ ንዅልና መጸናንዕን መንጽሕን ዝኾነ መንፈስ ቅዱስ እውን ቡሩኽ እዩ።\n፨ ሕዝብ፤ አሜን",
-      "tigrinya_phonetic": "kahn: nዅlna metsenan'in mentsḥn zkhone menfes ḳdus 'iwn burukh 'iyu.\n፨ ḥzb: 'amén"
+      "tigrinya_phonetic": "kahn: nዅlna metsenan'in mentsḥn zkhone menfes ḳdus 'iwn burukh 'iyu.\n፨ ḥzb: 'amén",
+      "spanish": "Sacerdote: Y bendito sea el Espíritu Santo, Paráclito, consolador y limpiador de todos nosotros.\n፨ Pueblo: Amén."
     },
     {
       "instruction": "",
@@ -9935,7 +10155,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ልዩ ሦስት ለሚሆኑ ሁልጊዜም ለተካከሉ ለአብ ለወልድ ለመንፈስ ቅዱስ ክብር ምስጋና ይገባል። ዛሬም ዘወትርም ለዘላለሙ አሜን።",
       "amharic_phonetic": "kahn: lyu sost lemīhonu hulgīzém letekakelu le'ab leweld lemenfes ḳdus kbr msgana ygebal. zarém zewetrm lezelalemu 'amén.",
       "tigrinya_script": "ካህን፤ ዘለዓለም ማዕረ ንዝኾኑ ንሥሉስ ቅዱስ ኣብ፡ ወልድ፡ መንፈስ ቅዱስ፡ ክብርን ምስጋናን ይግባእ ሎምን ኵሉ ሳዕን ንዘለዓለም ዓለም።",
-      "tigrinya_phonetic": "kahn: zele'alem ma'ire nzkhonu nslus ḳdus 'ab weld menfes ḳdus kbrn msganan ygba'i lomn kwlu sa'in nzele'alem 'alem."
+      "tigrinya_phonetic": "kahn: zele'alem ma'ire nzkhonu nslus ḳdus 'ab weld menfes ḳdus kbrn msganan ygba'i lomn kwlu sa'in nzele'alem 'alem.",
+      "spanish": "Sacerdote: La gloria y la honra son debidas a la Santísima Trinidad, al Padre y al Hijo y al Espíritu Santo, siempre coiguales, ahora y siempre y por los siglos de los siglos. Amén."
     },
     {
       "instruction": "",
@@ -9948,7 +10169,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አባቶቼና ወንድሞቼ በእኔ ላይ በመሥዋዕቱም ላይ ጸልዩ።",
       "amharic_phonetic": "kahn: 'abatochéna wendmoché be'iné lay bemeswa'itum lay tselyu.",
       "tigrinya_script": "ካህን፤ ኣቦታተይን ኣኅዋተይን ምእንታይን ምእንቲ እዚ መሥዋዕቲ እዝን ጸልዩ።",
-      "tigrinya_phonetic": "kahn: 'abotateyn 'ahwateyn m'intayn m'intī 'izī meswa'itī 'izn tselyu."
+      "tigrinya_phonetic": "kahn: 'abotateyn 'ahwateyn m'intayn m'intī 'izī meswa'itī 'izn tselyu.",
+      "spanish": "Sacerdote: Mis padres y mis hermanos oran por mí y por este sacrificio."
     },
     {
       "instruction": "",
@@ -9961,7 +10183,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤ እግዚአብሔር የለመንከውን ሁሉ ይስማህ። የበኵር የቤተ ክርስቲያኑ ካህናቱ የሚሆኑ",
       "amharic_phonetic": "kahn nfḳ: 'igzī'abḥér yelemenkewn hulu ysmah. yebekwr yebéte krstīyanu kahnatu yemīhonu",
       "tigrinya_script": "ካህን ንፍቅ፤ እግዚኣብሔር ዝለመንካዮ ኵሉ ይስማዕካ፡ ናይቶም በዅሪ ክርስቶስ ካህናት ዝኾኑ ናይ",
-      "tigrinya_phonetic": "kahn nfḳ: 'igzī'abḥér zlemenkayo kwlu ysma'ika naytom beዅrī krstos kahnat zkhonu nay melke tsédéḳn 'aronn zekaryasn meswa'itī kem zteqhebele meswa'itkhan ḳwrbankan yḳebelelka."
+      "tigrinya_phonetic": "kahn nfḳ: 'igzī'abḥér zlemenkayo kwlu ysma'ika naytom beዅrī krstos kahnat zkhonu nay melke tsédéḳn 'aronn zekaryasn meswa'itī kem zteqhebele meswa'itkhan ḳwrbankan yḳebelelka.",
+      "spanish": "Asistente. Sacerdote: Que Dios te escuche en todo lo que has pedido y acepte tu sacrificio y ofrenda;"
     },
     {
       "instruction": "",
@@ -9974,7 +10197,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤  የመልከጼዴቅንና የአሮንን የዘካርያስንም መሥዋዕት እንደ ተቀበለ መሥዋዕትህንም ቍርባንህንም ይቀበልልህ።",
       "amharic_phonetic": "kahn nfḳ:  yemelketsédéḳnna ye'aronn yezekaryasnm meswa'it 'inde teḳebele meswa'ithnm ḳwrbanhnm yḳebellh.",
       "tigrinya_script": "ካህን ንፍቅ፤ መልከ ጼዴቅን ኣሮንን ዘካርያስን መሥዋዕቲ ከም ዝተቐበለ መሥዋዕትኻን ቍርባንካን ይቀበለልካ።",
-      "tigrinya_phonetic": "kahn nfḳ: 'igzī'abḥér zlemenkayo kwlu ysma'ika naytom beዅrī krstos kahnat zkhonu nay melke tsédéḳn 'aronn zekaryasn meswa'itī kem zteqhebele meswa'itkhan ḳwrbankan yḳebelelka."
+      "tigrinya_phonetic": "kahn nfḳ: 'igzī'abḥér zlemenkayo kwlu ysma'ika naytom beዅrī krstos kahnat zkhonu nay melke tsédéḳn 'aronn zekaryasn meswa'itī kem zteqhebele meswa'itkhan ḳwrbankan yḳebelelka.",
+      "spanish": "Asistente. Sacerdote: como el sacrificio de Melquisedec y Aarón y Zacarías, los sacerdotes de la iglesia del Primogénito;"
     },
     {
       "instruction": "",
@@ -9987,7 +10211,8 @@ const kidaseData = {
       "amharic_script": "፨ ሁሉም፤ አባታችን ሆይ፥ በሰማይ የምትኖር፥ ስምህ ይቀደስ፥ መንግሥትህ ትምጣ፥ ፈቃድህ በሰማይ እንደሆነ እንዲሁም በምድር ይሁን።",
       "amharic_phonetic": "፨ hulum: 'abatachn hoy; besemay yemtnor; smh yḳedes; mengsth tmṭa; feḳadh besemay 'indehone 'indīhum bemdr yhun.",
       "tigrinya_script": "፨ ኣብ ሰማያት እትነብር ኣቦና ፨\n፨ ኩሉኹም፤ ኣብ ሰማያት እትነብር ኣቦና ስምካ ይቀደስ፥ መንግስትኻ ትምጻእ፥ ፈቓድካ ከምቲ ኣብ ሰማያት ከምኡ'ውን ኣብ ምድሪ ይኹን፥",
-      "tigrinya_phonetic": "፨ 'ab semayat 'itnebr 'abona ፨\n፨ kulukhum: 'ab semayat 'itnebr 'abona smka yḳedes; mengstkha tmtsa'i; feqhadka kemtī 'ab semayat kem'u'wn 'ab mdrī ykhun;"
+      "tigrinya_phonetic": "፨ 'ab semayat 'itnebr 'abona ፨\n፨ kulukhum: 'ab semayat 'itnebr 'abona smka yḳedes; mengstkha tmtsa'i; feqhadka kemtī 'ab semayat kem'u'wn 'ab mdrī ykhun;",
+      "spanish": "፨ EL PADRE NUESTRO ፨\n፨ TODOS: Padre Nuestro que estás en los Cielos; santificado sea tu nombre. Venga tu Reino. Hágase tu voluntad, tanto en la Tierra como en el Cielo."
     },
     {
       "instruction": "",
@@ -10000,7 +10225,8 @@ const kidaseData = {
       "amharic_script": "፨ ሁሉም፤ የዕለት እንጀራችንን ስጠን ለዛሬ፥ በደላችንን ይቅር በለን፥ እኛም የበደሉንን ይቅር እንደምንል፥",
       "amharic_phonetic": "፨ hulum: ye'ilet 'injerachnn sṭen lezaré; bedelachnn yḳr belen; 'iñam yebedelunn yḳr 'indemnl;",
       "tigrinya_script": "፨ ኩሉኹም፤ ናይ ዕለት እንጌራና ሎሚ ሃበና፥ ንሕና ንዝበደሉና በደሎም ከም እንኃደግናሎም በደልና ኅደገልና፥",
-      "tigrinya_phonetic": "፨ kulukhum: nay 'ilet 'ingérana lomī habena; nḥna nzbedeluna bedelom kem 'inhadegnalom bedelna hdegelna;"
+      "tigrinya_phonetic": "፨ kulukhum: nay 'ilet 'ingérana lomī habena; nḥna nzbedeluna bedelom kem 'inhadegnalom bedelna hdegelna;",
+      "spanish": "፨ TODOS: Danos hoy nuestro pan de cada día. Y perdónanos nuestros pecados y ofensas, como también nosotros perdonamos a los que nos ofenden."
     },
     {
       "instruction": "",
@@ -10013,7 +10239,8 @@ const kidaseData = {
       "amharic_script": "፨ ሁሉም፤ አቤቱ ወደ ፈተና አታግባን፥ ከክፉ ሁሉ አድነን እንጂ፥ መንግሥት ያንተ ናትና። ኃይል፥ ክብር፥ ምስጋና ለዘለዓለም አሜን።",
       "amharic_phonetic": "፨ hulum: 'abétu wede fetena 'atagban; kekfu hulu 'adnen 'injī; mengst yante natna. hayl; kbr; msgana lezele'alem 'amén.",
       "tigrinya_script": "፨ ኩሉኹም፤ ካብ ክፉእ ኣድኅነና እምበር ኣብ ፈተና ኣይተእትወና፥ መንግስትን፡ ኃይልን ፡ክብርን ንዘለዓለም ናትካ እዩ፡ አሜን።",
-      "tigrinya_phonetic": "፨ kulukhum: kab kfu'i 'adhnena 'imber 'ab fetena 'ayte'itwena; mengstn hayln kbrn nzele'alem natka 'iyu 'amén."
+      "tigrinya_phonetic": "፨ kulukhum: kab kfu'i 'adhnena 'imber 'ab fetena 'ayte'itwena; mengstn hayln kbrn nzele'alem natka 'iyu 'amén.",
+      "spanish": "፨ TODOS: Y no nos dejes caer en la tentación, Señor, sino líbranos del mal. Porque tuyo es el Reino, el Poder y la Gloria, por siempre. Amén."
     },
     {
       "instruction": "",
@@ -10026,7 +10253,8 @@ const kidaseData = {
       "amharic_script": "፨ ሁሉም፤ እመቤታችን ቅድስት ድንግል ማርያም ሆይ፥ በመልአኩ በቅዱስ ገብርኤል ሰላምታ ሰላም እንልሻለን።",
       "amharic_phonetic": "፨ hulum: 'imebétachn ḳdst dngl maryam hoy; bemel'aku beḳdus gebr'él selamta selam 'inlshalen.",
       "tigrinya_script": "፨ ብናይ ቅዱስ ገብርኤል መልኣኽ ሰላምታ ፨\n፨ ኩሉኹም፤ ኦ እግዝእትየ ማርያም ብናይ ቅዱስ ገብርኤል መልኣኽ ሰላምታ ሰላም እብለኪ፡",
-      "tigrinya_phonetic": "፨ bnay ḳdus gebr'él mel'akh selamta ፨\n፨ kulukhum: 'o 'igz'itye maryam bnay ḳdus gebr'él mel'akh selamta selam 'iblekī"
+      "tigrinya_phonetic": "፨ bnay ḳdus gebr'él mel'akh selamta ፨\n፨ kulukhum: 'o 'igz'itye maryam bnay ḳdus gebr'él mel'akh selamta selam 'iblekī",
+      "spanish": "፨ EL SALUDO A SAN GABRIEL ፨\n፨ TODOS: Con el saludo de San Gabriel Ángel, Oh mi Señora María, la paz sea con vosotros."
     },
     {
       "instruction": "",
@@ -10039,7 +10267,8 @@ const kidaseData = {
       "amharic_script": "፨ ሁሉም፤ በሃሳብሽ ድንግል ነሽ፥ በሥጋሽም ድንግል ነሽ። የአሸናፊ የእግዚአብሔር እናት ሆይ ሰላምታ ላንቺ ይገባሻል።",
       "amharic_phonetic": "፨ hulum: behasabsh dngl nesh; besgashm dngl nesh. ye'ashenafī ye'igzī'abḥér 'inat hoy selamta lanchī ygebashal.",
       "tigrinya_script": "፨ ኩሉኹም፤ ብሕልናኺ ድንግል ኢኺ፡ ብሥጋኺ'ውን ድንግል ኢኺ። ኣደ እግዚአብሔር ፀባዖት (ጎይታ ሠራዊት) ሰላም እብለኪ ኣለኹ።",
-      "tigrinya_phonetic": "፨ kulukhum: bḥlnakhī dngl 'īkhī bsgakhī'wn dngl 'īkhī. 'ade 'igzī'abḥér tseba'ot (goyta serawīt) selam 'iblekī 'alekhu."
+      "tigrinya_phonetic": "፨ kulukhum: bḥlnakhī dngl 'īkhī bsgakhī'wn dngl 'īkhī. 'ade 'igzī'abḥér tseba'ot (goyta serawīt) selam 'iblekī 'alekhu.",
+      "spanish": "፨ TODOS: Eres virgen en tus pensamientos y virgen en tu carne. La Madre del Señor Dios de los Ejércitos, la paz sea con vosotros."
     },
     {
       "instruction": "",
@@ -10052,7 +10281,8 @@ const kidaseData = {
       "amharic_script": "፨ ሁሉም፤ ከሴቶች ሁሉ ተለይተሽ አንቺ የተባረክሽ ነሽ፥ የማሕፀንሽም ፍሬ የተባረከ ነዉ። ጸጋን የተመላሽ ሆይ! ደስ ይበልሽ፣ እግዚአብሔር ካንቺ ጋር ነዉና።",
       "amharic_phonetic": "፨ hulum: kesétoch hulu teleytesh 'anchī yetebaräreksh nesh; yemaḥtsenshm fré yetebaräreke newu. tsegan yetemelash hoy! des ybelsh, 'igzī'abḥér kanchī gar newuna.",
       "tigrinya_script": "፨ ኩሉኹም፤ ንስኺ ካብ ኣንስቲ ብርኽቲ ኢኺ፡ ፍረ ከርሥኺ'ውን ብሩኽ እዩ። ኦ ምልእተ ጸጋ እግዚአብሔር ምሳኺ እዩ፡ ኦ ፍሥሕት ደስ ይበልኪ፡",
-      "tigrinya_phonetic": "፨ kulukhum: nskhī kab 'anstī brkhtī 'īkhī fre kerskhī'wn brukh 'iyu. 'o ml'ite tsega 'igzī'abḥér msakhī 'iyu 'o fsḥt des ybelkī"
+      "tigrinya_phonetic": "፨ kulukhum: nskhī kab 'anstī brkhtī 'īkhī fre kerskhī'wn brukh 'iyu. 'o ml'ite tsega 'igzī'abḥér msakhī 'iyu 'o fsḥt des ybelkī",
+      "spanish": "፨ TODOS: Bendita tú entre las mujeres y bendito el fruto de tu vientre. Alégrate, gozoso, oh lleno de gracia, el Señor está contigo."
     },
     {
       "instruction": "",
@@ -10065,7 +10295,8 @@ const kidaseData = {
       "amharic_script": "፨ ሁሉም፤ ከተወደደዉ ልጅሽ ከጌታችን ከመድኃኒታችን ከኢየሱስ ክርስቶስ ዘንድ ይቅርታን ለምኝልን ኃጢአታችንን ያስተሰርይልን ዘንድ። ለዘለዓለም አሜን።",
       "amharic_phonetic": "፨ hulum: ketewededewu ljsh kegétachn kemedhanītachn ke'īyesus krstos zend yḳrtan lemñln haṭī'atachnn yasteseryln zend. lezele'alem 'amén.",
       "tigrinya_script": "፨ ኩሉኹም፤ ኃጢኣትና ኪሠርየልና ናብ ፍቁር ወድኺ ኢየሱስ ክርስቶስ ምእንታና ምሕረት ለምንልና። አሜን።",
-      "tigrinya_phonetic": "፨ kulukhum: haṭī'atna kīseryelna nab fḳur wedkhī 'īyesus krstos m'intana mḥret lemnlna. 'amén."
+      "tigrinya_phonetic": "፨ kulukhum: haṭī'atna kīseryelna nab fḳur wedkhī 'īyesus krstos m'intana mḥret lemnlna. 'amén.",
+      "spanish": "፨ TODOS: Suplica y ruega nuestra misericordia hacia tu amado Hijo, Jesucristo, para que nos perdone nuestros pecados. Amén."
     },
     {
       "instruction": "",
@@ -10078,7 +10309,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አባቴ ሆይ ክብርት በምትሆን በጸሎትህ አስበኝ",
       "amharic_phonetic": "kahn: 'abaté hoy kbrt bemthon betseloth 'asbeñ",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Acuérdate de mí, mi padre sacerdote, en tus santas oraciones."
     },
     {
       "instruction": "",
@@ -10091,7 +10323,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤ እግዚአብሔር ክህነትህን ይጠብቃት፣ መሥዋዕትህንና ቊርባንህንም በብሩህ ገጽ ይቀበልልህ፣",
       "amharic_phonetic": "kahn nfḳ: 'igzī'abḥér khnethn yṭebḳat, meswa'ithnna ḳwīrbanhnm bebruh gets yḳebellh,",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: El Señor guarde tu sacerdocio y acepte tu sacrificio y ofrenda con semblante alegre."
     },
     {
       "instruction": "",
@@ -10104,7 +10337,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤ አቤቱ እኔን ታድነኝ ዘንድ ማዳንን ውደድ፣ (3 ጊዜ )።",
       "amharic_phonetic": "kahn nfḳ: 'abétu 'inén tadneñ zend madann wded , (3 gīzé )",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: Alégrate, Señor, de salvarme. (3x)"
     },
     {
       "instruction": "",
@@ -10117,7 +10351,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤ ብፍርሃት እግዚአብሔር ደው ንበል",
-      "tigrinya_phonetic": "kahn: bfrhat 'igzī'abḥér dew nbel"
+      "tigrinya_phonetic": "kahn: bfrhat 'igzī'abḥér dew nbel",
+      "spanish": "Sacerdote: Pongámonos delante del Señor con temor."
     },
     {
       "instruction": "",
@@ -10130,7 +10365,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አንዱ ቅዱስ አብ ነው፤ አንዱ ቅዱስ ወልድ ነው፤",
       "amharic_phonetic": "kahn: 'andu ḳdus 'ab new: 'andu ḳdus weld new:",
       "tigrinya_script": "ካህን፤ ሓደ ኣብ ቅዱስ እዩ፡ ሓደ ወልድ ቅዱስ እዩ፡ ሓደ መንፈስ ቅዱስውን ቅዱስ እዩ።",
-      "tigrinya_phonetic": "kahn: ḥade 'ab ḳdus 'iyu ḥade weld ḳdus 'iyu ḥade menfes ḳduswn ḳdus 'iyu."
+      "tigrinya_phonetic": "kahn: ḥade 'ab ḳdus 'iyu ḥade weld ḳdus 'iyu ḥade menfes ḳduswn ḳdus 'iyu.",
+      "spanish": "Sacerdote: Uno es el Santo Padre, uno es el Santo Hijo, uno es el Espíritu Santo."
     },
     {
       "instruction": "",
@@ -10143,7 +10379,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ አብ በእውነት ቅዱስ ነው፤ ወልድም በእውነት ቅዱስ ነው፤ መንፈስ ቅዱስም በእውነት",
       "amharic_phonetic": "፨ ḥzb: 'ab be'iwnet ḳdus new: weldm be'iwnet ḳdus new: menfes ḳdusm be'iwnet",
       "tigrinya_script": "፨ ሕዝብ፤ ብሓቂ ኣብ ቅዱስ እዩ፡ ብሓቂ ወልድ ቅዱስ እዩ፡ ብሓቂ መንፈስ ቅዱስ ቅዱስ እዩ።",
-      "tigrinya_phonetic": "፨ ḥzb: bḥaḳī 'ab ḳdus 'iyu bḥaḳī weld ḳdus 'iyu bḥaḳī menfes ḳdus ḳdus 'iyu."
+      "tigrinya_phonetic": "፨ ḥzb: bḥaḳī 'ab ḳdus 'iyu bḥaḳī weld ḳdus 'iyu bḥaḳī menfes ḳdus ḳdus 'iyu.",
+      "spanish": "፨ Pueblo: Verdaderamente el Padre es Santo, verdaderamente el Hijo es Santo y verdaderamente el Espíritu Santo es Santo."
     },
     {
       "instruction": "",
@@ -10156,7 +10393,8 @@ const kidaseData = {
       "amharic_script": "(መዝሙር ዘዳዊት 116:1)\nካህን፤ ምዕመናን ሁላችሁ እግዚአብሔርን አመስግኑት\n፨ ሕዝብ፤ ሕዝብ ሁሉ ያመሰግኑታል",
       "amharic_phonetic": "(mezmur zedawīt 116:1)\nkahn: m'imenan hulachhu 'igzī'abḥérn 'amesgnut\n፨ ḥzb: ḥzb hulu yamesegnutal",
       "tigrinya_script": "(መዝሙር ዘዳዊት 116:1)\nካህን፤ ንእግዚኣብሔር ኵልኹም ኣመስግንዎ\n፨ ሕዝብ፤ ኵሎም ሕዝቢውን ንእግዚኣብሔር የመስግንዎ።",
-      "tigrinya_phonetic": "(mezmur zedawīt 116:1)\nkahn: n'igzī'abḥér kwlkhum 'amesgnwo\n፨ ḥzb: kwlom ḥzbīwn n'igzī'abḥér yemesgnwo."
+      "tigrinya_phonetic": "(mezmur zedawīt 116:1)\nkahn: n'igzī'abḥér kwlkhum 'amesgnwo\n፨ ḥzb: kwlom ḥzbīwn n'igzī'abḥér yemesgnwo.",
+      "spanish": "(Salmo 117:1)\nSacerdote: Alabad al Señor, naciones todas.\n፨ Pueblo: Y alabadle, pueblo todo."
     },
     {
       "instruction": "",
@@ -10169,7 +10407,8 @@ const kidaseData = {
       "amharic_script": "(መዝሙር ዘዳዊት 116:1)\nካህን፤ ምሕረቱ በእኛ ላይ ጸንታለችና\n፨ ሕዝብ፤ የእግዚአብሔር ቸርነት ለዘለዓለም ጸንቶ ኖሯልና።",
       "amharic_phonetic": "(mezmur zedawīt 116:1)\nkahn: mḥräretu be'iña lay tsentalechna\n፨ ḥzb: ye'igzī'abḥér chernet lezele'alem tsento norwalna.",
       "tigrinya_script": "(መዝሙር ዘዳዊት 116:1)\nካህን፤ ምሕረቱ ኣባና ስለ ዝጸንዐት።\n፨ ሕዝብ፤ ጽድቂ እግዚኣብሔርሲ ንዘልዓለም ይነብር።",
-      "tigrinya_phonetic": "(mezmur zedawīt 116:1)\nkahn: mḥretu 'abana sle ztsen'at.\n፨ ḥzb: tsdḳī 'igzī'abḥérsī nzel'alem ynebr."
+      "tigrinya_phonetic": "(mezmur zedawīt 116:1)\nkahn: mḥretu 'abana sle ztsen'at.\n፨ ḥzb: tsdḳī 'igzī'abḥérsī nzel'alem ynebr.",
+      "spanish": "(Salmo 117:2)\nSacerdote: Porque grande es su misericordia para con nosotros.\n፨ Pueblo: Y la verdad del Señor permanece para siempre."
     },
     {
       "instruction": "",
@@ -10182,7 +10421,8 @@ const kidaseData = {
       "amharic_script": "ካህን (ይህንኑ መልሰው ይበሉ)፤ ለአብ ለወልድ ለመንፈስ ቅዱስ ክብር ምስጋና ይገባል ዛሬም ዘወትርም ለዘለዓለሙ አሜን ሃሌ ሉያ",
       "amharic_phonetic": "kahn (yhnnu melsew ybelu): le'ab leweld lemenfes ḳdus kbr msgana ygebal zarém zewetrm lezele'alemu 'amén halé luya",
       "tigrinya_script": "ካህን፤ ንኣብን ንወልድን ንመንፈስ ቅዱስን ምስጋና። ንዘልዓለም ዓለም ኣሜን ሃሌ ሉያ።",
-      "tigrinya_phonetic": "kahn: n'abn nweldn nmenfes ḳdusn msgana. nzel'alem 'alem 'amén halé luya."
+      "tigrinya_phonetic": "kahn: n'abn nweldn nmenfes ḳdusn msgana. nzel'alem 'alem 'amén halé luya.",
+      "spanish": "Sacerdote (La gente repite): Gloria al Padre y al Hijo y al Espíritu Santo, ahora y siempre y por los siglos de los siglos. Amén. Aleluya."
     },
     {
       "instruction": "Curtains shall be opened.",
@@ -10195,7 +10435,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ ለጸሎት ተነሱ\n፨ ሕዝብ፤ አቤቱ ይቅር በለን",
       "amharic_phonetic": "dīyaḳon: letselot tenesu\n፨ ḥzb: 'abétu yḳr belen",
       "tigrinya_script": "ዲያቆን፤ ንጸሎት ተንሥኡ፣\n፨ ሕዝብ፤ ኦ ጐይታ ይቕረ በለልና፣",
-      "tigrinya_phonetic": "dīyaḳon: ntselot tens'u,\n፨ ḥzb: 'o gweyta yqhre belelna,"
+      "tigrinya_phonetic": "dīyaḳon: ntselot tens'u,\n፨ ḥzb: 'o gweyta yqhre belelna,",
+      "spanish": "Diácono: Levántate para orar.\n፨ Pueblo: Oh Señor, ten piedad de nosotros."
     },
     {
       "instruction": "",
@@ -10208,7 +10449,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ሰላም ለሁላችሁ ይሁን\n፨ ሕዝብ፤ ከመንፈስህ ጋራ",
       "amharic_phonetic": "kahn: selam lehulachhu yhun\n፨ ḥzb: kemenfesh gara",
       "tigrinya_script": "ካህን፤ ሰላም ንዅልኹም ይኹን፣\n፨ ሕዝብ፤ ምስ መንፈስካ፣",
-      "tigrinya_phonetic": "kahn: selam nዅlkhum ykhun,\n፨ ḥzb: ms menfeska,"
+      "tigrinya_phonetic": "kahn: selam nዅlkhum ykhun,\n፨ ḥzb: ms menfeska,",
+      "spanish": "Sacerdote: La paz sea con todos vosotros.\n፨ Pueblo: y con Tu Espíritu."
     },
     {
       "instruction": "",
@@ -10221,7 +10463,8 @@ const kidaseData = {
       "amharic_script": "፨ የቅዱስ ባስልዮስ የምስጋና ጸሎት ፨\nካህን፤ ለእኛ በጎ ነገርን ያደረገ ይቅር ባይ እግዚአብሔርን እናመሰግነዋለን። ይቅር ባይ የጌታችን የአምላካችንና የመድኃኒታችን የኢየሱስ ክርስቶስ አባት",
       "amharic_phonetic": "፨ yeḳdus baslyos yemsgana tselot ፨\nkahn: le'iña bego negern yaderärege yḳr bay 'igzī'abḥérn 'inamesegnewalen. yḳr bay yegétachn ye'amlakachnna yemedhanītachn ye'īyesus krstos 'abat",
       "tigrinya_script": "፨ ናይ ምስጋና ጸሎት (ቅዱስ ባስልዮስ) ፨\nካህን፤ ሠናይ ነገር ንዝገበረልና ይቕረ በሃሊ እግዚኣብሔር ኣቦኡ ንጐይታናን ኣምላኽናን መድኃኒናን ኢየሱስ ክርስቶስ ነመስግኖ ኣሎና።",
-      "tigrinya_phonetic": "፨ nay msgana tselot (ḳdus baslyos) ፨\nkahn: senay neger nzgeberelna yqhre behalī 'igzī'abḥér 'abo'u ngweytanan 'amlakhnan medhanīnan 'īyesus krstos nemesgno 'alona."
+      "tigrinya_phonetic": "፨ nay msgana tselot (ḳdus baslyos) ፨\nkahn: senay neger nzgeberelna yqhre behalī 'igzī'abḥér 'abo'u ngweytanan 'amlakhnan medhanīnan 'īyesus krstos nemesgno 'alona.",
+      "spanish": "፨ LA ORACIÓN DE ACCIÓN DE GRACIAS DE SAN BASIL ፨\nSacerdote: Damos gracias al que nos hace bien, al Dios misericordioso, Padre de nuestro Señor, nuestro Dios y Salvador Jesucristo:"
     },
     {
       "instruction": "",
@@ -10234,7 +10477,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ሰውሮናልና ረድቶናልና ጠብቆ አቅርቦናልና ወደ እርሱም ተቀብሎናልና አጽንቶ ጠብቆናልና እስከዚች ሰዓት አድርሶናልና።",
       "amharic_phonetic": "kahn: sewronalna räredtonalna ṭebḳo 'aḳrbonalna wede 'irsum teḳeblonalna 'atsnto ṭebḳonalna 'iskezīch se'at 'adrsonalna.",
       "tigrinya_script": "ካህን፤ ሠዊሩናን ረዲኡናን ኣዩ ሓሊዉናን ኣቕሪቡናን ተቐቢሉናን እዩ። ተማዕቍቡናን ኣጽኒዑናን ክሳዕ እዛ ሰዓት እዚኣ እውን ኣብጺሑናን እዩ::",
-      "tigrinya_phonetic": "kahn: sewīrunan redī'unan 'ayu ḥalīwunan 'aqhrībunan teqhebīlunan 'iyu. tema'iḳwbunan 'atsnī'unan ksa'i 'iza se'at 'izī'a 'iwn 'abtsīḥunan 'iyu::"
+      "tigrinya_phonetic": "kahn: sewīrunan redī'unan 'ayu ḥalīwunan 'aqhrībunan teqhebīlunan 'iyu. tema'iḳwbunan 'atsnī'unan ksa'i 'iza se'at 'izī'a 'iwn 'abtsīḥunan 'iyu::",
+      "spanish": "Sacerdote: porque nos cubrió y nos socorrió, nos guardó y nos acercó y nos recibió en sí mismo, y asumió nuestra defensa, nos fortaleció y nos trajo hasta esta hora."
     },
     {
       "instruction": "",
@@ -10247,7 +10491,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አሁንም ክብርት በምትሆን በዚህች ዕለት በሕይወታችን ዘመን ሁሉ በፍጹም ሰላም ሁሉን የሚይዝ አምላካችን እግዚአብሔር ይጠብቀን ዘንድ እንለምነው።\nዲያቆን፤ ጸልዩ።",
       "amharic_phonetic": "kahn: 'ahunm kbrt bemthon bezīhch 'ilet beḥywetachn zemen hulu beftsum selam hulun yemīyz 'amlakachn 'igzī'abḥér yṭebḳen zend 'inlemnew.\ndīyaḳon: tselyu.",
       "tigrinya_script": "ካህን፤ ሕጂውን በዛ ቅድስቲ ዕለት እዚኣን ብዅሉ ዘመን ሕይወትናን ብፍጹም ሰላም ኪሕልወና ኵሉ ንዚኅዝ እግዚኣብሔር ኣምላኽና ንለምኖ::\nዲያቆን፤ ጸልዩ።",
-      "tigrinya_phonetic": "kahn: ḥjīwn beza ḳdstī 'ilet 'izī'an bዅlu zemen ḥywetnan bftsum selam kīḥlwena kwlu nzīhz 'igzī'abḥér 'amlakhna nlemno::\ndīyaḳon: tselyu."
+      "tigrinya_phonetic": "kahn: ḥjīwn beza ḳdstī 'ilet 'izī'an bዅlu zemen ḥywetnan bftsum selam kīḥlwena kwlu nzīhz 'igzī'abḥér 'amlakhna nlemno::\ndīyaḳon: tselyu.",
+      "spanish": "Sacerdote: Oremos, pues, para que el Señor Todopoderoso nuestro Dios nos guarde en este día santo y en todos los días de nuestra vida en toda paz.\nDiácono: Todo lo que ores."
     },
     {
       "instruction": "",
@@ -10260,7 +10505,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ሁሉን የያዝህ ጌታችን እግዚአብሔር የጌታችንና የአምላካችን የመድኃኒታችን የኢየሱስ ክርስቶስ አባት በሥራው ሁሉ ላይ ስለ ሥራው ሁሉ በሥራውም ሁሉ ውስጥ እናመሰግንሃለን፣",
       "amharic_phonetic": "kahn: hulun yeyazh gétachn 'igzī'abḥér yegétachnna ye'amlakachn yemedhanītachn ye'īyesus krstos 'abat besraw hulu lay sle sraw hulu besrawm hulu wsṭ 'inamesegnhalen,",
       "tigrinya_script": "ካህን፤ ኦ ጐይታና እግዚኣብሔር ኵሉ እትኅዝ ኣቦኡ ንጐይታናን ኣምላኽናን መድኃኒና ኢየሱስ ክርስቶስ፡...",
-      "tigrinya_phonetic": "kahn: 'o gweytana 'igzī'abḥér kwlu 'ithz 'abo'u ngweytanan 'amlakhnan medhanīna 'īyesus krstos..."
+      "tigrinya_phonetic": "kahn: 'o gweytana 'igzī'abḥér kwlu 'ithz 'abo'u ngweytanan 'amlakhnan medhanīna 'īyesus krstos...",
+      "spanish": "Sacerdote: Maestro, Señor Dios Todopoderoso, Padre de nuestro Señor y Dios nuestro y Salvador Jesucristo, te damos gracias por todo, por todo y en todo,"
     },
     {
       "instruction": "",
@@ -10273,7 +10519,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ሰውረኸናልና ረድተኸና ልና ጠብቀኸናልና ወዳንተ አቅርበህ ጠብቀኸናልና አጽንተህ ጠብቀኸናልና እስከዚችም ሰዓት አድርሰኸናልና፤",
       "amharic_phonetic": "kahn:  sewrärekhenalna räredtekhena lna ṭebḳekhenalna wedante 'aḳrbeh ṭebḳekhenalna 'atsnteh ṭebḳekhenalna 'iskezīchm se'at 'adrsekhenalna :",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: porque nos cubriste y nos socorriste, nos guardaste y nos acercaste, nos recibiste en ti, emprendiste nuestra defensa, nos fortaleciste y nos trajiste hasta esta hora."
     },
     {
       "instruction": "",
@@ -10286,7 +10533,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ እግዚአብሔር ይምረን ዘንድ በእኛም ላይ ይቅር ይል ዘንድ እሹ ለምኑ።",
       "amharic_phonetic": "dīyaḳon: 'igzī'abḥér ymrären zend be'iñam lay yḳr yl zend 'ishu lemnu.",
       "tigrinya_script": "ዲያቆን፤ ግዚኣብሔር ምእንቲ ኪምሕረናን ይቐረ ኪብለልናን፡ ኵሉ ጊዜ ብሠናይ ግብሪ ምእንታና ጸሎትን ልማኖንውን ካብ ቅዱሳኑ ኪቕበል።",
-      "tigrinya_phonetic": "dīyaḳon: gzī'abḥér m'intī kīmḥrenan yqhere kīblelnan kwlu gīzé bsenay gbrī m'intana tselotn lmanonwn kab ḳdusanu kīqhbel."
+      "tigrinya_phonetic": "dīyaḳon: gzī'abḥér m'intī kīmḥrenan yqhere kīblelnan kwlu gīzé bsenay gbrī m'intana tselotn lmanonwn kab ḳdusanu kīqhbel.",
+      "spanish": "Diácono: Suplicas y suplicas que el Señor tenga piedad de nosotros y sea misericordioso con nosotros y reciba oraciones y súplicas de sus santos por nosotros, según lo que conviene en cada momento."
     },
     {
       "instruction": "",
@@ -10299,7 +10547,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ ስለኛ ከቅዱሳን ጸሎትን ልመናንም ይቀ በል ዘንድ፣ ሁል ጊዜ ባማረ ነገር ቡሩክ ከሚ ሆን ምሥጢር አንድነት እንድንቀበል የበቃን ያደ ርገን ዘንድ",
       "amharic_phonetic": "dīyaḳon: sleña keḳdusan tselotn lmenanm yḳe bel zend, hul gīzé bamaräre neger buruk kemī hon msṭīr 'andnet 'indnḳebel yebeḳan yade rgen zend",
       "tigrinya_script": "ዲያቆን፤ ካብዚ ቡሩኽ ምሥጢር ብሓድነት ንምቕባል ብቑዓት ኪገብረናን ኃጢኣትና ኪሰርየልናን ድለዩን ለምኑን።",
-      "tigrinya_phonetic": "dīyaḳon: kabzī burukh msṭīr bḥadnet nmqhbal bqhu'at kīgebrenan haṭī'atna kīseryelnan dleyun lemnun."
+      "tigrinya_phonetic": "dīyaḳon: kabzī burukh msṭīr bḥadnet nmqhbal bqhu'at kīgebrenan haṭī'atna kīseryelnan dleyun lemnun.",
+      "spanish": "Diácono: para que nos haga aptos para participar de la comunión del santísimo sacramento y perdonarnos nuestros pecados."
     },
     {
       "instruction": "",
@@ -10312,7 +10561,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ: ኪርያላይሶን",
       "amharic_phonetic": "፨ ḥzb: kīryalayson",
       "tigrinya_script": "፨ ሕዝብ፤ ኪርያላይሶን።",
-      "tigrinya_phonetic": "፨ ḥzb: kīryalayson."
+      "tigrinya_phonetic": "፨ ḥzb: kīryalayson.",
+      "spanish": "፨ Gente: Kyrie eleison (\"Señor, ten piedad\" en griego)"
     },
     {
       "instruction": "",
@@ -10325,7 +10575,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ስለዚህ እንለምን ሃለን ከቸርነትህም እን ሻለን፣ ሰውን የምትወድ ሆይ ክብርት የምትሆን ይህችን ዕለት እንድ ንፈጽም ስጠን፣ የሕይወታችንን ዘመን ሁሉ በፍጹም ሰላም አንተን ከመፍራት ጋራ፣",
       "amharic_phonetic": "kahn: slezīh 'inlemn halen kechernethm 'in shalen, sewn yemtwed hoy kbrt yemthon yhchn 'ilet 'ind nfetsm sṭen, yeḥywetachnn zemen hulu beftsum selam 'anten kemefrat gara ,",
       "tigrinya_script": "ካህን፤ ኦ መፍቀሪ ሰብ ስለዚ ንልምነካ ኣሎና፡ ነዛ ቅድስቲ ዕለት እዚኣን ኵሉ ዘመን ሕይወትናን ነኣኻ ብምፍራሕ ብፍጹም ሰላም ክንፍጽም ሃበና።",
-      "tigrinya_phonetic": "kahn: 'o mefḳerī seb slezī nlmneka 'alona neza ḳdstī 'ilet 'izī'an kwlu zemen ḥywetnan ne'akha bmfraḥ bftsum selam knftsm habena."
+      "tigrinya_phonetic": "kahn: 'o mefḳerī seb slezī nlmneka 'alona neza ḳdstī 'ilet 'izī'an kwlu zemen ḥywetnan ne'akha bmfraḥ bftsum selam knftsm habena.",
+      "spanish": "Sacerdote: Por esta causa rogamos y suplicamos de tu bondad, oh amante del hombre, concédenos completar este día santo y todos los días de nuestra vida en toda paz junto con tu temor."
     },
     {
       "instruction": "",
@@ -10338,7 +10589,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ቅንዓትን ሁሉ፣ መከራውንም ሁሉ፣የሰይጣንንም ሥራ ሁሉ፣ የክፉዎች ስዎችንም ምክር የጠላትንም መነሣት የተሰወረውንና የተገለጸውን፤",
       "amharic_phonetic": "kahn: ḳn'atn hulu, mekerawnm hulu,yeseyṭannm sra hulu , yekfuwoch swochnm mkr yeṭelatnm menesat yetesewerärewnna yetegeletsewn :",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Toda envidia, toda prueba, toda obra de Satanás, el consejo del mal y todos los levantamientos de los adversarios, secretos y públicos,"
     },
     {
       "instruction": "",
@@ -10351,7 +10603,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አቤቱ ከእኔ ከሕዝብህም ሁሉ  አርቅ፣ ያንተ ከሚሆን ከዚህም ቅዱስ ቦታ፣",
       "amharic_phonetic": "kahn: 'abétu ke'iné keḥzbhm hulu  'arḳ , yante kemīhon kezīhm ḳdus bota ,",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: aléjate de mí y de todo tu pueblo y de este tu lugar santo."
     },
     {
       "instruction": "",
@@ -10364,7 +10617,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ፧ በመሠዊያው ያሉትን ይባርክ፤ በጎውን ነገር ሁሉ ያማ ረውንና የሚሻለውን እዘዝልን፤ እባቡን ጊንጡንም የጠላትንም ኃይል ሁሉ እንረግጥ ዘንድ ሥልጣንን የሰጠኸን አንተ ነህና፣",
       "amharic_phonetic": "kahn: ? bemesewīyaw yalutn ybark : begown neger hulu yama rärewnna yemīshalewn 'izezln: 'ibabun gīnṭunm yeṭelatnm hayl hulu 'inräregṭ zend slṭann yeseṭekhen 'ante nehna ,",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Todo bien, conveniente y excelente, te lo ordena para nosotros, porque tú eres el que nos ha dado poder para hollar serpientes y escorpiones y sobre toda fuerza del enemigo."
     },
     {
       "instruction": "",
@@ -10377,7 +10631,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ወደ መከራ አታግባን ከክፉ ነገር ሁሉ አድነን እንጂ፣ አንድ ልጅህ ጌታችንና አምላካችን መድኃኒታችንም ኢየሱስ ክርስቶስ ለሰው ፍቅር ብሎ ባደረገው ቸርነትና ይቅርታ፣",
       "amharic_phonetic": "kahn: : wede mekera 'atagban kekfu neger hulu 'adnen 'injī, 'and ljh gétachnna 'amlakachn medhanītachnm 'īyesus krstos lesew fḳr blo baderäregew chernetna yḳrta,",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: No nos dejes caer en la tentación, sino líbranos y líbranos de todo mal, por la gracia y la bondad amorosa que fueron mostradas por el amor de tu unigénito Hijo hacia la humanidad,"
     },
     {
       "instruction": "",
@@ -10390,7 +10645,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ በርሱ ያለ ምስጋና ክብር ጽንዕ ከእርሱ ጋራ ላንተ ይገባል፣ ካንተ ጋራ ትክክል ማሕየዊ ከሚሆን ከመንፈስ ቅዱስም ጋራ",
       "amharic_phonetic": "kahn: bersu yale msgana kbr tsn'i ke'irsu gara lante ygebal, kante gara tkkl maḥyewī kemīhon kemenfes ḳdusm gara",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Señor nuestro y Dios nuestro y Salvador nuestro Jesucristo, por quien a ti con Él y el Espíritu Santo, Dador de vida, que es coigual contigo te conviene gloria, honra y dominio,"
     },
     {
       "instruction": "",
@@ -10403,7 +10659,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ዛሬም ዘወትርም ለዘለዓለሙ አሜን።",
       "amharic_phonetic": "kahn: zarém zewetrm lezele'alemu 'amén.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: ahora y siempre y en el mundo sin fin. Amén."
     },
     {
       "instruction": "",
@@ -10416,7 +10673,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን ንፍቅ፤ ለጸሎት ተነሱ\n፨ ሕዝብ፤ አቤቱ ይቅር በለን",
       "amharic_phonetic": "dīyaḳon nfḳ: letselot tenesu\n፨ ḥzb: 'abétu yḳr belen",
       "tigrinya_script": "ዲያቆን ንፍቅ፤ ንጸሎት ተንሥኡ፣\n፨ ሕዝብ፤ ኦ ጐይታ ይቕረ በለልና፣",
-      "tigrinya_phonetic": "dīyaḳon nfḳ: ntselot tens'u,\n፨ ḥzb: 'o gweyta yqhre belelna,"
+      "tigrinya_phonetic": "dīyaḳon nfḳ: ntselot tens'u,\n፨ ḥzb: 'o gweyta yqhre belelna,",
+      "spanish": "Subdiácono: Ponte de pie para orar.\n፨ Pueblo: Oh Señor, ten piedad de nosotros."
     },
     {
       "instruction": "",
@@ -10429,7 +10687,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤ ሰላም ለሁላችሁ ይሁን\n፨ ሕዝብ፤ ከመንፈስህ ጋራ",
       "amharic_phonetic": "kahn nfḳ: selam lehulachhu yhun\n፨ ḥzb: kemenfesh gara",
       "tigrinya_script": "ካህን ንፍቅ፤ ሰላም ንዅልኹም ይኹን፣\n፨ ሕዝብ፤ ምስ መንፈስካ፣",
-      "tigrinya_phonetic": "kahn nfḳ: selam nዅlkhum ykhun,\n፨ ḥzb: ms menfeska,"
+      "tigrinya_phonetic": "kahn nfḳ: selam nዅlkhum ykhun,\n፨ ḥzb: ms menfeska,",
+      "spanish": "Asistente. Sacerdote: La paz sea con todos vosotros.\n፨ Pueblo: y con Tu Espíritu."
     },
     {
       "instruction": "",
@@ -10442,7 +10701,8 @@ const kidaseData = {
       "amharic_script": "፨ የሐዋርያት የመባ ጸሎት ፨\nካህን ንፍቅ፤ ዳግመኛም ሁሉን የሚይዝ የጌታችንንና የመድ ኃኒታችንን የኢየሱስ ክርስቶስን አባት እግዚ አብሔርን እንማልዳለን፣",
       "amharic_phonetic": "፨ yeḥawaryat yemeba tselot ፨\nkahn nfḳ: dagmeñam hulun yemīyz yegétachnnna yemed hanītachnn ye'īyesus krstosn 'abat 'igzī 'abḥérn 'inmaldalen,",
       "tigrinya_script": "ካህን ንፍቅ፤ ከም ብሓድሽ ኵሉ ንዝኃዘ እግዚኣብሔር ኣቦኡ ንጐይታናን መድኃኒና ኢየሱስ ክርስቶስ፡",
-      "tigrinya_phonetic": "kahn nfḳ: kem bḥadሽ kwlu nzhaze 'igzī'abḥér 'abo'u ngweytanan medhanīna 'īyesus krstos"
+      "tigrinya_phonetic": "kahn nfḳ: kem bḥadሽ kwlu nzhaze 'igzī'abḥér 'abo'u ngweytanan medhanīna 'īyesus krstos",
+      "spanish": "፨ LA ORACIÓN DE OBLACIÓN DE LOS APÓSTOLES ፨\nAsistente. Sacerdote: Y rogamos nuevamente al Señor Todopoderoso, Padre del Señor nuestro Salvador Jesucristo,"
     },
     {
       "instruction": "",
@@ -10455,7 +10715,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤ ከሁሉ በላይ በምትሆን በከበረች በአንዲት ቤተ ክርስቲያን መባ ስለሚያገቡ መሥዋዕቱን ቀዳምያቱን ካሥር አንዱን የመታሰቢያ ምስጋና",
       "amharic_phonetic": "kahn nfḳ: kehulu belay bemthon bekeberärech be'andīt béte krstīyan meba slemīyagebu meswa'itun ḳedamyatun kasr 'andun yemetasebīya msgana",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: en nombre de los que traen oblación dentro de la única y santa Iglesia universal, sacrificio, primicias, diezmos, ofrenda de acción de gracias, memoria,"
     },
     {
       "instruction": "",
@@ -10468,7 +10729,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤ ብዙውንና ጥቂቱን የተስወረውንና የተገለጸውን ይሰጡ ዘንድ ሲወዱ የሚሰጡት ከሌላቸው ላይፈቃዳቸውን ተቀብሎ",
       "amharic_phonetic": "kahn nfḳ: bzuwnna ṭḳītun yeteswerärewnna yetegeletsewn yseṭu zend sīwedu yemīseṭut kelélachew layfeḳadachewn teḳeblo",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: ya sea mucho o poco, en secreto o abiertamente, y de los que quieren dar y no tienen con qué dar, que acepte su disposición,"
     },
     {
       "instruction": "",
@@ -10481,7 +10743,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤ መንግሥተ ሰማያትን ይሰጥ ዘንድ ለሁሉ በረከትን የሚያድልበት ሥልጣን ገንዘቡ የሚሆን አምላካ ችን እግዚአብሔር፤",
       "amharic_phonetic": "kahn nfḳ: mengste semayatn yseṭ zend lehulu beräreketn yemīyadlbet slṭan genzebu yemīhon 'amlaka chn 'igzī'abḥér:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: para que les conceda el Reino de los Cielos: el poder sobre todas las obras de bendición pertenece al Señor nuestro Dios."
     },
     {
       "instruction": "",
@@ -10494,7 +10757,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን ንፍቅ፤ መባ ስለሚያገቡ ሰዎች ጸልዩ",
       "amharic_phonetic": "dīyaḳon nfḳ: meba slemīyagebu sewoch tselyu",
       "tigrinya_script": "ዲያቆን ንፍቅ፤ ምእንቲ እቶም መባእ ዜቕርቡ ጸልዩ።",
-      "tigrinya_phonetic": "dīyaḳon nfḳ: m'intī 'itom meba'i zéqhrbu tselyu."
+      "tigrinya_phonetic": "dīyaḳon nfḳ: m'intī 'itom meba'i zéqhrbu tselyu.",
+      "spanish": "Subdiácono: Orar por los que traen una oblación."
     },
     {
       "instruction": "",
@@ -10507,7 +10771,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ የወንዶችን መባ ተቀበል፣ የሴቶችን መባ ተቀበል። የኛንም መባችንን ቍርባናችንን ተቀበልልን።",
       "amharic_phonetic": "፨ ḥzb: yewendochn meba teḳebel, yesétochn meba teḳebel. yeñanm mebachnn ḳwrbanachnn teḳebelln.",
       "tigrinya_script": "፨ ሕዝብ፤ ነኅዋትና መባኦም ተቐበል፡ ንኣኃትና መባአን ተቐበል፡ ንዓናውን መባእናን ቍርባናን ተቐበለልና።",
-      "tigrinya_phonetic": "፨ ḥzb: nehwatna meba'om teqhebel n'ahatna meba'an teqhebel n'anawn meba'inan ḳwrbanan teqhebelelna."
+      "tigrinya_phonetic": "፨ ḥzb: nehwatna meba'om teqhebel n'ahatna meba'an teqhebel n'anawn meba'inan ḳwrbanan teqhebelelna.",
+      "spanish": "፨ Pueblo: Aceptad la oblación de nuestros hermanos, aceptad la oblación de nuestras hermanas, aceptad también nuestra oblación y nuestra ofrenda."
     },
     {
       "instruction": "",
@@ -10520,7 +10785,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤ ሁሉን የምትገዛ አምላካችን እግዚአብሔር ሆይ እንለምንሃለን እንማልድሃለንም፤ ከሁሉ በላይ በምትሆን ባንዲት ቅድስት ቤተ ክርስቲያን",
       "amharic_phonetic": "kahn nfḳ: hulun yemtgeza 'amlakachn 'igzī'abḥér hoy 'inlemnhalen 'inmaldhalenm: kehulu belay bemthon bandīt ḳdst béte krstīyan",
       "tigrinya_script": "ካህን ንፍቅ፤ ኦ እግዚኣብሔር ኣምላኽና፡ ንዅሉ እትኅዝ ንልምነካ ኣሎና። …",
-      "tigrinya_phonetic": "kahn nfḳ: 'o 'igzī'abḥér 'amlakhna nዅlu 'ithz nlmneka 'alona. …"
+      "tigrinya_phonetic": "kahn nfḳ: 'o 'igzī'abḥér 'amlakhna nዅlu 'ithz nlmneka 'alona. …",
+      "spanish": "Asistente. Sacerdote: Señor Dios nuestro todopoderoso, te rogamos y te suplicamos por los que traen una oblación dentro de la única y santa Iglesia universal,"
     },
     {
       "instruction": "",
@@ -10533,7 +10799,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤ ውስጥ መባ ስለሚያገቡ ሰዎች  መሥዋዕቱን መጀመሪያውን ካሥር አንዱን የመታሰቢያ ምስጋናን ብዙውንና ጥቂቱን የተስወረውንና የተገለጸውን ይሰጡ ዘንድ ሲወዱ የሚሰጡት ከሌላቸው ላይ",
       "amharic_phonetic": "kahn nfḳ: wsṭ meba slemīyagebu sewoch  meswa'itun mejemerīyawn kasr 'andun yemetasebīya msganan bzuwnna ṭḳītun yeteswerärewnna yetegeletsewn yseṭu zend sīwedu yemīseṭut kelélachew lay",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: sacrificio, primicias, diezmos, ofrenda de acción de gracias, memorial, ya sea mucho o poco, en secreto o abiertamente, y no tenemos con qué dar."
     },
     {
       "instruction": "",
@@ -10546,7 +10813,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤ ፈቃዳቸውን ተቀብለህ ለሁሉም የበረከት ዋጋን ስጥ፣ ዕድል ፈንታትሆን ዘንድ፣",
       "amharic_phonetic": "kahn nfḳ: feḳadachewn teḳebleh lehulum yeberäreket wagan sṭ, 'idl fentathon zend ,",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: Tu aceptación de su disposición mental concede a cada uno: que la recompensa de bendición sea una porción para todos ellos:"
     },
     {
       "instruction": "",
@@ -10559,7 +10827,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤ በአንድ ልጅህ በርሱ ያለ ክብር ጽንዕ ላንተ ይገባል፣ ከርሱ ጋራ ከመንፈስ ቅዱስም ጋራ ዛሬም ዘወትርም ለዘለዓለሙ አሜን።",
       "amharic_phonetic": "kahn nfḳ: be'and ljh bersu yale kbr tsn'i lante ygebal , kersu gara kemenfes ḳdusm gara zarém zewetrm lezele'alemu 'amén",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: por tu Hijo unigénito, por quien a ti con él y con el Espíritu Santo sea la gloria y el dominio, ahora y siempre y por los siglos de los siglos. Amén."
     },
     {
       "instruction": "",
@@ -10572,7 +10841,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ ለጸሎት ተነሱ\n፨ ሕዝብ፤ አቤቱ ይቅር በለን",
       "amharic_phonetic": "dīyaḳon: letselot tenesu\n፨ ḥzb: 'abétu yḳr belen",
       "tigrinya_script": "ዲያቆን፤ ንጸሎት ተንሥኡ፣\n፨ ሕዝብ፤ ኦ ጐይታ ይቕረ በለልና፣",
-      "tigrinya_phonetic": "dīyaḳon: ntselot tens'u,\n፨ ḥzb: 'o gweyta yqhre belelna,"
+      "tigrinya_phonetic": "dīyaḳon: ntselot tens'u,\n፨ ḥzb: 'o gweyta yqhre belelna,",
+      "spanish": "Diácono: Levántate para orar.\n፨ Pueblo: Oh Señor, ten piedad de nosotros."
     },
     {
       "instruction": "",
@@ -10585,7 +10855,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ሰላም ለሁላችሁ ይሁን\n፨ ሕዝብ፤ ከመንፈስህ ጋራ",
       "amharic_phonetic": "kahn: selam lehulachhu yhun\n፨ ḥzb: kemenfesh gara",
       "tigrinya_script": "ካህን፤ ሰላም ንዅልኹም ይኹን፣\n፨ ሕዝብ፤ ምስ መንፈስካ፣",
-      "tigrinya_phonetic": "kahn: selam nዅlkhum ykhun,\n፨ ḥzb: ms menfeska,"
+      "tigrinya_phonetic": "kahn: selam nዅlkhum ykhun,\n፨ ḥzb: ms menfeska,",
+      "spanish": "Sacerdote: La paz sea con todos vosotros.\n፨ Pueblo: y con Tu Espíritu."
     },
     {
       "instruction": "",
@@ -10598,7 +10869,8 @@ const kidaseData = {
       "amharic_script": "፨የኅብስት ጸሎት፨\nካህን፤ መምህሬ ኢየሱስ ክርስቶስ ሆይ፣ ከቀዳማዊ አብ ጋራ አንድ የምት ሆን ንጹሕ የሚሆን የአብ ቃል፣የማሕየዊ መንፈስ ቅዱስም ቃል፣",
       "amharic_phonetic": "፨yehbst tselot፨\nkahn: memhré 'īyesus krstos hoy, keḳedamawī 'ab gara 'and yemt hon ntsuḥ yemīhon ye'ab ḳal,yemaḥyewī menfes ḳdusm ḳal,",
       "tigrinya_script": "፨ ኣብ ኅብስቲ ዚጽልዮ ጸሎት ፨\nካህን፤ ኦ ጐይታ ኢየሱስ ክርስቶስ ምስ ቀዳማይ ኣብ ሓደ ዝኾንካ፡ …",
-      "tigrinya_phonetic": "፨ 'ab hbstī zītslyo tselot ፨\nkahn: 'o gweyta 'īyesus krstos ms ḳedamay 'ab ḥade zkhonka …"
+      "tigrinya_phonetic": "፨ 'ab hbstī zītslyo tselot ፨\nkahn: 'o gweyta 'īyesus krstos ms ḳedamay 'ab ḥade zkhonka …",
+      "spanish": "፨ LA ORACIÓN DE LA ANÁFORA (“OFRENDA”) ፨\nSacerdote: Oh Maestro mío, Jesucristo, coeterno Verbo puro del Padre y Verbo del Espíritu Santo, Dador de vida,"
     },
     {
       "instruction": "",
@@ -10611,7 +10883,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ከሰማያት የወረድህ የሕይወት ኅብስት አንተ ነህ፣ ስለ ዓለሙ መዳን ነውር የሌለበት መሥዋዕት እንድትሆን መናገርን አስቀ ደምህ ፧",
       "amharic_phonetic": "kahn: kesemayat yeweräredh yeḥywet hbst 'ante neh, sle 'alemu medan newr yelélebet meswa'it 'indthon menagern 'asḳe demh ?",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Tú eres el pan de vida que descendió del cielo y predijo que serías el Cordero sin mancha para la vida del mundo:"
     },
     {
       "instruction": "",
@@ -10624,7 +10897,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አሁንም ከበጎነትህ ቸርነት እንለምናለን እንማ ልዳለንም፣ ሰው ወዳጅ ሆይ ያንተ በሚሆን በዚህ በመንፈሳዊ ታቦት ላይ ባኖር ነው በዚህ ‹‹እማሬ›› ኅብስት ላይና በዚህ ‹‹እማሬ›› ጽዋ ላይፊትህን ግለጽ፤",
       "amharic_phonetic": "kahn: 'ahunm kebegoneth chernet 'inlemnalen 'inma ldalenm , sew wedaj hoy yante bemīhon bezīh bemenfesawī tabot lay banor new bezīh ‹‹'imaré›› hbst layna bezīh ‹‹'imaré›› tswa layfīthn glets:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Oramos y suplicamos ahora por tu excelente bondad, oh amante de los hombres, haz que tu rostro brille sobre este pan y sobre esta copa que hemos puesto sobre esta arca espiritual tuya:"
     },
     {
       "instruction": "",
@@ -10637,7 +10911,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ይህን ኅብስት ባርከው፣ ቡራኬ በኅብስትላይ ይህንንም ጽዋ አክብረው፣ ቡራኬ በጽዋው ላይሁለቱንም አንጻቸው፣ ቡራኬ በሁለቱም ላይ፤",
       "amharic_phonetic": "kahn: yhn hbst barkew, buraké behbstlay yhnnm tswa 'akbrärew, buraké betswaw layhuletunm 'antsachew, buraké behuletum lay:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Bendice este pan, santifica esta copa y límpialos a ambos."
     },
     {
       "instruction": "",
@@ -10650,7 +10925,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ይህ ‹‹እማሬ›› ንጹሕ ሥጋህን ይሆን ዘንድ ለውጠው፣ በዚህ ‹‹እማሬ›› ጽዋ ውስጥ የተቀዳውም ወይን የከበረ ደምህን ይሁን፤",
       "amharic_phonetic": "kahn: yh ‹‹'imaré›› ntsuḥ sgahn yhon zend lewṭew, bezīh ‹‹'imaré›› tswa wsṭ yeteḳedawm weyn yekeberäre demhn yhun:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Y cambia este pan para que sea Tu Cuerpo puro, y lo que se mezcla en esta copa para que sea Tu preciosa Sangre;"
     },
     {
       "instruction": "",
@@ -10663,7 +10939,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ለሁላችንም ያረገ ለነፍሳችንና ለሥጋችን ለልቡናችንም ፈውስ ይሆን ዘንድ፤",
       "amharic_phonetic": "kahn: lehulachnm yarärege lenefsachnna lesgachn lelbunachnm fews yhon zend:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: sean ofrecidos por todos nosotros para la curación y la salvación de nuestra alma, de nuestro cuerpo y de nuestro espíritu."
     },
     {
       "instruction": "",
@@ -10676,7 +10953,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አምላካችን ክርስቶስ የሁላችን ንጉሥ አንተ ነህ፣ ከፍያለ ምስጋናንና ክብርን ስግደትንም ላንተ እንልካለን፣",
       "amharic_phonetic": "kahn: 'amlakachn krstos yehulachn ngus 'ante neh, kefyale msgananna kbrn sgdetnm lante 'inlkalen,",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Tú eres el Rey de todos nosotros, Cristo nuestro Dios, y a Ti te enviamos grandes alabanzas, gloria y adoración,"
     },
     {
       "instruction": "",
@@ -10689,7 +10967,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ቸር ከሚሆን ከሰማያዊ አባትህ ጋራ ካንተ ጋራ ከሚተ ካከል ከማሕየዊ መንፈስ ቅዱስም ጋራ ዛሬም ዘወትርም ለዘለዓለሙ አሜን።",
       "amharic_phonetic": "kahn: cher kemīhon kesemayawī 'abath gara kante gara kemīte kakel kemaḥyewī menfes ḳdusm gara zarém zewetrm lezele'alemu 'amén",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: con tu buen Padre celestial y el Espíritu Santo, Dador de vida, que es coigual contigo, ahora y siempre y por los siglos de los siglos. Amén."
     },
     {
       "instruction": "",
@@ -10702,7 +10981,8 @@ const kidaseData = {
       "amharic_script": "፨የመግነዝ ጸሎት፨ \nካህን፤ ሦስት መዓልት፣ ሦስት ሌሊት በውስጡ በኖርህበት መቃብር አምሳል በዚህ በተባረከ ፃሕል ላይ አኖርን፧",
       "amharic_phonetic": "፨yemegnez tselot፨ \nkahn: sost me'alt, sost lélīt bewsṭu benorhbet meḳabr 'amsal bezīh betebaräreke tsaḥl lay 'anorn?",
       "tigrinya_script": "፨ ፨\nካህን፤",
-      "tigrinya_phonetic": "፨ ፨\nkahn:"
+      "tigrinya_phonetic": "፨ ፨\nkahn:",
+      "spanish": "፨ LA ORACIÓN DE LOS ENVOLTURAS ፨\nSacerdote: La colocamos sobre esta bendita patena a semejanza del sepulcro en el que habéis pasado tres días y tres noches."
     },
     {
       "instruction": "",
@@ -10715,7 +10995,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ እጆቼንም ሥጋህን እንደገነዙት እንደ ዮሴፍና እንደ ኒቆዲሞስ እጆች አድርጋቸው፣ በወዲያው ዕረፍትን ክብርንም",
       "amharic_phonetic": "kahn: 'ijochénm sgahn 'indegenezut 'inde yoséfna 'inde nīḳodīmos 'ijoch 'adrgachew, bewedīyaw 'iräreftn kbrnm",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Que mis manos sean como las manos de José y Nicodemo que envolvieron tu cuerpo y encontraron allí paz, descanso y honor."
     },
     {
       "instruction": "",
@@ -10728,7 +11009,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ከአብና ከወልድ ከመንፈስ ቅዱስም እንዳገኙ ዛሬም ዘወትርም ለዘለዓለሙ አሜን፣",
       "amharic_phonetic": "kahn: ke'abna keweld kemenfes ḳdusm 'indageñu zarém zewetrm lezele'alemu 'amén,",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: del Padre y del Hijo y del Espíritu Santo, ahora y siempre y por los siglos de los siglos. Amén."
     },
     {
       "instruction": "",
@@ -10741,7 +11023,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ ይህ የአባቶቻችን የሐዋርያት ትእዛዝ ነው። ሰው በልቦናው ቂምንና በቀልን ቅንዓትንና ጠብን በባልንጀራው ላይ በማንም ላይ ቢሆን አይያዝ።",
       "amharic_phonetic": "dīyaḳon: yh ye'abatochachn yeḥawaryat t'izaz new. sew belbonaw ḳīmnna beḳeln ḳn'atnna ṭebn bebalnjeraw lay bemanm lay bīhon 'ayyaz.",
       "tigrinya_script": "ዲያቆን፤ ትእዛዝ ናይ ኣቦታትና ሓዋርያት፡ ሰብ ኣብ ልዕሊ ብጻዩ፡ ወይ ኣብ ልዕሊ ዝኾነ ይኹን፡ ኣብ ልቡ ቂምን በቀልን ቅንኣትን ጽልእን ኣየሕድር።",
-      "tigrinya_phonetic": "dīyaḳon: t'izaz nay 'abotatna ḥawaryat seb 'ab l'ilī btsayu wey 'ab l'ilī zkhone ykhun 'ab lbu ḳīmn beḳeln ḳn'atn tsl'in 'ayeḥdr."
+      "tigrinya_phonetic": "dīyaḳon: t'izaz nay 'abotatna ḥawaryat seb 'ab l'ilī btsayu wey 'ab l'ilī zkhone ykhun 'ab lbu ḳīmn beḳeln ḳn'atn tsl'in 'ayeḥdr.",
+      "spanish": "Diácono: Esta es la orden de nuestros padres los Apóstoles: Que ninguno guarde en su corazón rencor, ni venganza, ni envidia, ni odio hacia el prójimo, ni hacia cualquier otra persona."
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -10754,7 +11037,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ በፍርሃት ሆናችሁ ለእግዚአብሔር ስገዱ\n፨ ሕዝብ፤ አቤቱ እያመሰገንህ ከፊትህ እንሰግዳለን",
       "amharic_phonetic": "dīyaḳon: befrhat honachhu le'igzī'abḥér sgedu\n፨ ḥzb: 'abétu 'iyamesegenh kefīth 'insegdalen",
       "tigrinya_script": "ዲያቆን፤ ንእግዚኣብሔር ብፍርሓት ስገዱ።\n፨ ሕዝብ፤ ኦ ጐይታ ኣብ ቅድሜኻ ንሰግድን ነመስግነካ።",
-      "tigrinya_phonetic": "dīyaḳon: n'igzī'abḥér bfrḥat sgedu.\n፨ ḥzb: 'o gweyta 'ab ḳdmékha nsegdn nemesgneka."
+      "tigrinya_phonetic": "dīyaḳon: n'igzī'abḥér bfrḥat sgedu.\n፨ ḥzb: 'o gweyta 'ab ḳdmékha nsegdn nemesgneka.",
+      "spanish": "Diácono: Adora al Señor con temor.\n፨ Pueblo: Ante ti, Señor, te adoramos y te glorificamos. \n***TODOS AHORA SE POSTRARÁN (INCLINARSE)***"
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -10767,7 +11051,8 @@ const kidaseData = {
       "amharic_script": "፨ ጸሎተ ፍትሐት ዘወልድ ፨\nካህን ንፍቅ፤ አቤቱ ጌታችን ኢየሱስ ክርስቶስ ወልድ ዋሕድ የእግዚአብሔር አብ ቃል ማሕየዊት መድኃኒትም በምትሆን በሕማምህ ከእኛ የኃጢአታችንን ሁሉ ማሠሪያ ያጠፋህ፣",
       "amharic_phonetic": "፨ tselote ftḥat zeweld ፨\nkahn nfḳ: 'abétu gétachn 'īyesus krstos weld waḥd ye'igzī'abḥér 'ab ḳal maḥyewīt medhanītm bemthon beḥmamh ke'iña yehaṭī'atachnn hulu maserīya yaṭefah,",
       "tigrinya_script": "፨ ጸሎት ናይ ኑዛዜ ጸሎት ፨\nካህን ንፍቅ፤ ኦ ጐይታ ኢየሱስ ክርስቶስ ናይ እግዚአብሔር አብ ቃል",
-      "tigrinya_phonetic": "፨ tselot nay nuzazé tselot ፨\nkahn nfḳ: 'o gweyta 'īyesus krstos nay 'igzī'abḥér 'ab ḳal"
+      "tigrinya_phonetic": "፨ tselot nay nuzazé tselot ፨\nkahn nfḳ: 'o gweyta 'īyesus krstos nay 'igzī'abḥér 'ab ḳal",
+      "spanish": "፨ LA ABSOLUCIÓN DEL HIJO ፨\nAsistente. Sacerdote: Maestro, Señor Jesucristo, Hijo Unigénito y Verbo de Dios Padre, que ha roto toda atadura de nuestros pecados."
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -10780,7 +11065,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤ ንጹሐን በሚሆኑ ደቀ መዛሙርትህና በንጹሐን አገልጋዮችህ ፊት እፍ ያልህባቸው",
       "amharic_phonetic": "kahn nfḳ: ntsuḥan bemīhonu deḳe mezamurthna bentsuḥan 'agelgayochh fīt 'if yalhbachew",
       "tigrinya_script": "ካህን ንፍቅ፤ መሕወዪትን መድኃኒትን ብዝኾነት መከራ መስቀልካ ካባና ናይ ኃጢያትና ማእሰርቲ ዝበተኽካ: ቅዱሳን ንዝኾኑ ደቀ መዛሙርትኻን...",
-      "tigrinya_phonetic": "kahn nfḳ: meḥweyītn medhanītn bzkhonet mekera mesḳelka kabana nay haṭīyatna ma'isertī zbetekhka: ḳdusan nzkhonu deḳe mezamurtkhan..."
+      "tigrinya_phonetic": "kahn nfḳ: meḥweyītn medhanītn bzkhonet mekera mesḳelka kabana nay haṭīyatna ma'isertī zbetekhka: ḳdusan nzkhonu deḳe mezamurtkhan...",
+      "spanish": "Asistente. Sacerdote: por Tus sufrimientos vivificantes y salvadores; Quien sopló sobre el rostro de Tus santos discípulos y ministros puros, diciéndoles:"
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -10793,7 +11079,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ (ዮሐንስ 20፡23)፤ መንፈስ ቅዱስን ተቀበሉ፣ ይቅር ላላችኋቸው ኃጢአታቸው ይቀርላቸዋል፣ ይቅርምላላላችኋቸው ኃጢአታቸው አይቀርላቸውም ያልካቸው",
       "amharic_phonetic": "kahn nfḳ (yoḥans 20 23): menfes ḳdusn teḳebelu, yḳr lalachhwachew haṭī'atachew yḳerlachewal , yḳrmlalalachhwachew haṭī'atachew 'ayḳerlachewm yalkachew",
       "tigrinya_script": "ካህን ንፍቅ (ዮሐንስ 20፡23)፤",
-      "tigrinya_phonetic": "kahn nfḳ (yoḥans 20 23):"
+      "tigrinya_phonetic": "kahn nfḳ (yoḥans 20 23):",
+      "spanish": "Asistente. Sacerdote (Juan 20:23): Recibe el Espíritu Santo. Si perdonáis los pecados de alguno, le quedan perdonados; si retienes los pecados de alguno, quedan retenidos."
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -10806,7 +11093,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤ አሁንም በክብርት ቤተክርስቲያንህ ሁልጊዜ የክህነትን ሥራ ለሚሠሩ ለንጹሐን አገልጋዮችህ አቤቱ አንተ ክህነትን ስጠህ፣",
       "amharic_phonetic": "kahn nfḳ: 'ahunm bekbrt bétekrstīyanh hulgīzé yekhnetn sra lemīseru lentsuḥan 'agelgayochh 'abétu 'ante khnetn sṭeh,",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: Tú, pues, Señor, has concedido ahora el sacerdocio a tus ministros puros que ejercen el oficio sacerdotal en todo tiempo en tu Santa Iglesia."
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -10819,7 +11107,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤ በምድር ላይ ኃጢአትን ይቅር ይሉ ዘንድ፣ ያሥሩ ዘንድ የበደልንም ማሠሪያ ሁሉ ይፈቱ ዘንድ።",
       "amharic_phonetic": "kahn nfḳ: bemdr lay haṭī'atn yḳr ylu zend, yasru zend yebedelnm maserīya hulu yfetu zend.",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: para que remitan el pecado en la tierra, para que aten y desaten todas las ataduras de la iniquidad."
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -10832,7 +11121,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤ አሁንም አቤቱ ሰው ወዳጅ ሆይ፣ ዳግመኛ ከቸርነትህ እንለምናለን እንሻለንም ስለነዚህ ስለ ወንዶችም ስለ ሴቶችም አገልጋዮችህ፣ አባቶቼና ወንድሞቼ እኅቶቼም",
       "amharic_phonetic": "kahn nfḳ: : 'ahunm 'abétu sew wedaj hoy, dagmeña kecherneth 'inlemnalen 'inshalenm slenezīh sle wendochm sle sétochm 'agelgayochh, 'abatochéna wendmoché 'ihtochém",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: Ahora también, rogamos y suplicamos de Tu bondad, oh Amante de la Humanidad, en favor de Tus siervos y siervas, mis padres, mis hermanos y mis hermanas,"
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -10845,7 +11135,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤ ደካማ ስለምሆን ስለ እኔም ስለ ባርያህ፣ በቅዱስ መሠዊያህም ፊት ራሳቸውን ዝቅ ስለአደረጉ ሰዎች የምሕረትህን ጐዳና ጥረ ግልን፣ የኃጢአታችንን ማሠሪያም ሁሉ ፈጽ መህ አጥፋልን፣",
       "amharic_phonetic": "kahn nfḳ: dekama slemhon sle 'iném sle baryah, beḳdus mesewīyahm fīt rasachewn zḳ sle'aderäregu sewoch yemḥrärethn gwedana ṭräre gln, yehaṭī'atachnn maserīyam hulu fets meh 'aṭfaln,",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: y también por mí mismo, por mí, tu débil siervo, y por los que se inclinan ante tu santo altar: prepáranos el camino de tu misericordia, rompe y corta todas las ataduras de nuestros pecados."
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -10858,7 +11149,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤ አቤቱ አንተን ብንበድል በማወቅ ወይም ባለማወቅ፣ በተ ንኰልም ቢሆን፣ በልቡና ክፋትም ቢሆን፣",
       "amharic_phonetic": "kahn nfḳ: 'abétu 'anten bnbedl bemaweḳ weym balemaweḳ, bete nkwelm bīhon, belbuna kfatm bīhon,",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: Ya sea que hayamos pecado contra ti, oh Señor, a sabiendas o sin querer, o con engaño o con maldad de corazón,"
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -10871,7 +11163,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤ በመሥራትም ቢሆን፣ በመናገርም ቢሆን፣ በዕውቀት ማነስም ቢሆን የሰውን ድካሙን አንተ ታውቃ ለህና፤",
       "amharic_phonetic": "kahn nfḳ: bemesratm bīhon, bemenagerm bīhon, be'iwḳet manesm bīhon yesewn dkamun 'ante tawḳa lehna:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: ya sea de obra, ya de palabra, o por pequeñez de entendimiento, porque Tú conoces la debilidad del hombre."
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -10884,7 +11177,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤ ቸር ሰው ወዳጅ ሆይ፣ የፍጥረቱ ሁሉ ጌታ ሥርየት ስጠን፣ ባርከን፣ አክብረንም ነጻም አድርገን፤ አንጻን የተፈታን ነጻም የወጣን አድርገን ሕዝቡንም ሁሉ ፍታቸው \nበዚህ ጊዜ አዲስ የሞቱትን ያስታውስ፤ ስ",
       "amharic_phonetic": "kahn nfḳ: cher sew wedaj hoy, yefṭräretu hulu géta sryet sṭen, barken, 'akbrärenm netsam 'adrgen : 'antsan yetefetan netsam yeweṭan 'adrgen ḥzbunm hulu ftachew \nbezīh gīzé 'adīs yemotutn yastaws: s",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: Oh buen amante del hombre y Señor de toda la creación, concédenos, oh Señor, el perdón de nuestros pecados, bendícenos y purifícanos y libéranos y absuelve a todo Tu pueblo,"
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -10897,7 +11191,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤ ምህን መፍራትንም የተመላን አድርገን፣ ቅዱስ ፈቃድህንም በመፍራት አጽናን ፧",
       "amharic_phonetic": "kahn nfḳ: mhn mefratnm yetemelan 'adrgen, ḳdus feḳadhnm bemefrat 'atsnan ?",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: y llénanos del temor de Tu Nombre, y establecenos en el hacer de Tu Santa Voluntad."
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -10910,7 +11205,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: Oh Bueno, porque tú eres nuestro Señor y nuestro Dios y nuestro Salvador Jesucristo,"
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -10923,7 +11219,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: a Ti te enviamos gloria y honra con Tu buen Padre celestial, y el Espíritu Santo, Dador de vida, que es coigual contigo, ahora y siempre y por los siglos de los siglos. Amén"
     },
     {
       "instruction": "All shall prostrate (bow down) together. Inaudible Prayer done during the litanies prayer.",
@@ -10936,7 +11233,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: Que tus siervos que sirven en este día, el sacerdote, el diácono, el clero y todo el pueblo, y yo mismo, tu pobre siervo,"
     },
     {
       "instruction": "All shall prostrate (bow down) together. Inaudible Prayer done during the litanies prayer.",
@@ -10949,7 +11247,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: sé absuelto y libertado y limpiado de la boca de la Santísima Trinidad, del Padre y del Hijo y del Espíritu Santo, y de la boca de la única y santa Iglesia apostólica,"
     },
     {
       "instruction": "All shall prostrate (bow down) together. Inaudible Prayer done during the litanies prayer.",
@@ -10962,7 +11261,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: y de la boca de los 15 profetas (Adán, Set, Enós, Cainán, Mahalaleel, Jared, Enoc, Matusalén, Lamec, Noé, Abraham, Job, Jacob, José, Moisés),"
     },
     {
       "instruction": "All shall prostrate (bow down) together. Inaudible Prayer done during the litanies prayer.",
@@ -10975,7 +11275,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: y de la boca de los 12 apóstoles, y de la boca de los 72 discípulos los ministros,"
     },
     {
       "instruction": "All shall prostrate (bow down) together. Inaudible Prayer done during the litanies prayer.",
@@ -10988,7 +11289,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: y de boca del predicador de la divinidad, el evangelista Marcos, apóstol y mártir:"
     },
     {
       "instruction": "All shall prostrate (bow down) together. Inaudible Prayer done during the litanies prayer.",
@@ -11001,7 +11303,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: y de boca de los honorables Patriarcas San Severo y San Dioscoro y San Atanasio y San Juan Crisóstomo, y San Cirilo y San Gregorio y San Basilio."
     },
     {
       "instruction": "All shall prostrate (bow down) together. Inaudible Prayer done during the litanies prayer.",
@@ -11014,7 +11317,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: y de boca de los 318 fieles ortodoxos que se reunieron en Nicea para condenar a Arrio,"
     },
     {
       "instruction": "All shall prostrate (bow down) together. Inaudible Prayer done during the litanies prayer.",
@@ -11027,7 +11331,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: y de boca de los 150 que se reunieron en Constantinopla para condenar a Macedonio"
     },
     {
       "instruction": "All shall prostrate (bow down) together. Inaudible Prayer done during the litanies prayer.",
@@ -11040,7 +11345,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: y de boca de los 200 que se reunieron en Éfeso para condenar a Nestorio"
     },
     {
       "instruction": "All shall prostrate (bow down) together. Inaudible Prayer done during the litanies prayer.",
@@ -11053,7 +11359,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: y de boca del honorable Patriarca {{PATRIARCH NAME}} y del bendito Obispo {{BISHOP NAME}},"
     },
     {
       "instruction": "All shall prostrate (bow down) together. Inaudible Prayer done during the litanies prayer.",
@@ -11066,7 +11373,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: y de mi boca también los pecadores, los miserables y los pobres, sean absueltos y puestos en libertad,"
     },
     {
       "instruction": "All shall prostrate (bow down) together. Inaudible Prayer done during the litanies prayer.",
@@ -11079,7 +11387,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: y de boca de Nuestra Señora Santa María, de doble virginidad, madre de Dios, el telar nuevo;"
     },
     {
       "instruction": "All shall prostrate (bow down) together. Inaudible Prayer done during the litanies prayer.",
@@ -11092,7 +11401,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: porque tu Santo Nombre es bendito y lleno de gloria, oh Santísima Trinidad, Padre e Hijo y Espíritu Santo, ahora y siempre y por los siglos de los siglos. Amén."
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -11105,7 +11415,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ አንድ ስለምታደርግ ሥጋውና ደሙ እግዚአብሔር በይቅርታው አንድ ያደርገን ዘንድ ሰላምን እንማልዳን",
       "amharic_phonetic": "dīyaḳon: 'and slemtaderg sgawna demu 'igzī'abḥér beyḳrtaw 'and yadergen zend selamn 'inmaldan",
       "tigrinya_script": "ዲያቆን፤ እግዚኣብሔር ብምሕረቱ ሥሙራት ኪገብረና፡ ምእንቲ እዚ ሓድነት ሥጋኡን ደሙን ንለምን።",
-      "tigrinya_phonetic": "dīyaḳon: 'igzī'abḥér bmḥretu smurat kīgebrena m'intī 'izī ḥadnet sga'un demun nlemn."
+      "tigrinya_phonetic": "dīyaḳon: 'igzī'abḥér bmḥretu smurat kīgebrena m'intī 'izī ḥadnet sga'un demun nlemn.",
+      "spanish": "፨ LETANÍAS (PETICIONES) ፨\nDiácono o Sacerdote: Por las cosas santas y pacíficas que rogamos, para que Dios nos conceda la paz por su misericordia."
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -11118,7 +11429,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ አሜን ኪራላይሶን አቤቱ ይቅር በለን",
       "amharic_phonetic": "፨ ḥzb: 'amén kīralayson 'abétu yḳr belen",
       "tigrinya_script": "፨ ሕዝብ፤ አሜን። ኦ ጐይታ ይቕረ በለልና፣",
-      "tigrinya_phonetic": "፨ ḥzb: 'amén. 'o gweyta yqhre belelna,"
+      "tigrinya_phonetic": "፨ ḥzb: 'amén. 'o gweyta yqhre belelna,",
+      "spanish": "፨ Pueblo: Amén. Kyrie eleison (\"Señor, ten piedad\" en griego). Señor ten piedad de nosotros."
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -11131,7 +11443,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ \n፨ ሕዝብ፤ አሜን። ኪርያላይሶን አቤቱ ይቅር በለን።",
       "amharic_phonetic": "dīyaḳon: \n፨ ḥzb: 'amén. kīryalayson 'abétu yḳr belen.",
       "tigrinya_script": "ዲያቆን፤ \n፨ ሕዝብ፤ አሜን። ኦ ጐይታ ይቕረ በለልና፣",
-      "tigrinya_phonetic": "dīyaḳon: \n፨ ḥzb: 'amén. 'o gweyta yqhre belelna,"
+      "tigrinya_phonetic": "dīyaḳon: \n፨ ḥzb: 'amén. 'o gweyta yqhre belelna,",
+      "spanish": "Diácono o Sacerdote: Por nuestra fe rogamos, que Dios nos conceda mantener la fe en pureza.\n፨ Pueblo: Amén. Kyrie eleison (\"Señor, ten piedad\" en griego). Señor ten piedad de nosotros."
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -11144,7 +11457,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ \n፨ ሕዝብ፤ አሜን። ኪርያላይሶን አቤቱ ይቅር በለን።",
       "amharic_phonetic": "dīyaḳon: \n፨ ḥzb: 'amén. kīryalayson 'abétu yḳr belen.",
       "tigrinya_script": "ዲያቆን፤ \n፨ ሕዝብ፤ አሜን። ኦ ጐይታ ይቕረ በለልና፣",
-      "tigrinya_phonetic": "dīyaḳon: \n፨ ḥzb: 'amén. 'o gweyta yqhre belelna,"
+      "tigrinya_phonetic": "dīyaḳon: \n፨ ḥzb: 'amén. 'o gweyta yqhre belelna,",
+      "spanish": "Diácono o Sacerdote: Por nuestra congregación rogamos, que Dios nos guarde hasta el fin en la comunión del Espíritu Santo.\n፨ Pueblo: Amén. Kyrie eleison (\"Señor, ten piedad\" en griego). Señor ten piedad de nosotros."
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -11157,7 +11471,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ \n፨ ሕዝብ፤ አሜን። ኪርያላይሶን አቤቱ ይቅር በለን።",
       "amharic_phonetic": "dīyaḳon: \n፨ ḥzb: 'amén. kīryalayson 'abétu yḳr belen.",
       "tigrinya_script": "ዲያቆን፤ \n፨ ሕዝብ፤ አሜን። ኦ ጐይታ ይቕረ በለልና፣",
-      "tigrinya_phonetic": "dīyaḳon: \n፨ ḥzb: 'amén. 'o gweyta yqhre belelna,"
+      "tigrinya_phonetic": "dīyaḳon: \n፨ ḥzb: 'amén. 'o gweyta yqhre belelna,",
+      "spanish": "Diácono o Sacerdote: Por paciencia del alma rogamos, para que Dios nos conceda perfecta paciencia en todas nuestras tribulaciones.\n፨ Pueblo: Amén. Kyrie eleison (\"Señor, ten piedad\" en griego). Señor ten piedad de nosotros."
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -11170,7 +11485,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ \n፨ ሕዝብ፤ አሜን። ኪርያላይሶን አቤቱ ይቅር በለን።",
       "amharic_phonetic": "dīyaḳon: \n፨ ḥzb: 'amén. kīryalayson 'abétu yḳr belen.",
       "tigrinya_script": "ዲያቆን፤ \n፨ ሕዝብ፤ አሜን። ኦ ጐይታ ይቕረ በለልና፣",
-      "tigrinya_phonetic": "dīyaḳon: \n፨ ḥzb: 'amén. 'o gweyta yqhre belelna,"
+      "tigrinya_phonetic": "dīyaḳon: \n፨ ḥzb: 'amén. 'o gweyta yqhre belelna,",
+      "spanish": "Diácono o Sacerdote: Por los santos profetas rogamos, que Dios nos cuente con ellos. \n፨ Pueblo: Amén. Kyrie eleison (\"Señor, ten piedad\" en griego). Señor ten piedad de nosotros."
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -11183,7 +11499,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤",
       "amharic_phonetic": "dīyaḳon:",
       "tigrinya_script": "ዲያቆን፤",
-      "tigrinya_phonetic": "dīyaḳon:"
+      "tigrinya_phonetic": "dīyaḳon:",
+      "spanish": "Diácono o Sacerdote: Por los Apóstoles ministrantes rogamos, que Dios nos conceda ser agradables como ellos lo fueron, y nos reparta mucho con ellos."
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -11196,7 +11513,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ አሜን። ኪርያላይሶን አቤቱ ይቅር በለን።",
       "amharic_phonetic": "፨ ḥzb: 'amén. kīryalayson 'abétu yḳr belen.",
       "tigrinya_script": "፨ ሕዝብ፤ አሜን። ኦ ጐይታ ይቕረ በለልና፣",
-      "tigrinya_phonetic": "፨ ḥzb: 'amén. 'o gweyta yqhre belelna,"
+      "tigrinya_phonetic": "፨ ḥzb: 'amén. 'o gweyta yqhre belelna,",
+      "spanish": "፨ Pueblo: Amén. Kyrie eleison (\"Señor, ten piedad\" en griego). Señor ten piedad de nosotros."
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -11209,7 +11527,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ \n፨ ሕዝብ፤ አሜን። ኪርያላይሶን አቤቱ ይቅር በለን።",
       "amharic_phonetic": "dīyaḳon: \n፨ ḥzb: 'amén. kīryalayson 'abétu yḳr belen.",
       "tigrinya_script": "ዲያቆን፤ \n፨ ሕዝብ፤ አሜን። ኦ ጐይታ ይቕረ በለልና፣",
-      "tigrinya_phonetic": "dīyaḳon: \n፨ ḥzb: 'amén. 'o gweyta yqhre belelna,"
+      "tigrinya_phonetic": "dīyaḳon: \n፨ ḥzb: 'amén. 'o gweyta yqhre belelna,",
+      "spanish": "Diácono o Sacerdote: Por los santos mártires rogamos, que Dios nos conceda perfeccionar la misma conversación.\n፨ Pueblo: Amén. Kyrie eleison (\"Señor, ten piedad\" en griego). Señor ten piedad de nosotros."
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -11222,7 +11541,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤",
       "amharic_phonetic": "dīyaḳon:",
       "tigrinya_script": "ዲያቆን፤",
-      "tigrinya_phonetic": "dīyaḳon:"
+      "tigrinya_phonetic": "dīyaḳon:",
+      "spanish": "Diácono o Sacerdote: Por nuestro Patriarca {{PATRIARCH NAME}} y el bendito Obispo {{BISHOP NAME}} suplicamos, que Dios les conceda largos días para estar sobre nosotros,"
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -11235,7 +11555,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤",
       "amharic_phonetic": "dīyaḳon:",
       "tigrinya_script": "ዲያቆን፤",
-      "tigrinya_phonetic": "dīyaḳon:"
+      "tigrinya_phonetic": "dīyaḳon:",
+      "spanish": "Diácono o Sacerdote: para que con entendimiento hablen correctamente la palabra de fe con pureza y sin mancha, por cuanto son defensores de la iglesia."
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -11248,7 +11569,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ አሜን። ኪርያላይሶን አቤቱ ይቅር በለን።",
       "amharic_phonetic": "፨ ḥzb: 'amén. kīryalayson 'abétu yḳr belen.",
       "tigrinya_script": "፨ ሕዝብ፤ አሜን። ኦ ጐይታ ይቕረ በለልና፣",
-      "tigrinya_phonetic": "፨ ḥzb: 'amén. 'o gweyta yqhre belelna,"
+      "tigrinya_phonetic": "፨ ḥzb: 'amén. 'o gweyta yqhre belelna,",
+      "spanish": "፨ Pueblo: Amén. Kyrie eleison (\"Señor, ten piedad\" en griego). Señor ten piedad de nosotros."
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -11261,7 +11583,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤",
       "amharic_phonetic": "dīyaḳon:",
       "tigrinya_script": "ዲያቆን፤",
-      "tigrinya_phonetic": "dīyaḳon:"
+      "tigrinya_phonetic": "dīyaḳon:",
+      "spanish": "Diácono o Sacerdote: Por los sacerdotes rogamos, que Dios nunca los quite del espíritu del sacerdocio y les dé la gracia del celo y el temor de Él hasta el fin y acepten su labor."
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -11274,7 +11597,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ አሜን። ኪርያላይሶን አቤቱ ይቅር በለን።",
       "amharic_phonetic": "፨ ḥzb: 'amén. kīryalayson 'abétu yḳr belen.",
       "tigrinya_script": "፨ ሕዝብ፤ አሜን። ኦ ጐይታ ይቕረ በለልና፣",
-      "tigrinya_phonetic": "፨ ḥzb: 'amén. 'o gweyta yqhre belelna,"
+      "tigrinya_phonetic": "፨ ḥzb: 'amén. 'o gweyta yqhre belelna,",
+      "spanish": "፨ Pueblo: Amén. Kyrie eleison (\"Señor, ten piedad\" en griego). Señor ten piedad de nosotros."
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -11287,7 +11611,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤",
       "amharic_phonetic": "dīyaḳon:",
       "tigrinya_script": "ዲያቆን፤",
-      "tigrinya_phonetic": "dīyaḳon:"
+      "tigrinya_phonetic": "dīyaḳon:",
+      "spanish": "Diácono o Sacerdote: Por los diáconos rogamos, que Dios les conceda seguir una trayectoria perfecta, y atraerlos a él en santidad, y recordar su trabajo y su amor."
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -11300,7 +11625,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ አሜን። ኪርያላይሶን አቤቱ ይቅር በለን።",
       "amharic_phonetic": "፨ ḥzb: 'amén. kīryalayson 'abétu yḳr belen.",
       "tigrinya_script": "፨ ሕዝብ፤ አሜን። ኦ ጐይታ ይቕረ በለልና፣",
-      "tigrinya_phonetic": "፨ ḥzb: 'amén. 'o gweyta yqhre belelna,"
+      "tigrinya_phonetic": "፨ ḥzb: 'amén. 'o gweyta yqhre belelna,",
+      "spanish": "፨ Pueblo: Amén. Kyrie eleison (\"Señor, ten piedad\" en griego). Señor ten piedad de nosotros."
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -11313,7 +11639,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤",
       "amharic_phonetic": "dīyaḳon:",
       "tigrinya_script": "ዲያቆን፤",
-      "tigrinya_phonetic": "dīyaḳon:"
+      "tigrinya_phonetic": "dīyaḳon:",
+      "spanish": "Diácono o Sacerdote: Por los ayudantes de diáconos y los lectores y cantores rogamos, que Dios les conceda perfeccionar la diligencia de su fe."
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -11326,7 +11653,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ አሜን። ኪርያላይሶን አቤቱ ይቅር በለን።",
       "amharic_phonetic": "፨ ḥzb: 'amén. kīryalayson 'abétu yḳr belen.",
       "tigrinya_script": "፨ ሕዝብ፤ አሜን። ኦ ጐይታ ይቕረ በለልና፣",
-      "tigrinya_phonetic": "፨ ḥzb: 'amén. 'o gweyta yqhre belelna,"
+      "tigrinya_phonetic": "፨ ḥzb: 'amén. 'o gweyta yqhre belelna,",
+      "spanish": "፨ Pueblo: Amén. Kyrie eleison (\"Señor, ten piedad\" en griego). Señor ten piedad de nosotros."
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -11339,7 +11667,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤",
       "amharic_phonetic": "dīyaḳon:",
       "tigrinya_script": "ዲያቆን፤",
-      "tigrinya_phonetic": "dīyaḳon:"
+      "tigrinya_phonetic": "dīyaḳon:",
+      "spanish": "Diácono o Sacerdote: Por las viudas y los deudos rogamos, que Dios escuche sus oraciones y les conceda abundantemente en sus corazones la gracia del Espíritu Santo y acepte su labor."
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -11352,7 +11681,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ አሜን። ኪርያላይሶን አቤቱ ይቅር በለን።",
       "amharic_phonetic": "፨ ḥzb: 'amén. kīryalayson 'abétu yḳr belen.",
       "tigrinya_script": "፨ ሕዝብ፤ አሜን። ኦ ጐይታ ይቕረ በለልና፣",
-      "tigrinya_phonetic": "፨ ḥzb: 'amén. 'o gweyta yqhre belelna,"
+      "tigrinya_phonetic": "፨ ḥzb: 'amén. 'o gweyta yqhre belelna,",
+      "spanish": "፨ Pueblo: Amén. Kyrie eleison (\"Señor, ten piedad\" en griego). Señor ten piedad de nosotros."
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -11365,7 +11695,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤",
       "amharic_phonetic": "dīyaḳon:",
       "tigrinya_script": "ዲያቆን፤",
-      "tigrinya_phonetic": "dīyaḳon:"
+      "tigrinya_phonetic": "dīyaḳon:",
+      "spanish": "Diácono o Sacerdote: Por las vírgenes rogamos, que Dios les conceda la corona de la virginidad, y que sean para Dios hijos e hijas y que Él acepte su trabajo."
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -11378,7 +11709,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ አሜን። ኪርያላይሶን አቤቱ ይቅር በለን።",
       "amharic_phonetic": "፨ ḥzb: 'amén. kīryalayson 'abétu yḳr belen.",
       "tigrinya_script": "፨ ሕዝብ፤ አሜን። ኦ ጐይታ ይቕረ በለልና፣",
-      "tigrinya_phonetic": "፨ ḥzb: 'amén. 'o gweyta yqhre belelna,"
+      "tigrinya_phonetic": "፨ ḥzb: 'amén. 'o gweyta yqhre belelna,",
+      "spanish": "፨ Pueblo: Amén. Kyrie eleison (\"Señor, ten piedad\" en griego). Señor ten piedad de nosotros."
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -11391,7 +11723,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ \n፨ ሕዝብ፤ አሜን። ኪርያላይሶን አቤቱ ይቅር በለን።",
       "amharic_phonetic": "dīyaḳon: \n፨ ḥzb: 'amén. kīryalayson 'abétu yḳr belen.",
       "tigrinya_script": "ዲያቆን፤ \n፨ ሕዝብ፤ አሜን። ኦ ጐይታ ይቕረ በለልና፣",
-      "tigrinya_phonetic": "dīyaḳon: \n፨ ḥzb: 'amén. 'o gweyta yqhre belelna,"
+      "tigrinya_phonetic": "dīyaḳon: \n፨ ḥzb: 'amén. 'o gweyta yqhre belelna,",
+      "spanish": "Diácono o Sacerdote: Por los que sufren con paciencia rogamos, que Dios les conceda recibir su recompensa mediante la paciencia.\n፨ Pueblo: Amén. Kyrie eleison (\"Señor, ten piedad\" en griego). Señor ten piedad de nosotros."
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -11404,7 +11737,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ \n፨ ሕዝብ፤ አሜን። ኪርያላይሶን አቤቱ ይቅር በለን።",
       "amharic_phonetic": "dīyaḳon: \n፨ ḥzb: 'amén. kīryalayson 'abétu yḳr belen.",
       "tigrinya_script": "ዲያቆን፤ \n፨ ሕዝብ፤ አሜን። ኦ ጐይታ ይቕረ በለልና፣",
-      "tigrinya_phonetic": "dīyaḳon: \n፨ ḥzb: 'amén. 'o gweyta yqhre belelna,"
+      "tigrinya_phonetic": "dīyaḳon: \n፨ ḥzb: 'amén. 'o gweyta yqhre belelna,",
+      "spanish": "Diácono o Sacerdote: Por los laicos y fieles rogamos, que Dios les conceda una fe completa que puedan conservar en pureza.\n፨ Pueblo: Amén. Kyrie eleison (\"Señor, ten piedad\" en griego) Señor, ten piedad de nosotros"
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -11417,7 +11751,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤",
       "amharic_phonetic": "dīyaḳon:",
       "tigrinya_script": "ዲያቆን፤",
-      "tigrinya_phonetic": "dīyaḳon:"
+      "tigrinya_phonetic": "dīyaḳon:",
+      "spanish": "Diácono o Sacerdote: Por los catecúmenos rogamos, que Dios les conceda la buena porción y el lavamiento de la regeneración para la remisión de los pecados, y los selle con el sello de la Santísima Trinidad."
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -11430,7 +11765,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ አሜን። ኪርያላይሶን አቤቱ ይቅር በለን።",
       "amharic_phonetic": "፨ ḥzb: 'amén. kīryalayson 'abétu yḳr belen.",
       "tigrinya_script": "፨ ሕዝብ፤ አሜን። ኦ ጐይታ ይቕረ በለልና፣",
-      "tigrinya_phonetic": "፨ ḥzb: 'amén. 'o gweyta yqhre belelna,"
+      "tigrinya_phonetic": "፨ ḥzb: 'amén. 'o gweyta yqhre belelna,",
+      "spanish": "፨ Pueblo: Amén. Kyrie eleison (\"Señor, ten piedad\" en griego). Señor ten piedad de nosotros."
     },
     {
       "instruction": "All shall prostrate (bow down) together. \"Country\" can also be replaced with the head of state (emperor, president, etc)",
@@ -11443,7 +11779,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ \n፨ ሕዝብ፤ አሜን። ኪርያላይሶን አቤቱ ይቅር በለን።",
       "amharic_phonetic": "dīyaḳon: \n፨ ḥzb: 'amén. kīryalayson 'abétu yḳr belen.",
       "tigrinya_script": "ዲያቆን፤ \n፨ ሕዝብ፤ አሜን። ኦ ጐይታ ይቕረ በለልና፣",
-      "tigrinya_phonetic": "dīyaḳon: \n፨ ḥzb: 'amén. 'o gweyta yqhre belelna,"
+      "tigrinya_phonetic": "dīyaḳon: \n፨ ḥzb: 'amén. 'o gweyta yqhre belelna,",
+      "spanish": "Diácono o Sacerdote: Por nuestra patria, {{PAÍS}}, Amante de Dios, rogamos, que Dios le conceda mucha paz en medio de ella.\n፨ Pueblo: Amén. Kyrie eleison (\"Señor, ten piedad\" en griego). Señor ten piedad de nosotros."
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -11456,7 +11793,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ \n፨ ሕዝብ፤ አሜን። ኪርያላይሶን አቤቱ ይቅር በለን።",
       "amharic_phonetic": "dīyaḳon: \n፨ ḥzb: 'amén. kīryalayson 'abétu yḳr belen.",
       "tigrinya_script": "ዲያቆን፤ \n፨ ሕዝብ፤ አሜን። ኦ ጐይታ ይቕረ በለልና፣",
-      "tigrinya_phonetic": "dīyaḳon: \n፨ ḥzb: 'amén. 'o gweyta yqhre belelna,"
+      "tigrinya_phonetic": "dīyaḳon: \n፨ ḥzb: 'amén. 'o gweyta yqhre belelna,",
+      "spanish": "Diácono o Sacerdote: Por los gobernantes y autoridades rogamos, que Dios les conceda de su sabiduría y de su temor.\n፨ Pueblo: Amén. Kyrie eleison (\"Señor, ten piedad\" en griego). Señor ten piedad de nosotros."
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -11469,7 +11807,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤",
       "amharic_phonetic": "dīyaḳon:",
       "tigrinya_script": "ዲያቆን፤",
-      "tigrinya_phonetic": "dīyaḳon:"
+      "tigrinya_phonetic": "dīyaḳon:",
+      "spanish": "Diácono o Sacerdote: Por todo el mundo rogamos que Dios apresure Su propósito y ponga en la mente de todos y de cada uno el deseo de lo que es bueno y conveniente."
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -11482,7 +11821,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ አሜን። ኪርያላይሶን አቤቱ ይቅር በለን።",
       "amharic_phonetic": "፨ ḥzb: 'amén. kīryalayson 'abétu yḳr belen.",
       "tigrinya_script": "፨ ሕዝብ፤ አሜን። ኦ ጐይታ ይቕረ በለልና፣",
-      "tigrinya_phonetic": "፨ ḥzb: 'amén. 'o gweyta yqhre belelna,"
+      "tigrinya_phonetic": "፨ ḥzb: 'amén. 'o gweyta yqhre belelna,",
+      "spanish": "፨ Pueblo: Amén. Kyrie eleison (\"Señor, ten piedad\" en griego). Señor ten piedad de nosotros."
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -11495,7 +11835,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤",
       "amharic_phonetic": "dīyaḳon:",
       "tigrinya_script": "ዲያቆን፤",
-      "tigrinya_phonetic": "dīyaḳon:"
+      "tigrinya_phonetic": "dīyaḳon:",
+      "spanish": "Diácono o Sacerdote: Por los que viajan por mar y por tierra rogamos, que Dios los guíe con diestra misericordiosa y les permita entrar a su hogar en seguridad y paz."
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -11508,7 +11849,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ አሜን። ኪርያላይሶን አቤቱ ይቅር በለን።",
       "amharic_phonetic": "፨ ḥzb: 'amén. kīryalayson 'abétu yḳr belen.",
       "tigrinya_script": "፨ ሕዝብ፤ አሜን። ኦ ጐይታ ይቕረ በለልና፣",
-      "tigrinya_phonetic": "፨ ḥzb: 'amén. 'o gweyta yqhre belelna,"
+      "tigrinya_phonetic": "፨ ḥzb: 'amén. 'o gweyta yqhre belelna,",
+      "spanish": "፨ Pueblo: Amén. Kyrie eleison (\"Señor, ten piedad\" en griego). Señor ten piedad de nosotros."
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -11521,7 +11863,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ \n፨ ሕዝብ፤ አሜን። ኪርያላይሶን አቤቱ ይቅር በለን።",
       "amharic_phonetic": "dīyaḳon: \n፨ ḥzb: 'amén. kīryalayson 'abétu yḳr belen.",
       "tigrinya_script": "ዲያቆን፤ \n፨ ሕዝብ፤ አሜን። ኦ ጐይታ ይቕረ በለልና፣",
-      "tigrinya_phonetic": "dīyaḳon: \n፨ ḥzb: 'amén. 'o gweyta yqhre belelna,"
+      "tigrinya_phonetic": "dīyaḳon: \n፨ ḥzb: 'amén. 'o gweyta yqhre belelna,",
+      "spanish": "Diácono o Sacerdote: Por los hambrientos y sedientos rogamos, que Dios les conceda su alimento diario.\n፨ Pueblo: Amén. Kyrie eleison (\"Señor, ten piedad\" en griego). Señor ten piedad de nosotros."
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -11534,7 +11877,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ \n፨ ሕዝብ፤ አሜን። ኪርያላይሶን አቤቱ ይቅር በለን።",
       "amharic_phonetic": "dīyaḳon: \n፨ ḥzb: 'amén. kīryalayson 'abétu yḳr belen.",
       "tigrinya_script": "ዲያቆን፤ \n፨ ሕዝብ፤ አሜን። ኦ ጐይታ ይቕረ በለልና፣",
-      "tigrinya_phonetic": "dīyaḳon: \n፨ ḥzb: 'amén. 'o gweyta yqhre belelna,"
+      "tigrinya_phonetic": "dīyaḳon: \n፨ ḥzb: 'amén. 'o gweyta yqhre belelna,",
+      "spanish": "Diácono o Sacerdote: Por los tristes y afligidos rogamos, que Dios les dé perfecto consuelo.\n፨ Pueblo: Amén. Kyrie eleison (\"Señor, ten piedad\" en griego). Señor ten piedad de nosotros."
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -11547,7 +11891,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ \n፨ ሕዝብ፤ አሜን። ኪርያላይሶን አቤቱ ይቅር በለን።",
       "amharic_phonetic": "dīyaḳon: \n፨ ḥzb: 'amén. kīryalayson 'abétu yḳr belen.",
       "tigrinya_script": "ዲያቆን፤ \n፨ ሕዝብ፤ አሜን። ኦ ጐይታ ይቕረ በለልና፣",
-      "tigrinya_phonetic": "dīyaḳon: \n፨ ḥzb: 'amén. 'o gweyta yqhre belelna,"
+      "tigrinya_phonetic": "dīyaḳon: \n፨ ḥzb: 'amén. 'o gweyta yqhre belelna,",
+      "spanish": "Diácono o Sacerdote: Por los presos rogamos, que Dios los libere de sus ataduras.\n፨ Pueblo: Amén. Kyrie eleison (\"Señor, ten piedad\" en griego). Señor ten piedad de nosotros."
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -11560,7 +11905,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ \n፨ ሕዝብ፤ አሜን። ኪርያላይሶን አቤቱ ይቅር በለን።",
       "amharic_phonetic": "dīyaḳon: \n፨ ḥzb: 'amén. kīryalayson 'abétu yḳr belen.",
       "tigrinya_script": "ዲያቆን፤ \n፨ ሕዝብ፤ አሜን። ኦ ጐይታ ይቕረ በለልና፣",
-      "tigrinya_phonetic": "dīyaḳon: \n፨ ḥzb: 'amén. 'o gweyta yqhre belelna,"
+      "tigrinya_phonetic": "dīyaḳon: \n፨ ḥzb: 'amén. 'o gweyta yqhre belelna,",
+      "spanish": "Diácono o Sacerdote: Por los cautivos rogamos, que Dios los restablezca en paz en su patria.\n፨ Pueblo: Amén. Kyrie eleison (\"Señor, ten piedad\" en griego). Señor ten piedad de nosotros."
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -11573,7 +11919,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤",
       "amharic_phonetic": "dīyaḳon:",
       "tigrinya_script": "ዲያቆን፤",
-      "tigrinya_phonetic": "dīyaḳon:"
+      "tigrinya_phonetic": "dīyaḳon:",
+      "spanish": "Diácono o Sacerdote: Por los que fueron refugiados rogamos, que Dios les conceda paciencia y buena instrucción, y les dé completa recompensa por su trabajo."
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -11586,7 +11933,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ አሜን። ኪርያላይሶን አቤቱ ይቅር በለን።",
       "amharic_phonetic": "፨ ḥzb: 'amén. kīryalayson 'abétu yḳr belen.",
       "tigrinya_script": "፨ ሕዝብ፤ አሜን። ኦ ጐይታ ይቕረ በለልና፣",
-      "tigrinya_phonetic": "፨ ḥzb: 'amén. 'o gweyta yqhre belelna,"
+      "tigrinya_phonetic": "፨ ḥzb: 'amén. 'o gweyta yqhre belelna,",
+      "spanish": "፨ Pueblo: Amén. Kyrie eleison (\"Señor, ten piedad\" en griego). Señor ten piedad de nosotros."
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -11599,7 +11947,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤",
       "amharic_phonetic": "dīyaḳon:",
       "tigrinya_script": "ዲያቆን፤",
-      "tigrinya_phonetic": "dīyaḳon:"
+      "tigrinya_phonetic": "dīyaḳon:",
+      "spanish": "Diácono o Sacerdote: Por los enfermos y los dolencias rogamos, que Dios los sane prontamente y les envíe misericordia y compasión."
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -11612,7 +11961,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ አሜን። ኪርያላይሶን አቤቱ ይቅር በለን።",
       "amharic_phonetic": "፨ ḥzb: 'amén. kīryalayson 'abétu yḳr belen.",
       "tigrinya_script": "፨ ሕዝብ፤ አሜን። ኦ ጐይታ ይቕረ በለልና፣",
-      "tigrinya_phonetic": "፨ ḥzb: 'amén. 'o gweyta yqhre belelna,"
+      "tigrinya_phonetic": "፨ ḥzb: 'amén. 'o gweyta yqhre belelna,",
+      "spanish": "፨ Pueblo: Amén. Kyrie eleison (\"Señor, ten piedad\" en griego). Señor ten piedad de nosotros."
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -11625,7 +11975,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ \n፨ ሕዝብ፤ አሜን። ኪርያላይሶን አቤቱ ይቅር በለን።",
       "amharic_phonetic": "dīyaḳon: \n፨ ḥzb: 'amén. kīryalayson 'abétu yḳr belen.",
       "tigrinya_script": "ዲያቆን፤ \n፨ ሕዝብ፤ አሜን። ኦ ጐይታ ይቕረ በለልና፣",
-      "tigrinya_phonetic": "dīyaḳon: \n፨ ḥzb: 'amén. 'o gweyta yqhre belelna,"
+      "tigrinya_phonetic": "dīyaḳon: \n፨ ḥzb: 'amén. 'o gweyta yqhre belelna,",
+      "spanish": "Diácono o Sacerdote: Por los que han dormido en esta santa Iglesia, rogamos que Dios les conceda un lugar de descanso.\n፨ Pueblo: Amén. Kyrie eleison (\"Señor, ten piedad\" en griego). Señor ten piedad de nosotros."
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -11638,7 +11989,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤",
       "amharic_phonetic": "dīyaḳon:",
       "tigrinya_script": "ዲያቆን፤",
-      "tigrinya_phonetic": "dīyaḳon:"
+      "tigrinya_phonetic": "dīyaḳon:",
+      "spanish": "Diácono o Sacerdote: Por los que han pecado, nuestros padres y nuestros hermanos, rogamos que Dios no guarde ira contra ellos, sino que les conceda descanso y alivio de su ira."
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -11651,7 +12003,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ አሜን። ኪርያላይሶን አቤቱ ይቅር በለን።",
       "amharic_phonetic": "፨ ḥzb: 'amén. kīryalayson 'abétu yḳr belen.",
       "tigrinya_script": "፨ ሕዝብ፤ አሜን። ኦ ጐይታ ይቕረ በለልና፣",
-      "tigrinya_phonetic": "፨ ḥzb: 'amén. 'o gweyta yqhre belelna,"
+      "tigrinya_phonetic": "፨ ḥzb: 'amén. 'o gweyta yqhre belelna,",
+      "spanish": "፨ Pueblo: Amén. Kyrie eleison (\"Señor, ten piedad\" en griego). Señor ten piedad de nosotros."
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -11664,7 +12017,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ \n፨ ሕዝብ፤ አሜን። ኪርያላይሶን አቤቱ ይቅር በለን።",
       "amharic_phonetic": "dīyaḳon: \n፨ ḥzb: 'amén. kīryalayson 'abétu yḳr belen.",
       "tigrinya_script": "ዲያቆን፤ \n፨ ሕዝብ፤ አሜን። ኦ ጐይታ ይቕረ በለልና፣",
-      "tigrinya_phonetic": "dīyaḳon: \n፨ ḥzb: 'amén. 'o gweyta yqhre belelna,"
+      "tigrinya_phonetic": "dīyaḳon: \n፨ ḥzb: 'amén. 'o gweyta yqhre belelna,",
+      "spanish": "Diácono o Sacerdote: Por la lluvia rogamos, para que Dios envíe lluvia sobre el lugar que la necesita.\n፨ Pueblo: Amén. Kyrie eleison (\"Señor, ten piedad\" en griego). Señor ten piedad de nosotros."
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -11677,7 +12031,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ \n፨ ሕዝብ፤ አሜን። ኪርያላይሶን አቤቱ ይቅር በለን።",
       "amharic_phonetic": "dīyaḳon: \n፨ ḥzb: 'amén. kīryalayson 'abétu yḳr belen.",
       "tigrinya_script": "ዲያቆን፤ \n፨ ሕዝብ፤ አሜን። ኦ ጐይታ ይቕረ በለልና፣",
-      "tigrinya_phonetic": "dīyaḳon: \n፨ ḥzb: 'amén. 'o gweyta yqhre belelna,"
+      "tigrinya_phonetic": "dīyaḳon: \n፨ ḥzb: 'amén. 'o gweyta yqhre belelna,",
+      "spanish": "Diácono o Sacerdote: Por las aguas de los ríos rogamos, que Dios las llene en su debida medida y límite.\n፨ Pueblo: Amén. Kyrie eleison (\"Señor, ten piedad\" en griego). Señor ten piedad de nosotros."
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -11690,7 +12045,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ \n፨ ሕዝብ፤ አሜን። ኪርያላይሶን አቤቱ ይቅር በለን።",
       "amharic_phonetic": "dīyaḳon: \n፨ ḥzb: 'amén. kīryalayson 'abétu yḳr belen.",
       "tigrinya_script": "ዲያቆን፤ \n፨ ሕዝብ፤ አሜን። ኦ ጐይታ ይቕረ በለልና፣",
-      "tigrinya_phonetic": "dīyaḳon: \n፨ ḥzb: 'amén. 'o gweyta yqhre belelna,"
+      "tigrinya_phonetic": "dīyaḳon: \n፨ ḥzb: 'amén. 'o gweyta yqhre belelna,",
+      "spanish": "Diácono o Sacerdote: Por los frutos de la tierra rogamos, que Dios conceda a la tierra sus frutos para la siembra y para la cosecha.\n፨ Pueblo: Amén. Kyrie eleison (\"Señor, ten piedad\" en griego). Señor ten piedad de nosotros."
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -11703,7 +12059,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ በጸሎት የምንለምንና የምንማልድ ሁላችንንም በሰላም በመንፈስ ይጠብቀን፣\n፨ ሕዝብ፤ አሜን።",
       "amharic_phonetic": "dīyaḳon: betselot yemnlemnna yemnmald hulachnnm beselam bemenfes yṭebḳen,\n፨ ḥzb: 'amén.",
       "tigrinya_script": "ዲያቆን፤ ፨ ሕዝብ፤ አሜን።",
-      "tigrinya_phonetic": "dīyaḳon: ፨ ḥzb: 'amén."
+      "tigrinya_phonetic": "dīyaḳon: ፨ ḥzb: 'amén.",
+      "spanish": "Diácono o Sacerdote: Y a todos los que pedimos y suplicamos en oración, que nos cubra con el Espíritu de paz,\n፨ Pueblo: Amén."
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -11716,7 +12073,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ ፍቅርንም ይስጠን ዓይነ ልቡናችንንም ያብራልን፣\n፨ ሕዝብ፤ አሜን።",
       "amharic_phonetic": "dīyaḳon: fḳrnm ysṭen 'ayne lbunachnnm yabraln,\n፨ ḥzb: 'amén.",
       "tigrinya_script": "ዲያቆን፤ ፨ ሕዝብ፤ አሜን።",
-      "tigrinya_phonetic": "dīyaḳon: ፨ ḥzb: 'amén."
+      "tigrinya_phonetic": "dīyaḳon: ፨ ḥzb: 'amén.",
+      "spanish": "Diácono o Sacerdote: y danos gracia, e ilumina los ojos de nuestro corazón.\n፨ Pueblo: Amén."
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -11729,7 +12087,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ ፈቃዱም ሆኖ ጸሎታችንን ይቀበል ዘንድ ቀርበን እግዚአብሔርን እንለምነው፤\n፨ ሕዝብ፤ አሜን።",
       "amharic_phonetic": "dīyaḳon: feḳadum hono tselotachnn yḳebel zend ḳerben 'igzī'abḥérn 'inlemnew:\n፨ ḥzb: 'amén.",
       "tigrinya_script": "ዲያቆን፤ ፨ ሕዝብ፤ አሜን።",
-      "tigrinya_phonetic": "dīyaḳon: ፨ ḥzb: 'amén."
+      "tigrinya_phonetic": "dīyaḳon: ፨ ḥzb: 'amén.",
+      "spanish": "Diácono o Sacerdote: Acerquémonos y pidamos a Dios que acepte nuestras oraciones según\na Su voluntad.\n፨ Pueblo: Amén."
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -11742,7 +12101,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ አውቀን በሀብቱ እናድግ ዘንድ በእርሱም ስም እንመካ ዘንድ በነቢያት በሐዋርያትም መሠረት ላይ እንታነጽ ዘንድ እንግዲህ በመንፈስ ቅዱስ እንነሣ ቀርበን አምላካችን እግዚአብሔርን እንለምነው ወዶ ጸሎታችንን ይቀበል ዘንድ።\n፨ ሕዝብ፤ አሜን።",
       "amharic_phonetic": "dīyaḳon: 'awḳen behabtu 'inadg zend be'irsum sm 'inmeka zend benebīyat beḥawaryatm meseret lay 'intanets zend 'ingdīh bemenfes ḳdus 'innesa ḳerben 'amlakachn 'igzī'abḥérn 'inlemnew wedo tselotachnn yḳebel zend.\n፨ ḥzb: 'amén.",
       "tigrinya_script": "ዲያቆን፤ ፨ ሕዝብ፤ አሜን።",
-      "tigrinya_phonetic": "dīyaḳon: ፨ ḥzb: 'amén."
+      "tigrinya_phonetic": "dīyaḳon: ፨ ḥzb: 'amén.",
+      "spanish": "Diácono o Sacerdote: Levantemos, pues, en el Espíritu Santo, creciendo en su gracia, con inteligencia, gloriándonos en su nombre y edificados sobre el fundamento de los profetas y los apóstoles.\n፨ Pueblo: Amén."
     },
     {
       "instruction": "",
@@ -11755,7 +12115,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ ቀርበን አምላካችን እግዚአብሔርን እንለምነው ወዶ ጸሎታችንን ይቀበል ዘንድ። \n፨ ሕዝብ፤ አሜን።",
       "amharic_phonetic": "dīyaḳon: ḳerben 'amlakachn 'igzī'abḥérn 'inlemnew wedo tselotachnn yḳebel zend. \n፨ ḥzb: 'amén.",
       "tigrinya_script": "ዲያቆን፤ ፨ ሕዝብ፤ አሜን።",
-      "tigrinya_phonetic": "dīyaḳon: ፨ ḥzb: 'amén."
+      "tigrinya_phonetic": "dīyaḳon: ፨ ḥzb: 'amén.",
+      "spanish": "Diácono o Sacerdote: Acerquémonos y pidamos al Señor nuestro Dios que acepte nuestras oraciones según Su voluntad.\n፨ ፨ Pueblo: Amén.\n***TODOS AHORA SE LEVANTARÁN***"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -11768,7 +12129,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Te ruego y te ruego, Señor Dios mío, como te agradó la ofrenda de Abel tu amado,"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -11781,7 +12143,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: y el sacrificio de Enoc, de Noé y de Abraham, y el incienso de Aarón, de Samuel y de Zacarías:"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -11794,7 +12157,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Acepta de la misma manera de mí este incienso puro como olor fragante para remisión de mis pecados, y perdona los pecados de todo tu pueblo:"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -11807,7 +12171,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: porque bendito eres, y a ti te conviene la gloria con tu Hijo unigénito y el Espíritu Santo, Dador de vida, ahora y siempre y por los siglos de los siglos. Amén."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -11820,7 +12185,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Oh Dios Padre, Dios Hijo, Dios Espíritu Santo, acepta este incienso puro, esta luz, este sacrificio y esta oración (3x)."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -11833,7 +12199,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Oh Nuestra Señora María, Madre de Dios, que ascienda este incienso, esta nuestra oración, esta nuestra luz y este nuestro sacrificio."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -11846,7 +12213,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Oh Señor, acepta de mí este incienso puro y esta ofrenda para la remisión de mis pecados y transgresiones y las transgresiones de tu pueblo. Bendito sea Dios, Padre Todopoderoso."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -11859,7 +12227,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Y bendito sea el Hijo unigénito, nuestro Señor Jesucristo, que nació de Nuestra Señora María, Virgen Santísima, de nuestra salvación."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -11872,7 +12241,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Y bendito sea el Espíritu Santo, fortalecedor de todos nosotros. La gloria y la honra son propias de la Santísima Trinidad, del Padre y del Hijo y del Espíritu Santo, ahora y siempre y por los siglos de los siglos. Amén."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -11885,7 +12255,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Te ofreceré incienso con carneros (Salmo 65:15). Todos los vestidos huelen a mirra, a áloe y a casia (Salmos 44:9). Que mi oración sea presentada ante ti como incienso (Salmo 140:2)."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -11898,7 +12269,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Nuevamente te ofrezco este incienso puro para la remisión de mis pecados y transgresiones de tu pueblo."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -11911,7 +12283,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Porque bendito y lleno de gloria es Tu Santo Nombre, Padre e Hijo y Espíritu Santo, ahora y siempre y por los siglos de los siglos. Amén."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -11924,7 +12297,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Alabanzas de los ángeles cantando en las alturas: Aleluya al Padre, Aleluya al Hijo, Aleluya al Espíritu Santo."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -11937,7 +12311,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Gloria al Padre, gloria al Hijo, gloria al Espíritu Santo."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -11950,7 +12325,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Adoremos al Padre, adoremos al Hijo y adoremos al Espíritu Santo, uno en tres y tres en uno."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -11963,7 +12339,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "፨ ORACIÓN DEL INCIENSO ፨\nSacerdote: Oh Dios eterno, primero y último, que no tienes principio ni fin, que eres grande en tu construcción y poderoso en tu obra,"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -11976,7 +12353,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: y sabio en Tu consejo, y fuerte en Tu poder, Quien existe en todos y continuará con todos:"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -11989,7 +12367,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Quédate con nosotros, Señor, en esta hora, y ponte en medio de nosotros, y purifica nuestros corazones, y santifica nuestra alma, nuestro cuerpo y nuestro espíritu,"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -12002,7 +12381,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: y lávanos de todos los pecados que hayamos cometido consciente o inconscientemente."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -12015,7 +12395,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Concédenos ofrecer delante de ti un sacrificio razonable y un sacrificio de bendición, que harás para entrar detrás del velo, el lugar santísimo, tu morada eterna."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -12028,7 +12409,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Te rogamos y te suplicamos, oh Señor, que te acuerdes de la única y santa Iglesia apostólica, que existe de un extremo al otro del mundo."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -12041,7 +12423,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ \n፨ ሕዝብ፤ አሜን። ኪርያላይሶን አቤቱ ይቅር በለን።",
       "amharic_phonetic": "dīyaḳon: \n፨ ḥzb: 'amén. kīryalayson 'abétu yḳr belen.",
       "tigrinya_script": "ዲያቆን፤ \n፨ ሕዝብ፤ አሜን። ኦ ጐይታ ይቕረ በለልና፣",
-      "tigrinya_phonetic": "dīyaḳon: \n፨ ḥzb: 'amén. 'o gweyta yqhre belelna,"
+      "tigrinya_phonetic": "dīyaḳon: \n፨ ḥzb: 'amén. 'o gweyta yqhre belelna,",
+      "spanish": "Diácono: Ora por la paz de la Iglesia, una, santa, apostólica, ortodoxa en el Señor.\n፨ Pueblo: Amén. Kyrie eleison (\"Señor, ten piedad\" en griego). Señor ten piedad de nosotros."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -12054,7 +12437,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Diácono o Sacerdote: Por nuestro Patriarca {{PATRIARCH NAME}} y el bendito Obispo {{BISHOP NAME}} suplicamos, que Dios les conceda largos días para estar sobre nosotros,"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -12067,7 +12451,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: recuerda, oh Señor, a los obispos, sacerdotes y diáconos ortodoxos."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -12080,7 +12465,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Oh Señor, haz que descanse el alma de nuestro padre {{NOMBRE FALLIDO}}, y hazle habitar en el reino de los cielos con los justos: ponnos en su lugar un buen pastor."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -12093,7 +12479,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: para que no seamos rebaño sin pastor, y para que el lobo rapaz no nos haga presa, y para que los pueblos extraños que nos son contrarios no nos reprochen."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -12106,7 +12493,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤",
       "amharic_phonetic": "dīyaḳon:",
       "tigrinya_script": "ዲያቆን፤",
-      "tigrinya_phonetic": "dīyaḳon:"
+      "tigrinya_phonetic": "dīyaḳon:",
+      "spanish": "Diácono: Ore por nuestro Patriarca {{PATRIARCH NAME}} y por nuestro bendito Obispo {{BISHOP NAME}}, y por todos los obispos, sacerdotes, diáconos y todos los cristianos ortodoxos."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -12119,7 +12507,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Acuérdate, Señor, de nuestros padres, hermanos y hermanas que durmieron y entraron en reposo con la recta fe."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -12132,7 +12521,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Acuérdate, Señor, de nuestra congregación, bendícela y haz que no se separe ni se aleje, para cumplir Tu santa y bendita Voluntad;"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -12145,7 +12535,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: haz de ellos una casa de oración, una casa de pureza y una casa de bendición. Concédelo, Señor, a nosotros tus siervos y a los que vendrán después de nosotros, concédelo hasta los días eternos."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -12158,7 +12549,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤",
       "amharic_phonetic": "dīyaḳon:",
       "tigrinya_script": "ዲያቆን፤",
-      "tigrinya_phonetic": "dīyaḳon:"
+      "tigrinya_phonetic": "dīyaḳon:",
+      "spanish": "Diácono: Ore por nuestra congregación y por la conservación de todos nosotros."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -12171,7 +12563,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Levántate, Señor Dios mío, y sean dispersos tus enemigos, y huyan todos los que tu santo y bendito nombre delante de tu faz,"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -12184,7 +12577,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: pero que Tu pueblo sea bendecido con bendiciones, mil, miles y diez mil veces diez mil, haciendo Tu Voluntad en todo tiempo,"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -12197,7 +12591,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: por el Hijo unigénito, por quien a ti con él y con el Espíritu Santo sea la gloria y el dominio, ahora y siempre y por los siglos de los siglos. Amén."
     },
     {
       "instruction": "",
@@ -12210,7 +12605,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ ለጸሎት ተነሱ\n፨ ሕዝብ፤ አቤቱ ይቅር በለን",
       "amharic_phonetic": "dīyaḳon: letselot tenesu\n፨ ḥzb: 'abétu yḳr belen",
       "tigrinya_script": "ዲያቆን፤ ንጸሎት ተንሥኡ፣\n፨ ሕዝብ፤ ኦ ጐይታ ይቕረ በለልና፣",
-      "tigrinya_phonetic": "dīyaḳon: ntselot tens'u,\n፨ ḥzb: 'o gweyta yqhre belelna,"
+      "tigrinya_phonetic": "dīyaḳon: ntselot tens'u,\n፨ ḥzb: 'o gweyta yqhre belelna,",
+      "spanish": "Diácono: Levántate para orar.\n፨ Pueblo: Oh Señor, ten piedad de nosotros."
     },
     {
       "instruction": "",
@@ -12223,7 +12619,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ሰላም ለሁላችሁ ይሁን\n፨ ሕዝብ፤ ከመንፈስህ ጋራ",
       "amharic_phonetic": "kahn: selam lehulachhu yhun\n፨ ḥzb: kemenfesh gara",
       "tigrinya_script": "ካህን፤ ሰላም ንዅልኹም ይኹን፣\n፨ ሕዝብ፤ ምስ መንፈስካ፣",
-      "tigrinya_phonetic": "kahn: selam nዅlkhum ykhun,\n፨ ḥzb: ms menfeska,"
+      "tigrinya_phonetic": "kahn: selam nዅlkhum ykhun,\n፨ ḥzb: ms menfeska,",
+      "spanish": "Sacerdote: La paz sea con todos vosotros.\n፨ Pueblo: y con Tu Espíritu."
     },
     {
       "instruction": "For Mondays through Saturdays",
@@ -12236,7 +12633,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Tú eres el incensario de oro."
     },
     {
       "instruction": "For Sundays, His Conception, Nativity, Epiphany, Transfiguration, Hosanna, Good Friday, Pascha, Ascension, Pentecost",
@@ -12249,7 +12647,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ እንስገድ (3 ጊዜ)፣\n፨ ሕዝብ፤ ሦስት ሲሆኑ አንድ ለሚሆኑ ለአብና ለወልድ ለመንፈስ ቅዱስም (3 ጊዜ)፤",
       "amharic_phonetic": "kahn: 'insged (3 gīzé),\n፨ ḥzb: sost sīhonu 'and lemīhonu le'abna leweld lemenfes ḳdusm (3 gīzé):",
       "tigrinya_script": "ካህን፤ ንስግድ (3 ግዜ)፣\n፨ ሕዝብ፤ ሠለስተ ከለዉ ሓደ ንዝኾኑንኣብ ንወልድን ንመንፈስ ቅዱስን (3 ጊዜ)፤",
-      "tigrinya_phonetic": "kahn: nsgd (3 gzé),\n፨ ḥzb: seleste kelewu ḥade nzkhonun'ab nweldn nmenfes ḳdusn (3 gīzé):"
+      "tigrinya_phonetic": "kahn: nsgd (3 gzé),\n፨ ḥzb: seleste kelewu ḥade nzkhonun'ab nweldn nmenfes ḳdusn (3 gīzé):",
+      "spanish": "Sacerdote: Adoremos (3x)\n፨ Pueblo: El Padre y el Hijo y el Espíritu Santo, que son tres en uno (3x)."
     },
     {
       "instruction": "For Sundays, His Conception, Nativity, Epiphany, Transfiguration, Hosanna, Good Friday, Pascha, Ascension, Pentecost",
@@ -12262,7 +12661,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ሰላምታ ይገባሻል\n፨ ሕዝብ፤ የመለኮት ማደሪያ ቅድስት ቤተ ክርስቲያን",
       "amharic_phonetic": "kahn: selamta ygebaሻl\n፨ ḥzb: yemelekot maderīya ḳdst béte krstīyan",
       "tigrinya_script": "ካህን፤ ሰላም ንኣኺ ይኹን\n፨ ሕዝብ፤ ማኅደር መለኮት ዝኾንኪ ቅድስቲ ቤተ ክርስቲያን",
-      "tigrinya_phonetic": "kahn: selam n'akhī ykhun\n፨ ḥzb: mahder melekot zkhonkī ḳdstī béte krstīyan"
+      "tigrinya_phonetic": "kahn: selam n'akhī ykhun\n፨ ḥzb: mahder melekot zkhonkī ḳdstī béte krstīyan",
+      "spanish": "Sacerdote: La paz sea con vosotros. \n፨ Pueblo: Santa Iglesia, morada de la Divinidad."
     },
     {
       "instruction": "For Sundays, His Conception, Nativity, Epiphany, Transfiguration, Hosanna, Good Friday, Pascha, Ascension, Pentecost",
@@ -12275,7 +12675,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ለምኝልን\n፨ ሕዝብ፤ አምላክን የወለድሽ ወላዲተ አምላክ\nካህን፤ አንቺ ነሽ",
       "amharic_phonetic": "kahn: lemñln\n፨ ḥzb: 'amlakn yeweledሽ weladīte 'amlak\nkahn: 'anchī neሽ",
       "tigrinya_script": "ካህን፤ ለምንልና\n፨ ሕዝብ፤ ድንግል ማርያም ወላዲተ ኣምላክ።\nካህን፤ አንቲ ውእቱ።",
-      "tigrinya_phonetic": "kahn: lemnlna\n፨ ḥzb: dngl maryam weladīte 'amlak.\nkahn: 'antī w'itu."
+      "tigrinya_phonetic": "kahn: lemnlna\n፨ ḥzb: dngl maryam weladīte 'amlak.\nkahn: 'antī w'itu.",
+      "spanish": "Sacerdote: Pregunta por nosotros:\n፨ Pueblo: Virgen María, Portadora de Dios.\nSacerdote: Eres:"
     },
     {
       "instruction": "For Sundays, His Conception, Nativity, Epiphany, Transfiguration, Hosanna, Good Friday, Pascha, Ascension, Pentecost",
@@ -12288,7 +12689,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ ብሩክ ከቤተ መቅደስ የተቀበላት የእሳትን ፍህም የተሸከምሽ የወርቅ ጥና አንቺ ነሽ ኃጢአትን የሚያስተሠርይ በደልንም የሚያጠፋ",
       "amharic_phonetic": "፨ ḥzb: bruk kebéte meḳdes yeteḳebelat ye'isatn fhm yeteሸkemሽ yewerḳ ṭna 'anchī neሽ haṭī'atn yemīyastesery bedelnm yemīyaṭefa",
       "tigrinya_script": "፨ ሕዝብ፤ ኃጢኣት ዘሥተስሪ፡ ጌጋ ዚድምስስ፡ ቡሩኽ ኣሮን ካብ ቤት መቕደስ ዝወሰዳ ጓህሪ ሓዊ ዝፆረት፡ ንስኺ ኢኺ።",
-      "tigrinya_phonetic": "፨ ḥzb: haṭī'at zestesrī géga zīdmss burukh 'aron kab bét meqhdes zweseda gwahrī ḥawī ztsoret nskhī 'īkhī."
+      "tigrinya_phonetic": "፨ ḥzb: haṭī'at zestesrī géga zīdmss burukh 'aron kab bét meqhdes zweseda gwahrī ḥawī ztsoret nskhī 'īkhī.",
+      "spanish": "፨ Pueblo: el incensario de oro que llevaba el carbón de fuego que el bendito (Aarón) tomó del santuario, y que perdona el pecado y borra el error,"
     },
     {
       "instruction": "For Sundays, His Conception, Nativity, Epiphany, Transfiguration, Hosanna, Good Friday, Pascha, Ascension, Pentecost",
@@ -12301,7 +12703,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ ይኸውም ካንቺ ሰው የሆነ የእግዚአብሔር ቃል ነው።",
       "amharic_phonetic": "፨ ḥzb: ykhewm kanchī sew yehone ye'igzī'abḥér ḳal new.",
       "tigrinya_script": "፨ ሕዝብ፤ እዚእውን ካባኺ ዝተወልደ። ርእሱ ሥሙር ዕጣንን መሥዋዕትን ገይሩ ነቡኡ ዘዕረገ፡ ናይ እግዚኣብሔር ቃል እዩ።",
-      "tigrinya_phonetic": "፨ ḥzb: 'izī'iwn kabakhī ztewelde. r'isu smur 'iṭann meswa'itn geyru nebu'u ze'irege nay 'igzī'abḥér ḳal 'iyu."
+      "tigrinya_phonetic": "፨ ḥzb: 'izī'iwn kabakhī ztewelde. r'isu smur 'iṭann meswa'itn geyru nebu'u ze'irege nay 'igzī'abḥér ḳal 'iyu.",
+      "spanish": "፨ Pueblo: quién es el Verbo de Dios que de vosotros se hizo hombre, que se ofreció a su Padre para incienso y sacrificio acepto."
     },
     {
       "instruction": "For Sundays, His Conception, Nativity, Epiphany, Transfiguration, Hosanna, Good Friday, Pascha, Ascension, Pentecost",
@@ -12314,7 +12717,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ ክርስቶስ ሆይ ቸር ከሚሆን ከሰማያዊ አባትህ ጋራ መድኃኒት ከሚሆን ከመንፈስ ቅዱስም ጋራ እንሰግድልሃለን መጥተህ አድነኸናልና",
       "amharic_phonetic": "፨ ḥzb: krstos hoy cher kemīhon kesemayawī 'abath gara medhanīt kemīhon kemenfes ḳdusm gara 'insegdlhalen meṭteh 'adnekhenalna",
       "tigrinya_script": "፨ ሕዝብ፤ ኦ ክርስቶስ፡ መጺእካ ስለ ዘድኃንካና፡ ምስ ኄር ሰማያዊ ኣቦኻን ምስ መሕወዪ መንፈስ ቅዱስን ንሰግደልካ ኣሎና።",
-      "tigrinya_phonetic": "፨ ḥzb: 'o krstos metsī'ika sle zedhankana ms hér semayawī 'abokhan ms meḥweyī menfes ḳdusn nsegdelka 'alona."
+      "tigrinya_phonetic": "፨ ḥzb: 'o krstos metsī'ika sle zedhankana ms hér semayawī 'abokhan ms meḥweyī menfes ḳdusn nsegdelka 'alona.",
+      "spanish": "፨ Pueblo: Te adoramos Cristo, con Tu buen Padre celestial y el Espíritu Santo, el Dador de Vida, porque Tú viniste y nos salvaste."
     },
     {
       "instruction": "Inaudible Prayer. For when Bishop/Patriarch is present",
@@ -12327,7 +12731,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Recuerde a nuestro padre {{OBISPO(S) ASISTENTE}}. Guárdalo por muchos años y largos días en justicia y paz."
     },
     {
       "instruction": "Inaudible Prayer. For when Bishop/Patriarch is present",
@@ -12340,7 +12745,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Somete a sus enemigos bajo sus pies para que ore por nosotros a Dios para que nos perdone nuestros pecados."
     },
     {
       "instruction": "Inaudible Prayer. For when Bishop/Patriarch is present",
@@ -12353,7 +12759,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Te ruego, padre sacerdote mío, que me recuerdes en tu santa oración."
     },
     {
       "instruction": "Inaudible Prayer. For when Bishop/Patriarch is present",
@@ -12366,7 +12773,8 @@ const kidaseData = {
       "amharic_script": "ሊቀ ጳጳስ፤",
       "amharic_phonetic": "līḳe p̣ap̣as:",
       "tigrinya_script": "ሊቀ ጳጳስ፤",
-      "tigrinya_phonetic": "līḳe p̣ap̣as:"
+      "tigrinya_phonetic": "līḳe p̣ap̣as:",
+      "spanish": "Obispo/Patriarca: Que Dios acepte tu sacrificio, huela el olor de tu incienso y guarde tu sacerdocio en justicia,"
     },
     {
       "instruction": "Inaudible Prayer. For when Bishop/Patriarch is present",
@@ -12379,7 +12787,8 @@ const kidaseData = {
       "amharic_script": "ሊቀ ጳጳስ፤",
       "amharic_phonetic": "līḳe p̣ap̣as:",
       "tigrinya_script": "ሊቀ ጳጳስ፤",
-      "tigrinya_phonetic": "līḳe p̣ap̣as:"
+      "tigrinya_phonetic": "līḳe p̣ap̣as:",
+      "spanish": "Obispo/Patriarca: al aceptar el sacrificio de Melquisedec y el incienso de Aarón y Zacarías que estaban en la iglesia del Primogénito."
     },
     {
       "instruction": "Inaudible Prayer. For when Bishop/Patriarch is present",
@@ -12392,7 +12801,8 @@ const kidaseData = {
       "amharic_script": "ሊቀ ጳጳስ፤",
       "amharic_phonetic": "līḳe p̣ap̣as:",
       "tigrinya_script": "ሊቀ ጳጳስ፤",
-      "tigrinya_phonetic": "līḳe p̣ap̣as:"
+      "tigrinya_phonetic": "līḳe p̣ap̣as:",
+      "spanish": "Obispo/Patriarca: Que la bendición de Pablo descanse sobre ti [el diácono]. Que Dios los bendiga [a todos]."
     },
     {
       "instruction": "",
@@ -12405,7 +12815,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ለሥላሴ ክብርና ምስጋና ይገባል\n፨ ሕዝብ፤ ለአብ ለወልድና ለመንፈስ ቅዱስም ክብርና ምስጋና ይገባል",
       "amharic_phonetic": "kahn: leslasé kbrna msgana ygebal\n፨ ḥzb: le'ab leweldna lemenfes ḳdusm kbrna msgana ygebal",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: La gloria y el honor convienen siempre a la Santísima Trinidad.\n፨ Pueblo: Conformidad al Padre y al Hijo y al Espíritu Santo."
     },
     {
       "instruction": "",
@@ -12418,7 +12829,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ልዩ ሦስት ለሚሆን ለአብና ለወልድ ለመንፈስ ቅዱስም ሁልጊዜ ክብር ምስጋና ይገባቸዋል፤ ዛሬም ዘወትርም ለዘላለሙ።",
       "amharic_phonetic": "kahn: lyu sost lemīhon le'abna leweld lemenfes ḳdusm hulgīzé kbr msgana ygebachewal: zarém zewetrm lezelalemu.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: El Padre y el Hijo y el Espíritu Santo, ahora y siempre y por los siglos de los siglos. Amén."
     },
     {
       "instruction": "",
@@ -12431,7 +12843,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ለሥላሴ ክብርና ምስጋና ይገባል\n፨ ሕዝብ፤ ለአብ ለወልድና ለመንፈስ ቅዱስም ክብርና ምስጋና ይገባል",
       "amharic_phonetic": "kahn: leslasé kbrna msgana ygebal\n፨ ḥzb: le'ab leweldna lemenfes ḳdusm kbrna msgana ygebal",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: La gloria y el honor convienen siempre a la Santísima Trinidad.\n፨ Pueblo: Conformidad al Padre y al Hijo y al Espíritu Santo."
     },
     {
       "instruction": "",
@@ -12444,7 +12857,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ልዩ ሦስት ለሚሆን ለአብና ለወልድ ለመንፈስ ቅዱስም ሁልጊዜ ክብር ምስጋና ይገባቸዋል፤ ዛሬም ዘወትርም ለዘላለሙ።",
       "amharic_phonetic": "kahn: lyu sost lemīhon le'abna leweld lemenfes ḳdusm hulgīzé kbr msgana ygebachewal: zarém zewetrm lezelalemu.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: El Padre y el Hijo y el Espíritu Santo, ahora y siempre y por los siglos de los siglos. Amén."
     },
     {
       "instruction": "",
@@ -12457,7 +12871,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ለሥላሴ ክብርና ምስጋና ይገባል\n፨ ሕዝብ፤ ለአብ ለወልድና ለመንፈስ ቅዱስም ክብርና ምስጋና ይገባል",
       "amharic_phonetic": "kahn: leslasé kbrna msgana ygebal\n፨ ḥzb: le'ab leweldna lemenfes ḳdusm kbrna msgana ygebal",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: La gloria y el honor convienen siempre a la Santísima Trinidad.\n፨ Pueblo: Conformidad al Padre y al Hijo y al Espíritu Santo."
     },
     {
       "instruction": "",
@@ -12470,7 +12885,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ልዩ ሦስት ለሚሆን ለአብና ለወልድ ለመንፈስ ቅዱስም ሁልጊዜ ክብር ምስጋና ይገባቸዋል፤ ዛሬም ዘወትርም ለዘላለሙ።",
       "amharic_phonetic": "kahn: lyu sost lemīhon le'abna leweld lemenfes ḳdusm hulgīzé kbr msgana ygebachewal: zarém zewetrm lezelalemu.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: El Padre y el Hijo y el Espíritu Santo, ahora y siempre y por los siglos de los siglos. Amén."
     },
     {
       "instruction": "",
@@ -12483,7 +12899,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ለሥላሴ ክብርና ምስጋና ይገባል\n፨ ሕዝብ፤ ለአብ ለወልድና ለመንፈስ ቅዱስም ክብርና ምስጋና ይገባል",
       "amharic_phonetic": "kahn: leslasé kbrna msgana ygebal\n፨ ḥzb: le'ab leweldna lemenfes ḳdusm kbrna msgana ygebal",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: La gloria y el honor convienen siempre a la Santísima Trinidad.\n፨ Pueblo: Conformidad al Padre y al Hijo y al Espíritu Santo."
     },
     {
       "instruction": "",
@@ -12496,7 +12913,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ልዩ ሦስት ለሚሆን ለአብና ለወልድ ለመንፈስ ቅዱስም ሁልጊዜ ክብር ምስጋና ይገባቸዋል፤ ዛሬም ዘወትርም ለዘላለሙ።",
       "amharic_phonetic": "kahn: lyu sost lemīhon le'abna leweld lemenfes ḳdusm hulgīzé kbr msgana ygebachewal: zarém zewetrm lezelalemu.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: El Padre y el Hijo y el Espíritu Santo, ahora y siempre y por los siglos de los siglos. Amén."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -12509,7 +12927,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote (entrando en el santuario): Señor Dios nuestro, como en el pasado derribas los muros de Jericó por mano de Josué hijo de Nun, tu siervo,"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -12522,7 +12941,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: De la misma manera, derriba los muros de mi pecado y los pecados de todo el pueblo en mis manos, incluso en las mías, Tu siervo."
     },
     {
       "instruction": "",
@@ -12535,7 +12955,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ፨ ሕዝብ፤",
       "amharic_phonetic": "kahn: ፨ ḥzb:",
       "tigrinya_script": "ካህን፤ ፨ ሕዝብ፤",
-      "tigrinya_phonetic": "kahn: ፨ ḥzb:"
+      "tigrinya_phonetic": "kahn: ፨ ḥzb:",
+      "spanish": "Sacerdote: El ángel entró hacia ella y se paró frente a ella y le dijo: \"Alégrate, regocíjate, regocíjate, tú que estás llena de gracia\".\n፨ Pueblo: El Señor está con vosotros."
     },
     {
       "instruction": "",
@@ -12548,7 +12969,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ፨ ሕዝብ፤",
       "amharic_phonetic": "kahn: ፨ ḥzb:",
       "tigrinya_script": "ካህን፤ ፨ ሕዝብ፤",
-      "tigrinya_phonetic": "kahn: ፨ ḥzb:"
+      "tigrinya_phonetic": "kahn: ፨ ḥzb:",
+      "spanish": "Sacerdote: Bendita tú entre las mujeres.\n፨ Pueblo: Y bendito el fruto de tu vientre."
     },
     {
       "instruction": "",
@@ -12561,7 +12983,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ፨ ሕዝብ፤",
       "amharic_phonetic": "kahn: ፨ ḥzb:",
       "tigrinya_script": "ካህን፤ ፨ ሕዝብ፤",
-      "tigrinya_phonetic": "kahn: ፨ ḥzb:"
+      "tigrinya_phonetic": "kahn: ፨ ḥzb:",
+      "spanish": "Sacerdote: Ruega por nosotros a Cristo tu Hijo\n፨ Pueblo: que nos perdone nuestros pecados."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -12574,7 +12997,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Oh aceptador de la penitencia y perdonador del pecado, Jesucristo, perdona mi pecado y el pecado de todo Tu pueblo."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -12587,7 +13011,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Y acepta la penitencia de estos Tus siervos y siervas; brilla sobre ellos con la Luz de Tu gracia,"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -12600,7 +13025,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: por amor de Tu Santo Nombre ahora y siempre y por los siglos de los siglos. Amén."
     },
     {
       "instruction": "",
@@ -12613,7 +13039,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ ለጸሎት ተነሱ\n፨ ሕዝብ፤ አቤቱ ይቅር በለን",
       "amharic_phonetic": "dīyaḳon: letselot tenesu\n፨ ḥzb: 'abétu yḳr belen",
       "tigrinya_script": "ዲያቆን፤ ንጸሎት ተንሥኡ፣\n፨ ሕዝብ፤ ኦ ጐይታ ይቕረ በለልና፣",
-      "tigrinya_phonetic": "dīyaḳon: ntselot tens'u,\n፨ ḥzb: 'o gweyta yqhre belelna,"
+      "tigrinya_phonetic": "dīyaḳon: ntselot tens'u,\n፨ ḥzb: 'o gweyta yqhre belelna,",
+      "spanish": "Diácono: Levántate para orar.\n፨ Pueblo: Oh Señor, ten piedad de nosotros."
     },
     {
       "instruction": "",
@@ -12626,7 +13053,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ሰላም ለሁላችሁ ይሁን\n፨ ሕዝብ፤ ከመንፈስህ ጋራ",
       "amharic_phonetic": "kahn: selam lehulachhu yhun\n፨ ḥzb: kemenfesh gara",
       "tigrinya_script": "ካህን፤ ሰላም ንዅልኹም ይኹን፣\n፨ ሕዝብ፤ ምስ መንፈስካ፣",
-      "tigrinya_phonetic": "kahn: selam nዅlkhum ykhun,\n፨ ḥzb: ms menfeska,"
+      "tigrinya_phonetic": "kahn: selam nዅlkhum ykhun,\n፨ ḥzb: ms menfeska,",
+      "spanish": "Sacerdote: La paz sea con todos vosotros.\n፨ Pueblo: y con Tu Espíritu."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -12639,7 +13067,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: Señor del conocimiento, anunciador de la sabiduría, que nos has revelado lo escondido en lo profundo de las tinieblas, dador de palabra de alegría a los que anuncian la grandeza de tu poder."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -12652,7 +13081,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: Fuiste tú quien, después de tu gran bondad, llamaste a Pablo, que antes era perseguidor, y le hiciste vaso escogido,"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -12665,7 +13095,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: y nos agradamos de él porque fuera predicador del evangelio de tu Reino, que lo llamaba a ser apóstol."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -12678,7 +13109,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: Oh Cristo Dios nuestro. Eres un amante del hombre. Oh Bueno, concédenos una mente sin distracciones y un entendimiento puro que no se aparte de Ti,"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -12691,7 +13123,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: para que podamos percibir y saber cuán grande es tu santa enseñanza que ahora nos es leída de él,"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -12704,7 +13137,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: y como él te imitó, oh Príncipe de la vida, así haz que nosotros también podamos imitarlo en obra y en fe, y a glorificar tu Santo Nombre y gloriarnos en tu preciosa cruz en todo tiempo:"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -12717,7 +13151,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤ ፨ ሕዝብ፤ አሜን",
       "amharic_phonetic": "kahn nfḳ: ፨ ḥzb: 'amén",
       "tigrinya_script": "ካህን ንፍቅ፤ ፨ ሕዝብ፤ አሜን",
-      "tigrinya_phonetic": "kahn nfḳ: ፨ ḥzb: 'amén"
+      "tigrinya_phonetic": "kahn nfḳ: ፨ ḥzb: 'amén",
+      "spanish": "Asistente. Sacerdote: porque tuyo es el Reino y el poder, la majestad y la soberanía, el honor y la gloria, por los siglos de los siglos.\n፨ Pueblo: Amén."
     },
     {
       "instruction": "",
@@ -12730,7 +13165,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤",
       "amharic_phonetic": "dīyaḳon:",
       "tigrinya_script": "ዲያቆን፤",
-      "tigrinya_phonetic": "dīyaḳon:"
+      "tigrinya_phonetic": "dīyaḳon:",
+      "spanish": "Diácono: Todo aquel que no ama a nuestro Señor y Salvador Jesucristo, y no cree en su nacimiento de María santa, de doble virginidad,"
     },
     {
       "instruction": "",
@@ -12743,7 +13179,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤",
       "amharic_phonetic": "dīyaḳon:",
       "tigrinya_script": "ዲያቆን፤",
-      "tigrinya_phonetic": "dīyaḳon:"
+      "tigrinya_phonetic": "dīyaḳon:",
+      "spanish": "Diácono: el arca del Espíritu Santo, hasta su venida otra vez, sea \"anatema\" (maldito) como dijo Pablo."
     },
     {
       "instruction": "Read towards the west because St. Pual's diocese was in the west.",
@@ -12756,7 +13193,8 @@ const kidaseData = {
       "amharic_script": "{{የዛሬው የቅዱስ ጳውሎስ መልእክት ይነበባል}}",
       "amharic_phonetic": "{{yezaréw yeḳdus p̣awlos mel'ikt ynebebal}}",
       "tigrinya_script": "{{ናይ ሎሚ ንባብ መልእኽቲ ጳውሎስ}}",
-      "tigrinya_phonetic": "{{nay lomī nbab mel'ikhtī p̣awlos}}"
+      "tigrinya_phonetic": "{{nay lomī nbab mel'ikhtī p̣awlos}}",
+      "spanish": "{{LECTURA DE LA EPÍSTOLA PAULINA DE HOY}}"
     },
     {
       "instruction": "",
@@ -12769,7 +13207,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ ቅድስት በምትሆን በጽርሐ ጽዮን በሐዋርያት ላይ የወረደው የአብ በረከት የወልድም ፍቅር የመንፈስ ቅዱስም ሀብት በሁላችሁም ላይ",
       "amharic_phonetic": "dīyaḳon: ḳdst bemthon betsrḥa tsyon beḥawaryat lay yeweredew ye'ab bereket yeweldm fḳr yemenfes ḳdusm habt behulachhum lay",
       "tigrinya_script": "ዲያቆን፤ ናይ ኣብ በረኸት ናይ ወልድ ፍቕሪ ናይ መንፈስ ቅዱስ ሃብቲ ኣብ ቅድስቲ ጸርሃ ጽዮን ኣብ ልዕሊ ሐዋርያት ከምዝወረደ",
-      "tigrinya_phonetic": "dīyaḳon: nay 'ab berekhet nay weld fqhrī nay menfes ḳdus habtī 'ab ḳdstī tserha tsyon 'ab l'ilī ḥawaryat kemzwerede"
+      "tigrinya_phonetic": "dīyaḳon: nay 'ab berekhet nay weld fqhrī nay menfes ḳdus habtī 'ab ḳdstī tserha tsyon 'ab l'ilī ḥawaryat kemzwerede",
+      "spanish": "Diácono: La bendición del Padre y el Amor del Hijo y el don del Espíritu Santo que descendió sobre los apóstoles en el cenáculo oh santa Sión,"
     },
     {
       "instruction": "",
@@ -12782,7 +13221,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ ይውረድ ዕፅፍ ድርብም ይሁን።",
       "amharic_phonetic": "dīyaḳon: ywred 'itsf drbm yhun.",
       "tigrinya_script": "ዲያቆን፤ ከምኡ ከኣ ኣብ ልዕለይን ኣብ ልዕሊ ኵልኹምን ይውረድ።",
-      "tigrinya_phonetic": "dīyaḳon: kem'u ke'a 'ab l'ileyn 'ab l'ilī kwlkhumn ywred."
+      "tigrinya_phonetic": "dīyaḳon: kem'u ke'a 'ab l'ileyn 'ab l'ilī kwlkhumn ywred.",
+      "spanish": "Diácono: de la misma manera desciende y multiplicate sobre mí y sobre todos vosotros."
     },
     {
       "instruction": "",
@@ -12795,7 +13235,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ አክሊለ ሰማዕታትን የተቀበልህ ድውያንን የምታድን መልእክትህ የበጀ ክቡር የምትሆን ጳውሎስ ሆይ",
       "amharic_phonetic": "፨ ḥzb: 'aklīle sema'itatn yeteḳebelh dwyann yemtadn mel'ikth yebeje kbur yemthon p̣awlos hoy",
       "tigrinya_script": "፨ ሕዝብ፤ ናይ ሰማዕታት ኣክሊል ዝተቐበልካ፡ ንሕሙማት እትፍውስ መልእኽትኻ ሠናይ ዝኾነ፡ ቅዱስ ሓዋርያ ጳውሎስ",
-      "tigrinya_phonetic": "፨ ḥzb: nay sema'itat 'aklīl zteqhebelka nḥmumat 'itfws mel'ikhtkha senay zkhone ḳdus ḥawarya p̣awlos"
+      "tigrinya_phonetic": "፨ ḥzb: nay sema'itat 'aklīl zteqhebelka nḥmumat 'itfws mel'ikhtkha senay zkhone ḳdus ḥawarya p̣awlos",
+      "spanish": "፨ Pueblo: Santo Apóstol Pablo, buen mensajero, sanador de los enfermos, que has recibido la corona,"
     },
     {
       "instruction": "",
@@ -12808,7 +13249,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ ስለእኛ ለምንልን በይቅርታው ቸርነቱ ብዛት ሰውነታችንን ይድን ዘንድ በክቡር ስሙ ስለአመንን",
       "amharic_phonetic": "፨ ḥzb: sle'iña lemnln beyḳrtaw chernetu bzat sewnetachnn ydn zend bekbur smu sle'amenn",
       "tigrinya_script": "፨ ሕዝብ፤ ምእንቲ ቅዱስ ስሙን ብብዝኂ ምሕረቱን ነፍሳትና ኬድኅን ምእንታና ጸልን ለምንን።",
-      "tigrinya_phonetic": "፨ ḥzb: m'intī ḳdus smun bbzhī mḥretun nefsatna kédhn m'intana tseln lemnn."
+      "tigrinya_phonetic": "፨ ḥzb: m'intī ḳdus smun bbzhī mḥretun nefsatna kédhn m'intana tseln lemnn.",
+      "spanish": "፨ Pueblo: pedid y orad por nosotros para que Él salve nuestras almas en la multitud de Sus misericordias y en Su piedad por amor de Su Santo Nombre."
     },
     {
       "instruction": "",
@@ -12821,7 +13263,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ ለጸሎት ተነሱ\n፨ ሕዝብ፤ አቤቱ ይቅር በለን",
       "amharic_phonetic": "dīyaḳon: letselot tenesu\n፨ ḥzb: 'abétu yḳr belen",
       "tigrinya_script": "ዲያቆን፤ ንጸሎት ተንሥኡ፣\n፨ ሕዝብ፤ ኦ ጐይታ ይቕረ በለልና፣",
-      "tigrinya_phonetic": "dīyaḳon: ntselot tens'u,\n፨ ḥzb: 'o gweyta yqhre belelna,"
+      "tigrinya_phonetic": "dīyaḳon: ntselot tens'u,\n፨ ḥzb: 'o gweyta yqhre belelna,",
+      "spanish": "Diácono: Levántate para orar.\n፨ Pueblo: Oh Señor, ten piedad de nosotros."
     },
     {
       "instruction": "",
@@ -12834,7 +13277,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ሰላም ለሁላችሁ ይሁን\n፨ ሕዝብ፤ ከመንፈስህ ጋራ",
       "amharic_phonetic": "kahn: selam lehulachhu yhun\n፨ ḥzb: kemenfesh gara",
       "tigrinya_script": "ካህን፤ ሰላም ንዅልኹም ይኹን፣\n፨ ሕዝብ፤ ምስ መንፈስካ፣",
-      "tigrinya_phonetic": "kahn: selam nዅlkhum ykhun,\n፨ ḥzb: ms menfeska,"
+      "tigrinya_phonetic": "kahn: selam nዅlkhum ykhun,\n፨ ḥzb: ms menfeska,",
+      "spanish": "Sacerdote: La paz sea con todos vosotros.\n፨ Pueblo: y con Tu Espíritu."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -12847,7 +13291,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Oh Dios eterno, primero y último, que no tiene principio ni fin,"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -12860,7 +13305,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: El que es grande en Su construcción y poderoso en Su obra y sabio en Su consejo y firme en Su poder, que existe en todos:"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -12873,7 +13319,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Te rogamos y te suplicamos que estés con nosotros en esta hora: haz que tu rostro brille sobre nosotros y permanece con nosotros en medio de nosotros:"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -12886,7 +13333,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Y purifica nuestros corazones, y santifica nuestras almas, y perdona nuestros pecados, que hemos hecho con nuestra voluntad en contra de Tu Voluntad:"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -12899,7 +13347,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: haznos, Señor, ofrecerte sacrificio puro, ofrenda razonable e incienso espiritual: que entre en el santo templo de Tu Santidad:"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -12912,7 +13361,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: por tu Hijo unigénito, nuestro Señor Jesucristo, y por el Espíritu Santo."
     },
     {
       "instruction": "",
@@ -12925,7 +13375,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን ንፍቅ፤",
       "amharic_phonetic": "dīyaḳon nfḳ:",
       "tigrinya_script": "ዲያቆን ንፍቅ፤",
-      "tigrinya_phonetic": "dīyaḳon nfḳ:"
+      "tigrinya_phonetic": "dīyaḳon nfḳ:",
+      "spanish": "Asistente. Diácono: Palabra de la Epístola de {{AUTOR DE LA EPÍSTOLA UNIVERSAL}}, discípulo y apóstol de nuestro Señor Jesucristo. Su oración y bendición esté con todos nosotros por siempre, Amén."
     },
     {
       "instruction": "Read towards the north.",
@@ -12938,7 +13389,8 @@ const kidaseData = {
       "amharic_script": "{{የዛሬው የሁለተኛው መልእክት ይነበባል}}",
       "amharic_phonetic": "{{yezaréw yehuleteñaw mel'ikt ynebebal}}",
       "tigrinya_script": "{{ናይ ሎሚ ካልኣይ ንባብ መልእኽቲ}}",
-      "tigrinya_phonetic": "{{nay lomī kal'ay nbab mel'ikhtī}}"
+      "tigrinya_phonetic": "{{nay lomī kal'ay nbab mel'ikhtī}}",
+      "spanish": "{{LECTURA DE LA EPÍSTOLA UNIVERSAL DE HOY}}"
     },
     {
       "instruction": "",
@@ -12951,7 +13403,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን ንፍቅ፤ ወንድሞቼ ይህን ዓለም አትውደዱት በዓለሙ ውስጥ ያለውንም። ዓለሙም አላፊ ነው ፈቃዱም አላፊ ነው ሁሉም አላፊ ነውና።",
       "amharic_phonetic": "dīyaḳon nfḳ: wendmoché yhn 'alem 'atwdedut be'alemu wsṭ yalewnm. 'alemum 'alafī new feḳadum 'alafī new hulum 'alafī newna.",
       "tigrinya_script": "ዲያቆን ንፍቅ፤ ም ኣኅዋተይ ዓለም ፍትወቱን ኵሉ ኃላፊ እዩ እሞ፡ ነዛ ዓለም እዚኣን ኣብዚ ዓለም ዘሎን ኣይትፍተውዎ።",
-      "tigrinya_phonetic": "dīyaḳon nfḳ: m 'ahwatey 'alem ftwetun kwlu halafī 'iyu 'imo neza 'alem 'izī'an 'abzī 'alem zelon 'aytftewwo."
+      "tigrinya_phonetic": "dīyaḳon nfḳ: m 'ahwatey 'alem ftwetun kwlu halafī 'iyu 'imo neza 'alem 'izī'an 'abzī 'alem zelon 'aytftewwo.",
+      "spanish": "Subdiácono: Oh hermanos míos, no améis al mundo ni las cosas del mundo. El mundo y sus concupiscencias van pasando; porque todo está pasando."
     },
     {
       "instruction": "",
@@ -12964,7 +13417,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ ባህርይህ አንድ የሚሆን ልዩ ሦስት ሆይ አንድነታችንን ጠብቅ ስለ ተመረጡ ክቡራን ደቀ መዛሙርትህ በይቅርታህ አጽናን ክቡር ስለሚሆን ስለ ስምህ ብለህ።",
       "amharic_phonetic": "፨ ḥzb: bahryh 'and yemīhon lyu sost hoy 'andnetachnn ṭebḳ sle temereṭu kburan deḳe mezamurth beyḳrtah 'atsnan kbur slemīhon sle smh bleh.",
       "tigrinya_script": "፨ ሕዝብ፤ ህልውናኻ ሓደ ዝኾነ ኦ ሥሉስ ቅዱስ፡ ንማኅበርና ሓሉ፡ ምእንቲ ቅዱሳንን ኅሩያን ኣገልገልትኻ፡ ምእንቲ ቅዱስ ስምካን ብሣህልኻ ኣጸናንዓና።",
-      "tigrinya_phonetic": "፨ ḥzb: hlwnakha ḥade zkhone 'o slus ḳdus nmahberna ḥalu m'intī ḳdusann hruyan 'agelgeltkha m'intī ḳdus smkan bsahlkha 'atsenan'ana."
+      "tigrinya_phonetic": "፨ ḥzb: hlwnakha ḥade zkhone 'o slus ḳdus nmahberna ḥalu m'intī ḳdusann hruyan 'agelgeltkha m'intī ḳdus smkan bsahlkha 'atsenan'ana.",
+      "spanish": "፨ Pueblo: Santa Trinidad consustancial, preserva nuestra congregación por amor de tu santo discípulo elegido: consuélanos en la misericordia, por amor de tu Santo Nombre."
     },
     {
       "instruction": "",
@@ -12977,7 +13431,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ ለጸሎት ተነሱ\n፨ ሕዝብ፤ አቤቱ ይቅር በለን",
       "amharic_phonetic": "dīyaḳon: letselot tenesu\n፨ ḥzb: 'abétu yḳr belen",
       "tigrinya_script": "ዲያቆን፤ ንጸሎት ተንሥኡ፣\n፨ ሕዝብ፤ ኦ ጐይታ ይቕረ በለልና፣",
-      "tigrinya_phonetic": "dīyaḳon: ntselot tens'u,\n፨ ḥzb: 'o gweyta yqhre belelna,"
+      "tigrinya_phonetic": "dīyaḳon: ntselot tens'u,\n፨ ḥzb: 'o gweyta yqhre belelna,",
+      "spanish": "Diácono: Levántate para orar.\n፨ Pueblo: Oh Señor, ten piedad de nosotros."
     },
     {
       "instruction": "",
@@ -12990,7 +13445,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ሰላም ለሁላችሁ ይሁን\n፨ ሕዝብ፤ ከመንፈስህ ጋራ",
       "amharic_phonetic": "kahn: selam lehulachhu yhun\n፨ ḥzb: kemenfesh gara",
       "tigrinya_script": "ካህን፤ ሰላም ንዅልኹም ይኹን፣\n፨ ሕዝብ፤ ምስ መንፈስካ፣",
-      "tigrinya_phonetic": "kahn: selam nዅlkhum ykhun,\n፨ ḥzb: ms menfeska,"
+      "tigrinya_phonetic": "kahn: selam nዅlkhum ykhun,\n፨ ḥzb: ms menfeska,",
+      "spanish": "Sacerdote: La paz sea con todos vosotros.\n፨ Pueblo: y con Tu Espíritu."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -13003,7 +13459,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Señor nuestro y Dios nuestro, fuiste Tú Quien reveló a Tus santos apóstoles el misterio del glorioso evangelio de Tu Mesías,"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -13016,7 +13473,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: y les diste el don grande e inconmensurable que es de tu gracia, y los enviaste a proclamar hasta todos los confines del mundo las inescrutables riquezas de tu gracia que es de la misericordia:"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -13029,7 +13487,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: También te rogamos y te suplicamos, oh Señor, que nos hagas dignos de heredad y porción con ellos, para que caminemos en sus caminos y sigamos sus pisadas:"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -13042,7 +13501,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: y concédenos en todo tiempo imitarlos y continuar en su amor y tener comunión con ellos en su trabajo en verdadera piedad."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -13055,7 +13515,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: ¿Y guardas tu santa Iglesia que fundaste por sus medios y bendices las ovejas de tu rebaño y aumentas la vid que plantaste con tu santa diestra?"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -13068,7 +13529,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: por Jesucristo nuestro Señor, por quien a vosotros con él y con el Espíritu Santo sea la gloria y el imperio, ahora y siempre y por los siglos de los siglos. Amén."
     },
     {
       "instruction": "",
@@ -13081,7 +13543,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: Fuente pura que es desde las fuentes puras de la ley, hasta con la historia de los Hechos de los Apóstoles. La bendición de su oración esté con todos nosotros para siempre. Amén."
     },
     {
       "instruction": "Read towards the south.",
@@ -13094,7 +13557,8 @@ const kidaseData = {
       "amharic_script": "{{የዛሬው የሐዋርያት ስራ ንባብ}}",
       "amharic_phonetic": "{{yezaréw yeḥawaryat sra nbab}}",
       "tigrinya_script": "{{ናይ ሎሚ ግብሪ ሃዋርያት ንባብ}}",
-      "tigrinya_phonetic": "{{nay lomī gbrī hawaryat nbab}}"
+      "tigrinya_phonetic": "{{nay lomī gbrī hawaryat nbab}}",
+      "spanish": "{{LECTURA DE ACTOS DE HOY}}"
     },
     {
       "instruction": "",
@@ -13107,7 +13571,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤ የእግዚአብሔር ቃል ፈጽሞ መላ። ከፍ ከፍ አለ። በቅድስት ቤተ ክርስቲያንም በዝቶ ተጨመረ ምስጋና ገንዘቡ በሚሆን በጌታችን በኢየሱስ ክርስቶስ ያመኑት ሕዝብም በዙ ለዘላለም አሜን",
       "amharic_phonetic": "kahn nfḳ: ye'igzī'abḥér ḳal fetsmo mela. kef kef 'ale. beḳdst béte krstīyanm bezto techemere msgana genzebu bemīhon begétachn be'īyesus krstos yamenut ḥzbm bezu lezelalem 'amén",
       "tigrinya_script": "ካህን ንፍቅ፤ ናይ እግዚኣብሔር ቃል መልአ ዓበየውን ተለዓለ ድማ፡ ኣብ ቅድስት ቤተ ክርስቲያን ሕዝብ በዚሑ ተወሰኸ፡ ብጐይታና ኢየሱስ ክርስቶስ ዝኣምኑ ድማ በዝኁ። ምስጋና ንእኡ ይኹን ኣሜን።",
-      "tigrinya_phonetic": "kahn nfḳ: nay 'igzī'abḥér ḳal mel'a 'abeyewn tele'ale dma 'ab ḳdst béte krstīyan ḥzb bezīḥu tewesekhe bgweytana 'īyesus krstos z'amnu dma bezhu. msgana n'i'u ykhun 'amén."
+      "tigrinya_phonetic": "kahn nfḳ: nay 'igzī'abḥér ḳal mel'a 'abeyewn tele'ale dma 'ab ḳdst béte krstīyan ḥzb bezīḥu tewesekhe bgweytana 'īyesus krstos z'amnu dma bezhu. msgana n'i'u ykhun 'amén.",
+      "spanish": "Asistente. Sacerdote: Plena, grande y exaltada es la Palabra de Dios, y ha aumentado en la Santa Iglesia, y muchos son los que creen en nuestro Señor Jesucristo, a quien sea la gloria por los siglos de los siglos. Amén."
     },
     {
       "instruction": "",
@@ -13120,7 +13585,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ ሁሉን የያዝህ አብ ሆይ ቅዱስ ቅዱስ ቅዱስ አንተ ነህ። ሕያው የአብ ቃል የምትሆን ወልድ ዋህድ ሆይ ቅዱስ ቅዱስ ቅዱስ አንተ ነህ። ሁሉን የምታውቅ መንፈስ ቅዱስ ሆይ ቅዱስ ቅዱስ ቅዱስ አንተ ነህ።",
       "amharic_phonetic": "፨ ḥzb: hulun yeyazh 'ab hoy ḳdus ḳdus ḳdus 'ante neh. ḥyaw ye'ab ḳal yemthon weld wahd hoy ḳdus ḳdus ḳdus 'ante neh. hulun yemtawḳ menfes ḳdus hoy ḳdus ḳdus ḳdus 'ante neh.",
       "tigrinya_script": "፨ ሕዝብ፤ ኵሉ ዝኃዝካ ኦ ኣብ ቅዱስ ቅዱስ ቅዱስ ንስኻ ኢኻ። ናይ ሕያው ኣብ ቃል ዝኾንካ ኦ ወልድ ዋሕድ ቅዱስ ቅዱስ ቅዱስ ንስኻ ኢኻ። ኵሉ እትፈልጥ መንፈስ ቅዱስ፡ ቅዱስ ቅዱስ ቅዱቅ ንስኻ ኢኻ።",
-      "tigrinya_phonetic": "፨ ḥzb: kwlu zhazka 'o 'ab ḳdus ḳdus ḳdus nskha 'īkha. nay ḥyaw 'ab ḳal zkhonka 'o weld waḥd ḳdus ḳdus ḳdus nskha 'īkha. kwlu 'itfelṭ menfes ḳdus ḳdus ḳdus ḳduḳ nskha 'īkha."
+      "tigrinya_phonetic": "፨ ḥzb: kwlu zhazka 'o 'ab ḳdus ḳdus ḳdus nskha 'īkha. nay ḥyaw 'ab ḳal zkhonka 'o weld waḥd ḳdus ḳdus ḳdus nskha 'īkha. kwlu 'itfelṭ menfes ḳdus ḳdus ḳdus ḳduḳ nskha 'īkha.",
+      "spanish": "፨ Pueblo: Santo, santo, santo eres Tú, Padre Todopoderoso, Santo, santo, santo eres Tú, Unigénito que eres la Palabra del Padre viviente. Santo, santo, santo eres Tú, Espíritu Santo que todo lo conoce."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -13133,7 +13599,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Señor Dios nuestro, que aceptaste el sacrificio de nuestro padre Abraham, y en lugar de Isaac, su hijo, preparaste y enviaste a él un carnero como rescate."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -13146,7 +13613,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: así también, oh Señor, acepta nuestro sacrificio y el olor de este incienso, y envíanos desde lo alto en recompensa las riquezas de tu misericordia y de tu compasión,"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -13159,7 +13627,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: para que seamos puros de toda mancha de nuestros pecados."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -13172,7 +13641,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Y haznos, oh amante del hombre, reunirnos para ministrar ante Tu gloriosa pureza en rectitud y pureza todos los días de nuestra vida, en gozo y en regocijo."
     },
     {
       "instruction": "",
@@ -13185,7 +13655,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ ለጸሎት ተነሱ\n፨ ሕዝብ፤ አቤቱ ይቅር በለን",
       "amharic_phonetic": "dīyaḳon: letselot tenesu\n፨ ḥzb: 'abétu yḳr belen",
       "tigrinya_script": "ዲያቆን፤ ንጸሎት ተንሥኡ፣\n፨ ሕዝብ፤ ኦ ጐይታ ይቕረ በለልና፣",
-      "tigrinya_phonetic": "dīyaḳon: ntselot tens'u,\n፨ ḥzb: 'o gweyta yqhre belelna,"
+      "tigrinya_phonetic": "dīyaḳon: ntselot tens'u,\n፨ ḥzb: 'o gweyta yqhre belelna,",
+      "spanish": "Diácono: Levántate para orar.\n፨ Pueblo: Oh Señor, ten piedad de nosotros."
     },
     {
       "instruction": "",
@@ -13198,7 +13669,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ሰላም ለሁላችሁ ይሁን\n፨ ሕዝብ፤ ከመንፈስህ ጋራ",
       "amharic_phonetic": "kahn: selam lehulachhu yhun\n፨ ḥzb: kemenfesh gara",
       "tigrinya_script": "ካህን፤ ሰላም ንዅልኹም ይኹን፣\n፨ ሕዝብ፤ ምስ መንፈስካ፣",
-      "tigrinya_phonetic": "kahn: selam nዅlkhum ykhun,\n፨ ḥzb: ms menfeska,"
+      "tigrinya_phonetic": "kahn: selam nዅlkhum ykhun,\n፨ ḥzb: ms menfeska,",
+      "spanish": "Sacerdote: La paz sea con todos vosotros.\n፨ Pueblo: y con Tu Espíritu."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -13211,7 +13683,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤ ቅድስት ንዝኾነት ቤተ ክርስቲያን ዘክራ…",
-      "tigrinya_phonetic": "kahn: ḳdst nzkhonet béte krstīyan zekra…"
+      "tigrinya_phonetic": "kahn: ḳdst nzkhonet béte krstīyan zekra…",
+      "spanish": "Sacerdote: Te rogamos y te suplicamos, oh Señor, que te acuerdes de la única y santa Iglesia apostólica, que existe de un extremo al otro del mundo."
     },
     {
       "instruction": "",
@@ -13224,7 +13697,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ ፨ ሕዝብ፤",
       "amharic_phonetic": "dīyaḳon: ፨ ḥzb:",
       "tigrinya_script": "ዲያቆን፤ ፨ ሕዝብ፤",
-      "tigrinya_phonetic": "dīyaḳon: ፨ ḥzb:"
+      "tigrinya_phonetic": "dīyaḳon: ፨ ḥzb:",
+      "spanish": "Diácono: Ora por la paz de la Iglesia, una, santa, apostólica, ortodoxa en el Señor.\n፨ Pueblo: Amén. Kyrie eleison (\"Señor, ten piedad\" en griego). Señor ten piedad de nosotros."
     },
     {
       "instruction": "",
@@ -13237,7 +13711,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤",
       "amharic_phonetic": "dīyaḳon:",
       "tigrinya_script": "ዲያቆን፤",
-      "tigrinya_phonetic": "dīyaḳon:"
+      "tigrinya_phonetic": "dīyaḳon:",
+      "spanish": "Sacerdote: Recuerda, oh Señor, el honorable, bendito y santo, nuestro Patriarca {{PATRIARCH NAME}} y el bendito y honorable Obispo {{BISHOP NAME}},"
     },
     {
       "instruction": "",
@@ -13250,7 +13725,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤",
       "amharic_phonetic": "dīyaḳon:",
       "tigrinya_script": "ዲያቆን፤",
-      "tigrinya_phonetic": "dīyaḳon:"
+      "tigrinya_phonetic": "dīyaḳon:",
+      "spanish": "Sacerdote: recuerda, oh Señor, a los obispos, sacerdotes y diáconos ortodoxos."
     },
     {
       "instruction": "Inaudible Prayer? For if the Patriarch/Bishop recently passed away",
@@ -13263,7 +13739,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Oh Señor, haz que descanse el alma de nuestro padre {{NOMBRE FALLIDO}}, y hazle habitar en el reino de los cielos con los justos: ponnos en su lugar un buen pastor."
     },
     {
       "instruction": "Inaudible Prayer? For if the Patriarch/Bishop recently passed away",
@@ -13276,7 +13753,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: para que no seamos rebaño sin pastor, y para que el lobo rapaz no nos haga presa, y para que los pueblos extraños que nos son contrarios no nos reprochen."
     },
     {
       "instruction": "",
@@ -13289,7 +13767,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤",
       "amharic_phonetic": "dīyaḳon:",
       "tigrinya_script": "ዲያቆን፤",
-      "tigrinya_phonetic": "dīyaḳon:"
+      "tigrinya_phonetic": "dīyaḳon:",
+      "spanish": "Sacerdote: Te rogamos y te suplicamos, oh Señor, que te acuerdes de la única y santa Iglesia apostólica, que existe de un extremo al otro del mundo."
     },
     {
       "instruction": "",
@@ -13302,7 +13781,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ደኅንነትን የምንለምንሽ ክብርን የተሞላሽ ቅድስት ሆይ ደስ ይበልሽ ሁልጊዜ ድንግል የምትሆኝ አምላክን የወለድሽ የክርስቶስ እናት ሆይ ኃጢአታችንን ያስተሠርይልን ዘንድ ወደ ልጅሽ ወደ ወዳጅሽ ወደ ላይ ጸሎታችንን አሳርጊ",
       "amharic_phonetic": "kahn: dehnnetn yemnlemnሽ kbrn yetemolaሽ ḳdst hoy des ybelሽ hulgīzé dngl yemthoñ 'amlakn yeweledሽ yekrstos 'inat hoy haṭī'atachnn yasteseryln zend wede ljሽ wede wedajሽ wede lay tselotachnn 'asargī",
       "tigrinya_script": "ካህን፤ ድሕነት እንልምነኪ ክብሪ ዝተመላእኪ ቕድስቲ ኹሉ ጊዜ ድንግል ዝኾንኪ ወላዲተ አምላክ ኣደ ክርስቶስ ደስ ይበልኪ። ኃጢኣትና ኪኃድገልና ጸሎትና ናብ ላዕሊ ናብ ፍቁር ወድኺ ኣዕርግልና።",
-      "tigrinya_phonetic": "kahn: dḥnet 'inlmnekī kbrī ztemela'ikī qhdstī khulu gīzé dngl zkhonkī weladīte 'amlak 'ade krstos des ybelkī haṭī'atna kīhadgelna tselotna nab la'ilī nab fḳur wedkhī 'a'irglna"
+      "tigrinya_phonetic": "kahn: dḥnet 'inlmnekī kbrī ztemela'ikī qhdstī khulu gīzé dngl zkhonkī weladīte 'amlak 'ade krstos des ybelkī haṭī'atna kīhadgelna tselotna nab la'ilī nab fḳur wedkhī 'a'irglna",
+      "spanish": "Sacerdote: Alégrate, oh tú a quien pedimos curación, oh santa, llena de honor, siempre virgen, madre de Dios, madre de Cristo, eleva nuestra oración en lo alto a tu amado Hijo para que nos perdone nuestro pecado."
     },
     {
       "instruction": "",
@@ -13315,7 +13795,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ በእውነት የፅድቅ ብርሃን የሚሆን አምላካችንን የወለድሽልን (ንጽሕት) ሆይ ደስ ይበልሽ። ንጽሕት ድንግል ሆይ ለነፍሳችን ይቅርታን ያደርግ ዘንድ ኃጢአታችንን ያስተሠርይልን ዘንድ ወደ ጌታችን ለምኝልን።",
       "amharic_phonetic": "kahn: be'iwnet yetsdḳ brhan yemīhon 'amlakachnn yeweledሽln (ntsḥt) hoy des ybelሽ. ntsḥt dngl hoy lenefsachn yḳrtan yaderg zend haṭī'atachnn yasteseryln zend wede gétachn lemñln.",
       "tigrinya_script": "ካህን፤ ብሓቂ ናይ ጽድቂ ብርሃን ዝኾነ ክርስቶስ ኣምላኽና ዝወለድክልና ደስ ይበልኪ። ኦ ንጽሕቲ ድንግል ንነፍሳትና ምሕረት ኪገብረልና ኃጢኣትና ኪኃድገልና ናብ ጎይታና ለምንልና።",
-      "tigrinya_phonetic": "kahn: bḥaḳī nay tsdḳī brhan zkhone krstos 'amlakhna zweledklna des ybelkī. 'o ntsḥtī dngl nnefsatna mḥret kīgebrelna haṭī'atna kīhadgelna nab goytana lemnlna."
+      "tigrinya_phonetic": "kahn: bḥaḳī nay tsdḳī brhan zkhone krstos 'amlakhna zweledklna des ybelkī. 'o ntsḥtī dngl nnefsatna mḥret kīgebrelna haṭī'atna kīhadgelna nab goytana lemnlna.",
+      "spanish": "Sacerdote: Alégrate, oh tú que llevaste para nosotros la luz misma de la justicia, es decir, Cristo nuestro Dios. Oh Virgen pura, ruega por nosotros al Señor para que tenga misericordia de nuestras almas y perdone nuestros pecados."
     },
     {
       "instruction": "",
@@ -13328,7 +13809,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ንጽሕት ድንግል ሆይ ለነፍሳችን ይቅርታን ያደርግ ዘንድ ኃጢአታችንን ያስተሠርይልን ዘንድ ወደ ጌታችን ለምኝልን",
       "amharic_phonetic": "kahn: ntsḥt dngl hoy lenefsachn yḳrtan yaderg zend haṭī'atachnn yasteseryln zend wede gétachn lemñln",
       "tigrinya_script": "ካህን፤ ኦ ድንግል ማርያም ቅድስትን ንጽሕትን ወላዲተ ኣምላኽ ደስ ይበልኪ። ብሓቂ ምእንቲ ደቂ ሰብ እትልምኒ ኃጢኣትና ኪኃድገልና ናብ ክርስቶስ ወድኺ ለምንልና።",
-      "tigrinya_phonetic": "kahn: 'o dngl maryam ḳdstn ntsḥtn weladīte 'amlakh des ybelkī. bḥaḳī m'intī deḳī seb 'itlmnī haṭī'atna kīhadgelna nab krstos wedkhī lemnlna."
+      "tigrinya_phonetic": "kahn: 'o dngl maryam ḳdstn ntsḥtn weladīte 'amlakh des ybelkī. bḥaḳī m'intī deḳī seb 'itlmnī haṭī'atna kīhadgelna nab krstos wedkhī lemnlna.",
+      "spanish": "Sacerdote: Oh Virgen María, portadora de Dios, santa y pura, muy defensora del linaje de la humanidad; ruega por nosotros ante Cristo, tu Hijo, para que nos conceda la remisión de nuestros pecados."
     },
     {
       "instruction": "",
@@ -13341,7 +13823,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ በእውነት ለሰው ወገን አማላጅ የምትሆኝ አምላክን የወለድሽ ንጽሕት ቅድስት ድንግል ማርያም ሆይ ደስ ይበልሽ",
       "amharic_phonetic": "kahn: be'iwnet lesew wegen 'amalaj yemthoñ 'amlakn yeweledሽ ntsḥt ḳdst dngl maryam hoy des ybelሽ",
       "tigrinya_script": "ካህን፤ ኦ ናይ ባህርይና ትምክሕቲ ዝኾንኪ ደስ ደበልኪ። ኦ ንኣማኑኤል ኣምላኽና ዝወለድክልና ደስ ይበልኪ።",
-      "tigrinya_phonetic": "kahn: 'o nay bahryna tmkḥtī zkhonkī des debelkī. 'o n'amanu'él 'amlakhna zweledklna des ybelkī."
+      "tigrinya_phonetic": "kahn: 'o nay bahryna tmkḥtī zkhonkī des debelkī. 'o n'amanu'él 'amlakhna zweledklna des ybelkī.",
+      "spanish": "Sacerdote: Alégrate, oh Virgen pura, Reina mía; Alégrate, oh orgullo de nuestra especie; Alégrate, oh tú que nos diste a luz a Emmanuel nuestro Dios."
     },
     {
       "instruction": "",
@@ -13354,7 +13837,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ የኃጢአታችንን ሥርየት ይሰጠን ዘንድ በልጅሽ በክርስቶስ ፊት ለምኝልን",
       "amharic_phonetic": "kahn: yehaṭī'atachnn sryet yseṭen zend beljሽ bekrstos fīt lemñln",
       "tigrinya_script": "ካህን፤ ኣብ ቅድሚ ጎይታና ኢየሱስ ክርስቶስ ናይ ብሓቂ መተዓረቂት ዝኾንኪ ምሕረት ገይሩ ኃጢኣትና ምእንቲ ኪኃድገልና ክትዝክርና ንልምነኪ ኣሎና።",
-      "tigrinya_phonetic": "kahn: 'ab ḳdmī goytana 'īyesus krstos nay bḥaḳī mete'areḳīt zkhonkī mḥret geyru haṭī'atna m'intī kīhadgelna ktzkrna nlmnekī 'alona."
+      "tigrinya_phonetic": "kahn: 'ab ḳdmī goytana 'īyesus krstos nay bḥaḳī mete'areḳīt zkhonkī mḥret geyru haṭī'atna m'intī kīhadgelna ktzkrna nlmnekī 'alona.",
+      "spanish": "Sacerdote: Te pedimos que te acuerdes de nosotros, oh verdadero Mediador, ante nuestro Señor Jesucristo, para que tenga misericordia de nuestras almas y perdone nuestros pecados."
     },
     {
       "instruction": "For days between the Pentecost and Pascha (\"Fasika\" in Ge'ez)",
@@ -13367,7 +13851,8 @@ const kidaseData = {
       "amharic_script": "ካህናት፤ ይህ የማመስገን ጊዜ ነው፥ የተመረጠ የዕጣን ጊዜም ነው፤ ሰውን የሚወድ መድኃኒታችንን ክርስቶስን ማመስገኛ ነው",
       "amharic_phonetic": "kahnat: yh yemamesgen gīzé new; yetemereṭe ye'iṭan gīzém new: sewn yemīwed medhanītachnn krstosn mamesgeña new",
       "tigrinya_script": "ካህናት፤ ናይ ምስጋና ጊዜ ሕጂ እዩ፡ ናይ ዝተመርጸ ዕጣን ጊዜ ሕጂ እዩ። መፍቀሪ ሰብ ንዝኾነ መድኃኒና ኢየሱስ ክርስቶስ ጊዜ ምስጋናኡ ሕጂ እዩ።",
-      "tigrinya_phonetic": "kahnat: nay msgana gīzé ḥjī 'iyu nay ztemertse 'iṭan gīzé ḥjī 'iyu. mefḳerī seb nzkhone medhanīna 'īyesus krstos gīzé msgana'u ḥjī 'iyu."
+      "tigrinya_phonetic": "kahnat: nay msgana gīzé ḥjī 'iyu nay ztemertse 'iṭan gīzé ḥjī 'iyu. mefḳerī seb nzkhone medhanīna 'īyesus krstos gīzé msgana'u ḥjī 'iyu.",
+      "spanish": "Sacerdotes: Este es el tiempo de bendición; este es el tiempo del incienso escogido, el tiempo de la alabanza de nuestro Salvador, amador del hombre, Cristo."
     },
     {
       "instruction": "For days between the Pentecost and Pascha (\"Fasika\" in Ge'ez)",
@@ -13380,7 +13865,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ ዕጣን ማርያም ናት፤ በማኅፀንዋ ያደረው ዕጣን እርሱ ነው። ከተመረጠው ዕጣን ሁሉ የሚሸት ነውና የወለደችው መ ጥቶ አዳነን።",
       "amharic_phonetic": "፨ ḥzb: 'iṭan maryam nat: bemahtsenwa yaderew 'iṭan 'irsu new. ketemereṭew 'iṭan hulu yemīሸt newna yeweledechw me ṭto 'adanen.",
       "tigrinya_script": "፨ ሕዝብ፤ ማርያም ዕጣን እያ፡ ንሱ ኸኣ ኦጣን እዩ፡ ኣብ ከርሳ ዝኃደረ፡ ካብ ኵሉ ዕጣን ምዑዝ እዩ። እቲ ዝወለደቶ ድማ መጺኡ ኣድኃነና።",
-      "tigrinya_phonetic": "፨ ḥzb: maryam 'iṭan 'iya nsu khe'a 'oṭan 'iyu 'ab kersa zhadere kab kwlu 'iṭan m'uz 'iyu. 'itī zweledeto dma metsī'u 'adhanena."
+      "tigrinya_phonetic": "፨ ḥzb: maryam 'iṭan 'iya nsu khe'a 'oṭan 'iyu 'ab kersa zhadere kab kwlu 'iṭan m'uz 'iyu. 'itī zweledeto dma metsī'u 'adhanena.",
+      "spanish": "፨ Pueblo: María es el incienso, y el incienso es Él, porque Aquel que estaba en su vientre es más fragante que todo incienso escogido. Aquel a quien ella dio a luz vino y nos salvó."
     },
     {
       "instruction": "For days between the Pentecost and Pascha (\"Fasika\" in Ge'ez)",
@@ -13393,7 +13879,8 @@ const kidaseData = {
       "amharic_script": "ካህናት፤ መዓዛ ያለው ሽቱ ኢየሱስ ክርስቶስ ነው ኑ እንስገድለት ትእዛዞቹንም እንጠብቅ ኃጢአታችንን ያስተሠርይልን ዘንድ",
       "amharic_phonetic": "kahnat: me'aza yalew ሽtu 'īyesus krstos new nu 'insgedlet t'izazochunm 'inṭebḳ haṭī'atachnn yasteseryln zend",
       "tigrinya_script": "ካህናት፤ ምዑዝ ጨና ኢየሱስ ክርስቶስ እዩ፡ ኃጢኣትና ኬሥተስርየልና ንዑ ንስገደሉ፡ ትእዛዛቱውን ንሓሉ።",
-      "tigrinya_phonetic": "kahnat: m'uz chena 'īyesus krstos 'iyu haṭī'atna késtesryelna n'u nsgedelu t'izazatuwn nḥalu."
+      "tigrinya_phonetic": "kahnat: m'uz chena 'īyesus krstos 'iyu haṭī'atna késtesryelna n'u nsgedelu t'izazatuwn nḥalu.",
+      "spanish": "Sacerdotes: El ungüento fragante es Jesucristo. Oh, venid, adorémosle y guardemos sus mandamientos para que Él nos perdone nuestros pecados."
     },
     {
       "instruction": "For days between the Pentecost and Pascha (\"Fasika\" in Ge'ez)",
@@ -13406,7 +13893,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ ምሕረት ለሚካኤል ተሰጠው ማብሰር ለገብርኤል፤ ሰማያዊ ሀብትም ለድንግል",
       "amharic_phonetic": "፨ ḥzb: mḥret lemīka'él teseṭew mabser legebr'él: semayawī habtm ledngl",
       "tigrinya_script": "፨ ሕዝብ፤ ንሚካኤል ምሕረት ተዋህቦ፡ ንገብርኤል ድማ ብሥራት፡ ሰማያዊ ሃብቲውን ንማርያም ድንግል ተዋህባ።",
-      "tigrinya_phonetic": "፨ ḥzb: nmīka'él mḥret tewahbo ngebr'él dma bsrat semayawī habtīwn nmaryam dngl tewahba."
+      "tigrinya_phonetic": "፨ ḥzb: nmīka'él mḥret tewahbo ngebr'él dma bsrat semayawī habtīwn nmaryam dngl tewahba.",
+      "spanish": "፨ Pueblo: A Miguel le fue dada misericordia, y buenas nuevas a Gabriel, y un regalo celestial a la Virgen María."
     },
     {
       "instruction": "For days between the Pentecost and Pascha (\"Fasika\" in Ge'ez)",
@@ -13419,7 +13907,8 @@ const kidaseData = {
       "amharic_script": "ካህናት፤ ልቦና ለዳዊት ተሰጠው ጥበብም ለሰሎሞን የሽቱ ቀንድም ለሳሙኤል ተሰጠው ነገሥታቱን የቀባ እርሱ ነውና",
       "amharic_phonetic": "kahnat: lbona ledawīt teseṭew ṭbebm leselomon yeሽtu ḳendm lesamu'él teseṭew negestatun yeḳeba 'irsu newna",
       "tigrinya_script": "ካህናት፤ ንዳዊት ልቦና፡ ንሰሎሞን ከኣ ጥበብ፡ ንሳሙኤል እውን ንነገሥታት ዚቐብእ ንሱ እዩ እሞ፡ ቀርኒ ቕብኢ ተዋህቦ።",
-      "tigrinya_phonetic": "kahnat: ndawīt lbona nselomon ke'a ṭbeb nsamu'él 'iwn nnegestat zīqheb'i nsu 'iyu 'imo ḳernī qhb'ī tewahbo."
+      "tigrinya_phonetic": "kahnat: ndawīt lbona nselomon ke'a ṭbeb nsamu'él 'iwn nnegestat zīqheb'i nsu 'iyu 'imo ḳernī qhb'ī tewahbo.",
+      "spanish": "Sacerdotes: A David le fue dado entendimiento y sabiduría a Salomón y un cuerno de aceite a Samuel porque era el ungido de reyes."
     },
     {
       "instruction": "For days between the Pentecost and Pascha (\"Fasika\" in Ge'ez)",
@@ -13432,7 +13921,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ ሥልጣን ለአባታችን ጴጥሮስ ተሰጠው፥ ድንግልና ለዮሐንስ፥ መልእክት መጻፍ ለጳውሎስ፥ የቤተ ክርስቲያን ብርሃኑ ነውና",
       "amharic_phonetic": "፨ ḥzb: slṭan le'abatachn p̣éṭros teseṭew; dnglna leyoḥans; mel'ikt metsaf lep̣awlos; yebéte krstīyan brhanu newna",
       "tigrinya_script": "፨ ሕዝብ፤ ነቦና ጴጥሮስ መፍትሕ፡ ንዮሓንስ ድንግልና፡ ንቤተ ክርስቲያን ብርሃና ስለ ዝኾነ ድማ፡ ነቦና ጳውሎስ መልእኽቲ ተዋህቦ።",
-      "tigrinya_phonetic": "፨ ḥzb: nebona p̣éṭros meftḥ nyoḥans dnglna nbéte krstīyan brhana sle zkhone dma nebona p̣awlos mel'ikhtī tewahbo."
+      "tigrinya_phonetic": "፨ ḥzb: nebona p̣éṭros meftḥ nyoḥans dnglna nbéte krstīyan brhana sle zkhone dma nebona p̣awlos mel'ikhtī tewahbo.",
+      "spanish": "፨ Pueblo: A nuestro padre Pedro le fueron dadas las llaves, y la virginidad a Juan, y a nuestro padre Pablo el apostolado, porque él era la luz de la iglesia."
     },
     {
       "instruction": "For days between the Pentecost and Pascha (\"Fasika\" in Ge'ez)",
@@ -13445,7 +13935,8 @@ const kidaseData = {
       "amharic_script": "ካህናት፤ መዓዛ ያላት ሽቱ ማርያም ናት በማኅፀንዋ ያለው ከዕጣን ሁሉ የሚበልጥ ነውና መጥቶ ከእርስዋ ሰው ሆነ",
       "amharic_phonetic": "kahnat: me'aza yalat ሽtu maryam nat bemahtsenwa yalew ke'iṭan hulu yemībelṭ newna meṭto ke'irswa sew hone",
       "tigrinya_script": "ካህናት፤ መዓዛ ዘለዋ ዕፍረት ማርያም እያ፡ እቲ ኣብ ከርሳ ዘሎ ካብ ዕጣን ዚበልጽ ስለ ዝኾነ መጺኡ ካብኣ ሰብ ኮነ።",
-      "tigrinya_phonetic": "kahnat: me'aza zelewa 'ifret maryam 'iya 'itī 'ab kersa zelo kab 'iṭan zībelts sle zkhone metsī'u kab'a seb kone."
+      "tigrinya_phonetic": "kahnat: me'aza zelewa 'ifret maryam 'iya 'itī 'ab kersa zelo kab 'iṭan zībelts sle zkhone metsī'u kab'a seb kone.",
+      "spanish": "Sacerdotes: El ungüento fragante es María, porque el que estaba en su vientre, el más fragante que todo incienso, vino y se encarnó de ella."
     },
     {
       "instruction": "For days between the Pentecost and Pascha (\"Fasika\" in Ge'ez)",
@@ -13458,7 +13949,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ ንጽሕት ድንግል ማርያምን አብ ወደዳት ለተወደደ ልጁ ማደሪያ እንድትሆን በነጽህና አስጌጣት",
       "amharic_phonetic": "፨ ḥzb: ntsḥt dngl maryamn 'ab wededat letewedede lju maderīya 'indthon benetshna 'asgéṭat",
       "tigrinya_script": "፨ ሕዝብ፤ ንንጽሕቲ ድንግል ማርያም ኣብ መረጻ፡ ንፍትው ወዱ መኅደሪ ክትከውን ከኣ ዝተሰለመት ድንኳን ገበራ።",
-      "tigrinya_phonetic": "፨ ḥzb: nntsḥtī dngl maryam 'ab meretsa nftw wedu mehderī ktkewn ke'a zteselemet dnkwan gebera."
+      "tigrinya_phonetic": "፨ ḥzb: nntsḥtī dngl maryam 'ab meretsa nftw wedu mehderī ktkewn ke'a zteselemet dnkwan gebera.",
+      "spanish": "፨ Pueblo: En la pura virgen María, el Padre se complació y la vistió para que fuera tabernáculo para habitación de su amado Hijo."
     },
     {
       "instruction": "For days between the Pentecost and Pascha (\"Fasika\" in Ge'ez)",
@@ -13471,7 +13963,8 @@ const kidaseData = {
       "amharic_script": "ካህናት፤ ሕግ ለሙሴ ተሰጠው፥ ክህነት ለአሮን፥ የተመረጠ ዕጣንም ለካህኑ ዘካርያስ",
       "amharic_phonetic": "kahnat: ḥg lemusé teseṭew; khnet le'aron; yetemereṭe 'iṭanm lekahnu zekaryas",
       "tigrinya_script": "ካህናት፤ ንሙሴ ሕጊ ተዋህቦ፡ ንኣሮን ድማ ክህነት፡ ንዘካርያስ ካህንውን ዝተመርጸ ዕጣን ተዋህቦ።",
-      "tigrinya_phonetic": "kahnat: nmusé ḥgī tewahbo n'aron dma khnet nzekaryas kahnwn ztemertse 'iṭan tewahbo."
+      "tigrinya_phonetic": "kahnat: nmusé ḥgī tewahbo n'aron dma khnet nzekaryas kahnwn ztemertse 'iṭan tewahbo.",
+      "spanish": "Sacerdotes: A Moisés le fue dada la ley y a Aarón el sacerdocio. Al sacerdote Zacarías se le dio incienso escogido."
     },
     {
       "instruction": "For days between the Pentecost and Pascha (\"Fasika\" in Ge'ez)",
@@ -13484,7 +13977,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ ጌታ እንደተናገረ የምስክር ድንኳን አደረጓት ካህኑም አሮን በመካከሏ የተመረጠ ዕጣን ያሳርጋል",
       "amharic_phonetic": "፨ ḥzb: géta 'indetenagere yemskr dnkwan 'aderegwat kahnum 'aron bemekakelwa yetemereṭe 'iṭan yasargal",
       "tigrinya_script": "፨ ሕዝብ፤ ጐይታ ከም ዝተናገረ፡ ናይ ምስክር ድንኳን ገበርዋ፡ ኣሮን ካህንውን ኣብ ማእከላ ዝተመርጸ ዕጣን የዕርግ ነበረ።",
-      "tigrinya_phonetic": "፨ ḥzb: gweyta kem ztenagere nay mskr dnkwan geberwa 'aron kahnwn 'ab ma'ikela ztemertse 'iṭan ye'irg nebere."
+      "tigrinya_phonetic": "፨ ḥzb: gweyta kem ztenagere nay mskr dnkwan geberwa 'aron kahnwn 'ab ma'ikela ztemertse 'iṭan ye'irg nebere.",
+      "spanish": "፨ Pueblo: Hicieron un tabernáculo de testimonio conforme a la palabra de Dios; y el sacerdote Aarón, en medio de ella, hacía subir el incienso escogido."
     },
     {
       "instruction": "For days between the Pentecost and Pascha (\"Fasika\" in Ge'ez)",
@@ -13497,7 +13991,8 @@ const kidaseData = {
       "amharic_script": "ካህናት፤ ሱራፌል ይሰግዱለታል ኪሩቤልም ያመሰግኑታል። እንዲህ እያሉ ይዘምራሉ።",
       "amharic_phonetic": "kahnat: surafél ysegduletal kīrubélm yamesegnutal. 'indīh 'iyalu yzemralu.",
       "tigrinya_script": "ካህናት፤ ሱራፌል ይሰግዱሉ፡ ኪሩቤል የመስግንዎ፡ ከምዚ እናበሉ (ይጭድሩ) የቃልሑ።",
-      "tigrinya_phonetic": "kahnat: surafél ysegdulu kīrubél yemesgnwo kemzī 'inabelu (ychdru) yeḳalḥu."
+      "tigrinya_phonetic": "kahnat: surafél ysegdulu kīrubél yemesgnwo kemzī 'inabelu (ychdru) yeḳalḥu.",
+      "spanish": "Sacerdotes: Los Serafines Le adoran, y los Querubines Le alaban y claman diciendo:"
     },
     {
       "instruction": "For days between the Pentecost and Pascha (\"Fasika\" in Ge'ez)",
@@ -13510,7 +14005,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ እግዚአብሔር በአእላፍ መላእክት ዘንድ ቅዱስ ቅዱስ ቅዱስ ነው። በአለቆችም ዘንድ ክቡር ነው።",
       "amharic_phonetic": "፨ ḥzb: 'igzī'abḥér be'a'ilaf mela'ikt zend ḳdus ḳdus ḳdus new. be'aleḳochm zend kbur new.",
       "tigrinya_script": "፨ ሕዝብ፤ እግዚኣብሔር ብኣእላፍ (መላእኽቲ) ቅዱስ ቅዱስ ቅዱስ እዩ ብረበዋትውን ክቡር እዩ።",
-      "tigrinya_phonetic": "፨ ḥzb: 'igzī'abḥér b'a'ilaf (mela'ikhtī) ḳdus ḳdus ḳdus 'iyu brebewatwn kbur 'iyu."
+      "tigrinya_phonetic": "፨ ḥzb: 'igzī'abḥér b'a'ilaf (mela'ikhtī) ḳdus ḳdus ḳdus 'iyu brebewatwn kbur 'iyu.",
+      "spanish": "፨ Pueblo: \"Santo, Santo, Santo es el Señor entre los miles y honrado entre las decenas de miles\"."
     },
     {
       "instruction": "For days between the Pentecost and Pascha (\"Fasika\" in Ge'ez)",
@@ -13523,7 +14019,8 @@ const kidaseData = {
       "amharic_script": "ካህናት፤ መድኃኒታችን ሆይ ዕጣን አንተ ነህ፤ መጥተህ አድነኸናልና። ይቅር በለን።",
       "amharic_phonetic": "kahnat: medhanītachn hoy 'iṭan 'ante neh: meṭteh 'adnekhenalna. yḳr belen.",
       "tigrinya_script": "ካህናት፤ ኦ መድኃኒና ዕጣን ንስኻ ኢኻ፡ መጺእካ ስለ ዘድሓንካና ይቕረ በለልና።",
-      "tigrinya_phonetic": "kahnat: 'o medhanīna 'iṭan nskha 'īkha metsī'ika sle zedḥankana yqhre belelna."
+      "tigrinya_phonetic": "kahnat: 'o medhanīna 'iṭan nskha 'īkha metsī'ika sle zedḥankana yqhre belelna.",
+      "spanish": "Sacerdotes: Tú eres el incienso, oh nuestro Salvador, porque viniste a salvarnos. Ten piedad de nosotros."
     },
     {
       "instruction": "For the Holy 50 Days: the day of Pascha (\"Fasika\" in Ge'ez) to the day of Pentecost",
@@ -13536,7 +14033,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ክርስቶስ ከሙታን ተለይቶ ተነሣ። ሞቶ ሞትን አጠፋው። በመቃብር ላሉም የዘላለም ሕይወትን ሰጠ።",
       "amharic_phonetic": "kahn: krstos kemutan teleyto tenesa. moto motn 'aṭefaw. bemeḳabr lalum yezelalem ḥywetn seṭe.",
       "tigrinya_script": "ካህን፤ ክርስቶስ ካብ ሙታን ተንሥአ ሞይቱውን ንሞት ደምሰሶ፡ ኣብ መቓብር ንዘለዉ ከኣ ናይ ዘለዓለም ዕረፍትን ሕይወትን ሃበ።",
-      "tigrinya_phonetic": "kahn: krstos kab mutan tens'a moytuwn nmot demseso 'ab meqhabr nzelewu ke'a nay zele'alem 'ireftn ḥywetn habe."
+      "tigrinya_phonetic": "kahn: krstos kab mutan tens'a moytuwn nmot demseso 'ab meqhabr nzelewu ke'a nay zele'alem 'ireftn ḥywetn habe.",
+      "spanish": "Sacerdote: Cristo resucitó de entre los muertos. Murió y pisoteó la muerte. Dio la vida de descanso eterno a los que estaban en la tumba."
     },
     {
       "instruction": "For the Holy 50 Days: the day of Pascha (\"Fasika\" in Ge'ez) to the day of Pentecost",
@@ -13549,7 +14047,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ ክርስቶስ ከሙታን ተለይቶ ተነሣ። ሞቶ ሞትን አጠፋው። በመቃብር ላሉም የዘላለም ሕይወትን ሰጠ።",
       "amharic_phonetic": "፨ ḥzb: krstos kemutan teleyto tenesa. moto motn 'aṭefaw. bemeḳabr lalum yezelalem ḥywetn seṭe.",
       "tigrinya_script": "፨ ሕዝብ፤ ክርስቶስ ካብ ሙታን ተንሥአ ሞይቱውን ንሞት ደምሰሶ፡ ኣብ መቓብር ንዘለዉ ከኣ ናይ ዘለዓለም ዕረፍትን ሕይወትን ሃበ።",
-      "tigrinya_phonetic": "፨ ḥzb: krstos kab mutan tens'a moytuwn nmot demseso 'ab meqhabr nzelewu ke'a nay zele'alem 'ireftn ḥywetn habe."
+      "tigrinya_phonetic": "፨ ḥzb: krstos kab mutan tens'a moytuwn nmot demseso 'ab meqhabr nzelewu ke'a nay zele'alem 'ireftn ḥywetn habe.",
+      "spanish": "፨ Pueblo: Cristo resucitó de entre los muertos. Murió y pisoteó la muerte. Dio la vida de descanso eterno a los que estaban en la tumba."
     },
     {
       "instruction": "For the Holy 50 Days: the day of Pascha (\"Fasika\" in Ge'ez) to the day of Pentecost",
@@ -13562,7 +14061,8 @@ const kidaseData = {
       "amharic_script": "፨ ሁሉም፤ ክርስቶስ ከሙታን ተለይቶ ተነሣ። ሞቶ ሞትን አጠፋው። በመቃብር ላሉም የዘላለም ሕይወትን ሰጠ።",
       "amharic_phonetic": "፨ hulum: krstos kemutan teleyto tenesa. moto motn 'aṭefaw. bemeḳabr lalum yezelalem ḥywetn seṭe.",
       "tigrinya_script": "፨ ኩሉኹም፤ ክርስቶስ ካብ ሙታን ተንሥአ ሞይቱውን ንሞት ደምሰሶ፡ ኣብ መቓብር ንዘለዉ ከኣ ናይ ዘለዓለም ዕረፍትን ሕይወትን ሃበ።",
-      "tigrinya_phonetic": "፨ kulukhum: krstos kab mutan tens'a moytuwn nmot demseso 'ab meqhabr nzelewu ke'a nay zele'alem 'ireftn ḥywetn habe."
+      "tigrinya_phonetic": "፨ kulukhum: krstos kab mutan tens'a moytuwn nmot demseso 'ab meqhabr nzelewu ke'a nay zele'alem 'ireftn ḥywetn habe.",
+      "spanish": "፨ TODOS: Cristo resucitó de entre los muertos. Murió y pisoteó la muerte. Dio la vida de descanso eterno a los que estaban en la tumba."
     },
     {
       "instruction": "Chanted in Araray tone.",
@@ -13575,7 +14075,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ቅዱስ።\n፨ ሕዝብ፤ ቅዱስ እግዚአብሔር ቅዱስ ኃያል ቅዱስ ሕያው የማይሞት ከቅድስት ድንግል ማርያም የተወለደ፥ አቤቱ ይቅር በለን።",
       "amharic_phonetic": "kahn: ḳdus.\n፨ ḥzb: ḳdus 'igzī'abḥér ḳdus hayal ḳdus ḥyaw yemaymot keḳdst dngl maryam yetewelede; 'abétu yḳr belen.",
       "tigrinya_script": "ካህን፤ ቅዱስ።\n፨ ሕዝብ፤ ካብ ቅድስቲ ድንግል ማርያም ዝተወልደ፡ ኦ ጐይታ ይቕረ በለልና፡ ቅዱስ እግዚኣብሔር ቅዱስ ኃያል ቅዱስ ዘይመውት ሕያው፥",
-      "tigrinya_phonetic": "kahn: ḳdus.\n፨ ḥzb: kab ḳdstī dngl maryam ztewelde 'o gweyta yqhre belelna ḳdus 'igzī'abḥér ḳdus hayal ḳdus zeymewt ḥyaw;"
+      "tigrinya_phonetic": "kahn: ḳdus.\n፨ ḥzb: kab ḳdstī dngl maryam ztewelde 'o gweyta yqhre belelna ḳdus 'igzī'abḥér ḳdus hayal ḳdus zeymewt ḥyaw;",
+      "spanish": "፨ ORACIÓN DE LA PACTO ፨\nSacerdote: Santo...\n፨ Pueblo:...Dios, Santo Fuerte, Santo Inmortal, que naciste de la Santísima Virgen María, ten piedad de nosotros, Señor."
     },
     {
       "instruction": "Chanted in Araray tone.",
@@ -13588,7 +14089,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ ቅዱስ እግዚአብሔር ቅዱስ ኃያል ቅዱስ ሕያው የማይሞት በዮርዳኖስ የተጠመቀ፥ በመስቀል ላይ የተሰቀለ አቤቱ ይቅር በለን።",
       "amharic_phonetic": "፨ ḥzb: ḳdus 'igzī'abḥér ḳdus hayal ḳdus ḥyaw yemaymot beyordanos yeteṭemeḳe; bemesḳel lay yeteseḳele 'abétu yḳr belen.",
       "tigrinya_script": "፨ ሕዝብ፤ ኣብ ዮርዳኖስ ዝተጠምቀ፡ ኣብ ልዕሊ ዕንፀይቲ መስቀል ዝተሰቕለ ኦ ጐይታ ይቕረ በለልና።",
-      "tigrinya_phonetic": "፨ ḥzb: 'ab yordanos zteṭemḳe 'ab l'ilī 'intseytī mesḳel zteseqhle 'o gweyta yqhre belelna."
+      "tigrinya_phonetic": "፨ ḥzb: 'ab yordanos zteṭemḳe 'ab l'ilī 'intseytī mesḳel zteseqhle 'o gweyta yqhre belelna.",
+      "spanish": "፨ Pueblo: Santo Dios, Santo Fuerte, Santo Inmortal que fue bautizado en el Jordán y fue crucificado en el madero de la Cruz; ten piedad de nosotros, Señor."
     },
     {
       "instruction": "Chanted in Araray tone.",
@@ -13601,7 +14103,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ ቅዱስ እግዚአብሔር ቅዱስ ኃያል ቅዱስ ሕያው የማይሞት በሦስተኛው ቀን ከሙታን ተለይቶ የተነሳ በምስጋና ወደ ሰማይ ወጣ",
       "amharic_phonetic": "፨ ḥzb: ḳdus 'igzī'abḥér ḳdus hayal ḳdus ḥyaw yemaymot besosteñaw ḳen kemutan teleyto yetenesa bemsgana wede semay weṭa",
       "tigrinya_script": "፨ ሕዝብ፤ ቅዱስ እግዚኣብሔር ቅዱስ ኃያል ቅዱስ ዘይመውት ሕያው፡ ኣብ ሣልሳይ መዓልቲ ካብ ምውታት ተፈልዩ ዝተንሥአ፡ ብምስጋና ናብ ሰማይ ዝዐረገ፡",
-      "tigrinya_phonetic": "፨ ḥzb: ḳdus 'igzī'abḥér ḳdus hayal ḳdus zeymewt ḥyaw 'ab salsay me'altī kab mwtat tefelyu ztens'a bmsgana nab semay z'arege"
+      "tigrinya_phonetic": "፨ ḥzb: ḳdus 'igzī'abḥér ḳdus hayal ḳdus zeymewt ḥyaw 'ab salsay me'altī kab mwtat tefelyu ztens'a bmsgana nab semay z'arege",
+      "spanish": "፨ Pueblo: Santo Dios, Santo Fuerte, Santo Inmortal que resucitó de entre los muertos al tercer día, ascendió al cielo en gloria,"
     },
     {
       "instruction": "Chanted in Araray tone.",
@@ -13614,7 +14117,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ በአባቱም ቀኝ ተቀመጠ ዳግመኛም ይመጣል በሕያዋንና በሙታን ይፈርድ ዘንድ፥ አቤቱ ይቅር በለን።",
       "amharic_phonetic": "፨ ḥzb: be'abatum ḳeñ teḳemeṭe dagmeñam ymeṭal beḥyawanna bemutan yferd zend; 'abétu yḳr belen.",
       "tigrinya_script": "፨ ሕዝብ፤ ኣብ የማን ኣቦኡ ዝተቐመጠ፡ ንሕያዋንን ምዉታትን ኪፈርድ ከም ብሓድሽ ኪመጽእ እዩ።",
-      "tigrinya_phonetic": "፨ ḥzb: 'ab yeman 'abo'u zteqhemeṭe nḥyawann mwutatn kīferd kem bḥadሽ kīmets'i 'iyu."
+      "tigrinya_phonetic": "፨ ḥzb: 'ab yeman 'abo'u zteqhemeṭe nḥyawann mwutatn kīferd kem bḥadሽ kīmets'i 'iyu.",
+      "spanish": "፨ Pueblo: está sentado a la diestra del Padre y vendrá nuevamente en gloria para juzgar a los vivos y a los muertos; ten piedad de nosotros, Señor."
     },
     {
       "instruction": "Chanted in Araray tone.",
@@ -13627,7 +14131,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ ለአብ ምስጋና ይሁን ለወልድም ምስጋና ይሁን ለመንፈስ ቅዱስ ምስጋና ይሁን ዛሬም ዘወትርም ለዘለዓለሙ",
       "amharic_phonetic": "፨ ḥzb: le'ab msgana yhun leweldm msgana yhun lemenfes ḳdus msgana yhun zarém zewetrm lezele'alemu",
       "tigrinya_script": "፨ ሕዝብ፤ ምስጋና ንኣብ፡ ምስጋና ንወልድ፡ ምስጋና ንመንፈስ ቅዱስ ይኹን፡ ሎምን ኵሉ ሳዕን ንዘልዓለም ዓለም",
-      "tigrinya_phonetic": "፨ ḥzb: msgana n'ab msgana nweld msgana nmenfes ḳdus ykhun lomn kwlu sa'in nzel'alem 'alem"
+      "tigrinya_phonetic": "፨ ḥzb: msgana n'ab msgana nweld msgana nmenfes ḳdus ykhun lomn kwlu sa'in nzel'alem 'alem",
+      "spanish": "፨ Pueblo: Gloria al Padre, Gloria al Hijo, Gloria al Espíritu Santo, ahora y siempre y por los siglos de los siglos."
     },
     {
       "instruction": "Chanted in Araray tone.",
@@ -13640,7 +14145,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ አሜን አሜን ይሁን ይሁን። ልዩ ሦስት ሕያው እግዚአብሔር ሆይ ይቅር በለን",
       "amharic_phonetic": "፨ ḥzb: 'amén 'amén yhun yhun. lyu sost ḥyaw 'igzī'abḥér hoy yḳr belen",
       "tigrinya_script": "፨ ሕዝብ፤ ኣሜን ኣሜን ይኹን ይኹነልና ይኹነልና። ቅዱስ ሥሉስ፤ ሕያው እግዚኣብሔር ይቕረ በለልና።",
-      "tigrinya_phonetic": "፨ ḥzb: 'amén 'amén ykhun ykhunelna ykhunelna. ḳdus slus: ḥyaw 'igzī'abḥér yqhre belelna."
+      "tigrinya_phonetic": "፨ ḥzb: 'amén 'amén ykhun ykhunelna ykhunelna. ḳdus slus: ḥyaw 'igzī'abḥér yqhre belelna.",
+      "spanish": "፨ Pueblo: Amén Amén, que así sea, que así sea. Oh Santísima Trinidad, Dios vivo, ten piedad de nosotros."
     },
     {
       "instruction": "For Liturgies starting at midnight (e.g. Pascha, Nativity, etc).",
@@ -13653,7 +14159,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ለእግዚአብሔር ምስጋና ይሁን፣\n፨ ሕዝብ፤ እውነት ነው ይገባል፣",
       "amharic_phonetic": "kahn: le'igzī'abḥér msgana yhun,\n፨ ḥzb: 'iwnet new yge bal,",
       "tigrinya_script": "ካህን፤ ምስጋና ንእግዚኣብሔር ይኹን።\n፨ ሕዝብ፤ ብሓቂ ይግባእ እዩ።",
-      "tigrinya_phonetic": "kahn: msgana n'igzī'abḥér ykhun.\n፨ ḥzb: bḥaḳī ygba'i 'iyu."
+      "tigrinya_phonetic": "kahn: msgana n'igzī'abḥér ykhun.\n፨ ḥzb: bḥaḳī ygba'i 'iyu.",
+      "spanish": "፨ ORACIÓN DE MEDIANOCHE DE LA PACTO ፨\nSacerdote: Gloria a Dios. \n፨ Pueblo: Está bien, es justo."
     },
     {
       "instruction": "For Liturgies starting at midnight (e.g. Pascha, Nativity, etc). Inaudible Prayer.",
@@ -13666,7 +14173,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አቤቱ ሁሉን ለፈጠርህ ለማትመረመር አምላክ ለአንተ ሰውነታችንን እናስገዛለን፣ አቤቱ የነግህ ምስጋናንም እናቀርብልሃለን፣",
       "amharic_phonetic": "kahn: 'abétu hulun lefeṭerh lematmeremer 'amlak le'ante sewnetachnn 'inasgezalen, 'abétu yenegh msgananm 'inaḳerblhalen,",
       "tigrinya_script": "ካህን፤ ኦ ጐይታ፡ ንኣኻ ኵሉ ንዝፈጠርካ\nንዘይትርአ ኣምላኸ፡ ብዅለንትናና ነምልኸካ ኣሎና። ናይ ንግሆ ምስጋና ንውፍየልካ ኣሎና።",
-      "tigrinya_phonetic": "kahn: 'o gweyta  n'akha kwlu nzfeṭerka\nnzeytr'a 'amlakhe  bዅlentnana nemlkheka 'alona. nay ngho msgana nwfyelka 'alona."
+      "tigrinya_phonetic": "kahn: 'o gweyta  n'akha kwlu nzfeṭerka\nnzeytr'a 'amlakhe  bዅlentnana nemlkheka 'alona. nay ngho msgana nwfyelka 'alona.",
+      "spanish": "Sacerdote: Oh Señor, Hacedor de todo, Dios invisible, extendemos nuestra alma hacia Ti y te ofrecemos la oración de la mañana."
     },
     {
       "instruction": "For Liturgies starting at midnight (e.g. Pascha, Nativity, etc). Inaudible Prayer.",
@@ -13679,7 +14187,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ የሁሉ ዕውቀት ኃያል የምትሆን፣ ይቅርታህ የበዛ አምላክ፣ ነፍስን የፈጠርሃት፣ ከዓለም አስቀድሞ ከአብ የተወለድህ አንተን እናመሰግንሃለን፣",
       "amharic_phonetic": "kahn: yehulu 'iwḳet hayal yemthon, yḳrtah yebeza 'amlak, nefsn yefeṭerhat, ke'alem 'asḳedmo ke'ab yeteweledh 'anten 'inamesegnhalen,",
       "tigrinya_script": "ካህን፤ ኦ ንኵሉ ጥበብ ኃያል ዝኾንካ ጐይታ፡ ብዓል ብዙኅ ምሕረት፡ ናይ ነፍሲ ፈጣሪኣ ዝኾንካ ኣምላኽ፡ ቅድሚ ምፍጣር ዓለም ካብ ኣብ ንዝተወለድካ ነመስግነካ ኣሎና።",
-      "tigrinya_phonetic": "kahn: 'o nkwlu ṭbeb hayal zkhonka gweyta  b'al bzuh mḥret  nay nefsī feṭarī'a zkhonka 'amlakh  ḳdmī mfṭar 'alem kab 'ab nzteweledka nemesgneka 'alona."
+      "tigrinya_phonetic": "kahn: 'o nkwlu ṭbeb hayal zkhonka gweyta  b'al bzuh mḥret  nay nefsī feṭarī'a zkhonka 'amlakh  ḳdmī mfṭar 'alem kab 'ab nzteweledka nemesgneka 'alona.",
+      "spanish": "Sacerdote: Oh Señor, poderosa Sabiduría de todos, Dios abundante en misericordia, Hacedor del alma, te glorificamos, engendrado del Padre antes de la creación del mundo;"
     },
     {
       "instruction": "For Liturgies starting at midnight (e.g. Pascha, Nativity, etc). Inaudible Prayer.",
@@ -13692,7 +14201,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ የብቻው ቃል የምትሆን በቅዱሳን አድሮባቸው የሚኖር፣ አርምሞ በሌለበት ምስጋና አለቆች ካሏቸው ሠራዊተ መላእክትም የምትመሰገን፣",
       "amharic_phonetic": "kahn: yebchaw ḳal yemthon beḳdusan 'adrobachew yemīnor, 'armmo belélebet msgana 'aleḳoch kalwachew serawīte mela'iktm yemtmesegen,",
       "tigrinya_script": "ካህን፤ ኣብ ቅዱሳኑ ዚዓርፍ ናይ ብሕቱ ቓል ኢኻ። ንስኻ ብዘየቋርጽ ምስጋናን ብኣሕሉቕ ሠራዊት መላእኸትን እትምስገን ኢኻ።",
-      "tigrinya_phonetic": "kahn: 'ab ḳdusanu zī'arf nay bḥtu qhal 'īkha. nskha bzeyeḳwarts msganan b'aḥluqh serawīt mela'ikhetn 'itmsgen 'īkha."
+      "tigrinya_phonetic": "kahn: 'ab ḳdusanu zī'arf nay bḥtu qhal 'īkha. nskha bzeyeḳwarts msganan b'aḥluqh serawīt mela'ikhetn 'itmsgen 'īkha.",
+      "spanish": "Sacerdote; Tú, que eres la única Palabra y descansas en Tus santos, eres alabado por los arcángeles con glorias incesantes."
     },
     {
       "instruction": "For Liturgies starting at midnight (e.g. Pascha, Nativity, etc). Inaudible Prayer.",
@@ -13705,7 +14215,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ በእጅ ያልተፈጠርህ የተሠወሩትን የፈጠርህ፣ የማትታይ ንጹሕ ቅዱስ የምስጋናህን ኅቡእ ጥበብን ያስረዳንን የተናገርህ",
       "amharic_phonetic": "kahn: be'ij yaltefeṭerh yetesewerutn yefeṭerh, yemattay ntsuḥ ḳdus yemsganahn hbu'i ṭbebn yasredann yetenagerh",
       "tigrinya_script": "ካህን፤ ብኢድ ዘይተፈጠርካ፡ ኅቡኣት ዝፈጠርካ ንጹሕን ቅዱስን ዘይትምርመር ኢኻ። ናይ ምስጋናኻ ሥዉር ጥበብ ዝነገርካና መምህር ኢኻ።",
-      "tigrinya_phonetic": "kahn: b'īd zeytefeṭerka  hbu'at zfeṭerka ntsuḥn ḳdusn zeytmrmer 'īkha. nay msganakha swur ṭbeb znegerkana memhr 'īkha."
+      "tigrinya_phonetic": "kahn: b'īd zeytefeṭerka  hbu'at zfeṭerka ntsuḥn ḳdusn zeytmrmer 'īkha. nay msganakha swur ṭbeb znegerkana memhr 'īkha.",
+      "spanish": "Sacerdote: Tú no fuiste creado con manos sino que eres Creador de las cosas ocultas; Tú eres el invisible, puro y santo, y el anunciador que nos habló de la sabiduría de Tu gloria escondida."
     },
     {
       "instruction": "For Liturgies starting at midnight (e.g. Pascha, Nativity, etc). Inaudible Prayer.",
@@ -13718,7 +14229,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ የማይጠፋ ብርሃንን ለእኛ ተስፋ ያስደረግከን፣ አቤቱ ፍጹም ምስጋናን ንጹሕ ምስጋናንም ለአንተ እናቀርባለን፣ እኛ የአንተ አገልጋዮች እና መሰግንሃለን፣ ሕዝቡም አንተን ያመሰግናሉ፣",
       "amharic_phonetic": "kahn: yemayṭefa brhann le'iña tesfa yasderegken, 'abétu ftsum msganan ntsuḥ msgananm le'ante 'inaḳerbalen , 'iña ye'ante 'agelgayoch 'ina mesegnhalen, ḥzbum 'anten yamesegnalu,",
       "tigrinya_script": "ካህን፤ ዘይጠፍእ ብርሃንውን ኣተስፎኻና። ንኣኻ ምስጋናን ክብርን ቅድስናን ነቕርብ ኣሎና። ኦ ጐይታ፡ ንሕና ባሮትካ ንጹሕ ምስጋና ንውፊ ኣሎና ንብል፡ ሕዝቢ ኸኣ ንኣኻ የመስግኑ ኣለዉ።",
-      "tigrinya_phonetic": "kahn: zeyṭef'i brhanwn 'atesfokhana. n'akha msganan kbrn ḳdsnan neqhrb 'alona. 'o gweyta  nḥna barotka ntsuḥ msgana nwfī 'alona nbl  ḥzbī khe'a n'akha yemesgnu 'alewu."
+      "tigrinya_phonetic": "kahn: zeyṭef'i brhanwn 'atesfokhana. n'akha msganan kbrn ḳdsnan neqhrb 'alona. 'o gweyta  nḥna barotka ntsuḥ msgana nwfī 'alona nbl  ḥzbī khe'a n'akha yemesgnu 'alewu.",
+      "spanish": "Sacerdote: Nos has hecho esperar la luz inextinguible; y nosotros, Tus siervos, te ofrecemos gloria, acción de gracias y santidad; y el pueblo te glorifica."
     },
     {
       "instruction": "For Liturgies starting at midnight (e.g. Pascha, Nativity, etc).",
@@ -13731,7 +14243,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ አቤቱ አንተን እናመሰግናለን፣",
       "amharic_phonetic": "፨ ḥzb: 'abétu 'anten 'inamesegnalen,",
       "tigrinya_script": "፨ ሕዝብ፤ ኦ ጐይታ፡ ንኣኻ ነመስግን ኣሎና",
-      "tigrinya_phonetic": "፨ ḥzb: 'o gweyta  n'akha nemesgn 'alona"
+      "tigrinya_phonetic": "፨ ḥzb: 'o gweyta  n'akha nemesgn 'alona",
+      "spanish": "፨ Pueblo: Oh Señor, te glorificamos."
     },
     {
       "instruction": "For Liturgies starting at midnight (e.g. Pascha, Nativity, etc). Inaudible Prayer.",
@@ -13744,7 +14257,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ የብርሃን አምላክ ሆይ የሕይወት መገኛ፣ የዕውቀት መጀመሪያ ጸጋን በፍጹም ጸጋ የሚሰጥ፣",
       "amharic_phonetic": "kahn: yebrhan 'amlak hoy yeḥywet megeña, ye'iwḳet mejemerīya tsegan beftsum tsega yemīseṭ,",
       "tigrinya_script": "ካህን፤ ኦ ኣምላኸ ብርሃን፡ ሕይወት ዝፈጠርካ፡ ካብ ፍጹም ጸጋ ወሃብ ጸጋ ዝኾንካ፡ ርእሲ ኣእምሮ፡",
-      "tigrinya_phonetic": "kahn: 'o 'amlakhe brhan  ḥywet zfeṭerka  kab ftsum tsega wehab tsega zkhonka  r'isī 'a'imro"
+      "tigrinya_phonetic": "kahn: 'o 'amlakhe brhan  ḥywet zfeṭerka  kab ftsum tsega wehab tsega zkhonka  r'isī 'a'imro",
+      "spanish": "Sacerdote: Oh Dios de luz, Tú eres la fuente de la vida, la Cabeza del conocimiento, el Dador de la gracia procedente de la gracia perfecta,"
     },
     {
       "instruction": "For Liturgies starting at midnight (e.g. Pascha, Nativity, etc). Inaudible Prayer.",
@@ -13757,7 +14271,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ነፍስን የፈጠረ፣ መንፈስ ቅዱስን በመስጠት የሚጠቅም፣ የጥበብ መገኛ፣ የቅዱሳን መምህርና የዓለም መሠረት፣ የንጹሐንን ጸሎት የሚቀበል፤",
       "amharic_phonetic": "kahn: nefsn yefeṭere, menfes ḳdusn bemesṭet yemīṭeḳm, yeṭbeb megeña, yeḳdusan memhrna ye'alem meseret, yentsuḥann tselot yemīḳebel:",
       "tigrinya_script": "ካህን፤ ንነፍሲ ዝፈጠረ፡ መዝገብ ጥበብ ረዳኢ፡ መንፈስ ቅዱስ ብምሃብ ዜሀብትም። መምህር ቅዱሳንን መሠረት ዓለምን ዝኾንካ። ጸሎት ንጹሓን እትቕበል።",
-      "tigrinya_phonetic": "kahn: nnefsī zfeṭere  mezgeb ṭbeb reda'ī  menfes ḳdus bmhab zéhabtm. memhr ḳdusann meseret 'alemn zkhonka. tselot ntsuḥan 'itqhbel."
+      "tigrinya_phonetic": "kahn: nnefsī zfeṭere  mezgeb ṭbeb reda'ī  menfes ḳdus bmhab zéhabtm. memhr ḳdusann meseret 'alemn zkhonka. tselot ntsuḥan 'itqhbel.",
+      "spanish": "Sacerdote: el Hacedor del alma, Dador del bien, Dador del Espíritu Santo, Tesoro de la sabiduría, Auxiliador, Maestro de los santos, Fundamento del mundo, que acepta la oración de los santos."
     },
     {
       "instruction": "For Liturgies starting at midnight (e.g. Pascha, Nativity, etc). Inaudible Prayer.",
@@ -13770,7 +14285,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ወልድ ዋሕድ አንተን እናመሰግናለን፣ ቀዳሜ በኵር የምትሆን የአብ ቃል፣ ለምንጠራህ ለእኛ ለሁሉ የሚሆን የአንተን ጸጋ የሰጠኸን፣",
       "amharic_phonetic": "kahn: weld waḥd 'anten 'inamesegnalen, ḳedamé bekwr yemthon ye'ab ḳal, lemnṭerah le'iña lehulu yemīhon ye'anten tsega yeseṭekhen,",
       "tigrinya_script": "ካህን፤ ኦ ወልድ ዋሕድ፥ ንኣኻ ነመስግን ኣሎና። ቀዳማይ በዅሪ ናይ ኣብ ቃል፡ ነዞም እንጽውዓካ ንኣና ንዅሉ ዚኸውን ናትካ ጸጋ ዝሃብካና ንስኻ ኢኻ።",
-      "tigrinya_phonetic": "kahn: 'o weld waḥd; n'akha nemesgn 'alona. ḳedamay beዅrī nay 'ab ḳal  nezom 'intsw'aka n'ana nዅlu zīkhewn natka tsega zhabkana nskha 'īkha."
+      "tigrinya_phonetic": "kahn: 'o weld waḥd; n'akha nemesgn 'alona. ḳedamay beዅrī nay 'ab ḳal  nezom 'intsw'aka n'ana nዅlu zīkhewn natka tsega zhabkana nskha 'īkha.",
+      "spanish": "Sacerdote: Te glorificamos, oh Hijo unigénito, Verbo primogénito del Padre; Nos has concedido tu gracia universal a los que te invocamos."
     },
     {
       "instruction": "For Liturgies starting at midnight (e.g. Pascha, Nativity, etc). Inaudible Prayer.",
@@ -13783,7 +14299,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ነውር የሌለብህ ንጹሕ አባት፣ ብል ነቀዝ የማያበላሸው ገንዘብ ያለህ፣ በፍጹም ልቡናቸው ለሚያምኑብህ የምትሰጥ፣",
       "amharic_phonetic": "kahn: newr yelélebh ntsuḥ 'abat, bl neḳez yemayabelaሸw genzeb yaleh, beftsum lbunachew lemīyamnubh yemtseṭ,",
       "tigrinya_script": "ካህን፤ ኦ ነውሪ ዘይብሉ ንጹሕ ኣቦ፡ ጻጸን ቍንቍነን ዘየበላሽዎ ሃብቲ ዘለዎ። ነቶም ብፍጹም ልቢ ዚኣምኑኻ እትህብ።",
-      "tigrinya_phonetic": "kahn: 'o newrī zeyblu ntsuḥ 'abo  tsatsen ḳwnḳwnen zeyebelaሽwo habtī zelewo. netom bftsum lbī zī'amnukha 'ithb."
+      "tigrinya_phonetic": "kahn: 'o newrī zeyblu ntsuḥ 'abo  tsatsen ḳwnḳwnen zeyebelaሽwo habtī zelewo. netom bftsum lbī zī'amnukha 'ithb.",
+      "spanish": "Sacerdote: Oh Padre puro e irreprensible, Tú tienes los tesoros que la polilla y el orín no corrompen, y que das a aquellos que confían en Ti en todos sus pensamientos."
     },
     {
       "instruction": "For Liturgies starting at midnight (e.g. Pascha, Nativity, etc). Inaudible Prayer.",
@@ -13796,7 +14313,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ዓለም ሳይፈጠር የነበረውን ብርሃን ያዩት ዘንድ መላእክትን ደስ የሚያሰኛቸው፤ የማይለወጥ ጠባቂያችን፤",
       "amharic_phonetic": "kahn: 'alem sayfeṭer yeneberewn brhan yayut zend mela'iktn des yemīyaseñachew: yemayleweṭ ṭebaḳīyachn:",
       "tigrinya_script": "ካህን፤ ንመላእኸቲ ኬመስግንዎ ዜፍትዎም። ዓለም ከይተፈጥረ ዝነበረ ዘይጠፍእ ሓላዊና ብርሃን ኢኻ።",
-      "tigrinya_phonetic": "kahn: nmela'ikhetī kémesgnwo zéftwom. 'alem keytefeṭre znebere zeyṭef'i ḥalawīna brhan 'īkha."
+      "tigrinya_phonetic": "kahn: nmela'ikhetī kémesgnwo zéftwom. 'alem keytefeṭre znebere zeyṭef'i ḥalawīna brhan 'īkha.",
+      "spanish": "Sacerdote: Tú hiciste que los ángeles desearan visitar la Luz que estaba ante el mundo, y Tú eres nuestro Guardián inmutable."
     },
     {
       "instruction": "For Liturgies starting at midnight (e.g. Pascha, Nativity, etc). Inaudible Prayer.",
@@ -13809,7 +14327,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ በእኛ የነበረውን ጨለማ በአባትህ ፈቃድ አራቅህልን፣ ከጨለማ ወደ ብርሃን አወጣኸን፣",
       "amharic_phonetic": "kahn: be'iña yeneberewn chelema be'abath feḳad 'araḳhln, kechelema wede brhan 'aweṭakhen,",
       "tigrinya_script": "ካህን፤ ነቲ ኣባና ዝነበረ መዝገብ ጽልመት ኣርሒቕካ ብፍቓድ ኣቦኻ ኣብራህካልና። ካብ መዓሙቝ ጸልማት ናብ ብርሃን ኣውፃእካና።",
-      "tigrinya_phonetic": "kahn: netī 'abana znebere mezgeb tslmet 'arḥīqhka bfqhad 'abokha 'abrahkalna. kab me'amuḳhw tselmat nab brhan 'awtsa'ikana."
+      "tigrinya_phonetic": "kahn: netī 'abana znebere mezgeb tslmet 'arḥīqhka bfqhad 'abokha 'abrahkalna. kab me'amuḳhw tselmat nab brhan 'awtsa'ikana.",
+      "spanish": "Sacerdote: Por la voluntad de tu Padre nos has iluminado, a nosotros que atesorábamos las tinieblas, a nosotros a quienes nos has sacado de las tinieblas a la luz,"
     },
     {
       "instruction": "For Liturgies starting at midnight (e.g. Pascha, Nativity, etc). Inaudible Prayer.",
@@ -13822,7 +14341,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ከሞት አድነህ ሕይወትን ሰጠኸን፣ ከመገዛት ነጻ አወጣኸን፣",
       "amharic_phonetic": "kahn: kemot 'adneh ḥywetn seṭekhen, kemegezat netsa 'aweṭakhen,",
       "tigrinya_script": "ካህን፤ ካብ ሞት ኣድኂንካ ሕይወት ሃብካና። ካብ ባርነት ሓራ ኣውፃእካና።",
-      "tigrinya_phonetic": "kahn: kab mot 'adhīnka ḥywet habkana. kab barnet ḥara 'awtsa'ikana."
+      "tigrinya_phonetic": "kahn: kab mot 'adhīnka ḥywet habkana. kab barnet ḥara 'awtsa'ikana.",
+      "spanish": "Sacerdote: y nos concedió la vida después de la muerte, y nos concedió la libertad de la esclavitud."
     },
     {
       "instruction": "For Liturgies starting at midnight (e.g. Pascha, Nativity, etc). Inaudible Prayer.",
@@ -13835,7 +14355,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ በመስቀልህ በሰማይ ወዳለው ወደ አባትህ ያቀረብከን፣ አቤቱ በወንጌል መራኸን፣ በነቢያት አረጋጋ ኸን፣ ያቀረብከን አምላክ አንተ ነህ፣",
       "amharic_phonetic": "kahn: bemesḳelh besemay wedalew wede 'abath yaḳerebken, 'abétu bewengél merakhen, benebīyat 'aregaga khen, yaḳerebken 'amlak 'ante neh,",
       "tigrinya_script": "ካህን፤ ብመስቀልካ ናብቲ ኣብ ሰማያት ዘሎ ኣቦኻ ኣቕረብካና። ብወንጌል መራሕካና፡ ብነቢያትውን ናዘዝካና። ኦ ኣምላኽ ባዕልኻ ኢኻ ዘቕረብካና።",
-      "tigrinya_phonetic": "kahn: bmesḳelka nabtī 'ab semayat zelo 'abokha 'aqhrebkana. bwengél meraḥkana  bnebīyatwn nazezkana. 'o 'amlakh ba'ilkha 'īkha zeqhrebkana."
+      "tigrinya_phonetic": "kahn: bmesḳelka nabtī 'ab semayat zelo 'abokha 'aqhrebkana. bwengél meraḥkana  bnebīyatwn nazezkana. 'o 'amlakh ba'ilkha 'īkha zeqhrebkana.",
+      "spanish": "Sacerdote: Con Tu cruz nos has acercado a Tu Padre que está en el cielo. Con el Evangelio nos has guiado y con los profetas nos has consolado, a nosotros, a quienes has acercado, oh Dios."
     },
     {
       "instruction": "For Liturgies starting at midnight (e.g. Pascha, Nativity, etc). Inaudible Prayer.",
@@ -13848,7 +14369,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ዳግመኛ አቤቱ ዕውቀትን ግለጽልን፣ ለአንተ ለአምላካችን ምስጋናን እናቀርባለን፣ አርምሞ በሌለበት ምስጋና እኛ ያንተ አገልጋዮች እናመሰግንሃለን፣ ሕዝቡም አንተን ያመሰግናሉ፤",
       "amharic_phonetic": "kahn: dagmeña 'abétu 'iwḳetn gletsln, le'ante le'amlakachn msganan 'inaḳerbalen, 'armmo belélebet msgana 'iña yante 'agelgayoch 'inamesegnhalen, ḥzbum 'anten yamesegnalu:",
       "tigrinya_script": "ካህን፤ ስለዚ ኦ ጐይታ፡ ንሕና ባሮትካ ንኣኻ ንኣምላኸና ክንውድስን ብዘይ ምቍራጽ ኵሉ ሳዕ ከነመስግንን ብርሃን ሃበና። ሕዝቢውን ንኣኻ ይውድሱ ኣለዉ።",
-      "tigrinya_phonetic": "kahn: slezī 'o gweyta  nḥna barotka n'akha n'amlakhena knwdsn bzey mḳwrats kwlu sa'i kenemesgnn brhan habena. ḥzbīwn n'akha ywdsu 'alewu."
+      "tigrinya_phonetic": "kahn: slezī 'o gweyta  nḥna barotka n'akha n'amlakhena knwdsn bzey mḳwrats kwlu sa'i kenemesgnn brhan habena. ḥzbīwn n'akha ywdsu 'alewu.",
+      "spanish": "Sacerdote: Danos, oh Dios, luz. Te alabamos, oh Dios nuestro, para que con incesante acción de gracias podamos decir que somos tus siervos; y el pueblo te alaba."
     },
     {
       "instruction": "For Liturgies starting at midnight (e.g. Pascha, Nativity, etc).",
@@ -13861,7 +14383,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ አቤቱ አንተን እናመሰግናለን።",
       "amharic_phonetic": "፨ ḥzb: 'abétu 'anten 'inamesegnalen",
       "tigrinya_script": "፨ ሕዝብ፤ ኦ ጐይታ፡ ንኣኻ ንውድስ ኣሎና",
-      "tigrinya_phonetic": "፨ ḥzb: 'o gweyta  n'akha nwds 'alona"
+      "tigrinya_phonetic": "፨ ḥzb: 'o gweyta  n'akha nwds 'alona",
+      "spanish": "፨ Pueblo: Oh Señor, te alabamos."
     },
     {
       "instruction": "For Liturgies starting at midnight (e.g. Pascha, Nativity, etc). Inaudible Prayer.",
@@ -13874,7 +14397,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ከሁሉ በላይ የምትሆን የእግዚአብሔር ልጁ ኢየሱስ ክርስቶስ ሆይ ጌትነትህ ለዘለዓለም ከሚሆን መንግሥትህ ጋራ በቃላችን ይህነን ምስጋና ሦስተኛ ጊዜ ለአንተ እናቀርባለን፣",
       "amharic_phonetic": "kahn: kehulu belay yemthon ye'igzī'abḥér lju 'īyesus krstos hoy gétneth lezele'alem kemīhon mengsth gara beḳalachn yhnen msgana sosteña gīzé le'ante 'inaḳerbalen,",
       "tigrinya_script": "ካህን፤ ምስ ኣቦ ልዕሊ ዅሉ ንዝኾንካ\nኢየሱስ ወዲ እግዚኣብሔር፡ ምስቲ ናይ ዘለዓለም መንግሥትኻ እዚ ምስጋና እዚ ንሣልሳይ ጊዜ ካብ ኣፍና ነቕርብ ኣሎና።",
-      "tigrinya_phonetic": "kahn: ms 'abo l'ilī ዅlu nzkhonka\n'īyesus wedī 'igzī'abḥér  mstī nay zele'alem mengstkha 'izī msgana 'izī nsalsay gīzé kab 'afna neqhrb 'alona."
+      "tigrinya_phonetic": "kahn: ms 'abo l'ilī ዅlu nzkhonka\n'īyesus wedī 'igzī'abḥér  mstī nay zele'alem mengstkha 'izī msgana 'izī nsalsay gīzé kab 'afna neqhrb 'alona.",
+      "spanish": "Sacerdote: Oh Jesús, Hijo de Dios, que estás sobre todo, tres veces más, te ofrecemos acción de gracias con tu Padre en tu reino eterno."
     },
     {
       "instruction": "For Liturgies starting at midnight (e.g. Pascha, Nativity, etc). Inaudible Prayer.",
@@ -13887,7 +14411,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ፍጥረት ሁሉ በመራድ (በመንቀጥቀጥ) በመፍራት ያመሰግንሃል፣",
       "amharic_phonetic": "kahn: fṭret hulu bemerad (bemenḳeṭḳeṭ) bemefrat yamesegnhal,",
       "tigrinya_script": "ካህን፤ ኵሉ ፍጥረት ድማ ብምርዓድን ብመን ፈስ ፍርሃትን የመስግነካ ኣሎ።",
-      "tigrinya_phonetic": "kahn: kwlu fṭret dma bmr'adn bmen fes frhatn yemesgneka 'alo."
+      "tigrinya_phonetic": "kahn: kwlu fṭret dma bmr'adn bmen fes frhatn yemesgneka 'alo.",
+      "spanish": "Sacerdote: y todas las criaturas te glorifican en temblor y temor de alma."
     },
     {
       "instruction": "For Liturgies starting at midnight (e.g. Pascha, Nativity, etc). Inaudible Prayer.",
@@ -13900,7 +14425,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ነፍስ ሁሉ የሚፈራው የሚያ መልከው፣ የጻድቃን ነፍሳት በአንተ ጸንተው ይኖራሉ፣ መናፍስት ያመጡትን የጐርፉን ፈሳሽነት ከእኛ ጸጥ ያደረግህልን፣",
       "amharic_phonetic": "kahn: nefs hulu yemīferaw yemīya melkew, yetsadḳan nefsat be'ante tsentew ynoralu, menafst yameṭutn yegwerfun fesaሽnet ke'iña tseṭ yadereghln,",
       "tigrinya_script": "ካህን፤ ኦ ኵሉ ነፍሲ ዚፈርሆ፡ ኵሎም ነፍሳት ጻድቃን ብኣኻ ጸኒዖም ዚነብሩ። መናፍስቲ ዘምጽእዎም ወሓዝቲ ማዕበላት ካባና ዘህዳ እካ።",
-      "tigrinya_phonetic": "kahn: 'o kwlu nefsī zīferho  kwlom nefsat tsadḳan b'akha tsenī'om zīnebru. menafstī zemts'iwom weḥaztī ma'ibelat kabana zehda 'ika."
+      "tigrinya_phonetic": "kahn: 'o kwlu nefsī zīferho  kwlom nefsat tsadḳan b'akha tsenī'om zīnebru. menafstī zemts'iwom weḥaztī ma'ibelat kabana zehda 'ika.",
+      "spanish": "Sacerdote: Toda alma te teme y todas las almas de los justos confían en Ti, que calmaste las tormentas de los espíritus malignos por nuestro bien."
     },
     {
       "instruction": "For Liturgies starting at midnight (e.g. Pascha, Nativity, etc). Inaudible Prayer.",
@@ -13913,7 +14439,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ከጥፋት አድነህ የሕይወት ወደብ የሆንከን፣ የዘለዓለም ድኅነት አለኝታ ያለበት መሸሻ የሆንከን፣ በባሕር የተጨነቁትን የምታድን፣",
       "amharic_phonetic": "kahn: keṭfat 'adneh yeḥywet wedeb yehonken, yezele'alem dhnet 'aleñta yalebet meሸሻ yehonken, bebaḥr yetecheneḳutn yemtadn,",
       "tigrinya_script": "ካህን፤ ካብ ጥፍኣት፡ ወደብ ሕይወት ዝኾንካና ንስኻ ኢኻ። ናብቲ ናይ ዘለዓለም ተስፋ ምድኃን ዘለዎ ጸግዒውን መጕየዪ ዝኾንካና ንስኻ ኢኻ። ነቶም ኣብ ባሕሪ ዚጭነቑ እተድኅን።",
-      "tigrinya_phonetic": "kahn: kab ṭf'at  wedeb ḥywet zkhonkana nskha 'īkha. nabtī nay zele'alem tesfa mdhan zelewo tseg'īwn megwyeyī zkhonkana nskha 'īkha. netom 'ab baḥrī zīchneqhu 'itedhn."
+      "tigrinya_phonetic": "kahn: kab ṭf'at  wedeb ḥywet zkhonkana nskha 'īkha. nabtī nay zele'alem tesfa mdhan zelewo tseg'īwn megwyeyī zkhonkana nskha 'īkha. netom 'ab baḥrī zīchneqhu 'itedhn.",
+      "spanish": "Sacerdote: y quien se hizo para nosotros vida de la destrucción, y refugio en donde está la esperanza de la salvación eterna; Tú salvas a los que están atribulados en el mar,"
     },
     {
       "instruction": "For Liturgies starting at midnight (e.g. Pascha, Nativity, etc). Inaudible Prayer.",
@@ -13926,7 +14453,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ በምድረበዳ ያሉትንም የምታድን በጽኑ እሥራት ካሉትም ጋራ አብረሃቸው የምትኖር ከሞት ማሠሪያ የፈታኸን፣",
       "amharic_phonetic": "kahn: bemdrebeda yalutnm yemtadn betsnu 'israt kalutm gara 'abrehachew yemtnor kemot maserīya yefetakhen,",
       "tigrinya_script": "ካህን፤ ነቶም ኣብ ምድረ በዳ ዘለዉ ኸኣ ብጸጋኻ እተሕዊ፡ ነቶም ኣብ ጽኑዕ ማእሰርቲ ዘለዉኸኣ ምስኣቶም እትነብር። ካብ ማእሰር ሞት ዝፈታሕካና፡",
-      "tigrinya_phonetic": "kahn: netom 'ab mdre beda zelewu khe'a btsegakha 'iteḥwī  netom 'ab tsnu'i ma'isertī zelewukhe'a ms'atom 'itnebr. kab ma'iser mot zfetaḥkana"
+      "tigrinya_phonetic": "kahn: netom 'ab mdre beda zelewu khe'a btsegakha 'iteḥwī  netom 'ab tsnu'i ma'isertī zelewukhe'a ms'atom 'itnebr. kab ma'iser mot zfetaḥkana",
+      "spanish": "Sacerdote: Acompañaste a aquellos cuyo encarcelamiento es muy duro; Así que libéranos de la atadura de la muerte."
     },
     {
       "instruction": "For Liturgies starting at midnight (e.g. Pascha, Nativity, etc). Inaudible Prayer.",
@@ -13939,7 +14467,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ችግረኞችንና የሚያለቅሱትን የሚያረጋጋቸው፣ የደከሙትን በመስቀሉ የሚያድን፣ ከአመንበት ከእኛ መዓቱን ሁሉ የሚያርቅ፣",
       "amharic_phonetic": "kahn: chgreñochnna yemīyaleḳsutn yemīyaregagachew, yedekemutn bemesḳelu yemīyadn, ke'amenbet ke'iña me'atun hulu yemīyarḳ,",
       "tigrinya_script": "ካህን፤ ንመሳኺንን ንዚበኸዩን ዚናዝዞም፡ ነቶም ዝጻመዉ ድማ ብመስቀሉ ዚብጀዎም። ነቶም ኣብኡ ዝተወከልና ኵሉ መዓት ካባና ዚመልስን ዜርሕቕን ንስኻ ኢኻ።",
-      "tigrinya_phonetic": "kahn: nmesakhīnn nzībekheyun zīnazzom  netom ztsamewu dma bmesḳelu zībjewom. netom 'ab'u ztewekelna kwlu me'at kabana zīmelsn zérḥqhn nskha 'īkha."
+      "tigrinya_phonetic": "kahn: nmesakhīnn nzībekheyun zīnazzom  netom ztsamewu dma bmesḳelu zībjewom. netom 'ab'u ztewekelna kwlu me'at kabana zīmelsn zérḥqhn nskha 'īkha.",
+      "spanish": "Sacerdote: Tú consuelas a los miserables y a los que lloran, salvas a los débiles con tu cruz, quitas y quitas toda ira de los que en ti hemos confiado."
     },
     {
       "instruction": "For Liturgies starting at midnight (e.g. Pascha, Nativity, etc). Inaudible Prayer.",
@@ -13952,7 +14481,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ነቢያትና ሐዋርያት በኅቡእ ያመሰገኑህን አንተን አቤቱ እናመሰግናለን፣ ለአንተ ምስጋና እናቀርባለን፣ አንተን አምነን በመንግሥተ ሰማያት እናርፍ ዘንድ፣",
       "amharic_phonetic": "kahn: nebīyatna ḥawaryat behbu'i yamesegenuhn 'anten 'abétu 'inamesegnalen, le'ante msgana 'inaḳerbalen, 'anten 'amnen bemengste semayat 'inarf zend,",
       "tigrinya_script": "ካህን፤ ኦ ጐይታ፡ ነቢያትን ሓዋርያትን ብኅቡእ ንዜመስግኑኻ ንኣኻ ንውድስን ነመስግነካን ኣሎና። ኣብ ማኅደር ሕይወት ምእንቲ ኸነዕርፍ፡ ብኣኻ ኣሚንና",
-      "tigrinya_phonetic": "kahn: 'o gweyta  nebīyatn ḥawaryatn bhbu'i nzémesgnukha n'akha nwdsn nemesgnekan 'alona. 'ab mahder ḥywet m'intī khene'irf  b'akha 'amīnna"
+      "tigrinya_phonetic": "kahn: 'o gweyta  nebīyatn ḥawaryatn bhbu'i nzémesgnukha n'akha nwdsn nemesgnekan 'alona. 'ab mahder ḥywet m'intī khene'irf  b'akha 'amīnna",
+      "spanish": "Sacerdote: Oh Señor, a quien los profetas y los apóstoles agradecieron en secreto, nosotros te damos gracias. Te glorificamos, para que, creyendo en Ti y cumpliendo Tu voluntad, descansemos en la morada de la vida."
     },
     {
       "instruction": "For Liturgies starting at midnight (e.g. Pascha, Nativity, etc). Inaudible Prayer.",
@@ -13965,7 +14495,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ፈቃድህንም እየሠራን በትእዛዝህ እንድንሄድ አድርገን፣ ሁሉንም በቸርነትህ ጎብኝ፣ ትንንሾችንም ትልልቆችንም፣ ገዢውንና ሕዝቡን ጠባቂውንና መንጋውን፣",
       "amharic_phonetic": "kahn: feḳadhnm 'iyeseran bet'izazh 'indnhéd 'adrgen, hulunm becherneth gobñ, tnnሾchnm tllḳochnm, gezhīwnna ḥzbun ṭebaḳīwnna mengawn,",
       "tigrinya_script": "ካህን፤ ፍቓድካ እናገበርና ብትእዛዝካ ከም እንመላለስ ግበረና። ኦ ጐይታ፡ ንዅሉ ንናእሽቱን ንዓበይትን፡ ንመመኃደርን ንሕዝቡን፡ ንጓሳን ንመጓሴኡን፡ ብምሕረትካ ሓሉ።",
-      "tigrinya_phonetic": "kahn: fqhadka 'inageberna bt'izazka kem 'inmelales gberena. 'o gweyta  nዅlu nna'iሽtun n'abeytn  nmemehadern nḥzbun  ngwasan nmegwasé'un  bmḥretka ḥalu."
+      "tigrinya_phonetic": "kahn: fqhadka 'inageberna bt'izazka kem 'inmelales gberena. 'o gweyta  nዅlu nna'iሽtun n'abeytn  nmemehadern nḥzbun  ngwasan nmegwasé'un  bmḥretka ḥalu.",
+      "spanish": "Sacerdote: Concédenos caminar según Tu orden. Oh Señor, por Tu misericordia visita a todos: pequeños y grandes; gobernantes y pueblo; pastor y rebaño."
     },
     {
       "instruction": "For Liturgies starting at midnight (e.g. Pascha, Nativity, etc). Inaudible Prayer.",
@@ -13978,7 +14509,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አቤቱ አምላካችን ሆይ፣ ክቡር መንግሥት የአንተ ነውና",
       "amharic_phonetic": "kahn: 'abétu 'amlakachn hoy, kbur mengst ye'ante newna",
       "tigrinya_script": "ካህን፤ ኦ ጐይታናን ኣምላኸናን ቡሩኸ መንግሥቲ ናትካ እዩ እሞ፡",
-      "tigrinya_phonetic": "kahn: 'o gweytanan 'amlakhenan burukhe mengstī natka 'iyu 'imo"
+      "tigrinya_phonetic": "kahn: 'o gweytanan 'amlakhenan burukhe mengstī natka 'iyu 'imo",
+      "spanish": "Sacerdote: Porque tuyo es el Reino, oh bendito Señor Dios nuestro."
     },
     {
       "instruction": "For Liturgies starting at midnight (e.g. Pascha, Nativity, etc).",
@@ -13991,7 +14523,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ከዓለም አስ ቀድሞ ምስጋና ለአብ ለወልድ ለመንፈስ ቅዱስ ይገባል ዛሬም ዘወትርም ለልጅ ልጅ ለዘለዓለሙ የማይፈጸም፤\n፨ ሕዝብ፤ አሜን።",
       "amharic_phonetic": "kahn: ke'alem 'as ḳedmo msgana le'ab leweld lemenfes ḳdus ygebal zarém zewetrm lelj lj lezele'alemu yemayfetsem:\n፨ ḥzb: 'amén.",
       "tigrinya_script": "ካህን፤ ቅድሚ ዓለም፡ ምስጋና ንኣብን ንወልድን ንመንፈስ ቅዱስን ይግባእ። ሎምን ኵሉ ሳዕን ንውሉድ ወለዶን ዘይውዳእ፡ ንዘለዓለም ዓለም።\n፨ ሕዝብ፤ ኣሜን።",
-      "tigrinya_phonetic": "kahn: ḳdmī 'alem  msgana n'abn nweldn nmenfes ḳdusn ygba'i. lomn kwlu sa'in nwlud weledon zeywda'i  nzele'alem 'alem.\n፨ ḥzb: 'amén."
+      "tigrinya_phonetic": "kahn: ḳdmī 'alem  msgana n'abn nweldn nmenfes ḳdusn ygba'i. lomn kwlu sa'in nwlud weledon zeywda'i  nzele'alem 'alem.\n፨ ḥzb: 'amén.",
+      "spanish": "Sacerdote: Gloria al Padre, al Hijo y al Espíritu Santo, antes de la creación del mundo, ahora y siempre, y de generación en generación y en el mundo sin fin.\n፨ Pueblo: Amén."
     },
     {
       "instruction": "For Liturgies starting in the morning (e.g. Saturdays, Sundays)",
@@ -14004,7 +14537,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ የእግዚአብሔር ጸጋ ከናንተ ጋራ ይሁን\n፨ ሕዝብ፤ ከመንፈስህ ጋር",
       "amharic_phonetic": "kahn: ye'igzī'abḥér tsega kenante gara yhun\n፨ ḥzb: kemenfesh gar",
       "tigrinya_script": "ካህን፤ ናይ እግዚኣብሔር ጸጋ ምሳኹም ይኹን።\n፨ ሕዝብ፤ ምስ መንፈስካ",
-      "tigrinya_phonetic": "kahn: nay 'igzī'abḥér tsega msakhum ykhun.\n፨ ḥzb: ms menfeska"
+      "tigrinya_phonetic": "kahn: nay 'igzī'abḥér tsega msakhum ykhun.\n፨ ḥzb: ms menfeska",
+      "spanish": "፨ ORACIÓN DE LA MAÑANA DE LA PACTO ፨\nSacerdote: La Gracia de Dios esté con vosotros.\n፨ Pueblo: y con Tu Espíritu."
     },
     {
       "instruction": "For Liturgies starting in the morning (e.g. Saturdays, Sundays)",
@@ -14017,7 +14551,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ፈጣሪያችንን እናመስግን\n፨ ሕዝብ፤ እውነት ነው ይገባል\nካህን፤ የልባችሁን ሃሳብ አጽኑ",
       "amharic_phonetic": "kahn: feṭarīyachnn 'inamesgn\n፨ ḥzb: 'iwnet new ygebal\nkahn: yelbachhun hasab 'atsnu",
       "tigrinya_script": "ካህን፤ ንኣምላኽና ነመስግኖ፡\n፨ ሕዝብ፤ ብሓቂ ይግባእ እዩ።\nካህን፤ ሕሊና ልብኹም ኣጽንዑ።",
-      "tigrinya_phonetic": "kahn: n'amlakhna nemesgno \n፨ ḥzb: bḥaḳī ygba'i 'iyu.\nkahn: ḥlīna lbkhum 'atsn'u."
+      "tigrinya_phonetic": "kahn: n'amlakhna nemesgno \n፨ ḥzb: bḥaḳī ygba'i 'iyu.\nkahn: ḥlīna lbkhum 'atsn'u.",
+      "spanish": "Sacerdote: Glorifiquemos a nuestro Dios.\n፨ Pueblo: Está bien, es justo.\nSacerdote: Fortalece el pensamiento de tu corazón."
     },
     {
       "instruction": "For Liturgies starting in the morning (e.g. Saturdays, Sundays)",
@@ -14030,7 +14565,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ ከእግዚአብሔር ዘንድ አለን። አባታችን ሆይ አባታችን ሆይ አባታችን ሆይ አቤቱ ወደ ፈተና አታግባን።",
       "amharic_phonetic": "፨ ḥzb: ke'igzī'abḥér zend 'alen. 'abatachn hoy 'abatachn hoy 'abatachn hoy 'abétu wede fetena 'atagban.",
       "tigrinya_script": "፨ ሕዝብ፤ ኣብ እግዚአብሔር ኣቦና ኣሎና፡ ኣብ ሰማያት እትነብር ኣቦና፡ ኣብ ሰማያት እትነብር ኣቦና፡ ኣብ ሰማያት እትነብር ኣቦና፡ ናብ ፈተና ኣይተእትወና።",
-      "tigrinya_phonetic": "፨ ḥzb: 'ab 'igzī'abḥér 'abona 'alona 'ab semayat 'itnebr 'abona 'ab semayat 'itnebr 'abona 'ab semayat 'itnebr 'abona nab fetena 'ayte'itwena."
+      "tigrinya_phonetic": "፨ ḥzb: 'ab 'igzī'abḥér 'abona 'alona 'ab semayat 'itnebr 'abona 'ab semayat 'itnebr 'abona 'ab semayat 'itnebr 'abona nab fetena 'ayte'itwena.",
+      "spanish": "፨ Pueblo: Los elevamos al Señor. Padre nuestro que estás en los cielos, Padre nuestro que estás en los cielos, Padre nuestro que estás en los cielos, no nos dejes caer en la tentación."
     },
     {
       "instruction": "For Liturgies starting in the morning (e.g. Saturdays, Sundays). Inaudible Prayer.",
@@ -14043,7 +14579,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ብርሃንን የሚስጥ እግዚአብሔር አብ ኃይል የሚሆን ነፍስን ሁሉ የሚጎበኝ ከቀድሞ ጀምሮ የነበረ ብርሃን",
       "amharic_phonetic": "kahn: brhann yemīsṭ 'igzī'abḥér 'ab hayl yemīhon nefsn hulu yemīgobeñ keḳedmo jemro yeneberäre brhan",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Oh Dios Padre, Dador de luz, Poder de todo, Visitador de toda alma, Luz que era antes, Creador del mundo,"
     },
     {
       "instruction": "For Liturgies starting in the morning (e.g. Saturdays, Sundays). Inaudible Prayer.",
@@ -14056,7 +14593,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ዓለምን የፈጠረ፣ ወደ ሕይወት የሚመራ፣ የማያልፈውን ተድላ የሚሰጥ ነው፣\nከጨለማ መሰናክል አውጥተህ የማይገኝ ብርሃንን የሰጠ ኸን፣",
       "amharic_phonetic": "kahn: 'alemn yefeṭeräre, wede ḥywet yemīmera, yemayalfewn tedla yemīseṭ new ,\nkechelema mesenakl 'awṭteh yemaygeñ brhann yeseṭe khen,",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Líder de la vida y Dador de la felicidad inmortal: Tú nos sacaste de las trampas de las tinieblas y nos concediste la luz inescrutable."
     },
     {
       "instruction": "For Liturgies starting in the morning (e.g. Saturdays, Sundays). Inaudible Prayer.",
@@ -14069,7 +14607,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ያመንብህ እኛን ከማዕሠረ ክሕደት አውጥተህ በሃይማኖት ያከበርከን",
       "amharic_phonetic": "kahn: yamenbh 'iñan kema'iseräre kḥdet 'awṭteh behaymanot yakeberken",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Tú nos desataste a los que creemos en Ti, y nos cubriste de fe."
     },
     {
       "instruction": "For Liturgies starting in the morning (e.g. Saturdays, Sundays). Inaudible Prayer.",
@@ -14082,7 +14621,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ከአገልጋዮቹ የማይርቅ የማይለይ፣ ዘወትር ከነርሱ ጋራ የሚኖር፣ በፍርሃት በረዓድ የምትለምነውን ነፍስ ቸል የማይል፣",
       "amharic_phonetic": "kahn: ke'agelgayochu yemayrḳ yemayley, zewetr kenersu gara yemīnor, befrhat beräre'ad yemtlemnewn nefs chel yemayl,",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: No estás lejos de Tus siervos sino que estás siempre con ellos. No descuidaste el alma que te suplica con temor y temblor."
     },
     {
       "instruction": "For Liturgies starting in the morning (e.g. Saturdays, Sundays). Inaudible Prayer.",
@@ -14095,7 +14635,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ከሕሊና አስቀድሞ ሁሉን የሚያውቅ፣ ከአሳብ አስቀድሞ የሚመረ ምር፣ ሳንለምነው የምንሻውን ዐውቆ የሚሰጠን፣ ሳንጠራጠር የምንለምነውን የሚሰማን፣",
       "amharic_phonetic": "kahn: keḥlīna 'asḳedmo hulun yemīyawḳ, ke'asab 'asḳedmo yemīmeräre mr, sanlemnew yemnshawn 'awḳo yemīseṭen, sanṭeraṭer yemnlemnewn yemīseman,",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Lo sabes todo antes de pensarlo. Por Tu Voluntad Suples nuestras necesidades antes de que te las pidamos; Tú nos escuchas que te invocamos sin dudar."
     },
     {
       "instruction": "For Liturgies starting in the morning (e.g. Saturdays, Sundays). Inaudible Prayer.",
@@ -14108,7 +14649,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ የማይመረመር ብርሃን፣ በሰማያት ያሉ የመላእክት ንጉሥ አድሮባቸው የሚኖር ሊቃነ መላእክት ያቀረቡትን ምስጋና የሚቀበል፣",
       "amharic_phonetic": "kahn: yemaymeräremer brhan , besemayat yalu yemela'ikt ngus 'adrobachew yemīnor līḳane mela'ikt yaḳerärebutn msgana yemīḳebel ,",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Tú eres la luz inescrutable y el Rey de las huestes celestiales, oyente del cántico glorioso de los arcángeles sobre quienes descansas."
     },
     {
       "instruction": "For Liturgies starting in the morning (e.g. Saturdays, Sundays). Inaudible Prayer.",
@@ -14121,7 +14663,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤አቤቱ የምን ለምንህን ስማን፣ አርምሞ የሌለበትን ቃል በሃይማኖት ስጠን፣ አንተን ፈጽሞ እናመሰግን ዘንድ አንተን እናከብር ዘንድ፧",
       "amharic_phonetic": "kahn:'abétu yemn lemnhn sman, 'armmo yelélebetn ḳal behaymanot sṭen, 'anten fetsmo 'inamesegn zend 'anten 'inakebr zend?",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Oh Señor, te rogamos que nos escuches. Concédenos la Palabra incesante en confianza. Te glorificamos, te damos gracias y te bendecimos."
     },
     {
       "instruction": "For Liturgies starting in the morning (e.g. Saturdays, Sundays). Inaudible Prayer.",
@@ -14134,7 +14677,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤  በአንተም ጸንተን እንኖር ዘንድ፣ አቤቱ እኛ አገልጋዮችህ እና መሰግንሃለን፣",
       "amharic_phonetic": "kahn:  be'antem tsenten 'innor zend, 'abétu 'iña 'agelgayochh 'ina mesegnhalen ,",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Oh Señor, nosotros, Tus siervos, te glorificamos porque dependemos de Ti."
     },
     {
       "instruction": "For Liturgies starting in the morning (e.g. Saturdays, Sundays).",
@@ -14147,7 +14691,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ አቤቱ አንተን እናመሰግንሃለን",
       "amharic_phonetic": "፨ ḥzb: 'abétu 'anten 'inamesegnhalen",
       "tigrinya_script": "፨ ሕዝብ፤ ኦ ጐይታ ንኣኻ ነመስግን።",
-      "tigrinya_phonetic": "፨ ḥzb: 'o gweyta n'akha nemesgn."
+      "tigrinya_phonetic": "፨ ḥzb: 'o gweyta n'akha nemesgn.",
+      "spanish": "፨ Pueblo: Oh Señor, te glorificamos."
     },
     {
       "instruction": "For Liturgies starting in the morning (e.g. Saturdays, Sundays). Inaudible Prayer.",
@@ -14160,7 +14705,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አቤቱ ኢየሱስ ክርስቶስ ሆይ ቊርጥ ልመናችንን ስማን፣ ድዳ ለነበሩት ቃል፣ ለተሰበሩት ምርኩዝ፣ ለዕውራን ብርሃን ለሐንካሶች, መሄጃ፣ ለምጻሙን የሚያነጻ ሆናቸው፣",
       "amharic_phonetic": "kahn: 'abétu 'īyesus krstos hoy ḳwīrṭ lmenachnn sman , dda leneberut ḳal, leteseberut mrkuz, le'iwran brhan leḥankasoch, mehéja , lemtsamun yemīyanetsa honachew,",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Oh Señor, Jesucristo, Santo, Tú nos has oído. Te convertiste en palabra para los mudos, en bastón para los quebrantados, en luz para los ciegos, en camino para los cojos y en purificador de los leprosos."
     },
     {
       "instruction": "For Liturgies starting in the morning (e.g. Saturdays, Sundays). Inaudible Prayer.",
@@ -14173,7 +14719,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አዳንህ፣ ደንቆሮችን ፈወስህ፣ ሞትን ዘለፈው፣ ጨለማንም ሣቀ",
       "amharic_phonetic": "kahn: 'adanh, denḳorochn fewesh, motn zelefew, chelemanm saḳe",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Oh Señor, Tú sanaste a los enfermos y curaste a los sordos. Reprendiste la muerte y destruiste las tinieblas."
     },
     {
       "instruction": "For Liturgies starting in the morning (e.g. Saturdays, Sundays). Inaudible Prayer.",
@@ -14186,7 +14733,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤  ሣቀየወ ብርሃንን የፈጠረ  ኅልፈት የሌለበት ፀሐይ፣ የማይጠፋ ፋኖስ፣ በቅዱሳን ላይ ዘወትር የሚያበራ ፀሐይ፣",
       "amharic_phonetic": "kahn:  saḳeyewe brhann yefeṭeräre  hlfet yelélebet tseḥay, yemayṭefa fanos, beḳdusan lay zewetr yemīyabera tseḥay,",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Tú creaste la luz del sol que no se pone, la luz inextinguible, el Sol que siempre brilla sobre los santos,"
     },
     {
       "instruction": "For Liturgies starting in the morning (e.g. Saturdays, Sundays). Inaudible Prayer.",
@@ -14199,7 +14747,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤በተወሰነ በቊርጥ ፈቃድ ለዓለም ጌጥ ሁሉን የፈጠረ፣ ሰውን ለማዳን ለሁሉ ተገለጽህ፣ ነፍስን የመለስሃት አንተ ነህ፣",
       "amharic_phonetic": "kahn:betewesene beḳwīrṭ feḳad le'alem géṭ hulun yefeṭeräre , sewn lemadan lehulu tegeletsh , nefsn yemeleshat 'ante neh ,",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Tú estableciste todo a través de Tu Voluntad fija para la decoración del mundo. Tú apareciste claramente a todos para salvar al hombre, Tú eres el restaurador del alma,"
     },
     {
       "instruction": "For Liturgies starting in the morning (e.g. Saturdays, Sundays). Inaudible Prayer.",
@@ -14212,7 +14761,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ሁሉን እንደሚገባ ማሰብን አስቀደምህ መላእክትን የፈጠርህ፣ የሁሉ አባት፣ የሁሉ ጌታ፤ የዓለም ጌጥ፣ ምድርን የፈጠርሃት",
       "amharic_phonetic": "kahn: hulun 'indemīgeba masebn 'asḳedemh mela'iktn yefeṭerh, yehulu 'abat , yehulu géta: ye'alem géṭ, mdrn yefeṭerhat",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: y Tú fuiste de antemano para determinar correctamente todas las cosas. Oh Tú, Creador de los ángeles, Padre de todos, adorno del mundo y hacedor de la tierra,"
     },
     {
       "instruction": "For Liturgies starting in the morning (e.g. Saturdays, Sundays). Inaudible Prayer.",
@@ -14225,7 +14775,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ዓለም ሳይፈጠር የነበረ፣ ጥበብና ዕውቀት, ከአብ ወደ ዓለም ተላከ፣ ይህ አኗኗር የማይለወጥ፣ የማይፈርስ የማይመረመር  ነው፣",
       "amharic_phonetic": "kahn: 'alem sayfeṭer yeneberäre , ṭbebna 'iwḳet, ke'ab wede 'alem telake , yh 'anwanwar yemayleweṭ , yemayfers yemaymeräremer  new,",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: La Sabiduría y el Conocimiento fueron enviados al mundo por el Padre que era antes. Esta existencia es inmutable, inescrutable e invisible en espíritu."
     },
     {
       "instruction": "For Liturgies starting in the morning (e.g. Saturdays, Sundays). Inaudible Prayer.",
@@ -14238,7 +14789,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ የማይታይ መንፈስ ነው፣ ይህን የተናገርህ አንተ ምስጉን ነህ፣ምስክርነትህም የተደነቀ ነው  ስለዚህ እኛ አገልጋዮችህ እናመሰግንሃለን፣",
       "amharic_phonetic": "kahn: yemaytay menfes new, yhn yetenagerh 'ante msgun neh ,mskrnethm yetedeneḳe new  slezīh 'iña 'agelgayochh 'inamesegnhalen ,",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Tú eres el glorioso anunciador y Tu nombre es maravilloso. Por eso nosotros, tus siervos, te alabamos, oh Señor."
     },
     {
       "instruction": "For Liturgies starting in the morning (e.g. Saturdays, Sundays).",
@@ -14251,7 +14803,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ አቤቱ አንተን እናወድስሃለን",
       "amharic_phonetic": "፨ ḥzb: 'abétu 'anten 'inawedshalen",
       "tigrinya_script": "፨ ሕዝብ፤ ኦ ጐይታ ንኣኻ ንውድስ።",
-      "tigrinya_phonetic": "፨ ḥzb: 'o gweyta n'akha nwds."
+      "tigrinya_phonetic": "፨ ḥzb: 'o gweyta n'akha nwds.",
+      "spanish": "፨ Pueblo: Oh Señor, te alabamos."
     },
     {
       "instruction": "For Liturgies starting in the morning (e.g. Saturdays, Sundays). Inaudible Prayer.",
@@ -14264,7 +14817,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ የማይለወጥ ባንተ ማመንን የስጠኸን አቤቱ ይህን ክቡር ምስጋና ሦስተኛ ጊዜ እናቀርብልሃለን፣ የሞት ማሠሪያ ክሕደትን በሃይማኖት ድል እንድንነሣው ያደረግ ህልን፣",
       "amharic_phonetic": "kahn: yemayleweṭ bante mamenn yesṭekhen 'abétu yhn kbur msgana sosteña gīzé 'inaḳerblhalen , yemot maserīya kḥdetn behaymanot dl 'indnnesaw yaderäreg hln,",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Tres veces más te ofrecemos esta santa gloria, que nos has dado tu fe inmutable con la que nos has hecho romper las ataduras de la muerte."
     },
     {
       "instruction": "For Liturgies starting in the morning (e.g. Saturdays, Sundays). Inaudible Prayer.",
@@ -14277,7 +14831,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ለሚያምኑብህ ቅን ልቡናን የፈጠርህ፣ ከስው ወገን አማልክት ይባሉ ዘንድ፤",
       "amharic_phonetic": "kahn: lemīyamnubh ḳn lbunan yefeṭerh, kesw wegen 'amalkt ybalu zend:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Tú creaste la mente recta de los que creen en Ti, para que sean llamados dioses entre los hombres."
     },
     {
       "instruction": "For Liturgies starting in the morning (e.g. Saturdays, Sundays). Inaudible Prayer.",
@@ -14290,7 +14845,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ በመንፈስ የጠላትን ኃይል ሁሉ እንረግጥ ዘንድ የሰጠ ኸን፣ የማይፈታውን እንፈታ ዘንድ",
       "amharic_phonetic": "kahn: bemenfes yeṭelatn hayl hulu 'inräregṭ zend yeseṭe khen, yemayfetawn 'infeta zend",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Tú nos has concedido hollar todas las potencias del enemigo mediante el Espíritu, para que desate lo que no puede ser desatado."
     },
     {
       "instruction": "For Liturgies starting in the morning (e.g. Saturdays, Sundays). Inaudible Prayer.",
@@ -14303,7 +14859,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ከአባትህ ዘንድ ፍቅርን አደረግህልን፣ በመካከላችንም ሆነህ አስታረቅኸን፣ አቤቱ የሚለምኑህን ስማቸው",
       "amharic_phonetic": "kahn: ke'abath zend fḳrn 'aderäreghln , bemekakelachnm honeh 'astaräreḳkhen , 'abétu yemīlemnuhn smachew",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Tú nos has hecho eficaz el amor hacia tu Padre y has hecho la reconciliación entre nosotros y Él. Oh Señor, escucha a los que te suplican."
     },
     {
       "instruction": "For Liturgies starting in the morning (e.g. Saturdays, Sundays). Inaudible Prayer.",
@@ -14316,7 +14873,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አቤቱ የምንለምንህ እኛ አንከ ስስ፤ በመከስስ ጊዜ በጠላ ታችን ላይ እንኑርበት እንጂ ዘወትር እንድንጸልይ አድርገን፣ ከጠላታችን ማታለል እንጠበቅ ዘንድ",
       "amharic_phonetic": "kahn: 'abétu yemnlemnh 'iña 'anke ss: bemekess gīzé beṭela tachn lay 'innurbet 'injī zewetr 'indntsely 'adrgen, keṭelatachn matalel 'inṭebeḳ zend",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Oh Señor, que nosotros, los que te suplicamos, no caigamos en pecado, sino vindicadnos contra nuestros enemigos, nuestros acusadores. Concédenos oración continua para que no seamos devorados por el enemigo."
     },
     {
       "instruction": "For Liturgies starting in the morning (e.g. Saturdays, Sundays). Inaudible Prayer.",
@@ -14329,7 +14887,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ የዘለዓለም ንጉሥ ሆይ ስማ ባልቴቲቱን አረጋጋት፣ አባት እናት የሞቱበትን ልጅ ተቀበል የታለሉትን በቸርነትህ አንጻ፣",
       "amharic_phonetic": "kahn: yezele'alem ngus hoy sma baltétītun 'aräregagat, 'abat 'inat yemotubetn lj teḳebel yetalelutn becherneth 'antsa,",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Oh Rey eterno, escucha; Consuela a las viudas, acoge a los huérfanos, purifica a los inmundos con tu misericordia,"
     },
     {
       "instruction": "For Liturgies starting in the morning (e.g. Saturdays, Sundays).",
@@ -14342,7 +14901,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ሰነ ፎችን አስብ አዋቂ አድርጋቸው፣ የጠፉትን መልስ፣ በግዞት ያሉትን አድናቸው፣ ለሁላችንም መጠጊያ ሁነን አቤቱ አምላካችን ክቡር መንግሥት ያንተ ነውና፤\r\nይ.ሕ. አሜን።\n፨ ሕዝብ፤ አሜን።",
       "amharic_phonetic": "kahn: sene fochn 'asb 'awaḳī 'adrgachew, yeṭefutn mels, begzot yalutn 'adnachew, lehulachnm meṭegīya hunen 'abétu 'amlakachn kbur mengst yante newna:\r\ny.ḥ. 'amén   \n፨ ḥzb: 'amén.",
       "tigrinya_script": "ካህን፤...\n፨ ሕዝብ፤ ኣሜን።",
-      "tigrinya_phonetic": "kahn:...\n፨ ḥzb: 'amén."
+      "tigrinya_phonetic": "kahn:...\n፨ ḥzb: 'amén.",
+      "spanish": "Sacerdote: concede sabiduría a los necios, restaura a los perdidos, salva a los cautivos y sé refugio para todos nosotros, porque tuyo es el Reino bendito, oh Señor Dios nuestro.\n፨ Pueblo: Amén."
     },
     {
       "instruction": "For afternoon/evening services.",
@@ -14355,7 +14915,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ የእግዚአብሔር ጸጋ ከናንተ ጋራ ይሁን\n፨ ሕዝብ፤ ከመንፈስህ ጋር",
       "amharic_phonetic": "kahn: ye'igzī'abḥér tsega kenante gara yhun\n፨ ḥzb: kemenfesh gar",
       "tigrinya_script": "ካህን፤ ናይ እግዚኣብሔር ጸጋ ምሳኹም ይኹን።\n፨ ሕዝብ፤ ምስ መንፈስካ",
-      "tigrinya_phonetic": "kahn: nay 'igzī'abḥér tsega msakhum ykhun.\n፨ ḥzb: ms menfeska"
+      "tigrinya_phonetic": "kahn: nay 'igzī'abḥér tsega msakhum ykhun.\n፨ ḥzb: ms menfeska",
+      "spanish": "፨ ORACIÓN DE LA TARDE DE LA PACTO ፨\nSacerdote: La Gracia de Dios esté con vosotros.\n፨ Pueblo: y con Tu Espíritu."
     },
     {
       "instruction": "For afternoon/evening services.",
@@ -14368,7 +14929,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤...\n፨ ሕዝብ፤ እውነት ነው ይገባል",
       "amharic_phonetic": "kahn:...\n፨ ḥzb: 'iwnet new ygebal",
       "tigrinya_script": "ካህን፤...\n፨ ሕዝብ፤ ብሓቂ ይግባእ እዩ።",
-      "tigrinya_phonetic": "kahn:...\n፨ ḥzb: bḥaḳī ygba'i 'iyu."
+      "tigrinya_phonetic": "kahn:...\n፨ ḥzb: bḥaḳī ygba'i 'iyu.",
+      "spanish": "Sacerdote: Das gracias a nuestro Dios.\n፨ Pueblo: Está bien, es justo."
     },
     {
       "instruction": "For afternoon/evening services. Inaudible Prayer.",
@@ -14381,7 +14943,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ የማትለወጥ አንተን\r\nአብን የነፍሳችን መድኃኒት\r\nየምትሆን፣ የጥበባት መሠረት፣\r\nየልቡናችን ጠባቂ፣",
       "amharic_phonetic": "kahn: yematleweṭ 'anten\r\n'abn yenefsachn medhanīt\r\nyemthon, yeṭbebat meseräret,\r\nyelbunachn ṭebaḳī ,",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Oh Padre inmortal, Salvador de nuestra alma, Fundamento de la sabiduría, Custodio de nuestros corazones,"
     },
     {
       "instruction": "For afternoon/evening services. Inaudible Prayer.",
@@ -14394,7 +14957,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ውሳጣዊ ዓይናችንን ብሩህ ያደረግህልን የሕሊናችንን\nጨለማ አርቀህ ከአንተ በሚገኝ ዕውቀት አከበርከን፤",
       "amharic_phonetic": "kahn: wsaṭawī 'aynachnn bruh yaderäreghln yeḥlīnachnn\nchelema 'arḳeh ke'ante bemīgeñ 'iwḳet 'akeberken:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Tú has concedido luz a nuestros ojos interiores y nos has cubierto con Tu conocimiento contra la oscuridad de nuestra mente."
     },
     {
       "instruction": "For afternoon/evening services. Inaudible Prayer.",
@@ -14407,7 +14971,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ለጥፋት የተሰጠ የቀደመ ሰው አዳምን በልጅህ መስቀል አዳንህ፣ በማይለወጥ አደስከው፣",
       "amharic_phonetic": "kahn: leṭfat yeteseṭe yeḳedeme sew 'adamn beljh mesḳel 'adanh, bemayleweṭ 'adeskew,",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Tú salvaste al primer hombre, que fue entregado a la destrucción, por la cruz de Tu Unigénito, y lo renovaste por las cosas inmortales."
     },
     {
       "instruction": "For afternoon/evening services. Inaudible Prayer.",
@@ -14420,7 +14985,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ስሕተቶች በትእዛዝህ ጠፉ፣ በልጅህ ሞት አዳንህ፣ የጠፋውን ፈለግህ፣",
       "amharic_phonetic": "kahn: sḥtetoch bet'izazh ṭefu, beljh mot 'adanh , yeṭefawn felegh ,",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Las iniquidades desaparecieron por tu mandamiento, y tú hiciste la redención por la muerte de tu Hijo y buscaste al perdido."
     },
     {
       "instruction": "For afternoon/evening services. Inaudible Prayer.",
@@ -14433,7 +14999,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ስለዚህ እኛ አገልጋዮችህ እናመሰግንሃለን፣",
       "amharic_phonetic": "kahn: slezīh 'iña 'agelgayochh 'inamesegnhalen ,",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Por eso nosotros, tus siervos, te glorificamos, oh Señor."
     },
     {
       "instruction": "For afternoon/evening services.",
@@ -14446,7 +15013,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ አቤቱ አንተን እናመሰግንሃለን",
       "amharic_phonetic": "፨ ḥzb: 'abétu 'anten 'inamesegnhalen",
       "tigrinya_script": "፨ ሕዝብ፤ ኦ ጐይታ ንኣኻ ነመስግን።",
-      "tigrinya_phonetic": "፨ ḥzb: 'o gweyta n'akha nemesgn."
+      "tigrinya_phonetic": "፨ ḥzb: 'o gweyta n'akha nemesgn.",
+      "spanish": "፨ Pueblo: Oh Señor, te glorificamos."
     },
     {
       "instruction": "For afternoon/evening services. Inaudible Prayer.",
@@ -14459,7 +15027,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ሳናቋርጥ አርምሞ ጽርዓት በሌለበት ቃል ሊቃነ መላእክት ለሚያመሰግኑህ ለአንተ ከምስጋና የሚበልጥ ምስጋናን እናቀርብልሃለን፣",
       "amharic_phonetic": "kahn: sanaḳwarṭ 'armmo tsr'at belélebet ḳal līḳane mela'ikt lemīyamesegnuh le'ante kemsgana yemībelṭ msganan 'inaḳerblhalen ,",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Te alabamos, oh Señor, con cántico glorioso, a Ti a quien los arcángeles glorifican siempre, sin cesar y sin descanso,"
     },
     {
       "instruction": "For afternoon/evening services. Inaudible Prayer.",
@@ -14472,7 +15041,8 @@ const kidaseData = {
       "amharic_script": "ያውም መላእክት የሚያመሰግ ኑት ምስጋና ነው፣",
       "amharic_phonetic": "yawm mela'ikt yemīyameseg nut msgana new ,",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: y a quien los señores alaban cantando con alabanza de gloria y acción de gracias."
     },
     {
       "instruction": "For afternoon/evening services. Inaudible Prayer.",
@@ -14485,7 +15055,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤  አቤቱ አንተን በማኅሌት ያመሰግኑ ሃል፣ ያንተ ምክር፣ ያንተ ቃል፣ ያንተ ጥበብ፣ ያንተ መጎብኘት የላክኸው ወልድ",
       "amharic_phonetic": "kahn:  'abétu 'anten bemahlét yamesegnu hal, yante mkr, yante ḳal, yante ṭbeb, yante megobñet yelakkhew weld",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Oh Señor, Tú has enviado Tu consejo, Tu Palabra, Tu sabiduría y Tu visitación,"
     },
     {
       "instruction": "For afternoon/evening services. Inaudible Prayer.",
@@ -14498,7 +15069,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ከቀድሞ ጀምሮ ካንተ ጋራ የነበረ፣ ዓለም ሳይፈጠር ያልተ ፈጠረ፣",
       "amharic_phonetic": "kahn: keḳedmo jemro kante gara yeneberäre, 'alem sayfeṭer yalte feṭeräre,",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: que estuvo contigo antes del principio del mundo, sin ser creado; ese es el Verbo que no fue creado,"
     },
     {
       "instruction": "For afternoon/evening services. Inaudible Prayer.",
@@ -14511,7 +15083,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ባሕርየ ሰብእን ለማዳን በሥጋ የተገለጸ ቃል ልጅህ ወዳጅህ ጌታችን ኢየሱስ ከኃጢአት ቀንበር ነጻ አደረገን፣",
       "amharic_phonetic": "kahn: baḥrye seb'in lemadan besga yetegeletse ḳal ljh wedajh gétachn 'īyesus kehaṭī'at ḳenber netsa 'aderäregen,",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Quien apareció en carne para la salvación de la humanidad. Tu amado Hijo, nuestro Señor Jesús, nos ha liberado del yugo del pecado."
     },
     {
       "instruction": "For afternoon/evening services. Inaudible Prayer.",
@@ -14524,7 +15097,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አቤቱ ስለዚህ እኛ አገልጋዮችህ እናመሰግንሃለን፣",
       "amharic_phonetic": "kahn: 'abétu slezīh 'iña 'agelgayochh 'inamesegnhalen ,",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Por eso nosotros, tus siervos, te alabamos, oh Señor."
     },
     {
       "instruction": "For afternoon/evening services.",
@@ -14537,7 +15111,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ አቤቱ አንተን እናወድስሃለን",
       "amharic_phonetic": "፨ ḥzb: 'abétu 'anten 'inawedshalen",
       "tigrinya_script": "፨ ሕዝብ፤ ኦ ጐይታ ንኣኻ ንውድስ።",
-      "tigrinya_phonetic": "፨ ḥzb: 'o gweyta n'akha nwds."
+      "tigrinya_phonetic": "፨ ḥzb: 'o gweyta n'akha nwds.",
+      "spanish": "፨ Pueblo: Oh Señor, te alabamos."
     },
     {
       "instruction": "For afternoon/evening services. Inaudible Prayer.",
@@ -14550,7 +15125,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ይ.ካ. ምስጋናን ሦስተኛ ጊዜ ከልባችን ለአንተ እናቀርባለን፣ ሕይወትን የምትሰጥ አቤቱ፣",
       "amharic_phonetic": "kahn: y.ka. msganan sosteña gīzé kelbachn le'ante 'inaḳerbalen, ḥywetn yemtseṭ 'abétu,",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: De corazón te ofrecemos tres veces más alabanza, oh Señor, Dador de vida."
     },
     {
       "instruction": "For afternoon/evening services. Inaudible Prayer.",
@@ -14563,7 +15139,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ የትሑታንን ሰውነት የሚጎበኝ፣ የተቸገረውን ሰውነት ቸል የማይል፣",
       "amharic_phonetic": "kahn: yetḥutann sewnet yemīgobeñ, yetechegerärewn sewnet chel yemayl,",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Visitaste el alma de los humildes y no despreciaste el alma atribulada."
     },
     {
       "instruction": "For afternoon/evening services. Inaudible Prayer.",
@@ -14576,7 +15153,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ከሀገራቸው የተሰደዱትን የሚቀበላቸው የሚረዳቸው፣ በመከራ ያሉ ትን የሚያድን፣",
       "amharic_phonetic": "kahn: kehagerachew yetesededutn yemīḳebelachew yemīräredachew, bemekera yalu tn yemīyadn,",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Tú aceptaste a los perseguidos y los ayudaste, salvaste a los que estaban en dificultades."
     },
     {
       "instruction": "For afternoon/evening services. Inaudible Prayer.",
@@ -14589,7 +15167,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ለተራቡት የሚያስብላቸው፣ ለተበደሉ የሚበቀልላቸው፣ የምእመናን ወዳጅ ለጻድቃን የሚመሰክርላቸው የንጹሐን ማደሪያቸው፣",
       "amharic_phonetic": "kahn: leterabut yemīyasblachew, letebedelu yemībeḳellachew, yem'imenan wedaj letsadḳan yemīmesekrlachew yentsuḥan maderīyachew,",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Tú sí pensaste en los hambrientos y vengaste a aquellos contra quienes se cometió el pecado. Tú eres el Amigo de los fieles, Portavoz de los justos, morada de los puros;"
     },
     {
       "instruction": "For afternoon/evening services. Inaudible Prayer.",
@@ -14602,7 +15181,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤  በእው ነት የሚለምኑትን የሚሰማ፣ ባልቴቲቱን የሚሠውር፣ አባት እናት የሞቱበትን የሚያድን፣",
       "amharic_phonetic": "kahn:  be'iw net yemīlemnutn yemīsema, baltétītun yemīsewr, 'abat 'inat yemotubetn yemīyadn,",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Tú escuchas a los que te invocan con justicia, protege a la viuda, salva al huérfano,"
     },
     {
       "instruction": "For afternoon/evening services. Inaudible Prayer.",
@@ -14615,7 +15195,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ የሃይማኖት ክብር ምስጋና ማረፊያ ላደረጋት ለቤተ ክርስቲያን ቅን መሪ የሚሰጥ፣ ሀብት ጸጋ ኃይልም የመንፈስ ቅዱስ ጉባኤ የምትሆን፣",
       "amharic_phonetic": "kahn: yehaymanot kbr msgana marärefīya laderäregat lebéte krstīyan ḳn merī yemīseṭ , habt tsega haylm yemenfes ḳdus guba'é yemthon ,",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: concede el recto liderazgo a la iglesia de la que has hecho morada de la fe gloriosa, consejo del espíritu, don de gracia y de poder."
     },
     {
       "instruction": "For afternoon/evening services. Inaudible Prayer.",
@@ -14628,7 +15209,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አንተን ስናመሰግን ዘወትርም ሳናርፍ የመንግሥትህን ነገር በልቡናችን እናውቃለን አንተ ስለ ገለጽህልን፤",
       "amharic_phonetic": "kahn: 'anten snamesegn zewetrm sanarf yemengsthn neger belbunachn 'inawḳalen 'ante sle geletshln:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Mientras te alabamos sin descanso, conocemos en nuestro corazón tu reino que tú nos declaraste."
     },
     {
       "instruction": "For afternoon/evening services.",
@@ -14641,7 +15223,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ልጅህ ወዳጅህ ጌታችን ኢየሱስም ስለ ገለጸልን፤ ምስጋና ጽንዕ ያለው ለዘለዓለሙ",
       "amharic_phonetic": "kahn: ljh wedajh gétachn 'īyesusm sle geletseln: msgana tsn'i yalew lezele'alemu",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: y a tu amado Hijo, nuestro Señor Jesús, por quien a ti sea la gloria y el dominio por los siglos de los siglos.\n፨ Pueblo: Amén."
     },
     {
       "instruction": "",
@@ -14654,7 +15237,8 @@ const kidaseData = {
       "amharic_script": "፨ ሁሉም፤ አባታችን ሆይ፥ በሰማይ የምትኖር፥ ስምህ ይቀደስ፥ መንግሥትህ ትምጣ፥ ፈቃድህ በሰማይ እንደሆነ እንዲሁም በምድር ይሁን።",
       "amharic_phonetic": "፨ hulum: 'abatachn hoy; besemay yemtnor; smh yḳedes; mengsth tmṭa; feḳadh besemay 'indehone 'indīhum bemdr yhun.",
       "tigrinya_script": "፨ ኣብ ሰማያት እትነብር ኣቦና ፨\n፨ ኩሉኹም፤ ኣብ ሰማያት እትነብር ኣቦና ስምካ ይቀደስ፥ መንግስትኻ ትምጻእ፥ ፈቓድካ ከምቲ ኣብ ሰማያት ከምኡ'ውን ኣብ ምድሪ ይኹን፥",
-      "tigrinya_phonetic": "፨ 'ab semayat 'itnebr 'abona ፨\n፨ kulukhum: 'ab semayat 'itnebr 'abona smka yḳedes; mengstkha tmtsa'i; feqhadka kemtī 'ab semayat kem'u'wn 'ab mdrī ykhun;"
+      "tigrinya_phonetic": "፨ 'ab semayat 'itnebr 'abona ፨\n፨ kulukhum: 'ab semayat 'itnebr 'abona smka yḳedes; mengstkha tmtsa'i; feqhadka kemtī 'ab semayat kem'u'wn 'ab mdrī ykhun;",
+      "spanish": "፨ EL PADRE NUESTRO ፨\n፨ TODOS: Padre Nuestro que estás en los Cielos; santificado sea tu nombre. Venga tu Reino. Hágase tu voluntad, tanto en la Tierra como en el Cielo."
     },
     {
       "instruction": "",
@@ -14667,7 +15251,8 @@ const kidaseData = {
       "amharic_script": "፨ ሁሉም፤ የዕለት እንጀራችንን ስጠን ለዛሬ፥ በደላችንን ይቅር በለን፥ እኛም የበደሉንን ይቅር እንደምንል፥",
       "amharic_phonetic": "፨ hulum: ye'ilet 'injerachnn sṭen lezaré; bedelachnn yḳr belen; 'iñam yebedelunn yḳr 'indemnl;",
       "tigrinya_script": "፨ ኩሉኹም፤ ናይ ዕለት እንጌራና ሎሚ ሃበና፥ ንሕና ንዝበደሉና በደሎም ከም እንኃደግናሎም በደልና ኅደገልና፥",
-      "tigrinya_phonetic": "፨ kulukhum: nay 'ilet 'ingérana lomī habena; nḥna nzbedeluna bedelom kem 'inhadegnalom bedelna hdegelna;"
+      "tigrinya_phonetic": "፨ kulukhum: nay 'ilet 'ingérana lomī habena; nḥna nzbedeluna bedelom kem 'inhadegnalom bedelna hdegelna;",
+      "spanish": "፨ TODOS: Danos hoy nuestro pan de cada día. Y perdónanos nuestros pecados y ofensas, como también nosotros perdonamos a los que nos ofenden."
     },
     {
       "instruction": "",
@@ -14680,7 +15265,8 @@ const kidaseData = {
       "amharic_script": "፨ ሁሉም፤ አቤቱ ወደ ፈተና አታግባን፥ ከክፉ ሁሉ አድነን እንጂ፥ መንግሥት ያንተ ናትና። ኃይል፥ ክብር፥ ምስጋና ለዘለዓለም አሜን።",
       "amharic_phonetic": "፨ hulum: 'abétu wede fetena 'atagban; kekfu hulu 'adnen 'injī; mengst yante natna. hayl; kbr; msgana lezele'alem 'amén.",
       "tigrinya_script": "፨ ኩሉኹም፤ ካብ ክፉእ ኣድኅነና እምበር ኣብ ፈተና ኣይተእትወና፥ መንግስትን፡ ኃይልን ፡ክብርን ንዘለዓለም ናትካ እዩ፡ አሜን።",
-      "tigrinya_phonetic": "፨ kulukhum: kab kfu'i 'adhnena 'imber 'ab fetena 'ayte'itwena; mengstn hayln kbrn nzele'alem natka 'iyu 'amén."
+      "tigrinya_phonetic": "፨ kulukhum: kab kfu'i 'adhnena 'imber 'ab fetena 'ayte'itwena; mengstn hayln kbrn nzele'alem natka 'iyu 'amén.",
+      "spanish": "፨ TODOS: Y no nos dejes caer en la tentación, Señor, sino líbranos del mal. Porque tuyo es el Reino, el Poder y la Gloria, por siempre. Amén."
     },
     {
       "instruction": "",
@@ -14693,7 +15279,8 @@ const kidaseData = {
       "amharic_script": "፨ ሁሉም፤ እመቤታችን ቅድስት ድንግል ማርያም ሆይ፥ በመልአኩ በቅዱስ ገብርኤል ሰላምታ ሰላም እንልሻለን።",
       "amharic_phonetic": "፨ hulum: 'imebétachn ḳdst dngl maryam hoy; bemel'aku beḳdus gebr'él selamta selam 'inlshalen.",
       "tigrinya_script": "፨ ብናይ ቅዱስ ገብርኤል መልኣኽ ሰላምታ ፨\n፨ ኩሉኹም፤ ኦ እግዝእትየ ማርያም ብናይ ቅዱስ ገብርኤል መልኣኽ ሰላምታ ሰላም እብለኪ፡",
-      "tigrinya_phonetic": "፨ bnay ḳdus gebr'él mel'akh selamta ፨\n፨ kulukhum: 'o 'igz'itye maryam bnay ḳdus gebr'él mel'akh selamta selam 'iblekī"
+      "tigrinya_phonetic": "፨ bnay ḳdus gebr'él mel'akh selamta ፨\n፨ kulukhum: 'o 'igz'itye maryam bnay ḳdus gebr'él mel'akh selamta selam 'iblekī",
+      "spanish": "፨ EL SALUDO A SAN GABRIEL ፨\n፨ TODOS: Con el saludo de San Gabriel Ángel, Oh mi Señora María, la paz sea con vosotros."
     },
     {
       "instruction": "",
@@ -14706,7 +15293,8 @@ const kidaseData = {
       "amharic_script": "፨ ሁሉም፤ በሃሳብሽ ድንግል ነሽ፥ በሥጋሽም ድንግል ነሽ። የአሸናፊ የእግዚአብሔር እናት ሆይ ሰላምታ ላንቺ ይገባሻል።",
       "amharic_phonetic": "፨ hulum: behasabsh dngl nesh; besgashm dngl nesh. ye'ashenafī ye'igzī'abḥér 'inat hoy selamta lanchī ygebashal.",
       "tigrinya_script": "፨ ኩሉኹም፤ ብሕልናኺ ድንግል ኢኺ፡ ብሥጋኺ'ውን ድንግል ኢኺ። ኣደ እግዚአብሔር ፀባዖት (ጎይታ ሠራዊት) ሰላም እብለኪ ኣለኹ።",
-      "tigrinya_phonetic": "፨ kulukhum: bḥlnakhī dngl 'īkhī bsgakhī'wn dngl 'īkhī. 'ade 'igzī'abḥér tseba'ot (goyta serawīt) selam 'iblekī 'alekhu."
+      "tigrinya_phonetic": "፨ kulukhum: bḥlnakhī dngl 'īkhī bsgakhī'wn dngl 'īkhī. 'ade 'igzī'abḥér tseba'ot (goyta serawīt) selam 'iblekī 'alekhu.",
+      "spanish": "፨ TODOS: Eres virgen en tus pensamientos y virgen en tu carne. La Madre del Señor Dios de los Ejércitos, la paz sea con vosotros."
     },
     {
       "instruction": "",
@@ -14719,7 +15307,8 @@ const kidaseData = {
       "amharic_script": "፨ ሁሉም፤ ከሴቶች ሁሉ ተለይተሽ አንቺ የተባረክሽ ነሽ፥ የማሕፀንሽም ፍሬ የተባረከ ነዉ። ጸጋን የተመላሽ ሆይ! ደስ ይበልሽ፣ እግዚአብሔር ካንቺ ጋር ነዉና።",
       "amharic_phonetic": "፨ hulum: kesétoch hulu teleytesh 'anchī yetebaräreksh nesh; yemaḥtsenshm fré yetebaräreke newu. tsegan yetemelash hoy! des ybelsh, 'igzī'abḥér kanchī gar newuna.",
       "tigrinya_script": "፨ ኩሉኹም፤ ንስኺ ካብ ኣንስቲ ብርኽቲ ኢኺ፡ ፍረ ከርሥኺ'ውን ብሩኽ እዩ። ኦ ምልእተ ጸጋ እግዚአብሔር ምሳኺ እዩ፡ ኦ ፍሥሕት ደስ ይበልኪ፡",
-      "tigrinya_phonetic": "፨ kulukhum: nskhī kab 'anstī brkhtī 'īkhī fre kerskhī'wn brukh 'iyu. 'o ml'ite tsega 'igzī'abḥér msakhī 'iyu 'o fsḥt des ybelkī"
+      "tigrinya_phonetic": "፨ kulukhum: nskhī kab 'anstī brkhtī 'īkhī fre kerskhī'wn brukh 'iyu. 'o ml'ite tsega 'igzī'abḥér msakhī 'iyu 'o fsḥt des ybelkī",
+      "spanish": "፨ TODOS: Bendita tú entre las mujeres y bendito el fruto de tu vientre. Alégrate, gozoso, oh lleno de gracia, el Señor está contigo."
     },
     {
       "instruction": "",
@@ -14732,7 +15321,8 @@ const kidaseData = {
       "amharic_script": "፨ ሁሉም፤ ከተወደደዉ ልጅሽ ከጌታችን ከመድኃኒታችን ከኢየሱስ ክርስቶስ ዘንድ ይቅርታን ለምኝልን ኃጢአታችንን ያስተሰርይልን ዘንድ። ለዘለዓለም አሜን።",
       "amharic_phonetic": "፨ hulum: ketewededewu ljsh kegétachn kemedhanītachn ke'īyesus krstos zend yḳrtan lemñln haṭī'atachnn yasteseryln zend. lezele'alem 'amén.",
       "tigrinya_script": "፨ ኩሉኹም፤ ኃጢኣትና ኪሠርየልና ናብ ፍቁር ወድኺ ኢየሱስ ክርስቶስ ምእንታና ምሕረት ለምንልና። አሜን።",
-      "tigrinya_phonetic": "፨ kulukhum: haṭī'atna kīseryelna nab fḳur wedkhī 'īyesus krstos m'intana mḥret lemnlna. 'amén."
+      "tigrinya_phonetic": "፨ kulukhum: haṭī'atna kīseryelna nab fḳur wedkhī 'īyesus krstos m'intana mḥret lemnlna. 'amén.",
+      "spanish": "፨ TODOS: Suplica y ruega nuestra misericordia hacia tu amado Hijo, Jesucristo, para que nos perdone nuestros pecados. Amén."
     },
     {
       "instruction": "",
@@ -14745,7 +15335,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ ልዩ ሦስት ሆይ ማረን፥ ልዩ ሦስት ሆይ ራራልን፥ ልዩ ሦስት ሆይ ይቅር በለን፥",
       "amharic_phonetic": "፨ ḥzb: lyu sost hoy marären; lyu sost hoy raraln; lyu sost hoy yḳr belen;",
       "tigrinya_script": "፨ ሕዝብ፤ ኦ ሥሉስ ቅዱስ ምሓረና፡ ኦ ሥሉስ ቅዱስ ራሕርሓልና፡ ኦ ሥሉስ ቅዱስ ይቕረ በለልና።",
-      "tigrinya_phonetic": "፨ ḥzb: 'o slus ḳdus mḥarena 'o slus ḳdus raḥrḥalna 'o slus ḳdus yqhre belelna."
+      "tigrinya_phonetic": "፨ ḥzb: 'o slus ḳdus mḥarena 'o slus ḳdus raḥrḥalna 'o slus ḳdus yqhre belelna.",
+      "spanish": "፨ Pueblo: Oh Santísima Trinidad, ten piedad de nosotros, oh Santísima Trinidad, perdónanos, oh Santísima Trinidad, ten piedad de nosotros."
     },
     {
       "instruction": "",
@@ -14758,7 +15349,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ጸጋን የተመላሽ ድንግል ማርያም ሆይ ደስ ይበልሽ ደስ ይበልሽ ደስ ይበልሽ\n፨ ሕዝብ፤ እግዚአብሔር ካንቺ ጋራ ነው",
       "amharic_phonetic": "kahn: tsegan yetemelash dngl maryam hoy des ybelsh des ybelsh des ybelsh\n፨ ḥzb: 'igzī'abḥér kanchī gara new",
       "tigrinya_script": "ካህን፤ ጸጋ ዝተመላእኪ ኦ ድንግል ማርያም ደስ ይበልኪ፡ ደስ ይበልኪ ደስ ይበልኪ፡\n፨ ሕዝብ፤ እግዚኣብሔር ምሳኺ እዩ፡",
-      "tigrinya_phonetic": "kahn: tsega ztemela'ikī 'o dngl maryam des ybelkī des ybelkī des ybelkī ፨ ḥzb: 'igzī'abḥér msakhī 'iyu"
+      "tigrinya_phonetic": "kahn: tsega ztemela'ikī 'o dngl maryam des ybelkī des ybelkī des ybelkī ፨ ḥzb: 'igzī'abḥér msakhī 'iyu",
+      "spanish": "Sacerdote: Alégrate, alégrate, alégrate, oh Virgen María, llena eres de gracia.\n፨ Pueblo: El Señor está con vosotros."
     },
     {
       "instruction": "",
@@ -14771,7 +15363,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ወደ ተወደደ ልጅሽ ለምኝልን አማልጅልንም\n፨ ሕዝብ፤ ኃጢአታችንን ያስተሠርይልን ዘንድ",
       "amharic_phonetic": "kahn: wede tewedede ljsh lemñln 'amaljlnm\n፨ ḥzb: haṭī'atachnn yasteseryln zend",
       "tigrinya_script": "ካህን፤ ናብ ፍቑር ወድኺ ጸልይልናን ለምንልናን።\n፨ ሕዝብ፤ ኃጢኣትና ምእንቲ ኪኃድገልና።",
-      "tigrinya_phonetic": "kahn: nab fqhur wedkhī tselylnan lemnlnan.\n፨ ḥzb: haṭī'atna m'intī kīhadgelna."
+      "tigrinya_phonetic": "kahn: nab fqhur wedkhī tselylnan lemnlnan.\n፨ ḥzb: haṭī'atna m'intī kīhadgelna.",
+      "spanish": "Sacerdote: Intercede y ruega a tu amado Hijo:\n፨ Pueblo: para que nos perdone nuestro pecado."
     },
     {
       "instruction": "",
@@ -14784,7 +15377,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ልዩ ሦስት ለሚሆን ለአብና ለወልድ ለመንፈስ ቅዱስም ሁልጊዜ ክብር ምስጋና ይገባቸዋል ዛሬም ዘወትርም ለዘላለሙ",
       "amharic_phonetic": "kahn: lyu sost lemīhon le'abna leweld lemenfes ḳdusm hulgīzé kbr msgana ygebachewal zarém zewetrm lezelalemu",
       "tigrinya_script": "ካህን፤ ንኣብ ንወልድ ንመንፈስ ቅዱስ ክብሪ ምስጋና ይኹን ሎምን ኩሉ ሳዕን ንዘለዓለም ዓለም አሜን።",
-      "tigrinya_phonetic": "kahn: n'ab nweld nmenfes ḳdus kbrī msgana ykhun lomn kulu sa'in nzele'alem 'alem 'amén."
+      "tigrinya_phonetic": "kahn: n'ab nweld nmenfes ḳdus kbrī msgana ykhun lomn kulu sa'in nzele'alem 'alem 'amén.",
+      "spanish": "Sacerdote: La gloria y la honra son dadas a la Santísima Trinidad, al Padre y al Hijo y al Espíritu Santo en todo tiempo, ahora y siempre y por los siglos de los siglos. Amén."
     },
     {
       "instruction": "",
@@ -14797,7 +15391,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ ለጸሎት ተነሱ\n፨ ሕዝብ፤ አቤቱ ይቅር በለን",
       "amharic_phonetic": "dīyaḳon: letselot tenesu\n፨ ḥzb: 'abétu yḳr belen",
       "tigrinya_script": "ዲያቆን፤ ንጸሎት ተንሥኡ፣\n፨ ሕዝብ፤ ኦ ጐይታ ይቕረ በለልና፣",
-      "tigrinya_phonetic": "dīyaḳon: ntselot tens'u,\n፨ ḥzb: 'o gweyta yqhre belelna,"
+      "tigrinya_phonetic": "dīyaḳon: ntselot tens'u,\n፨ ḥzb: 'o gweyta yqhre belelna,",
+      "spanish": "Diácono: Levántate para orar.\n፨ Pueblo: Oh Señor, ten piedad de nosotros."
     },
     {
       "instruction": "",
@@ -14810,7 +15405,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ሰላም ለሁላችሁ ይሁን\n፨ ሕዝብ፤ ከመንፈስህ ጋራ",
       "amharic_phonetic": "kahn: selam lehulachhu yhun\n፨ ḥzb: kemenfesh gara",
       "tigrinya_script": "ካህን፤ ሰላም ንዅልኹም ይኹን፣\n፨ ሕዝብ፤ ምስ መንፈስካ፣",
-      "tigrinya_phonetic": "kahn: selam nዅlkhum ykhun,\n፨ ḥzb: ms menfeska,"
+      "tigrinya_phonetic": "kahn: selam nዅlkhum ykhun,\n፨ ḥzb: ms menfeska,",
+      "spanish": "Sacerdote: La paz sea con todos vosotros.\n፨ Pueblo: y con Tu Espíritu."
     },
     {
       "instruction": "",
@@ -14823,7 +15419,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አቤቱ ፈጣሪያችን እግዚአብሔር ኢየሱስ ክርስቶስ ሆይ! ክቡራን ንጹሐን ለሚሆኑ ደቀ መዝሙሮችህ እንዲህ ያልካቸው፥",
       "amharic_phonetic": "kahn: 'abétu feṭarīyachn 'igzī'abḥér 'īyesus krstos hoy! kburan ntsuḥan lemīhonu deḳe mezmurochh 'indīh yalkachew;",
       "tigrinya_script": "፨ ናይ ወንጌል ጸሎት ፨\nካህን፤ ኦ ጐይታና እግዚኣብሔር ኢየሱስ ክርስቶስ ኣምላኽና…",
-      "tigrinya_phonetic": "፨ nay wengél tselot ፨\nkahn: 'o gweytana 'igzī'abḥér 'īyesus krstos 'amlakhna…"
+      "tigrinya_phonetic": "፨ nay wengél tselot ፨\nkahn: 'o gweytana 'igzī'abḥér 'īyesus krstos 'amlakhna…",
+      "spanish": "፨ ORACIÓN DEL EVANGELIO ፨\nSacerdote: Oh Señor Jesucristo, Dios nuestro, que dijiste a tus santos discípulos y a tus puros apóstoles:"
     },
     {
       "instruction": "",
@@ -14836,7 +15433,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ እናንተ የምታዩትን ያዩ ዘንድ ብዙ ነቢያት ጻድቃን ወደዱ፤ አላዩም። እናንተ የምትሰሙትን ወደዱ፤ አልሰሙም።",
       "amharic_phonetic": "kahn: 'inante yemtayutn yayu zend bzu nebīyat tsadḳan wededu: 'alayum. 'inante yemtsemutn wededu: 'alsemum.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Muchos profetas y justos desearon ver lo que vosotros veis, y no las vieron, y quisieron oír lo que vosotros oís, y no las oyeron;"
     },
     {
       "instruction": "",
@@ -14849,7 +15447,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ የእናንተ ያዩ ዓይኖቻችሁና የሰሙ ጆሮቻችሁ ግን የተመሰገኑ ናቸው።",
       "amharic_phonetic": "kahn: ye'inante yayu 'aynochachhuna yesemu jorochachhu gn yetemesegenu nachew.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: pero tú, bienaventurados tus ojos que vieron y tus oídos que oyeron;"
     },
     {
       "instruction": "",
@@ -14862,7 +15461,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ እኛንም እንደ እነሱ የበቃን አድርገን፤ በቅዱሳን ጸሎት የከበረ የወንጌልን ቃል ሰምተን እንሠራ ዘንድ።",
       "amharic_phonetic": "kahn: 'iñanm 'inde 'inesu yebeḳan 'adrgen: beḳdusan tselot yekebere yewengéln ḳal semten 'insera zend.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Haz que también nosotros, como ellos, podamos escuchar y practicar la Palabra de tu Santo Evangelio mediante la oración de los santos."
     },
     {
       "instruction": "",
@@ -14875,7 +15475,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ ክቡር ስለሚሆን ወንጌል ጸልዩ\n፨ ሕዝብ፤ ወንጌልን ለመስማት የበቃን ያድርገን",
       "amharic_phonetic": "dīyaḳon: kbur slemīhon wengél tselyu\n፨ ḥzb: wengéln lemesmat yebeḳan yadrgen",
       "tigrinya_script": "ዲያቆን፤ ምእንቲ ቅዱስ ወንጌል ጸልዩ።\n፨ ሕዝብ፤ ቃል ቅዱስ ወንጌል ንምስማዕ ድልዋት ግበረና።",
-      "tigrinya_phonetic": "dīyaḳon: m'intī ḳdus wengél tselyu.\n፨ ḥzb: ḳal ḳdus wengél nmsma'i dlwat gberena."
+      "tigrinya_phonetic": "dīyaḳon: m'intī ḳdus wengél tselyu.\n፨ ḥzb: ḳal ḳdus wengél nmsma'i dlwat gberena.",
+      "spanish": "Diácono: Ora por el Santo Evangelio.\n፨ Pueblo: Que Él nos haga aptos para escuchar el Santo Evangelio."
     },
     {
       "instruction": "",
@@ -14888,7 +15489,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ዳግመኛ አቤቱ ካንተ ዘንድ የምንሻውን በምንለምንበትና በምን ጸልይበት ጊዜ እና ስባቸው ዘንድ አስቡን ያሉንን ዳግመኛ አስብ፤",
       "amharic_phonetic": "kahn: dagmeña 'abétu kante zend yemnshawn bemnlemnbetna bemn tselybet gīzé 'ina sbachew zend 'asbun yalunn dagmeña 'asb:",
       "tigrinya_script": "ካህን፤ ኦ ጐይታ ካባኻ እንደልዮ ክንረክብ፡ ኣብ እንጽልየሉ ጊዜ ክንዝክሮም ዘክሩና",
-      "tigrinya_phonetic": "kahn: 'o gweyta kabakha 'indelyo knrekb 'ab 'intslyelu gīzé knzkrom zekruna"
+      "tigrinya_phonetic": "kahn: 'o gweyta kabakha 'indelyo knrekb 'ab 'intslyelu gīzé knzkrom zekruna",
+      "spanish": "Sacerdote: Acuérdate de nuevo, Señor, de aquellos que nos han ordenado recordarlos en el momento de nuestras oraciones y súplicas con las que te pedimos."
     },
     {
       "instruction": "",
@@ -14901,7 +15503,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አቤቱ አምላካችን እግዚአብሔር ሆይ ከኛ አስቀድመው የሞቱትን አሳርፋቸው፣ የታመሙትንም ፈጥነህ አድና ቸው፣ የሁላችን ሕይወት የሁላችንም ተስፋ",
       "amharic_phonetic": "kahn: 'abétu 'amlakachn 'igzī'abḥér hoy keña 'asḳedmew yemotutn 'asarfachew, yetamemutnm feṭneh 'adna chew, yehulachn ḥywet yehulachnm tesfa",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Señor Dios nuestro, da descanso a los que durmieron delante de nosotros, sana prontamente a los enfermos, porque tú eres la vida de todos nosotros, la esperanza de todos nosotros,"
     },
     {
       "instruction": "",
@@ -14914,7 +15517,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ የሁላችንም አዳኝ የሁላ ችንም አስነሽ አንተ ነህና፣ ላንተ ምስጋናን እስከ አርያም ድረስ እንልካለን፤ ለዘለዓለሙ አሜን",
       "amharic_phonetic": "kahn: yehulachnm 'adañ yehula chnm 'asnesh 'ante nehna, lante msganan 'iske 'aryam dräres 'inlkalen: lezele'alemu 'amén",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: libertador de todos nosotros, y levantador de todos nosotros, y a ti elevamos acción de gracias hasta el cielo más alto, por los siglos de los siglos."
     },
     {
       "instruction": "",
@@ -14927,7 +15531,8 @@ const kidaseData = {
       "amharic_script": "{{የዛሬው ምስባክ}}",
       "amharic_phonetic": "{{yezaréw msbak}}",
       "tigrinya_script": "{{ናይ ሎሚ ንባብ መዝሙር ዳዊት}}",
-      "tigrinya_phonetic": "{{nay lomī nbab mezmur dawīt}}"
+      "tigrinya_phonetic": "{{nay lomī nbab mezmur dawīt}}",
+      "spanish": "፨ Diácono (la gente repite):\n{{LECTURA DE LOS SALMOS DE HOY}}"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -14940,7 +15545,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤ ልዑል እግዚኣብሔር ብመንፈሳዊ በረኸት ንዅልና ይባርኸናን ይቐድሰናን …",
-      "tigrinya_phonetic": "kahn: l'ul 'igzī'abḥér bmenfesawī berekhet nዅlna ybarkhenan yqhedsenan …"
+      "tigrinya_phonetic": "kahn: l'ul 'igzī'abḥér bmenfesawī berekhet nዅlna ybarkhenan yqhedsenan …",
+      "spanish": "Sacerdote: Oh Dios, Altísimo, bendícenos a todos y santifícanos con toda bendición espiritual,"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -14953,7 +15559,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: y llévanos a la Santa Iglesia para unirnos a Sus Santos Ángeles que le sirven siempre con temor y temblor,"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -14966,7 +15573,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Señor Dios nuestro, Salvador nuestro y amante del hombre, Tú eres Quien envió a Tus santos discípulos y ministros,"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -14979,7 +15587,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: y Tus apóstoles puros hasta todos los confines del mundo para predicar y enseñar el Evangelio de Tu Reino, y para sanar todas las dolencias y todas las dolencias que hay entre Tu pueblo,"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -14992,7 +15601,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: y proclamar el misterio escondido desde antes del principio del mundo."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -15005,7 +15615,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Ahora también, Señor nuestro y Dios nuestro, envía sobre nosotros tu luz y tu justicia, e ilumina los ojos de nuestro corazón y de nuestro entendimiento;"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -15018,7 +15629,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: haznos dignos de perseverar en la escucha de la Palabra de tu Santo Evangelio, y no sólo de oír sino de hacer según lo que oímos, para que dé buen fruto en nosotros,"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -15031,7 +15643,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: permaneciendo no sólo uno sino aumentando treinta, sesenta y cien veces; y perdónanos nuestros pecados, a nosotros pueblo tuyo, para que seamos dignos del Reino de los Cielos."
     },
     {
       "instruction": "",
@@ -15044,7 +15657,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn: kahn nfḳ:",
       "tigrinya_script": "ካህን፤ ኵሉ ዚኃዘ እግዚኣብሔር ኣብ ቡሩኽ እዩ።\nካህን ንፍቅ፤ ንኣብ ኣመስግንዎ",
-      "tigrinya_phonetic": "kahn: kwlu zīhaze 'igzī'abḥér 'ab burukh 'iyu.\nkahn nfḳ: n'ab 'amesgnwo"
+      "tigrinya_phonetic": "kahn: kwlu zīhaze 'igzī'abḥér 'ab burukh 'iyu.\nkahn nfḳ: n'ab 'amesgnwo",
+      "spanish": "Sacerdote: Bendito sea Dios, Padre Todopoderoso.\nAsistente. Sacerdote: Dad gracias al Padre."
     },
     {
       "instruction": "",
@@ -15057,7 +15671,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn: kahn nfḳ:",
       "tigrinya_script": "ካህን፤ ወልድ ዋሕድ ኢየሱስ ክርስቶስውን ቡሩኽ እዩ\nካህን ንፍቅ፤ ንወልድ ኣመስግንዎ",
-      "tigrinya_phonetic": "kahn: weld waḥd 'īyesus krstoswn burukh 'iyu\nkahn nfḳ: nweld 'amesgnwo"
+      "tigrinya_phonetic": "kahn: weld waḥd 'īyesus krstoswn burukh 'iyu\nkahn nfḳ: nweld 'amesgnwo",
+      "spanish": "Sacerdote: Y bendito sea el Hijo unigénito nuestro Señor Jesucristo.\nAsistente. Sacerdote: Dad gracias al Hijo."
     },
     {
       "instruction": "",
@@ -15070,7 +15685,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn: kahn nfḳ:",
       "tigrinya_script": "ካህን፤ ጰራቅሊጦስ መንፈስ ቅዱስውን ቡሩኽ እዩ።\nካህን ንፍቅ፤ ንመንፈስ ቅዱስ ኣመስግንዎ",
-      "tigrinya_phonetic": "kahn: p̣eraḳlīṭos menfes ḳduswn burukh 'iyu.\nkahn nfḳ: nmenfes ḳdus 'amesgnwo"
+      "tigrinya_phonetic": "kahn: p̣eraḳlīṭos menfes ḳduswn burukh 'iyu.\nkahn nfḳ: nmenfes ḳdus 'amesgnwo",
+      "spanish": "Sacerdote: Y bendito sea el Espíritu Santo Paráclito.\nAsistente. Sacerdote: Dad gracias al Espíritu Santo."
     },
     {
       "instruction": "",
@@ -15083,7 +15699,8 @@ const kidaseData = {
       "amharic_script": "፨ ዲያቆን፤ ሃሌ ሉያ! ጌታችን መድኃኒታችን ኢየሱስ ክርስቶስ የተናገረውን ቅዱስ ወንጌል ቁማችሁ ስሙ",
       "amharic_phonetic": "፨ dīyaḳon: halé luya! gétachn medhanītachn 'īyesus krstos yetenagerewn ḳdus wengél ḳumachhu smu",
       "tigrinya_script": "፨ ዲያቆን፤ ሃሌ ሉያ ናይ ጐይታናን ምድኃኒናን ኢየሱስ ክርስቶስ ዜና ቅዱስ ወንጌል ቌምኩም ስምዑ።",
-      "tigrinya_phonetic": "፨ dīyaḳon: halé luya nay gweytanan mdhanīnan 'īyesus krstos zéna ḳdus wengél ḳwémkum sm'u."
+      "tigrinya_phonetic": "፨ dīyaḳon: halé luya nay gweytanan mdhanīnan 'īyesus krstos zéna ḳdus wengél ḳwémkum sm'u.",
+      "spanish": "Diácono: Alelulia, levántate para escuchar el Santo Evangelio, el mensaje de nuestro Señor y Salvador Jesucristo."
     },
     {
       "instruction": "",
@@ -15096,7 +15713,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ እግዚአብሔር አድሮባችሁ ይኑር\n፨ ሕዝብ፤ ከመንፈስህ ጋራ",
       "amharic_phonetic": "kahn: 'igzī'abḥér 'adrobachhu ynur\n፨ ḥzb: kemenfesh gara",
       "tigrinya_script": "ካህን፤ እግዚኣብሔር ምስ ኵልኹም ይኹን።\n፨ ሕዝብ፤ ምስ መንፈስካ።",
-      "tigrinya_phonetic": "kahn: 'igzī'abḥér ms kwlkhum ykhun.\n፨ ḥzb: ms menfeska."
+      "tigrinya_phonetic": "kahn: 'igzī'abḥér ms kwlkhum ykhun.\n፨ ḥzb: ms menfeska.",
+      "spanish": "Sacerdote: El Señor esté con todos vosotros.\n፨ Pueblo: y con Tu Espíritu."
     },
     {
       "instruction": "For the Gospel of John",
@@ -15109,7 +15727,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ዮሐንስ የሰበከው የተናገረው የእግዚአብሔር ቃል የሚሆን ቅዱስ ወንጌል",
       "amharic_phonetic": "kahn: yoḥans yesebekew yetenagerew ye'igzī'abḥér ḳal yemīhon ḳdus wengél",
       "tigrinya_script": "ካህን፤ ወንጌል ኣብ ዮሓንስ ዝሰበኸ። ይበሃል።",
-      "tigrinya_phonetic": "kahn: wengél 'ab yoḥans zsebekhe. ybehal."
+      "tigrinya_phonetic": "kahn: wengél 'ab yoḥans zsebekhe. ybehal.",
+      "spanish": "Sacerdote: El Santo Evangelio que predicó Juan, la Palabra del Hijo de Dios."
     },
     {
       "instruction": "For the Gospel of Matthew/Mark/Luke",
@@ -15122,7 +15741,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ማቴዎስ / ማርቆስ / ሉቃስ የተናገረው የእግዚአብሔር ቃል የሚሆን ቅዱስ ወንጌል",
       "amharic_phonetic": "kahn: matéwos / marḳos / luḳas yetenagerew ye'igzī'abḥér ḳal yemīhon ḳdus wengél",
       "tigrinya_script": "ካህን፤ ወንጌል ኣብ ማቴዎስ / ማርቆስ / ሉቃስ፡ ዘዘንተወ፡ ይበሃል።",
-      "tigrinya_phonetic": "kahn: wengél 'ab matéwos / marḳos / luḳas zezentewe ybehal."
+      "tigrinya_phonetic": "kahn: wengél 'ab matéwos / marḳos / luḳas zezentewe ybehal.",
+      "spanish": "Sacerdote: El Santo Evangelio que {{AUTOR DEL EVANGELIO}} proclamó."
     },
     {
       "instruction": "",
@@ -15135,7 +15755,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ ጌታዬ አምላኬ ሆይ ሁልጊዜ ለአንተ ምስጋና ይገባል።",
       "amharic_phonetic": "፨ ḥzb: gétayé 'amlaké hoy hulgīzé le'ante msgana ygebal.",
       "tigrinya_script": "፨ ሕዝብ፤ ኦ ጐይታይን ኣምላኸይን ክርስቶስ። ንኣኻ ኵሉ ጊዜ ምስጋና ይዅን።",
-      "tigrinya_phonetic": "፨ ḥzb: 'o gweytayn 'amlakheyn krstos. n'akha kwlu gīzé msgana yዅn."
+      "tigrinya_phonetic": "፨ ḥzb: 'o gweytayn 'amlakheyn krstos. n'akha kwlu gīzé msgana yዅn.",
+      "spanish": "፨ Pueblo: Gloria a Ti, Cristo mi Señor y mi Dios, en todo tiempo."
     },
     {
       "instruction": "For non-fasting periods",
@@ -15148,7 +15769,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ በረዳን በእግዚአብሔር ደስ ይበላችሁ የያዕቆብንም አምላክ አመስግኑ መዝሙሩን ያዙ ከበሮውንም ስጡ ከበገና ጋር የተስማማ ነው።",
       "amharic_phonetic": "፨ ḥzb: beredan be'igzī'abḥér des ybelachhu yeya'iḳobnm 'amlak 'amesgnu mezmurun yazu keberownm sṭu kebegena gar yetesmama new.",
       "tigrinya_script": "፨ ሕዝብ፤ ብዝረድኣና ብእግዚኣብሔር ደስ ይበልኩም ንኣምላኽ ያዕቆብውን ዕልል በሉሉ። ከበሮ ሃቡ መዝሙር መሰንቆ ጥዑም እዩ።",
-      "tigrinya_phonetic": "፨ ḥzb: bzred'ana b'igzī'abḥér des ybelkum n'amlakh ya'iḳobwn 'ill belulu. kebero habu mezmur mesenḳo ṭ'um 'iyu."
+      "tigrinya_phonetic": "፨ ḥzb: bzred'ana b'igzī'abḥér des ybelkum n'amlakh ya'iḳobwn 'ill belulu. kebero habu mezmur mesenḳo ṭ'um 'iyu.",
+      "spanish": "(Salmo 80:1-2)\n፨ Pueblo: [1] Alegraos en Dios nuestro ayudador; Alegraos grandemente en el Dios vivo. [2] Tomad salmo y tocad pandero, salterio agradable con arpa;"
     },
     {
       "instruction": "For fasting periods",
@@ -15161,7 +15783,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ በወንጌል መራኸን በነቢያትም አጸናኸን በአቀረብክልን ክብር ምስጋና ይገባል።",
       "amharic_phonetic": "፨ ḥzb: bewengél merakhen benebīyatm 'atsenakhen be'aḳerärebkln kbr msgana ygebal.",
       "tigrinya_script": "፨ ሕዝብ፤ ብወንጌል መራሕካና፡ ብነብያትውን ናዘዝካና ባዕልኻ ንዘቕረብካና ምስጋና ንኣኻ ይኹን።",
-      "tigrinya_phonetic": "፨ ḥzb: bwengél meraḥkana bnebyatwn nazezkana ba'ilkha nzeqhrebkana msgana n'akha ykhun."
+      "tigrinya_phonetic": "፨ ḥzb: bwengél meraḥkana bnebyatwn nazezkana ba'ilkha nzeqhrebkana msgana n'akha ykhun.",
+      "spanish": "፨ Pueblo: Tú nos guiaste con el Evangelio, nos consolaste con estos profetas y nos acercaste a Ti. Gloria a Ti."
     },
     {
       "instruction": "",
@@ -15174,7 +15797,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ወደ መንግሥተ ሰማያት የምታገባ ወንጌል እነሆ\nካህን ንፍቅ፤ መንግሥቱንና ጽድቁን የሰጠኝን ሰጠሁ",
       "amharic_phonetic": "kahn: wede mengste semayat yemtageba wengél 'ineho\nkahn nfḳ: mengstunna tsdḳun yeseṭeñn seṭehu",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: He aquí el Evangelio del Reino de los Cielos.\nAsistente. Sacerdote: Su Reino y su justicia que me entregó, yo os la entrego."
     },
     {
       "instruction": "",
@@ -15187,7 +15811,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ መንግሥተ ሰማያት ቀርባለችና ንስሓ ግቡ",
       "amharic_phonetic": "dīyaḳon: mengste semayat ḳerbalechna nsḥa gbu",
       "tigrinya_script": "ዲያቆን፤",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Diácono: Arrepiéntete, porque el Reino de los Cielos está cerca."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -15200,7 +15825,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: Oh tú que estás lejos de la ira, abundante en misericordia y verdaderamente justo, acepta nuestra oración y súplica diaria,"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -15213,7 +15839,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: y acepta nuestra penitencia y nuestra humildad y nuestro servicio ante tu altar santo, celestial, inmaculado e inmaculado."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -15226,7 +15853,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: Haznos reunirnos para escuchar la Palabra de Tu Santo Evangelio y para guardar Tus mandamientos, Tu ley y Tu testimonio,"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -15239,7 +15867,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: y bendícenos para que llevemos fruto, no siendo uno solo, sino creciendo a treinta, a sesenta y a ciento por uno, por Jesucristo nuestro Señor."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -15252,7 +15881,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: Acuérdate, Señor, de los enfermos de tu pueblo: visítalos en tu misericordia y sánalos en tu compasión."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -15265,7 +15895,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: Acuérdate, Señor, de nuestros padres y de nuestros hermanos que viajaron y permanecieron para comerciar; tráelos de regreso a su morada en seguridad y paz."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -15278,7 +15909,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: Acuérdate, Señor, del rocío del aire y de los frutos de la tierra, bendícelos y guárdalos sin pérdida."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -15291,7 +15923,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: Acuérdate, Señor, del descenso de las lluvias y de las aguas y de los ríos, y bendícelos."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -15304,7 +15937,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: Acuérdate, Señor, de las plantas, de las semillas y de los frutos de los campos de cada año, bendícelos y hazlos abundantes."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -15317,7 +15951,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: Recuerda, Señor, la seguridad de tu Santa Iglesia y de todas las ciudades y países de nuestros padres ortodoxos los apóstoles."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -15330,7 +15965,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: Acuérdate, Señor, de la seguridad del hombre y de la bestia y de mí, tu siervo pecador."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -15343,7 +15979,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: Acuérdate, Señor, de nuestra patria {{PAÍS}} la amada del Señor Dios, y guárdala por muchos años y largos días, en buena manera y en paz."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -15356,7 +15993,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: Acuérdate, Señor, de nuestros padres y de nuestros hermanos y hermanas que se han quedado dormidos y han ido a descansar en la fe ortodoxa."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -15369,7 +16007,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: Acuérdate, Señor, de los que te han presentado esta ofrenda y este incienso, y de aquellos en nombre de quienes hacen la ofrenda, y de aquellos de quienes los han traído:"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -15382,7 +16021,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: concédeles una buena recompensa en el cielo y consuélales a todos en su angustia."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -15395,7 +16035,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: Acuérdate, Señor, de los cautivos de tu pueblo, y tráelos de nuevo en paz a sus moradas."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -15408,7 +16049,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: Acuérdate, Señor, de los afligidos y angustiados."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -15421,7 +16063,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: Acuérdate, Señor, de los catecúmenos cristianos de tu pueblo, muéstrales tu piedad y ten misericordia de ellos, y confírmalos en la recta fe;"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -15434,7 +16077,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: destierra de sus corazones todo resto de idolatría: confirma en sus corazones tu ley, tu mandamiento, tu temor y tu ordenanza:"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -15447,7 +16091,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: para que conozcan el poder de la palabra en la que han sido instruidos,"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -15460,7 +16105,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: y en el tiempo señalado haz que todos estén preparados para el nuevo nacimiento y para la remisión de sus pecados y prepáralos para ser arca del Espíritu Santo."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -15473,7 +16119,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: Acuérdate, Señor, de tus siervos, de los pobres que están bajo opresión, ten piedad de ellos y confírmalos en la recta fe."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -15486,7 +16133,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: y haz de ellos morada del Espíritu Santo mediante el gozo espiritual y el amor del hombre,"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -15499,7 +16147,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: Por tu Hijo unigénito, Señor nuestro, Dios y Salvador nuestro, Jesucristo,"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -15512,7 +16161,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Asistente. Sacerdote: por quien a ti, con él y con el Espíritu Santo, sea la gloria y el imperio, ahora y siempre y por los siglos de los siglos. Amén."
     },
     {
       "instruction": "For the Gospel of Matthew/Mark/Luke",
@@ -15525,7 +16175,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Awlogios Kyrios (\"Bendito sea el Señor\" en griego). Bendice, oh Señor, la porción del Evangelio de {{AUTOR DEL EVANGELIO}} el discípulo y apóstol de nuestro Señor Jesucristo, el Hijo del Dios Vivo;"
     },
     {
       "instruction": "For the Gospel of Matthew/Mark/Luke",
@@ -15538,7 +16189,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: a Él sea la gloria continuamente y por los siglos de los siglos. Amén."
     },
     {
       "instruction": "For the Gospel of John",
@@ -15551,7 +16203,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Esta es la Palabra de nuestro Señor y Salvador Jesucristo para honra de Su Reino, gloria a Él por los siglos."
     },
     {
       "instruction": "ALL SHALL STAND IN THE FEAR OF GOD TO HEAR THE GOSPEL IN SILENCE AND AWE.",
@@ -15564,7 +16217,8 @@ const kidaseData = {
       "amharic_script": "{{የዛሬው ወንጌል ንባብ}}",
       "amharic_phonetic": "{{yezaréw wengél nbab}}",
       "tigrinya_script": "{{ናይ ሎሚ ንባብ ወንጌል}}",
-      "tigrinya_phonetic": "{{nay lomī nbab wengél}}"
+      "tigrinya_phonetic": "{{nay lomī nbab wengél}}",
+      "spanish": "{{LECTURA DEL EVANGELIO DE HOY}}"
     },
     {
       "instruction": "For the Gospel of Matthew",
@@ -15577,7 +16231,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "(Mateo 24:35)\nSacerdote: \"El cielo y la tierra pasarán, pero mis palabras no pasarán\", dijo el Señor a su discípulo."
     },
     {
       "instruction": "For the Gospel of Matthew",
@@ -15590,7 +16245,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ አብን በእውነት እናምናለን ወልድንም በእውነት እናምናለን መንፈስ ቅዱስንም በእውነት እናምናለን የማይለወጥ ሦስትነታቸውንም እናምናለን",
       "amharic_phonetic": "፨ ḥzb: 'abn be'iwnet 'inamnalen weldnm be'iwnet 'inamnalen menfes ḳdusnm be'iwnet 'inamnalen yemayleweṭ sostnetachewnm 'inamnalen",
       "tigrinya_script": "፨ ሕዝብ፤ ብሓቂ ንዝእመን ኣብ ነኣምን፡ ብሓቂ ንዚእመን ወልድ ነኣምን፡ ብሓቂ ንዚእመን መንፈስ ቅዱስውን ነኣምን። ህልው ዝኾነ ሠለስትነቶም ነኣምን።",
-      "tigrinya_phonetic": "፨ ḥzb: bḥaḳī nz'imen 'ab ne'amn bḥaḳī nzī'imen weld ne'amn bḥaḳī nzī'imen menfes ḳduswn ne'amn. hlw zkhone selestnetom ne'amn."
+      "tigrinya_phonetic": "፨ ḥzb: bḥaḳī nz'imen 'ab ne'amn bḥaḳī nzī'imen weld ne'amn bḥaḳī nzī'imen menfes ḳduswn ne'amn. hlw zkhone selestnetom ne'amn.",
+      "spanish": "፨ Pueblo: Creemos en el mismo Padre, creemos en el mismo Hijo, y creemos en el mismo Espíritu Santo, creemos en su Trinidad inmutable."
     },
     {
       "instruction": "For the Gospel of Mark",
@@ -15603,7 +16259,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "(Marcos 4:9)\nSacerdote: \"¡El que tiene oídos para oír, que oiga!\""
     },
     {
       "instruction": "For the Gospel of Mark",
@@ -15616,7 +16273,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ እሊህ ኪሩቤልና ሱራፌል ምስጋናን ያቀርቡለታል አብ ወልድ መንፈስ ቅዱስን ቅዱስ ቅዱስ ቅዱስ አንተ እግዚአብሔር ነህ እያሉ",
       "amharic_phonetic": "፨ ḥzb: 'ilīh kīrubélna surafél msganan yaḳerbuletal 'ab weld menfes ḳdusn ḳdus ḳdus ḳdus 'ante 'igzī'abḥér neh 'iyalu",
       "tigrinya_script": "፨ ሕዝብ፤ ኪሩቤልን ሱራፌልን እግዚኣብሔር ኣብን ወልድን መንፈስ ቅዱስን። ቅዱስ ቅዱስ ቅዱስ ኢኻ እናበሉ ምስጋና የቕርቡሉ።",
-      "tigrinya_phonetic": "፨ ḥzb: kīrubéln suraféln 'igzī'abḥér 'abn weldn menfes ḳdusn. ḳdus ḳdus ḳdus 'īkha 'inabelu msgana yeqhrbulu."
+      "tigrinya_phonetic": "፨ ḥzb: kīrubéln suraféln 'igzī'abḥér 'abn weldn menfes ḳdusn. ḳdus ḳdus ḳdus 'īkha 'inabelu msgana yeqhrbulu.",
+      "spanish": "፨ Pueblo: Esos Querubines y Serafines le ofrecen gloria diciendo: \"Santo, Santo, Santo eres Dios, Padre, Hijo y Espíritu Santo\"."
     },
     {
       "instruction": "For the Gospel of Luke",
@@ -15629,7 +16287,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "(Lucas 16:17)\nSacerdote: “Es más fácil que pasen el cielo y la tierra, que que falte una tilde de la ley”"
     },
     {
       "instruction": "For the Gospel of Luke",
@@ -15642,7 +16301,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ አቤቱ ከአማልክት ወገን የሚመስልህ ማነው፤ ታምራቱን የምታደርግ አንተ ነህ፤ ለወገኖችህ ኃይልህን አሳየሃቸው ወገኖችህንም በክንድህ አዳንሃቸው፤",
       "amharic_phonetic": "፨ ḥzb: 'abétu ke'amalkt wegen yemīmeslh manew: tamratun yemtaderg 'ante neh: lewegenochh haylhn 'asayehachew wegenochhnm bekndh 'adanhachew:",
       "tigrinya_script": "፨ ሕዝብ፤ ኦ ጐይታ ካብ ኣማልኽቲ ዚመስለካ መን እዩ? ተኣምራት እትገብር ንስኻ ኢካ፡ ንሕዝብኻ ኃይልኻ ኣርኣኻዮም፡ ብቕልጽምካውን ንሕዝብኻ ኣድኃንካዮም፡",
-      "tigrinya_phonetic": "፨ ḥzb: 'o gweyta kab 'amalkhtī zīmesleka men 'iyu? te'amrat 'itgebr nskha 'īka nḥzbkha haylkha 'ar'akhayom bqhltsmkawn nḥzbkha 'adhankayom"
+      "tigrinya_phonetic": "፨ ḥzb: 'o gweyta kab 'amalkhtī zīmesleka men 'iyu? te'amrat 'itgebr nskha 'īka nḥzbkha haylkha 'ar'akhayom bqhltsmkawn nḥzbkha 'adhankayom",
+      "spanish": "Pueblo: ¿Quién como tú, oh Señor, entre los dioses? Tú eres el Dios que hace maravillas: has manifestado tu poder entre los pueblos. Con tu brazo has redimido a tu pueblo."
     },
     {
       "instruction": "For the Gospel of Luke",
@@ -15655,7 +16315,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ ወደ ሲዖል ሄደህ በዚያ ምርኮን አወጣህ፤ ዳግመኛምማንድ ጊዜ ነጻነትን ሰጠኸን መጥተህ አድነኸናልና",
       "amharic_phonetic": "፨ ḥzb: wede sī'ol hédeh bezīya mrkon 'aweṭah: dagmeñammand gīzé netsanetn seṭekhen meṭteh 'adnekhenalna",
       "tigrinya_script": "፨ ሕዝብ፤ ናብ ሲኦል ከድካ፡ ካብኡውን ምርኮ ኣውጻእካ፡ ሓንሳእውን ዕጽፊ ሓርነት ሃብካና፡ መጺእካ ስለ ዘድኃንካና፡ ነመስግነካ ኣሎና።",
-      "tigrinya_phonetic": "፨ ḥzb: nab sī'ol kedka kab'uwn mrko 'awtsa'ika ḥansa'iwn 'itsfī ḥarnet habkana metsī'ika sle zedhankana nemesgneka 'alona."
+      "tigrinya_phonetic": "፨ ḥzb: nab sī'ol kedka kab'uwn mrko 'awtsa'ika ḥansa'iwn 'itsfī ḥarnet habkana metsī'ika sle zedhankana nemesgneka 'alona.",
+      "spanish": "፨ Pueblo: Tú descendiste al Hades y los cautivos se levantaron de allí, y nos concediste de nuevo la libertad, porque viniste y nos salvaste."
     },
     {
       "instruction": "For the Gospel of Luke",
@@ -15668,7 +16329,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ ስለዚህ እናመሰግንሃለን አቤቱ ኢየሱስ ሆይ ብሩክ ነህ እያልን እንጮኻለን መጥተህ አድነኸናልና",
       "amharic_phonetic": "፨ ḥzb: slezīh 'inamesegnhalen 'abétu 'īyesus hoy bruk neh 'iyaln 'inchokhalen meṭteh 'adnekhenalna",
       "tigrinya_script": "፨ ሕዝብ፤ ኦ ጐይታ ኢየሱስ ክርስቶስ መጺእካ ኣድኂንካና ኢኻ እሞ፡ ቡሩኽ ኢኻ እናበልናውን ዓው ኢልና ነመስግነካ ኣሎና።",
-      "tigrinya_phonetic": "፨ ḥzb: 'o gweyta 'īyesus krstos metsī'ika 'adhīnkana 'īkha 'imo burukh 'īkha 'inabelnawn 'aw 'īlna nemesgneka 'alona."
+      "tigrinya_phonetic": "፨ ḥzb: 'o gweyta 'īyesus krstos metsī'ika 'adhīnkana 'īkha 'imo burukh 'īkha 'inabelnawn 'aw 'īlna nemesgneka 'alona.",
+      "spanish": "፨ Pueblo: Por esta razón, te glorificamos y clamamos a ti diciendo: “Bendito seas, Señor Jesucristo, porque viniste y nos salvaste."
     },
     {
       "instruction": "For the Gospel of John",
@@ -15681,7 +16343,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "(Juan 3:36)\nSacerdote: «El que cree en el Hijo tiene vida eterna»."
     },
     {
       "instruction": "For the Gospel of John",
@@ -15694,7 +16357,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ ቃል በቅድሚያ ነበር ይህ ቃል እግዚአብሔር አብ ቃል ነው፤",
       "amharic_phonetic": "፨ ḥzb: ḳal beḳdmīya neber yh ḳal 'igzī'abḥér 'ab ḳal new:",
       "tigrinya_script": "፨ ሕዝብ፤ ቃል ብቕድሙ ነበረ፡ እቲ ቃል ናይ እግዚኣብሔር ቃል እዩ።",
-      "tigrinya_phonetic": "፨ ḥzb: ḳal bqhdmu nebere 'itī ḳal nay 'igzī'abḥér ḳal 'iyu."
+      "tigrinya_phonetic": "፨ ḥzb: ḳal bqhdmu nebere 'itī ḳal nay 'igzī'abḥér ḳal 'iyu.",
+      "spanish": "፨ Gente: En el principio era el Verbo, y el Verbo era la Palabra de Dios:"
     },
     {
       "instruction": "For the Gospel of John",
@@ -15707,7 +16371,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ ያ ቃል ሥጋ ሆነ በባህርያችን ተዋሀደ በአባቱ እንደ አንድ ልጅ የሚሆን ክብሩንም አየን፥",
       "amharic_phonetic": "፨ ḥzb: ya ḳal sga hone bebahryachn tewahade be'abatu 'inde 'and lj yemīhon kbrunm 'ayen;",
       "tigrinya_script": "፨ ሕዝብ፤ እቲ ቃል ሰብ ኮነ ኣባና ድማ ኃደረ፡ ከም ክብሪ ሓደ ወዲ ነቦኡ ዝኾነ ክብሩውን ረኣና።",
-      "tigrinya_phonetic": "፨ ḥzb: 'itī ḳal seb kone 'abana dma hadere kem kbrī ḥade wedī nebo'u zkhone kbruwn re'ana."
+      "tigrinya_phonetic": "፨ ḥzb: 'itī ḳal seb kone 'abana dma hadere kem kbrī ḥade wedī nebo'u zkhone kbruwn re'ana.",
+      "spanish": "(Juan 1:14)\n፨ Pueblo: «El Verbo se hizo carne y habitó entre nosotros, y vimos su gloria, gloria como del unigénito del Padre»."
     },
     {
       "instruction": "For the Gospel of John",
@@ -15720,7 +16385,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ የሕያው የአብ ቃል ነው፥ ቃልም ሕይወትን የሚሰጥ ነው። የእግዚአብሔር ቃል ተነሣ፥ ሥጋውም አልጠፋም።",
       "amharic_phonetic": "፨ ḥzb: yeḥyaw ye'ab ḳal new; ḳalm ḥywetn yemīseṭ new. ye'igzī'abḥér ḳal tenesa; sgawm 'alṭefam.",
       "tigrinya_script": "፨ ሕዝብ፤ ናይ ሕያው ኣብ ቃል እዩ መሕወዪውን እዩ: ናይ እግዚኣብሔር ቃል ተንስአ ሥጋኡውን ኣይማሰነን።",
-      "tigrinya_phonetic": "፨ ḥzb: nay ḥyaw 'ab ḳal 'iyu meḥweyīwn 'iyu: nay 'igzī'abḥér ḳal tens'a sga'uwn 'aymasenen."
+      "tigrinya_phonetic": "፨ ḥzb: nay ḥyaw 'ab ḳal 'iyu meḥweyīwn 'iyu: nay 'igzī'abḥér ḳal tens'a sga'uwn 'aymasenen.",
+      "spanish": "፨ Pueblo: la Palabra del Padre viviente y la Palabra que da vida, la Palabra de Dios, resucitó y su carne no fue corrompida."
     },
     {
       "instruction": "",
@@ -15733,7 +16399,8 @@ const kidaseData = {
       "amharic_script": "",
       "amharic_phonetic": "",
       "tigrinya_script": "***(ወንጌል ምስ ተነበበ፡ ዕርገት ቁርባን ከይተፈጸመ፡ ብጸገም ምኽንያት እንተዘይኮይኑ ካህን ቡራኬ ሂቡ ከየፋነወ፡ ሓደኳ ካብ ቤተ ክርስቲያን ኣይውጻእ)***",
-      "tigrinya_phonetic": "***(wengél ms tenebebe 'irget ḳurban keytefetseme btsegem mkhnyat 'intezeykoynu kahn buraké hību keyefanewe ḥadekwa kab béte krstīyan 'aywtsa'i)***"
+      "tigrinya_phonetic": "***(wengél ms tenebebe 'irget ḳurban keytefetseme btsegem mkhnyat 'intezeykoynu kahn buraké hību keyefanewe ḥadekwa kab béte krstīyan 'aywtsa'i)***",
+      "spanish": "***(Después de la lectura del Evangelio, que nadie salga de la iglesia —salvo en caso de urgencia— antes de la distribución de la Sagrada Comunión, la bendición del sacerdote y la despedida).***"
     },
     {
       "instruction": "",
@@ -15746,7 +16413,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤",
       "amharic_phonetic": "፨ ḥzb:",
       "tigrinya_script": "፨ ሕዝብ፤ ብቃል ወንጌል ንኣምን።",
-      "tigrinya_phonetic": "፨ ḥzb: bḳal wengél n'amn."
+      "tigrinya_phonetic": "፨ ḥzb: bḳal wengél n'amn.",
+      "spanish": "፨ Gente (al besar el Evangelio): Creemos en la palabra del Santo Evangelio."
     },
     {
       "instruction": "",
@@ -15759,7 +16427,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Sacerdote auxiliar: Gloria a Ti, Señor, Dios Todopoderoso, que nos has reunido para escuchar la Palabra de tu Santo Evangelio, saludarla y regocijarnos en ella,"
     },
     {
       "instruction": "",
@@ -15772,7 +16441,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Sacerdote auxiliar: nuevamente te pedimos y suplicamos que escribas la Palabra de tu Evangelio en nuestros corazones,"
     },
     {
       "instruction": "",
@@ -15785,7 +16455,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Sacerdote auxiliar: y acepta nuestra oración en este templo en el que entró nuestro Señor Jesucristo,"
     },
     {
       "instruction": "",
@@ -15798,7 +16469,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Sacerdote auxiliar: y envía tu misericordia y tu compasión sobre nosotros y sobre tu pueblo, por medio de tu Hijo unigénito, porque tuya es la gloria y el poder por los siglos de los siglos. Amén."
     },
     {
       "instruction": "",
@@ -15811,7 +16483,8 @@ const kidaseData = {
       "amharic_script": "፨ ዲያቆን፤ የክርስቲያን ታናናሾች የሆናችሁ ውጡ",
       "amharic_phonetic": "፨ dīyaḳon: yekrstīyan tananaሾch yehonachhu wṭu",
       "tigrinya_script": "፨ ዲያቆን፤ ንኡሰ ክርስቲያን (ዘይተጠመቕኩም ውጽኡ)",
-      "tigrinya_phonetic": "፨ dīyaḳon: n'use krstīyan (zeyteṭemeqhkum wts'u)"
+      "tigrinya_phonetic": "፨ dīyaḳon: n'use krstīyan (zeyteṭemeqhkum wts'u)",
+      "spanish": "Diácono: Salgan, catecúmenos.\n\n***(Quienes sean catecúmenos o no comulguen deberán retirarse ahora, pues el resto es para los comulgantes).***"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -15824,7 +16497,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤ ኦ እግዚኣብሔር ኣምላኽና፡ ብዘይትምርመር ሰብ ብምፍቃርካ ንሓደ ወድኻ፡ ዝጠፍአ በጊዕ ናባኻ ኪመልስ፡ ናብ ዓለም ለኣኽካዮ።",
-      "tigrinya_phonetic": "kahn: 'o 'igzī'abḥér 'amlakhna bzeytmrmer seb bmfḳarka nḥade wedkha zṭef'a begī'i nabakha kīmels nab 'alem le'akhkayo."
+      "tigrinya_phonetic": "kahn: 'o 'igzī'abḥér 'amlakhna bzeytmrmer seb bmfḳarka nḥade wedkha zṭef'a begī'i nabakha kīmels nab 'alem le'akhkayo.",
+      "spanish": "ORACIÓN DE SAN BASILIO\n\nSacerdote: Oh Señor, Dios nuestro, que por tu amor al hombre, que es inefable, enviaste a tu Hijo unigénito al mundo para traer de vuelta a ti a la oveja perdida,"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -15837,7 +16511,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Te suplicamos, Maestro nuestro, que no nos devuelvas cuando te ofrecemos esta terrible (impresionante) oblación que es inmaculada."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -15850,7 +16525,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: No confiamos en nuestra justicia, sino en Tu misericordia, oh Tú que has amado nuestra naturaleza."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -15863,7 +16539,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Te rogamos y suplicamos, oh amante del hombre, que este misterio que preparaste para nuestra salvación no sea para nuestra condenación, la de tus siervos y la de todo tu pueblo."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -15876,7 +16553,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Pero que sea para nuestra salvación, para borrar nuestros pecados y perdonar nuestra negligencia."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -15889,7 +16567,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Gloria y honor sean a tu santo Nombre, Padre, Hijo y Espíritu Santo, ahora y siempre y por los siglos de los siglos. Amén."
     },
     {
       "instruction": "",
@@ -15902,7 +16581,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ ለጸሎት ተነሱ\n፨ ሕዝብ፤ አቤቱ ይቅር በለን",
       "amharic_phonetic": "dīyaḳon: letselot tenesu\n፨ ḥzb: 'abétu yḳr belen",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Diácono: Pónganse de pie para orar.\n\n፨ Pueblo: Señor, ten misericordia de nosotros."
     },
     {
       "instruction": "",
@@ -15915,7 +16595,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ሰላም ለሁላችሁ ይሁን\n፨ ሕዝብ፤ ከመንፈስህ ጋራ",
       "amharic_phonetic": "kahn: selam lehulachhu yhun\n፨ ḥzb: kemenfesh gara",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: La paz sea con todos vosotros.\n\nPueblo: y con tu Espíritu."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -15928,7 +16609,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤ ሕጂ ከኣ ኵሉ ንዝኃዝካ እግዚኣብሔር ኣቦ ጐይታናን መድኃኒናን ኢየሱስ ክርስቶስ፡",
-      "tigrinya_phonetic": "kahn: ḥjī ke'a kwlu nzhazka 'igzī'abḥér 'abo gweytanan medhanīnan 'īyesus krstos"
+      "tigrinya_phonetic": "kahn: ḥjī ke'a kwlu nzhazka 'igzī'abḥér 'abo gweytanan medhanīnan 'īyesus krstos",
+      "spanish": "Sacerdote: De nuevo suplicamos al Dios Todopoderoso, Padre de nuestro Señor y Salvador Jesucristo; pedimos y rogamos por tu bondad, oh amante del hombre,"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -15941,7 +16623,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Acuérdate, Señor, de la paz de la única Iglesia santa y apostólica, que se extiende de un extremo del mundo al otro."
     },
     {
       "instruction": "",
@@ -15954,7 +16637,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ ሐዋርያት ለሰበሰቧት በእግዚአብሔር ዘንድ ስለቀናች፣ ክብርት ስለምትሆን አንዲት ቤተ ክርስቲያን ጸልዩ",
       "amharic_phonetic": "dīyaḳon: ḥawaryat lesebesebwat be'igzī'abḥér zend sleḳenach, kbrt slemthon 'andīt béte krstīyan tselyu",
       "tigrinya_script": "ዲያቆን፤ ኣብ እግዚኣብሔር ጽንዕቲ ዝኾነት ምእንቲ ሰላም ሓንቲ ቅድስቲ ቤተ ክርስቲያን ጸልዩ።",
-      "tigrinya_phonetic": "dīyaḳon: 'ab 'igzī'abḥér tsn'itī zkhonet m'intī selam ḥantī ḳdstī béte krstīyan tselyu."
+      "tigrinya_phonetic": "dīyaḳon: 'ab 'igzī'abḥér tsn'itī zkhonet m'intī selam ḥantī ḳdstī béte krstīyan tselyu.",
+      "spanish": "Diácono: Oren por la paz de la Iglesia una, santa, apostólica, ortodoxa en el Señor."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -15967,7 +16651,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤ ንዅሉ ሕዝብን ንኹሉ ምእመናንን ባርኽ። ንዅልና ውን ካብ ሰማያት ዚርከብ ኵሉ ሰላም ናብ ልባትና ፈንወልና፡",
-      "tigrinya_phonetic": "kahn: nዅlu ḥzbn nkhulu m'imenann barkh. nዅlna wn kab semayat zīrkeb kwlu selam nab lbatna fenwelna"
+      "tigrinya_phonetic": "kahn: nዅlu ḥzbn nkhulu m'imenann barkh. nዅlna wn kab semayat zīrkeb kwlu selam nab lbatna fenwelna",
+      "spanish": "Sacerdote: Todo el pueblo y toda la congregación te bendicen, toda la paz que viene del cielo te envía a nuestros corazones y concédenos la seguridad de nuestra vida en ellos."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -15980,7 +16665,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Concede la paz a nuestra patria {{COUNTRY}}, a su unidad, a sus ejércitos, a quienes gobiernan a su pueblo."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -15993,7 +16679,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Y a la multitud de nuestros vecinos, tanto en casa como en el extranjero, adornadlos con toda paz."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -16006,7 +16693,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Oh Rey de paz, concédenos tu paz, pues nos has concedido todas las cosas. Posee nuestras vidas, oh Señor, y recompénsanos, pues fuera de ti no conocemos a ningún otro;"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -16019,7 +16707,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Hacemos mención de Tu Santo Nombre y lo invocamos, para que nuestras almas vivan por medio del Espíritu Santo, y para que la muerte del pecado no tenga dominio sobre nosotros, Tus siervos y todo Tu pueblo:"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -16032,7 +16721,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Por tu Hijo unigénito, a quien contigo y con el Espíritu Santo sea la gloria y el dominio, ahora y siempre y por los siglos de los siglos. Amén."
     },
     {
       "instruction": "",
@@ -16045,7 +16735,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ ኪርያላይሶን (አቤቱ ይቅር በለን)።",
       "amharic_phonetic": "፨ ḥzb: kīryalayson ('abétu yḳr belen).",
       "tigrinya_script": "፨ ሕዝብ፤ ኪርያላይሶን (ኦ ጐይታ ይቕረ በለልና)",
-      "tigrinya_phonetic": "፨ ḥzb: kīryalayson ('o gweyta yqhre belelna)"
+      "tigrinya_phonetic": "፨ ḥzb: kīryalayson ('o gweyta yqhre belelna)",
+      "spanish": "፨ Pueblo: Kyrie Eleison (\"Señor, ten piedad\" en griego)"
     },
     {
       "instruction": "",
@@ -16058,7 +16749,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን ንፍቅ፤ ለጸሎት ተነሱ\n፨ ሕዝብ፤ አቤቱ ይቅር በለን",
       "amharic_phonetic": "dīyaḳon nfḳ: letselot tenesu\n፨ ḥzb: 'abétu yḳr belen",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Subdiácono: Pónganse de pie para orar.\n\n፨ Pueblo: Señor, ten misericordia de nosotros."
     },
     {
       "instruction": "",
@@ -16071,7 +16763,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤ ሰላም ለሁላችሁ ይሁን\n፨ ሕዝብ፤ ከመንፈስህ ጋራ",
       "amharic_phonetic": "kahn nfḳ: selam lehulachhu yhun\n፨ ḥzb: kemenfesh gara",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote auxiliar: La paz sea con todos vosotros.\n\n፨ Pueblo: y con tu Espíritu."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -16084,7 +16777,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤ ደጊምና ኵሉ ንዝኃዘ እግዚኣብሔር ኣቦ ጐይታናን መድኃኒናን ኢየሱስ ክርስቶስ",
-      "tigrinya_phonetic": "kahn nfḳ: degīmna kwlu nzhaze 'igzī'abḥér 'abo gweytanan medhanīnan 'īyesus krstos"
+      "tigrinya_phonetic": "kahn nfḳ: degīmna kwlu nzhaze 'igzī'abḥér 'abo gweytanan medhanīnan 'īyesus krstos",
+      "spanish": "Sacerdote auxiliar: Y nuevamente suplicamos al Dios Todopoderoso, Padre de nuestro Señor y Salvador Jesucristo,"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -16097,7 +16791,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤ ምእንቲ ርእሰ ሊቃነ ጳጳሳት {{PATRIARCH NAME}}",
-      "tigrinya_phonetic": "kahn nfḳ: m'intī r'ise līḳane p̣ap̣asat {{PATRIARCH NAME}}"
+      "tigrinya_phonetic": "kahn nfḳ: m'intī r'ise līḳane p̣ap̣asat {{PATRIARCH NAME}}",
+      "spanish": "Sacerdote auxiliar: Por el bendito Patriarca Abba {{NOMBRE DEL PATRIARCA}}, que Él verdaderamente lo preserve para nosotros por muchos años."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -16110,7 +16805,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Sacerdote auxiliar: y en días de paz hasta que el Señor nuestro Dios, rico en gracia, le conceda cumplir lo que le fue encomendado, el oficio del sacerdocio."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -16123,7 +16819,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን ንፍቅ፤",
       "amharic_phonetic": "dīyaḳon nfḳ:",
       "tigrinya_script": "ዲያቆን ንፍቅ፤ ምእንቲ መምህርና ርእሲ ሊቃነ ጳጳሳት ናይ ዓባይ ሃገር {{COUNTRY}} ኣባ {{PATRIARCH NAME}}",
-      "tigrinya_phonetic": "dīyaḳon nfḳ: m'intī memhrna r'isī līḳane p̣ap̣asat nay 'abay hager {{COUNTRY}} 'aba {{PATRIARCH NAME}}"
+      "tigrinya_phonetic": "dīyaḳon nfḳ: m'intī memhrna r'isī līḳane p̣ap̣asat nay 'abay hager {{COUNTRY}} 'aba {{PATRIARCH NAME}}",
+      "spanish": "Subdiácono: Oren por el Patriarca Abba {{NOMBRE DEL PATRIARCO}}, nuestro señor, jefe de los obispos de la gran nación de {{PAÍS}}."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -16136,7 +16833,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን ንፍቅ፤",
       "amharic_phonetic": "dīyaḳon nfḳ:",
       "tigrinya_script": "ዲያቆን ንፍቅ፤ ምእንቲ ኣብ ርእሲ ኸተማና ዝተሸመ ብፁዕ ሊቀ ጳጳስና ኣብ {{BISHOP NAME}} ሃይማኖቶም ቅኑዕ ምእንቲ ዝኾኑ ኵሎም ኤጲስ ቆጶሳትን ቀሳውስትን ዲያቆናትን ጸልዩ",
-      "tigrinya_phonetic": "dīyaḳon nfḳ: m'intī 'ab r'isī khetemana zteሸme btsu'i līḳe p̣ap̣asna 'ab {{BISHOP NAME}} haymanotom ḳnu'i m'intī zkhonu kwlom 'ép̣īs ḳop̣osatn ḳesawstn dīyaḳonatn tselyu"
+      "tigrinya_phonetic": "dīyaḳon nfḳ: m'intī 'ab r'isī khetemana zteሸme btsu'i līḳe p̣ap̣asna 'ab {{BISHOP NAME}} haymanotom ḳnu'i m'intī zkhonu kwlom 'ép̣īs ḳop̣osatn ḳesawstn dīyaḳonatn tselyu",
+      "spanish": "Subdiácono: y por el bendito Primado del país de nuestros padres Abba {{NOMBRE DEL OBISPO}} y todos los obispos, sacerdotes y diáconos ortodoxos."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -16149,7 +16847,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Sacerdote auxiliar: Señor, Dios Todopoderoso, te rogamos y suplicamos por nuestro bendito obispo Abba {{NOMBRE DEL OBISPO}} para que verdaderamente lo preserves para nosotros por muchos años."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -16162,7 +16861,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Sacerdote auxiliar: y en días de paz para cumplir el oficio del sacerdocio que le has encomendado, junto con todos los obispos, sacerdotes y diáconos ortodoxos,"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -16175,7 +16875,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Sacerdote auxiliar: y toda la congregación de la única, santa y universal Iglesia; y la oración que él hace por nosotros en nombre de todo tu pueblo, ¿la aceptas?"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -16188,7 +16889,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Sacerdote auxiliar: ábrele el tesoro de tu bendición, y especialmente concédele abundantemente la gracia del Espíritu Santo;"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -16201,7 +16903,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Sacerdote auxiliar: derrama sobre él desde el cielo tu bendición para que él bendiga a tu pueblo;"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -16214,7 +16917,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Sacerdote auxiliar: y a todos sus enemigos, visibles e invisibles, los sometes y los aplastas rápidamente bajo su peso;"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -16227,7 +16931,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Sacerdote auxiliar: pero a ti mismo nos lo preservas en justicia, paz y gloria, para tu santa Iglesia;"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -16240,7 +16945,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Sacerdote auxiliar: Por tu Hijo unigénito, por quien a ti, con él y con el Espíritu Santo, sea la gloria y el dominio, ahora y siempre, por los siglos de los siglos. Amén."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -16253,7 +16959,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ ለጸሎት ተነሱ\n፨ ሕዝብ፤ አቤቱ ይቅር በለን",
       "amharic_phonetic": "dīyaḳon: letselot tenesu\n፨ ḥzb: 'abétu yḳr belen",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Diácono: Pónganse de pie para orar.\n\n፨ Pueblo: Señor, ten misericordia de nosotros."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -16266,7 +16973,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ሰላም ለሁላችሁ ይሁን\n፨ ሕዝብ፤ ከመንፈስህ ጋራ",
       "amharic_phonetic": "kahn: selam lehulachhu yhun\n፨ ḥzb: kemenfesh gara",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: La paz sea con todos vosotros.\n\nPueblo: y con tu Espíritu."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -16279,7 +16987,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤ ደጊምና ኵሉ ንዝኃዘ እግዚኣብሔር ኣቦ ጐይታናን መድኃኒናን ኢየሱስ ክርስቶስ",
-      "tigrinya_phonetic": "kahn: degīmna kwlu nzhaze 'igzī'abḥér 'abo gweytanan medhanīnan 'īyesus krstos"
+      "tigrinya_phonetic": "kahn: degīmna kwlu nzhaze 'igzī'abḥér 'abo gweytanan medhanīnan 'īyesus krstos",
+      "spanish": "Sacerdote: Y de nuevo elevamos nuestra súplica al Dios Todopoderoso, Padre de nuestro Señor y Salvador Jesucristo; te pedimos y suplicamos tu bondad, oh amante del hombre:"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -16292,7 +17001,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Acuérdate, Señor, de nuestra congregación; bendícelos."
     },
     {
       "instruction": "",
@@ -16305,7 +17015,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ ክብርት ስለምትሆን አንዲት ቤተ ክርስቲያን ጸልዩ በውስጥዋ ስላለ አንድነታችንም ጸልዩ",
       "amharic_phonetic": "dīyaḳon: kbrt slemthon 'andīt béte krstīyan tselyu bewsṭwa slale 'andnetachnm tselyu",
       "tigrinya_script": "ዲያቆን፤ ምእንቲ እዛ ቅድስቲ ቤተ ክርስቲያንን ምእንቲ ኣብ ውሽጣ ዘሎ ማኅበርን ጸልዩ።",
-      "tigrinya_phonetic": "dīyaḳon: m'intī 'iza ḳdstī béte krstīyann m'intī 'ab wሽṭa zelo mahbern tselyu."
+      "tigrinya_phonetic": "dīyaḳon: m'intī 'iza ḳdstī béte krstīyann m'intī 'ab wሽṭa zelo mahbern tselyu.",
+      "spanish": "Diácono: Ora por esta santa Iglesia y por nuestra congregación."
     },
     {
       "instruction": "",
@@ -16318,7 +17029,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤",
       "amharic_phonetic": "፨ ḥzb:",
       "tigrinya_script": "፨ ሕዝብ፤ ንማኅበርና ባርኽ ብሰላም ድማ ሓሉ።",
-      "tigrinya_phonetic": "፨ ḥzb: nmahberna barkh bselam dma ḥalu."
+      "tigrinya_phonetic": "፨ ḥzb: nmahberna barkh bselam dma ḥalu.",
+      "spanish": "፨ Pueblo: Bendice a nuestra congregación y mantennos en paz."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -16331,7 +17043,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤ ብዘይ ምቁራጽን ብዘይ ምኽልካልን፡ ቅድስትን ንእድትን ፍቓድካ ኪገብሩን ናትካ ኪኾኑን ጸጋኻ ሃቦም። ቤት ጸሎትን ቤት ንጽሕናን ቤት በረኸትን ድማ ግበሮም፡",
-      "tigrinya_phonetic": "kahn: bzey mḳuratsn bzey mkhlkaln ḳdstn n'idtn fqhadka kīgebrun natka kīkhonun tsegakha habom. bét tselotn bét ntsḥnan bét berekhetn dma gberom"
+      "tigrinya_phonetic": "kahn: bzey mḳuratsn bzey mkhlkaln ḳdstn n'idtn fqhadka kīgebrun natka kīkhonun tsegakha habom. bét tselotn bét ntsḥnan bét berekhetn dma gberom",
+      "spanish": "Sacerdote: Concede que sean Tuyos para que sin pereza ni impedimento hagan Tu santa y bendita Voluntad, una casa de oración, una casa de pureza y una casa de bendición."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -16344,7 +17057,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤ ንኣና ንባሮትካ ካባና ንደኃር ንዚመጹን ንዘለዓለም ሠናይ መዋዕል ሃብ።",
-      "tigrinya_phonetic": "kahn: n'ana nbarotka kabana ndehar nzīmetsun nzele'alem senay mewa'il hab."
+      "tigrinya_phonetic": "kahn: n'ana nbarotka kabana ndehar nzīmetsun nzele'alem senay mewa'il hab.",
+      "spanish": "Sacerdote: Danos también, Señor, tus siervos, y a los que vendrán después de nosotros, concédenos longanimidad hasta el fin del mundo."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -16357,7 +17071,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Levántate, Señor Dios mío, y que tus enemigos se dispersen, y que huyan de ti los que odian tu santo y bendito nombre."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -16370,7 +17085,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Pero tu pueblo que hace tu voluntad en todo tiempo sea bendecido con bendiciones mil miles y diez mil veces diez mil."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -16383,7 +17099,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Por tu Hijo unigénito, por quien a ti, con él y con el Espíritu Santo, sea la gloria y el dominio, ahora y siempre, por los siglos de los siglos. Amén."
     },
     {
       "instruction": "For the Anaphoras of The Lord, St. Mary, St. John, & The Apostles",
@@ -16396,7 +17113,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ በእግዚአብሔር ጥበብ ሆነን በሰላም ሁላችን የሃይማኖት ጸሎት እንበል",
       "amharic_phonetic": "dīyaḳon: be'igzī'abḥér ṭbeb honen beselam hulachn yehaymanot tselot 'inbel",
       "tigrinya_script": "ዲያቆን፤ ብጥበብ እግዚኣብሔር ኵላትና ጸሎተ ሃይማኖት ንበል።",
-      "tigrinya_phonetic": "dīyaḳon: bṭbeb 'igzī'abḥér kwlatna tselote haymanot nbel."
+      "tigrinya_phonetic": "dīyaḳon: bṭbeb 'igzī'abḥér kwlatna tselote haymanot nbel.",
+      "spanish": "Diácono: Digamos todos, en la sabiduría de Dios, la oración de fe."
     },
     {
       "instruction": "For the Anaphoras of The Lord, St. Mary, St. John, & The Apostles",
@@ -16409,7 +17127,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ የጌታችንና የአምላካችን የመድኃኒታችን የኢየሱስ ክርስቶስ አባት በሚሆን ፍጥረቱን ሁሉ በፈጠረ በአንድ አምላክ እናምናለን፣ በባሕርዩ ምክንያት የለበትምና፤",
       "amharic_phonetic": "፨ ḥzb:",
       "tigrinya_script": "፨ ሕዝብ፤ ኵሉ ፍጥረት ብዝፈጠረ ብሓደ ኣምላኽ ንኣምን። ኣቦ ጐይታናን ኣምላኽናን መድኃኒናን ኢየሱስ ክርስቶስ ኣቐዲምና ከም ዝነገርናዮ ንህላዌኡ ምኽንያት ስለ ዘየብሉ",
-      "tigrinya_phonetic": "፨ ḥzb: kwlu fṭret bzfeṭere bḥade 'amlakh n'amn. 'abo gweytanan 'amlakhnan medhanīnan 'īyesus krstos 'aqhedīmna kem znegernayo nhlawé'u mkhnyat sle zeyeblu"
+      "tigrinya_phonetic": "፨ ḥzb: kwlu fṭret bzfeṭere bḥade 'amlakh n'amn. 'abo gweytanan 'amlakhnan medhanīnan 'īyesus krstos 'aqhedīmna kem znegernayo nhlawé'u mkhnyat sle zeyeblu",
+      "spanish": "፨ CREDO DE LOS APÓSTOLES ፨\n\n፨ Pueblo: Creemos en un solo Dios, creador de toda la creación, Padre de nuestro Señor, nuestro Dios y nuestro Salvador Jesucristo, porque su naturaleza es inescrutable."
     },
     {
       "instruction": "For the Anaphoras of The Lord, St. Mary, St. John, & The Apostles",
@@ -16422,7 +17141,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ አስቀድመን እንደ ተናገርን በዘመኑ ሁሉ ይኖራል እንጂ ጥንት ወይም ፍጻሜ የለውምና፤ የማይጠፋ ብርሃን አለው፤ ወደርሱም መቅረብ የሚቻለው የለም፤",
       "amharic_phonetic": "፨ ḥzb:",
       "tigrinya_script": "፨ ሕዝብ፤ ብዅሉ ዘመናት ህልው ኮይኑ ይነብር እምበር መጀመርታን መፈጸምታን የብሉን። ዘይጠፍእ ብርሃን ኣለዎ፡ ናብኡ ኪቐርብ ዚኽእል የልቦን።",
-      "tigrinya_phonetic": "፨ ḥzb: bዅlu zemenat hlw koynu ynebr 'imber mejemertan mefetsemtan yeblun. zeyṭef'i brhan 'alewo nab'u kīqherb zīkh'il yelbon."
+      "tigrinya_phonetic": "፨ ḥzb: bዅlu zemenat hlw koynu ynebr 'imber mejemertan mefetsemtan yeblun. zeyṭef'i brhan 'alewo nab'u kīqherb zīkh'il yelbon.",
+      "spanish": "፨ Pueblo: Como ya hemos declarado, Él no tiene principio ni fin, pero vive para siempre, tiene luz que nunca se extingue y nunca se le puede acercar."
     },
     {
       "instruction": "For the Anaphoras of The Lord, St. Mary, St. John, & The Apostles",
@@ -16435,7 +17155,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ ሁለተኛ አይደለም ሦስተኛም አይደለም፣ አይጨመርበትም፤ ብቻውን\nለዘለዓለሙ የሚኖር አንድ ነው እንጂ፣ የማይታወቅ የተሰወረ አይደለምና",
       "amharic_phonetic": "፨ ḥzb:",
       "tigrinya_script": "፨ ሕዝብ፤ ክልተ ኣይኮነን ሠለስተ ኣይኮነን፡ ኣይውሰኾንውን፡ ሓደ በይኑ እዩ ዘይፍለጥ ስዉር ኣይኮነን፡",
-      "tigrinya_phonetic": "፨ ḥzb: klte 'aykonen seleste 'aykonen 'aywsekhonwn ḥade beynu 'iyu zeyfleṭ swur 'aykonen"
+      "tigrinya_phonetic": "፨ ḥzb: klte 'aykonen seleste 'aykonen 'aywsekhonwn ḥade beynu 'iyu zeyfleṭ swur 'aykonen",
+      "spanish": "፨ Gente: Él no es dos ni tres, y nada se le puede añadir; sino que Él es uno solo, que vive para siempre, no porque esté oculto no se le pueda conocer,"
     },
     {
       "instruction": "For the Anaphoras of The Lord, St. Mary, St. John, & The Apostles",
@@ -16448,7 +17169,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ ሁሉን የያዘና ከፍጥረቱም ሁሉ በላይ የሰለጠነ መሆኑን በኦሪትና በነቢያት ፈጽመን አወቅ ነው እንጂ፤",
       "amharic_phonetic": "፨ ḥzb:",
       "tigrinya_script": "፨ ሕዝብ፤ ብኦሪትን ብነቢያትን ብርግጽ ፈሊጥናዮ ኢና። ንሱ ገዛእ ኵሉን ኣብ ልዕሊ ኵሉ ፍጥረት ሥልጣን ዘለዎን እዩ።",
-      "tigrinya_phonetic": "፨ ḥzb: b'orītn bnebīyatn brgts felīṭnayo 'īna. nsu geza'i kwlun 'ab l'ilī kwlu fṭret slṭan zelewon 'iyu."
+      "tigrinya_phonetic": "፨ ḥzb: b'orītn bnebīyatn brgts felīṭnayo 'īna. nsu geza'i kwlun 'ab l'ilī kwlu fṭret slṭan zelewon 'iyu.",
+      "spanish": "፨ Pueblo: pero nosotros le conocemos perfectamente por medio de la Ley y los profetas, que Él es todopoderoso y tiene autoridad sobre toda la creación."
     },
     {
       "instruction": "For the Anaphoras of The Lord, St. Mary, St. John, & The Apostles",
@@ -16461,7 +17183,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ የጌታችንና የመድኃኒታችን የኢየሱስ ክርስቶስ አባት እግዚአብሔር አንድ ነው፤ ዓለም ሳይፈጠር የተወለደ፤",
       "amharic_phonetic": "፨ ḥzb:",
       "tigrinya_script": "፨ ሕዝብ፤ ኣቦኡ ንጐታናን መድኃኒናን ኢየሱስ ክርስቶስ እግዚኣብሔር ሓደ እዩ። ዓለም ከይተፍጥረ ዝተወልደ",
-      "tigrinya_phonetic": "፨ ḥzb: 'abo'u ngwetanan medhanīnan 'īyesus krstos 'igzī'abḥér ḥade 'iyu. 'alem keytefṭre ztewelde"
+      "tigrinya_phonetic": "፨ ḥzb: 'abo'u ngwetanan medhanīnan 'īyesus krstos 'igzī'abḥér ḥade 'iyu. 'alem keytefṭre ztewelde",
+      "spanish": "፨ Pueblo: Un solo Dios, Padre de nuestro Señor y Salvador Jesucristo, que fue engendrado antes de la creación del mundo,"
     },
     {
       "instruction": "For the Anaphoras of The Lord, St. Mary, St. John, & The Apostles",
@@ -16474,7 +17197,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ ከርሱ ጋራ የተካከለ የሚሆን አንድ ልጅ፤ ሠራዊትንና ሢመታትን ሥልጣናትንም ሁሉ የፈጠረ፤",
       "amharic_phonetic": "፨ ḥzb:",
       "tigrinya_script": "፨ ሕዝብ፤ ወልድ ዋሕድ ምስኡ ማዕረ ዝኾነ ኵሉ ሠራዊትን ሢመታትን ሥልጣናትን ዝፈጠረ።",
-      "tigrinya_phonetic": "፨ ḥzb: weld waḥd ms'u ma'ire zkhone kwlu serawītn sīmetatn slṭanatn zfeṭere."
+      "tigrinya_phonetic": "፨ ḥzb: weld waḥd ms'u ma'ire zkhone kwlu serawītn sīmetatn slṭanatn zfeṭere.",
+      "spanish": "፨ Pueblo: el Hijo unigénito, igual a Él, Creador de todos los ejércitos, los principados y los dominios:"
     },
     {
       "instruction": "For the Anaphoras of The Lord, St. Mary, St. John, & The Apostles",
@@ -16487,7 +17211,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ በኋለኛው ዘመን ሰው ይሆን ዘንድ የወደደ፤ ያለ ዘርዐ ብእሲ ቅድስት ከምትሆን ከእመቤታችን ከድንግል ማርያም ሥጋን ነሣ፣",
       "amharic_phonetic": "፨ ḥzb:",
       "tigrinya_script": "፨ ሕዝብ፤ ብዳሕረዋይ ዘመን ሰብ ኪኸውን ዝፈቐደ፡ ብዘይዘርኢ ሰብኣይ ካብ ቅድስቲ ድንግል ማርያም ሥጋ ዝለበሰ።",
-      "tigrinya_phonetic": "፨ ḥzb: bdaḥreway zemen seb kīkhewn zfeqhede bzeyzer'ī seb'ay kab ḳdstī dngl maryam sga zlebese."
+      "tigrinya_phonetic": "፨ ḥzb: bdaḥreway zemen seb kīkhewn zfeqhede bzeyzer'ī seb'ay kab ḳdstī dngl maryam sga zlebese.",
+      "spanish": "፨ Pueblo: Quien en los últimos días se complació en hacerse hombre, y tomó carne de nuestra Señora María, la Santísima Virgen, sin semilla de hombre,"
     },
     {
       "instruction": "For the Anaphoras of The Lord, St. Mary, St. John, & The Apostles",
@@ -16500,7 +17225,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ ያለ ኃጢአትና ያለ በደል እንደ ሰው አደገ፣ በአንደበቱም ሐሰት የለበትም፤",
       "amharic_phonetic": "፨ ḥzb:",
       "tigrinya_script": "፨ ሕዝብ፤ ብዘይ ኃጢኣትን ኣበሳን ከም ሰብ ዓበየ። ኣብ ኣፉ ሓሶት ኣይተረኽበን።",
-      "tigrinya_phonetic": "፨ ḥzb: bzey haṭī'atn 'abesan kem seb 'abeye. 'ab 'afu ḥasot 'ayterekhben."
+      "tigrinya_phonetic": "፨ ḥzb: bzey haṭī'atn 'abesan kem seb 'abeye. 'ab 'afu ḥasot 'ayterekhben.",
+      "spanish": "፨ Gente: y creció como hombres, pero sin pecado ni maldad; ni se halló engaño en su boca."
     },
     {
       "instruction": "For the Anaphoras of The Lord, St. Mary, St. John, & The Apostles",
@@ -16513,7 +17239,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ ከዚህ በኋላ በሥጋ ታመመ ሞተም፤ በሦስተኛውም ቀን ከሙታን ተለይቶ ተነሣ፣ ወደ ላከውም ወደ አብ ወደ ሰማይ ዐረገ፣ ኃይል ባለውም ቀኝ ተቀመጠ፤",
       "amharic_phonetic": "፨ ḥzb:",
       "tigrinya_script": "፨ ሕዝብ፤ ብድኅርዚ ብሥጋ መከራ መስቀል ተቐቢሉ ሞተ፡ ብሣልሳይ መዓልቲ ካብ ምውታት ተፈልዩ ተንሥአ። ናብ ዝለኣኾ፡ ኣቦኡ ናብ ሰማያት ዓረገ። ብየማን ኃይሊ ተቐመጠ።",
-      "tigrinya_phonetic": "፨ ḥzb: bdhrzī bsga mekera mesḳel teqhebīlu mote bsalsay me'altī kab mwtat tefelyu tens'a. nab zle'akho 'abo'u nab semayat 'arege. byeman haylī teqhemeṭe."
+      "tigrinya_phonetic": "፨ ḥzb: bdhrzī bsga mekera mesḳel teqhebīlu mote bsalsay me'altī kab mwtat tefelyu tens'a. nab zle'akho 'abo'u nab semayat 'arege. byeman haylī teqhemeṭe.",
+      "spanish": "፨ Pueblo: Entonces padeció, murió en la carne, resucitó de entre los muertos al tercer día, ascendió al cielo al Padre que lo envió, se sentó a la diestra del Poder,"
     },
     {
       "instruction": "For the Anaphoras of The Lord, St. Mary, St. John, & The Apostles",
@@ -16526,7 +17253,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ ከአብ የሠረፀ ጰራቅሊጦስ መንፈስ ቅዱስን ሰደደልን፤ ዓለሙንም ሁሉ አዳነ፣ ከአብና ከወልድ ጋራ ህልው የሚሆን፤",
       "amharic_phonetic": "፨ ḥzb:",
       "tigrinya_script": "፨ ሕዝብ፤ ካብ ኣብ ዝሠረፀ ንዓለም እውን ዘድኃነ፡ ምስ ኣብን ምስ ወልድን ህልዊ ዝኾነ ጰራቅሊጦስ መንፈስ ጽድቂ ሰደደልና።",
-      "tigrinya_phonetic": "፨ ḥzb: kab 'ab zseretse n'alem 'iwn zedhane ms 'abn ms weldn hlwī zkhone p̣eraḳlīṭos menfes tsdḳī sededelna."
+      "tigrinya_phonetic": "፨ ḥzb: kab 'ab zseretse n'alem 'iwn zedhane ms 'abn ms weldn hlwī zkhone p̣eraḳlīṭos menfes tsdḳī sededelna.",
+      "spanish": "፨ Pueblo: nos envió al Paráclito, el Espíritu Santo, que procede del Padre y salvó a todo el mundo, y que es coeterno con el Padre y el Hijo."
     },
     {
       "instruction": "For the Anaphoras of The Lord, St. Mary, St. John, & The Apostles",
@@ -16539,7 +17267,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ እንግዲህ የእግዚአብሔር ፍጥረት ሁሉ በጎ እንደ ሆነ የሚጣልም እንደ ሌለ እንናገራለን፣ የሥጋ ሕይወት የምትሆን ነፍስ ግን ንጽሕት ቅድስት ናት፤",
       "amharic_phonetic": "፨ ḥzb:",
       "tigrinya_script": "፨ ሕዝብ፤ እግዚኣብሔር ዝፈጠሮ ኵሉ ፍጥረት ንጹሕ ከም ዝኾነ፡ ዚድርበውን የብሉን ንብል። ናይ ሥጋ ሕይወት ነፍሲ ግና፡ ብኹሉ ቅድስትን ንጽሕትን እያ።",
-      "tigrinya_phonetic": "፨ ḥzb: 'igzī'abḥér zfeṭero kwlu fṭret ntsuḥ kem zkhone zīdrbewn yeblun nbl. nay sga ḥywet nefsī gna bkhulu ḳdstn ntsḥtn 'iya."
+      "tigrinya_phonetic": "፨ ḥzb: 'igzī'abḥér zfeṭero kwlu fṭret ntsuḥ kem zkhone zīdrbewn yeblun nbl. nay sga ḥywet nefsī gna bkhulu ḳdstn ntsḥtn 'iya.",
+      "spanish": "፨ Pueblo: Decimos además que todas las criaturas de Dios son buenas y no hay nada que rechazar, y el espíritu, la vida del cuerpo, es puro y santo en todos."
     },
     {
       "instruction": "For the Anaphoras of The Lord, St. Mary, St. John, & The Apostles",
@@ -16552,7 +17281,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ እኛስ ጋብቻ ንጹሕ እንደ ሆነ ልደትም ርኵሰት እንደሌለበት እንናገራለን፣ ሕዝቡ ይበዙ ዘንድ እግዚአብሔር አዳምንና ሔዋንን ፈጥሮዋቸዋልና፣",
       "amharic_phonetic": "፨ ḥzb:",
       "tigrinya_script": "፨ ሕዝብ፤ ንሕናስ መውስቦ ንጹሕ ከም ዚኾነ ምውላድውን ርኽሰት ዘይብሉ ከም ዝኾነ ንምህር። እግዚኣብሔር ንኣዳምን ንሔዋንን ሕዝቢ ኪበዝኁ ኢሉ ፈጢርዎም እዩ፡",
-      "tigrinya_phonetic": "፨ ḥzb: nḥnas mewsbo ntsuḥ kem zīkhone mwladwn rkhset zeyblu kem zkhone nmhr. 'igzī'abḥér n'adamn nḥéwann ḥzbī kībezhu 'īlu feṭīrwom 'iyu"
+      "tigrinya_phonetic": "፨ ḥzb: nḥnas mewsbo ntsuḥ kem zīkhone mwladwn rkhset zeyblu kem zkhone nmhr. 'igzī'abḥér n'adamn nḥéwann ḥzbī kībezhu 'īlu feṭīrwom 'iyu",
+      "spanish": "፨ Pueblo: Y decimos que el matrimonio es puro, y el parto no es mancha, porque Dios creó a Adán y Eva para que se multiplicaran."
     },
     {
       "instruction": "For the Anaphoras of The Lord, St. Mary, St. John, & The Apostles",
@@ -16565,7 +17295,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ ከሥጋ ጋራ የማትሞትና የማትበሰብስ ነፍስ በሥጋችን እንዳለንእና ስተውል፤",
       "amharic_phonetic": "፨ ḥzb:",
       "tigrinya_script": "፨ ሕዝብ፤ እምበኣር ኣብዛ ሥጋና፡ ዘይትመውትን ዘይትብስብስን ነፍሲ ከም ዘላትና ነስተውዕል።",
-      "tigrinya_phonetic": "፨ ḥzb: 'imbe'ar 'abza sgana zeytmewtn zeytbsbsn nefsī kem zelatna nestew'il."
+      "tigrinya_phonetic": "፨ ḥzb: 'imbe'ar 'abza sgana zeytmewtn zeytbsbsn nefsī kem zelatna nestew'il.",
+      "spanish": "፨ Gente: Entendemos además que en nuestro cuerpo hay un alma que es inmortal y no perece con el cuerpo."
     },
     {
       "instruction": "For the Anaphoras of The Lord, St. Mary, St. John, & The Apostles",
@@ -16578,7 +17309,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ እኛስ የሃይማኖት ለዋጮችን ሥራቸውን እንጸ የፋለን፣ መለየታቸውንም ሁሉ፣ ሕግ መለወጣቸውንም እነርሱ በኛ ዘንድ የረከሱ ናቸውና፤",
       "amharic_phonetic": "፨ ḥzb:",
       "tigrinya_script": "፨ ሕዝብ፤ ንሕናስ ብኣና ርኹሳት እዮም እሞ እምነቶም ንዚልውጡ፡ ኵሉ ግብሮምን ኵሉ ምፍልላዮምን ሕጊ ምፍራሶምን ንጽየፍ።",
-      "tigrinya_phonetic": "፨ ḥzb: nḥnas b'ana rkhusat 'iyom 'imo 'imnetom nzīlwṭu kwlu gbromn kwlu mfllayomn ḥgī mfrasomn ntsyef."
+      "tigrinya_phonetic": "፨ ḥzb: nḥnas b'ana rkhusat 'iyom 'imo 'imnetom nzīlwṭu kwlu gbromn kwlu mfllayomn ḥgī mfrasomn ntsyef.",
+      "spanish": "፨ Pueblo: Repudiamos todas las obras de los herejes y todos los cismas y transgresiones de la Ley, porque son impuros para nosotros."
     },
     {
       "instruction": "For the Anaphoras of The Lord, St. Mary, St. John, & The Apostles",
@@ -16591,7 +17323,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ ዳግመኛም የሞቱ የጻድቃንና የኃጥአን ትንሣኤ እንዳለ እናምናለን፣ ሁሉ እንደ ሥራው ፍዳውን የሚቀበልበት የፍርድ ቀንም እንዳለ እናምናለን፤",
       "amharic_phonetic": "፨ ḥzb:",
       "tigrinya_script": "፨ ሕዝብ፤ ከምኡውን ጻድቃንን ኃጥኣንን ዚትንሥእዎ ትንሣኤ ሙታን ንኣምን። ኵሉ ከከም ግብሩ ዚፍደየሉ መዓልቲ ፍርዲ ከም ዘሎውን ንኣምን።",
-      "tigrinya_phonetic": "፨ ḥzb: kem'uwn tsadḳann haṭ'ann zītns'iwo tnsa'é mutan n'amn. kwlu kekem gbru zīfdeyelu me'altī frdī kem zelown n'amn."
+      "tigrinya_phonetic": "፨ ḥzb: kem'uwn tsadḳann haṭ'ann zītns'iwo tnsa'é mutan n'amn. kwlu kekem gbru zīfdeyelu me'altī frdī kem zelown n'amn.",
+      "spanish": "፨ Pueblo: También creemos en la resurrección de los muertos, tanto de los justos como de los pecadores; y en el día del juicio, cuando cada uno será recompensado según sus obras."
     },
     {
       "instruction": "For the Anaphoras of The Lord, St. Mary, St. John, & The Apostles",
@@ -16604,7 +17337,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ ዳግመኛ ክርስቶስ ሰው ከመሆኑ የተነሣ ምንም ምን ሕፀፅ እንደሌለበት እናምናለን፣",
       "amharic_phonetic": "፨ ḥzb:",
       "tigrinya_script": "፨ ሕዝብ፤ ደጊምና ከኣ ክርስቶስ ሰብ ብምዃኑ፡ ከቶ ሕጸጽ ከም ዘይብሉ ንኣምን።",
-      "tigrinya_phonetic": "፨ ḥzb: degīmna ke'a krstos seb bmዃnu keto ḥtsets kem zeyblu n'amn."
+      "tigrinya_phonetic": "፨ ḥzb: degīmna ke'a krstos seb bmዃnu keto ḥtsets kem zeyblu n'amn.",
+      "spanish": "፨ Pueblo: También creemos que Cristo no es en absoluto inferior debido a su encarnación,"
     },
     {
       "instruction": "For the Anaphoras of The Lord, St. Mary, St. John, & The Apostles",
@@ -16617,7 +17351,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ በእውነት ሰው የሆነ የእግዚአብሔር ቃል ነው እንጂ፣ የአብ ሊቀ ካህናት የሚሆን እርሱ የሰውን ባሕርይ ከእግዚአብሔርጋራ አስታረቀ፤",
       "amharic_phonetic": "፨ ḥzb:",
       "tigrinya_script": "፨ ሕዝብ፤ ብሓቂ ሰብ ዝኾነ እግዚኣብሔር ቃል እዩ። ናይ ኣብ ሊቀ ካህናት ኮይኑ ንፍጥረት ሰብ ምስ እግዚኣብሔር ዘተዓረቐ እዩ።",
-      "tigrinya_phonetic": "፨ ḥzb: bḥaḳī seb zkhone 'igzī'abḥér ḳal 'iyu. nay 'ab līḳe kahnat koynu nfṭret seb ms 'igzī'abḥér zete'areqhe 'iyu."
+      "tigrinya_phonetic": "፨ ḥzb: bḥaḳī seb zkhone 'igzī'abḥér ḳal 'iyu. nay 'ab līḳe kahnat koynu nfṭret seb ms 'igzī'abḥér zete'areqhe 'iyu.",
+      "spanish": "፨ Pueblo: pero Él es Dios, el Verbo que verdaderamente se hizo hombre y reconcilió a la humanidad con Dios, siendo el Sumo Sacerdote del Padre."
     },
     {
       "instruction": "For the Anaphoras of The Lord, St. Mary, St. John, & The Apostles",
@@ -16630,7 +17365,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ እንግዲህ እንደ አይሁድ አንገዘር፣ ኦሪትንና ነቢያትን የሚፈጽማቸው እንደመጣ እናውቃለን፤",
       "amharic_phonetic": "፨ ḥzb:",
       "tigrinya_script": "፨ ሕዝብ፤ እምበኣር ከም ሥርዓት ኣይሁድ ኣይንገዘር። ንኦሪትን ነቢያትን ኪፍጽም ከም ዝመጸ ንፈልጥ ኢና።",
-      "tigrinya_phonetic": "፨ ḥzb: 'imbe'ar kem sr'at 'ayhud 'ayngezer. n'orītn nebīyatn kīftsm kem zmetse nfelṭ 'īna."
+      "tigrinya_phonetic": "፨ ḥzb: 'imbe'ar kem sr'at 'ayhud 'ayngezer. n'orītn nebīyatn kīftsm kem zmetse nfelṭ 'īna.",
+      "spanish": "Pueblo: De ahora en adelante, no nos circuncidemos como los judíos. Sabemos que el que tenía que cumplir la ley y los profetas ya ha venido."
     },
     {
       "instruction": "For the Anaphoras of The Lord, St. Mary, St. John, & The Apostles",
@@ -16643,7 +17379,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ አሕዛብ ሁሉ የርሱን መምጣት ተስፋ የሚያደርጉት ኢየሱስ ክርስቶስ ከይሁዳ ከዕሤይም ሥር የተገኘ",
       "amharic_phonetic": "፨ ḥzb:",
       "tigrinya_script": "፨ ሕዝብ፤ ካብ ይሁዳ ካብ ሡር ዕሴይ ዝተወልደ ኢየሱስ ክርስቶስ፡ ሥልጣኑ ናይ ባህርዩ እዩ።",
-      "tigrinya_phonetic": "፨ ḥzb: kab yhuda kab sur 'iséy ztewelde 'īyesus krstos slṭanu nay bahryu 'iyu."
+      "tigrinya_phonetic": "፨ ḥzb: kab yhuda kab sur 'iséy ztewelde 'īyesus krstos slṭanu nay bahryu 'iyu.",
+      "spanish": "፨ Pueblo: A Él, cuya venida todos los pueblos esperaban, Jesucristo, que desciende de Judá, de la raíz de Jesé,"
     },
     {
       "instruction": "For the Anaphoras of The Lord, St. Mary, St. John, & The Apostles",
@@ -16656,7 +17393,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ ሥልጣኑ በትከሻው ላይ የሆነ ነው፣ ክብር ምስጋናና ገናንነት ቡራኬና ውዳሴ መመስገን ለርሱ ይገባዋል፤ ዛሬም ዘወትርም ለዘለዓለሙ አሜን።",
       "amharic_phonetic": "፨ ḥzb:",
       "tigrinya_script": "፨ ሕዝብ፤ ንእኡ ክብርን ምስጋናን ዕቤትን ባርኾትን ውዳሴን ማኅሌትን ይኹን። ሎምን ኵሉ ሳዕን ንዘለዓለም ዓለም ኣሜን።",
-      "tigrinya_phonetic": "፨ ḥzb: n'i'u kbrn msganan 'ibétn barkhotn wdasén mahlétn ykhun. lomn kwlu sa'in nzele'alem 'alem 'amén."
+      "tigrinya_phonetic": "፨ ḥzb: n'i'u kbrn msganan 'ibétn barkhotn wdasén mahlétn ykhun. lomn kwlu sa'in nzele'alem 'alem 'amén.",
+      "spanish": "Pueblo (en himno): Cuyo gobierno está sobre su hombro: a Él sea la gloria, la acción de gracias, la grandeza, la bendición, la alabanza, el cántico, ahora y siempre y por los siglos de los siglos. Amén."
     },
     {
       "instruction": "For all Anaphoras EXCEPT The Lord, St. Mary, St. John, & The Apostles",
@@ -16669,7 +17407,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ ሁሉን በያዘ ሰማይና ምድርን የሚታይና የማይታየውን በፈጠረ በአንድ አምላክ በእግዚአብሔር አብ እናምናለን።",
       "amharic_phonetic": "፨ ḥzb: hulun beyaze semayna mdrn yemītayna yemaytayewn befeṭere be'and 'amlak be'igzī'abḥér 'ab 'inamnalen.",
       "tigrinya_script": "፨ ሕዝብ፤ ኩሉ ብዝሓዘ ሰማይን ምድርን ዝረአን ዘይረአን ብዝፈጠረ ብሓደ እግዚኣብሔር ኣብ ንኣምን።",
-      "tigrinya_phonetic": "፨ ḥzb: kulu bzḥaze semayn mdrn zre'an zeyre'an bzfeṭere bḥade 'igzī'abḥér 'ab n'amn."
+      "tigrinya_phonetic": "፨ ḥzb: kulu bzḥaze semayn mdrn zre'an zeyre'an bzfeṭere bḥade 'igzī'abḥér 'ab n'amn.",
+      "spanish": "፨ CREDO DE NICEO** ፨\n\n፨ Pueblo: Creemos en un solo Dios, Dios Padre Todopoderoso, Creador del cielo y de la tierra, de todo lo visible y lo invisible."
     },
     {
       "instruction": "For all Anaphoras EXCEPT The Lord, St. Mary, St. John, & The Apostles",
@@ -16682,7 +17421,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ ዓለም ሳይፈጠር ከርሱ ጋር በነበረ የአብ አንድ ልጁ በሚሆን በአንድ ጌታ በኢየሱስ ክርስቶስ እናምናለን።",
       "amharic_phonetic": "፨ ḥzb: 'alem sayfeṭer kersu gar benebere ye'ab 'and lju bemīhon be'and géta be'īyesus krstos 'inamnalen.",
       "tigrinya_script": "፨ ሕዝብ፤ ብሓደ ጐይታ ብኢየሱስ ክርስቶስ ዓለም ፡ ከይተፈጥረ ምስኡ ፡ ህልው ፡ ብዝኾነ ወልደ ፡ ኣብ ዋህድ ፡ ውን ነኣምን።",
-      "tigrinya_phonetic": "፨ ḥzb: bḥade gweyta b'īyesus krstos 'alem keytefeṭre ms'u hlw bzkhone welde 'ab wahd wn ne'amn."
+      "tigrinya_phonetic": "፨ ḥzb: bḥade gweyta b'īyesus krstos 'alem keytefeṭre ms'u hlw bzkhone welde 'ab wahd wn ne'amn.",
+      "spanish": "፨ Pueblo: Y creemos en un solo Señor Jesucristo, el Hijo unigénito del Padre, que estaba con él antes de la creación del mundo:"
     },
     {
       "instruction": "For all Anaphoras EXCEPT The Lord, St. Mary, St. John, & The Apostles",
@@ -16695,7 +17435,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ ከብርሃን የተገኘ ብርሃን፣ ከእውነተኛ አምላክ የተገኘ አምላክ፣ የተፈጠረ ያይደለ የተወለደ፣",
       "amharic_phonetic": "፨ ḥzb: kebrhan yetegeñe brhan, ke'iwneteña 'amlak yetegeñe 'amlak, yetefeṭere yaydele yetewelede,",
       "tigrinya_script": "፨ ሕዝብ፤ ካብ ብርሃን ዝተረኽበ ብርሃን፡ ካብ ሓቀኛ ኣምላኽ ዝተረኽበ ኣምላኽ፡ ዝተወልደ እምበር ፍጡር ዘይኮነ፡ ብመለኮቱ ምስ ኣብ ማዕረ ዝኾነ።",
-      "tigrinya_phonetic": "፨ ḥzb: kab brhan zterekhbe brhan kab ḥaḳeña 'amlakh zterekhbe 'amlakh ztewelde 'imber fṭur zeykone bmelekotu ms 'ab ma'ire zkhone."
+      "tigrinya_phonetic": "፨ ḥzb: kab brhan zterekhbe brhan kab ḥaḳeña 'amlakh zterekhbe 'amlakh ztewelde 'imber fṭur zeykone bmelekotu ms 'ab ma'ire zkhone.",
+      "spanish": "፨ Pueblo: Luz de Luz, Dios Verdadero de Dios Verdadero, engendrado, no creado, de una misma esencia con el Padre."
     },
     {
       "instruction": "For all Anaphoras EXCEPT The Lord, St. Mary, St. John, & The Apostles",
@@ -16708,7 +17449,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ በመለኮቱ ከአብ ጋር የሚተካከል፤ ሁሉ በርሱ የሆነ ያለ እርሱ ግን ምንም ምን የሆነ የለም።",
       "amharic_phonetic": "፨ ḥzb: bemelekotu ke'ab gar yemītekakel: hulu bersu yehone yale 'irsu gn mnm mn yehone yelem.",
       "tigrinya_script": "፨ ሕዝብ፤ ኩሉ ብእኡ ዝተፈጥረ፡ ብዘይካኡ ግና ኣብዚ ምድሪ ዘሎ ይኹን ወይስ ኣብ ሰማይ ዘሎ ምንም ዝተፈጥረ የልቦን።",
-      "tigrinya_phonetic": "፨ ḥzb: kulu b'i'u ztefeṭre bzeyka'u gna 'abzī mdrī zelo ykhun weys 'ab semay zelo mnm ztefeṭre yelbon."
+      "tigrinya_phonetic": "፨ ḥzb: kulu b'i'u ztefeṭre bzeyka'u gna 'abzī mdrī zelo ykhun weys 'ab semay zelo mnm ztefeṭre yelbon.",
+      "spanish": "፨ Pueblo: Por quien todas las cosas fueron hechas, y sin él nada de lo que hay en el cielo o en la tierra fue hecho:"
     },
     {
       "instruction": "For all Anaphoras EXCEPT The Lord, St. Mary, St. John, & The Apostles",
@@ -16721,7 +17463,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ በሰማይም ያለ በምድርም ያለ፤ ስለኛ ስለ ሰዎች ስለ መዳናችን ከሰማይ ወረደ፣ ከመንፈስ ቅዱስ የተነሳ ከቅድስት ድንግል ማርያም ፈጽሞ ሰው ሆነ።",
       "amharic_phonetic": "፨ ḥzb: besemaym yale bemdrm yale: sleña sle sewoch sle medanachn kesemay werede, kemenfes ḳdus yetenesa keḳdst dngl maryam fetsmo sew hone.",
       "tigrinya_script": "፨ ሕዝብ፤ ምእንታና ምእንቲ ሰብ ምእንቲ ድኅነትና፡ ካብ ሰማያት ዝወረደ፡ብመንፈስ ቅዱስ ካብ ቅድስት ድንግል ማርያም ሥጋ ለበሰ ሰብ ኮነ።",
-      "tigrinya_phonetic": "፨ ḥzb: m'intana m'intī seb m'intī dhnetna kab semayat zwerede bmenfes ḳdus kab ḳdst dngl maryam sga lebese seb kone."
+      "tigrinya_phonetic": "፨ ḥzb: m'intana m'intī seb m'intī dhnetna kab semayat zwerede bmenfes ḳdus kab ḳdst dngl maryam sga lebese seb kone.",
+      "spanish": "፨ Pueblo: Quien por nosotros los hombres y por nuestra salvación descendió del cielo, se hizo hombre y se encarnó por obra del Espíritu Santo y de la santa Virgen María."
     },
     {
       "instruction": "For all Anaphoras EXCEPT The Lord, St. Mary, St. John, & The Apostles",
@@ -16734,7 +17477,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ ሰው ሆኖ በጴንጤናዊ ጲላጦስ ዘመን ስለኛ ተሰቀለ፣ ታመመ፣ ሞተ፣ ተቀበረም፤ በሶስተኛውም ቀን ከሙታን ተለይቶ ተነሳ፤ በቅዱሳት መጻህፍት እንደተጻፈ",
       "amharic_phonetic": "፨ ḥzb: sew hono bep̣énṭénawī p̣īlaṭos zemen sleña teseḳele, tameme, mote, teḳeberem: besosteñawm ḳen kemutan teleyto tenesa: beḳdusat metsahft 'indetetsafe",
       "tigrinya_script": "፨ ሕዝብ፤ ሰብ ኮይኑ ድማ ብዘመን ጴንጤናዊ ጲላጦስ ምእንታና ተሰቕለ፡ ሓመመ፡ መከራ መስቀል ተቐበለ፡ ሞተ፡ ተቐብረ፡ ኣብ ቅዱሳት መጻሕፍቲ ከም ዝተጻሕፈ፡",
-      "tigrinya_phonetic": "፨ ḥzb: seb koynu dma bzemen p̣énṭénawī p̣īlaṭos m'intana teseqhle ḥameme mekera mesḳel teqhebele mote teqhebre 'ab ḳdusat metsaḥftī kem ztetsaḥfe"
+      "tigrinya_phonetic": "፨ ḥzb: seb koynu dma bzemen p̣énṭénawī p̣īlaṭos m'intana teseqhle ḥameme mekera mesḳel teqhebele mote teqhebre 'ab ḳdusat metsaḥftī kem ztetsaḥfe",
+      "spanish": "፨ El pueblo: se hizo hombre, fue crucificado por nosotros en los días de Poncio Pilato, padeció, murió, fue sepultado y resucitó de entre los muertos al tercer día, como está escrito en las Sagradas Escrituras:"
     },
     {
       "instruction": "For all Anaphoras EXCEPT The Lord, St. Mary, St. John, & The Apostles",
@@ -16747,7 +17491,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ በክብር ወደ ሰማይ አረገ፤ በአባቱም ቀኝ ተቀመጠ። ዳግመኛም ህያዋንና ሙታንን ይገዛ ዘንድ በጌትነት ይመጣል። ለመንግስቱም ፍጻሜ የለውም፤",
       "amharic_phonetic": "፨ ḥzb: bekbr wede semay 'arege: be'abatum ḳeñ teḳemeṭe. dagmeñam hyawanna mutann ygeza zend begétnet ymeṭal. lemengstum ftsamé yelewm:",
       "tigrinya_script": "፨ ሕዝብ፤ ብኽብሪ ናብ ሰማይ ዓረገ፡ ኣብ የማን ኣቡኡ ተቐመጠ፡ ከም ብሓድሽ ንሕያዋንን ንምዉታትን ክፈርድ ብኽብሪ ክመጽእ እዩ፡ ንመንግሥቱውን መወዳእታ የብሉን።",
-      "tigrinya_phonetic": "፨ ḥzb: bkhbrī nab semay 'arege 'ab yeman 'abu'u teqhemeṭe kem bḥadሽ nḥyawann nmwutatn kferd bkhbrī kmets'i 'iyu nmengstuwn meweda'ita yeblun."
+      "tigrinya_phonetic": "፨ ḥzb: bkhbrī nab semay 'arege 'ab yeman 'abu'u teqhemeṭe kem bḥadሽ nḥyawann nmwutatn kferd bkhbrī kmets'i 'iyu nmengstuwn meweda'ita yeblun.",
+      "spanish": "፨ Pueblo: Ascendió en gloria al cielo, se sentó a la diestra de su Padre, y volverá en gloria para juzgar a los vivos y a los muertos; no hay fin para su reinado."
     },
     {
       "instruction": "For all Anaphoras EXCEPT The Lord, St. Mary, St. John, & The Apostles",
@@ -16760,7 +17505,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ ጌታ ማህየዊ በሚሆን ከአብ በሰረጸ በመንፈስ ቅዱስም እናምናለን። እንሰግድለት እናመሰግነውም ዘንድ ከአብና ከወልድ ጋራ በነቢያት የተናገረ፤",
       "amharic_phonetic": "፨ ḥzb: géta mahyewī bemīhon ke'ab beseretse bemenfes ḳdusm 'inamnalen. 'insegdlet 'inamesegnewm zend ke'abna keweld gara benebīyat yetenagere:",
       "tigrinya_script": "፨ ሕዝብ፤ ጐይታን መሕወይን ብዝኾነ ካብ ኣብ ዝሰረፀ መንፈስ ቅዱስውን ንኣምን። ምስ ኣብን ወልድን ንሰግደሉን ነመስግኖን፡ ብነብያት ዝተዛረበ እዩ።",
-      "tigrinya_phonetic": "፨ ḥzb: gweytan meḥweyn bzkhone kab 'ab zseretse menfes ḳduswn n'amn. ms 'abn weldn nsegdelun nemesgnon bnebyat ztezarebe 'iyu."
+      "tigrinya_phonetic": "፨ ḥzb: gweytan meḥweyn bzkhone kab 'ab zseretse menfes ḳduswn n'amn. ms 'abn weldn nsegdelun nemesgnon bnebyat ztezarebe 'iyu.",
+      "spanish": "፨ Pueblo: Y creemos en el Espíritu Santo, el Dios que da vida, que procede del Padre; le adoramos y glorificamos con el Padre y el Hijo, que habló por medio de los profetas."
     },
     {
       "instruction": "For all Anaphoras EXCEPT The Lord, St. Mary, St. John, & The Apostles",
@@ -16773,7 +17519,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ ከሁሉ በላይ በምትሆን ሐዋርያት በሰበሰቧት በአንዲት ቅድስት ቤተ ክርስቲያንም እናምናለን። ኃጢአት ለማስተስረይ በአንዲት ጥምቀት እናምናለን፣",
       "amharic_phonetic": "፨ ḥzb: kehulu belay bemthon ḥawaryat besebesebwat be'andīt ḳdst béte krstīyanm 'inamnalen. haṭī'at lemastesrey be'andīt ṭmḳet 'inamnalen,",
       "tigrinya_script": "፨ ሕዝብ፤ ልዕሊ ኩሉ ናይ ሓዋርያት ጉባኤ ብዝኾነት ብሓንቲ ቅድስት ቤተ ክርስቲያን ንኣምን። ንሕድገት ሓጢኣት ብሓንቲ ጥምቀትውን ንኣምን።",
-      "tigrinya_phonetic": "፨ ḥzb: l'ilī kulu nay ḥawaryat guba'é bzkhonet bḥantī ḳdst béte krstīyan n'amn. nḥdget ḥaṭī'at bḥantī ṭmḳetwn n'amn."
+      "tigrinya_phonetic": "፨ ḥzb: l'ilī kulu nay ḥawaryat guba'é bzkhonet bḥantī ḳdst béte krstīyan n'amn. nḥdget ḥaṭī'at bḥantī ṭmḳetwn n'amn.",
+      "spanish": "፨ Pueblo: Y creemos en una sola Iglesia santa, universal y apostólica, y creemos en un solo bautismo para el perdón de los pecados,"
     },
     {
       "instruction": "For all Anaphoras EXCEPT The Lord, St. Mary, St. John, & The Apostles",
@@ -16786,7 +17533,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ (በዜማ)፤ የሙታንንም መነሳት ተስፋ እናደርጋለን፣ የሚመጣውንም ሕይወት ለዘላለሙ።",
       "amharic_phonetic": "፨ ḥzb (bezéma): yemutannm menesat tesfa 'inadergalen, yemīmeṭawnm ḥywet lezelalemu.",
       "tigrinya_script": "፨ ሕዝብ (በዜማ)፤ ትንሣኤ ምዉታትን ንዘልዓለም ዓለም ዝመጽእ ሕይወትን ተስፋን ንገብር። ኣሜን",
-      "tigrinya_phonetic": "፨ ḥzb (bezéma): tnsa'é mwutatn nzel'alem 'alem zmets'i ḥywetn tesfan ngebr. 'amén"
+      "tigrinya_phonetic": "፨ ḥzb (bezéma): tnsa'é mwutatn nzel'alem 'alem zmets'i ḥywetn tesfan ngebr. 'amén",
+      "spanish": "፨ Pueblo (en himno): y esperen la resurrección de entre los muertos y la vida venidera, por los siglos de los siglos. Amén."
     },
     {
       "instruction": "",
@@ -16799,7 +17547,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ንጹህ የሆነ ከቍርባኑ ይቀበል፤ ንጹህ ያልሆነ ግን አይቀበል፤",
       "amharic_phonetic": "kahn: ntsuh yehone keḳwrbanu yḳebel: ntsuh yalhone gn 'ayḳebel:",
       "tigrinya_script": "ካህን፤ ንጹሕ ዝኾነ ካብ ቁርባን ይቀበል፡ ንጹሕ ዘይኮነ ግና ኣይቀበል።",
-      "tigrinya_phonetic": "kahn: ntsuḥ zkhone kab ḳurban yḳebel ntsuḥ zeykone gna 'ayḳebel."
+      "tigrinya_phonetic": "kahn: ntsuḥ zkhone kab ḳurban yḳebel ntsuḥ zeykone gna 'ayḳebel.",
+      "spanish": "፨ EL LAVADO DE MANOS ፨\n\nSacerdote: El que sea puro, que reciba la Comunión; y el que no sea puro, que no la reciba."
     },
     {
       "instruction": "",
@@ -16812,7 +17561,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ለሰይጣንና ለመላክተኞቹ በተዘጋጀ በመለኮት እሳት እንዳይቃጠል።",
       "amharic_phonetic": "kahn: leseyṭanna lemelakteñochu betezegaje bemelekot 'isat 'indayḳaṭel.",
       "tigrinya_script": "ካህን፤ ንሰይጣንን ንሠራዊቱን ብዝተዳለወ መለኮታዊ ሓዊ ከይነድድ።",
-      "tigrinya_phonetic": "kahn: nseyṭann nserawītun bztedalewe melekotawī ḥawī keynedd."
+      "tigrinya_phonetic": "kahn: nseyṭann nserawītun bztedalewe melekotawī ḥawī keynedd.",
+      "spanish": "Sacerdote: para que no sea consumido por el fuego de la Divinidad que está preparado para el diablo y sus ángeles,"
     },
     {
       "instruction": "",
@@ -16825,7 +17575,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ በልቦናው ቂምን የያዘ፣ ልዩ አሳብና ዝሙትም ያለበት ቢኖር አይቅረብ።",
       "amharic_phonetic": "kahn: belbonaw ḳīmn yeyaze, lyu 'asabna zmutm yalebet bīnor 'ayḳreb.",
       "tigrinya_script": "ካህን፤ ኣብ ልቡ ቂምን በቐልን ዘለዎ፡ ኣብ ኅሊናኡውን ዝሙትን ካልእ ሓሳብን ዘለዎ ኣይቕረብ።",
-      "tigrinya_phonetic": "kahn: 'ab lbu ḳīmn beqheln zelewo 'ab hlīna'uwn zmutn kal'i ḥasabn zelewo 'ayqhreb."
+      "tigrinya_phonetic": "kahn: 'ab lbu ḳīmn beqheln zelewo 'ab hlīna'uwn zmutn kal'i ḥasabn zelewo 'ayqhreb.",
+      "spanish": "Sacerdote: Quien tenga deseos de venganza en su corazón, quien tenga pensamientos perversos y fornicación, que no se acerque."
     },
     {
       "instruction": "",
@@ -16838,7 +17589,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ እጄን ከአፍአዊ እድፍ ንጹህ እንዳደረግሁ እንዲሁም ከሁላችሁ ደም ንጹሕ ነኝ፤",
       "amharic_phonetic": "kahn: 'ijén ke'af'awī 'idf ntsuh 'indadereghu 'indīhum kehulachhu dem ntsuḥ neñ:",
       "tigrinya_script": "ካህን፤ ኢደይ ካብ ሥጋዊ ርስሓት ከም ዘንጻሕኩ፡ ከምኡ ድማ ካብ ናይ ኵልኹም ኃጢኣት ንጹሕ እየ።",
-      "tigrinya_phonetic": "kahn: 'īdey kab sgawī rsḥat kem zentsaḥku kem'u dma kab nay kwlkhum haṭī'at ntsuḥ 'iye."
+      "tigrinya_phonetic": "kahn: 'īdey kab sgawī rsḥat kem zentsaḥku kem'u dma kab nay kwlkhum haṭī'at ntsuḥ 'iye.",
+      "spanish": "Sacerdote: Así como yo he limpiado mis manos de la contaminación externa, así también yo estoy limpio de la sangre de todos vosotros."
     },
     {
       "instruction": "",
@@ -16851,7 +17603,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ደፍራችሁ ወደ ክርስቶስ ሥጋና ደም ብትቀርቡ ከርሱ ለመቀበላችሁ መተላለፍ የለብኝም።",
       "amharic_phonetic": "kahn: defrachhu wede krstos sgana dem btḳerbu kersu lemeḳebelachhu metelalef yelebñm.",
       "tigrinya_script": "ካህን፤ ደፊርኩም ኣብ ናይ ክርስቶስ ሥጋን ደምን እንተ ቐረብኩም፡ ካብኡ ብምቕባልኩም ኃላፍነት የብለይን።",
-      "tigrinya_phonetic": "kahn: defīrkum 'ab nay krstos sgan demn 'inte qherebkum kab'u bmqhbalkum halafnet yebleyn."
+      "tigrinya_phonetic": "kahn: defīrkum 'ab nay krstos sgan demn 'inte qherebkum kab'u bmqhbalkum halafnet yebleyn.",
+      "spanish": "Sacerdote: Si os acercáis presuntuosamente al Cuerpo y la Sangre de Cristo, no me haré responsable de vuestra recepción de los mismos."
     },
     {
       "instruction": "",
@@ -16864,7 +17617,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ኃጢአታችሁ በራሳችሁ ይመለሳል እንጂ፣ በንጽሕና ሆናችሁ ባትቀርቡ እኔ ከበደላችሁ ንጹሕ ነኝ።",
       "amharic_phonetic": "kahn: haṭī'atachhu berasachhu ymelesal 'injī, bentsḥna honachhu batḳerbu 'iné kebedelachhu ntsuḥ neñ.",
       "tigrinya_script": "ካህን፤ ብንጽሕና ኬንኩም እንተ ዘይቀረብኩም ኃጢኣትኩም ኣብ ገዛእ ርእስኹም እዩ ዚምለስ እምበር ኣነ ካብ ኃጢኣትኩም ንጹሕ እየ።",
-      "tigrinya_phonetic": "kahn: bntsḥna kénkum 'inte zeyḳerebkum haṭī'atkum 'ab geza'i r'iskhum 'iyu zīmles 'imber 'ane kab haṭī'atkum ntsuḥ 'iye."
+      "tigrinya_phonetic": "kahn: bntsḥna kénkum 'inte zeyḳerebkum haṭī'atkum 'ab geza'i r'iskhum 'iyu zīmles 'imber 'ane kab haṭī'atkum ntsuḥ 'iye.",
+      "spanish": "Sacerdote: Yo estoy libre de vuestra maldad, pero vuestro pecado recaerá sobre vuestra cabeza si no os acercáis con pureza."
     },
     {
       "instruction": "",
@@ -16877,7 +17631,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ ይህን የካህኑን ቃል ያቃለለ ወይም የሳቀና የተነጋገረ ወይም በቤተ ክርስቲያን ውስጥ በክፋት የቆመ",
       "amharic_phonetic": "dīyaḳon: yhn yekahnun ḳal yaḳalele weym yesaḳena yetenegagere weym bebéte krstīyan wsṭ bekfat yeḳome",
       "tigrinya_script": "ዲያቆን፤ ነዚ ናይ ካህን ቃል ዘስተሓቐረ፡ ወይ ዝሰሓቐን ዝተዛረበን ወይከኣ ብኽፍኣት ኣብ ውሽጢ ቤተ ክርስቲያን ዝቖመ እንተሎ",
-      "tigrinya_phonetic": "dīyaḳon: nezī nay kahn ḳal zesteḥaqhere wey zseḥaqhen ztezareben weyke'a bkhf'at 'ab wሽṭī béte krstīyan zqhome 'intelo"
+      "tigrinya_phonetic": "dīyaḳon: nezī nay kahn ḳal zesteḥaqhere wey zseḥaqhen ztezareben weyke'a bkhf'at 'ab wሽṭī béte krstīyan zqhome 'intelo",
+      "spanish": "Diácono: Si hay alguien que desdeñe esta palabra del sacerdote, o se ríe, o habla, o se para en la iglesia de manera malvada,"
     },
     {
       "instruction": "",
@@ -16890,7 +17645,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ ቢኖር ጌታችንን ኢየሱስ ክርስቶስን እንዳሳዘነው በርሱም እንደተነሳሳ ይወቅ ይረዳ፣ ስለ በረከት ፈንታ መርገምን፣",
       "amharic_phonetic": "dīyaḳon: bīnor gétachnn 'īyesus krstosn 'indasazenew bersum 'indetenesasa yweḳ yreda, sle bereket fenta mergemn,",
       "tigrinya_script": "ዲያቆን፤ ንጐይታና ኢየሱስ ክርስቶስ ከም ዘቖጥዖን ኣብ ልዕሊኡ ከም ዘሽካዕለለን ይረዳእ። ኣብ ክንዲ በረኸት መርገም",
-      "tigrinya_phonetic": "dīyaḳon: ngweytana 'īyesus krstos kem zeqhoṭ'on 'ab l'ilī'u kem zeሽka'ilelen yreda'i. 'ab kndī berekhet mergem"
+      "tigrinya_phonetic": "dīyaḳon: ngweytana 'īyesus krstos kem zeqhoṭ'on 'ab l'ilī'u kem zeሽka'ilelen yreda'i. 'ab kndī berekhet mergem",
+      "spanish": "Diácono: hazle saber y comprender que está provocando la ira de nuestro Señor Jesucristo y atrayendo sobre sí una maldición en lugar de una bendición."
     },
     {
       "instruction": "",
@@ -16903,7 +17659,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ ስለ ኃጢአት ሥርየት ፈንታም ገሃነመ እሳትን ከእግዚአብሔር ዘንድ ይቀበላል።",
       "amharic_phonetic": "dīyaḳon: sle haṭī'at sryet fentam gehaneme 'isatn ke'igzī'abḥér zend yḳebelal.",
       "tigrinya_script": "ዲያቆን፤ ኣብ ክንዲ ኅድገት ኃጢኣትውን ገሃነመ እሳት ካብ እግዚኣብሔር ኪቕበል እዩ።",
-      "tigrinya_phonetic": "dīyaḳon: 'ab kndī hdget haṭī'atwn gehaneme 'isat kab 'igzī'abḥér kīqhbel 'iyu."
+      "tigrinya_phonetic": "dīyaḳon: 'ab kndī hdget haṭī'atwn gehaneme 'isat kab 'igzī'abḥér kīqhbel 'iyu.",
+      "spanish": "Diácono: y recibirán de Dios el fuego del infierno en lugar del perdón de los pecados."
     },
     {
       "instruction": "",
@@ -16916,7 +17673,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤ ኦ ጐይታይን ኣምላኸይን፡ ገባሪ ሥርዓትን ወሃብ ፍቕርን፡",
-      "tigrinya_phonetic": "kahn: 'o gweytayn 'amlakheyn gebarī sr'atn wehab fqhrn"
+      "tigrinya_phonetic": "kahn: 'o gweytayn 'amlakheyn gebarī sr'atn wehab fqhrn",
+      "spanish": "Sacerdote: Oh Señor mío y Dios mío, Autor de la Ley, Dador de paz y amor,"
     },
     {
       "instruction": "",
@@ -16929,7 +17687,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤ ክፉእ ሒልናን ቂምን ቅንኣትን፡ ሥጋዊ ፍትወትን ኣርሕቐለይ",
-      "tigrinya_phonetic": "kahn: kfu'i ḥīlnan ḳīmn ḳn'atn sgawī ftwetn 'arḥqheley"
+      "tigrinya_phonetic": "kahn: kfu'i ḥīlnan ḳīmn ḳn'atn sgawī ftwetn 'arḥqheley",
+      "spanish": "Sacerdote: quita de mí todo mal pensamiento, venganza, envidia y todos los deseos de la carne."
     },
     {
       "instruction": "",
@@ -16942,7 +17701,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Hazme digno de ser añadido a tus santos siervos que te complacieron con la belleza de sus vidas en los días de amor y paz."
     },
     {
       "instruction": "",
@@ -16955,7 +17715,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Porque fuiste Tú quien descendió del cielo y estableció la paz entre los habitantes del cielo y los habitantes de la tierra,"
     },
     {
       "instruction": "",
@@ -16968,7 +17729,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Y reuniste a todo tu pueblo para glorificarte, porque tuya es la gloria, por los siglos de los siglos. Amén."
     },
     {
       "instruction": "",
@@ -16981,7 +17743,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ ለጸሎት ተነሱ\n፨ ሕዝብ፤ አቤቱ ይቅር በለን",
       "amharic_phonetic": "dīyaḳon: letselot tenesu\n፨ ḥzb: 'abétu yḳr belen",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Diácono: Pónganse de pie para orar.\n\n፨ Pueblo: Señor, ten misericordia de nosotros."
     },
     {
       "instruction": "",
@@ -16994,7 +17757,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ሰላም ለሁላችሁ ይሁን\n፨ ሕዝብ፤ ከመንፈስህ ጋራ",
       "amharic_phonetic": "kahn: selam lehulachhu yhun\n፨ ḥzb: kemenfesh gara",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: La paz sea con todos vosotros.\n\nPueblo: y con tu Espíritu."
     },
     {
       "instruction": "",
@@ -17007,7 +17771,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "፨ ORACIÓN DE SALUDO A SAN BASILIO ፨\n\nSacerdote: Dios, Gran Eterno, que formaste al hombre incorrupto,"
     },
     {
       "instruction": "",
@@ -17020,7 +17785,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Tú aboliste la muerte que primero vino por la envidia de Satanás, mediante la venida de tu Hijo viviente, nuestro Señor, nuestro Dios y nuestro Salvador Jesucristo,"
     },
     {
       "instruction": "",
@@ -17033,7 +17799,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Y llenaste toda la tierra con tu paz que viene del cielo, en la cual los ejércitos del cielo te glorifican diciendo:"
     },
     {
       "instruction": "",
@@ -17046,7 +17813,8 @@ const kidaseData = {
       "amharic_script": "ካህን (ይህንኑ መልሰው ይበሉ)፤ በሰማይ ለእግዚአብሔር ምስጋና ይገባል\nካህን (ይህንኑ መልሰው ይበሉ)፤ በምድርም ሰላም፣ የሰው ፈቃድ",
       "amharic_phonetic": "kahn (yhnnu melsew ybelu): besemay le'igzī'abḥér msgana ygebal\nkahn (yhnnu melsew ybelu): bemdrm selam, yesew feḳad",
       "tigrinya_script": "ካህን፤ ንእግዚኣብሔር ኣብ ሰማያት ምስጋና ይኹን\nካህን፤ ኣብ ምድሪ ውን ንሰብ ፍቕርን ሰላምን ይኹን።",
-      "tigrinya_phonetic": "kahn: n'igzī'abḥér 'ab semayat msgana ykhun\nkahn: 'ab mdrī wn nseb fqhrn selamn ykhun."
+      "tigrinya_phonetic": "kahn: n'igzī'abḥér 'ab semayat msgana ykhun\nkahn: 'ab mdrī wn nseb fqhrn selamn ykhun.",
+      "spanish": "Sacerdote (El pueblo repite): Gloria a Dios en el cielo, Sacerdote (El pueblo repite): y en la tierra paz, su buena voluntad para con los hombres."
     },
     {
       "instruction": "",
@@ -17059,7 +17827,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤ ኦ ጐይታ ኣብ ልቢ ኵላትና ሥምረትካ ምላእ። ካብ ኵሉ ርኽሰትን ዕብዳንን ኣንጽሓና።",
-      "tigrinya_phonetic": "kahn: 'o gweyta 'ab lbī kwlatna smretka mla'i. kab kwlu rkhsetn 'ibdann 'antsḥana."
+      "tigrinya_phonetic": "kahn: 'o gweyta 'ab lbī kwlatna smretka mla'i. kab kwlu rkhsetn 'ibdann 'antsḥana.",
+      "spanish": "Sacerdote: Oh Señor, en tu bondad llena nuestros corazones y purifícanos de toda corrupción y de todo exceso,"
     },
     {
       "instruction": "",
@@ -17072,7 +17841,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: y de toda venganza y envidia, y de toda maldad y del recuerdo del mal que está revestido de muerte."
     },
     {
       "instruction": "",
@@ -17085,7 +17855,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Y que todos nos reunamos para saludarnos unos a otros con un santo saludo."
     },
     {
       "instruction": "",
@@ -17098,7 +17869,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ ፍጽምት ስለምትሆን ሰላምና ፍቅር ጸልዩ፥ እርስ በራሳችሁ በተለየች ሰላምታ እጅ ተነሳሱ።",
       "amharic_phonetic": "dīyaḳon: ftsmt slemthon selamna fḳr tselyu; 'irs berasachhu beteleyech selamta 'ij tenesasu.",
       "tigrinya_script": "ዲያቆን፤ ምእንቲ ፍጽምቲ ሰላምን ፍቕርን ጸልዩ፡ ንሓድሕድኩም ድማ ብመንፈሳዊ ምስዕዓም ሰላም ተባሃሃሉ።",
-      "tigrinya_phonetic": "dīyaḳon: m'intī ftsmtī selamn fqhrn tselyu nḥadḥdkum dma bmenfesawī ms'i'am selam tebahahalu."
+      "tigrinya_phonetic": "dīyaḳon: m'intī ftsmtī selamn fqhrn tselyu nḥadḥdkum dma bmenfesawī ms'i'am selam tebahahalu.",
+      "spanish": "Diácono: Oren por la paz y el amor perfectos. Salúdense unos a otros con un saludo santo."
     },
     {
       "instruction": "Greet and salute one another in the church.",
@@ -17111,7 +17883,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ አምላካችን ክርስቶስ ሆይ! እርስ በርሳችን በከበረች ሰላምታ እጅ እንነሳሳ ዘንድ የበቃን አድርገን።",
       "amharic_phonetic": "፨ ḥzb: 'amlakachn krstos hoy! 'irs bersachn bekeberech selamta 'ij 'innesasa zend yebeḳan 'adrgen.",
       "tigrinya_script": "፨ ሕዝብ፤ ኦ ክርስቶስ ኣምላኽና፡ ብቅዱስ ምስዕዓም ንሓድሕድና ሰላምታ ክንወሃሃብ ድልዋት ግበረና።",
-      "tigrinya_phonetic": "፨ ḥzb: 'o krstos 'amlakhna bḳdus ms'i'am nḥadḥdna selamta knwehahab dlwat gberena."
+      "tigrinya_phonetic": "፨ ḥzb: 'o krstos 'amlakhna bḳdus ms'i'am nḥadḥdna selamta knwehahab dlwat gberena.",
+      "spanish": "Pueblo: Cristo, Dios nuestro, concédenos el saludo santo.\n\n***¡Todos se saludarán ahora!***"
     },
     {
       "instruction": "",
@@ -17124,7 +17897,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤ ዘይ ፍርዲ ካብ (ሥጋኻን ደምካን) ውህበትካን ክንቅበል ሃበና። ንሳ ከኣ ሞት ዘይብላ ሰማያዊት እያ። ብጐይታና ብኢየሱስ ክርስቶስ",
-      "tigrinya_phonetic": "kahn: zey frdī kab (sgakhan demkan) whbetkan knḳbel habena. nsa ke'a mot zeybla semayawīt 'iya. bgweytana b'īyesus krstos"
+      "tigrinya_phonetic": "kahn: zey frdī kab (sgakhan demkan) whbetkan knḳbel habena. nsa ke'a mot zeybla semayawīt 'iya. bgweytana b'īyesus krstos",
+      "spanish": "Sacerdote: Y para que participemos sin condenación de tu santo don celestial e inmortal, por Jesucristo nuestro Señor:"
     },
     {
       "instruction": "",
@@ -17137,7 +17911,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤ ምስኡን ምስ መንፈስ ቅዱስን ክብርን ሥልጣንን ብእኡ ዘሎካ ሎምን ኵሉ ሳዕን ንዘለዓለም ዓለም ኣሜን::",
-      "tigrinya_phonetic": "kahn: ms'un ms menfes ḳdusn kbrn slṭann b'i'u zeloka lomn kwlu sa'in nzele'alem 'alem 'amén::"
+      "tigrinya_phonetic": "kahn: ms'un ms menfes ḳdusn kbrn slṭann b'i'u zeloka lomn kwlu sa'in nzele'alem 'alem 'amén::",
+      "spanish": "Sacerdote: Por Él, con Él y con el Espíritu Santo, sea la gloria y el dominio, ahora y siempre, por los siglos de los siglos. Amén."
     },
     {
       "instruction": "",
@@ -17150,7 +17925,8 @@ const kidaseData = {
       "amharic_script": "",
       "amharic_phonetic": "",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "፨ FIN DEL ORDEN DE LA LITURGIA ፨"
     }
   ],
   "apostles": [
@@ -17165,7 +17941,8 @@ const kidaseData = {
       "amharic_script": "የአባቶቻችን የሐዋርያት የቍርባን ምስጋና የጸሎታቸው በረከት በጳጳሳቱ {{PATRIARCH NAME}} በጳጳሳችን {{BISHOP NAME}} በሁላችንም ላይ ይደር፣",
       "amharic_phonetic": "ye'abatochachn yeḥawaryat yeḳwrban msgana yetselotachew bereket bep̣ap̣asatu {{PATRIARCH NAME}} bep̣ap̣asachn {{BISHOP NAME}} behulachnm lay yder,",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "La Anáfora de nuestros padres los Apóstoles, que la bendición de su oración esté con nuestro Patriarca {{NOMBRE DEL PATRIARCA}} y nuestro Arzobispo {{NOMBRE DEL OBISPO}} y"
     },
     {
       "instruction": "",
@@ -17178,7 +17955,8 @@ const kidaseData = {
       "amharic_script": "አገራችንን ኢትዮጵያንም ይጠብቃት ለዘለዓለሙ አሜን፤",
       "amharic_phonetic": "agerachnn 'ītyop̣yanm yṭebḳat lezele'alemu 'amén:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "nuestro país {{COUNTRY}}, y con el pueblo, por los siglos de los siglos. Amén."
     },
     {
       "instruction": "",
@@ -17191,7 +17969,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ እግዚአብሔር ከሁላ ችሁ ጋራ ይሁን \n፨ ሕዝብ፤ ከመንፈስህ ጋራ",
       "amharic_phonetic": "kahn: 'igzī'abḥér kehula chhu gara yhun \n፨ ḥzb: kemenfesh gara",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: El Señor esté con todos ustedes. ፨ Pueblo: y con tu Espíritu."
     },
     {
       "instruction": "",
@@ -17204,7 +17983,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አምላካችንን አመስግኑት፣\n፨ ሕዝብ፤ እውነት ነው ይገባል\nካህን፤ ልቡናችሁን ከፍ ከፍ አድርጉ፣\n፨ ሕዝብ፤ በአምላካችን በእግዚአብሔር ዘንድ አለን",
       "amharic_phonetic": "kahn: 'amlakachnn 'amesgnut ,\n፨ ḥzb: 'iwnet new ygebal\nkahn: lbunachhun kef kef 'adrgu ,\n፨ ḥzb: be'amlakachn be'igzī'abḥér zend 'alen",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Dad gracias a nuestro Dios.\n\nPueblo: Es justo, es correcto.\n\nSacerdote: Levantad vuestros corazones.\n\nPueblo: Los hemos levantado al Señor nuestro Dios."
     },
     {
       "instruction": "",
@@ -17217,7 +17997,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አቤቱ በተወደደ ልጅህ በጌታችን በኢየሱስ ክርስቶስ እናመስግንሃለን፣ በኋለኛው ዘመን የምክርህን አበጋዝ መድኃኒትና ቤዛ የሚሆን ልጅህን የሰደድህልን፧",
       "amharic_phonetic": "kahn: 'abétu betewedede ljh begétachn be'īyesus krstos 'inamesgnhalen, behwaleñaw zemen yemkrhn 'abegaz medhanītna béza yemīhon ljhn yesededhln?",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Te damos gracias, Señor, en tu amado Hijo, nuestro Señor Jesús, a quien en los últimos días nos enviaste, tu Hijo el Salvador y Redentor, el mensajero de tu consejo,"
     },
     {
       "instruction": "",
@@ -17230,7 +18011,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ይህ ቃል ካንተ የተገኘ ነው፣ በርሱም ሁሉን በፈቃድህ አደረግህ።",
       "amharic_phonetic": "kahn: yh ḳal kante yetegeñe new, bersum hulun befeḳadh 'aderegh",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Este Verbo es aquel que procede de ti, y por medio de quien hiciste todas las cosas según tu voluntad."
     },
     {
       "instruction": "",
@@ -17243,7 +18025,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ ብፁዕ ቅዱስ ስለ ሚሆን ስለ ሊቀ ጳጳሳቱ ስለ አባ {{PATRIARCH NAME}}፣ ብፁዕም ስለሚሆን ስለ አባ {{BISHOP NAME}}፣ በጸሎታቸውና በልመናቸው ሲያመሰግኑህ የሰማዕታት መጀመሪያ",
       "amharic_phonetic": "dīyaḳon: btsu'i ḳdus sle mīhon sle līḳe p̣ap̣asatu sle 'aba {{PATRIARCH NAME}}, btsu'im slemīhon sle 'aba {{BISHOP NAME}}, betselotachewna belmenachew sīyamesegnuh yesema'itat mejemerīya",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Diácono: Por amor al bienaventurado y santo Patriarca Abba {{NOMBRE DEL PATRIARCA}} y al bienaventurado Arzobispo Abba {{NOMBRE DEL OBISPO}}, mientras aún te dan gracias en su oración y en su súplica:"
     },
     {
       "instruction": "",
@@ -17256,7 +18039,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ እስጢፋኖስ፣ ካህኑ ዘካርያስና መጥምቁ ዮሐንስ፤",
       "amharic_phonetic": "dīyaḳon: 'isṭīfanos, kahnu zekaryasna meṭmḳu yoḥans:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Diácono: Esteban, el primer mártir, Zacarías, el sacerdote, y Juan el Bautista."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -17269,7 +18053,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ በሃይማኖት ስላረፉ ስለ ቅዱሳንና ስለ ሰማዕታት ሁሉ፣አራቱ ወንጌላውያን ማቴዎስና ማርቆስ ሉቃስና ዮሐንስ፣ አምላክን የወለ ደች ማርያም",
       "amharic_phonetic": "dīyaḳon: : behaymanot slarefu sle ḳdusanna sle sema'itat hulu,'aratu wengélawyan matéwosna marḳos luḳasna yoḥans, 'amlakn yewele dech maryam",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Diácono: Y por todos los santos y mártires que han ido a su descanso en la fe: Mateo y Marcos, Lucas y Juan, los cuatro evangelistas; María, la madre de Dios,"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -17282,7 +18067,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ ጴጥሮስ የተባለ ስምዖን፣ እንድርያስም፣ ያዕቆብና ዮሐንስ፣ ፊልጶስና በርተሎሜዎስ፣ ቶማስና ማቴዎስ፣ ታዴዎ ስና ናትናኤል፣ የእልፍ ዮስ ልጅ ያዕቆብ ማትያስም፣",
       "amharic_phonetic": "dīyaḳon: p̣éṭros yetebale sm'on, 'indryasm, ya'iḳobna yoḥans, fīlp̣osna berteloméwos, tomasna matéwos, tadéwo sna natna'él , ye'ilf yos lj ya'iḳob matyasm ,",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Diácono: Simón Pedro y Andrés, Santiago y Juan, Felipe y Bartolomé, Tomás y Mateo, Tadeo y Natanael, Santiago hijo de Alfeo y Matías,"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -17295,7 +18081,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ ዐሥራ ሁለቱ ሐዋርያት፣ የኢየሩሳሌም ኤጲስ ቆጶስ የጌታችን ወንድም ሐዋርያ ያዕቆብ፣ ጳውሎስ፣ ጢሞቴዎስ፣ ሲላስና በርናባስ ቲቶ ፊልሞና ቀሌምንጦስም",
       "amharic_phonetic": "dīyaḳon: 'asra huletu ḥawaryat, ye'īyerusalém 'ép̣īs ḳop̣os yegétachn wendm ḥawarya ya'iḳob, p̣awlos, ṭīmotéwos, sīlasna bernabas tīto fīlmona ḳelémnṭosm",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Diácono: los doce apóstoles; y Santiago el apóstol, hermano de nuestro Señor, obispo de Jerusalén; Pablo, Timoteo, Silas y Bernabé; Tito, Filemón y Clemente,"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -17308,7 +18095,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ ሰባ ሁለቱ አርድእት አምስት መቶ ባልንጀሮች ሃይማኖታቸው የቀና ሦስት መቶ አሥራ ስምንት ሊቃውንት፣ የሁሉም ጸሎት ትድረሰን ከእነሱም ጋራ እኛን ጐብኝ፤",
       "amharic_phonetic": "dīyaḳon: seba huletu 'ard'it 'amst meto balnjeroch haymanotachew yeḳena sost meto 'asra smnt līḳawnt, yehulum tselot tdresen ke'inesum gara 'iñan gwebñ:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Diácono: los setenta y dos discípulos, los quinientos seguidores, los trescientos dieciocho eruditos ortodoxos; que las oraciones de todos ellos vengan a nosotros y nos visiten junto con ellos."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -17321,7 +18109,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ ከሁሉ በላይ የምትሆን የሐዋርያትንም ቤተክርስቲያን አስብ፣ በፍቅርዋ በክርስቶስም በተደረገው በከበረ ደም፧",
       "amharic_phonetic": "dīyaḳon: kehulu belay yemthon yeḥawaryatnm bétekrstīyan 'asb, befḳrwa bekrstosm betederegew bekebere dem?",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Diácono: Y recordad la paz de la Iglesia apostólica universal que fue hecha por Cristo mediante su preciosa sangre."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -17334,7 +18123,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ በውነት የቃልን መንገድ የሚያቀኑ ሊቃነ ጳጳሳቱን ጳጳሳቱን ኤጲስቆጶሳቱን ቀሳውስቱንና ዲያቆናቱን ንም ሁሉ አስብ፤",
       "amharic_phonetic": "dīyaḳon: bewnet yeḳaln menged yemīyaḳenu līḳane p̣ap̣asatun p̣ap̣asatun 'ép̣īsḳop̣osatun ḳesawstunna dīyaḳonatun nm hulu 'asb :",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Diácono: Recuerda a todos los patriarcas, arzobispos, obispos, sacerdotes y diáconos que mantienen recto el camino de la verdadera palabra."
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -17347,7 +18137,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤ ልዩ ሦስት የምትሆን አብ ወልድ መንፈስ ቅዱስ ሆይ የሚፋቅሩ የክርስቶስ ወገኖች የሚሆኑ ሕዝብህን በሰማያውያንና ምድራውያን በረከት ባርክ",
       "amharic_phonetic": "kahn nfḳ: lyu sost yemthon 'ab weld menfes ḳdus hoy yemīfaḳru yekrstos wegenoch yemīhonu ḥzbhn besemayawyanna mdrawyan bereket bark",
       "tigrinya_script": "ካህን ንፍቅ፤ ኦ ሥሉስ ቅዱስ ኣብ ወልድ መንፈስ ቅዱስን ፍቑራት ክርስቲያን ንዝኾኑ ሕዝብኻ ብበረከት ሰማያውያንን ምድራውያንን ባርኽ።",
-      "tigrinya_phonetic": "kahn nfḳ: 'o slus ḳdus 'ab weld menfes ḳdusn fqhurat krstīyan nzkhonu ḥzbkha bbereket semayawyann mdrawyann barkh."
+      "tigrinya_phonetic": "kahn nfḳ: 'o slus ḳdus 'ab weld menfes ḳdusn fqhurat krstīyan nzkhonu ḥzbkha bbereket semayawyann mdrawyann barkh.",
+      "spanish": "Sacerdote auxiliar: ¡Oh, Santísima Trinidad, Padre, Hijo y Espíritu Santo, bendice a tu pueblo, amados cristianos, con bendiciones celestiales y terrenales!"
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -17360,7 +18151,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤ ጸጋ መንፈስ ቅዱስ ናባና  ለኣኽ ናይ ቅድስቲ ቤተ ክርስቲያን ኣፍ  ደገታት ብምሕረትን ብሃይማኖትን",
-      "tigrinya_phonetic": "kahn nfḳ: tsega menfes ḳdus nabana  le'akh nay ḳdstī béte krstīyan 'af  degetat bmḥretn bhaymanotn"
+      "tigrinya_phonetic": "kahn nfḳ: tsega menfes ḳdus nabana  le'akh nay ḳdstī béte krstīyan 'af  degetat bmḥretn bhaymanotn",
+      "spanish": "Sacerdote auxiliar: Y envíanos la gracia del Espíritu Santo, y abre para nosotros las puertas de tu Santa Iglesia en misericordia y en fe;"
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -17373,7 +18165,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤ ከምዝረሓዉ ግበረልና እምነት ቅድስቲ ሥላሴኻ ውን ክሳዕ መወዳእታ እስትንፋስ",
-      "tigrinya_phonetic": "kahn nfḳ: kemzreḥawu gberelna 'imnet ḳdstī slasékha wn ksa'i meweda'ita 'istnfas"
+      "tigrinya_phonetic": "kahn nfḳ: kemzreḥawu gberelna 'imnet ḳdstī slasékha wn ksa'i meweda'ita 'istnfas",
+      "spanish": "Sacerdote auxiliar: y perfecciona en nosotros la fe de tu Santísima Trinidad hasta nuestro último aliento."
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -17386,7 +18179,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤ ፈጽመልና ኦ ጐይታ  ኢየሱስ ክርስቶስ ንዝሓመሙ ሕዝብኻ  ብጽሓዮም እሞ ፈውሶም መገሻ  ንዝኸዱ ኣቦታትናን ኣደታ ትናን አኅዋትናን ኣኃትናን",
-      "tigrinya_phonetic": "kahn nfḳ: fetsmelna 'o gweyta  'īyesus krstos nzḥamemu ḥzbkha  btsḥayom 'imo fewsom megeሻ  nzkhedu 'abotatnan 'adeta tnan 'ahwatnan 'ahatnan"
+      "tigrinya_phonetic": "kahn nfḳ: fetsmelna 'o gweyta  'īyesus krstos nzḥamemu ḥzbkha  btsḥayom 'imo fewsom megeሻ  nzkhedu 'abotatnan 'adeta tnan 'ahwatnan 'ahatnan",
+      "spanish": "Sacerdote auxiliar: Oh mi Señor Jesucristo, visita a los enfermos de tu pueblo, sánalos y guía a nuestros padres y hermanos que se han ido y se han convertido en extranjeros."
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -17399,7 +18193,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤ ምርሓዮም እሞ  ብሰላምን ጥዕናን ነናብ ቦታኦም  ምለሶም",
-      "tigrinya_phonetic": "kahn nfḳ: mrḥayom 'imo  bselamn ṭ'inan nenab bota'om  mlesom"
+      "tigrinya_phonetic": "kahn nfḳ: mrḥayom 'imo  bselamn ṭ'inan nenab bota'om  mlesom",
+      "spanish": "Sacerdote auxiliar: llévalos de regreso a sus hogares en paz y con buena salud."
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -17412,7 +18207,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤ ንፋሳት ሰማይን ዝናማትን ባርኽ ከም መጠን ጸጋኻ ናይዛ ዓመት እዚኣ ፍረ ምድሪ ውን ባርኽ ኣብ ገጽ  ምድሪ ዘወትር ሓጐስን ተድላን ግበረልና።",
-      "tigrinya_phonetic": "kahn nfḳ: nfasat semayn znamatn  barkh kem meṭen tsegakha nayza 'amet 'izī'a fre mdrī wn barkh 'ab gets  mdrī zewetr ḥagwesn tedlan  gberelna."
+      "tigrinya_phonetic": "kahn nfḳ: nfasat semayn znamatn  barkh kem meṭen tsegakha nayza 'amet 'izī'a fre mdrī wn barkh 'ab gets  mdrī zewetr ḥagwesn tedlan  gberelna.",
+      "spanish": "Sacerdote auxiliar: Bendice los aires del cielo, las lluvias y los frutos de la tierra de este año, según tu gracia, y haz que la alegría y el gozo prevalezcan perpetuamente sobre la faz de la tierra."
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -17425,7 +18221,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤ ሰላምካ ኣጽንዓልና ኵሉ  ጊዜ ነዓና ሠናይ ነገር ክሓስቡ ልቢ ጽኑዓት ኃያላትን",
-      "tigrinya_phonetic": "kahn nfḳ: selamka 'atsn'alna kwlu  gīzé ne'ana senay neger kḥasbu lbī tsnu'at hayalatn"
+      "tigrinya_phonetic": "kahn nfḳ: selamka 'atsn'alna kwlu  gīzé ne'ana senay neger kḥasbu lbī tsnu'at hayalatn",
+      "spanish": "Sacerdote auxiliar: Y establece para nosotros tu paz. Vuelve los corazones de los reyes poderosos para que siempre nos traten con bondad."
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -17438,7 +18235,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤ ዝኾኑ ምለስ ኵሉ ሳዕ  ኣብ ቅድስቲ ቤተ ክርስቲያንካ",
-      "tigrinya_phonetic": "kahn nfḳ: zkhonu mles kwlu sa'i  'ab ḳdstī béte krstīyanka"
+      "tigrinya_phonetic": "kahn nfḳ: zkhonu mles kwlu sa'i  'ab ḳdstī béte krstīyanka",
+      "spanish": "Sacerdote auxiliar: Concede la paz a los estudiantes de la iglesia que se reúnen continuamente en tu Santa Iglesia;"
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -17451,7 +18249,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Sacerdote auxiliar: a todos, a cada uno por su nombre; en presencia de reyes poderosos, oh Dios nuestro, aumenta tu paz."
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -17464,7 +18263,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Sacerdote auxiliar: Descansen las almas de nuestros padres, hermanos y hermanas que han fallecido y encontrado el descanso en la fe correcta."
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -17477,7 +18277,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤ ብዕጣን ብቝርባን ብወይኒ ብሜሮን ብመ ብራህቲ ብመጋረጃ ብመጻሕፍቲ ምንባ ባት ብኣቕሑ ቤተ መቕደስ ንዚሓልዩ  ባርኽ",
-      "tigrinya_phonetic": "kahn nfḳ: b'iṭan bḳhwrban bweynī bméron bme brahtī bmegareja bmetsaḥftī mnba bat b'aqhḥu béte meqhdes nzīḥalyu  barkh"
+      "tigrinya_phonetic": "kahn nfḳ: b'iṭan bḳhwrban bweynī bméron bme brahtī bmegareja bmetsaḥftī mnba bat b'aqhḥu béte meqhdes nzīḥalyu  barkh",
+      "spanish": "Sacerdote auxiliar: Y bendice a los que traen ofrendas de incienso, pan, vino, ungüento, aceite para lámparas, tapices, libros de lectura y vasos sagrados para el santuario."
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -17490,7 +18291,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤ ክርስቶስ ኣምላ ኽና ኣብ ኢየሩሳ ሌም ሰማያ ዊት ዋጋኦም ኪኸፍ ሎም",
-      "tigrinya_phonetic": "kahn nfḳ: krstos 'amla khna 'ab 'īyerusa lém semaya wīt waga'om kīkhef lom"
+      "tigrinya_phonetic": "kahn nfḳ: krstos 'amla khna 'ab 'īyerusa lém semaya wīt waga'om kīkhef lom",
+      "spanish": "Sacerdote auxiliar: que Cristo nuestro Dios les dé su recompensa en la Jerusalén celestial."
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -17503,7 +18305,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤ ኦ ክርስቶስ ኣምላኽና ምሕረት ንምርካብ ኣብዚ ምሳና  ተኣኪቦም ንዘለዉ ኵሎም  ራኅርኃሎም። ኣብ ቅድሚ መፍርህን  መደንገጽን መንበ ርካ ምጽዋት  ንዘቕረቡልካ ዅሎም ተቐበለሎም",
-      "tigrinya_phonetic": "kahn nfḳ: 'o krstos 'amlakhna mḥret nmrkab 'abzī msana  te'akībom nzelewu kwlom  rahrhalom. 'ab ḳdmī mefrhn  medengetsn menbe rka mtswat  nzeqhrebulka ዅlom teqhebelelom"
+      "tigrinya_phonetic": "kahn nfḳ: 'o krstos 'amlakhna mḥret nmrkab 'abzī msana  te'akībom nzelewu kwlom  rahrhalom. 'ab ḳdmī mefrhn  medengetsn menbe rka mtswat  nzeqhrebulka ዅlom teqhebelelom",
+      "spanish": "Sacerdote auxiliar: Y todos los que están reunidos con nosotros para implorar misericordia: Cristo nuestro Dios tenga misericordia de ellos; y todos los que dan limosna ante tu trono terrible y espantoso, recíbanla."
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -17516,7 +18319,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤ ንዝተጨነቐት ሰብነት ኵላ ኣሓጕሳ በጽኑዕ ማእሰርቲ ንዝተኣስሩን ኣብ ስደትን ኣብ ምርኮን ንዘለውን",
-      "tigrinya_phonetic": "kahn nfḳ: nztecheneqhet sebnet kwla 'aḥagwsa betsnu'i ma'isertī nzte'asrun 'ab sdetn 'ab mrkon nzelewn"
+      "tigrinya_phonetic": "kahn nfḳ: nztecheneqhet sebnet kwla 'aḥagwsa betsnu'i ma'isertī nzte'asrun 'ab sdetn 'ab mrkon nzelewn",
+      "spanish": "Sacerdote auxiliar: Y consolad a toda alma afligida, a los que están encadenados y a los que están en el exilio o en cautiverio."
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -17529,7 +18333,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤ ብመሪር መግዛእቲ ንዝተታኀዙን ኦ ኣምላክና ብምሕረትካ አድኅኖም።",
-      "tigrinya_phonetic": "kahn nfḳ: bmerīr megza'itī nztetahazun 'o 'amlakna bmḥretka 'adhnom."
+      "tigrinya_phonetic": "kahn nfḳ: bmerīr megza'itī nztetahazun 'o 'amlakna bmḥretka 'adhnom.",
+      "spanish": "Sacerdote auxiliar: Y a los que están sometidos a amarga servidumbre: Dios nuestro, líbralos en tu misericordia."
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -17542,7 +18347,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤ ኦ መምህርና ኢየሱስ ክርስቶስ ናባኻ ናብ እንጽልየሉ ጊዜ",
-      "tigrinya_phonetic": "kahn nfḳ: 'o memhrna 'īyesus krstos nabakha nab 'intslyelu gīzé"
+      "tigrinya_phonetic": "kahn nfḳ: 'o memhrna 'īyesus krstos nabakha nab 'intslyelu gīzé",
+      "spanish": "Sacerdote auxiliar: Y a todos aquellos que nos han encomendado que los recordemos en nuestras súplicas a Ti:"
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -17555,7 +18361,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤ ክንዝክሮም ንዝኣዘዙና ዅሎም ኣብ ሰማያዊት መንግሥትኻ ዘክሮም። ንዓይ ንኃጢኣተኛ ባርያኻውን ዘክረኒ",
-      "tigrinya_phonetic": "kahn nfḳ: knzkrom nz'azezuna ዅlom 'ab semayawīt mengstkha zekrom. n'ay nhaṭī'ateña baryakhawn zekrenī"
+      "tigrinya_phonetic": "kahn nfḳ: knzkrom nz'azezuna ዅlom 'ab semayawīt mengstkha zekrom. n'ay nhaṭī'ateña baryakhawn zekrenī",
+      "spanish": "Sacerdote auxiliar: Oh, nuestro Maestro Jesucristo, acuérdate de ellos en tu reino celestial y acuérdate de mí, tu siervo pecador."
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
@@ -17568,7 +18375,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤ ኦ ጐይታ ሕዝብኻ ኣድኅን ርስትኻ ውን ባርኽ ንዘለዓለም ሓልዎምን ኣዕብዮምን።",
-      "tigrinya_phonetic": "kahn nfḳ: 'o gweyta ḥzbkha 'adhn rstkha wn barkh nzele'alem ḥalwomn 'a'ibyomn."
+      "tigrinya_phonetic": "kahn nfḳ: 'o gweyta ḥzbkha 'adhn rstkha wn barkh nzele'alem ḥalwomn 'a'ibyomn.",
+      "spanish": "Sacerdote auxiliar: Oh Señor, \"salva a tu pueblo y bendice tu heredad; pastoréalos y suscítalos para siempre\" (Salmo 27:9)."
     },
     {
       "instruction": "",
@@ -17581,7 +18389,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን ንፍቅ፤  አቤቱ የጳጳሳቱን አለቆች ጳጳሳቱንና ኤጲስ ቆጶሳቱን ቀሳውስቱንና ዲያቆናቱን የክርስቲያንንም ወገኖች ሁሉ ማራቸው ይቅርም በላቸው።",
       "amharic_phonetic": "dīyaḳon nfḳ:  'abétu yep̣ap̣asatun 'aleḳoch p̣ap̣asatunna 'ép̣īs ḳop̣osatun ḳesawstunna dīyaḳonatun yekrstīyannm wegenoch hulu marachew yḳrm belachew.",
       "tigrinya_script": "ዲያቆን ንፍቅ፤ ኦ ጐይታ ንሊቃነ ጳጳሳትን ጳጳሳትን ንኤጲስ ቆጶሳትን ንቀሳውስትን ንዲያቆናትን ንዅሎም ሕዝበ ክርስቲያንን ምሓሮምን ይቕረ በለሎምን።",
-      "tigrinya_phonetic": "dīyaḳon nfḳ: 'o gweyta nlīḳane p̣ap̣asatn p̣ap̣asatn n'ép̣īs ḳop̣osatn nḳesawstn ndīyaḳonatn nዅlom ḥzbe krstīyann mḥaromn yqhre belelomn."
+      "tigrinya_phonetic": "dīyaḳon nfḳ: 'o gweyta nlīḳane p̣ap̣asatn p̣ap̣asatn n'ép̣īs ḳop̣osatn nḳesawstn ndīyaḳonatn nዅlom ḥzbe krstīyann mḥaromn yqhre belelomn.",
+      "spanish": "Subdiácono: Señor, ten piedad y misericordia de los patriarcas, arzobispos, obispos, sacerdotes, diáconos y de todo el pueblo cristiano."
     },
     {
       "instruction": "",
@@ -17594,7 +18403,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ የእሊህንም የሁሉንም ነፍሳቸውን አሳርፍ፣ ይቅርም በላቸው፣ ልጅ ህን ከሰማይ ወደ ድንግል ማኅፀን የሰደድኸው በማኅፀን ተወሰነ",
       "amharic_phonetic": "kahn: ye'ilīhnm yehulunm nefsachewn 'asarf, yḳrm belachew , lj hn kesemay wede dngl mahtsen yesededkhew bemahtsen tewesene",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: A ellos y a todos, concede el descanso de sus almas y ten misericordia de ellos. Tu Hijo, a quien enviaste del cielo al vientre de una virgen, fue concebido en su vientre,"
     },
     {
       "instruction": "",
@@ -17607,7 +18417,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ሥጋም ሆነ፣ ልጅህም (መወለዱም) በመንፈስ ቅዱስ ታወቀ፤",
       "amharic_phonetic": "kahn: sgam hone, ljhm (meweledum) bemenfes ḳdus taweḳe :",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: y se hizo carne, y tu Hijo fue dado a conocer por el Espíritu Santo."
     },
     {
       "instruction": "",
@@ -17620,7 +18431,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ የተቀመጣችሁ ተንሥኡ",
       "amharic_phonetic": "dīyaḳon: yeteḳemeṭachhu tens'u",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Diácono: Vosotros que estáis sentados, poneos de pie."
     },
     {
       "instruction": "",
@@ -17633,7 +18445,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አእላፈ አእላፋ ትና ትእልፊተ አእላፋት የሚሆኑ ቅዱሳን መላእ ክት የመላእክትም አለ ቆች ክንፋቸው ስድስት የሚሆን ክቡራን አርባ ዕቱ እንስሳም ከፊትህ ለሚቆሙልህ ለአንተ፤",
       "amharic_phonetic": "kahn: 'a'ilafe 'a'ilafa tna t'ilfīte 'a'ilafat yemīhonu ḳdusan mela'i kt yemela'iktm 'ale ḳoch knfachew sdst yemīhon kburan 'arba 'itu 'inssam kefīth lemīḳomulh le'ante :",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Allí están ante vosotros miles y diez mil veces diez mil, y los Santos ángeles y arcángeles y vuestras honorables cuatro criaturas, cada una con seis alas."
     },
     {
       "instruction": "",
@@ -17646,7 +18459,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ ወደ ምሥራቅ ተመልከቱ፤",
       "amharic_phonetic": "dīyaḳon: wede msraḳ temelketu:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Diácono: Mira hacia el este."
     },
     {
       "instruction": "",
@@ -17659,7 +18473,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤. በሁለት ክንፋቸው ፊታቸውን ይሸፍናሉ፤ በሁለት ክንፋቸው እግራ ቸውን ይሸፍናሉ፣ በሁለት ክንፋቸው ከዳርቻ እስከ ዓለም ዳርቻ ይወጣሉ፤",
       "amharic_phonetic": "kahn:. behulet knfachew fītachewn yshefnalu: behulet knfachew 'igra chewn yshefnalu, behulet knfachew kedarcha 'iske 'alem darcha yweṭalu :",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Con dos de sus alas se cubren el rostro, con dos de sus alas se cubren los pies, y con dos de sus alas vuelan de un extremo al otro del mundo."
     },
     {
       "instruction": "",
@@ -17672,7 +18487,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ እናስተውል",
       "amharic_phonetic": "dīyaḳon: 'inastewl",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Diácono: Prestemos atención."
     },
     {
       "instruction": "",
@@ -17685,7 +18501,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ሁሉም ዘወትርአንተን ከሚቀድሱህና ከሚያመሰግኑህ ሁሉ ጋራ እንዲቀድሱና እንዲያመ ስግኑ፣",
       "amharic_phonetic": "kahn: hulum zewetr'anten kemīḳedsuhna kemīyamesegnuh hulu gara 'indīḳedsuna 'indīyame sgnu,",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Y todos ellos te santifican y te alaban constantemente, con todos los que te santifican y te alaban."
     },
     {
       "instruction": "",
@@ -17698,7 +18515,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ዓዲ ተወከፍ ዘዚአነሂ ቅዳሴ እለ ዘንብለከ ቅዱስ ቅዱስ ቅዱስ እግ ዚአብሔር ጸባኦት ፍጹም",
       "amharic_phonetic": "kahn: 'adī tewekef zezī'anehī ḳdasé 'ile zenbleke ḳdus ḳdus ḳdus 'ig zī'abḥér tseba'ot ftsum",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: recibe también nuestra santificación que te decimos: Santo, Santo, Santo, perfecto Señor de los Ejércitos,"
     },
     {
       "instruction": "",
@@ -17711,7 +18529,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ ተሰጥዎውን መልሱ ፧",
       "amharic_phonetic": "dīyaḳon: teseṭwown melsu ?",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Diácono: Te responderé."
     },
     {
       "instruction": "",
@@ -17724,7 +18543,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤  ቅዱስ ቅዱስ ቅዱስ ፍጹም አሸናፊ እግዚአብሔር የጌትነትህ ምስጋና በሰማይና በምድር የመላነው፧",
       "amharic_phonetic": "፨ ḥzb:  ḳdus ḳdus ḳdus ftsum 'ashenafī 'igzī'abḥér yegétneth msgana besemayna bemdr yemelanew?",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "፨ Pueblo: Santo, santo, santo, perfecto Señor de los ejércitos, el cielo y la tierra están llenos de la santidad de tu gloria."
     },
     {
       "instruction": "",
@@ -17737,7 +18557,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤  የጌትነትህ ምስጋና በጌታችን በአምላካችንና በመድኃኒታችን በኢየሱስ ክርስቶስ በእውነት በሰማይና በምድር መላ፣ ቅዱስ ልጅህ",
       "amharic_phonetic": "kahn:  yegétneth msgana begétachn be'amlakachnna bemedhanītachn be'īyesus krstos be'iwnet besemayna bemdr mela, ḳdus ljh",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Verdaderamente, el cielo y la tierra están llenos de la santidad de tu gloria por medio de nuestro Señor, nuestro Dios y nuestro Salvador Jesucristo, tu Santo Hijo."
     },
     {
       "instruction": "",
@@ -17750,7 +18571,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ መጣ፤ ከድንግልም ተወለደ፧ ፈቃድህን ይፈጽም ዘንድ፤ ሕዝቡንም ላንተ ያደርግ ዘንድ ፧",
       "amharic_phonetic": "kahn: meṭa: kednglm tewelede? feḳadhn yfetsm zend: ḥzbunm lante yaderg zend ?",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Él vino y nació de una virgen para cumplir tu voluntad y hacerte un pueblo."
     },
     {
       "instruction": "",
@@ -17763,7 +18585,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤  አቤቱ በመንግሥትህ አስበን፤ ሊቅ ሆይ አቤቱ በመንግሥትህ አስበን",
       "amharic_phonetic": "፨ ḥzb:  'abétu bemengsth 'asben: līḳ hoy 'abétu bemengsth 'asben",
       "tigrinya_script": "፨ ሕዝብ፤",
-      "tigrinya_phonetic": "፨ ḥzb:"
+      "tigrinya_phonetic": "፨ ḥzb:",
+      "spanish": "፨ Pueblo: Acuérdate de nosotros, Señor, en tu reino; acuérdate de nosotros, Señor, Maestro, en tu reino;"
     },
     {
       "instruction": "",
@@ -17776,7 +18599,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ ቅዱስ በሚሆን በዕፀ መስቀል ላይ ሳለህ ፈያታዊ ዘየማንን እንዳ ሰብከው አቤቱ በመንግ ሥትህ አስበን።",
       "amharic_phonetic": "፨ ḥzb: ḳdus bemīhon be'itse mesḳel lay saleh feyatawī zeyemann 'inda sebkew 'abétu bemeng sth 'asben",
       "tigrinya_script": "፨ ሕዝብ፤",
-      "tigrinya_phonetic": "፨ ḥzb:"
+      "tigrinya_phonetic": "፨ ḥzb:",
+      "spanish": "፨ Pueblo: acuérdate de nosotros, Señor, en tu Reino, como te acordaste del ladrón a la derecha cuando estabas en el madero de la Santa Cruz."
     },
     {
       "instruction": "",
@@ -17789,7 +18613,8 @@ const kidaseData = {
       "amharic_script": "ከዚህ በኋላ ንፍቅ ቄስ | ዕጣኑን አግብቶ ማዕጠን ቱን ያቅርብለት፣ እጁ ንም አጥኖ ሦስት ጊዜ ከሥጋው ላይ ሦስት ጊዜ ከደሙ ላይ ያሳርግ፤",
       "amharic_phonetic": "kezīh behwala nfḳ ḳés | 'iṭanun 'agbto ma'iṭen tun yaḳrblet , 'iju nm 'aṭno sost gīzé kesgaw lay sost gīzé kedemu lay yasarg:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Entonces el sacerdote auxiliar pondrá granos de incienso y llevará el incensario al sacerdote, quien tomará el incienso con ambas manos y lo pasará sobre el pan y el cáliz tres veces por separado."
     },
     {
       "instruction": "",
@@ -17802,7 +18627,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤. በርሱ ያመኑትን ሕሙማን ታሞ ያድን ዘንድ እጆቹን ለሕማም ዘረጋ",
       "amharic_phonetic": "kahn:. bersu yamenutn ḥmuman tamo yadn zend 'ijochun leḥmam zerega",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: En su pasión, extendió sus manos, sufriendo para salvar a los que sufren y confían en Él."
     },
     {
       "instruction": "",
@@ -17815,7 +18641,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ሞትን ይሽር ዘንድ፤ የሰይጣንንም ማሠሪያ ይቈርጥ ዘንድ፣ ሲኦልንም ይረግጥ ዘንድ፣ ቅዱሳንን ይመራ ዘንድ፣ ሥርዓትን ይሠራ ዘንድ፣ ትንሣኤው ንም ይገልፅ ዘንድ ለሕ ማም ተሰጠ፣",
       "amharic_phonetic": "kahn: motn yshr zend: yeseyṭannm maserīya yḳwerṭ zend, sī'olnm yregṭ zend, ḳdusann ymera zend, sr'atn ysera zend, tnsa'éw nm ygelts zend leḥ mam teseṭe ,",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Quien fue entregado a la pasión para destruir la muerte, romper las ataduras de Satanás, pisotear el infierno, guiar a los santos, establecer una alianza y dar a conocer su resurrección."
     },
     {
       "instruction": "",
@@ -17828,7 +18655,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ ቀሳውስት እጆቻችሁን አንሡ ፧",
       "amharic_phonetic": "dīyaḳon: ḳesawst 'ijochachhun 'ansu ?",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Diácono: Sacerdotes, alcen las manos."
     },
     {
       "instruction": "",
@@ -17841,7 +18669,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ እርሱን በያዙባት በዚያች ሌሊት ነውር በሌለባቸው ንዑዳት ክቡራት ብፁዓትም በሚሆኑ እጆቹ ኅብስቱን አንሥቶ ያዘ፣",
       "amharic_phonetic": "kahn: 'irsun beyazubat bezīyach lélīt newr belélebachew n'udat kburat btsu'atm bemīhonu 'ijochu hbstun 'ansto yaze ,",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: La misma noche en que lo traicionaron, tomó el pan en sus santas, benditas e inmaculadas manos;"
     },
     {
       "instruction": "",
@@ -17854,7 +18683,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ ይህ እንደ ሆነ በእውነት እናምናለን፤",
       "amharic_phonetic": "፨ ḥzb: yh 'inde hone be'iwnet 'inamnalen :",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "፨ Gente: Creemos que este es Él, verdaderamente lo creemos."
     },
     {
       "instruction": "",
@@ -17867,7 +18697,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ወደ አንተ ወደ አባቱ ወደ ሰማይ ቀና ብሎ አመሰገነ ባረከ፤ ቈረሰ፣",
       "amharic_phonetic": "kahn: wede 'ante wede 'abatu wede semay ḳena blo 'amesegene bareke: ḳwerese ,",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Él alzó la vista al cielo hacia ti, su Padre; dio gracias, bendijo y partió;"
     },
     {
       "instruction": "",
@@ -17880,7 +18711,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ለወገኖቹ ለደቀ መዛሙርቱ ስጣቸው፣ ንሱ ብሉ ይህ ኅብስት ለኃጢአት ማስተሥረያ ሊሆን ስለ እናንተ የሚፈተት ሥጋዬ ነው አላቸው፤",
       "amharic_phonetic": "kahn: lewegenochu ledeḳe mezamurtu sṭachew, nsu blu yh hbst lehaṭī'at mastesreya līhon sle 'inante yemīfetet sgayé new 'alachew:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Y les dio a sus discípulos y les dijo: Tomad, comed; este pan es mi cuerpo, que será partido por vosotros para el perdón de los pecados."
     },
     {
       "instruction": "",
@@ -17893,7 +18725,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤  አሜን አሜን አሜን እናምናለን፤ እንታመናለ ንም፣ ጌታችንና አምላ ካችን ሆይ እናመሰግን ሃለን፤ ይህ እርሱ እንደ ሆነ በእውነት እናምናለን፤",
       "amharic_phonetic": "፨ ḥzb:  'amén 'amén 'amén 'inamnalen: 'intamenale nm, gétachnna 'amla kachn hoy 'inamesegn halen: yh 'irsu 'inde hone be'iwnet 'inamnalen:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "፨ Pueblo: Amén, amén, amén: Creemos y confesamos, y te glorificamos, oh Señor nuestro y Dios nuestro, que este es en quien verdaderamente creemos."
     },
     {
       "instruction": "",
@@ -17906,7 +18739,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ እንዲሁም ጽዋ ውን አመስግኖ ባርኮ አክብሮ ለወገኖቹ ለደቀ መዛሙርቱ ሰጣቸው፣ ንሱ ጠጡ",
       "amharic_phonetic": "kahn: 'indīhum tswa wn 'amesgno barko 'akbro lewegenochu ledeḳe mezamurtu seṭachew , nsu ṭeṭu",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Y asimismo la copa; dando gracias, bendiciéndola y santificándola, se la dio a sus discípulos y les dijo: Tomad, bebed;"
     },
     {
       "instruction": "",
@@ -17919,7 +18753,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ይህ ጽዋ ለብዙ ሰዎች ቤዛ ሊሆን ስለ እናንተ የሚፈስ ደሜ ነው አላቸው፤",
       "amharic_phonetic": "kahn: yh tswa lebzu sewoch béza līhon sle 'inante yemīfes demé new 'alachew:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Esta copa es mi sangre, que será derramada por vosotros como propiciación por muchos."
     },
     {
       "instruction": "",
@@ -17932,7 +18767,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ አሜን አሜን አሜን እናምናለን፣ እንታመናለንም ጌታችንና አምላካችን ሆይ፣ እናመሰግንሃለን፣ ይህ እርሱ እንደ ሆነ በእውነት እናምናለን፤",
       "amharic_phonetic": "፨ ḥzb: 'amén 'amén 'amén 'inamnalen, 'intamenalenm gétachnna 'amlakachn hoy, 'inamesegnhalen, yh 'irsu 'inde hone be'iwnet 'inamnalen:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "፨ Pueblo: Amén, amén, amén: creemos y confesamos, te glorificamos, oh Señor nuestro y Dios nuestro, y que este es Él en quien verdaderamente creemos."
     },
     {
       "instruction": "",
@@ -17945,7 +18781,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ይህን በምታደርጉበት ጊዜ የኔን መታሰቢያ አድርጉ፤",
       "amharic_phonetic": "kahn: yhn bemtadergubet gīzé yenén metasebīya 'adrgu :",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Y cada vez que hagáis esto, hacedlo en memoria mía."
     },
     {
       "instruction": "",
@@ -17958,7 +18795,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤  አቤቱ ሞትህን፣ ቅድስት ትንሣኤህንም እን ነግራለን፣ ዕርገትህን ዳግመኛም መምጣትህን እናምናለን፣ እናመሰግናለን እናምንሃለንም፣",
       "amharic_phonetic": "፨ ḥzb:  'abétu mothn , ḳdst tnsa'éhnm 'in negralen, 'irgethn dagmeñam memṭathn 'inamnalen, 'inamesegnalen 'inamnhalenm,",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Pueblo: Proclamamos tu muerte, Señor, y tu santa resurrección; creemos en tu ascensión y tu segunda venida. Te glorificamos y te confesamos."
     },
     {
       "instruction": "",
@@ -17971,7 +18809,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ ጌታችንና አምላካችን፣ ሆይ እንለምንሃለን፣ እንማልድሃለ",
       "amharic_phonetic": "፨ ḥzb: gétachnna 'amlakachn, hoy 'inlemnhalen, 'inmaldhale",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "፨ Pueblo: te ofrecemos nuestra oración y te suplicamos, oh Señor nuestro y Dios nuestro."
     },
     {
       "instruction": "",
@@ -17984,7 +18823,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤  አሁንም አቤቱ ሞትህንና ትንሣኤህን እናስባለን፤ እናምንሃለን፤ እያመሰገንህ ይህን ኅብስት ይህንም ጽዋ እናቀርብልሃለን፣ በፊትህ",
       "amharic_phonetic": "kahn:  'ahunm 'abétu mothnna tnsa'éhn 'inasbalen: 'inamnhalen: 'iyamesegenh yhn hbst yhnm tswa 'inaḳerblhalen, befīth",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Ahora, Señor, recordamos tu muerte y tu resurrección. Te confesamos y te ofrecemos este pan y esta copa, dándote gracias; y así nos has hecho dignos de la alegría,"
     },
     {
       "instruction": "",
@@ -17997,7 +18837,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ እንቆም ዘንድ አንተንም እናገለግል ዘንድ በርሱ ተድላን አደረግህልን፣ አቤቱ እንለምንሃለን፣ እንማልድሃለንም፣ በዚህ ኅብስት ላይቅዱስ መንፈስን ኃይል  ታሳድር ዘንድ፣ በዚህም በጽዋው ላይ፤",
       "amharic_phonetic": "kahn: 'inḳom zend 'antenm 'inagelegl zend bersu tedlan 'adereghln, 'abétu 'inlemnhalen, 'inmaldhalenm, bezīh hbst layḳdus menfesn hayl  tasadr zend, bezīhm betswaw lay :",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: de pie ante vosotros, ofreciéndoos servicio. Os rogamos y suplicamos, Señor, que enviéis el Espíritu Santo y su poder sobre este pan y sobre este cáliz."
     },
     {
       "instruction": "",
@@ -18010,7 +18851,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ የጌታችንና የአምላካችን የመድኃኒታችን የኢየሱስ ክርስቶስ ሥጋና ደም ያደርገው ዘንድ ለዘለ ዓለሙ፣",
       "amharic_phonetic": "kahn: yegétachnna ye'amlakachn yemedhanītachn ye'īyesus krstos sgana dem yadergew zend lezele 'alemu ,",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Que Él los convierta en el cuerpo y la sangre de nuestro Señor, nuestro Dios y nuestro Salvador Jesucristo, por los siglos de los siglos."
     },
     {
       "instruction": "",
@@ -18023,7 +18865,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አሜን: ማረን፣ አቤቱ ራራልን፣ አቤቱ ይቅር በለን፤",
       "amharic_phonetic": "kahn: 'amén: maren, 'abétu raraln, 'abétu yḳr belen :",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "፨ Pueblo: Amén; Señor, ten piedad de nosotros, Señor, perdónanos, Señor, ten misericordia de nosotros."
     },
     {
       "instruction": "",
@@ -18036,7 +18879,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ በፍጹም ልብ አም ላካችንን እግዚአብሔርን እንማልደው፣ ያማረ የመ ንፈስ ቅዱስን አንድነት ይሰጠን ዘንድ፣",
       "amharic_phonetic": "dīyaḳon: beftsum lb 'am lakachnn 'igzī'abḥérn 'inmaldew, yamare yeme nfes ḳdusn 'andnet yseṭen zend ,",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Diácono: Con todo nuestro corazón, roguemos al Señor nuestro Dios que nos conceda la buena comunión del Espíritu Santo."
     },
     {
       "instruction": "",
@@ -18049,7 +18893,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ በፊት እንደ ነበረ ለዘለዓለሙ ለልጅ ልጅ ይኖራል ፧",
       "amharic_phonetic": "፨ ḥzb: befīt 'inde nebere lezele'alemu lelj lj ynoral ?",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "፨ Pueblo: Como era, es y será por generaciones y generaciones, por los siglos de los siglos."
     },
     {
       "instruction": "",
@@ -18062,7 +18907,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ከርሱ ለሚቀበሉ ሁሉ አንድ አድርገህ ለንጽሕና መንፈስ ቅዱስንም ለመመላት እውነተኛውንም ሃይማኖት",
       "amharic_phonetic": "kahn: kersu lemīḳebelu hulu 'and 'adrgeh lentsḥna menfes ḳdusnm lememelat 'iwneteñawnm haymanot",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Concédelo junto a todos los que lo tomen, para que les sirva de santificación, para ser llenos del Espíritu Santo y para fortalecer la verdadera fe."
     },
     {
       "instruction": "",
@@ -18075,7 +18921,8 @@ const kidaseData = {
       "amharic_script": "ለማጽናት ስጣቸው፣ አንተን ይቀድሱና ያመሰግኑ ዘንድ ልጅህን ወዳጅህን ኢየሱስ ክርስቶስንም ከመንፈስ ቅዱስ ጋራ ፧\n፨ ሕዝብ፤ አሜን።",
       "amharic_phonetic": "lematsnat sṭachew, 'anten yḳedsuna yamesegnu zend ljhn wedajhn 'īyesus krstosnm kemenfes ḳdus gara ?\n፨ ḥzb: 'amén",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: para que te santifiquen y te alaben a ti y a tu amado Hijo Jesucristo con el Espíritu Santo.\n\n፨ Pueblo: Amén"
     },
     {
       "instruction": "",
@@ -18088,7 +18935,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ የአንተ በሚሆን በመንፈስ ቅዱስ አንድ እንሆን ዘንድ ስጠን፣ በዚህም ጵርስፎራ (በሥ ጋው በደሙ) አድነን፤ ለዓለሙ ሁሉ በምትሆን በአንተ ለዘለዓለሙ ሕያ ዋን እንሆን ዘንድ፣",
       "amharic_phonetic": "kahn: ye'ante bemīhon bemenfes ḳdus 'and 'inhon zend sṭen, bezīhm p̣rsfora (bes gaw bedemu) 'adnen: le'alemu hulu bemthon be'ante lezele'alemu ḥya wan 'inhon zend ,",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote (El pueblo repite): Concédenos la unión a través de tu Espíritu Santo y sáname con esta ofrenda para que vivamos en Ti para siempre."
     },
     {
       "instruction": "",
@@ -18101,7 +18949,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ የእግዚአብሔር ስሙ ምስጉን ነው፧ በእግዚአብሔር ስም የሚመጣውም ምስጉን ነው፧ የጌትነቱ ስም ይመስገን፣ ይሁን\r\nይሁን የተመሰገነ ይሁን፤",
       "amharic_phonetic": "kahn: ye'igzī'abḥér smu msgun new? be'igzī'abḥér sm yemīmeṭawm msgun new? yegétnetu sm ymesgen, yhun\r\nyhun yetemesegene yhun:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote (El pueblo repite): Bendito sea el nombre del Señor, y bendito sea el que viene en el nombre del Señor, y sea bendito el nombre de su gloria. Así sea, así sea, así sea bendito."
     },
     {
       "instruction": "",
@@ -18114,7 +18963,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤. የመንፈስ ቅዱስን ጸጋ ላክልን\n፨ ሕዝብ፤ ከማሁ",
       "amharic_phonetic": "kahn:. yemenfes ḳdusn tsega lakln\n፨ ḥzb: kemahu",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote (El pueblo repite): Envía la gracia del Espíritu Santo sobre nosotros."
     },
     {
       "instruction": "",
@@ -18127,7 +18977,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ለጸሎት ተነሡ\n፨ ሕዝብ፤ አቤቱ ይቅር በለን\nዲያቆን፤  ሰላም ለሁላችሁ ይሁን፣\n፨ ሕዝብ፤ ከመንፈስህ ጋራ",
       "amharic_phonetic": "kahn: letselot tenesu\n፨ ḥzb: 'abétu yḳr belen\ndīyaḳon:  selam lehulachhu yhun ,\n፨ ḥzb: kemenfesh gara",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Diácono: Pónganse de pie para orar.\n\n፨ Pueblo: Señor, ten misericordia de nosotros.\n\nSacerdote: La paz sea con todos ustedes.\n\n፨ Pueblo: Y con tu Espíritu."
     },
     {
       "instruction": "",
@@ -18140,7 +18991,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ዳግመኛም ሁሉን የሚ ይዝ የጌታችንና የመድ ኃኒታችን የኢየሱስ ክርስቶስን አባት እግዚአብሔርን እንማልዳለን ፧",
       "amharic_phonetic": "kahn: dagmeñam hulun yemī yz yegétachnna yemed hanītachn ye'īyesus krstosn 'abat 'igzī'abḥérn 'inmaldalen ?",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Y nuevamente imploramos al Dios todopoderoso, Padre de nuestro Señor y Salvador Jesucristo."
     },
     {
       "instruction": "",
@@ -18153,7 +19005,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ከቅዱስ ምሥጢር በበረከት እንቀበል ዘንድ እን ዲሰጠን ለኛ መጽናትን ይስጠን፣ ከኛ ወገን ማንንም አያጐስቊል፧ የክርስቶስ ሥጋና ደም የሚሆን",
       "amharic_phonetic": "kahn: keḳdus msṭīr bebereket 'inḳebel zend 'in dīseṭen leña metsnatn ysṭen, keña wegen mannm 'ayagwesḳwīl? yekrstos sgana dem yemīhon",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Para concedernos tomar de este santo misterio con bendición, para concedernos la confirmación y no condenar a ninguno de nosotros, sino hacer dignos a todos los que participan de él."
     },
     {
       "instruction": "",
@@ -18166,7 +19019,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ቅዱስ ምሥጢ ርህን መቀበልን ለሚቀበሉ ሁሉ ተድላ ያድርግላ ቸው እንጂ፣ ይኸውም ሁሉን የሚይዝ አምላካ ችን እግዚአብሔር ነው፤",
       "amharic_phonetic": "kahn: ḳdus msṭī rhn meḳebeln lemīḳebelu hulu tedla yadrgla chew 'injī, ykhewm hulun yemīyz 'amlaka chn 'igzī'abḥér new :",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: el santo misterio del cuerpo y la sangre de Cristo. El Señor todopoderoso es nuestro Dios."
     },
     {
       "instruction": "",
@@ -18179,7 +19033,8 @@ const kidaseData = {
       "amharic_script": "፨ ሁሉም፤ አባታችን ሆይ፥ በሰማይ የምትኖር፥ ስምህ ይቀደስ፥ መንግሥትህ ትምጣ፥ ፈቃድህ በሰማይ እንደሆነ እንዲሁም በምድር ይሁን።",
       "amharic_phonetic": "፨ hulum: 'abatachn hoy; besemay yemtnor; smh yḳedes; mengsth tmṭa; feḳadh besemay 'indehone 'indīhum bemdr yhun.",
       "tigrinya_script": "፨ ኣብ ሰማያት እትነብር ኣቦና ፨\n፨ ኩሉኹም፤ ኣብ ሰማያት እትነብር ኣቦና ስምካ ይቀደስ፥ መንግስትኻ ትምጻእ፥ ፈቓድካ ከምቲ ኣብ ሰማያት ከምኡ'ውን ኣብ ምድሪ ይኹን፥",
-      "tigrinya_phonetic": "፨ 'ab semayat 'itnebr 'abona ፨\n፨ kulukhum: 'ab semayat 'itnebr 'abona smka yḳedes; mengstkha tmtsa'i; feqhadka kemtī 'ab semayat kem'u'wn 'ab mdrī ykhun;"
+      "tigrinya_phonetic": "፨ 'ab semayat 'itnebr 'abona ፨\n፨ kulukhum: 'ab semayat 'itnebr 'abona smka yḳedes; mengstkha tmtsa'i; feqhadka kemtī 'ab semayat kem'u'wn 'ab mdrī ykhun;",
+      "spanish": "፨ EL PADRE NUESTRO ፨\n\n፨ TODOS: Padre nuestro que estás en los cielos, santificado sea tu nombre. Venga a nosotros tu reino. Hágase tu voluntad en la tierra como en el cielo."
     },
     {
       "instruction": "",
@@ -18192,7 +19047,8 @@ const kidaseData = {
       "amharic_script": "፨ ሁሉም፤ የዕለት እንጀራችንን ስጠን ለዛሬ፥ በደላችንን ይቅር በለን፥ እኛም የበደሉንን ይቅር እንደምንል፥",
       "amharic_phonetic": "፨ hulum: ye'ilet 'injerachnn sṭen lezaré; bedelachnn yḳr belen; 'iñam yebedelunn yḳr 'indemnl;",
       "tigrinya_script": "፨ ኩሉኹም፤ ናይ ዕለት እንጌራና ሎሚ ሃበና፥ ንሕና ንዝበደሉና በደሎም ከም እንኃደግናሎም በደልና ኅደገልና፥",
-      "tigrinya_phonetic": "፨ kulukhum: nay 'ilet 'ingérana lomī habena; nḥna nzbedeluna bedelom kem 'inhadegnalom bedelna hdegelna;"
+      "tigrinya_phonetic": "፨ kulukhum: nay 'ilet 'ingérana lomī habena; nḥna nzbedeluna bedelom kem 'inhadegnalom bedelna hdegelna;",
+      "spanish": "፨ TODOS: Danos hoy nuestro pan de cada día. Y perdona nuestras ofensas y pecados, como también nosotros perdonamos a los que nos ofenden."
     },
     {
       "instruction": "",
@@ -18205,7 +19061,8 @@ const kidaseData = {
       "amharic_script": "፨ ሁሉም፤ አቤቱ ወደ ፈተና አታግባን፥ ከክፉ ሁሉ አድነን እንጂ፥ መንግሥት ያንተ ናትና። ኃይል፥ ክብር፥ ምስጋና ለዘለዓለም አሜን።",
       "amharic_phonetic": "፨ hulum: 'abétu wede fetena 'atagban; kekfu hulu 'adnen 'injī; mengst yante natna. hayl; kbr; msgana lezele'alem 'amén.",
       "tigrinya_script": "፨ ኩሉኹም፤ ካብ ክፉእ ኣድኅነና እምበር ኣብ ፈተና ኣይተእትወና፥ መንግስትን፡ ኃይልን ፡ክብርን ንዘለዓለም ናትካ እዩ፡ አሜን።",
-      "tigrinya_phonetic": "፨ kulukhum: kab kfu'i 'adhnena 'imber 'ab fetena 'ayte'itwena; mengstn  hayln  kbrn nzele'alem natka 'iyu  'amén."
+      "tigrinya_phonetic": "፨ kulukhum: kab kfu'i 'adhnena 'imber 'ab fetena 'ayte'itwena; mengstn  hayln  kbrn nzele'alem natka 'iyu  'amén.",
+      "spanish": "TODOS: Y no nos dejes caer en la tentación, Señor, y líbranos del mal. Porque tuyo es el reino, el poder y la gloria, por siempre. Amén."
     },
     {
       "instruction": "",
@@ -18218,7 +19075,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ሁሉን የምትይዝ አምላካችን እግዚአብሔርየቅዱስ ምሥጢርህን መቀበል ለኛ ጽንዕ አድርገህ ትሰጠን ዘንድ ከእኛ ወገን ማንንም አታ ጐስቍል፣",
       "amharic_phonetic": "kahn: hulun yemtyz 'amlakachn 'igzī'abḥéryeḳdus msṭīrhn meḳebel leña tsn'i 'adrgeh tseṭen zend ke'iña wegen mannm 'ata gwesḳwl,",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Señor Dios Todopoderoso, concédenos participar eficazmente del santo misterio, y no condenes a ninguno de nosotros, sino bendice a todos."
     },
     {
       "instruction": "",
@@ -18231,7 +19089,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ በክርስቶስ ሁሉን ባርክ እንጂ፣ በርሱ ያለ ክብር ጽንዕ ለአንተ ይገባል፣ ከርሱ ጋራ፣ ከመንፈስ ቅዱስም ጋራ፣ ዛሬም ዘወትርም ለዘለዓለሙ አሜን ፧",
       "amharic_phonetic": "kahn: bekrstos hulun bark 'injī, bersu yale kbr tsn'i le'ante ygebal, kersu gara, kemenfes ḳdusm gara, zarém zewetrm lezele'alemu 'amén ?",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Todo en Cristo, por quien, con él y con el Espíritu Santo, sea la gloria y el dominio ahora y siempre, por los siglos de los siglos. Amén."
     },
     {
       "instruction": "",
@@ -18244,7 +19103,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ አምላካችን ሆይእንደ ቸርነትህ ነው እንጂ እንደ ኃጢአታችን አይደ ለም፣ (፫ተ ጊዜ)",
       "amharic_phonetic": "፨ ḥzb: 'amlakachn hoy'inde cherneth new 'injī 'inde haṭī'atachn 'ayde lem, (selestute gīzé)",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "፨ Pueblo: Conforme a tu misericordia, Dios nuestro, y no conforme a nuestros pecados. (3x)"
     },
     {
       "instruction": "Then, in succession, they shall all say three times:",
@@ -18257,7 +19117,8 @@ const kidaseData = {
       "amharic_script": "፨ ሁሉም: የመድኃኔዓለም አገልጋዮች የሚሆኑ የመላእክት ሠራዊት ወዮ፣ ወዮ፣ ወዮ፣ በመድኃኔ ዓለም ፊት ይቆማሉ ፡",
       "amharic_phonetic": "፨ hulum: yemedhané'alem 'agelgayoch yemīhonu yemela'ikt serawīt weyo, weyo, weyo, bemedhané 'alem fīt yḳomalu",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "፨ TODOS: Las huestes de los ángeles del Salvador del mundo, sí, sí, sí, están ante el Salvador del mundo."
     },
     {
       "instruction": "",
@@ -18270,7 +19131,8 @@ const kidaseData = {
       "amharic_script": "፨ ሁሉም: መድኃኔ ዓለምን ያመሰ ግኑታል፣ ወዮ፣ ወዮ፣ ወዮ፣ የመድኃኔ ዓለም ሥጋውና ደሙ ይህ ነው፧",
       "amharic_phonetic": "፨ hulum: medhané 'alemn yamese gnutal, weyo, weyo, weyo, yemedhané 'alem sgawna demu yh new?",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "፨ TODOS: y rodean al Salvador del mundo, sí, sí, sí, este cuerpo y sangre del Salvador del mundo."
     },
     {
       "instruction": "",
@@ -18283,7 +19145,8 @@ const kidaseData = {
       "amharic_script": "፨ ሁሉም: እንቅረብ ወደ መድኃኔ ዓለም ፊት ወዮ፣ወዮ፣ወዮ፣ እርሱን በማመን ለክርስቶስ እንገ ዛለን፣",
       "amharic_phonetic": "፨ hulum: 'inḳreb wede medhané 'alem fīt weyo,weyo,weyo, 'irsun bemamen lekrstos 'inge zalen,",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "፨ TODOS: Acerquémonos al rostro del Salvador del mundo, sí, sí, sí. En la fe que es de él, sometámonos a Cristo."
     },
     {
       "instruction": "The assistant deacon shall say while entering:",
@@ -18296,7 +19159,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን ንፍቅ፤ ሲገባ፣ መኳንንት ደጆችን ክፈቱ፤",
       "amharic_phonetic": "dīyaḳon nfḳ: sīgeba , mekwannt dejochn kfetu:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Diácono auxiliar: ¡Príncipes, abran las puertas!"
     },
     {
       "instruction": "",
@@ -18309,7 +19173,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤  የቆማችሁ ሰዎች ራሳችሁን ዝቅ ዝቅ አድ ርጉ፤",
       "amharic_phonetic": "dīyaḳon:  yeḳomachhu sewoch rasachhun zḳ zḳ 'ad rgu:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Diácono: Vosotros que estáis de pie, inclinad la cabeza."
     },
     {
       "instruction": "",
@@ -18322,7 +19187,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤  የተሰወረውንና የተገለፀውን የምታውቅ ዘለዓለማዊ እግዚአብሔርሆይ፣ ወገኖችህ በፊትህ ራሳቸ ውን ዝቅ ዝቅ አደረጉ፣ ልቡናቸውንም አስገዙ፣",
       "amharic_phonetic": "kahn:  yetesewerewnna yetegeletsewn yemtawḳ zele'alemawī 'igzī'abḥérhoy , wegenochh befīth rasache wn zḳ zḳ 'aderegu , lbunachewnm 'asgezu,",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Señor eterno, que conoces lo oculto y lo manifiesto, ante ti tu pueblo ha inclinado la cabeza, y a ti ha sometido los corazones tercos de su cuerpo;"
     },
     {
       "instruction": "",
@@ -18335,7 +19201,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ከተዘጋጀ ማደሪያህ ሁነህ እይ፣ ወንዶች ንም ሴቶችንም ባርክ፣ ጆሮህን ቀቅርላቸው ጸሎታቸውንም ስማቸው ፧",
       "amharic_phonetic": "kahn: ketezegaje maderīyah huneh 'iy, wendoch nm sétochnm bark , jorohn ḳeḳrlachew tselotachewnm smachew ?",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: desde tu digna morada, bendícelos, hombres y mujeres; inclina tu oído hacia ellos y escucha su oración."
     },
     {
       "instruction": "",
@@ -18348,7 +19215,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ በቀኝህ ኃይል አጽናቸው፣ ከክፉ ምቀኝነት ሰውራቸው ርዳቸውም፣ ጠባቂ ሁናቸው፣ ለሥጋችንም ለነፍሳችንም ሃይማኖትህንና ስምህን መፍራትን ለሴቶችም ለወንዶችም ጨምራላ ቸው",
       "amharic_phonetic": "kahn: beḳeñh hayl 'atsnachew, kekfu mḳeñnet sewrachew rdachewm, ṭebaḳī hunachew, lesgachnm lenefsachnm haymanothnna smhn mefratn lesétochm lewendochm chemrala chew",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Fortalécelos con la fuerza de tu diestra, ayúdalos y protégelos de la aflicción del mal; sé guardián de sus cuerpos y almas; y aumenta en hombres y mujeres tu fe y temor de tu nombre."
     },
     {
       "instruction": "",
@@ -18361,7 +19229,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ በአንድ ልጅህ በርሱ ያለ ክብር ጽንዕ ለአንተ ይገባል፣ ከርሱ ጋራ፣ ከመንፈስ ቅዱስም ጋራ፣ ዛሬም ዘወትርም ለዘለ ዓለሙ አሜን።",
       "amharic_phonetic": "kahn: be'and ljh bersu yale kbr tsn'i le'ante ygebal, kersu gara, kemenfes ḳdusm gara, zarém zewetrm lezele 'alemu 'amén",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Por tu Hijo unigénito, por quien con él y con el Espíritu Santo sea la gloria y el dominio, ahora y siempre, por los siglos de los siglos. Amén."
     },
     {
       "instruction": "",
@@ -18374,7 +19243,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ በፍርሃት ሁናችሁ ለእግዚአብሔር ስገዱ፣\n፨ ሕዝብ፤ አቤቱ በፊትህ እንሰግዳለን እናመሰግን ሃለንም፤",
       "amharic_phonetic": "dīyaḳon: befrhat hunachhu le'igzī'abḥér sgedu,\n፨ ḥzb: 'abétu befīth 'insegdalen 'inamesegn halenm:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Diácono: Adoren al Señor con temor.\n\nPueblo: Ante ti, Señor, te adoramos y te glorificamos."
     },
     {
       "instruction": "",
@@ -18387,7 +19257,8 @@ const kidaseData = {
       "amharic_script": "ካህን፣ የንሰሓ ጸሎት (ቅዳ.ሐዋ ቍ 72—88)።",
       "amharic_phonetic": "kahn, yenseḥa tselot (ḳda.ḥawa ḳw 72—88).",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: (ORACIÓN DE PENITENCIA) Oh Señor Dios, Padre Todopoderoso, eres Tú quien sana las heridas de nuestra alma, nuestro cuerpo y nuestro espíritu,"
     },
     {
       "instruction": "",
@@ -18400,7 +19271,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ባንድ ልጅህ በጌታችን 73 በአምላካችንና በመድኃኒታችን በኢየሱስ ክርስቶስ አፍ ተናግረሃልና፣",
       "amharic_phonetic": "kahn: : band ljh begétachn 73 be'amlakachnna bemedhanītachn be'īyesus krstos 'af tenagrehalna,",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: porque lo has dicho por boca de tu Hijo unigénito, nuestro Señor, nuestro Dios y nuestro Salvador Jesucristo,"
     },
     {
       "instruction": "",
@@ -18413,7 +19285,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ለአባ ታችን ለጴጥሮስ እንዲህ ብሎ የተናገረውን አንተ መሠረት ነህ፣ በዚህችም መሠረት ላይ ክብርት ቤተ ክርስቲያኔን እሠራታለሁ፣ የሲኦልም ደጆች ሊያጠፏ ትና ሊያነዋውጧት አይ ችሉም፣",
       "amharic_phonetic": "kahn: le'aba tachn lep̣éṭros 'indīh blo yetenagerewn 'ante meseret neh, bezīhchm meseret lay kbrt béte krstīyanén 'iseratalehu, yesī'olm dejoch līyaṭefwa tna līyanewawṭwat 'ay chlum,",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: lo que le dijo a nuestro padre Pedro: «Tú eres una roca, y sobre esta roca edificaré mi santa Iglesia, y las puertas del infierno no prevalecerán contra ella,"
     },
     {
       "instruction": "",
@@ -18426,7 +19299,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤፣ ላንተም የመንግ ሥተ ሰማያትን መክፈቻ እሰጥሃለሁ፣በምድር ያሠ ርኸው በሰማይ የታሠረ ይሆን ዘንድ፤ በምድርም የፈታኸው በሰማይ የተ ፈታ ይሆን ዘንድ፧",
       "amharic_phonetic": "kahn: , lantem yemeng ste semayatn mekfecha 'iseṭhalehu,bemdr yase rkhew besemay yetasere yhon zend: bemdrm yefetakhew besemay yete feta yhon zend?",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Y a vosotros os doy las llaves del reino de los cielos; todo lo que hayáis atado en la tierra quedará atado en el cielo, y todo lo que hayáis desatado en la tierra quedará desatado en el cielo."
     },
     {
       "instruction": "",
@@ -18439,7 +19313,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ወንዶቹም ሴቶቹም አገ ልጋዮችህ ሁሉ በየስማ ቸው የተፈቱ፣ ነጻም የወጡ ይሁኑ፣ በመንፈስ ቅዱስ ቃል ኃጥእ በደለኛ በምሆን በኔም በ አገ ልጋይህ እገሌ ቃል፣ በማወቅ ወይም ባለማ ወቅ ቢሠሩ",
       "amharic_phonetic": "kahn: wendochum sétochum 'age lgayochh hulu beyesma chew yetefetu , netsam yeweṭu yhunu, bemenfes ḳdus ḳal haṭ'i bedeleña bemhon beném be 'age lgayh 'igelé ḳal, bemaweḳ weym balema weḳ bīseru",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Que todos tus siervos y siervas, según sus respectivos nombres, seamos absueltos y liberados por la boca del Espíritu Santo, y también por mi boca tu siervo pecador y culpable, ya sea que haya obrado consciente o inconscientemente."
     },
     {
       "instruction": "",
@@ -18452,7 +19327,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አቤቱ እሊህን አገልጋ ዮችህን አባቶቼንና ወን ድሞቼን እኅቶቼንም አጽንተህ ጠብቃቸው",
       "amharic_phonetic": "kahn: : 'abétu 'ilīhn 'agelga yochhn 'abatochénna wen dmochén 'ihtochénm 'atsnteh ṭebḳachew",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Señor, protégelos y defiéndelos, a tus siervos, padres, hermanos y hermanas."
     },
     {
       "instruction": "",
@@ -18465,7 +19341,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ዳግመኛም ኃጥእ በደለኛ የምሆን እኔንም ወራዳ ነቴን አይተህ ፍታኝ",
       "amharic_phonetic": "kahn: : dagmeñam haṭ'i bedeleña yemhon 'inénm werada netén 'ayteh ftañ",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Y libérame también a mí, tu humilde y pecador siervo."
     },
     {
       "instruction": "",
@@ -18478,7 +19355,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ልዩ ሦስት በሚሆኑ በአብና በወልድ በመን ፈስ ቅዱስም ቃል የተ ፈቱ ነጻም የወጡ ይሁኑ፣ ኃጥእ በደለኛ በምሆን በኔም በአገልጋይህ ቃል፧",
       "amharic_phonetic": "kahn: lyu sost bemīhonu be'abna beweld bemen fes ḳdusm ḳal yete fetu netsam yeweṭu yhunu, haṭ'i bedeleña bemhon beném be'agelgayh ḳal?",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Y absuélvelos y libéralos de la boca de la Santísima Trinidad, el Padre, el Hijo y el Espíritu Santo, y de mi boca, vuestro siervo pecador e injusto."
     },
     {
       "instruction": "",
@@ -18491,7 +19369,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ መሐሪ ይቅር ባይ ሰው ንም የምትወድ አምላካ ችን እግዚአብሔር ሆይ፣ የዓለሙን ኃጢአት የምታርቅ፣ የወንዶቹንና የሴቶቹን አገልጋዮችህን ንስሓቸውን ተቀበል፣",
       "amharic_phonetic": "kahn: meḥarī yḳr bay sew nm yemtwed 'amlaka chn 'igzī'abḥér hoy, ye'alemun haṭī'at yemtarḳ, yewendochunna yesétochun 'agelgayochhn nsḥachewn teḳebel,",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Oh, Señor Dios nuestro, compasivo, misericordioso y amante del hombre, que quitas el pecado del mundo, aceptas el arrepentimiento de tus siervos y de tus siervas,"
     },
     {
       "instruction": "",
@@ -18504,7 +19383,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ የዘለዓለም ደኅንነት የሚ ሆን ብርሃንንም ግለጽ ላ ቸው፣ አቤቱ ኃጢአታቸ ውንም ሁሉ ይቅር በላቸው፣ ቸር ሰውንም የምትወድ አንተ ነህና፤",
       "amharic_phonetic": "kahn: yezele'alem dehnnet yemī hon brhannm glets la chew, 'abétu haṭī'atache wnm hulu yḳr belachew, cher sewnm yemtwed 'ante nehna :",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: e iluminadlos con la luz de la vida eterna, y perdonadles, Señor, todos sus pecados; porque tú eres bueno y amas al hombre."
     },
     {
       "instruction": "",
@@ -18517,7 +19397,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ይቅር ባይ አምላካችን እግዚአብሔር ሆይ፣ መዓትህ የራቀ፣ ምሕ ረትህም የበዛ፣ እውነተ ኛም የምትሆን የኔን ኃጢአቴን አስተሥርይ ልኝ፤",
       "amharic_phonetic": "kahn: yḳr bay 'amlakachn 'igzī'abḥér hoy, me'ath yeraḳe , mḥ rethm yebeza , 'iwnete ñam yemthon yenén haṭī'atén 'astesry lñ :",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Oh Señor, Dios nuestro, misericordioso, lento para la ira, grande en misericordia y justo, perdona mis pecados;"
     },
     {
       "instruction": "",
@@ -18530,7 +19411,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ወንዶችንና ሴቶችንም ባሮችህን ሁሉ ከበደ ልም ከመርገምም ሁሉ አድናቸው፣",
       "amharic_phonetic": "kahn: wendochnna sétochnm barochhn hulu kebede lm kemergemm hulu 'adnachew,",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: y libra a todos tus siervos y siervas de toda transgresión y maldición. Si hemos pecado contra ti, Señor,"
     },
     {
       "instruction": "",
@@ -18543,7 +19425,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤፣ በቃላችንም ቢሆን በሥራችንም ቢሆን፣ በአሳባችንም ቢሆን አቤቱ አንተን ብንበድል ተውልን አስተሥርይልን አቃል ልን፣ ይቅርም በለን",
       "amharic_phonetic": "kahn: , beḳalachnm bīhon besrachnm bīhon, be'asabachnm bīhon 'abétu 'anten bnbedl tewln 'astesryln 'aḳal ln , yḳrm belen",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: ya sea en nuestra palabra, en nuestra obra o en nuestro pensamiento, perdona, remite, perdona y ten misericordia, porque Tú eres bueno y amante del hombre, Señor Dios nuestro."
     },
     {
       "instruction": "",
@@ -18556,7 +19439,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አምላካችን እግዚአብሔር ሆይ አንተ ቸር ሰውን ወዳጅ ነህና፣ አቤቱ የተፈታን ነጻም የወጣን አድርገን፣ ወገኖችህንም ሁሉ ፍታቸው፣ ኃጥእ የምሆን እኔንም አገልጋ ይህን ፍታኝ ፧",
       "amharic_phonetic": "kahn: : 'amlakachn 'igzī'abḥér hoy 'ante cher sewn wedaj nehna , 'abétu yetefetan netsam yeweṭan 'adrgen, wegenochhnm hulu ftachew, haṭ'i yemhon 'inénm 'agelga yhn ftañ ?",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Oh Señor, absuélvenos y libéranos, y absuelve a todo tu pueblo, y absuélveme a mí, tu siervo pecador."
     },
     {
       "instruction": "",
@@ -18569,7 +19453,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ክቡር የሚሆን የጳጳሳቱን አለቃ አባ {{ ዕገሌን }} አስ በው፣ ብፁዕ የሚሆን አባ {{ዕገሌንም }} አስበው፣",
       "amharic_phonetic": "kahn: kbur yemīhon yep̣ap̣asatun 'aleḳa 'aba {{ 'igelén }} 'as bew, btsu'i yemīhon 'aba {{'igelénm }} 'asbew,",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Recuerda, Señor, al honorable padre, nuestro Patriarca Abba {{NOMBRE DEL PATRIARCA}} y al bendito Arzobispo Abba {{NOMBRE DEL OBISPO}}."
     },
     {
       "instruction": "",
@@ -18582,7 +19467,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤አምላካችን ሆይ፣ ለብዙ ዘመናት ለረጅም ወራት በእውነትና በሰላም መጠ በቅን ጠብቅልን፣",
       "amharic_phonetic": "kahn:'amlakachn hoy, lebzu zemenat lerejm werat be'iwnetna beselam meṭe beḳn ṭebḳln ,",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Dios nuestro, guárdalos para nosotros por muchos años y muchos días en justicia y paz."
     },
     {
       "instruction": "",
@@ -18595,7 +19481,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አቤቱ ሀገራችንንም {{COUNTRY}} አስባት፣ የሚጣሏ ትን ጠላቶቿን ፈጥነህ አስገዛላት፤",
       "amharic_phonetic": "kahn: : 'abétu hagerachnnm {{COUNTRY}} 'asbat, yemīṭalwa tn ṭelatochwan feṭneh 'asgezalat :",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Acuérdate, oh Señor, de nuestra patria {{PAÍS}}. Somete pronto a sus adversarios y enemigos bajo su dominio."
     },
     {
       "instruction": "",
@@ -18608,7 +19495,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ የጳጳሳቱን አለቆች ጳጳሳቱ ንና ኤጲስ ቆጶሳቱን፣ ቀሳ ውስቱንና ዲያቆናቱን፣ አንባቢዎችንና መዘምራ ኑን፣ ደናግሉንና መነ ኰሳቱን፣ ባልቴቶቹንና አባት እናት የሞቱባቸ ውን፣",
       "amharic_phonetic": "kahn: : yep̣ap̣asatun 'aleḳoch p̣ap̣asatu nna 'ép̣īs ḳop̣osatun, ḳesa wstunna dīyaḳonatun, 'anbabīwochnna mezemra nun, denaglunna mene kwesatun, baltétochunna 'abat 'inat yemotubache wn,",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Acuérdate, Señor, de los patriarcas, arzobispos, obispos, sacerdotes y diáconos, anaguntos (lectores) y cantores, vírgenes y monjes, viudas y huérfanos,"
     },
     {
       "instruction": "",
@@ -18621,7 +19509,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ወንዶቹንና ሽማ ግሌዎቹንና ልጆቹን፣ ክብርት በምትሆን በዚ ህች ቤተ ክርስቲያን ያሉትን፣ የቆሙትንም የክርስቲያንን ወገኖች ሁሉ ክርስቶስን በማመን አጽናቸው፧",
       "amharic_phonetic": "kahn: wendochunna shma gléwochunna ljochun, kbrt bemthon bezī hch béte krstīyan yalutn, yeḳomutnm yekrstīyann wegenoch hulu krstosn bemamen 'atsnachew?",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: hombres y mujeres, ancianos y niños, y todos los cristianos que se encuentran en esta santa iglesia; fortalécelos en la fe de Cristo."
     },
     {
       "instruction": "",
@@ -18634,7 +19523,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አቤቱ በቀናች ሃይማኖት ሁነው የሞቱትንና ያረፉትን አባቶቻችንንና ወንድሞ ቻችንን እኅቶቻችንንም ሁሉ አስባቸው፣ ነፍሶ ቻቸውንም በአብርሃምና በይስሐቅ በያዕቆብም አጠገብ አኑር",
       "amharic_phonetic": "kahn: 'abétu beḳenach haymanot hunew yemotutnna yarefutn 'abatochachnnna wendmo chachnn 'ihtochachnnm hulu 'asbachew, nefso chachewnm be'abrhamna beysḥaḳ beya'iḳobm 'aṭegeb 'anur",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Acuérdate, Señor, de todos nuestros padres, hermanos y hermanas que duermen y descansan en la fe ortodoxa, y que depositan sus almas en el seno de Abraham, Isaac y Jacob."
     },
     {
       "instruction": "",
@@ -18647,7 +19537,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Y en cuanto a nosotros, líbranos de toda transgresión y maldición, de toda maldad, de toda rebelión y de todo juramento falso."
     },
     {
       "instruction": "",
@@ -18660,7 +19551,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: y de todo anatema, de todo perjurio, de mezclarse con herejes y gentiles en error y contaminación."
     },
     {
       "instruction": "",
@@ -18673,7 +19565,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Concédenos, Señor, sabiduría, poder, razón, entendimiento y conocimiento, para que podamos apartarnos y huir para siempre de todas las obras de Satanás, el tentador."
     },
     {
       "instruction": "",
@@ -18686,7 +19579,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Concédenos, Señor, hacer tu voluntad y tu beneplácito en todo momento, y escribe nuestros nombres en el libro de la vida en el reino de los cielos con todos los santos mártires,"
     },
     {
       "instruction": "",
@@ -18699,7 +19593,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Por Jesucristo nuestro Señor, por quien, con él y con el Espíritu Santo, sea la gloria y el dominio, ahora y siempre, por los siglos de los siglos. Amén."
     },
     {
       "instruction": "",
@@ -18712,7 +19607,8 @@ const kidaseData = {
       "amharic_script": "",
       "amharic_phonetic": "",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Diácono: Presten atención.\nSacerdote: Lo santo es para lo santo.\n\nPueblo: Uno es el Padre, uno es el Hijo Santo, uno es el Espíritu Santo."
     },
     {
       "instruction": "",
@@ -18725,7 +19621,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: El Señor esté con todos ustedes.\n\nPueblo: y con tu Espíritu."
     },
     {
       "instruction": "3x in a loud chant and 15x in low chant",
@@ -18738,7 +19635,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Señor Cristo, ten compasión de nosotros.\n\nPueblo: Señor Cristo, ten compasión de nosotros."
     },
     {
       "instruction": "",
@@ -18751,7 +19649,8 @@ const kidaseData = {
       "amharic_script": "",
       "amharic_phonetic": "",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Diácono: Vosotros, los penitentes, inclinad la cabeza."
     },
     {
       "instruction": "",
@@ -18764,7 +19663,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Señor, Dios nuestro, mira a tu pueblo que está penitente, y según tu gran misericordia, ten misericordia de ellos,"
     },
     {
       "instruction": "",
@@ -18777,7 +19677,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: y conforme a la multitud de Tu compasión, borra su iniquidad, cúbrelos y guárdalos de todo mal."
     },
     {
       "instruction": "",
@@ -18790,7 +19691,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Y redime sus almas en paz, perdona sus obras pasadas. Únelos a tu Santa Iglesia."
     },
     {
       "instruction": "",
@@ -18803,7 +19705,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: por la gracia y la compasión de tu Hijo unigénito, nuestro Señor, Dios y Salvador Jesucristo,"
     },
     {
       "instruction": "",
@@ -18816,7 +19719,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Por Él, con Él y con el Espíritu Santo, sea la gloria ahora y siempre, por los siglos de los siglos. Amén."
     },
     {
       "instruction": "",
@@ -18829,7 +19733,8 @@ const kidaseData = {
       "amharic_script": "",
       "amharic_phonetic": "",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Diácono: Pónganse de pie para orar.\n\n፨ Pueblo: Señor, ten misericordia de nosotros."
     },
     {
       "instruction": "",
@@ -18842,7 +19747,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: La paz sea con todos vosotros.\n\nPueblo: y con tu Espíritu."
     },
     {
       "instruction": "",
@@ -18855,7 +19761,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Este es el verdadero y santo Cuerpo de nuestro Señor, nuestro Dios y nuestro Salvador Jesucristo,"
     },
     {
       "instruction": "",
@@ -18868,7 +19775,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: que se da para vida, para salvación y para perdón de los pecados a quienes la reciben con fe.\n\n፨ Pueblo: Amén."
     },
     {
       "instruction": "",
@@ -18881,7 +19789,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Esta es la verdadera y preciosa Sangre de nuestro Señor, nuestro Dios y nuestro Salvador Jesucristo,"
     },
     {
       "instruction": "",
@@ -18894,7 +19803,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: que se da para vida, para salvación y para el perdón de los pecados a quienes la beben con fe.\n\nPueblo: Amén."
     },
     {
       "instruction": "",
@@ -18907,7 +19817,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Porque este es el Cuerpo y la Sangre de Emmanuel, nuestro Dios.\n\nPueblo: Amén."
     },
     {
       "instruction": "",
@@ -18920,7 +19831,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Creo, creo, creo y confieso, hasta mi último aliento, que este es el Cuerpo y la Sangre de nuestro Señor, nuestro Dios y nuestro Salvador Jesucristo,"
     },
     {
       "instruction": "",
@@ -18933,7 +19845,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: que tomó de la Señora de todos nosotros, la Santa María de doble virginidad, y la hizo una con su Divinidad sin mezcla ni confusión, sin división ni alteración;"
     },
     {
       "instruction": "",
@@ -18946,7 +19859,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Y en verdad confesó con buen testimonio en tiempos de Poncio Pilato, y entregó su cuerpo por nosotros y por la vida de todos nosotros.\n\n፨ Pueblo: Amén."
     },
     {
       "instruction": "",
@@ -18959,7 +19873,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Creo, creo, creo y confieso que su divinidad no se separó de su humanidad, ni por una hora ni por un abrir y cerrar de ojos,"
     },
     {
       "instruction": "",
@@ -18972,7 +19887,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Pero Él la entregó por nosotros, para vida, salvación y perdón de pecados a los que participan de ella con fe.\n\n፨ Pueblo: Amén."
     },
     {
       "instruction": "",
@@ -18985,7 +19901,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Creo, creo, creo y confieso, hasta mi último aliento, que este es el Cuerpo y la Sangre de nuestro Señor, nuestro Dios y nuestro Salvador Jesucristo,"
     },
     {
       "instruction": "",
@@ -18998,7 +19915,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: y que a Él le corresponde el honor, la gloria y la adoración junto con su bondadoso Padre celestial y el Espíritu Santo, dador de vida, ahora y siempre, por los siglos de los siglos. Amén."
     },
     {
       "instruction": "",
@@ -19011,7 +19929,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Bendito sea Dios, Padre todopoderoso, nuestro Dios. Y bendito sea el Hijo unigénito, nuestro Señor y Salvador Jesucristo."
     },
     {
       "instruction": "",
@@ -19024,7 +19943,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Y bendito sea el Espíritu Santo, el Paráclito, el consolador y purificador de todos nosotros."
     },
     {
       "instruction": "",
@@ -19037,7 +19957,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Señor, Dios mío, contempla el sacrificio del Cuerpo de tu Hijo, que te agrada. Por medio de él, borra todos mis pecados, porque tu Hijo unigénito murió por mí."
     },
     {
       "instruction": "",
@@ -19050,7 +19971,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Y he aquí que la pura sangre de tu Mesías, derramada por mí en el Calvario, clama en mi lugar. Concede que esta sangre que habla sea la que perdone a mi siervo."
     },
     {
       "instruction": "",
@@ -19063,7 +19985,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Y acepta mis súplicas por ella, porque tu amado aceptó la lanza y los clavos por mi causa, y sufrió para complacerte."
     },
     {
       "instruction": "",
@@ -19076,7 +19999,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Pero después de haber sido salvado, Satanás volvió a mi corazón y me traspasó con sus dardos. Concédeme, Señor, tu misericordia, porque es un poderoso acusador."
     },
     {
       "instruction": "",
@@ -19089,7 +20013,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Y por medio del pecado me mató. Vengadme de aquel audaz que no se contenta con que me desvíe de mi camino."
     },
     {
       "instruction": "",
@@ -19102,7 +20027,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Tú, Señor, mi Rey, mi Dios y mi Salvador, vendas las heridas del alma y del cuerpo de mi siervo."
     },
     {
       "instruction": "Inaudible Prayer.",
@@ -19115,7 +20041,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ",
       "amharic_phonetic": "፨ ḥzb",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "፨ Pueblo: Oh mi Señor Jesucristo, no soy digno de que entres bajo el techo de mi casa contaminada,"
     },
     {
       "instruction": "Inaudible Prayer.",
@@ -19128,7 +20055,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ",
       "amharic_phonetic": "፨ ḥzb",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Pueblo: porque os he provocado a ira, y he hecho lo malo ante vuestros ojos, y por la transgresión de vuestro mandamiento he contaminado mi alma y mi cuerpo."
     },
     {
       "instruction": "Inaudible Prayer.",
@@ -19141,7 +20069,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ",
       "amharic_phonetic": "፨ ḥzb",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "፨ Pueblo: que creaste conforme a tu imagen y semejanza, y en mí no habita nada bueno."
     },
     {
       "instruction": "Inaudible Prayer.",
@@ -19154,7 +20083,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ",
       "amharic_phonetic": "፨ ḥzb",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "፨ Pueblo: Pero por causa de Tu designio y Tu encarnación para mi salvación, por causa de Tu preciosa cruz y Tu muerte que da vida,"
     },
     {
       "instruction": "Inaudible Prayer.",
@@ -19167,7 +20097,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ",
       "amharic_phonetic": "፨ ḥzb",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "፨ Pueblo: por amor a Tu resurrección en el tercer día, te ruego y te suplico, oh Señor mío, que me purifiques de toda culpa y maldición y de todo pecado y contaminación."
     },
     {
       "instruction": "Inaudible Prayer.",
@@ -19180,7 +20111,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ",
       "amharic_phonetic": "፨ ḥzb",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "፨ Pueblo: Y cuando haya recibido tu santo misterio, no sea para mí juicio ni condenación, sino ten compasión de mí y ten misericordia de mí;"
     },
     {
       "instruction": "Inaudible Prayer.",
@@ -19193,7 +20125,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ",
       "amharic_phonetic": "፨ ḥzb",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "፨ Pueblo: y por ella concédeme el perdón de mis pecados y la vida para mi alma, oh vida del mundo, por la petición de Nuestra Señora, la Santa María de doble virginidad, tu madre."
     },
     {
       "instruction": "Inaudible Prayer.",
@@ -19206,7 +20139,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ",
       "amharic_phonetic": "፨ ḥzb",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "፨ Pueblo: y de Juan el Bautista, y por la oración de todos los santos ángeles y de todos los mártires y justos que han luchado por el bien, por los siglos de los siglos. Amén."
     },
     {
       "instruction": "Inaudible Prayer.",
@@ -19219,7 +20153,8 @@ const kidaseData = {
       "amharic_script": "ካህን፣ ጌታዬ ኢየሱስ ክርስቶስ ሆይ፣ ይህ ምሥጢርህ በእኔ በደል አይሁንብኝ ሥጋዬንና ነፍሴን ለማ ንጻት ይሁንልኝ እንጂ",
       "amharic_phonetic": "kahn, gétayé 'īyesus krstos hoy, yh msṭīrh be'iné bedel 'ayhunbñ sgayénna nefsén lema ntsat yhunlñ 'injī",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Oh Señor mío, Jesucristo, que este misterio tuyo no sea en mí iniquidad, sino más bien para la purificación de mi alma y de mi cuerpo."
     },
     {
       "instruction": "Inaudible Prayer. For the Anaphora of the Lord.",
@@ -19232,7 +20167,8 @@ const kidaseData = {
       "amharic_script": "ካህን፣ ከሰማይ የወረደ የሕይ ወት ኅብስት የሚሆን የክሮስቶስ ክቡር ሥጋ፣",
       "amharic_phonetic": "kahn, kesemay yewerede yeḥy wet hbst yemīhon yekrostos kbur sga,",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: El pan de vida que bajó del cielo, el Santo Cuerpo de Cristo.\n\n፨ Pueblo: Amén"
     },
     {
       "instruction": "Inaudible Prayer. For the Anaphora of the Apostles.",
@@ -19245,7 +20181,8 @@ const kidaseData = {
       "amharic_script": "ካህን፣ ሥጋንና ነፍስን ደመ ነፍስንም ለማክበር የሚ ሆን የጌታችን የኢየሱስ ክርስቶስ ሥጋ ይህ ነው፧",
       "amharic_phonetic": "kahn, sganna nefsn deme nefsnm lemakber yemī hon yegétachn ye'īyesus krstos sga yh new?",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: El Cuerpo de nuestro Señor Jesucristo para la santificación del cuerpo, el alma y el espíritu.\n\n፨ Pueblo: Amén"
     },
     {
       "instruction": "Inaudible Prayer. For all Anaphoras except that of the Lord and the Apostles.",
@@ -19258,7 +20195,8 @@ const kidaseData = {
       "amharic_script": "ካህን፣ ከሁላችን እመቤት ከማር\r\nያም የነሣው እውነተኛ የሚሆን የአምላካችን የአ ማኑኤል ሥጋ፣",
       "amharic_phonetic": "kahn, kehulachn 'imebét kemar\r\nyam yenesaw 'iwneteña yemīhon ye'amlakachn ye'a manu'él sga,",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: El Cuerpo de Emmanuel, nuestro Dios, que Él tomó de María, la Virgen de todos nosotros.\n\n፨ Pueblo: Amén"
     },
     {
       "instruction": "Inaudible Prayer.",
@@ -19271,7 +20209,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤",
       "amharic_phonetic": "፨ ḥzb:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote auxiliar: Esta es la copa de la vida que descendió del cielo; esta es la preciosa Sangre de Cristo.\n\nClero: Amén y amén."
     },
     {
       "instruction": "Inaudible Prayer. Said in the heart while the Blood is in the mouth.",
@@ -19284,7 +20223,8 @@ const kidaseData = {
       "amharic_script": "ካህናት {ደሙ በአፉ ሳለ በሕሊ ናው ይበል}፤ ጌታዬ አምላኬም ኢየሱስ ክርስቶስ ሆይ ንጹሕ ሥጋህንና ክቡር ደምህን እነሆ ተቀበልሁ፣",
       "amharic_phonetic": "kahnat {demu be'afu sale beḥlī naw ybel}: gétayé 'amlakém 'īyesus krstos hoy ntsuḥ sgahnna kbur demhn 'ineho teḳebelhu,",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Clérigos: Oh Señor mío y Dios mío, Jesucristo, he aquí que he recibido tu santo Cuerpo y tu preciosa Sangre."
     },
     {
       "instruction": "Inaudible Prayer. Said in the heart while the Blood is in the mouth.",
@@ -19297,7 +20237,8 @@ const kidaseData = {
       "amharic_script": "ካህናት፤ ለኃጢ አቴ ማሥተሥረያ ይሁነኝ፣ ስለ በደሌም ሁሉ፤",
       "amharic_phonetic": "kahnat: lehaṭī 'até mastesreya yhuneñ, sle bedelém hulu:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Clero: Que sean para el perdón de mis pecados y el borrado de mis transgresiones."
     },
     {
       "instruction": "Inaudible Prayer. Said in the heart while the Blood is in the mouth.",
@@ -19310,7 +20251,8 @@ const kidaseData = {
       "amharic_script": "ካህናት፤ ሰውን የምትወድ ወልድ ዋሕድ ሆይ፣ ምስጋናህን በአንደበቴ ምላ፣ ምስጋናህን አመሰግን ዘንድ",
       "amharic_phonetic": "kahnat: sewn yemtwed weld waḥd hoy, msganahn be'andebeté mla, msganahn 'amesegn zend",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Clérigos: Oh Hijo unigénito y amante del hombre, llena mi boca con tu alabanza para que yo pueda alabar tu gloria,"
     },
     {
       "instruction": "Inaudible Prayer. Said in the heart while the Blood is in the mouth.",
@@ -19323,7 +20265,8 @@ const kidaseData = {
       "amharic_script": "ካህናት፤ ቀድሞ አንተ ሰው የሆንህ፣ በርሱም የተገለጽህ፣ እስከ ዘለዓለሙ ታድነኝ ዘንድ ነውና ስለ ቅዱስ ስምህም ለዘለ ዓለሙ አዳንኸኝ",
       "amharic_phonetic": "kahnat: ḳedmo 'ante sew yehonh, bersum yetegeletsh, 'iske zele'alemu tadneñ zend newna sle ḳdus smhm lezele 'alemu 'adankheñ",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Clero: Porque Tú eres Aquel que antes de los tiempos se hizo hombre y se manifestó a través de su encarnación para salvarme para siempre; Tú me has redimido para siempre por amor de tu santo nombre."
     },
     {
       "instruction": "Inaudible Prayer. Said in the heart while the Blood is in the mouth.",
@@ -19336,7 +20279,8 @@ const kidaseData = {
       "amharic_script": "ካህናት፤ ጌታዬ አምላኬ ኢየሱስ ክርስቶስ ሆይ፣ በአገልጋይህ {} እጅ ሥጋህንና ደምህን አንድ አድርገህ ለሰጠኸኝ",
       "amharic_phonetic": "kahnat: gétayé 'amlaké 'īyesus krstos hoy, be'agelgayh {} 'ij sgahnna demhn 'and 'adrgeh leseṭekheñ",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Clérigos: Gloria a Ti, oh mi Señor y mi Dios Jesucristo, que me has concedido (Tu Cuerpo y Tu Sangre) de la mano de Tu siervo."
     },
     {
       "instruction": "Inaudible Prayer. Said in the heart while the Blood is in the mouth.",
@@ -19349,7 +20293,8 @@ const kidaseData = {
       "amharic_script": "ካህናት፤ ለአንተ ምስጋና ይገባል፣ አመሰግንሃለሁ እለምንህማለሁ፣ ከምእመናን ጋራ አንድ እሆን ዘንድ ከበጎችህም ትቈጥረኝ ዘንድ ተቀበለኝ፧",
       "amharic_phonetic": "kahnat: le'ante msgana ygebal, 'amesegnhalehu 'ilemnhmalehu, kem'imenan gara 'and 'ihon zend kebegochhm tḳweṭreñ zend teḳebeleñ?",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Clérigos: Te glorifico y te ruego que me permitas estar en medio de tu rebaño, que me cuentes entre tus ovejas y me aceptes."
     },
     {
       "instruction": "Inaudible Prayer. Said in the heart while the Blood is in the mouth.",
@@ -19362,7 +20307,8 @@ const kidaseData = {
       "amharic_script": "ካህናት፤ አሁንም ኃጢአቴን አትቊጠርብኝ፣ ለእኔ የተሰጠኝን ጸጋህንና በእኔ ያለች ረድኤትህን አመሰግናለሁ",
       "amharic_phonetic": "kahnat: 'ahunm haṭī'atén 'atḳwīṭerbñ, le'iné yeteseṭeñn tsegahnna be'iné yalech red'éthn 'amesegnalehu",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Clérigos: Y ahora no recuerden mis pecados. Les doy gracias por la gracia que me han concedido y por la ayuda que me han brindado."
     },
     {
       "instruction": "The deacon says this upon receiving the cup.",
@@ -19375,7 +20321,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ የሕይወት ጽዋን እቀበላ ለሁ፣ የእግዚአብሔርንም ስም እጠራለሁ፣ ስለ እኛና መታሰቢያቸ ውን አድርጉ ስላሉን ስለክርስቲያን ሁሉ ጸልዩ፣",
       "amharic_phonetic": "dīyaḳon: yeḥywet tswan 'iḳebela lehu, ye'igzī'abḥérnm sm 'iṭeralehu, sle 'iñana metasebīyache wn 'adrgu slalun slekrstīyan hulu tselyu,",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Diácono: Tomaré la copa de la vida e invocaré el nombre del Señor. Ruega por nosotros y por todos los cristianos que nos pidieron que los mencionáramos."
     },
     {
       "instruction": "Curtains are opened.",
@@ -19388,7 +20335,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ በሰላም በኢየሱስ ክርስቶስም ፍቅር አመስግኑ ዘምሩም፤",
       "amharic_phonetic": "dīyaḳon: beselam be'īyesus krstosm fḳr 'amesgnu zemrum :",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Diácono: Te alabamos y cantamos en la paz y el amor de Jesucristo."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -19401,7 +20349,8 @@ const kidaseData = {
       "amharic_script": "",
       "amharic_phonetic": "",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Clero: [1] ¡Alabado sea el Señor! ¡Alabado sea Dios en su santuario; alábenlo en su poderoso firmamento! [2] ¡Alábenlo por sus obras poderosas; alábenlo conforme a su excelente grandeza!"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -19414,7 +20363,8 @@ const kidaseData = {
       "amharic_script": "",
       "amharic_phonetic": "",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Clero: [3] ¡Alábenlo con el sonido de la trompeta; alábenlo con el laúd y el arpa! [4] ¡Alábenlo con el pandero y la danza; alábenlo con instrumentos de cuerda y flautas!"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -19427,7 +20377,8 @@ const kidaseData = {
       "amharic_script": "",
       "amharic_phonetic": "",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Clero: [5] ¡Alábenlo con címbalos resonantes! ¡Alábenlo con címbalos que retumban! [6] ¡Que todo ser que respira alabe al Señor! ¡Alaben al Señor!"
     },
     {
       "instruction": "This can be repeated until all communicants have received the Body and Blood.",
@@ -19440,7 +20391,8 @@ const kidaseData = {
       "amharic_script": "{ቊርባን ከተቀበለ በኋላ በአፉ ሳለ ሁሉም እያ ንዳንዱ እንዲህ ይበል}   ፨ ሕዝብ፤ የማይነገር ቅዱስ ቅዱስ ቅዱስ ሦስት የምት ሆን፣ ይህን ሥጋና ደም ሕይወት ሊሆነኝ ሳይፈረድብኝ እቀበል ዘንድ ስጠኝ፣",
       "amharic_phonetic": "{ḳwīrban keteḳebele behwala be'afu sale hulum 'iya ndandu 'indīh ybel}   ፨ ḥzb: yemayneger ḳdus ḳdus ḳdus sost yemt hon, yhn sgana dem ḥywet līhoneñ sayferedbñ 'iḳebel zend sṭeñ,",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "፨ Pueblo: Santa, Santa, Santísima Trinidad inefable, concédeme recibir este Cuerpo y esta Sangre para vida y no para condenación."
     },
     {
       "instruction": "This can be repeated until all communicants have received the Body and Blood.",
@@ -19453,7 +20405,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ በጌትነ ትህ እንድገለጽ ደስ የሚያሰኝህን ፍሬ እሠራ ዘንድ ስጠኝ፣ የአንተ ንም ፈቃድ እየሠራሁ እኖርልህ ዘንድ ስጠኝ፤",
       "amharic_phonetic": "፨ ḥzb: begétne th 'indgelets des yemīyaseñhn fré 'isera zend sṭeñ, ye'ante nm feḳad 'iyeserahu 'inorlh zend sṭeñ :",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "፨ Pueblo: Concédeme dar fruto que sea de tu agrado, para que pueda aparecer en tu gloria y vivir para ti haciendo tu voluntad."
     },
     {
       "instruction": "This can be repeated until all communicants have received the Body and Blood.",
@@ -19466,7 +20419,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ በማመን አባት ብዬ እጠራሃለሁ፣ መንግሥትህንም እጠ ራለሁ፣ አቤቱ ስምህ በኛ ላይ ይመስገን፣ ምስጉን ክቡር የምት ሆን ኃያል አንተ ነህና፣ ለአንተ ክብር ይገባሃል ለዘለዓለሙ፧",
       "amharic_phonetic": "፨ ḥzb: : bemamen 'abat byé 'iṭerahalehu, mengsthnm 'iṭe ralehu, 'abétu smh beña lay ymesgen, msgun kbur yemt hon hayal 'ante nehna, le'ante kbr ygebahal lezele'alemu?",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "፨ Pueblo: Con fe te invoco, Padre, y clamo a tu Reino: Señor, santificado sea tu nombre sobre nosotros, porque tú eres poderoso, alabado y glorioso, y a ti sea la gloria por los siglos de los siglos."
     },
     {
       "instruction": "Inaudible Prayer. While quietly chewing in fear and trembling, communicants shall cover their mouth with a hand.",
@@ -19479,7 +20433,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ሰውን ለማዳን ሰው ከሆነ ከአምላካዊ ምሥጢር በተቀበልሁ በእኔ በአንደበቴ ምስጋናህን በልቡናዬ ሐሤትን በሰውነቴም ደስታን ምላ",
       "amharic_phonetic": "፨ ḥzb:sewn lemadan sew kehone ke'amlakawī msṭīr beteḳebelhu be'iné be'andebeté msganahn belbunayé ḥasétn besewnetém destan mla",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "፨ Pueblo: Llenad mi boca de alabanzas, mi corazón de gozo y mi alma de alegría;"
     },
     {
       "instruction": "Inaudible Prayer. While quietly chewing in fear and trembling, communicants shall cover their mouth with a hand.",
@@ -19492,7 +20447,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤",
       "amharic_phonetic": "፨ ḥzb:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "፨ Pueblo: llénenme ustedes que han recibido de este misterio divino, ustedes que se han hecho hombres para la salvación de los hombres."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -19505,7 +20461,8 @@ const kidaseData = {
       "amharic_script": "፨ትእዛዝ፨ ቊርባን ከተቀ በሉ በኋላ እጅና እግርን መታጠብ፣ ከልብስም መራቆት፣ መስገድና መንበርከክ አይገባም፣ ምራቅን መትፋትና ደም ማውጣት፣ ጥፍርን መቊረጥ፣ ጠጕርንም መላጨት፣ መንገድ መሄድ፣ ከሰውም ጋራ መፈራረድ፧ ወደ ውሽባ ቤት መግባት፣ ያለ መጠን መብላትና መጠጣት፣ ከሴት መገናኘት፣ ይህን የመሰለ ሁሉ ቊርባን ከተቀ በሉበኋላ አይገባም፧",
       "amharic_phonetic": "፨t'izaz፨ ḳwīrban keteḳe belu behwala 'ijna 'igrn metaṭeb, kelbsm meraḳot, mesgedna menberkek 'aygebam , mraḳn metfatna dem mawṭat, ṭfrn meḳwīreṭ, ṭegwrnm melachet, menged mehéd, kesewm gara meferared? wede wshba bét megbat, yale meṭen meblatna meṭeṭat, kesét megenañet, yhn yemesele hulu ḳwīrban keteḳe belubehwala 'aygebam?",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "፨ Mandamiento ፨ Después de participar de la Sagrada Comunión NO deberás: lavarte las manos ni los pies; quitarte la ropa; inclinarte; arrodillarte; escupir; sangrar; cortarte el cabello ni las uñas; emprender un viaje; demandar en el tribunal; bañarte; comer demasiado; beber demasiado; acostarte con un hombre/una mujer."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -19518,7 +20475,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤አቤቱ የጠራሃቸውን ያከበርሃቸውንም በመጥራትህ አድላቸው፣ በኃይልህም አጽና፣ በፍቅርህ ጠብቅ፣ የዘለዓለም በሚሆን መንግሥትህም በክርስ ቶስ አንድ",
       "amharic_phonetic": "kahn:'abétu yeṭerahachewn yakeberhachewnm bemeṭrath 'adlachew, behaylhm 'atsna, befḳrh ṭebḳ, yezele'alem bemīhon mengsthm bekrs tos 'and",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: A quienes has llamado, Señor, y santificado, hazlos felices con tu llamamiento, afiánzalos con tu poder, guárdalos con tu amor, incorpóralos a tu reino eterno por medio de Cristo,"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -19531,7 +20489,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤አድርግ፣ በርሱ ያለ ክብር ጽንዕ ለአንተ ይገባል፣ ከእርሱ ጋራ ከመንፈስ ቅዱስም ጋራ ዛሬም ዘወትርም፣ ለዘለዓለሙ አሜን ፧",
       "amharic_phonetic": "kahn:'adrg, bersu yale kbr tsn'i le'ante ygebal, ke'irsu gara kemenfes ḳdusm gara zarém zewetrm, lezele'alemu 'amén ?",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Por él, a ti, con él y con el Espíritu Santo, sea la gloria y la contrición, ahora y siempre, por los siglos de los siglos. Amén."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -19544,7 +20503,8 @@ const kidaseData = {
       "amharic_script": "ካህን፣ ከሰማይ የወረደ የሕይ ወት ኅብስት የሚሆን የክሮስቶስ ክቡር ሥጋ፣",
       "amharic_phonetic": "kahn, kesemay yewerede yeḥy wet hbst yemīhon yekrostos kbur sga,",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: El pan de vida que bajó del cielo, el Santo Cuerpo de Cristo.\n\n፨ Pueblo: Amén"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -19557,7 +20517,8 @@ const kidaseData = {
       "amharic_script": "ካህን፣ ሥጋንና ነፍስን ደመ ነፍስንም ለማክበር የሚ ሆን የጌታችን የኢየሱስ ክርስቶስ ሥጋ ይህ ነው፧",
       "amharic_phonetic": "kahn, sganna nefsn deme nefsnm lemakber yemī hon yegétachn ye'īyesus krstos sga yh new?",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: El Cuerpo de nuestro Señor Jesucristo para la santificación del cuerpo, el alma y el espíritu.\n\n፨ Pueblo: Amén"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -19570,7 +20531,8 @@ const kidaseData = {
       "amharic_script": "ካህን፣ ከሁላችን እመቤት ከማር\nያም የነሣው እውነተኛ የሚሆን የአምላካችን የአ ማኑኤል ሥጋ፣",
       "amharic_phonetic": "kahn, kehulachn 'imebét kemar\nyam yenesaw 'iwneteña yemīhon ye'amlakachn ye'a manu'él sga,",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: El Cuerpo de Emmanuel, nuestro Dios, que Él tomó de María, la Virgen de todos nosotros.\n\n፨ Pueblo: Amén"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -19583,7 +20545,8 @@ const kidaseData = {
       "amharic_script": "ካህን፣. ለዘለዓለሙ የሕይወት ብርሃን የምት ሆን እግዚአብሔር፣ አቤቱ ባለው መዓልትና ሌሊት ለኛ ለአገልጋዮችህ በሰላም እየጠበቅህ መጠበቅን ጽናትንም የሰጠኸን፣ በዛሬው ዕለት ኋላም",
       "amharic_phonetic": "kahn,. lezele'alemu yeḥywet brhan yemt hon 'igzī'abḥér, 'abétu balew me'altna lélīt leña le'agelgayochh beselam 'iyeṭebeḳh meṭebeḳn tsnatnm yeseṭekhen, bezaréw 'ilet hwalam",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Oh Dios eterno, luz de vida, tú nos has dado, Señor, a nosotros tus siervos fuerza y ​​protección, durante los días y noches presentes manteniendo a todos en paz. Bendícelos en el día que hoy es"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -19596,7 +20559,8 @@ const kidaseData = {
       "amharic_script": "ካህን፣ በሚመጣው ዕለት በጌታችን በኢየሱስ ክርስቶስ ባርክ፣ በርሱ ያለ ክብር ጽንዕ ለአንተ · ይገባል፣ ከእርሱ ጋራ ከመንፈስ ቅዱስም ጋራ ዛሬም ዘወትርም ለዘለ ዓለሙ፣",
       "amharic_phonetic": "kahn, bemīmeṭaw 'ilet begétachn be'īyesus krstos bark, bersu yale kbr tsn'i le'ante · ygebal, ke'irsu gara kemenfes ḳdusm gara zarém zewetrm lezele 'alemu,",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: y sobre los que vendrán después, por nuestro Señor Jesucristo, por quien a vosotros con él y con el Espíritu Santo sea la gloria y el dominio, ahora y siempre y por los siglos de los siglos."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -19609,7 +20573,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ አሜን",
       "amharic_phonetic": "፨ ḥzb: 'amén",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "፨ Gente: Amén"
     },
     {
       "instruction": "",
@@ -19622,7 +20587,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ ሥጋ 130 ውን ደሙን ተቀብለን እግዚአብሔርን እናመሰ ግነዋለን፣ ለነፍሳችን አነዋወር መድኃኒት ይሆን ዘንድ የተቀበልን እኛ አምላካችንን እግዚ አብሔርን እያመሰገን እንለምናለን፣ አደራም እንላለን፤",
       "amharic_phonetic": "dīyaḳon: sga 130 wn demun teḳeblen 'igzī'abḥérn 'inamese gnewalen, lenefsachn 'anewawer medhanīt yhon zend yeteḳebeln 'iña 'amlakachnn 'igzī 'abḥérn 'iyamesegen 'inlemnalen, 'aderam 'inlalen:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Diácono: Damos gracias a Dios por haber participado de sus cosas santas; oramos y confiamos en que lo que hemos recibido sea sanación para la vida del alma mientras glorificamos al Señor nuestro Dios."
     },
     {
       "instruction": "",
@@ -19635,7 +20601,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አንደበቴ የእግዚአብሔርን ምስጋና ይናገራል፣ የሥጋ ፍጥረትም ሁሉ ቅዱስ የሚ ሆን ስሙን ያመሰግ ናል ለዘለዓለሙ፣",
       "amharic_phonetic": "kahn: 'andebeté ye'igzī'abḥérn msgana ynageral, yesga fṭretm hulu ḳdus yemī hon smun yameseg nal lezele'alemu ,",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Mi boca proclamará las alabanzas del Señor, y toda carne bendiga su santo nombre por los siglos de los siglos."
     },
     {
       "instruction": "",
@@ -19648,7 +20615,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ በሰማይ ያለህ አባታችን ሆይ አቤቱ ወደ ፈተና አታግባን፤",
       "amharic_phonetic": "፨ ḥzb: besemay yaleh 'abatachn hoy 'abétu wede fetena 'atagban :",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "፨ Pueblo: Padre nuestro que estás en los cielos, Señor, no nos dejes caer en la tentación."
     },
     {
       "instruction": "",
@@ -19661,7 +20629,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ ከክርስቶስ ከቅ ዱስ ሥጋውና ከክቡርደሙም ተቀበልን፤",
       "amharic_phonetic": "dīyaḳon: kekrstos keḳ dus sgawna kekburdemum teḳebeln :",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Diácono: Hemos recibido del santo cuerpo y de la preciosa sangre de Cristo."
     },
     {
       "instruction": "",
@@ -19674,7 +20643,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አንደበቴ የእግዚ | አብሔርን ምስጋና ይና ገራል፣ የሥጋ ፍጥረ ትም ሁሉ ቅዱስ የሚ ሆን ስሙን ያመሰግ ናል፣ ለዘለዓለሙ፣",
       "amharic_phonetic": "kahn: 'andebeté ye'igzī | 'abḥérn msgana yna geral, yesga fṭre tm hulu ḳdus yemī hon smun yameseg nal, lezele'alemu ,",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Mi boca proclamará las alabanzas del Señor, y toda carne bendecirá su santo nombre por los siglos de los siglos."
     },
     {
       "instruction": "",
@@ -19687,7 +20657,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ በሰማይ ያለህ አባታችን ሆይ አቤቱ ወደ ፈተና አታግባን፤",
       "amharic_phonetic": "፨ ḥzb: besemay yaleh 'abatachn hoy 'abétu wede fetena 'atagban:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "፨ Pueblo: Padre nuestro que estás en los cielos, Señor, no nos dejes caer en la tentación."
     },
     {
       "instruction": "",
@@ -19700,7 +20671,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤  ክብርት ቅድስት የምትሆን ምሥጢርን እንቀበል ዘንድ ልናመ ሰግነው ይገባናል ፧",
       "amharic_phonetic": "dīyaḳon:  kbrt ḳdst yemthon msṭīrn 'inḳebel zend lname segnew ygebanal ?",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Diácono: Y demos gracias a aquel que nos capacita para participar en el precioso y santo misterio."
     },
     {
       "instruction": "",
@@ -19713,7 +20685,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤አንደበቴ የእግዚአብሔርን ምስጋና ይናገ ራል፣ የሥጋ ፍጥረ ትም ሁሉ ቅዱስ የሚሆን ስሙን ያመ ስግናል፣ ለዘለዓለሙ፣",
       "amharic_phonetic": "kahn:'andebeté ye'igzī'abḥérn msgana ynage ral, yesga fṭre tm hulu ḳdus yemīhon smun yame sgnal, lezele'alemu,",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Mi boca proclamará las alabanzas del Señor, y toda carne bendiga su santo nombre por los siglos de los siglos."
     },
     {
       "instruction": "",
@@ -19726,7 +20699,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ በሰማይ ያለህ አባታችን ሆይ አቤቱ ወደ ፈተና አታግባን፤",
       "amharic_phonetic": "፨ ḥzb: besemay yaleh 'abatachn hoy 'abétu wede fetena 'atagban:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "፨ Pueblo: Padre nuestro que estás en los cielos, Señor, no nos dejes caer en la tentación."
     },
     {
       "instruction": "Inaudible Prayer? Chanted when Liturgy is in the Izl mode.",
@@ -19739,7 +20713,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ገዢዬና አምላኬ ከፍ ከፍ አደርግሃለሁ፣ ለስም ህም ምስጋናን አቀርባ ለሁ፣ ለዘለዓለሙ፣",
       "amharic_phonetic": "kahn: gezhīyéna 'amlaké kef kef 'aderghalehu, lesm hm msganan 'aḳerba lehu, lezele'alemu ,",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Te ensalzaré, mi Rey y mi Dios, y bendeciré tu nombre por siempre jamás."
     },
     {
       "instruction": "Inaudible Prayer? Chanted when Liturgy is in the Izl mode.",
@@ -19752,7 +20727,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ በሰማይ ያለህ አባታችን ሆይ፣አቤቱ ወደ ፈተና አታግባን ፧",
       "amharic_phonetic": "፨ ḥzb: besemay yaleh 'abatachn hoy ,'abétu wede fetena 'atagban ?",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "፨ Pueblo: Padre nuestro que estás en los cielos, Señor, no nos dejes caer en la tentación."
     },
     {
       "instruction": "Inaudible Prayer? Chanted when Liturgy is in the Izl mode.",
@@ -19765,7 +20741,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤. ቀኑን ሁሉ አመ | ሰግንሃለሁ፣ ለስምህም ምስጋናን አቀርባለሁ ለዘለዓለሙ፤",
       "amharic_phonetic": "kahn:. ḳenun hulu 'ame | segnhalehu, lesmhm msganan 'aḳerbalehu lezele'alemu :",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Cada día te bendeciré y alabaré tu nombre por los siglos de los siglos."
     },
     {
       "instruction": "Inaudible Prayer? Chanted when Liturgy is in the Izl mode.",
@@ -19778,7 +20755,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ በሰማይ ያለህ አባታችን ሆይ፣አቤቱ ወደ ፈተና አታግባን ፧",
       "amharic_phonetic": "፨ ḥzb: besemay yaleh 'abatachn hoy ,'abétu wede fetena 'atagban ?",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "፨ Pueblo: Padre nuestro que estás en los cielos, Señor, no nos dejes caer en la tentación."
     },
     {
       "instruction": "For the feasts of Our Lord and Our Lady, and on Sundays.",
@@ -19791,7 +20769,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አንደበቴ የእግ ዚአብሔርን ምስጋና ይናገራል፣ የሥጋ ፍጥ ረትም ሁሉ ቅዱስ የሚሆን ስሙን ያመሰ ግናል ለዘለዓለሙ፣ ፨ ሕዝብ፤ በሰማይ ያለህ አባታችን ሆይ፣አቤቱ ወደ ፈተና አታግባን ፧",
       "amharic_phonetic": "kahn: 'andebeté ye'ig zī'abḥérn msgana ynageral, yesga fṭ retm hulu ḳdus yemīhon smun yamese gnal lezele'alemu , ፨ ḥzb: besemay yaleh 'abatachn hoy ,'abétu wede fetena 'atagban ?",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Mi boca proclamará la alabanza del Señor, y toda carne bendiga su santo nombre por siempre jamás. Pueblo: Padre nuestro que estás en los cielos, Señor, no nos dejes caer en la tentación."
     },
     {
       "instruction": "",
@@ -19804,7 +20783,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ንዳፌ ነፍስ፣ ዳግመኛም ሁሉን የሚ ይዝ የጌታችንንና የመድ ኃኒታችንን የኢየሱስ ክርስቶስን አባት እግዚ አብሔርን እንማልዳለን፧",
       "amharic_phonetic": "kahn: ndafé nefs , dagmeñam hulun yemī yz yegétachnnna yemed hanītachnn ye'īyesus krstosn 'abat 'igzī 'abḥérn 'inmaldalen?",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Una vez más, ofrecemos nuestra súplica al Dios todopoderoso, Padre del Señor y Salvador nuestro Jesucristo."
     },
     {
       "instruction": "",
@@ -19817,7 +20797,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ከቅዱስ ምሥጢርህ | እንቀበል ዘንድ አድለ ኸናልና እናመሰግንሃ ለን፣ ለኃጢአት ወይም ለፍርድ አይሁን፤ ነፍ ስንና ሥጋን ደመ ነፍስን",
       "amharic_phonetic": "kahn: keḳdus msṭīrh | 'inḳebel zend 'adle khenalna 'inamesegnha len, lehaṭī'at weym lefrd 'ayhun: nef snna sgan deme nefsn",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Te damos gracias porque nos has concedido participar de tu santo misterio. Que no sea para mí ocasión de culpa ni de juicio, sino de renovación del alma, del cuerpo y del espíritu;"
     },
     {
       "instruction": "",
@@ -19830,7 +20811,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ለማደስ ይሁን እንጂ፣ በአንድ ልጅህ በርሱ ያለ ክብር ጽንዕ ላንተ ይገባል፣ ከርሱ ጋራ ከመንፈስ ቅዱ ስም ১৮: 46 ዘወትርም ለዘለዓለሙ አሜን፤",
       "amharic_phonetic": "kahn: lemades yhun 'injī, be'and ljh bersu yale kbr tsn'i lante ygebal, kersu gara kemenfes ḳdu sm ১৮: 46 zewetrm lezele'alemu 'amén :",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Por tu Hijo unigénito, por quien, con él y con el Espíritu Santo, sea la gloria y el dominio, ahora y siempre, por los siglos de los siglos. Amén."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -19843,7 +20825,8 @@ const kidaseData = {
       "amharic_script": "፨የባስልዮስ ትእዛዝ፨፣ ሥጋና ደም ቢተርፍ ካህኑ ማየ መቊረሩን ከመጠጣቱ አስቀድሞ ለካህናቱና ለዲያቆናቱ ለያንዳንዳቸው ሁለት ሁለት ጊዜ ይስጣቸው፣ ቀድሞ ተቀበከሉት ጋራ ሦስት ይሆን ዘንድ፣ የተረፈውም ብዙ ቢሆን ሦስት ሦስት ጊዜ ይቀ በሉ፣ ከደሙም እንደ ዚሁ ኅብስትና ወይን ወደ መሆን አይለወጥ ምና፤",
       "amharic_phonetic": "፨yebaslyos t'izaz፨ , sgana dem bīterf kahnu maye meḳwīrerun kemeṭeṭatu 'asḳedmo lekahnatuna ledīyaḳonatu leyandandachew hulet hulet gīzé ysṭachew, ḳedmo teḳebekelut gara sost yhon zend, yeterefewm bzu bīhon sost sost gīzé yḳe belu, kedemum 'inde zīhu hbstna weyn wede mehon 'ayleweṭ mna:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "፨ Mandamiento de Basilio ፨ Si queda algo del cuerpo y la sangre, que el sacerdote dé de ellos a cada uno de los sacerdotes y diáconos dos veces antes de que cualquiera de ellos beba agua, para que todos reciban tres veces, incluyendo la primera vez. Si no queda mucho, que cada uno tome tres veces. Que haga lo mismo con la sangre, porque el Cuerpo y la Sangre jamás volverán a convertirse en pan y vino."
     },
     {
       "instruction": "The priest shall sing\nfrom \"Zimmari\" Then he shall sing a song of two stanzas as follows:",
@@ -19856,7 +20839,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ሃሌ ሉያ በዕዝል ደግሞ ሃሌ ሃሌ ሉያ በሰማይያለህ አባታችን ሆይስምህ ይቀደስ ኃጢአታ ችንን ሁሉ አስተሥርይልን፣",
       "amharic_phonetic": "kahn: halé luya be'izl degmo halé halé luya besemayyaleh 'abatachn hoysmh yḳedes haṭī'ata chnn hulu 'astesryln,",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Aleluya, aleluya, Padre nuestro que estás en los cielos, santificado sea tu nombre, perdona todas nuestras ofensas, no nos dejes caer en la tentación;"
     },
     {
       "instruction": "The priest shall sing\nfrom \"Zimmari\" Then he shall sing a song of two stanzas as follows:",
@@ -19869,7 +20853,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አቤቱ ወደ ፈተና አታግባን፣ ከክፉ ቀን አድነን፣ ከፈተናም ሁሉ አድነን፧",
       "amharic_phonetic": "kahn: 'abétu wede fetena 'atagban, kekfu ḳen 'adnen, kefetenam hulu 'adnen?",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Señor, líbranos del día malo y protégenos de toda tentación."
     },
     {
       "instruction": "",
@@ -19882,7 +20867,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አቤቱ የማታልፍ ቅድስት ምሥጢርህ ለሁሉ ተሰጠች፣ ካንተ ጋራ ያለ የሞትህን መታ ሰቢያ ኃይልንና መድኃ ኒትን ለኛ የሰጠኸን፤",
       "amharic_phonetic": "kahn: 'abétu yematalf ḳdst msṭīrh lehulu teseṭech, kante gara yale yemothn meta sebīya haylnna medha nītn leña yeseṭekhen :",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Oh Señor, tu santo e inmaculado misterio se ha cumplido, el que nos has dado para poder y salvación, como memorial de tu muerte que está contigo."
     },
     {
       "instruction": "",
@@ -19895,7 +20881,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ክብርት የምትሆን የትንሣኤህንም ምሥጢር አየን፣ ሕይወትንም አውርሰን፣ በዚህች ሰዓት በየጊዜውም ሁሉ በርሱ ጠብቀን፣ ጌታችንና አምላካችን",
       "amharic_phonetic": "kahn: kbrt yemthon yetnsa'éhnm msṭīr 'ayen, ḥywetnm 'awrsen, bezīhch se'at beyegīzéwm hulu bersu ṭebḳen, gétachnna 'amlakachn",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Y hemos visto el misterio de la santa resurrección. Permítenos ser herederos de la vida, y por medio de ella consérvanos en este tiempo y siempre, porque tú eres un Rey glorioso sobre todas las cosas."
     },
     {
       "instruction": "",
@@ -19908,7 +20895,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ መድኃኒታችንም ኢየሱስ ክርስቶስ ሆይ፣ በሁሉ ላይ የከበርህ ንጉሥ አንተ ነህና ላንተ ምስጋናን ገናንነ ትን ክብርንም እናቀርብልሃለን፣",
       "amharic_phonetic": "kahn: medhanītachnm 'īyesus krstos hoy, behulu lay yekeberh ngus 'ante nehna lante msganan genanne tn kbrnm 'inaḳerblhalen,",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Señor, Dios y Salvador nuestro, Jesucristo. A ti te damos gracias, majestad y honor, con"
     },
     {
       "instruction": "",
@@ -19921,7 +20909,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ሰማያዊ ከሚ ሆን ከቸር አባትህ ጋራ፣ ማሕየዊ ከሚሆን ከመን ፈስ ቅዱስም ጋራ ለዘለ ዓለሙ አሜን ፧",
       "amharic_phonetic": "kahn: semayawī kemī hon kecher 'abath gara, maḥyewī kemīhon kemen fes ḳdusm gara lezele 'alemu 'amén ?",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Tu buen Padre celestial y el Espíritu Santo, dador de vida, por los siglos de los siglos. Amén."
     },
     {
       "instruction": "Inaudible Prayer.",
@@ -19934,7 +20923,8 @@ const kidaseData = {
       "amharic_script": "ሁሉም፤ አቤቱ ጌታዬ አምላኬ ወዳንተ እጸልያለሁ እለምንሃለሁም፣ መን ጋህን የወደድህ ቸርጠባቂ ለበጎችህ ቤዛ ሰውነትህን የሰጠህ በእ ውነት የጽድቅ መብል",
       "amharic_phonetic": "hulum: 'abétu gétayé 'amlaké wedante 'itselyalehu 'ilemnhalehum, men gahn yewededh cherṭebaḳī lebegochh béza sewnethn yeseṭeh be'i wnet yetsdḳ mebl",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Todos: Te ruego y te suplico, Señor mío y Dios mío, Buen Pastor, que amaste a tu rebaño y diste tu vida en rescate por tus ovejas, que me concedas..."
     },
     {
       "instruction": "Inaudible Prayer.",
@@ -19947,7 +20937,8 @@ const kidaseData = {
       "amharic_script": "ሁሉም፤ሥጋህንና የዘለዓለም የእውነት መጠጥ የሚ ሆን ደምህን ትሰጠኝ ዘንድ ፧",
       "amharic_phonetic": "hulum:sgahnna yezele'alem ye'iwnet meṭeṭ yemī hon demhn tseṭeñ zend ?",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Todos: Vuestro cuerpo y vuestra sangre son alimento verdadero para la justicia, y bebida verdadera para la vida eterna."
     },
     {
       "instruction": "Inaudible Prayer.",
@@ -19960,7 +20951,8 @@ const kidaseData = {
       "amharic_script": "ሁሉም፤ ዳግመኛም ጌታዬ ሆይ፣ ይህ የተቀበልሁት ሥጋ ህና ደምህ ሥጋዬንና ነፍሴን እንዳያስነቅፍና እንዳያሳድፍ እለምንሃ ለሁ፣ እማልድሃለሁ፣",
       "amharic_phonetic": "hulum: dagmeñam gétayé hoy, yh yeteḳebelhut sga hna demh sgayénna nefsén 'indayasneḳfna 'indayasadf 'ilemnha lehu, 'imaldhalehu,",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Todos: Y además te ruego y te suplico, oh mi Señor, que este Tu Cuerpo y Tu Sangre que he recibido no sean para mi vergüenza ni para la culpa de mi alma y mi cuerpo,"
     },
     {
       "instruction": "Inaudible Prayer.",
@@ -19973,7 +20965,8 @@ const kidaseData = {
       "amharic_script": "ሁሉም፤ ፈጽሞ የሚያድነኝ አን ተን መፍራትንም የሚ ያስረዳኝ ፍቅርህንም የሚያስተምረኝ ይሁን እንጂ፣ በሕይወቴ ዘመን ሁሉ ላንተ አደላ ዘንድ ያለማቋረጥም አመሰግ ንህ ዘንድ ፧",
       "amharic_phonetic": "hulum: fetsmo yemīyadneñ 'an ten mefratnm yemī yasredañ fḳrhnm yemīyastemreñ yhun 'injī, beḥyweté zemen hulu lante 'adela zend yalemaḳwareṭm 'ameseg nh zend ?",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Todos: Pero que ellos me den vida y salud; y me enseñen tu temor, y me instruyan en tu amor, para que pueda agradarte todos los días de mi vida y glorificarte sin cesar."
     },
     {
       "instruction": "Inaudible Prayer.",
@@ -19986,7 +20979,8 @@ const kidaseData = {
       "amharic_script": "ሁሉም፤ አቤቱ ሰውነቴን አንጻት፣ ላንተ መሥዋዕት ትሆን ዘንድ ዳግ መኛም አጥራት፣ ልቡናዬንም እንዲድን መንፈስ ቅዱስ እንዲያድርበትና እንዲመላበት አድርገው፣",
       "amharic_phonetic": "hulum: 'abétu sewnetén 'antsat, lante meswa'it thon zend dag meñam 'aṭrat, lbunayénm 'indīdn menfes ḳdus 'indīyadrbetna 'indīmelabet 'adrgew,",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Todos: Oh Señor, limpia mi alma y purifícala también para que sea un sacrificio para Ti, y dispone mi corazón para que el Espíritu Santo viva y more en él y lo llene,"
     },
     {
       "instruction": "Inaudible Prayer.",
@@ -19999,7 +20993,8 @@ const kidaseData = {
       "amharic_script": "ሁሉም፤ ሥጋህንና ደምህን አምኜ ተቀብያለሁና፣ ከካህናቱም እጅ ተቀ ብዬ በላሁ፣ ላንተ ምስጋና ይገባል፣ ለዘለ ዓለሙ አሜን ፧",
       "amharic_phonetic": "hulum: sgahnna demhn 'amñé teḳebyalehuna, kekahnatum 'ij teḳe byé belahu, lante msgana ygebal, lezele 'alemu 'amén ?",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Todos: Porque he aceptado con fe tu Cuerpo y tu Sangre, y los he recibido de manos de tus sacerdotes, y los he comido; porque tuya es la gloria por los siglos de los siglos. Amén."
     },
     {
       "instruction": "Inaudible Prayer.",
@@ -20012,7 +21007,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ ስለ ማመስገናችን እንማልዳለን፣ እግዚአብሔር በሕይወት መጽ ሐፍ ልመናችንን ይጽፍ ዘንድ ለዘለዓለሙ የሚ ኖር አምላክም በቅዱሳን ማደሪያ በርሱ ብርሃን ያስበን ዘንድ፤",
       "amharic_phonetic": "dīyaḳon: sle mamesgenachn 'inmaldalen, 'igzī'abḥér beḥywet mets ḥaf lmenachnn ytsf zend lezele'alemu yemī nor 'amlakm beḳdusan maderīya bersu brhan yasben zend :",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Diácono: Por el bien de nuestra ofrenda de acción de gracias, suplicamos a Dios que escriba nuestras oraciones en el libro de la vida, y al Dios eterno que se acuerde de nosotros en las moradas de los santos en su luz."
     },
     {
       "instruction": "Inaudible Prayer.",
@@ -20025,7 +21021,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ወደ ኋላ ስላሉ አባቶቻ ችንና ወንድሞቻችን ስለ እኅቶቻችንም እንማልዳለን፣ እግዚአብሔር ትጋትን ይሰጣቸው ዘንድ፣ ለሁሉም ያስብ ዘንድ፣ የዚህን ዓለም",
       "amharic_phonetic": "dīyaḳon:wede hwala slalu 'abatocha chnna wendmochachn sle 'ihtochachnm 'inmaldalen, 'igzī'abḥér tgatn yseṭachew zend, lehulum yasb zend , yezīhn 'alem",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Diácono: Por nuestros padres, hermanos y hermanas que se han ausentado, suplicamos a Dios que les conceda diligencia, que cuide de todos ellos y que los libere de las ataduras de este mundo."
     },
     {
       "instruction": "Inaudible Prayer.",
@@ -20038,7 +21035,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ ማሠሪያን ከነርሱ ይመልስ ዘንድ፣ ሥርዓትን ፍቅርንና ማመንን በጎ ተስፋንም ይሰጣቸው ዘንድ፣ ስለእግ ዚአብሔር ልጅ ሥጋና ደም ለዘለዓለሙ አሜን፣ ይሁን ይሁን።",
       "amharic_phonetic": "dīyaḳon: maserīyan kenersu ymels zend, sr'atn fḳrnna mamenn bego tesfanm yseṭachew zend, sle'ig zī'abḥér lj sgana dem lezele'alemu 'amén, yhun yhun",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Diácono: y concédeles bondad, amor, fe y buena esperanza por medio del cuerpo y la sangre del Hijo de Dios, por los siglos de los siglos. Amén. Así sea, así sea."
     },
     {
       "instruction": "Inaudible Prayer.",
@@ -20051,7 +21049,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አንብሮ እድ፣ ለዘለዓለሙ የማይጠፋ የሕይወት ብርሃን እግዚአብሔር ሆይ፣ ወንዶችንና ሴቶችን አገልጋዮችህን ተመልከታቸው፣ ስምሀን መፍራትንም በልቡናቸው ዝራ፣",
       "amharic_phonetic": "kahn: 'anbro 'id , lezele'alemu yemayṭefa yeḥywet brhan 'igzī'abḥér hoy, wendochnna sétochn 'agelgayochhn temelketachew, smhan mefratnm belbunachew zra,",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Oh Dios eterno, luz de vida inextinguible, mira a tus siervos y a tus siervas y planta en sus corazones el temor de tu nombre, para que den fruto en bendición,"
     },
     {
       "instruction": "Inaudible Prayer.",
@@ -20064,7 +21063,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ በረከትን ያፈሩ ዘንድ ሥጋህና ደምህ ከተስጣቸውም ጋራ ቊጠራቸው፤",
       "amharic_phonetic": "kahn: bereketn yaferu zend sgahna demh ketesṭachewm gara ḳwīṭerachew:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: y cuéntalos con aquellos a quienes se les ha dado tu cuerpo y tu sangre."
     },
     {
       "instruction": "Inaudible Prayer.",
@@ -20077,7 +21077,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Y que tu mano repose sobre los que han inclinado la cabeza ante ti, tu pueblo, hombres y mujeres, ancianos y niños, vírgenes y monjes, viudas y huérfanos."
     },
     {
       "instruction": "Inaudible Prayer.",
@@ -20090,7 +21091,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Y únenos también a ellos; protégenos, socorrémosnos, afiánzanos y fortalécenos con el poder de tus arcángeles; aparta de nosotros toda obra mala, y únenos en toda obra buena."
     },
     {
       "instruction": "Inaudible Prayer.",
@@ -20103,7 +21105,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Por tu Hijo unigénito, por quien a ti, con él y con el Espíritu Santo, sea la gloria y el dominio, ahora y siempre, por los siglos de los siglos. Amén."
     },
     {
       "instruction": "Inaudible Prayer.",
@@ -20116,7 +21119,8 @@ const kidaseData = {
       "amharic_script": "ንፍቅ ካህን፤",
       "amharic_phonetic": "nfḳ kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote auxiliar: Y que permanezcan en la fe correcta, en gloria y honor, todos los días de su vida."
     },
     {
       "instruction": "Inaudible Prayer.",
@@ -20129,7 +21133,8 @@ const kidaseData = {
       "amharic_script": "ንፍቅ ካህን፤",
       "amharic_phonetic": "nfḳ kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote auxiliar: Y haz que vivan en amor y paz, que sobrepasa todo conocimiento y todo entendimiento,"
     },
     {
       "instruction": "Inaudible Prayer.",
@@ -20142,7 +21147,8 @@ const kidaseData = {
       "amharic_script": "ንፍቅ ካህን፤",
       "amharic_phonetic": "nfḳ kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote auxiliar: por las oraciones y súplicas de la Señora de todos nosotros, la Madre de Dios, la santa y pura María,"
     },
     {
       "instruction": "Inaudible Prayer.",
@@ -20155,7 +21161,8 @@ const kidaseData = {
       "amharic_script": "ንፍቅ ካህን፤",
       "amharic_phonetic": "nfḳ kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote auxiliar: y los cuatro grandes, llenos de luz: Miguel, Gabriel, Rafael y Surial, y las cuatro bestias incorpóreas, y los veinticuatro sacerdotes celestiales,"
     },
     {
       "instruction": "Inaudible Prayer.",
@@ -20168,7 +21175,8 @@ const kidaseData = {
       "amharic_script": "ንፍቅ ካህን፤",
       "amharic_phonetic": "nfḳ kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote auxiliar: y recordad a nuestros grandes santos padres Abraham, Isaac y Jacob, los patriarcas, y a Juan el Bautista, y a los ciento cuarenta y cuatro mil santos niños,"
     },
     {
       "instruction": "Inaudible Prayer.",
@@ -20181,7 +21189,8 @@ const kidaseData = {
       "amharic_script": "ንፍቅ ካህን፤",
       "amharic_phonetic": "nfḳ kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote auxiliar: y nuestros padres los eruditos, apóstoles, y el santo apóstol Marcos, mártir y evangelista, y los setenta y dos discípulos,"
     },
     {
       "instruction": "Inaudible Prayer.",
@@ -20194,7 +21203,8 @@ const kidaseData = {
       "amharic_script": "ንፍቅ ካህን፤",
       "amharic_phonetic": "nfḳ kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote auxiliar: y los quinientos hermanos, y los trescientos dieciocho padres ortodoxos, y los tres niños: Hananías, Misael y Azarías, y los siete jóvenes santos."
     },
     {
       "instruction": "Inaudible Prayer.",
@@ -20207,7 +21217,8 @@ const kidaseData = {
       "amharic_script": "ንፍቅ ካህን፤",
       "amharic_phonetic": "nfḳ kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote auxiliar: Y San Esteban, archidiácono y protomártir, San Jorge, San Teodoro del Oriente, San Banadlios, San Marcorio, San Mamas, San Aboli, San Filataos, San Marmihanam,"
     },
     {
       "instruction": "Inaudible Prayer.",
@@ -20220,7 +21231,8 @@ const kidaseData = {
       "amharic_script": "ንፍቅ ካህን፤",
       "amharic_phonetic": "nfḳ kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote auxiliar: San Abadir, San Galawdeos, San Fasiladas, San Víctor, San Minas, San Kirkos y su madre Iyalota, y todos los mártires,"
     },
     {
       "instruction": "Inaudible Prayer.",
@@ -20233,7 +21245,8 @@ const kidaseData = {
       "amharic_script": "ንፍቅ ካህን፤",
       "amharic_phonetic": "nfḳ kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote auxiliar: y el casto Abba Nob el valiente que luchó y fue martirizado por causa del Hijo unigénito de Dios. Y el gran padre el señor y justo Abba Antonio, nuestro padre Abba Pablo,"
     },
     {
       "instruction": "Inaudible Prayer.",
@@ -20246,7 +21259,8 @@ const kidaseData = {
       "amharic_script": "ንፍቅ ካህን፤",
       "amharic_phonetic": "nfḳ kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote asistente: nuestros santos padres los tres Macarii, nuestro padre Abba Youhannes el Breve, el justo Abba Baula, nuestro padre Abba Besoi, nuestro padre Abba Amon, nuestro padre Abba Youhannes Kama,"
     },
     {
       "instruction": "Inaudible Prayer.",
@@ -20259,7 +21273,8 @@ const kidaseData = {
       "amharic_script": "ንፍቅ ካህን፤",
       "amharic_phonetic": "nfḳ kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote asistente: nuestro padre Abba Pantaleón, nuestro padre Abba Senoda, nuestro padre Abba Besenda, nuestro padre Abba Latsiun, nuestro padre Abba Pacomio, nuestro padre Abba Abakarazun, nuestro padre Abba Barsoma,"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -20272,7 +21287,8 @@ const kidaseData = {
       "amharic_script": "ንፍቅ ካህን፤",
       "amharic_phonetic": "nfḳ kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote auxiliar: nuestros santos padres romanos Máximo y Domatios, el fuerte y santo Abba Moisés, los cuarenta y nueve mártires y todos los que llevan la cruz, justos y buenos, y el ángel de este bendito día."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -20285,7 +21301,8 @@ const kidaseData = {
       "amharic_script": "ንፍቅ ካህን፤",
       "amharic_phonetic": "nfḳ kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote auxiliar: Que su bendición y la gracia de su ayuda e intercesión estén siempre con nuestro país {{COUNTRY}} por los siglos de los siglos. Amén."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -20298,7 +21315,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤",
       "amharic_phonetic": "",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "፨ Pueblo: Oh, Rey de paz, Jesucristo, concédenos tu paz, perdona nuestros pecados y haznos dignos de salir y entrar en nuestros hogares en paz."
     },
     {
       "instruction": "",
@@ -20311,7 +21329,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤",
       "amharic_phonetic": "",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Diácono: Inclinad vuestras cabezas ante el Señor nuestro Dios, para que os bendiga por medio de su siervo, el sacerdote."
     },
     {
       "instruction": "",
@@ -20324,7 +21343,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤",
       "amharic_phonetic": "",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "፨ Pueblo: Amén, que Él nos bendiga por medio de su siervo, el sacerdote."
     },
     {
       "instruction": "",
@@ -20337,7 +21357,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Oh Señor, salva a tu pueblo y bendice tu herencia. Aliméntalos, exhórtalos para siempre y guarda a tu iglesia."
     },
     {
       "instruction": "",
@@ -20350,7 +21371,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: que tú adquiriste con la preciosa sangre de tu Hijo unigénito, nuestro Señor, nuestro Dios y nuestro Salvador Jesucristo,"
     },
     {
       "instruction": "",
@@ -20363,7 +21385,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: y que tú has llamado para que sea morada de reyes y gobernantes, de gente santa y pura,"
     },
     {
       "instruction": "",
@@ -20376,7 +21399,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Vosotros que habéis venido y os habéis reunido y orado en esta santa iglesia, y vosotros que habéis tomado el santo Cuerpo y bebido la preciosa Sangre de nuestro Señor Jesucristo."
     },
     {
       "instruction": "",
@@ -20389,7 +21413,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Que Él perdone tus pecados que hayas cometido consciente o inconscientemente. Que Él perdone tus pecados pasados ​​y te libre de los futuros,"
     },
     {
       "instruction": "",
@@ -20402,7 +21427,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: por amor a su Cuerpo, el Cuerpo Divino, y por amor a su Sangre, la sangre del pacto de Jesucristo, Hijo del Señor de los Ejércitos,"
     },
     {
       "instruction": "",
@@ -20415,7 +21441,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Y el Hijo de la pura María, que ha sellado la virginidad de su conciencia y de su cuerpo por los siglos de los siglos. Amén."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -20428,7 +21455,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ የአባታችን የጴጥሮስ የእጁ ሹመት፣\nካህን ንፍቅ፤ እግዚአብሔር በዘለ ዓለም መንግሥቱ ይሹምህ ፧",
       "amharic_phonetic": "kahn: ye'abatachn yep̣éṭros ye'iju shumet,\nkahn nfḳ: 'igzī'abḥér bezele 'alem mengstu yshumh ?",
       "tigrinya_script": "ካህን፤ \nካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn: \nkahn nfḳ:"
+      "tigrinya_phonetic": "kahn: \nkahn nfḳ:",
+      "spanish": "Sacerdote (a los sacerdotes auxiliares): El poder de nuestro padre Pedro.\n\nSacerdotes auxiliares: Que Dios los colme de bendiciones en su reino eterno."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -20441,7 +21469,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ልዑል እግዚአብሔር ይባርክህ ዐይነ ልቡናህንም ያብራልህ፣",
       "amharic_phonetic": "kahn: l'ul 'igzī'abḥér ybarkh 'ayne lbunahnm yabralh ,",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote (a los diáconos): Que Dios Altísimo los bendiga e ilumine los ojos de su corazón."
     },
     {
       "instruction": "",
@@ -20454,7 +21483,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ልዑል እግዚአብሔር ይባርክህ ፊቱንም ይግለ ጽልህ፣",
       "amharic_phonetic": "kahn: l'ul 'igzī'abḥér ybarkh fītunm ygle tslh,",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote (a los fieles): Que Dios Altísimo los bendiga y alce su rostro sobre ustedes. El Señor esté con todos ustedes."
     },
     {
       "instruction": "",
@@ -20467,7 +21497,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ እግዚአብሔር ከሁላችሁ ጋራ ይሁን\n፨ ሕዝብ፤ ከመንፈስህ ጋራ",
       "amharic_phonetic": "kahn: 'igzī'abḥér kehulachhu gara yhun\n፨ ḥzb: kemenfesh gara",
       "tigrinya_script": "ካህን፤ እግዚኣብሔር ምስ ኵልኹም ይኹን።\n፨ ሕዝብ፤ ምስ መንፈስካ።",
-      "tigrinya_phonetic": "kahn: 'igzī'abḥér ms kwlkhum ykhun.\n፨ ḥzb: ms menfeska."
+      "tigrinya_phonetic": "kahn: 'igzī'abḥér ms kwlkhum ykhun.\n፨ ḥzb: ms menfeska.",
+      "spanish": "Sacerdote (a los fieles): El Señor esté con todos vosotros.\n\nPueblo: y con tu Espíritu."
     },
     {
       "instruction": "",
@@ -20480,7 +21511,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ አሜን እግዚአብሔር እኛን ባሮቹን በሰላም ይባርከን። የተቀበልነው ሥጋህና ደምህ ለሥርየት ይሁነን። የጠላትን ኀይል ሁሉ በመንፈስ እንረግጥ ዘንድ አሠልጥነን።",
       "amharic_phonetic": "፨ ḥzb: 'amén 'igzī'abḥér 'iñan barochun beselam ybarken. yeteḳebelnew sgahna demh lesryet yhunen. yeṭelatn hayl hulu bemenfes 'inregṭ zend 'aselṭnen.",
       "tigrinya_script": "፨ ሕዝብ፤ ኣሜን እግዚኣብሔር ንባሮትካ ብሰላም ባርኸና። ዝተቐበልናዮ ሥጋኻን ደምካን ንኅድገት ኃጢኣት ይኹነና። ኵሉ ኃይሊ ጸላኢ ብመንፈስ ክንረግጽ ሥልጣን ሃበና።",
-      "tigrinya_phonetic": "፨ ḥzb: 'amén 'igzī'abḥér nbarotka bselam barkhena. zteqhebelnayo sgakhan demkan nhdget haṭī'at ykhunena. kwlu haylī tsela'ī bmenfes knregts slṭan habena."
+      "tigrinya_phonetic": "፨ ḥzb: 'amén 'igzī'abḥér nbarotka bselam barkhena. zteqhebelnayo sgakhan demkan nhdget haṭī'at ykhunena. kwlu haylī tsela'ī bmenfes knregts slṭan habena.",
+      "spanish": "Pueblo: Amén. Que Dios nos bendiga, a sus siervos, en paz. El perdón nos sea concedido a quienes hemos recibido tu Cuerpo y tu Sangre. Permítenos, por medio del Espíritu, pisotear todo el poder del enemigo."
     },
     {
       "instruction": "",
@@ -20493,7 +21525,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ ምሕረትን የተመላች ክብርት የምትሆን የእጅህን በረከት ሁላችን ተስፋ እናደርጋለን፤ ከክፉ ሥራ ሁሉ አርቀን፤ በበጎውም ሥራ ሁሉ አንድ አድርገን። ቅዱስ ሥጋውን ክቡር ደሙንም የሰጠን ቡሩክ ነው።",
       "amharic_phonetic": "፨ ḥzb: mḥretn yetemelach kbrt yemthon ye'ijhn bereket hulachn tesfa 'inadergalen: kekfu sra hulu 'arḳen: bebegowm sra hulu 'and 'adrgen. ḳdus sgawn kbur demunm yeseṭen buruk new.",
       "tigrinya_script": "፨ ሕዝብ፤ ምሕረት ዝመልአት በረኸት ቅድስቲ ኢድካ ንኣኣ ኵላትና ንጽበ ኣሎና። ካብ ክፉእ ምግባር ኩሉ ኣርሕቐና፡ ኣብ ኩሉ ምግባር ሠናይ ከኣ ጸምብረና። ቅዱስ ሥጋኡን ክቡር ደሙን ዝሃበና ቡሩኽ እዩ።",
-      "tigrinya_phonetic": "፨ ḥzb: mḥret zmel'at berekhet ḳdstī 'īdka n'a'a kwlatna ntsbe 'alona. kab kfu'i mgbar kulu 'arḥqhena  'ab kulu mgbar senay ke'a tsembrena. ḳdus sga'un kbur demun zhabena burukh 'iyu."
+      "tigrinya_phonetic": "፨ ḥzb: mḥret zmel'at berekhet ḳdstī 'īdka n'a'a kwlatna ntsbe 'alona. kab kfu'i mgbar kulu 'arḥqhena  'ab kulu mgbar senay ke'a tsembrena. ḳdus sga'un kbur demun zhabena burukh 'iyu.",
+      "spanish": "Pueblo: Todos anhelamos la bendición de tu santa mano, llena de misericordia. Sepáranos de toda mala obra y únenos en toda buena obra. Bendito sea quien nos ha dado su preciosa sangre."
     },
     {
       "instruction": "",
@@ -20506,7 +21539,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ ጸጋን ተቀበልን፤ ደኅንነትንም በኢየሱስ ክርስቶስ በመስቀሉ ኀይል አገኘን። አቤቱ ከመንፈስ ቅዱስ የተገኘ ጸጋን ተቀበልን አንተን እናመሰግናለን።",
       "amharic_phonetic": "፨ ḥzb: tsegan teḳebeln: dehnnetnm be'īyesus krstos bemesḳelu hayl 'ageñen. 'abétu kemenfes ḳdus yetegeñe tsegan teḳebeln 'anten 'inamesegnalen.",
       "tigrinya_script": "፨ ሕዝብ፤ ብኃይሊ መስቀሉ ንኢየሱስ ክርስቶስ ጸጋ ተቐቢልና ሕይወትውን ረኺብና ኢና። ኦ ጐይታ ካብ መንፈስ ቅዱስ ዝተረኽበ ጸጋ ተቐቢልና ንኣኻ ነመስግን ኣሎና።",
-      "tigrinya_phonetic": "፨ ḥzb: bhaylī mesḳelu n'īyesus krstos tsega teqhebīlna ḥywetwn rekhībna 'īna. 'o gweyta kab menfes ḳdus zterekhbe tsega teqhebīlna n'akha nemesgn 'alona."
+      "tigrinya_phonetic": "፨ ḥzb: bhaylī mesḳelu n'īyesus krstos tsega teqhebīlna ḥywetwn rekhībna 'īna. 'o gweyta kab menfes ḳdus zterekhbe tsega teqhebīlna n'akha nemesgn 'alona.",
+      "spanish": "Pueblo: Hemos recibido su gracia y hemos hallado la vida eterna por el poder de la cruz de nuestro Señor Jesucristo. A ti, Señor, te damos gracias porque hemos recibido tu gracia del Espíritu Santo."
     },
     {
       "instruction": "",
@@ -20519,7 +21553,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ በሰላም ወደ ቤታችሁ ግቡ።",
       "amharic_phonetic": "dīyaḳon: beselam wede bétachhu gbu.",
       "tigrinya_script": "ዲያቆን፤ ብሰላም እተዉ።",
-      "tigrinya_phonetic": "dīyaḳon: bselam 'itewu."
+      "tigrinya_phonetic": "dīyaḳon: bselam 'itewu.",
+      "spanish": "Diácono: Vete en paz."
     }
   ],
   "mary": [
@@ -20534,7 +21569,8 @@ const kidaseData = {
       "amharic_script": "፨ የማርያም ቅዳሴ ፨",
       "amharic_phonetic": "፨ yemaryam ḳdasé ፨",
       "tigrinya_script": "፨ ናይ ማርያም ቅዳሴ ፨",
-      "tigrinya_phonetic": "፨ nay maryam ḳdasé ፨"
+      "tigrinya_phonetic": "፨ nay maryam ḳdasé ፨",
+      "spanish": "፨ LA LITURGIA DE MARÍA ፨\n\n(LA ORACIÓN EUCARÍSTICA DE NUESTRA SEÑORA, LA VIRGEN MARÍA)"
     },
     {
       "instruction": "",
@@ -20547,7 +21583,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ የብህንሳ ኤጲስቆጶስ አባ ሕርያቆስ አምላክን ስለ ወለደች ስለ እመቤታችን ድንግል ማርያም በመንፈስ ቅዱስ የደረሰው የቊርባን ምስጋና ይህ ነው፣",
       "amharic_phonetic": "kahn: yebhnsa 'ép̣īsḳop̣os 'aba ḥryaḳos 'amlakn sle weledech sle 'imebétachn dngl maryam bemenfes ḳdus yederesew yeḳwīrban msgana yh new ,",
       "tigrinya_script": "ናይ ብህንሳ ኤጲስ ቆጶስ ኣባ ሕርያቆስ ብመንፈስ ቅዱስ ዝደረሶ ናይ  እግዝእትነ ማርያም ቅድስቲ ድንግል ማርያም ወላዲተ አምላኽ ናይ ቍርባን",
-      "tigrinya_phonetic": "nay bhnsa 'ép̣īs ḳop̣os 'aba ḥryaḳos bmenfes ḳdus zdereso nay  'igz'itne maryam ḳdstī dngl maryam weladīte 'amlakh nay ḳwrban"
+      "tigrinya_phonetic": "nay bhnsa 'ép̣īs ḳop̣os 'aba ḥryaḳos bmenfes ḳdus zdereso nay  'igz'itne maryam ḳdstī dngl maryam weladīte 'amlakh nay ḳwrban",
+      "spanish": "La Anáfora de Nuestra Señora, la Virgen María, Madre de Dios, que el Abba Heryacos, Obispo de la Provincia de Behnesa, compuso por medio del Espíritu Santo."
     },
     {
       "instruction": "",
@@ -20560,7 +21597,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤  ልመናዋና በረከትዋ ከጳጳ ሳቱ አለቃ አባ {{PATRIARCH NAME}}ና",
       "amharic_phonetic": "kahn:  lmenawana bereketwa kep̣ap̣a satu 'aleḳa 'aba {{PATRIARCH NAME}}na",
       "tigrinya_script": "ምስጋና ጸሎታን ምሕረት ፍቁር ወዳን ምስ ርእሰ ሊቀ ጳጳሳት ኣባ {{PATRIARCH NAME}}ን",
-      "tigrinya_phonetic": "msgana tselotan mḥret fḳur wedan ms r'ise līḳe p̣ap̣asat 'aba {{PATRIARCH NAME}}n"
+      "tigrinya_phonetic": "msgana tselotan mḥret fḳur wedan ms r'ise līḳe p̣ap̣asat 'aba {{PATRIARCH NAME}}n",
+      "spanish": "Que su oración, su bendición y la misericordia de su amado Hijo estén con nuestro Patriarca {{NOMBRE DEL PATRIARCA}},"
     },
     {
       "instruction": "",
@@ -20573,7 +21611,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤  ከጳጳሳችን አባ {{BISHOP NAME}} ከሁላ ችንም ጋራ ይኑር፣ አገራችን {{COUNTRY}} ይጠብ ቃት፣ ለዘለዓለሙ አሜን፤",
       "amharic_phonetic": "kahn:  kep̣ap̣asachn 'aba {{BISHOP NAME}} kehula chnm gara ynur, 'agerachn {{COUNTRY}} yṭeb ḳat, lezele'alemu 'amén:",
       "tigrinya_script": "ምስ ብፁዕ ጳጳስና ኣባ {{BISHOP NAME}} ምስ ኵልና ሕዝበ፡ ክርስቲያን ይኹን ንሃገርና {{COUNTRY}} ኸኣ ብረድኤት የሓልዋ ንዘለዓለመ ዓለም ኣሜን።",
-      "tigrinya_phonetic": "ms btsu'i p̣ap̣asna 'aba {{BISHOP NAME}} ms kwlna ḥzbe  krstīyan ykhun nhagerna {{COUNTRY}} khe'a bred'ét yeḥalwa nzele'aleme 'alem 'amén."
+      "tigrinya_phonetic": "ms btsu'i p̣ap̣asna 'aba {{BISHOP NAME}} ms kwlna ḥzbe  krstīyan ykhun nhagerna {{COUNTRY}} khe'a bred'ét yeḥalwa nzele'aleme 'alem 'amén.",
+      "spanish": "Nuestro Arzobispo {{NOMBRE DEL OBISPO}}, con todos los cristianos y nuestro país {{PAÍS}}, por los siglos de los siglos. Amén."
     },
     {
       "instruction": "",
@@ -20586,7 +21625,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ እግዚአብሔር አድሮባችሁ ይኑር\n፨ ሕዝብ፤ ከመንፈስህ ጋራ",
       "amharic_phonetic": "kahn: 'igzī'abḥér 'adrobachhu ynur\n፨ ḥzb: kemenfesh gara",
       "tigrinya_script": "ካህን፤ እግዚኣብሔር ምስ ኵልኹም ይኹን።\n፨ ሕዝብ፤ ምስ መንፈስካ።",
-      "tigrinya_phonetic": "kahn: 'igzī'abḥér ms kwlkhum ykhun.\n፨ ḥzb: ms menfeska."
+      "tigrinya_phonetic": "kahn: 'igzī'abḥér ms kwlkhum ykhun.\n፨ ḥzb: ms menfeska.",
+      "spanish": "Sacerdote: El Señor esté con todos ustedes.\n\nPueblo: y con tu Espíritu."
     },
     {
       "instruction": "",
@@ -20599,7 +21639,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አምላካችንን አመስግኑት።\n፨ ሕዝብ፤ እውነት ነው ይገባል።",
       "amharic_phonetic": "kahn: 'amlakachnn 'amesgnut.\n፨ ḥzb: 'iwnet new ygebal.",
       "tigrinya_script": "ካህን፤ \n፨ ሕዝብ፤ ብሓቂ ይግባእ እዩ።",
-      "tigrinya_phonetic": "kahn: \n፨ ḥzb: bḥaḳī ygba'i 'iyu."
+      "tigrinya_phonetic": "kahn: \n፨ ḥzb: bḥaḳī ygba'i 'iyu.",
+      "spanish": "Sacerdote: Demos gracias a nuestro Dios.\n\nPueblo: Es justo, es correcto."
     },
     {
       "instruction": "",
@@ -20612,7 +21653,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ልቡናችሁን ከፍ ከፍ አድርጉ።\n፨ ሕዝብ፤ በአምላካችን በእግዚአብሔር ዘንድ አለን",
       "amharic_phonetic": "kahn: lbunachhun kef kef 'adrgu.\n፨ ḥzb: be'amlakachn be'igzī'abḥér zend 'alen",
       "tigrinya_script": "ካህን፤ ብልብኹም ሰማያዊ ነገር ሕሰቡ።\n፨ ሕዝብ፤ ኣብ እግዚኣብሔር ኣምላኽና ኣሎና።",
-      "tigrinya_phonetic": "kahn: blbkhum semayawī neger ḥsebu.\n፨ ḥzb: 'ab 'igzī'abḥér 'amlakhna 'alona."
+      "tigrinya_phonetic": "kahn: blbkhum semayawī neger ḥsebu.\n፨ ḥzb: 'ab 'igzī'abḥér 'amlakhna 'alona.",
+      "spanish": "Sacerdote: Levantad vuestros corazones.\n\nPueblo: Los hemos levantado al Señor nuestro Dios."
     },
     {
       "instruction": "",
@@ -20625,7 +21667,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤  ልቡናዬ በጎ ነገርን አወጣ። ልቡናዬ በጎ ነገርን አወጣ። ልቡናዬ በጎ ነገርን አወጣ።",
       "amharic_phonetic": "kahn:  lbunayé bego negern 'aweṭa. lbunayé bego negern 'aweṭa. lbunayé bego negern 'aweṭa.",
       "tigrinya_script": "ካህን፤ ልበይ ሠናይ ቃል ጐሥዐ ልበይ ሠናይ ቃል ጐሥዐ ልበይ ሠናይ ቃል ጐሥዐ",
-      "tigrinya_phonetic": "kahn: lbey senay ḳal gwes'a lbey senay ḳal gwes'a lbey senay ḳal gwes'a"
+      "tigrinya_phonetic": "kahn: lbey senay ḳal gwes'a lbey senay ḳal gwes'a lbey senay ḳal gwes'a",
+      "spanish": "Sacerdote: Mi corazón está escribiendo algo bueno; mi corazón está escribiendo algo bueno; mi corazón está escribiendo algo bueno."
     },
     {
       "instruction": "",
@@ -20638,7 +21681,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤  እኔም የማርያምን ቅዳሴ እናገራለሁ በማብዛት አይደለም በማሳነስ ነው እንጂ።",
       "amharic_phonetic": "kahn:  'iném yemaryamn ḳdasé 'inageralehu bemabzat 'aydelem bemasanes new 'injī.",
       "tigrinya_script": "ካህን፤ ኣነ ናይ ማርያም ቅዳሴኣ እነግር ብምዛሕ ዘይኮነ ብምውሓድ ኣነ ናይ ድንግል ውድሴኣ እነግር ብም ንዋኅ ቃልን ብምዝንጋዕን ኣይኮነን እንታይ ደኣ ቃል ብምሕጻር",
-      "tigrinya_phonetic": "kahn: 'ane nay maryam ḳdasé'a 'inegr bmzaḥ zeykone bmwḥad 'ane nay dngl wdsé'a 'inegr bm nwah ḳaln bmznga'in 'aykonen 'intay de'a ḳal bmḥtsar"
+      "tigrinya_phonetic": "kahn: 'ane nay maryam ḳdasé'a 'inegr bmzaḥ zeykone bmwḥad 'ane nay dngl wdsé'a 'inegr bm nwah ḳaln bmznga'in 'aykonen 'intay de'a ḳal bmḥtsar",
+      "spanish": "Sacerdote: Y hablo de la Anáfora de María, no extensamente, sino brevemente. Y alabo a la Virgen, no con muchas palabras, que serían olvidadas, sino con pocas."
     },
     {
       "instruction": "",
@@ -20651,7 +21695,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤  እኔም የድንግልን ውዳሴ እናገራለሁ።",
       "amharic_phonetic": "kahn:  'iném yedngln wdasé 'inageralehu.",
       "tigrinya_script": "ካህን፤ ኣነ ናይ ድንግል ዕብየታ እነግር",
-      "tigrinya_phonetic": "kahn: 'ane nay dngl 'ibyeta 'inegr"
+      "tigrinya_phonetic": "kahn: 'ane nay dngl 'ibyeta 'inegr",
+      "spanish": "Sacerdote: Y yo hablo de la exaltación de la Virgen."
     },
     {
       "instruction": "",
@@ -20664,7 +21709,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ዛሬ በዚህች ቀን በፍቅርና በትሕትና ግሩም በሚሆን በዚህ ምስጢር ፊት እቆማለሁ። በዚህም ማዕድና ቁርባን ፊት።",
       "amharic_phonetic": "kahn: zaré bezīhch ḳen befḳrna betḥtna grum bemīhon bezīh msṭīr fīt 'iḳomalehu. bezīhm ma'idna ḳurban fīt.",
       "tigrinya_script": "ካህን፤ ሎሚ በዛ ዕለት ኣዚአ ኣብ ቅድሚ እዚ ግሩም ምሥጢርን ኣብ ቅድሚ እዚ ናይ ቍርባን ማእድን ብትሕትናን ብፍቕርን እቐውም",
-      "tigrinya_phonetic": "kahn: lomī beza 'ilet 'azī'a 'ab ḳdmī 'izī grum msṭīrn 'ab ḳdmī 'izī nay ḳwrban ma'idn btḥtnan bfqhrn 'iqhewm"
+      "tigrinya_phonetic": "kahn: lomī beza 'ilet 'azī'a 'ab ḳdmī 'izī grum msṭīrn 'ab ḳdmī 'izī nay ḳwrban ma'idn btḥtnan bfqhrn 'iqhewm",
+      "spanish": "Sacerdote: Y hoy me presento, en este mismo día, con humildad y amor ante este poderoso misterio y ante esta mesa y ofrenda."
     },
     {
       "instruction": "",
@@ -20677,7 +21723,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ መንፈሳቸውን ያረከሱ ሰዎች ከርሱ ሊቀምሱ የማይቻላቸው በእውነት ቁርባን ነው፡፤",
       "amharic_phonetic": "kahn: menfesachewn yarekesu sewoch kersu līḳemsu yemaychalachew be'iwnet ḳurban new :",
       "tigrinya_script": "ካህን፤ ብመንፈሶም ዝረኸሱ ሰባት ካብኡ ክጥዕሙ ዘይክእሉ ብሓቂ ቍርባን እዩ።",
-      "tigrinya_phonetic": "kahn: bmenfesom zrekhesu sebat kab'u kṭ'imu zeyk'ilu bḥaḳī ḳwrban 'iyu."
+      "tigrinya_phonetic": "kahn: bmenfesom zrekhesu sebat kab'u kṭ'imu zeyk'ilu bḥaḳī ḳwrban 'iyu.",
+      "spanish": "Sacerdote: En verdad, esta es la ofrenda que aquellos cuyos espíritus están contaminados no pueden probar."
     },
     {
       "instruction": "",
@@ -20690,7 +21737,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤  በበግ፣ በጊደርና በላም ደም እንደ ነበረው እንደ ቀደሙት አባቶች መሥዋዕት አይደለም እሳት ነው እንጂ።",
       "amharic_phonetic": "kahn:  bebeg, begīderna belam dem 'inde neberew 'inde ḳedemut 'abatoch meswa'it 'aydelem 'isat new 'injī.",
       "tigrinya_script": "ካህን፤ ከምቲ ናይ ቀዳሞት ብደም በጊዕን ኣርሕን ላምን ዝነበረ ኣይኮነን።እንታይ ደኣ ሓዊ እዩ።",
-      "tigrinya_phonetic": "kahn: kemtī nay ḳedamot bdem begī'in 'arḥn lamn znebere 'aykonen.'intay de'a ḥawī 'iyu."
+      "tigrinya_phonetic": "kahn: kemtī nay ḳedamot bdem begī'in 'arḥn lamn znebere 'aykonen.'intay de'a ḥawī 'iyu.",
+      "spanish": "Sacerdote: No es como el sacrificio de nuestros antepasados, que dependía de la sangre de ovejas, bueyes y vacas, sino que es fuego."
     },
     {
       "instruction": "",
@@ -20703,7 +21751,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤  ፈቃዱን ለሚሥሩ ልቡናቸውን ላቀኑ ሰዎች የሚያድን እሳት ነው። ስሙን ለሚክዱ ለዓመፀኞች ሰዎች የሚበላ እሳት ነው።",
       "amharic_phonetic": "kahn:  feḳadun lemīsru lbunachewn laḳenu sewoch yemīyadn 'isat new. smun lemīkdu le'ametseñoch sewoch yemībela 'isat new.",
       "tigrinya_script": "ካህን፤ ነቶም ፍቓዱ ዝገብሩ ቅኑዓት ልቢ ዘድሕን ሓዊ እዩ ነቶም ስሙ ዝኽሕዱ ዓመጽቲ ግና ዝባላዕ  ሓዊ እዩ",
-      "tigrinya_phonetic": "kahn: netom fqhadu zgebru ḳnu'at lbī zedḥn ḥawī 'iyu netom smu zkhḥdu 'ametstī gna zbala'i  ḥawī 'iyu"
+      "tigrinya_phonetic": "kahn: netom fqhadu zgebru ḳnu'at lbī zedḥn ḥawī 'iyu netom smu zkhḥdu 'ametstī gna zbala'i  ḥawī 'iyu",
+      "spanish": "Sacerdote: Es fuego, dador de vida a los rectos de corazón que cumplen su voluntad. Es fuego consumidor para los impíos que niegan su nombre."
     },
     {
       "instruction": "",
@@ -20716,7 +21765,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤  እሳታዊያን የሚሆኑ ሱራፌልና ኪሩቤል ሊነኩት የማይቻላቸው በእውነት እሳት ነው።",
       "amharic_phonetic": "kahn:  'isatawīyan yemīhonu surafélna kīrubél līnekut yemaychalachew be'iwnet 'isat new.",
       "tigrinya_script": "ካህን፤ ብባሪኦም እሳታውያን ዝኾኑ ኪሩቤልን ሱራፌልን ክትንክይዎ ዘይክእሉ ብሓቂ ሓዊ እዩ።",
-      "tigrinya_phonetic": "kahn: bbarī'om 'isatawyan zkhonu kīrubéln suraféln ktnkywo zeyk'ilu bḥaḳī ḥawī 'iyu."
+      "tigrinya_phonetic": "kahn: bbarī'om 'isatawyan zkhonu kīrubéln suraféln ktnkywo zeyk'ilu bḥaḳī ḥawī 'iyu.",
+      "spanish": "Sacerdote: En verdad, es un fuego que ni los querubines y serafines, vestidos de fuego y que son llamas de fuego, pueden tocar."
     },
     {
       "instruction": "",
@@ -20729,7 +21779,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤  ማርያም ሆይ ስለዚህ እንወድሻለን ከፍ ከፍም እናደርግሻለን፤  እውነተኛ የጽድቅ መብልንና እውነተኛ የሕይወት መጠጥን ወልድሽልናልና።",
       "amharic_phonetic": "kahn:  maryam hoy slezīh 'inwedሻlen kef kefm 'inadergሻlen:  'iwneteña yetsdḳ meblnna 'iwneteña yeḥywet meṭeṭn weldሽlnalna.",
       "tigrinya_script": "ካህን፤ ኦ ማርያም ኣማናዊ ብልዒ ሓቅን ኣማናዊ መስተ ሕይወትን ስለ  ዝወለድክልና ምእንትዚ ነፍቅረክን ነዕብየክን ሰዓብቲ",
-      "tigrinya_phonetic": "kahn: 'o maryam 'amanawī bl'ī ḥaḳn 'amanawī meste ḥywetn sle  zweledklna m'intzī nefḳrekn ne'ibyekn se'abtī"
+      "tigrinya_phonetic": "kahn: 'o maryam 'amanawī bl'ī ḥaḳn 'amanawī meste ḥywetn sle  zweledklna m'intzī nefḳrekn ne'ibyekn se'abtī",
+      "spanish": "Sacerdote: Oh María, por esto te amamos y te exaltamos, porque nos diste el verdadero alimento de justicia y la verdadera bebida de vida."
     },
     {
       "instruction": "",
@@ -20742,7 +21793,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤  የሐዋርያት ተከታዮች የሆናችሁ በአንብሮ እድ የተሾማችሁ አባቶች ሆይ ከእግዚአብሔር ዘንድ ለእኛ የምታማልዱ እናንተን ተቀበለናችኋል እኮን።",
       "amharic_phonetic": "kahn:  yeḥawaryat teketayoch yehonachhu be'anbro 'id yeteሾmachhu 'abatoch hoy ke'igzī'abḥér zend le'iña yemtamaldu 'inanten teḳebelenachhwal 'ikon.",
       "tigrinya_script": "ካህን፤ ሓዋርያት ዝኾንኩም ብምንባር ኢድ ዝተሸምኩም ኣቦታትና ናብ እግዚአብሔር ከተማልዱና",
-      "tigrinya_phonetic": "kahn: ḥawaryat zkhonkum bmnbar 'īd zteሸmkum 'abotatna nab 'igzī'abḥér ketemalduna"
+      "tigrinya_phonetic": "kahn: ḥawaryat zkhonkum bmnbar 'īd zteሸmkum 'abotatna nab 'igzī'abḥér ketemalduna",
+      "spanish": "Sacerdote: Oh padres nuestros, consagrados por la imposición de manos, sucesores de los apóstoles, os hemos tomado como intercesores ante Dios,"
     },
     {
       "instruction": "",
@@ -20755,7 +21807,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ከእግዚአብሔር ዘንድ ለእኛ የሚያማልዱ እነዚህንም ሁለቱን የጳጳሳት አለቆች በዘመናችን ተቀብለናቸዋል።  የታላቂቱን አገር የ{{COUNTRY}} አባ {{PATRIARCH NAME}}",
       "amharic_phonetic": "kahn: ke'igzī'abḥér zend le'iña yemīyamaldu 'inezīhnm huletun yep̣ap̣asat 'aleḳoch bezemenachn teḳeblenachewal.  yetalaḳītun 'ager ye{{COUNTRY}} 'aba {{PATRIARCH NAME}}",
       "tigrinya_script": "ካህን፤ ተቐቢልናኩም ኢና ብዘመና ድማ ናብ እግዚአብሔር ከማልዱና ነዞም 2ተ ሊቃነ ጳጳሳት ኣብ ሃገረ {{COUNTRY}}ን ኣብ ከተማናን ዝተሸሙ ኣባ {{PATRIARCH NAME}}ን",
-      "tigrinya_phonetic": "kahn: teqhebīlnakum 'īna bzemena dma nab 'igzī'abḥér kemalduna nezom 2te līḳane p̣ap̣asat 'ab hagere {{COUNTRY}}n 'ab ketemanan zteሸmu 'aba {{PATRIARCH NAME}}n"
+      "tigrinya_phonetic": "kahn: teqhebīlnakum 'īna bzemena dma nab 'igzī'abḥér kemalduna nezom 2te līḳane p̣ap̣asat 'ab hagere {{COUNTRY}}n 'ab ketemanan zteሸmu 'aba {{PATRIARCH NAME}}n",
+      "spanish": "Sacerdote: y hemos tomado como intercesores entre nosotros y Dios durante nuestros días a estos dos: El Patriarca de la gran Nación de {{PAÍS}}, Abba {{NOMBRE DEL PATRIARCA}},"
     },
     {
       "instruction": "",
@@ -20768,7 +21821,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ በአባቶቻችንም አገር ከተማ ላይ ክቡር የሚሆን አባ {{BISHOP NAME}}",
       "amharic_phonetic": "kahn: be'abatochachnm 'ager ketema lay kbur yemīhon 'aba {{BISHOP NAME}}",
       "tigrinya_script": "ካህን፤ ኣባ {{BISHOP NAME}}ን ተቐቢልናዮም ኣሎና።",
-      "tigrinya_phonetic": "kahn: 'aba {{BISHOP NAME}}n teqhebīlnayom 'alona."
+      "tigrinya_phonetic": "kahn: 'aba {{BISHOP NAME}}n teqhebīlnayom 'alona.",
+      "spanish": "Sacerdote: y el bendito Arzobispo, Abba {{NOMBRE DEL OBISPO}}, Primado del país de nuestros padres."
     },
     {
       "instruction": "",
@@ -20781,7 +21835,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ ብፅዕትና ፍስሕት በሁሉ ዘንድ የተመሰገነች ቡሩክትና ቅድስት ንጽሕትም ስለሆነች ስለ አምላክ እናት ስለ እመቤታችን ድንግል ማርያም",
       "amharic_phonetic": "dīyaḳon: bts'itna fsḥt behulu zend yetemesegenech buruktna ḳdst ntsḥtm slehonech sle 'amlak 'inat sle 'imebétachn dngl maryam",
       "tigrinya_script": "ዲያቆን፤ በእንተ ብፅዕት ወፍሥሕት ወስብሕት በኵሉ ቡርክት ወንጽሕት እግዝእትነ ወላዲተ አምላክ ማርያም ድንግል።",
-      "tigrinya_phonetic": "dīyaḳon: be'inte bts'it wefsḥt wesbḥt bekwlu burkt wentsḥt 'igz'itne weladīte 'amlak maryam dngl."
+      "tigrinya_phonetic": "dīyaḳon: be'inte bts'it wefsḥt wesbḥt bekwlu burkt wentsḥt 'igz'itne weladīte 'amlak maryam dngl.",
+      "spanish": "Diácono: Por amor a la bienaventurada, feliz, próspera, santa y pura Virgen María, Nuestra Señora, Madre de Dios, glorificada por todos."
     },
     {
       "instruction": "",
@@ -20794,7 +21849,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ ቅዱሳን ክቡራን ሰማያውያን ኃይሎችም ስለሚሆኑ ስለ መላእክት አለቆች። ሰባኪ ጎዳናንም ስለ ጠረጉ ሰለ ዮሐንስ መጥምቅ።",
       "amharic_phonetic": "dīyaḳon: ḳdusan kburan semayawyan haylochm slemīhonu sle mela'ikt 'aleḳoch. sebakī godananm sle ṭeregu sele yoḥans meṭmḳ.",
       "tigrinya_script": "ዲያቆን፤",
-      "tigrinya_phonetic": "dīyaḳon:"
+      "tigrinya_phonetic": "dīyaḳon:",
+      "spanish": "Diácono: Y por amor a los santos, honorables, espirituales, celestiales y poderosos arcángeles; y por amor a Juan el Bautista, el predicador y preparador del camino."
     },
     {
       "instruction": "",
@@ -20807,7 +21863,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ የተመሰገኑ ቅዱሳን አገልጋዮችም ስለሚሆኑ አራቱ ወንጌላውያን ማቴዎስና ማርቆስ ሉቃስና ዮሐንስ።",
       "amharic_phonetic": "dīyaḳon: yetemesegenu ḳdusan 'agelgayochm slemīhonu 'aratu wengélawyan matéwosna marḳos luḳasna yoḥans.",
       "tigrinya_script": "ዲያቆን፤",
-      "tigrinya_phonetic": "dīyaḳon:"
+      "tigrinya_phonetic": "dīyaḳon:",
+      "spanish": "Diácono: Y por amor a los santos y glorificados ministros, Mateo, Marcos, Lucas y Juan, los cuatro evangelistas:"
     },
     {
       "instruction": "",
@@ -20820,7 +21877,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ ሰለቅዱሳን ባሮችህ ጴጥሮስና ያዕቆብ፤ ዮሐንስና እንድርያስ፤ ፊልጶስና በርተሎሜዎስ፤",
       "amharic_phonetic": "dīyaḳon: seleḳdusan barochh p̣éṭrosna ya'iḳob: yoḥansna 'indryas: fīlp̣osna berteloméwos:",
       "tigrinya_script": "ዲያቆን፤",
-      "tigrinya_phonetic": "dīyaḳon:"
+      "tigrinya_phonetic": "dīyaḳon:",
+      "spanish": "Diácono: Por los santos siervos Pedro y Santiago; Juan y Andrés; Felipe y Bartolomé;"
     },
     {
       "instruction": "",
@@ -20833,7 +21891,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ ቶማስና ማቴዎስ፤ የዕልፍዮስ ልጅ ያዕቆብና ታዴዎስ፤ ስምዖንና  ማትያን፤ አሥራ ሁለቱን ሐዋርያት፤",
       "amharic_phonetic": "dīyaḳon: tomasna matéwos: ye'ilfyos lj ya'iḳobna tadéwos: sm'onna  matyan: 'asra huletun ḥawaryat:",
       "tigrinya_script": "ዲያቆን፤",
-      "tigrinya_phonetic": "dīyaḳon:"
+      "tigrinya_phonetic": "dīyaḳon:",
+      "spanish": "Diácono: Tomás y Mateo; Santiago, hijo de Alfeo; Tadeo, Simón y Matías;"
     },
     {
       "instruction": "",
@@ -20846,7 +21905,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ ሰለቅዱሳን ባሮችህ ጴጥሮስና ያዕቆብ፤ ዮሐንስና እንድርያስ፤ ፊልጶስና በርተሎሜዎስ፤ ቶማስና ማቴዎስ፤ የዕልፍዮስ ልጅ ያዕቆብና ታዴዎስ፤ ስምዖንና  ማትያን፤ አሥራ ሁለቱን ሐዋርያት፤",
       "amharic_phonetic": "dīyaḳon: seleḳdusan barochh p̣éṭrosna ya'iḳob: yoḥansna 'indryas: fīlp̣osna berteloméwos: tomasna matéwos: ye'ilfyos lj ya'iḳobna tadéwos: sm'onna  matyan: 'asra huletun ḥawaryat:",
       "tigrinya_script": "ዲያቆን፤",
-      "tigrinya_phonetic": "dīyaḳon:"
+      "tigrinya_phonetic": "dīyaḳon:",
+      "spanish": "Diácono: los doce apóstoles; y el apóstol Santiago, hermano de nuestro Señor y obispo de Jerusalén; y el santo y glorioso Esteban, archidiácono y mártir."
     },
     {
       "instruction": "",
@@ -20859,7 +21919,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ በቀናች ሃይማኖት ስላረፉ ስለ ቅዱሳን ሰማዕታት ሁሉ",
       "amharic_phonetic": "dīyaḳon: beḳenach haymanot slarefu sle ḳdusan sema'itat hulu",
       "tigrinya_script": "ዲያቆን፤",
-      "tigrinya_phonetic": "dīyaḳon:"
+      "tigrinya_phonetic": "dīyaḳon:",
+      "spanish": "Diácono: Y por todos los santos y mártires que han ido a descansar en la verdadera fe:"
     },
     {
       "instruction": "",
@@ -20872,7 +21933,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ ጳውሎስ ጢሞቴዎስ ሲላስና በርናባስ፤ ቲቶና ፊልሞና ቀሌምንጦ፤ ሰባ ሁለት አርድእት አምስት መቶ ባልንጀሮች። ሃይማኖታቸው ስለ ቀና ሰለ ሦስት መቶ አሥራ ስምንቱ።",
       "amharic_phonetic": "dīyaḳon: p̣awlos ṭīmotéwos sīlasna bernabas: tītona fīlmona ḳelémnṭo: seba hulet 'ard'it 'amst meto balnjeroch. haymanotachew sle ḳena sele sost meto 'asra smntu.",
       "tigrinya_script": "ዲያቆን፤",
-      "tigrinya_phonetic": "dīyaḳon:"
+      "tigrinya_phonetic": "dīyaḳon:",
+      "spanish": "Diáconos: Pablo, Timoteo, Silas y Bernabé, Tito, Filemón y Clemente, los 72 discípulos, los 500 hermanos, los 318 padres ortodoxos."
     },
     {
       "instruction": "",
@@ -20885,7 +21947,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ እኒህንም ሁሉንም ለአንተ ወገን ሊሆኑ አቤቱ አስባቸው፤ ብፁዕ ቅዱስ ሊቀ ጳጳሳቱን {{PATRIARCH NAME}}",
       "amharic_phonetic": "dīyaḳon: 'inīhnm hulunm le'ante wegen līhonu 'abétu 'asbachew: btsu'i ḳdus līḳe p̣ap̣asatun {{PATRIARCH NAME}}",
       "tigrinya_script": "ዲያቆን፤",
-      "tigrinya_phonetic": "dīyaḳon:"
+      "tigrinya_phonetic": "dīyaḳon:",
+      "spanish": "Diácono: Señor, acuérdate de todos y cada uno de ellos y del santo Patriarca Abba {{NOMBRE DEL PATRIARCA}}"
     },
     {
       "instruction": "",
@@ -20898,7 +21961,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ ብፁዕ ጳጳስ አባ {{BISHOP NAME}} አስባቸው። በሕይወታቸው ትጠብቃቸው ዘንድ ታድናቸውም ዘንድ ኃጢአታቸውንም ይቅር ትላቸው ዘንድ።",
       "amharic_phonetic": "dīyaḳon: btsu'i p̣ap̣as 'aba {{BISHOP NAME}} 'asbachew. beḥywetachew tṭebḳachew zend tadnachewm zend haṭī'atachewnm yḳr tlachew zend.",
       "tigrinya_script": "ዲያቆን፤",
-      "tigrinya_phonetic": "dīyaḳon:"
+      "tigrinya_phonetic": "dīyaḳon:",
+      "spanish": "Diácono: y el bienaventurado y santo Arzobispo Abba {{NOMBRE DEL OBISPO}} para preservar su vida y salvarlos y perdonar su pecado,"
     },
     {
       "instruction": "",
@@ -20911,7 +21975,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ እኛንም በነርሱ ጸሎት ትምረን ዘንድ ለዘላለሙ።",
       "amharic_phonetic": "dīyaḳon: 'iñanm benersu tselot tmren zend lezelalemu.",
       "tigrinya_script": "ዲያቆን፤",
-      "tigrinya_phonetic": "dīyaḳon:"
+      "tigrinya_phonetic": "dīyaḳon:",
+      "spanish": "Diácono: y que tengan compasión de nosotros por medio de sus oraciones, por los siglos de los siglos."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -20924,7 +21989,8 @@ const kidaseData = {
       "amharic_script": "",
       "amharic_phonetic": "",
       "tigrinya_script": "፨ ጸሎተ ቡራኬ ናይ ባስሌዎስ ፨",
-      "tigrinya_phonetic": "፨ tselote buraké nay basléwos ፨"
+      "tigrinya_phonetic": "፨ tselote buraké nay basléwos ፨",
+      "spanish": "፨ LA ORACIÓN DE BENDICIÓN DE SAN BASILIO ፨"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -20937,7 +22003,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤ ልዩ ሦስት የምትሆን አብ ወልድ መንፈስ ቅዱስ ሆይ የሚፋቅሩ የክርስቶስ ወገኖች የሚሆኑ ሕዝብህን በሰማያውያንና ምድራውያን በረከት ባርክ",
       "amharic_phonetic": "kahn nfḳ: lyu sost yemthon 'ab weld menfes ḳdus hoy yemīfaḳru yekrstos wegenoch yemīhonu ḥzbhn besemayawyanna mdrawyan bereket bark",
       "tigrinya_script": "ካህን ንፍቅ፤ ኦ ሥሉስ ቅዱስ ኣብ ወልድ መንፈስ ቅዱስን ፍቑራት ክርስቲያን ንዝኾኑ ሕዝብኻ ብበረከት ሰማያውያንን ምድራውያንን ባርኽ።",
-      "tigrinya_phonetic": "kahn nfḳ: 'o slus ḳdus 'ab weld menfes ḳdusn fqhurat krstīyan nzkhonu ḥzbkha bbereket semayawyann mdrawyann barkh."
+      "tigrinya_phonetic": "kahn nfḳ: 'o slus ḳdus 'ab weld menfes ḳdusn fqhurat krstīyan nzkhonu ḥzbkha bbereket semayawyann mdrawyann barkh.",
+      "spanish": "Sacerdote auxiliar: ¡Oh, Santísima Trinidad, Padre, Hijo y Espíritu Santo, bendice a tu pueblo, amados cristianos, con bendiciones celestiales y terrenales!"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -20950,7 +22017,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤ ጸጋ መንፈስ ቅዱስ ናባና  ለኣኽ ናይ ቅድስቲ ቤተ ክርስቲያን ኣፍ  ደገታት ብምሕረትን ብሃይማኖትን",
-      "tigrinya_phonetic": "kahn nfḳ: tsega menfes ḳdus nabana  le'akh nay ḳdstī béte krstīyan 'af  degetat bmḥretn bhaymanotn"
+      "tigrinya_phonetic": "kahn nfḳ: tsega menfes ḳdus nabana  le'akh nay ḳdstī béte krstīyan 'af  degetat bmḥretn bhaymanotn",
+      "spanish": "Sacerdote auxiliar: Y envíanos la gracia del Espíritu Santo, y abre para nosotros las puertas de tu Santa Iglesia en misericordia y en fe;"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -20963,7 +22031,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤ ከምዝረሓዉ ግበረልና እምነት ቅድስቲ ሥላሴኻ ውን ክሳዕ መወዳእታ እስትንፋስ",
-      "tigrinya_phonetic": "kahn nfḳ: kemzreḥawu gberelna 'imnet ḳdstī slasékha wn ksa'i meweda'ita 'istnfas"
+      "tigrinya_phonetic": "kahn nfḳ: kemzreḥawu gberelna 'imnet ḳdstī slasékha wn ksa'i meweda'ita 'istnfas",
+      "spanish": "Sacerdote auxiliar: y perfecciona en nosotros la fe de tu Santísima Trinidad hasta nuestro último aliento."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -20976,7 +22045,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤ ፈጽመልና ኦ ጐይታ  ኢየሱስ ክርስቶስ ንዝሓመሙ ሕዝብኻ  ብጽሓዮም እሞ ፈውሶም መገሻ  ንዝኸዱ ኣቦታትናን ኣደታ ትናን አኅዋትናን ኣኃትናን",
-      "tigrinya_phonetic": "kahn nfḳ: fetsmelna 'o gweyta  'īyesus krstos nzḥamemu ḥzbkha  btsḥayom 'imo fewsom megeሻ  nzkhedu 'abotatnan 'adeta tnan 'ahwatnan 'ahatnan"
+      "tigrinya_phonetic": "kahn nfḳ: fetsmelna 'o gweyta  'īyesus krstos nzḥamemu ḥzbkha  btsḥayom 'imo fewsom megeሻ  nzkhedu 'abotatnan 'adeta tnan 'ahwatnan 'ahatnan",
+      "spanish": "Sacerdote auxiliar: Oh mi Señor Jesucristo, visita a los enfermos de tu pueblo, sánalos y guía a nuestros padres y hermanos que se han ido y se han convertido en extranjeros."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -20989,7 +22059,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤ ምርሓዮም እሞ  ብሰላምን ጥዕናን ነናብ ቦታኦም  ምለሶም",
-      "tigrinya_phonetic": "kahn nfḳ: mrḥayom 'imo  bselamn ṭ'inan nenab bota'om  mlesom"
+      "tigrinya_phonetic": "kahn nfḳ: mrḥayom 'imo  bselamn ṭ'inan nenab bota'om  mlesom",
+      "spanish": "Sacerdote auxiliar: llévalos de regreso a sus hogares en paz y con buena salud."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -21002,7 +22073,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤ ንፋሳት ሰማይን ዝናማትን ባርኽ ከም መጠን ጸጋኻ ናይዛ ዓመት እዚኣ ፍረ ምድሪ ውን ባርኽ ኣብ ገጽ ምድሪ ዘወትር ሓጐስን ተድላን ግበረልና።",
-      "tigrinya_phonetic": "kahn nfḳ: nfasat semayn znamatn  barkh kem meṭen tsegakha nayza 'amet  'izī'a fre mdrī wn barkh 'ab gets  mdrī zewetr ḥagwesn tedlan  gberelna."
+      "tigrinya_phonetic": "kahn nfḳ: nfasat semayn znamatn  barkh kem meṭen tsegakha nayza 'amet  'izī'a fre mdrī wn barkh 'ab gets  mdrī zewetr ḥagwesn tedlan  gberelna.",
+      "spanish": "Sacerdote auxiliar: Bendice los aires del cielo, las lluvias y los frutos de la tierra de este año, según tu gracia, y haz que la alegría y el gozo prevalezcan perpetuamente sobre la faz de la tierra."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -21015,7 +22087,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤ ሰላምካ ኣጽንዓልና ኵሉ  ጊዜ ነዓና ሠናይ ነገር ክሓስቡ ልቢ ጽኑዓት ኃያላትን",
-      "tigrinya_phonetic": "kahn nfḳ: selamka 'atsn'alna kwlu  gīzé ne'ana senay neger kḥasbu lbī tsnu'at hayalatn"
+      "tigrinya_phonetic": "kahn nfḳ: selamka 'atsn'alna kwlu  gīzé ne'ana senay neger kḥasbu lbī tsnu'at hayalatn",
+      "spanish": "Sacerdote auxiliar: Y establece para nosotros tu paz. Vuelve los corazones de los reyes poderosos para que siempre nos traten con bondad."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -21028,7 +22101,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤ ዝኾኑ ምለስ ኵሉ ሳዕ  ኣብ ቅድስቲ ቤተ ክርስቲያንካ",
-      "tigrinya_phonetic": "kahn nfḳ: zkhonu mles kwlu sa'i  'ab ḳdstī béte krstīyanka"
+      "tigrinya_phonetic": "kahn nfḳ: zkhonu mles kwlu sa'i  'ab ḳdstī béte krstīyanka",
+      "spanish": "Sacerdote auxiliar: Concede la paz a los estudiantes de la iglesia que se reúnen continuamente en tu Santa Iglesia;"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -21041,7 +22115,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Sacerdote auxiliar: a todos, a cada uno por su nombre; en presencia de reyes poderosos, oh Dios nuestro, aumenta tu paz."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -21054,7 +22129,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn nfḳ:"
+      "tigrinya_phonetic": "kahn nfḳ:",
+      "spanish": "Sacerdote auxiliar: Descansen las almas de nuestros padres, hermanos y hermanas que han fallecido y encontrado el descanso en la fe correcta."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -21067,7 +22143,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤ ብዕጣን ብቝርባን ብወይኒ ብሜሮን ብመ ብራህቲ ብመጋረጃ ብመጻሕፍቲ ምንባ ባት ብኣቕሑ ቤተ መቕደስ ንዚሓልዩ  ባርኽ",
-      "tigrinya_phonetic": "kahn nfḳ: b'iṭan bḳhwrban bweynī bméron bme brahtī bmegareja bmetsaḥftī mnba bat b'aqhḥu béte meqhdes nzīḥalyu  barkh"
+      "tigrinya_phonetic": "kahn nfḳ: b'iṭan bḳhwrban bweynī bméron bme brahtī bmegareja bmetsaḥftī mnba bat b'aqhḥu béte meqhdes nzīḥalyu  barkh",
+      "spanish": "Sacerdote auxiliar: Y bendice a los que traen ofrendas de incienso, pan, vino, ungüento, aceite para lámparas, tapices, libros de lectura y vasos sagrados para el santuario."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -21080,7 +22157,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤ ክርስቶስ ኣምላ ኽና ኣብ ኢየሩሳ ሌም ሰማያ ዊት ዋጋኦም ኪኸፍ ሎም",
-      "tigrinya_phonetic": "kahn nfḳ: krstos 'amla khna 'ab 'īyerusa lém semaya wīt waga'om kīkhef lom"
+      "tigrinya_phonetic": "kahn nfḳ: krstos 'amla khna 'ab 'īyerusa lém semaya wīt waga'om kīkhef lom",
+      "spanish": "Sacerdote auxiliar: que Cristo nuestro Dios les dé su recompensa en la Jerusalén celestial."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -21093,7 +22171,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤ ኦ ክርስቶስ ኣምላኽና ምሕረት ንምርካብ ኣብዚ ምሳና  ተኣኪቦም ንዘለዉ ኵሎም  ራኅርኃሎም። ኣብ ቅድሚ መፍርህን  መደንገጽን መንበ ርካ ምጽዋት  ንዘቕረቡልካ ዅሎም ተቐበለሎም",
-      "tigrinya_phonetic": "kahn nfḳ: 'o krstos 'amlakhna mḥret nmrkab 'abzī msana  te'akībom nzelewu kwlom  rahrhalom. 'ab ḳdmī mefrhn  medengetsn menbe rka mtswat  nzeqhrebulka ዅlom teqhebelelom"
+      "tigrinya_phonetic": "kahn nfḳ: 'o krstos 'amlakhna mḥret nmrkab 'abzī msana  te'akībom nzelewu kwlom  rahrhalom. 'ab ḳdmī mefrhn  medengetsn menbe rka mtswat  nzeqhrebulka ዅlom teqhebelelom",
+      "spanish": "Sacerdote auxiliar: Y todos los que están reunidos con nosotros para implorar misericordia: Cristo nuestro Dios tenga misericordia de ellos; y todos los que dan limosna ante tu trono terrible y espantoso, recíbanla."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -21106,7 +22185,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤ ንዝተጨነቐት ሰብነት ኵላ ኣሓጕሳ በጽኑዕ ማእሰርቲ ንዝተኣስሩን ኣብ ስደትን ኣብ ምርኮን ንዘለውን",
-      "tigrinya_phonetic": "kahn nfḳ: nztecheneqhet sebnet kwla 'aḥagwsa betsnu'i ma'isertī nzte'asrun 'ab sdetn 'ab mrkon nzelewn"
+      "tigrinya_phonetic": "kahn nfḳ: nztecheneqhet sebnet kwla 'aḥagwsa betsnu'i ma'isertī nzte'asrun 'ab sdetn 'ab mrkon nzelewn",
+      "spanish": "Sacerdote auxiliar: Y consolad a toda alma afligida, a los que están encadenados y a los que están en el exilio o en cautiverio."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -21119,7 +22199,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤ ብመሪር መግዛእቲ ንዝተታኀዙን ኦ ኣምላክና ብምሕረትካ አድኅኖም።",
-      "tigrinya_phonetic": "kahn nfḳ: bmerīr megza'itī nztetahazun 'o 'amlakna bmḥretka 'adhnom."
+      "tigrinya_phonetic": "kahn nfḳ: bmerīr megza'itī nztetahazun 'o 'amlakna bmḥretka 'adhnom.",
+      "spanish": "Sacerdote auxiliar: Y a los que están sometidos a amarga servidumbre: Dios nuestro, líbralos en tu misericordia."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -21132,7 +22213,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤ ኦ መምህርና ኢየሱስ ክርስቶስ ናባኻ ናብ እንጽልየሉ ጊዜ",
-      "tigrinya_phonetic": "kahn nfḳ: 'o memhrna 'īyesus krstos nabakha nab 'intslyelu gīzé"
+      "tigrinya_phonetic": "kahn nfḳ: 'o memhrna 'īyesus krstos nabakha nab 'intslyelu gīzé",
+      "spanish": "Sacerdote auxiliar: Y a todos aquellos que nos han encomendado que los recordemos en nuestras súplicas a Ti:"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -21145,7 +22227,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤ ክንዝክሮም ንዝኣዘዙና ዅሎም ኣብ ሰማያዊት መንግሥትኻ ዘክሮም። ንዓይ ንኃጢኣተኛ ባርያኻውን ዘክረኒ",
-      "tigrinya_phonetic": "kahn nfḳ: knzkrom nz'azezuna ዅlom 'ab semayawīt mengstkha zekrom. n'ay nhaṭī'ateña baryakhawn zekrenī"
+      "tigrinya_phonetic": "kahn nfḳ: knzkrom nz'azezuna ዅlom 'ab semayawīt mengstkha zekrom. n'ay nhaṭī'ateña baryakhawn zekrenī",
+      "spanish": "Sacerdote auxiliar: Oh, nuestro Maestro Jesucristo, acuérdate de ellos en tu reino celestial y acuérdate de mí, tu siervo pecador."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -21158,7 +22241,8 @@ const kidaseData = {
       "amharic_script": "ካህን ንፍቅ፤",
       "amharic_phonetic": "kahn nfḳ:",
       "tigrinya_script": "ካህን ንፍቅ፤ ኦ ጐይታ ሕዝብኻ ኣድኅን ርስትኻ ውን ባርኽ ንዘለዓለም ሓልዎምን ኣዕብዮምን።",
-      "tigrinya_phonetic": "kahn nfḳ: 'o gweyta ḥzbkha 'adhn rstkha wn barkh nzele'alem ḥalwomn 'a'ibyomn."
+      "tigrinya_phonetic": "kahn nfḳ: 'o gweyta ḥzbkha 'adhn rstkha wn barkh nzele'alem ḥalwomn 'a'ibyomn.",
+      "spanish": "Sacerdote auxiliar: Oh Señor, \"salva a tu pueblo y bendice tu heredad; pastoréalos y suscítalos para siempre\" (Salmo 27:9)."
     },
     {
       "instruction": "",
@@ -21171,7 +22255,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን ንፍቅ፤  አቤቱ የጳጳሳቱን አለቆች ጳጳሳቱንና ኤጲስ ቆጶሳቱን ቀሳውስቱንና ዲያቆናቱን የክርስቲያንንም ወገኖች ሁሉ ማራቸው ይቅርም በላቸው።",
       "amharic_phonetic": "dīyaḳon nfḳ:  'abétu yep̣ap̣asatun 'aleḳoch p̣ap̣asatunna 'ép̣īs ḳop̣osatun ḳesawstunna dīyaḳonatun yekrstīyannm wegenoch hulu marachew yḳrm belachew.",
       "tigrinya_script": "ዲያቆን ንፍቅ፤ ኦ ጐይታ ንሊቃነ ጳጳሳትን ጳጳሳትን ንኤጲስ ቆጶሳትን ንቀሳውስትን ንዲያቆናትን ንዅሎም ሕዝበ ክርስቲያንን ምሓሮምን ይቕረ በለሎምን።",
-      "tigrinya_phonetic": "dīyaḳon nfḳ: 'o gweyta nlīḳane p̣ap̣asatn p̣ap̣asatn n'ép̣īs ḳop̣osatn nḳesawstn ndīyaḳonatn nዅlom ḥzbe krstīyann mḥaromn yqhre belelomn."
+      "tigrinya_phonetic": "dīyaḳon nfḳ: 'o gweyta nlīḳane p̣ap̣asatn p̣ap̣asatn n'ép̣īs ḳop̣osatn nḳesawstn ndīyaḳonatn nዅlom ḥzbe krstīyann mḥaromn yqhre belelomn.",
+      "spanish": "Subdiácono: Señor, ten piedad y misericordia de los patriarcas, arzobispos, obispos, sacerdotes, diáconos y de todo el pueblo cristiano."
     },
     {
       "instruction": "",
@@ -21184,7 +22269,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አማላጂቱ ሆይ እሊህንም ሁሉንም ከልጅሽ ዘንድ አማልጂ፤ የጳጳሳትንና የሊቃነ ጳጳሳትን የኤጲስቆጶሳትንም ሁሉ ነፍስ ያሳርፍ ዘንድ የቀሳውስትንና የዲያቆናትንም፤",
       "amharic_phonetic": "kahn: 'amalajītu hoy 'ilīhnm hulunm keljሽ zend 'amaljī: yep̣ap̣asatnna yelīḳane p̣ap̣asatn ye'ép̣īsḳop̣osatnm hulu nefs yasarf zend yeḳesawstnna yedīyaḳonatnm:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Oh Intercesor, intercede ante tu Hijo por el bien de todos y cada uno para dar descanso a las almas de todos los patriarcas, arzobispos, obispos, sacerdotes y diáconos."
     },
     {
       "instruction": "",
@@ -21197,7 +22283,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ እውነተኛውን የቃል ጐዳና የሚያቀኑ። \nነገሥታቱንና መኳንንቱን መሳፍንቱንም፤ በሥልጣን የሚኖሩትን ወራዙትንና ደናግልን፤ መነኰሳትንም ባለጠጋውንና ድሀውን፤ ታላቁንና ታናሹን ባልቴቱንና አባት እናት የሞቱበትን መጻተኛውንና ችጋረኛውን።",
       "amharic_phonetic": "kahn: 'iwneteñawn yeḳal gwedana yemīyaḳenu. \nnegestatunna mekwanntun mesafntunm: beslṭan yemīnorutn werazutnna denagln: menekwesatnm baleṭegawnna dhawn: talaḳunna tanaሹn baltétunna 'abat 'inat yemotubetn metsateñawnna chgareñawn.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: quienes guardan recto el camino de la verdadera palabra: reyes, gobernantes, príncipes, los que están en autoridad, jóvenes, vírgenes, monjes, ricos, pobres, grandes, pequeños, ancianas, huérfanos, extranjeros, miserables,"
     },
     {
       "instruction": "",
@@ -21210,7 +22297,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አስቀድሞ ከቤተ ክርስቲያን ማኅበር ተለይተው ያረፉትን የክርስቲያንንም ወገኖች ሁሉ።",
       "amharic_phonetic": "kahn: 'asḳedmo kebéte krstīyan mahber teleytew yarefutn yekrstīyannm wegenoch hulu.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: y todos los cristianos de la congregación de la iglesia que en días pasados ​​tuvieron su descanso."
     },
     {
       "instruction": "",
@@ -21223,7 +22311,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ይልቁንም በዚች ቦታ ስለሞቱ አንቺ ስለነርሱ ተግተሽ አማልጅ፤ ነፍሳቸውን ዕረፍትን ሰጥቶ ያሳርፍ ዘንድ",
       "amharic_phonetic": "kahn: ylḳunm bezīch bota slemotu 'anchī slenersu tegteሽ 'amalj: nefsachewn 'ireftn seṭto yasarf zend",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Intercede fervientemente por aquellos que han caído dormidos en este lugar para que él (el Hijo) les dé a sus almas un descanso tranquilo,"
     },
     {
       "instruction": "",
@@ -21236,7 +22325,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤  የድል ነሺዎች የሰማዕታት ቦታ በተባለ ሁሉ ዘንድ፤ በቡሩካን ጻድቃን ቦታና በትጉሃን መላእክት ቦታ።",
       "amharic_phonetic": "kahn:  yedl neሺwoch yesema'itat bota betebale hulu zend: beburukan tsadḳan botana betguhan mela'ikt bota.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: en todo lugar que se llama lugar de los mártires victoriosos, en el lugar de los bienaventurados justos, en el lugar de los ángeles guardianes."
     },
     {
       "instruction": "",
@@ -21249,7 +22339,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤  በቦታው ሁሉ ዘንድ አንቺ ርስት ነሽ፤ ስምሽም በእግዚአብሔር ዘንድ የሠለጠነ ነው።",
       "amharic_phonetic": "kahn:  bebotaw hulu zend 'anchī rst neሽ: smሽm be'igzī'abḥér zend yeseleṭene new.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Vosotros sois la herencia en todas partes y vuestro nombre es agradable a Dios."
     },
     {
       "instruction": "",
@@ -21262,7 +22353,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ የተቀመጣችሁ ተነሡ",
       "amharic_phonetic": "dīyaḳon: yeteḳemeṭachhu tenesu",
       "tigrinya_script": "ዲያቆን፤",
-      "tigrinya_phonetic": "dīyaḳon:"
+      "tigrinya_phonetic": "dīyaḳon:",
+      "spanish": "Diácono: Vosotros que estáis sentados, levantaos."
     },
     {
       "instruction": "",
@@ -21275,7 +22367,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤  እግዚአብሔርን በመፍራት እንነሳ፤ ምስጋናን የተመላች እርሷን ከፍ ከፍ እናደርጋት ዘንድ እንዲህም እያልን",
       "amharic_phonetic": "kahn:  'igzī'abḥérn bemefrat 'innesa: msganan yetemelach 'irswan kef kef 'inadergat zend 'indīhm 'iyaln",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Levantémonos con temor de Dios para exaltar y glorificar a aquella que está llena de gloria, diciendo:"
     },
     {
       "instruction": "",
@@ -21288,7 +22381,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ እናመሰግናት ዘንድ ጸጋን የተመላሽ ሆይ! የደስታ መፍሰሻ ሆይ! ዓይኖቻቸው ብዙዎች ከሚሆኑ ከኪሩቤል፤ ክንፎቻቸው ስድስት ከሚሆኑ ከሱራፌልም ይልቅ የሚበልት የመልክ ግርማ አለሽ።",
       "amharic_phonetic": "kahn: 'inamesegnat zend tsegan yetemelaሽ hoy! yedesta mefseሻ hoy! 'aynochachew bzuwoch kemīhonu kekīrubél : knfochachew sdst kemīhonu kesurafélm ylḳ yemībelt yemelk grma 'aleሽ.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: ¡Oh tú, lleno de gracia, oh tú, que eres el canal de la alegría, tienes un semblante más hermoso que los querubines de muchos ojos y los serafines de seis alas!"
     },
     {
       "instruction": "",
@@ -21301,7 +22395,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤  ወደ ምሥራቅ ተመልከቱ",
       "amharic_phonetic": "dīyaḳon:  wede msraḳ temelketu",
       "tigrinya_script": "ዲያቆን፤",
-      "tigrinya_phonetic": "dīyaḳon:"
+      "tigrinya_phonetic": "dīyaḳon:",
+      "spanish": "Diácono: Mira hacia el este."
     },
     {
       "instruction": "",
@@ -21314,7 +22409,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ እግዚአብሔር አብ በሰማይ ሁኖ ምሥራቅንና ምዕራብን ሰሜንንና ደቡብን ዳርቻዎችንም ሁሉ በእውነት ተመለከተ።",
       "amharic_phonetic": "kahn: 'igzī'abḥér 'ab besemay huno msraḳnna m'irabn seménnna debubn darchawochnm hulu be'iwnet temelekete.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: En verdad, Dios Padre miró desde el cielo hacia el este, el oeste, el norte y el sur, y hacia todos los confines (de la tierra)."
     },
     {
       "instruction": "",
@@ -21327,7 +22423,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ተነፈሰ አሻተተም እንደ አንቺ ያለ አላገኘም፤ የአንቺን መዓዛ ወደደ፤ ደም ግባትሽንም ወደደ የሚወደውን ልጁንም ወደ አንች ሰደደ።",
       "amharic_phonetic": "kahn: tenefese 'aሻtetem 'inde 'anchī yale 'alageñem: ye'anchīn me'aza wedede: dem gbatሽnm wedede yemīwedewn ljunm wede 'anch sedede.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Él percibió toda fragancia y no halló ninguna como la tuya. Le gustó tu fragancia y amó tu belleza, y por eso te envió a su Hijo, a quien ama."
     },
     {
       "instruction": "",
@@ -21340,7 +22437,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤  እናስተውል",
       "amharic_phonetic": "dīyaḳon:  'inastewl",
       "tigrinya_script": "ዲያቆን፤",
-      "tigrinya_phonetic": "dīyaḳon:"
+      "tigrinya_phonetic": "dīyaḳon:",
+      "spanish": "Diácono: Prestemos atención."
     },
     {
       "instruction": "",
@@ -21353,7 +22451,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አንቺን የወደደ እግዚአብሔር አብ ቅዱስ ነው፤ በማኅፀንሽ ያደረ ወልድ ዋሕድም ቅዱስ ነው፤ ያጸናሽ የጽድቅ መንፈስ ጰራቅሊጦስም ቅዱስ ነው።",
       "amharic_phonetic": "kahn: 'anchīn yewedede 'igzī'abḥér 'ab ḳdus new : bemahtsenሽ yadere weld waḥdm ḳdus new: yatsenaሽ yetsdḳ menfes p̣eraḳlīṭosm ḳdus new.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Santo es Dios Padre que te amó, santo es el Hijo unigénito que habitó en tu vientre, y santo es el Paráclito, el Espíritu de justicia, que te fortaleció."
     },
     {
       "instruction": "",
@@ -21366,7 +22465,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤  ተሰጥዎውን መልሱ",
       "amharic_phonetic": "dīyaḳon:  teseṭwown melsu",
       "tigrinya_script": "ዲያቆን፤",
-      "tigrinya_phonetic": "dīyaḳon:"
+      "tigrinya_phonetic": "dīyaḳon:",
+      "spanish": "Diácono: Te responderé."
     },
     {
       "instruction": "",
@@ -21379,7 +22479,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ ቅዱስ ቅዱስ ቅዱስ ፍጹም አሸናፊ እግዚአብሔር የጌትነትህ ምሥጋና በሰማይና በምድር የመላ ነው።",
       "amharic_phonetic": "፨ ḥzb: ḳdus ḳdus ḳdus ftsum 'aሸnafī 'igzī'abḥér yegétneth msgana besemayna bemdr yemela new.",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "፨ Pueblo: Santo, Santo, Santo, perfecto Señor de los ejércitos, el cielo y la tierra están llenos de la santidad de tu gloria."
     },
     {
       "instruction": "",
@@ -21392,7 +22493,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ምስጋናን የተመላሽ ድንግል ሆይ በማንና በማንስ ምሳሌ እንመስልሻለን?",
       "amharic_phonetic": "kahn: msganan yetemelaሽ dngl hoy bemanna bemans msalé 'inmeslሻlen?",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: ¡Oh Virgen, llena de gloria!, ¿con quién y con qué semejanza te compararemos?"
     },
     {
       "instruction": "",
@@ -21405,7 +22507,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አማኑኤል የማይተረጐም የሥጋን ልብስነት ከአንቺ የለበሳት መሥሪያ ነሽ። ዝሐውን ከአዳም ጥንተ ሥጋ አደረገ።",
       "amharic_phonetic": "kahn: 'amanu'él yemayteregwem yesgan lbsnet ke'anchī yelebesat mesrīya nesh. zḥawn ke'adam ṭnte sga 'aderege.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Vosotros sois el telar del que Emmanuel tomó su inefable vestidura de carne. Hizo la envoltura de la misma carne que la de Adán, y la trama es vuestra carne."
     },
     {
       "instruction": "",
@@ -21418,7 +22521,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ማጉም ያንቺ ሥጋ ነው፤ መወርወሪያውም ቃል እርሱ ኢየሱስ ክርስቶስ ነው። መሕኑም ከልዕልና የወረደ የልዑል እግዚአብሔር አምሳል ነው። ሠሪውም መንፈስ ቅዱስ ነው።",
       "amharic_phonetic": "kahn: magum yanchī sga new: mewerwerīyawm ḳal 'irsu 'īyesus krstos new. meḥnum kel'ilna yewerede yel'ul 'igzī'abḥér 'amsal new. serīwm menfes ḳdus new.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: La lanzadera es la Palabra misma, Jesucristo. La longitud del hilo es la sombra de Dios Altísimo. El tejedor es el Espíritu Santo."
     },
     {
       "instruction": "",
@@ -21431,7 +22535,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ወዮ ይህ ነገር ዕፁብ ድንቅ ነው የቀደሙ አባቶች ከሞት ወደ ሕይወት የተሸጋገሩብሽ ድልድይ ሆይ፣",
       "amharic_phonetic": "kahn: weyo yh neger 'itsub dnḳ new yeḳedemu 'abatoch kemot wede ḥywet yeteshegagerubish dldy hoy,",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: ¡Qué maravilloso y espléndido es esto! ¡Oh puente por el cual los antiguos padres cruzaron de la muerte a la vida!"
     },
     {
       "instruction": "",
@@ -21444,7 +22549,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ከምድር እስከ ሰማይ የምትደርሽ መሰላል ሆይ፤ የፍጥረት ሁሉ መጀመሪያ በአንቺ ታደስ።",
       "amharic_phonetic": "kahn: kemdr 'iske semay yemtderish meselal hoy: yefṭret hulu mejemerīya be'anchī tades.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: ¡Oh escalera de la tierra al cielo, por ti fue renovada la primera creación!"
     },
     {
       "instruction": "",
@@ -21457,7 +22563,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ከገነት በተሰደደ ጊዜ የአዳም ተስፋው አንቺ ነሽ። በግፍ የተገደለ የአቤል የውሃቱ አንቺ ነሽ። የሴት ቸርነት አንቺ ነሽ።",
       "amharic_phonetic": "kahn: kegenet betesedede gīzé ye'adam tesfaw 'anchī nesh. begf yetegedele ye'abél yewhatu 'anchī nesh. yesét chernet 'anchī nesh.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Tú fuiste la esperanza de Adán cuando fue expulsado del paraíso, la mansedumbre de Abel que fue asesinado por su injusticia,"
     },
     {
       "instruction": "",
@@ -21470,7 +22577,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ የሄኖክም ሥራዎቹ ከክፉ ጥፋት የዳነባት የኖኅ መርከብ፤ የሴም ቡራኬው ዕድል ፈንታውም አንቺ ነሽ።",
       "amharic_phonetic": "kahn: yehénokm srawochu kekfu ṭfat yedanebat yenoh merkeb: yesém burakéw 'idl fentawm 'anchī nesh.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: la bondad de Set, las obras de Enoc, el arca de Noé a través de la cual fue salvado de la destrucción maligna, la bendición y porción de Sem,"
     },
     {
       "instruction": "",
@@ -21483,7 +22591,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ የአብርሃም እንግድነት የይስሐቅ መዓዛ፤ የያዕቆብም መሰላል አንቺ ነሽ። ዮሴፍንም የምታረጋጊው አንቺ ነሽ።",
       "amharic_phonetic": "kahn: ye'abrham 'ingdnet yeysḥaḳ me'aza: yeya'iḳobm meselal 'anchī nesh. yoséfnm yemtaregagīw 'anchī nesh.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: la peregrinación de Abraham, el salvador de Isaac, la escalera de Jacob, el consolador de José,"
     },
     {
       "instruction": "",
@@ -21496,7 +22605,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ የሙሴ ጽላት፤ የሲና ሐመልማል፤ የካህኑ የአሮን የልብሱ ቃጭል፤ የጸገየች፤ ያበበችና ያፈራችም በትር አንቺ ነሽ።",
       "amharic_phonetic": "kahn: yemusé tslat: yesīna hamelmal: yekahnu ye'aron yelbsu ḳachl: yetsegeyech: yabebetchnna yaferachm betr 'anchī nesh.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: las tablas de Moisés, la zarza del Sinaí, las campanillas en el manto de Aarón el sacerdote, la vara que creció, floreció y dio fruto,"
     },
     {
       "instruction": "",
@@ -21509,7 +22619,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ የኢያሱ የምስክር ሐውልት፤ የጌዴዎን ፀምር፤ የሳሙኤል የሽቱ ሙዳይና የዘይት ቀንድ አንቺ ነሽ።",
       "amharic_phonetic": "kahn: ye'īyasu yemskr ḥawlt: yegédéwon tsemr: yesamu'él yeshtu mudayna yezeyt ḳend 'anchī nesh.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: la piedra del testimonio de Josué, el vellón de Gedeón, el frasco de ungüento y el cuerno de aceite de Samuel,"
     },
     {
       "instruction": "",
@@ -21522,7 +22633,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ የተመካባት የዕሴይ ሥር፤ የአሚናዳብም ሠረገላ የዳዊት መሰንቆ የሰሎሞን አክሊል አንቺ ነሽ። የታጠረች ተክል የተዘጋች የውኃ ጕድጓድ አንቺ ነሽ።",
       "amharic_phonetic": "kahn: yetemekabat ye'iséy sr: ye'amīnadabm seregela yedawīt mesenḳo yeselomon 'aklīl 'anchī nesh. yetaṭerech tekl yetezegach yewha gwdgwad 'anchī nesh.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: la raíz de Jesé de la que se jactaba, los carros de Aminadib, el arpa de David, la corona de Salomón, el jardín cercado, el manantial cerrado,"
     },
     {
       "instruction": "",
@@ -21535,7 +22647,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ የኤልያስ የወርቅ መሶብ፤ የኤልሳዕ ጋን አንቺ ነሽ። ኢሳይያስ ፅንስን ከድንግልና ጋራ የተናገረልሽ ዳንኤልም ያለ ሩካቤ መውለድን የተናገረልሽ አንቺ ነሽ።",
       "amharic_phonetic": "kahn: ye'élyas yewerḳ mesob: ye'élsa'i gan 'anchī neሽ. 'īsayyas tsnsn kednglna gara yetenagerelሽ dan'élm yale rukabé mewledn yetenagerelሽ 'anchī neሽ.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: el omer de oro de Elías, la vasija de Eliseo, la concepción virginal de la que profetizó Isaías, el primer parto sin conocer varón del que también habló Daniel,"
     },
     {
       "instruction": "",
@@ -21548,7 +22661,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ፋራን የምትባል የዕንባቆም ተራራ፤ የተዘጋች የሕዝቅኤል ምሥራቅ፤ የቤተልሔም ሕግ መውጫ ኤፍራታ የምትባል ምድር አንቺ ነሽ",
       "amharic_phonetic": "kahn: faran yemtbal ye'inbaḳom terara: yetezegach yeḥzḳ'él msraḳ: yebételḥém ḥg mewcha 'éfrata yemtbal mdr 'anchī neሽ",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: el monte de Faran de Habacuc, la casa cerrada al este de Ezequiel, el lugar en Belén desde donde sale la ley,"
     },
     {
       "instruction": "",
@@ -21561,7 +22675,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ የሲሎንዲስ ዕፀ ሕይወት፤ የናሆምንም ቍስል የምታድን የዘካርያስ ደስታው፤ የሚልክያስ ንጽሕት አዳራሽ አንቺ ነሽ።",
       "amharic_phonetic": "kahn: yesīlondīs 'itse ḥywet: yenahomnm ḳwsl yemtadn yezekaryas destaw: yemīlkyas ntsḥt 'adaraሽ 'anchī neሽ.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: la tierra de Efrata de Miqueas, el árbol de la vida de Silóndis, el sanador de las heridas de Nahúm, el gozo de Zacarías, el salón limpio de Malaquías."
     },
     {
       "instruction": "",
@@ -21574,7 +22689,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ድንግል ሆይ የነቢያት ትንቢትን ምሳሌ የሐዋርያት ሞገሳቸው የሰማዕታት እናታቸው፤ የመላእከት እኅታቸው አንቺ ነሽ።",
       "amharic_phonetic": "kahn: dngl hoy yenebīyat tnbītn msalé yeḥawaryat mogesachew yesema'itat 'inatachew: yemela'iket 'ihtachew 'anchī neሽ.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Oh Virgen, tú eres el ideal y la profecía de los profetas; el favor de los apóstoles, la madre de los mártires; la hermana de los ángeles;"
     },
     {
       "instruction": "",
@@ -21587,7 +22703,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ በመዓልትና በሌሊት በበሮቿ ደጅ የሚጠኑ የወራዙትና የደናግል የመነኰሳትም መመኪያቸው አንቺ ነሽ።",
       "amharic_phonetic": "kahn: beme'altna belélīt beberochwa dej yemīṭenu yewerazutna yedenagl yemenekwesatm memekīyachew 'anchī neሽ.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: el orgullo de los jóvenes, las vírgenes y los monjes que velan día y noche a tus puertas."
     },
     {
       "instruction": "",
@@ -21600,7 +22717,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ድንግል ሆይ በኃጢአት ፍትወት የተፀነሽ አይደለም፤ በሕግ በሆነ ሩካቤ ከሐና ከኢያቄም የተወልድሽ እንጂ።",
       "amharic_phonetic": "kahn: dngl hoy behaṭī'at ftwet yetetseneሽ 'aydelem: beḥg behone rukabé keḥana ke'īyaḳém yeteweldሽ 'injī.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Oh Virgen, no fuiste concebida por lujuria impura, sino que naciste en matrimonio legítimo de Ana y Eliaquim."
     },
     {
       "instruction": "",
@@ -21613,7 +22731,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ድንግል ሆይ አንገታቸውን እንደሚያገዝፉ እንደ ዕብራውያን ሴቶች ልጆች በዋዛ ያደግሽ አይደለም፤ በንጽሕና፣ በቅድስና በቤተ መቅደስ ኖርሽ እንጂ።",
       "amharic_phonetic": "kahn: dngl hoy 'angetachewn 'indemīyagezfu 'inde 'ibrawyan sétoch ljoch bewaza yadegሽ 'aydelem: bentsḥna, beḳdsna bebéte meḳdes norሽ 'injī.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Oh Virgen, no creciste en la alegría como las hijas hebreas que endurecieron su cuello, sino que viviste en el santuario en santidad y pureza."
     },
     {
       "instruction": "",
@@ -21626,7 +22745,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ድንግል ሆይ ምድራዊ ኅብስትን የተመገብሽ አይደለሽም፤  ከሰማየ ሰማያት የበሰለ ሰማያዊ ኅብስትን ነው እንጂ።",
       "amharic_phonetic": "kahn: dngl hoy mdrawī hbstn yetemegebሽ 'aydeleሽm:  kesemaye semayat yebesele semayawī hbstn new 'injī.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Oh Virgen, no comiste pan terrenal, sino pan celestial preparado en el cielo de los cielos."
     },
     {
       "instruction": "",
@@ -21639,7 +22759,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ድንግል ሆይ ምድራዊ መጠጥን የጠጣሽ አይደለም፤ ከሰማየ ሰማያት የተቀዳ ሰማያዊ መጠጥን ነው እንጂ።",
       "amharic_phonetic": "kahn: dngl hoy mdrawī meṭeṭn yeṭeṭaሽ 'aydelem: kesemaye semayat yeteḳeda semayawī meṭeṭn new 'injī.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Oh Virgen, no bebiste bebida terrenal, sino bebida celestial derramada desde el cielo de los cielos."
     },
     {
       "instruction": "",
@@ -21652,7 +22773,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ድንግል ሆይ ከአንቺ አስቀድሞ ከአንቺም በኋላ እንዳሉ ሴቶች እድፍ የምታዊቂ አይደለሽም በንጽሕና፣ በቅድስና ያጌጥሽ ነሽ እንጂ።",
       "amharic_phonetic": "kahn: dngl hoy ke'anchī 'asḳedmo ke'anchīm behwala 'indalu sétoch 'idf yemtawīḳī 'aydeleሽm bentsḥna , beḳdsna yagéṭሽ neሽ 'injī.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Oh Virgen, tú no conociste la impureza como las mujeres que te precedieron y las que vendrán después de ti, sino que estás adornada con santidad y pureza."
     },
     {
       "instruction": "",
@@ -21665,7 +22787,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ድንግል ሆይ የሚያታልሉ ጕልማሶች ያረጋጉሽ አይደለሽም የሰማይ መላእክት ጐበኙሽ እንጂ። እንደ ተነገረ ካህናትና የካህናት አለቆች አመሰገኑሽ እንጂ።",
       "amharic_phonetic": "kahn: dngl hoy yemīyatallu gwlmasoch yaregaguሽ 'aydeleሽm yesemay mela'ikt gwebeñuሽ 'injī. 'inde tenegere kahnatna yekahnat 'aleḳoch 'amesegenuሽ 'injī.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Oh Virgen, los jóvenes malvados no pudieron seducirte, pero los ángeles del cielo te visitaron y, como se decía, los sacerdotes y los sumos sacerdotes te alabaron."
     },
     {
       "instruction": "",
@@ -21678,7 +22801,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ድንግል ሆይ ለዮሴፍ የታጨሽ ለመገናኘት አይደለም፤ ንጹሕ ሆኖ ሊጠብቅሽ ነው እንጂ። እንዲሁ ስለሆነ",
       "amharic_phonetic": "kahn: dngl hoy leyoséf yetacheሽ lemegenañet 'aydelem: ntsuḥ hono līṭebḳሽ new 'injī. 'indīhu slehone",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Oh Virgen, no te desposaste con José para uniros, sino para que él te mantuviera pura, y así se cumplió."
     },
     {
       "instruction": "",
@@ -21691,7 +22815,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ እርሱ ቅሉ እግዚአብሔር አብ ንጽሕናሽን ባየ ጊዜ ስሙ ገብርኤል የሚባል ብርሃናዊ መልአኩን ወደ አንቺ ላከ",
       "amharic_phonetic": "kahn: 'irsu ḳlu 'igzī'abḥér 'ab ntsḥnaሽn baye gīzé smu gebr'él yemībal brhanawī mel'akun wede 'anchī lake",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Cuando Dios Padre vio vuestra pureza, os envió a su ángel resplandeciente, cuyo nombre es Gabriel,"
     },
     {
       "instruction": "",
@@ -21704,7 +22829,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ \"መንፈስ ቅዱስ በላይሽ ይመጣል\" የልዑል ኃይልም ይጋርድሻል አለሽ።",
       "amharic_phonetic": "kahn: \"menfes ḳdus belayሽ ymeṭal\" yel'ul haylm ygardሻl 'aleሽ.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Y os dijo: «El Espíritu Santo vendrá sobre vosotros, y el poder del Altísimo os cubrirá con su sombra»."
     },
     {
       "instruction": "",
@@ -21717,7 +22843,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ከአባቱ አጠገብ ሳይለይ ቃል ወደ አንቺ መጣ፤",
       "amharic_phonetic": "kahn: ke'abatu 'aṭegeb sayley ḳal wede 'anchī meṭa:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: El Verbo vino a vosotros sin separarse del seno de su Padre;"
     },
     {
       "instruction": "",
@@ -21730,7 +22857,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ሳይወሰን ፀነስሽው በላይ ሳይጐድል በታችም ሳይጨመር በማኅፀንሽ ተወሰነ።",
       "amharic_phonetic": "kahn: saywesen tsenesሽw belay saygwedl betachm saychemer bemahtsenሽ tewesene.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Tú lo concebiste sin que le faltara nada, y permaneció en tu vientre sin que le quitaran nada de arriba ni le añadieran nada de abajo."
     },
     {
       "instruction": "",
@@ -21743,7 +22871,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ መመጠነ መመርመር የሌለበት እሳተ መለኮት በሆድሽ አደረ። በምድራዊ እሳት እንመስለው ዘንድ አይገባም፤",
       "amharic_phonetic": "kahn: memeṭene memermer yelélebet 'isate melekot behodሽ 'adere. bemdrawī 'isat 'inmeslew zend 'aygebam:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: En tu vientre moraba el fuego inestimable e insondable de la Divinidad. No es justo compararlo con el fuego terrenal."
     },
     {
       "instruction": "",
@@ -21756,7 +22885,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ለእሳትስ መጠን አለው፤ ልክም አለው መለኮት ግን ይህን ያህላል፤ ይህንንም ይመስላል ሊባል አይቻልም።",
       "amharic_phonetic": "kahn: le'isats meṭen 'alew: lkm 'alew melekot gn yhn yahlal: yhnnm ymeslal lībal 'aychalm.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: El fuego tiene medida y volumen, pero de la Deidad no se puede decir que sea así, ni siquiera que parezca ser así."
     },
     {
       "instruction": "",
@@ -21769,7 +22899,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ለመለኮት እንደ ፀሐይና እንደ ጨረቃ ክበብ፤ እንደ ሰውም መጠን ያለው አይደለም፤ ድንቅ ነው እንጂ፤ የሰው ሕሊና የመላእክትም አእምሮ በማይደርስበት በአርያሙ የሚኖር ነው እንጂ።",
       "amharic_phonetic": "kahn: lemelekot 'inde tseḥayna 'inde chereḳa kbeb: 'inde sewm meṭen yalew 'aydelem: dnḳ new 'injī : yesew ḥlīna yemela'iktm 'a'imro bemaydersbet be'aryamu yemīnor new 'injī.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: La Divinidad no tiene círculo como el sol y la luna, ni estatura como la del hombre, sino que es todopoderosa y está sentada en su cielo más alto, al que ni el pensamiento del hombre ni el conocimiento de los ángeles pueden llegar."
     },
     {
       "instruction": "",
@@ -21782,7 +22913,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ለመለኮት ወርድና ቁመት፣ ላይና ታች፤ ቀኝና ግራ ያለው አይደለም በሁሉ የመላ ነው እንጂ።",
       "amharic_phonetic": "kahn: lemelekot werdna ḳumet, layna tach: ḳeñna gra yalew 'aydelem behulu yemela new 'injī.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: La Deidad no tiene ni arriba ni abajo, ni izquierda ni derecha, sino que siempre llena las cosas."
     },
     {
       "instruction": "",
@@ -21795,7 +22927,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ለመለኮት የሚዘረጋበትና የሚሰበሰብበት ያለው አይደለም ግዛቱ ባገር ሁሉ ነው እንጂ።",
       "amharic_phonetic": "kahn: lemelekot yemīzeregabetna yemīsebesebbet yalew 'aydelem gzatu bager hulu new 'injī.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: La Deidad no tiene lugar donde estirarse o contraerse, sino que llena todo lugar."
     },
     {
       "instruction": "",
@@ -21808,7 +22941,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ለመለኮት በላይ ጠፈር በታችም መሠረት ያለው አይደለም፤ ጠፈሩ እርሱ መሠረቱም እርሱ ነው እንጂ።",
       "amharic_phonetic": "kahn: lemelekot belay ṭefer betachm meseret yalew 'aydelem: ṭeferu 'irsu meseretum 'irsu new 'injī.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: La Deidad no tiene ni firmamento arriba ni fundamento abajo, sino que Él mismo es el firmamento y el fundamento."
     },
     {
       "instruction": "",
@@ -21821,7 +22955,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ለመለኮት ከምድር ከውስጧ የሆነውን ያነሳ ዘንድ ማጐንበስ ራስንም ዝቅ ማድረግ ያለበት አይደለም፤ ለጴጥሮስ እንዳሳየው ሁሉ በእጁ የተያዘ ነው እንጂ።",
       "amharic_phonetic": "kahn: lemelekot kemdr kewsṭwa yehonewn yanesa zend magwenbes rasnm zḳ madreg yalebet 'aydelem: lep̣éṭros 'indasayew hulu be'iju yeteyaze new 'injī.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: La Divinidad no se inclina ni agacha la cabeza para tomar lo que está en la tierra, sino que todo está en su mano, como se lo mostró a Pedro."
     },
     {
       "instruction": "",
@@ -21834,7 +22969,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ለመለኮት በሚታይ ገንዘብ በሚወሰንም ገንዘብ ደረትና ፊት የኋላም ጀርባ ያለው አይደለም በነደ እሳት የተሸፈን ነው እንጂ።",
       "amharic_phonetic": "kahn: lemelekot bemītay genzeb bemīwesenm genzeb deretna fīt yehwalam jerba yalew 'aydelem benede 'isat yeteሸfen new 'injī.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: La Deidad no tiene ni pecho ni espalda por los cuales pueda ser vista, y a través de los cuales pueda ser vista, y a través de los cuales pueda ser limitada,"
     },
     {
       "instruction": "",
@@ -21847,7 +22983,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ነደ እሳት ግን እርሱ ነው። መለኮትስ ንጹሕና ጽሩይ ብሩህም ነው።",
       "amharic_phonetic": "kahn: nede 'isat gn 'irsu new. melekots ntsuḥna tsruy bruhm new.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Pero Él está cubierto de llama de fuego, y Él mismo es la llama de fuego. La divinidad es limpia, pura y resplandeciente."
     },
     {
       "instruction": "",
@@ -21860,7 +22997,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ የላከ አብ በህላዌው አባት እንደሆነ እናምናለን። የተላከ ወልድንም በህላዌው ወልድ እንደሆነ እናምናለን።",
       "amharic_phonetic": "kahn: yelake 'ab behlawéw 'abat 'indehone 'inamnalen. yetelake weldnm behlawéw weld 'indehone 'inamnalen.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Creemos que el Padre que envía es Padre por naturaleza. Creemos que el Hijo que es enviado es Hijo por naturaleza."
     },
     {
       "instruction": "",
@@ -21873,7 +23011,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ማሕየዊ መንፈስ ቅዱስም በህላዌው መንፈስ ቅዱስ እንደሆነ እናምናለን። ሦስቱ ስም አንዱ እግዚአብሔር።",
       "amharic_phonetic": "kahn: maḥyewī menfes ḳdusm behlawéw menfes ḳdus 'indehone 'inamnalen. sostu sm 'andu 'igzī'abḥér.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Creemos que el Espíritu Santo, dador de vida, es Espíritu Santo en su esencia. Tres nombres, pero un solo Dios."
     },
     {
       "instruction": "",
@@ -21886,7 +23025,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አብርሃም ከይስሐቅ እንደሚበልጥ ይስሐቅም ከያዕቆብ እንደሚበልጥ አይደለም። ለመለኮት እንዲህ አይደለም፤ አብ ከልጁ አይበልጥም።",
       "amharic_phonetic": "kahn: 'abrham keysḥaḳ 'indemībelṭ ysḥaḳm keya'iḳob 'indemībelṭ 'aydelem. lemelekot 'indīh 'aydelem: 'ab kelju 'aybelṭm.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: No sucede con la Deidad como sucedió con Abraham, que era mayor que Isaac, o con Isaac, que era mayor que Jacob, sino que el Padre no es mayor que el Hijo."
     },
     {
       "instruction": "",
@@ -21899,7 +23039,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ወልድም ከመንፈስ ቅዱስ አይበልጥም። መንፈስ ቅዱስም ከወልድ አያንስም፤ ወልድም ከአባቱ አያንስም።",
       "amharic_phonetic": "kahn: weldm kemenfes ḳdus 'aybelṭm. menfes ḳdusm keweld 'ayansm: weldm ke'abatu 'ayansm.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Ni el Hijo es mayor que el Espíritu Santo, ni el Espíritu Santo es menor que el Hijo, ni el Hijo es menor que su Padre."
     },
     {
       "instruction": "",
@@ -21912,7 +23053,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አብርሃም በፍጥረት ሥርዓት ይስሐቅን እንደሚያዘው ይስሐቅም ያዕቆብን እንደሚያዘው አይደለም። መለኮት እንዲህ አይደለም፤",
       "amharic_phonetic": "kahn: 'abrham befṭret sr'at ysḥaḳn 'indemīyazew ysḥaḳm ya'iḳobn 'indemīyazew 'aydelem. melekot 'indīh 'aydelem:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: No es con la Deidad como fue con Abraham quien dio órdenes a Isaac, o con Isaac quien dio órdenes a Jacob,"
     },
     {
       "instruction": "",
@@ -21925,7 +23067,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አባት በመሆን አብ ልጁን አያዘውም። ወልድም ልጅ በመሆን አይበልጥም፤ መንፈስ ቅዱስም ትክክል ነው።",
       "amharic_phonetic": "kahn: 'abat bemehon 'ab ljun 'ayazewm. weldm lj bemehon 'aybelṭm: menfes ḳdusm tkkl new.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: pero el Padre, siendo Padre, no da órdenes al Hijo; y el Hijo, siendo Hijo, no es exaltado; y el Espíritu Santo es igual:"
     },
     {
       "instruction": "",
@@ -21938,7 +23081,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ መለኮት ግን አብ ወልድ መንፈስ ቅዱስም ነው። አንድ አምላክ አንዲት መንግሥት፤ አንዲት ሥልጣን አንዲት አገዛዝ ናቸው።",
       "amharic_phonetic": "kahn: melekot gn 'ab weld menfes ḳdusm new. 'and 'amlak 'andīt mengst: 'andīt slṭan 'andīt 'agezaz nachew.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Pero el Padre, el Hijo y el Espíritu Santo son un solo Dios, un solo reino, una sola autoridad y un solo gobierno."
     },
     {
       "instruction": "",
@@ -21951,7 +23095,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አብ ወልድ መንፈስ ቅዱስ ያስባሉ።\nአብ ወልድ መንፈስ ቅዱስ ይናገራሉ።\nአብ ወልድ መንፈስ ቅዱስ ይወዳሉ።",
       "amharic_phonetic": "kahn: 'ab weld menfes ḳdus yasbalu.\n'ab weld menfes ḳdus ynageralu.\n'ab weld menfes ḳdus ywedalu.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: El Padre, el Hijo y el Espíritu Santo piensan. El Padre, el Hijo y el Espíritu Santo hablan. El Padre, el Hijo y el Espíritu Santo quieren."
     },
     {
       "instruction": "",
@@ -21964,7 +23109,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አብ አብ ወልድ መንፈስ ቅዱስ ይመክራሉ።\nአብ ወልድ መንፈስ ቅዱስ ይናገራሉ።\nአብ ወልድ መንፈስ ቅዱስ ይፈጽማሉ።",
       "amharic_phonetic": "kahn: 'ab 'ab weld menfes ḳdus ymekralu.\n'ab weld menfes ḳdus ynageralu.\n'ab weld menfes ḳdus yfetsmalu.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: El Padre, el Hijo y el Espíritu Santo deliberan. El Padre, el Hijo y el Espíritu Santo pronuncian la palabra. El Padre, el Hijo y el Espíritu Santo la completan."
     },
     {
       "instruction": "",
@@ -21977,7 +23123,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አብ ወልድ መንፈስ ቅዱስ ይሠራሉ።\nአብ ወልድ መንፈስ ቅዱስ ያስማማሉ።\nአብ ወልድ መንፈስ ቅዱስ ያከናውናሉ።",
       "amharic_phonetic": "kahn: 'ab weld menfes ḳdus yseralu.\n'ab weld menfes ḳdus yasmamalu.\n'ab weld menfes ḳdus yakenawnalu.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: El Padre, el Hijo y el Espíritu Santo hacen. El Padre, el Hijo y el Espíritu Santo se unen. El Padre, el Hijo y el Espíritu Santo crean bien."
     },
     {
       "instruction": "",
@@ -21990,7 +23137,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አብ ወልድ መንፈስ ቅዱስ ይልካሉ።\nአብ ወልድ መንፈስ ቅዱስ ያሰለጥናሉ።\nአብ ወልድ መንፈስ ቅዱስ ምስክር ይሆናሉ።",
       "amharic_phonetic": "kahn: 'ab weld menfes ḳdus ylkalu.\n'ab weld menfes ḳdus yaseleṭnalu.\n'ab weld menfes ḳdus mskr yhonalu.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: El Padre, el Hijo y el Espíritu Santo envían. El Padre, el Hijo y el Espíritu Santo dan autoridad. El Padre, el Hijo y el Espíritu Santo dan testimonio."
     },
     {
       "instruction": "",
@@ -22003,7 +23151,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አብ ወልድ መንፈስ ቅዱስ ሰውን ይስባሉ።\nአብ ወልድ መንፈስ ቅዱስ ያለምዳሉ።\nአብ ወልድ መንፈስ ቅዱስ ይመክራሉ።",
       "amharic_phonetic": "kahn: 'ab weld menfes ḳdus sewn ysbalu.\n'ab weld menfes ḳdus yalemdalu.\n'ab weld menfes ḳdus ymekralu.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: El Padre, el Hijo y el Espíritu Santo atraen. El Padre, el Hijo y el Espíritu Santo acostumbran. El Padre, el Hijo y el Espíritu Santo aconsejan."
     },
     {
       "instruction": "",
@@ -22016,7 +23165,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አብ ወልድ መንፈስ ቅዱስ ያነጻሉ።\nአብ ወልድ መንፈስ ቅዱስ ያጸራሉ።\nአብ ወልድ መንፈስ ቅዱስ ያከብራሉ።",
       "amharic_phonetic": "kahn: 'ab weld menfes ḳdus yanetsalu.\n'ab weld menfes ḳdus yatseralu.\n'ab weld menfes ḳdus yakebralu.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: El Padre, el Hijo y el Espíritu Santo purifican. El Padre, el Hijo y el Espíritu Santo limpian. El Padre, el Hijo y el Espíritu Santo santifican."
     },
     {
       "instruction": "",
@@ -22029,7 +23179,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አብ ወልድ መንፈስ ቅዱስ ያጸናሉ።\nአብ ወልድ መንፈስ ቅዱስ ያስጨክናሉ።\nአብ ወልድ መንፈስ ቅዱስ ያስተምራሉ።",
       "amharic_phonetic": "kahn: 'ab weld menfes ḳdus yatsenalu.\n'ab weld menfes ḳdus yascheknalu.\n'ab weld menfes ḳdus yastemralu.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: El Padre, el Hijo y el Espíritu Santo fortalecen. El Padre, el Hijo y el Espíritu Santo animan. El Padre, el Hijo y el Espíritu Santo enseñan."
     },
     {
       "instruction": "",
@@ -22042,7 +23193,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አብ ወልድ መንፈስ ቅዱስ ይጋርዳሉ። \nአብ ወልድ መንፈስ ቅዱስ ያለብሳሉ።\nአብ ወልድ መንፈስ ቅዱስ ባለሟል ያደርጋሉ።",
       "amharic_phonetic": "kahn: 'ab weld menfes ḳdus ygardalu. \n'ab weld menfes ḳdus yalebsalu.\n'ab weld menfes ḳdus balemwal yadergalu.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: El Padre, el Hijo y el Espíritu Santo coronan. El Padre, el Hijo y el Espíritu Santo visten. El Padre, el Hijo y el Espíritu Santo conceden la gracia."
     },
     {
       "instruction": "",
@@ -22055,7 +23207,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አብ ወልድ መንፈስ ቅዱስ ይቀመጣሉ።\nአብ ወልድ መንፈስ ቅዱስ ይፈርዳሉ።\nአብ ወልድ መንፈስ ቅዱስ ይመረምራሉ።",
       "amharic_phonetic": "kahn: 'ab weld menfes ḳdus yḳemeṭalu.\n'ab weld menfes ḳdus yferdalu.\n'ab weld menfes ḳdus ymeremralu.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: El Padre, el Hijo y el Espíritu Santo se sientan. El Padre, el Hijo y el Espíritu Santo juzgan. El Padre, el Hijo y el Espíritu Santo examinan."
     },
     {
       "instruction": "",
@@ -22068,7 +23221,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ እንዲህ እናምናለን እንዲህም እንታመናለን አንድነትን ሳንለይ የተለየ እንዳይሆን። የተቀላቀለ እንዳይሆን እንለይ።",
       "amharic_phonetic": "kahn: 'indīh 'inamnalen 'indīhm 'intamenalen 'andnetn sanley yeteleye 'indayhon. yeteḳelaḳele 'indayhon 'inley.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Así, nosotros creemos y confesamos, sin separar ni dividir, la unidad y la unidad, para que no se divida ni se separe. Distingamos para que no haya confusión."
     },
     {
       "instruction": "",
@@ -22081,7 +23235,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ እንደ አብርሃምና እንደ ይስሐቅ እንደ ያዕቆብም ሦስት የምንል አይደለንም በገጽ ሦስት ሲሆን አንድ ነው እንጂ።",
       "amharic_phonetic": "kahn: 'inde 'abrhamna 'inde ysḥaḳ 'inde ya'iḳobm sost yemnl 'aydelenm begets sost sīhon 'and new 'injī.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: No decimos Tres como decimos Abraham, Isaac y Jacob, sino uno en tres personas."
     },
     {
       "instruction": "",
@@ -22094,7 +23249,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ከፍጥረት ሁሉ እንደሚቀድም እንደ አዳም አንድ የምንል አይደለም፤ በባሕርይ አንድ ሲሆን ሦስት ነው እንላለን እንጂ።",
       "amharic_phonetic": "kahn: kefṭret hulu 'indemīḳedm 'inde 'adam 'and yemnl 'aydelem: bebaḥry 'and sīhon sost new 'inlalen 'injī.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: No decimos Uno como Adán, la primera criatura, sino tres con una misma naturaleza."
     },
     {
       "instruction": "",
@@ -22107,7 +23263,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ክፉዎች አይሁድን ባለማወቃቸው የእግዚአብሔርን ገጽና አካል አንድ ነው የሚሉ በደለኞቹን የይስማኤል ወገኖችንም እነዎ እንሰማቸዋለን፤ ልቡናቸውን ያሳወሩ ናቸው።",
       "amharic_phonetic": "kahn: kfuwoch 'ayhudn balemaweḳachew ye'igzī'abḥérn getsna 'akal 'and new yemīlu bedeleñochun yeysma'él wegenochnm 'inewo 'insemachewalen: lbunachewn yasaweru nachew.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Ahora bien, cuando oímos a los judíos malvados y a los ismaelitas impíos, que, sin entendimiento, dicen que Dios es una sola persona y un solo cuerpo, son de corazón ciego."
     },
     {
       "instruction": "",
@@ -22120,7 +23277,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አምላኮቻችው ብዙ አጋንንቶቻቸውም ብዙ የሆኑ በጣዖት የሚያመልኩ አረማወያንን እነሆ እናያቸዋለን።",
       "amharic_phonetic": "kahn: 'amlakochachw bzu 'aganntochachewm bzu yehonu beṭa'ot yemīyamelku 'aremaweyann 'ineho 'inayachewalen.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Ahora vemos al pagano idólatra, cuyos ídolos son muchos y cuyos demonios son muchos."
     },
     {
       "instruction": "",
@@ -22133,7 +23291,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ እኛ ግን በጎ ጐዳና የሚያስተምሩትን እንከተላለን። ሐዋርያት እንዲህ እያሉ እንዳስተማሩን።",
       "amharic_phonetic": "kahn: 'iña gn bego gwedana yemīyastemrutn 'inketelalen. ḥawaryat 'indīh 'iyalu 'indastemarun.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Pero nosotros seguimos a los líderes por el buen camino, como nos enseñaron los apóstoles, diciendo:"
     },
     {
       "instruction": "",
@@ -22146,7 +23305,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አብ ፀሐይ ነው፤ ወልድ ፀሐይ ነው፤ መንፈስ ቅዱስም ፀሐይ ነው፤ ከሁሉ በላይ የሚሆን አንድ የእውነት ፀሐይ ነው።",
       "amharic_phonetic": "kahn: 'ab tseḥay new: weld tseḥay new: menfes ḳdusm tseḥay new: kehulu belay yemīhon 'and ye'iwnet tseḥay new.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: \"El Padre es el sol, el Hijo es el sol y el Espíritu Santo es el sol; pero es un solo sol de justicia sobre todos.\""
     },
     {
       "instruction": "",
@@ -22159,7 +23319,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አብ እሳት ነው፤ ወልድ እሳት ነው፤ መንፈስ ቅዱስም እሳት ነው፤ በልዕልና ያለ አንድ የሕይወት እሳት ነው።",
       "amharic_phonetic": "kahn: 'ab 'isat new: weld 'isat new: menfes ḳdusm 'isat new: bel'ilna yale 'and yeḥywet 'isat new.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: \"El Padre es fuego, el Hijo es fuego y el Espíritu Santo es fuego; pero es un solo fuego de vida en las alturas.\""
     },
     {
       "instruction": "",
@@ -22172,7 +23333,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አብ ጎሕ ነው፤ ወልድ ጎሕ ነው፤ መንፈስ ቅዱስም ጎሕ ነው፤ በብርሃኑ ፀዳል ጨለማ የራቀበት አንድ የጧት ጎሕ ነው።",
       "amharic_phonetic": "kahn: 'ab goḥ new: weld goḥ new: menfes ḳdusm goḥ new: bebrhanu tsedal chelema yeraḳebet 'and yeṭwat goḥ new.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: \"El Padre es la aurora, el Hijo es la aurora, el Espíritu Santo es la aurora; pero es una sola aurora oriental, por cuyo rayo de luz destruyó las tinieblas.\""
     },
     {
       "instruction": "",
@@ -22185,7 +23347,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አብ ጕንደ ወይን ነው፤ ወልድ ጕንደ ወይን ነው፤ መንፈስ ቅዱስም ጕንደ ወይን ነው፤ ዓለሙ ሁሉ የጣፈጠበት አንድ የሕይወት ወይን ነው።",
       "amharic_phonetic": "kahn: 'ab gwnde weyn new: weld gwnde weyn new: menfes ḳdusm gwnde weyn new: 'alemu hulu yeṭafeṭebet 'and yeḥywet weyn new.",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: \"El Padre es la vid, el Hijo es la vid y el Espíritu Santo es la vid; pero todo el mundo ha probado de esta vid la vida.\""
     },
     {
       "instruction": "",
@@ -22198,7 +23361,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አብ ሐሊብ ነው፤ ወልድ ሐሊብ ነው፤ መንፈስ ቅዱስም ሐሊብ ነው፤ ጭማሪ የሌለበት አንድ ሐሊብ እርሱ ነው",
       "amharic_phonetic": "kahn: 'ab ḥalīb new: weld ḥalīb new: menfes ḳdusm ḥalīb new: chmarī yelélebet 'and ḥalīb 'irsu new",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: \"El Padre es leche, el Hijo es leche y el Espíritu Santo es leche; pero es una sola leche sin nada añadido.\""
     },
     {
       "instruction": "",
@@ -22211,7 +23375,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ እንዲ እናምናለን እንዲህም እንታመናለን፤ የሃይማኖት ጸሎት እንበል",
       "amharic_phonetic": "kahn: 'indī 'inamnalen 'indīhm 'intamenalen: yehaymanot tselot 'inbel",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Así creemos, así confesamos y así decimos el credo."
     },
     {
       "instruction": "",
@@ -22224,7 +23389,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፣ ስለ ሃይማኖት ጸልዩ",
       "amharic_phonetic": "dīyaḳon, sle haymanot tselyu",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Diácono: Oren por la fe."
     },
     {
       "instruction": "",
@@ -22237,7 +23403,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ ሁሉን በያዘ ሰማይና ምድርን የሚታይና የማይታየውን በፈጠረ በአንድ አምላክ በእግዚአብሔር አብ እናምናለን።",
       "amharic_phonetic": "፨ ḥzb: hulun beyaze semayna mdrn yemītayna yemaytayewn befeṭere be'and 'amlak be'igzī'abḥér 'ab 'inamnalen.",
       "tigrinya_script": "፨ ሕዝብ፤ ኩሉ ብዝሓዘ ሰማይን ምድርን ዝረአን ዘይረአን ብዝፈጠረ ብሓደ እግዚኣብሔር ኣብ ንኣምን።",
-      "tigrinya_phonetic": "፨ ḥzb: kulu bzḥaze semayn mdrn zre'an zeyre'an bzfeṭere bḥade 'igzī'abḥér 'ab n'amn."
+      "tigrinya_phonetic": "፨ ḥzb: kulu bzḥaze semayn mdrn zre'an zeyre'an bzfeṭere bḥade 'igzī'abḥér 'ab n'amn.",
+      "spanish": "፨ CREDO DE NICEO** ፨\n\n፨ Pueblo: Creemos en un solo Dios, Dios Padre Todopoderoso, Creador del cielo y de la tierra, de todo lo visible y lo invisible."
     },
     {
       "instruction": "",
@@ -22250,7 +23417,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ ዓለም ሳይፈጠር ከርሱ ጋር በነበረ የአብ አንድ ልጁ በሚሆን በአንድ ጌታ በኢየሱስ ክርስቶስ እናምናለን።",
       "amharic_phonetic": "፨ ḥzb: 'alem sayfeṭer kersu gar benebere ye'ab 'and lju bemīhon be'and géta be'īyesus krstos 'inamnalen.",
       "tigrinya_script": "፨ ሕዝብ፤ ብሓደ ጐይታ ብኢየሱስ ክርስቶስ  ዓለም ፡ ከይተፈጥረ ምስኡ ፡ ህልው ፡ ብዝኾነ ወልደ ፡ ኣብ ዋህድ ፡ ውን ነኣምን።",
-      "tigrinya_phonetic": "፨ ḥzb: bḥade gweyta b'īyesus krstos  'alem   keytefeṭre ms'u   hlw   bzkhone welde   'ab wahd   wn ne'amn."
+      "tigrinya_phonetic": "፨ ḥzb: bḥade gweyta b'īyesus krstos  'alem   keytefeṭre ms'u   hlw   bzkhone welde   'ab wahd   wn ne'amn.",
+      "spanish": "፨ Pueblo: Y creemos en un solo Señor Jesucristo, el Hijo unigénito del Padre, que estaba con él antes de la creación del mundo:"
     },
     {
       "instruction": "",
@@ -22263,7 +23431,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ ከብርሃን የተገኘ ብርሃን፣ ከእውነተኛ አምላክ የተገኘ አምላክ፣ የተፈጠረ ያይደለ የተወለደ፣",
       "amharic_phonetic": "፨ ḥzb: kebrhan yetegeñe brhan, ke'iwneteña 'amlak yetegeñe 'amlak, yetefeṭere yaydele yetewelede,",
       "tigrinya_script": "፨ ሕዝብ፤ ካብ ብርሃን ዝተረኽበ ብርሃን፡ ካብ ሓቀኛ ኣምላኽ ዝተረኽበ ኣምላኽ፡ ዝተወልደ እምበር ፍጡር ዘይኮነ፡ ብመለኮቱ ምስ ኣብ ማዕረ ዝኾነ።",
-      "tigrinya_phonetic": "፨ ḥzb: kab brhan zterekhbe brhan  kab ḥaḳeña 'amlakh zterekhbe 'amlakh  ztewelde 'imber fṭur zeykone  bmelekotu ms 'ab ma'ire zkhone."
+      "tigrinya_phonetic": "፨ ḥzb: kab brhan zterekhbe brhan  kab ḥaḳeña 'amlakh zterekhbe 'amlakh  ztewelde 'imber fṭur zeykone  bmelekotu ms 'ab ma'ire zkhone.",
+      "spanish": "፨ Pueblo: Luz de Luz, Dios Verdadero de Dios Verdadero, engendrado, no creado, de una misma esencia con el Padre."
     },
     {
       "instruction": "",
@@ -22276,7 +23445,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ በመለኮቱ ከአብ ጋር የሚተካከል፤ ሁሉ በርሱ የሆነ ያለ እርሱ ግን ምንም ምን የሆነ የለም።",
       "amharic_phonetic": "፨ ḥzb: bemelekotu ke'ab gar yemītekakel: hulu bersu yehone yale 'irsu gn mnm mn yehone yelem.",
       "tigrinya_script": "፨ ሕዝብ፤ ኩሉ ብእኡ ዝተፈጥረ፡ ብዘይካኡ ግና ኣብዚ ምድሪ ዘሎ ይኹን ወይስ ኣብ ሰማይ ዘሎ ምንም ዝተፈጥረ የልቦን።",
-      "tigrinya_phonetic": "፨ ḥzb: kulu b'i'u ztefeṭre  bzeyka'u gna 'abzī mdrī zelo ykhun weys 'ab semay zelo mnm ztefeṭre yelbon."
+      "tigrinya_phonetic": "፨ ḥzb: kulu b'i'u ztefeṭre  bzeyka'u gna 'abzī mdrī zelo ykhun weys 'ab semay zelo mnm ztefeṭre yelbon.",
+      "spanish": "፨ Pueblo: Por quien todas las cosas fueron hechas, y sin él nada de lo que hay en el cielo o en la tierra fue hecho:"
     },
     {
       "instruction": "",
@@ -22289,7 +23459,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ በሰማይም ያለ በምድርም ያለ፤ ስለኛ ስለ ሰዎች ስለ መዳናችን ከሰማይ ወረደ፣ ከመንፈስ ቅዱስ የተነሳ ከቅድስት ድንግል ማርያም ፈጽሞ ሰው ሆነ።",
       "amharic_phonetic": "፨ ḥzb: besemaym yale bemdrm yale: sleña sle sewoch sle medanachn kesemay werede, kemenfes ḳdus yetenesa keḳdst dngl maryam fetsmo sew hone.",
       "tigrinya_script": "፨ ሕዝብ፤ ምእንታና ምእንቲ ሰብ ምእንቲ ድኅነትና፡ ካብ ሰማያት ዝወረደ፡ብመንፈስ ቅዱስ ካብ ቅድስት ድንግል ማርያም ሥጋ ለበሰ ሰብ ኮነ።",
-      "tigrinya_phonetic": "፨ ḥzb: m'intana m'intī seb m'intī dhnetna  kab semayat zwerede bmenfes ḳdus kab ḳdst dngl maryam sga lebese seb kone."
+      "tigrinya_phonetic": "፨ ḥzb: m'intana m'intī seb m'intī dhnetna  kab semayat zwerede bmenfes ḳdus kab ḳdst dngl maryam sga lebese seb kone.",
+      "spanish": "፨ Pueblo: Quien por nosotros los hombres y por nuestra salvación descendió del cielo, se hizo hombre y se encarnó por obra del Espíritu Santo y de la santa Virgen María."
     },
     {
       "instruction": "",
@@ -22302,7 +23473,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ ሰው ሆኖ በጴንጤናዊ ጲላጦስ  ዘመን ስለኛ ተሰቀለ፣ ታመመ፣ ሞተ፣ ተቀበረም፤ በሶስተኛውም ቀን ከሙታን ተለይቶ ተነሳ፤ በቅዱሳት መጻህፍት እንደተጻፈ",
       "amharic_phonetic": "፨ ḥzb: sew hono bep̣énṭénawī p̣īlaṭos  zemen sleña teseḳele, tameme, mote, teḳeberem: besosteñawm ḳen kemutan teleyto tenesa: beḳdusat metsahft 'indetetsafe",
       "tigrinya_script": "፨ ሕዝብ፤ ሰብ ኮይኑ ድማ ብዘመን ጴንጤናዊ ጲላጦስ ምእንታና ተሰቕለ፡ ሓመመ፡ መከራ መስቀል ተቐበለ፡ ሞተ፡ ተቐብረ፡ ኣብ ቅዱሳት መጻሕፍቲ ከም ዝተጻሕፈ፡",
-      "tigrinya_phonetic": "፨ ḥzb: seb koynu dma bzemen p̣énṭénawī p̣īlaṭos m'intana teseqhle  ḥameme  mekera mesḳel teqhebele  mote  teqhebre  'ab ḳdusat metsaḥftī kem ztetsaḥfe"
+      "tigrinya_phonetic": "፨ ḥzb: seb koynu dma bzemen p̣énṭénawī p̣īlaṭos m'intana teseqhle  ḥameme  mekera mesḳel teqhebele  mote  teqhebre  'ab ḳdusat metsaḥftī kem ztetsaḥfe",
+      "spanish": "፨ El pueblo: se hizo hombre, fue crucificado por nosotros en los días de Poncio Pilato, padeció, murió, fue sepultado y resucitó de entre los muertos al tercer día, como está escrito en las Sagradas Escrituras:"
     },
     {
       "instruction": "",
@@ -22315,7 +23487,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ በክብር ወደ ሰማይ አረገ፤ በአባቱም ቀኝ ተቀመጠ። ዳግመኛም ህያዋንና ሙታንን ይገዛ ዘንድ በጌትነት ይመጣል። ለመንግስቱም ፍጻሜ የለውም፤",
       "amharic_phonetic": "፨ ḥzb: bekbr wede semay 'arege: be'abatum ḳeñ teḳemeṭe. dagmeñam hyawanna mutann ygeza zend begétnet ymeṭal. lemengstum ftsamé yelewm:",
       "tigrinya_script": "፨ ሕዝብ፤ ብኽብሪ ናብ ሰማይ ዓረገ፡ ኣብ የማን ኣቡኡ ተቐመጠ፡ ከም ብሓድሽ ንሕያዋንን ንምዉታትን ክፈርድ ብኽብሪ ክመጽእ እዩ፡ ንመንግሥቱውን መወዳእታ የብሉን።",
-      "tigrinya_phonetic": "፨ ḥzb: bkhbrī nab semay 'arege  'ab yeman 'abu'u teqhemeṭe  kem bḥadሽ nḥyawann nmwutatn kferd bkhbrī kmets'i 'iyu  nmengstuwn meweda'ita yeblun."
+      "tigrinya_phonetic": "፨ ḥzb: bkhbrī nab semay 'arege  'ab yeman 'abu'u teqhemeṭe  kem bḥadሽ nḥyawann nmwutatn kferd bkhbrī kmets'i 'iyu  nmengstuwn meweda'ita yeblun.",
+      "spanish": "፨ Pueblo: Ascendió en gloria al cielo, se sentó a la diestra de su Padre, y volverá en gloria para juzgar a los vivos y a los muertos; no hay fin para su reinado."
     },
     {
       "instruction": "",
@@ -22328,7 +23501,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ ጌታ ማህየዊ በሚሆን ከአብ በሰረጸ በመንፈስ ቅዱስም እናምናለን። እንሰግድለት እናመሰግነውም ዘንድ ከአብና ከወልድ ጋራ በነቢያት የተናገረ፤",
       "amharic_phonetic": "፨ ḥzb: géta mahyewī bemīhon ke'ab beseretse bemenfes ḳdusm 'inamnalen. 'insegdlet 'inamesegnewm zend ke'abna keweld gara benebīyat yetenagere:",
       "tigrinya_script": "፨ ሕዝብ፤ ጐይታን መሕወይን ብዝኾነ ካብ ኣብ ዝሰረፀ መንፈስ ቅዱስውን ንኣምን። ምስ ኣብን ወልድን ንሰግደሉን ነመስግኖን፡ ብነብያት ዝተዛረበ እዩ።",
-      "tigrinya_phonetic": "፨ ḥzb: gweytan meḥweyn bzkhone kab 'ab zseretse menfes ḳduswn n'amn. ms 'abn weldn nsegdelun nemesgnon  bnebyat ztezarebe 'iyu."
+      "tigrinya_phonetic": "፨ ḥzb: gweytan meḥweyn bzkhone kab 'ab zseretse menfes ḳduswn n'amn. ms 'abn weldn nsegdelun nemesgnon  bnebyat ztezarebe 'iyu.",
+      "spanish": "፨ Pueblo: Y creemos en el Espíritu Santo, el Dios que da vida, que procede del Padre; le adoramos y glorificamos con el Padre y el Hijo, que habló por medio de los profetas."
     },
     {
       "instruction": "",
@@ -22341,7 +23515,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ ከሁሉ በላይ በምትሆን ሐዋርያት በሰበሰቧት በአንዲት ቅድስት ቤተ ክርስቲያንም እናምናለን። ኃጢአት ለማስተስረይ በአንዲት ጥምቀት እናምናለን፣",
       "amharic_phonetic": "፨ ḥzb: kehulu belay bemthon ḥawaryat besebesebwat be'andīt ḳdst béte krstīyanm 'inamnalen. haṭī'at lemastesrey be'andīt ṭmḳet 'inamnalen,",
       "tigrinya_script": "፨ ሕዝብ፤ ልዕሊ ኩሉ ናይ ሓዋርያት ጉባኤ ብዝኾነት ብሓንቲ ቅድስት ቤተ ክርስቲያን ንኣምን። ንሕድገት ሓጢኣት ብሓንቲ ጥምቀትውን ንኣምን።",
-      "tigrinya_phonetic": "፨ ḥzb: l'ilī kulu nay ḥawaryat guba'é bzkhonet bḥantī ḳdst béte krstīyan n'amn. nḥdget ḥaṭī'at bḥantī ṭmḳetwn n'amn."
+      "tigrinya_phonetic": "፨ ḥzb: l'ilī kulu nay ḥawaryat guba'é bzkhonet bḥantī ḳdst béte krstīyan n'amn. nḥdget ḥaṭī'at bḥantī ṭmḳetwn n'amn.",
+      "spanish": "፨ Pueblo: Y creemos en una sola Iglesia santa, universal y apostólica, y creemos en un solo bautismo para el perdón de los pecados,"
     },
     {
       "instruction": "",
@@ -22354,7 +23529,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ (በዜማ)፤ የሙታንንም መነሳት ተስፋ እናደርጋለን፣ የሚመጣውንም ሕይወት ለዘላለሙ።",
       "amharic_phonetic": "፨ ḥzb (bezéma): yemutannm menesat tesfa 'inadergalen, yemīmeṭawnm ḥywet lezelalemu.",
       "tigrinya_script": "፨ ሕዝብ (በዜማ)፤ ትንሣኤ ምዉታትን ንዘልዓለም ዓለም ዝመጽእ ሕይወትን ተስፋን ንገብር። ኣሜን",
-      "tigrinya_phonetic": "፨ ḥzb (bezéma): tnsa'é mwutatn nzel'alem 'alem zmets'i ḥywetn tesfan ngebr. 'amén"
+      "tigrinya_phonetic": "፨ ḥzb (bezéma): tnsa'é mwutatn nzel'alem 'alem zmets'i ḥywetn tesfan ngebr. 'amén",
+      "spanish": "፨ Pueblo (en himno): y esperen la resurrección de entre los muertos y la vida venidera, por los siglos de los siglos. Amén."
     },
     {
       "instruction": "",
@@ -22367,7 +23543,8 @@ const kidaseData = {
       "amharic_script": "ወደ ቀደመው ነገር እንመለስ፤ ቅድስት ድንግልንም ለሁሉ ድንቅ የሚሆን የፅንሷን ነገር እንዲህ እያልን እንመርምራት።",
       "amharic_phonetic": "wede ḳedemew neger 'inmeles: ḳdst dnglnm lehulu dnḳ yemīhon yetsnswan neger 'indīh 'iyaln 'inmermrat.",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Volvamos ahora a hablar de la Santísima Virgen, de su concepción, que es maravillosa para todos, y digamos:"
     },
     {
       "instruction": "",
@@ -22380,7 +23557,8 @@ const kidaseData = {
       "amharic_script": "ድንግል ሆይ እሳተ መለኮት በሆድሽ ባደር ጊዜ ፊቱ እሳት፤ ልብሱ እሳት፤ ቀሚሱ እሳት ነው፤ እንደምን አላቃጠለሽም?",
       "amharic_phonetic": "dngl hoy 'isate melekot behodሽ bader gīzé fītu 'isat: lbsu 'isat: ḳemīsu 'isat new: 'indemn 'alaḳaṭeleሽm?",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Oh Virgen, cuando en tu vientre moraba el fuego de la Divinidad, cuyo rostro es fuego, cuyas vestiduras son fuego, cuya envoltura es fuego, ¿cómo no te quemó?"
     },
     {
       "instruction": "",
@@ -22393,7 +23571,8 @@ const kidaseData = {
       "amharic_script": "ሰባት የእሳት ነበልባል መጋረጃ በሆድሽ ውስጥ ወዴት ተዘጋጀ? ወዴትስ ተጋረደ? ከጐንሽ በቀኝ ነውን? ወይሽ ከጎንሽ በግራ ነው? ትንሽ አካል ስትሆኝ?",
       "amharic_phonetic": "sebat ye'isat nebelbal megareja behodሽ wsṭ wedét tezegaje? wedéts tegarede? kegwenሽ beḳeñ newn? weyሽ kegonሽ begra new? tnሽ 'akal sthoñ?",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: ¿En qué parte del vientre se prepararon y extendieron las siete cortinas de la llama de fuego? ¿Estaban a la derecha o a la izquierda de tu costado cuando eras un cuerpecito?"
     },
     {
       "instruction": "",
@@ -22406,7 +23585,8 @@ const kidaseData = {
       "amharic_script": "ያሚያንጸባርቅ ነደ እሳት የሚከበው ኪሩቤል የተሸከሙት ዙፋን በሆድሽ ውስጥ ወዴት ተዘጋጀ? ወዴትስ ተተከለ? ታናሽ ሙሽራ ስትሆኝ?",
       "amharic_phonetic": "yamīyantsebarḳ nede 'isat yemīkebew kīrubél yeteሸkemut zufan behodሽ wsṭ wedét tezegaje? wedéts tetekele? tanaሽ muሽra sthoñ?",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: ¿En qué parte de tu vientre se preparó y plantó el resplandeciente trono querúbico, rodeado por la llama del fuego, cuando eras una joven novia?"
     },
     {
       "instruction": "",
@@ -22419,7 +23599,8 @@ const kidaseData = {
       "amharic_script": "ከገረድነት ጋራ እናትነት እንደምን ያለ ነው፤ ከስፋት ጋራ የሆድ መጠበብ፤",
       "amharic_phonetic": "kegerednet gara 'inatnet 'indemn yale new: kesfat gara yehod meṭebeb:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: ¡Qué maravilloso es! ser madre y sirvienta al mismo tiempo; la estrechez del vientre y lo infinito;"
     },
     {
       "instruction": "",
@@ -22432,7 +23613,8 @@ const kidaseData = {
       "amharic_script": "እንደ ንብ ያለ ሩካቤ፤ ከቃል ድምፅ የተገኘ ፅንስ፤ ከድንግልና ጋራ አንድ የሆነ ሐሊብ።",
       "amharic_phonetic": "inde nb yale rukabé: keḳal dmts yetegeñe tsns: kednglna gara 'and yehone ḥalīb.",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: la concepción sin conocer al hombre, como la abeja concibe, por la voz de una palabra; la leche se encuentra en la virginidad."
     },
     {
       "instruction": "",
@@ -22445,7 +23627,8 @@ const kidaseData = {
       "amharic_script": "ይህንም ባሰብኩ ጊዜ ሕሊናዬ የልጅሽን የባሕሩን ጥልቅነት ሊዋኝ ይወዳል የወዳጅሽ የመሠወሪያው ማዕበልም ያማታዋል።",
       "amharic_phonetic": "yhnm basebku gīzé ḥlīnayé yeljሽn yebaḥrun ṭlḳnet līwañ ywedal yewedajሽ yemesewerīyaw ma'ibelm yamatawal.",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Cuando pienso en esto, mi mente desea sumergirse en la profundidad de la naturaleza de tu Hijo, y las olas que brotan del escondite de tu Amado la recorren."
     },
     {
       "instruction": "",
@@ -22458,7 +23641,8 @@ const kidaseData = {
       "amharic_script": "ዳግመኛም ባሰብሁ ጊዜ ሕሊናዬ ተሠውሮ ወደ ላይ ወጥቶ የሕያው መሠወሪያ የሆነውን ሊገልጥ ይወዳል።",
       "amharic_phonetic": "dagmeñam basebhu gīzé ḥlīnayé tesewro wede lay weṭto yeḥyaw mesewerīya yehonewn līgelṭ ywedal.",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: De nuevo, cuando pienso en esto, mi mente quiere elevarse y ascender en secreto y descorrer las cortinas de los escondites del Viviente;"
     },
     {
       "instruction": "",
@@ -22471,7 +23655,8 @@ const kidaseData = {
       "amharic_script": "ከነደ እሳትነቱ የተነሣ ይፈራል ከዐየራት ከእርቧቸው እርቦ አይደርስም።",
       "amharic_phonetic": "kenede 'isatnetu yetenesa yferal ke'ayerat ke'irbwachew 'irbo 'aydersm.",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: le tiene miedo a la llama del fuego y no llega ni a una cuarta parte del camino al cielo."
     },
     {
       "instruction": "",
@@ -22484,7 +23669,8 @@ const kidaseData = {
       "amharic_script": "ይህንንም ባሰብኩ ጊዜ ሕሊናዬ በነፋስ ትከሻ ተጭኖ በምሥራቅና በምዕራብ፤ በሰሜንና በደቡብ በዳርቻውም ሁሉ ሊበር ይወዳል። የፍጡራንን አኗኗር ያይ ዘንድ፤",
       "amharic_phonetic": "yhnnm basebku gīzé ḥlīnayé benefas tkeሻ techno bemsraḳna bem'irab: beseménna bedebub bedarchawm hulu līber ywedal. yefṭurann 'anwanwar yay zend:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Cuando pienso en esto, mi mente quiere subirse a los hombros de los vientos para volar hacia el este, el oeste, el norte y el sur hasta todos los confines (del mundo) para ver la naturaleza de las criaturas,"
     },
     {
       "instruction": "",
@@ -22497,7 +23683,8 @@ const kidaseData = {
       "amharic_script": "የአብሕርትንም ጥልቅነታቸውን ይለካ ዘንድ፤ የሰማይን ርዝመቱን ያውቅ ዘንድ በሁሉ ዘንድ፤ በሁሉም ይዞራል። አቅቶት ወደ ቀደመ አኗኗሩ ይመለሳል።",
       "amharic_phonetic": "ye'abḥrtnm ṭlḳnetachewn yleka zend: yesemayn rzmetun yawḳ zend behulu zend: behulum yzoral. 'aḳtot wede ḳedeme 'anwanwaru ymelesal.",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: para medir las profundidades de los mares y conocer la altura del cielo, y viajando así a cada parte se desvanece y regresa de nuevo a su lugar de origen."
     },
     {
       "instruction": "",
@@ -22510,7 +23697,8 @@ const kidaseData = {
       "amharic_script": "አሁንም ገናንነቱን አንመርምር፤ ጥልቅነቱንም አንጠናቀቅ፤ የገናንነቱን መጠን ለማመስገን የነቢያትና የሐዋርያት አንደበት የማይቻለው ነው።",
       "amharic_phonetic": "ahunm genannetun 'anmermr: ṭlḳnetunm 'anṭenaḳeḳ: yegenannetun meṭen lemamesgen yenebīyatna yeḥawaryat 'andebet yemaychalew new.",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Ahora bien, no indaguemos más ni siquiera pensemos en la grandeza y profundidad de Aquel cuya grandeza no puede ser dignamente alabada, ni siquiera por las lenguas de los profetas o de los apóstoles."
     },
     {
       "instruction": "",
@@ -22523,7 +23711,8 @@ const kidaseData = {
       "amharic_script": "የማይደፈር ግሩም ነው፤ በእኛ ዘንድ ግን ትሑት ነው። የማይገኝ ልዑል ነው በኛ ዘንድ ግን አርኣያ ገብርን ነሣ። የማይዳሰስ እሳት ነው፤",
       "amharic_phonetic": "yemaydefer grum new: be'iña zend gn tḥut new. yemaygeñ l'ul new beña zend gn 'ar'aya gebrn nesa. yemaydases 'isat new:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Él es el Todopoderoso, a quien nadie puede discernir con artificios sutiles; pero se hizo humilde entre nosotros; Él es el Altísimo, al que nadie puede alcanzar."
     },
     {
       "instruction": "",
@@ -22536,7 +23725,8 @@ const kidaseData = {
       "amharic_script": "እኛ ግን አየነው ዳሰስነውም፤ ከርሱም ጋራ በላን ጠጣን። አሁንም እንዲህ እያልን እናመስግነው፦",
       "amharic_phonetic": "iña gn 'ayenew dasesnewm: kersum gara belan ṭeṭan. 'ahunm 'indīh 'iyaln 'inamesgnew:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Pero entre nosotros tomó forma de siervo; Él es fuego impalpable, pero lo vimos, lo tocamos, comimos y bebimos con Él. Ahora oremos diciendo:"
     },
     {
       "instruction": "Chanted in Araray tone.",
@@ -22549,7 +23739,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ ቅዱስ እግዚአብሔር ቅዱስ ኃያል ቅዱስ ሕያው የማይሞት ከቅድስት ድንግል ማርያም የተወለደ፥ አቤቱ ይቅር በለን።",
       "amharic_phonetic": "፨ ḥzb: ḳdus 'igzī'abḥér ḳdus hayal ḳdus ḥyaw yemaymot keḳdst dngl maryam yetewelede; 'abétu yḳr belen.",
       "tigrinya_script": "፨ ሕዝብ፤ ካብ ቅድስቲ ድንግል ማርያም ዝተወልደ፡ ኦ ጐይታ ይቕረ በለልና፡ ቅዱስ እግዚኣብሔር ቅዱስ ኃያል ቅዱስ ዘይመውት ሕያው፥",
-      "tigrinya_phonetic": "፨ ḥzb: kab ḳdstī dngl maryam ztewelde  'o gweyta yqhre belelna  ḳdus 'igzī'abḥér ḳdus hayal ḳdus zeymewt ḥyaw;"
+      "tigrinya_phonetic": "፨ ḥzb: kab ḳdstī dngl maryam ztewelde  'o gweyta yqhre belelna  ḳdus 'igzī'abḥér ḳdus hayal ḳdus zeymewt ḥyaw;",
+      "spanish": "፨ Pueblo: Santo Dios, Santo Fuerte, Santo Inmortal, que naciste de la Santísima Virgen María, ten misericordia de nosotros, Señor."
     },
     {
       "instruction": "Chanted in Araray tone.",
@@ -22562,7 +23753,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ ቅዱስ እግዚአብሔር ቅዱስ ኃያል ቅዱስ ሕያው የማይሞት በዮርዳኖስ የተጠመቀ፥ በመስቀል ላይ የተሰቀለ አቤቱ ይቅር በለን።",
       "amharic_phonetic": "፨ ḥzb: ḳdus 'igzī'abḥér ḳdus hayal ḳdus ḥyaw yemaymot beyordanos yeteṭemeḳe; bemesḳel lay yeteseḳele 'abétu yḳr belen.",
       "tigrinya_script": "፨ ሕዝብ፤ ኣብ ዮርዳኖስ ዝተጠምቀ፡ ኣብ ልዕሊ ዕንፀይቲ መስቀል ዝተሰቕለ ኦ ጐይታ ይቕረ በለልና።",
-      "tigrinya_phonetic": "፨ ḥzb: 'ab yordanos zteṭemḳe  'ab l'ilī 'intseytī mesḳel zteseqhle 'o gweyta yqhre belelna."
+      "tigrinya_phonetic": "፨ ḥzb: 'ab yordanos zteṭemḳe  'ab l'ilī 'intseytī mesḳel zteseqhle 'o gweyta yqhre belelna.",
+      "spanish": "፨ Pueblo: Santo Dios, Santo Fuerte, Santo Inmortal, que fuiste bautizado en el Jordán y crucificado en el árbol de la Cruz; ten misericordia de nosotros, Señor."
     },
     {
       "instruction": "",
@@ -22575,7 +23767,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤",
       "amharic_phonetic": "፨ ḥzb:",
       "tigrinya_script": "፨ ሕዝብ፤",
-      "tigrinya_phonetic": "፨ ḥzb:"
+      "tigrinya_phonetic": "፨ ḥzb:",
+      "spanish": "፨ Pueblo: Acuérdate de nosotros, Señor, en tu reino; acuérdate de nosotros, Señor, Maestro, en tu reino;"
     },
     {
       "instruction": "",
@@ -22588,7 +23781,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤",
       "amharic_phonetic": "፨ ḥzb:",
       "tigrinya_script": "፨ ሕዝብ፤",
-      "tigrinya_phonetic": "፨ ḥzb:"
+      "tigrinya_phonetic": "፨ ḥzb:",
+      "spanish": "፨ Pueblo: acuérdate de nosotros, Señor, en tu Reino, como te acordaste del ladrón a la derecha cuando estabas en el madero de la Santa Cruz."
     },
     {
       "instruction": "",
@@ -22601,7 +23795,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote: Al tercer día Él volvió su alma a su cuerpo."
     },
     {
       "instruction": "Chanted in Araray tone.",
@@ -22614,7 +23809,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ ቅዱስ እግዚአብሔር ቅዱስ ኃያል ቅዱስ ሕያው የማይሞት በሦስተኛው ቀን ከሙታን ተለይቶ የተነሳ በምስጋና ወደ ሰማይ ወጣ",
       "amharic_phonetic": "፨ ḥzb: ḳdus 'igzī'abḥér ḳdus hayal ḳdus ḥyaw yemaymot besosteñaw ḳen kemutan teleyto yetenesa bemsgana wede semay weṭa",
       "tigrinya_script": "፨ ሕዝብ፤ ቅዱስ እግዚኣብሔር ቅዱስ ኃያል ቅዱስ ዘይመውት ሕያው፡ ኣብ ሣልሳይ መዓልቲ ካብ ምውታት ተፈልዩ ዝተንሥአ፡ ብምስጋና ናብ ሰማይ ዝዐረገ፡",
-      "tigrinya_phonetic": "፨ ḥzb: ḳdus 'igzī'abḥér ḳdus hayal ḳdus zeymewt ḥyaw  'ab salsay me'altī kab mwtat tefelyu ztens'a  bmsgana nab semay z'arege"
+      "tigrinya_phonetic": "፨ ḥzb: ḳdus 'igzī'abḥér ḳdus hayal ḳdus zeymewt ḥyaw  'ab salsay me'altī kab mwtat tefelyu ztens'a  bmsgana nab semay z'arege",
+      "spanish": "፨ Pueblo: Santo Dios, Santo Poderoso, Santo Inmortal, que resucitaste de entre los muertos al tercer día, ascendiste al cielo en gloria,"
     },
     {
       "instruction": "Chanted in Araray tone.",
@@ -22627,7 +23823,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ በአባቱም ቀኝ ተቀመጠ ዳግመኛም ይመጣል በሕያዋንና በሙታን ይፈርድ ዘንድ፥ አቤቱ ይቅር በለን።",
       "amharic_phonetic": "፨ ḥzb: be'abatum ḳeñ teḳemeṭe dagmeñam ymeṭal beḥyawanna bemutan yferd zend; 'abétu yḳr belen.",
       "tigrinya_script": "፨ ሕዝብ፤ ኣብ የማን ኣቦኡ ዝተቐመጠ፡ ንሕያዋንን ምዉታትን ኪፈርድ ከም ብሓድሽ ኪመጽእ እዩ።",
-      "tigrinya_phonetic": "፨ ḥzb: 'ab yeman 'abo'u zteqhemeṭe  nḥyawann mwutatn kīferd kem bḥadሽ kīmets'i 'iyu."
+      "tigrinya_phonetic": "፨ ḥzb: 'ab yeman 'abo'u zteqhemeṭe  nḥyawann mwutatn kīferd kem bḥadሽ kīmets'i 'iyu.",
+      "spanish": "፨ Pueblo: está sentado a la diestra del Padre y vendrá de nuevo en gloria para juzgar a los vivos y a los muertos; ten misericordia de nosotros, Señor."
     },
     {
       "instruction": "Chanted in Araray tone.",
@@ -22640,7 +23837,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ ለአብ ምስጋና ይሁን ለወልድም ምስጋና ይሁን ለመንፈስ ቅዱስ ምስጋና ይሁን ዛሬም ዘወትርም ለዘለዓለሙ",
       "amharic_phonetic": "፨ ḥzb: le'ab msgana yhun leweldm msgana yhun lemenfes ḳdus msgana yhun zarém zewetrm lezele'alemu",
       "tigrinya_script": "፨ ሕዝብ፤ ምስጋና ንኣብ፡ ምስጋና ንወልድ፡ ምስጋና ንመንፈስ ቅዱስ ይኹን፡ ሎምን ኵሉ ሳዕን ንዘልዓለም ዓለም",
-      "tigrinya_phonetic": "፨ ḥzb: msgana n'ab  msgana nweld  msgana nmenfes ḳdus ykhun  lomn kwlu sa'in nzel'alem 'alem"
+      "tigrinya_phonetic": "፨ ḥzb: msgana n'ab  msgana nweld  msgana nmenfes ḳdus ykhun  lomn kwlu sa'in nzel'alem 'alem",
+      "spanish": "፨ Pueblo: Gloria al Padre, Gloria al Hijo, Gloria al Espíritu Santo, ahora y siempre y por los siglos de los siglos."
     },
     {
       "instruction": "Chanted in Araray tone.",
@@ -22653,7 +23851,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ አሜን አሜን ይሁን ይሁን። ልዩ ሦስት ሕያው እግዚአብሔር ሆይ ይቅር በለን",
       "amharic_phonetic": "፨ ḥzb: 'amén 'amén yhun yhun. lyu sost ḥyaw 'igzī'abḥér hoy yḳr belen",
       "tigrinya_script": "፨ ሕዝብ፤ ኣሜን ኣሜን ይኹን ይኹነልና ይኹነልና። ቅዱስ ሥሉስ፤ ሕያው እግዚኣብሔር ይቕረ በለልና።",
-      "tigrinya_phonetic": "፨ ḥzb: 'amén 'amén ykhun ykhunelna ykhunelna. ḳdus slus: ḥyaw 'igzī'abḥér yqhre belelna."
+      "tigrinya_phonetic": "፨ ḥzb: 'amén 'amén ykhun ykhunelna ykhunelna. ḳdus slus: ḥyaw 'igzī'abḥér yqhre belelna.",
+      "spanish": "፨ Pueblo: Amén Amén, así sea, así sea. Oh Santísima Trinidad, Dios vivo, ten misericordia de nosotros."
     },
     {
       "instruction": "",
@@ -22666,7 +23865,8 @@ const kidaseData = {
       "amharic_script": "ድንግል ሆይ የሚበላውን ያፈራሽልን፤ የሚጠጣውን ያስገኘሽልን",
       "amharic_phonetic": "dngl hoy yemībelawn yaferaሽln: yemīṭeṭawn yasgeñeሽln",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: ¡Oh Virgen, que nos das el fruto que se puede comer y la fuente de la que se puede beber!"
     },
     {
       "instruction": "",
@@ -22679,7 +23879,8 @@ const kidaseData = {
       "amharic_script": "ወዮ ከአንቺ የተገኘ ኅብስት በማመን ከርሱ ለሚቀበሉ ሰዎች ሕይወትንና ደኅንነትን የሚሰጥ ነው።",
       "amharic_phonetic": "weyo ke'anchī yetegeñe hbst bemamen kersu lemīḳebelu sewoch ḥywetnna dehnnetn yemīseṭ new.",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: ¡Oh, pan que recibimos de ti, que da vida y salvación a quienes lo comen con fe!"
     },
     {
       "instruction": "",
@@ -22692,7 +23893,8 @@ const kidaseData = {
       "amharic_script": "ወዮ ከአንቺ የተገኘ ኅብስት በማመን ከርሱ ለማይቀበሉ ሰዎች የማይላመጥ ጽኑ ነው፤ ይኸውም ኃያል የሚሆን የአድማስ ደንጊያ ነው።",
       "amharic_phonetic": "weyo ke'anchī yetegeñe hbst bemamen kersu lemayḳebelu sewoch yemaylameṭ tsnu new: ykhewm hayal yemīhon ye'admas dengīya new.",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: ¡Oh, pan que recibimos de ti, que es tan duro como la piedra de Admas, que no puede ser masticado por aquellos que no comen de él con fe!"
     },
     {
       "instruction": "",
@@ -22705,7 +23907,8 @@ const kidaseData = {
       "amharic_script": "ወዮ ከአንቺ የተገኘ ጽዋ በማመን ከርሱ ለሚጠጡ ሰዎች ጥበብን የሚገልጽ ሕይወትንም የሚሰጥ ነው።",
       "amharic_phonetic": "weyo ke'anchī yetegeñe tswa bemamen kersu lemīṭeṭu sewoch ṭbebn yemīgelts ḥywetnm yemīseṭ new.",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Oh, copa que recibí de ti, que ayuda a quienes beben de ella con fe a escribir sabiduría, y que les da vida."
     },
     {
       "instruction": "",
@@ -22718,7 +23921,8 @@ const kidaseData = {
       "amharic_script": "ወዮ ከአንቺ የተገኘ ጽዋ በማመን ከርሱ ለማይጠጡ ሰዎች የሚአሰክርና የሚያፍገመግም፤ የሚጥልና ኃጢአትን ስለሚያስተው ፈንታ ኃጢአትን የሚጨምር ነው!",
       "amharic_phonetic": "weyo ke'anchī yetegeñe tswa bemamen kersu lemayṭeṭu sewoch yemī'asekrna yemīyafgemegm: yemīṭlna haṭī'atn slemīyastew fenta haṭī'atn yemīchemr new!",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: ¡Oh, copa que has recibido de ti, que embriaga a los que no beben de ella con fe, y los hace tropezar y caer, y les añade pecado en lugar de remisión!"
     },
     {
       "instruction": "",
@@ -22731,7 +23935,8 @@ const kidaseData = {
       "amharic_script": "አሁንም ለአንተ ምስጋና ይገባሃል። ለመንግሥትህም ምስጋና ይገባል እያልን እናመስግነው። ከንጹሕ ዕጣን ጋራ ምስጋና እናቀርብልሃለን።",
       "amharic_phonetic": "ahunm le'ante msgana ygebahal. lemengsthm msgana ygebal 'iyaln 'inamesgnew. kentsuḥ 'iṭan gara msgana 'inaḳerblhalen.",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Y ahora glorifiquémosle diciendo: Gloria a ti, gloria a tu reino, gloria con incienso puro te ofrecemos."
     },
     {
       "instruction": "",
@@ -22744,7 +23949,8 @@ const kidaseData = {
       "amharic_script": "ሕዝብ፣ አቤቱ በመንግሥትህ አስበን፤ ሊቅ ሆይ አቤቱ በመንግሥትህ አስበን፤",
       "amharic_phonetic": "ḥzb, 'abétu bemengsth 'asben: līḳ hoy 'abétu bemengsth 'asben:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "፨ Pueblo: Acuérdate de nosotros, Señor, en tu reino; acuérdate de nosotros, Señor, Maestro, en tu reino;"
     },
     {
       "instruction": "",
@@ -22757,7 +23963,8 @@ const kidaseData = {
       "amharic_script": "ሕዝብ፣ ቅዱስ በሚሆን በዕፀ መስቀል ላይ ሳለህ ፈያታዊ ዘየማንን እንዳሰብከው አቤቱ በመንግሥትህ አስበን",
       "amharic_phonetic": "ḥzb, ḳdus bemīhon be'itse mesḳel lay saleh feyatawī zeyemann 'indasebkew 'abétu bemengsth 'asben",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "፨ Pueblo: acuérdate de nosotros, Señor, en tu reino, como te acordaste del ladrón a la derecha cuando estabas en el madero de la santa cruz."
     },
     {
       "instruction": "",
@@ -22770,7 +23977,8 @@ const kidaseData = {
       "amharic_script": "ካህን፣ በጎ ሀብት ሁሉ ፍጹም ዕድልም ሁሉ ከርሱ የሚገኝ የሕያው የእግዚአብሔር ልጅ ኢየሱስ ክርስቶስ ሰው ሆነ ከኃጢአት ብቻ በቀር የሰውን ሕግ ሁሉ ፈጸመ የዕብራውያንንም ሕግ ተማረ።",
       "amharic_phonetic": "kahn, bego habt hulu ftsum 'idlm hulu kersu yemīgeñ yeḥyaw ye'igzī'abḥér lj 'īyesus krstos sew hone kehaṭī'at bcha beḳer yesewn ḥg hulu fetseme ye'ibrawyannm ḥg temare.",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Jesucristo, Hijo del Dios viviente, de quien procede toda buena dádiva y todo don perfecto, se hizo hombre, cumplió toda la ley de los hombres sin pecado y aprendió la ley de los hebreos."
     },
     {
       "instruction": "",
@@ -22783,7 +23991,8 @@ const kidaseData = {
       "amharic_script": "ከዮሐንስ ዘንድ ተጠመቀ፤ በገዳም ተፈተነ፤ ተራበም ተጠማም፤ ተአምራትንም አደረገ።",
       "amharic_phonetic": "keyoḥans zend teṭemeḳe: begedam tefetene: terabem teṭemam: te'amratnm 'aderege.",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Fue bautizado por Juan, fue tentado en el desierto, tuvo hambre y sed, e hizo milagros."
     },
     {
       "instruction": "",
@@ -22796,7 +24005,8 @@ const kidaseData = {
       "amharic_script": "ሰውነቱን ለሞት በሰጠባት በዚያች ሌሊት ለደቀ መዛሙርቱ በብዙ ምልክት አመለከተ። የሕማሙንና የስቅለቱን የሞቱን ነገር በሦስተኛውም ቀን የመነሣቱን ነገር በሥጋና በነፍስ።",
       "amharic_phonetic": "sewnetun lemot beseṭebat bezīyach lélīt ledeḳe mezamurtu bebzu mlkt 'amelekete. yeḥmamunna yesḳletun yemotun neger besosteñawm ḳen yemenesatun neger besgana benefs.",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: En la misma noche en que entregó su alma a la muerte, mostró a sus discípulos muchas señales acerca de sus sufrimientos, crucifixión, muerte, su resurrección al tercer día con cuerpo y alma,"
     },
     {
       "instruction": "",
@@ -22809,7 +24019,8 @@ const kidaseData = {
       "amharic_script": "በዐጥንትና በደም ቀድሞ እንደ ነበረው ደቀ መዛሙርቱ ከርሱ ጋራ በቀኙና በግራው",
       "amharic_phonetic": "be'aṭntna bedem ḳedmo 'inde neberew deḳe mezamurtu kersu gara beḳeñuna begraw",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: con hueso y sangre, como antes cuando sus discípulos estaban con él a su derecha y a su izquierda,"
     },
     {
       "instruction": "",
@@ -22822,7 +24033,8 @@ const kidaseData = {
       "amharic_script": "... ሳሉ ፍጥረቱ ክርዳድ የሚሆን ከስንዴ ጋራ የተቆጠረ ሆኖ ነበረ።",
       "amharic_phonetic": "... salu fṭretu krdad yemīhon kesndé gara yeteḳoṭere hono nebere.",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Y cuando se contó entre ellos a Judas, cuya creación era como la cizaña añadida al trigo, y que lo traicionó."
     },
     {
       "instruction": "",
@@ -22835,7 +24047,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፣  ቀሳውስት እጆቻችሁን አንሡ",
       "amharic_phonetic": "dīyaḳon,  ḳesawst 'ijochachhun 'ansu",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Diácono: Sacerdotes, alcen las manos."
     },
     {
       "instruction": "",
@@ -22848,7 +24061,8 @@ const kidaseData = {
       "amharic_script": "ካህን፣ ያን ጊዜ ኢየሱስ ክርስቶስ ቅዱሳን ብፁዓን በሚሆኑ እድፍ በሌለባቸው እጆቹ ኀብስቱን አነሣ።",
       "amharic_phonetic": "kahn, yan gīzé 'īyesus krstos ḳdusan btsu'an bemīhonu 'idf belélebachew 'ijochu habstun 'anesa.",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: En aquel momento Jesucristo tomó el pan en sus santas, benditas, puras e inmaculadas manos:"
     },
     {
       "instruction": "",
@@ -22861,7 +24075,8 @@ const kidaseData = {
       "amharic_script": "ሕዝብ፣ እናምናለን፤ ይህ እርሱ እንደሆነ በእውነት እናምናለን።",
       "amharic_phonetic": "ḥzb, 'inamnalen: yh 'irsu 'indehone be'iwnet 'inamnalen.",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "፨ Gente: Creemos que este es Él, verdaderamente lo creemos."
     },
     {
       "instruction": "",
@@ -22874,7 +24089,8 @@ const kidaseData = {
       "amharic_script": "ካህን፣ ወደ ሰማይ ወደ አባቱ ቀና ብሎ አየ፤ የወለደውንም ማለደ ደቀ መዛሙርቱንም ከክፉው ሁሉ ይጠብቃቸው ዘንድ አደራ አስጠበቀ",
       "amharic_phonetic": "kahn, wede semay wede 'abatu ḳena blo 'aye: yeweledewnm malede deḳe mezamurtunm kekfuw hulu yṭebḳachew zend 'adera 'asṭebeḳe",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Él alzó la mirada al cielo, hacia ti, su Padre, intercedió ante su Padre y le encomendó a sus discípulos para que los guardara de todo mal."
     },
     {
       "instruction": "",
@@ -22887,7 +24103,8 @@ const kidaseData = {
       "amharic_script": "ቡሩክ ሲሆን ባርከ። ቅዱስ ሲሆን ቆረሰ",
       "amharic_phonetic": "buruk sīhon barke. ḳdus sīhon ḳorese",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Bendito mientras Él (ello) era bendito, quebrantado mientras Él (ello) era santo:"
     },
     {
       "instruction": "",
@@ -22900,7 +24117,8 @@ const kidaseData = {
       "amharic_script": "ለደቀመዛሙርቱ ሰጣቸው ይህ ኅብስት «እማሬ» ለዓለም ሁሉ ቤዛ ሊሆን ስለናንተ የሚሰጥ ሥጋዬ ነው አላቸው።",
       "amharic_phonetic": "ledeḳemezamurtu seṭachew yh hbst «'imaré» le'alem hulu béza līhon slenante yemīseṭ sgayé new 'alachew.",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Y se lo dio a sus discípulos y les dijo: «Tomad, comed; este pan es mi cuerpo, que os será dado como propiciación por todo el mundo»."
     },
     {
       "instruction": "",
@@ -22913,7 +24131,8 @@ const kidaseData = {
       "amharic_script": "ሕዝብ፣ አሜን አሜን አሜን እናምናለነኦ፤ እንታመናለንም፤ ጌታችንና አምላካችን ሆይ እናመሰግንሃለን፤ ይህ እርሱ እንደሆነ በእውነት እናምናለን።",
       "amharic_phonetic": "ḥzb, 'amén 'amén 'amén 'inamnalene'o: 'intamenalenm: gétachnna 'amlakachn hoy 'inamesegnhalen: yh 'irsu 'indehone be'iwnet 'inamnalen.",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "፨ Pueblo: Amén, amén, amén, creemos y confesamos, te glorificamos, oh Señor nuestro y Dios nuestro; que este es Él en quien verdaderamente creemos."
     },
     {
       "instruction": "",
@@ -22926,7 +24145,8 @@ const kidaseData = {
       "amharic_script": "ካህን፣ ከተመገቡ በኋላ አመለከተ ይህ ጽዋ «እማሬ» ስለናንተ ጦር የሚያፈሰው ደሜ ነው ንሡ ጠጡ አለ።",
       "amharic_phonetic": "kahn, ketemegebu behwala 'amelekete yh tswa «'imaré» slenante ṭor yemīyafesew demé new nsu ṭeṭu 'ale.",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Y de igual manera, después de la cena, tomó la copa: señaló y dijo: «Tomad, bebed; esta copa es mi sangre, la cual la lanza derramará por vosotros»."
     },
     {
       "instruction": "",
@@ -22939,7 +24159,8 @@ const kidaseData = {
       "amharic_script": "ሕዝብ፣ አሜን አሜን አሜን እናምናለን፤ እንታመናለንም፤ ጌታችንና አምላካችን ሆይ እናመሰግንሃለን፤ ይህ እርሱ እንደ ሆነ በእውነት እናምናለን።",
       "amharic_phonetic": "ḥzb, 'amén 'amén 'amén 'inamnalen : 'intamenalenm: gétachnna 'amlakachn hoy 'inamesegnhalen: yh 'irsu 'inde hone be'iwnet 'inamnalen.",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "፨ Pueblo: Amén, amén, amén, creemos y confesamos, te glorificamos, oh Señor nuestro y Dios nuestro; que este es Él en quien verdaderamente creemos."
     },
     {
       "instruction": "",
@@ -22952,7 +24173,8 @@ const kidaseData = {
       "amharic_script": "ካህን፣ ቅዱስ ይህን በምታደርጉበት ጊዜ የሞቴን መታሰቢያ ታደርጋላችሁ፤ የትንሣኤዬንም መታሰቢያ ትናገራላችሁ።",
       "amharic_phonetic": "kahn, ḳdus yhn bemtadergubet gīzé yemotén metasebīya tadergalachhu: yetnsa'éyénm metasebīya tnageralachhu.",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Y cada vez que hagáis esto, hacedlo en memoria de mi muerte y proclamad el recuerdo de mi resurrección."
     },
     {
       "instruction": "",
@@ -22965,7 +24187,8 @@ const kidaseData = {
       "amharic_script": "ሕዝብ፣  አቤቱ ሞትህን፤ ቅድስት ትንሣኤንም እንነግራለን። እርገትህን ዳግመኛም መምጣትህን እናምናለን፤",
       "amharic_phonetic": "ḥzb,  'abétu mothn: ḳdst tnsa'énm 'innegralen. 'irgethn dagmeñam memṭathn 'inamnalen:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "፨ Pueblo: Proclamamos tu muerte, Señor, y tu santa resurrección, creemos en tu ascensión y tu segunda venida."
     },
     {
       "instruction": "",
@@ -22978,7 +24201,8 @@ const kidaseData = {
       "amharic_script": "ሕዝብ፣ እናመሰግናለን እናምንሃለንም ጌታችንና አምላካችን ሆይ እንለምንሃለን እንማልድሃለንም።",
       "amharic_phonetic": "ḥzb, 'inamesegnalen 'inamnhalenm gétachnna 'amlakachn hoy 'inlemnhalen 'inmaldhalenm.",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "፨ Pueblo: Te glorificamos y te confesamos, te ofrecemos nuestra oración y te suplicamos, oh Señor nuestro y Dios nuestro."
     },
     {
       "instruction": "",
@@ -22991,7 +24215,8 @@ const kidaseData = {
       "amharic_script": "ካህን፣ አቤቱ እንደዚያን ጊዜ ይህን ኅብስት «እማሬ» ባርከህ ቆርሰህ ስጥ\nሕዝብ፣ አሜን",
       "amharic_phonetic": "kahn, 'abétu 'indezīyan gīzé yhn hbst «'imaré» barkeh ḳorseh sṭ\nḥzb, 'amén",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Oh Señor nuestro, bendice, parte y da este pan.\n\n፨ Pueblo: Amén."
     },
     {
       "instruction": "",
@@ -23004,7 +24229,8 @@ const kidaseData = {
       "amharic_script": "ካህን፣ አቤቱ እንደዚያን ጊዜ ይህን ጽዋ «እማሬ» ባርከህ አክብረህ ስጥ\nሕዝብ፣ አሜን",
       "amharic_phonetic": "kahn, 'abétu 'indezīyan gīzé yhn tswa «'imaré» barkeh 'akbreh sṭ\nḥzb, 'amén",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Oh Señor nuestro, bendice, parte y danos este cáliz.\n\n፨ Pueblo: Amén."
     },
     {
       "instruction": "",
@@ -23017,7 +24243,8 @@ const kidaseData = {
       "amharic_script": "ካህን፣ ይህንንም የኔን ማገልገል (ክህነት) አንጻ ምረጥ ውደድም\nሕዝብ፣ አሜን",
       "amharic_phonetic": "kahn, yhnnm yenén magelgel (khnet) 'antsa mreṭ wdedm\nḥzb, 'amén",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Y este es mi ministerio: purifícalo, escógelo y que te plazca.\n\nPueblo: Amén."
     },
     {
       "instruction": "",
@@ -23030,7 +24257,8 @@ const kidaseData = {
       "amharic_script": "ካህን፣ በዚህ ምሥጢር እየተራዳኝ ከእኔ ጋራ ያለ ይህንን ካህን እርሱንም እኔንም ሥጋህን እንደ ገነዙት እንደ ዮሴፍና እንደ ኒቆዲሞስ አድርገን\nሕዝብ፣ አሜን",
       "amharic_phonetic": "kahn, bezīh msṭīr 'iyeteradañ ke'iné gara yale yhnn kahn 'irsunm 'inénm sgahn 'inde genezut 'inde yoséfna 'inde nīḳodīmos 'adrgen\nḥzb, 'amén",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Y este sacerdote que me acompaña en este ministerio, y yo, hagámoslo como José y Nicodemo, que envolvieron tu cuerpo.\n\nPueblo: Amén."
     },
     {
       "instruction": "",
@@ -23043,7 +24271,8 @@ const kidaseData = {
       "amharic_script": "ካህን፣ እንደ አገልጋይ ሥራት የሚያገለግል ይህንም ዲያቆን ዳግመኛ ወደሚበልጥ ወደ እኛ ክህነት ሹመት ማዕረግ አድርሰው።",
       "amharic_phonetic": "kahn, 'inde 'agelgay srat yemīyagelegl yhnm dīyaḳon dagmeña wedemībelṭ wede 'iña khnet ሹmet ma'ireg 'adrsew.",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Y el diácono enviado según la ley del ministerio, permita alcanzar nuestro alto rango de sacerdocio,"
     },
     {
       "instruction": "",
@@ -23056,7 +24285,8 @@ const kidaseData = {
       "amharic_script": "ካህን፣ ጸጋንና ጽድቅን ባለሟልነትንም የተመላ አድርገው። የሥላሴን አኗኗር በልዕልና አይቶ በመንፈስ ቅዱስ መውረድ እንዳደነቀ እንደ እስጢፋኖስ አድርገው \nሕዝብ፣ አሜን",
       "amharic_phonetic": "kahn, tseganna tsdḳn balemwalnetnm yetemela 'adrgew. yeslasén 'anwanwar bel'ilna 'ayto bemenfes ḳdus mewred 'indadeneḳe 'inde 'isṭīfanos 'adrgew \nḥzb, 'amén",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: y llénalo de gracia, justicia y favor, como a Esteban, que vio la Trinidad y se maravilló y quedó estremecido por la venida del Espíritu Santo.\n\n፨ Pueblo: Amén."
     },
     {
       "instruction": "",
@@ -23069,7 +24299,8 @@ const kidaseData = {
       "amharic_script": "ካህን፣ በቅድስት ቤተ ክርስቲያንህ የተሰበሰቡትን ሕዝብህንም ከካህናቱና ከዲያቆናት ጋራ ከታናሹ ከታላቁም ጋራ ቅዱስ ምሥጢርህን ለመቀበል አብቃ። ይቅር በል እንጂ አትፍረድ",
       "amharic_phonetic": "kahn, beḳdst béte krstīyanh yetesebesebutn ḥzbhnm kekahnatuna kedīyaḳonat gara ketanaሹ ketalaḳum gara ḳdus msṭīrhn lemeḳebel 'abḳa. yḳr bel 'injī 'atfred",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Y a este pueblo que se ha reunido en tu santa iglesia con sacerdotes y diáconos, grandes y pequeños, hazlo digno de recibir tu santo misterio; ten compasión y no los juzgues."
     },
     {
       "instruction": "",
@@ -23082,7 +24313,8 @@ const kidaseData = {
       "amharic_script": "ሕዝብ፣  አሜን አሜን አቤቱ ማረን፣ አቤቱ ራራልን፣ አቤቱ ይቅር በለን",
       "amharic_phonetic": "ḥzb,  'amén 'amén 'abétu maren, 'abétu raraln, 'abétu yḳr belen",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "፨ Pueblo: Amén, Señor, ten piedad de nosotros, Señor, perdónanos, Señor, ten misericordia de nosotros."
     },
     {
       "instruction": "",
@@ -23095,7 +24327,8 @@ const kidaseData = {
       "amharic_script": "(ሕዝቡ ካህኑን ይቀበሉ)\nአቤቱ ክርስቶስ ማረን (3 ጊዜ)",
       "amharic_phonetic": "(ḥzbu kahnun yḳebelu)\n'abétu krstos maren (3 gīzé)",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Señor Cristo, ten piedad de nosotros.\n\nPueblo: Señor Cristo, ten piedad de nosotros. {repetir tres veces}"
     },
     {
       "instruction": "",
@@ -23108,7 +24341,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ በፍጹም ልብ አምላካችንን እግዚአብሔርን እንማልደው ያማረ የመንፈስ ቅዱስን አንድነት ይሰጠን ዘንድ።",
       "amharic_phonetic": "dīyaḳon : beftsum lb 'amlakachnn 'igzī'abḥérn 'inmaldew yamare yemenfes ḳdusn 'andnet yseṭen zend.",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Diácono: Con todo nuestro corazón, roguemos al Señor nuestro Dios que nos conceda la buena comunión del Espíritu Santo."
     },
     {
       "instruction": "",
@@ -23121,7 +24355,8 @@ const kidaseData = {
       "amharic_script": "ሕዝብ፣  በፊት እንደ ነበረ ለዘላለሙ ለልጅ ልጅ ይኖራል።",
       "amharic_phonetic": "ḥzb,  befīt 'inde nebere lezelalemu lelj lj ynoral.",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "፨ Pueblo: Como era, es y será por generaciones y generaciones, por los siglos de los siglos."
     },
     {
       "instruction": "",
@@ -23134,7 +24369,8 @@ const kidaseData = {
       "amharic_script": "ካህን፣  ከርሱ ለሚቀበሉ ሰዎች ሁሉ ለዘላለም ሕይወት ይሆናቸው ዘንድ አንድ አድርገህ ስጣቸው።",
       "amharic_phonetic": "kahn,  kersu lemīḳebelu sewoch hulu lezelalem ḥywet yhonachew zend 'and 'adrgeh sṭachew.",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Concédelo a todos los que lo tomen, para que les sea para vida eterna."
     },
     {
       "instruction": "",
@@ -23147,7 +24383,8 @@ const kidaseData = {
       "amharic_script": "ካህን፣ የአንተ በሚሆን በመንፈስ ቅዱስ አንድ እንሆን ዘንድ ስጠን በዚህም ጵርስፎራ (በሥጋው በደሙ) አድነን ለዓለሙ ሁሉ በምትሆን በአንተ ለዘላለሙ ሕያዋን እንሆን ዘንድ",
       "amharic_phonetic": "kahn, ye'ante bemīhon bemenfes ḳdus 'and 'inhon zend sṭen bezīhm p̣rsfora (besgaw bedemu) 'adnen le'alemu hulu bemthon be'ante lezelalemu ḥyawan 'inhon zend",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Concédenos la unión por medio del Espíritu Santo y sáname con esta ofrenda para que vivamos en ti para siempre.\n\n፨ Pueblo: {repiten sus palabras}"
     },
     {
       "instruction": "",
@@ -23160,7 +24397,8 @@ const kidaseData = {
       "amharic_script": "ካህን፣ የእግዚአብሔር ስሙ ምስጉን ነው በእግዚአብሔር ስም የሚመጣውም ምስጉን ነው የጌትነቱ ስም ይመስገን ይሁን ይሁን ይሁን የተመሰገነ ይሁን።",
       "amharic_phonetic": "kahn, ye'igzī'abḥér smu msgun new be'igzī'abḥér sm yemīmeṭawm msgun new yegétnetu sm ymesgen yhun yhun yhun yetemesegene yhun.",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Bendito sea el nombre del Señor, y bendito el que viene en el nombre del Señor, y bendito sea el nombre de su gloria. Así sea, así sea, así sea bendito.\n\nPueblo: {repiten sus palabras}"
     },
     {
       "instruction": "",
@@ -23173,7 +24411,8 @@ const kidaseData = {
       "amharic_script": "ካህን፣ የመንፈስ ቅዱስን ጸጋ ላክልን።",
       "amharic_phonetic": "kahn, yemenfes ḳdusn tsega lakln.",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Envía la gracia del Espíritu Santo sobre nosotros.\n\nPueblo: {repiten sus palabras}"
     },
     {
       "instruction": "",
@@ -23186,7 +24425,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ ለጸሎት ተነሱ\nሕዝብ፤ አቤቱ ይቅር በለን",
       "amharic_phonetic": "dīyaḳon : letselot tenesu\nḥzb :  'abétu yḳr belen",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Diácono: Pónganse de pie para orar.\n\n፨ Pueblo: Señor, ten misericordia de nosotros."
     },
     {
       "instruction": "",
@@ -23199,7 +24439,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ሰላም ለሁላችሁ ይሁን \n\nሕዝብ፤ ከመንፈስህ ጋራ",
       "amharic_phonetic": "kahn : selam lehulachhu yhun \n\nḥzb : kemenfesh gara",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: La paz sea con todos vosotros.\n\nPueblo: y con tu Espíritu."
     },
     {
       "instruction": "",
@@ -23212,7 +24453,8 @@ const kidaseData = {
       "amharic_script": "ካህን፣ ሁሉ የፈጠረ ሁሉን የጀመረ ሁሉንም የፈጸመ ሁሉን የያዘ፤ ሁሉንም የጨበጠ እግዚአብሔር።",
       "amharic_phonetic": "kahn, hulu yefeṭere hulun yejemere hulunm yefetseme hulun yeyaze: hulunm yechebeṭe 'igzī'abḥér.",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: (ORACIÓN DE FRACCIÓN) Dios, creador de todo, el Iniciador de todo, el Consumador de todo, el Todopoderoso, el Sustentador de todo,"
     },
     {
       "instruction": "",
@@ -23225,7 +24467,8 @@ const kidaseData = {
       "amharic_script": "መላእክትና የመላእክት አለቆች መናብርትና ሥልጣናት አጋዕዝትና ኃይላት።  ፀሐይና ጨረቃ ከዋክብትም ድርገታትም የሚሰግዱለት ተገዦቹና ግዛቱ ጉልቱም ናቸውና።",
       "amharic_phonetic": "mela'iktna yemela'ikt 'aleḳoch menabrtna slṭanat 'aga'iztna haylat.  tseḥayna chereḳa kewakbtm drgetatm yemīsegdulet tegezhochuna gzatu gultum nachewna.",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Tú eres a quien adoran los ángeles, los arcángeles, los tronos, las autoridades, los señores, las potestades, el sol, la luna, las estrellas y toda la creación, porque son sus súbditos, sus dominios y son gobernados por él."
     },
     {
       "instruction": "",
@@ -23238,7 +24481,8 @@ const kidaseData = {
       "amharic_script": "በሁሉ ባለጠጋ ሲሆን ራሱን ከሁሉ ድሀ አደረገ።",
       "amharic_phonetic": "behulu baleṭega sīhon rasun kehulu dha 'aderege.",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Aunque era rico en todo, se hizo pobre en todo."
     },
     {
       "instruction": "",
@@ -23251,7 +24495,8 @@ const kidaseData = {
       "amharic_script": "ኃያል ወልድን ፍቅር ከዙፋኑ ሳበው እስከ ሞትም አደረሰው።",
       "amharic_phonetic": "hayal weldn fḳr kezufanu sabew 'iske motm 'aderesew.",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: El amor hizo que el poderoso Hijo descendiera de su trono y lo condujera a la muerte."
     },
     {
       "instruction": "",
@@ -23264,7 +24509,8 @@ const kidaseData = {
       "amharic_script": "የሚስቡትን ሰዎች በቀንዱ የማይበረታታ፤ ለሚያርዱትም ሰዎች አንገቱን የሚያዘነብል ላም ምን ይደንቅ",
       "amharic_phonetic": "yemīsbutn sewoch beḳendu yemayberetata: lemīyardutm sewoch 'angetun yemīyazenebl lam mn ydenḳ",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Oh Buey, que con tu cuerno no atacas a quienes te atraen, sino que inclinas tu cuello ante quienes te matan:"
     },
     {
       "instruction": "",
@@ -23277,7 +24523,8 @@ const kidaseData = {
       "amharic_script": "በሚሸልተው ፊት የማይናገር በግ እንደምን ያለ ነው። በመከራው ጊዜ በሚወጉት ፊት አፉን ያልገለጸ ምን ትዕግሥት ነው።",
       "amharic_phonetic": "bemīሸltew fīt yemaynager beg 'indemn yale new. bemekeraw gīzé bemīwegut fīt 'afun yalgeletse mn t'igst new.",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: ¡Oh oveja muda ante tus esquiladores! ¡Oh Paciencia, que no abriste tu boca en el momento de tus sufrimientos ante los que te traspasaron!"
     },
     {
       "instruction": "",
@@ -23290,7 +24537,8 @@ const kidaseData = {
       "amharic_script": "ዮሴፍ ከተወዳጃት ክቡር ዕንቍንም በውስጧ ካገኘባት ሣጥን የተገኝ ኅብስት እንደምን ያለ ነው።",
       "amharic_phonetic": "yoséf ketewedajat kbur 'inḳwnm bewsṭwa kageñebat saṭn yetegeñ hbst 'indemn yale new.",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: ¡Oh, pan hallado en el tesoro que José obtuvo en sus mercancías, en el cual también halló la perla de gran precio!"
     },
     {
       "instruction": "",
@@ -23303,7 +24551,8 @@ const kidaseData = {
       "amharic_script": "በውስጧ ሰው ካልገባባት አዳራሽ የተገኘ ጽዋ እንደምን ያለ ነው።",
       "amharic_phonetic": "bewsṭwa sew kalgebabat 'adaraሽ yetegeñe tswa 'indemn yale new.",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Oh, copa hallada en la casa en la que nadie entraba:"
     },
     {
       "instruction": "",
@@ -23316,7 +24565,8 @@ const kidaseData = {
       "amharic_script": "ፈጽሞ የተለየ ሳይሆን ከዚህ ከኅብስት የተለይ ይህ ትእምርተ መስቀል ምን ድንቅ ነው። መልኩ ልምላሜው ጣዕሙ አንድ ነው እንጂ",
       "amharic_phonetic": "fetsmo yeteleye sayhon kezīh kehbst yeteley yh t'imrte mesḳel mn dnḳ new. melku lmlaméw ṭa'imu 'and new 'injī",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Oh, esta señal de la cruz, separada de esta hostia sin estar dividida ni enajenada, sino que su apariencia, sabor y suavidad son los mismos:"
     },
     {
       "instruction": "",
@@ -23329,7 +24579,8 @@ const kidaseData = {
       "amharic_script": "መለኮቱ ከሰውነቱ ፈጽሞ የተለይ እንዳይደለ፤ እንደዚሁም ይህ ትእምርተ መስቀል ከዚህ ኅብስት ፈጽሞ የተለየ አይደለም።",
       "amharic_phonetic": "melekotu kesewnetu fetsmo yeteley 'indaydele: 'indezīhum yh t'imrte mesḳel kezīh hbst fetsmo yeteleye 'aydelem.",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Así como su Divinidad no fue separada ni dividida de su Humanidad, tampoco esta señal de la cruz está separada ni dividida de esta hostia:"
     },
     {
       "instruction": "",
@@ -23342,7 +24593,8 @@ const kidaseData = {
       "amharic_script": "እንዲሁም ገናንነትህ ከትሕትናችን ትሕትናችን ከገናንነትህ ጋራ አንድ ይሁን። ዓለሙን የያዝህ አንተ አምላካችን እግዚአብሔር። \nዲያቆን፣  ጸልዩ",
       "amharic_phonetic": "indīhum genanneth ketḥtnachn tḥtnachn kegenanneth gara 'and yhun. 'alemun yeyazh 'ante 'amlakachn 'igzī'abḥér. \ndīyaḳon,  tselyu",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Asimismo, que tu grandeza se una a nuestra humildad y nuestra humildad a tu grandeza, oh Señor todopoderoso, Dios nuestro.\n\nDiácono: Ora."
     },
     {
       "instruction": "",
@@ -23355,7 +24607,8 @@ const kidaseData = {
       "amharic_script": "፨ ሁሉም፤ አባታችን ሆይ፥ በሰማይ የምትኖር፥ ስምህ ይቀደስ፥ መንግሥትህ ትምጣ፥ ፈቃድህ በሰማይ እንደሆነ እንዲሁም በምድር ይሁን።",
       "amharic_phonetic": "፨ hulum: 'abatachn hoy; besemay yemtnor; smh yḳedes; mengsth tmṭa; feḳadh besemay 'indehone 'indīhum bemdr yhun.",
       "tigrinya_script": "፨ ኣብ ሰማያት እትነብር ኣቦና ፨\n፨ ኩሉኹም፤ ኣብ ሰማያት እትነብር ኣቦና ስምካ ይቀደስ፥ መንግስትኻ ትምጻእ፥ ፈቓድካ ከምቲ ኣብ ሰማያት ከምኡ'ውን ኣብ ምድሪ ይኹን፥",
-      "tigrinya_phonetic": "፨ 'ab semayat 'itnebr 'abona ፨\n፨ kulukhum: 'ab semayat 'itnebr 'abona smka yḳedes; mengstkha tmtsa'i; feqhadka kemtī 'ab semayat kem'u'wn 'ab mdrī ykhun;"
+      "tigrinya_phonetic": "፨ 'ab semayat 'itnebr 'abona ፨\n፨ kulukhum: 'ab semayat 'itnebr 'abona smka yḳedes; mengstkha tmtsa'i; feqhadka kemtī 'ab semayat kem'u'wn 'ab mdrī ykhun;",
+      "spanish": "፨ EL PADRE NUESTRO ፨\n\n፨ TODOS: Padre nuestro que estás en los cielos, santificado sea tu nombre. Venga a nosotros tu reino. Hágase tu voluntad en la tierra como en el cielo."
     },
     {
       "instruction": "",
@@ -23368,7 +24621,8 @@ const kidaseData = {
       "amharic_script": "፨ ሁሉም፤ የዕለት እንጀራችንን ስጠን ለዛሬ፥ በደላችንን ይቅር በለን፥ እኛም የበደሉንን ይቅር እንደምንል፥",
       "amharic_phonetic": "፨ hulum: ye'ilet 'injerachnn sṭen lezaré; bedelachnn yḳr belen; 'iñam yebedelunn yḳr 'indemnl;",
       "tigrinya_script": "፨ ኩሉኹም፤ ናይ ዕለት እንጌራና ሎሚ ሃበና፥ ንሕና ንዝበደሉና በደሎም ከም እንኃደግናሎም በደልና ኅደገልና፥",
-      "tigrinya_phonetic": "፨ kulukhum: nay 'ilet 'ingérana lomī habena; nḥna nzbedeluna bedelom kem 'inhadegnalom bedelna hdegelna;"
+      "tigrinya_phonetic": "፨ kulukhum: nay 'ilet 'ingérana lomī habena; nḥna nzbedeluna bedelom kem 'inhadegnalom bedelna hdegelna;",
+      "spanish": "፨ TODOS: Danos hoy nuestro pan de cada día. Y perdona nuestras ofensas y pecados, como también nosotros perdonamos a los que nos ofenden."
     },
     {
       "instruction": "",
@@ -23381,7 +24635,8 @@ const kidaseData = {
       "amharic_script": "፨ ሁሉም፤ አቤቱ ወደ ፈተና አታግባን፥ ከክፉ ሁሉ አድነን እንጂ፥ መንግሥት ያንተ ናትና። ኃይል፥ ክብር፥ ምስጋና ለዘለዓለም አሜን።",
       "amharic_phonetic": "፨ hulum: 'abétu wede fetena 'atagban; kekfu hulu 'adnen 'injī; mengst yante natna. hayl; kbr; msgana lezele'alem 'amén.",
       "tigrinya_script": "፨ ኩሉኹም፤ ካብ ክፉእ ኣድኅነና እምበር ኣብ ፈተና ኣይተእትወና፥ መንግስትን፡ ኃይልን ፡ክብርን ንዘለዓለም ናትካ እዩ፡ አሜን።",
-      "tigrinya_phonetic": "፨ kulukhum: kab kfu'i 'adhnena 'imber 'ab fetena 'ayte'itwena; mengstn  hayln  kbrn nzele'alem natka 'iyu  'amén."
+      "tigrinya_phonetic": "፨ kulukhum: kab kfu'i 'adhnena 'imber 'ab fetena 'ayte'itwena; mengstn  hayln  kbrn nzele'alem natka 'iyu  'amén.",
+      "spanish": "TODOS: Y no nos dejes caer en la tentación, Señor, y líbranos del mal. Porque tuyo es el reino, el poder y la gloria, por siempre. Amén."
     },
     {
       "instruction": "",
@@ -23394,7 +24649,8 @@ const kidaseData = {
       "amharic_script": "ካህን: እንግዲህ እስከ ደኃሪት እስትንፋስ(ዕለተ ሞት) ድረስ ይህን ቃል እንስማ። በምንከሰስባት ገንዘብ በሚፈረድብንና ይቅር በሚለን ገንዘብ።",
       "amharic_phonetic": "kahn: 'ingdīh 'iske deharīt 'istnfas('ilete mot) dres yhn ḳal 'insma. bemnkesesbat genzeb bemīferedbnna yḳr bemīlen genzeb.",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Escuchemos, pues, hasta el último bocado, esta palabra por la cual seremos acusados, juzgados y perdonados."
     },
     {
       "instruction": "",
@@ -23407,7 +24663,8 @@ const kidaseData = {
       "amharic_script": "ወልድ ለመፍረድና ይቅር ለማለት ከሰማየ ሰማያት እንደመጣ። እንደዚሁም ይህ ኅብስት ከሳሽ ነው፤ ፈራጅም ነው ይቅር ባይም ነው።",
       "amharic_phonetic": "weld lemefredna yḳr lemalet kesemaye semayat 'indemeṭa. 'indezīhum yh hbst kesaሽ new: ferajm new yḳr baym new.",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Así como el Hijo vino del cielo de los cielos para juicio y misericordia, este pan será acusador, juez y perdonador."
     },
     {
       "instruction": "",
@@ -23420,7 +24677,8 @@ const kidaseData = {
       "amharic_script": "ከዚህ ከሚያስደነግፅ ቃል የተነሣ ነፍስ ትፍራ፤ ሕዋስ ይንቀጥቀጥ፤ በውስጥ ያለ የልብ ደጅም ይሰበር።",
       "amharic_phonetic": "kezīh kemīyasdenegts ḳal yetenesa nefs tfra: ḥwas ynḳeṭḳeṭ: bewsṭ yale yelb dejm yseber.",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Que el alma tema, los nervios tiemblen y la puerta del corazón se rompa con esta majestuosa palabra."
     },
     {
       "instruction": "",
@@ -23433,7 +24691,8 @@ const kidaseData = {
       "amharic_script": "ይህ መለኮታዊ ኅብስት እነሆ ተቆረሰ። ይህ ማኅየዊ ጽዋም እነሆ ተዘጋጀ። የሚቀበል ይምጣ አስቀድሞ ራሳችሁን መርምሩ ሰውነታችሁንም አንጹ።",
       "amharic_phonetic": "yh melekotawī hbst 'ineho teḳorese. yh mahyewī tswam 'ineho tezegaje. yemīḳebel ymṭa 'asḳedmo rasachhun mermru sewnetachhunm 'antsu.",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Este pan divino ha sido partido y esta copa vivificante ha sido preparada. Quien quiera tomar, que venga; pero primero examínense y purifiquen sus cuerpos."
     },
     {
       "instruction": "",
@@ -23446,7 +24705,8 @@ const kidaseData = {
       "amharic_script": "ንጹሕ ያልሆነ ሰው ቢኖር ይወግድ፤ በኃጢአት የወደቀ ሰው ቢኖር አይርሳ የማይረሳ ነወና።",
       "amharic_phonetic": "ntsuḥ yalhone sew bīnor ywegd: behaṭī'at yewedeḳe sew bīnor 'ayrsa yemayresa newena.",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Si hay alguien impuro, que no se acerque; y si hay alguien que ha caído en pecado, que no lo olvide, porque no debe olvidarse."
     },
     {
       "instruction": "",
@@ -23459,7 +24719,8 @@ const kidaseData = {
       "amharic_script": "ይህን ቍርባን የሚያቃልል ሰው ቢኖር አይቅረብ፤ ይከልከል እንጂ ይህ ኅብስት እንደምታዩት እንደ ምድራዊ ኅብስት ብላሽ አይደለም፣ እሳተ መለኮት ነው እንጂ።",
       "amharic_phonetic": "yhn ḳwrban yemīyaḳall sew bīnor 'ayḳreb: ykelkel 'injī yh hbst 'indemtayut 'inde mdrawī hbst blaሽ 'aydelem, 'isate melekot new 'injī.",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Si alguien desprecia la Sagrada Comunión, que no se acerque, sino que se le impida. Como veis, este pan no es perecedero como el pan terrenal, sino que es fuego divino."
     },
     {
       "instruction": "",
@@ -23472,7 +24733,8 @@ const kidaseData = {
       "amharic_script": "ይህን ኅብስት የሚጐርስ ምን አፍ ነው፤ ይህን ኅብስት የሚያላምጥ ምን ጥርስ ነው፤ ይህን ኅብስት የሚችል ምን ሆድ ነው።",
       "amharic_phonetic": "yhn hbst yemīgwers mn 'af new: yhn hbst yemīyalamṭ mn ṭrs new: yhn hbst yemīchl mn hod new.",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: ¿Qué boca es la que toma este pan, qué dientes son los que mastican este pan, y qué estómago es el que puede contener este pan?"
     },
     {
       "instruction": "",
@@ -23485,7 +24747,8 @@ const kidaseData = {
       "amharic_script": "አሁንም አምላካችን ሆይ እንደ ምሕረትህ ነው እንደ ኃጢአታችንም አይደለም እንበል።",
       "amharic_phonetic": "ahunm 'amlakachn hoy 'inde mḥreth new 'inde haṭī'atachnm 'aydelem 'inbel.",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Y ahora digamos: Según tu misericordia, Dios nuestro, y no según nuestros pecados."
     },
     {
       "instruction": "",
@@ -23498,7 +24761,8 @@ const kidaseData = {
       "amharic_script": "ሕዝብ፣ አምላክች ሆይ እንደ ቸርነትህ ነው እንጂ እንደ በደላችን አይሁን(3 ጊዜ)",
       "amharic_phonetic": "ḥzb, 'amlakch hoy 'inde cherneth new 'injī 'inde bedelachn 'ayhun(3 gīzé)",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "፨ Pueblo: Conforme a tu misericordia, Dios nuestro, y no conforme a nuestros pecados. {repetir tres veces}"
     },
     {
       "instruction": "",
@@ -23511,7 +24775,8 @@ const kidaseData = {
       "amharic_script": "ሕዝብ፣፣ የመድኃኔ ዓለም አገልጋዮች የሚሆኑ የመላእክት ሠራዊት በመድኃኔ ዓለም ፊት ይቆማሉ። \nመድኃኔ ዓለምን ያመሰግኑታል የመድኃኔ ዓለም  ሥጋውና ደሙ",
       "amharic_phonetic": "ḥzb,, yemedhané 'alem 'agelgayoch yemīhonu yemela'ikt serawīt bemedhané 'alem fīt yḳomalu. \nmedhané 'alemn yamesegnutal yemedhané 'alem  sgawna demu",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "፨ Pueblo: Las huestes de ángeles del Salvador del mundo están delante del Salvador del mundo. Y rodean al Salvador del mundo, incluso el cuerpo y la sangre del Salvador del mundo."
     },
     {
       "instruction": "",
@@ -23524,7 +24789,8 @@ const kidaseData = {
       "amharic_script": "ወደ መድኃኔ ዓለም ፊት እንቅረብ እርሱን በማመን ለክርስቶስ እንገዛለን",
       "amharic_phonetic": "wede medhané 'alem fīt 'inḳreb 'irsun bemamen lekrstos 'ingezalen",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "፨ Pueblo: Y acerquémonos al rostro del Salvador del mundo con la fe que es de Él a quien damos gracias, para alabar a Cristo."
     },
     {
       "instruction": "",
@@ -23537,7 +24803,8 @@ const kidaseData = {
       "amharic_script": "ን.ዲያቆን፣ መኳንንት ደጆችን ክፈቱ\nዲያቆን፣ የቆማችሁ ሰዎች ራሳችሁን ዝቅ ዝቅ አድርጉ",
       "amharic_phonetic": "n.dīyaḳon, mekwannt dejochn kfetu\ndīyaḳon, yeḳomachhu sewoch rasachhun zḳ zḳ 'adrgu",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Subdiácono: Príncipes, abran las puertas.\n\nDiácono: Ustedes que están de pie, inclinen la cabeza."
     },
     {
       "instruction": "",
@@ -23550,7 +24817,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አቤቱ ሁሉን ለፈጠርህ ለማትታይ አምላክ ለአንተ ሰውነታችንን እንዘረጋለን። ሁሉን ለምታዋርድ ለአንተ ራሳችንን እናዋርዳለን። ሁሉን ለምታሰግድ ለአንተ እንሰግዳለን። ሁሉን ለምትገዛ ለአንተ እንገዛለን።",
       "amharic_phonetic": "kahn : 'abétu hulun lefeṭerh lemattay 'amlak le'ante sewnetachnn 'inzeregalen. hulun lemtaward le'ante rasachnn 'inawardalen. hulun lemtasegd le'ante 'insegdalen. hulun lemtgeza le'ante 'ingezalen.",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Ponemos nuestras almas ante Ti, Señor, Creador de todo, Dios invisible. Nos humillamos ante Ti, el que humilla a todos. Te adoramos, que haces que todos te adoren. Te servimos, Soberano de todo."
     },
     {
       "instruction": "",
@@ -23563,7 +24831,8 @@ const kidaseData = {
       "amharic_script": "የተሠወረውን የምትገልጽ የተገለጸውን ሁሉ የምትሠውር ሆይ።",
       "amharic_phonetic": "yetesewerewn yemtgelts yetegeletsewn hulu yemtsewr hoy.",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Oh tú que descubres lo oculto y cubres como en secreto todo lo que está a la vista:"
     },
     {
       "instruction": "",
@@ -23576,7 +24845,8 @@ const kidaseData = {
       "amharic_script": "በውስጥ ያለውን የምታወጣ በውጭ ያለውን የምታስገባ ሆይ።",
       "amharic_phonetic": "bewsṭ yalewn yemtaweṭa bewch yalewn yemtasgeba hoy.",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Oh tú que eres capaz de expulsar lo que está dentro y tomar dentro lo que está fuera:"
     },
     {
       "instruction": "",
@@ -23589,7 +24859,8 @@ const kidaseData = {
       "amharic_script": "አሁንም በእውነት የሚጠሩህን የወገኖችህን ጩኸታቸውን ስማ።",
       "amharic_phonetic": "ahunm be'iwnet yemīṭeruhn yewegenochhn chukhetachewn sma.",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Escucha ahora los clamores de tu pueblo que te invoca con justicia."
     },
     {
       "instruction": "",
@@ -23602,7 +24873,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፣ ስግዱ ለእግዚአብሔር በፍርሃት \nሕዝብ፣ አቤቱ በፊትህ እንሰግዳለን እናመሰግንሃለንም",
       "amharic_phonetic": "dīyaḳon, sgdu le'igzī'abḥér befrhat \nḥzb, 'abétu befīth 'insegdalen 'inamesegnhalenm",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Diácono: Adoren al Señor con temor.\n\nPueblo: Ante ti, Señor, te adoramos y te glorificamos."
     },
     {
       "instruction": "",
@@ -23615,7 +24887,8 @@ const kidaseData = {
       "amharic_script": "ካህን፣ የንሰሓ ጸሎት (ቅዳ.ሐዋ ቍ 72—88)።",
       "amharic_phonetic": "kahn, yenseḥa tselot (ḳda.ḥawa ḳw 72—88).",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: (ORACIÓN DE PENITENCIA) Oh Señor Dios, Padre todopoderoso, eres Tú quien sana las heridas de nuestra alma, de nuestro cuerpo y de nuestro espíritu,"
     },
     {
       "instruction": "",
@@ -23628,7 +24901,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ባንድ ልጅህ በጌታችን 73 በአምላካችንና በመድኃኒታችን በኢየሱስ ክርስቶስ አፍ ተናግረሃልና፣",
       "amharic_phonetic": "kahn: : band ljh begétachn 73 be'amlakachnna bemedhanī tachn be'īyesus krstos 'af tenagrehalna,",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: porque lo has dicho por boca de tu Hijo unigénito, nuestro Señor, nuestro Dios y nuestro Salvador Jesucristo,"
     },
     {
       "instruction": "",
@@ -23641,7 +24915,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ለአባ ታችን ለጴጥሮስ እንዲህ ብሎ የተናገረውን አንተ መሠረት ነህ፣ በዚህችም መሠረት ላይ ክብርት ቤተ ክርስቲያኔን እሠራታለሁ፣ የሲኦልም ደጆች ሊያጠፏ ትና ሊያነዋውጧት አይ ችሉም፣",
       "amharic_phonetic": "kahn: le'aba tachn lep̣éṭros 'indīh blo yetenagerewn 'ante meseret neh, bezīhchm meseret lay kbrt béte krstīyanén 'iseratalehu, yesī'olm dejoch līyaṭefwa tna līyanewawṭwat 'ay chlum,",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: lo que le dijo a nuestro padre Pedro: «Tú eres una roca, y sobre esta roca edificaré mi santa Iglesia, y las puertas del infierno no prevalecerán contra ella,"
     },
     {
       "instruction": "",
@@ -23654,7 +24929,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤፣ ላንተም የመንግ ሥተ ሰማያትን መክፈቻ እሰጥሃለሁ፣በምድር ያሠ ርኸው በሰማይ የታሠረ ይሆን ዘንድ፤ በምድርም የፈታኸው በሰማይ የተ ፈታ ይሆን ዘንድ፧",
       "amharic_phonetic": "kahn: , lantem yemeng ste semayatn mekfecha 'iseṭhalehu,bemdr yase rkhew besemay yetasere yhon zend: bemdrm yefetakhew besemay yete feta yhon zend?",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Y a vosotros os doy las llaves del reino de los cielos; todo lo que hayáis atado en la tierra quedará atado en el cielo, y todo lo que hayáis desatado en la tierra quedará desatado en el cielo."
     },
     {
       "instruction": "",
@@ -23667,7 +24943,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ወንዶቹም ሴቶቹም አገ ልጋዮችህ ሁሉ በየስማ ቸው የተፈቱ፣ ነጻም የወጡ ይሁኑ፣ በመንፈስ ቅዱስ ቃል ኃጥእ በደለኛ በምሆን በኔም በ አገልጋይህ እገሌ ቃል፣ በማወቅ ወይም ባለማ ወቅ ቢሠሩ",
       "amharic_phonetic": "kahn: wendochum sétochum 'age lgayochh hulu beyesma chew yetefetu , netsam yeweṭu yhunu, bemenfes ḳdus ḳal haṭ'i bedeleña bemhon beném be 'age lgayh 'igelé ḳal, bemaweḳ weym balema weḳ bīseru",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Que todos tus siervos y siervas, según sus respectivos nombres, seamos absueltos y liberados por la boca del Espíritu Santo, y también por mi boca tu siervo pecador y culpable, ya sea que haya obrado consciente o inconscientemente."
     },
     {
       "instruction": "",
@@ -23680,7 +24957,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አቤቱ እሊህን አገልጋ ዮችህን አባቶቼንና ወን ድሞቼን እኅቶቼንም አጽንተህ ጠብቃቸው፧",
       "amharic_phonetic": "kahn: : 'abétu 'ilīhn 'agelga yochhn 'abatochénna wen dmochén 'ihtochénm 'atsnteh ṭebḳachew?",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Señor, protégelos y defiéndelos, a tus siervos, padres, hermanos y hermanas."
     },
     {
       "instruction": "",
@@ -23693,7 +24971,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ዳግመኛም ኃጥእ በደለኛ የምሆን እኔንም ወራዳ ነቴን አይተህ ፍታኝ",
       "amharic_phonetic": "kahn: : dagmeñam haṭ'i bedeleña yemhon 'inénm werada netén 'ayteh ftañ",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Y libérame también a mí, tu humilde y pecador siervo."
     },
     {
       "instruction": "",
@@ -23706,7 +24985,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ልዩ ሦስት በሚሆኑ በአብና በወልድ በመን ፈስ ቅዱስም ቃል የተ ፈቱ ነጻም የወጡ ይሁኑ፣ ኃጥእ በደለኛ በምሆን በኔም በአገልጋይህ ቃል፧",
       "amharic_phonetic": "kahn: lyu sost bemīhonu be'abna beweld bemen fes ḳdusm ḳal yete fetu netsam yeweṭu yhunu, haṭ'i bedeleña bemhon beném be'agelgayh ḳal?",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Y absuélvelos y libéralos de la boca de la Santísima Trinidad, el Padre, el Hijo y el Espíritu Santo, y de mi boca, vuestro siervo pecador e injusto."
     },
     {
       "instruction": "",
@@ -23719,7 +24999,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ መሐሪ ይቅር ባይ ሰውንም የምትወድ አምላካ ችን እግዚአብሔር ሆይ፣ የዓለሙን ኃጢአት የምታርቅ፣ የወንዶቹንና የሴቶቹን አገልጋዮችህን ንስሓቸውን ተቀበል፣",
       "amharic_phonetic": "kahn: meḥarī yḳr bay sew nm yemtwed 'amlaka chn 'igzī'abḥér hoy, ye'alemun haṭī'at yemtarḳ, yewendochunna yesétochun 'agelgayochhn nsḥachewn teḳebel,",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Oh, Señor Dios nuestro, compasivo, misericordioso y amante del hombre, que quitas el pecado del mundo, aceptas el arrepentimiento de tus siervos y de tus siervas,"
     },
     {
       "instruction": "",
@@ -23732,7 +25013,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ የዘለዓለም ደኅንነት የሚ ሆን ብርሃንንም ግለጽ ላ ቸው፣ አቤቱ ኃጢአታቸ ውንም ሁሉ ይቅር በላቸው፣ ቸር ሰውንም የምትወድ አንተ ነህና፤",
       "amharic_phonetic": "kahn: yezele'alem dehnnet yemī hon brhannm glets la chew, 'abétu haṭī'atache wnm hulu yḳr belachew, cher sewnm yemtwed 'ante nehna :",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: e iluminadlos con la luz de la vida eterna, y perdonadles, Señor, todos sus pecados; porque tú eres bueno y amas al hombre."
     },
     {
       "instruction": "",
@@ -23745,7 +25027,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ይቅር ባይ አምላካችን እግዚአብሔር ሆይ፣ መዓትህ የራቀ፣ ምሕ ረትህም የበዛ፣ እውነተ ኛም የምትሆን የኔን ኃጢአቴን አስተሥርይ ልኝ፤",
       "amharic_phonetic": "kahn: yḳr bay 'amlakachn 'igzī'abḥér hoy, me'ath yeraḳe , mḥ rethm yebeza , 'iwnete ñam yemthon yenén haṭī'atén 'astesry lñ :",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Oh Señor, Dios nuestro, misericordioso, lento para la ira, grande en misericordia y justo, perdona mis pecados;"
     },
     {
       "instruction": "",
@@ -23758,7 +25041,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ወንዶችንና ሴቶችንም ባሮችህን ሁሉ ከበደ ልም ከመርገምም ሁሉ አድናቸው፣",
       "amharic_phonetic": "kahn: wendochnna sétochnm barochhn hulu kebede lm kemergemm hulu 'adnachew,",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: y libra a todos tus siervos y siervas de toda transgresión y maldición. Si hemos pecado contra ti, Señor,"
     },
     {
       "instruction": "",
@@ -23771,7 +25055,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤፣ በቃላችንም ቢሆን በሥራችንም ቢሆን፣ በአሳባችንም ቢሆን አቤቱ አንተን ብንበድል ተውልን አስተሥርይልን አቃል ልን፣ ይቅርም በለን",
       "amharic_phonetic": "kahn: , beḳalachnm bīhon besrachnm bīhon, be'asabachnm bīhon 'abétu 'anten bnbedl tewln 'astesryln 'aḳal ln , yḳrm belen",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: ya sea en nuestra palabra, en nuestra obra o en nuestro pensamiento, perdona, remite, perdona y ten misericordia, porque Tú eres bueno y amante del hombre, Señor, Dios nuestro."
     },
     {
       "instruction": "",
@@ -23784,7 +25069,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አምላካችን እግዚአብሔር ሆይ አንተ ቸር ሰውን ወዳጅ ነህና፣ አቤቱ የተፈታን ነጻም የወጣን አድርገን፣ ወገኖችህንም ሁሉ ፍታቸው፣ ኃጥእ የምሆን እኔንም አገልጋ ይህን ፍታኝ ፧",
       "amharic_phonetic": "kahn: : 'amlakachn 'igzī'abḥér hoy 'ante cher sewn wedaj nehna , 'abétu yetefetan netsam yeweṭan 'adrgen, wegenochhnm hulu ftachew, haṭ'i yemhon 'inénm 'agelga yhn ftañ ?",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Oh Señor, absuélvenos y libéranos, y absuelve a todo tu pueblo, y absuelve a mí, tu siervo pecador."
     },
     {
       "instruction": "The priest shall also make mention of other attending bishops or archpriests.",
@@ -23797,7 +25083,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ክቡር የሚሆን የጳጳሳቱን አለቃ አባ {{ ዕገሌን }} አስ በው፣ ብፁዕ የሚሆን አባ {{ዕገሌንም }} አስበው፣",
       "amharic_phonetic": "kahn: kbur yemīhon yep̣ap̣asatun 'aleḳa 'aba {{ 'igelén }} 'as bew, btsu'i yemīhon 'aba {{'igelénm }} 'asbew,",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Recuerda, Señor, al honorable padre, nuestro Patriarca Abba {{NOMBRE DEL PATRIARCA}} y al bendito Arzobispo Abba {{NOMBRE DEL OBISPO}}."
     },
     {
       "instruction": "The priest shall also make mention of other attending bishops or archpriests.",
@@ -23810,7 +25097,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤አምላካችን ሆይ፣ ለብዙ ዘመናት ለረጅም ወራት በእውነትና በሰላም መጠ በቅን ጠብቅልን፣",
       "amharic_phonetic": "kahn:'amlakachn hoy, lebzu zemenat lerejm werat be'iwnetna beselam meṭe beḳn ṭebḳln ,",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Dios nuestro, guárdalos para nosotros por muchos años y muchos días en justicia y paz."
     },
     {
       "instruction": "",
@@ -23823,7 +25111,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አቤቱ ሀገራችንንም {{COUNTRY}} አስባት፣ የሚጣሏ ትን ጠላቶቿን ፈጥነህ አስገዛላት፤",
       "amharic_phonetic": "kahn: : 'abétu hagerachnnm {{COUNTRY}} 'asbat, yemīṭalwa tn ṭelatochwan feṭneh 'asgezalat :",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Acuérdate, oh Señor, de nuestra patria {{PAÍS}}. Somete pronto a sus adversarios y enemigos bajo su dominio."
     },
     {
       "instruction": "",
@@ -23836,7 +25125,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ የጳጳሳቱን አለቆች ጳጳሳቱ ንና ኤጲስ ቆጶሳቱን፣ ቀሳ ውስቱንና ዲያቆናቱን፣ አንባቢዎችንና መዘምራ ኑን፣ ደናግሉንና መነ ኰሳቱን፣ ባልቴቶቹንና አባት እናት የሞቱባቸ ውን፣",
       "amharic_phonetic": "kahn: : yep̣ap̣asatun 'aleḳoch p̣ap̣asatu nna 'ép̣īs ḳop̣osatun, ḳesa wstunna dīyaḳonatun, 'anbabīwochnna mezemra nun, denaglunna mene kwesatun, baltétochunna 'abat 'inat yemotubache wn,",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Acuérdate, Señor, de los patriarcas, arzobispos, obispos, sacerdotes y diáconos, anaguntos (lectores) y cantores, vírgenes y monjes, viudas y huérfanos,"
     },
     {
       "instruction": "",
@@ -23849,7 +25139,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ወንዶቹንና ሽማ ግሌዎቹንና ልጆቹን፣ ክብርት በምትሆን በዚ ህች ቤተ ክርስቲያን ያሉትን፣ የቆሙትንም የክርስቲያንን ወገኖች ሁሉ ክርስቶስን በማመን አጽናቸው፧",
       "amharic_phonetic": "kahn: wendochunna ሽma gléwochunna ljochun, kbrt bemthon bezī hch béte krstīyan yalutn, yeḳomutnm yekrstīyann wegenoch hulu krstosn bemamen 'atsnachew?",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: hombres y mujeres, ancianos y niños, y todos los cristianos que se encuentran en esta santa iglesia; fortalécelos en la fe de Cristo."
     },
     {
       "instruction": "",
@@ -23862,7 +25153,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ አቤቱ በቀናች ሃይማኖት ሁነው የሞቱትንና ያረፉትን አባቶቻችንንና ወንድሞ ቻችንን እኅቶቻችንንም ሁሉ አስባቸው፣ ነፍሶ ቻቸውንም በአብርሃምና በይስሐቅ በያዕቆብም አጠገብ አኑር",
       "amharic_phonetic": "kahn: 'abétu beḳenach haymanot hunew yemotutnna yarefutn 'abatochachnnna wendmo chachnn 'ihtochachnnm hulu 'asbachew, nefso chachewnm be'abrhamna beysḥaḳ beya'iḳobm 'aṭegeb 'anur",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Acuérdate, Señor, de todos nuestros padres, hermanos y hermanas que duermen y descansan en la fe ortodoxa, y que depositan sus almas en el seno de Abraham, Isaac y Jacob."
     },
     {
       "instruction": "",
@@ -23875,7 +25167,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Y en cuanto a nosotros, líbranos de toda transgresión y maldición, de toda maldad, de toda rebelión y de todo juramento falso."
     },
     {
       "instruction": "",
@@ -23888,7 +25181,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: y de todo anatema, de todo perjurio, de mezclarse con herejes y gentiles en error y contaminación."
     },
     {
       "instruction": "",
@@ -23901,7 +25195,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Concédenos, Señor, sabiduría, poder, razón, entendimiento y conocimiento, para que podamos apartarnos y huir para siempre de todas las obras de Satanás, el tentador."
     },
     {
       "instruction": "",
@@ -23914,7 +25209,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Concédenos, Señor, hacer tu voluntad y tu beneplácito en todo momento, y escribe nuestros nombres en el libro de la vida en el reino de los cielos con todos los santos mártires,"
     },
     {
       "instruction": "",
@@ -23927,7 +25223,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Por Jesucristo nuestro Señor, por quien, con él y con el Espíritu Santo, sea la gloria y el dominio, ahora y siempre, por los siglos de los siglos. Amén."
     },
     {
       "instruction": "",
@@ -23940,7 +25237,8 @@ const kidaseData = {
       "amharic_script": "",
       "amharic_phonetic": "",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Diácono: Presten atención.\nSacerdote: Lo santo es para lo santo.\n\nPueblo: Uno es el Padre, uno es el Hijo Santo, uno es el Espíritu Santo."
     },
     {
       "instruction": "",
@@ -23953,7 +25251,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: El Señor esté con todos ustedes.\n\nPueblo: y con tu Espíritu."
     },
     {
       "instruction": "The priest shall raise the whole Host with his hand and say: O Lord Christ, have compassion on us. (3X in a loud chant & 15X in low chant)",
@@ -23966,7 +25265,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Señor Cristo, ten compasión de nosotros.\n\nPueblo: Señor Cristo, ten compasión de nosotros. {repetir}"
     },
     {
       "instruction": "",
@@ -23979,7 +25279,8 @@ const kidaseData = {
       "amharic_script": "",
       "amharic_phonetic": "",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Diácono: Vosotros, los penitentes, inclinad la cabeza."
     },
     {
       "instruction": "Then the priest shall turn to the people and say: (Anaphora of Apostles No. 95 - 126)",
@@ -23992,7 +25293,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Señor, Dios nuestro, mira a tu pueblo que está penitente, y según tu gran misericordia, ten misericordia de ellos,"
     },
     {
       "instruction": "",
@@ -24005,7 +25307,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: y conforme a la multitud de Tu compasión, borra su iniquidad, cúbrelos y guárdalos de todo mal."
     },
     {
       "instruction": "",
@@ -24018,7 +25321,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Y redime sus almas en paz, perdona sus obras pasadas. Únelas a tu Santa Iglesia."
     },
     {
       "instruction": "",
@@ -24031,7 +25335,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: por la gracia y la compasión de tu Hijo unigénito, nuestro Señor, Dios y Salvador Jesucristo,"
     },
     {
       "instruction": "",
@@ -24044,7 +25349,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Por Él, con Él y con el Espíritu Santo, sea la gloria ahora y siempre, por los siglos de los siglos. Amén."
     },
     {
       "instruction": "",
@@ -24057,7 +25363,8 @@ const kidaseData = {
       "amharic_script": "",
       "amharic_phonetic": "",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Diácono: Pónganse de pie para orar.\n\n፨ Pueblo: Señor, ten misericordia de nosotros."
     },
     {
       "instruction": "",
@@ -24070,7 +25377,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: La paz sea con todos vosotros.\n\nPueblo: y con tu Espíritu."
     },
     {
       "instruction": "(pointing)",
@@ -24083,7 +25391,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Este es el verdadero y santo Cuerpo de nuestro Señor, nuestro Dios y nuestro Salvador Jesucristo,"
     },
     {
       "instruction": "",
@@ -24096,7 +25405,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: que se da para vida, para salvación y para perdón de los pecados a quienes la reciben con fe.\n\n፨ Pueblo: Amén."
     },
     {
       "instruction": "(pointing)",
@@ -24109,7 +25419,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Esta es la verdadera y preciosa Sangre de nuestro Señor, nuestro Dios y nuestro Salvador Jesucristo,"
     },
     {
       "instruction": "",
@@ -24122,7 +25433,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: que se da para vida, para salvación y para el perdón de los pecados a quienes la beben con fe.\n\nPueblo: Amén."
     },
     {
       "instruction": "(pointing)",
@@ -24135,7 +25447,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Porque este es el Cuerpo y la Sangre de Emmanuel, nuestro Dios.\n\nPueblo: Amén."
     },
     {
       "instruction": "(pointing)",
@@ -24148,7 +25461,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Creo, creo, creo y confieso, hasta mi último aliento, que este es el Cuerpo y la Sangre de nuestro Señor, nuestro Dios y nuestro Salvador Jesucristo,"
     },
     {
       "instruction": "",
@@ -24161,7 +25475,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: que tomó de la Señora de todos nosotros, la Santa María de doble virginidad, y la hizo una con su Divinidad sin mezcla ni confusión, sin división ni alteración;"
     },
     {
       "instruction": "",
@@ -24174,7 +25489,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Y en verdad confesó con buen testimonio en tiempos de Poncio Pilato, y entregó su cuerpo por nosotros y por la vida de todos nosotros.\n\n፨ Pueblo: Amén."
     },
     {
       "instruction": "",
@@ -24187,7 +25503,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Creo, creo, creo y confieso que su divinidad no se separó de su humanidad, ni por una hora ni por un abrir y cerrar de ojos,"
     },
     {
       "instruction": "",
@@ -24200,7 +25517,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Pero Él la entregó por nosotros, para vida, salvación y perdón de pecados a los que participan de ella con fe.\n\n፨ Pueblo: Amén."
     },
     {
       "instruction": "(pointing)",
@@ -24213,7 +25531,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Creo, creo, creo y confieso, hasta mi último aliento, que este es el Cuerpo y la Sangre de nuestro Señor, nuestro Dios y nuestro Salvador Jesucristo,"
     },
     {
       "instruction": "",
@@ -24226,7 +25545,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: y que a Él le corresponden con toda razón el honor, la gloria y la adoración, junto con su bondadoso Padre celestial y el Espíritu Santo, dador de vida, ahora y siempre, por los siglos de los siglos. Amén."
     },
     {
       "instruction": "Then the priest shall take in his hand the \"asbadikon\" (the central part of the Host) which bears the sign of the cross, dip it into the blood, and with it make the sign of the cross on the Body: Firstt. on the large outer parts, second on t the inner parts, third on the small parts. Then, with the Body, he shall make the sign of the cross over the Blood and say:",
@@ -24239,7 +25559,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Bendito sea Dios, Padre todopoderoso, nuestro Dios. Y bendito sea el Hijo unigénito, nuestro Señor y Salvador Jesucristo."
     },
     {
       "instruction": "The assitant deacon shall offer water to the priests to wash their hands signifying that they are holy in their souls",
@@ -24252,7 +25573,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Y bendito sea el Espíritu Santo, el Paráclito, el consolador y purificador de todos nosotros."
     },
     {
       "instruction": "",
@@ -24265,7 +25587,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Señor, Dios mío, contempla el sacrificio del Cuerpo de tu Hijo, que te agrada. Por medio de él, borra todos mis pecados, porque tu Hijo unigénito murió por mí."
     },
     {
       "instruction": "",
@@ -24278,7 +25601,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Y he aquí que la pura sangre de tu Mesías, derramada por mí en el Calvario, clama en mi lugar. Concede que esta sangre que habla sea la que perdone a mi siervo."
     },
     {
       "instruction": "",
@@ -24291,7 +25615,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Y acepta mis súplicas por ella, porque tu amado aceptó la lanza y los clavos por mi causa, y sufrió para complacerte."
     },
     {
       "instruction": "",
@@ -24304,7 +25629,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Pero después de haber sido salvado, Satanás volvió a mi corazón y me traspasó con sus dardos. Concédeme, Señor, tu misericordia, porque es un poderoso acusador."
     },
     {
       "instruction": "",
@@ -24317,7 +25643,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Y por medio del pecado me mató. Vengadme de aquel audaz que no se contenta con que me desvíe de mi camino."
     },
     {
       "instruction": "",
@@ -24330,7 +25657,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤",
       "amharic_phonetic": "kahn:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Tú, Señor, mi Rey, mi Dios y mi Salvador, vendas las heridas del alma y del cuerpo de mi siervo."
     },
     {
       "instruction": "Inaudible Prayer.",
@@ -24343,7 +25671,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ",
       "amharic_phonetic": "፨ ḥzb",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "፨ Pueblo: Oh mi Señor Jesucristo, no soy digno de que entres bajo el techo de mi casa contaminada,"
     },
     {
       "instruction": "Inaudible Prayer.",
@@ -24356,7 +25685,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ",
       "amharic_phonetic": "፨ ḥzb",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Pueblo: porque os he provocado a ira, y he hecho lo malo ante vuestros ojos, y por la transgresión de vuestro mandamiento he contaminado mi alma y mi cuerpo."
     },
     {
       "instruction": "Inaudible Prayer.",
@@ -24369,7 +25699,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ",
       "amharic_phonetic": "፨ ḥzb",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "፨ Pueblo: que creaste conforme a tu imagen y semejanza, y en mí no habita nada bueno."
     },
     {
       "instruction": "Inaudible Prayer.",
@@ -24382,7 +25713,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ",
       "amharic_phonetic": "፨ ḥzb",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "፨ Pueblo: Pero por causa de Tu designio y Tu encarnación para mi salvación, por causa de Tu preciosa cruz y Tu muerte que da vida,"
     },
     {
       "instruction": "Inaudible Prayer.",
@@ -24395,7 +25727,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ",
       "amharic_phonetic": "፨ ḥzb",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "፨ Pueblo: por amor a Tu resurrección en el tercer día, te ruego y te suplico, oh Señor mío, que me purifiques de toda culpa y maldición y de todo pecado y contaminación."
     },
     {
       "instruction": "Inaudible Prayer.",
@@ -24408,7 +25741,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ",
       "amharic_phonetic": "፨ ḥzb",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "፨ Pueblo: Y cuando haya recibido tu santo misterio, no sea para mí juicio ni condenación, sino ten compasión de mí y ten misericordia de mí;"
     },
     {
       "instruction": "Inaudible Prayer.",
@@ -24421,7 +25755,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ",
       "amharic_phonetic": "፨ ḥzb",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "፨ Pueblo: y por ella concédeme el perdón de mis pecados y la vida para mi alma, oh vida del mundo, por la petición de Nuestra Señora, la Santa María de doble virginidad, tu madre."
     },
     {
       "instruction": "Inaudible Prayer.",
@@ -24434,7 +25769,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ",
       "amharic_phonetic": "፨ ḥzb",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "፨ Pueblo: y de Juan el Bautista, y por la oración de todos los santos ángeles y de todos los mártires y justos que han luchado por el bien, por los siglos de los siglos. Amén."
     },
     {
       "instruction": "Inaudible Prayer.",
@@ -24447,7 +25783,8 @@ const kidaseData = {
       "amharic_script": "ካህን፣ ጌታዬ ኢየሱስ ክርስቶስ ሆይ፣ ይህ ምሥጢርህ በእኔ በደል አይሁንብኝ ሥጋዬንና ነፍሴን ለማ ንጻት ይሁንልኝ እንጂ",
       "amharic_phonetic": "kahn, gétayé 'īyesus krstos hoy, yh msṭīrh be'iné bedel 'ayhunbñ sgayénna nefsén lema ntsat yhunlñ 'injī",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Oh Señor mío, Jesucristo, que este misterio tuyo no sea en mí iniquidad, sino más bien para la purificación de mi alma y de mi cuerpo."
     },
     {
       "instruction": "Inaudible Prayer. For the Anaphora of the Lord.",
@@ -24460,7 +25797,8 @@ const kidaseData = {
       "amharic_script": "ካህን፣ ከሰማይ የወረደ የሕይ ወት ኅብስት የሚሆን የክሮስቶስ ክቡር ሥጋ፣",
       "amharic_phonetic": "kahn, kesemay yewerede yeḥy wet hbst yemīhon yekrostos kbur sga,",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: El pan de vida que bajó del cielo, el Santo Cuerpo de Cristo.\n\n፨ Pueblo: Amén"
     },
     {
       "instruction": "Inaudible Prayer. For the Anaphora of the Apostles.",
@@ -24473,7 +25811,8 @@ const kidaseData = {
       "amharic_script": "ካህን፣",
       "amharic_phonetic": "kahn,",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: El Cuerpo de nuestro Señor Jesucristo para la santificación del cuerpo, el alma y el espíritu.\n\n፨ Pueblo: Amén"
     },
     {
       "instruction": "Inaudible Prayer. For all Anaphoras except that of the Lord and the Apostles.",
@@ -24486,7 +25825,8 @@ const kidaseData = {
       "amharic_script": "ካህን፣",
       "amharic_phonetic": "kahn,",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: El Cuerpo de Emmanuel, nuestro Dios, que Él tomó de María, la Virgen de todos nosotros.\n\n፨ Pueblo: Amén"
     },
     {
       "instruction": "Inaudible Prayer.",
@@ -24499,7 +25839,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤",
       "amharic_phonetic": "፨ ḥzb:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote auxiliar: Esta es la copa de la vida que descendió del cielo; esta es la preciosa Sangre de Cristo.\n\nClero: Amén y amén."
     },
     {
       "instruction": "Inaudible Prayer. Said in the heart while the Blood is in the mouth.",
@@ -24512,7 +25853,8 @@ const kidaseData = {
       "amharic_script": "ካህናት {ደሙ በአፉ ሳለ በሕሊ ናው ይበል}፤ ጌታዬ አምላኬም ኢየሱስ ክርስቶስ ሆይ ንጹሕ ሥጋህንና ክቡር ደምህን እነሆ ተቀበልሁ፣",
       "amharic_phonetic": "kahnat {demu be'afu sale beḥlī naw ybel}: gétayé 'amlakém 'īyesus krstos hoy ntsuḥ sgahnna kbur demhn 'ineho teḳebelhu,",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Clérigos: Oh Señor mío y Dios mío, Jesucristo, he aquí que he recibido tu santo Cuerpo y tu preciosa Sangre."
     },
     {
       "instruction": "Inaudible Prayer. Said in the heart while the Blood is in the mouth.",
@@ -24525,7 +25867,8 @@ const kidaseData = {
       "amharic_script": "ካህናት፤ ለኃጢ አቴ ማሥተሥረያ ይሁነኝ፣ ስለ በደሌም ሁሉ፤",
       "amharic_phonetic": "kahnat: lehaṭī 'até mastesreya yhuneñ, sle bedelém hulu:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Clero: Que sean para el perdón de mis pecados y el borrado de mis transgresiones."
     },
     {
       "instruction": "Inaudible Prayer. Said in the heart while the Blood is in the mouth.",
@@ -24538,7 +25881,8 @@ const kidaseData = {
       "amharic_script": "ካህናት፤ ሰውን የምትወድ ወልድ ዋሕድ ሆይ፣ ምስጋናህን በአንደበቴ ምላ፣ ምስጋናህን አመሰግን ዘንድ",
       "amharic_phonetic": "kahnat: sewn yemtwed weld waḥd hoy, msganahn be'andebeté mla, msganahn 'amesegn zend",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Clérigos: Oh Hijo unigénito y amante del hombre, llena mi boca con tu alabanza para que yo pueda alabar tu gloria,"
     },
     {
       "instruction": "Inaudible Prayer. Said in the heart while the Blood is in the mouth.",
@@ -24551,7 +25895,8 @@ const kidaseData = {
       "amharic_script": "ካህናት፤ ቀድሞ አንተ ሰው የሆንህ፣ በርሱም የተገለጽህ፣ እስከ ዘለዓለሙ ታድነኝ ዘንድ ነውና ስለ ቅዱስ ስምህም ለዘለ ዓለሙ አዳንኸኝ",
       "amharic_phonetic": "kahnat: ḳedmo 'ante sew yehonh, bersum yetegeletsh, 'iske zele'alemu tadneñ zend newna sle ḳdus smhm lezele 'alemu 'adankheñ",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Clero: Porque Tú eres Aquel que antes de los tiempos se hizo hombre y se manifestó a través de su encarnación para salvarme para siempre; Tú me has redimido para siempre por amor de tu santo nombre."
     },
     {
       "instruction": "Inaudible Prayer. Said in the heart while the Blood is in the mouth.",
@@ -24564,7 +25909,8 @@ const kidaseData = {
       "amharic_script": "ካህናት፤ ጌታዬ አምላኬ ኢየሱስ ክርስቶስ ሆይ፣ በአገልጋይህ {} እጅ ሥጋህንና ደምህን አንድ አድርገህ ለሰጠኸኝ",
       "amharic_phonetic": "kahnat: gétayé 'amlaké 'īyesus krstos hoy, be'agelgayh {} 'ij sgahnna demhn 'and 'adrgeh leseṭekheñ",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Clérigos: Gloria a Ti, oh mi Señor y mi Dios Jesucristo, que me has concedido (Tu Cuerpo y Tu Sangre) de la mano de Tu siervo."
     },
     {
       "instruction": "Inaudible Prayer. Said in the heart while the Blood is in the mouth.",
@@ -24577,7 +25923,8 @@ const kidaseData = {
       "amharic_script": "ካህናት፤ ለአንተ ምስጋና ይገባል፣ አመሰግንሃለሁ እለምንህማለሁ፣ ከምእመናን ጋራ አንድ እሆን ዘንድ ከበጎችህም ትቈጥረኝ ዘንድ ተቀበለኝ፧",
       "amharic_phonetic": "kahnat: le'ante msgana yge bal, 'amesegnhalehu 'ilemnhmalehu, kem'imenan gara 'and 'ihon zend kebegochhm tḳweṭreñ zend teḳebeleñ?",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Clérigos: Te glorifico y te ruego que me permitas estar en medio de tu rebaño, que me cuentes entre tus ovejas y me aceptes."
     },
     {
       "instruction": "Inaudible Prayer. Said in the heart while the Blood is in the mouth.",
@@ -24590,7 +25937,8 @@ const kidaseData = {
       "amharic_script": "ካህናት፤ አሁንም ኃጢአቴን አትቊጠርብኝ፣ ለእኔ የተሰጠኝን ጸጋህንና በእኔ ያለች ረድኤትህን አመሰግናለሁ",
       "amharic_phonetic": "kahnat: 'ahunm haṭī'atén 'atḳwīṭerbñ, le'iné yeteseṭeñn tsegahnna be'iné yalech red'éthn 'amesegnalehu",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Clérigos: Y ahora no recuerden mis pecados. Les doy gracias por la gracia que me han concedido y por la ayuda que me han brindado."
     },
     {
       "instruction": "The deacon says this upon receiving the cup.",
@@ -24603,7 +25951,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን: የሕይወት ጽዋን እቀበላ ለሁ፣ የእግዚአብሔርንም ስም እጠራለሁ፣ ስለ እኛና መታሰቢያቸ ውን አድርጉ ስላሉን ስለክርስቲያን ሁሉ ጸልዩ፣",
       "amharic_phonetic": "dīyaḳon: yeḥywet tswan 'iḳebela lehu, ye'igzī'abḥérnm sm 'iṭeralehu, sle 'iñana metasebīyache wn 'adrgu slalun slekrstīyan hulu tselyu,",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Diácono: Tomaré la copa de la vida e invocaré el nombre del Señor. Ruega por nosotros y por todos los cristianos que nos pidieron que los mencionáramos."
     },
     {
       "instruction": "Curtains are opened.",
@@ -24616,7 +25965,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን: በሰላም በኢየሱስ ክርስቶስም ፍቅር አመስግኑ ዘምሩም፤",
       "amharic_phonetic": "dīyaḳon: beselam be'īyesus krstosm fḳr 'amesgnu zemrum :",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Diácono: Te alabamos y cantamos en la paz y el amor de Jesucristo."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -24629,7 +25979,8 @@ const kidaseData = {
       "amharic_script": "",
       "amharic_phonetic": "",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Clero: [1] ¡Alabado sea el Señor! ¡Alabado sea Dios en su santuario; alábenlo en su poderoso firmamento! [2] ¡Alábenlo por sus obras poderosas; alábenlo conforme a su excelente grandeza!"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -24642,7 +25993,8 @@ const kidaseData = {
       "amharic_script": "",
       "amharic_phonetic": "",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Clero: [3] ¡Alábenlo con el sonido de la trompeta; alábenlo con el laúd y el arpa! [4] ¡Alábenlo con el pandero y la danza; alábenlo con instrumentos de cuerda y flautas!"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -24655,7 +26007,8 @@ const kidaseData = {
       "amharic_script": "",
       "amharic_phonetic": "",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Clero: [5] ¡Alábenlo con címbalos resonantes! ¡Alábenlo con címbalos que retumban! [6] ¡Que todo ser que respira alabe al Señor! ¡Alaben al Señor!"
     },
     {
       "instruction": "This can be repeated until all communicants have received the Body and Blood.",
@@ -24668,7 +26021,8 @@ const kidaseData = {
       "amharic_script": "{ቊርባን ከተቀበለ በኋላ በአፉ ሳለ ሁሉም እያ ንዳንዱ እንዲህ ይበል}   ፨ ሕዝብ፤ የማይነገር ቅዱስ ቅዱስ ቅዱስ ሦስት የምት ሆን፣ ይህን ሥጋና ደም ሕይወት ሊሆነኝ ሳይፈረድብኝ እቀበል ዘንድ ስጠኝ፣",
       "amharic_phonetic": "{ḳwīrban keteḳebele behwala be'afu sale hulum 'iya ndandu 'indīh ybel}   ፨ ḥzb: yemayneger ḳdus ḳdus ḳdus sost yemt hon, yhn sgana dem ḥywet līhoneñ sayferedbñ 'iḳebel zend sṭeñ,",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "፨ Pueblo: Santa, Santa, Santísima Trinidad inefable, concédeme recibir este Cuerpo y esta Sangre para vida y no para condenación."
     },
     {
       "instruction": "This can be repeated until all communicants have received the Body and Blood.",
@@ -24681,7 +26035,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ በጌትነ ትህ እንድገለጽ ደስ የሚያሰኝህን ፍሬ እሠራ ዘንድ ስጠኝ፣ የአንተ ንም ፈቃድ እየሠራሁ እኖርልህ ዘንድ ስጠኝ፤",
       "amharic_phonetic": "፨ ḥzb: begétne th 'indgelets des yemīyaseñhn fré 'isera zend sṭeñ, ye'ante nm feḳad 'iyeserahu 'inorlh zend sṭeñ :",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "፨ Pueblo: Concédeme dar fruto que sea de tu agrado, para que pueda aparecer en tu gloria y vivir para ti haciendo tu voluntad."
     },
     {
       "instruction": "This can be repeated until all communicants have received the Body and Blood.",
@@ -24694,7 +26049,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ በማመን አባት ብዬ እጠራሃለሁ፣ መንግሥትህንም እጠ ራለሁ፣ አቤቱ ስምህ በኛ ላይ ይመስገን፣ ምስጉን ክቡር የምት ሆን ኃያል አንተ ነህና፣ ለአንተ ክብር ይገባሃል ለዘለዓለሙ፧",
       "amharic_phonetic": "፨ ḥzb: : bemamen 'abat byé 'iṭerahalehu, mengsthnm 'iṭe ralehu, 'abétu smh beña lay ymesgen, msgun kbur yemt hon hayal 'ante nehna, le'ante kbr ygebahal lezele'alemu?",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "፨ Pueblo: Con fe te invoco, Padre, y clamo a tu Reino: Señor, santificado sea tu nombre sobre nosotros, porque tú eres poderoso, alabado y glorioso, y a ti sea la gloria por los siglos de los siglos."
     },
     {
       "instruction": "Inaudible Prayer. While quietly chewing in fear and trembling, communicants shall cover their mouth with a hand.",
@@ -24707,7 +26063,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ሰውን ለማዳን ሰው ከሆነ ከአምላካዊ ምሥጢር በተቀበልሁ በእኔ በአንደበቴ ምስጋናህን በልቡናዬ ሐሤትን በሰውነቴም ደስታን ምላ",
       "amharic_phonetic": "፨ ḥzb:sewn lemadan sew kehone ke'amlakawī msṭīr beteḳebelhu be'iné be'andebeté msganahn belbunayé ḥasétn besewnetém destan mla",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "፨ Pueblo: Llenad mi boca de alabanzas, mi corazón de gozo y mi alma de alegría;"
     },
     {
       "instruction": "Inaudible Prayer. While quietly chewing in fear and trembling, communicants shall cover their mouth with a hand.",
@@ -24720,7 +26077,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤",
       "amharic_phonetic": "፨ ḥzb:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "፨ Pueblo: llénenme ustedes que han recibido de este misterio divino, ustedes que se han hecho hombres para la salvación de los hombres."
     },
     {
       "instruction": "",
@@ -24733,7 +26091,8 @@ const kidaseData = {
       "amharic_script": "፨ትእዛዝ፨ ቊርባን ከተቀ በሉ በኋላ እጅና እግርን መታጠብ፣ ከልብስም መራቆት፣ መስገድና መንበርከክ አይገባም፣ ምራቅን መትፋትና ደም ማውጣት፣ ጥፍርን መቊረጥ፣ ጠጕርንም መላጨት፣ መንገድ መሄድ፣ ከሰውም ጋራ መፈራረድ፧ ወደ ውሽባ ቤት መግባት፣ ያለ መጠን መብላትና መጠጣት፣ ከሴት መገናኘት፣ ይህን የመሰለ ሁሉ ቊርባን ከተቀ በሉበኋላ አይገባም፧",
       "amharic_phonetic": "፨t'izaz፨ ḳwīrban keteḳe belu behwala 'ijna 'igrn metaṭeb, kelbsm meraḳot, mesgedna menberkek 'aygebam , mraḳn metfatna dem mawṭat, ṭfrn meḳwīreṭ, ṭegwrnm melachet, menged mehéd, kesewm gara meferared? wede wሽba bét megbat, yale meṭen meblatna meṭeṭat, kesét megenañet, yhn yemesele hulu ḳwīrban keteḳe belubehwala 'aygebam?",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "፨ Regla ፨ Después de participar de la Sagrada Comunión NO deberás: lavarte las manos o los pies; quitarte la ropa; inclinarte; arrodillarte; escupir; sangrar; cortarte el cabello o las uñas; emprender un viaje; demandar en el tribunal; bañarte; comer demasiado; beber demasiado; acostarte con un hombre/una mujer."
     },
     {
       "instruction": "This is prayed instead of the prayer of the Pilot of the Soul.",
@@ -24746,7 +26105,8 @@ const kidaseData = {
       "amharic_script": "ካህን፣ እናንት የክርስቲያን ወገ ኖች ሆይ፣ በዚህች ቀን እንደተሰበሰባችሁ እንደ ዚሁ ክብርት በምትሆን በደብረ ጽዮንና በሰማይ ባለች ነጻ በምታወጣ በኢየሩሳሌም ይሰብስባችሁ",
       "amharic_phonetic": "kahn, 'inant yekrstīyan wege noch hoy, bezīhch ḳen 'indetesebesebachhu 'inde zīhu kbrt bemthon bedebre tsyonna besemay balech netsa bemtaweṭa be'īyerusalém ysebsbachhu",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Oh, vosotros, pueblo cristiano, así como os habéis reunido en este día, que Él también os reúna en el monte santo de Sión y en la Jerusalén libre del cielo."
     },
     {
       "instruction": "This is prayed instead of the prayer of the Pilot of the Soul.",
@@ -24759,7 +26119,8 @@ const kidaseData = {
       "amharic_script": "ካህን፣ ይህንም የማርያምን የም ስጋናዋን ቃል እንደሰማችሁ የሕፃናትን የምስጋና ቃል",
       "amharic_phonetic": "kahn, yhnm yemaryamn yem sganawan ḳal 'indesemachhu yeḥtsanatn yemsgana ḳal",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Y así como habéis escuchado esta voz de alabanza a María, que Él os haga dignos de escuchar la palabra de las arpas del niño."
     },
     {
       "instruction": "This is prayed instead of the prayer of the Pilot of the Soul.",
@@ -24772,7 +26133,8 @@ const kidaseData = {
       "amharic_script": "ካህን፣ ይልቁንም ከጣዕሙ ብዛት የተነሣ አጥንትን የሚያለመልም የመላእክትንም ምስጋና እንደዚሁ ያሰማችሁ",
       "amharic_phonetic": "kahn, ylḳunm keṭa'imu bzat yetenesa 'aṭntn yemīyalemelm yemela'iktnm msgana 'indezīhu yasemachhu",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: y el canto de los ángeles que ablanda hasta los huesos por la multitud de sus melodías."
     },
     {
       "instruction": "This is prayed instead of the prayer of the Pilot of the Soul.",
@@ -24785,7 +26147,8 @@ const kidaseData = {
       "amharic_script": "ካህን፣፤ የእሳት ነበልባል ድንኳ ኖች ወደ ተተከሉበት፣ የካህናት አለቃ ኢየሱስ ክርስቶስ ወዳለበት ያግ ባችሁ፣",
       "amharic_phonetic": "kahn, : ye'isat nebelbal dnkwa noch wede tetekelubet, yekahnat 'aleḳa 'īyesus krstos wedalebet yag bachhu,",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Que Él os guíe donde estaban extendidos los tabernáculos de fuego llameante donde está el Sumo Sacerdote,"
     },
     {
       "instruction": "This is prayed instead of the prayer of the Pilot of the Soul.",
@@ -24798,7 +26161,8 @@ const kidaseData = {
       "amharic_script": "ካህን፣ ከዚያ አለ፣ ንጹሕ አክሊልና ብሩህ ልብስ ከዚያ አለ፣ እርሱም ከላይ የተገኘ ነው እንጂ የሰው እጅ ያልተጠበበት ነው",
       "amharic_phonetic": "kahn, kezīya 'ale, ntsuḥ 'aklīlna bruh lbs kezīya 'ale, 'irsum kelay yetegeñe new 'injī yesew 'ij yalteṭebebet new",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: y en ellas están la imagen de su rostro, la corona pura y el vestido resplandeciente que mano de hombre no hizo, sino que fue tejido desde arriba."
     },
     {
       "instruction": "This is prayed instead of the prayer of the Pilot of the Soul.",
@@ -24811,7 +26175,8 @@ const kidaseData = {
       "amharic_script": "ካህን፣ የቅዱሳን ነቢያት ማኅበር ወዳሉበት ያግባችሁ፣ ያስተማሩ የሐዋርያትም ማኅበር፣ ድል የነሡ የሰማዕታትም ማኅበር፣ ቡሩካን የሚሆኑ የጻድቃንም ማኅበር፣",
       "amharic_phonetic": "kahn, yeḳdusan nebīyat mahber wedalubet yagbachhu, yastemaru yeḥawaryatm mahber, dl yenesu yesema'itatm mahber, burukan yemīhonu yetsadḳanm mahber,",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Que Él os guíe a donde está la congregación de los santos profetas, la congregación de los apóstoles predicadores, la congregación de los mártires victoriosos, la congregación de los bienaventurados justos,"
     },
     {
       "instruction": "This is prayed instead of the prayer of the Pilot of the Soul.",
@@ -24824,7 +26189,8 @@ const kidaseData = {
       "amharic_script": "ካህን፣ የተሾሙ የካህናት ማኅበር፣ ትጉሃን የሚሆኑ የመላእክት ማኅበር፣የፍጹማን ደናግልና የመነኰሳት ማኅበር ወዳሉበት ያግባችሁ፣",
       "amharic_phonetic": "kahn, yeteሾmu yekahnat mahber, tguhan yemīhonu yemela'ikt mahber,yeftsuman denaglna yemenekwesat mahber wedalubet yagbachhu ,",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: la congregación de los sacerdotes ordenados, la congregación de los ángeles vigilantes y la congregación de vírgenes y monjes perfectos,"
     },
     {
       "instruction": "This is prayed instead of the prayer of the Pilot of the Soul.",
@@ -24837,7 +26203,8 @@ const kidaseData = {
       "amharic_script": "ካህን፣ ከሁሉ በላይ ከሆነች ከአንዲት ቅድስት ቤተክርስቲያን ፍጹም አንድነትዋ ሁሉ ጋራ፣ ከነርሱም ጋራ ታቦት ዘዶር ወዳለችበት ያግባችሁ ይህችውም እመቤታችን ማርያም ናት::",
       "amharic_phonetic": "kahn, kehulu belay kehonech ke'andīt ḳdst bétekrstīyan ftsum 'andnetwa hulu gara, kenersum gara tabot zedor wedalechbet yagbachhu yhchwm 'imebétachn maryam nat::",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: con todas las congregaciones perfectas de la única y santa Iglesia universal, y con ellas donde está el Arca del desierto que es nuestra Señora María."
     },
     {
       "instruction": "This is prayed instead of the prayer of the Pilot of the Soul.",
@@ -24850,7 +26217,8 @@ const kidaseData = {
       "amharic_script": "ካህን፣ እንግዲህ ሞትን የምታለብስና ወደ ሲኦል የምታወርድ ትዕቢትን መታጀርንም ጌጥ አናድርግ",
       "amharic_phonetic": "kahn, 'ingdīh motn yemtalebsna wede sī'ol yemtawerd t'ibītn metajernm géṭ 'anadrg",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: No nos dejemos adornar de ahora en adelante con altivez o orgullo, que se visten de muerte y conducen al Hades."
     },
     {
       "instruction": "This is prayed instead of the prayer of the Pilot of the Soul.",
@@ -24863,7 +26231,8 @@ const kidaseData = {
       "amharic_script": "ካህን፣ እንግዲህ የሥጋ ንጽሕና ብቻ ያይደለ ትሕትናን ከንጽሕና ጋራ ገንዘብ እናድርግ፣ መንፈስን ንጹሕ በማድረግ ነቢያት እግዚአብሔርን አይተውታልና ፊት ለፊትም ተያይተዋልና፣",
       "amharic_phonetic": "kahn, 'ingdīh yesga ntsḥna bcha yaydele tḥtnan kentsḥna gara genzeb 'inadrg, menfesn ntsuḥ bemadreg nebīyat 'igzī'abḥérn 'aytewtalna fīt lefītm teyaytewalna,",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: De ahora en adelante, tengamos humildad con pureza, no solo pureza de la carne, porque los profetas vieron al Señor con pureza de espíritu, viéndolo cara a cara."
     },
     {
       "instruction": "This is prayed instead of the prayer of the Pilot of the Soul.",
@@ -24876,7 +26245,8 @@ const kidaseData = {
       "amharic_script": "ካህን፣ እንግዲህ እንደ ሐዋር ያት ፍቅርን የዋሃት ንም ገንዘብ እናድርግ፣ ጌታቸውን ወደውታልና፣ የዓመፃ ማሠሪያን ሁሉ ያሥሩ ይፈቱም ዘንድ እንደርሱ ያለ ሥልጣንን የሰጣቸው ፧",
       "amharic_phonetic": "kahn, 'ingdīh 'inde ḥawar yat fḳrn yewahat nm genzeb 'inadrg, gétachewn wedewtalna, ye'ametsa maserīyan hulu yasru yfetum zend 'indersu yale slṭann yeseṭachew ?",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: De ahora en adelante, tengamos amor y mansedumbre como los apóstoles, porque ellos amaron a su Señor, quien les otorgó autoridad como la suya para atar y desatar las ataduras de la maldad."
     },
     {
       "instruction": "This is prayed instead of the prayer of the Pilot of the Soul.",
@@ -24889,7 +26259,8 @@ const kidaseData = {
       "amharic_script": "ካህን፣ እንግዲህ እንደ ማርያም አርምሞንና ትዕግሥትን ገንዘብ እናድርግ፣ ማርያምስ የማይቀምዋት በጎ እድልን መረጠች ብሎ ጌታችን አመስግኗታልና፤",
       "amharic_phonetic": "kahn, 'ingdīh 'inde maryam 'armmonna t'igstn genzeb 'inadrg, maryams yemayḳemwat bego 'idln mereṭech blo gétachn 'amesgnwatalna:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: De ahora en adelante, tengamos silencio y paciencia como María, porque nuestro Señor la alabó diciendo: «María ha escogido la mejor parte, la cual no le será quitada»."
     },
     {
       "instruction": "This is prayed instead of the prayer of the Pilot of the Soul.",
@@ -24902,7 +26273,8 @@ const kidaseData = {
       "amharic_script": "ካህን፣ አሁንም ጸጋን የሰጠ አምላካችንን እግዚአብ ሔርን እንለምነው፣ \nዲያቆን: ጸልዩ፤",
       "amharic_phonetic": "kahn, 'ahunm tsegan yeseṭe 'amlakachnn 'igzī'ab ḥérn 'inlemnew , \ndīyaḳon: tselyu :",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Y ahora oremos al Señor nuestro Dios, dador de la gracia.\n\nDiácono: Oren ustedes."
     },
     {
       "instruction": "",
@@ -24915,7 +26287,8 @@ const kidaseData = {
       "amharic_script": "ካህን፣ ድንግል ሆይ ከሚያስብ ሁሉን ከማይዘነጋ ከልጅሽ ዘንድ አሳስቢ፤",
       "amharic_phonetic": "kahn, dngl hoy kemīyasb hulun kemayzenega keljሽ zend 'asasbī:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Oh Virgen, recuérdale a Aquel que recuerda, que nunca olvida a nadie."
     },
     {
       "instruction": "",
@@ -24928,7 +26301,8 @@ const kidaseData = {
       "amharic_script": "ካህን፣ ድንግል ሆይ፣ በቤተልሔም ካንቺ የተወለደውን መወለድ፣ በጨርቅ የተጠቀለለውንም አህያና ላም በብርድ ወራት እስትንፋስን ያሟሟቁትንም አሳስቢ ፧",
       "amharic_phonetic": "kahn, dngl hoy, bebételḥém kanchī yeteweledewn meweled , becherḳ yeteṭeḳelelewnm 'ahyana lam bebrd werat 'istnfasn yamwamwaḳutnm 'asasbī ?",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Oh Virgen, recuérdale su nacimiento, dado por ti en Belén, de cuando fue envuelto en pañales y de cuando fue calentado por el aliento del asno y la vaca en los días fríos."
     },
     {
       "instruction": "",
@@ -24941,7 +26315,8 @@ const kidaseData = {
       "amharic_script": "ካህን፣ ድንግል ሆይ፣ ርጉም በሆነ በሄሮድስ ዘመን ከርሱ ከአገር ወደ አገር ስትሸሺ ካንቺ ጋራ መሰደዱን አሳስቢ፤",
       "amharic_phonetic": "kahn, dngl hoy , rgum behone behérods zemen kersu ke'ager wede 'ager stሸሺ kanchī gara mesededun 'asasbī:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Oh Virgen, recuérdale su huida contigo cuando viajaban de un país a otro en los días del maldito Herodes."
     },
     {
       "instruction": "",
@@ -24954,7 +26329,8 @@ const kidaseData = {
       "amharic_script": "ካህን፣ ድንግል ሆይ፣ ከዓይኖችሽ የፈሰሰውንና በተወደደ ልጅሽ ፊት የወረ ደውን መሪር እንባ አሳስቢ፤",
       "amharic_phonetic": "kahn, dngl hoy, ke'aynochሽ yefesesewnna betewedede ljሽ fīt yewere dewn merīr 'inba 'asasbī :",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Oh Virgen, recuérdale las amargas lágrimas que derramaste de tus ojos y que cayeron sobre el rostro de tu amado Hijo."
     },
     {
       "instruction": "",
@@ -24967,7 +26343,8 @@ const kidaseData = {
       "amharic_script": "ካህን፣ ድንግል ሆይ ረኃቡንና ጥሙን ችግሩንና ኃዘኑን ከርሱ ጋራ የደረሰብሽንም ጭንቀት ሁሉ አሳስቢ፤",
       "amharic_phonetic": "kahn, dngl hoy rehabunna ṭmun chgrunna hazenun kersu gara yederesebሽnm chnḳet hulu 'asasbī:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Oh Virgen, recuérdale el hambre, la sed, la pobreza, la tristeza y todas las aflicciones que sufristeis junto con Él."
     },
     {
       "instruction": "",
@@ -24980,7 +26357,8 @@ const kidaseData = {
       "amharic_script": "ካህን፣ ጥፋትን ያይደለ ይቅርታን አሳስቢ፣ መዓትን ያይደለ ምሕረትን አሳስቢ፤",
       "amharic_phonetic": "kahn, ṭfatn yaydele yḳrtan 'asasbī, me'atn yaydele mḥretn 'asasbī:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Recuérdale la misericordia y no la destrucción. Recuérdale la compasión y no la ira."
     },
     {
       "instruction": "",
@@ -24993,7 +26371,8 @@ const kidaseData = {
       "amharic_script": "ካህን፣፤ ለጻድቃን ያይደለ ለኃጥአን አሳስቢ፣ ለንጹሐን ያይደለ ለተዳደፉት አሳስቢ፤",
       "amharic_phonetic": "kahn, : letsadḳan yaydele lehaṭ'an 'asasbī, lentsuḥan yaydele letedadefut 'asasbī :",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Recuérdale a los pecadores y no a los justos. Recuérdale a los impuros y no a los puros."
     },
     {
       "instruction": "",
@@ -25006,7 +26385,8 @@ const kidaseData = {
       "amharic_script": "ካህን፣ አሁንም አብንና ወልድን መንፈስ ቅዱስንም እናመስግነው ለዘለ ዓለሙ\n፨ ሕዝብ፤ አሜን",
       "amharic_phonetic": "kahn, 'ahunm 'abnna weldn menfes ḳdusnm 'inamesgnew lezele 'alemu\n፨ ḥzb: 'amén",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Y ahora glorifiquemos al Padre, al Hijo y al Espíritu Santo, ahora y siempre, por los siglos de los siglos.\n\nPueblo: Amén."
     },
     {
       "instruction": "",
@@ -25019,7 +26399,8 @@ const kidaseData = {
       "amharic_script": "ካህን፣ ለእናቱ ስለሰጣት ጸጋ ሁሉ በዚህችም ቅዳሴ ላይ ስለ አሠለጠናት እግዚአብሔርን እናመሰግነዋለን፣",
       "amharic_phonetic": "kahn, le'inatu sleseṭat tsega hulu bezīhchm ḳdasé lay sle 'aseleṭenat 'igzī'abḥérn 'inamesegnewalen ,",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Ofrecemos acción de gracias a Dios por todas las gracias que nos ha concedido y porque permitió que su Madre fuera glorificada a través de esta Anáfora,"
     },
     {
       "instruction": "",
@@ -25032,7 +26413,8 @@ const kidaseData = {
       "amharic_script": "ካህን፣ እኛንም በቸርነቱ እንናገር ዘንድ በፈቃዱም እንፈጽም ዘንድ የተዘጋጀን ያደረገን፣ ምስጋና ያለው እርሱ ነው፣ ጥበበኛም ነው ፧፤ ለዘለዓለሙ አሜን፤",
       "amharic_phonetic": "kahn, 'iñanm bechernetu 'innager zend befeḳadum 'infetsm zend yetezegajen yaderegen , msgana yalew 'irsu new, ṭbebeñam new ? : lezele'alemu 'amén:",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: y porque Él nos hizo dignos de comenzarla por su bondad, y de completarla por su voluntad, Él, que es gloria y sabio, por los siglos de los siglos, Amén."
     },
     {
       "instruction": "",
@@ -25045,7 +26427,8 @@ const kidaseData = {
       "amharic_script": "ካህን፣፤ የሚቀበለው የልመናዋ ክብር ፍጹም የሆነ የረድኤትዋ ሀብት ጽንፍ እስከ ጽንፍ የሚሞላ፣ የተወደደ የልጅዋ ቸርነት በእውነት ከሁላችን ጋራ ይሁን፣ ለዘለዓለሙ አሜን።",
       "amharic_phonetic": "kahn, : yemīḳebelew yelmenawa kbr ftsum yehone yered'étwa habt tsnf 'iske tsnf yemīmola, yetewedede yeljwa chernet be'iwnet kehulachn gara yhun, lezele'alemu 'amén",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "Sacerdote: Que la bendición aceptada de su oración, el don perfecto de su ayuda y la compasión de su amado Hijo, que llena los confines del mundo, estén con todos nosotros por los siglos de los siglos. Amén."
     },
     {
       "instruction": "",
@@ -25058,7 +26441,8 @@ const kidaseData = {
       "amharic_script": "፨ ሁሉም፤ አባታችን ሆይ፥ በሰማይ የምትኖር፥ ስምህ ይቀደስ፥ መንግሥትህ ትምጣ፥ ፈቃድህ በሰማይ እንደሆነ እንዲሁም በምድር ይሁን።",
       "amharic_phonetic": "፨ hulum: 'abatachn hoy; besemay yemtnor; smh yḳedes; mengsth tmṭa; feḳadh besemay 'indehone 'indīhum bemdr yhun.",
       "tigrinya_script": "፨ ኣብ ሰማያት እትነብር ኣቦና ፨\n፨ ኩሉኹም፤ ኣብ ሰማያት እትነብር ኣቦና ስምካ ይቀደስ፥ መንግስትኻ ትምጻእ፥ ፈቓድካ ከምቲ ኣብ ሰማያት ከምኡ'ውን ኣብ ምድሪ ይኹን፥",
-      "tigrinya_phonetic": "፨ 'ab semayat 'itnebr 'abona ፨\n፨ kulukhum: 'ab semayat 'itnebr 'abona smka yḳedes; mengstkha tmtsa'i; feqhadka kemtī 'ab semayat kem'u'wn 'ab mdrī ykhun;"
+      "tigrinya_phonetic": "፨ 'ab semayat 'itnebr 'abona ፨\n፨ kulukhum: 'ab semayat 'itnebr 'abona smka yḳedes; mengstkha tmtsa'i; feqhadka kemtī 'ab semayat kem'u'wn 'ab mdrī ykhun;",
+      "spanish": "፨ EL PADRE NUESTRO ፨\n\n፨ TODOS: Padre nuestro que estás en los cielos, santificado sea tu nombre. Venga a nosotros tu reino. Hágase tu voluntad en la tierra como en el cielo."
     },
     {
       "instruction": "",
@@ -25071,7 +26455,8 @@ const kidaseData = {
       "amharic_script": "፨ ሁሉም፤ የዕለት እንጀራችንን ስጠን ለዛሬ፥ በደላችንን ይቅር በለን፥ እኛም የበደሉንን ይቅር እንደምንል፥",
       "amharic_phonetic": "፨ hulum: ye'ilet 'injerachnn sṭen lezaré; bedelachnn yḳr belen; 'iñam yebedelunn yḳr 'indemnl;",
       "tigrinya_script": "፨ ኩሉኹም፤ ናይ ዕለት እንጌራና ሎሚ ሃበና፥ ንሕና ንዝበደሉና በደሎም ከም እንኃደግናሎም በደልና ኅደገልና፥",
-      "tigrinya_phonetic": "፨ kulukhum: nay 'ilet 'ingérana lomī habena; nḥna nzbedeluna bedelom kem 'inhadegnalom bedelna hdegelna;"
+      "tigrinya_phonetic": "፨ kulukhum: nay 'ilet 'ingérana lomī habena; nḥna nzbedeluna bedelom kem 'inhadegnalom bedelna hdegelna;",
+      "spanish": "፨ TODOS: Danos hoy nuestro pan de cada día. Y perdona nuestras ofensas y pecados, como también nosotros perdonamos a los que nos ofenden."
     },
     {
       "instruction": "",
@@ -25084,7 +26469,8 @@ const kidaseData = {
       "amharic_script": "፨ ሁሉም፤ አቤቱ ወደ ፈተና አታግባን፥ ከክፉ ሁሉ አድነን እንጂ፥ መንግሥት ያንተ ናትና። ኃይል፥ ክብር፥ ምስጋና ለዘለዓለም አሜን።",
       "amharic_phonetic": "፨ hulum: 'abétu wede fetena 'atagban; kekfu hulu 'adnen 'injī; mengst yante natna. hayl; kbr; msgana lezele'alem 'amén.",
       "tigrinya_script": "፨ ኩሉኹም፤ ካብ ክፉእ ኣድኅነና እምበር ኣብ ፈተና ኣይተእትወና፥ መንግስትን፡ ኃይልን ፡ክብርን ንዘለዓለም ናትካ እዩ፡ አሜን።",
-      "tigrinya_phonetic": "፨ kulukhum: kab kfu'i 'adhnena 'imber 'ab fetena 'ayte'itwena; mengstn  hayln  kbrn nzele'alem natka 'iyu  'amén."
+      "tigrinya_phonetic": "፨ kulukhum: kab kfu'i 'adhnena 'imber 'ab fetena 'ayte'itwena; mengstn  hayln  kbrn nzele'alem natka 'iyu  'amén.",
+      "spanish": "TODOS: Y no nos dejes caer en la tentación, Señor, y líbranos del mal. Porque tuyo es el reino, el poder y la gloria, por siempre. Amén."
     },
     {
       "instruction": "",
@@ -25097,7 +26483,8 @@ const kidaseData = {
       "amharic_script": "፨ ሁሉም፤ እመቤታችን ቅድስት ድንግል ማርያም ሆይ፥ በመልአኩ በቅዱስ ገብርኤል ሰላምታ ሰላም እንልሻለን።",
       "amharic_phonetic": "፨ hulum: 'imebétachn ḳdst dngl maryam hoy; bemel'aku beḳdus gebr'él selamta selam 'inlሻlen.",
       "tigrinya_script": "፨ ብናይ ቅዱስ ገብርኤል መልኣኽ ሰላምታ ፨\n፨ ኩሉኹም፤ ኦ እግዝእትየ ማርያም ብናይ  ቅዱስ ገብርኤል መልኣኽ ሰላምታ ሰላም እብለኪ፡",
-      "tigrinya_phonetic": "፨ bnay ḳdus gebr'él mel'akh selamta ፨\n፨ kulukhum: 'o 'igz'itye maryam bnay  ḳdus gebr'él mel'akh selamta selam 'iblekī"
+      "tigrinya_phonetic": "፨ bnay ḳdus gebr'él mel'akh selamta ፨\n፨ kulukhum: 'o 'igz'itye maryam bnay  ḳdus gebr'él mel'akh selamta selam 'iblekī",
+      "spanish": "፨ EL SALUDO DE SAN GABRIEL ፨\n\n፨ TODOS: Con el saludo del ángel San Gabriel, oh mi Señora María, la paz sea contigo."
     },
     {
       "instruction": "",
@@ -25110,7 +26497,8 @@ const kidaseData = {
       "amharic_script": "፨ ሁሉም፤ በሃሳብሽ ድንግል ነሽ፥ በሥጋሽም ድንግል ነሽ። የአሸናፊ የእግዚአብሔር እናት ሆይ ሰላምታ ላንቺ ይገባሻል።",
       "amharic_phonetic": "፨ hulum: behasabሽ dngl neሽ; besgaሽm dngl neሽ. ye'aሸnafī ye'igzī'abḥér 'inat hoy selamta lanchī ygebaሻl.",
       "tigrinya_script": "፨ ኩሉኹም፤ ብሕልናኺ ድንግል ኢኺ፡ ብሥጋኺ'ውን ድንግል ኢኺ። ኣደ እግዚአብሔር ፀባዖት (ጎይታ ሠራዊት) ሰላም እብለኪ ኣለኹ።",
-      "tigrinya_phonetic": "፨ kulukhum: bḥlnakhī dngl 'īkhī  bsgakhī'wn dngl 'īkhī. 'ade 'igzī'abḥér tseba'ot (goyta serawīt) selam 'iblekī 'alekhu."
+      "tigrinya_phonetic": "፨ kulukhum: bḥlnakhī dngl 'īkhī  bsgakhī'wn dngl 'īkhī. 'ade 'igzī'abḥér tseba'ot (goyta serawīt) selam 'iblekī 'alekhu.",
+      "spanish": "፨ TODOS: Sois vírgenes en vuestros pensamientos y vírgenes en vuestra carne. Madre del Señor Dios de los Ejércitos, la paz sea con vosotros."
     },
     {
       "instruction": "",
@@ -25123,7 +26511,8 @@ const kidaseData = {
       "amharic_script": "፨ ሁሉም፤ ከሴቶች ሁሉ ተለይተሽ አንቺ የተባረክሽ ነሽ፥ የማሕፀንሽም ፍሬ የተባረከ ነዉ። ጸጋን የተመላሽ ሆይ! ደስ ይበልሽ፣ እግዚአብሔር ካንቺ ጋር ነዉና።",
       "amharic_phonetic": "፨ hulum: kesétoch hulu teleyteሽ 'anchī yetebarekሽ neሽ; yemaḥtsenሽm fré yetebareke newu. tsegan yetemelaሽ hoy! des ybelሽ, 'igzī'abḥér kanchī gar newuna.",
       "tigrinya_script": "፨ ኩሉኹም፤ ንስኺ ካብ ኣንስቲ ብርኽቲ ኢኺ፡ ፍረ ከርሥኺ'ውን ብሩኽ እዩ። ኦ ምልእተ ጸጋ እግዚአብሔር ምሳኺ እዩ፡ ኦ ፍሥሕት ደስ ይበልኪ፡",
-      "tigrinya_phonetic": "፨ kulukhum: nskhī kab 'anstī brkhtī 'īkhī  fre kerskhī'wn brukh 'iyu. 'o ml'ite tsega 'igzī'abḥér msakhī 'iyu  'o fsḥt des ybelkī"
+      "tigrinya_phonetic": "፨ kulukhum: nskhī kab 'anstī brkhtī 'īkhī  fre kerskhī'wn brukh 'iyu. 'o ml'ite tsega 'igzī'abḥér msakhī 'iyu  'o fsḥt des ybelkī",
+      "spanish": "፨ TODOS: Bendita tú entre las mujeres, y bendito el fruto de tu vientre. Alégrate, llena de gozo, llena de gracia, el Señor está contigo."
     },
     {
       "instruction": "",
@@ -25136,7 +26525,8 @@ const kidaseData = {
       "amharic_script": "፨ ሁሉም፤ ከተወደደዉ ልጅሽ ከጌታችን ከመድኃኒታችን ከኢየሱስ ክርስቶስ ዘንድ ይቅርታን ለምኝልን ኃጢአታችንን ያስተሰርይልን ዘንድ። ለዘለዓለም አሜን።",
       "amharic_phonetic": "፨ hulum: ketewededewu ljሽ kegétachn kemedhanītachn ke'īyesus krstos zend yḳrtan lemñln haṭī'atachnn yasteseryln zend. lezele'alem 'amén.",
       "tigrinya_script": "፨ ኩሉኹም፤ ኃጢኣትና ኪሠርየልና ናብ ፍቁር ወድኺ ኢየሱስ ክርስቶስ ምእንታና ምሕረት ለምንልና። አሜን።",
-      "tigrinya_phonetic": "፨ kulukhum: haṭī'atna kīseryelna nab fḳur wedkhī 'īyesus krstos m'intana mḥret lemnlna. 'amén."
+      "tigrinya_phonetic": "፨ kulukhum: haṭī'atna kīseryelna nab fḳur wedkhī 'īyesus krstos m'intana mḥret lemnlna. 'amén.",
+      "spanish": "፨ TODOS: Rueguen y pidan misericordia a su amado Hijo, Jesucristo, para que nos perdone nuestros pecados. Amén."
     },
     {
       "instruction": "",
@@ -25149,7 +26539,8 @@ const kidaseData = {
       "amharic_script": "",
       "amharic_phonetic": "",
       "tigrinya_script": "",
-      "tigrinya_phonetic": ""
+      "tigrinya_phonetic": "",
+      "spanish": "፨ FIN DE LA LITURGIA DE MARÍA ፨\n\n(ORACIÓN EUCARÍSTICA DE NUESTRA SEÑORA, LA VIRGEN MARÍA)"
     },
     {
       "instruction": "Inaudible Prayer",
@@ -25162,7 +26553,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ የአባታችን የጴጥሮስ የእጁ ሹመት፣\nካህን ንፍቅ፤ እግዚአብሔር በዘለ ዓለም መንግሥቱ ይሹምህ ፧",
       "amharic_phonetic": "kahn: ye'abatachn yep̣éṭros ye'iju ሹmet,\nkahn nfḳ: 'igzī'abḥér bezele 'alem mengstu yሹmh ?",
       "tigrinya_script": "ካህን፤ \nካህን ንፍቅ፤",
-      "tigrinya_phonetic": "kahn: \nkahn nfḳ:"
+      "tigrinya_phonetic": "kahn: \nkahn nfḳ:",
+      "spanish": "Sacerdote (a los sacerdotes auxiliares): El poder de nuestro padre Pedro.\nSacerdotes auxiliares: Que Dios los colme de honores en su reino eterno."
     },
     {
       "instruction": "Inaudible Prayer",
@@ -25175,7 +26567,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ልዑል እግዚአብሔር ይባርክህ ዐይነ ልቡናህንም ያብራልህ፣",
       "amharic_phonetic": "kahn: l'ul 'igzī'abḥér ybarkh 'ayne lbunahnm yabralh ,",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote (a los diáconos): Que Dios Altísimo los bendiga e ilumine los ojos de su corazón."
     },
     {
       "instruction": "",
@@ -25188,7 +26581,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ ልዑል እግዚአብሔር ይባርክህ ፊቱንም ይግለ ጽልህ፣",
       "amharic_phonetic": "kahn: l'ul 'igzī'abḥér ybarkh fītunm ygle tslh,",
       "tigrinya_script": "ካህን፤",
-      "tigrinya_phonetic": "kahn:"
+      "tigrinya_phonetic": "kahn:",
+      "spanish": "Sacerdote (a los fieles): Que Dios Altísimo los bendiga y alce su rostro sobre ustedes. El Señor esté con todos ustedes."
     },
     {
       "instruction": "",
@@ -25201,7 +26595,8 @@ const kidaseData = {
       "amharic_script": "ካህን፤ እግዚአብሔር ከሁላችሁ ጋራ ይሁን\n፨ ሕዝብ፤ ከመንፈስህ ጋራ",
       "amharic_phonetic": "kahn: 'igzī'abḥér kehulachhu gara yhun\n፨ ḥzb: kemenfesh gara",
       "tigrinya_script": "ካህን፤ እግዚኣብሔር ምስ ኵልኹም ይኹን።\n፨ ሕዝብ፤ ምስ መንፈስካ።",
-      "tigrinya_phonetic": "kahn: 'igzī'abḥér ms kwlkhum ykhun.\n፨ ḥzb: ms menfeska."
+      "tigrinya_phonetic": "kahn: 'igzī'abḥér ms kwlkhum ykhun.\n፨ ḥzb: ms menfeska.",
+      "spanish": "Sacerdote (a los fieles): El Señor esté con todos vosotros.\n\nPueblo: y con tu Espíritu."
     },
     {
       "instruction": "",
@@ -25214,7 +26609,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ አሜን እግዚአብሔር እኛን ባሮቹን በሰላም ይባርከን። የተቀበልነው ሥጋህና ደምህ ለሥርየት ይሁነን። የጠላትን ኀይል ሁሉ በመንፈስ እንረግጥ ዘንድ አሠልጥነን።",
       "amharic_phonetic": "፨ ḥzb: 'amén 'igzī'abḥér 'iñan barochun beselam ybarken. yeteḳebelnew sgahna demh lesryet yhunen. yeṭelatn hayl hulu bemenfes 'inregṭ zend 'aselṭnen.",
       "tigrinya_script": "፨ ሕዝብ፤ ኣሜን እግዚኣብሔር ንባሮትካ ብሰላም ባርኸና። ዝተቐበልናዮ ሥጋኻን ደምካን ንኅድገት ኃጢኣት ይኹነና። ኵሉ ኃይሊ ጸላኢ ብመንፈስ ክንረግጽ ሥልጣን ሃበና።",
-      "tigrinya_phonetic": "፨ ḥzb: 'amén 'igzī'abḥér nbarotka bselam barkhena. zteqhebelnayo sgakhan demkan nhdget haṭī'at ykhunena. kwlu haylī tsela'ī bmenfes knregts slṭan habena."
+      "tigrinya_phonetic": "፨ ḥzb: 'amén 'igzī'abḥér nbarotka bselam barkhena. zteqhebelnayo sgakhan demkan nhdget haṭī'at ykhunena. kwlu haylī tsela'ī bmenfes knregts slṭan habena.",
+      "spanish": "Pueblo: Amén. Que Dios nos bendiga, a sus siervos, en paz. El perdón nos sea concedido a quienes hemos recibido tu Cuerpo y tu Sangre. Permítenos, por medio del Espíritu, pisotear todo el poder del enemigo."
     },
     {
       "instruction": "",
@@ -25227,7 +26623,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ ምሕረትን የተመላች ክብርት የምትሆን የእጅህን በረከት ሁላችን ተስፋ እናደርጋለን፤ ከክፉ ሥራ ሁሉ አርቀን፤ በበጎውም ሥራ ሁሉ አንድ አድርገን። ቅዱስ ሥጋውን ክቡር ደሙንም የሰጠን ቡሩክ ነው።",
       "amharic_phonetic": "፨ ḥzb: mḥretn yetemelach kbrt yemthon ye'ijhn bereket hulachn tesfa 'inadergalen: kekfu sra hulu 'arḳen: bebegowm sra hulu 'and 'adrgen. ḳdus sgawn kbur demunm yeseṭen buruk new.",
       "tigrinya_script": "፨ ሕዝብ፤ ምሕረት ዝመልአት በረኸት ቅድስቲ ኢድካ ንኣኣ ኵላትና ንጽበ ኣሎና። ካብ ክፉእ ምግባር ኩሉ ኣርሕቐና፡ ኣብ ኩሉ ምግባር ሠናይ ከኣ ጸምብረና። ቅዱስ ሥጋኡን ክቡር ደሙን ዝሃበና ቡሩኽ እዩ።",
-      "tigrinya_phonetic": "፨ ḥzb: mḥret zmel'at berekhet ḳdstī 'īdka n'a'a kwlatna ntsbe 'alona. kab kfu'i mgbar kulu 'arḥqhena  'ab kulu mgbar senay ke'a tsembrena. ḳdus sga'un kbur demun zhabena burukh 'iyu."
+      "tigrinya_phonetic": "፨ ḥzb: mḥret zmel'at berekhet ḳdstī 'īdka n'a'a kwlatna ntsbe 'alona. kab kfu'i mgbar kulu 'arḥqhena  'ab kulu mgbar senay ke'a tsembrena. ḳdus sga'un kbur demun zhabena burukh 'iyu.",
+      "spanish": "Pueblo: Todos anhelamos la bendición de tu santa mano, llena de misericordia. Sepáranos de toda mala obra y únenos en toda buena obra. Bendito sea quien nos ha dado su preciosa sangre."
     },
     {
       "instruction": "",
@@ -25240,7 +26637,8 @@ const kidaseData = {
       "amharic_script": "፨ ሕዝብ፤ ጸጋን ተቀበልን፤ ደኅንነትንም በኢየሱስ ክርስቶስ በመስቀሉ ኀይል አገኘን። አቤቱ ከመንፈስ ቅዱስ የተገኘ ጸጋን ተቀበልን አንተን እናመሰግናለን።",
       "amharic_phonetic": "፨ ḥzb: tsegan teḳebeln: dehnnetnm be'īyesus krstos bemesḳelu hayl 'ageñen. 'abétu kemenfes ḳdus yetegeñe tsegan teḳebeln 'anten 'inamesegnalen.",
       "tigrinya_script": "፨ ሕዝብ፤ ብኃይሊ መስቀሉ ንኢየሱስ ክርስቶስ ጸጋ ተቐቢልና ሕይወትውን ረኺብና ኢና። ኦ ጐይታ ካብ መንፈስ ቅዱስ ዝተረኽበ ጸጋ ተቐቢልና ንኣኻ ነመስግን ኣሎና።",
-      "tigrinya_phonetic": "፨ ḥzb: bhaylī mesḳelu n'īyesus krstos tsega teqhebīlna ḥywetwn rekhībna 'īna. 'o gweyta kab menfes ḳdus zterekhbe tsega teqhebīlna n'akha nemesgn 'alona."
+      "tigrinya_phonetic": "፨ ḥzb: bhaylī mesḳelu n'īyesus krstos tsega teqhebīlna ḥywetwn rekhībna 'īna. 'o gweyta kab menfes ḳdus zterekhbe tsega teqhebīlna n'akha nemesgn 'alona.",
+      "spanish": "Pueblo: Hemos recibido su gracia y hemos hallado la vida eterna por el poder de la cruz de nuestro Señor Jesucristo. A ti, Señor, te damos gracias porque hemos recibido tu gracia del Espíritu Santo."
     },
     {
       "instruction": "",
@@ -25253,7 +26651,8 @@ const kidaseData = {
       "amharic_script": "ዲያቆን፤ በሰላም ወደ ቤታችሁ ግቡ።",
       "amharic_phonetic": "dīyaḳon: beselam wede bétachhu gbu.",
       "tigrinya_script": "ዲያቆን፤ ብሰላም እተዉ።",
-      "tigrinya_phonetic": "dīyaḳon: bselam 'itewu."
+      "tigrinya_phonetic": "dīyaḳon: bselam 'itewu.",
+      "spanish": "Diácono: Vete en paz."
     }
   ]
 };

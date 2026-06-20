@@ -5448,17 +5448,21 @@ document.addEventListener('DOMContentLoaded', async () => {
             } else if (fsItem.chapter === 'Psalms' || fsItem.chapter === 'ProphetSong' || fsItem.chapter === 'Bible') {
                 updateAllMatches(songs, p =>
                     p.chapter === fsItem.chapter &&
-                    p.stanza == fsItem.stanza &&
-                    p.reference === fsItem.reference &&
-                    p.english === fsItem.english
+                    p.stanza == fsItem.stanza
                 );
             } else {
-                updateAllMatches(prayers, p =>
+                const criteria = p =>
                     p.chapter === fsItem.chapter &&
-                    p.stanza == fsItem.stanza &&
-                    p.reference === fsItem.reference &&
-                    p.english === fsItem.english
-                );
+                    p.stanza == fsItem.stanza;
+
+                updateAllMatches(prayers, criteria);
+
+                // Sync translated liturgy/Kidase data from Firestore
+                if (typeof kidaseData !== 'undefined') {
+                    updateAllMatches(kidaseData.order, criteria);
+                    updateAllMatches(kidaseData.apostles, criteria);
+                    updateAllMatches(kidaseData.mary, criteria);
+                }
             }
         });
     }
@@ -5476,6 +5480,11 @@ document.addEventListener('DOMContentLoaded', async () => {
             prayersFromFirestore.find(p => p.stanza == stanzaId && p.chapter == chapter) ||
             prayers.find(p => p.chapter === chapter && p.stanza == stanzaId) ||
             songs.find(p => p.chapter === chapter && p.stanza == stanzaId) ||
+            (typeof kidaseData !== 'undefined' ? (
+                kidaseData.order.find(p => p.chapter === chapter && p.stanza == stanzaId) ||
+                kidaseData.apostles.find(p => p.chapter === chapter && p.stanza == stanzaId) ||
+                kidaseData.mary.find(p => p.chapter === chapter && p.stanza == stanzaId)
+            ) : null) ||
             (chapter === 'Servant' ? servantsPrayers.find(p => p.title == stanzaId) : null);
 
         if (!prayer) {
