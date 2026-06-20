@@ -75,6 +75,7 @@ const helpButton = document.getElementById('help-button');
 const showSupplicationsToggle = document.getElementById('show-supplications-toggle');
 const autoProphetSongsToggle = document.getElementById('auto-prophet-songs-toggle');
 const showDailyPrayerToggle = document.getElementById('show-daily-prayer-toggle');
+const showGateOfLightToggle = document.getElementById('show-gate-of-light-toggle');
 const showGeezPhoneticChantsToggle = document.getElementById('show-geez-phonetic-chants');
 const showLoanwordOriginsToggle = document.getElementById('show-loanword-origins');
 const expandCollapseAllButton = document.getElementById('expand-collapse-all-button');
@@ -1251,7 +1252,8 @@ async function loadSettings() {
             autoProphetSongs: false,
             showDailyPrayer: true,
             showGeezPhoneticChants: false,
-            showLoanwordOrigins: false
+            showLoanwordOrigins: false,
+            showGateOfLight: false
         },
         displayedLanguages: defaultLanguages,
         fontSizes: {
@@ -1453,6 +1455,7 @@ function updateAllTogglesInSettingsPanel() {
     showSupplicationsToggle.checked = displayOptions.showSupplications;
     autoProphetSongsToggle.checked = displayOptions.autoProphetSongs;
     showDailyPrayerToggle.checked = displayOptions.showDailyPrayer;
+    if (showGateOfLightToggle) showGateOfLightToggle.checked = displayOptions.showGateOfLight;
     if (showGeezPhoneticChantsToggle) showGeezPhoneticChantsToggle.checked = displayOptions.showGeezPhoneticChants;
     if (showLoanwordOriginsToggle) showLoanwordOriginsToggle.checked = displayOptions.showLoanwordOrigins;
 
@@ -2299,6 +2302,8 @@ function getPrayerLabel(prayer, isKidase = false) {
         return dayTitles[prayer.chapter];
     } else if (prayer.chapter === 'Angels') {
         return 'Prayer of Abba Giyorgis: The Angels Praise Mary | ይዌድስዋ መላእክት ለማርያም';
+    } else if (prayer.chapter === 'Anqetse Birhan') {
+        return 'The Gate of Light | አንቀጸ ብርሃን';
     } else if (prayer.chapter === 'Psalms' && prayer.stanza === 'Intro') {
         return 'Opening Prayer for the Psalms and the Songs of the Prophets | ነዓ ኀቤየ ዳዊት';
     } else if (prayer.chapter === 'Psalms' && prayer.stanza === 'Closing') {
@@ -3079,13 +3084,13 @@ function renderPrayers() {
 
     // Render main prayers (non-Psalms, non-Prophet Songs)
     const widaseMaryamChapters = {
-        'Sunday': ['Sun'],
-        'Monday': ['Mon'],
-        'Tuesday': ['Tue'],
-        'Wednesday': ['Wed'],
-        'Thursday': ['Thurs', 'Angels'],
-        'Friday': ['Fri'],
-        'Saturday': ['Sat']
+        'Sunday': ['Sun', 'Anqetse Birhan'],
+        'Monday': ['Mon', 'Anqetse Birhan'],
+        'Tuesday': ['Tue', 'Anqetse Birhan'],
+        'Wednesday': ['Wed', 'Anqetse Birhan'],
+        'Thursday': ['Thurs', 'Angels', 'Anqetse Birhan'],
+        'Friday': ['Fri', 'Anqetse Birhan'],
+        'Saturday': ['Sat', 'Anqetse Birhan']
     };
 
     const mainPrayers = prayers.filter(p => {
@@ -3093,6 +3098,8 @@ function renderPrayers() {
 
         // Always include Daily prayers
         if (p.chapter === 'Daily') return displayOptions.showDailyPrayer;
+
+        if (p.chapter === 'Anqetse Birhan' && !displayOptions.showGateOfLight) return false;
 
         // Filter Praise of Mary (and related) based on selection
         if (selectedWidaseMaryamDay === 'None') return false;
@@ -4766,6 +4773,14 @@ showDailyPrayerToggle.addEventListener('change', () => {
     smoothRender();
     saveSettings();
 });
+
+if (showGateOfLightToggle) {
+    showGateOfLightToggle.addEventListener('change', () => {
+        displayOptions.showGateOfLight = showGateOfLightToggle.checked;
+        smoothRender();
+        saveSettings();
+    });
+}
 
 if (showGeezPhoneticChantsToggle) {
     showGeezPhoneticChantsToggle.addEventListener('change', () => {
