@@ -7,13 +7,15 @@ const firebaseConfig = {
     projectId: "mount-of-mercy",
     storageBucket: "mount-of-mercy.firebasestorage.app",
     messagingSenderId: "974361367981",
-    appId: "1:974361367981:web:752f9a6fb815e208f4fd24"
+    appId: "1:974361367981:web:752f9a6fb815e208f4fd24",
+    measurementId: "G-2B968Y7B26"
 };
 
 // Initialize Firebase (Compat)
 firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
 const db = firebase.firestore();
+const analytics = firebase.analytics();
 
 // --- Application Logic ---
 const header = document.querySelector('header');
