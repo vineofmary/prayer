@@ -242,6 +242,48 @@ body[class*="language-colors-"].theme-legacy-light .language-section.lang-tigrin
     color: #008000 !important; /* Darker green on light */
 }
 
+body[class*="language-colors-"].theme-legacy-dark .language-section.lang-spanish .language-text {
+    color: #ff9800 !important; /* Bright Orange */
+}
+body[class*="language-colors-"].theme-legacy-light .language-section.lang-spanish .language-text {
+    color: #e65100 !important; /* Dark Orange */
+}
+
+body[class*="language-colors-"].theme-legacy-dark .language-section.lang-french .language-text {
+    color: #ff69b4 !important; /* Hot Pink */
+}
+body[class*="language-colors-"].theme-legacy-light .language-section.lang-french .language-text {
+    color: #c2185b !important; /* Dark Pink */
+}
+
+body[class*="language-colors-"].theme-legacy-dark .language-section.lang-arabic .language-text {
+    color: #00ffcc !important; /* Bright Teal */
+}
+body[class*="language-colors-"].theme-legacy-light .language-section.lang-arabic .language-text {
+    color: #00695c !important; /* Dark Teal */
+}
+
+body[class*="language-colors-"].theme-legacy-dark .language-section.lang-greek .language-text {
+    color: #cc99ff !important; /* Bright Lavender */
+}
+body[class*="language-colors-"].theme-legacy-light .language-section.lang-greek .language-text {
+    color: #4a148c !important; /* Dark Purple */
+}
+
+body[class*="language-colors-"].theme-legacy-dark .language-section.lang-hebrew .language-text {
+    color: #ffb6c1 !important; /* Light Pink */
+}
+body[class*="language-colors-"].theme-legacy-light .language-section.lang-hebrew .language-text {
+    color: #880e4f !important; /* Dark Red-Pink */
+}
+
+body[class*="language-colors-"].theme-legacy-dark .language-section.lang-malayalam .language-text {
+    color: #adff2f !important; /* Green Yellow */
+}
+body[class*="language-colors-"].theme-legacy-light .language-section.lang-malayalam .language-text {
+    color: #558b2f !important; /* Olive Green */
+}
+
 /* In Legacy theme, English and Spanish retain their unique colors for rubrication and labels regardless of position */
 body[class*="theme-legacy-"] .language-section.lang-english .rubric-red,
 body[class*="theme-legacy-"] .language-section.lang-spanish .rubric-red {
