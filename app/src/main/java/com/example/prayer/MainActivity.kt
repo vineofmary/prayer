@@ -17,6 +17,11 @@ class MainActivity : AppCompatActivity() {
         // Allow file access
         webView.settings.allowFileAccess = true
 
+        // Enable debugging for WebView
+        if (0 != (applicationInfo.flags and android.content.pm.ApplicationInfo.FLAG_DEBUGGABLE)) {
+            WebView.setWebContentsDebuggingEnabled(true)
+        }
+
         // Load your local index.html from the assets folder
         webView.loadUrl("file:///android_asset/index.html")
     }

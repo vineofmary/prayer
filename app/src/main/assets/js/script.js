@@ -15,7 +15,17 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
 const db = firebase.firestore();
-const analytics = firebase.analytics();
+
+let analytics = null;
+try {
+    if (window.location.protocol.startsWith('http') && typeof firebase.analytics === 'function') {
+        analytics = firebase.analytics();
+    } else {
+        console.warn("Firebase Analytics is blocked by ad-blocker or not in http/https environment. Skipping.");
+    }
+} catch (e) {
+    console.warn("Firebase Analytics initialization failed:", e);
+}
 
 // --- Application Logic ---
 const header = document.querySelector('header');
