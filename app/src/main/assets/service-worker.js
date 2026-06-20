@@ -40,7 +40,7 @@ self.addEventListener('fetch', event => {
 
   event.respondWith(
     caches.open(CACHE_NAME).then(cache => {
-      return cache.match(event.request).then(response => {
+      return cache.match(event.request, {ignoreSearch: true}).then(response => {
         const fetchPromise = fetch(event.request).then(networkResponse => {
           // If we got a valid response, update the cache
           if (networkResponse && networkResponse.status === 200) {
