@@ -284,19 +284,32 @@ body[class*="language-colors-"].theme-legacy-light .language-section.lang-malaya
     color: #558b2f !important; /* Olive Green */
 }
 
-/* In Legacy theme, English and Spanish retain their unique colors for rubrication and labels regardless of position */
-body[class*="theme-legacy-"] .language-section.lang-english .rubric-red,
-body[class*="theme-legacy-"] .language-section.lang-spanish .rubric-red {
+/* In Legacy theme, English retains its unique colors for rubrication and labels regardless of position */
+body[class*="theme-legacy-"] .language-section.lang-english .rubric-red {
     color: var(--rubric-red) !important;
 }
-body[class*="theme-legacy-"] .language-section.lang-english .rubric-gold,
-body[class*="theme-legacy-"] .language-section.lang-spanish .rubric-gold {
+body[class*="theme-legacy-"] .language-section.lang-english .rubric-gold {
     color: var(--rubric-gold) !important;
 }
-body[class*="theme-legacy-"] .language-section.lang-english .speaker-label,
-body[class*="theme-legacy-"] .language-section.lang-spanish .speaker-label {
+body[class*="theme-legacy-"] .language-section.lang-english .speaker-label {
     color: var(--speaker-label-color) !important;
     opacity: 1 !important;
+}
+
+/* In Legacy theme, explicitly brightly-colored languages should inherit their color for rubrication */
+body[class*="theme-legacy-"] .language-section.lang-spanish .rubric-red,
+body[class*="theme-legacy-"] .language-section.lang-french .rubric-red,
+body[class*="theme-legacy-"] .language-section.lang-arabic .rubric-red,
+body[class*="theme-legacy-"] .language-section.lang-greek .rubric-red,
+body[class*="theme-legacy-"] .language-section.lang-hebrew .rubric-red,
+body[class*="theme-legacy-"] .language-section.lang-malayalam .rubric-red,
+body[class*="theme-legacy-"] .language-section.lang-spanish .rubric-gold,
+body[class*="theme-legacy-"] .language-section.lang-french .rubric-gold,
+body[class*="theme-legacy-"] .language-section.lang-arabic .rubric-gold,
+body[class*="theme-legacy-"] .language-section.lang-greek .rubric-gold,
+body[class*="theme-legacy-"] .language-section.lang-hebrew .rubric-gold,
+body[class*="theme-legacy-"] .language-section.lang-malayalam .rubric-gold {
+    color: inherit !important;
 }
 
 /* --- Language FONT Color Palettes --- */
