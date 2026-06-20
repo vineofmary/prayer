@@ -1,16 +1,16 @@
-const CACHE_NAME = 'divine-liturgy-cache-v7';
+const CACHE_NAME = 'divine-liturgy-cache-v8';
 const urlsToCache = [
   './',
   './index.html',
   './manifest.json',
-  './css/style.css',
-  './js/icons.js',
-  './js/prayers.js',
-  './js/songs.js',
-  './js/servants.js',
-  './js/kidase.js',
-  './js/typical_psalms.js',
-  './js/script.js',
+  './css/style.css?v=3',
+  './js/icons.js?v=3',
+  './js/prayers.js?v=3',
+  './js/songs.js?v=3',
+  './js/servants.js?v=3',
+  './js/kidase.js?v=3',
+  './js/typical_psalms.js?v=3',
+  './js/script.js?v=3',
   './icons/icon-192x192.png',
   './icons/icon-512x512.png',
   './bible/NKJV_New_King_James_English_Bible_1982AD.json',
@@ -21,6 +21,8 @@ const urlsToCache = [
 ];
 
 self.addEventListener('install', event => {
+  // Force the new service worker to activate immediately
+  self.skipWaiting();
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then(cache => {
