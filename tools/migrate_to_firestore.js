@@ -67,10 +67,10 @@ async function migrate() {
                 const chapter = item.chapter || 'Servant';
                 const stanza = item.stanza || item.title || 'stanza';
                 const ref = item.reference || 'ref';
-                const english = item.english || '';
+                const contentText = item.english || item.geez_script || item.amharic_script || '';
                 
                 // Create a content hash to ensure uniqueness even if metadata is identical
-                const contentHash = Buffer.from(english).toString('base64').substring(0, 10);
+                const contentHash = Buffer.from(contentText).toString('base64').substring(0, 10);
                 
                 const docId = `${chapter}_${stanza}_${ref}_${contentHash}`.replace(/[^a-zA-Z0-9]/g, '_').substring(0, 100);
                 const docRef = db.collection('prayers').doc(docId);

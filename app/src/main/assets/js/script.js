@@ -5438,8 +5438,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         const chapter = p.chapter || 'Servant';
         const stanza = p.stanza || p.title || 'stanza';
         const ref = p.reference || 'ref';
-        const english = p.english || '';
-        const contentHash = btoa(unescape(encodeURIComponent(english))).substring(0, 10);
+        const contentText = p.english || p.geez_script || p.amharic_script || '';
+        const contentHash = btoa(unescape(encodeURIComponent(contentText))).substring(0, 10);
         const rawId = `${chapter}_${stanza}_${ref}_${contentHash}`;
         return rawId.replace(/[^a-zA-Z0-9]/g, '_').substring(0, 100);
     }
