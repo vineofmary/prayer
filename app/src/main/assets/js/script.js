@@ -95,11 +95,11 @@ const psalmSelectorContainer = document.getElementById('psalm-selector-container
 const psalmSummary = document.getElementById('psalm-summary');
 const clearPsalmsButton = document.getElementById('clear-psalms-button');
 const psalmCombinationsSelect = document.getElementById('psalm-combinations-select');
-const PSALM_COMBINATIONS = { 
-    'daily': { 
-        name: 'Daily Prayer', 
-        psalms: [12, 15, 22, 50, 90, 102, 135] 
-    } 
+const PSALM_COMBINATIONS = {
+    'daily': {
+        name: 'Daily Prayer',
+        psalms: [12, 15, 22, 50, 90, 102, 135]
+    }
 };
 const prophetSongsSelectorContainer = document.getElementById('prophet-songs-selector-container');
 const prophetSongsSummary = document.getElementById('prophet-songs-summary');
@@ -463,7 +463,7 @@ const LOANWORD_MAPPING = {
     "ጳራቅሊጦስ": { lang: "Greek", original: "(\u03a0\u03b1\u03c1\u03ac\u03ba\u03bb\u03b7\u03c4\u03bf\u03c2)", phonetic: "pa-ra-kli-tos", meaning: "Paraclete (Advocate, Helper, Comforter)", geez: "ናዛዚ" },
     "አምንስቲቲ ሙኪርያ": { lang: "Greek", original: "(\u039c\u03bd\u03ae\u03c3\u03b8\u03b7\u03c4\u03af \u03bc\u03bf\u03c5, \u039a\u03cd\u03c1\u03b9\u03b5)", phonetic: "mni-sthi-ti mou ky-ri-e", meaning: "Remember me, O Lord", geez: "ተዘከረኒ እግዚኦ" },
     "አንቲ ፋሲልያሱ": { lang: "Greek", original: "(\u1f10\u03bd \u03c4\u1fc7 \u03b2\u03b1\u03c3\u03b9\u03bb\u03b5\u03af\u1fb3 \u03c3\u03bf\u03c5)", phonetic: "en ti va-si-li-a sou", meaning: "in your kingdom", geez: "በመንግሥትከ" },
-    
+
     // Additional Liturgical & Theological Terms
     "ሃሌ ሉያ": { lang: "Hebrew", original: "(\u05d4\u05b7\u05dc\u05b0\u05dc\u05d5\u05bc-\u05d9\u05b8\u05d4\u05bc)", phonetic: "ha-le-lu-yah", meaning: "Praise the Lord", geez: "ስብሐት ለእግዚአብሔር" },
     "አሜን": { lang: "Hebrew", original: "(\u05d0\u05b8\u05de\u05b5\u05df)", phonetic: "a-men", meaning: "Verily / So be it", geez: "ለይኩን (በአማን)" },
@@ -507,7 +507,7 @@ function applyLoanwordOrigins(text, langKey) {
     }
 
     let transformedText = text;
-    
+
     // Build a single regex to match all loanwords in one pass to avoid nested replacements
     const sortedKeys = Object.keys(LOANWORD_MAPPING).sort((a, b) => b.length - a.length);
     const pattern = sortedKeys.map(k => k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|');
@@ -579,7 +579,7 @@ function showLoanwordTooltip(element) {
     const rect = element.getBoundingClientRect();
     const tooltipHeight = tooltip.offsetHeight;
     const tooltipWidth = tooltip.offsetWidth;
-    
+
     let top = rect.top - tooltipHeight - 15;
     let left = rect.left + (rect.width / 2) - (tooltipWidth / 2);
 
@@ -587,7 +587,7 @@ function showLoanwordTooltip(element) {
     if (top < 10) {
         top = rect.bottom + 15;
     }
-    
+
     if (left < 10) left = 10;
     if (left + tooltipWidth > window.innerWidth - 10) {
         left = window.innerWidth - tooltipWidth - 10;
@@ -595,15 +595,15 @@ function showLoanwordTooltip(element) {
 
     tooltip.style.top = `${top}px`;
     tooltip.style.left = `${left}px`;
-    
+
     // Clean up manual styles and let CSS transition take over
     tooltip.style.display = '';
     tooltip.style.opacity = '';
     tooltip.style.visibility = '';
-    
+
     // Force reflow
     void tooltip.offsetWidth;
-    
+
     tooltip.classList.add('active');
 }
 
@@ -727,7 +727,7 @@ const rubricGoldRegex = {
 // --- Speaker Label Data ---
 const speakerKeywords = {
     english: ["Priest", "Asst. Priest", "Deacon", "People", "Subdeacon", "All", "ALL", "Leader", "Reader"],
-    geez_script: ["ካህን", "ካህን ንፍቅ", "ዲያቆን", "ሕዝብ", "ንፍቀ ዲያቆን", "ኵሎሙ", "መሪሕ", "አንባቤ", "አንባቢ"],
+    geez_script: ["ካህን", "ካህን ንፍቅ", "ዲያቆን", "ሕዝብ", "ንፍቀ ዲያቆን", "ኵሎሙ", "መሪሕ", "አንባቢ"],
     amharic_script: ["ካህን", "ካህን ንፍቅ", "ዲያቆን", "ሕዝብ", "ንፍቀ ዲያቆን", "ሁሉም", "መሪ", "አንባቢ"],
     tigrinya_script: ["ካህን", "ካህን ንፍቅ", "ዲያቆን", "ሕዝብ", "ንፍቀ ዲያቆን", "ኩሉኹም", "መራሒ", "ነባቢ"],
     spanish: ["Sacerdote", "Diácono", "Pueblo", "Subdiácono", "Todos", "Líder", "Gente", "Lector"],
@@ -1762,10 +1762,10 @@ const LITURGY_LECTIONARY_CONFIG = [
 
 function getActualVerseCount(bookName, chapterNum) {
     if (!bibleData.loaded) return null;
-    
+
     let lookupName = bookName;
     if (bookName === 'Psalm') lookupName = 'Psalms';
-    
+
     const bookCfg = BIBLE_BOOK_MAPPING[lookupName];
     if (!bookCfg) return null;
 
@@ -1891,7 +1891,7 @@ function createLectionaryPicker(containerId, lectionaryKey, bookOptions = [], ty
 
     const populateSelect = (select, max, selected, isEndField = false) => {
         select.innerHTML = '';
-        
+
         let cappedSelected = selected;
         if (selected !== 'End' && !isNaN(parseInt(selected)) && parseInt(selected) > max) {
             cappedSelected = max;
@@ -1904,7 +1904,7 @@ function createLectionaryPicker(containerId, lectionaryKey, bookOptions = [], ty
             if (i == cappedSelected) opt.selected = true;
             select.appendChild(opt);
         }
-        
+
         if (isEndField) {
             // Check if "End" is already functionally represented by the last number
             const endOpt = document.createElement('option');
@@ -1972,7 +1972,7 @@ function createLectionaryPicker(containerId, lectionaryKey, bookOptions = [], ty
             const book = bookSelect.value;
             const metadata = BIBLE_METADATA[book] || { chapters: 50, maxVerses: 100 };
             const actualMax = getActualVerseCount(book, 1) || metadata.maxVerses;
-            
+
             populateSelect(chapterField.sel, metadata.chapters, 1);
             populateSelect(startField.sel, actualMax, 1);
             populateSelect(endField.sel, actualMax, 'End', true);
@@ -1985,16 +1985,16 @@ function createLectionaryPicker(containerId, lectionaryKey, bookOptions = [], ty
         const ch = parseInt(chapterField.sel.value);
         const metadata = BIBLE_METADATA[book] || { chapters: 50, maxVerses: 100 };
         const actualMax = getActualVerseCount(book, ch) || metadata.maxVerses;
-        
+
         const currentStart = startField.sel.value;
         const currentEnd = endField.sel.value;
-        
+
         populateSelect(startField.sel, actualMax, currentStart);
         populateSelect(endField.sel, actualMax, currentEnd, true);
-        
+
         updateRefs();
     });
-    
+
     startField.sel.addEventListener('change', updateRefs);
     endField.sel.addEventListener('change', updateRefs);
 
@@ -2047,17 +2047,17 @@ function createLectionaryPicker(containerId, lectionaryKey, bookOptions = [], ty
         let metadataKey = (book === 'Psalm') ? 'Psalms' : book;
         const metadata = BIBLE_METADATA[metadataKey] || { chapters: 50, maxVerses: 100 };
         const actualMax = getActualVerseCount(book, ch) || metadata.maxVerses;
-        
+
         populateSelect(chapterField.sel, metadata.chapters, ch);
         populateSelect(startField.sel, actualMax, start);
         populateSelect(endField.sel, actualMax, end, true);
-        
+
         // Sync Typical Psalm Dropdown if available
         if (typicalSelect && typicalPsalms) {
             // Resolve 'End' for matching
             const numericEnd = (end === 'End') ? actualMax : parseInt(end);
-            const foundIdx = typicalPsalms.findIndex(p => 
-                (book === 'Psalms' || book === 'Psalm') && 
+            const foundIdx = typicalPsalms.findIndex(p =>
+                (book === 'Psalms' || book === 'Psalm') &&
                 p.mc === ch && p.ms === parseInt(start) && p.me === numericEnd
             );
             if (foundIdx !== -1) {
@@ -2235,7 +2235,7 @@ function getPrayerLabel(prayer, isKidase = false) {
         } else if (!chapter && isKidase) {
             chapterPrefix = 'Liturgy';
         }
-        
+
         const source = prayer.stanza ? `${chapterPrefix}-${prayer.stanza}` : chapterPrefix;
         const reference = (prayer.reference && prayer.reference.trim() && prayer.reference.trim().toLowerCase() !== 'n/a') ? prayer.reference.trim() : "";
         const instruction = (prayer.instruction && prayer.instruction.trim() && prayer.instruction.trim().toLowerCase() !== 'n/a') ? prayer.instruction.trim() : "";
@@ -2681,10 +2681,10 @@ function renderSelectedKidase(addSectionTitleCallback) {
     // 1. Find dynamic markers to divide the sequence
     // Morning Gospel Section starts specifically at 3-181
     const mGospelIdx = allOrderPrayers.findIndex(p => p.chapter === '3' && p.stanza === '181');
-    
+
     // Pre-Liturgy Kidan starts at the first occurrence of Chapter "Kidan"
     const kStartIdx = allOrderPrayers.findIndex(p => p.chapter === 'Kidan');
-    
+
     // Order of the Liturgy starts at the specific "Start of the Liturgy of the Word" marker
     const lStartIdx = allOrderPrayers.findIndex(p => p.reference && p.reference.includes("Start of the Liturgy of the Word"));
 
@@ -2696,10 +2696,10 @@ function renderSelectedKidase(addSectionTitleCallback) {
     // 2. Prepare chunks
     const morningGospelChunk = allOrderPrayers.slice(mGospelStart, kidanStart);
     const preLiturgyKidanChunk = allOrderPrayers.slice(kidanStart, liturgyStart);
-    
+
     // "Order of the Liturgy" is the catch-all for everything else (Prep + Main Liturgy)
     const mainLiturgyArray = [];
-    
+
     // Add Preparatory prayers (everything before Morning Gospel start 3-181)
     mainLiturgyArray.push(...allOrderPrayers.slice(0, mGospelStart));
 
@@ -3478,7 +3478,7 @@ function adjustSlideFontSize() {
                     let currentSizes = new Array(langSections.length).fill(12);
                     let growing = true;
                     const maxAvailableHeight = prayerContent.clientHeight;
-                    
+
                     if (maxAvailableHeight > 0) {
                         while (growing) {
                             growing = false;
@@ -4566,7 +4566,7 @@ psalmCombinationsSelect.addEventListener('change', () => {
         if (selectAllCheckbox) {
             selectAllCheckbox.checked = selectedPsalms.length === 150;
         }
-        
+
         updatePsalmSummary();
         saveSettings();
         smoothRender();
@@ -4824,35 +4824,35 @@ feedbackButton.addEventListener('click', () => openModal(feedbackModal));
 modalBackdrop.addEventListener('click', closeModal);
 document.querySelectorAll('.close-button').forEach(btn => btn.addEventListener('click', closeModal));
 
-    // Help Modal Feedback
-    if (sendFeedbackButtonHelp) {
-        sendFeedbackButtonHelp.addEventListener('click', () => {
-            const feedbackText = document.getElementById('feedback-textarea-help').value;
-            if (feedbackText.trim()) {
-                const mailtoLink = `mailto:vineofmary@gmail.com?subject=Feedback for Prayer App&body=${encodeURIComponent(feedbackText)}`;
-                window.location.href = mailtoLink;
-                showCopyNotification('Feedback sent!', 3000);
-                closeModal();
-            } else {
-                alert('Please enter your feedback before sending.');
-            }
-        });
-    }
+// Help Modal Feedback
+if (sendFeedbackButtonHelp) {
+    sendFeedbackButtonHelp.addEventListener('click', () => {
+        const feedbackText = document.getElementById('feedback-textarea-help').value;
+        if (feedbackText.trim()) {
+            const mailtoLink = `mailto:vineofmary@gmail.com?subject=Feedback for Prayer App&body=${encodeURIComponent(feedbackText)}`;
+            window.location.href = mailtoLink;
+            showCopyNotification('Feedback sent!', 3000);
+            closeModal();
+        } else {
+            alert('Please enter your feedback before sending.');
+        }
+    });
+}
 
-    // Feedback Modal Feedback
-    if (sendFeedbackButtonModal) {
-        sendFeedbackButtonModal.addEventListener('click', () => {
-            const feedbackText = document.getElementById('feedback-textarea').value;
-            if (feedbackText.trim()) {
-                const mailtoLink = `mailto:vineofmary@gmail.com?subject=Feedback for Prayer App&body=${encodeURIComponent(feedbackText)}`;
-                window.location.href = mailtoLink;
-                showCopyNotification('Feedback sent!', 3000);
-                closeModal();
-            } else {
-                alert('Please enter your feedback before sending.');
-            }
-        });
-    }
+// Feedback Modal Feedback
+if (sendFeedbackButtonModal) {
+    sendFeedbackButtonModal.addEventListener('click', () => {
+        const feedbackText = document.getElementById('feedback-textarea').value;
+        if (feedbackText.trim()) {
+            const mailtoLink = `mailto:vineofmary@gmail.com?subject=Feedback for Prayer App&body=${encodeURIComponent(feedbackText)}`;
+            window.location.href = mailtoLink;
+            showCopyNotification('Feedback sent!', 3000);
+            closeModal();
+        } else {
+            alert('Please enter your feedback before sending.');
+        }
+    });
+}
 
 
 // --- Drag and Drop Logic ---
@@ -5093,7 +5093,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     document.querySelectorAll('.clickable-reading-title').forEach(title => {
         title.addEventListener('click', () => {
             const targetId = title.dataset.readingTarget;
-            
+
             // 1. Collapse sidebar first
             collapseSidebar();
 
@@ -5128,7 +5128,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                         showCopyNotification("Reading card not found. Ensure it is enabled in settings.", 3000);
                     }
                 }
-            }, 500); 
+            }, 500);
         });
     });
 
@@ -5782,14 +5782,14 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     async function fetchGithubCommits() {
         if (!changelogList) return;
-        
+
         // Show loading state
         changelogList.innerHTML = '<div class="changelog-loading">Fetching recent updates...</div>';
 
         try {
             const response = await fetch('https://api.github.com/repos/vineofmary/prayer/commits?per_page=10');
             if (!response.ok) throw new Error('Private repository or API limit');
-            
+
             const commits = await response.json();
             renderChangelog(commits.map(c => ({
                 date: c.commit.author.date,
@@ -5808,15 +5808,15 @@ document.addEventListener('DOMContentLoaded', async () => {
         changelogList.innerHTML = '';
 
         commits.forEach(commit => {
-            const date = new Date(commit.date).toLocaleDateString(undefined, { 
-                year: 'numeric', 
-                month: 'short', 
-                day: 'numeric' 
+            const date = new Date(commit.date).toLocaleDateString(undefined, {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric'
             });
 
             const item = document.createElement('div');
             item.classList.add('changelog-item');
-            
+
             const dateEl = document.createElement('span');
             dateEl.classList.add('commit-date');
             dateEl.textContent = date;
@@ -5832,7 +5832,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             item.appendChild(dateEl);
             item.appendChild(messageEl);
             item.appendChild(authorEl);
-            
+
             if (commit.url) {
                 item.style.cursor = 'pointer';
                 item.addEventListener('click', () => {
