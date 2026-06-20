@@ -1213,13 +1213,18 @@ async function loadSettings() {
     const defaultLanguages = {};
     Object.keys(LANGUAGE_REGISTRY).forEach(id => {
         const cfg = LANGUAGE_REGISTRY[id];
-        // By default, turn on main scripts but leave auto-translations and phonetics off for new users
-        if (cfg.category === 'main' && !cfg.isAuto && !id.includes('phonetic')) {
-            defaultLanguages[id] = true;
-        } else if (id === 'spanish') {
-            defaultLanguages[id] = !isMobile;
+        if (isMobile) {
+            // For new mobile users, only initially display English and Ge'ez
+            defaultLanguages[id] = (id === 'english' || id === 'geez_script');
         } else {
-            defaultLanguages[id] = false;
+            // For desktop, turn on main scripts but leave auto-translations and phonetics off
+            if (cfg.category === 'main' && !cfg.isAuto && !id.includes('phonetic')) {
+                defaultLanguages[id] = true;
+            } else if (id === 'spanish') {
+                defaultLanguages[id] = true;
+            } else {
+                defaultLanguages[id] = false;
+            }
         }
     });
 
