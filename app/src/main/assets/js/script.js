@@ -5471,7 +5471,15 @@ document.addEventListener('DOMContentLoaded', async () => {
         const stanza = p.stanza || p.title || 'stanza';
         const ref = p.reference || 'ref';
         const contentText = p.english || p.geez_script || p.amharic_script || '';
-        const contentHash = btoa(unescape(encodeURIComponent(contentText))).substring(0, 10);
+        
+        let hash = 0;
+        for (let i = 0; i < contentText.length; i++) {
+            const char = contentText.charCodeAt(i);
+            hash = ((hash << 5) - hash) + char;
+            hash = hash & hash; // Convert to 32bit int
+        }
+        const contentHash = Math.abs(hash).toString(36);
+        
         const rawId = `${chapter}_${stanza}_${ref}_${contentHash}`;
         return rawId.replace(/[^a-zA-Z0-9]/g, '_').substring(0, 100);
     }
