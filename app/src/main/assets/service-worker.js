@@ -1,4 +1,4 @@
-const CACHE_NAME = 'divine-liturgy-cache-v13';
+const CACHE_NAME = 'divine-liturgy-cache-v14';
 const urlsToCache = [
   './',
   './index.html',
