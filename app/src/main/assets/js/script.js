@@ -1018,7 +1018,7 @@ function syncStateToUrl() {
 
 const SECTION_SLUGS = {
     "Daily Prayer | ዘዘወትር ጸሎት": "dp",
-    "Prayer of Saint Ephraim: Praise of Mary (Theotokia) | ውዳሴ ማርያም": "pm",
+    "Prayer of Saint Ephraim: The Praises of Mary (Theotokia) | ውዳሴ ማርያም": "pm",
     "Opening Prayer for the Psalms and the Songs of the Prophets | ነዓ ኀቤየ ዳዊት": "ps_in",
     "Closing Prayer for the Psalms and Songs of the Prophets | ሰአሊ ለነ ማርያም": "ps_out",
     "Prayer of Abba Giyorgis: The Angels Praise Mary | ይዌድስዋ መላእክት ለማርያም": "ap",
@@ -2279,8 +2279,8 @@ function getPrayerLabel(prayer, isKidase = false) {
         "Daily-8": "Daily Prayer | ዘዘወትር ጸሎት - Glory...",
         "Daily-9": "Daily Prayer | ዘዘወትር ጸሎት - Greetings to You, [Mary]...",
         "Daily-10": "Daily Prayer | ዘዘወትር ጸሎት - Prayer of Our Lady Mary",
-        "Daily-11": "Prayer of Saint Ephraim: Praise of Mary (Theotokia) | ውዳሴ ማርያም",
-        "Daily-12": "Prayer of Saint Ephraim: Praise of Mary (Theotokia) | ውዳሴ ማርያም - O my Lady, loose me...",
+        "Daily-11": "Prayer of Saint Ephraim: The Praises of Mary (Theotokia) | ውዳሴ ማርያም",
+        "Daily-12": "Prayer of Saint Ephraim: The Praises of Mary (Theotokia) | ውዳሴ ማርያም - O my Lady, loose me...",
         "Personal-0": "Prayer"
     };
 
@@ -2303,7 +2303,7 @@ function getPrayerLabel(prayer, isKidase = false) {
     } else if (prayer.chapter === 'Angels') {
         return 'Prayer of Abba Giyorgis: The Angels Praise Mary | ይዌድስዋ መላእክት ለማርያም';
     } else if (prayer.chapter === 'Anqetse Birhan') {
-        return 'The Gate of Light | አንቀጸ ብርሃን';
+        return 'Prayer of Saint Yared: The Gate of Light | አንቀጸ ብርሃን';
     } else if (prayer.chapter === 'Psalms' && prayer.stanza === 'Intro') {
         return 'Opening Prayer for the Psalms and the Songs of the Prophets | ነዓ ኀቤየ ዳዊት';
     } else if (prayer.chapter === 'Psalms' && prayer.stanza === 'Closing') {
@@ -2318,7 +2318,7 @@ function getSectionTitle(prayer) {
         return "Daily Prayer | ዘዘወትር ጸሎት";
     } else if (label === "Trinitarian Invocation") {
         return "";
-    } else if (label.startsWith("Prayer of Saint Ephraim: Praise of Mary (Theotokia) | ውዳሴ ማርያም") && (selectedWidaseMaryamDay === 'None')) {
+    } else if (label.startsWith("Prayer of Saint Ephraim: The Praises of Mary (Theotokia) | ውዳሴ ማርያም") && (selectedWidaseMaryamDay === 'None')) {
         // Hide the section title if None is selected
         return "";
     }
@@ -2955,6 +2955,15 @@ function renderPrayers() {
             const titleEl = document.createElement('h2');
             titleEl.classList.add('section-title');
             titleEl.innerHTML = title.replace(/\(Theotokia\)/g, '<i>(Theotokia)</i>');
+            
+            const subSections = [
+                "Sunday | ዘእሁድ", "Monday | ዘሰኑይ", "Tuesday | ዘሠሉስ", 
+                "Wednesday | ዘረቡዕ", "Thursday | ዘሐሙስ", "Friday | ዘዓርብ", 
+                "Saturday | ዘቀዳሚት"
+            ];
+            if (subSections.includes(title)) {
+                titleEl.classList.add('sub-section-title');
+            }
 
             if (isCollapsible) {
                 titleEl.classList.add('collapsible');
@@ -3025,7 +3034,7 @@ function renderPrayers() {
                 iconImg.classList.add('holy-trinity-icon'); // Add a class for styling
                 if (isInitiallyCollapsed) iconImg.style.display = 'none';
                 prayerDisplay.appendChild(iconImg);
-            } else if (title === "Prayer of Saint Ephraim: Praise of Mary (Theotokia) | ውዳሴ ማርያም") {
+            } else if (title === "Prayer of Saint Ephraim: The Praises of Mary (Theotokia) | ውዳሴ ማርያም") {
                 const iconImg = document.createElement('img');
                 iconImg.src = 'img/Mary-Blesses-Ephraim.svg';
                 iconImg.alt = 'Mary Blesses Ephraim Icon';
