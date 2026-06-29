@@ -1018,7 +1018,7 @@ function syncStateToUrl() {
 
 const SECTION_SLUGS = {
     "Daily Prayer | ዘዘወትር ጸሎት": "dp",
-    "Prayer of Saint Ephraim: Praise of Mary | ውዳሴ ማርያም": "pm",
+    "Prayer of Saint Ephraim: Praise of Mary (Theotokia) | ውዳሴ ማርያም": "pm",
     "Opening Prayer for the Psalms and the Songs of the Prophets | ነዓ ኀቤየ ዳዊት": "ps_in",
     "Closing Prayer for the Psalms and Songs of the Prophets | ሰአሊ ለነ ማርያም": "ps_out",
     "Prayer of Abba Giyorgis: The Angels Praise Mary | ይዌድስዋ መላእክት ለማርያም": "ap",
@@ -2279,8 +2279,8 @@ function getPrayerLabel(prayer, isKidase = false) {
         "Daily-8": "Daily Prayer | ዘዘወትር ጸሎት - Glory...",
         "Daily-9": "Daily Prayer | ዘዘወትር ጸሎት - Greetings to You, [Mary]...",
         "Daily-10": "Daily Prayer | ዘዘወትር ጸሎት - Prayer of Our Lady Mary",
-        "Daily-11": "Prayer of Saint Ephraim: Praise of Mary | ውዳሴ ማርያም",
-        "Daily-12": "Prayer of Saint Ephraim: Praise of Mary | ውዳሴ ማርያም - O my Lady, loose me...",
+        "Daily-11": "Prayer of Saint Ephraim: Praise of Mary (Theotokia) | ውዳሴ ማርያም",
+        "Daily-12": "Prayer of Saint Ephraim: Praise of Mary (Theotokia) | ውዳሴ ማርያም - O my Lady, loose me...",
         "Personal-0": "Prayer"
     };
 
@@ -2318,8 +2318,8 @@ function getSectionTitle(prayer) {
         return "Daily Prayer | ዘዘወትር ጸሎት";
     } else if (label === "Trinitarian Invocation") {
         return "";
-    } else if (label.startsWith("Prayer of Saint Ephraim: Praise of Mary | ውዳሴ ማርያም") && (selectedWidaseMaryamDay === 'None' || selectedWidaseMaryamDay === 'All')) {
-        // Hide the section title if None is selected (or All, until we have multiple days)
+    } else if (label.startsWith("Prayer of Saint Ephraim: Praise of Mary (Theotokia) | ውዳሴ ማርያም") && (selectedWidaseMaryamDay === 'None')) {
+        // Hide the section title if None is selected
         return "";
     }
     return label.replace(/ - .*/, '');
@@ -2954,7 +2954,7 @@ function renderPrayers() {
         if (title && title !== lastSectionTitle) {
             const titleEl = document.createElement('h2');
             titleEl.classList.add('section-title');
-            titleEl.textContent = title;
+            titleEl.innerHTML = title.replace(/\(Theotokia\)/g, '<i>(Theotokia)</i>');
 
             if (isCollapsible) {
                 titleEl.classList.add('collapsible');
@@ -3025,7 +3025,7 @@ function renderPrayers() {
                 iconImg.classList.add('holy-trinity-icon'); // Add a class for styling
                 if (isInitiallyCollapsed) iconImg.style.display = 'none';
                 prayerDisplay.appendChild(iconImg);
-            } else if (title === "Prayer of Saint Ephraim: Praise of Mary | ውዳሴ ማርያም") {
+            } else if (title === "Prayer of Saint Ephraim: Praise of Mary (Theotokia) | ውዳሴ ማርያም") {
                 const iconImg = document.createElement('img');
                 iconImg.src = 'img/Mary-Blesses-Ephraim.svg';
                 iconImg.alt = 'Mary Blesses Ephraim Icon';
@@ -3084,13 +3084,13 @@ function renderPrayers() {
 
     // Render main prayers (non-Psalms, non-Prophet Songs)
     const widaseMaryamChapters = {
-        'Sunday': ['Sun', 'Anqetse Birhan'],
-        'Monday': ['Mon', 'Anqetse Birhan'],
-        'Tuesday': ['Tue', 'Anqetse Birhan'],
-        'Wednesday': ['Wed', 'Anqetse Birhan'],
+        'Sunday': ['Sun', 'Angels', 'Anqetse Birhan'],
+        'Monday': ['Mon', 'Angels', 'Anqetse Birhan'],
+        'Tuesday': ['Tue', 'Angels', 'Anqetse Birhan'],
+        'Wednesday': ['Wed', 'Angels', 'Anqetse Birhan'],
         'Thursday': ['Thurs', 'Angels', 'Anqetse Birhan'],
-        'Friday': ['Fri', 'Anqetse Birhan'],
-        'Saturday': ['Sat', 'Anqetse Birhan']
+        'Friday': ['Fri', 'Angels', 'Anqetse Birhan'],
+        'Saturday': ['Sat', 'Angels', 'Anqetse Birhan']
     };
 
     const mainPrayers = prayers.filter(p => {
@@ -3108,6 +3108,39 @@ function renderPrayers() {
         const targetChapters = widaseMaryamChapters[selectedWidaseMaryamDay] || [];
         return targetChapters.includes(p.chapter);
     });
+
+    if (selectedWidaseMaryamDay === 'All') {
+        const chapterOrder = {
+            'Daily': 1,
+            'Mon': 2,
+            'Tue': 3,
+            'Wed': 4,
+            'Thurs': 5,
+            'Fri': 6,
+            'Sat': 7,
+            'Sun': 8,
+            'Angels': 9,
+            'Anqetse Birhan': 10
+        };
+        
+        // Map to explicitly guarantee stable sort in older browsers and handle potential whitespaces
+        const mapped = mainPrayers.map((el, i) => {
+            let ch = (el.chapter || '').trim();
+            if (ch === 'Thursday') ch = 'Thurs';
+            return { index: i, value: el, order: chapterOrder[ch] || 99 };
+        });
+        
+        mapped.sort((a, b) => {
+            if (a.order !== b.order) {
+                return a.order - b.order;
+            }
+            return a.index - b.index; // Guaranteed stable sort
+        });
+        
+        // Clear and repopulate mainPrayers to maintain const binding
+        mainPrayers.length = 0;
+        mapped.forEach(item => mainPrayers.push(item.value));
+    }
 
     mainPrayers.forEach((prayer, prayerIndex) => {
         if (prayer.chapter === 'Daily' && prayer.stanza === '0') {
