@@ -177,6 +177,96 @@ const PSALM_COMBINATIONS = {
             'prayerOfJonah'
         ]
     },
+    'nigus1': {
+        name: 'Nigus #1',
+        dropdownLabel: 'Nigus #1: Fikarie Zetsadiqan Wezehatian… | ፍካሬ ዘጻድቃን ወዘኃጥኣን… | The exposition of the righteous and of the sinners… (1-10)',
+        psalms: Array.from({length: 10}, (_, i) => i + 1),
+        prophetSongs: []
+    },
+    'nigus2': {
+        name: 'Nigus #2',
+        dropdownLabel: 'Nigus #2: Adihineni Egzio… | አድኅነኒ እግዚኦ… | Help, Lord… (11-20)',
+        psalms: Array.from({length: 10}, (_, i) => i + 11),
+        prophetSongs: []
+    },
+    'nigus3': {
+        name: 'Nigus #3',
+        dropdownLabel: 'Nigus #3: Amlakiye Amlakiye… | አምላኪየ አምላኪየ… | My God, My God… (21-30)',
+        psalms: Array.from({length: 10}, (_, i) => i + 21),
+        prophetSongs: []
+    },
+    'nigus4': {
+        name: 'Nigus #4',
+        dropdownLabel: 'Nigus #4: Bitsuan Ele… | ብፁዓን እለ… | Blessed are those… (31-40)',
+        psalms: Array.from({length: 10}, (_, i) => i + 31),
+        prophetSongs: []
+    },
+    'nigus5': {
+        name: 'Nigus #5',
+        dropdownLabel: 'Nigus #5: Keme Yafeqir Hayel… | ከመ ያፈቅር ኀየል… | As the deer pants… (41-50)',
+        psalms: Array.from({length: 10}, (_, i) => i + 41),
+        prophetSongs: []
+    },
+    'nigus6': {
+        name: 'Nigus #6',
+        dropdownLabel: 'Nigus #6: Lemint Yiziehar… | ለምንት ይዜኃር… | Why do you boast… (51-60)',
+        psalms: Array.from({length: 10}, (_, i) => i + 51),
+        prophetSongs: []
+    },
+    'nigus7': {
+        name: 'Nigus #7',
+        dropdownLabel: 'Nigus #7: Akonu LeEgziabihier Tigeni Nefsiye… | አኮኑ ለእግዚአብሔር ትገኒ ነፍስየ… | Truly… (61-70)',
+        psalms: Array.from({length: 10}, (_, i) => i + 61),
+        prophetSongs: []
+    },
+    'nigus8': {
+        name: 'Nigus #8',
+        dropdownLabel: 'Nigus #8: Egzio Kuneneke Habo LeNigus… | እግዚኦ ኵነኔከ ሀቦ ለንጉሥ… | Give the king Your judgments, O God… (71-80)',
+        psalms: Array.from({length: 10}, (_, i) => i + 71),
+        prophetSongs: []
+    },
+    'nigus9': {
+        name: 'Nigus #9',
+        dropdownLabel: 'Nigus #9: Egziabihier Qome… | እግዚአብሔር ቆመ… | God stands… (81-90)',
+        psalms: Array.from({length: 10}, (_, i) => i + 81),
+        prophetSongs: []
+    },
+    'nigus10': {
+        name: 'Nigus #10',
+        dropdownLabel: 'Nigus #10: Yihieyis Teamino BeEgziabihier… | ይኄይስ ተአምኖ በእግዚአብሔር… | It is good to give thanks to the Lord… (91-100)',
+        psalms: Array.from({length: 10}, (_, i) => i + 91),
+        prophetSongs: []
+    },
+    'nigus11': {
+        name: 'Nigus #11',
+        dropdownLabel: 'Nigus #11: Simeani Egzio Tselotiye… | ስምዓኒ እግዚኦ ጸሎትየ… | Hear my prayer, O Lord… (101-110)',
+        psalms: Array.from({length: 10}, (_, i) => i + 101),
+        prophetSongs: []
+    },
+    'nigus12': {
+        name: 'Nigus #12',
+        dropdownLabel: 'Nigus #12: Bitsui Beisi Zeyiferho LeEgziabihier… | ብፁዕ ብእሲ ዘይፈርሆ ለእግዚአብሔር… | Blessed is the man who fears the Lord… (111-120)',
+        psalms: Array.from({length: 10}, (_, i) => i + 111),
+        prophetSongs: []
+    },
+    'nigus13': {
+        name: 'Nigus #13',
+        dropdownLabel: 'Nigus #13: Tefesahiku Isme Yibeluni… | ተፈሣሕኩ እስመ ይቤሉኒ… | I was glad when they said to me… (121-130)',
+        psalms: Array.from({length: 10}, (_, i) => i + 121),
+        prophetSongs: []
+    },
+    'nigus14': {
+        name: 'Nigus #14',
+        dropdownLabel: 'Nigus #14: Tezekero Egzio LeDawit… | ተዘከሮ እግዚኦ ለዳዊት… | Lord, remember David… (131-140)',
+        psalms: Array.from({length: 10}, (_, i) => i + 131),
+        prophetSongs: []
+    },
+    'nigus15': {
+        name: 'Nigus #15',
+        dropdownLabel: 'Nigus #15: Qaliye Habe Egziabihier Tserahku… | ቃልየ ኀበ እግዚአብሔር ጸራኅኩ… | I cry out to the Lord with my voice… (141-150)',
+        psalms: Array.from({length: 10}, (_, i) => i + 141),
+        prophetSongs: []
+    },
     'dawn': {
         name: 'Dawn (1st Hour) | ነግህ',
         dropdownLabel: 'Dawn (1st Hour) | Negih | ነግህ (62, 50, 112, 110, 99, Prayer of Zachariah)',
