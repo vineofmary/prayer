@@ -112,6 +112,70 @@ const PSALM_COMBINATIONS = {
     'daily': {
         name: 'Daily Prayer',
         psalms: [12, 15, 22, 50, 90, 102, 135]
+    },
+    'all': {
+        name: 'All | ኵሉ',
+        dropdownLabel: 'All | ኵሉ (1-150) [Desert Fathers, c. 4th century]',
+        psalms: Array.from({length: 150}, (_, i) => i + 1),
+        prophetSongs: []
+    },
+    'monday': {
+        name: 'Monday | ሰኑይ',
+        dropdownLabel: 'Monday | ሰኑይ (1-30) [St. Yared, c. 6th century]',
+        psalms: Array.from({length: 30}, (_, i) => i + 1),
+        prophetSongs: []
+    },
+    'tuesday': {
+        name: 'Tuesday | ሠሉስ',
+        dropdownLabel: 'Tuesday | ሠሉስ (31-60) [St. Yared, c. 6th century]',
+        psalms: Array.from({length: 30}, (_, i) => i + 31),
+        prophetSongs: []
+    },
+    'wednesday': {
+        name: 'Wednesday | ረቡዕ',
+        dropdownLabel: 'Wednesday | ረቡዕ (61-80) [St. Yared, c. 6th century]',
+        psalms: Array.from({length: 20}, (_, i) => i + 61),
+        prophetSongs: []
+    },
+    'thursday': {
+        name: 'Thursday | ሐሙስ',
+        dropdownLabel: 'Thursday | ሐሙስ (81-110) [St. Yared, c. 6th century]',
+        psalms: Array.from({length: 30}, (_, i) => i + 81),
+        prophetSongs: []
+    },
+    'friday': {
+        name: 'Friday | ዓርብ',
+        dropdownLabel: 'Friday | ዓርብ (111-130) [St. Yared, c. 6th century]',
+        psalms: Array.from({length: 20}, (_, i) => i + 111),
+        prophetSongs: []
+    },
+    'saturday': {
+        name: 'Saturday | ቀዳሚት',
+        dropdownLabel: 'Saturday | ቀዳሚት (131-150, Song of Songs 1-5) [St. Yared, c. 6th century]',
+        psalms: Array.from({length: 20}, (_, i) => i + 131),
+        prophetSongs: ['songOfSongs']
+    },
+    'sunday': {
+        name: 'Sunday | እሁድ',
+        dropdownLabel: 'Sunday | እሁድ (Songs of the Prophets: Moses, Hannah, Hezekiah, Manasseh, Three Youths, Habakkuk, Isaiah, Mary, Zachariah, Simeon, Jonah) [St. Yared, c. 6th century]',
+        psalms: [],
+        prophetSongs: [
+            'firstSongOfMoses',
+            'secondSongOfMoses',
+            'thirdSongOfMoses',
+            'prayerOfHannah',
+            'prayerOfHezekiah',
+            'prayerOfManasseh',
+            'firstPrayerOfThreeYouths',
+            'secondPrayerOfThreeYouths',
+            'thirdPrayerOfThreeYouths',
+            'prayerOfHabakkuk',
+            'prayerOfIsaiah',
+            'prayerOfMary',
+            'songOfZachariah',
+            'prayerOfSimeon',
+            'prayerOfJonah'
+        ]
     }
 };
 const prophetSongsSelectorContainer = document.getElementById('prophet-songs-selector-container');
@@ -4621,19 +4685,34 @@ psalmSelectorContainer.addEventListener('change', (event) => {
 psalmCombinationsSelect.addEventListener('change', () => {
     const comboKey = psalmCombinationsSelect.value;
     if (comboKey && PSALM_COMBINATIONS[comboKey]) {
-        selectedPsalms = [...PSALM_COMBINATIONS[comboKey].psalms];
-        // Update checkboxes
-        const checkboxes = psalmSelectorContainer.querySelectorAll('input[type="checkbox"]');
-        checkboxes.forEach(cb => {
+        const combo = PSALM_COMBINATIONS[comboKey];
+        
+        // Update Psalms
+        selectedPsalms = [...(combo.psalms || [])];
+        const psalmCheckboxes = psalmSelectorContainer.querySelectorAll('input[type="checkbox"]');
+        psalmCheckboxes.forEach(cb => {
             cb.checked = selectedPsalms.includes(Number(cb.value));
         });
-        // Check "Select All" if all 150 are selected (unlikely for a preset but for completeness)
-        const selectAllCheckbox = document.getElementById('select-all-psalms');
-        if (selectAllCheckbox) {
-            selectAllCheckbox.checked = selectedPsalms.length === 150;
+        const selectAllPsalmCheckbox = document.getElementById('select-all-psalms');
+        if (selectAllPsalmCheckbox) {
+            selectAllPsalmCheckbox.checked = selectedPsalms.length === 150;
+        }
+        updatePsalmSummary();
+
+        // Update Prophet Songs
+        if (combo.prophetSongs !== undefined) {
+            selectedProphetSongs = [...combo.prophetSongs];
+            const prophetCheckboxes = prophetSongsSelectorContainer.querySelectorAll('input[type="checkbox"]');
+            prophetCheckboxes.forEach(cb => {
+                cb.checked = selectedProphetSongs.includes(cb.value);
+            });
+            const selectAllProphetCheckbox = document.getElementById('select-all-prophet-songs');
+            if (selectAllProphetCheckbox) {
+                selectAllProphetCheckbox.checked = selectedProphetSongs.length === prophetSongs.length;
+            }
+            updateProphetSongsSummary();
         }
 
-        updatePsalmSummary();
         saveSettings();
         smoothRender();
     }
@@ -4644,7 +4723,11 @@ psalmCombinationsSelect.addEventListener('mousedown', () => {
     for (let opt of psalmCombinationsSelect.options) {
         const combo = PSALM_COMBINATIONS[opt.value];
         if (combo) {
-            opt.text = `${combo.name} (${combo.psalms.join(', ')})`;
+            if (combo.dropdownLabel) {
+                opt.text = combo.dropdownLabel;
+            } else {
+                opt.text = `${combo.name} (${(combo.psalms || []).join(', ')})`;
+            }
         }
     }
 });
