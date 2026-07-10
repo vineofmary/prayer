@@ -115,49 +115,49 @@ const PSALM_COMBINATIONS = {
     },
     'all': {
         name: 'All | ኵሉ',
-        dropdownLabel: 'All | ኵሉ (1-150) [Desert Fathers, c. 4th century]',
+        dropdownLabel: 'All | ኵሉ (1-150)',
         psalms: Array.from({length: 150}, (_, i) => i + 1),
         prophetSongs: []
     },
     'monday': {
         name: 'Monday | ሰኑይ',
-        dropdownLabel: 'Monday | ሰኑይ (1-30) [St. Yared, c. 6th century]',
+        dropdownLabel: 'Monday | ሰኑይ (1-30)',
         psalms: Array.from({length: 30}, (_, i) => i + 1),
         prophetSongs: []
     },
     'tuesday': {
         name: 'Tuesday | ሠሉስ',
-        dropdownLabel: 'Tuesday | ሠሉስ (31-60) [St. Yared, c. 6th century]',
+        dropdownLabel: 'Tuesday | ሠሉስ (31-60)',
         psalms: Array.from({length: 30}, (_, i) => i + 31),
         prophetSongs: []
     },
     'wednesday': {
         name: 'Wednesday | ረቡዕ',
-        dropdownLabel: 'Wednesday | ረቡዕ (61-80) [St. Yared, c. 6th century]',
+        dropdownLabel: 'Wednesday | ረቡዕ (61-80)',
         psalms: Array.from({length: 20}, (_, i) => i + 61),
         prophetSongs: []
     },
     'thursday': {
         name: 'Thursday | ሐሙስ',
-        dropdownLabel: 'Thursday | ሐሙስ (81-110) [St. Yared, c. 6th century]',
+        dropdownLabel: 'Thursday | ሐሙስ (81-110)',
         psalms: Array.from({length: 30}, (_, i) => i + 81),
         prophetSongs: []
     },
     'friday': {
         name: 'Friday | ዓርብ',
-        dropdownLabel: 'Friday | ዓርብ (111-130) [St. Yared, c. 6th century]',
+        dropdownLabel: 'Friday | ዓርብ (111-130)',
         psalms: Array.from({length: 20}, (_, i) => i + 111),
         prophetSongs: []
     },
     'saturday': {
         name: 'Saturday | ቀዳሚት',
-        dropdownLabel: 'Saturday | ቀዳሚት (131-150, Song of Songs 1-5) [St. Yared, c. 6th century]',
+        dropdownLabel: 'Saturday | ቀዳሚት (131-150, Song of Songs 1-5)',
         psalms: Array.from({length: 20}, (_, i) => i + 131),
         prophetSongs: ['songOfSongs']
     },
     'sunday': {
         name: 'Sunday | እሁድ',
-        dropdownLabel: 'Sunday | እሁድ (Songs of the Prophets: Moses, Hannah, Hezekiah, Manasseh, Three Youths, Habakkuk, Isaiah, Mary, Zachariah, Simeon, Jonah) [St. Yared, c. 6th century]',
+        dropdownLabel: 'Sunday | እሁድ (Songs of the Prophets: Moses, Hannah, Hezekiah, Manasseh, Three Youths, Habakkuk, Isaiah, Mary, Zachariah, Simeon, Jonah)',
         psalms: [],
         prophetSongs: [
             'firstSongOfMoses',
@@ -179,49 +179,49 @@ const PSALM_COMBINATIONS = {
     },
     'dawn': {
         name: 'Dawn (1st Hour) | ነግህ',
-        dropdownLabel: 'Dawn (1st Hour) | Negih | ነግህ (62, 50, 112, 110, 99, Prayer of Zachariah the Prophet) [Echegé Gebre-Giyorgis & Scholars, 1938 AD]',
+        dropdownLabel: 'Dawn (1st Hour) | Negih | ነግህ (62, 50, 112, 110, 99, Prayer of Zachariah)',
         psalms: [62, 50, 112, 110, 99],
         prophetSongs: ['songOfZachariah']
     },
     'sunset': {
         name: 'Sunset (11th Hour) | ሠርክ',
-        dropdownLabel: 'Sunset (11th Hour) | Serk | ሠርክ (23, 140, 14, 145, 66, Prayer of Simeon the Elder) [Echegé Gebre-Giyorgis & Scholars, 1938 AD]',
+        dropdownLabel: 'Sunset (11th Hour) | Serk | ሠርክ (23, 140, 14, 145, 66, Prayer of Simeon)',
         psalms: [23, 140, 14, 145, 66],
         prophetSongs: ['prayerOfSimeon']
     },
     'nativity': {
         name: 'Nativity | ልደት',
-        dropdownLabel: 'Nativity | Lidet | ልደት (19, 45, 85, 89, 110, 132) [Echegé Gebre-Giyorgis & Scholars, 1938 AD]',
+        dropdownLabel: 'Nativity | Lidet | ልደት (19, 45, 85, 89, 110, 132)',
         psalms: [19, 45, 85, 89, 110, 132],
         prophetSongs: []
     },
     'baptism': {
         name: 'Baptism | ጥምቀት',
-        dropdownLabel: 'Baptism | Timqet | ጥምቀት (42, 77, 114, 74, 85, 118) [Echegé Gebre-Giyorgis & Scholars, 1938 AD]',
+        dropdownLabel: 'Baptism | Timqet | ጥምቀት (42, 77, 114, 74, 85, 118)',
         psalms: [42, 77, 114, 74, 85, 118],
         prophetSongs: []
     },
     'crucifixion': {
         name: 'Crucifixion | ስቅለት',
-        dropdownLabel: 'Crucifixion | Siqlet | ስቅለት (22, 40, 54, 69, 88) [Echegé Gebre-Giyorgis & Scholars, 1938 AD]',
+        dropdownLabel: 'Crucifixion | Siqlet | ስቅለት (22, 40, 54, 69, 88)',
         psalms: [22, 40, 54, 69, 88],
         prophetSongs: []
     },
     'resurrection': {
         name: 'Resurrection | ትንሥኤ',
-        dropdownLabel: 'Resurrection | Tinsaie | ትንሥኤ (2, 57, 111, 113, 114, 118) [Echegé Gebre-Giyorgis & Scholars, 1938 AD]',
+        dropdownLabel: 'Resurrection | Tinsaie | ትንሥኤ (2, 57, 111, 113, 114, 118)',
         psalms: [2, 57, 111, 113, 114, 118],
         prophetSongs: []
     },
     'ascension': {
         name: 'Ascension | እርገት',
-        dropdownLabel: 'Ascension | Irget | እርገት (8, 15, 21, 24, 47, 108) [Echegé Gebre-Giyorgis & Scholars, 1938 AD]',
+        dropdownLabel: 'Ascension | Irget | እርገት (8, 15, 21, 24, 47, 108)',
         psalms: [8, 15, 21, 24, 47, 108],
         prophetSongs: []
     },
     'pentecost': {
         name: 'Pentecost | ጰራቅሊቶስ',
-        dropdownLabel: 'Pentecost | Peraqlitos | ጰራቅሊቶስ (48, 68, 104, 145) [Echegé Gebre-Giyorgis & Scholars, 1938 AD]',
+        dropdownLabel: 'Pentecost | Peraqlitos | ጰራቅሊቶስ (48, 68, 104, 145)',
         psalms: [48, 68, 104, 145],
         prophetSongs: []
     }
