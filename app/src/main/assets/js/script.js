@@ -176,6 +176,54 @@ const PSALM_COMBINATIONS = {
             'prayerOfSimeon',
             'prayerOfJonah'
         ]
+    },
+    'dawn': {
+        name: 'Dawn (1st Hour) | ነግህ',
+        dropdownLabel: 'Dawn (1st Hour) | Negih | ነግህ (62, 50, 112, 110, 99, Prayer of Zachariah the Prophet) [Echegé Gebre-Giyorgis & Scholars, 1938 AD]',
+        psalms: [62, 50, 112, 110, 99],
+        prophetSongs: ['songOfZachariah']
+    },
+    'sunset': {
+        name: 'Sunset (11th Hour) | ሠርክ',
+        dropdownLabel: 'Sunset (11th Hour) | Serk | ሠርክ (23, 140, 14, 145, 66, Prayer of Simeon the Elder) [Echegé Gebre-Giyorgis & Scholars, 1938 AD]',
+        psalms: [23, 140, 14, 145, 66],
+        prophetSongs: ['prayerOfSimeon']
+    },
+    'nativity': {
+        name: 'Nativity | ልደት',
+        dropdownLabel: 'Nativity | Lidet | ልደት (19, 45, 85, 89, 110, 132) [Echegé Gebre-Giyorgis & Scholars, 1938 AD]',
+        psalms: [19, 45, 85, 89, 110, 132],
+        prophetSongs: []
+    },
+    'baptism': {
+        name: 'Baptism | ጥምቀት',
+        dropdownLabel: 'Baptism | Timqet | ጥምቀት (42, 77, 114, 74, 85, 118) [Echegé Gebre-Giyorgis & Scholars, 1938 AD]',
+        psalms: [42, 77, 114, 74, 85, 118],
+        prophetSongs: []
+    },
+    'crucifixion': {
+        name: 'Crucifixion | ስቅለት',
+        dropdownLabel: 'Crucifixion | Siqlet | ስቅለት (22, 40, 54, 69, 88) [Echegé Gebre-Giyorgis & Scholars, 1938 AD]',
+        psalms: [22, 40, 54, 69, 88],
+        prophetSongs: []
+    },
+    'resurrection': {
+        name: 'Resurrection | ትንሥኤ',
+        dropdownLabel: 'Resurrection | Tinsaie | ትንሥኤ (2, 57, 111, 113, 114, 118) [Echegé Gebre-Giyorgis & Scholars, 1938 AD]',
+        psalms: [2, 57, 111, 113, 114, 118],
+        prophetSongs: []
+    },
+    'ascension': {
+        name: 'Ascension | እርገት',
+        dropdownLabel: 'Ascension | Irget | እርገት (8, 15, 21, 24, 47, 108) [Echegé Gebre-Giyorgis & Scholars, 1938 AD]',
+        psalms: [8, 15, 21, 24, 47, 108],
+        prophetSongs: []
+    },
+    'pentecost': {
+        name: 'Pentecost | ጰራቅሊቶስ',
+        dropdownLabel: 'Pentecost | Peraqlitos | ጰራቅሊቶስ (48, 68, 104, 145) [Echegé Gebre-Giyorgis & Scholars, 1938 AD]',
+        psalms: [48, 68, 104, 145],
+        prophetSongs: []
     }
 };
 const prophetSongsSelectorContainer = document.getElementById('prophet-songs-selector-container');
