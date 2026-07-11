@@ -1,16 +1,16 @@
-const CACHE_NAME = 'divine-liturgy-cache-v15';
+const CACHE_NAME = 'divine-liturgy-cache-v18';
 const urlsToCache = [
   './',
   './index.html',
   './manifest.json',
-  './css/style.css?v=5',
-  './js/icons.js?v=5',
-  './js/prayers.js?v=5',
-  './js/songs.js?v=5',
-  './js/servants.js?v=5',
-  './js/kidase.js?v=5',
-  './js/typical_psalms.js?v=5',
-  './js/script.js?v=5',
+  './css/style.css?v=3',
+  './js/icons.js?v=9',
+  './js/prayers.js?v=9',
+  './js/songs.js?v=9',
+  './js/servants.js?v=9',
+  './js/kidase.js?v=9',
+  './js/typical_psalms.js?v=9',
+  './js/script.js?v=16',
   './icons/icon-192x192.png',
   './icons/icon-512x512.png',
   './bible/NKJV_New_King_James_English_Bible_1982AD.json',
@@ -42,7 +42,13 @@ self.addEventListener('fetch', event => {
 
   event.respondWith(
     caches.open(CACHE_NAME).then(cache => {
-      return cache.match(event.request, {ignoreSearch: true}).then(response => {
+      // Only ignore search query parameters for HTML and root requests,
+      // so versioned JS/CSS/JSON assets are correctly fetched when versions change.
+      const url = new URL(event.request.url);
+      const isHtmlOrRoot = url.pathname === '/' || url.pathname.endsWith('/index.html') || url.pathname === '' || !url.pathname.includes('.');
+      const options = isHtmlOrRoot ? { ignoreSearch: true } : {};
+
+      return cache.match(event.request, options).then(response => {
         const fetchPromise = fetch(event.request).then(networkResponse => {
           // If we got a valid response, update the cache
           if (networkResponse && networkResponse.status === 200) {

@@ -88,6 +88,10 @@ const closeEphremModal = document.getElementById('close-ephrem-modal');
 const eusebiusModal = document.getElementById('eusebius-modal');
 const eusebiusInfoBtn = document.getElementById('eusebius-info-btn');
 const closeEusebiusModal = document.getElementById('close-eusebius-modal');
+const psalmCombinationsBtn = document.getElementById('psalm-combinations-btn');
+const psalmCombinationsModal = document.getElementById('psalm-combinations-modal');
+const closePsalmCombinationsModal = document.getElementById('close-psalm-combinations-modal');
+const psalmCombinationsAccordion = document.getElementById('psalm-combinations-accordion');
 const scribeLoginModal = document.getElementById('scribe-login-modal');
 const scribeEditorModal = document.getElementById('scribe-editor-modal');
 const changelogModal = document.getElementById('changelog-modal');
@@ -107,7 +111,7 @@ const fontPreview = document.getElementById('font-preview');
 const psalmSelectorContainer = document.getElementById('psalm-selector-container');
 const psalmSummary = document.getElementById('psalm-summary');
 const clearPsalmsButton = document.getElementById('clear-psalms-button');
-const psalmCombinationsSelect = document.getElementById('psalm-combinations-select');
+// Old select removed
 const PSALM_COMBINATIONS = {
     'daily': {
         name: 'Daily Prayer',
@@ -316,6 +320,39 @@ const PSALM_COMBINATIONS = {
         prophetSongs: []
     }
 };
+
+const PSALM_CATEGORIES = [
+    {
+        id: 'general',
+        label: 'General Psalters',
+        items: ['daily']
+    },
+    {
+        id: 'desert_fathers',
+        label: 'Daily Psalter (Desert Fathers & Mothers, c. 4th century)',
+        items: ['all']
+    },
+    {
+        id: 'weekly',
+        label: 'Weekly Psalter (St. Yared of Aksum, c. 6th century)',
+        items: ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
+    },
+    {
+        id: 'nigus',
+        label: 'Nigus / Sibhat Psalter (St. Yared of Aksum, c. 6th century)',
+        items: ['nigus1', 'nigus2', 'nigus3', 'nigus4', 'nigus5', 'nigus6', 'nigus7', 'nigus8', 'nigus9', 'nigus10', 'nigus11', 'nigus12', 'nigus13', 'nigus14', 'nigus15']
+    },
+    {
+        id: 'hourly',
+        label: 'Hourly Psalters (Echegé Gebre-Giyorgis of Debre Libanos, 1938 AD)',
+        items: ['dawn', 'sunset']
+    },
+    {
+        id: 'feasts',
+        label: 'Feast Day Psalters (Echegé Gebre-Giyorgis of Debre Libanos, 1938 AD)',
+        items: ['nativity', 'baptism', 'crucifixion', 'resurrection', 'ascension', 'pentecost']
+    }
+];
 const prophetSongsSelectorContainer = document.getElementById('prophet-songs-selector-container');
 const prophetSongsSummary = document.getElementById('prophet-songs-summary');
 const clearProphetSongsButton = document.getElementById('clear-prophet-songs-button');
@@ -981,31 +1018,7 @@ function updatePsalmSummary() {
     } else {
         psalmSummary.textContent = 'Selected Psalms: None';
     }
-
-    // Sync Typical Psalm Combinations dropdown
-    let matchedCombination = "";
-    const sortedSelected = [...selectedPsalms].sort((a, b) => a - b).join(',');
-    for (const [key, combo] of Object.entries(PSALM_COMBINATIONS)) {
-        const sortedCombo = [...combo.psalms].sort((a, b) => a - b).join(',');
-        if (sortedSelected === sortedCombo) {
-            matchedCombination = key;
-            break;
-        }
-    }
-    if (psalmCombinationsSelect) {
-        psalmCombinationsSelect.value = matchedCombination;
-        // Shorten the selected text if a combination is matched
-        for (let opt of psalmCombinationsSelect.options) {
-            const combo = PSALM_COMBINATIONS[opt.value];
-            if (combo) {
-                if (opt.value === matchedCombination) {
-                    opt.text = combo.name;
-                } else {
-                    opt.text = `${combo.name} (${combo.psalms.join(', ')})`;
-                }
-            }
-        }
-    }
+    syncPsalmCombinationsButton();
 }
 
 function updateProphetSongsSummary() {
@@ -1020,6 +1033,41 @@ function updateProphetSongsSummary() {
         prophetSongsSummary.textContent = `Selected Songs: ${selectedAuthors.join(', ')}`;
     } else {
         prophetSongsSummary.textContent = 'Selected Songs: None';
+    }
+    syncPsalmCombinationsButton();
+}
+
+function syncPsalmCombinationsButton() {
+    let matchedCombination = "";
+    const sortedSelectedPsalms = [...selectedPsalms].sort((a, b) => a - b).join(',');
+    const sortedSelectedProphetSongs = [...selectedProphetSongs].sort().join(',');
+
+    if (selectedPsalms.length > 0 || selectedProphetSongs.length > 0) {
+        for (const [key, combo] of Object.entries(PSALM_COMBINATIONS)) {
+            const sortedComboPsalms = [...(combo.psalms || [])].sort((a, b) => a - b).join(',');
+            const sortedComboProphetSongs = [...(combo.prophetSongs || [])].sort().join(',');
+            
+            if (sortedSelectedPsalms === sortedComboPsalms && sortedSelectedProphetSongs === sortedComboProphetSongs) {
+                matchedCombination = key;
+                break;
+            }
+        }
+    }
+    if (psalmCombinationsBtn) {
+        if (matchedCombination && PSALM_COMBINATIONS[matchedCombination]) {
+            psalmCombinationsBtn.textContent = PSALM_COMBINATIONS[matchedCombination].name;
+        } else {
+            psalmCombinationsBtn.textContent = 'Typical Psalm Combinations...';
+        }
+        
+        // Update selected state in the modal
+        document.querySelectorAll('.combo-option').forEach(opt => {
+            if (opt.dataset.value === matchedCombination) {
+                opt.classList.add('selected');
+            } else {
+                opt.classList.remove('selected');
+            }
+        });
     }
 }
 
@@ -1511,7 +1559,7 @@ async function loadSettings() {
         isKidaseModeActive = defaultSettings.isKidaseModeActive;
         selectedAnaphora = defaultSettings.selectedAnaphora;
         selectedCovenantPrayer = defaultSettings.selectedCovenantPrayer;
-        quietPrayersVisibility = defaultSettings.quietPrayersVisibility;
+        hideQuietPrayers = defaultSettings.hideQuietPrayers;
         customNames = defaultSettings.customNames; // Use defaults
         collapsedSections = defaultSettings.collapsedSections;
     } else {
@@ -1577,6 +1625,7 @@ async function loadSettings() {
     checkAndEnforceLayoutRules();
     updateAllTogglesInSettingsPanel();
     populatePsalmSelector();
+    renderPsalmCombinationsModal();
     populateProphetSongsSelector();
     renderPrayers();
 }
@@ -4820,8 +4869,84 @@ psalmSelectorContainer.addEventListener('change', (event) => {
     }
 });
 
-psalmCombinationsSelect.addEventListener('change', () => {
-    const comboKey = psalmCombinationsSelect.value;
+// --- Custom Psalm Combinations Modal Logic ---
+function renderPsalmCombinationsModal() {
+    if (!psalmCombinationsAccordion) return;
+    psalmCombinationsAccordion.innerHTML = '';
+    
+    PSALM_CATEGORIES.forEach(category => {
+        const itemDiv = document.createElement('div');
+        itemDiv.className = 'accordion-item';
+        
+        const headerDiv = document.createElement('div');
+        headerDiv.className = 'accordion-header';
+        headerDiv.innerHTML = `<span>${category.label}</span><span class="accordion-icon">▼</span>`;
+        
+        const contentDiv = document.createElement('div');
+        contentDiv.className = 'accordion-content';
+        
+        const innerDiv = document.createElement('div');
+        innerDiv.className = 'accordion-content-inner';
+        
+        category.items.forEach(comboKey => {
+            const combo = PSALM_COMBINATIONS[comboKey];
+            if (!combo) return;
+            
+            // Format dropdown label for rich display
+            const parts = combo.dropdownLabel ? combo.dropdownLabel.split(' | ') : [combo.name];
+            const title = parts[0];
+            const metaParts = parts.length > 1 ? parts[parts.length - 1].split(' (') : [];
+            const englishTranslation = metaParts[0] || '';
+            const chapters = metaParts.length > 1 ? `(${metaParts[1]}` : (combo.psalms.length > 0 ? `(${combo.psalms[0]}-${combo.psalms[combo.psalms.length-1]})` : '(Songs of the Prophets)');
+            
+            const geezTitle = parts.length > 2 ? parts[1] : '';
+
+            const optionDiv = document.createElement('div');
+            optionDiv.className = 'combo-option';
+            optionDiv.dataset.value = comboKey;
+            
+            optionDiv.innerHTML = `
+                <div class="combo-header-row">
+                    <span class="combo-title">${title}</span>
+                    <span class="combo-chapters">${chapters}</span>
+                </div>
+                ${geezTitle ? `<span class="combo-subtitle">${geezTitle}</span>` : ''}
+                ${englishTranslation ? `<span class="combo-translation">${englishTranslation}</span>` : ''}
+            `;
+            
+            optionDiv.addEventListener('click', () => {
+                selectPsalmCombination(comboKey);
+                closeModal();
+            });
+            
+            innerDiv.appendChild(optionDiv);
+        });
+        
+        contentDiv.appendChild(innerDiv);
+        itemDiv.appendChild(headerDiv);
+        itemDiv.appendChild(contentDiv);
+        
+        // Accordion toggle logic
+        headerDiv.addEventListener('click', () => {
+            const isActive = itemDiv.classList.contains('active');
+            
+            // Close all other accordions
+            document.querySelectorAll('.accordion-item').forEach(item => {
+                item.classList.remove('active');
+                item.querySelector('.accordion-content').style.maxHeight = null;
+            });
+            
+            if (!isActive) {
+                itemDiv.classList.add('active');
+                contentDiv.style.maxHeight = contentDiv.scrollHeight + "px";
+            }
+        });
+        
+        psalmCombinationsAccordion.appendChild(itemDiv);
+    });
+}
+
+function selectPsalmCombination(comboKey) {
     if (comboKey && PSALM_COMBINATIONS[comboKey]) {
         const combo = PSALM_COMBINATIONS[comboKey];
         
@@ -4854,28 +4979,32 @@ psalmCombinationsSelect.addEventListener('change', () => {
         saveSettings();
         smoothRender();
     }
-});
+}
 
-// Restore full text with psalm numbers when the user clicks the dropdown to see options
-psalmCombinationsSelect.addEventListener('mousedown', () => {
-    for (let opt of psalmCombinationsSelect.options) {
-        const combo = PSALM_COMBINATIONS[opt.value];
-        if (combo) {
-            if (combo.dropdownLabel) {
-                opt.text = combo.dropdownLabel;
-            } else {
-                opt.text = `${combo.name} (${(combo.psalms || []).join(', ')})`;
-            }
-        }
-    }
-});
+// Modal open/close listeners
+if (psalmCombinationsBtn) {
+    psalmCombinationsBtn.addEventListener('click', () => {
+        console.log('psalmCombinationsBtn clicked!');
+        console.log('psalmCombinationsModal:', psalmCombinationsModal);
+        openModal(psalmCombinationsModal);
+        // Ensure backdrop is under this modal (openModal handles basic display)
+        modalBackdrop.style.zIndex = '1000'; 
+        psalmCombinationsModal.style.zIndex = '1001';
+    });
+}
+
+if (closePsalmCombinationsModal) {
+    closePsalmCombinationsModal.addEventListener('click', () => {
+        closeModal();
+    });
+}
 
 clearPsalmsButton.addEventListener('click', () => {
     selectedPsalms = [];
     document.querySelectorAll('#psalm-selector-container input[type="checkbox"]').forEach(checkbox => {
         checkbox.checked = false;
     });
-    if (psalmCombinationsSelect) psalmCombinationsSelect.value = "";
+    if (psalmCombinationsBtn) psalmCombinationsBtn.textContent = 'Typical Psalm Combinations...';
     updatePsalmSummary();
     saveSettings();
     renderPrayers();

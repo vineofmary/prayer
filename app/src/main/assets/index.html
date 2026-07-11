@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mount of Mercy</title>
-    <link rel="stylesheet" href="css/style.css?v=2">
+    <link rel="stylesheet" href="css/style.css?v=3">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Abyssinica+SIL&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Lato&family=Roboto&display=swap"
@@ -204,53 +204,7 @@
                             </button>
                         </div>
                         <div id="psalm-selector-container"></div>
-                        <select id="psalm-combinations-select" class="settings-select">
-                            <option value="">Typical Psalm Combinations...</option>
-                            <optgroup label="General Psalters">
-                                <option value="daily">Daily Prayer (12, 15, 22, 50, 90, 102, 135)</option>
-                            </optgroup>
-                            <optgroup label="Daily Psalter (Desert Fathers & Mothers, c. 4th century)">
-                                <option value="all">All | ኵሉ (1-150)</option>
-                            </optgroup>
-                            <optgroup label="Weekly Psalter (St. Yared of Aksum, c. 6th century)">
-                                <option value="monday">Monday | ሰኑይ (1-30)</option>
-                                <option value="tuesday">Tuesday | ሠሉስ (31-60)</option>
-                                <option value="wednesday">Wednesday | ረቡዕ (61-80)</option>
-                                <option value="thursday">Thursday | ሐሙስ (81-110)</option>
-                                <option value="friday">Friday | ዓርብ (111-130)</option>
-                                <option value="saturday">Saturday | ቀዳሚት (131-150, Song of Songs 1-5)</option>
-                                <option value="sunday">Sunday | እሁድ (Songs of the Prophets)</option>
-                            </optgroup>
-                            <optgroup label="Nigus / Sibhat Psalter (St. Yared of Aksum, c. 6th century)">
-                                <option value="nigus1">Nigus #1: Fikarie Zetsadiqan Wezehatian… | ፍካሬ ዘጻድቃን ወዘኃጥኣን… | The exposition of the righteous and of the sinners… (1-10)</option>
-                                <option value="nigus2">Nigus #2: Adihineni Egzio… | አድኅነኒ እግዚኦ… | Help, Lord… (11-20)</option>
-                                <option value="nigus3">Nigus #3: Amlakiye Amlakiye… | አምላኪየ አምላኪየ… | My God, My God… (21-30)</option>
-                                <option value="nigus4">Nigus #4: Bitsuan Ele… | ብፁዓን እለ… | Blessed are those… (31-40)</option>
-                                <option value="nigus5">Nigus #5: Keme Yafeqir Hayel… | ከመ ያፈቅር ኀየል… | As the deer pants… (41-50)</option>
-                                <option value="nigus6">Nigus #6: Lemint Yiziehar… | ለምንት ይዜኃር… | Why do you boast… (51-60)</option>
-                                <option value="nigus7">Nigus #7: Akonu LeEgziabihier Tigeni Nefsiye… | አኮኑ ለእግዚአብሔር ትገኒ ነፍስየ… | Truly… (61-70)</option>
-                                <option value="nigus8">Nigus #8: Egzio Kuneneke Habo LeNigus… | እግዚኦ ኵነኔከ ሀቦ ለንጉሥ… | Give the king Your judgments, O God… (71-80)</option>
-                                <option value="nigus9">Nigus #9: Egziabihier Qome… | እግዚአብሔር ቆመ… | God stands… (81-90)</option>
-                                <option value="nigus10">Nigus #10: Yihieyis Teamino BeEgziabihier… | ይኄይስ ተአምኖ በእግዚአብሔር… | It is good to give thanks to the Lord… (91-100)</option>
-                                <option value="nigus11">Nigus #11: Simeani Egzio Tselotiye… | ስምዓኒ እግዚኦ ጸሎትየ… | Hear my prayer, O Lord… (101-110)</option>
-                                <option value="nigus12">Nigus #12: Bitsui Beisi Zeyiferho LeEgziabihier… | ብፁዕ ብእሲ ዘይፈርሆ ለእግዚአብሔር… | Blessed is the man who fears the Lord… (111-120)</option>
-                                <option value="nigus13">Nigus #13: Tefesahiku Isme Yibeluni… | ተፈሣሕኩ እስመ ይቤሉኒ… | I was glad when they said to me… (121-130)</option>
-                                <option value="nigus14">Nigus #14: Tezekero Egzio LeDawit… | ተዘከሮ እግዚኦ ለዳዊት… | Lord, remember David… (131-140)</option>
-                                <option value="nigus15">Nigus #15: Qaliye Habe Egziabihier Tserahku… | ቃልየ ኀበ እግዚአብሔር ጸራኅኩ… | I cry out to the Lord with my voice… (141-150)</option>
-                            </optgroup>
-                            <optgroup label="Hourly Psalters (Echegé Gebre-Giyorgis of Debre Libanos, 1938 AD)">
-                                <option value="dawn">Dawn (1st Hour) | Negih | ነግህ (62, 50, 112, 110, 99, Prayer of Zachariah)</option>
-                                <option value="sunset">Sunset (11th Hour) | Serk | ሠርክ (23, 140, 14, 145, 66, Prayer of Simeon)</option>
-                            </optgroup>
-                            <optgroup label="Feast Day Psalters (Echegé Gebre-Giyorgis of Debre Libanos, 1938 AD)">
-                                <option value="nativity">Nativity | Lidet | ልደት (19, 45, 85, 89, 110, 132)</option>
-                                <option value="baptism">Baptism | Timqet | ጥምቀት (42, 77, 114, 74, 85, 118)</option>
-                                <option value="crucifixion">Crucifixion | Siqlet | ስቅለት (22, 40, 54, 69, 88)</option>
-                                <option value="resurrection">Resurrection | Tinsaie | ትንሥኤ (2, 57, 111, 113, 114, 118)</option>
-                                <option value="ascension">Ascension | Irget | እርገት (8, 15, 21, 24, 47, 108)</option>
-                                <option value="pentecost">Pentecost | Peraqlitos | ጰራቅሊቶስ (48, 68, 104, 145)</option>
-                            </optgroup>
-                        </select>
+                        <button id="psalm-combinations-btn" class="settings-button">Typical Psalm Combinations...</button>
 
                         <div id="psalm-summary" class="settings-summary"></div>
                         <button id="clear-psalms-button" class="settings-button">Clear Psalms</button>
@@ -888,7 +842,7 @@
                 <p>Enter your credentials to enter the Scribe's Chamber.</p>
                 <form class="scribe-login-form" id="scribe-login-form">
                     <input type="email" id="scribe-email" placeholder="Email" required>
-                    <input type="password" id="scribe-password" placeholder="Password" required>
+                    <input type="password" id="scribe-password" placeholder="Password" required autocomplete="current-password">
                     <button type="submit" id="scribe-login-btn">Login</button>
                     <p id="scribe-login-error" class="error-text hidden"></p>
                 </form>
@@ -1124,6 +1078,18 @@
             </div>
         </div>
 
+        <div id="psalm-combinations-modal" class="modal">
+            <div class="modal-content psalm-combinations-content">
+                <div class="psalm-combinations-header">
+                    <h2>Typical Psalm Combinations</h2>
+                    <span class="close-button" id="close-psalm-combinations-modal">&times;</span>
+                </div>
+                <div id="psalm-combinations-accordion" class="psalm-combinations-body">
+                    <!-- Dynamically populated by JS -->
+                </div>
+            </div>
+        </div>
+
         <div id="changelog-modal" class="modal">
             <div class="modal-content changelog-content">
                 <span class="close-button" id="close-changelog-modal">&times;</span>
@@ -1156,7 +1122,7 @@
     <script src="js/servants.js?v=9"></script>
     <script src="js/kidase.js?v=9"></script>
     <script src="js/typical_psalms.js?v=9"></script>
-    <script src="js/script.js?v=15"></script>
+    <script src="js/script.js?v=16"></script>
 </body>
 
 </html>

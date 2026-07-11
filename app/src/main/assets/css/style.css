@@ -2756,3 +2756,161 @@ body.presentation-mode-slides .hareg-ornament {
     color: var(--accent-color);
     font-size: 1.1rem;
 }
+
+/* Psalm Combinations Modal & Accordion Styles */
+.psalm-combinations-content {
+    max-width: 650px;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    max-height: 90vh;
+}
+
+.psalm-combinations-header {
+    padding: 1.5rem 2rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    background-color: var(--hover-color);
+}
+
+.psalm-combinations-header h2 {
+    margin: 0;
+    font-size: 1.4rem;
+    color: var(--accent-color);
+}
+
+.psalm-combinations-header .close-button {
+    font-size: 2rem;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    color: var(--speaker-label-color);
+    transition: color var(--transition-speed);
+}
+
+.psalm-combinations-header .close-button:hover {
+    color: var(--text-color);
+}
+
+.psalm-combinations-body {
+    padding: 1.5rem 2rem;
+    overflow-y: auto;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.accordion-item {
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background-color: var(--card-background);
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+}
+
+.accordion-item:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.25rem;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: var(--hover-color);
+    color: var(--text-color);
+    transition: background-color var(--transition-speed);
+    user-select: none;
+}
+
+.accordion-header:hover {
+    background-color: var(--border-color);
+}
+
+.accordion-icon {
+    font-size: 0.75rem;
+    transition: transform 0.3s ease;
+    opacity: 0.7;
+}
+
+.accordion-item.active .accordion-icon {
+    transform: rotate(180deg);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: var(--card-background);
+}
+
+.accordion-content-inner {
+    padding: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.combo-option {
+    padding: 0.85rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid var(--border-color);
+    background-color: var(--hover-color);
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.combo-option:hover {
+    background-color: var(--card-background);
+    border-color: var(--accent-color);
+    transform: translateY(-1px);
+}
+
+.combo-option:active {
+    transform: translateY(0);
+}
+
+.combo-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.combo-title {
+    font-weight: bold;
+    color: var(--accent-color);
+    font-size: 0.95rem;
+}
+
+.combo-chapters {
+    font-size: 0.8rem;
+    color: var(--text-color);
+    opacity: 0.7;
+    font-style: italic;
+    white-space: nowrap;
+}
+
+.combo-subtitle {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    margin-top: 0.1rem;
+}
+
+.combo-translation {
+    font-size: 0.78rem;
+    color: var(--text-color);
+    opacity: 0.65;
+    font-style: italic;
+    line-height: 1.3;
+}
