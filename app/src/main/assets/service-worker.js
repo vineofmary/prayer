@@ -1,16 +1,16 @@
-const CACHE_NAME = 'divine-liturgy-cache-v22';
+const CACHE_NAME = 'divine-liturgy-cache-v24';
 const urlsToCache = [
   './',
   './index.html',
   './manifest.json',
-  './css/style.css?v=6',
+  './css/style.css?v=7',
   './js/icons.js?v=9',
   './js/prayers.js?v=9',
   './js/songs.js?v=9',
   './js/servants.js?v=9',
   './js/kidase.js?v=9',
   './js/typical_psalms.js?v=9',
-  './js/script.js?v=18',
+  './js/script.js?v=19',
   './icons/icon-192x192.png',
   './icons/icon-512x512.png',
   './bible/NKJV_New_King_James_English_Bible_1982AD.json',

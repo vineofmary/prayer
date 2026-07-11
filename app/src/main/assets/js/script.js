@@ -4909,18 +4909,19 @@ function renderPsalmCombinationsModal() {
             
             let translit = '';
             let geezTitle = '';
-            let chapters = '';
+            let chaptersText = '';
 
+            let rawChapters = '';
             if (parts.length === 3) {
                 translit = parts[1];
                 const geezAndChapters = parts[2].split(' (');
                 geezTitle = geezAndChapters[0];
-                chapters = geezAndChapters.length > 1 ? `(${geezAndChapters[1]}` : '';
+                rawChapters = geezAndChapters.length > 1 ? geezAndChapters[1] : '';
             } else if (parts.length === 2) {
                 // If it's "Title | Ge'ez (Chapters)"
                 const geezAndChapters = parts[1].split(' (');
                 geezTitle = geezAndChapters[0];
-                chapters = geezAndChapters.length > 1 ? `(${geezAndChapters[1]}` : '';
+                rawChapters = geezAndChapters.length > 1 ? geezAndChapters[1] : '';
             } else {
                 // Fallback if no dropdownLabel or standard split
                 const nameParts = combo.name.split(' | ');
@@ -4930,9 +4931,23 @@ function renderPsalmCombinationsModal() {
                 const last = combo.psalms[combo.psalms.length - 1];
                 const isContiguous = combo.psalms.length === (last - first + 1);
                 
-                chapters = combo.psalms.length > 0 
-                    ? (isContiguous ? `(${first}-${last})` : `(${combo.psalms.join(', ')})`) 
-                    : '(Songs of the Prophets)';
+                rawChapters = combo.psalms.length > 0 
+                    ? (isContiguous ? `${first}-${last}` : `${combo.psalms.join(', ')}`) 
+                    : 'Songs of the Prophets';
+            }
+
+            // Remove trailing ')' if present
+            if (rawChapters.endsWith(')')) {
+                rawChapters = rawChapters.slice(0, -1);
+            }
+
+            // Format chapters string
+            if (rawChapters) {
+                if (rawChapters === 'Songs of the Prophets') {
+                    chaptersText = rawChapters;
+                } else {
+                    chaptersText = `Psalms ${rawChapters}`;
+                }
             }
 
             const optionDiv = document.createElement('div');
@@ -4942,7 +4957,7 @@ function renderPsalmCombinationsModal() {
             optionDiv.innerHTML = `
                 <div class="combo-header-row">
                     <span class="combo-title">${title}</span>
-                    <span class="combo-chapters">${chapters}</span>
+                    <span class="combo-chapters">${chaptersText}</span>
                 </div>
                 ${geezTitle ? `<span class="combo-geez ethiopic-label">${geezTitle}</span>` : ''}
                 ${translit ? `<span class="combo-translit">${translit}</span>` : ''}
