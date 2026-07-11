@@ -2954,6 +2954,163 @@ body.presentation-mode-slides .hareg-ornament {
     background-color: var(--card-background);
 }
 
+/* Typical Liturgy Psalms Modal Styles */
+.typical-psalms-modal-content {
+    max-width: 650px;
+    padding: 0;
+    overflow-y: auto;
+    max-height: 80vh;
+    max-height: 80dvh;
+    display: block;
+}
+
+.typical-psalms-modal-header {
+    padding: 1.5rem 2rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    background-color: var(--hover-color);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.typical-psalms-modal-header h2 {
+    margin: 0;
+    font-size: 1.4rem;
+    color: var(--accent-color);
+}
+
+.typical-psalms-modal-header .close-button {
+    font-size: 2rem;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    color: var(--speaker-label-color);
+    transition: color var(--transition-speed);
+    cursor: pointer;
+}
+
+.typical-psalms-modal-header .close-button:hover {
+    color: var(--text-color);
+}
+
+.typical-psalms-modal-instructions {
+    padding: 1rem 2rem 0.5rem;
+    font-size: 0.85rem;
+    line-height: 1.45;
+    color: var(--text-color);
+    opacity: 0.8;
+    border-bottom: 1px solid var(--border-color);
+    background-color: var(--card-background);
+}
+
+.typical-psalms-modal-body {
+    padding: 1.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.typical-psalm-option {
+    padding: 0.85rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background-color: var(--card-background);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.typical-psalm-option:hover {
+    background-color: var(--hover-color);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.typical-psalm-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.typical-psalm-left {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    flex: 1;
+}
+
+.typical-psalm-right {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    align-items: flex-end;
+    flex-shrink: 0;
+    text-align: right;
+}
+
+.typical-psalm-phonetic {
+    font-weight: bold;
+    color: var(--accent-color);
+    font-size: 0.95rem;
+}
+
+.typical-psalm-geez {
+    font-size: 0.95rem;
+    color: var(--text-color);
+}
+
+.typical-psalm-ref-nkjv,
+.typical-psalm-ref-lxx {
+    font-size: 0.75rem;
+    color: var(--text-color);
+    opacity: 0.7;
+    font-style: italic;
+}
+
+.typical-psalm-ref-geez {
+    font-size: 0.8rem;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+/* Chant selection button — two-line display when active */
+.typical-psalms-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    text-align: left;
+    height: auto;
+    min-height: 2.4rem;
+    line-height: 1.35;
+}
+
+.typical-psalms-btn .chant-btn-phonetic {
+    font-weight: 600;
+    font-size: 0.88rem;
+}
+
+.typical-psalms-btn .chant-btn-geez {
+    font-size: 0.82rem;
+    opacity: 0.8;
+    margin-top: 0.1rem;
+}
+
+/* Clear Psalm Chant button */
+.clear-psalm-chant-btn {
+    margin-top: 0.35rem;
+    width: 100%;
+    font-size: 0.8rem;
+    opacity: 0.75;
+}
+
+.clear-psalm-chant-btn:hover {
+    opacity: 1;
+}
+
+
 @media (max-width: 900px) {
     .psalm-combinations-content {
         margin: 1.5rem auto;
@@ -2981,6 +3138,31 @@ body.presentation-mode-slides .hareg-ornament {
     }
     
     .combo-option {
+        padding: 0.75rem 0.9rem;
+    }
+
+    .typical-psalms-modal-content {
+        margin: 1.5rem auto;
+        width: 92%;
+        max-height: 80vh;
+        max-height: 80dvh;
+    }
+    
+    .typical-psalms-modal-header {
+        padding: 1.25rem 1.5rem 0.85rem;
+    }
+
+    .typical-psalms-modal-instructions {
+        padding: 1rem 1.5rem 0.5rem;
+        font-size: 0.8rem;
+    }
+    
+    .typical-psalms-modal-body {
+        padding: 1.25rem 1.5rem;
+        gap: 0.5rem;
+    }
+    
+    .typical-psalm-option {
         padding: 0.75rem 0.9rem;
     }
 }

@@ -92,6 +92,9 @@ const psalmCombinationsBtn = document.getElementById('psalm-combinations-btn');
 const psalmCombinationsModal = document.getElementById('psalm-combinations-modal');
 const closePsalmCombinationsModal = document.getElementById('close-psalm-combinations-modal');
 const psalmCombinationsAccordion = document.getElementById('psalm-combinations-accordion');
+const typicalPsalmsModal = document.getElementById('typical-psalms-modal');
+const closeTypicalPsalmsModalBtn = document.getElementById('close-typical-psalms-modal');
+const typicalPsalmsList = document.getElementById('typical-psalms-list');
 const scribeLoginModal = document.getElementById('scribe-login-modal');
 const scribeEditorModal = document.getElementById('scribe-editor-modal');
 const changelogModal = document.getElementById('changelog-modal');
@@ -2092,6 +2095,8 @@ function createLectionaryPicker(containerId, lectionaryKey, bookOptions = [], ty
 
     container.innerHTML = ''; // Clear
 
+    let typicalBtn = null;
+
     // 1. Book Selection (if multiple)
     let bookSelect = null;
     if (bookOptions.length > 1) {
@@ -2187,54 +2192,50 @@ function createLectionaryPicker(containerId, lectionaryKey, bookOptions = [], ty
     };
 
     // 4. Typical Psalms Dropdown
-    let typicalSelect = null;
+    // 4. Typical Psalms Button & Modal Trigger
     if (typicalPsalms) {
         const typicalContainer = document.createElement('div');
         typicalContainer.className = 'typical-psalms-container';
         typicalContainer.style.marginTop = '0.5rem';
 
-        typicalSelect = document.createElement('select');
-        typicalSelect.className = 'settings-select typical-psalms-select';
+        typicalBtn = document.createElement('button');
+        typicalBtn.className = 'settings-button typical-psalms-btn';
+        typicalBtn.textContent = 'Typical Psalm Chants...';
+        typicalBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            openTypicalPsalmsModal((idx) => {
+                const data = typicalPsalms[idx];
+                if (bookSelect) bookSelect.value = "Psalms";
 
-        const placeholder = document.createElement('option');
-        placeholder.value = "";
-        placeholder.textContent = "Typical Psalm Chants...";
-        typicalSelect.appendChild(placeholder);
+                const metadata = BIBLE_METADATA["Psalms"];
+                populateSelect(chapterField.sel, metadata.chapters, data.mc);
+                populateSelect(startField.sel, metadata.maxVerses, data.ms);
+                populateSelect(endField.sel, metadata.maxVerses, data.me, true);
 
-        typicalPsalms.forEach((p, idx) => {
-            const opt = document.createElement('option');
-            opt.value = idx;
-
-            // Format: Phonetic... [Masoretic (NKJV) | LXX (OSB)] Ge'ez... [Ge'ez Numerals LXX (ግእዝ)]
-            const masoretic = `${p.mc}:${p.ms}${p.me !== p.ms ? '-' + p.me : ''}`;
-            const lxx = `${p.lc}:${p.ls}${p.le !== p.ls ? '-' + p.le : ''}`;
-            const geezLxx = `${toGeezNumeral(p.lc)}:${toGeezNumeral(p.ls)}${p.le !== p.ls ? '-' + toGeezNumeral(p.le) : ''}`;
-
-            // Clip Ge'ez to first 5 words as incipit
-            const geezWords = p.g.split(/\s+/);
-            const geezIncipit = geezWords.slice(0, 5).join(' ');
-            const gDisplay = geezWords.length > 5 ? `${geezIncipit}...` : p.g;
-
-            opt.textContent = `${p.p}... (${masoretic} (NKJV) | ${lxx} (OSB)) ${gDisplay} (${geezLxx} (ግእዝ))`;
-            typicalSelect.appendChild(opt);
+                updateRefs();
+                syncPicker(); // update button label to reflect newly selected chant
+            });
         });
 
-        typicalSelect.addEventListener('change', () => {
-            const idx = typicalSelect.value;
-            if (idx === "") return;
-            const data = typicalPsalms[idx];
+        typicalContainer.appendChild(typicalBtn);
 
-            if (bookSelect) bookSelect.value = "Psalms";
-
-            const metadata = BIBLE_METADATA["Psalms"];
-            populateSelect(chapterField.sel, metadata.chapters, data.mc);
-            populateSelect(startField.sel, metadata.maxVerses, data.ms);
-            populateSelect(endField.sel, metadata.maxVerses, data.me, true);
-
+        const clearChantBtn = document.createElement('button');
+        clearChantBtn.className = 'settings-button clear-psalm-chant-btn';
+        clearChantBtn.textContent = 'Clear Psalm Chant';
+        clearChantBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            // Reset chapter/start/end selectors to defaults
+            if (bookSelect) bookSelect.value = 'Psalms';
+            const metadata = BIBLE_METADATA['Psalms'];
+            populateSelect(chapterField.sel, metadata.chapters, 1);
+            populateSelect(startField.sel, metadata.maxVerses, 1);
+            populateSelect(endField.sel, metadata.maxVerses, 'End', true);
             updateRefs();
+            // Reset button appearance
+            typicalBtn.innerHTML = 'Typical Psalm Chants...';
+            typicalBtn.classList.remove('selected');
         });
-
-        typicalContainer.appendChild(typicalSelect);
+        typicalContainer.appendChild(clearChantBtn);
         container.appendChild(typicalContainer);
     }
     // Listeners
@@ -2323,8 +2324,8 @@ function createLectionaryPicker(containerId, lectionaryKey, bookOptions = [], ty
         populateSelect(startField.sel, actualMax, start);
         populateSelect(endField.sel, actualMax, end, true);
 
-        // Sync Typical Psalm Dropdown if available
-        if (typicalSelect && typicalPsalms) {
+        // Sync Typical Psalm button label if available
+        if (typicalBtn && typicalPsalms) {
             // Resolve 'End' for matching
             const numericEnd = (end === 'End') ? actualMax : parseInt(end);
             const foundIdx = typicalPsalms.findIndex(p =>
@@ -2332,9 +2333,12 @@ function createLectionaryPicker(containerId, lectionaryKey, bookOptions = [], ty
                 p.mc === ch && p.ms === parseInt(start) && p.me === numericEnd
             );
             if (foundIdx !== -1) {
-                typicalSelect.value = foundIdx;
+                const match = typicalPsalms[foundIdx];
+                typicalBtn.innerHTML = `<span class="chant-btn-phonetic">${match.p}...</span><span class="chant-btn-geez ethiopic-label">${match.g.split(/\s+/).slice(0, 5).join(' ')}...</span>`;
+                typicalBtn.classList.add('selected');
             } else {
-                typicalSelect.value = "";
+                typicalBtn.innerHTML = 'Typical Psalm Chants...';
+                typicalBtn.classList.remove('selected');
             }
         }
 
@@ -5048,6 +5052,12 @@ if (closePsalmCombinationsModal) {
     });
 }
 
+if (closeTypicalPsalmsModalBtn) {
+    closeTypicalPsalmsModalBtn.addEventListener('click', () => {
+        closeModal();
+    });
+}
+
 clearPsalmsButton.addEventListener('click', () => {
     selectedPsalms = [];
     document.querySelectorAll('#psalm-selector-container input[type="checkbox"]').forEach(checkbox => {
@@ -5273,6 +5283,60 @@ function closeModal() {
     });
     modalBackdrop.style.display = 'none';
     body.style.overflow = 'auto';
+}
+
+let currentTypicalPsalmCallback = null;
+
+function openTypicalPsalmsModal(callback) {
+    currentTypicalPsalmCallback = callback;
+    openModal(typicalPsalmsModal);
+    modalBackdrop.style.zIndex = '1000';
+    typicalPsalmsModal.style.zIndex = '1001';
+    renderTypicalPsalmsModal();
+}
+
+function renderTypicalPsalmsModal() {
+    if (!typicalPsalmsList) return;
+    typicalPsalmsList.innerHTML = '';
+
+    TYPICAL_PSALMS.forEach((p, idx) => {
+        const optionDiv = document.createElement('div');
+        optionDiv.className = 'typical-psalm-option';
+        optionDiv.dataset.index = idx;
+
+        // Format citations
+        const masoretic = `${p.mc}:${p.ms}${p.me !== p.ms ? '-' + p.me : ''}`;
+        const lxx = `${p.lc}:${p.ls}${p.le !== p.ls ? '-' + p.le : ''}`;
+        const geezLxx = `${toGeezNumeral(p.lc)}:${toGeezNumeral(p.ls)}${p.le !== p.ls ? '-' + toGeezNumeral(p.le) : ''}`;
+
+        // Split Ge'ez to first 5 words as incipit
+        const geezWords = p.g.split(/\s+/);
+        const geezIncipit = geezWords.slice(0, 5).join(' ');
+        const gDisplay = geezWords.length > 5 ? `${geezIncipit}...` : p.g;
+
+        optionDiv.innerHTML = `
+            <div class="typical-psalm-row">
+                <div class="typical-psalm-left">
+                    <span class="typical-psalm-phonetic">${p.p}...</span>
+                    <span class="typical-psalm-geez ethiopic-label">${gDisplay}</span>
+                </div>
+                <div class="typical-psalm-right">
+                    <span class="typical-psalm-ref-nkjv">${masoretic} NKJV</span>
+                    <span class="typical-psalm-ref-lxx">${lxx} OSB</span>
+                    <span class="typical-psalm-ref-geez ethiopic-label">${geezLxx} ግእዝ</span>
+                </div>
+            </div>
+        `;
+
+        optionDiv.addEventListener('click', () => {
+            if (currentTypicalPsalmCallback) {
+                currentTypicalPsalmCallback(idx);
+            }
+            closeModal();
+        });
+
+        typicalPsalmsList.appendChild(optionDiv);
+    });
 }
 
 // Global listener for closing modals when clicking outside modal-content
@@ -6397,6 +6461,8 @@ document.addEventListener('DOMContentLoaded', async () => {
             document.getElementById(`story-${day}`).classList.add('active');
         });
     });
+
+    // (openTypicalPsalmsModal and renderTypicalPsalmsModal moved to global scope)
 
     // Technical Context Collapsible Logic
     const techToggleBtn = document.getElementById('toggle-technical-context');
