@@ -3216,7 +3216,9 @@ function renderPrayers() {
                 "Wednesday | ዘረቡዕ", "Thursday | ዘሐሙስ", "Friday | ዘዓርብ", 
                 "Saturday | ዘቀዳሚት"
             ];
-            if (subSections.includes(title)) {
+            const isPsalm = /^Psalm \d+/.test(title);
+            const isProphetSong = typeof prophetSongs !== 'undefined' && prophetSongs.some(s => title.startsWith(s.name));
+            if (subSections.includes(title) || isPsalm || isProphetSong) {
                 titleEl.classList.add('sub-section-title');
             }
 
