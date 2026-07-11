@@ -2761,10 +2761,10 @@ body.presentation-mode-slides .hareg-ornament {
 .psalm-combinations-content {
     max-width: 650px;
     padding: 0;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    max-height: 90vh;
+    overflow-y: auto; /* scroll the entire modal content block */
+    max-height: 80vh;
+    max-height: 80dvh;
+    display: block; /* standard block layout */
 }
 
 .psalm-combinations-header {
@@ -2774,6 +2774,9 @@ body.presentation-mode-slides .hareg-ornament {
     align-items: center;
     border-bottom: 1px solid var(--border-color);
     background-color: var(--hover-color);
+    position: sticky; /* keep header visible on scroll */
+    top: 0;
+    z-index: 10;
 }
 
 .psalm-combinations-header h2 {
@@ -2797,8 +2800,6 @@ body.presentation-mode-slides .hareg-ornament {
 
 .psalm-combinations-body {
     padding: 1.5rem 2rem;
-    overflow-y: auto;
-    flex: 1;
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
@@ -2821,7 +2822,6 @@ body.presentation-mode-slides .hareg-ornament {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 1.25rem;
-    font-weight: bold;
     cursor: pointer;
     background-color: var(--hover-color);
     color: var(--text-color);
@@ -2833,10 +2833,36 @@ body.presentation-mode-slides .hareg-ornament {
     background-color: var(--border-color);
 }
 
+.accordion-header-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+    text-align: left;
+    padding-right: 0.5rem;
+}
+
+.accordion-title {
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--text-color);
+    line-height: 1.2;
+}
+
+.accordion-citation {
+    font-size: 0.8rem;
+    font-weight: normal;
+    color: var(--text-color);
+    opacity: 0.65;
+    font-style: italic;
+    line-height: 1.2;
+}
+
 .accordion-icon {
     font-size: 0.75rem;
     transition: transform 0.3s ease;
     opacity: 0.7;
+    flex-shrink: 0;
 }
 
 .accordion-item.active .accordion-icon {
@@ -2882,15 +2908,17 @@ body.presentation-mode-slides .hareg-ornament {
 .combo-header-row {
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: flex-start;
     gap: 0.5rem;
     width: 100%;
+    flex-wrap: wrap; /* Allows wrap on narrow mobile layouts */
 }
 
 .combo-title {
     font-weight: bold;
     color: var(--accent-color);
     font-size: 0.95rem;
+    line-height: 1.2;
 }
 
 .combo-chapters {
@@ -2898,19 +2926,46 @@ body.presentation-mode-slides .hareg-ornament {
     color: var(--text-color);
     opacity: 0.7;
     font-style: italic;
-    white-space: nowrap;
+    line-height: 1.2;
 }
 
-.combo-subtitle {
-    font-size: 0.9rem;
+.combo-geez {
+    font-size: 0.95rem;
     color: var(--text-color);
     margin-top: 0.1rem;
+    font-style: normal; /* Ge'ez text should not be italicized */
 }
 
-.combo-translation {
-    font-size: 0.78rem;
+.combo-translit {
+    font-size: 0.8rem;
     color: var(--text-color);
-    opacity: 0.65;
-    font-style: italic;
+    opacity: 0.7;
+    font-style: italic; /* Transliteration should be italicized */
     line-height: 1.3;
+}
+
+@media (max-width: 900px) {
+    .psalm-combinations-content {
+        margin: 1.5rem auto;
+        width: 92%;
+        max-height: 80vh;
+        max-height: 80dvh;
+    }
+    
+    .psalm-combinations-header {
+        padding: 1.25rem 1.5rem 0.85rem;
+    }
+    
+    .psalm-combinations-body {
+        padding: 1.25rem 1.5rem;
+        gap: 0.5rem;
+    }
+    
+    .accordion-header {
+        padding: 0.85rem 1.1rem;
+    }
+    
+    .combo-option {
+        padding: 0.75rem 0.9rem;
+    }
 }

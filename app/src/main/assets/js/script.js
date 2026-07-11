@@ -4878,9 +4878,20 @@ function renderPsalmCombinationsModal() {
         const itemDiv = document.createElement('div');
         itemDiv.className = 'accordion-item';
         
+        // Split title and citation: e.g. "Weekly Psalter (St. Yared...)" -> Title: "Weekly Psalter", Citation: "(St. Yared...)"
+        const match = category.label.match(/^([^(]+)(?:\s+(\(.+\)))?$/);
+        const titleText = match ? match[1].trim() : category.label;
+        const citationText = match && match[2] ? match[2] : '';
+
         const headerDiv = document.createElement('div');
         headerDiv.className = 'accordion-header';
-        headerDiv.innerHTML = `<span>${category.label}</span><span class="accordion-icon">▼</span>`;
+        headerDiv.innerHTML = `
+            <div class="accordion-header-text">
+                <span class="accordion-title">${titleText}</span>
+                ${citationText ? `<span class="accordion-citation">${citationText}</span>` : ''}
+            </div>
+            <span class="accordion-icon">▼</span>
+        `;
         
         const contentDiv = document.createElement('div');
         contentDiv.className = 'accordion-content';
@@ -4892,14 +4903,37 @@ function renderPsalmCombinationsModal() {
             const combo = PSALM_COMBINATIONS[comboKey];
             if (!combo) return;
             
-            // Format dropdown label for rich display
+            // Format dropdown label for rich display: "English Title | Transliteration | Ge'ez Title (Chapters)"
             const parts = combo.dropdownLabel ? combo.dropdownLabel.split(' | ') : [combo.name];
             const title = parts[0];
-            const metaParts = parts.length > 1 ? parts[parts.length - 1].split(' (') : [];
-            const englishTranslation = metaParts[0] || '';
-            const chapters = metaParts.length > 1 ? `(${metaParts[1]}` : (combo.psalms.length > 0 ? `(${combo.psalms[0]}-${combo.psalms[combo.psalms.length-1]})` : '(Songs of the Prophets)');
             
-            const geezTitle = parts.length > 2 ? parts[1] : '';
+            let translit = '';
+            let geezTitle = '';
+            let chapters = '';
+
+            if (parts.length === 3) {
+                translit = parts[1];
+                const geezAndChapters = parts[2].split(' (');
+                geezTitle = geezAndChapters[0];
+                chapters = geezAndChapters.length > 1 ? `(${geezAndChapters[1]}` : '';
+            } else if (parts.length === 2) {
+                // If it's "Title | Ge'ez (Chapters)"
+                const geezAndChapters = parts[1].split(' (');
+                geezTitle = geezAndChapters[0];
+                chapters = geezAndChapters.length > 1 ? `(${geezAndChapters[1]}` : '';
+            } else {
+                // Fallback if no dropdownLabel or standard split
+                const nameParts = combo.name.split(' | ');
+                geezTitle = nameParts.length > 1 ? nameParts[1] : '';
+                
+                const first = combo.psalms[0];
+                const last = combo.psalms[combo.psalms.length - 1];
+                const isContiguous = combo.psalms.length === (last - first + 1);
+                
+                chapters = combo.psalms.length > 0 
+                    ? (isContiguous ? `(${first}-${last})` : `(${combo.psalms.join(', ')})`) 
+                    : '(Songs of the Prophets)';
+            }
 
             const optionDiv = document.createElement('div');
             optionDiv.className = 'combo-option';
@@ -4910,8 +4944,8 @@ function renderPsalmCombinationsModal() {
                     <span class="combo-title">${title}</span>
                     <span class="combo-chapters">${chapters}</span>
                 </div>
-                ${geezTitle ? `<span class="combo-subtitle">${geezTitle}</span>` : ''}
-                ${englishTranslation ? `<span class="combo-translation">${englishTranslation}</span>` : ''}
+                ${geezTitle ? `<span class="combo-geez ethiopic-label">${geezTitle}</span>` : ''}
+                ${translit ? `<span class="combo-translit">${translit}</span>` : ''}
             `;
             
             optionDiv.addEventListener('click', () => {
