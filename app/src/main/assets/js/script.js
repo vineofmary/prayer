@@ -1880,6 +1880,13 @@ function getBibleVersesFromRef(ref) {
             .map(v => ({ verseNum: v.verse, text: v.text }));
     }
 
+    // 1b. Spanish (RGV) - Flat list in .verses
+    if (bookCfg && bibleData.rgv && bibleData.rgv.verses) {
+        results.spanish = bibleData.rgv.verses
+            .filter(v => v.book_name === bookCfg.rgv && v.chapter === chapterNum && v.verse >= startVerse && v.verse <= endVerse)
+            .map(v => ({ verseNum: v.verse, text: v.text }));
+    }
+
     // 2. Amharic (am54) - Nested structure
     if (bookCfg && bibleData.am54 && bibleData.am54.books) {
         const amBook = bibleData.am54.books.find(b => b.title === bookCfg.am54);
@@ -1944,12 +1951,14 @@ const LITURGY_LECTIONARY_CONFIG = [
             english: '{{TODAY\'S PAULINE EPISTLE READING}}',
             geez_script: '{{ዮም አንበበ መልእክተ ጳውሎስ}}',
             amharic_script: '{{የዛሬው የቅዱስ ጳውሎስ መልእክት ይነበባል}}',
-            tigrinya_script: '{{ናይ ሎሚ ንባብ መልእኽቲ ጳውሎስ}}'
+            tigrinya_script: '{{ናይ ሎሚ ንባብ መልእኽቲ ጳውሎስ}}',
+            spanish: '{{LECTURA DE LA EPÍSTOLA PAULINA DE HOY}}'
         },
         prefixes: {
             english: 'Epistle: ',
             amharic_script: 'መልእክት፤ ',
-            geez_script: 'መልእክት፤ '
+            geez_script: 'መልእክት፤ ',
+            spanish: 'Epístola: '
         }
     },
     {
@@ -1959,12 +1968,14 @@ const LITURGY_LECTIONARY_CONFIG = [
             english: '{{TODAY\'S UNIVERSAL EPISTLE READING}}',
             geez_script: '{{ዮም አንበበ መልእክተ ካቶሊካ}}',
             amharic_script: '{{የዛሬው የሁለተኛው መልእክት ይነበባል}}',
-            tigrinya_script: '{{ናይ ሎሚ ካልኣይ ንባብ መልእኽቲ}}'
+            tigrinya_script: '{{ናይ ሎሚ ካልኣይ ንባብ መልእኽቲ}}',
+            spanish: '{{LECTURA DE LA EPÍSTOLA UNIVERSAL DE HOY}}'
         },
         prefixes: {
             english: 'Epistle: ',
             amharic_script: 'መልእክት፤ ',
-            geez_script: 'መልእክት፤ '
+            geez_script: 'መልእክት፤ ',
+            spanish: 'Epístola: '
         }
     },
     {
@@ -1974,7 +1985,8 @@ const LITURGY_LECTIONARY_CONFIG = [
             english: '{{TODAY\'S ACTS READING}}',
             geez_script: '{{ዮም አንበበ ግብረ ሐዋርያት}}',
             amharic_script: '{{የዛሬው የሐዋርያት ስራ ንባብ}}',
-            tigrinya_script: '{{ናይ ሎሚ ግብሪ ሃዋርያት ንባብ}}'
+            tigrinya_script: '{{ናይ ሎሚ ግብሪ ሃዋርያት ንባብ}}',
+            spanish: '{{LECTURA DE ACTOS DE HOY}}'
         },
         prefixes: {}
     },
@@ -1985,7 +1997,8 @@ const LITURGY_LECTIONARY_CONFIG = [
             english: '{{TODAY\'S PSALMS READING}}',
             geez_script: '{{ዮም ምስባክ}}',
             amharic_script: '{{የዛሬው ምስባክ}}',
-            tigrinya_script: '{{ናይ ሎሚ ንባብ መዝሙር ዳዊት}}'
+            tigrinya_script: '{{ናይ ሎሚ ንባብ መዝሙር ዳዊት}}',
+            spanish: '{{LECTURA DE LOS SALMOS DE HOY}}'
         },
         prefixes: {
             amharic_script: 'ምስባክ፤ ',
@@ -1999,10 +2012,12 @@ const LITURGY_LECTIONARY_CONFIG = [
             english: '{{TODAY\'S GOSPEL READING}}',
             geez_script: '{{ዮም አንበበ ወንጌል}}',
             amharic_script: '{{የዛሬው ወንጌል ንባብ}}',
-            tigrinya_script: '{{ናይ ሎሚ ንባብ ወንጌል}}'
+            tigrinya_script: '{{ናይ ሎሚ ንባብ ወንጌል}}',
+            spanish: '{{LECTURA DEL EVANGELIO DE HOY}}'
         },
         prefixes: {
-            english: 'Gospel of '
+            english: 'Gospel of ',
+            spanish: 'Evangelio de '
         }
     },
     {
@@ -2012,7 +2027,8 @@ const LITURGY_LECTIONARY_CONFIG = [
             english: '{{MORNING PSALMS READING}}',
             geez_script: '{{ዮም ምስባክ ዘነግህ}}',
             amharic_script: '{{የዛሬው ምስባክ ዘነግህ}}',
-            tigrinya_script: '{{ናይ ንግሆ ንባብ መዝሙር ዳዊት}}'
+            tigrinya_script: '{{ናይ ንግሆ ንባብ መዝሙር ዳዊት}}',
+            spanish: '{{LECTURA DE LOS SALMOS DE LA MAÑANA}}'
         },
         prefixes: {
             amharic_script: 'ምስባክ፤ ',
@@ -2026,10 +2042,12 @@ const LITURGY_LECTIONARY_CONFIG = [
             english: '{{MORNING GOSPEL READING}}',
             geez_script: '{{ዮም አንበበ ወንጌል ዘነግህ}}',
             amharic_script: '{{የዛሬው ወንጌል ዘነግህ ንባብ}}',
-            tigrinya_script: '{{ናይ ንግሆ ንባብ ወንጌል}}'
+            tigrinya_script: '{{ናይ ንግሆ ንባብ ወንጌል}}',
+            spanish: '{{LECTURA DEL EVANGELIO DE LA MAÑANA}}'
         },
         prefixes: {
-            english: 'Gospel of '
+            english: 'Gospel of ',
+            spanish: 'Evangelio de '
         }
     }
 ];
@@ -3109,7 +3127,7 @@ function renderSelectedKidase(addSectionTitleCallback) {
                                     if (langKey === 'amharic_script') {
                                         header = `${bookCfg.am54} ${chapter}:${rangeSuffix} (አም1954)`;
                                     } else if (langKey === 'spanish') {
-                                        header = `${bookCfg.rgv} ${chapter}:${rangeSuffix}`;
+                                        header = `${bookCfg.rgv} ${chapter}:${rangeSuffix} (RVG)`;
                                     }
                                 }
 
@@ -3149,7 +3167,7 @@ function renderSelectedKidase(addSectionTitleCallback) {
                                                 } else if (langKey === 'english') {
                                                     header = `${bookName} ${range} (NKJV)`;
                                                 } else if (langKey === 'spanish') {
-                                                    header = `${bookCfg.rgv} ${range}`;
+                                                    header = `${bookCfg.rgv} ${range} (RVG)`;
                                                 }
                                             }
                                             const prefix = (activeCfg.prefixes && activeCfg.prefixes[langKey]) || "";
@@ -3887,6 +3905,16 @@ async function loadBibleData() {
             }
             const data = await response.json();
             bibleData[key] = (typeof data === 'string') ? JSON.parse(data) : data;
+            
+            // Clean up RGV text formatting
+            if (key === 'rgv' && bibleData[key].verses) {
+                bibleData[key].verses.forEach(v => {
+                    if (v.text) {
+                        v.text = v.text.replace(/[‹›]/g, '').replace(/\[(.*?)\]/g, '<i>$1</i>');
+                    }
+                });
+            }
+            
             console.log(`${key} Bible data loaded successfully.`);
             return true;
         } catch (error) {

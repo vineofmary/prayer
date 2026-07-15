@@ -1095,6 +1095,16 @@ const TYPICAL_PSALMS = [
         "le": 19
     },
     {
+        "p": "WeAtsianke SebiE Dibe Ariistine",
+        "g": "ወአጽዐንከ ሰብአ ዲበ አርእስቲነ። አሕለፍከነ ማዕከለ እሳት ወማይ። ወአውፃእከነ ውስተ ዕረፍት።",
+        "mc": 66,
+        "ms": 12,
+        "me": 12,
+        "lc": 65,
+        "ls": 12,
+        "le": 13
+    },
+    {
         "p": "WeAtsineo Egzio Lezintu Zeseraeke Lene",
         "g": "ወአጽንዖ እግዚኦ ለዝንቱ ዘሠራእከ ለነ ውስተ ጽርሕከ ዘኢየሩሳሌም ለከ ያመጽኡ ነገሥት አምኃ",
         "mc": 68,
