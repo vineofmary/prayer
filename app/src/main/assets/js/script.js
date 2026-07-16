@@ -2592,19 +2592,19 @@ function getPrayerLabel(prayer, isKidase = false) {
         "Daily-8": "Daily Prayer | ዘዘወትር ጸሎት - Glory...",
         "Daily-9": "Daily Prayer | ዘዘወትር ጸሎት - Greetings to You, [Mary]...",
         "Daily-10": "Daily Prayer | ዘዘወትር ጸሎት - Prayer of Our Lady Mary",
-        "Daily-11": "Prayer of Saint Ephraim: The Praises of Mary (Theotokia) | ውዳሴ ማርያም",
-        "Daily-12": "Prayer of Saint Ephraim: The Praises of Mary (Theotokia) | ውዳሴ ማርያም - O my Lady, loose me...",
+        "Daily-11": "→ Prayer of Saint Ephraim: The Praises of Mary | ውዳሴ ማርያም",
+        "Daily-12": "→ Prayer of Saint Ephraim: The Praises of Mary | ውዳሴ ማርያም - O my Lady, loose me...",
         "Personal-0": "Prayer"
     };
 
     const dayTitles = {
-        'Sun': 'Sunday | ዘእሁድ',
-        'Mon': 'Monday | ዘሰኑይ',
-        'Tue': 'Tuesday | ዘሠሉስ',
-        'Wed': 'Wednesday | ዘረቡዕ',
-        'Thurs': 'Thursday | ዘሐሙስ',
-        'Fri': 'Friday | ዘዓርብ',
-        'Sat': 'Saturday | ዘቀዳሚት'
+        'Sun': '→ → → Sunday | ዘእሁድ',
+        'Mon': '→ → → Monday | ዘሰኑይ',
+        'Tue': '→ → → Tuesday | ዘሠሉስ',
+        'Wed': '→ → → Wednesday | ዘረቡዕ',
+        'Thurs': '→ → → Thursday | ዘሐሙስ',
+        'Fri': '→ → → Friday | ዘዓርብ',
+        'Sat': '→ → → Saturday | ዘቀዳሚት'
     };
 
     if (customLabels[prayerKey]) {
@@ -2614,9 +2614,9 @@ function getPrayerLabel(prayer, isKidase = false) {
     } else if (dayTitles[prayer.chapter]) {
         return dayTitles[prayer.chapter];
     } else if (prayer.chapter === 'Angels') {
-        return 'Prayer of Abba Giyorgis: The Angels Praise Mary | ይዌድስዋ መላእክት ለማርያም';
+        return '→ Prayer of Abba Giyorgis: The Angels Praise Mary | ይዌድስዋ መላእክት ለማርያም';
     } else if (prayer.chapter === 'Anqetse Birhan') {
-        return 'Prayer of Saint Yared: The Gate of Light | አንቀጸ ብርሃን';
+        return '→ Prayer of Saint Yared: The Gate of Light | አንቀጸ ብርሃን';
     } else if (prayer.chapter === 'Psalms' && prayer.stanza === 'Intro') {
         return 'Opening Prayer for the Psalms and the Songs of the Prophets | ነዓ ኀቤየ ዳዊት';
     } else if (prayer.chapter === 'Psalms' && prayer.stanza === 'Closing') {
@@ -2631,7 +2631,7 @@ function getSectionTitle(prayer) {
         return "Daily Prayer | ዘዘወትር ጸሎት";
     } else if (label === "Trinitarian Invocation") {
         return "";
-    } else if (label.startsWith("Prayer of Saint Ephraim: The Praises of Mary (Theotokia) | ውዳሴ ማርያም") && (selectedWidaseMaryamDay === 'None')) {
+    } else if (label.startsWith("→ Prayer of Saint Ephraim: The Praises of Mary | ውዳሴ ማርያም") && (selectedWidaseMaryamDay === 'None')) {
         // Hide the section title if None is selected
         return "";
     }
@@ -3298,7 +3298,10 @@ function renderPrayers() {
             
             let actualTitle = title;
             let indentLevel = 0;
-            if (actualTitle.startsWith("→ → ")) {
+            if (actualTitle.startsWith("→ → → ")) {
+                indentLevel = 3;
+                actualTitle = actualTitle.substring(6);
+            } else if (actualTitle.startsWith("→ → ")) {
                 indentLevel = 2;
                 actualTitle = actualTitle.substring(4);
             } else if (actualTitle.startsWith("→ ")) {
@@ -3315,10 +3318,12 @@ function renderPrayers() {
             ];
             const isPsalm = /^Psalm \d+/.test(actualTitle);
             const isProphetSong = typeof prophetSongs !== 'undefined' && prophetSongs.some(s => actualTitle.startsWith(s.name));
-            if (subSections.includes(actualTitle) || isPsalm || isProphetSong || indentLevel === 1) {
-                titleEl.classList.add('sub-section-title');
+            if (indentLevel === 3) {
+                titleEl.classList.add('sub-sub-sub-section-title');
             } else if (indentLevel === 2) {
                 titleEl.classList.add('sub-sub-section-title');
+            } else if (indentLevel === 1 || subSections.includes(actualTitle) || isPsalm || isProphetSong) {
+                titleEl.classList.add('sub-section-title');
             }
 
             if (isCollapsible) {
@@ -3390,21 +3395,21 @@ function renderPrayers() {
                 iconImg.classList.add('holy-trinity-icon'); // Add a class for styling
                 if (isInitiallyCollapsed) iconImg.style.display = 'none';
                 prayerDisplay.appendChild(iconImg);
-            } else if (title === "Prayer of Saint Ephraim: The Praises of Mary (Theotokia) | ውዳሴ ማርያም") {
+            } else if (title === "→ Prayer of Saint Ephraim: The Praises of Mary | ውዳሴ ማርያም") {
                 const iconImg = document.createElement('img');
                 iconImg.src = 'img/Mary-Blesses-Ephraim.svg';
                 iconImg.alt = 'Mary Blesses Ephraim Icon';
                 iconImg.classList.add('section-icon');
                 if (isInitiallyCollapsed) iconImg.style.display = 'none';
                 prayerDisplay.appendChild(iconImg);
-            } else if (title === "Thursday | ዘሐሙስ") {
+            } else if (title === "→ → → Thursday | ዘሐሙስ") {
                 const iconImg = document.createElement('img');
                 iconImg.src = 'img/Ephraim-and-Mary-on-Thursday.svg';
                 iconImg.alt = 'Ephraim and Mary on Thursday Icon';
                 iconImg.classList.add('section-icon');
                 if (isInitiallyCollapsed) iconImg.style.display = 'none';
                 prayerDisplay.appendChild(iconImg);
-            } else if (title === "Prayer of Abba Giyorgis: The Angels Praise Mary | ይዌድስዋ መላእክት ለማርያም") {
+            } else if (title === "→ Prayer of Abba Giyorgis: The Angels Praise Mary | ይዌድስዋ መላእክት ለማርያም") {
                 const iconImg = document.createElement('img');
                 iconImg.src = 'img/Mary-with-her-beloved-Son.svg';
                 iconImg.alt = 'Mary with her beloved Son Icon';
@@ -3507,7 +3512,17 @@ function renderPrayers() {
         mapped.forEach(item => mainPrayers.push(item.value));
     }
 
+    let hasRenderedTheotokiaTitle = false;
+
     mainPrayers.forEach((prayer, prayerIndex) => {
+        const isTheotokia = (prayer.chapter === 'Daily' && (prayer.stanza === '11' || prayer.stanza === '12')) || 
+                            ['Sun', 'Mon', 'Tue', 'Wed', 'Thurs', 'Fri', 'Sat', 'Angels', 'Anqetse Birhan'].includes(prayer.chapter);
+
+        if (isTheotokia && !hasRenderedTheotokiaTitle && selectedWidaseMaryamDay !== 'None') {
+            addSectionTitle("<i>Theotokia</i> — The Praises of the Mother of God", false);
+            hasRenderedTheotokiaTitle = true;
+        }
+
         if (prayer.chapter === 'Daily' && prayer.stanza === '0') {
             const prayerCard = createPrayerCardElement(prayer, prayerIndex);
             prayerDisplay.appendChild(prayerCard);
