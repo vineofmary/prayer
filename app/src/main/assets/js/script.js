@@ -1021,10 +1021,9 @@ function toGeez(n) {
 
 // --- Functions ---
 function updatePsalmSummary() {
-    if (selectedPsalms.length > 0) {
-        psalmSummary.textContent = `Selected Psalms: ${selectedPsalms.sort((a, b) => a - b).join(', ')}`;
-    } else {
-        psalmSummary.textContent = 'Selected Psalms: None';
+    const psalmSequenceInput = document.getElementById('psalm-sequence-input');
+    if (psalmSequenceInput) {
+        psalmSequenceInput.value = selectedPsalms.join(', ');
     }
     syncPsalmCombinationsButton();
 }
@@ -1047,15 +1046,13 @@ function updateProphetSongsSummary() {
 
 function syncPsalmCombinationsButton() {
     let matchedCombination = "";
-    const sortedSelectedPsalms = [...selectedPsalms].sort((a, b) => a - b).join(',');
-    const sortedSelectedProphetSongs = [...selectedProphetSongs].sort().join(',');
+    const stringifiedSelectedPsalms = JSON.stringify(selectedPsalms);
+    const stringifiedSelectedProphetSongs = JSON.stringify(selectedProphetSongs);
 
     if (selectedPsalms.length > 0 || selectedProphetSongs.length > 0) {
         for (const [key, combo] of Object.entries(PSALM_COMBINATIONS)) {
-            const sortedComboPsalms = [...(combo.psalms || [])].sort((a, b) => a - b).join(',');
-            const sortedComboProphetSongs = [...(combo.prophetSongs || [])].sort().join(',');
-            
-            if (sortedSelectedPsalms === sortedComboPsalms && sortedSelectedProphetSongs === sortedComboProphetSongs) {
+            if (JSON.stringify(combo.psalms || []) === stringifiedSelectedPsalms && 
+                JSON.stringify(combo.prophetSongs || []) === stringifiedSelectedProphetSongs) {
                 matchedCombination = key;
                 break;
             }
@@ -3545,6 +3542,29 @@ function renderPrayers() {
 
     if (psalmsRendered || prophetSongsRendered) {
         addSectionTitle("Psalms | መዝሙር ዘዳዊት", false);
+
+        // Inject preset combination subtitle if matched
+        const stringifiedSelectedPsalms = JSON.stringify(selectedPsalms);
+        const stringifiedSelectedProphetSongs = JSON.stringify(selectedProphetSongs);
+        let matchedCombinationName = null;
+        for (const [key, combo] of Object.entries(PSALM_COMBINATIONS)) {
+            if (JSON.stringify(combo.psalms || []) === stringifiedSelectedPsalms && 
+                JSON.stringify(combo.prophetSongs || []) === stringifiedSelectedProphetSongs) {
+                matchedCombinationName = combo.name;
+                break;
+            }
+        }
+        
+        if (matchedCombinationName) {
+            const subtitleEl = document.createElement('div');
+            subtitleEl.classList.add('section-metadata');
+            subtitleEl.style.marginTop = '-0.25rem';
+            subtitleEl.style.marginBottom = '1.5rem';
+            subtitleEl.style.color = 'var(--speaker-label-color)';
+            subtitleEl.innerHTML = `<i>Preset: ${matchedCombinationName}</i>`;
+            prayerDisplay.appendChild(subtitleEl);
+        }
+
         const psalmIntroPrayers = prayers.filter(p => p.chapter === 'Psalms' && p.stanza === 'Intro');
         if (psalmIntroPrayers.length > 0) {
             addSectionTitleIfNeeded(psalmIntroPrayers[0]);
@@ -4164,7 +4184,7 @@ function renderSelectedPsalmsWithDoxology(addSectionTitleCallback) {
 
     const doxologyPrayer = prayers.find(p => p.chapter === 'Psalms' && p.stanza === 'Response');
 
-    for (const lxxChapter of selectedPsalms.sort((a, b) => a - b)) {
+    for (const lxxChapter of selectedPsalms) {
         addSectionTitleCallback(lxxChapter);
         let allVerses = [];
 
@@ -4984,22 +5004,64 @@ psalmSelectorContainer.addEventListener('change', (event) => {
         if (event.target.id === 'select-all-psalms') {
             const isChecked = event.target.checked;
             const checkboxes = psalmSelectorContainer.querySelectorAll('input[type="checkbox"]');
+            
+            if (isChecked) {
+                selectedPsalms = Array.from({length: 150}, (_, i) => i + 1);
+            } else {
+                selectedPsalms = [];
+            }
+
             checkboxes.forEach(cb => {
                 if (cb.id !== 'select-all-psalms') {
                     cb.checked = isChecked;
                 }
             });
+        } else {
+            const psalmNum = Number(event.target.value);
+            if (!isNaN(psalmNum)) {
+                if (event.target.checked) {
+                    if (!selectedPsalms.includes(psalmNum)) {
+                        selectedPsalms.push(psalmNum);
+                    }
+                } else {
+                    selectedPsalms = selectedPsalms.filter(p => p !== psalmNum);
+                }
+            }
         }
-
-        selectedPsalms = Array.from(psalmSelectorContainer.querySelectorAll('input[type="checkbox"]:checked'))
-            .map(cb => Number(cb.value))
-            .filter(value => !isNaN(value) && value > 0); // Filter out NaN from select-all
 
         updatePsalmSummary();
         saveSettings();
         smoothRender();
     }
 });
+
+const psalmSequenceInput = document.getElementById('psalm-sequence-input');
+if (psalmSequenceInput) {
+    psalmSequenceInput.addEventListener('change', (e) => {
+        const rawText = e.target.value;
+        const newSequence = rawText.split(',')
+            .map(s => Number(s.trim()))
+            .filter(n => !isNaN(n) && n > 0 && n <= 150);
+        
+        selectedPsalms = newSequence;
+        
+        const checkboxes = psalmSelectorContainer.querySelectorAll('input[type="checkbox"]');
+        checkboxes.forEach(cb => {
+            if (cb.id !== 'select-all-psalms') {
+                cb.checked = selectedPsalms.includes(Number(cb.value));
+            }
+        });
+        
+        const selectAllPsalmCheckbox = document.getElementById('select-all-psalms');
+        if (selectAllPsalmCheckbox) {
+            selectAllPsalmCheckbox.checked = selectedPsalms.length === 150;
+        }
+
+        updatePsalmSummary(); // To format it cleanly if they typed weird spaces
+        saveSettings();
+        smoothRender();
+    });
+}
 
 // --- Custom Psalm Combinations Modal Logic ---
 function renderPsalmCombinationsModal() {

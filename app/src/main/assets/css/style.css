@@ -1390,6 +1390,44 @@ body.view-mode-unified .info-panel-content {
     padding-bottom: 1rem;
 }
 
+.settings-summary {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0.5rem 0;
+    line-height: 1.4;
+    word-break: break-word;
+}
+
+.psalm-sequence-container {
+    margin: 1rem 0 0.5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.psalm-sequence-container label {
+    font-size: 0.85rem;
+    color: var(--speaker-label-color);
+    font-weight: bold;
+}
+
+.settings-sequence-input {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 0.95rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--card-background);
+    color: var(--text-color);
+    box-sizing: border-box;
+    font-family: monospace;
+}
+
+.settings-sequence-input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
 .story-tabs-nav {
     display: flex;
     gap: 0.5rem;
