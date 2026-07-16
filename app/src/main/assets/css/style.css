@@ -834,6 +834,7 @@ input[type="range"], select {
     border-bottom: none;
     margin-bottom: 0.5rem;
     padding-bottom: 0;
+    opacity: 0.85;
 }
 
 .sub-section-title {

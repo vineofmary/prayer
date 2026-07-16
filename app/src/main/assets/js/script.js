@@ -2618,9 +2618,9 @@ function getPrayerLabel(prayer, isKidase = false) {
     } else if (prayer.chapter === 'Anqetse Birhan') {
         return '→ Prayer of Saint Yared: The Gate of Light | አንቀጸ ብርሃን';
     } else if (prayer.chapter === 'Psalms' && prayer.stanza === 'Intro') {
-        return 'Opening Prayer for the Psalms and the Songs of the Prophets | ነዓ ኀቤየ ዳዊት';
+        return '→ Opening Prayer | ነዓ ኀቤየ ዳዊት';
     } else if (prayer.chapter === 'Psalms' && prayer.stanza === 'Closing') {
-        return 'Closing Prayer for the Psalms and Songs of the Prophets | ሰአሊ ለነ ማርያም';
+        return '→ Closing Prayer | ሰአሊ ለነ ማርያም';
     }
     return prayer.reference; // Default fallback
 }
@@ -2799,7 +2799,7 @@ function createPrayerCardElement(prayer, prayerIndex, isKidase = false) {
     const prayerLabel = document.createElement('div');
     prayerLabel.classList.add('prayer-label');
     if (!displayOptions.showPrayerLabels) prayerLabel.classList.add('hidden');
-    prayerLabel.textContent = getPrayerLabel(prayer, isKidase);
+    prayerLabel.textContent = getPrayerLabel(prayer, isKidase).replace(/→\s*/g, '');
     prayerFooter.appendChild(prayerLabel);
 
     const prayerActions = document.createElement('div');
@@ -3416,14 +3416,14 @@ function renderPrayers() {
                 iconImg.classList.add('section-icon');
                 if (isInitiallyCollapsed) iconImg.style.display = 'none';
                 prayerDisplay.appendChild(iconImg);
-            } else if (title === "Opening Prayer for the Psalms and the Songs of the Prophets | ነዓ ኀቤየ ዳዊት") {
+            } else if (title === "→ Opening Prayer | ነዓ ኀቤየ ዳዊት") {
                 const iconImg = document.createElement('img');
                 iconImg.src = 'img/Covenant-of-Mercy.svg';
                 iconImg.alt = 'Covenant of Mercy Icon';
                 iconImg.classList.add('section-icon');
                 if (isInitiallyCollapsed) iconImg.style.display = 'none';
                 prayerDisplay.appendChild(iconImg);
-            } else if (title === "Closing Prayer for the Psalms and Songs of the Prophets | ሰአሊ ለነ ማርያም") {
+            } else if (title === "→ Closing Prayer | ሰአሊ ለነ ማርያም") {
                 const iconImg = document.createElement('img');
                 iconImg.src = 'img/Covenant-of-Mercy-with-Psalm.svg';
                 iconImg.alt = 'Covenant of Mercy with Psalm Icon';
@@ -3544,6 +3544,7 @@ function renderPrayers() {
     const prophetSongsRendered = selectedProphetSongs.length > 0;
 
     if (psalmsRendered || prophetSongsRendered) {
+        addSectionTitle("Psalms | መዝሙር ዘዳዊት", false);
         const psalmIntroPrayers = prayers.filter(p => p.chapter === 'Psalms' && p.stanza === 'Intro');
         if (psalmIntroPrayers.length > 0) {
             addSectionTitleIfNeeded(psalmIntroPrayers[0]);
@@ -3559,14 +3560,14 @@ function renderPrayers() {
 
     if (psalmsRendered) {
         renderSelectedPsalmsWithDoxology((psalmNum) => {
-            addSectionTitle(`Psalm ${psalmNum} | መዝሙር ዘዳዊት ${toGeez(psalmNum)}`);
+            addSectionTitle(`→ Psalm ${psalmNum} | መዝሙር ዘዳዊት ${toGeez(psalmNum)}`);
         });
     }
 
     // Conditionally render Prophet Songs
     if (prophetSongsRendered) {
         renderSelectedProphetSongs((song) => {
-            const title = `${song.name} ${song.verseRange || ''}`;
+            const title = `→ ${song.name} ${song.verseRange || ''}`;
             addSectionTitle(title, true, { aka: song.aka, time: song.time, purpose: song.purpose });
         });
     }
