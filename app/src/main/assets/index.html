@@ -253,7 +253,23 @@
                             style="display: none; margin-left: 1rem; border-left: 2px solid var(--accent-color); padding-left: 1rem;">
                             <h4 class="settings-subtitle">PRE-LITURGY</h4>
                             <label style="display: block; margin-bottom: 0.5rem;"><input type="checkbox"
-                                    id="show-morning-psalm-gospel"> <span>Add Morning Psalm & Gospel</span></label>
+                                    id="show-vespers"> <span>Add Vespers (Sunset)</span></label>
+                            <div id="vespers-psalm-gospel-settings"
+                                style="display: none; margin-bottom: 1rem; margin-left: 1rem; border-left: 1px solid var(--border-color); padding-left: 0.5rem;">
+                                <div class="kidase-lectionary-item" style="margin-top: 0.5rem;">
+                                    <h5 class="settings-subtitle clickable-reading-title"
+                                        data-reading-target="eveningPsalm">Evening Psalm (NKJV) | ምስባክ ዘሠርክ</h5>
+                                    <div id="evening-psalm-ref-container" class="lectionary-picker-container"></div>
+                                </div>
+                                <hr class="lectionary-separator">
+                                <div class="kidase-lectionary-item" style="margin-top: 0.5rem;">
+                                    <h5 class="settings-subtitle clickable-reading-title"
+                                        data-reading-target="eveningGospel">Evening Gospel | ወንጌል ዘሠርክ</h5>
+                                    <div id="evening-gospel-ref-container" class="lectionary-picker-container"></div>
+                                </div>
+                            </div>
+                            <label style="display: block; margin-bottom: 0.5rem;"><input type="checkbox"
+                                    id="show-matins"> <span>Add Matins (Dawn)</span></label>
                             <div id="morning-psalm-gospel-settings"
                                 style="display: none; margin-bottom: 1rem; margin-left: 1rem; border-left: 1px solid var(--border-color); padding-left: 0.5rem;">
                                 <div class="kidase-lectionary-item" style="margin-top: 0.5rem;">
@@ -269,8 +285,7 @@
                                 </div>
                             </div>
 
-                            <label style="display: block; margin-bottom: 0.5rem;"><input type="checkbox"
-                                    id="show-pre-liturgy-kidan"> <span>Add Prayer of Covenant</span></label>
+
 
 
                             <h4 class="settings-subtitle"
@@ -307,11 +322,10 @@
                                 <div id="kidase-gospel-ref-container" class="lectionary-picker-container"></div>
                             </div>
 
-                            <h4 class="settings-subtitle" style="margin-top: 0.75rem;">Eucharistic Prayer (Anaphora) |
-                                አኰቴተ ቍርባን</h4>
-                            <select id="anaphora-selector" class="settings-select">
+                            <h4 class="settings-subtitle" style="margin-top: 0.75rem;">Eucharistic Prayer | አኰቴተ ቍርባን</h4>
+                            <select id="anaphora-selector" class="settings-select" style="margin-top: 0.25rem;">
                                 <option value="apostles">Apostles | ሐዋርያት</option>
-                                <option value="mary">Our Lady Mary | ማርያም</option>
+                                <option value="mary">Mary | ማርያም</option>
                             </select>
 
                             <h4 class="settings-subtitle"
@@ -325,9 +339,9 @@
                                 TIME OF ḲIDASÉ</h4>
                             <select id="covenant-prayer-selector" class="settings-select">
                                 <option value="none">None | አልቦ</option>
-                                <option value="morning" selected>Morning | ዘነግህ</option>
+                                <option value="morning" selected>Dawn | ዘነግህ</option>
                                 <option value="midnight">Midnight | ዘመንፈቀ ሌሊት</option>
-                                <option value="afternoon">Afternoon | ዘሠርክ</option>
+                                <option value="afternoon">Sunset | ዘሠርክ</option>
                             </select>
                         </div>
                     </div>

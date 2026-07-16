@@ -3166,3 +3166,8 @@ body.presentation-mode-slides .hareg-ornament {
         padding: 0.75rem 0.9rem;
     }
 }
+
+.sub-sub-section-title {
+    margin-left: 3rem;
+    font-size: 1.5rem;
+}
