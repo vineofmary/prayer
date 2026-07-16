@@ -3042,7 +3042,7 @@ function renderSelectedKidase(addSectionTitleCallback) {
 
     // A. Vespers (Evening Prayers)
     if (showVespers) {
-        addSectionTitleCallback("<i>Vespers</i> — Prayer of the Sunset | ጸሎተ ዘሠርክ");
+        addSectionTitleCallback("<i>Vespers</i> — Sunset Prayer | ጸሎተ ሠርክ", false);
         addSectionTitleCallback("→ Prayer of the Gospel | ጸሎተ ወንጌል");
         
         // Deep clone the chunk and swap morning placeholders for evening placeholders
@@ -3072,7 +3072,7 @@ function renderSelectedKidase(addSectionTitleCallback) {
 
     // B. Matins (Morning Prayers)
     if (showMatins) {
-        addSectionTitleCallback("<i>Matins</i> — Prayer of the Dawn | ጸሎተ ዘነግህ");
+        addSectionTitleCallback("<i>Matins</i> — Morning Prayer | ጸሎተ ነግህ", false);
         addSectionTitleCallback("→ Prayer of the Gospel | ጸሎተ ወንጌል");
         renderKidaseSection(morningGospelChunk);
         addSectionTitleCallback("→ <i>Kidan</i> — Prayer of the Covenant | ጸሎተ ኪዳን");
@@ -3080,20 +3080,19 @@ function renderSelectedKidase(addSectionTitleCallback) {
     }
 
     // C. Order of the Liturgy | ሥርዓተ ቅዳሴ
-    addSectionTitleCallback("<i>Ḳwirban</i> — Holy Communion | ምስጢረ ቍርባን");
-    addSectionTitleCallback("→ <i>Ḳidasé</i> — Order of the Liturgy | ሥርዓተ ቅዳሴ");
+    addSectionTitleCallback("<i>Ḳidasé</i> — Liturgy | ቅዳሴ", false);
+    addSectionTitleCallback("→ Order of the Liturgy | ሥርዓተ ቅዳሴ");
     mainLiturgyArray.push(...allOrderPrayers.slice(liturgyStart));
     renderKidaseSection(mainLiturgyArray, true); // true means apply version filtering to any embedded Kidan
 
     // 4. Anaphora
     const anaphoraMap = {
-        'apostles': { name: '→ → Our Fathers the Apostles | ዘአበዊነ ሐዋርያት', data: kidaseData.apostles },
-        'mary': { name: '→ → Our Lady Mary | ዘእግዝእትነ ማርያም', data: kidaseData.mary }
+        'apostles': { name: '→ Anaphora of the Apostles | ቅዳሴ ሐዋርያት', data: kidaseData.apostles },
+        'mary': { name: '→ Anaphora of Mary | ቅዳሴ ማርያም', data: kidaseData.mary }
     };
 
     const anaphora = anaphoraMap[selectedAnaphora];
     if (anaphora) {
-        addSectionTitleCallback("→ <i>Anaphora</i> — The Thanksgiving of the Offering | አኰቴተ ቍርባን");
         addSectionTitleCallback(anaphora.name);
         renderKidaseSection(anaphora.data);
     }
