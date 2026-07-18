@@ -379,6 +379,7 @@ const covenantPrayerSelector = document.getElementById('covenant-prayer-selector
 const hideQuietPrayersToggle = document.getElementById('hide-quiet-prayers');
 const servantNameInput = document.getElementById('servant-name-input');
 const shareLinkButton = document.getElementById('share-link-button');
+const shareScripturesButton = document.getElementById('share-scriptures-button');
 const patriarchNameInput = document.getElementById('patriarch-name-input');
 const bishopNameInput = document.getElementById('bishop-name-input');
 const attendingBishopsInput = document.getElementById('attending-bishops-input');
@@ -1398,6 +1399,42 @@ async function loadStateFromUrl() {
     }
 }
 
+async function createShortLinkUrl() {
+    const state = {
+        v: '2',
+        k: isKidaseModeActive,
+        a: selectedAnaphora,
+        c: selectedCovenantPrayer,
+        hq: hideQuietPrayers,
+        ps: selectedPsalms,
+        ss: selectedProphetSongs,
+        sd: selectedSeatatLectionaryDay,
+        wd: selectedWidaseMaryamDay,
+        lr: kidaseLectionaryRefs,
+        sm: showMatins,
+        st: showTeklil,
+        bgn: bridegroomName,
+        bn: brideName,
+        sv: showVespers,
+        l: Object.keys(displayedLanguages).filter(lang => displayedLanguages[lang]),
+        t: currentTheme,
+        do: displayOptions,
+        fs: fontSizes,
+        lo: languageOrder,
+        cn: customNames,
+        cs: {}, // Empty collapsed sections
+        ac: true // Recipients see everything collapsed by default as requested
+    };
+
+    const stateJson = JSON.stringify(state);
+    const docRef = await db.collection('short_links').add({
+        state: stateJson,
+        createdAt: firebase.firestore.FieldValue.serverTimestamp()
+    });
+
+    return `${window.location.origin}${window.location.pathname}#id=${docRef.id}`;
+}
+
 async function generateShortLink() {
     if (!shareLinkButton) return;
     const originalContent = shareLinkButton.innerHTML;
@@ -1405,39 +1442,7 @@ async function generateShortLink() {
     shareLinkButton.disabled = true;
 
     try {
-        const state = {
-            v: '2',
-            k: isKidaseModeActive,
-            a: selectedAnaphora,
-            c: selectedCovenantPrayer,
-            hq: hideQuietPrayers,
-            ps: selectedPsalms,
-            ss: selectedProphetSongs,
-            sd: selectedSeatatLectionaryDay,
-            wd: selectedWidaseMaryamDay,
-            lr: kidaseLectionaryRefs,
-            sm: showMatins,
-            st: showTeklil,
-            bgn: bridegroomName,
-            bn: brideName,
-            sv: showVespers,
-            l: Object.keys(displayedLanguages).filter(lang => displayedLanguages[lang]),
-            t: currentTheme,
-            do: displayOptions,
-            fs: fontSizes,
-            lo: languageOrder,
-            cn: customNames,
-            cs: {}, // Empty collapsed sections
-            ac: true // Recipients see everything collapsed by default as requested
-        };
-
-        const stateJson = JSON.stringify(state);
-        const docRef = await db.collection('short_links').add({
-            state: stateJson,
-            createdAt: firebase.firestore.FieldValue.serverTimestamp()
-        });
-
-        const shortUrl = `${window.location.origin}${window.location.pathname}#id=${docRef.id}`;
+        const shortUrl = await createShortLinkUrl();
         await navigator.clipboard.writeText(shortUrl);
         showCopyNotification('Short link copied to clipboard!');
     } catch (e) {
@@ -1446,6 +1451,149 @@ async function generateShortLink() {
     } finally {
         shareLinkButton.innerHTML = originalContent;
         shareLinkButton.disabled = false;
+    }
+}
+
+async function shareScriptures() {
+    if (!shareScripturesButton) return;
+    const originalContent = shareScripturesButton.innerHTML;
+    shareScripturesButton.innerHTML = '<span>Generating...</span>';
+    shareScripturesButton.disabled = true;
+
+    try {
+        if (!bibleData.loaded) {
+            await loadBibleData();
+        }
+        
+        const shortUrl = await createShortLinkUrl();
+        
+        let text = "";
+        const readings = [];
+        
+        if (showVespers) {
+            readings.push({ key: 'eveningPsalm', title: '፨ Vespers Psalm | ምስባክ ዘሠርክ', isPsalm: true });
+            readings.push({ key: 'eveningGospel', title: '፨ Vespers Gospel | ወንጌል ዘሠርክ', isPsalm: false });
+        }
+
+        if (showMatins) {
+            readings.push({ key: 'morningPsalm', title: '፨ Matins Psalm | ምስባክ ዘነግህ', isPsalm: true });
+            readings.push({ key: 'morningGospel', title: '፨ Matins Gospel | ወንጌል ዘነግህ', isPsalm: false });
+        }
+        
+        if (isKidaseModeActive) {
+            readings.push({ key: 'pauline', title: '፨ Pauline Epistle | መልእክተ ጳውሎስ', isPsalm: false });
+            readings.push({ key: 'universal', title: '፨ Universal Epistle | መልእክተ ካልእ', isPsalm: false });
+            readings.push({ key: 'acts', title: '፨ Acts of the Apostles | ግብረ ሐዋርያት', isPsalm: false });
+            readings.push({ key: 'psalm', title: '፨ Liturgy Psalm | ምስባክ ዘቅዳሴ', isPsalm: true });
+            readings.push({ key: 'gospel', title: '፨ Liturgy Gospel | ወንጌል ዘቅዳሴ', isPsalm: false });
+        }
+        
+        for (const r of readings) {
+            const refStr = kidaseLectionaryRefs[r.key];
+            if (!refStr) continue;
+            
+            const match = refStr.match(/(.+) (\d+):(.+)/);
+            if (!match) continue;
+            
+            let book = match[1];
+            let chapter = parseInt(match[2]);
+            let versesStr = match[3];
+            
+            let lookupName = book;
+            if (book === 'Psalm') lookupName = 'Psalms';
+            
+            let startVerse = 1;
+            let endVerse = 1;
+            if (versesStr.includes('-')) {
+                const parts = versesStr.split('-');
+                startVerse = parseInt(parts[0]);
+                if (parts[1].toLowerCase() === 'end') {
+                    endVerse = getActualVerseCount(lookupName, chapter) || 999;
+                } else {
+                    endVerse = parseInt(parts[1]);
+                }
+            } else {
+                startVerse = endVerse = parseInt(versesStr);
+            }
+            const actualEndVerse = (startVerse !== endVerse) ? `${startVerse}-${endVerse}` : `${startVerse}`;
+            
+            const bookCfg = BIBLE_BOOK_MAPPING[lookupName];
+            let geezBook = bookCfg ? bookCfg.geez : book;
+            
+            const engRef = `${book} ${chapter}:${actualEndVerse} (NKJV)`;
+            let citationLine = engRef;
+            
+            let misbak = null;
+            if (r.isPsalm && typeof TYPICAL_PSALMS !== 'undefined') {
+                misbak = TYPICAL_PSALMS.find(p => p.mc === chapter && p.ms === startVerse && p.me === endVerse);
+            }
+            
+            if (r.isPsalm) {
+                if (misbak) {
+                    const osbEndVerse = (misbak.ls !== misbak.le) ? `${misbak.ls}-${misbak.le}` : `${misbak.ls}`;
+                    const osbRef = `Psalms ${misbak.lc}:${osbEndVerse} (OSB)`;
+                    
+                    const endGeez = (misbak.ls !== misbak.le) ? '-' + toGeezNumeral(misbak.le) : '';
+                    const geezRef = `${geezBook} ${toGeezNumeral(misbak.lc)}፡${toGeezNumeral(misbak.ls)}${endGeez} (ግእዝ)`;
+                    
+                    citationLine = `${engRef} | ${osbRef} | ${geezRef}`;
+                } else {
+                    citationLine = engRef;
+                }
+            } else {
+                const endGeez = (startVerse !== endVerse) ? '-' + toGeezNumeral(endVerse) : '';
+                const geezRef = `${geezBook} ${toGeezNumeral(chapter)}፡${toGeezNumeral(startVerse)}${endGeez}`;
+                citationLine = `${engRef} | ${geezRef}`;
+            }
+            
+            if (text !== "") {
+                text += `\n`;
+            }
+            text += `${r.title}\n`;
+            text += `${citationLine}\n`;
+            
+            if (r.isPsalm) {
+                if (misbak) {
+                    text += `${misbak.g}\n`;
+                }
+                
+                const engTextArray = [];
+                const nkjvBookName = bookCfg ? bookCfg.nkjv : "Psalms";
+                if (bibleData.nkjv) {
+                    for (let vNum = startVerse; vNum <= endVerse; vNum++) {
+                        const v = bibleData.nkjv.find(v => v.book === nkjvBookName && v.chapter === chapter && v.verse === vNum);
+                        if (v) {
+                            engTextArray.push(String(v.text).replace(/<[^>]+>/g, ''));
+                        }
+                    }
+                }
+                const engText = engTextArray.join(' ');
+                if (engText) {
+                    text += `${engText}\n`;
+                }
+            } else {
+                const engVerses = getSeatatBibleVerses(lookupName, chapter, actualEndVerse);
+                if (engVerses && engVerses.length > 0) {
+                    const firstVerseText = engVerses.map(v => String(v.english).replace(/<[^>]+>/g, '')).filter(Boolean).join(' ');
+                    if (firstVerseText) {
+                        const words = firstVerseText.split(/\s+/);
+                        const incipit = words.slice(0, 15).join(' ') + (words.length > 15 ? '...' : '');
+                        text += `"${incipit}"\n`;
+                    }
+                }
+            }
+        }
+        
+        text += `\n${shortUrl}`;
+        
+        await navigator.clipboard.writeText(text.trim());
+        showCopyNotification('Link and scriptures copied!');
+    } catch (e) {
+        console.error("Failed to generate scriptures text:", e);
+        showCopyNotification('Failed to copy.', 3000);
+    } finally {
+        shareScripturesButton.innerHTML = originalContent;
+        shareScripturesButton.disabled = false;
     }
 }
 
@@ -5487,6 +5635,10 @@ showPrayerLabelsToggle.addEventListener('change', () => {
 
 if (shareLinkButton) {
     shareLinkButton.addEventListener('click', generateShortLink);
+}
+
+if (shareScripturesButton) {
+    shareScripturesButton.addEventListener('click', shareScriptures);
 }
 
 showLanguageLabelsToggle.addEventListener('change', () => {
