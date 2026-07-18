@@ -363,6 +363,10 @@ const kidaseGatedSection = document.getElementById('kidase-gated-section');
 const kidaseModeToggle = document.getElementById('kidase-mode-toggle');
 const kidaseSettings = document.getElementById('kidase-settings');
 const showMatinsToggle = document.getElementById('show-matins');
+const showTeklilToggle = document.getElementById('show-teklil');
+const teklilNamesSettings = document.getElementById('teklil-names-settings');
+const bridegroomNameInput = document.getElementById('bridegroom-name-input');
+const brideNameInput = document.getElementById('bride-name-input');
 const morningPsalmGospelSettings = document.getElementById('morning-psalm-gospel-settings');
 const morningPsalmRefContainer = document.getElementById('morning-psalm-ref-container');
 const morningGospelRefContainer = document.getElementById('morning-gospel-ref-container');
@@ -415,6 +419,9 @@ let selectedWidaseMaryamDay = 'All';
 let isKidaseModeActive = false;
 let selectedAnaphora = 'apostles';
 let showMatins = true;
+let showTeklil = false;
+let bridegroomName = '';
+let brideName = '';
 let showVespers = false;
 let selectedCovenantPrayer = 'morning';
 let hideQuietPrayers = true;
@@ -1252,6 +1259,9 @@ function syncStateToUrl() {
             wd: selectedWidaseMaryamDay,
             lr: kidaseLectionaryRefs,
             sm: showMatins,
+            st: showTeklil,
+            bgn: bridegroomName,
+            bn: brideName,
             sv: showVespers,
             l: Object.keys(displayedLanguages).filter(lang => displayedLanguages[lang]),
             t: currentTheme,
@@ -1358,6 +1368,9 @@ async function loadStateFromUrl() {
         if (state.wd !== undefined) selectedWidaseMaryamDay = state.wd;
         if (state.lr !== undefined) kidaseLectionaryRefs = { ...kidaseLectionaryRefs, ...state.lr };
         if (state.sm !== undefined) showMatins = state.sm;
+        if (state.st !== undefined) showTeklil = state.st;
+        if (state.bgn !== undefined) bridegroomName = state.bgn;
+        if (state.bn !== undefined) brideName = state.bn;
         if (state.sv !== undefined) showVespers = state.sv;
 
         if (state.l !== undefined) {
@@ -1404,6 +1417,9 @@ async function generateShortLink() {
             wd: selectedWidaseMaryamDay,
             lr: kidaseLectionaryRefs,
             sm: showMatins,
+            st: showTeklil,
+            bgn: bridegroomName,
+            bn: brideName,
             sv: showVespers,
             l: Object.keys(displayedLanguages).filter(lang => displayedLanguages[lang]),
             t: currentTheme,
@@ -1451,6 +1467,9 @@ function saveSettings() {
     localStorage.setItem('isKidaseModeActive', isKidaseModeActive);
     localStorage.setItem('selectedAnaphora', selectedAnaphora);
     localStorage.setItem('showMatins', showMatins);
+    localStorage.setItem('showTeklil', showTeklil);
+    localStorage.setItem('bridegroomName', bridegroomName);
+    localStorage.setItem('brideName', brideName);
     localStorage.setItem('showVespers', showVespers);
     localStorage.setItem('selectedCovenantPrayer', selectedCovenantPrayer);
     localStorage.setItem('hideQuietPrayers', hideQuietPrayers);
@@ -1525,6 +1544,9 @@ async function loadSettings() {
         isKidaseModeActive: false,
         selectedAnaphora: 'apostles',
         showMatins: true,
+        showTeklil: false,
+        bridegroomName: '',
+        brideName: '',
         showVespers: false,
         selectedCovenantPrayer: 'morning',
         hideQuietPrayers: true,
@@ -1597,6 +1619,9 @@ async function loadSettings() {
         isKidaseModeActive = localStorage.getItem('isKidaseModeActive') === 'true';
         selectedAnaphora = localStorage.getItem('selectedAnaphora') || defaultSettings.selectedAnaphora;
         showMatins = localStorage.getItem('showMatins') !== null ? localStorage.getItem('showMatins') === 'true' : defaultSettings.showMatins;
+        showTeklil = localStorage.getItem('showTeklil') === 'true';
+        bridegroomName = localStorage.getItem('bridegroomName') || defaultSettings.bridegroomName;
+        brideName = localStorage.getItem('brideName') || defaultSettings.brideName;
         showVespers = localStorage.getItem('showVespers') === 'true';
         selectedCovenantPrayer = localStorage.getItem('selectedCovenantPrayer') || defaultSettings.selectedCovenantPrayer;
         hideQuietPrayers = localStorage.getItem('hideQuietPrayers') !== null ? localStorage.getItem('hideQuietPrayers') === 'true' : defaultSettings.hideQuietPrayers;
@@ -1620,6 +1645,11 @@ async function loadSettings() {
     headOfStateInput.value = customNames.headOfState;
 
     initializeLectionaryPickers();
+
+    showTeklilToggle.checked = showTeklil;
+    bridegroomNameInput.value = bridegroomName;
+    brideNameInput.value = brideName;
+    teklilNamesSettings.style.display = showTeklil ? 'block' : 'none';
 
     geezFontSizeSlider.value = fontSizes.geez;
     englishFontSizeSlider.value = fontSizes.english;
@@ -3070,10 +3100,96 @@ function renderSelectedKidase(addSectionTitleCallback) {
     // B. Matins (Morning Prayers)
     if (showMatins) {
         addSectionTitleCallback("<i>Matins</i> — Morning Prayer | ጸሎተ ነግህ", false);
+
+        if (showTeklil && typeof teklilData !== 'undefined') {
+            addSectionTitleCallback("→ <i>Teklil</i> — Crowning (Matrimony) | ተክሊል");
+            
+            // 1. Render main block of Teklil (up to Thanksgiving) - Stanzas 1 to 75
+            const mainTeklil = teklilData.prayers.filter(p => parseInt(p.stanza) <= 75);
+            renderKidaseSection(mainTeklil);
+            
+            // 2. Fetch Thanksgiving (3-31 to 3-39)
+            const thanksgiving = allOrderPrayers.filter(p => p.chapter === '3' && parseInt(p.stanza) >= 31 && parseInt(p.stanza) <= 39);
+            renderKidaseSection(thanksgiving);
+
+            // 3. Stand up for prayer / Peace be unto you (3-118)
+            const standUp = allOrderPrayers.filter(p => p.chapter === '3' && parseInt(p.stanza) === 118);
+            renderKidaseSection(standUp);
+
+            // 4. Fetch Oblation (3-41 to 3-44)
+            const oblation = allOrderPrayers.filter(p => p.chapter === '3' && parseInt(p.stanza) >= 41 && parseInt(p.stanza) <= 44);
+            renderKidaseSection(oblation);
+
+            // 5. Fetch "Let us worship" sequence (3-119 to 3-122). Note: 3-119 has two variants, we want the Sunday one containing "worship" in english
+            const worshipSequence = allOrderPrayers.filter(p => {
+                if (p.chapter !== '3') return false;
+                const s = parseInt(p.stanza);
+                if (s === 119) return p.english.toLowerCase().includes("worship");
+                return s >= 120 && s <= 122;
+            });
+            renderKidaseSection(worshipSequence);
+
+            // 6. Deacon Intro to Ephesians
+            const ephesiansIntroCard = {
+                chapter: "Ephesians",
+                stanza: "Intro",
+                instruction: "",
+                reference: "Epistle to the Ephesians",
+                english: "DEACON: A reading from the Epistle of St. Paul to the Ephesians, chapter 5, verses 25-33. May his prayer and blessing be with us all. Amen."
+            };
+            renderKidaseSection([ephesiansIntroCard]);
+            
+            // 7. Fetch Ephesians 5:25-33
+            const ephesiansVerses = getBibleVersesFromRef('Ephesians 5:25-33');
+            if (ephesiansVerses) {
+                const verseCounts = Object.values(ephesiansVerses).map(arr => arr.length);
+                const maxVerses = Math.max(0, ...verseCounts);
+                
+                for (let i = 0; i < maxVerses; i++) {
+                    const versePrayer = {
+                        english: ephesiansVerses['english']?.[i]?.text || '',
+                        geez_script: ephesiansVerses['geez_script']?.[i]?.text || '',
+                        amharic_script: ephesiansVerses['amharic_script']?.[i]?.text || '',
+                        tigrinya_script: ephesiansVerses['tigrinya_script']?.[i]?.text || '',
+                        spanish: ephesiansVerses['spanish']?.[i]?.text || '',
+                        chapter: "Ephesians",
+                        stanza: "5:" + (25 + i),
+                        reference: "Ephesians 5:25-33",
+                        instruction: ""
+                    };
+                    renderKidaseSection([versePrayer]);
+                }
+            }
+            
+            // 8. Fetch Blessing (3-136 to 3-137)
+            const blessing = allOrderPrayers.filter(p => 
+                p.chapter === '3' && 
+                (parseInt(p.stanza) === 136 || parseInt(p.stanza) === 137) &&
+                !p.english.includes("{{TODAY'S PAULINE EPISTLE READING}}")
+            );
+            renderKidaseSection(blessing);
+        }
+
         addSectionTitleCallback("→ Prayer of the Gospel | ጸሎተ ወንጌል");
         renderKidaseSection(morningGospelChunk);
         addSectionTitleCallback("→ <i>Kidan</i> — Prayer of the Covenant | ጸሎተ ኪዳን");
         renderKidaseSection(preLiturgyKidanChunk);
+
+        if (showTeklil && typeof teklilData !== 'undefined') {
+            addSectionTitleCallback("→ <i>Teklil</i> — Exhortation | ምክር");
+            
+            // 5. Exhortation specific liturgy insertions (4-6 to 4-12, 4-23 to 4-31, The300-1 to 10)
+            const exhortationLiturgy = allOrderPrayers.filter(p => 
+                (p.chapter === '4' && parseInt(p.stanza) >= 6 && parseInt(p.stanza) <= 12) ||
+                (p.chapter === '4' && parseInt(p.stanza) >= 23 && parseInt(p.stanza) <= 31) ||
+                (p.chapter === 'The300' && parseInt(p.stanza) >= 1 && parseInt(p.stanza) <= 10)
+            );
+            renderKidaseSection(exhortationLiturgy, false, true); 
+            
+            // 6. Concluding Teklil prayers
+            const exhortationTeklil = teklilData.prayers.filter(p => parseInt(p.stanza) >= 76);
+            renderKidaseSection(exhortationTeklil);
+        }
     }
 
     // C. Order of the Liturgy | ሥርዓተ ቅዳሴ
@@ -3095,7 +3211,7 @@ function renderSelectedKidase(addSectionTitleCallback) {
     }
 
     // Helper to render a chunk of kidase prayers with current filters
-    function renderKidaseSection(prayers, isLiturgyCore = false) {
+    function renderKidaseSection(prayers, isLiturgyCore = false, overrideQuietFilter = false) {
         let filtered = prayers;
 
         // Apply Liturgy-embedded Covenant Prayer filtering (only for Core) BEFORE hideQuietPrayers
@@ -3111,17 +3227,32 @@ function renderSelectedKidase(addSectionTitleCallback) {
             });
         }
 
-        if (hideQuietPrayers) {
-            filtered = filtered.filter(p => !p.instruction.includes("Inaudible Prayer"));
+        if (hideQuietPrayers && !overrideQuietFilter) {
+            filtered = filtered.filter(p => p.instruction ? !p.instruction.includes("Inaudible Prayer") : true);
         }
 
-        filtered.forEach((p, relativeIdx) => {
+        filtered.forEach((pOriginal, relativeIdx) => {
+            const p = { ...pOriginal }; // clone to avoid modifying original array
+
+            // Replace Teklil placeholders if they exist
+            if (showTeklil) {
+                const keys = ['english', 'geez_script', 'amharic_script', 'tigrinya_script', 'spanish'];
+                const groom = bridegroomName.trim() || "Bridegroom";
+                const bride = brideName.trim() || "Bride";
+                keys.forEach(k => {
+                    if (p[k]) {
+                        p[k] = p[k].replace(/\{\{BRIDEGROOM_NAME\}\}/g, groom);
+                        p[k] = p[k].replace(/\{\{BRIDE_NAME\}\}/g, bride);
+                    }
+                });
+            }
+
             // Check if this prayer contains a reading placeholder from the config
             let activeCfg = null;
             for (const cfg of LITURGY_LECTIONARY_CONFIG) {
                 const hasPlaceholder = Object.values(cfg.placeholders).some(ph =>
-                    p.english.includes(ph) ||
-                    p.geez_script.includes(ph) ||
+                    (p.english && p.english.includes(ph)) ||
+                    (p.geez_script && p.geez_script.includes(ph)) ||
                     (p.amharic_script && p.amharic_script.includes(ph))
                 );
 
@@ -4918,8 +5049,38 @@ kidaseModeToggle.addEventListener('change', () => {
 showMatinsToggle.addEventListener('change', () => {
     showMatins = showMatinsToggle.checked;
     morningPsalmGospelSettings.style.display = showMatins ? 'block' : 'none';
+
     saveSettings();
     smoothRender();
+});
+
+showTeklilToggle.addEventListener('change', () => {
+    showTeklil = showTeklilToggle.checked;
+    teklilNamesSettings.style.display = showTeklil ? 'block' : 'none';
+    
+    if (showTeklil) {
+        // Default Matins lectionary when Teklil is toggled ON
+        kidaseLectionaryRefs.morningPsalm = 'Psalms 19:5-5'; // 18:5 in Orthodox is 19:5 in NKJV
+        kidaseLectionaryRefs.morningGospel = 'Matthew 9:1-13';
+        
+        // Re-initialize pickers to update the UI with new defaults
+        initializeLectionaryPickers();
+    }
+
+    saveSettings();
+    smoothRender();
+});
+
+bridegroomNameInput.addEventListener('input', () => {
+    bridegroomName = bridegroomNameInput.value;
+    saveSettings();
+    renderPrayers();
+});
+
+brideNameInput.addEventListener('input', () => {
+    brideName = brideNameInput.value;
+    saveSettings();
+    renderPrayers();
 });
 
 
