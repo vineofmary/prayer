@@ -1481,9 +1481,9 @@ async function shareScriptures() {
         }
         
         if (isKidaseModeActive) {
-            readings.push({ key: 'pauline', title: '፨ Pauline Epistle | መልእክተ ጳውሎስ', isPsalm: false });
-            readings.push({ key: 'universal', title: '፨ Universal Epistle | መልእክተ ካልእ', isPsalm: false });
-            readings.push({ key: 'acts', title: '፨ Acts of the Apostles | ግብረ ሐዋርያት', isPsalm: false });
+            readings.push({ key: 'pauline', title: '፨ Liturgy Pauline Epistle | መልእክተ ጳውሎስ', isPsalm: false });
+            readings.push({ key: 'universal', title: '፨ Liturgy Universal Epistle | መልእክተ ካልእ', isPsalm: false });
+            readings.push({ key: 'acts', title: '፨ Liturgy Acts of the Apostles | ግብረ ሐዋርያት', isPsalm: false });
             readings.push({ key: 'psalm', title: '፨ Liturgy Psalm | ምስባክ ዘቅዳሴ', isPsalm: true });
             readings.push({ key: 'gospel', title: '፨ Liturgy Gospel | ወንጌል ዘቅዳሴ', isPsalm: false });
         }
