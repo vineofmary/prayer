@@ -21,16 +21,16 @@ const teklilData = {
     { instruction: "", reference: "Teklil", chapter: "Teklil", stanza: "19", english: "And I give my word in oath before God and before the congregation of the holy Orthodox Church." },
     { instruction: "", reference: "Teklil", chapter: "Teklil", stanza: "20", english: "Priest: May God in His loving-kindness help you both to keep the promise you have made to each other." },
     { instruction: "", reference: "Teklil", chapter: "Teklil", stanza: "21", english: "Priest: In the name of our Lord and our Savior Jesus Christ, we celebrate the sacrament of matrimony for our blessed Orthodox son {{BRIDEGROOM_NAME}} and our blessed Orthodox daughter {{BRIDE_NAME}}, his wife." },
-    { instruction: "(Having received the wedding rings)", reference: "Prayer over the Covenant Ring", chapter: "Teklil", stanza: "22", english: "Priest: We give You thanks, O Lord God Almighty," },
-    { instruction: "", reference: "Prayer over the Covenant Ring", chapter: "Teklil", stanza: "23", english: "Who were before all the worlds, Who have established by Your word the heavens and the earth, and the foundation of the earth and everything therein;" },
-    { instruction: "", reference: "Prayer over the Covenant Ring", chapter: "Teklil", stanza: "24", english: "Who have gathered the dispersed and have made these two, one;" },
-    { instruction: "", reference: "Prayer over the Covenant Ring", chapter: "Teklil", stanza: "25", english: "and now, O Lord, we supplicate You that You may bless this covenant ring that it may become for {{BRIDEGROOM_NAME}} and {{BRIDE_NAME}} a symbol of the bond of their union," },
-    { instruction: "", reference: "Prayer over the Covenant Ring", chapter: "Teklil", stanza: "26", english: "for they seek Your blessing, and that they may become worthy of the example of the sign of Your word by the bond of the gift of the Holy Spirit," },
-    { instruction: "", reference: "Prayer over the Covenant Ring", chapter: "Teklil", stanza: "27", english: "that there may be between them indivisible love established upon the foundation of the Church," },
-    { instruction: "", reference: "Prayer over the Covenant Ring", chapter: "Teklil", stanza: "28", english: "and that they may live by the bond of unity which each one of them has established;" },
-    { instruction: "", reference: "Prayer over the Covenant Ring", chapter: "Teklil", stanza: "29", english: "for You are the bond of love, have ordained their meeting, and have wrought harmony between them;" },
-    { instruction: "", reference: "Prayer over the Covenant Ring", chapter: "Teklil", stanza: "30", english: "and that they may fulfill the commandment of Your only Son, our Lord and our God and our Savior Jesus Christ," },
-    { instruction: "", reference: "Prayer over the Covenant Ring", chapter: "Teklil", stanza: "31", english: "to Whom is due glory, honor and worship with You and with the Holy Spirit now and always and for all eternity. Amen." },
+    { instruction: "(Having received the wedding rings)", reference: "Prayer over the Covenant Ring", chapter: "Teklil", stanza: "2-1", english: "Priest: We give You thanks, O Lord God Almighty," },
+    { instruction: "", reference: "Prayer over the Covenant Ring", chapter: "Teklil", stanza: "2-1", english: "Who were before all the worlds, Who have established by Your word the heavens and the earth, and the foundation of the earth and everything therein;" },
+    { instruction: "", reference: "Prayer over the Covenant Ring", chapter: "Teklil", stanza: "2-2", english: "Who have gathered the dispersed and have made these two, one;" },
+    { instruction: "", reference: "Prayer over the Covenant Ring", chapter: "Teklil", stanza: "2-2", english: "and now, O Lord, we supplicate You that You may bless this covenant ring that it may become for {{BRIDEGROOM_NAME}} and {{BRIDE_NAME}} a symbol of the bond of their union, for they seek Your blessing, " },
+    { instruction: "", reference: "Prayer over the Covenant Ring", chapter: "Teklil", stanza: "2-3", english: "and that they may become worthy of the example of the sign of Your word by the bond of the gift of the Holy Spirit," },
+    { instruction: "", reference: "Prayer over the Covenant Ring", chapter: "Teklil", stanza: "2-3", english: "that there may be between them indivisible love established upon the foundation of the Church," },
+    { instruction: "", reference: "Prayer over the Covenant Ring", chapter: "Teklil", stanza: "2-4", english: "and that they may live by the bond of unity which each one of them has established;" },
+    { instruction: "", reference: "Prayer over the Covenant Ring", chapter: "Teklil", stanza: "2-4", english: "for You are the bond of love, have ordained their meeting, and have wrought harmony between them;" },
+    { instruction: "", reference: "Prayer over the Covenant Ring", chapter: "Teklil", stanza: "2-5", english: "and that they may fulfill the commandment of Your only Son, our Lord and our God and our Savior Jesus Christ," },
+    { instruction: "", reference: "Prayer over the Covenant Ring", chapter: "Teklil", stanza: "2-5", english: "to Whom is due glory, honor and worship with You and with the Holy Spirit now and always and for all eternity. Amen." },
     { instruction: "(Priest blesses the rings. Bridegroom and Bride place the rings on each other's finger)", reference: "Prayer over the Covenant Ring", chapter: "Teklil", stanza: "32", english: "Priest: Blessed is God the Father Almighty.\n፨ People: Amen.\nPriest: Blessed is God the Son.\n፨ People: Amen.\nPriest: Blessed is God the Holy Spirit.\n፨ People: Amen." },
     { instruction: "", reference: "Prayer over the Covenant Ring", chapter: "Teklil", stanza: "33", english: "Priest: O Lord, Who have made man with Your hands and have given him woman as his helper and comforter," },
     { instruction: "", reference: "Prayer over the Covenant Ring", chapter: "Teklil", stanza: "34", english: "be now, O Lord, a peacemaker unto these young people, the bridegroom and his helper;" },
@@ -106,22 +106,22 @@ const teklilData = {
     { instruction: "", reference: "Exhortation", chapter: "Teklil", stanza: "102", english: "through the prayer of the Lady of us all and the pride of our next of kin, the pure Mother of our Lord, the chosen Mother of all the children of Adam, the holy Virgin Mary" },
     { instruction: "", reference: "Exhortation", chapter: "Teklil", stanza: "103", english: "and through the intercession of Saint Tekle Haymanot, the Righteous One and Evangelist," },
     { instruction: "(The marriage certificate may be signed. The congregation may sing a suitable hymn.)", reference: "Exhortation", chapter: "Teklil", stanza: "104", english: "and through the intercession of the holy and pure saints and martyrs. Amen." },
-    { 
-      instruction: "", 
-      reference: "Exhortation", 
-      chapter: "Teklil", 
-      stanza: "105", 
+    {
+      instruction: "",
+      reference: "Exhortation",
+      chapter: "Teklil",
+      stanza: "105",
       english: "Deacon: Stand up for prayer.\n፨ People: O Lord have mercy upon us.",
       geez_script: "ዲያቆን፤ ተንሥኡ ለጸሎት፣\n፨ ሕዝብ፤ እግዚኦ ተሣሃለነ፣",
       amharic_script: "ዲያቆን፤ ለጸሎት ተነሱ\n፨ ሕዝብ፤ አቤቱ ይቅር በለን",
       tigrinya_script: "ዲያቆን፤ ንጸሎት ተንሥኡ፣\n፨ ሕዝብ፤ ኦ ጐይታ ይቕረ በለልና፣",
       spanish: "Diácono: Levántate para orar.\n፨ Pueblo: Oh Señor, ten piedad de nosotros."
     },
-    { 
-      instruction: "", 
-      reference: "Exhortation", 
-      chapter: "Teklil", 
-      stanza: "106", 
+    {
+      instruction: "",
+      reference: "Exhortation",
+      chapter: "Teklil",
+      stanza: "106",
       english: "Priest: Peace be unto you all.\n፨ People: and with Your Spirit.",
       geez_script: "ካህን፤ ሰላም ለኵልክሙ፣\n፨ ሕዝብ፤ ምስለ መንፈስከ፤",
       amharic_script: "ካህን፤ ሰላም ለሁላችሁ ይሁን\n፨ ሕዝብ፤ ከመንፈስህ ጋራ",
@@ -133,8 +133,8 @@ const teklilData = {
 
 // Add empty strings for other languages so they don't break rendering logic
 teklilData.prayers.forEach(p => {
-    p.geez_script = p.geez_script || "";
-    p.amharic_script = p.amharic_script || "";
-    p.tigrinya_script = p.tigrinya_script || "";
-    p.spanish = p.spanish || "";
+  p.geez_script = p.geez_script || "";
+  p.amharic_script = p.amharic_script || "";
+  p.tigrinya_script = p.tigrinya_script || "";
+  p.spanish = p.spanish || "";
 });

@@ -6367,6 +6367,11 @@ document.addEventListener('DOMContentLoaded', async () => {
                     updateAllMatches(kidaseData.apostles, criteria);
                     updateAllMatches(kidaseData.mary, criteria);
                 }
+                
+                // Sync Teklil data from Firestore
+                if (typeof teklilData !== 'undefined') {
+                    updateAllMatches(teklilData.prayers, criteria);
+                }
             }
         });
     }
