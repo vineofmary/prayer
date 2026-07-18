@@ -3011,8 +3011,8 @@ function renderSelectedKidase(addSectionTitleCallback) {
     const allOrderPrayers = kidaseData.order;
 
     // 1. Find dynamic markers to divide the sequence
-    // Morning Gospel Section starts specifically at 3-181
-    const mGospelIdx = allOrderPrayers.findIndex(p => p.chapter === '3' && p.stanza === '181');
+    // Morning Gospel Section starts specifically at 3-179
+    const mGospelIdx = allOrderPrayers.findIndex(p => p.chapter === '3' && p.stanza === '179');
 
     // Pre-Liturgy Kidan starts at the first occurrence of Chapter "Kidan"
     const kStartIdx = allOrderPrayers.findIndex(p => p.chapter === 'Kidan');
@@ -3032,7 +3032,7 @@ function renderSelectedKidase(addSectionTitleCallback) {
     // "Order of the Liturgy" is the catch-all for everything else (Prep + Main Liturgy)
     const mainLiturgyArray = [];
 
-    // Add Preparatory prayers (everything before Morning Gospel start 3-181)
+    // Add Preparatory prayers (everything before Morning Gospel start 3-179)
     mainLiturgyArray.push(...allOrderPrayers.slice(0, mGospelStart));
 
     // 3. Render Sections

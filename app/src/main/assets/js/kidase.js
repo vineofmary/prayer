@@ -9401,7 +9401,7 @@ const kidaseData = {
       "malayalam": ""
     },
     {
-      "instruction": "Inaudible Prayer",
+      "instruction": "",
       "reference": "Prayer/Litany of the Morning Gospel",
       "chapter": "3",
       "stanza": "179",
@@ -9420,7 +9420,7 @@ const kidaseData = {
       "malayalam": "፨ സുവിശേഷ പ്രാർത്ഥന ፨\nപുരോഹിതൻ: ഓ കർത്താവായ യേശുക്രിസ്തുവേ, ഞങ്ങളുടെ ദൈവമേ, നിന്റെ വിശുദ്ധ ശിഷ്യന്മാരോടും നിന്റെ നിർമ്മല അപ്പോസ്തലന്മാരോടും അവൻ പറഞ്ഞു:"
     },
     {
-      "instruction": "Inaudible Prayer",
+      "instruction": "",
       "reference": "Prayer/Litany of the Morning Gospel (Matthew 13:17)",
       "chapter": "3",
       "stanza": "179",
@@ -9439,7 +9439,7 @@ const kidaseData = {
       "malayalam": "പുരോഹിതൻ: അനേകം പ്രവാചകന്മാരും നീതിമാന്മാരും നിങ്ങൾ കാണുന്ന കാര്യങ്ങൾ കാണാൻ ആഗ്രഹിച്ചിട്ടും കണ്ടില്ല; നിങ്ങൾ കേൾക്കുന്ന കാര്യങ്ങൾ കേൾക്കാൻ ആഗ്രഹിച്ചിട്ടും കേട്ടില്ല."
     },
     {
-      "instruction": "Inaudible Prayer",
+      "instruction": "",
       "reference": "Prayer/Litany of the Morning Gospel (Matthew 13:16)",
       "chapter": "3",
       "stanza": "179",
@@ -9458,7 +9458,7 @@ const kidaseData = {
       "malayalam": "പുരോഹിതൻ: നിങ്ങളോ കണ്ട കണ്ണുകളും കേട്ട ചെവികളും ഭാഗ്യമുള്ളവ;"
     },
     {
-      "instruction": "Inaudible Prayer",
+      "instruction": "",
       "reference": "Prayer/Litany of the Morning Gospel",
       "chapter": "3",
       "stanza": "180",
