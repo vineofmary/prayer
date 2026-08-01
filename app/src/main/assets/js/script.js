@@ -4775,6 +4775,8 @@ function renderSelectedPsalmsWithDoxology(addSectionTitleCallback) {
 function renderSelectedProphetSongs(addSectionTitleCallback) {
     if (selectedProphetSongs.length === 0) return;
 
+    const doxologyPrayer = prayers.find(p => p.chapter === 'Psalms' && p.stanza === 'Response');
+
     selectedProphetSongs.forEach(songKey => {
         const song = prophetSongs.find(s => s.key === songKey);
         if (!song) return;
@@ -4897,6 +4899,12 @@ function renderSelectedProphetSongs(addSectionTitleCallback) {
                 const prayerCard = createPrayerCardElement(versePrayer, -1);
                 prayerDisplay.appendChild(prayerCard);
             });
+        }
+
+        // Render doxology (Conclusion/response) after each Song of the Prophets
+        if (doxologyPrayer) {
+            const doxologyCard = createPrayerCardElement(doxologyPrayer, -1);
+            prayerDisplay.appendChild(doxologyCard);
         }
     });
 }
