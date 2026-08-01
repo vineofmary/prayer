@@ -3368,3 +3368,27 @@ body.presentation-mode-slides .card-inline-lectionary-picker {
     position: relative;
     z-index: 10;
 }
+
+/* Creed cross-navigation button */
+.creed-nav-btn {
+    font-size: 0.72rem;
+    padding: 0.25rem 0.6rem;
+    white-space: nowrap;
+    letter-spacing: 0.03em;
+    flex-shrink: 0;
+    width: auto;
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: 0.5rem;
+}
+
+/* Highlight animation when navigating to a card */
+@keyframes nav-highlight-pulse {
+    0% { box-shadow: 0 0 0 0 rgba(var(--accent-rgb, 100, 149, 237), 0.5); }
+    50% { box-shadow: 0 0 12px 4px rgba(var(--accent-rgb, 100, 149, 237), 0.35); }
+    100% { box-shadow: 0 0 0 0 rgba(var(--accent-rgb, 100, 149, 237), 0); }
+}
+
+.prayer-card.nav-highlight {
+    animation: nav-highlight-pulse 0.75s ease-in-out 2;
+}

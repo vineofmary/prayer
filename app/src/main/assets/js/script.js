@@ -3354,6 +3354,11 @@ function createPrayerCardElement(prayer, prayerIndex, isKidase = false) {
     prayerCard.classList.add('prayer-card');
     prayerCard.dataset.prayerIndex = prayerIndex;
 
+    // Store card identity for cross-card navigation (e.g. creed jump buttons)
+    if (prayer.chapter && prayer.stanza) {
+        prayerCard.dataset.cardId = `${prayer.chapter}-${prayer.stanza}`;
+    }
+
     // Handle initial collapse state (from renderPrayers context)
     // IMPORTANT: Do not hide cards in slides mode even if the section is collapsed
     if (window.isRenderingCollapsed && displayOptions.presentationMode !== 'slides') {
@@ -4132,6 +4137,35 @@ function renderSelectedKidase(addSectionTitleCallback) {
             }
 
             const card = createPrayerCardElement(p, -1, true);
+
+            // Add cross-navigation buttons for creed cards
+            const cardId = `${p.chapter}-${p.stanza}`;
+            if (cardId === '4-33' || cardId === 'The300-1') {
+                const navBtn = document.createElement('button');
+                navBtn.className = 'settings-button creed-nav-btn';
+                if (cardId === '4-33') {
+                    navBtn.textContent = 'NICENE CREED | ጸሎተ ሐይማኖት';
+                    navBtn.title = 'Jump to the Nicene Creed (The 300)';
+                    navBtn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        navigateToCard('The300-1');
+                    });
+                } else {
+                    navBtn.textContent = "APOSTLE'S CREED | አመክንዮ ዘሐዋርያት";
+                    navBtn.title = "Jump to the Apostle's Creed";
+                    navBtn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        navigateToCard('4-33');
+                    });
+                }
+
+                const pFooter = card.querySelector('.prayer-footer');
+                const pActions = card.querySelector('.prayer-actions');
+                if (pFooter && pActions) {
+                    pFooter.insertBefore(navBtn, pActions);
+                }
+            }
+
             prayerDisplay.appendChild(card);
         });
     }
@@ -4732,6 +4766,45 @@ function prevSlide() {
     if (slides.length > 0) {
         currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
         showSlide(currentSlideIndex);
+    }
+}
+
+/**
+ * Navigate to a prayer card by its chapter-stanza ID (e.g. 'The300-1', '4-33').
+ * Works in both scroll mode (scrollIntoView) and slides mode (jump to slide).
+ */
+function navigateToCard(targetCardId) {
+    const targetCard = prayerDisplay.querySelector(`.prayer-card[data-card-id="${targetCardId}"]`);
+    if (!targetCard) return;
+
+    if (displayOptions.presentationMode === 'slides') {
+        // In slides mode: find the slide index and jump to it
+        const allSlides = Array.from(prayerDisplay.querySelectorAll('.prayer-card, .section-title.collapsible'));
+        const slideIdx = allSlides.indexOf(targetCard);
+        if (slideIdx !== -1) {
+            currentSlideIndex = slideIdx;
+            showSlide(currentSlideIndex);
+        }
+    } else {
+        // In scroll mode: expand collapsed sections, unhide card, scroll to it
+        // Ensure the target card's section is expanded
+        if (targetCard.style.display === 'none') {
+            // Find the parent section title and expand it
+            let prev = targetCard.previousElementSibling;
+            while (prev && !prev.classList.contains('section-title')) {
+                prev = prev.previousElementSibling;
+            }
+            if (prev && prev.classList.contains('collapsible') && prev.classList.contains('collapsed')) {
+                prev.click(); // Expand the section
+            }
+        }
+        // Small delay to allow DOM to settle after expansion
+        requestAnimationFrame(() => {
+            targetCard.scrollIntoView({ block: 'center', behavior: 'smooth' });
+            // Brief highlight effect
+            targetCard.classList.add('nav-highlight');
+            setTimeout(() => targetCard.classList.remove('nav-highlight'), 1500);
+        });
     }
 }
 
