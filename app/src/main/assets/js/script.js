@@ -377,6 +377,7 @@ const anaphoraSelector = document.getElementById('anaphora-selector');
 const showVespersToggle = document.getElementById('show-vespers');
 const covenantPrayerSelector = document.getElementById('covenant-prayer-selector');
 const hideQuietPrayersToggle = document.getElementById('hide-quiet-prayers');
+const holyFiftyDaysToggle = document.getElementById('holy-fifty-days-toggle');
 const servantNameInput = document.getElementById('servant-name-input');
 const shareLinkButton = document.getElementById('share-link-button');
 const shareScripturesButton = document.getElementById('share-scriptures-button');
@@ -426,6 +427,7 @@ let brideName = '';
 let showVespers = false;
 let selectedCovenantPrayer = 'morning';
 let hideQuietPrayers = true;
+let isHolyFiftyDays = false;
 let isInitializing = true;
 let kidaseLectionaryRefs = {
     morningPsalm: 'Psalms 34:7-8',
@@ -1263,6 +1265,7 @@ function syncStateToUrl() {
             a: selectedAnaphora,
             c: selectedCovenantPrayer,
             hq: hideQuietPrayers,
+            h50: isHolyFiftyDays,
             ps: selectedPsalms,
             ss: selectedProphetSongs,
             sd: selectedSeatatLectionaryDay,
@@ -1372,6 +1375,7 @@ async function loadStateFromUrl() {
         if (state.a !== undefined) selectedAnaphora = state.a;
         if (state.c !== undefined) selectedCovenantPrayer = state.c;
         if (state.hq !== undefined) hideQuietPrayers = state.hq;
+        if (state.h50 !== undefined) isHolyFiftyDays = state.h50;
         if (state.ps !== undefined) selectedPsalms = state.ps;
         if (state.ss !== undefined) selectedProphetSongs = state.ss;
         if (state.sd !== undefined) selectedSeatatLectionaryDay = state.sd;
@@ -1630,6 +1634,7 @@ function saveSettings() {
     localStorage.setItem('showVespers', showVespers);
     localStorage.setItem('selectedCovenantPrayer', selectedCovenantPrayer);
     localStorage.setItem('hideQuietPrayers', hideQuietPrayers);
+    localStorage.setItem('isHolyFiftyDays', isHolyFiftyDays);
     localStorage.setItem('kidaseLectionaryRefs', JSON.stringify(kidaseLectionaryRefs));
     localStorage.setItem('customNames', JSON.stringify(customNames));
     localStorage.setItem('collapsedSections', JSON.stringify(collapsedSections));
@@ -1707,6 +1712,7 @@ async function loadSettings() {
         showVespers: false,
         selectedCovenantPrayer: 'morning',
         hideQuietPrayers: true,
+        isHolyFiftyDays: false,
         // Default Custom Names
         customNames: {
             servant: '{Names}',
@@ -1746,6 +1752,7 @@ async function loadSettings() {
         selectedAnaphora = defaultSettings.selectedAnaphora;
         selectedCovenantPrayer = defaultSettings.selectedCovenantPrayer;
         hideQuietPrayers = defaultSettings.hideQuietPrayers;
+        isHolyFiftyDays = defaultSettings.isHolyFiftyDays;
         customNames = defaultSettings.customNames; // Use defaults
         collapsedSections = defaultSettings.collapsedSections;
     } else {
@@ -1782,6 +1789,7 @@ async function loadSettings() {
         showVespers = localStorage.getItem('showVespers') === 'true';
         selectedCovenantPrayer = localStorage.getItem('selectedCovenantPrayer') || defaultSettings.selectedCovenantPrayer;
         hideQuietPrayers = localStorage.getItem('hideQuietPrayers') !== null ? localStorage.getItem('hideQuietPrayers') === 'true' : defaultSettings.hideQuietPrayers;
+        isHolyFiftyDays = localStorage.getItem('isHolyFiftyDays') !== null ? localStorage.getItem('isHolyFiftyDays') === 'true' : defaultSettings.isHolyFiftyDays;
         const savedKidaseLectionaryRefs = JSON.parse(localStorage.getItem('kidaseLectionaryRefs')) || {};
         kidaseLectionaryRefs = { ...defaultSettings.kidaseLectionaryRefs, ...savedKidaseLectionaryRefs };
         const savedCustomNames = JSON.parse(localStorage.getItem('customNames')) || {};
@@ -1932,6 +1940,7 @@ function updateAllTogglesInSettingsPanel() {
     vespersPsalmGospelSettings.style.display = showVespers ? 'block' : 'none';
     covenantPrayerSelector.value = selectedCovenantPrayer;
     hideQuietPrayersToggle.checked = hideQuietPrayers;
+    if (holyFiftyDaysToggle) holyFiftyDaysToggle.checked = isHolyFiftyDays;
 
     updateLayoutToggleIcon();
     updatePresentationModeToggleIcon();
@@ -3794,6 +3803,21 @@ function renderSelectedKidase(addSectionTitleCallback) {
                 return true;
             });
         }
+
+        // Apply Holy 50 Days filtering (3-160..3-172 vs 3-173)
+        filtered = filtered.filter(p => {
+            if (p.chapter === '3' && p.stanza) {
+                const sNum = parseInt(p.stanza);
+                if (isHolyFiftyDays) {
+                    // When ON: hide cards 3-160 through 3-172
+                    if (!isNaN(sNum) && sNum >= 160 && sNum <= 172) return false;
+                } else {
+                    // When OFF (default): hide card 3-173
+                    if (!isNaN(sNum) && sNum === 173) return false;
+                }
+            }
+            return true;
+        });
 
         filtered.forEach((pOriginal, relativeIdx) => {
             const p = { ...pOriginal }; // clone to avoid modifying original array
@@ -5731,6 +5755,14 @@ hideQuietPrayersToggle.addEventListener('change', () => {
     saveSettings();
     smoothRender();
 });
+
+if (holyFiftyDaysToggle) {
+    holyFiftyDaysToggle.addEventListener('change', () => {
+        isHolyFiftyDays = holyFiftyDaysToggle.checked;
+        saveSettings();
+        smoothRender();
+    });
+}
 
 
 
