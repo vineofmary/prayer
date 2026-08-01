@@ -2700,10 +2700,11 @@ function formatPrayerText(text, langKey, query, isFirstLanguage, chapter = null,
     processedText = processedText.replace(/\{\{BISHOP(S) IN ATTENDANCE\}\}/g, customNames.attendingBishops || '');
     processedText = processedText.replace(/\{\{CHURCH NAME\}\}/g, customNames.churchName || '');
 
-    // Format enclosed prayer titles on their own line (e.g. ፨ THE SALUTATION OF SAINT GABRIEL ፨)
-    const innerTitleRegex = /^\s*(?:<[^>]+>)*\s*(፨\s*[^፨\n\r]+?\s*፨)\s*(?:<[^>]+>)*\s*(?:\r?\n|<br\s*\/?>|$)/i;
+    // Format enclosed prayer titles / references on their own line (e.g. ፨ THE SALUTATION OF SAINT GABRIEL ፨ or (Psalms 117:1))
+    const innerTitleRegex = /^\s*(?:<[^>]+>)*\s*(?:(፨\s*[^፨\n\r]+?\s*፨)|(\({1,2}\s*[^()\n\r]+?\s*\){1,2}))\s*(?:<[^>]+>)*\s*(?:\r?\n|<br\s*\/?>|$)/i;
     if (innerTitleRegex.test(processedText)) {
-        processedText = processedText.replace(innerTitleRegex, (match, titleMatch) => {
+        processedText = processedText.replace(innerTitleRegex, (match, titleMatch1, titleMatch2) => {
+            const titleMatch = titleMatch1 || titleMatch2;
             if (displayOptions.showSpeakerLabels) {
                 return `<span class="speaker-label">${titleMatch}</span><br>`;
             }
