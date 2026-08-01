@@ -2744,6 +2744,166 @@ function getGeezDateInfo() {
     };
 }
 
+function getUniversalEpistleAuthor(langKey) {
+    const currentRef = kidaseLectionaryRefs.universal || "1 Peter 1:1-End";
+    const match = currentRef.match(/^(.+?)\s+\d+:/);
+    const book = match ? match[1].trim() : "1 Peter";
+
+    let authorKey = 'Peter';
+    if (book === 'James') {
+        authorKey = 'James';
+    } else if (book === '1 Peter' || book === '2 Peter') {
+        authorKey = 'Peter';
+    } else if (book === '1 John' || book === '2 John' || book === '3 John' || book === 'Revelation') {
+        authorKey = 'John';
+    } else if (book === 'Jude') {
+        authorKey = 'Jude';
+    }
+
+    const AUTHORS = {
+        James: {
+            english: 'James',
+            geez_script: 'ያዕቆብ',
+            geez_phonetic: "Yā'iḳob",
+            amharic_script: 'ያዕቆብ',
+            amharic_phonetic: "Yā'iḳob",
+            tigrinya_script: 'ያዕቆብ',
+            tigrinya_phonetic: "Yā'iḳob",
+            spanish: 'Santiago',
+            french: 'Jacques',
+            arabic: 'يعقوب',
+            greek: 'Ιακώβου',
+            hebrew: 'יעקב',
+            malayalam: 'യാക്കോബ്'
+        },
+        Peter: {
+            english: 'Peter',
+            geez_script: 'ጴጥሮስ',
+            geez_phonetic: "Péṭros",
+            amharic_script: 'ጴጥሮስ',
+            amharic_phonetic: "Péṭros",
+            tigrinya_script: 'ጴጥሮስ',
+            tigrinya_phonetic: "Péṭros",
+            spanish: 'Pedro',
+            french: 'Pierre',
+            arabic: 'بطرس',
+            greek: 'Πέτρου',
+            hebrew: 'פטרוס',
+            malayalam: 'പത്രോസ്'
+        },
+        John: {
+            english: 'John',
+            geez_script: 'ዮሐንስ',
+            geez_phonetic: 'Yōḥannes',
+            amharic_script: 'ዮሐንስ',
+            amharic_phonetic: 'Yōḥannes',
+            tigrinya_script: 'ዮሐንስ',
+            tigrinya_phonetic: 'Yōḥannes',
+            spanish: 'Juan',
+            french: 'Jean',
+            arabic: 'يوحنا',
+            greek: 'Ιωάννη',
+            hebrew: 'יוחנן',
+            malayalam: 'യോഹന്നാൻ'
+        },
+        Jude: {
+            english: 'Jude',
+            geez_script: 'ይሁዳ',
+            geez_phonetic: 'Yhuda',
+            amharic_script: 'ይሁዳ',
+            amharic_phonetic: 'Yhuda',
+            tigrinya_script: 'ይሁዳ',
+            tigrinya_phonetic: 'Yhuda',
+            spanish: 'Judas',
+            french: 'Jude',
+            arabic: 'يهوذا',
+            greek: 'Ιούዳ',
+            hebrew: 'יהודה',
+            malayalam: 'യൂദാ'
+        }
+    };
+
+    const authorObj = AUTHORS[authorKey] || AUTHORS.Peter;
+    return authorObj[langKey] || authorObj.english;
+}
+
+function getGospelAuthor(langKey, lectionaryKey = 'gospel') {
+    const currentRef = kidaseLectionaryRefs[lectionaryKey] || "Matthew 1:1-End";
+    const match = currentRef.match(/^(.+?)\s+\d+:/);
+    const book = match ? match[1].trim() : "Matthew";
+
+    let authorKey = 'Matthew';
+    if (book.includes('Mark')) authorKey = 'Mark';
+    else if (book.includes('Luke')) authorKey = 'Luke';
+    else if (book.includes('John')) authorKey = 'John';
+
+    const AUTHORS = {
+        Matthew: {
+            english: 'Matthew',
+            geez_script: 'ማቴዎስ',
+            geez_phonetic: 'Mātéwos',
+            amharic_script: 'ማቴዎስ',
+            amharic_phonetic: 'Mātéwos',
+            tigrinya_script: 'ማቴዎስ',
+            tigrinya_phonetic: 'Mātéwos',
+            spanish: 'Mateo',
+            french: 'Matthieu',
+            arabic: 'متى',
+            greek: 'Ματθαίον',
+            hebrew: 'מתי',
+            malayalam: 'മത്തായി'
+        },
+        Mark: {
+            english: 'Mark',
+            geez_script: 'ማርቆስ',
+            geez_phonetic: 'Mārḳos',
+            amharic_script: 'ማርቆስ',
+            amharic_phonetic: 'Mārḳos',
+            tigrinya_script: 'ማርቆስ',
+            tigrinya_phonetic: 'Mārḳos',
+            spanish: 'Marcos',
+            french: 'Marc',
+            arabic: 'مرقس',
+            greek: 'Μάρκον',
+            hebrew: 'מרקוס',
+            malayalam: 'മർക്കോസ്'
+        },
+        Luke: {
+            english: 'Luke',
+            geez_script: 'ሉቃስ',
+            geez_phonetic: 'Luḳās',
+            amharic_script: 'ሉቃስ',
+            amharic_phonetic: 'Luḳās',
+            tigrinya_script: 'ሉቃስ',
+            tigrinya_phonetic: 'Luḳās',
+            spanish: 'Lucas',
+            french: 'Luc',
+            arabic: 'لوقا',
+            greek: 'Loukan',
+            hebrew: 'לוקס',
+            malayalam: 'ലൂക്കോസ്'
+        },
+        John: {
+            english: 'John',
+            geez_script: 'ዮሐንስ',
+            geez_phonetic: 'Yōḥannes',
+            amharic_script: 'ዮሐንስ',
+            amharic_phonetic: 'Yōḥannes',
+            tigrinya_script: 'ዮሐንስ',
+            tigrinya_phonetic: 'Yōḥannes',
+            spanish: 'Juan',
+            french: 'Jean',
+            arabic: 'يوحنا',
+            greek: 'Ιωάννη',
+            hebrew: 'יוחנן',
+            malayalam: 'യോഹന്നാൻ'
+        }
+    };
+
+    const authorObj = AUTHORS[authorKey] || AUTHORS.Matthew;
+    return authorObj[langKey] || authorObj.english;
+}
+
 function formatPrayerText(text, langKey, query, isFirstLanguage, chapter = null, verseNum = null) {
     let processedText = text;
 
@@ -2762,6 +2922,32 @@ function formatPrayerText(text, langKey, query, isFirstLanguage, chapter = null,
     processedText = processedText.replace(/\{\{ወርኅ\}\}/g, geezDateInfo.geezMonth);
     processedText = processedText.replace(/\{\{ዕለት\}\}/g, geezDateInfo.geezDate);
     processedText = processedText.replace(/\{\{ዓመት\}\}/g, geezDateInfo.geezYear);
+
+    // Replace Universal Epistle & Gospel Author placeholders
+    if (processedText.includes('{{UNIVERSAL EPISTLE AUTHOR}}') ||
+        processedText.includes('{{AUTOR DE LA EPÍSTOLA UNIVERSAL}}') ||
+        processedText.includes('{{AUTEUR DE L’ÉPÎTRE UNIVERSEL}}') ||
+        processedText.includes('{{مؤلف الرسالة العالمية}}') ||
+        processedText.includes('{{ΣΥΓΓΡΑΦΕΑ ΠΑΓΚΟΣΜΙΩΝ ΕΠİΣΤΟΛΩΝ}}') ||
+        processedText.includes('{{מחבר האיגרת האוניبرסלית}}')) {
+        const universalAuthor = getUniversalEpistleAuthor(langKey);
+        processedText = processedText.replace(/\{\{UNIVERSAL EPISTLE AUTHOR\}\}/gi, universalAuthor);
+        processedText = processedText.replace(/\{\{AUTOR DE LA EPÍSTOLA UNIVERSAL\}\}/gi, universalAuthor);
+        processedText = processedText.replace(/\{\{AUTEUR DE L’ÉPÎTRE UNIVERSEL\}\}/gi, universalAuthor);
+        processedText = processedText.replace(/\{\{مؤلف الرسالة العالمية\}\}/gi, universalAuthor);
+        processedText = processedText.replace(/\{\{ΣΥΓΓΡΑΦΕΑ ΠΑΓΚΟΣΜΙΩΝ ΕΠİΣΤΟΛΩΝ\}\}/gi, universalAuthor);
+        processedText = processedText.replace(/\{\{מחבר האיגרת האוניبرסלית\}\}/gi, universalAuthor);
+    }
+
+    if (processedText.includes('{{GOSPEL AUTHOR}}')) {
+        const gospelAuthor = getGospelAuthor(langKey, 'gospel');
+        processedText = processedText.replace(/\{\{GOSPEL AUTHOR\}\}/g, gospelAuthor);
+    }
+
+    if (processedText.includes('{{MORNING GOSPEL AUTHOR}}')) {
+        const morningGospelAuthor = getGospelAuthor(langKey, 'morningGospel');
+        processedText = processedText.replace(/\{\{MORNING GOSPEL AUTHOR\}\}/g, morningGospelAuthor);
+    }
 
     // Apply superscription formatting for Psalms, Songs of the Prophets, and Lectionary readings
     if (chapter === 'Psalms' || chapter === 'ProphetSong' || chapter === 'SeatatLectionary') {
