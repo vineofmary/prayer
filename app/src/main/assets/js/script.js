@@ -2853,6 +2853,69 @@ function isChantStanza(prayer) {
     return false;
 }
 
+function filterGeezPhoneticForPeople(phoneticText, prayer) {
+    if (!phoneticText || !phoneticText.trim()) return '';
+
+    const PEOPLE_LABEL_REGEX = /^(?:፨\s*)?(?:People|ALL|All|Pueblo|Todos|Gente|ሕዝብ|ኵሎሙ|ሁሉም|ኩሉኹም|Ḥizb|Hizb|Kwllomu|Kullomu|Kwlomu|Hizbi|Ḥizbi)(?:\s*\([^)]*\))?[:፡።፤፣]/i;
+    const LEADER_LABEL_REGEX = /^(?:፨\s*)?(?:Priest|Asst\.\s*Priest|Deacon|Subdeacon|Leader|Reader|Bridegroom|Bride|ካህን|ካህን\s*ንፍቅ|ዲያቆን|ንፍቀ\s*ዲያቆን|መሪሕ|መሪ|መራሒ|አንባቢ|ነባቢ|ሙሽራው|ሙሽራዋ|መርዓዊ|መርዓት|Sacerdote|Diácono|Subdiácono|Líder|Lector|Novio|Novia|Merīḥ|Meriḥ|Merih|Kahn|Kahin|Diyakon|Dīyakon|Meraḥi|Meraḥī)(?:\s*\([^)]*\))?[:፡።፤፣]/i;
+
+    const checkStringForLeader = (str) => str && LEADER_LABEL_REGEX.test(str.trim());
+    const hasLeaderLabel = checkStringForLeader(phoneticText) ||
+                           checkStringForLeader(prayer?.geez_script) ||
+                           checkStringForLeader(prayer?.english) ||
+                           checkStringForLeader(prayer?.amharic_script);
+
+    // If there is no leader label anywhere in the card, the whole text belongs to the people chant
+    if (!hasLeaderLabel) {
+        return phoneticText;
+    }
+
+    const paragraphs = phoneticText.split(/(?:<br\s*\/?>|\n)+/);
+    const geezScriptParagraphs = (prayer?.geez_script || '').split(/(?:<br\s*\/?>|\n)+/);
+    const englishParagraphs = (prayer?.english || '').split(/(?:<br\s*\/?>|\n)+/);
+
+    const keptParagraphs = [];
+    let currentSpeakerIsPeople = false;
+
+    paragraphs.forEach((para, index) => {
+        const trimmedPara = para.trim();
+        if (!trimmedPara) return;
+
+        const geezPara = (geezScriptParagraphs[index] || '').trim();
+        const engPara = (englishParagraphs[index] || '').trim();
+
+        if (PEOPLE_LABEL_REGEX.test(trimmedPara) || PEOPLE_LABEL_REGEX.test(geezPara) || PEOPLE_LABEL_REGEX.test(engPara)) {
+            currentSpeakerIsPeople = true;
+        } else if (LEADER_LABEL_REGEX.test(trimmedPara) || LEADER_LABEL_REGEX.test(geezPara) || LEADER_LABEL_REGEX.test(engPara)) {
+            currentSpeakerIsPeople = false;
+        }
+
+        if (currentSpeakerIsPeople) {
+            keptParagraphs.push(para);
+        }
+    });
+
+    // Deduplicate identical People phonetic responses (e.g. repeated "Amen" / "፨ ḥzb: 'amén.")
+    const uniqueParagraphs = [];
+    const seenNormalized = new Set();
+
+    keptParagraphs.forEach(para => {
+        const norm = para.replace(/<[^>]*>?/g, '')
+                        .replace(PEOPLE_LABEL_REGEX, '')
+                        .replace(/[^a-zA-Z'ĀāĒēĪīŌōŪū\u1200-\u137F0-9]/g, '')
+                        .trim()
+                        .toLowerCase();
+
+        if (!norm || !seenNormalized.has(norm)) {
+            if (norm) seenNormalized.add(norm);
+            uniqueParagraphs.push(para);
+        }
+    });
+
+    const delimiter = phoneticText.includes('<br>') ? '<br><br>' : '\n\n';
+    return uniqueParagraphs.join(delimiter);
+}
+
 function createPrayerCardElement(prayer, prayerIndex, isKidase = false) {
     const searchQuery = searchInput.value;
 
@@ -2944,11 +3007,13 @@ function createPrayerCardElement(prayer, prayerIndex, isKidase = false) {
 
         // Append Ge'ez Phonetics to Ge'ez Script if setting is active and this is a chant
         if (langKey === 'geez_script' && displayOptions.showGeezPhoneticChants && isChantStanza(prayer)) {
-            const phoneticText = prayer['geez_phonetic'];
-            if (phoneticText && phoneticText.trim()) {
-                // We format the phonetic text too (for highlighting, etc.)
-                const formattedPhonetic = formatPrayerText(phoneticText, 'geez_phonetic', searchQuery, false, prayer.chapter, prayer.verseNum);
-                content += `<br><i class="geez-phonetic-append">${formattedPhonetic}</i>`;
+            const rawPhoneticText = prayer['geez_phonetic'];
+            if (rawPhoneticText && rawPhoneticText.trim()) {
+                const phoneticText = filterGeezPhoneticForPeople(rawPhoneticText, prayer);
+                if (phoneticText && phoneticText.trim()) {
+                    const formattedPhonetic = formatPrayerText(phoneticText, 'geez_phonetic', searchQuery, false, prayer.chapter, prayer.verseNum);
+                    content += `<br><i class="geez-phonetic-append">${formattedPhonetic}</i>`;
+                }
             }
         }
 
@@ -3985,12 +4050,15 @@ function copyPrayer(prayer) {
 
             // Append Ge'ez Phonetics for chants if option is on
             if (langKey === 'geez_script' && displayOptions.showGeezPhoneticChants && isChantStanza(prayer)) {
-                const phoneticText = prayer['geez_phonetic'];
-                if (phoneticText && phoneticText.trim()) {
-                    let cleanPhonetic = phoneticText.replace(/<br\s*\/?>/gi, '\n').replace(/<[^>]*>?/gm, '');
-                    cleanPhonetic = formatPrayerText(cleanPhonetic, 'geez_phonetic', null, false, prayer.chapter, prayer.stanza);
-                    cleanPhonetic = cleanPhonetic.replace(/<br\s*\/?>/gi, '\n').replace(/<[^>]*>?/gm, '');
-                    cleanText += `\n(${cleanPhonetic})`;
+                const rawPhoneticText = prayer['geez_phonetic'];
+                if (rawPhoneticText && rawPhoneticText.trim()) {
+                    const phoneticText = filterGeezPhoneticForPeople(rawPhoneticText, prayer);
+                    if (phoneticText && phoneticText.trim()) {
+                        let cleanPhonetic = phoneticText.replace(/<br\s*\/?>/gi, '\n').replace(/<[^>]*>?/gm, '');
+                        cleanPhonetic = formatPrayerText(cleanPhonetic, 'geez_phonetic', null, false, prayer.chapter, prayer.stanza);
+                        cleanPhonetic = cleanPhonetic.replace(/<br\s*\/?>/gi, '\n').replace(/<[^>]*>?/gm, '');
+                        cleanText += `\n(${cleanPhonetic})`;
+                    }
                 }
             }
 
