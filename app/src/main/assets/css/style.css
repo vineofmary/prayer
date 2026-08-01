@@ -1014,9 +1014,9 @@ body.view-mode-unified .prayer-footer {
 .colored-languages .language-section:not(:first-child) .rubric-gold {
     color: inherit;
 }
-.colored-languages .language-section:not(:first-child) .speaker-label {
-    color: inherit;
-    opacity: 0.8;
+.colored-languages .language-section .speaker-label {
+    color: var(--speaker-label-color);
+    font-style: italic;
 }
 
 .prayer-content.layout-column .language-section {

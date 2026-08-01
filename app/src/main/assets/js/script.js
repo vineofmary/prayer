@@ -997,10 +997,17 @@ const speakerKeywords = {
     english: ["Priest", "Asst. Priest", "Deacon", "People", "Subdeacon", "All", "ALL", "Leader", "Reader", "Bridegroom", "Bride"],
     geez_script: ["ካህን", "ካህን ንፍቅ", "ዲያቆን", "ሕዝብ", "ንፍቀ ዲያቆን", "ኵሎሙ", "መሪሕ", "አንባቢ", "ሙሽራው", "ሙሽራዋ"],
     amharic_script: ["ካህን", "ካህን ንፍቅ", "ዲያቆን", "ሕዝብ", "ንፍቀ ዲያቆን", "ሁሉም", "መሪ", "አንባቢ", "ሙሽራው", "ሙሽራዋ"],
+    amharic_phonetic: ["kahn", "kahin", "diyakon", "ḥizb", "hizb", "hulumu", "meri", "anbabi", "Priest", "Deacon", "People", "Leader"],
+    oromoo: ["Lubbuu", "Luba", "Diyaaqonii", "Uummata", "Hunda", "Garsee"],
     tigrinya_script: ["ካህን", "ካህን ንፍቅ", "ዲያቆን", "ሕዝብ", "ንፍቀ ዲያቆን", "ኩሉኹም", "መራሒ", "ነባቢ", "መርዓዊ", "መርዓት"],
+    tigrinya_phonetic: ["kahn", "kahin", "diyakon", "ḥizb", "hizb", "kulukhum", "merahi", "meraḥī", "nebabi", "Priest", "Deacon", "People", "Leader"],
     spanish: ["Sacerdote", "Diácono", "Pueblo", "Subdiácono", "Todos", "Líder", "Gente", "Lector", "Novio", "Novia"],
-    geez_phonetic: ["kwlomu", "ḥzb", "hzb", "merīḥ", "meriḥ", "merih", "kahn", "kahin", "diyakon", "dīyakon", "ḥizb", "hizb", "kwllomu", "kullomu", "meraḥi", "meraḥī", "anbabi", "anbabī", "nebabi", "nebabī", "Kahn", "Kahin", "Asst. Kahn", "Diyakon", "Dīyakon", "Nfq Diyakon", "Ḥizb", "Hizb", "Kwllomu", "Kullomu", "Kwlomu", "Merīḥ", "Meriḥ", "Merih", "Meraḥi", "Meraḥī", "Anbabi", "Anbabī", "Nebabi", "Nebabī", "Priest", "Asst. Priest", "Deacon", "People", "Subdeacon", "All", "ALL", "Leader", "Reader", "Bridegroom", "Bride"],
-    tigrinya_phonetic: ["kwlomu", "ḥzb", "hzb", "merīḥ", "meriḥ", "merih", "kahn", "kahin", "diyakon", "dīyakon", "ḥizb", "hizb", "kwllomu", "kullomu", "meraḥi", "meraḥī", "anbabi", "anbabī", "nebabi", "nebabī", "Kahn", "Kahin", "Asst. Kahn", "Diyakon", "Dīyakon", "Nfq Diyakon", "Ḥizb", "Hizb", "Kwllomu", "Kullomu", "Kwlomu", "Merīḥ", "Meriḥ", "Merih", "Meraḥi", "Meraḥī"]
+    french: ["Prêtre", "Diacre", "Peuple", "Sous-diacre", "Tous", "Leader", "Lecteur", "Marié", "Mariée"],
+    arabic: ["الكاهن", "الشعب", "الشماس", "القارئ", "الجميع", "الرب", "الناس"],
+    greek: ["Ιερέας", "Διάκονος", "Λαός", "Λαοί", "Όλοι", "Αναγνώστης"],
+    hebrew: ["כהן", "כוهاء", "עם", "אנשים", "דיאקון"],
+    malayalam: ["പുരോഹിതൻ", "ജനതകൾ", "ആളുകൾ", "ജനങ്ങൾ", "ശെമ്മാശൻ"],
+    geez_phonetic: ["kwlomu", "ḥzb", "hzb", "merīḥ", "meriḥ", "merih", "kahn", "kahin", "diyakon", "dīyakon", "ḥizb", "hizb", "kwllomu", "kullomu", "meraḥi", "meraḥī", "anbabi", "anbabī", "nebabi", "nebabī", "Kahn", "Kahin", "Asst. Kahn", "Diyakon", "Dīyakon", "Nfq Diyakon", "Ḥizb", "Hizb", "Kwllomu", "Kullomu", "Kwlomu", "Merīḥ", "Meriḥ", "Merih", "Meraḥi", "Meraḥī", "Anbabi", "Anbabī", "Nebabi", "Nebabī", "Priest", "Asst. Priest", "Deacon", "People", "Subdeacon", "All", "ALL", "Leader", "Reader", "Bridegroom", "Bride"]
 };
 
 function toGeez(n) {
