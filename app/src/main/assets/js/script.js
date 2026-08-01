@@ -2717,7 +2717,7 @@ function formatPrayerText(text, langKey, query, isFirstLanguage, chapter = null,
     if (keywords) {
         const sortedKeywords = [...keywords].sort((a, b) => b.length - a.length);
         const escapedKeywords = sortedKeywords.map(k => k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
-        const regex = new RegExp(`(፨\\s*)?(${escapedKeywords.join('|')})([:፡።፤፣])`, 'gi');
+        const regex = new RegExp(`(፨\\s*)?(${escapedKeywords.join('|')})(?:\\s*\\([^)]*\\))?([:፡።፤፣])`, 'gi');
         processedText = processedText.replace(regex, (match) => {
             if (displayOptions.showSpeakerLabels) {
                 return `<span class="speaker-label">${match}</span>`;
