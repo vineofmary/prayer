@@ -994,7 +994,7 @@ const rubricGoldRegex = {
 
 // --- Speaker Label Data ---
 const speakerKeywords = {
-    english: ["Priest", "Asst. Priest", "Deacon", "People", "Subdeacon", "All", "ALL", "Leader", "Reader", "Bridegroom", "Bride"],
+    english: ["Deacon or Priest", "Priest or Deacon", "Priest", "Asst. Priest", "Deacon", "People", "Subdeacon", "All", "ALL", "Leader", "Reader", "Bridegroom", "Bride"],
     geez_script: ["ካህን", "ካህን ንፍቅ", "ዲያቆን", "ሕዝብ", "ንፍቀ ዲያቆን", "ኵሎሙ", "መሪሕ", "አንባቢ", "ሙሽራው", "ሙሽራዋ"],
     amharic_script: ["ካህን", "ካህን ንፍቅ", "ዲያቆን", "ሕዝብ", "ንፍቀ ዲያቆን", "ሁሉም", "መሪ", "አንባቢ", "ሙሽራው", "ሙሽራዋ"],
     amharic_phonetic: ["kahn", "kahin", "diyakon", "ḥizb", "hizb", "hulumu", "meri", "anbabi", "Priest", "Deacon", "People", "Leader"],
@@ -2724,7 +2724,7 @@ function formatPrayerText(text, langKey, query, isFirstLanguage, chapter = null,
     if (keywords) {
         const sortedKeywords = [...keywords].sort((a, b) => b.length - a.length);
         const escapedKeywords = sortedKeywords.map(k => k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
-        const regex = new RegExp(`(፨\\s*)?(${escapedKeywords.join('|')})(?:\\s*\\([^)]*\\))?([:፡።፤፣])`, 'gi');
+        const regex = new RegExp(`(፨\\s*)?(${escapedKeywords.join('|')})(?:\\s*(?:or|ወይም|ወ|o|ou|\\/|-)\\s*(?:${escapedKeywords.join('|')}))*(?:\\s*\\([^)]*\\))?([:፡።፤፣])`, 'gi');
         processedText = processedText.replace(regex, (match) => {
             if (displayOptions.showSpeakerLabels) {
                 return `<span class="speaker-label">${match}</span>`;
