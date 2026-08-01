@@ -2329,33 +2329,27 @@ function toGeezNumeral(n) {
     return result;
 }
 
-function createLectionaryPicker(containerId, lectionaryKey, bookOptions = [], typicalPsalms = null) {
-    const container = document.getElementById(containerId);
+function syncAllLectionaryPickers(lectionaryKey, originContainer = null) {
+    document.querySelectorAll(`.lectionary-picker-container[data-lectionary-key="${lectionaryKey}"]`).forEach(c => {
+        if (c !== originContainer && typeof c.syncPicker === 'function') {
+            c.syncPicker(true);
+        }
+    });
+}
+
+function createLectionaryPicker(containerOrId, lectionaryKey, bookOptions = [], typicalPsalms = null) {
+    const container = (typeof containerOrId === 'string') ? document.getElementById(containerOrId) : containerOrId;
     if (!container) return;
+
+    container.classList.add('lectionary-picker-container');
+    container.dataset.lectionaryKey = lectionaryKey;
 
     container.innerHTML = ''; // Clear
 
+    const isCardInline = container.classList.contains('card-inline-lectionary-picker');
+
     let typicalBtn = null;
-
-    // 1. Book Selection (if multiple)
     let bookSelect = null;
-    if (bookOptions.length > 1) {
-        bookSelect = document.createElement('select');
-        bookSelect.className = 'lectionary-picker-book-select settings-select';
-        bookOptions.forEach(bookName => {
-            const opt = document.createElement('option');
-            opt.value = bookName;
-            const bookCfg = BIBLE_BOOK_MAPPING[bookName];
-            const geezName = bookCfg ? bookCfg.geez : "";
-            opt.textContent = geezName ? `${bookName} | ${geezName}` : bookName;
-            bookSelect.appendChild(opt);
-        });
-        container.appendChild(bookSelect);
-    }
-
-    // 2. Row for Chapter, Start, End
-    const row = document.createElement('div');
-    row.className = 'lectionary-picker-row';
 
     const createField = (label, className) => {
         const field = document.createElement('div');
@@ -2373,13 +2367,144 @@ function createLectionaryPicker(containerId, lectionaryKey, bookOptions = [], ty
     const startField = createField('Start', 'start-field');
     const endField = createField('End', 'end-field');
 
-    row.appendChild(chapterField.field);
-    row.appendChild(startField.field);
-    row.appendChild(endField.field);
-    container.appendChild(row);
+    if (isCardInline) {
+        // --- Single Horizontal Row for Card Footer ---
+        const pickerRow = document.createElement('div');
+        pickerRow.className = 'lectionary-picker-single-row';
 
-    const updateRefs = () => {
-        const book = bookOptions.length === 1 ? bookOptions[0] : bookSelect.value;
+        if (lectionaryKey === 'psalm') {
+            const nkjvLabel = document.createElement('span');
+            nkjvLabel.className = 'psalm-nkjv-label';
+            nkjvLabel.textContent = 'NKJV';
+            pickerRow.appendChild(nkjvLabel);
+        } else if (bookOptions.length > 1) {
+            bookSelect = document.createElement('select');
+            bookSelect.className = 'lectionary-picker-book-select settings-select';
+            bookOptions.forEach(bookName => {
+                const opt = document.createElement('option');
+                opt.value = bookName;
+                const bookCfg = BIBLE_BOOK_MAPPING[bookName];
+                const geezName = bookCfg ? bookCfg.geez : "";
+                opt.textContent = geezName ? `${bookName} | ${geezName}` : bookName;
+                bookSelect.appendChild(opt);
+            });
+            pickerRow.appendChild(bookSelect);
+        }
+
+        pickerRow.appendChild(chapterField.field);
+        pickerRow.appendChild(startField.field);
+        pickerRow.appendChild(endField.field);
+
+        if (typicalPsalms) {
+            typicalBtn = document.createElement('button');
+            typicalBtn.className = 'settings-button typical-psalms-btn';
+            typicalBtn.textContent = 'Typical Psalms...';
+            typicalBtn.title = 'Select a Typical Psalm Chant';
+            typicalBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                openTypicalPsalmsModal((idx) => {
+                    const data = typicalPsalms[idx];
+                    if (bookSelect) bookSelect.value = "Psalms";
+
+                    const metadata = BIBLE_METADATA["Psalms"];
+                    populateSelect(chapterField.sel, metadata.chapters, data.mc);
+                    populateSelect(startField.sel, metadata.maxVerses, data.ms);
+                    populateSelect(endField.sel, metadata.maxVerses, data.me, true);
+
+                    updateRefs();
+                    syncPicker(true);
+                });
+            });
+            pickerRow.appendChild(typicalBtn);
+
+            const clearChantBtn = document.createElement('button');
+            clearChantBtn.className = 'settings-button clear-psalm-chant-btn';
+            clearChantBtn.textContent = 'Clear';
+            clearChantBtn.title = 'Clear Psalm Chant';
+            clearChantBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                if (bookSelect) bookSelect.value = 'Psalms';
+                const metadata = BIBLE_METADATA['Psalms'];
+                populateSelect(chapterField.sel, metadata.chapters, 1);
+                populateSelect(startField.sel, metadata.maxVerses, 1);
+                populateSelect(endField.sel, metadata.maxVerses, 'End', true);
+                updateRefs();
+                typicalBtn.textContent = 'Typical Psalms...';
+                typicalBtn.classList.remove('selected');
+            });
+            pickerRow.appendChild(clearChantBtn);
+        }
+
+        container.appendChild(pickerRow);
+    } else {
+        // --- Original 2-Row Layout for Settings Panel ---
+        if (bookOptions.length > 1) {
+            bookSelect = document.createElement('select');
+            bookSelect.className = 'lectionary-picker-book-select settings-select';
+            bookOptions.forEach(bookName => {
+                const opt = document.createElement('option');
+                opt.value = bookName;
+                const bookCfg = BIBLE_BOOK_MAPPING[bookName];
+                const geezName = bookCfg ? bookCfg.geez : "";
+                opt.textContent = geezName ? `${bookName} | ${geezName}` : bookName;
+                bookSelect.appendChild(opt);
+            });
+            container.appendChild(bookSelect);
+        }
+
+        const row = document.createElement('div');
+        row.className = 'lectionary-picker-row';
+        row.appendChild(chapterField.field);
+        row.appendChild(startField.field);
+        row.appendChild(endField.field);
+        container.appendChild(row);
+
+        if (typicalPsalms) {
+            const typicalContainer = document.createElement('div');
+            typicalContainer.className = 'typical-psalms-container';
+            typicalContainer.style.marginTop = '0.5rem';
+
+            typicalBtn = document.createElement('button');
+            typicalBtn.className = 'settings-button typical-psalms-btn';
+            typicalBtn.textContent = 'Typical Psalm Chants...';
+            typicalBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                openTypicalPsalmsModal((idx) => {
+                    const data = typicalPsalms[idx];
+                    if (bookSelect) bookSelect.value = "Psalms";
+
+                    const metadata = BIBLE_METADATA["Psalms"];
+                    populateSelect(chapterField.sel, metadata.chapters, data.mc);
+                    populateSelect(startField.sel, metadata.maxVerses, data.ms);
+                    populateSelect(endField.sel, metadata.maxVerses, data.me, true);
+
+                    updateRefs();
+                    syncPicker();
+                });
+            });
+            typicalContainer.appendChild(typicalBtn);
+
+            const clearChantBtn = document.createElement('button');
+            clearChantBtn.className = 'settings-button clear-psalm-chant-btn';
+            clearChantBtn.textContent = 'Clear Psalm Chant';
+            clearChantBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                if (bookSelect) bookSelect.value = 'Psalms';
+                const metadata = BIBLE_METADATA['Psalms'];
+                populateSelect(chapterField.sel, metadata.chapters, 1);
+                populateSelect(startField.sel, metadata.maxVerses, 1);
+                populateSelect(endField.sel, metadata.maxVerses, 'End', true);
+                updateRefs();
+                typicalBtn.innerHTML = 'Typical Psalm Chants...';
+                typicalBtn.classList.remove('selected');
+            });
+            typicalContainer.appendChild(clearChantBtn);
+            container.appendChild(typicalContainer);
+        }
+    }
+
+    const updateRefs = (skipReRender = false) => {
+        const book = bookOptions.length === 1 ? bookOptions[0] : (bookSelect ? bookSelect.value : bookOptions[0]);
         const ch = parseInt(chapterField.sel.value);
         const start = startField.sel.value;
         const end = endField.sel.value;
@@ -2402,7 +2527,29 @@ function createLectionaryPicker(containerId, lectionaryKey, bookOptions = [], ty
 
         kidaseLectionaryRefs[lectionaryKey] = `${book} ${ch}:${start}-${end}`;
         saveSettings();
-        renderPrayers();
+        syncAllLectionaryPickers(lectionaryKey, container);
+
+        if (isCardInline) {
+            // Keep sections expanded so prayer view does not collapse in scroll mode
+            areAllSectionsCollapsed = false;
+            Object.keys(collapsedSections).forEach(k => {
+                collapsedSections[k] = false;
+            });
+        }
+
+        if (!skipReRender) {
+            const targetCard = container.closest('.prayer-card');
+            const targetReadingType = targetCard ? targetCard.dataset.readingType : null;
+
+            renderPrayers();
+
+            if (isCardInline && targetReadingType && displayOptions.presentationMode !== 'slides') {
+                const reRenderedCard = document.querySelector(`.prayer-card[data-reading-type="${targetReadingType}"]`);
+                if (reRenderedCard) {
+                    reRenderedCard.scrollIntoView({ block: 'center', behavior: 'instant' });
+                }
+            }
+        }
     };
 
     const populateSelect = (select, max, selected, isEndField = false) => {
@@ -2422,7 +2569,6 @@ function createLectionaryPicker(containerId, lectionaryKey, bookOptions = [], ty
         }
 
         if (isEndField) {
-            // Check if "End" is already functionally represented by the last number
             const endOpt = document.createElement('option');
             endOpt.value = 'End';
             endOpt.textContent = 'End | ፍጻሜ';
@@ -2431,53 +2577,6 @@ function createLectionaryPicker(containerId, lectionaryKey, bookOptions = [], ty
         }
     };
 
-    // 4. Typical Psalms Dropdown
-    // 4. Typical Psalms Button & Modal Trigger
-    if (typicalPsalms) {
-        const typicalContainer = document.createElement('div');
-        typicalContainer.className = 'typical-psalms-container';
-        typicalContainer.style.marginTop = '0.5rem';
-
-        typicalBtn = document.createElement('button');
-        typicalBtn.className = 'settings-button typical-psalms-btn';
-        typicalBtn.textContent = 'Typical Psalm Chants...';
-        typicalBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            openTypicalPsalmsModal((idx) => {
-                const data = typicalPsalms[idx];
-                if (bookSelect) bookSelect.value = "Psalms";
-
-                const metadata = BIBLE_METADATA["Psalms"];
-                populateSelect(chapterField.sel, metadata.chapters, data.mc);
-                populateSelect(startField.sel, metadata.maxVerses, data.ms);
-                populateSelect(endField.sel, metadata.maxVerses, data.me, true);
-
-                updateRefs();
-                syncPicker(); // update button label to reflect newly selected chant
-            });
-        });
-
-        typicalContainer.appendChild(typicalBtn);
-
-        const clearChantBtn = document.createElement('button');
-        clearChantBtn.className = 'settings-button clear-psalm-chant-btn';
-        clearChantBtn.textContent = 'Clear Psalm Chant';
-        clearChantBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            // Reset chapter/start/end selectors to defaults
-            if (bookSelect) bookSelect.value = 'Psalms';
-            const metadata = BIBLE_METADATA['Psalms'];
-            populateSelect(chapterField.sel, metadata.chapters, 1);
-            populateSelect(startField.sel, metadata.maxVerses, 1);
-            populateSelect(endField.sel, metadata.maxVerses, 'End', true);
-            updateRefs();
-            // Reset button appearance
-            typicalBtn.innerHTML = 'Typical Psalm Chants...';
-            typicalBtn.classList.remove('selected');
-        });
-        typicalContainer.appendChild(clearChantBtn);
-        container.appendChild(typicalContainer);
-    }
     // Listeners
     if (bookSelect) {
         bookSelect.addEventListener('change', () => {
@@ -2493,7 +2592,7 @@ function createLectionaryPicker(containerId, lectionaryKey, bookOptions = [], ty
     }
 
     chapterField.sel.addEventListener('change', () => {
-        const book = bookOptions.length === 1 ? bookOptions[0] : bookSelect.value;
+        const book = bookOptions.length === 1 ? bookOptions[0] : (bookSelect ? bookSelect.value : bookOptions[0]);
         const ch = parseInt(chapterField.sel.value);
         const metadata = BIBLE_METADATA[book] || { chapters: 50, maxVerses: 100 };
         const actualMax = getActualVerseCount(book, ch) || metadata.maxVerses;
@@ -2507,12 +2606,12 @@ function createLectionaryPicker(containerId, lectionaryKey, bookOptions = [], ty
         updateRefs();
     });
 
-    startField.sel.addEventListener('change', updateRefs);
-    endField.sel.addEventListener('change', updateRefs);
+    startField.sel.addEventListener('change', () => updateRefs());
+    endField.sel.addEventListener('change', () => updateRefs());
 
     // Restore full "End" text when the user clicks to choose
     endField.sel.addEventListener('mousedown', () => {
-        const book = bookOptions.length === 1 ? bookOptions[0] : bookSelect.value;
+        const book = bookOptions.length === 1 ? bookOptions[0] : (bookSelect ? bookSelect.value : bookOptions[0]);
         const ch = parseInt(chapterField.sel.value);
         const endOptions = endField.sel.options;
         const endOpt = endOptions[endOptions.length - 1];
@@ -2527,11 +2626,10 @@ function createLectionaryPicker(containerId, lectionaryKey, bookOptions = [], ty
     });
 
     // Restore shortened text on blur if End is still selected
-    endField.sel.addEventListener('blur', updateRefs);
+    endField.sel.addEventListener('blur', () => updateRefs());
 
-    const syncPicker = () => {
+    const syncPicker = (skipUpdateRefs = false) => {
         const currentRef = kidaseLectionaryRefs[lectionaryKey] || "";
-        // More robust regex to handle book names with spaces/numbers
         const match = currentRef.match(/^(.+?)\s+(\d+):(\d+)(?:-(\d+|End))?$/);
 
         let book = bookOptions[0];
@@ -2547,7 +2645,6 @@ function createLectionaryPicker(containerId, lectionaryKey, bookOptions = [], ty
         }
 
         if (bookSelect) {
-            // Find option that matches book name
             for (let i = 0; i < bookSelect.options.length; i++) {
                 if (bookSelect.options[i].value === book) {
                     bookSelect.selectedIndex = i;
@@ -2564,26 +2661,27 @@ function createLectionaryPicker(containerId, lectionaryKey, bookOptions = [], ty
         populateSelect(startField.sel, actualMax, start);
         populateSelect(endField.sel, actualMax, end, true);
 
-        // Sync Typical Psalm button label if available
         if (typicalBtn && typicalPsalms) {
-            // Resolve 'End' for matching
             const numericEnd = (end === 'End') ? actualMax : parseInt(end);
             const foundIdx = typicalPsalms.findIndex(p =>
                 (book === 'Psalms' || book === 'Psalm') &&
                 p.mc === ch && p.ms === parseInt(start) && p.me === numericEnd
             );
             if (foundIdx !== -1) {
-                const match = typicalPsalms[foundIdx];
-                typicalBtn.innerHTML = `<span class="chant-btn-phonetic">${match.p}...</span><span class="chant-btn-geez ethiopic-label">${match.g.split(/\s+/).slice(0, 5).join(' ')}...</span>`;
+                const chantMatch = typicalPsalms[foundIdx];
+                typicalBtn.innerHTML = `<span class="chant-btn-phonetic">${chantMatch.p.split(/\s+/).slice(0, 4).join(' ')}...</span><span class="chant-btn-geez ethiopic-label">${chantMatch.g.split(/\s+/).slice(0, 4).join(' ')}...</span>`;
+                typicalBtn.title = `Typical Psalm Chant: ${chantMatch.p} (${chantMatch.g})`;
                 typicalBtn.classList.add('selected');
             } else {
-                typicalBtn.innerHTML = 'Typical Psalm Chants...';
+                typicalBtn.textContent = isCardInline ? 'Typical Psalms...' : 'Typical Psalm Chants...';
+                typicalBtn.title = 'Select a Typical Psalm Chant';
                 typicalBtn.classList.remove('selected');
             }
         }
 
-        // Final sync of internal refs and UI text
-        updateRefs();
+        if (!skipUpdateRefs) {
+            updateRefs(true);
+        }
     };
 
     // Initial sync
@@ -3618,6 +3716,18 @@ function renderSelectedKidase(addSectionTitleCallback) {
 
                             const card = createPrayerCardElement(versePrayer, -1, true);
                             card.dataset.readingType = activeCfg.id;
+
+                            const pickerFooter = document.createElement('div');
+                            pickerFooter.classList.add('card-inline-lectionary-picker');
+                            createLectionaryPicker(pickerFooter, activeCfg.id, ['Psalms'], TYPICAL_PSALMS);
+                            const pFooter = card.querySelector('.prayer-footer');
+                            const pActions = card.querySelector('.prayer-actions');
+                            if (pFooter && pActions) {
+                                pFooter.insertBefore(pickerFooter, pActions);
+                            } else {
+                                card.appendChild(pickerFooter);
+                            }
+
                             prayerDisplay.appendChild(card);
                         } else {
                             // Split into multiple cards for Gospel/Epistles
@@ -3665,7 +3775,25 @@ function renderSelectedKidase(addSectionTitleCallback) {
                                     }
                                 });
                                 const card = createPrayerCardElement(versePrayer, -1, true);
-                                if (i === 0) card.dataset.readingType = activeCfg.id;
+                                if (i === 0) {
+                                    card.dataset.readingType = activeCfg.id;
+                                    const pickerFooter = document.createElement('div');
+                                    pickerFooter.classList.add('card-inline-lectionary-picker');
+
+                                    const bookOpts = (activeCfg.id === 'pauline') ? ['Romans', '1 Corinthians', '2 Corinthians', 'Galatians', 'Ephesians', 'Philippians', 'Colossians', '1 Thessalonians', '2 Thessalonians', '1 Timothy', '2 Timothy', 'Titus', 'Philemon', 'Hebrews']
+                                        : (activeCfg.id === 'universal') ? ['James', '1 Peter', '2 Peter', '1 John', '2 John', '3 John', 'Jude', 'Revelation']
+                                        : (activeCfg.id === 'acts') ? ['Acts']
+                                        : ['Matthew', 'Mark', 'Luke', 'John'];
+
+                                    createLectionaryPicker(pickerFooter, activeCfg.id, bookOpts, null);
+                                    const pFooter = card.querySelector('.prayer-footer');
+                                    const pActions = card.querySelector('.prayer-actions');
+                                    if (pFooter && pActions) {
+                                        pFooter.insertBefore(pickerFooter, pActions);
+                                    } else {
+                                        card.appendChild(pickerFooter);
+                                    }
+                                }
                                 prayerDisplay.appendChild(card);
                             }
                         }
@@ -6195,7 +6323,7 @@ function handleSlideSwipe() {
 
 mainContent.addEventListener('click', (e) => {
     if (displayOptions.presentationMode !== 'slides') return;
-    if (e.target.closest('button, a, .info-panel, .info-toggle, .share-btn, .language-order-handle')) return;
+    if (e.target.closest('button, a, select, option, label, .info-panel, .info-toggle, .share-btn, .language-order-handle, .card-inline-lectionary-picker')) return;
 
     const rect = mainContent.getBoundingClientRect();
     const clickX = e.clientX - rect.left;
