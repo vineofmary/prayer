@@ -2733,6 +2733,14 @@ function formatPrayerText(text, langKey, query, isFirstLanguage, chapter = null,
         }).trim();
     }
 
+    // Format instructions enclosed in triple asterisks (e.g. ***ALL SHALL NOW PROSTRATE (BOW DOWN)***)
+    processedText = processedText.replace(/\*{3}\s*([^\*\n\r]+?)\s*\*{3}/g, (match) => {
+        if (displayOptions.showSpeakerLabels) {
+            return `<span class="speaker-label">${match}</span>`;
+        }
+        return '';
+    });
+
     // Specific formatting: Place English Psalm 135, Three Holy Youth, and Praise of Mary refrains on a new line
     if ((chapter === 'Psalms' || chapter === 'ProphetSong' || chapter === 'Thurs') && langKey === 'english') {
         // Find refrains (with or without the red span) and insert a line break before them.
