@@ -2617,7 +2617,10 @@ function replaceKidasePlaceholders(text, langKey, isFirstLanguage) {
                 if (isFirstLanguage) {
                     const results = getBibleVersesFromRef(cfg.ref());
                     if (results && results[langKey]) {
-                        return processed.replace(placeholder, results[langKey].map(v => `[${v.verseNum}] ${v.text}`).join(" "));
+                        const prefix = (cfg.prefixes && cfg.prefixes[langKey]) || "";
+                        const headerText = `${prefix}${cfg.ref()}`.trim();
+                        const formattedBody = results[langKey].map(v => `<sup>${v.verseNum}</sup> ${v.text}`).join(" ");
+                        return processed.replace(placeholder, `<span class="speaker-label">${headerText}</span><br>${formattedBody}`);
                     }
                     return processed.replace(placeholder, `[Bible Reading]`);
                 } else {
@@ -2648,6 +2651,9 @@ function formatPrayerText(text, langKey, query, isFirstLanguage, chapter = null,
 
     // Replace Kidase placeholders
     processedText = replaceKidasePlaceholders(processedText, langKey, isFirstLanguage);
+
+    // Convert bracketed verse numbers [1], [2] to superscripted tags <sup>1</sup>, <sup>2</sup>
+    processedText = processedText.replace(/\[(\d+)\]/g, '<sup>$1</sup>');
 
     // Replace Date placeholders
     const geezDateInfo = getGeezDateInfo();
@@ -3612,7 +3618,7 @@ function renderSelectedKidase(addSectionTitleCallback) {
 
                                     if (bibleResults[langKey] && bibleResults[langKey][i]) {
                                         const v = bibleResults[langKey][i];
-                                        const verseText = `[${v.verseNum}] ${v.text}`;
+                                        const verseText = `<sup>${v.verseNum}</sup> ${v.text}`;
                                         if (i === 0) {
                                             // Construct localized header
                                             const range = match ? match[2] + ":" + match[3] + (match[4] ? "-" + match[4] : "") : "";
@@ -3630,7 +3636,8 @@ function renderSelectedKidase(addSectionTitleCallback) {
                                                 }
                                             }
                                             const prefix = (activeCfg.prefixes && activeCfg.prefixes[langKey]) || "";
-                                            const fullText = `${prefix}${header}\n${verseText}`;
+                                            const headerText = `${prefix}${header}`.trim();
+                                            const fullText = `<span class="speaker-label">${headerText}</span><br>${verseText}`;
 
                                             // Replace the language-specific placeholder
                                             if (p[langKey]) {
