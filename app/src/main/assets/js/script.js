@@ -2338,6 +2338,68 @@ function toGeezNumeral(n) {
     return result;
 }
 
+const GEEZ_PHONETIC_CHAR_MAP = {
+    "፣": ",", "።": ".", "፤": ":", "፥": ";", "፦": ":", "፧": "?", "፡": " ",
+    "፩": "ahadu", "፪": "kil'etu", "፫": "selestu", "፬": "arba'tu", "፭": "hamistu",
+    "፮": "sidistu", "፯": "seb'atu", "፰": "semantu", "፱": "tes'atu", "፲": "asertu",
+    "፳": "isra", "፴": "selasa", "፵": "arb'a", "፶": "hamsa", "፷": "sidsa",
+    "፸": "seb'a", "፹": "semanya", "፺": "tese'a", "፻": "mi't", "፼": "asertu mi't",
+    "ሀ": "ha", "ሁ": "hu", "ሂ": "hī", "ሃ": "ha", "ሄ": "hé", "ህ": "h", "ሆ": "ho",
+    "ለ": "le", "ሉ": "lu", "ሊ": "lī", "ላ": "la", "ሌ": "lé", "ል": "l", "ሎ": "lo", "ሏ": "lwa",
+    "ሐ": "ḥa", "ሑ": "ḥu", "ሒ": "ḥī", "ሓ": "ḥa", "ሔ": "ḥé", "ሕ": "ḥ", "ሖ": "ḥo", "ሗ": "ḥwa",
+    "መ": "me", "ሙ": "mu", "ሚ": "mī", "ማ": "ma", "ሜ": "mé", "ም": "m", "ሞ": "mo", "ሟ": "mwa", "ፙ": "mya",
+    "ሠ": "se", "ሡ": "su", "ሢ": "sī", "ሣ": "sa", "ሤ": "sé", "ሥ": "s", "ሦ": "so", "ሧ": "swa",
+    "ረ": "re", "ሩ": "ru", "ሪ": "rī", "ራ": "ra", "ሬ": "ré", "ር": "r", "ሮ": "ro", "ሯ": "rwa", "ፘ": "rya",
+    "ሰ": "se", "ሱ": "su", "ሲ": "sī", "ሳ": "sa", "ሴ": "sé", "ስ": "s", "ሶ": "so", "ሷ": "swa",
+    "ቀ": "ḳe", "ቁ": "ḳu", "ቂ": "ḳī", "ቃ": "ḳa", "ቄ": "ḳé", "ቅ": "ḳ", "ቆ": "ḳo", "ቇ": "ḳwa",
+    "በ": "be", "ቡ": "bu", "ቢ": "bī", "ባ": "ba", "ቤ": "bé", "ብ": "b", "ቦ": "bo", "ቧ": "bwa",
+    "ተ": "te", "ቱ": "tu", "ቲ": "tī", "ታ": "ta", "ቴ": "té", "ት": "t", "ቶ": "to", "ቷ": "twa",
+    "ኀ": "ha", "ኁ": "hu", "ኂ": "hī", "ኃ": "ha", "ኄ": "hé", "ኅ": "h", "ኆ": "ho", "ኇ": "hwa",
+    "ነ": "ne", "ኑ": "nu", "ኒ": "nī", "ና": "na", "ኔ": "né", "ን": "n", "ኖ": "no", "ኗ": "nwa",
+    "አ": "'a", "ኡ": "'u", "ኢ": "'ī", "ኣ": "'a", "ኤ": "'é", "እ": "'i", "ኦ": "'o", "ኧ": "'wa",
+    "ከ": "ke", "ኩ": "ku", "ኪ": "kī", "ካ": "ka", "ኬ": "ké", "ክ": "k", "ኮ": "ko", "ኯ": "kwa",
+    "ወ": "we", "ዉ": "wu", "ዊ": "wī", "ዋ": "wa", "ዌ": "wé", "ው": "w", "ዎ": "wo", "ዏ": "wua",
+    "ዐ": "'a", "ዑ": "'u", "ዒ": "'ī", "ዓ": "'a", "ዔ": "'é", "ዕ": "'i", "ዖ": "'o",
+    "ዘ": "ze", "ዙ": "zu", "ዚ": "zī", "ዛ": "za", "ዜ": "zé", "ዝ": "z", "ዞ": "zo", "ዟ": "zwa",
+    "የ": "ye", "ዩ": "yu", "ዪ": "yī", "ያ": "ya", "ዬ": "yé", "ይ": "y", "ዮ": "yo", "ዯ": "ywa",
+    "ደ": "de", "ዱ": "du", "ዲ": "dī", "ዳ": "da", "ዴ": "dé", "ድ": "d", "ዶ": "do", "ዷ": "dwa",
+    "ገ": "ge", "ጉ": "gu", "ጊ": "gī", "ጋ": "ga", "ጌ": "gé", "ግ": "g", "ጎ": "go", "ጏ": "gwa",
+    "ጠ": "ṭe", "ጡ": "ṭu", "ጢ": "ṭī", "ጣ": "ṭa", "ጤ": "ṭé", "ጥ": "ṭ", "ጦ": "ṭo", "ጧ": "ṭwa",
+    "ጰ": "p̣e", "ጱ": "p̣u", "ጲ": "p̣ī", "ጳ": "p̣a", "ጴ": "p̣é", "ጵ": "p̣", "ጶ": "p̣o", "ጷ": "p̣wa",
+    "ጸ": "tse", "ጹ": "tsu", "ጺ": "tsī", "ጻ": "tsa", "ጼ": "tsé", "ጽ": "ts", "ጾ": "tso", "ጿ": "tswa",
+    "ፀ": "tse", "ፁ": "tsu", "ፂ": "tsī", "ፃ": "tsa", "ፄ": "tsé", "ፅ": "ts", "ፆ": "tso", "ፇ": "tswa",
+    "ፈ": "fe", "ፉ": "fu", "ፊ": "fī", "ፋ": "fa", "ፌ": "fé", "ፍ": "f", "ፎ": "fo", "ፏ": "fwa", "ፚ": "fya",
+    "ፐ": "pe", "ፑ": "pu", "ፒ": "pī", "ፓ": "pa", "ፔ": "pé", "ፕ": "p", "ፖ": "po", "ፗ": "pwa",
+    "ቈ": "ḳwe", "ቊ": "ḳwī", "ቋ": "ḳwa", "ቌ": "ḳwé", "ቍ": "ḳw",
+    "ቘ": "ḳhwe", "ቚ": "ḳhwī", "ቛ": "ḳhwa", "ቜ": "ḳhwé", "ቝ": "ḳhw",
+    "ኈ": "hwe", "ኊ": "hwī", "ኋ": "hwa", "ኌ": "hwé", "ኍ": "hw",
+    "ኰ": "kwe", "ኲ": "kwī", "ኳ": "kwa", "ኴ": "kwé", "ኵ": "kw",
+    "ጐ": "gwe", "ጒ": "gwī", "ጓ": "gwa", "ጔ": "gwé", "ጕ": "gw",
+    "ቐ": "qhe", "ቑ": "qhu", "ቒ": "qhī", "ቓ": "qha", "ቔ": "qhé", "ቕ": "qh", "ቖ": "qho",
+    "ቸ": "che", "ቹ": "chu", "ቺ": "chī", "ቻ": "cha", "ቼ": "ché", "ች": "ch", "ቾ": "cho",
+    "ኘ": "ñe", "ኙ": "ñu", "ኚ": "ñī", "ኛ": "ña", "ኜ": "ñé", "ኝ": "ñ", "ኞ": "ño",
+    "ኸ": "khe", "ኹ": "khu", "ኺ": "khī", "ኻ": "kha", "ኼ": "khé", "ኽ": "kh", "ኾ": "kho",
+    "ዠ": "zhe", "ዡ": "zhu", "ዢ": "zhī", "ዣ": "zha", "ዤ": "zhé", "ዥ": "zh", "ዦ": "zho",
+    "ጀ": "je", "ጁ": "ju", "ጂ": "jī", "ጃ": "ja", "ጄ": "jé", "ጅ": "j", "ጆ": "jo",
+    "ጨ": "che", "ጩ": "chu", "ጪ": "chī", "ጫ": "cha", "ጬ": "ché", "ጭ": "ch", "ጮ": "cho",
+    "ቨ": "ve", "ቩ": "vu", "ቪ": "vī", "ቫ": "va", "ቬ": "vé", "ቭ": "v", "ቮ": "vo",
+    "ዧ": "zhwa", "ጯ": "chwa", "ቿ": "chwa", "ጇ": "jwa", "ኟ": "ñwa",
+    "ሸ": "she", "ሹ": "shu", "ሺ": "shī", "ሻ": "sha", "ሼ": "shé", "ሽ": "sh", "ሾ": "sho", "ሿ": "shwa"
+};
+
+function transliterateGeezToPhonetic(text) {
+    if (!text) return '';
+    let result = '';
+    for (const char of text) {
+        if (GEEZ_PHONETIC_CHAR_MAP[char] !== undefined) {
+            result += GEEZ_PHONETIC_CHAR_MAP[char];
+        } else {
+            result += char;
+        }
+    }
+    return result;
+}
+
 function syncAllLectionaryPickers(lectionaryKey, originContainer = null) {
     document.querySelectorAll(`.lectionary-picker-container[data-lectionary-key="${lectionaryKey}"]`).forEach(c => {
         if (c !== originContainer && typeof c.syncPicker === 'function') {
@@ -3871,12 +3933,34 @@ function renderSelectedKidase(addSectionTitleCallback) {
 
                             // Only populate languages that are currently enabled
                             const visibleLangs = languageOrder.filter(id => displayedLanguages[id]);
+
+                            // Always pre-compute phonetic raw text so showGeezPhoneticChants can append it
+                            // under the Ge'ez script column even if geez_phonetic column is not displayed
+                            let psalmPhoneticRaw = '';
+                            if (typical && typical.g) {
+                                psalmPhoneticRaw = transliterateGeezToPhonetic(typical.g);
+                            } else if (bibleResults['geez_script']) {
+                                const rawGeez = bibleResults['geez_script'].map(v => v.text).join("\n");
+                                psalmPhoneticRaw = transliterateGeezToPhonetic(rawGeez);
+                            } else if (typical && typical.p) {
+                                psalmPhoneticRaw = typical.p;
+                            }
+
                             visibleLangs.forEach(langKey => {
                                 const langPlaceholder = activeCfg.placeholders[langKey] || activeCfg.placeholders.english;
                                 let combinedText = "";
 
                                 if (langKey === 'geez_script' && typical) {
                                     combinedText = typical.g;
+                                } else if (langKey === 'geez_phonetic') {
+                                    if (typical && typical.g) {
+                                        combinedText = transliterateGeezToPhonetic(typical.g);
+                                    } else if (bibleResults['geez_script']) {
+                                        const rawGeez = bibleResults['geez_script'].map(v => v.text).join("\n");
+                                        combinedText = transliterateGeezToPhonetic(rawGeez);
+                                    } else if (typical && typical.p) {
+                                        combinedText = typical.p;
+                                    }
                                 } else if (bibleResults[langKey]) {
                                     // Remove verse numbers in brackets for Psalm chants
                                     combinedText = bibleResults[langKey].map(v => v.text).join("\n");
@@ -3897,6 +3981,14 @@ function renderSelectedKidase(addSectionTitleCallback) {
                                     const sG = toGeezNumeral(gS);
                                     const eG = (gE !== gS && gE !== 999) ? '-' + toGeezNumeral(gE) : (gE === 999 ? '-ፍጻሜ' : '');
                                     header = `መዝሙር ዘዳዊት ${chG}፥${sG}${eG} (ግእዝ${toGeezNumeral(1980)})`;
+                                } else if (langKey === 'geez_phonetic') {
+                                    if (typical) {
+                                        const lxxRange = `${typical.ls}${typical.le !== typical.ls ? '-' + typical.le : ''}`;
+                                        const mcRange = `${typical.ms}${typical.me !== typical.ms ? '-' + typical.me : ''}`;
+                                        header = `Mezmure Dawīt ${typical.lc}:${lxxRange} OSB (${typical.mc}:${mcRange} NKJV)`;
+                                    } else {
+                                        header = `Mezmure Dawīt ${chapter}:${rangeSuffix} (Ge'ez Phonetic)`;
+                                    }
                                 } else if (langKey === 'english') {
                                     // English Column: Psalm 94:7-8 OSB (95:7-8 NKJV) OR Psalm 12:5 (NKJV)
                                     if (typical) {
@@ -3923,6 +4015,13 @@ function renderSelectedKidase(addSectionTitleCallback) {
                                     versePrayer[langKey] = "";
                                 }
                             });
+
+                            // Ensure geez_phonetic raw text is always available for
+                            // the "showGeezPhoneticChants" append feature (appended under Ge'ez script column),
+                            // even when the geez_phonetic language column is not displayed.
+                            if (!displayedLanguages['geez_phonetic'] && psalmPhoneticRaw) {
+                                versePrayer['geez_phonetic'] = psalmPhoneticRaw;
+                            }
 
                             const card = createPrayerCardElement(versePrayer, -1, true);
                             card.dataset.readingType = activeCfg.id;
