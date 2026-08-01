@@ -2725,6 +2725,17 @@ function formatPrayerText(text, langKey, query, isFirstLanguage, chapter = null,
         }).trim();
     }
 
+    // Format standalone Scripture / Psalm headers on top line (e.g. Psalm 33:16-17 (NKJV) or መዝሙር ዘዳዊት ፴፫፥፲፮-፲፯ (ግእዝ፲፱፻፹))
+    const scriptureHeaderRegex = /^\s*(?:<[^>]+>)*\s*((?:Psalm|Psalms|መዝሙር|መዝሙረ|Salmo|Salmos)\s+[^<\n\r]+?\((?:NKJV|OSB|አም\d+|ግእዝ\d+|RVG|VRG|GNT)\))\s*(?:<[^>]+>)*\s*(?:\r?\n|<br\s*\/?>|$)/i;
+    if (scriptureHeaderRegex.test(processedText)) {
+        processedText = processedText.replace(scriptureHeaderRegex, (match, headerMatch) => {
+            if (displayOptions.showSpeakerLabels) {
+                return `<span class="speaker-label">${headerMatch}</span><br>`;
+            }
+            return '';
+        }).trim();
+    }
+
     const keywords = speakerKeywords[langKey];
 
     if (keywords) {
@@ -3599,7 +3610,7 @@ function renderSelectedKidase(addSectionTitleCallback) {
                                 // For Psalm chants, we replace the entire card content to remove the Deacon prompt
                                 // But only if we have actual content for this language
                                 if (combinedText && combinedText.trim()) {
-                                    versePrayer[langKey] = `${header}\n${combinedText}`;
+                                    versePrayer[langKey] = `<span class="speaker-label">${header}</span><br>${combinedText}`;
                                 } else {
                                     versePrayer[langKey] = "";
                                 }
