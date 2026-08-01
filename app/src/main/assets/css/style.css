@@ -1813,6 +1813,29 @@ body.presentation-mode-slides .section-title {
     font-size: 3rem;
 }
 
+body.presentation-mode-slides .section-title.non-collapsible {
+    display: none !important;
+}
+
+body:not(.presentation-mode-slides) .parent-title-header {
+    display: none !important;
+}
+
+body.presentation-mode-slides .parent-title-header {
+    display: block;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: var(--primary-gold, #d4af37);
+    opacity: 0.95;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+body.presentation-mode-slides .sub-title-content {
+    font-size: 2.8rem;
+    font-weight: 700;
+}
+
 
 /* Default "Slide" Transition */
 body.presentation-mode-slides #prayer-display.transition-slide {

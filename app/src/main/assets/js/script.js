@@ -3063,7 +3063,7 @@ function createPrayerCardElement(prayer, prayerIndex, isKidase = false) {
     enterSlidesBtn.title = 'Enter Slides Mode';
     enterSlidesBtn.addEventListener('click', (event) => {
         const clickedCard = event.currentTarget.closest('.prayer-card');
-        const allCards = Array.from(prayerDisplay.querySelectorAll('.prayer-card, .section-title'));
+        const allCards = Array.from(prayerDisplay.querySelectorAll('.prayer-card, .section-title.collapsible'));
         const cardIndex = allCards.indexOf(clickedCard);
         if (cardIndex !== -1) {
             currentSlideIndex = cardIndex;
@@ -3631,6 +3631,7 @@ function renderPrayers() {
     }
 
     let lastSectionTitle = null;
+    let currentNonCollapsibleTitleHtml = null;
     const addSectionTitle = (title, isCollapsible = true, metadata = null) => {
         if (title && title !== lastSectionTitle) {
             const titleEl = document.createElement('h2');
@@ -3649,7 +3650,25 @@ function renderPrayers() {
                 actualTitle = actualTitle.substring(2);
             }
             
-            titleEl.innerHTML = actualTitle.replace(/\(Theotokia\)/g, '<i>(Theotokia)</i>');
+            const titleContent = document.createElement('div');
+            titleContent.classList.add('sub-title-content');
+            titleContent.innerHTML = actualTitle.replace(/\(Theotokia\)/g, '<i>(Theotokia)</i>');
+
+            if (!isCollapsible) {
+                titleEl.classList.add('non-collapsible');
+                currentNonCollapsibleTitleHtml = actualTitle.replace(/\(Theotokia\)/g, '<i>(Theotokia)</i>');
+                titleEl.appendChild(titleContent);
+            } else {
+                titleEl.classList.add('collapsible');
+                if (currentNonCollapsibleTitleHtml) {
+                    const parentHeader = document.createElement('div');
+                    parentHeader.classList.add('parent-title-header');
+                    parentHeader.innerHTML = currentNonCollapsibleTitleHtml;
+                    titleEl.appendChild(parentHeader);
+                    currentNonCollapsibleTitleHtml = null;
+                }
+                titleEl.appendChild(titleContent);
+            }
             
             const subSections = [
                 "Sunday | ዘእሁድ", "Monday | ዘሰኑይ", "Tuesday | ዘሠሉስ", 
@@ -3667,14 +3686,11 @@ function renderPrayers() {
             }
 
             if (isCollapsible) {
-                titleEl.classList.add('collapsible');
                 const slug = slugifyTitle(title);
                 const isCollapsed = areAllSectionsCollapsed || collapsedSections[title] || collapsedSections[slug];
 
                 if (isCollapsed) {
                     titleEl.classList.add('collapsed');
-                    // We need to actually hide the elements initially if they are collapsed
-                    // This was missing in the previous version
                 }
                 titleEl.addEventListener('click', () => {
                     // Do not allow collapsing/expanding in slides mode
@@ -4158,12 +4174,12 @@ function setupSlides() {
 function removeSlides() {
     prayerDisplay.style.transform = '';
     prayerDisplay.className = '';
-    document.querySelectorAll('.prayer-card, .section-title').forEach(el => el.classList.remove('active-slide'));
+    document.querySelectorAll('.prayer-card, .section-title.collapsible').forEach(el => el.classList.remove('active-slide'));
     document.querySelectorAll('.language-text').forEach(p => p.style.fontSize = '');
 }
 
 function showSlide(index) {
-    const slides = prayerDisplay.querySelectorAll('.prayer-card, .section-title');
+    const slides = prayerDisplay.querySelectorAll('.prayer-card, .section-title.collapsible');
     if (index >= slides.length) currentSlideIndex = 0;
     if (index < 0) currentSlideIndex = slides.length - 1;
 
@@ -4178,7 +4194,7 @@ function showSlide(index) {
 }
 
 function nextSlide() {
-    const slides = prayerDisplay.querySelectorAll('.prayer-card, .section-title');
+    const slides = prayerDisplay.querySelectorAll('.prayer-card, .section-title.collapsible');
     if (slides.length > 0) {
         currentSlideIndex = (currentSlideIndex + 1) % slides.length;
         showSlide(currentSlideIndex);
@@ -4186,7 +4202,7 @@ function nextSlide() {
 }
 
 function prevSlide() {
-    const slides = prayerDisplay.querySelectorAll('.prayer-card, .section-title');
+    const slides = prayerDisplay.querySelectorAll('.prayer-card, .section-title.collapsible');
     if (slides.length > 0) {
         currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
         showSlide(currentSlideIndex);
@@ -4740,7 +4756,7 @@ function renderSelectedPsalmsWithDoxology(addSectionTitleCallback) {
             enterSlidesBtn.title = 'Enter Slides Mode';
             enterSlidesBtn.addEventListener('click', (event) => {
                 const clickedCard = event.currentTarget.closest('.prayer-card');
-                const allCards = Array.from(prayerDisplay.querySelectorAll('.prayer-card, .section-title'));
+                const allCards = Array.from(prayerDisplay.querySelectorAll('.prayer-card, .section-title.collapsible'));
                 const cardIndex = allCards.indexOf(clickedCard);
                 if (cardIndex !== -1) {
                     currentSlideIndex = cardIndex;
