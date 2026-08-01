@@ -2869,23 +2869,38 @@ function isChantStanza(prayer) {
 function filterGeezPhoneticForPeople(phoneticText, prayer) {
     if (!phoneticText || !phoneticText.trim()) return '';
 
+    const INNER_TITLE_LINE_REGEX = /^\s*(?:፨\s*[^፨\n\r]+?\s*፨|\({1,2}\s*[^()\n\r]+?\s*\){1,2})\s*$/i;
     const PEOPLE_LABEL_REGEX = /^(?:፨\s*)?(?:People|ALL|All|Pueblo|Todos|Gente|ሕዝብ|ኵሎሙ|ሁሉም|ኩሉኹም|Ḥizb|Hizb|Kwllomu|Kullomu|Kwlomu|Hizbi|Ḥizbi|(?:Priest|Asst\.\s*Priest|Deacon|Subdeacon|Leader|Reader|Bridegroom|Bride|ካህን|ካህን\s*ንፍቅ|ዲያቆን|ንፍቀ\s*ዲያቆን|መሪሕ|መሪ|መራሒ|አንባቢ|ነባቢ|ሙሽራው|ሙሽራዋ|መርዓዊ|መርዓት|Sacerdote|Diácono|Subdiácono|Líder|Lector|Novio|Novia|Merīḥ|Meriḥ|Merih|Kahn|Kahin|Diyakon|Dīyakon|Meraḥi|Meraḥī)\s*\([^)]*(?:People|repeat|ከምኡ|ይበሉ|መልሰው|repite|kem'u)[^)]*\))(?:\s*\([^)]*\))?[:፡።፤፣]/i;
     const LEADER_LABEL_REGEX = /^(?:፨\s*)?(?:Priest|Asst\.\s*Priest|Deacon|Subdeacon|Leader|Reader|Bridegroom|Bride|ካህን|ካህን\s*ንፍቅ|ዲያቆን|ንፍቀ\s*ዲያቆን|መሪሕ|መሪ|መራሒ|አንባቢ|ነባቢ|ሙሽራው|ሙሽራዋ|መርዓዊ|መርዓት|Sacerdote|Diácono|Subdiácono|Líder|Lector|Novio|Novia|Merīḥ|Meriḥ|Merih|Kahn|Kahin|Diyakon|Dīyakon|Meraḥi|Meraḥī)(?:\s*\([^)]*\))?[:፡።፤፣]/i;
 
-    const checkStringForLeader = (str) => str && LEADER_LABEL_REGEX.test(str.trim());
+    const filterTitleLines = (text) => {
+        if (!text) return [];
+        return text.split(/(?:<br\s*\/?>|\n)+/).map(p => p.trim()).filter(p => p && !INNER_TITLE_LINE_REGEX.test(p));
+    };
+
+    // Filter out top inner title/reference header lines first across all language paragraph lists for index alignment
+    const paragraphs = filterTitleLines(phoneticText);
+    if (paragraphs.length === 0) return '';
+
+    const checkStringForLeader = (str) => {
+        if (!str) return false;
+        const lines = filterTitleLines(str);
+        return lines.some(line => LEADER_LABEL_REGEX.test(line));
+    };
     const hasLeaderLabel = checkStringForLeader(phoneticText) ||
                            checkStringForLeader(prayer?.geez_script) ||
                            checkStringForLeader(prayer?.english) ||
                            checkStringForLeader(prayer?.amharic_script);
 
-    // If there is no leader label anywhere in the card, the whole text belongs to the people chant
+    // If there is no leader label anywhere in the card, return all non-title paragraphs
     if (!hasLeaderLabel) {
-        return phoneticText;
+        const delimiter = phoneticText.includes('<br>') ? '<br><br>' : '\n\n';
+        return paragraphs.join(delimiter);
     }
 
-    const paragraphs = phoneticText.split(/(?:<br\s*\/?>|\n)+/);
-    const geezScriptParagraphs = (prayer?.geez_script || '').split(/(?:<br\s*\/?>|\n)+/);
-    const englishParagraphs = (prayer?.english || '').split(/(?:<br\s*\/?>|\n)+/);
+    const geezScriptParagraphs = filterTitleLines(prayer?.geez_script);
+    const englishParagraphs = filterTitleLines(prayer?.english);
+    const amharicParagraphs = filterTitleLines(prayer?.amharic_script);
 
     const keptParagraphs = [];
     let currentSpeakerIsPeople = false;
@@ -2896,10 +2911,11 @@ function filterGeezPhoneticForPeople(phoneticText, prayer) {
 
         const geezPara = (geezScriptParagraphs[index] || '').trim();
         const engPara = (englishParagraphs[index] || '').trim();
+        const amhPara = (amharicParagraphs[index] || '').trim();
 
-        if (PEOPLE_LABEL_REGEX.test(trimmedPara) || PEOPLE_LABEL_REGEX.test(geezPara) || PEOPLE_LABEL_REGEX.test(engPara)) {
+        if (PEOPLE_LABEL_REGEX.test(trimmedPara) || PEOPLE_LABEL_REGEX.test(geezPara) || PEOPLE_LABEL_REGEX.test(engPara) || PEOPLE_LABEL_REGEX.test(amhPara)) {
             currentSpeakerIsPeople = true;
-        } else if (LEADER_LABEL_REGEX.test(trimmedPara) || LEADER_LABEL_REGEX.test(geezPara) || LEADER_LABEL_REGEX.test(engPara)) {
+        } else if (LEADER_LABEL_REGEX.test(trimmedPara) || LEADER_LABEL_REGEX.test(geezPara) || LEADER_LABEL_REGEX.test(engPara) || LEADER_LABEL_REGEX.test(amhPara)) {
             currentSpeakerIsPeople = false;
         }
 
