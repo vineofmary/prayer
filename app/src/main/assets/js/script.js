@@ -2669,7 +2669,7 @@ function formatPrayerText(text, langKey, query, isFirstLanguage, chapter = null,
             // Restricted to verse 1 to avoid misidentifying leading italicized words in later verses
             // Handles nested <i> tags and stray trailing </i> tags found in some NKJV data
             const nkjvSuperscriptionRegex = /^((?:<i>(?:<i>.*?<\/i>|.)*?<\/i>(?:\s*<\/i>)*\s*)+)/;
-            if (verseNum === 1 && nkjvSuperscriptionRegex.test(processedText)) {
+            if (Number(verseNum) === 1 && nkjvSuperscriptionRegex.test(processedText)) {
                 processedText = processedText.replace(nkjvSuperscriptionRegex, '<span class="psalm-superscription">$1</span><br>' + supTag);
             } else {
                 processedText = supTag + processedText;
@@ -2716,9 +2716,8 @@ function formatPrayerText(text, langKey, query, isFirstLanguage, chapter = null,
         // Handles "For His mercy endures forever", the Three Holy Youth variations, 
         // and "O holy one (Mary), pray for us."
         const refrainRegex = /\s*(<span class="rubric-red">)?(For His mercy|And (?:sing a hymn|let it sing a hymn)|O holy one)/gi;
-        processedText = processedText.replace(refrainRegex, (match, p1, p2) => {
-            // p1 is the optional span tag, p2 is the matched start of the refrain
-            return '<br>' + (p1 || '') + match.trim();
+        processedText = processedText.replace(refrainRegex, (match) => {
+            return '<br>' + match.trim();
         });
     }
 
@@ -6506,7 +6505,10 @@ document.addEventListener('DOMContentLoaded', async () => {
             } else if (fsItem.chapter === 'Psalms' || fsItem.chapter === 'ProphetSong' || fsItem.chapter === 'Bible') {
                 updateAllMatches(songs, p =>
                     p.chapter === fsItem.chapter &&
-                    p.stanza == fsItem.stanza
+                    p.stanza == fsItem.stanza &&
+                    (generateDocId(p) === fsItem.id ||
+                     (p.reference && fsItem.reference && p.reference.trim() === fsItem.reference.trim()) ||
+                     songs.filter(s => s.chapter === fsItem.chapter && s.stanza == fsItem.stanza).length === 1)
                 );
             } else {
                 const criteria = p => generateDocId(p) === fsItem.id;
