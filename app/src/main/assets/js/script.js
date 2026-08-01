@@ -2855,15 +2855,12 @@ function hasActualContent(text, langKey) {
 
 function isChantStanza(prayer) {
     if (!prayer) return false;
-    const chantKeywords = ['People', 'ALL', 'All', 'ሕዝብ', 'ኵሎሙ', 'ሁሉም', 'ኩሉኹም', 'Pueblo', 'Todos', 'Gente'];
 
-    for (const langKey in speakerKeywords) {
-        const keywords = speakerKeywords[langKey];
-        const relevantKeywords = keywords.filter(k => chantKeywords.includes(k));
+    const chantPattern = /(?:People|ALL|All|Pueblo|Todos|Gente|ሕዝብ|ኵሎሙ|ሁሉም|ኩሉኹም|Ḥizb|Hizb|Kwllomu|Kullomu|Kwlomu|Hizbi|Ḥizbi|ከምኡ\s*ይበሉ|ይህንኑ\s*መልሰው|People\s*repeat|la\s*gente\s*repite|kem'u\s*ybelu)/i;
 
-        if (relevantKeywords.length > 0 && prayer[langKey]) {
-            const regex = new RegExp(`(፨ )?(${relevantKeywords.join('|')})([:፤፣፡])`);
-            if (regex.test(prayer[langKey])) return true;
+    for (const langKey of ['english', 'geez_script', 'amharic_script', 'tigrinya_script', 'spanish', 'geez_phonetic']) {
+        if (prayer[langKey] && chantPattern.test(prayer[langKey])) {
+            return true;
         }
     }
     return false;
@@ -2872,7 +2869,7 @@ function isChantStanza(prayer) {
 function filterGeezPhoneticForPeople(phoneticText, prayer) {
     if (!phoneticText || !phoneticText.trim()) return '';
 
-    const PEOPLE_LABEL_REGEX = /^(?:፨\s*)?(?:People|ALL|All|Pueblo|Todos|Gente|ሕዝብ|ኵሎሙ|ሁሉም|ኩሉኹም|Ḥizb|Hizb|Kwllomu|Kullomu|Kwlomu|Hizbi|Ḥizbi)(?:\s*\([^)]*\))?[:፡።፤፣]/i;
+    const PEOPLE_LABEL_REGEX = /^(?:፨\s*)?(?:People|ALL|All|Pueblo|Todos|Gente|ሕዝብ|ኵሎሙ|ሁሉም|ኩሉኹም|Ḥizb|Hizb|Kwllomu|Kullomu|Kwlomu|Hizbi|Ḥizbi|(?:Priest|Asst\.\s*Priest|Deacon|Subdeacon|Leader|Reader|Bridegroom|Bride|ካህን|ካህን\s*ንፍቅ|ዲያቆን|ንፍቀ\s*ዲያቆን|መሪሕ|መሪ|መራሒ|አንባቢ|ነባቢ|ሙሽራው|ሙሽራዋ|መርዓዊ|መርዓት|Sacerdote|Diácono|Subdiácono|Líder|Lector|Novio|Novia|Merīḥ|Meriḥ|Merih|Kahn|Kahin|Diyakon|Dīyakon|Meraḥi|Meraḥī)\s*\([^)]*(?:People|repeat|ከምኡ|ይበሉ|መልሰው|repite|kem'u)[^)]*\))(?:\s*\([^)]*\))?[:፡።፤፣]/i;
     const LEADER_LABEL_REGEX = /^(?:፨\s*)?(?:Priest|Asst\.\s*Priest|Deacon|Subdeacon|Leader|Reader|Bridegroom|Bride|ካህን|ካህን\s*ንፍቅ|ዲያቆን|ንፍቀ\s*ዲያቆን|መሪሕ|መሪ|መራሒ|አንባቢ|ነባቢ|ሙሽራው|ሙሽራዋ|መርዓዊ|መርዓት|Sacerdote|Diácono|Subdiácono|Líder|Lector|Novio|Novia|Merīḥ|Meriḥ|Merih|Kahn|Kahin|Diyakon|Dīyakon|Meraḥi|Meraḥī)(?:\s*\([^)]*\))?[:፡።፤፣]/i;
 
     const checkStringForLeader = (str) => str && LEADER_LABEL_REGEX.test(str.trim());
