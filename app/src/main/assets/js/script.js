@@ -3484,7 +3484,14 @@ function renderSelectedKidase(addSectionTitleCallback) {
         }
 
         if (hideQuietPrayers && !overrideQuietFilter) {
-            filtered = filtered.filter(p => p.instruction ? !p.instruction.includes("Inaudible Prayer") : true);
+            const isSunday = new Date().getDay() === 0;
+            filtered = filtered.filter(p => {
+                if (p.instruction && p.instruction.includes("Inaudible Prayer")) return false;
+                if (isSunday && ((p.chapter === '3' && p.stanza === '119') || (p.chapter === '2' && (p.stanza === '73' || p.stanza === '74')))) {
+                    return false;
+                }
+                return true;
+            });
         }
 
         filtered.forEach((pOriginal, relativeIdx) => {
