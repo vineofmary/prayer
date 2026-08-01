@@ -999,6 +999,8 @@ const speakerKeywords = {
     amharic_script: ["ካህን", "ካህን ንፍቅ", "ዲያቆን", "ሕዝብ", "ንፍቀ ዲያቆን", "ሁሉም", "መሪ", "አንባቢ", "ሙሽራው", "ሙሽራዋ"],
     tigrinya_script: ["ካህን", "ካህን ንፍቅ", "ዲያቆን", "ሕዝብ", "ንፍቀ ዲያቆን", "ኩሉኹም", "መራሒ", "ነባቢ", "መርዓዊ", "መርዓት"],
     spanish: ["Sacerdote", "Diácono", "Pueblo", "Subdiácono", "Todos", "Líder", "Gente", "Lector", "Novio", "Novia"],
+    geez_phonetic: ["kwlomu", "ḥzb", "hzb", "merīḥ", "meriḥ", "merih", "kahn", "kahin", "diyakon", "dīyakon", "ḥizb", "hizb", "kwllomu", "kullomu", "meraḥi", "meraḥī", "anbabi", "anbabī", "nebabi", "nebabī", "Kahn", "Kahin", "Asst. Kahn", "Diyakon", "Dīyakon", "Nfq Diyakon", "Ḥizb", "Hizb", "Kwllomu", "Kullomu", "Kwlomu", "Merīḥ", "Meriḥ", "Merih", "Meraḥi", "Meraḥī", "Anbabi", "Anbabī", "Nebabi", "Nebabī", "Priest", "Asst. Priest", "Deacon", "People", "Subdeacon", "All", "ALL", "Leader", "Reader", "Bridegroom", "Bride"],
+    tigrinya_phonetic: ["kwlomu", "ḥzb", "hzb", "merīḥ", "meriḥ", "merih", "kahn", "kahin", "diyakon", "dīyakon", "ḥizb", "hizb", "kwllomu", "kullomu", "meraḥi", "meraḥī", "anbabi", "anbabī", "nebabi", "nebabī", "Kahn", "Kahin", "Asst. Kahn", "Diyakon", "Dīyakon", "Nfq Diyakon", "Ḥizb", "Hizb", "Kwllomu", "Kullomu", "Kwlomu", "Merīḥ", "Meriḥ", "Merih", "Meraḥi", "Meraḥī"]
 };
 
 function toGeez(n) {
@@ -2701,7 +2703,9 @@ function formatPrayerText(text, langKey, query, isFirstLanguage, chapter = null,
     const keywords = speakerKeywords[langKey];
 
     if (keywords) {
-        const regex = new RegExp(`(፨ )?(${keywords.join('|')})([:፤፣])`, 'g');
+        const sortedKeywords = [...keywords].sort((a, b) => b.length - a.length);
+        const escapedKeywords = sortedKeywords.map(k => k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+        const regex = new RegExp(`(፨\\s*)?(${escapedKeywords.join('|')})([:፡።፤፣])`, 'gi');
         processedText = processedText.replace(regex, (match) => {
             if (displayOptions.showSpeakerLabels) {
                 return `<span class="speaker-label">${match}</span>`;
