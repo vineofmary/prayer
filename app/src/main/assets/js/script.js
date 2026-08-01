@@ -3881,6 +3881,26 @@ function renderSelectedKidase(addSectionTitleCallback) {
             return true;
         });
 
+        // Apply Gospel Conclusion/Response filtering (3-213..3-216)
+        // Each gospel book has its own conclusion & response cards:
+        //   Matthew → 3-213, Mark → 3-214, Luke → 3-215, John → 3-216
+        const GOSPEL_STANZA_MAP = { 'Matthew': 213, 'Mark': 214, 'Luke': 215, 'John': 216 };
+        const gospelRef = kidaseLectionaryRefs.gospel || '';
+        const gospelBookMatch = gospelRef.match(/^(\w+)\s/);
+        const selectedGospelBook = gospelBookMatch ? gospelBookMatch[1] : '';
+        const activeGospelStanza = GOSPEL_STANZA_MAP[selectedGospelBook];
+
+        filtered = filtered.filter(p => {
+            if (p.chapter === '3' && p.stanza) {
+                const sNum = parseInt(p.stanza);
+                if (!isNaN(sNum) && sNum >= 213 && sNum <= 216) {
+                    // Only show the stanza matching the selected gospel book
+                    return sNum === activeGospelStanza;
+                }
+            }
+            return true;
+        });
+
         filtered.forEach((pOriginal, relativeIdx) => {
             const p = { ...pOriginal }; // clone to avoid modifying original array
 
