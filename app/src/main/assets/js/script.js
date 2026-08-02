@@ -4143,15 +4143,16 @@ function renderSelectedKidase(addSectionTitleCallback) {
             if (cardId === '4-33' || cardId === 'The300-1') {
                 const navBtn = document.createElement('button');
                 navBtn.className = 'settings-button creed-nav-btn';
+                const jumpIconSVG = `<svg class="creed-nav-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>`;
                 if (cardId === '4-33') {
-                    navBtn.textContent = 'NICENE CREED | ጸሎተ ሐይማኖት';
+                    navBtn.innerHTML = `${jumpIconSVG} <span>NICENE CREED | ጸሎተ ሐይማኖት</span>`;
                     navBtn.title = 'Jump to the Nicene Creed (The 300)';
                     navBtn.addEventListener('click', (e) => {
                         e.preventDefault();
                         navigateToCard('The300-1');
                     });
                 } else {
-                    navBtn.textContent = "APOSTLE'S CREED | አመክንዮ ዘሐዋርያት";
+                    navBtn.innerHTML = `${jumpIconSVG} <span>APOSTLE'S CREED | አመክንዮ ዘሐዋርያት</span>`;
                     navBtn.title = "Jump to the Apostle's Creed";
                     navBtn.addEventListener('click', (e) => {
                         e.preventDefault();

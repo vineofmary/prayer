@@ -3371,6 +3371,9 @@ body.presentation-mode-slides .card-inline-lectionary-picker {
 
 /* Creed cross-navigation button */
 .creed-nav-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
     font-size: 0.72rem;
     padding: 0.25rem 0.6rem;
     white-space: nowrap;
@@ -3380,6 +3383,11 @@ body.presentation-mode-slides .card-inline-lectionary-picker {
     max-width: fit-content;
     margin-left: auto;
     margin-right: 0.5rem;
+}
+
+.creed-nav-btn .creed-nav-icon {
+    flex-shrink: 0;
+    opacity: 0.85;
 }
 
 /* Highlight animation when navigating to a card */
