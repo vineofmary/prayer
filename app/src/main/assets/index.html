@@ -206,6 +206,7 @@
                         <div id="psalm-selector-container"></div>
                         <button id="psalm-combinations-btn" class="settings-button">Typical Psalm
                             Combinations...</button>
+                        <button id="athanasius-guide-btn" class="settings-button">📜 St. Athanasius’ Psalm Guide</button>
 
                         <div class="psalm-sequence-container">
                             <label for="psalm-sequence-input">Sequence Order:</label>
@@ -1174,6 +1175,22 @@
             </div>
         </div>
 
+        <div id="athanasius-modal" class="modal">
+            <div class="modal-content athanasius-modal-content">
+                <span class="close-button" id="close-athanasius-modal">&times;</span>
+                <div class="athanasius-modal-header">
+                    <h2>📜 St. Athanasius’ Psalter Guide</h2>
+                    <p class="athanasius-subtitle"><i>Saint Athanasius to Marcellinus: On the Interpretation of the Psalms (c. 360 AD)</i></p>
+                </div>
+                <div class="athanasius-search-container">
+                    <input type="text" id="athanasius-search-input" placeholder="Search by emotion, trial, prophecy, keyword, or LXX Psalm..." />
+                </div>
+                <div id="athanasius-category-chips" class="athanasius-category-chips"></div>
+                <div id="athanasius-results-count" class="athanasius-results-count"></div>
+                <div id="athanasius-prescriptions-list" class="athanasius-prescriptions-list"></div>
+            </div>
+        </div>
+
         <div id="changelog-modal" class="modal">
             <div class="modal-content changelog-content">
                 <span class="close-button" id="close-changelog-modal">&times;</span>
@@ -1207,6 +1224,7 @@
     <script src="js/kidase.js?v=9"></script>
     <script src="js/teklil.js?v=1"></script>
     <script src="js/typical_psalms.js?v=9"></script>
+    <script src="js/st_athanasius_psalms.js?v=1"></script>
     <script src="js/script.js?v=26"></script>
 </body>
 

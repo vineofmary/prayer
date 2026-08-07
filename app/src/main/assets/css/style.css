@@ -3400,3 +3400,240 @@ body.presentation-mode-slides .card-inline-lectionary-picker {
 .prayer-card.nav-highlight {
     animation: nav-highlight-pulse 0.75s ease-in-out 2;
 }
+
+/* ==========================================
+ * ST. ATHANASIUS PSALTER GUIDE STYLES
+ * ========================================== */
+
+.athanasius-modal-content {
+    max-width: 850px;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.athanasius-modal-header {
+    text-align: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.athanasius-modal-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: var(--accent-color);
+}
+
+.athanasius-subtitle {
+    font-size: 0.85rem;
+    opacity: 0.8;
+    margin-top: 0.3rem;
+}
+
+.athanasius-search-container {
+    margin-bottom: 1rem;
+}
+
+.athanasius-search-container input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--bg-color);
+    color: var(--text-color);
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.athanasius-search-container input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(184, 134, 11, 0.2);
+}
+
+.athanasius-category-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 0.75rem;
+}
+
+.athanasius-chip {
+    background: var(--hover-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    padding: 0.35rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.82rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.athanasius-chip:hover {
+    background: var(--border-color);
+}
+
+.athanasius-chip.active {
+    background: var(--accent-color);
+    color: var(--accent-text-color, #fff);
+    border-color: var(--accent-color);
+    font-weight: bold;
+}
+
+.athanasius-results-count {
+    font-size: 0.8rem;
+    opacity: 0.75;
+    margin-bottom: 0.75rem;
+}
+
+.athanasius-prescriptions-list {
+    overflow-y: auto;
+    max-height: 55vh;
+    padding-right: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+}
+
+.athanasius-card {
+    background: var(--card-bg, rgba(255, 255, 255, 0.05));
+    border: 1px solid var(--border-color);
+    border-left: 4px solid var(--accent-color);
+    border-radius: 8px;
+    padding: 1rem;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.athanasius-card:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.athanasius-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.athanasius-card-title {
+    font-weight: bold;
+    font-size: 1.05rem;
+    color: var(--accent-color);
+    line-height: 1.3;
+}
+
+.athanasius-card-section {
+    font-size: 0.75rem;
+    padding: 0.15rem 0.5rem;
+    background: var(--hover-color);
+    border-radius: 4px;
+    opacity: 0.8;
+    white-space: nowrap;
+}
+
+.athanasius-card-quote {
+    font-size: 0.92rem;
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+    font-style: italic;
+    color: var(--text-color);
+}
+
+.athanasius-card-footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.75rem;
+    border-top: 1px dashed var(--border-color);
+    padding-top: 0.6rem;
+    margin-top: 0.5rem;
+}
+
+.athanasius-psalms-pills {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.athanasius-psalms-label {
+    font-size: 0.8rem;
+    font-weight: bold;
+    opacity: 0.85;
+}
+
+.athanasius-psalm-badge {
+    background: var(--accent-color);
+    color: var(--accent-text-color, #fff);
+    font-size: 0.78rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: 12px;
+    font-weight: bold;
+}
+
+.athanasius-actions {
+    display: flex;
+    gap: 0.4rem;
+}
+
+.ath-btn {
+    font-size: 0.78rem;
+    padding: 0.3rem 0.65rem;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.15s ease;
+}
+
+.ath-set-btn {
+    background: var(--accent-color);
+    color: var(--accent-text-color, #fff);
+    border-color: var(--accent-color);
+}
+
+.ath-set-btn:hover {
+    filter: brightness(1.1);
+}
+
+.ath-add-btn {
+    background: var(--hover-color);
+    color: var(--text-color);
+}
+
+.ath-add-btn:hover {
+    background: var(--border-color);
+}
+
+/* St. Athanasius Reader Badge */
+.athanasius-reader-badge {
+    margin: 0.5rem 0 1rem 0;
+    padding: 0.6rem 0.9rem;
+    background: var(--hover-color);
+    border-left: 3px solid var(--accent-color);
+    border-radius: 4px;
+    font-size: 0.88rem;
+    line-height: 1.4;
+
+.athanasius-reader-badge-title {
+    font-weight: bold;
+    font-size: 0.8rem;
+    color: var(--accent-color);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.2rem;
+}
+
+.athanasius-reader-badge-text {
+    font-style: italic;
+    opacity: 0.9;
+}
+

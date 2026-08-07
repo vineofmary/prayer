@@ -100,6 +100,13 @@ const scribeEditorModal = document.getElementById('scribe-editor-modal');
 const changelogModal = document.getElementById('changelog-modal');
 const changelogList = document.getElementById('changelog-list');
 const closeChangelogModal = document.getElementById('close-changelog-modal');
+const athanasiusModal = document.getElementById('athanasius-modal');
+const athanasiusGuideBtn = document.getElementById('athanasius-guide-btn');
+const closeAthanasiusModal = document.getElementById('close-athanasius-modal');
+const athanasiusSearchInput = document.getElementById('athanasius-search-input');
+const athanasiusCategoryChips = document.getElementById('athanasius-category-chips');
+const athanasiusResultsCount = document.getElementById('athanasius-results-count');
+const athanasiusPrescriptionsList = document.getElementById('athanasius-prescriptions-list');
 const appVersionContainer = document.getElementById('app-version-container');
 const modalBackdrop = document.getElementById('modal-backdrop');
 
@@ -4500,7 +4507,15 @@ function renderPrayers() {
 
     if (psalmsRendered) {
         renderSelectedPsalmsWithDoxology((psalmNum) => {
-            addSectionTitle(`→ Psalm ${psalmNum} | መዝሙር ዘዳዊት ${toGeez(psalmNum)}`);
+            let athMetadata = null;
+            if (typeof ST_ATHANASIUS_PSALMS_GUIDE !== 'undefined') {
+                const athEntries = ST_ATHANASIUS_PSALMS_GUIDE.filter(e => e.psalms.includes(psalmNum));
+                if (athEntries.length > 0) {
+                    const descList = athEntries.map(e => e.prescription).join(' ');
+                    athMetadata = { athanasius: descList };
+                }
+            }
+            addSectionTitle(`→ Psalm ${psalmNum} | መዝሙር ዘዳዊት ${toGeez(psalmNum)}`, true, athMetadata);
         });
     }
 
@@ -7524,6 +7539,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     document.getElementById('close-icon-metadata-modal').addEventListener('click', closeModal);
     document.getElementById('close-scribe-icon-editor-modal').addEventListener('click', closeModal);
     document.getElementById('close-eusebius-modal').addEventListener('click', closeModal);
+    if (closeAthanasiusModal) closeAthanasiusModal.addEventListener('click', closeModal);
     if (closeChangelogModal) closeChangelogModal.addEventListener('click', closeModal);
 
     // App Version & Changelog Logic
@@ -7702,4 +7718,164 @@ document.addEventListener('DOMContentLoaded', async () => {
             lockFontSizesToggle.checked = fontSizes.locked;
         }
     });
+
+    initAthanasiusModal();
 });
+
+// St. Athanasius Psalter Guide Modal Logic
+let currentAthanasiusCategory = 'all';
+let currentAthanasiusQuery = '';
+
+function initAthanasiusModal() {
+    if (!athanasiusGuideBtn || !athanasiusModal) return;
+
+    athanasiusGuideBtn.addEventListener('click', () => {
+        openModal(athanasiusModal);
+        renderAthanasiusModal();
+    });
+
+    if (athanasiusSearchInput) {
+        athanasiusSearchInput.addEventListener('input', (e) => {
+            currentAthanasiusQuery = e.target.value.trim().toLowerCase();
+            renderAthanasiusPrescriptionsList();
+        });
+    }
+}
+
+function renderAthanasiusModal() {
+    renderAthanasiusCategoryChips();
+    renderAthanasiusPrescriptionsList();
+}
+
+function renderAthanasiusCategoryChips() {
+    if (!athanasiusCategoryChips || typeof ST_ATHANASIUS_CATEGORIES === 'undefined') return;
+
+    athanasiusCategoryChips.innerHTML = '';
+    ST_ATHANASIUS_CATEGORIES.forEach(cat => {
+        const chip = document.createElement('button');
+        chip.classList.add('athanasius-chip');
+        if (cat.id === currentAthanasiusCategory) {
+            chip.classList.add('active');
+        }
+        chip.innerHTML = `${cat.icon} ${cat.name}`;
+        chip.addEventListener('click', () => {
+            currentAthanasiusCategory = cat.id;
+            renderAthanasiusCategoryChips();
+            renderAthanasiusPrescriptionsList();
+        });
+        athanasiusCategoryChips.appendChild(chip);
+    });
+}
+
+function renderAthanasiusPrescriptionsList() {
+    if (!athanasiusPrescriptionsList || typeof ST_ATHANASIUS_PSALMS_GUIDE === 'undefined') return;
+
+    athanasiusPrescriptionsList.innerHTML = '';
+
+    const filtered = ST_ATHANASIUS_PSALMS_GUIDE.filter(item => {
+        // Category filter
+        if (currentAthanasiusCategory !== 'all' && item.category !== currentAthanasiusCategory) {
+            return false;
+        }
+
+        // Search query filter
+        if (currentAthanasiusQuery) {
+            const query = currentAthanasiusQuery;
+            const matchTitle = item.title.toLowerCase().includes(query);
+            const matchQuote = item.prescription.toLowerCase().includes(query);
+            const matchTags = item.tags && item.tags.some(t => t.toLowerCase().includes(query));
+            const matchPsalms = item.psalms && item.psalms.some(p => p.toString() === query || `psalm ${p}`.includes(query) || `ps ${p}`.includes(query));
+            return matchTitle || matchQuote || matchTags || matchPsalms;
+        }
+
+        return true;
+    });
+
+    if (athanasiusResultsCount) {
+        athanasiusResultsCount.textContent = `Showing ${filtered.length} prescription${filtered.length === 1 ? '' : 's'}`;
+    }
+
+    if (filtered.length === 0) {
+        athanasiusPrescriptionsList.innerHTML = '<div style="padding: 2rem; text-align: center; opacity: 0.7;">No prescriptions found matching your search.</div>';
+        return;
+    }
+
+    filtered.forEach(entry => {
+        const card = document.createElement('div');
+        card.classList.add('athanasius-card');
+
+        const psalmsPillsHtml = entry.psalms.map(p => `<span class="athanasius-psalm-badge">${p}</span>`).join(' ');
+
+        card.innerHTML = `
+            <div class="athanasius-card-header">
+                <div class="athanasius-card-title">${entry.title}</div>
+                <div class="athanasius-card-section">${entry.section}</div>
+            </div>
+            <div class="athanasius-card-quote">"${entry.prescription}"</div>
+            <div class="athanasius-card-footer">
+                <div class="athanasius-psalms-pills">
+                    <span class="athanasius-psalms-label">Prescribed Psalms:</span>
+                    ${psalmsPillsHtml}
+                </div>
+                <div class="athanasius-actions">
+                    <button class="ath-btn ath-set-btn" title="Replace active psalm sequence with these psalms">Set as Sequence</button>
+                    <button class="ath-btn ath-add-btn" title="Append these psalms to active psalm sequence">Add to Sequence</button>
+                </div>
+            </div>
+        `;
+
+        const setBtn = card.querySelector('.ath-set-btn');
+        const addBtn = card.querySelector('.ath-add-btn');
+
+        setBtn.addEventListener('click', () => {
+            applyAthanasiusPsalms(entry.psalms, 'set');
+        });
+
+        addBtn.addEventListener('click', () => {
+            applyAthanasiusPsalms(entry.psalms, 'add');
+        });
+
+        athanasiusPrescriptionsList.appendChild(card);
+    });
+}
+
+function applyAthanasiusPsalms(psalmsList, mode) {
+    let newSequence = [];
+    if (mode === 'set') {
+        newSequence = [...psalmsList];
+    } else { // add
+        newSequence = [...selectedPsalms];
+        psalmsList.forEach(p => {
+            if (!newSequence.includes(p)) {
+                newSequence.push(p);
+            }
+        });
+    }
+
+    selectedPsalms = newSequence;
+
+    const psalmSequenceInput = document.getElementById('psalm-sequence-input');
+    if (psalmSequenceInput) {
+        psalmSequenceInput.value = selectedPsalms.join(', ');
+    }
+
+    const psalmSelectorContainer = document.getElementById('psalm-selector-container');
+    if (psalmSelectorContainer) {
+        const checkboxes = psalmSelectorContainer.querySelectorAll('input[type="checkbox"]');
+        checkboxes.forEach(cb => {
+            if (cb.id !== 'select-all-psalms') {
+                cb.checked = selectedPsalms.includes(Number(cb.value));
+            }
+        });
+        const selectAllPsalmCheckbox = document.getElementById('select-all-psalms');
+        if (selectAllPsalmCheckbox) {
+            selectAllPsalmCheckbox.checked = selectedPsalms.length === 150;
+        }
+    }
+
+    updatePsalmSummary();
+    saveSettings();
+    smoothRender();
+
+    closeModal();
+}
