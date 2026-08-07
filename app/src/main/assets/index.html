@@ -160,57 +160,60 @@
                                 id="show-language-labels"> <span>Language Labels</span></label>
                     </div>
                     <div id="kidase-gated-section" class="setting-group">
-                        <h3>Add Liturgy</h3>
+                        <h3>Add Prayers</h3>
+                        
                         <label style="display: block; margin-bottom: 0.5rem;"><input type="checkbox"
-                                id="kidase-mode-toggle"> <span>Liturgy Mode</span></label>
+                                id="show-daily-prayer-toggle"> <span>Daily Prayer | ዘዘወትር ጸሎት</span></label>
+
+                        <label style="display: block; margin-bottom: 0.5rem;"><input type="checkbox"
+                                id="show-vespers"> <span>Sunset Prayer | ጸሎተ ሠርክ</span></label>
+                        <div id="vespers-psalm-gospel-settings"
+                            style="display: none; margin-bottom: 1rem; margin-left: 1rem; border-left: 1px solid var(--border-color); padding-left: 0.5rem;">
+                            <div class="kidase-lectionary-item" style="margin-top: 0.5rem;">
+                                <h5 class="settings-subtitle clickable-reading-title"
+                                    data-reading-target="eveningPsalm">Evening Psalm (NKJV) | ምስባክ ዘሠርክ</h5>
+                                <div id="evening-psalm-ref-container" class="lectionary-picker-container"></div>
+                            </div>
+                            <hr class="lectionary-separator">
+                            <div class="kidase-lectionary-item" style="margin-top: 0.5rem;">
+                                <h5 class="settings-subtitle clickable-reading-title"
+                                    data-reading-target="eveningGospel">Evening Gospel | ወንጌል ዘሠርክ</h5>
+                                <div id="evening-gospel-ref-container" class="lectionary-picker-container"></div>
+                            </div>
+                        </div>
+
+                        <label style="display: block; margin-bottom: 0.5rem;"><input type="checkbox"
+                                id="show-teklil"> <span>Crowning (Matrimony) | ተክሊል</span></label>
+                        <div id="teklil-names-settings"
+                            style="display: none; margin-bottom: 1rem; margin-left: 1rem; border-left: 1px solid var(--border-color); padding-left: 0.5rem;">
+                            <h4 class="settings-subtitle">Bridegroom's Baptismal Name</h4>
+                            <input type="text" id="bridegroom-name-input" placeholder="e.g. Gebre Kristos" style="margin-bottom: 0.5rem;">
+                            <h4 class="settings-subtitle">Bride's Baptismal Name</h4>
+                            <input type="text" id="bride-name-input" placeholder="e.g. Wolete Mariam">
+                        </div>
+
+                        <label style="display: block; margin-bottom: 0.5rem;"><input type="checkbox"
+                                id="show-matins"> <span>Morning Prayer | ጸሎተ ነግህ</span></label>
+                        <div id="morning-psalm-gospel-settings"
+                            style="display: none; margin-bottom: 1rem; margin-left: 1rem; border-left: 1px solid var(--border-color); padding-left: 0.5rem;">
+                            <div class="kidase-lectionary-item" style="margin-top: 0.5rem;">
+                                <h5 class="settings-subtitle clickable-reading-title"
+                                    data-reading-target="morningPsalm">Morning Psalm (NKJV) | ምስባክ ዘነግህ</h5>
+                                <div id="morning-psalm-ref-container" class="lectionary-picker-container"></div>
+                            </div>
+                            <hr class="lectionary-separator">
+                            <div class="kidase-lectionary-item" style="margin-top: 0.5rem;">
+                                <h5 class="settings-subtitle clickable-reading-title"
+                                    data-reading-target="morningGospel">Morning Gospel | ወንጌል ዘነግህ</h5>
+                                <div id="morning-gospel-ref-container" class="lectionary-picker-container"></div>
+                            </div>
+                        </div>
+
+                        <label style="display: block; margin-bottom: 0.5rem;"><input type="checkbox"
+                                id="kidase-mode-toggle"> <span>Order of the Liturgy | ሥርዓተ ቅዳሴ</span></label>
                         <div id="kidase-settings"
                             style="display: none; margin-left: 1rem; border-left: 2px solid var(--accent-color); padding-left: 1rem;">
-                            <h4 class="settings-subtitle">PRE-LITURGY</h4>
-                            <label style="display: block; margin-bottom: 0.5rem;"><input type="checkbox"
-                                    id="show-vespers"> <span>Add Vespers (Sunset)</span></label>
-                            <div id="vespers-psalm-gospel-settings"
-                                style="display: none; margin-bottom: 1rem; margin-left: 1rem; border-left: 1px solid var(--border-color); padding-left: 0.5rem;">
-                                <div class="kidase-lectionary-item" style="margin-top: 0.5rem;">
-                                    <h5 class="settings-subtitle clickable-reading-title"
-                                        data-reading-target="eveningPsalm">Evening Psalm (NKJV) | ምስባክ ዘሠርክ</h5>
-                                    <div id="evening-psalm-ref-container" class="lectionary-picker-container"></div>
-                                </div>
-                                <hr class="lectionary-separator">
-                                <div class="kidase-lectionary-item" style="margin-top: 0.5rem;">
-                                    <h5 class="settings-subtitle clickable-reading-title"
-                                        data-reading-target="eveningGospel">Evening Gospel | ወንጌል ዘሠርክ</h5>
-                                    <div id="evening-gospel-ref-container" class="lectionary-picker-container"></div>
-                                </div>
-                            </div>
-                            <label style="display: block; margin-bottom: 0.5rem;"><input type="checkbox"
-                                    id="show-teklil"> <span>Add Teklil (Crowning)</span></label>
-                            <div id="teklil-names-settings"
-                                style="display: none; margin-bottom: 1rem; margin-left: 1rem; border-left: 1px solid var(--border-color); padding-left: 0.5rem;">
-                                <h4 class="settings-subtitle">Bridegroom's Baptismal Name</h4>
-                                <input type="text" id="bridegroom-name-input" placeholder="e.g. Gebre Kristos" style="margin-bottom: 0.5rem;">
-                                <h4 class="settings-subtitle">Bride's Baptismal Name</h4>
-                                <input type="text" id="bride-name-input" placeholder="e.g. Wolete Mariam">
-                            </div>
-                            <label style="display: block; margin-bottom: 0.5rem;"><input type="checkbox"
-                                    id="show-matins"> <span>Add Matins (Dawn)</span></label>
-                            <div id="morning-psalm-gospel-settings"
-                                style="display: none; margin-bottom: 1rem; margin-left: 1rem; border-left: 1px solid var(--border-color); padding-left: 0.5rem;">
-                                <div class="kidase-lectionary-item" style="margin-top: 0.5rem;">
-                                    <h5 class="settings-subtitle clickable-reading-title"
-                                        data-reading-target="morningPsalm">Morning Psalm (NKJV) | ምስባክ ዘነግህ</h5>
-                                    <div id="morning-psalm-ref-container" class="lectionary-picker-container"></div>
-                                </div>
-                                <hr class="lectionary-separator">
-                                <div class="kidase-lectionary-item" style="margin-top: 0.5rem;">
-                                    <h5 class="settings-subtitle clickable-reading-title"
-                                        data-reading-target="morningGospel">Morning Gospel | ወንጌል ዘነግህ</h5>
-                                    <div id="morning-gospel-ref-container" class="lectionary-picker-container"></div>
-                                </div>
-                            </div>
-
-                            <h4 class="settings-subtitle"
-                                style="margin-top: 1rem; border-top: 1px solid var(--border-color); padding-top: 0.75rem;">
-                                SELECT LECTIONARY</h4>
+                            <h4 class="settings-subtitle" style="margin-top: 0.5rem;">SELECT LECTIONARY</h4>
 
                             <div class="kidase-lectionary-item">
                                 <h5 class="settings-subtitle clickable-reading-title" data-reading-target="pauline">
@@ -242,22 +245,6 @@
                                 <div id="kidase-gospel-ref-container" class="lectionary-picker-container"></div>
                             </div>
 
-                            <h4 class="settings-subtitle" style="margin-top: 0.75rem;">Eucharistic Prayer | አኰቴተ ቍርባን</h4>
-                            <select id="anaphora-selector" class="settings-select" style="margin-top: 0.25rem;">
-                                <option value="apostles">Apostles | ሐዋርያት</option>
-                                <option value="mary">Mary | ማርያም</option>
-                            </select>
-
-                            <h4 class="settings-subtitle"
-                                style="margin-top: 1rem; border-top: 1px solid var(--border-color); padding-top: 0.75rem;">
-                                Customizations</h4>
-                            <label style="display: block; margin-bottom: 0.5rem;"><input type="checkbox"
-                                    id="hide-quiet-prayers"> <span>Quiet Prayers | ጸሎት በልኁሳስ</span></label>
-                            <label style="display: block; margin-bottom: 0.5rem;"><input type="checkbox"
-                                    id="holy-fifty-days-toggle"> <span>Holy 50 Days? | እምትንሣኤ እስከ በዓለ ፶</span></label>
-                            <label style="display: block; margin-bottom: 0.5rem;"><input type="checkbox"
-                                    id="show-geez-phonetic-chants"> <span>Ge'ez Phonetics for Chants</span></label>
-
                             <h4 class="settings-subtitle"
                                 style="margin-top: 1rem; border-top: 1px solid var(--border-color); padding-top: 0.75rem;">
                                 TIME OF ḲIDASÉ</h4>
@@ -268,12 +255,27 @@
                                 <option value="afternoon">Sunset | ዘሠርክ</option>
                             </select>
                         </div>
-                    </div>
 
-                    <div class="setting-group">
-                        <h3>Add Daily Prayer</h3>
-                        <label style="display: block; margin-top: 0.5rem;"><input type="checkbox"
-                                id="show-daily-prayer-toggle"> <span>Daily Prayer | ዘዘወትር ጸሎት</span></label>
+                        <label style="display: block; margin-bottom: 0.5rem;"><input type="checkbox"
+                                id="show-anaphora-toggle"> <span>Eucharistic Prayer | አኰቴተ ቍርባን</span></label>
+                        <div id="anaphora-settings"
+                            style="display: none; margin-left: 1rem; border-left: 1px solid var(--border-color); padding-left: 0.5rem; margin-bottom: 1rem;">
+                            <h4 class="settings-subtitle" style="margin-top: 0.5rem;">Anaphora | ቅዳሴ</h4>
+                            <select id="anaphora-selector" class="settings-select" style="margin-top: 0.25rem;">
+                                <option value="apostles">Apostles | ሐዋርያት</option>
+                                <option value="mary">Mary | ማርያም</option>
+                            </select>
+                        </div>
+
+                        <h4 class="settings-subtitle"
+                            style="margin-top: 1rem; border-top: 1px solid var(--border-color); padding-top: 0.75rem;">
+                            Customizations</h4>
+                        <label style="display: block; margin-bottom: 0.5rem;"><input type="checkbox"
+                                id="hide-quiet-prayers"> <span>Quiet Prayers | ጸሎት በልኁሳስ</span></label>
+                        <label style="display: block; margin-bottom: 0.5rem;"><input type="checkbox"
+                                id="holy-fifty-days-toggle"> <span>Holy 50 Days? | እምትንሣኤ እስከ በዓለ ፶</span></label>
+                        <label style="display: block; margin-bottom: 0.5rem;"><input type="checkbox"
+                                id="show-geez-phonetic-chants"> <span>Ge'ez Phonetics for Chants</span></label>
                     </div>
 
                     <div class="setting-group">

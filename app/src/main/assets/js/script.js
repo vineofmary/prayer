@@ -382,6 +382,8 @@ const vespersPsalmGospelSettings = document.getElementById('vespers-psalm-gospel
 const eveningPsalmRefContainer = document.getElementById('evening-psalm-ref-container');
 const eveningGospelRefContainer = document.getElementById('evening-gospel-ref-container');
 const anaphoraSelector = document.getElementById('anaphora-selector');
+const showAnaphoraToggle = document.getElementById('show-anaphora-toggle');
+const anaphoraSettings = document.getElementById('anaphora-settings');
 const showVespersToggle = document.getElementById('show-vespers');
 const covenantPrayerSelector = document.getElementById('covenant-prayer-selector');
 const hideQuietPrayersToggle = document.getElementById('hide-quiet-prayers');
@@ -434,6 +436,7 @@ let bridegroomName = '';
 let brideName = '';
 let showVespers = false;
 let selectedCovenantPrayer = 'morning';
+let showAnaphora = true;
 let hideQuietPrayers = false;
 let isHolyFiftyDays = false;
 let isInitializing = true;
@@ -1720,6 +1723,7 @@ async function loadSettings() {
         brideName: '',
         showVespers: false,
         selectedCovenantPrayer: 'morning',
+        showAnaphora: true,
         hideQuietPrayers: false,
         isHolyFiftyDays: false,
         // Default Custom Names
@@ -1797,6 +1801,7 @@ async function loadSettings() {
         brideName = localStorage.getItem('brideName') || defaultSettings.brideName;
         showVespers = localStorage.getItem('showVespers') === 'true';
         selectedCovenantPrayer = localStorage.getItem('selectedCovenantPrayer') || defaultSettings.selectedCovenantPrayer;
+        showAnaphora = localStorage.getItem('showAnaphora') !== null ? localStorage.getItem('showAnaphora') === 'true' : defaultSettings.showAnaphora;
         hideQuietPrayers = localStorage.getItem('hideQuietPrayers') !== null ? localStorage.getItem('hideQuietPrayers') === 'true' : defaultSettings.hideQuietPrayers;
         isHolyFiftyDays = localStorage.getItem('isHolyFiftyDays') !== null ? localStorage.getItem('isHolyFiftyDays') === 'true' : defaultSettings.isHolyFiftyDays;
         const savedKidaseLectionaryRefs = JSON.parse(localStorage.getItem('kidaseLectionaryRefs')) || {};
@@ -1944,6 +1949,10 @@ function updateAllTogglesInSettingsPanel() {
     kidaseModeToggle.checked = isKidaseModeActive;
     kidaseSettings.style.display = isKidaseModeActive ? 'block' : 'none';
     anaphoraSelector.value = selectedAnaphora;
+    const showAnaphoraToggleEl = document.getElementById('show-anaphora-toggle');
+    const anaphoraSettingsEl = document.getElementById('anaphora-settings');
+    if (showAnaphoraToggleEl) showAnaphoraToggleEl.checked = showAnaphora;
+    if (anaphoraSettingsEl) anaphoraSettingsEl.style.display = showAnaphora ? 'block' : 'none';
     showMatinsToggle.checked = showMatins;
     showVespersToggle.checked = showVespers;
     morningPsalmGospelSettings.style.display = showMatins ? 'block' : 'none';
@@ -3842,15 +3851,17 @@ function renderSelectedKidase(addSectionTitleCallback) {
     renderKidaseSection(mainLiturgyArray, true); // true means apply version filtering to any embedded Kidan
 
     // 4. Anaphora
-    const anaphoraMap = {
-        'apostles': { name: '→ Anaphora of the Apostles | ቅዳሴ ሐዋርያት', data: kidaseData.apostles },
-        'mary': { name: '→ Anaphora of Mary | ቅዳሴ ማርያም', data: kidaseData.mary }
-    };
+    if (showAnaphora) {
+        const anaphoraMap = {
+            'apostles': { name: '→ Anaphora of the Apostles | ቅዳሴ ሐዋርያት', data: kidaseData.apostles },
+            'mary': { name: '→ Anaphora of Mary | ቅዳሴ ማርያም', data: kidaseData.mary }
+        };
 
-    const anaphora = anaphoraMap[selectedAnaphora];
-    if (anaphora) {
-        addSectionTitleCallback(anaphora.name);
-        renderKidaseSection(anaphora.data);
+        const anaphora = anaphoraMap[selectedAnaphora];
+        if (anaphora) {
+            addSectionTitleCallback(anaphora.name);
+            renderKidaseSection(anaphora.data);
+        }
     }
 
     // Helper to render a chunk of kidase prayers with current filters
@@ -5945,6 +5956,20 @@ anaphoraSelector.addEventListener('change', () => {
     saveSettings();
     smoothRender();
 });
+
+const showAnaphoraToggleEl = document.getElementById('show-anaphora-toggle');
+if (showAnaphoraToggleEl) {
+    showAnaphoraToggleEl.addEventListener('change', () => {
+        showAnaphora = showAnaphoraToggleEl.checked;
+        const anaphoraSettingsEl = document.getElementById('anaphora-settings');
+        if (anaphoraSettingsEl) {
+            anaphoraSettingsEl.style.display = showAnaphora ? 'block' : 'none';
+        }
+        localStorage.setItem('showAnaphora', showAnaphora);
+        saveSettings();
+        smoothRender();
+    });
+}
 
 showVespersToggle.addEventListener('change', () => {
     showVespers = showVespersToggle.checked;
