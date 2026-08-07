@@ -76,6 +76,7 @@ const showSupplicationsToggle = document.getElementById('show-supplications-togg
 const autoProphetSongsToggle = document.getElementById('auto-prophet-songs-toggle');
 const showDailyPrayerToggle = document.getElementById('show-daily-prayer-toggle');
 const showGateOfLightToggle = document.getElementById('show-gate-of-light-toggle');
+const showYewediswaMelaektToggle = document.getElementById('show-yewediswa-melaekt-toggle');
 const showGeezPhoneticChantsToggle = document.getElementById('show-geez-phonetic-chants');
 const showLoanwordOriginsToggle = document.getElementById('show-loanword-origins');
 const expandCollapseAllButton = document.getElementById('expand-collapse-all-button');
@@ -433,7 +434,7 @@ let bridegroomName = '';
 let brideName = '';
 let showVespers = false;
 let selectedCovenantPrayer = 'morning';
-let hideQuietPrayers = true;
+let hideQuietPrayers = false;
 let isHolyFiftyDays = false;
 let isInitializing = true;
 let kidaseLectionaryRefs = {
@@ -1696,7 +1697,8 @@ async function loadSettings() {
             showDailyPrayer: true,
             showGeezPhoneticChants: false,
             showLoanwordOrigins: false,
-            showGateOfLight: false
+            showGateOfLight: false,
+            showYewediswaMelaekt: true
         },
         displayedLanguages: defaultLanguages,
         fontSizes: {
@@ -1718,7 +1720,7 @@ async function loadSettings() {
         brideName: '',
         showVespers: false,
         selectedCovenantPrayer: 'morning',
-        hideQuietPrayers: true,
+        hideQuietPrayers: false,
         isHolyFiftyDays: false,
         // Default Custom Names
         customNames: {
@@ -1916,6 +1918,7 @@ function updateAllTogglesInSettingsPanel() {
     autoProphetSongsToggle.checked = displayOptions.autoProphetSongs;
     showDailyPrayerToggle.checked = displayOptions.showDailyPrayer;
     if (showGateOfLightToggle) showGateOfLightToggle.checked = displayOptions.showGateOfLight;
+    if (showYewediswaMelaektToggle) showYewediswaMelaektToggle.checked = displayOptions.showYewediswaMelaekt !== false;
     if (showGeezPhoneticChantsToggle) showGeezPhoneticChantsToggle.checked = displayOptions.showGeezPhoneticChants;
     if (showLoanwordOriginsToggle) showLoanwordOriginsToggle.checked = displayOptions.showLoanwordOrigins;
 
@@ -3867,7 +3870,7 @@ function renderSelectedKidase(addSectionTitleCallback) {
             });
         }
 
-        if (hideQuietPrayers && !overrideQuietFilter) {
+        if (!hideQuietPrayers && !overrideQuietFilter) {
             const isSunday = new Date().getDay() === 0;
             filtered = filtered.filter(p => {
                 if (p.instruction && p.instruction.includes("Inaudible Prayer")) return false;
@@ -4378,13 +4381,13 @@ function renderPrayers() {
 
     // Render main prayers (non-Psalms, non-Prophet Songs)
     const widaseMaryamChapters = {
-        'Sunday': ['Sun', 'Angels', 'Anqetse Birhan'],
-        'Monday': ['Mon', 'Angels', 'Anqetse Birhan'],
-        'Tuesday': ['Tue', 'Angels', 'Anqetse Birhan'],
-        'Wednesday': ['Wed', 'Angels', 'Anqetse Birhan'],
-        'Thursday': ['Thurs', 'Angels', 'Anqetse Birhan'],
-        'Friday': ['Fri', 'Angels', 'Anqetse Birhan'],
-        'Saturday': ['Sat', 'Angels', 'Anqetse Birhan']
+        'Sunday': ['Sun', 'Anqetse Birhan', 'Angels'],
+        'Monday': ['Mon', 'Anqetse Birhan', 'Angels'],
+        'Tuesday': ['Tue', 'Anqetse Birhan', 'Angels'],
+        'Wednesday': ['Wed', 'Anqetse Birhan', 'Angels'],
+        'Thursday': ['Thurs', 'Anqetse Birhan', 'Angels'],
+        'Friday': ['Fri', 'Anqetse Birhan', 'Angels'],
+        'Saturday': ['Sat', 'Anqetse Birhan', 'Angels']
     };
 
     const mainPrayers = prayers.filter(p => {
@@ -4394,6 +4397,7 @@ function renderPrayers() {
         if (p.chapter === 'Daily') return displayOptions.showDailyPrayer;
 
         if (p.chapter === 'Anqetse Birhan' && !displayOptions.showGateOfLight) return false;
+        if (p.chapter === 'Angels' && displayOptions.showYewediswaMelaekt === false) return false;
 
         // Filter Praise of Mary (and related) based on selection
         if (selectedWidaseMaryamDay === 'None') return false;
@@ -4403,38 +4407,35 @@ function renderPrayers() {
         return targetChapters.includes(p.chapter);
     });
 
-    if (selectedWidaseMaryamDay === 'All') {
-        const chapterOrder = {
-            'Daily': 1,
-            'Mon': 2,
-            'Tue': 3,
-            'Wed': 4,
-            'Thurs': 5,
-            'Fri': 6,
-            'Sat': 7,
-            'Sun': 8,
-            'Angels': 9,
-            'Anqetse Birhan': 10
-        };
-        
-        // Map to explicitly guarantee stable sort in older browsers and handle potential whitespaces
-        const mapped = mainPrayers.map((el, i) => {
-            let ch = (el.chapter || '').trim();
-            if (ch === 'Thursday') ch = 'Thurs';
-            return { index: i, value: el, order: chapterOrder[ch] || 99 };
-        });
-        
-        mapped.sort((a, b) => {
-            if (a.order !== b.order) {
-                return a.order - b.order;
-            }
-            return a.index - b.index; // Guaranteed stable sort
-        });
-        
-        // Clear and repopulate mainPrayers to maintain const binding
-        mainPrayers.length = 0;
-        mapped.forEach(item => mainPrayers.push(item.value));
-    }
+    // Traditional liturgical ordering: Gate of Light (Anqetse Birhan) ALWAYS before The Angels Praise Mary (Angels)
+    const chapterOrder = {
+        'Daily': 1,
+        'Mon': 2,
+        'Tue': 3,
+        'Wed': 4,
+        'Thurs': 5,
+        'Fri': 6,
+        'Sat': 7,
+        'Sun': 8,
+        'Anqetse Birhan': 9,
+        'Angels': 10
+    };
+    
+    const mapped = mainPrayers.map((el, i) => {
+        let ch = (el.chapter || '').trim();
+        if (ch === 'Thursday') ch = 'Thurs';
+        return { index: i, value: el, order: chapterOrder[ch] || 99 };
+    });
+    
+    mapped.sort((a, b) => {
+        if (a.order !== b.order) {
+            return a.order - b.order;
+        }
+        return a.index - b.index; // Guaranteed stable sort
+    });
+    
+    mainPrayers.length = 0;
+    mapped.forEach(item => mainPrayers.push(item.value));
 
     let hasRenderedTheotokiaTitle = false;
 
@@ -6445,6 +6446,14 @@ showDailyPrayerToggle.addEventListener('change', () => {
 if (showGateOfLightToggle) {
     showGateOfLightToggle.addEventListener('change', () => {
         displayOptions.showGateOfLight = showGateOfLightToggle.checked;
+        smoothRender();
+        saveSettings();
+    });
+}
+
+if (showYewediswaMelaektToggle) {
+    showYewediswaMelaektToggle.addEventListener('change', () => {
+        displayOptions.showYewediswaMelaekt = showYewediswaMelaektToggle.checked;
         smoothRender();
         saveSettings();
     });
