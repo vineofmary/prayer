@@ -7815,7 +7815,10 @@ function renderAthanasiusPrescriptionsList() {
     });
 
     if (athanasiusResultsCount) {
-        athanasiusResultsCount.textContent = `Showing ${filtered.length} prescription${filtered.length === 1 ? '' : 's'}`;
+        athanasiusResultsCount.innerHTML = `
+            <span>Showing ${filtered.length} prescription${filtered.length === 1 ? '' : 's'}</span>
+            ${filtered.length > 2 ? '<span class="athanasius-scroll-hint">Scroll down for more ↓</span>' : ''}
+        `;
     }
 
     if (filtered.length === 0) {
@@ -7832,7 +7835,6 @@ function renderAthanasiusPrescriptionsList() {
         card.innerHTML = `
             <div class="athanasius-card-header">
                 <div class="athanasius-card-title">${entry.title}</div>
-                <div class="athanasius-card-section">${entry.section}</div>
             </div>
             <div class="athanasius-card-quote">"${entry.prescription}"</div>
             <div class="athanasius-card-footer">
@@ -7841,8 +7843,8 @@ function renderAthanasiusPrescriptionsList() {
                     ${psalmsPillsHtml}
                 </div>
                 <div class="athanasius-actions">
-                    <button class="ath-btn ath-set-btn" title="Replace active psalm sequence with these psalms">Set as Sequence</button>
-                    <button class="ath-btn ath-add-btn" title="Append these psalms to active psalm sequence">Add to Sequence</button>
+                    <button class="ath-btn ath-set-btn" title="Set as current prayer and jump to prayer view">Pray Now</button>
+                    <button class="ath-btn ath-add-btn" title="Add these psalms to your active sequence">Add to Prayers</button>
                 </div>
             </div>
         `;
@@ -7851,54 +7853,115 @@ function renderAthanasiusPrescriptionsList() {
         const addBtn = card.querySelector('.ath-add-btn');
 
         setBtn.addEventListener('click', () => {
-            applyAthanasiusPsalms(entry.psalms, 'set');
+            applyAthanasiusPsalms(entry.psalms, 'set', setBtn);
         });
 
         addBtn.addEventListener('click', () => {
-            applyAthanasiusPsalms(entry.psalms, 'add');
+            applyAthanasiusPsalms(entry.psalms, 'add', addBtn);
         });
 
         athanasiusPrescriptionsList.appendChild(card);
     });
 }
 
-function applyAthanasiusPsalms(psalmsList, mode) {
-    let newSequence = [];
-    if (mode === 'set') {
-        newSequence = [...psalmsList];
-    } else { // add
-        newSequence = [...selectedPsalms];
+function applyAthanasiusPsalms(psalmsList, mode, btnElement) {
+    if (mode === 'add') {
+        let newSequence = [...selectedPsalms];
         psalmsList.forEach(p => {
             if (!newSequence.includes(p)) {
                 newSequence.push(p);
             }
         });
-    }
 
-    selectedPsalms = newSequence;
+        selectedPsalms = newSequence;
 
-    const psalmSequenceInput = document.getElementById('psalm-sequence-input');
-    if (psalmSequenceInput) {
-        psalmSequenceInput.value = selectedPsalms.join(', ');
-    }
-
-    const psalmSelectorContainer = document.getElementById('psalm-selector-container');
-    if (psalmSelectorContainer) {
-        const checkboxes = psalmSelectorContainer.querySelectorAll('input[type="checkbox"]');
-        checkboxes.forEach(cb => {
-            if (cb.id !== 'select-all-psalms') {
-                cb.checked = selectedPsalms.includes(Number(cb.value));
-            }
-        });
-        const selectAllPsalmCheckbox = document.getElementById('select-all-psalms');
-        if (selectAllPsalmCheckbox) {
-            selectAllPsalmCheckbox.checked = selectedPsalms.length === 150;
+        const psalmSequenceInput = document.getElementById('psalm-sequence-input');
+        if (psalmSequenceInput) {
+            psalmSequenceInput.value = selectedPsalms.join(', ');
         }
+
+        const psalmSelectorContainer = document.getElementById('psalm-selector-container');
+        if (psalmSelectorContainer) {
+            const checkboxes = psalmSelectorContainer.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(cb => {
+                if (cb.id !== 'select-all-psalms') {
+                    cb.checked = selectedPsalms.includes(Number(cb.value));
+                }
+            });
+            const selectAllPsalmCheckbox = document.getElementById('select-all-psalms');
+            if (selectAllPsalmCheckbox) {
+                selectAllPsalmCheckbox.checked = selectedPsalms.length === 150;
+            }
+        }
+
+        updatePsalmSummary();
+        saveSettings();
+        smoothRender();
+
+        // Feedback: Keep modal open & display confirmation toast
+        if (btnElement) {
+            const originalText = btnElement.textContent;
+            btnElement.textContent = '✓ Added!';
+            btnElement.style.background = 'var(--accent-color)';
+            btnElement.style.color = '#fff';
+            setTimeout(() => {
+                btnElement.textContent = originalText;
+                btnElement.style.background = '';
+                btnElement.style.color = '';
+            }, 1500);
+        }
+
+        if (typeof showCopyNotification === 'function') {
+            showCopyNotification(`Added Psalm(s) ${psalmsList.join(', ')} to your prayers`, 2500);
+        }
+
+    } else if (mode === 'set') {
+        // "Pray Now" mode: set exclusive sequence, deselect Liturgy mode if active, close modal, and scroll to Psalms
+        selectedPsalms = [...psalmsList];
+
+        const psalmSequenceInput = document.getElementById('psalm-sequence-input');
+        if (psalmSequenceInput) {
+            psalmSequenceInput.value = selectedPsalms.join(', ');
+        }
+
+        const psalmSelectorContainer = document.getElementById('psalm-selector-container');
+        if (psalmSelectorContainer) {
+            const checkboxes = psalmSelectorContainer.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(cb => {
+                if (cb.id !== 'select-all-psalms') {
+                    cb.checked = selectedPsalms.includes(Number(cb.value));
+                }
+            });
+            const selectAllPsalmCheckbox = document.getElementById('select-all-psalms');
+            if (selectAllPsalmCheckbox) {
+                selectAllPsalmCheckbox.checked = selectedPsalms.length === 150;
+            }
+        }
+
+        // Deselect Liturgy Mode if active
+        if (typeof isKidaseModeActive !== 'undefined' && isKidaseModeActive) {
+            isKidaseModeActive = false;
+            const kidaseToggle = document.getElementById('kidase-mode-toggle');
+            if (kidaseToggle) {
+                kidaseToggle.checked = false;
+            }
+            if (typeof kidaseSettings !== 'undefined' && kidaseSettings) {
+                kidaseSettings.style.display = 'none';
+            }
+        }
+
+        updatePsalmSummary();
+        saveSettings();
+        smoothRender();
+
+        closeModal();
+
+        // Open/scroll directly to Psalms list in reader view
+        setTimeout(() => {
+            const targetEl = document.querySelector('.psalm-card') || document.querySelector('.sub-section-title');
+            if (targetEl) {
+                targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }, 150);
     }
-
-    updatePsalmSummary();
-    saveSettings();
-    smoothRender();
-
-    closeModal();
 }
