@@ -4929,128 +4929,245 @@ function navigateToCard(targetCardId) {
     }
 }
 
+let slideFontSizeCache = new Map();
+let presizeIdleCallbackId = null;
+let resizeDebounceTimer = null;
+
+/**
+ * Cancels any pending background pre-sizing work.
+ */
+function cancelPendingPresize() {
+    if (presizeIdleCallbackId !== null) {
+        if (typeof cancelIdleCallback === 'function') {
+            cancelIdleCallback(presizeIdleCallbackId);
+        } else {
+            clearTimeout(presizeIdleCallbackId);
+        }
+        presizeIdleCallbackId = null;
+    }
+}
+
+/**
+ * Pre-sizes nearby slides in the background using requestIdleCallback.
+ * Expands outward from the current index: +1, -1, +2, -2, ...
+ * Each callback sizes one card to avoid blocking the main thread.
+ */
+function presizeNearbySlides(slides, centerIndex) {
+    // Build the list of card indices to pre-size, expanding outward
+    const toPresize = [];
+    for (let offset = 1; offset < slides.length; offset++) {
+        const ahead = centerIndex + offset;
+        const behind = centerIndex - offset;
+        if (ahead < slides.length) toPresize.push(ahead);
+        if (behind >= 0) toPresize.push(behind);
+    }
+
+    let queueIndex = 0;
+
+    function presizeNext(deadline) {
+        // Process cards while we have idle time (or at least one per callback)
+        while (queueIndex < toPresize.length) {
+            const card = slides[toPresize[queueIndex]];
+            queueIndex++;
+
+            // Only size prayer cards (skip section titles)
+            if (!card || !card.classList.contains('prayer-card')) continue;
+            if (card.style.display === 'none') continue;
+
+            // Skip if already cached
+            if (slideFontSizeCache.has(card)) continue;
+
+            sizeOneCard(card);
+
+            // If we've used our idle time, yield and come back
+            if (typeof deadline !== 'undefined' && deadline.timeRemaining() < 5) {
+                presizeIdleCallbackId = requestIdleCallbackCompat(presizeNext);
+                return;
+            }
+        }
+        // All done
+        presizeIdleCallbackId = null;
+    }
+
+    presizeIdleCallbackId = requestIdleCallbackCompat(presizeNext);
+}
+
+/**
+ * requestIdleCallback with setTimeout fallback for older browsers.
+ */
+function requestIdleCallbackCompat(callback) {
+    if (typeof requestIdleCallback === 'function') {
+        return requestIdleCallback(callback, { timeout: 2000 });
+    }
+    // Fallback: use setTimeout with a fake deadline
+    return setTimeout(() => {
+        callback({ timeRemaining: () => 50 });
+    }, 50);
+}
+
+/**
+ * Main orchestrator: sizes the active card synchronously, then pre-sizes
+ * nearby slides in the background. Replaces the old all-at-once approach.
+ */
 function adjustSlideFontSize() {
     if (displayOptions.presentationMode !== 'slides' || !displayOptions.dynamicFontSizing) {
         document.querySelectorAll('.language-text').forEach(p => { p.style.fontSize = ''; });
         return;
     }
 
-    const prayerCards = prayerDisplay.querySelectorAll('.prayer-card');
-    prayerCards.forEach(card => {
-        if (card.style.display === 'none' || card.offsetParent === null) return;
+    // Cancel any pending background pre-sizing
+    cancelPendingPresize();
 
-        setTimeout(() => {
-            const prayerContent = card.querySelector('.prayer-content');
-            if (!prayerContent) return;
+    // Size ONLY the active card synchronously
+    const slides = prayerDisplay.querySelectorAll('.prayer-card, .section-title.collapsible');
+    const activeCard = slides[currentSlideIndex];
+    if (activeCard && activeCard.classList.contains('prayer-card')) {
+        sizeOneCard(activeCard);
+    }
 
-            const langSections = card.querySelectorAll('.language-section');
-            if (langSections.length === 0) return;
-
-            // Reset sizes
-            langSections.forEach(section => {
-                const textP = section.querySelector('p.language-text');
-                if (textP) textP.style.fontSize = '12px';
-            });
-
-            const isColumn = prayerContent.classList.contains('layout-column');
-            let bestSizes = [];
-
-            const HEIGHT_BUFFER = 48; // Pixels buffer to prevent clipping descenders/labels
-
-            if (isColumn) {
-                // Column Layout: Each column is independent
-                let minOverallBest = 250;
-                langSections.forEach(section => {
-                    const textP = section.querySelector('p.language-text');
-                    if (!textP) return;
-
-                    let minSize = 12, maxSize = 250, bestSize = minSize;
-                    while (minSize <= maxSize) {
-                        let midSize = Math.floor((minSize + maxSize) / 2);
-                        textP.style.fontSize = midSize + 'px';
-                        if (textP.scrollHeight <= (prayerContent.clientHeight - HEIGHT_BUFFER) && textP.scrollWidth <= section.clientWidth) {
-                            bestSize = midSize;
-                            minSize = midSize + 1;
-                        } else {
-                            maxSize = midSize - 1;
-                        }
-                    }
-                    bestSizes.push({ textP, size: bestSize });
-                    if (bestSize < minOverallBest) minOverallBest = bestSize;
-                });
-
-                if (displayOptions.forceUniformFontSize) {
-                    bestSizes.forEach(item => item.textP.style.fontSize = minOverallBest + 'px');
-                } else {
-                    bestSizes.forEach(item => item.textP.style.fontSize = item.size + 'px');
-                }
-
-            } else {
-                // Row Layout: Packed together, maximize to fill container height
-                if (displayOptions.forceUniformFontSize) {
-                    let minSize = 12, maxSize = 250, bestSize = minSize;
-                    while (minSize <= maxSize) {
-                        let midSize = Math.floor((minSize + maxSize) / 2);
-                        langSections.forEach(s => {
-                            const p = s.querySelector('p.language-text');
-                            if (p) p.style.fontSize = midSize + 'px';
-                        });
-
-                        const widthOverflow = Array.from(langSections).some(s => {
-                            const p = s.querySelector('p.language-text');
-                            return p && p.scrollWidth > s.clientWidth;
-                        });
-                        const heightOverflow = prayerContent.scrollHeight > (prayerContent.clientHeight - HEIGHT_BUFFER);
-
-                        if (!widthOverflow && !heightOverflow) {
-                            bestSize = midSize;
-                            minSize = midSize + 1;
-                        } else {
-                            maxSize = midSize - 1;
-                        }
-                    }
-                    langSections.forEach(s => {
-                        const p = s.querySelector('p.language-text');
-                        if (p) p.style.fontSize = bestSize + 'px';
-                    });
-                } else {
-                    // Independent Growth Loop for rows to maximize space usage
-                    let currentSizes = new Array(langSections.length).fill(12);
-                    let growing = true;
-                    const maxAvailableHeight = prayerContent.clientHeight;
-
-                    if (maxAvailableHeight > 0) {
-                        while (growing) {
-                            growing = false;
-                            for (let i = 0; i < langSections.length; i++) {
-                                const section = langSections[i];
-                                const textP = section.querySelector('p.language-text');
-                                if (!textP) continue;
-
-                                if (currentSizes[i] >= 300) continue;
-
-                                const nextSize = currentSizes[i] + 1;
-                                textP.style.fontSize = nextSize + 'px';
-
-                                // Check if this section overflows its width or the total container overflows height
-                                // Use a small buffer to prevent clipping of labels and descenders
-                                if (textP.scrollWidth <= section.clientWidth && prayerContent.scrollHeight <= (maxAvailableHeight - HEIGHT_BUFFER)) {
-                                    currentSizes[i] = nextSize;
-                                    growing = true;
-                                } else {
-                                    textP.style.fontSize = currentSizes[i] + 'px'; // Revert
-                                }
-                            }
-                        }
-                    }
-                }
-
-            }
-        }, 50);
-    });
+    // Pre-size nearby slides in background during idle time
+    presizeNearbySlides(slides, currentSlideIndex);
 }
 
+/**
+ * Clears the font size cache. Called on resize, re-render, or settings changes.
+ */
+function clearSlideFontSizeCache() {
+    slideFontSizeCache = new Map();
+}
 
+/**
+ * Sizes a single prayer card using the original binary search algorithm.
+ * Checks the cache first; stores results in cache after computation.
+ * This is synchronous — ~280ms per card is acceptable for the active card.
+ */
+function sizeOneCard(card) {
+    // Cache hit — apply cached sizes and return immediately
+    if (slideFontSizeCache.has(card)) {
+        const cached = slideFontSizeCache.get(card);
+        cached.sizes.forEach(item => {
+            item.textP.style.fontSize = item.size + 'px';
+        });
+        return;
+    }
+
+    const prayerContent = card.querySelector('.prayer-content');
+    if (!prayerContent) return;
+
+    const langSections = card.querySelectorAll('.language-section');
+    if (langSections.length === 0) return;
+
+    // Reset sizes
+    langSections.forEach(section => {
+        const textP = section.querySelector('p.language-text');
+        if (textP) textP.style.fontSize = '12px';
+    });
+
+    const isColumn = prayerContent.classList.contains('layout-column');
+    let bestSizes = [];
+
+    const HEIGHT_BUFFER = 48; // Pixels buffer to prevent clipping descenders/labels
+
+    if (isColumn) {
+        // Column Layout: Each column is independent
+        let minOverallBest = 250;
+        langSections.forEach(section => {
+            const textP = section.querySelector('p.language-text');
+            if (!textP) return;
+
+            let minSize = 12, maxSize = 250, bestSize = minSize;
+            while (minSize <= maxSize) {
+                let midSize = Math.floor((minSize + maxSize) / 2);
+                textP.style.fontSize = midSize + 'px';
+                if (textP.scrollHeight <= (prayerContent.clientHeight - HEIGHT_BUFFER) && textP.scrollWidth <= section.clientWidth) {
+                    bestSize = midSize;
+                    minSize = midSize + 1;
+                } else {
+                    maxSize = midSize - 1;
+                }
+            }
+            bestSizes.push({ textP, size: bestSize });
+            if (bestSize < minOverallBest) minOverallBest = bestSize;
+        });
+
+        if (displayOptions.forceUniformFontSize) {
+            bestSizes.forEach(item => { item.size = minOverallBest; item.textP.style.fontSize = minOverallBest + 'px'; });
+        } else {
+            bestSizes.forEach(item => item.textP.style.fontSize = item.size + 'px');
+        }
+
+    } else {
+        // Row Layout: Packed together, maximize to fill container height
+        if (displayOptions.forceUniformFontSize) {
+            let minSize = 12, maxSize = 250, bestSize = minSize;
+            while (minSize <= maxSize) {
+                let midSize = Math.floor((minSize + maxSize) / 2);
+                langSections.forEach(s => {
+                    const p = s.querySelector('p.language-text');
+                    if (p) p.style.fontSize = midSize + 'px';
+                });
+
+                const widthOverflow = Array.from(langSections).some(s => {
+                    const p = s.querySelector('p.language-text');
+                    return p && p.scrollWidth > s.clientWidth;
+                });
+                const heightOverflow = prayerContent.scrollHeight > (prayerContent.clientHeight - HEIGHT_BUFFER);
+
+                if (!widthOverflow && !heightOverflow) {
+                    bestSize = midSize;
+                    minSize = midSize + 1;
+                } else {
+                    maxSize = midSize - 1;
+                }
+            }
+            langSections.forEach(s => {
+                const p = s.querySelector('p.language-text');
+                if (p) {
+                    p.style.fontSize = bestSize + 'px';
+                    bestSizes.push({ textP: p, size: bestSize });
+                }
+            });
+        } else {
+            // Independent Growth Loop for rows to maximize space usage
+            let currentSizes = new Array(langSections.length).fill(12);
+            let growing = true;
+            const maxAvailableHeight = prayerContent.clientHeight;
+
+            if (maxAvailableHeight > 0) {
+                while (growing) {
+                    growing = false;
+                    for (let i = 0; i < langSections.length; i++) {
+                        const section = langSections[i];
+                        const textP = section.querySelector('p.language-text');
+                        if (!textP) continue;
+
+                        if (currentSizes[i] >= 300) continue;
+
+                        const nextSize = currentSizes[i] + 1;
+                        textP.style.fontSize = nextSize + 'px';
+
+                        // Check if this section overflows its width or the total container overflows height
+                        // Use a small buffer to prevent clipping of labels and descenders
+                        if (textP.scrollWidth <= section.clientWidth && prayerContent.scrollHeight <= (maxAvailableHeight - HEIGHT_BUFFER)) {
+                            currentSizes[i] = nextSize;
+                            growing = true;
+                        } else {
+                            textP.style.fontSize = currentSizes[i] + 'px'; // Revert
+                        }
+                    }
+                }
+            }
+            // Store final sizes for cache
+            for (let i = 0; i < langSections.length; i++) {
+                const textP = langSections[i].querySelector('p.language-text');
+                if (textP) bestSizes.push({ textP, size: currentSizes[i] });
+            }
+        }
+    }
+
+    // Store in cache
+    slideFontSizeCache.set(card, { sizes: bestSizes });
+}
 
 // --- Search Functionality ---
 function updateSearchMatches() {
