@@ -3622,6 +3622,7 @@ body.presentation-mode-slides .card-inline-lectionary-picker {
     border-radius: 4px;
     font-size: 0.88rem;
     line-height: 1.4;
+}
 
 .athanasius-reader-badge-title {
     font-weight: bold;
@@ -3636,4 +3637,35 @@ body.presentation-mode-slides .card-inline-lectionary-picker {
     font-style: italic;
     opacity: 0.9;
 }
+
+/* Mobile Adjustments for St. Athanasius Guide Modal */
+@media (max-width: 900px) {
+    .athanasius-modal-content {
+        margin: 1rem auto;
+        width: 94%;
+        padding: 1.25rem 1rem;
+        max-height: 85vh;
+        max-height: 85dvh;
+    }
+    .athanasius-modal-header h2 {
+        font-size: 1.25rem;
+    }
+    .athanasius-prescriptions-list {
+        max-height: 58vh;
+        max-height: 58dvh;
+    }
+    .athanasius-card {
+        padding: 0.85rem;
+    }
+    .athanasius-card-footer {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.5rem;
+    }
+    .athanasius-actions {
+        justify-content: flex-end;
+        margin-top: 0.25rem;
+    }
+}
+
 

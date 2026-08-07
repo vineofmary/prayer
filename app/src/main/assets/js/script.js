@@ -6489,16 +6489,28 @@ searchPrev.addEventListener('click', () => {
 
 // Modal Listeners
 function openModal(modal) {
+    if (!modal) return;
+    if (window.innerWidth <= 900 && typeof collapseSidebar === 'function') {
+        collapseSidebar();
+    }
     modal.style.display = 'block';
-    modalBackdrop.style.display = 'block';
+    modal.style.zIndex = '3000';
+    if (modalBackdrop) {
+        modalBackdrop.style.display = 'block';
+        modalBackdrop.style.zIndex = '2999';
+    }
     body.style.overflow = 'hidden';
 }
 
 function closeModal() {
     document.querySelectorAll('.modal').forEach(modal => {
         modal.style.display = 'none';
+        modal.style.zIndex = '';
     });
-    modalBackdrop.style.display = 'none';
+    if (modalBackdrop) {
+        modalBackdrop.style.display = 'none';
+        modalBackdrop.style.zIndex = '';
+    }
     body.style.overflow = 'auto';
 }
 
@@ -7727,15 +7739,26 @@ let currentAthanasiusCategory = 'all';
 let currentAthanasiusQuery = '';
 
 function initAthanasiusModal() {
-    if (!athanasiusGuideBtn || !athanasiusModal) return;
+    const btn = document.getElementById('athanasius-guide-btn') || athanasiusGuideBtn;
+    const modal = document.getElementById('athanasius-modal') || athanasiusModal;
+    if (!btn || !modal) return;
 
-    athanasiusGuideBtn.addEventListener('click', () => {
-        openModal(athanasiusModal);
+    const handleOpen = (e) => {
+        if (e) {
+            e.stopPropagation();
+        }
+        if (typeof collapseSidebar === 'function') {
+            collapseSidebar();
+        }
+        openModal(modal);
         renderAthanasiusModal();
-    });
+    };
 
-    if (athanasiusSearchInput) {
-        athanasiusSearchInput.addEventListener('input', (e) => {
+    btn.addEventListener('click', handleOpen);
+
+    const searchInputEl = document.getElementById('athanasius-search-input') || athanasiusSearchInput;
+    if (searchInputEl) {
+        searchInputEl.addEventListener('input', (e) => {
             currentAthanasiusQuery = e.target.value.trim().toLowerCase();
             renderAthanasiusPrescriptionsList();
         });
