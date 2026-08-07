@@ -183,6 +183,47 @@
                         </div>
 
                         <label style="display: block; margin-bottom: 0.5rem;"><input type="checkbox"
+                                id="show-seatat-readings-toggle"> <span><i>Se'atat</i> Readings | ምንባባተ ሰዓታት</span></label>
+                        <div id="seatat-readings-settings"
+                            style="display: none; margin-left: 1rem; border-left: 1px solid var(--border-color); padding-left: 0.5rem; margin-bottom: 1rem;">
+                            <div class="title-with-info" style="margin-top: 0.25rem; margin-bottom: 0.5rem;">
+                                <h4 class="settings-subtitle" style="margin: 0;">Scripture Readings* for <i>Tselote Se’atat</i></h4>
+                                <button id="seatat-info-btn" class="info-toggle-btn"
+                                    title="Scripture Readings for Tselote Se’atat">
+                                    <svg viewBox="0 0 24 24" width="18" height="18">
+                                        <path
+                                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div id="seatat-lectionary-selector-container">
+                                <div class="lectionary-day-selector">
+                                    <label style="display: block; margin-bottom: 0.25rem;"><input type="radio"
+                                            name="seatat-lectionary-day" value="Sunday"> Sunday | ዘእሁድ</label>
+                                    <label style="display: block; margin-bottom: 0.25rem;"><input type="radio"
+                                            name="seatat-lectionary-day" value="Monday"> Monday | ዘሰኑይ</label>
+                                    <label style="display: block; margin-bottom: 0.25rem;"><input type="radio"
+                                            name="seatat-lectionary-day" value="Tuesday"> Tuesday | ዘሠሉስ</label>
+                                    <label style="display: block; margin-bottom: 0.25rem;"><input type="radio"
+                                            name="seatat-lectionary-day" value="Wednesday"> Wednesday | ዘረቡዕ</label>
+                                    <label style="display: block; margin-bottom: 0.25rem;"><input type="radio"
+                                            name="seatat-lectionary-day" value="Thursday"> Thursday | ዘሐሙስ</label>
+                                    <label style="display: block; margin-bottom: 0.25rem;"><input type="radio"
+                                            name="seatat-lectionary-day" value="Friday"> Friday | ዘዓርብ</label>
+                                    <label style="display: block; margin-bottom: 0.25rem;"><input type="radio"
+                                            name="seatat-lectionary-day" value="Saturday"> Saturday | ዘቀዳሚት</label>
+                                    <label style="display: block; margin-bottom: 0.25rem;"><input type="radio"
+                                            name="seatat-lectionary-day" value="None"> None | አልቦ</label>
+                                </div>
+                            </div>
+                            <p class="settings-subtitle lectionary-disclaimer"
+                                style="font-size: 0.75rem; margin-top: 0.5rem; opacity: 0.8;">
+                                *According to the certified <i>Se'atat</i> liturgical tradition of <i>Debre Abay Abune
+                                    Samuel Ze-Waldiba</i> Monastery, for the Prayer—or Liturgy—of the Hours (ጸሎተ ሰዓታት).
+                            </p>
+                        </div>
+
+                        <label style="display: block; margin-bottom: 0.5rem;"><input type="checkbox"
                                 id="show-teklil"> <span>Crowning (Matrimony) | ተክሊል</span></label>
                         <div id="teklil-names-settings"
                             style="display: none; margin-bottom: 1rem; margin-left: 1rem; border-left: 1px solid var(--border-color); padding-left: 0.5rem;">
@@ -273,7 +314,7 @@
                         <label style="display: block; margin-bottom: 0.5rem;"><input type="checkbox"
                                 id="hide-quiet-prayers"> <span>Quiet Prayers | ጸሎት በልኁሳስ</span></label>
                         <label style="display: block; margin-bottom: 0.5rem;"><input type="checkbox"
-                                id="holy-fifty-days-toggle"> <span>Holy 50 Days? | እምትንሣኤ እስከ በዓለ ፶</span></label>
+                                id="holy-fifty-days-toggle"> <span>Holy 50 Days | እምትንሣኤ እስከ በዓለ ፶</span></label>
                         <label style="display: block; margin-bottom: 0.5rem;"><input type="checkbox"
                                 id="show-geez-phonetic-chants"> <span>Ge'ez Phonetics for Chants</span></label>
                     </div>
@@ -348,34 +389,7 @@
                         <div id="prophet-songs-summary" class="settings-summary"></div>
                         <button id="clear-prophet-songs-button" class="settings-button">Clear Songs</button>
                     </div>
-                    <div class="setting-group">
-                        <h3>Add Scriptures from <i>Se'atat*</i></h3>
-                        <div id="seatat-lectionary-selector-container">
-                            <div class="lectionary-day-selector">
-                                <label style="display: block; margin-bottom: 0.25rem;"><input type="radio"
-                                        name="seatat-lectionary-day" value="Sunday"> Sunday | ዘእሁድ</label>
-                                <label style="display: block; margin-bottom: 0.25rem;"><input type="radio"
-                                        name="seatat-lectionary-day" value="Monday"> Monday | ዘሰኑይ</label>
-                                <label style="display: block; margin-bottom: 0.25rem;"><input type="radio"
-                                        name="seatat-lectionary-day" value="Tuesday"> Tuesday | ዘሠሉስ</label>
-                                <label style="display: block; margin-bottom: 0.25rem;"><input type="radio"
-                                        name="seatat-lectionary-day" value="Wednesday"> Wednesday | ዘረቡዕ</label>
-                                <label style="display: block; margin-bottom: 0.25rem;"><input type="radio"
-                                        name="seatat-lectionary-day" value="Thursday"> Thursday | ዘሐሙስ</label>
-                                <label style="display: block; margin-bottom: 0.25rem;"><input type="radio"
-                                        name="seatat-lectionary-day" value="Friday"> Friday | ዘዓርብ</label>
-                                <label style="display: block; margin-bottom: 0.25rem;"><input type="radio"
-                                        name="seatat-lectionary-day" value="Saturday"> Saturday | ዘቀዳሚት</label>
-                                <label style="display: block; margin-bottom: 0.25rem;"><input type="radio"
-                                        name="seatat-lectionary-day" value="None"> None | አልቦ</label>
-                            </div>
-                        </div>
-                        <p class="settings-subtitle lectionary-disclaimer"
-                            style="font-size: 0.75rem; margin-top: 0.5rem; opacity: 0.8;">
-                            *According to the certified <i>Se'atat</i> liturgical tradition of <i>Debre Abay Abune
-                                Samuel Ze-Waldiba</i> Monastery, for the Prayer—or Liturgy—of the Hours (ጸሎተ ሰዓታት).
-                        </p>
-                    </div>
+
                     <div class="setting-group">
                         <h3>Customize Names</h3>
                         <p class="settings-subtitle" style="font-size: 0.8rem; margin-bottom: 1rem;">These names will be
@@ -1231,7 +1245,7 @@
     <script src="js/servants.js?v=9"></script>
     <script src="js/kidase.js?v=9"></script>
     <script src="js/teklil.js?v=1"></script>
-    <script src="js/typical_psalms.js?v=9"></script>
+    <script src="js/typical_psalms.js?v=2"></script>
     <script src="js/st_athanasius_psalms.js?v=1"></script>
     <script src="js/script.js?v=26"></script>
 </body>

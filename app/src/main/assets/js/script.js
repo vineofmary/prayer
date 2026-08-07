@@ -430,6 +430,7 @@ let selectedSeatatLectionaryDay = 'None';
 let selectedWidaseMaryamDay = 'All';
 let isKidaseModeActive = false;
 let selectedAnaphora = 'apostles';
+let showSeatatReadings = false;
 let showMatins = true;
 let showTeklil = false;
 let bridegroomName = '';
@@ -1717,6 +1718,7 @@ async function loadSettings() {
         selectedWidaseMaryamDay: getSeatatLiturgicalDay(),
         isKidaseModeActive: false,
         selectedAnaphora: 'apostles',
+        showSeatatReadings: false,
         showMatins: true,
         showTeklil: false,
         bridegroomName: '',
@@ -1795,6 +1797,7 @@ async function loadSettings() {
         selectedWidaseMaryamDay = localStorage.getItem('selectedWidaseMaryamDay') || defaultSettings.selectedWidaseMaryamDay;
         isKidaseModeActive = localStorage.getItem('isKidaseModeActive') === 'true';
         selectedAnaphora = localStorage.getItem('selectedAnaphora') || defaultSettings.selectedAnaphora;
+        showSeatatReadings = localStorage.getItem('showSeatatReadings') === 'true';
         showMatins = localStorage.getItem('showMatins') !== null ? localStorage.getItem('showMatins') === 'true' : defaultSettings.showMatins;
         showTeklil = localStorage.getItem('showTeklil') === 'true';
         bridegroomName = localStorage.getItem('bridegroomName') || defaultSettings.bridegroomName;
@@ -1953,6 +1956,10 @@ function updateAllTogglesInSettingsPanel() {
     const anaphoraSettingsEl = document.getElementById('anaphora-settings');
     if (showAnaphoraToggleEl) showAnaphoraToggleEl.checked = showAnaphora;
     if (anaphoraSettingsEl) anaphoraSettingsEl.style.display = showAnaphora ? 'block' : 'none';
+    const showSeatatReadingsToggle = document.getElementById('show-seatat-readings-toggle');
+    const seatatReadingsSettings = document.getElementById('seatat-readings-settings');
+    if (showSeatatReadingsToggle) showSeatatReadingsToggle.checked = showSeatatReadings;
+    if (seatatReadingsSettings) seatatReadingsSettings.style.display = showSeatatReadings ? 'block' : 'none';
     showMatinsToggle.checked = showMatins;
     showVespersToggle.checked = showVespers;
     morningPsalmGospelSettings.style.display = showMatins ? 'block' : 'none';
@@ -5672,7 +5679,7 @@ function getSeatatBibleVerses(bookKey, chapter, rangeString, customEnglish = nul
 }
 
 function renderSelectedSeatatLectionary(addSectionTitleCallback) {
-    if (selectedSeatatLectionaryDay === 'None' || !SEATAT_LECTIONARY_DATA[selectedSeatatLectionaryDay]) return;
+    if (!showSeatatReadings || selectedSeatatLectionaryDay === 'None' || !SEATAT_LECTIONARY_DATA[selectedSeatatLectionaryDay]) return;
 
     const readings = SEATAT_LECTIONARY_DATA[selectedSeatatLectionaryDay];
 
@@ -5966,6 +5973,20 @@ if (showAnaphoraToggleEl) {
             anaphoraSettingsEl.style.display = showAnaphora ? 'block' : 'none';
         }
         localStorage.setItem('showAnaphora', showAnaphora);
+        saveSettings();
+        smoothRender();
+    });
+}
+
+const showSeatatReadingsToggle = document.getElementById('show-seatat-readings-toggle');
+if (showSeatatReadingsToggle) {
+    showSeatatReadingsToggle.addEventListener('change', () => {
+        showSeatatReadings = showSeatatReadingsToggle.checked;
+        const seatatReadingsSettings = document.getElementById('seatat-readings-settings');
+        if (seatatReadingsSettings) {
+            seatatReadingsSettings.style.display = showSeatatReadings ? 'block' : 'none';
+        }
+        localStorage.setItem('showSeatatReadings', showSeatatReadings);
         saveSettings();
         smoothRender();
     });
@@ -7576,18 +7597,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     });
 
-    // Close Modals on close button click
-    document.getElementById('close-help-modal').addEventListener('click', closeModal);
-    document.getElementById('close-feedback-modal').addEventListener('click', closeModal);
-    document.getElementById('close-ephrem-modal').addEventListener('click', closeModal);
-    document.getElementById('close-scribe-login-modal').addEventListener('click', closeModal);
-    document.getElementById('close-scribe-editor-modal').addEventListener('click', closeModal);
-    document.getElementById('close-icon-metadata-modal').addEventListener('click', closeModal);
-    document.getElementById('close-scribe-icon-editor-modal').addEventListener('click', closeModal);
-    document.getElementById('close-eusebius-modal').addEventListener('click', closeModal);
-    if (closeAthanasiusModal) closeAthanasiusModal.addEventListener('click', closeModal);
-    if (closeChangelogModal) closeChangelogModal.addEventListener('click', closeModal);
-
     // App Version & Changelog Logic
     if (appVersionContainer) {
         appVersionContainer.textContent = APP_VERSION;
@@ -7715,6 +7724,22 @@ document.addEventListener('DOMContentLoaded', async () => {
             openModal(ephremStoryModal);
         });
     }
+
+    // Se'atat Info Modal Logic
+    const seatatInfoBtn = document.getElementById('seatat-info-btn');
+    const seatatInfoModal = document.getElementById('seatat-info-modal');
+    const closeSeatatModal = document.getElementById('close-seatat-modal');
+    if (seatatInfoBtn && seatatInfoModal) {
+        seatatInfoBtn.addEventListener('click', () => {
+            openModal(seatatInfoModal);
+        });
+    }
+
+    // Modal Close Buttons
+    ['close-help-modal', 'close-feedback-modal', 'close-ephrem-modal', 'close-scribe-login-modal', 'close-scribe-editor-modal', 'close-icon-metadata-modal', 'close-scribe-icon-editor-modal', 'close-eusebius-modal', 'close-seatat-modal'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.addEventListener('click', closeModal);
+    });
 
     // Story Tabs Logic
     const tabBtns = document.querySelectorAll('.story-tab-btn');
