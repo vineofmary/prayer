@@ -3695,7 +3695,8 @@ function getStandardPrayerSequence() {
 let collapsedSections = {};
 
 function renderSelectedKidase(addSectionTitleCallback) {
-    if (!isKidaseModeActive || typeof kidaseData === 'undefined') return;
+    if (typeof kidaseData === 'undefined') return;
+    if (!showVespers && !showMatins && !showTeklil && !isKidaseModeActive && !showAnaphora) return;
 
     const allOrderPrayers = kidaseData.order;
 
@@ -3756,7 +3757,87 @@ function renderSelectedKidase(addSectionTitleCallback) {
         renderKidaseSection(preLiturgyKidanChunk);
     }
 
-    // B. Matins (Morning Prayers)
+    // B. Crowning (Matrimony / Teklil) - Render standalone if Matins is not active
+    if (showTeklil && !showMatins && typeof teklilData !== 'undefined') {
+        addSectionTitleCallback("<i>Teklil</i> — Crowning (Matrimony) | ተክሊል", false);
+        
+        // 1. Render main block of Teklil (up to Thanksgiving) - Stanzas 1 to 75
+        const mainTeklil = teklilData.prayers.filter(p => parseInt(p.stanza) <= 75);
+        renderKidaseSection(mainTeklil);
+        
+        // 2. Fetch Thanksgiving (3-31 to 3-39)
+        const thanksgiving = allOrderPrayers.filter(p => p.chapter === '3' && parseInt(p.stanza) >= 31 && parseInt(p.stanza) <= 39);
+        renderKidaseSection(thanksgiving);
+
+        // 3. Stand up for prayer / Peace be unto you (3-118)
+        const standUp = allOrderPrayers.filter(p => p.chapter === '3' && parseInt(p.stanza) === 118);
+        renderKidaseSection(standUp);
+
+        // 4. Fetch Oblation (3-41 to 3-44)
+        const oblation = allOrderPrayers.filter(p => p.chapter === '3' && parseInt(p.stanza) >= 41 && parseInt(p.stanza) <= 44);
+        renderKidaseSection(oblation);
+
+        // 5. Fetch "Let us worship" sequence (3-119 to 3-122)
+        const worshipSequence = allOrderPrayers.filter(p => {
+            if (p.chapter !== '3') return false;
+            const s = parseInt(p.stanza);
+            if (s === 119) return p.english.toLowerCase().includes("worship");
+            return s >= 120 && s <= 122;
+        });
+        renderKidaseSection(worshipSequence);
+
+        // 6. Deacon Intro to Ephesians
+        const ephesiansIntroCard = {
+            chapter: "Ephesians",
+            stanza: "Intro",
+            instruction: "",
+            reference: "Epistle to the Ephesians",
+            english: "DEACON: A reading from the Epistle of St. Paul to the Ephesians, chapter 5, verses 25-33. May his prayer and blessing be with us all. Amen."
+        };
+        renderKidaseSection([ephesiansIntroCard]);
+        
+        // 7. Fetch Ephesians 5:25-33
+        const ephesiansVerses = getBibleVersesFromRef('Ephesians 5:25-33');
+        if (ephesiansVerses) {
+            const verseCounts = Object.values(ephesiansVerses).map(arr => arr.length);
+            const maxVerses = Math.max(0, ...verseCounts);
+            
+            for (let i = 0; i < maxVerses; i++) {
+                const versePrayer = {
+                    english: ephesiansVerses['english']?.[i]?.text || '',
+                    geez_script: ephesiansVerses['geez_script']?.[i]?.text || '',
+                    amharic_script: ephesiansVerses['amharic_script']?.[i]?.text || '',
+                    tigrinya_script: ephesiansVerses['tigrinya_script']?.[i]?.text || '',
+                    spanish: ephesiansVerses['spanish']?.[i]?.text || '',
+                    chapter: "Ephesians",
+                    stanza: "5:" + (25 + i),
+                    reference: "Ephesians 5:25-33",
+                    instruction: ""
+                };
+                renderKidaseSection([versePrayer]);
+            }
+        }
+        
+        // 8. Fetch Blessing (3-136 to 3-137)
+        const blessing = allOrderPrayers.filter(p => 
+            p.chapter === '3' && 
+            (parseInt(p.stanza) === 136 || parseInt(p.stanza) === 137) &&
+            !p.english.includes("{{TODAY'S PAULINE EPISTLE READING}}")
+        );
+        renderKidaseSection(blessing);
+
+        addSectionTitleCallback("→ <i>Teklil</i> — Exhortation | ምክር");
+        const exhortationLiturgy = allOrderPrayers.filter(p => 
+            (p.chapter === '4' && parseInt(p.stanza) >= 6 && parseInt(p.stanza) <= 12) ||
+            (p.chapter === '4' && parseInt(p.stanza) >= 23 && parseInt(p.stanza) <= 31) ||
+            (p.chapter === 'The300' && parseInt(p.stanza) >= 1 && parseInt(p.stanza) <= 10)
+        );
+        renderKidaseSection(exhortationLiturgy, false, true); 
+        const exhortationTeklil = teklilData.prayers.filter(p => parseInt(p.stanza) >= 76);
+        renderKidaseSection(exhortationTeklil);
+    }
+
+    // C. Matins (Morning Prayers)
     if (showMatins) {
         addSectionTitleCallback("<i>Matins</i> — Morning Prayer | ጸሎተ ነግህ", false);
 
@@ -3851,13 +3932,15 @@ function renderSelectedKidase(addSectionTitleCallback) {
         }
     }
 
-    // C. Order of the Liturgy | ሥርዓተ ቅዳሴ
-    addSectionTitleCallback("<i>Ḳidasé</i> — Liturgy | ቅዳሴ", false);
-    addSectionTitleCallback("→ Order of the Liturgy | ሥርዓተ ቅዳሴ");
-    mainLiturgyArray.push(...allOrderPrayers.slice(liturgyStart));
-    renderKidaseSection(mainLiturgyArray, true); // true means apply version filtering to any embedded Kidan
+    // D. Order of the Liturgy | ሥርዓተ ቅዳሴ
+    if (isKidaseModeActive) {
+        addSectionTitleCallback("<i>Ḳidasé</i> — Liturgy | ቅዳሴ", false);
+        addSectionTitleCallback("→ Order of the Liturgy | ሥርዓተ ቅዳሴ");
+        mainLiturgyArray.push(...allOrderPrayers.slice(liturgyStart));
+        renderKidaseSection(mainLiturgyArray, true); // true means apply version filtering to any embedded Kidan
+    }
 
-    // 4. Anaphora
+    // E. Eucharistic Prayer | አኰቴተ ቍርባን (Anaphora)
     if (showAnaphora) {
         const anaphoraMap = {
             'apostles': { name: '→ Anaphora of the Apostles | ቅዳሴ ሐዋርያት', data: kidaseData.apostles },
@@ -3866,6 +3949,9 @@ function renderSelectedKidase(addSectionTitleCallback) {
 
         const anaphora = anaphoraMap[selectedAnaphora];
         if (anaphora) {
+            if (!isKidaseModeActive) {
+                addSectionTitleCallback("<i>Ḳidasé</i> — Liturgy | ቅዳሴ", false);
+            }
             addSectionTitleCallback(anaphora.name);
             renderKidaseSection(anaphora.data);
         }
@@ -4568,7 +4654,7 @@ function renderPrayers() {
     renderSelectedKidase(addSectionTitle);
 
     // Render Supplicatory Prayers
-    if (!isKidaseModeActive && displayOptions.showSupplications) {
+    if (displayOptions.showSupplications) {
         const supplications = getSupplicatoryPrayers();
         addSectionTitle("Supplications | ምሕላ");
         supplications.forEach((prayer, index) => {
