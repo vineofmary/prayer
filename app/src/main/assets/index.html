@@ -199,9 +199,11 @@
                             <label id="force-uniform-font-size-label" style="display: none;"><input type="checkbox"
                                     id="force-uniform-font-size"> <span>Force Uniform Font Sizes (Slides
                                     Mode)</span></label>
-                            <label title="Show original Greek/Coptic forms in parentheses for Ge'ez loanwords."><input
+                            <label title="Show original Greek/Coptic forms in Ge'ez loanwords."><input
                                     type="checkbox" id="show-loanword-origins"> <span>Show Loanword Origins
                                     (Beta)</span></label>
+                            <label id="external-bible-api-label" style="display: none;" title="Use the locally bundled 80 Weahadu Bible translations for Kidase and Psalms."><input
+                                    type="checkbox" id="use-external-bible-api"> <span>Enable 80 Weahadu Data (Scribe Only)</span></label>
                         </div>
                         <h4 class="settings-subtitle">Slide Transition</h4>
                         <select id="slide-transition-select">
@@ -1255,6 +1257,9 @@
     <script src="js/teklil.js?v=2"></script>
     <script src="js/typical_psalms.js?v=3"></script>
     <script src="js/st_athanasius_psalms.js?v=2"></script>
+    <script src="js/bible_service.js"></script>
+
+    <!-- UI Interaction and Data Scripts -->
     <script src="js/script.js?v=28"></script>
 </body>
 
