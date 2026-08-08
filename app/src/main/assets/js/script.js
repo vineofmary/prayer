@@ -29,9 +29,11 @@ try {
 
 // --- Application Logic ---
 const header = document.querySelector('header');
-const sidebar = document.querySelector('.sidebar');
+const leftSidebar = document.getElementById('left-sidebar');
+const rightSidebar = document.getElementById('right-sidebar');
 const mainContent = document.querySelector('.main-content');
 const sidebarToggle = document.getElementById('sidebar-toggle');
+const prayersPanelToggle = document.getElementById('prayers-panel-toggle');
 const sidebarBackdrop = document.getElementById('sidebar-backdrop');
 const themeToggle = document.getElementById('theme-toggle');
 const paletteSelector = document.getElementById('palette-selector');
@@ -53,7 +55,7 @@ const presModeIconScroll = presentationModeToggleHeader.querySelector('.pres-mod
 const layoutToggleHeader = document.getElementById('layout-toggle-header');
 const layoutIconColumn = layoutToggleHeader.querySelector('.layout-icon-column');
 const layoutIconRow = layoutToggleHeader.querySelector('.layout-icon-row');
-const showPrayerLabelsToggle = document.getElementById('show-prayer-labels');
+
 const showLanguageLabelsToggle = document.getElementById('show-language-labels');
 const showSpeakerLabelsToggle = document.getElementById('show-speaker-labels');
 const paragraphModeToggle = document.getElementById('paragraph-mode');
@@ -73,7 +75,6 @@ const searchPrev = document.getElementById('search-prev');
 const searchNext = document.getElementById('search-next');
 const helpButton = document.getElementById('help-button');
 const showSupplicationsToggle = document.getElementById('show-supplications-toggle');
-const autoProphetSongsToggle = document.getElementById('auto-prophet-songs-toggle');
 const showDailyPrayerToggle = document.getElementById('show-daily-prayer-toggle');
 const showGateOfLightToggle = document.getElementById('show-gate-of-light-toggle');
 const showYewediswaMelaektToggle = document.getElementById('show-yewediswa-melaekt-toggle');
@@ -419,7 +420,8 @@ const STATIC_CHANGELOG = [
     { date: '2026-04-26', message: 'feat: add toggle setting for Ge\'ez phonetics for chants', author: 'vineofmary' }
 ];
 let currentTheme = {};
-let isSidebarCollapsed = false;
+let isLeftSidebarCollapsed = false;
+let isRightSidebarCollapsed = true;
 let isServantsCornerActive = false;
 let displayOptions = {};
 let displayedLanguages = {};
@@ -1216,14 +1218,32 @@ function applyTheme() {
     }
 
     // Handle sidebar state
-    if (isSidebarCollapsed) {
-        sidebar.classList.add('collapsed');
-        body.classList.remove('sidebar-open');
-        header.classList.remove('sidebar-visible-in-mobile');
-    } else {
-        sidebar.classList.remove('collapsed');
+    if (leftSidebar) {
+        if (isLeftSidebarCollapsed) {
+            leftSidebar.classList.add('collapsed');
+            body.classList.remove('sidebar-left-open');
+            header.classList.remove('sidebar-visible-in-mobile');
+        } else {
+            leftSidebar.classList.remove('collapsed');
+            body.classList.add('sidebar-left-open');
+            header.classList.add('sidebar-visible-in-mobile');
+        }
+    }
+
+    if (rightSidebar) {
+        if (isRightSidebarCollapsed) {
+            rightSidebar.classList.add('collapsed');
+            body.classList.remove('sidebar-right-open');
+        } else {
+            rightSidebar.classList.remove('collapsed');
+            body.classList.add('sidebar-right-open');
+        }
+    }
+
+    if (!isLeftSidebarCollapsed || !isRightSidebarCollapsed) {
         body.classList.add('sidebar-open');
-        header.classList.add('sidebar-visible-in-mobile');
+    } else {
+        body.classList.remove('sidebar-open');
     }
 
     // Handle rubrication state
@@ -1626,7 +1646,8 @@ function saveSettings() {
     if (isInitializing) return;
     localStorage.setItem('settingsVersion', SETTINGS_VERSION);
     localStorage.setItem('theme', JSON.stringify(currentTheme));
-    localStorage.setItem('sidebarCollapsed', isSidebarCollapsed);
+    localStorage.setItem('sidebarLeftCollapsed', isLeftSidebarCollapsed);
+    localStorage.setItem('sidebarRightCollapsed', isRightSidebarCollapsed);
     localStorage.setItem('displayOptions', JSON.stringify(displayOptions));
     localStorage.setItem('fontSizes', JSON.stringify(fontSizes));
     localStorage.setItem('ethiopicFont', ethiopicFontSelect.value);
@@ -1697,7 +1718,6 @@ async function loadSettings() {
             boldText: false,
             anglicizeNames: false,
             showSupplications: true,
-            autoProphetSongs: false,
             showDailyPrayer: true,
             showGeezPhoneticChants: false,
             showLoanwordOrigins: false,
@@ -1773,7 +1793,12 @@ async function loadSettings() {
     } else {
         // Load saved settings and merge with defaults to ensure all keys exist
         currentTheme = JSON.parse(localStorage.getItem('theme')) || defaultSettings.theme;
-        isSidebarCollapsed = localStorage.getItem('sidebarCollapsed') === 'true';
+        isLeftSidebarCollapsed = localStorage.getItem('sidebarLeftCollapsed') !== null 
+            ? localStorage.getItem('sidebarLeftCollapsed') === 'true' 
+            : (localStorage.getItem('sidebarCollapsed') !== null ? localStorage.getItem('sidebarCollapsed') === 'true' : isMobile);
+        isRightSidebarCollapsed = localStorage.getItem('sidebarRightCollapsed') !== null 
+            ? localStorage.getItem('sidebarRightCollapsed') === 'true' 
+            : true;
         const savedDisplayOptions = JSON.parse(localStorage.getItem('displayOptions')) || {};
         displayOptions = { ...defaultSettings.displayOptions, ...savedDisplayOptions };
         const savedDisplayedLanguages = JSON.parse(localStorage.getItem('displayedLanguages')) || {};
@@ -1909,7 +1934,6 @@ function updateExpandCollapseAllIcon() {
 
 
 function updateAllTogglesInSettingsPanel() {
-    showPrayerLabelsToggle.checked = displayOptions.showPrayerLabels;
     showLanguageLabelsToggle.checked = displayOptions.showLanguageLabels;
     showSpeakerLabelsToggle.checked = displayOptions.showSpeakerLabels;
     paragraphModeToggle.checked = displayOptions.paragraphMode;
@@ -1923,7 +1947,6 @@ function updateAllTogglesInSettingsPanel() {
     boldTextToggle.checked = displayOptions.boldText;
     anglicizeNamesToggle.checked = displayOptions.anglicizeNames;
     showSupplicationsToggle.checked = displayOptions.showSupplications;
-    autoProphetSongsToggle.checked = displayOptions.autoProphetSongs;
     showDailyPrayerToggle.checked = displayOptions.showDailyPrayer;
     if (showGateOfLightToggle) showGateOfLightToggle.checked = displayOptions.showGateOfLight;
     if (showYewediswaMelaektToggle) showYewediswaMelaektToggle.checked = displayOptions.showYewediswaMelaekt !== false;
@@ -5201,14 +5224,54 @@ function closeSearch() {
     performSearch();
 }
 
-// --- Sidebar Helper ---
-function collapseSidebar() {
-    if (!isSidebarCollapsed) {
-        isSidebarCollapsed = true;
-        sidebar.classList.add('collapsed');
-        applyTheme();
-        saveSettings();
+// --- Sidebar Helpers ---
+function openLeftSidebar() {
+    isLeftSidebarCollapsed = false;
+    isRightSidebarCollapsed = true;
+    applyTheme();
+    saveSettings();
+}
+
+function collapseLeftSidebar() {
+    isLeftSidebarCollapsed = true;
+    applyTheme();
+    saveSettings();
+}
+
+function toggleLeftSidebar() {
+    if (isLeftSidebarCollapsed) {
+        openLeftSidebar();
+    } else {
+        collapseLeftSidebar();
     }
+}
+
+function openRightSidebar() {
+    isRightSidebarCollapsed = false;
+    isLeftSidebarCollapsed = true;
+    applyTheme();
+    saveSettings();
+}
+
+function collapseRightSidebar() {
+    isRightSidebarCollapsed = true;
+    applyTheme();
+    saveSettings();
+}
+
+function toggleRightSidebar() {
+    if (isRightSidebarCollapsed) {
+        openRightSidebar();
+    } else {
+        collapseRightSidebar();
+    }
+}
+
+function collapseSidebar() {
+    isLeftSidebarCollapsed = true;
+    isRightSidebarCollapsed = true;
+    applyTheme();
+    saveSettings();
 }
 
 // --- Psalm Functions ---
@@ -5953,13 +6016,10 @@ document.querySelectorAll('input[name="praise-of-mary-day"]').forEach(radio => {
     });
 });
 
-sidebarToggle.addEventListener('click', () => {
-    isSidebarCollapsed = !isSidebarCollapsed;
-    sidebar.classList.toggle('collapsed');
-    applyTheme();
-    saveSettings();
-});
-
+sidebarToggle.addEventListener('click', toggleLeftSidebar);
+if (prayersPanelToggle) {
+    prayersPanelToggle.addEventListener('click', toggleRightSidebar);
+}
 sidebarBackdrop.addEventListener('click', collapseSidebar);
 
 // --- Prevent sliders from closing sidebar when dragging ---
@@ -6591,12 +6651,6 @@ expandCollapseAllButton.addEventListener('click', () => {
     saveSettings();
 });
 
-showPrayerLabelsToggle.addEventListener('change', () => {
-    displayOptions.showPrayerLabels = showPrayerLabelsToggle.checked;
-    renderPrayers();
-    saveSettings();
-});
-
 if (shareLinkButton) {
     shareLinkButton.addEventListener('click', generateShortLink);
 }
@@ -6675,16 +6729,6 @@ showSupplicationsToggle.addEventListener('change', () => {
     saveSettings();
 });
 
-autoProphetSongsToggle.addEventListener('change', () => {
-    displayOptions.autoProphetSongs = autoProphetSongsToggle.checked;
-    if (displayOptions.autoProphetSongs && selectedProphetSongs.length === 0) {
-        selectedProphetSongs = getDefaultProphetSongsForCurrentTime();
-        updateProphetSongsSummary();
-        populateProphetSongsSelector();
-    }
-    smoothRender();
-    saveSettings();
-});
 
 showDailyPrayerToggle.addEventListener('change', () => {
     displayOptions.showDailyPrayer = showDailyPrayerToggle.checked;
@@ -6985,18 +7029,21 @@ function handleTouchEnd(e) {
 function handleSidebarSwipe() {
     const deltaX = touchEndX - touchStartX;
     const deltaY = touchEndY - touchStartY;
-    const swipeThreshold = 70; // Increased from 50 for sidebar
+    const swipeThreshold = 70;
 
     // Ensure horizontal movement is dominant and exceeds threshold
     if (Math.abs(deltaX) > Math.abs(deltaY) * 1.5 && Math.abs(deltaX) > swipeThreshold) {
         if (deltaX < -swipeThreshold) { // Swipe Left
-            collapseSidebar();
+            if (!isLeftSidebarCollapsed) {
+                collapseLeftSidebar();
+            } else if (isRightSidebarCollapsed) {
+                openRightSidebar();
+            }
         } else if (deltaX > swipeThreshold) { // Swipe Right
-            if (isSidebarCollapsed) {
-                isSidebarCollapsed = false;
-                sidebar.classList.remove('collapsed');
-                applyTheme();
-                saveSettings();
+            if (!isRightSidebarCollapsed) {
+                collapseRightSidebar();
+            } else if (isLeftSidebarCollapsed) {
+                openLeftSidebar();
             }
         }
     }
@@ -7089,11 +7136,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     await loadSettings(); // Ensure settings are loaded before anything else
-
-    // Default Prophet Songs based on current day and time if nothing else selected
-    if (displayOptions.autoProphetSongs && (!localStorage.getItem('selectedProphetSongs') || selectedProphetSongs.length === 0)) {
-        selectedProphetSongs = getDefaultProphetSongsForCurrentTime();
-    }
 
     await loadBibleData(); // Load data on startup
 
@@ -8009,9 +8051,7 @@ function initAthanasiusModal() {
         if (e) {
             e.stopPropagation();
         }
-        if (typeof collapseSidebar === 'function') {
-            collapseSidebar();
-        }
+
         openModal(modal);
         renderAthanasiusModal();
     };

@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mount of Mercy</title>
-    <link rel="stylesheet" href="css/style.css?v=9">
+    <link rel="stylesheet" href="css/style.css?v=10">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Abyssinica+SIL&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Lato&family=Roboto&display=swap"
         rel="stylesheet">
     <link rel="manifest" href="manifest.json">
-    <link rel="icon" href="/icons/icon-192x192.png">
+    <link rel="icon" href="icons/icon-192x192.png">
     <meta property="og:image" content="img/With-her-beloved-Son.png">
 </head>
 
@@ -85,10 +85,16 @@
                 </button>
                 <button id="theme-toggle" title="Toggle Dark Mode"></button>
                 <button id="help-button" title="Help">?</button>
+                <button id="prayers-panel-toggle" title="Select Prayers">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24px" height="24px">
+                        <path d="M10.5 2v6H5v3h5.5v11h3V11H19V8h-5.5V2z"/>
+                    </svg>
+                </button>
             </div>
         </header>
         <div class="container">
-            <aside class="sidebar">
+            <!-- Left Sidebar: General Settings -->
+            <aside id="left-sidebar" class="sidebar sidebar-left">
                 <div class="settings-panel">
                     <div class="setting-group">
                         <h3>Pick Theme</h3>
@@ -159,6 +165,110 @@
                         <label style="margin-top: 1rem; display: block;"><input type="checkbox"
                                 id="show-language-labels"> <span>Language Labels</span></label>
                     </div>
+
+                    <div class="setting-group">
+                        <h3>Customize Names</h3>
+                        <p class="settings-subtitle" style="font-size: 0.8rem; margin-bottom: 1rem;">These names will be
+                            dynamically inserted into prayers which include parts to intercede and pray for others.</p>
+                        <h4 class="settings-subtitle">Servant's Name(s)</h4>
+                        <input type="text" id="servant-name-input" placeholder="e.g. John, Jane, etc.">
+                        <h4 class="settings-subtitle">Patriarch</h4>
+                        <input type="text" id="patriarch-name-input" placeholder="e.g. Abba Mathias I">
+                        <h4 class="settings-subtitle">Bishop</h4>
+                        <input type="text" id="bishop-name-input" placeholder="e.g. Abba Theophilus">
+                        <h4 class="settings-subtitle">Bishop(s) in Attendance</h4>
+                        <input type="text" id="attending-bishops-input" placeholder="e.g. Abba ...">
+                        <h4 class="settings-subtitle">Church Name</h4>
+                        <input type="text" id="church-name-input" placeholder="e.g. St. Michael EOTC">
+                        <h4 class="settings-subtitle">Country</h4>
+
+                        <input type="text" id="country-name-input" placeholder="e.g. Ethiopia, USA, etc.">
+                        <h4 class="settings-subtitle">Head of State</h4>
+                        <input type="text" id="head-of-state-input" placeholder="e.g. President, Emperor, etc.">
+                    </div>
+                    <div class="setting-group">
+                        <h3 class="settings-subtitle">Advanced Display Options</h3>
+                        <div id="display-options-toggles">
+
+                            <label><input type="checkbox" id="show-speaker-labels"> <span>Speaker Labels
+                                    (Beta)</span></label>
+                            <label><input type="checkbox" id="paragraph-mode"> <span>Paragraph Mode (Single Language
+                                    only)</span></label>
+                            <label id="dynamic-font-sizing-label" style="display: none;"><input type="checkbox"
+                                    id="dynamic-font-sizing"> <span>Dynamic Font Sizing (Slides Mode)</span></label>
+                            <label id="force-uniform-font-size-label" style="display: none;"><input type="checkbox"
+                                    id="force-uniform-font-size"> <span>Force Uniform Font Sizes (Slides
+                                    Mode)</span></label>
+                            <label title="Show original Greek/Coptic forms in parentheses for Ge'ez loanwords."><input
+                                    type="checkbox" id="show-loanword-origins"> <span>Show Loanword Origins
+                                    (Beta)</span></label>
+                        </div>
+                        <h4 class="settings-subtitle">Slide Transition</h4>
+                        <select id="slide-transition-select">
+                            <option value="slide">Slide</option>
+                            <option value="fade">Fade</option>
+                            <option value="none">None</option>
+                        </select>
+                    </div>
+
+                    <div class="setting-group" id="unofficial-languages-section" style="display: none;">
+                        <h3>Translations*</h3>
+                        <div id="unofficial-language-toggles">
+                            <!-- Dynamic -->
+                        </div>
+                        <p class="settings-subtitle"
+                            style="font-size: 0.7rem; margin-top: 1rem; opacity: 0.8; font-weight: normal; font-style: italic; line-height: 1.4;">
+                            *Includes unofficial translations (generated from English) via Google Translate APIs which
+                            require thorough review for theological accuracy, but is an important first step towards
+                            future officially approved translations of liturgical prayers.
+                        </p>
+                        <p class="settings-subtitle"
+                            style="font-size: 0.7rem; margin-top: 0.5rem; opacity: 0.8; font-weight: normal; font-style: italic; line-height: 1.4;">
+                            **Seeking scribes to help insert prayers/Scriptures in these languages.
+                        </p>
+                    </div>
+
+                    <div class="setting-group feedback-section">
+                        <button id="share-link-button" class="settings-button share-button">
+                            <svg viewBox="0 0 24 24" width="18" height="18"
+                                style="margin-right: 8px; vertical-align: middle;">
+                                <path fill="currentColor"
+                                    d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92c0-1.61-1.31-2.92-2.92-2.92z" />
+                            </svg>
+                            <span>Share Link</span>
+                        </button>
+                        <p class="share-hint"><i>Shares all your current settings and filters.</i></p>
+                        
+                        <button id="share-scriptures-button" class="settings-button share-button" style="margin-top: 10px;">
+                            <svg viewBox="0 0 24 24" width="18" height="18"
+                                style="margin-right: 8px; vertical-align: middle;">
+                                <path fill="currentColor"
+                                    d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10H7v-2h10v2zm0-4H7V7h10v2z" />
+                            </svg>
+                            <span>Share Link with Scriptures</span>
+                        </button>
+                        <p class="share-hint"><i>Copies link along with all selected Liturgy mode Bible readings to clipboard.</i></p>
+                        <hr class="settings-divider">
+                        <button id="feedback-button">Share Feedback</button>
+                        <div class="scribe-entry-point">
+                            <button id="scribe-login-link">Scribe Login</button>
+                        </div>
+                    </div>
+                    <div class="bible-verse-sidebar">
+                        <p>“Pray without ceasing”</p>
+                        <p class="ethiopic-label">“ወጸልዩ ወትረ”</p>
+                        <p class="citation">(1 Thessalonians 5:17 ፨ <span class="ethiopic-label">፩ ተሰሎንቄ ፭፡፲፯</span>)
+                        </p>
+                    </div>
+                    <div class="setting-group app-version-section">
+                        <div id="app-version-container">v0.8.3-beta</div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Right Sidebar: Prayer Selection -->
+            <aside id="right-sidebar" class="sidebar sidebar-right collapsed">
+                <div class="settings-panel">
                     <div id="kidase-gated-section" class="setting-group">
                         <h3>Add Prayers</h3>
                         
@@ -388,108 +498,6 @@
                         <div id="prophet-songs-selector-container"></div>
                         <div id="prophet-songs-summary" class="settings-summary"></div>
                         <button id="clear-prophet-songs-button" class="settings-button">Clear Songs</button>
-                    </div>
-
-                    <div class="setting-group">
-                        <h3>Customize Names</h3>
-                        <p class="settings-subtitle" style="font-size: 0.8rem; margin-bottom: 1rem;">These names will be
-                            dynamically inserted into prayers which include parts to intercede and pray for others.</p>
-                        <h4 class="settings-subtitle">Servant's Name(s)</h4>
-                        <input type="text" id="servant-name-input" placeholder="e.g. John, Jane, etc.">
-                        <h4 class="settings-subtitle">Patriarch</h4>
-                        <input type="text" id="patriarch-name-input" placeholder="e.g. Abba Mathias I">
-                        <h4 class="settings-subtitle">Bishop</h4>
-                        <input type="text" id="bishop-name-input" placeholder="e.g. Abba Theophilus">
-                        <h4 class="settings-subtitle">Bishop(s) in Attendance</h4>
-                        <input type="text" id="attending-bishops-input" placeholder="e.g. Abba ...">
-                        <h4 class="settings-subtitle">Church Name</h4>
-                        <input type="text" id="church-name-input" placeholder="e.g. St. Michael EOTC">
-                        <h4 class="settings-subtitle">Country</h4>
-
-                        <input type="text" id="country-name-input" placeholder="e.g. Ethiopia, USA, etc.">
-                        <h4 class="settings-subtitle">Head of State</h4>
-                        <input type="text" id="head-of-state-input" placeholder="e.g. President, Emperor, etc.">
-                    </div>
-                    <div class="setting-group">
-                        <h3 class="settings-subtitle">Advanced Display Options</h3>
-                        <div id="display-options-toggles">
-                            <label><input type="checkbox" id="show-prayer-labels"> <span>Prayer Labels</span></label>
-                            <label><input type="checkbox" id="show-speaker-labels"> <span>Speaker Labels
-                                    (Beta)</span></label>
-                            <label><input type="checkbox" id="paragraph-mode"> <span>Paragraph Mode (Single Language
-                                    only)</span></label>
-                            <label id="dynamic-font-sizing-label" style="display: none;"><input type="checkbox"
-                                    id="dynamic-font-sizing"> <span>Dynamic Font Sizing (Slides Mode)</span></label>
-                            <label id="force-uniform-font-size-label" style="display: none;"><input type="checkbox"
-                                    id="force-uniform-font-size"> <span>Force Uniform Font Sizes (Slides
-                                    Mode)</span></label>
-                            <label
-                                title="Automatically add the Song of the Prophet corresponding to the current time."><input
-                                    type="checkbox" id="auto-prophet-songs-toggle"> <span>Auto-selected Song of the
-                                    Prophets</span></label>
-                            <label title="Show original Greek/Coptic forms in parentheses for Ge'ez loanwords."><input
-                                    type="checkbox" id="show-loanword-origins"> <span>Show Loanword Origins
-                                    (Beta)</span></label>
-                        </div>
-                        <h4 class="settings-subtitle">Slide Transition</h4>
-                        <select id="slide-transition-select">
-                            <option value="slide">Slide</option>
-                            <option value="fade">Fade</option>
-                            <option value="none">None</option>
-                        </select>
-                    </div>
-
-                    <div class="setting-group" id="unofficial-languages-section" style="display: none;">
-                        <h3>Translations*</h3>
-                        <div id="unofficial-language-toggles">
-                            <!-- Dynamic -->
-                        </div>
-                        <p class="settings-subtitle"
-                            style="font-size: 0.7rem; margin-top: 1rem; opacity: 0.8; font-weight: normal; font-style: italic; line-height: 1.4;">
-                            *Includes unofficial translations (generated from English) via Google Translate APIs which
-                            require thorough review for theological accuracy, but is an important first step towards
-                            future officially approved translations of liturgical prayers.
-                        </p>
-                        <p class="settings-subtitle"
-                            style="font-size: 0.7rem; margin-top: 0.5rem; opacity: 0.8; font-weight: normal; font-style: italic; line-height: 1.4;">
-                            **Seeking scribes to help insert prayers/Scriptures in these languages.
-                        </p>
-                    </div>
-
-                    <div class="setting-group feedback-section">
-                        <button id="share-link-button" class="settings-button share-button">
-                            <svg viewBox="0 0 24 24" width="18" height="18"
-                                style="margin-right: 8px; vertical-align: middle;">
-                                <path fill="currentColor"
-                                    d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92c0-1.61-1.31-2.92-2.92-2.92z" />
-                            </svg>
-                            <span>Share Link</span>
-                        </button>
-                        <p class="share-hint"><i>Shares all your current settings and filters.</i></p>
-                        
-                        <button id="share-scriptures-button" class="settings-button share-button" style="margin-top: 10px;">
-                            <svg viewBox="0 0 24 24" width="18" height="18"
-                                style="margin-right: 8px; vertical-align: middle;">
-                                <path fill="currentColor"
-                                    d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10H7v-2h10v2zm0-4H7V7h10v2z" />
-                            </svg>
-                            <span>Share Link with Scriptures</span>
-                        </button>
-                        <p class="share-hint"><i>Copies link along with all selected Liturgy mode Bible readings to clipboard.</i></p>
-                        <hr class="settings-divider">
-                        <button id="feedback-button">Share Feedback</button>
-                        <div class="scribe-entry-point">
-                            <button id="scribe-login-link">Scribe Login</button>
-                        </div>
-                    </div>
-                    <div class="bible-verse-sidebar">
-                        <p>“Pray without ceasing”</p>
-                        <p class="ethiopic-label">“ወጸልዩ ወትረ”</p>
-                        <p class="citation">(1 Thessalonians 5:17 ፨ <span class="ethiopic-label">፩ ተሰሎንቄ ፭፡፲፯</span>)
-                        </p>
-                    </div>
-                    <div class="setting-group app-version-section">
-                        <div id="app-version-container">v0.8.2-beta</div>
                     </div>
                 </div>
             </aside>
@@ -1239,15 +1247,15 @@
     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
 
-    <script src="js/icons.js?v=9"></script>
-    <script src="js/prayers.js?v=9"></script>
-    <script src="js/songs.js?v=9"></script>
-    <script src="js/servants.js?v=9"></script>
-    <script src="js/kidase.js?v=9"></script>
-    <script src="js/teklil.js?v=1"></script>
-    <script src="js/typical_psalms.js?v=2"></script>
-    <script src="js/st_athanasius_psalms.js?v=1"></script>
-    <script src="js/script.js?v=26"></script>
+    <script src="js/icons.js?v=10"></script>
+    <script src="js/prayers.js?v=10"></script>
+    <script src="js/songs.js?v=10"></script>
+    <script src="js/servants.js?v=10"></script>
+    <script src="js/kidase.js?v=10"></script>
+    <script src="js/teklil.js?v=2"></script>
+    <script src="js/typical_psalms.js?v=3"></script>
+    <script src="js/st_athanasius_psalms.js?v=2"></script>
+    <script src="js/script.js?v=28"></script>
 </body>
 
 </html>
