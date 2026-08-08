@@ -3292,11 +3292,16 @@ function hasActualContent(text, langKey) {
 function isChantStanza(prayer) {
     if (!prayer) return false;
 
-    const chantPattern = /(?:People|ALL|All|Pueblo|Todos|Gente|ሕዝብ|ኵሎሙ|ሁሉም|ኩሉኹም|Ḥizb|Hizb|Kwllomu|Kullomu|Kwlomu|Hizbi|Ḥizbi|ከምኡ\s*ይበሉ|ይህንኑ\s*መልሰው|People\s*repeat|la\s*gente\s*repite|kem'u\s*ybelu)/i;
+    const PEOPLE_LABEL_REGEX = /^(?:፨\s*)?(?:People|ALL|All|Pueblo|Todos|Gente|ሕዝብ|ኵሎሙ|ሁሉም|ኩሉኹም|Ḥizb|Hizb|Kwllomu|Kullomu|Kwlomu|Hizbi|Ḥizbi|(?:Priest|Asst\.\s*Priest|Deacon|Subdeacon|Leader|Reader|Bridegroom|Bride|ካህን|ካህን\s*ንፍቅ|ዲያቆን|ንፍቀ\s*ዲያቆን|መሪሕ|መሪ|መራሒ|አንባቢ|ነባቢ|ሙሽራው|ሙሽራዋ|መርዓዊ|መርዓት|Sacerdote|Diácono|Subdiácono|Líder|Lector|Novio|Novia|Merīḥ|Meriḥ|Merih|Kahn|Kahin|Diyakon|Dīyakon|Meraḥi|Meraḥī)\s*\([^)]*(?:People|repeat|ከምኡ|ይበሉ|መልሰው|repite|kem'u)[^)]*\))(?:\s*\([^)]*\))?[:፡።፤፣]/i;
 
     for (const langKey of ['english', 'geez_script', 'amharic_script', 'tigrinya_script', 'spanish', 'geez_phonetic']) {
-        if (prayer[langKey] && chantPattern.test(prayer[langKey])) {
-            return true;
+        if (prayer[langKey]) {
+            const lines = prayer[langKey].split(/(?:<br\s*\/?>|\n)+/);
+            for (let line of lines) {
+                if (PEOPLE_LABEL_REGEX.test(line.trim())) {
+                    return true;
+                }
+            }
         }
     }
     return false;
