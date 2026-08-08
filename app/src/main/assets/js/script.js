@@ -390,6 +390,9 @@ const anaphoraSettings = document.getElementById('anaphora-settings');
 const showVespersToggle = document.getElementById('show-vespers');
 const covenantPrayerSelector = document.getElementById('covenant-prayer-selector');
 const hideQuietPrayersToggle = document.getElementById('hide-quiet-prayers');
+const miracleSelector = document.getElementById('miracle-selector');
+const miraclePositionContainer = document.getElementById('miracle-position-container');
+const miraclePositionRadios = document.getElementsByName('miracle-position');
 const holyFiftyDaysToggle = document.getElementById('holy-fifty-days-toggle');
 const servantNameInput = document.getElementById('servant-name-input');
 const shareLinkButton = document.getElementById('share-link-button');
@@ -431,9 +434,12 @@ let fontSizes = {};
 let selectedPsalms = [];
 let selectedProphetSongs = [];
 let selectedSeatatLectionaryDay = 'None';
-let selectedWidaseMaryamDay = 'All';
+let selectedWidaseMaryamDay = 'monday';
 let isKidaseModeActive = false;
 let selectedAnaphora = 'apostles';
+let selectedMiracleId = 'none';
+let miraclePosition = 'anaphora';
+let selectedMiracleTranslationIndex = 0;
 let showSeatatReadings = false;
 let showMatins = true;
 let showTeklil = false;
@@ -588,7 +594,7 @@ const SEATAT_LECTIONARY_DATA = {
         { type: 'Pauline Epistle (1 Thessalonians 4:15-18) | መልእክተ ጳውሎስ ዘሰዓታት', book: '1 Thessalonians', chapter: 4, verses: '15-18' },
         { type: 'Universal Epistle (1 Peter 5:5-12) | መልእክተ ካልእ ዘሰዓታት', book: '1 Peter', chapter: 5, verses: '5-12' },
         { type: 'Acts of the Apostles (Acts 16:25-35) | ግብረ ሐዋርያት ዘሰዓታት', book: 'Acts', chapter: 16, verses: '25-35' },
-        { type: 'Psalm (Psalm 1:2-3) | ምስባክ ዘሰዓታት', book: 'Psalms', chapter: 1, verses: '2-3', customEnglish: '[2] And in His law he meditates day and night. [3] He shall be like a tree planted by the rivers of water, that brings forth its fruit in its season.', customGeez: '[2] ወዘሕጎ ያነብብ መዕልተ ወሌሊተ። [3] ወየከውን ከመ ዕፅ እንተ ትክልት ኀበ ሙሓዘ ማይ፤ እንተ ትሁብ ፍሬሃ በበጊዜሃ፤' },
+        { type: 'Psalm (Psalm 1:2-3) | ምስባክ ዘሰዓታት', book: 'Psalms', chapter: 1, verses: '2-3', customEnglish: '[2] And in His law he meditates day and night. [3] He shall be like a tree planted by the rivers of water, that brings forth its fruit in its season.', customGeez: '[2] ወዘሕጎ ያነብብ መዕልተ ወሌሊተ። [3] ወየከውን ከመ ዕፅ እንተ ትክልት ኀበ ሙሓዘ ማይ፤ እንተ ትሁብ ፍሬሃ በበጊዜሃ；' },
         { type: 'Gospel (Matthew 25:1-14) | ወንጌል ዘሰዓታት', book: 'Matthew', chapter: 25, verses: '1-14' }
     ],
     'Tuesday': [
@@ -609,28 +615,28 @@ const SEATAT_LECTIONARY_DATA = {
         { type: 'Pauline Epistle (2 Corinthians 8:1-16) | መልእክተ ጳውሎስ ዘሰዓታት', book: '2 Corinthians', chapter: 8, verses: '1-16' },
         { type: 'Universal Epistle (1 Peter 4:12-19) | መልእክተ ካልእ ዘሰዓታት', book: '1 Peter', chapter: 4, verses: '12-19' },
         { type: 'Acts of the Apostles (Acts 16:35-40) | ግብረ ሐዋርያት ዘሰዓታት', book: 'Acts', chapter: 16, verses: '35-40' },
-        { type: 'Psalm (Psalm 87:1-2) | ምስባክ ዘሰዓታት', book: 'Psalms', chapter: 87, verses: '1-2', customEnglish: '[1] O Lord, God of my salvation, I have cried out day and night before You. [2] Let my prayer come before You...', customGeez: '[1] እግዚአብሔር አምላከ መድኀኒትየ፤ ዕለትየ ጸራኅኩ ኀቤከ ወሌሊትየኒ ቅድሜከ። [2] ለትባእ ጸሎትየ ቅድሜከ፤' },
+        { type: 'Psalm (Psalm 87:1-2) | ምስባክ ዘሰዓታት', book: 'Psalms', chapter: 87, verses: '1-2', customEnglish: '[1] O Lord, God of my salvation, I have cried out day and night before You. [2] Let my prayer come before You...', customGeez: '[1] እግዚአብሔር አምላከ መድኀኒትየ፤ ዕለትየ ጸራኅኩ ኀቤከ ወሌሊትየኒ ቅድሜከ። [2] ለትባእ ጸሎትየ ቅድሜከ；' },
         { type: 'Gospel (Matt 24:36-51) | ወንጌል ዘሰዓታት', book: 'Matthew', chapter: 24, verses: '36-51' }
     ],
     'Friday': [
         { type: 'Pauline Epistle (Romans 13:11-14) | መልእክተ ጳውሎስ ዘሰዓታት', book: 'Romans', chapter: 13, verses: '11-14' },
         { type: 'Universal Epistle (2 Peter 3:8-14) | መልእክተ ካልእ ዘሰዓታት', book: '2 Peter', chapter: 3, verses: '8-14' },
         { type: 'Acts of the Apostles (Acts 8:26-40) | ግብረ ሐዋርያት ዘሰዓታት', book: 'Acts', chapter: 8, verses: '26-40' },
-        { type: 'Psalm (Psalm 118:55-56) | ምስባክ ዘሰዓታት', book: 'Psalms', chapter: 118, verses: '55-56', customEnglish: '[55] I remember Your name in the night, O Lord, And I keep Your law. [56] This has become mine...', customGeez: '[55] ተዘከርኩ በሌሊት ስመከ እግዚኦ፤ ወዐቀብኩ ሕገከ። [56] ወይእቲ ኮነተኒ፤' },
+        { type: 'Psalm (Psalm 118:55-56) | ምስባክ ዘሰዓታት', book: 'Psalms', chapter: 118, verses: '55-56', customEnglish: '[55] I remember Your name in the night, O Lord, And I keep Your law. [56] This has become mine...', customGeez: '[55] ተዘከርኩ በሌሊት ስመከ እግዚኦ፤ ወዐቀብኩ ሕገከ። [56] ወይእቲ ኮነተኒ；' },
         { type: 'Gospel (Luke 12:35-49) | ወንጌል ዘሰዓታት', book: 'Luke', chapter: 12, verses: '35-49' }
     ],
     'Saturday': [
         { type: 'Torah (Leviticus 23:1-4) | ኦሪት ዘሰዓታት', book: 'Leviticus', chapter: 23, verses: '1-4' },
         { type: 'Prophecy (Jeremiah 17:26-27) | ትንቢት ዘሰዓታት', book: 'Jeremiah', chapter: 17, verses: '26-27' },
         { type: 'Acts of the Apostles (Acts 17:2-5) | ግብረ ሐዋርያት ዘሰዓታት', book: 'Acts', chapter: 17, verses: '2-5' },
-        { type: 'Psalm (Psalm 133:2-3) | ምስባክ ዘሰዓታት', book: 'Psalms', chapter: 133, verses: '2-3', customEnglish: '[2] Lift up your hands in the sanctuary, and bless the Lord. [3] The Lord who made heaven and earth bless you from Zion!', customGeez: '[2] በሌሊት አንሥኡ እደዊክሙ በቤተ መቅደስ፤ ወባርክዎ ለእግዚአብሔር። [3] ይባርከከ እግዚአብሔር እምጽዮን፤' },
+        { type: 'Psalm (Psalm 133:2-3) | ምስባክ ዘሰዓታት', book: 'Psalms', chapter: 133, verses: '2-3', customEnglish: '[2] Lift up your hands in the sanctuary, and bless the Lord. [3] The Lord who made heaven and earth bless you from Zion!', customGeez: '[2] በሌሊት አንሥኡ እደዊክሙ በቤተ መቅደስ፤ ወባርክዎ ለእግዚአብሔር። [3] ይባርከከ እግዚአብሔር እምጽዮን；' },
         { type: 'Gospel (John 5:5-23) | ወንጌል ዘሰዓታት', book: 'John', chapter: 5, verses: '5-23' }
     ],
     'Sunday': [
         { type: 'Pauline Epistle (1 Corinthians 15:51-16:3) | መልእክተ ጳውሎስ ዘሰዓታት', book: '1 Corinthians', chapter: 15, verses: '51-58', extra: { book: '1 Corinthians', chapter: 16, verses: '1-3' } },
         { type: 'Universal Epistle (1 John 1:1-10) | መልእክተ ካልእ ዘሰዓታት', book: '1 John', chapter: 1, verses: '1-10' },
         { type: 'Acts of the Apostles (Acts 20:7-12) | ግብረ ሐዋርያት ዘሰዓታት', book: 'Acts', chapter: 20, verses: '7-12' },
-        { type: 'Psalm (Psalm 125:2) | ምስባክ ዘሰዓታት', book: 'Psalms', chapter: 125, verses: '2', customEnglish: 'Then our mouth was filled with laughter, And our tongue with singing. Then they said among the nations...', customGeez: 'አሜሃ መልአ ፍሥሓ አፉነ፤ ወተሐሥየ ልሳንነ፤ አሜሃ ይቤሉ አሕዛብ፦' },
+        { type: 'Psalm (Psalm 125:2) | ምስባክ ዘሰዓታት', book: 'Psalms', chapter: 125, verses: '2', customEnglish: 'Then our mouth was filled with laughter, And our tongue with singing. Then they said among the nations...', customGeez: 'አሜሃ መልአ ፍሥሓ አፉነ፤ ወተሐሥየ ልሳንነ； አሜሃ ይቤሉ አሕዛብ፦' },
         { type: 'Gospel (John 3:1-22) | ወንጌል ዘሰዓታት', book: 'John', chapter: 3, verses: '1-22' }
     ]
 };
@@ -940,11 +946,11 @@ const rubricRedWords = {
         "And let it sing a hymn to Him, And exalt Him beyond measure unto the ages."
     ],
     geez_script: [
-        "በስመ አብ ወወልድ ወመንፈስ ቅዱስ", "አአትብ ገጽየ", "አብ", "ወልድ", "ወወልድ", "መንፈስ ቅዱስ", "አሐዱ አምላክ", "አሐዱ አምላክ፣",
+        "በስመ አብ ወወልድ ወመንፈስ ቅዱስ", "አአትብ ገጽየ", "አብ", "ወልድ", "ወወልድ", "መንፈስ ቅዱስ", "አሐዱ አምላክ", "አሐዱ አምላክ，",
         "ሥላሴ", "ነአኵተከ እግዚኦ", "እግዚ", "እግዚእ", "እግዚኦ", "እግዚአብሔር", "እግዚአ", "አምላክ", "ንጉሥ", "ንጉሠ", "ወንጉሠ", "አቡነ ዘበሰማያት",
         "በሰላመ ቅዱስ ገብርኤል መልአክ", "እግዚአብሔር ጸባዖት", "እግዚአብሔር ጸባዖት", "ኢየሱስ ክርስቶስ",
         "ንኣምን በአሐዱ አምላክ", "ነአምን በአሐዱ አምላክ", "አምላክ ዘእምአምላክ ዘበአማን", "ድንግል ማርያም", "ማርያም ድንግል", "አሜን", "ቅዱስ ቅዱስ ቅዱስ እግዚአብሔር ጸባኦት",
-        "ቅዱስ ቅዱስ ቅዱስ እግዚአብሔር ጸባዖት", "ቅዱስ ቅዱስ ቅዱስ", "ቅዱስ፣ ቅዱስ፣ ቅዱስ", "ክርስቶስ", "እሰግድ ለአብ ወወልድ ወመንፈስ ቅዱስ አሐቲ ስግደት።", "መለኮት",
+        "ቅዱስ ቅዱስ ቅዱስ እግዚአብሔር ጸባዖት", "ቅዱስ ቅዱስ ቅዱስ", "ቅዱስ， ቅዱስ， ቅዱስ", "ክርስቶስ", "እሰግድ ለአብ ወወልድ ወመንፈስ ቅዱስ አሐቲ ስግደት。", "መለኮት",
         "ስብሐት ለአብ ወወልድ ወመንፈስ ቅዱስ", "ልዑል እግዚአብሔር", "እግዚአብሔር ልዑል", "ሰላም ለኪ እንዘ ንሰግድ ንብለኪ", "ሰላም ለኪ",
         "ጸሎተ እግዝእትነ ማርያም ድንግል ወላዲተ አምላክ", "መድኀኒየ", "ወመድኀኒየ", "ታዐብዮ ነፍስየ ለእግዚአብሔር",
         "ስብሐት ለአብ ወወልድ ወመንፈስ ቅዱስ ለዓለም ወለዓለመ ዓለም", "ውዳሴሃ ለእግዝእትነ ማርያም ድንግል ወላዲተ አምላክ", "ይዌድስዋ መላእክት ለማርያም",
@@ -1298,6 +1304,9 @@ function syncStateToUrl() {
             v: '2', // State Version
             k: isKidaseModeActive,
             a: selectedAnaphora,
+            mi: selectedMiracleId,
+            mp: miraclePosition,
+            mit: selectedMiracleTranslationIndex,
             c: selectedCovenantPrayer,
             hq: hideQuietPrayers,
             h50: isHolyFiftyDays,
@@ -1408,6 +1417,9 @@ async function loadStateFromUrl() {
 
         if (state.k !== undefined) isKidaseModeActive = state.k;
         if (state.a !== undefined) selectedAnaphora = state.a;
+        if (state.mi !== undefined) selectedMiracleId = state.mi;
+        if (state.mp !== undefined) miraclePosition = state.mp;
+        if (state.mit !== undefined) selectedMiracleTranslationIndex = state.mit;
         if (state.c !== undefined) selectedCovenantPrayer = state.c;
         if (state.hq !== undefined) hideQuietPrayers = state.hq;
         if (state.h50 !== undefined) isHolyFiftyDays = state.h50;
@@ -1452,6 +1464,9 @@ async function createShortLinkUrl() {
         v: '2',
         k: isKidaseModeActive,
         a: selectedAnaphora,
+        mi: selectedMiracleId,
+        mp: miraclePosition,
+        mit: selectedMiracleTranslationIndex,
         c: selectedCovenantPrayer,
         hq: hideQuietPrayers,
         ps: selectedPsalms,
@@ -1663,6 +1678,11 @@ function saveSettings() {
     localStorage.setItem('selectedWidaseMaryamDay', selectedWidaseMaryamDay);
     localStorage.setItem('isKidaseModeActive', isKidaseModeActive);
     localStorage.setItem('selectedAnaphora', selectedAnaphora);
+    localStorage.setItem('selectedMiracleId', selectedMiracleId);
+    localStorage.setItem('miraclePosition', miraclePosition);
+    localStorage.setItem('selectedMiracleTranslationIndex', selectedMiracleTranslationIndex);
+    localStorage.setItem('showAnaphora', showAnaphora);
+    localStorage.setItem('showSeatatReadings', showSeatatReadings);
     localStorage.setItem('showMatins', showMatins);
     localStorage.setItem('showTeklil', showTeklil);
     localStorage.setItem('useExternalBibleAPI', useExternalBibleAPI);
@@ -1751,6 +1771,9 @@ async function loadSettings() {
         showVespers: false,
         selectedCovenantPrayer: 'morning',
         showAnaphora: true,
+        selectedMiracleId: 'none',
+        miraclePosition: 'anaphora',
+        selectedMiracleTranslationIndex: 0,
         hideQuietPrayers: false,
         isHolyFiftyDays: false,
         // Default Custom Names
@@ -3600,10 +3623,18 @@ function createPrayerCardElement(prayer, prayerIndex, isKidase = false) {
     const isKidaseChapter = /^\d+$/.test(prayer.chapter) || ['Kidan', 'order', 'Apostles', 'St.Mary', 'Chrysostom', 'The300', 'mary', 'apostles'].some(c => c.toLowerCase() === (prayer.chapter || '').toLowerCase());
     const isKidasePrayer = isKidase || (isKidaseChapter && prayer.chapter && prayer.stanza);
 
-    if (!isKidasePrayer) {
-        infoHTML = `<p><strong>Reference:</strong> ${prayer.reference}</p>`;
+    if (!isKidasePrayer || prayer._isMiracle) {
+        if (prayer.reference) {
+            infoHTML = `<p><strong>Reference:</strong> ${prayer.reference}</p>`;
+        }
         if (prayer.instruction && prayer.instruction.trim().toLowerCase() !== 'n/a') {
             infoHTML += `<p><strong>Instruction:</strong> ${prayer.instruction}</p>`;
+        }
+        if (prayer._isMiracle && prayer._miracleData) {
+            infoHTML += `<p><strong>Citation:</strong> Princeton Ethiopian, Eritrean, and Egyptian Miracles of Mary (PEMM) Project.</p>`;
+            if (prayer._miracleData.incipit) {
+                infoHTML += `<p><strong>Ge'ez Incipit:</strong> <span class="geez-font">${prayer._miracleData.incipit}</span></p>`;
+            }
         }
     }
 
@@ -3751,6 +3782,68 @@ function getStandardPrayerSequence() {
     const gabrielGreetingParts = prayers.filter(p => p.chapter === 'Daily' && p.stanza === '4');
 
     return [personalPrayer, ...lordsPrayerParts, ...gabrielGreetingParts];
+}
+
+window.updateMiracleTranslation = function(idx) {
+    selectedMiracleTranslationIndex = parseInt(idx);
+    saveSettings();
+    // Re-render prayers to show new translation
+    if (typeof _renderPrayersSync === 'function') {
+        _renderPrayersSync();
+    } else {
+        renderPrayers();
+    }
+};
+
+function renderSelectedMiracle(addSectionTitleCallback, renderKidaseSectionCallback) {
+    if (selectedMiracleId === 'none' || typeof MIRACLES_OF_MARY === 'undefined') return;
+    
+    const miracle = MIRACLES_OF_MARY.find(m => m.id === selectedMiracleId);
+    if (!miracle || !miracle.translations || miracle.translations.length === 0) return;
+    
+    const translationIndex = Math.min(selectedMiracleTranslationIndex || 0, miracle.translations.length - 1);
+    const translation = miracle.translations[translationIndex];
+    
+    addSectionTitleCallback("→ Miracle of Mary | ተአምረ ማርያም");
+    
+    const miracleCards = [];
+    
+    let textToSplit = translation.text.replace(/<br\s*\/?>/gi, '\n');
+    textToSplit = textToSplit.replace(/<\/p>\s*<p>/gi, '\n\n');
+    textToSplit = textToSplit.replace(/<[^>]+>/g, ''); 
+    
+    const paragraphs = textToSplit.split(/\n\s*\n/).filter(p => p.trim().length > 0);
+    
+    paragraphs.forEach((pText, i) => {
+        let reference = `Miracles of Mary`;
+        let instructionHtml = "";
+        if (i === 0) {
+            reference = `Miracle: ${miracle.title || miracle.id} (Translated by ${translation.author})`;
+            if (miracle.translations.length > 1) {
+                instructionHtml = `
+                    <div style="margin-bottom: 0.5rem; text-align: center;">
+                        <label style="font-size: 0.8rem; opacity: 0.8;">Translation Version:</label>
+                        <select onchange="window.updateMiracleTranslation(this.value)" class="settings-select" style="display: inline-block; width: auto; padding: 2px 5px; font-size: 0.8rem; margin-left: 5px; min-width: 150px;">
+                            ${miracle.translations.map((t, idx) => `<option value="${idx}" ${idx === translationIndex ? 'selected' : ''}>${t.author}</option>`).join('')}
+                        </select>
+                    </div>
+                `;
+            }
+        }
+        
+        miracleCards.push({
+            chapter: "Miracle",
+            stanza: `${i + 1}`,
+            english: pText.trim(),
+            geez_script: i === 0 ? (miracle.incipit || '') : '',
+            reference: reference,
+            instruction: instructionHtml,
+            _isMiracle: true,
+            _miracleData: miracle
+        });
+    });
+    
+    renderKidaseSectionCallback(miracleCards);
 }
 
 let collapsedSections = {};
@@ -3907,6 +4000,10 @@ function renderSelectedKidase(addSectionTitleCallback) {
     if (showMatins) {
         addSectionTitleCallback("<i>Matins</i> — Morning Prayer | ጸሎተ ነግህ", false);
 
+        if (miraclePosition === 'matins') {
+            renderSelectedMiracle(addSectionTitleCallback, renderKidaseSection);
+        }
+
         if (showTeklil && typeof teklilData !== 'undefined') {
             addSectionTitleCallback("→ <i>Teklil</i> — Crowning (Matrimony) | ተክሊል");
             
@@ -4020,6 +4117,10 @@ function renderSelectedKidase(addSectionTitleCallback) {
             }
             addSectionTitleCallback(anaphora.name);
             renderKidaseSection(anaphora.data);
+        }
+
+        if (miraclePosition === 'anaphora') {
+            renderSelectedMiracle(addSectionTitleCallback, renderKidaseSection);
         }
     }
 
@@ -6406,6 +6507,56 @@ anaphoraSelector.addEventListener('change', () => {
     saveSettings();
     smoothRender();
 });
+
+// --- Miracles of Mary Setup ---
+function populateMiraclesSelector() {
+    if (typeof MIRACLES_OF_MARY === 'undefined' || !miracleSelector) return;
+    
+    while (miracleSelector.options.length > 1) {
+        miracleSelector.remove(1);
+    }
+
+    MIRACLES_OF_MARY.forEach(miracle => {
+        const option = document.createElement('option');
+        option.value = miracle.id;
+        
+        let text = [];
+        if (miracle.title) text.push(miracle.title);
+        if (miracle.incipit) text.push(miracle.incipit);
+        
+        option.text = text.join(' | ');
+        miracleSelector.appendChild(option);
+    });
+}
+populateMiraclesSelector();
+
+if (miracleSelector) {
+    miracleSelector.value = selectedMiracleId;
+    miraclePositionContainer.style.display = selectedMiracleId !== 'none' ? 'block' : 'none';
+
+    miracleSelector.addEventListener('change', () => {
+        selectedMiracleId = miracleSelector.value;
+        miraclePositionContainer.style.display = selectedMiracleId !== 'none' ? 'block' : 'none';
+        saveSettings();
+        smoothRender();
+    });
+}
+
+if (miraclePositionRadios) {
+    miraclePositionRadios.forEach(radio => {
+        if (radio.value === miraclePosition) {
+            radio.checked = true;
+        }
+        radio.addEventListener('change', (e) => {
+            if (e.target.checked) {
+                miraclePosition = e.target.value;
+                saveSettings();
+                smoothRender();
+            }
+        });
+    });
+}
+// ------------------------------
 
 const showAnaphoraToggleEl = document.getElementById('show-anaphora-toggle');
 if (showAnaphoraToggleEl) {

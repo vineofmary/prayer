@@ -423,6 +423,17 @@
                             <select id="melka-selector" class="settings-select" style="margin-top: 0.25rem;">
                                 <option value="communion">Communion | ቍርባን</option>
                             </select>
+
+                            <h4 class="settings-subtitle" style="margin-top: 0.75rem;">Miracles of Mary | ተአምረ ማርያም</h4>
+                            <select id="miracle-selector" class="settings-select" style="margin-top: 0.25rem;">
+                                <option value="none">None | አልቦ</option>
+                                <!-- Populated dynamically by script.js -->
+                            </select>
+                            
+                            <div id="miracle-position-container" style="margin-top: 0.5rem; display: none;">
+                                <label style="display: block; margin-bottom: 0.25rem; font-size: 0.8rem;"><input type="radio" name="miracle-position" value="anaphora" checked> Read After Anaphora (Default)</label>
+                                <label style="display: block; font-size: 0.8rem;"><input type="radio" name="miracle-position" value="matins"> Read at Matins</label>
+                            </div>
                         </div>
 
                         <h4 class="settings-subtitle"
@@ -883,6 +894,7 @@
                                     target="_blank" rel="noopener noreferrer"><i>“The Liturgy of the Ethiopian
                                         Church”</i></a> by Fr. Marcos Daoud and H.E. Blatta Marsie Hazen, published by
                                 The Egyptian Book Press (Cairo, Egypt 1959).</li>
+                            <li><strong>Miracles of Mary Data & Translations:</strong> <a href="https://pemm.princeton.edu/" target="_blank">Princeton Ethiopian, Eritrean, and Egyptian Miracles of Mary (PEMM) Project</a> (Data via <a href="https://zenodo.org/record/8247393" target="_blank">Zenodo</a>)</li>
                         </ul>
 
                         <h4>Expanding Horizons</h4>
@@ -1263,6 +1275,7 @@
     <script src="js/typical_psalms.js?v=3"></script>
     <script src="js/st_athanasius_psalms.js?v=2"></script>
     <script src="js/bible_service.js"></script>
+    <script src="js/miracles_of_mary.js"></script>
 
     <!-- UI Interaction and Data Scripts -->
     <script src="js/script.js?v=28"></script>
