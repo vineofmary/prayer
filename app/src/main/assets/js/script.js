@@ -390,7 +390,14 @@ const anaphoraSettings = document.getElementById('anaphora-settings');
 const showVespersToggle = document.getElementById('show-vespers');
 const covenantPrayerSelector = document.getElementById('covenant-prayer-selector');
 const hideQuietPrayersToggle = document.getElementById('hide-quiet-prayers');
-const miracleSelector = document.getElementById('miracle-selector');
+const openMiracleModalBtn = document.getElementById('open-miracle-modal-btn');
+const miracleModal = document.getElementById('miracle-modal');
+const closeMiracleModalBtn = document.getElementById('close-miracle-modal');
+const miracleSearchInput = document.getElementById('miracle-search-input');
+const miracleMostReadToggle = document.getElementById('miracle-most-read-toggle');
+const miracleListContainer = document.getElementById('miracle-list-container');
+const selectedMiracleText = document.getElementById('selected-miracle-text');
+
 const miraclePositionContainer = document.getElementById('miracle-position-container');
 const miraclePositionRadios = document.getElementsByName('miracle-position');
 const holyFiftyDaysToggle = document.getElementById('holy-fifty-days-toggle');
@@ -3817,6 +3824,9 @@ function renderSelectedMiracle(addSectionTitleCallback, renderKidaseSectionCallb
     paragraphs.forEach((pText, i) => {
         let reference = `Miracles of Mary`;
         let instructionHtml = "";
+        let englishText = pText.trim();
+        let geezText = "";
+        
         if (i === 0) {
             reference = `Miracle: ${miracle.title || miracle.id} (Translated by ${translation.author})`;
             if (miracle.translations.length > 1) {
@@ -6508,38 +6518,120 @@ anaphoraSelector.addEventListener('change', () => {
     smoothRender();
 });
 
-// --- Miracles of Mary Setup ---
-function populateMiraclesSelector() {
-    if (typeof MIRACLES_OF_MARY === 'undefined' || !miracleSelector) return;
-    
-    while (miracleSelector.options.length > 1) {
-        miracleSelector.remove(1);
+// --- Miracles of Mary Modal Setup ---
+function updateSelectedMiracleUI() {
+    if (!selectedMiracleText) return;
+    if (selectedMiracleId === 'none') {
+        selectedMiracleText.textContent = 'None selected';
+        miraclePositionContainer.style.display = 'none';
+    } else {
+        const miracle = MIRACLES_OF_MARY?.find(m => m.id === selectedMiracleId);
+        if (miracle) {
+            let html = miracle.title;
+            if (miracle.incipit) {
+                const words = miracle.incipit.split(' ');
+                const first15 = words.slice(0, 15).join(' ');
+                const suffix = words.length > 15 ? '...' : '';
+                html += `<br><span class="geez-font" style="font-size: 1.1em; opacity: 0.8; display: block; margin-top: 4px;">${first15}${suffix}</span>`;
+            }
+            selectedMiracleText.innerHTML = html;
+            miraclePositionContainer.style.display = 'block';
+        } else {
+            selectedMiracleText.textContent = 'None selected';
+            miraclePositionContainer.style.display = 'none';
+        }
     }
-
-    MIRACLES_OF_MARY.forEach(miracle => {
-        const option = document.createElement('option');
-        option.value = miracle.id;
-        
-        let text = [];
-        if (miracle.title) text.push(miracle.title);
-        if (miracle.incipit) text.push(miracle.incipit);
-        
-        option.text = text.join(' | ');
-        miracleSelector.appendChild(option);
-    });
 }
-populateMiraclesSelector();
 
-if (miracleSelector) {
-    miracleSelector.value = selectedMiracleId;
-    miraclePositionContainer.style.display = selectedMiracleId !== 'none' ? 'block' : 'none';
-
-    miracleSelector.addEventListener('change', () => {
-        selectedMiracleId = miracleSelector.value;
-        miraclePositionContainer.style.display = selectedMiracleId !== 'none' ? 'block' : 'none';
+function renderMiracleModalList() {
+    if (!miracleListContainer || typeof MIRACLES_OF_MARY === 'undefined') return;
+    
+    const query = (miracleSearchInput.value || '').toLowerCase();
+    const showMostReadOnly = miracleMostReadToggle.checked;
+    
+    miracleListContainer.innerHTML = '';
+    
+    // Add "None" option first
+    const noneBtn = document.createElement('button');
+    noneBtn.className = 'settings-button';
+    noneBtn.style.textAlign = 'left';
+    noneBtn.style.width = '100%';
+    noneBtn.style.padding = '10px';
+    noneBtn.style.border = selectedMiracleId === 'none' ? '2px solid var(--primary-color)' : '1px solid var(--border-color)';
+    noneBtn.style.marginBottom = '5px';
+    noneBtn.textContent = 'None selected';
+    noneBtn.addEventListener('click', () => {
+        selectedMiracleId = 'none';
+        updateSelectedMiracleUI();
         saveSettings();
         smoothRender();
+        miracleModal.style.display = 'none';
     });
+    miracleListContainer.appendChild(noneBtn);
+
+    let filtered = MIRACLES_OF_MARY.filter(m => {
+        if (showMostReadOnly && !m.most_read) return false;
+        
+        if (query) {
+            const matchesTitle = m.title && m.title.toLowerCase().includes(query);
+            const matchesIncipit = m.incipit && m.incipit.toLowerCase().includes(query);
+            const matchesTranslation = m.translations && m.translations.some(t => t.text.toLowerCase().includes(query));
+            return matchesTitle || matchesIncipit || matchesTranslation;
+        }
+        return true;
+    });
+    
+    const countContainer = document.getElementById('miracle-count-text');
+    if (countContainer) {
+        countContainer.textContent = `${filtered.length} stories available`;
+    }
+
+    filtered.forEach(miracle => {
+        const btn = document.createElement('button');
+        btn.className = 'settings-button';
+        btn.style.textAlign = 'left';
+        btn.style.width = '100%';
+        btn.style.padding = '10px';
+        btn.style.border = selectedMiracleId === miracle.id ? '2px solid var(--primary-color)' : '1px solid var(--border-color)';
+        btn.style.marginBottom = '5px';
+        btn.style.display = 'block';
+        
+        let html = `<div style="font-weight: 600; font-size: 1.1rem; color: var(--primary-color); display: flex; justify-content: space-between; gap: 1rem;">
+                        <span>${miracle.title || 'Untitled'}</span>
+                        <span style="font-size: 0.75rem; font-weight: normal; opacity: 0.6; white-space: nowrap;">ID: ${miracle.id}</span>
+                    </div>`;
+        if (miracle.incipit) {
+            html += `<div style="font-family: 'Aboriginal Serif', serif; font-size: 0.95rem; margin-top: 5px; color: var(--text-color); opacity: 0.85;">${miracle.incipit}</div>`;
+        }
+        btn.innerHTML = html;
+        
+        btn.addEventListener('click', () => {
+            selectedMiracleId = miracle.id;
+            selectedMiracleTranslationIndex = 0; // Reset translation index when a new miracle is picked
+            updateSelectedMiracleUI();
+            saveSettings();
+            smoothRender();
+            miracleModal.style.display = 'none';
+        });
+        
+        miracleListContainer.appendChild(btn);
+    });
+}
+
+if (openMiracleModalBtn && miracleModal && closeMiracleModalBtn) {
+    updateSelectedMiracleUI(); // Initial UI update
+    
+    openMiracleModalBtn.addEventListener('click', () => {
+        miracleModal.style.display = 'block';
+        renderMiracleModalList();
+    });
+    
+    closeMiracleModalBtn.addEventListener('click', () => {
+        miracleModal.style.display = 'none';
+    });
+    
+    miracleSearchInput.addEventListener('input', renderMiracleModalList);
+    miracleMostReadToggle.addEventListener('change', renderMiracleModalList);
 }
 
 if (miraclePositionRadios) {

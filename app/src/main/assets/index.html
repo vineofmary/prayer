@@ -424,11 +424,9 @@
                                 <option value="communion">Communion | ቍርባን</option>
                             </select>
 
-                            <h4 class="settings-subtitle" style="margin-top: 0.75rem;">Miracles of Mary | ተአምረ ማርያም</h4>
-                            <select id="miracle-selector" class="settings-select" style="margin-top: 0.25rem;">
-                                <option value="none">None | አልቦ</option>
-                                <!-- Populated dynamically by script.js -->
-                            </select>
+                            <h4 class="settings-subtitle" style="margin-top: 0.75rem;">Miracle of Mary | ተአምረ ማርያም</h4>
+                            <button id="open-miracle-modal-btn" class="settings-button" style="margin-top: 0.25rem;">Select Miracle</button>
+                            <div id="selected-miracle-text" style="font-size: 0.8rem; margin-top: 0.25rem; color: var(--text-color); opacity: 0.8;">None selected</div>
                             
                             <div id="miracle-position-container" style="margin-top: 0.5rem; display: none;">
                                 <label style="display: block; margin-bottom: 0.25rem; font-size: 0.8rem;"><input type="radio" name="miracle-position" value="anaphora" checked> Read After Anaphora (Default)</label>
@@ -1259,6 +1257,24 @@
         <div id="modal-backdrop"></div>
 
     </div>
+        <div id="miracle-modal" class="modal">
+            <div class="modal-content" style="max-width: 600px; max-height: 80vh; display: flex; flex-direction: column;">
+                <span class="close" id="close-miracle-modal">&times;</span>
+                <h2 style="margin-bottom: 0.5rem; font-family: 'Aboriginal Serif', serif;">Miracle of Mary | ተአምረ ማርያም</h2>
+                <div style="margin-bottom: 1rem;">
+                    <input type="text" id="miracle-search-input" class="settings-select" placeholder="Search by title or incipit..." style="width: 100%; padding: 0.5rem; box-sizing: border-box; margin-bottom: 0.5rem;">
+                    <label style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;">
+                        <input type="checkbox" id="miracle-most-read-toggle" checked>
+                        Show only stories most read in church
+                    </label>
+                </div>
+                <div id="miracle-count-text" style="font-size: 0.85rem; opacity: 0.8; margin-bottom: 0.5rem; text-align: right;"></div>
+                <div id="miracle-list-container" style="overflow-y: auto; flex-grow: 1; border: 1px solid var(--border-color); border-radius: 4px; padding: 0.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <!-- Populated dynamically by script.js -->
+                </div>
+            </div>
+        </div>
+
 
     <!-- Firebase SDKs (Compat) -->
     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>

@@ -4,6 +4,7 @@ const MIRACLES_OF_MARY = [
     "title": "Hildefonsus Composes Mary's Miracles",
     "incipit": "ተብህለ፡ ከመ፡ ሀሎ፡ በውስተ፡ ቤተ፡ ክርስቲያን፡ ዘጥልጥልያ፡ ኤጲስ፡ ቆጶስ፡ ዘስሙ፡ ደቅስዮስ፡ ወኮነ፡ ብእሴ፡ ቡሩከ፡ ወኄረ፡ ወፈራሄ፡ እግዚአብሔር",
     "manuscript_count": 360,
+    "most_read": true,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -16,6 +17,7 @@ const MIRACLES_OF_MARY = [
     "title": "The laborer who complained to the Virgin Mary because she did not reply to his Hail Mary",
     "incipit": "ወሀሎ፡ አሐዱ፡ ብእሲ፡ ገባራዊ፡ ዘኮነ፡ ያወትር፡ ኵሎ፡ ዕለተ፡ ሰላማ፡ ለእግዝእትነ፡…. ሰርከ፡ ወነግሃ፡ ወመንፈቀ፡ መዓልት፡ ወነበረ፡ ከመዝ፡ ብዙኃ፡ መዋዕለ። ወአሐተ፡ ዕለተ፡ ይቤላ፡ ኦእግዝእትየ፡ መስተሣህልት፡ እስመ፡ አንሰ፡ ወትረ፡ ከመዝ፡ እሁብ፡ ሰላመኪ፡ ዘእንበለ፡ ኃፍረት፡ ወአንቲኒ፡ ለምንት፡ ዘኢታገብኢ፡ ሊተ፡ ሰላምየ",
     "manuscript_count": 352,
+    "most_read": false,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -36,6 +38,7 @@ const MIRACLES_OF_MARY = [
     "title": "The two women who were attacked by robbers on their way to church",
     "incipit": "ወሀለዋ፡ ክልኤ፡ አንስት፡ አእማተ፡ እግዝእትነ፡ ማርያም፡ በቤተ፡ ልሔም፡ እምአዋልደ፡ ይሁዳ፡ ወአሐተ፡ ዕለተ፡ እንዘ፡ የሐውራ፡ ኢየሩሳሌም፡ ይሰግዳ፡ ለበዓለ፡ ፍልሰተ፡ ሥጋሃ፡ ለእግዝእትነ",
     "manuscript_count": 335,
+    "most_read": false,
     "translations": [
       {
         "author": "Jeremy Brown & Dawit Muluneh with Ekaterina Pukhovaia",
@@ -52,6 +55,7 @@ const MIRACLES_OF_MARY = [
     "title": "The sinful deacon whom his enemies could not kill until he had confessed himself to a priest.",
     "incipit": "ወሀሎ፡ ፩፡ ብእሲ፡ ውኁደ፡ ሠናያት፡ ዘኢያአምሮ፡ ለእግዚአብሔር፡ ወኢያስተሰሪ፡ በእንተ፡ ኀጢአቱ።",
     "manuscript_count": 334,
+    "most_read": true,
     "translations": [
       {
         "author": "Jeremy Brown with Ekaterina Pukhovaia",
@@ -76,6 +80,7 @@ const MIRACLES_OF_MARY = [
     "title": "The monastic scribe who used to write the Virgin Mary's name in golden ink",
     "incipit": "ወሀሎ፡ አሐዱ፡ ብእሲ፡ መነኮስ፡ ዘስሙ፡ ድምያኖስ፡ ዘይነብር፡ በሀገረ፡ ፊልጵስዩስ፡ ዲበ፡ ደብር፡ ነዋኅ፡ ዘውስተ፡ ይእቲ፡ ሀገር፡ እስመ፡ ውእቱ፡ ያፈቅራ፡ ለእግዝእትነ፡…. እምማዕምቀ፡ ልቡ፡ ወይትቀነይ፡ ላቲ፡ በመልእክቱ፡ ወበኵሉ፡ ኀይሉ፡ ወይተግህ፡ ውስተ፡ ቤተ፡ ክርስቲያና፡ ለእግዝእትነ፡…. በውስተ፡ መጻሕፍት፡ ኵሉ፡ ዘሀሎ",
     "manuscript_count": 331,
+    "most_read": false,
     "translations": [
       {
         "author": "Ellen Li",
@@ -88,6 +93,7 @@ const MIRACLES_OF_MARY = [
     "title": "The former pagan, the Bishop of Rome, who cut off his hand because of a lustful thought and the Virgin Mary healed him",
     "incipit": "ወሀሎ፡ አሐዱ፡ ብእሲ፡ ዘይብልዎ፡ አባስ፡ እምጳጳሳተ፡ ሮሜ፡ ብእሲ፡ ኄር፡ ወቅዱስ፡ ወንዑድ፡ በክህነቱ፡ ወይፈርሆ፡ ለእግዚአብሔር፡ ወየዓቅብ፡ ነፍሶ፡ በንጽሕ፡ እምዝሙተ፡ ሥጋ፡ ወርኵስ፡ ወእምሑከተ፡ ሕሊና",
     "manuscript_count": 324,
+    "most_read": true,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -104,6 +110,7 @@ const MIRACLES_OF_MARY = [
     "title": "A deacon prayed the prayer that contained the word 'rejoice' five times for the five joys of the Virgin Mary",
     "incipit": "ወሀሎ፡ አሐዱ፡ ብእሲ፡ ዘስሙ፡ አንስጦስዮስ፡ በሀገረ፡ ሮሜ፡ ዘበራንስትስያ፡",
     "manuscript_count": 323,
+    "most_read": false,
     "translations": [
       {
         "author": "Rowan Williams",
@@ -124,6 +131,7 @@ const MIRACLES_OF_MARY = [
     "title": "An aged monk whom the Virgin Mary made young again (sometimes a \"Hebrew\" man from Akhmim, Egypt)",
     "incipit": "ወሀሎ፡ አሐዱ፡ ብእሲ፡ ዕብራዊ፡ ይነብር፡ በሀገረ፡ አክሚም፡ እስመ፡ ፈድፋደ፡ ያፈቅራ፡ ለእግዝእትነ፡…. እምስርወ፡ ልቡ፡ በፍርሃት፡ ወበረዓድ፡ ወኢይጸርዕ፡ እምአፉሁ፡ ዝክረ፡ ስማ፡ ዘምስለ፡ ሰጊድ፡ ወግናይ",
     "manuscript_count": 318,
+    "most_read": false,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -144,6 +152,7 @@ const MIRACLES_OF_MARY = [
     "title": "A young man who used to crown the icon of the Virgin Mary with roses",
     "incipit": "ወሀሎ፡ አሐዱ፡ ብእሲ፡ ወሬዛ፡ ዘሠናይ፡ ስነ፡ ላሕዩ፡ ዘስሙ፡ ዘካርያስ፡ ዘውስተ፡ ሀገረ፡ ሮሜ፡ እምዘመደ፡ ነገሥት። ወአሐተ፡ ዕለተ፡ ቦአ፡ ውስተ፡ ቤተ፡ ክርስቲያን፡ ከመ፡ ይጼሊ፡ ወነጸረ፡ ሥዕላ፡ ለእግዝእትነ",
     "manuscript_count": 310,
+    "most_read": false,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -156,6 +165,7 @@ const MIRACLES_OF_MARY = [
     "title": "Monk Transported to Jerusalem",
     "incipit": "ወሀለወት፡ ሥዕለ፡ እግዝእትነ፡ ማርያም፡ በደብረ፡ ነጋድያን፡ በቤተ፡ ሕሙማን፡ መንገለ፡ ምሥራቅ",
     "manuscript_count": 300,
+    "most_read": true,
     "translations": [
       {
         "author": "Jeremy Brown with Ekaterina Pukhovaia",
@@ -172,6 +182,7 @@ const MIRACLES_OF_MARY = [
     "title": "Church Moves to Shore",
     "incipit": "ተአምሪሃ፡ ዘኮነ፡ በሀገረ፡ ጽርዕ። ወሀሎ፡ ደብር፡ በጽንፈ፡ ኢያሪኮ፡ ወኑኁ፡ መጠነ፡ መንፈቀ፡ ምዕራፍ",
     "manuscript_count": 289,
+    "most_read": false,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -184,6 +195,7 @@ const MIRACLES_OF_MARY = [
     "title": "Giyorgis Haddis in Prison",
     "incipit": "ወሀሎ፡ አሐዱ፡ ብእሲ፡ መስተጋድል፡ ፈድፋደ፡ በከዊነ፡ ስምዕ፡ በእንተ፡ ስመ፡ እግዝእነ፡ ወአምላክነ፡ ወመድኃኒነ፡ ኢየሱስ፡ ክርስቶስ፡ ዘስሙ፡ ጊዮርጊስ፡ ሐዲስ",
     "manuscript_count": 274,
+    "most_read": false,
     "translations": [
       {
         "author": "Jeremy Brown & Dawit Muluneh with Blaine Kebede",
@@ -200,6 +212,7 @@ const MIRACLES_OF_MARY = [
     "title": "Artist Falls from Ladder",
     "incipit": "ወሀሎ፡ አሐዱ፡ ብእሲ፡ ሠዐሊ፡ ወአልቦ፡ ዘይትማሰሎ፡ በውእቱ፡ አዝማን፡ በገቢረ፡ ሥዕል",
     "manuscript_count": 272,
+    "most_read": false,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -212,6 +225,7 @@ const MIRACLES_OF_MARY = [
     "title": "A pregnant abbess is secretly delivered of her son by the Virgin Mary and he grows up to become a bishop",
     "incipit": "ወነበረት፡ አሐቲ፡ እመ፡ ምኔት፡ በደብረ፡ ቀርሜሎስ፡ ዘስማ፡ ሶፍያ፡ ብእሲት፡ ኅሪት፡ ጽሕቅት፡ ለምግባረ፡ ሠናይ፡ ወጸልዮ፡ ወትትለአክ፡ ለቤተ፡ እግዝእትነ፡ ማርያም፡ በብዙኅ፡ ፃማ፡ ወበዐቢይ፡ ቅኔ",
     "manuscript_count": 271,
+    "most_read": false,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -228,6 +242,7 @@ const MIRACLES_OF_MARY = [
     "title": "A European man, lame due to a stone foot, is healed by praying in front of the icon of the Virgin Mary",
     "incipit": "ስምዑ፡ አበዊነ፡ ወአኃዊነ፡ ዘገብረት፡ ተአምረ፡ ወመንክረ፡ በብሔረ፡ ፋርስ። ወገብአት፡ ብሔረ፡ አፍርንጊ፡ ወረከበት፡ ፩፡ ብእሴ፡ ዘእብን፡ እግሩ",
     "manuscript_count": 263,
+    "most_read": false,
     "translations": [
       {
         "author": "Rowan Williams",
@@ -244,6 +259,7 @@ const MIRACLES_OF_MARY = [
     "title": "Girl Prevented from Going to Church",
     "incipit": "ስምዑ፡ አበውየ፡ ወአኃውየ፡ ዘንተ፡ ነገረ፡ ዘኮነ፡ በእንተ፡ እግዝእትነ፡… እመ፡ ምሕረት፡ በአማን፡ መሐሪት፡ ወመስተፍሥሒት፡ ወመናዝዚት፡ ለዘሰአለ፡ ኀቤሃ፡ በጥቡዕ፡ ልብ፡ ወበጽኑዕ፡ ሃይማኖት። ወኮነ፡ እንዘ፡ ሀሎኩ፡ አነ፡ ነዳይ፡ ዮሐንስ፡ እስቁፍ፡ በገዳመ፡ አስቄጥስ፡ ነገሩኒ፡ ሰብእ፡ መሃይምናን፡ ኄራን፡ ከመ፡ ሀሎ፡ አሐዱ፡ ብእሲ፡ ፈራሄ፡ እግዚአብሔር፡ ወያፈቅራ፡ ለእግዝእትነ፡…. ሀገሩሰ፡ ድፍራ",
     "manuscript_count": 257,
+    "most_read": false,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -256,6 +272,7 @@ const MIRACLES_OF_MARY = [
     "title": "Man Shot in the Eye",
     "incipit": "ዘኮነ፡ በደሴተ፡ ቆላሲስ። ወሀሎ፡ አሐዱ፡ ብእሲ፡ ባዕል፡ ጥቀ፡ ወሖረ፡ ሀገረ፡ ትርኵ፡ ከመ፡ ይፅብኦሙ፡ ለቍዝ",
     "manuscript_count": 256,
+    "most_read": false,
     "translations": [
       {
         "author": "Grace Matthews",
@@ -268,6 +285,7 @@ const MIRACLES_OF_MARY = [
     "title": "The Seven Year Prayer",
     "incipit": "ወኮነ፡ በዝንቱ፡ ደብር፡ ቅዱስ፡ ዘዝኩር፡ በመዋዕሊሁ፡ ለአቡነ፡ አባ፡ ገብርኤል፡ ሊቀ፡ ጳጳሳት፡ ዘለእስክንድርያ፡ ብእሲ፡ መነኮስ፡ ቅዱስ፡ ወእምንእሱ፡ ነበረ፡ ህየ፡ ወስሙ፡ ይስሐቅ",
     "manuscript_count": 254,
+    "most_read": false,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -280,6 +298,7 @@ const MIRACLES_OF_MARY = [
     "title": "Travellers Saved from Crocodiles",
     "incipit": "ወኮነ፡ በአሐዱ፡ እምመዋዕል፡ ሖሩ፡ ኀበ፡ ምድረ፡ ሪፍ፡ ሠለስቱ፡ ሰብእ፡ ዐረባውያን፡ እንዘ፡ ምሉእ፡ ማየ፡ ተከዜ፡ ጥቀ",
     "manuscript_count": 252,
+    "most_read": false,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -292,6 +311,7 @@ const MIRACLES_OF_MARY = [
     "title": "The Loving Scribes",
     "incipit": "ወሀለዉ፡ በአሐቲ፡ ሀገር፡ እምአህጉረ፡ ክርስቲያን፡ ፪፡ አኃው፡ ፍቁራን፡ ወጽፉቀ፡ ይትፋቀሩ፡ በበይናቲሆሙ፡ ወየአምሩ፡ ግብረ፡ እድ፡ ወግብረ፡ እዶሙሰ፡ ጽሒፍ",
     "manuscript_count": 251,
+    "most_read": false,
     "translations": [
       {
         "author": "Jeremy Brown with Ekaterina Pukhovaia",
@@ -316,6 +336,7 @@ const MIRACLES_OF_MARY = [
     "title": "Blind Girl Healed",
     "incipit": "ወሀለወት፡ ሀገር፡ እምአህጉረ፡ ጽዒድ፡ ዘትሰመይ፡ በድርማን፡ ወይነብር፡ ውስቴታ፡ ብእሲ፡ ዘስሙ፡ አብርሃም፡ ወስመ፡ ብእሲቱ፡ ጌራ፡ አንስት",
     "manuscript_count": 248,
+    "most_read": false,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -328,6 +349,7 @@ const MIRACLES_OF_MARY = [
     "title": "Bishop Mercurius contracted leprosy and the patriarch banned him from serving communion due to his ailment",
     "incipit": "ወሀሎ፡ ፩፡ ኤጲስ፡ ቆጶስ፡ ዘስሙ፡ መርቆሬዎስ፡ ዘኮነ፡ ለምጸ፡ ኵሎ፡ ሥጋሁ፡ ወአሐተ፡ ዕለተ፡ ሖረ፡ ኀበ፡ ሊቀ፡ ጳጳሳት፡ ዘስሙ፡ ዘካርያስ",
     "manuscript_count": 246,
+    "most_read": false,
     "translations": [
       {
         "author": "Jeremy Brown with Ekaterina Pukhovaia",
@@ -348,6 +370,7 @@ const MIRACLES_OF_MARY = [
     "title": "The Blind Priest",
     "incipit": "ወሀለወት፡ ቤተ፡ ክርስቲያን፡ በሀገረ፡ ምስር፡ በስመ፡ ሰማዕት፡ ፑሉፓዴር፡ መርቆሬዎስ፡ ብእሲ፡ መነኮስ፡ ቀሲስ፡ ዘስሙ፡ ዮሐንስ፡ በከንሲ",
     "manuscript_count": 244,
+    "most_read": false,
     "translations": [
       {
         "author": "Jeremy Brown & Dawit Muluneh with Ekaterina Pukhovaia",
@@ -364,6 +387,7 @@ const MIRACLES_OF_MARY = [
     "title": "Three Husbandless Daughters",
     "incipit": "ወሀለወት፡ ብእሲት፡ ነዳይት፡ ወሞተ፡ ምታ፡ ወኀደገ፡ አዋልደ፡ ለአሐቲ፡ ስማ፡ ማርያም፡ ወለካልእት፡ ስማ፡ ማርታ፡ ወለሣልሲት፡ ስማ፡ የዋሂት",
     "manuscript_count": 240,
+    "most_read": false,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -376,6 +400,7 @@ const MIRACLES_OF_MARY = [
     "title": "Jesus asks the Virgin Mary what her greatest sorrow is and she replies saying these five sorrows",
     "incipit": "ወበአሐቲ፡ ዕለት፡ ይቤላ፡ ክርስቶስ፡ ለእሙ፡ አይ፡ የዓቢ፡ እምነ፡ ሐዘናት፡ ዘረከበኪ",
     "manuscript_count": 225,
+    "most_read": true,
     "translations": [
       {
         "author": "",
@@ -396,6 +421,7 @@ const MIRACLES_OF_MARY = [
     "title": "The sinful deacon who was healed from his illness by a drop of the Virgin Mary's breast milk",
     "incipit": "ተብህለ፡ ከመ፡ ሀሎ፡ አሐዱ፡ ዲያቆን፡ ውስተ፡ አሐቲ፡ ሀገር፡ ዘኢይክሉ፡ ነጊረ፡ እከዮ፡ ወኀጣውኢሁ",
     "manuscript_count": 223,
+    "most_read": false,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -428,6 +454,7 @@ const MIRACLES_OF_MARY = [
     "title": "The Monk Who Pretends Not to Fast",
     "incipit": "ወሀሎ፡ አሐዱ፡ ብእሲ፡ መነኮስ፡ በደብረ፡ አባ፡ ሳሙኤል፡ ዘቀልሞን፡ ወያፈቅራ፡ ለእግዝእትነ፡ ማርያም፡ ወያነብብ፡ ወትረ፡ ተአምኆተ፡ መልአክ፡ ሌሊተ፡ ወመዐልተ። ወዝንቱሰ፡ ብእሲ፡ ኢይጸውም፡ ወኢይጼሊ፡ ወይትሜሰል፡ ከመ፡ አብድ፡ ወእንቡዝ",
     "manuscript_count": 217,
+    "most_read": false,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -440,6 +467,7 @@ const MIRACLES_OF_MARY = [
     "title": "The thief whom the king's soldiers could not kill by hanging because he prayed to the Virgin Mary",
     "incipit": "ተብህለ፡ ከመ፡ ኮነ፡ በውስተ፡ አሓቲ፡ ሀገር፡ ፩፡ ብእሲ፡ ይፀንሕ፡ ፍኖተ፡ ወያፈርህ፡ ለኵሉ፡ ለእለ፡ የሐውሩ፡ በውስተ፡ ፍኖት።",
     "manuscript_count": 214,
+    "most_read": false,
     "translations": [
       {
         "author": "Ellen Li",
@@ -456,6 +484,7 @@ const MIRACLES_OF_MARY = [
     "title": "The rich woman who went with the monks to the [the Church of] Manbalis [in the town of Alwa, Nubia] for prayer and there saw a vision of the Virgin Mary",
     "incipit": "ተብህለ፡ ሶበ፡ ፈቀዱ፡ አኃው፡ ከመ፡ ይትጋብኡ፡ ውስተ፡ መንበሊስ፡ ተንሥኡ፡ እምአብርፊስ፡ ኀበ፡ መንበሊስ፡ ወሖረት፡ ምስሌሆሙ፡ አሐቲ፡ ብእሲት፡ ዐባይ፡ ወክብርት",
     "manuscript_count": 214,
+    "most_read": false,
     "translations": [
       {
         "author": "Jeremy Brown",
@@ -472,6 +501,7 @@ const MIRACLES_OF_MARY = [
     "title": "A Muslim who found an icon of the Virgin Mary in his house and converted after oil flowed from it",
     "incipit": "ወሀሎ፡ አሐዱ፡ አረማዊ፡ እምደቂቀ፡ ይስማዔል፡ ወረከበ፡ ውስተ፡ ቤቱ፡ ሥዕለ፡ እግዝእትነ፡…. ወኢያእመረ፡ እምኀበ፡ መጽአት፡ ይእቲ፡ ሥዕል",
     "manuscript_count": 213,
+    "most_read": false,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -488,6 +518,7 @@ const MIRACLES_OF_MARY = [
     "title": "The priest who could only memorize one mass, the Anaphora of the Virgin Mary, and was prevented from performing mass by the bishop",
     "incipit": "ወሀሎ፡ አሐዱ፡ ካህን፡ ቀሲስ፡ በሀገረ፡ ቂሳርያ፡ ዘስሙ፡ እንድርያስ፡ ወሀሎ፡ በህየ፡ ቤተ፡ ክርስቲያን፡ ዘተሐንጸ፡ በስማ፡ ለእግዝእትነ፡…. ወብዙኅ፡ ሰብእ፡ ካህናት፡ ወዲያቆናት፡ ይትጋብኡ፡ ውስቴታ፡ ወይነግሩ፡ በእንተ፡ ዕበየ፡ ተአምሪሃ፡ ዘትገብር፡ እስመ፡ ውእቱ፡ ቀሲስ፡ ዘስሙ፡ እንድርያስ፡ ኢየአምር፡ ካልአ፡ ቅዳሴ፡ ዘእንበለ፡ ቅዳሴሃ፡ ለእግዝእትነ፡ ማርያም",
     "manuscript_count": 208,
+    "most_read": true,
     "translations": [
       {
         "author": "Jeremy Brown & Dawit Muluneh with Ekaterina Pukhovaia",
@@ -504,6 +535,7 @@ const MIRACLES_OF_MARY = [
     "title": "A pious monk who had drunk too much wine was saved from a lion and a dog by the Virgin Mary",
     "incipit": "ወሀሎ፡ አሐዱ፡ መነኮስ፡ ዘስሙ፡ ጢሞቴዎስ፡ መጋቤ፡ ቤተ፡ ክርስቲያና፡ ለእግዝእትነ፡…. ተንባሊተ፡ ምሕረት። ወአሐተ፡ ዕለተ፡ ሰትየ፡ ወይነ፡ ወሰክረ፡ እምጻዕፈ፡ ወይን",
     "manuscript_count": 205,
+    "most_read": false,
     "translations": [
       {
         "author": "Jeremy Brown & Dawit Muluneh with Ekaterina Pukhovaia",
@@ -520,6 +552,7 @@ const MIRACLES_OF_MARY = [
     "title": "A monk who was carried by his fellow monks to church when he became too sick to walk",
     "incipit": "ወሀሎ፡ አሐዱ፡ ደብር፡ ዘመነኮሳት፡ ኀበ፡ ጽንፈ፡ ባሕር፡ ወሀሎ፡ ውስቴቱ፡ አሐዱ፡ እኅው፡ ዘመንኰሰ፡ እምንእሱ፡ ወውእቱሰ፡ ብእሲ፡ ሠናይ፡ ውእቱ",
     "manuscript_count": 202,
+    "most_read": false,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -536,6 +569,7 @@ const MIRACLES_OF_MARY = [
     "title": "As a girl, the Virgin Mary gave water to a thirsty dog from her shoe",
     "incipit": "ዘከመ፡ አስተየቶ፡ ለከልብ፡ ጽሙእ፡ በአሣዕና። ጸሎታ፡…. ወሀለወት፡ አንስት፡ ምስለ፡ እግዝእትነ፡…. ወመጽአ፡ ከልብ፡ ወሰደዳሁ፡ ውእቶን፡ አንስት",
     "manuscript_count": 202,
+    "most_read": true,
     "translations": [
       {
         "author": "Jeremy Brown & Dawit Muluneh with Ekaterina Pukhovaia",
@@ -548,6 +582,7 @@ const MIRACLES_OF_MARY = [
     "title": "The nun who the Virgin Mary encouraged to recite the Hail Mary more slowly because the Virgin Mary enjoyed it",
     "incipit": "ወሀለወት፡ አሐቲ፡ መበለት፡ ውስተ፡ ደብር፡ ዘኮነት፡ ትትለአክ፡ ለእግዝእትነ፡…. ወፈድፋደ፡ ታከብራ፡ ወታበዝኅ፡ ሰላማ፡ ወተኄውጽ፡ አብያተ፡ ክርስቲያናት፡ ዘእግዝእትነ",
     "manuscript_count": 201,
+    "most_read": false,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -560,6 +595,7 @@ const MIRACLES_OF_MARY = [
     "title": "The Composition of the  Wǝddase Maryam",
     "incipit": "ስምዑ፡ አበውየ፡ ወአኀውየ፡ ከመ፡ ንንግርክሙ፡ ተአምረ፡ ዐባየ፡ ዘኮነ፡ ለእግዝእትነ፡…. ዘነገሩ፡ አበው፡ ቅዱሳን፡ ሰማዕትየ፡ እግዚአብሔር፡ ከመ፡ ኢይዌስክ፡ ወኢያነትግ። ይቤሉነ፡ ነበረ፡ በምድረ፡ ሶርያ፡ ብእሲ፡ ለብሓዊ፡ ፈራሄ፡ እግዚአብሔር",
     "manuscript_count": 200,
+    "most_read": false,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -572,6 +608,7 @@ const MIRACLES_OF_MARY = [
     "title": "The Jewish boy who was thrown into the furnace by his father after he received Holy Communion with his Christian companions",
     "incipit": "ይቤ፡ ፩፡ መነኮስ፡ ፈራሄ፡ እግዚአብሔር። ከመ፡ ሀሎ፡ ውስተ፡ ሀገረ፡ ብሎስ፡ ሕፃን፡ እምውስተ፡ አይሁድ፡ እንዘ፡ ይትናገር፡ ምስለ፡ ውሉደ፡ ክርስቲያን። ወኀበ፡ ፩፡ መምህር",
     "manuscript_count": 195,
+    "most_read": true,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -588,6 +625,7 @@ const MIRACLES_OF_MARY = [
     "title": "The pious official who was accused of embezzlement and of having an affair with the wife of his lord",
     "incipit": "ወሀሎ፡ አሐዱ፡ መኰንን፡ በሀገረ፡ ኤፌሶን፡ ዘስሙ፡ አርማትያስ፡ እስመ፡ ሠናይ፡ ብእሲሁ፡ ወፈራሄ፡ እግዚአብሔር፡ ውእቱ፡ ወፈድፋደሰ፡ ያፈቅራ፡ ለእግዝእትነ፡ ማርያም፡ በኵሉ፡ ልቡ፡ ወይትቀነይ፡ ላቲ፡ በኵሉ፡ ኃይሉ። ወሀሎ፡ እግዚአብሔር፡ በረከቶ፡ ይመልእ፡ ውስተ፡ ቤቱ፡ ወይዌስክ፡ ሲሳየ፡ በዲበ፡ ሲሳዩ",
     "manuscript_count": 189,
+    "most_read": false,
     "translations": [
       {
         "author": "Jeremy Brown & Dawit Muluneh with Wendy Laura Belcher",
@@ -600,6 +638,7 @@ const MIRACLES_OF_MARY = [
     "title": "The rich man who angrily threw a loaf of dry bread at a beggar, cutting him, but was saved from hell by the Virgin Mary",
     "incipit": "ወሀሎ፡ አሐዱ፡ ብእሲ፡ ባዕል፡ ጥቀ፡ ወይገብር፡ ተዝካራ፡ ለእግዝእትነ፡…. ወይትቄረብ፡ ቍርባነ፡ በበዓላ፡ ለእግዝእትነ፡…. ወአልቦ፡ ካልዕ፡ ምግባረ፡ ሠናይ፡ ወኢበውሂበ፡ ምጽዋት፡ ወኢበኂሩት፡ ወኢምንተኒ፡ ምግባረ፡ ሠናይ",
     "manuscript_count": 188,
+    "most_read": true,
     "translations": [
       {
         "author": "Jeremy Brown & Dawit Muluneh with Ekaterina Pukhovaia",
@@ -628,6 +667,7 @@ const MIRACLES_OF_MARY = [
     "title": "The poor, pious mower of hay to whom the town's gatekeeper betrothed his daughter",
     "incipit": "ወሀሎ፡ አሐዱ፡ ብእሲ፡ ወሬዛ፡ ዘይነብር፡ ውስተ፡ አሐቲ፡ ሀገር፡ ወሠናይ፡ ውእቱ፡ እምወራዙት፡ ወኄር፡ በፍኖቱ፡ ወንጹሕ፡ ወጽሩይ፡ ወፈራሄ፡ እግዚአብሔር፡ ዘያፈቅር፡ ሠናያተ፡ ወይጸልእ፡ እኩያተ፡ እምንእሱ። ወነዳይ፡ ውእቱ፡ ይበልዕ፡ እምፍሬ፡ ጻማሁ፡ ወኮነ፡ ኵሎ፡ ዕለተ፡ የሐውር፡ ውስተ፡ ገዳም፡ ወይሴጽር፡ ዕፀወ፡ አው፡ የዓጽድ፡ ሣዕረ፡ ወይሠይጦ፡ ውስተ፡ ምሥያት",
     "manuscript_count": 184,
+    "most_read": false,
     "translations": [
       {
         "author": "Ellen Li",
@@ -644,6 +684,7 @@ const MIRACLES_OF_MARY = [
     "title": "Sybil the prophetess saw a vision of the Virgin Mary holding her child within a circle around the sun and the Emperor of Rome erected an altar in his palace",
     "incipit": "ወሀሎ፡ ፩፡ ንጉሥ፡ ዐቢይ፡ ወክቡር፡ ፈድፋደ። ወኀያል፡ በግርማሁ። ወነግሠ፡ ላዕለ፡ ኵሉ፡ ምድር። ወተቀንዩ፡ ሎቱ፡ ኵሉ፡ ሰብእ።",
     "manuscript_count": 183,
+    "most_read": true,
     "translations": [
       {
         "author": "Allie V. Mangel",
@@ -668,6 +709,7 @@ const MIRACLES_OF_MARY = [
     "title": "A man who drowned when a pilgrim ship sank and was delivered unharmed to their destination",
     "incipit": "ወሀለወት፡ አሐቲ፡ ሐመር፡ ዐባይ፡ በውስተ፡ ባሕር፡ ወምሉኣን፡ ሰብእ፡ ውስቴታ፡ ወባዕዳንሰ፡ ነጋድያን፡ ወሊቃውንት፡ እለ፡ ውስተ፡ ሐመር፡ ወምስሌሆሙ፡ ሀለወ፡ ኤጲስ፡ ቆጶስ፡ ፈራሄ፡ እግዚአብሔር",
     "manuscript_count": 182,
+    "most_read": false,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -680,6 +722,7 @@ const MIRACLES_OF_MARY = [
     "title": "A bee keeper who consulted a sorceress to have his bees produce more honey and wax",
     "incipit": "ወሀሎ፡ አሐዱ፡ ብእሲ፡ ሀያብ፡ መዓር፡ ዘይለምድ፡ ንህበ፡ ብዙኃ፡ ረከቦ፡ ፈድፋደ፡ እምኵሉ፡ ሰብእ። ወእምዝ፡ ኄጦ፡ ሰይጣን፡ በምክረ፡ እኩይ፡ ወረሰዮ፡ ይሑር፡ ኀበ፡ ብእሲት፡ አሐቲ፡ መሠሪት",
     "manuscript_count": 182,
+    "most_read": true,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -692,6 +735,7 @@ const MIRACLES_OF_MARY = [
     "title": "Pilgrim to Santiago: Part 1: The bishop for whom the Virgin Mary tailored a new sackcloth sends a penitent pilgrim to Santiago (whole or opening)",
     "incipit": "ወሀሎ፡ ፩፡ ኤጲስ፡ ቆጶስ፡ ሐራ፡ በኵሉ፡ ግብሩ፡ ወኢያደሉ፡ በመዋዕለ፡ ሢመቱ።",
     "manuscript_count": 181,
+    "most_read": false,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -704,6 +748,7 @@ const MIRACLES_OF_MARY = [
     "title": "The pilgrim [to Santiago] whom Satan persuaded to mutilate himself after falling into a sexual sin",
     "incipit": "ወሀሎ፡ አሐዱ፡ መነኮስ፡ ዘይፈርሆ፡ ለእግዚአብሔር፡ ወበኵሉ፡ ግብር፡ ሠናይ፡ ግዕዙ፡ ወመሥመሬ፡ አኃው፡ ውእቱ። ወአሐተ፡ ዕለተ፡ ረከቦ፡ ድቀተ፡ ሥጋ፡ ዘአምጽአ፡ ሎቱ፡ ጸላኢ፡ ርእዮ፡ ትግሀታቲሁ",
     "manuscript_count": 180,
+    "most_read": true,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -716,6 +761,7 @@ const MIRACLES_OF_MARY = [
     "title": "The Jew who stabbed the icon of the Virgin Mary when he failed to obtain someone else's property through a lawsuit",
     "incipit": "ተብህለ፡፡ ከመ፡፡ ሀሎ፡ አሐዱ፡ ብእሲ፡ መስተቃሕው፡ አይሁዳዊ፡ ወበአሐቲ፡ ዕለት፡ ተቀሐወ፡ ምስለ፡ አሐዱ፡ ብእሲ፡ ወተመውአ፡ ውእቱ፡ አይሁዳዊ፡ ወፈደየ፡ ንዋየ፡ ብዙኃ፡ ለውእቱ፡ ብእሲ፡ ዘተቀሐወ፡ ምስሌሁ",
     "manuscript_count": 178,
+    "most_read": false,
     "translations": [
       {
         "author": "Ellen Li",
@@ -732,6 +778,7 @@ const MIRACLES_OF_MARY = [
     "title": "The peasant who became rich by seizing his neighbors' land and crops and is rescued from going to hell by the Virgin Mary",
     "incipit": "ወሀሎ፡ አሐዱ፡ ብእሲ፡ ገብር፡ ባዕል፡ ውእቱ፡ በንዋይ፡ ወባሕቱ፡ ብዕሉሰ፡ ኮነ፡ እምንዋየ፡ ዓመፃ፡ እስመ፡ ኮነ፡ የሃይድ፡ ንዋየ፡ አግዋሪሁ",
     "manuscript_count": 173,
+    "most_read": false,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -744,6 +791,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book [very old, after Mary] of Nagara??? Maryam: Journey: Thieves at the Spring: Part 4: The Virgin Mary saves the soul of a thief who was slain by the miraculous spring",
     "incipit": "ወእምድኅረ፡ አዕረፈት፡ እግዝእትነ፡ ማርያም፡ መጽአ፡ ካልእ፡ ፋያታይ፡ ኀበ፡ ውእቱ፡ ማይ፡ ዘነቅዓ፡ እምታሕተ፡ እግራ፡ ለማርያም፡ ውዒሎ፡ ኀበ፡ ቀቲለ፡ ነፍስ",
     "manuscript_count": 169,
+    "most_read": false,
     "translations": [
       {
         "author": "Jeremy Brown with Ekaterina Pukhovaia",
@@ -764,6 +812,7 @@ const MIRACLES_OF_MARY = [
     "title": "The sinful woman who despaired when she kept on sinning and swallowed a tarantula as an attempt to die",
     "incipit": "ወሀለወት፡ አሐቲ፡ ብእሲት፡ ኃጥእት፡ ዘገብረት፡ ኀጣውኣ፡ ዐበይተ፡ ወእምኵሉ፡ ዘየዐቢ፡ ጌጋያ፡ ትኔሥሕ፡ ወተመዪጣ፡ ትገብእ፡ ኀበ፡ ዘቀዳሚ፡ ምግባራ",
     "manuscript_count": 169,
+    "most_read": true,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -776,6 +825,7 @@ const MIRACLES_OF_MARY = [
     "title": "The physican monk who suspected that the food the monks ate was harmful, but then saw the Virgin Mary making it safe and tasty for them",
     "incipit": "ወሀሎ፡ አሐዱ፡ ጠቢብ፡ ዘስሙ፡ ሲላን፡ በደብረ፡ ኢቆንዮን፡ ወመንኰሰ፡ ውስተ፡ አሐቲ፡ ደብር። ወሶበ፡ ርእየ፡ ሲሳዮሙ፡ ለቅዱሳን፡ ዘይበልዑ፡ ሐለየ፡ በልቡ",
     "manuscript_count": 166,
+    "most_read": false,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -788,6 +838,7 @@ const MIRACLES_OF_MARY = [
     "title": "A monk without food or clothes received a garment from the Virgin Mary",
     "incipit": "ተብህለ፡ ከመ፡ ሀሎ፡ አሐዱ፡ መነኮስ፡ ነዳይ፡ ወአልቦቱ፡ አልባሰ፡ ወአራዘ፡ ወሲሳየ፡ ወይትአምና፡ ለእግዝእትነ፡…. ወይቤለ፡ አዝዚ፡ ዘእለብስ፡ ወዘእበልዕ",
     "manuscript_count": 166,
+    "most_read": false,
     "translations": [
       {
         "author": "Getatchew Haile",
@@ -816,6 +867,7 @@ const MIRACLES_OF_MARY = [
     "title": "Desert Fathers Appear to Monks",
     "incipit": "ወሀለዉ፡ በገዳመ፡ አስቄጥስ፡ ብዙኃን፡ ሕሙማን፡ እምአበው፡ ቅዱሳን",
     "manuscript_count": 165,
+    "most_read": false,
     "translations": [
       {
         "author": "Jeremy Brown with Ekaterina Pukhovaia",
@@ -832,6 +884,7 @@ const MIRACLES_OF_MARY = [
     "title": "A woman from Cairo whose nine children all died but the Virgin Mary helped her conceive three more.",
     "incipit": "ወሀለወት፡ አሐቲ፡ ብእሲት፡ በደወለ፡ ቃሕራ፡ ወወለደት፡ ፱፡ ውሉደ፡ ወሞቱ፡ ኵሎሙ",
     "manuscript_count": 164,
+    "most_read": false,
     "translations": [
       {
         "author": "Grace Matthews",
@@ -848,6 +901,7 @@ const MIRACLES_OF_MARY = [
     "title": "The Jew of Constantinople who threw an icon of the Virgin Mary into a pit toliet and was taken to hell by a demon",
     "incipit": "ወሀሎ፡ አሐዱ፡ ብእሲ፡ አይሁዳዊ፡ በውስተ፡ ሀገረ፡ ቍስጥንጥንያ፡ ሀገረ፡ ንጉሥ፡ ወቦቱ፡ ፍቁረ፡ ብእሲ፡ ክርስቲያናዊ፡ ወያፈቅሮ፡ ፈድፋደ። ወኮነ፡ ውእቱ፡ አይሁዳዊ፡ ይጸልእ፡ ሃይማኖተ፡ ክርስቲያን፡ ወይጸርፍ፡ ላዕሌሆሙ፡ በነገረ፡ እኩይ",
     "manuscript_count": 163,
+    "most_read": true,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -860,6 +914,7 @@ const MIRACLES_OF_MARY = [
     "title": "A herder saves his sheep and cattle during a storm by praying to the Virgin Mary",
     "incipit": "ወሀሎ፡ አሐዱ፡ ብእሲ፡ ኖላዊ፡ ዘይሬኢ፡ አልህምተ፡ ወእንስሳ፡ ወኮነ፡ ብእሲ፡ የዋህ፡ ዘያፈቅራ፡ ለእግዝእትነ፡…. በልቡ፡ ወኮነ፡ ይትለአክ፡ ወይቀውም፡ ቅድሜሃ፡ ውስተ፡ ኵሉ፡ መካን፡ ወኢያጸርዕ፡ ሰላመ፡ መልአክ፡ ዛቲ፡ ወኮነ፡ ዝንቱ፡ ሰላም፡ ውስተ፡ አፉሁ፡ መዐልተ፡ ወሌሊተ፡ በሑረቱ፡ ወበግብአቱ፡ በንብረቱ፡ ወበተንሥኦቱ። ወአመ፡ በዐላ፡ ለእግዝእትነ፡…. ተንሥአ፡ አውሎ፡ ወበረድ፡ በይእቲ፡ ሌሊት፡ ወሐለየ፡ ውእቱ፡ ብእሲ፡ ከመ፡ ይመውቱ፡ እንስሳሁ፡ በይእቲ፡ ሌሊት",
     "manuscript_count": 161,
+    "most_read": true,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -872,6 +927,7 @@ const MIRACLES_OF_MARY = [
     "title": "The faded icon of the Virgin Mary that the mother-in-law wanted to discard.",
     "incipit": "ወሀለወት፡ አሐቲ፡ ብእሲት፡ ምስለ፡ ሐማታ፡ ዘታፈቅራ፡ ለእግዝእትነ፡ ማርያም፡ ወሥዕላ፡ ለእግዝእትነ፡ ማርያም፡ ሀሎ፡ ኀቤሃ፡ ወትትአመን፡ ባ",
     "manuscript_count": 160,
+    "most_read": false,
     "translations": [
       {
         "author": "Jeremy Brown & Dawit Muluneh with Wendy Laura Belcher",
@@ -892,6 +948,7 @@ const MIRACLES_OF_MARY = [
     "title": "A wealthy knight who squandered his wealth and denied Christ at the bidding of Satan, in order to have fine clothes for a reception, but refused to deny the Virgin Mary",
     "incipit": "ወሀሎ፡ አሐዱ፡ ብእሲ፡ ፈረሳዊ፡ ዘይትለአካ፡ ለእግዝእትነ፡ ቅድስት፡ በኵሉ፡ ወኮነ፡ ወትረ፡ ይሳለማ፡ በፍርሃተ፡ ልብ። ወባሕቱ፡ አኃዘ፡ ውእቱ፡ ፈረሳዊ፡ ይዝሩ፡ ንዋቶ፡ በከንቱ፡ ወእምዝ፡ ኃልቀ፡ ንዋዩ",
     "manuscript_count": 159,
+    "most_read": false,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -904,6 +961,7 @@ const MIRACLES_OF_MARY = [
     "title": "The rich merchant from Constantinople who lost all his money and made the icon of the Virgin Mary his collatoral when he borrowed money",
     "incipit": "ወነበረ፡ ውስተ፡ ሀገረ፡ ቍስጥንጥንያ፡ ብእሲ፡ ዘስሙ፡ አቦሊ፡ እስመ፡ ባዕል፡ ወነጋዲ፡ ውእቱ፡ ወጥቀ፡ ሀለዎ፡ ፍቁር፡ ወዓርክ፡ ምእመን፡ እምሰብአ፡ ሮሜ፡ እምዘመደ፡ መንግሥት፡ ብእሲሁ፡ ዘስሙ፡ በጊዶ",
     "manuscript_count": 156,
+    "most_read": true,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -920,6 +978,7 @@ const MIRACLES_OF_MARY = [
     "title": "King Sought For",
     "incipit": "ወሀሎ፡ አሐዱ፡ ሊቀ፡ ጳጳሳት፡ ዘስሙ፡ ዲዮናስዮስ፡ በሀገረ፡ ሮምያ፡ ወሶበ፡ ኃጥእዎ፡ ሕዝብ፡ ለብፁዕ፡ ማርቆስ፡ ውስተ፡ ቤተ፡ መንግሥቱ፡ ሖሩ፡ ኀበ፡ ሊቀ፡ ጳጳሳት",
     "manuscript_count": 155,
+    "most_read": false,
     "translations": [
       {
         "author": "Allie V. Mangel",
@@ -936,6 +995,7 @@ const MIRACLES_OF_MARY = [
     "title": "The nun who used to pray for the dead lost her virginity but died before completing her penance and the Virgin Mary delivered her from hell",
     "incipit": "ወሀለወት፡ አሐቲ፡ መበለት፡ ውስተ፡ ደብር፡ ወትትለአካ፡ ለእግዝእትነ፡…. ወታከብራ፡ ወታፈቅራ፡ በኵሉ፡ ልባ። ወኮነት፡ ይእቲ፡ መበለት፡ የዋሂተ፡ ወትጸውም፡ ወትጼሊ፡ ወበተፍጻሚተ፡ ጸሎታ፡ ትጼሊ፡ ጸሎተ፡ ምውታን",
     "manuscript_count": 155,
+    "most_read": false,
     "translations": [
       {
         "author": "Ellen Li",
@@ -952,6 +1012,7 @@ const MIRACLES_OF_MARY = [
     "title": "The noblewoman who was persuaded by her priest to give away her fine clothes",
     "incipit": "ወሀለወት፡ አሐቲ፡ ብእሲት፡ ዘስማ፡ ሶፍያ፡ ክብርት፡ ዘትነብር፡ ውስተ፡ ደሴት፡ ማእከለ፡ ባሕር፡ ዘሰመናዊ፡ ወይእቲ፡ እምዐበይተ፡ ሀገር፡ ወለተ፡ ክቡራነ፡ ዘመድ፡ እምድቂቀ፡ እስራኤል፡ አቡሃ፡ ወእማ፡ እምቤተ፡ አሮን",
     "manuscript_count": 154,
+    "most_read": true,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -964,6 +1025,7 @@ const MIRACLES_OF_MARY = [
     "title": "The Winged Maiden",
     "incipit": "ወሀሎ፡ አሐዱ፡ ብእሲ፡ ቀሲስ፡ በደብረ፡ አባ፡ መቃርስ፡ ዘስሙ፡ ዮሐንስ፡ ወዘልፈ፡ ታስተርእዮ፡ እግዝእትነ",
     "manuscript_count": 153,
+    "most_read": false,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -976,6 +1038,7 @@ const MIRACLES_OF_MARY = [
     "title": "King Abandons Throne",
     "incipit": "ወሀሎ፡ አሐዱ፡ ብእሲ፡ ዘስሙ፡ ማርቆስ፡ ዘነግሠ፡ በሮምያ፡ እምድኅረ፡ ሞተ፡ አቡሁ፡ ንጉሥ፡ ዘስሙ፡ ገብረ፡ ኢየሱስ",
     "manuscript_count": 153,
+    "most_read": true,
     "translations": [
       {
         "author": "Wendy Laura Belcher",
@@ -1000,6 +1063,7 @@ const MIRACLES_OF_MARY = [
     "title": "Church Turns into Ship",
     "incipit": "ስምዑ፡ አበውየ፡ ወአኃውየ፡ ዘንተ፡ ምሥጢረ፡ መንክረ፡ ወመድምመ፡ ዘነገሩነ፡ አበዊነ፡ ቅዱሳን፡ ዘረከብዎ፡ ጽሑፈ፡ ውስተ፡ መጻሕፍት፡ ቅዱሳት። ወይቤሉ፡ አመ፡ ይመጽእ፡ እግዚእነ፡ በዳግም፡ ምጽኣቱ",
     "manuscript_count": 150,
+    "most_read": false,
     "translations": [
       {
         "author": "Jeremy Brown & Dawit Muluneh with Ekaterina Pukhovaia",
@@ -1020,6 +1084,7 @@ const MIRACLES_OF_MARY = [
     "title": "A husband broke his vow to live celibately with his wife and the wife cursed him by saying any resulting child would belong to Satan",
     "incipit": "ወነበረ፡ አሐዱ፡ ብእሲ፡ ክቡር፡ ወቡሩክ፡ ዘይፈርሆ፡ ለእግዚአብሔር፡ ዘስሙ፡ ሰርጊዮስ፡ ወሀለወት፡ ብእሲቱ፡ ቡርክት፡ ወቅድስት፡ ዘስማ፡ አብርስቂላ። ወተካየዱ፡ ክልኤሆሙ፡ ብእሲ፡ ምስለ፡ ብእሲቱ፡ ወበጽኡ፡ ርእሶሙ፡ ከመ፡ ይንበሩ፡ በንጽሕ",
     "manuscript_count": 148,
+    "most_read": true,
     "translations": [
       {
         "author": "Jeremy Brown with Ekaterina Pukhovaia",
@@ -1036,6 +1101,7 @@ const MIRACLES_OF_MARY = [
     "title": "The hypocritical superior of a monastery who pretended to be religious and is rescued from hell by the Virgin Mary",
     "incipit": "ወሀሎ፡ ውስተ፡ አሐቲ፡ ሀገር፡ አሐዱ፡ ደብር፡ ዘመነኮሳት፡ ውስተ፡ ውእቱ፡ ደብር፡ ሊቅ፡ ዘእኩይ፡ ግብሩ፡ ወያፈቅር፡ ነገረ፡ ከንቶ፡ ወይትፈጋዕ፡ በሠናይ፡ መባልዕት፡ ወኵሉ፡ ዘርእዮ፡ የአምር፡ እምአርአያሁ፡ ከመ፡ እኩይ፡ ብእሲ፡ ውእቱ",
     "manuscript_count": 147,
+    "most_read": false,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -1048,6 +1114,7 @@ const MIRACLES_OF_MARY = [
     "title": "A monk who was custodian of a church near a river and, when tried to cross it to visit his lover, drowned",
     "incipit": "ወሀሎ፡ አሐዱ፡ መነኮስ፡ ዘሥዩም፡ ውስተ፡ ደብር፡ ጥቀ፡ ፈለግ፡ ውእቱ፡ ደብር፡ ወዓቃቢሃ፡ ወመጋቢሃ፡ ውእቱ፡ ፡ መነኮስ፡ ዘቤተ፡ ክርስቲያን፡ ወኮነ፡ ሶበ፡ ይበውእ፡ ቅድመ፡ ሥዕላ፡ ለእግዝእትነ፡…. ይብል፡ ሰላማ፡ ዘውእቱ፡ ሰላመ፡ መልአክ፡ ላዕሌሃ። ኮነ፡ ውእቱ፡ መነኮስ፡ ያፈቅራ፡ ለአሐቲ፡ ብእሲት፡ ወይእቲ፡ ትነብር፡ ማዕዶተ፡ ፈለግ",
     "manuscript_count": 147,
+    "most_read": false,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -1060,6 +1127,7 @@ const MIRACLES_OF_MARY = [
     "title": "The shepherd near Saint Paul's Church in Rome who was possessed by a demon",
     "incipit": "ተብህለ፡ በእንተ፡ አኃው፡ ክርስቲያን፡ እንዘ፡ የሐውሩ፡ ኀበ፡ ሀገረ፡ ሮሜ፡ ወረከቡ፡ በህየ፡ ቤተ፡ ክርስቲያነ፡ በስሙ፡ ለቅዱስ፡ ሐዋርያ፡ ጳውሎስ፡ ዘተሐንጸት፡ በስመ፡ ዚአሁ",
     "manuscript_count": 145,
+    "most_read": true,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -1076,6 +1144,7 @@ const MIRACLES_OF_MARY = [
     "title": "A stream runs uphill after its neighbor had diverted it.",
     "incipit": "ተብህለ፡ ከመ፡ ሀሎ፡ አሐዱ፡ ብእሲ፡ ሐፃቤ፡ አልባስ፡ ወእንዘ፡ የሐፅብ፡ ልብሰ፡ መጽአ፡ አሐዱ፡ ብእሲ፡ ወሜጠ፡ ማየ፡ እንተ፡ ካልእ፡ ፍኖት",
     "manuscript_count": 142,
+    "most_read": false,
     "translations": [
       {
         "author": "Rowan Williams",
@@ -1088,6 +1157,7 @@ const MIRACLES_OF_MARY = [
     "title": "Atrib's Virgin Mary Church and the monk who saved it with his prayers when its destruction had been ordered by the Caliph.",
     "incipit": "ንወጥን፡ በረድኤተ፡ እግዚአብሔር፡ ወበአኰቴተ፡ ስብሐቲሁ፡ ወንዜንወክሙ፡ ኦአኃው፡ ፍቁራን፡ ሕዝበ፡ ክርስቲያን፡ ዘንተ፡ ዐቢየ፡ ተአምረ፡ ወመንክረ፡ ዘገብረት፡ እግዝእትነ፡…. በሀገረ፡ አትሪብ ። ወሀሎ፡ ንጉሥ፡ በውእቱ፡ መዋዕል፡ ዘስሙ፡ ከሊፋ፡ ወዝብሂል፡ ዘነግሠ፡ እምድኅረ፡ አቡሁ፡ ረስዲድ፡ ወትርጓሜሁ፡ ድሩክ፡ ብእሲ፡ ብሂል። ወኮነ፡ እምቅድመ፡ ይትወፈይ፡ መንግሥተ፡ ይትቃወሞሙ፡ ለክርስቲያን፡ ወይሰድዶሙ፡ ወይደቢ፡ አብያተ፡ ክርስቲያናት",
     "manuscript_count": 141,
+    "most_read": true,
     "translations": [
       {
         "author": "Allie V. Mangel",
@@ -1104,6 +1174,7 @@ const MIRACLES_OF_MARY = [
     "title": "Monastery Cistern Filled",
     "incipit": "ወሀሎ፡ ውስተ፡ ዝንቱ፡ ደብር፡ ቅዱስ፡ ደብረ፡ ምጥማቅ፡ ቤተ፡ ክርስቲያን፡ ዘሕንጽት፡ በስመ፡ እግዝእትነ፡…. ዔላ፡ ዘውእቱ፡ ምዕላደ፡ ማይ",
     "manuscript_count": 139,
+    "most_read": true,
     "translations": [
       {
         "author": "Rowan Williams",
@@ -1120,6 +1191,7 @@ const MIRACLES_OF_MARY = [
     "title": "The knight who plotted to seduce the cobbler's daughter, who had pledged her virginity to the Virgin Mary",
     "incipit": "ወሀሎ፡ አሐዱ፡ ብእሲ፡ በሀገረ፡ ደማስቆ፡ ዘስሙ፡ ኤጲፋንዮስ፡ ሰፋዬ፡ አሣዕን፡ ወሀለወቶ፡ ወለት፡ ሠናይት፡ ስነ፡ ላሕያ፡ ዘወሀቦ፡ እግዚአብሔር፡ ኪያሃ",
     "manuscript_count": 139,
+    "most_read": true,
     "translations": [
       {
         "author": "Ellen Li",
@@ -1136,6 +1208,7 @@ const MIRACLES_OF_MARY = [
     "title": "Life of Mary: Plot to Burn Mary",
     "incipit": "ወኮነ፡ ሶበ፡ ጥዕመት፡ ሞተ፡ እግዝእትነ፡ ማርያም፡ አመ፡ ፳ወ፩፡ ለጥር፡ ተማከሩ፡ አይሁድ፡ እንዝ፡ ይብሉ፡ ሚንገብር፡ ሐዘነ፡ ሞት፡ ወረደ፡ ላዕሌነ፡ በእንተ፡ ኢየሱስ",
     "manuscript_count": 138,
+    "most_read": true,
     "translations": [
       {
         "author": "Ellen Li",
@@ -1148,6 +1221,7 @@ const MIRACLES_OF_MARY = [
     "title": "A merchant who distributed as alms the money that had been loaned to him by a friend after the merchant gave away all his wealth to the poor",
     "incipit": "ወነበረ፡ አሐዱ፡ ብእሲ፡ ባዕል፡ ወነጋዲ፡ ዘስሙ፡ ፊልጶስ፡ ዘሀገረ፡ ኒቆንያ፡ ወቦቱ፡ ምግባረ፡ ሠናይ፡ ወይምሕክ፡ ነዳያነ፡ በውሂበ፡ ምጽዋት፡ ብዙኅ። ወአሐተ፡ ዕለተ፡ ሐለየ፡ በልቡ፡ እንዘ፡ ይብል፡ እስመ፡ ሊተ፡ ብዙኅ፡ ንዋይ፡ ወብየ፡ ብዙኅ፡ ወርቅ፡ ወብሩር፡ ወእፈቅድ፡ አሃብ፡ ለነዳያን፡ ወለምስኪናን፡ እምቅድመ፡ እሙት",
     "manuscript_count": 138,
+    "most_read": true,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -1164,6 +1238,7 @@ const MIRACLES_OF_MARY = [
     "title": "A ship in a storm was about to founder when it was saved by the passengers praying to the Virgin Mary",
     "incipit": "ወሀለወት፡ አሐቲ፡ ሐመር፡ ዘተሐውር፡ ማእከለ፡ ባሕር፡ ወእንዘ፡ ተሐውር፡ ውስተ፡ ባሕር፡ ጸልመ፡ ላዕሌሃ፡ መዓልት፡ ወጸንዐ፡ ነፋስ፡ ወተቈጠ፡ ባሕር",
     "manuscript_count": 137,
+    "most_read": false,
     "translations": [
       {
         "author": "Jeremy Brown & Dawit Muluneh with Ekaterina Pukhovaia",
@@ -1180,6 +1255,7 @@ const MIRACLES_OF_MARY = [
     "title": "The daughter of the rich man from Caesarea who could not deliver her baby and almost died until taken to the church of the Virgin Mary",
     "incipit": "ወሀለወት፡ አሐቲ፡ ብእሲት፡ እምዐባይተ፡ ሀገረ፡ ቂሳርያ፡ ወኮነ፡ አቡሃ፡ ባዕለ፡ በሕቁ፡ በወርቅ፡ ወበብሩር፡ ወበንዋየ፡ ዝንቱ፡ ዓለም፡ ኃላፊት",
     "manuscript_count": 134,
+    "most_read": false,
     "translations": [
       {
         "author": "Jeremy Brown & Dawit Muluneh with Wendy Laura Belcher",
@@ -1208,6 +1284,7 @@ const MIRACLES_OF_MARY = [
     "title": "A woman from Rome whose daughter returns to life for a day on the anniversary of her death",
     "incipit": "ወኮነ፡ ልማዶሙ፡ ለሰብአ፡ ሮሜ፡ አመ፡ በዓለ፡ ዕረፍታ፡ ለእግዝእትነ፡…. ይመጽኡ፡ እምለፌ፡ ወእምለፌ፡ እምምሥራቅ፡ ወእምምዕራብ፡ ወይትጋብኡ፡ ውስተ፡ ቤተ፡ ክርስቲያነ፡ እግዝእትነ፡ ማርያም",
     "manuscript_count": 134,
+    "most_read": false,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -1220,6 +1297,7 @@ const MIRACLES_OF_MARY = [
     "title": "A nun eloped with a priest and they were married for four years but then they repented",
     "incipit": "ወሀሎ፡ ደሴት፡ መንገለ፡ ባሕረ፡ ኢያሪኮ፡ ወሀለዋ፡ ህየ፡ ብዙኃት፡ መነኮሳይያት። ወእምኔሆን፡ አሐቲ፡ መበለት፡ ፈራሂተ፡ እግዚአብሔር፡ ወትትቀነይ፡ ለቤተ፡ ክርስቲያነ፡ እግዝእትነ፡…. ወትትለአክ፡ በእንተ፡ ምጽዋት፡ ወቍርባን፡ ወወይን፡ ወዕጣን፡ ወጽንሓሕ",
     "manuscript_count": 134,
+    "most_read": true,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -1232,6 +1310,7 @@ const MIRACLES_OF_MARY = [
     "title": "Atrib Feast-Goers Saved",
     "incipit": "ወኮነ፡ በአሐዱ፡ እምመዋዕል፡ እንዘ፡ ይገብሩ፡ በዐላ፡ ለእግዝእትነ፡…. በሀገረ፡ አትሪብ፡ አመ፡ ፳፡ ወ፩፡ ለውርኀ፡ ሰኔ፡ ቅዳሴ፡ ቤተ፡ ክርስቲያና፡ ቅድስት፡ በሀገረ፡ ፊልጵኢስ",
     "manuscript_count": 131,
+    "most_read": true,
     "translations": [
       {
         "author": "Jeremy Brown with Ekaterina Pukhovaia",
@@ -1248,6 +1327,7 @@ const MIRACLES_OF_MARY = [
     "title": "Life of Mary: Jesus and Spring",
     "incipit": "ተአምሪሃ፡ ለእግዝእትነ፡…. ዘገብረቶ፡ ምስለ፡ ፍቁር፡ ወልዳ፡ አመ፡ ፰፡ ለወርኀ፡ ሰኔ፡ ውስተ፡ ቤተ፡ ምሕፃብ፡ ዘዕውቅት፡ ኀበ፡ መቅዐ፡ ማይ፡ ቡሩክ፡ ዘነቅዓ፡ እግዚእነ፡ ኢየሱስ፡ ክርስቶስ",
     "manuscript_count": 130,
+    "most_read": true,
     "translations": [
       {
         "author": "Jeremy Brown & Dawit Muluneh with Wendy Laura Belcher and Ekaterina Pukhovaia",
@@ -1260,6 +1340,7 @@ const MIRACLES_OF_MARY = [
     "title": "The Jewish boy and cowherd who was thrown into the furnace by his father after he was baptized by his Christian companions",
     "incipit": "ወሀሎ፡ አይሁዳዊ፡ ዘቦቱ፡ መራዕየ፡ አልህምት፡ ወቦቱ፡ አሐዱ፡ ወልደ፡ ዘይሬኢ፡ አልህምተ፡ አቡሁ፡ አፍአ፡ እምሀገር፡ ምስለ፡ ደቂቀ፡ ክርስቲያን። ወበአሐቲ፡ እምመዋዕል፡ ተጋብኡ፡ እሉ፡ ኖሎት፡ ከመ፡ ይብልዑ፡ ኅብስተ",
     "manuscript_count": 126,
+    "most_read": true,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -1272,6 +1353,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Ledata la-Maryam??: OldA: Part 01: Conception: The Virgin Mary is conceived and born (whole or opening)",
     "incipit": "ንነግረክሙ፡ አበዊነ፡ ቅዱሳን፡ ወአኀዊነ፡ ፍቁራን፡ ውሉደ፡ ቤተ፡ ክርስቲያን፡ እግዚአብሔር፡ ይባርክሙ፡ ወያበርህ፡ አዕይንተ፡ አልባቢክሙ፡ ለሰሚዐ፡ ተአምሪሃ፡ ለእግዝእትነ፡ ማርያም፡ ዘያስተፌሥሕ፡ አልባበ፡ ወይመርህ፡ ውስተ፡ መንግሥተ፡ ሰማያት። ሚመጠነ፡ ተአምረ፡ ገብረት፡ በእደዊሆሙ፡ ለአበው፡ ቀደምት፡ ተአምረ፡ ወመንክረ፡ ዘአልቦ፡ ኍልቈ። መቅድመ፡ ኵሉ፡ ንነግረክሙ፡ ሕይወታ፡ ወንጽሕናሃ፡ እስመ፡ ኀረያ፡ እግዚአብሔር፡ እምቀዳሚ። ወሀሎ፡ አሐዱ፡ ብእሲ፡ እምዘመደ፡ ካህናት፡ ዘይሰመይ፡ ኢያቄም፡ ወአውሰበ፡ ብእሲተ፡ እምአዋልደ፡ ይሁዳ፡ ወትሰመይ፡ ሐና",
     "manuscript_count": 126,
+    "most_read": true,
     "translations": [
       {
         "author": "",
@@ -1304,6 +1386,7 @@ const MIRACLES_OF_MARY = [
     "title": "A priest who was warned not to rush when incensing the icon of the Virgin Mary; the patrariach who received miraculous baptismal water; and Hilaria the daughter of Emperor Zeno who became a nun in Scete",
     "incipit": "ወኮነ፡ በአሐቲ፡ ዕለት፡ እንዘ፡ የዐውድ፡ ካህን፡ ወእንዘ፡ የዐጥን፡ ቤተ፡ ክርስቲያነ፡ ወበጽሐ፡ ኀበ፡ ሀለወ፡ ሥዕለ፡ እግዝእትነ",
     "manuscript_count": 125,
+    "most_read": false,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -1316,6 +1399,7 @@ const MIRACLES_OF_MARY = [
     "title": "A greedy priest ignored a pious dying woman to visit a dying man, a lover of bribes, and gain his wealth",
     "incipit": "ወሀሎ፡ አሐዱ፡ ቀሲስ፡ ውስተ፡ አሐቲ፡ ሀገር፡ እምብሔረ፡ ግብጽ፡ ዘያፈቅር፡ ንዋየ። ወሀሎ፡ ካዕበ፡ ካልእ፡ ብእሲ፡ ዘያፈቅር፡ ሕልያነ፡ ሐመ፡ ዐቢየ፡ ሕማመ",
     "manuscript_count": 125,
+    "most_read": true,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -1328,6 +1412,7 @@ const MIRACLES_OF_MARY = [
     "title": "A monk who got himself appointed by the king to be abbot when the abbot died, angering the monks, and then he himself died",
     "incipit": "ወሀሎ፡ ውስተ፡ አሐቲ፡ ሀገር፡ አሐዱ፡ ደብር፡ ዘአዕረፈ፡ ሊቁ። ወጥቀ፡ ውእቱ፡ ደብር፡ ሀሎ፡ አሐዱ፡ ደብር፡ ዘቦቱ፡ ሊቅ፡ ወኮነ፡ ውስቴቱ፡ አሐዱ፡ ብእሲ፡ ክቡር፡ ዘይፈቅድ፡ ይሠየም፡ ህየንተ፡ ውእቱ፡ ዘሞተ",
     "manuscript_count": 124,
+    "most_read": false,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -1344,6 +1429,7 @@ const MIRACLES_OF_MARY = [
     "title": "Cupbearer of the French King",
     "incipit": "ወሀሎ፡ አሐዱ፡ ብእሲ፡ ዘያፈቅራ፡ ለእግዝእትነ፡… ሊቀ፡ ጸውርተ፡ ሜስ፡ ዘንጉሠ፡ አፍራንሳ፡ እስመ፡ ልማዶሙ፡ ውእቱ፡ አሐዱ፡ ዘየማን፡ ወአሐዱ፡ ዘፀጋም",
     "manuscript_count": 123,
+    "most_read": true,
     "translations": [
       {
         "author": "Jeremy Brown & Dawit Muluneh with Ekaterina Pukhovaia",
@@ -1360,6 +1446,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Felsata la-Maryam??: AOld?: Dormition: Bier: When Tafoneya lays hands on the bier of The Virgin Mary, an angel cuts his arms off.",
     "incipit": "ወሶበ፡ ተጋብኡ፡ ሐዋርያት፡ ለግንዘተ፡ እሙ፡ ወረከብዋ፡ ለማርያም፡ በክብር፡ ወበዐቢይ፡ ስብሐት",
     "manuscript_count": 123,
+    "most_read": true,
     "translations": [
       {
         "author": "Jeremy Brown & Dawit Muluneh with Wendy Laura Belcher and Blaine Kebede",
@@ -1380,6 +1467,7 @@ const MIRACLES_OF_MARY = [
     "title": "A good king's only son who dedicated himself to the Virgin Mary and fled so that he would not have to get married",
     "incipit": "ወሀሎ፡ አሐዱ፡ ንጉሥ፡ ዘይነብር፡ ውስተ፡ ባሕር፡ ዘክቡር፡ እምነገሥት፡ ወአልቦ፡ ዘእንበለ፡ አሐዱ፡ ውሉድ፡ ወቡሩክ፡ ወሠናይ፡ ውእቱ፡ ወልድ፡ ወፈራሄ፡ እግዚአብሔር",
     "manuscript_count": 122,
+    "most_read": true,
     "translations": [
       {
         "author": "Jeremy Brown & Dawit Muluneh with Ekaterina Pukhovaia",
@@ -1392,6 +1480,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Nagara Maryam??: OldF: Part 05: Journey: The Holy Family hides from thieves in a sycamore tree at Dabra Metmaq. (321, 322, 325, 431 similar)",
     "incipit": "ተብህለ፡ በእንተ፡ እለ፡ መጽኡ፡ እኩያን፡ ፈያት፡ ከመ፡ ይንሥኡ፡ ንዋያ፡ ለእግዝእትነ፡…. ወበእንተ፡ ኦመ፡ ሰግላ፡ ክልኤ፡ ክፍለ። ወእንዘ፡ ትጐይይ፡ እግዝእትነ፡ ማርያም፡ ዘምስለ፡ ሕፃና፡ ኢየሱስ፡ ክርስቶስ፡ ዮሴፍ፡ ወሰሎሜ፡ ምስሌሃ፡ እምነ፡ መዐቱ፡ ለሄሮድስ፡ ዕልው፡ ወእንዘ፡ ትፈልስ፡ እምሀገር፡ ውስተ፡ ሀገር፡ ሶበ፡ ብጽሐት፡ ውስተ፡ አድያማተ፡ ደብረ፡ ምጥማቅ፡ ወአድግኒ፡ አሐዱ፡ ጽዑን፡ ስንቀ፡ ዚአሃ፡ ወነጸርዋ፡ እኩያን፡ ፈያት",
     "manuscript_count": 122,
+    "most_read": false,
     "translations": [
       {
         "author": "Rowan Williams",
@@ -1404,6 +1493,7 @@ const MIRACLES_OF_MARY = [
     "title": "Pachomius, the greedy bishop of Saint Peter's Church in Rome, who sold the church's annointing oil",
     "incipit": "ወነበረ፡ በሀገረ፡ ሮሜ፡ ሊቀ፡ ጳጳሳት፡ ዲበ፡ መንበረ፡ ጴጥሮስ፡ ዘስሙ፡ ፓኵሚስ፡ እስመ፡ መፍቀሬ፡ ንዋይ፡ ውእቱ፡ ወይነሥእ፡ ንዋየ፡ ቤተ፡ ክርስቲያን፡ ለመፍቅዱ፡ ወለጻሕቁ፡ ወእምብዝኃ፡ ድፍረቱ፡ ነሥአ፡ ሜሮነ፡ እምቤተ፡ ክርስቲያን፡ ወሤጦ፡ ለንዋይ",
     "manuscript_count": 121,
+    "most_read": false,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -1420,6 +1510,7 @@ const MIRACLES_OF_MARY = [
     "title": "A monk, the church custodian, who prayed to see the Virgin Mary and did",
     "incipit": "ወሀሎ፡ አሐዱ፡ ብእሲ፡ ዘስሙ፡ ናታን፡ በደብረ፡ ሰራብዮን፡ ኀበ፡ መነኮሳት፡ ዘይእቲ፡ ደብር፡ ወውእቱ፡ መጋቢ፡ ዘየዐቅብ፡ መዛግብተ፡ ዘቤተ፡ ክርስቲያን፡ ወውእቱ፡ ዘይጠቅዕ፡ መጥቅዓ፡ በጊዜ፡ ጸሎት፡ ዘሰዓታት",
     "manuscript_count": 120,
+    "most_read": false,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -1432,6 +1523,7 @@ const MIRACLES_OF_MARY = [
     "title": "A rich sinner, who had repented and planned to build a monastery, died before he could accomplish this pious goal yet was still saved from hell by the Virgin Mary",
     "incipit": "ወሀሎ፡ አሐዱ፡ ፈረሳዊ፡ ዘስሙ፡ ማልኮስ፡ ዘሀገረ፡ ንሒሳ፡ ወክቡር፡ ውእቱ፡ ወባዕል፡ ጥቀ፡ ወብዙኅ፡ ንዋዩ፡ ወገራውኢሁ፡ እስመ፡ ኃጥእ፡ ወጊጉይ፡ ውእቱ፡ ፈረሳዊ፡ ማልኮስ፡ ወኢይዜከሮ፡ ለሞት",
     "manuscript_count": 119,
+    "most_read": false,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -1444,6 +1536,7 @@ const MIRACLES_OF_MARY = [
     "title": "The Old Thief",
     "incipit": "ወሀለዉ፡ ክልኤቱ፡ መነኮሳት፡ ቡሩካን፡ እምድብረ፡ ሰማዕት፡ ማር፡ ፊቅጦር፡ በማኅፈደ፡ ናርቆን",
     "manuscript_count": 116,
+    "most_read": true,
     "translations": [
       {
         "author": "Ellen Li",
@@ -1460,6 +1553,7 @@ const MIRACLES_OF_MARY = [
     "title": "A child and his mother see the icon of the Virgin Mary weeping for the sins of the world.",
     "incipit": "ተብህለ፡ ከመ፡ ሀሎ፡ ሕፃን፡ ንዑስ፡ ዘያፈቅር፡ ጸሎተ፡ እምንእሱ። ወይቤላ፡ ለእሙ፡ ኦእምየ፡ ንዒ፡ ንሖር፡ ኀበ፡ ቤተ፡ ጸሎት፡ ወንግበር፡ ንስቲተ፡ ጸሎተ",
     "manuscript_count": 116,
+    "most_read": false,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -1472,6 +1566,7 @@ const MIRACLES_OF_MARY = [
     "title": "The Ring in the Fish",
     "incipit": "ወሀሎ፡ አሐዱ፡ ብእሲ፡ በሀገር፡ ዘሳሙ፡ ዲያቆን፡ ውእቱ፡ ዘስሙ፡ ሚካኤል፡ ወያፈቅራ፡ ለእግዝእትነ፡…. ብዙኀ፡ ወይትለአካ፡ በኵሉ፡ ኀይሉ፡ ዐጣር፡ ዘውእቱ፡ ሠያጤ፡ እምኵሉ፡ መባልዕት",
     "manuscript_count": 115,
+    "most_read": false,
     "translations": [
       {
         "author": "Jeremy Brown & Dawit Muluneh with Wendy Laura Belcher",
@@ -1488,6 +1583,7 @@ const MIRACLES_OF_MARY = [
     "title": "A Cappadocian official's beloved son who died but was raised from the dead when he was carried to the icon of the Virgin Mary",
     "incipit": "ወሀሎ፡ አሐዱ፡ ብእሲ፡ መስፍን፡ በሀገረ፡ ቀጰዶቅያ፡ ወኮነ፡ ሎቱ፡ አሐዱ፡ ወልደ፡ ወሬዛ",
     "manuscript_count": 115,
+    "most_read": false,
     "translations": [
       {
         "author": "Ellen Li",
@@ -1504,6 +1600,7 @@ const MIRACLES_OF_MARY = [
     "title": "Priest Intercedes for an Angel",
     "incipit": "ዘገብረቶ፡ ሥዕለ፡ እግዝእትነ፡…. ዘእምርት፡ ገባሪታ፡ ተአምራት፡ ወመንክራት፡ ዘደብረ፡ ቀልሞን። ተብህለ፡ ከመ፡ ተምዐ፡ እግዚአብሔር፡ ላዕለ፡ አሐቲ፡ ሀገር፡ በእንተ፡ እከዮሙ፡ ወኀጢአቶሙ፡ ለሰብእ፡ እለ፡ ይነብሩ፡ ውስቴታ",
     "manuscript_count": 114,
+    "most_read": false,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -1516,6 +1613,7 @@ const MIRACLES_OF_MARY = [
     "title": "A virgin, living with her mother, who slept with many young men due to Satan and was saved by the Virgin Mary when her tears outweighed her sins",
     "incipit": "ወሀለወት፡ አሐቲ፡ ድንግል፡ ምስለ፡ እማ፡ ወመጽአ፡ አሐዱ፡ ወሬዛ፡ ወአማሰነ፡ ድንግልናሃ። ወእምዝ፡ መጽኡ፡ ብዙኃን፡ ወራዙት፡ ወረኰሰት፡ ምስሌሆሙ",
     "manuscript_count": 113,
+    "most_read": true,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -1544,6 +1642,7 @@ const MIRACLES_OF_MARY = [
     "title": "A bankrupt merchant to whom Satan offered two pearls if he would deny Christ and the Virgin Mary and they turn to sand",
     "incipit": "ወሀሎ፡ አሐዱ፡ ነጋዲ፡ ዘስሙ፡ ጥብርያኖስ፡ በሀገረ፡ ቅፍጥ፡ እስመ፡ ባዕል፡ ጥቀ፡ በአግብርት፡ ወበአእማት፡ በወርቅ፡ ወበብሩር፡ ወአልሕምት፡ ወአግማል፡ ወዘይነግድ፡ ዲበ፡ የብስ፡ ወባሕር ። ወተወለጠ፡ ላዕሌሁ፡ መዋዕል፡ ወአዝማን፡ ወኃልቀ፡ ኵሉ፡ ንዋዩ",
     "manuscript_count": 113,
+    "most_read": true,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -1556,6 +1655,7 @@ const MIRACLES_OF_MARY = [
     "title": "Alexander, a nobleman from Jerusalem, was swallowed up by a dragon (crocodile) and delivered after three days",
     "incipit": "ወሀሎ፡ አሐዱ፡ ብእሲ፡ ዕብራዊ፡ እምዘመደ፡ ክቡራን፡ በሀገረ፡ ኢየሩሳሌም፡ ዘስሙ፡ እለስክንድሮስ፡ ወይሐውር፡ በግዕዘ፡ አይሁድ፡ ወይገብር፡ ኃጣውአ፡ ብዙኃ፡ ዘያምዕዖ፡ ለእግዚአብሔር",
     "manuscript_count": 110,
+    "most_read": true,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -1568,6 +1668,7 @@ const MIRACLES_OF_MARY = [
     "title": "A man with paralysis who was healed on the Feast of Our Lady's Assumption",
     "incipit": "ስምዑኬ፡ ዘገብረት፡ እግዝእትነ፡…. አመ፡ ፲፡ ወ፮፡ ለነሐሴ። ወነበረ፡ አሐዱ፡ መፃጕዕ፡ ውስተ፡ አሐቲ፡ ሀገር፡ ወአስተርአየቶ፡ በሕልም",
     "manuscript_count": 110,
+    "most_read": false,
     "translations": [
       {
         "author": "Rowan Williams",
@@ -1584,6 +1685,7 @@ const MIRACLES_OF_MARY = [
     "title": "Ruler's Son Insults Icon",
     "incipit": "ወሀሎ፡ አሐዱ፡ ንጉሥ፡ ምስለ፡ ወልዱ፡ በሀገረ፡ ምስር፡ ወውእቱ፡ ተንባላታይ፡ ዕልው፡ በመዋዕሊሁ፡ ለአባ፡ እልስክንድሮስ፡ ሊቀ፡ ጳጳሳት",
     "manuscript_count": 109,
+    "most_read": false,
     "translations": [
       {
         "author": "Rowan Williams",
@@ -1596,6 +1698,7 @@ const MIRACLES_OF_MARY = [
     "title": "Monks Helped to Celebrate",
     "incipit": "ወሀሎ፡ በመዋዕለ፡ ሢመቱ፡ ለአብ፡ ኤጲስ፡ ቆጶስ፡ አባ፡ ሚካኤል፡ ዘደብረ፡ ምጥማቅ፡ መጽኡ፡ ኀቤሁ፡ መነኮሳተ፡ ደብር፡ ሶበ፡ ቀርበ፡ በዐለ፡ ፋሲካ",
     "manuscript_count": 108,
+    "most_read": true,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -1616,6 +1719,7 @@ const MIRACLES_OF_MARY = [
     "title": "Dabra Metmaq's people are shown a negative vision of the religious leader Muhammad (Mohamed)",
     "incipit": "ስምዑኬ፡ ኦሕዝበ፡ ክርስቲያን፡ ከመ፡ ናይድዕክሙ፡ ዘንተ፡ ተአምረ፡ ዐቢየ፡ ወመድምመ፡ ዘተገብረ፡ በቤተ፡ ክርስቲያና፡ ለእግዝእትነ፡…. ዘደብረ፡ ምጥማቅ። ወበአሐቲ፡ ዕለት፡ እንዘ፡ ጉቡኣን፡ ውስተ፡ ቤተ፡ ክርስቲያን፡ ዘደብረ፡ ምጥማቅ፡ ይገብሩ፡ በዓላ፡ ክርስቲያን፡ ንጉሠ፡ አፍርንጊ፡ ወንጉሠ፡ ሮም፡ ወሶርያ፡ ወማሮን፡ በከመ፡ ልማዶሙ",
     "manuscript_count": 106,
+    "most_read": true,
     "translations": [
       {
         "author": "Allie V. Mangel",
@@ -1632,6 +1736,7 @@ const MIRACLES_OF_MARY = [
     "title": "Lamp Hangs in Air",
     "incipit": "ወሀለወት፡ ቤተ፡ ክርስቲያን፡ ወዓዲ፡ ሥዕል፡ በስመ፡ እግዝእትነ፡…. በገቦ፡ ንድቅ፡ ዘየማን",
     "manuscript_count": 105,
+    "most_read": false,
     "translations": [
       {
         "author": "Jeremy Brown & Dawit Muluneh with Ekaterina Pukhovaia",
@@ -1644,6 +1749,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Nagara Maryam??: OldF: Part 01: Journey: The rich Egyptian woman who refused to give water to the Holy Family. (321, 322, 325, 431 similar)",
     "incipit": "ወኮነ፡ ዝንቱ፡ ነገር፡ እምድኅረ፡ ወለደቶ፡ ለእግዚእነ፡ ኢየሱስ፡ ክርስቶስ፡ ወአዘዘ፡ ሄሮድስ፡ ከመ፡ ይቅትሉ፡ ሕፃናተ፡ ዘክልኤ፡ ዓማት። ወሰሚዓ፡ እግዝእትነ፡ ማርያም፡ አጐየየቶ፡ ለፍቁር፡ ወልዳ፡ ውስተ፡ ምድረ፡ ግብጽ። ወእንዘ፡ ትትጐየይ፡ ወአብጽሐቶ፡ ውስተ፡ አሐቲ፡ ሀገር፡ እምአህጉረ፡ ግብጽ፡ ኃምስ፡ ወአኃዞ፡ ለፍቁር፡ ወልዳ፡ ጽምዓ፡ ማይ፡ እስመ፡ ጊዜ፡ ቀትር፡ ውእቱ። ወቦአት፡ ውስተ፡ ቤተ፡ አሐቲ፡ ብእሲት፡ ከመ፡ ትስእል፡ ማየ፡ ለፍቁር፡ ወልዳ፡ ዘውእቱ፡ ወሀቤ፡ ዝናማት፡ ወይእቲሰ፡ ብእሲት፡ ባዕልት፡ ጥቀ፡ እምንዋየ፡ ዝንቱ፡ ዓለም፡ ወበምግባረ፡ ኀጢአት፡ ወነዳይት፡ ይእቲ፡ በምግባረ፡ ሠናይ፡ ወድርክት፡ ይእቲ፡ ካልእታ፡ ለኤልዛቤል",
     "manuscript_count": 105,
+    "most_read": false,
     "translations": [
       {
         "author": "Rowan Williams",
@@ -1656,6 +1762,7 @@ const MIRACLES_OF_MARY = [
     "title": "The Barren King's Wife",
     "incipit": "ወሀሎ፡ አሐዱ፡ ብእሲ፡ ዘስሙ፡ መስፍያኖስ፡ ንጉሠ፡ ሮምያ፡ ወስመ፡ ብእሲቱ፡ ስፍንግያ፡ እስመ፡ መካን፡ ይእቲ",
     "manuscript_count": 104,
+    "most_read": false,
     "translations": [
       {
         "author": "Jeremy Brown & Dawit Muluneh with Ekaterina Pukhovaia",
@@ -1672,6 +1779,7 @@ const MIRACLES_OF_MARY = [
     "title": "An official who kidnapped a girl who had made a vow of virginity is visited by the Virgin Mary",
     "incipit": "ወሀለወት፡ አሐቲ፡ ድንግል፡ እንተ፡ በፅዓት፡ ድንግልናሃ፡ ለማርያም፡ ወትትአመን፡ ብዙኀ፡ ወትብል፡ ኦእግዝእትየ፡ አልብየ፡ ምግባረ፡ ሠናይ፡ ወባሕቱ፡ ዕቀቢ፡ ድንግልናየ፡ ከመ፡ ኢይትኃፈር፡ በቅድሜኪ",
     "manuscript_count": 104,
+    "most_read": false,
     "translations": [
       {
         "author": "Rowan Williams",
@@ -1692,6 +1800,7 @@ const MIRACLES_OF_MARY = [
     "title": "Mary Appears at Däbrä Metmaq (Part 1)",
     "incipit": "ወሀሎ፡ በምድረ፡ ግብጽ፡ ምኔት፡ ዐቢይ፡ ዘይሰመይ፡ ድብረ፡ ምጥማቅ፡ ወእሙር፡ ውእቱ፡ በኀበ፡ ኵሉ",
     "manuscript_count": 102,
+    "most_read": true,
     "translations": [
       {
         "author": "Rowan Williams",
@@ -1704,6 +1813,7 @@ const MIRACLES_OF_MARY = [
     "title": "Dabra Metmaq's Annual Apparition: Part 1: Dabra Metmaq's church and how Jesus promises the Virgin Mary that it would be built in her honor [expanded part of 35A, not 35B]",
     "incipit": "ወሶበ ፡ ፈጸመ ፡ እግዚእነ ፡ ዘሎቱ ፡ ስብሐት ፡ ሐኒፀ ፡ ቤተ ፡ መቅደስ ፡ ዘእሙ ፡ ቅድስት ፤ ካዕበ ፡ ይቤላ ፡ ለወላዲቱ ፡ ድንግል ፡ ከመ ፡ በደኃሪ ፡ መዋዕል ፡ ይትሐነፅ ፡ ቤተ ፡ ክርስቲያን ፡ ዐቢይ ፡ በስምየ ፡ ወበስምኪ ።",
     "manuscript_count": 102,
+    "most_read": false,
     "translations": [
       {
         "author": "Rowan Williams",
@@ -1716,6 +1826,7 @@ const MIRACLES_OF_MARY = [
     "title": "The Martyr Pifamon",
     "incipit": "ወሀሎ፡ አሐዱ፡ ብእሲ፡ ዘስሙ፡ ፒፋሞን፡ በሀገረ፡ አውሴም፡ ክቡረ፡ ዘመድ፡ ወአቡሁ፡ መኰንነ፡ ሀገር",
     "manuscript_count": 101,
+    "most_read": true,
     "translations": [
       {
         "author": "Allie V. Mangel",
@@ -1732,6 +1843,7 @@ const MIRACLES_OF_MARY = [
     "title": "Pagan Official's Wife",
     "incipit": "ኦኵልክሙ፡ ማኅበረ፡ ክርስቲያን፡ ክሥቱ፡ አእዛነ፡ አልባቢክሙ፡ ለሰሚዐ፡ ተአምሪሃ፡ ለእግዝእትነ፡…. ወሰሚዐክሙ፡ ከመ፡ አድኃነቶሙ፡ ለኃጥኣን፡ እምስሕተቶሙ፡ በትንብልናሃ፡ በልዋ፡ ኦድንግል፡ አፍጥኒ",
     "manuscript_count": 99,
+    "most_read": false,
     "translations": [
       {
         "author": "Ellen Li",
@@ -1748,6 +1860,7 @@ const MIRACLES_OF_MARY = [
     "title": "The nominal Christian from Sidon who encountered a serpent/dragon/snake in the desert of Scete (same as 1231?)",
     "incipit": "ወሀሎ፡ አሐዱ፡ ብእሲ፡ በሀገረ፡ ሲዶና፡ ወልደ፡ ክቡራን፡ እምዘመደ፡ መንግሥት፡ በስምሰ፡ ክርስቲያናዊ፡ ወይገብር፡ ብዙኃ፡ ኀጢአተ",
     "manuscript_count": 98,
+    "most_read": true,
     "translations": [
       {
         "author": "Jeremy Brown & Dawit Muluneh with Ekaterina Pukhovaia",
@@ -1764,6 +1877,7 @@ const MIRACLES_OF_MARY = [
     "title": "The hungry man whom the Virgin Mary used to feed when he prayed to her",
     "incipit": "ተብህለ፡ ከመ፡ ሀሎ፡ አሐዱ፡ ርኁብ፡ ዘያፈቅራ፡ ለእግዝእትነ፡…. ወይሳእላ፡ ለከርሡ፡ መብልአ፡ ወትረ፡ ወይእቲኒ፡ ትሁቦ፡ ኅብስተ፡ ሠናየ",
     "manuscript_count": 98,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -1776,6 +1890,7 @@ const MIRACLES_OF_MARY = [
     "title": "The thief who was caught stealing from the church of the Virgin Mary and was released by his captors when he prayed to her.",
     "incipit": "ተብህለ፡ በእንተ፡ አሐዱ፡ ብእሲ፡ ቀሳጤ፡ ቤተ፡ ክርስቲያን፡ ኵሎ፡ አሚረ፡ ነበረ፡ እንዘ፡ ይቀስጥ፡ እኩየ፡ ልማዶ፡ ወይጸንሕዎ፡ ኵሉ፡ ሰብእ",
     "manuscript_count": 97,
+    "most_read": false,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -1788,6 +1903,7 @@ const MIRACLES_OF_MARY = [
     "title": "The pious abbot who was falsely accused by his monks of sinning with a woman.",
     "incipit": "ዝንቱ፡ ተአምር፡ በእንተ፡ አሐዱ፡ መምህረ፡ ደብር፡ ከመ፡ ውእቱ፡ ኮነ፡ ኄረ፡ በኵሉ፡ ምግባሩ፡ ወሠናይ፡ በግዕዙ፡ ወርቱዕ፡ በሃይማኖቱ፡ ወይጌስጾሙ፡ ለደቂቁ፡ ሠርከ፡ ወነግሀ፡ እንበይነ፡ ዐቂበ፡ ሥርዓተ፡ ምንኵስና፡ ወበሕገ፡ ቀኖና፡ ዘሐዋርያት፡ ወዘሊቃውንት። ወሶበ፡ አንወዮሙ፡ በጽኑዕ፡ ግብር፡ በእንተ፡ ዐቂበ፡ ሕግ፡ ኀብሩ፡ ቦቱ፡ ኵሎሙ፡ ደቂቁ፡ በእኩይ፡ ግብር",
     "manuscript_count": 95,
+    "most_read": true,
     "translations": [
       {
         "author": "Getatchew Haile",
@@ -1804,6 +1920,7 @@ const MIRACLES_OF_MARY = [
     "title": "The monastic community that was supplied with provisions by the Virgin Mary.",
     "incipit": "ተብህለ፡ ከመ፡ ሀሎ፡ አሐዱ፡ ረድኦሙ፡ ለቅዱሳን፡ ወየኀዝን፡ ለሲሳዮሙ፡ ለለ፡ ዕለቱ። ወአሐተ፡ ዕለተ፡ ሶበ፡ ኀልቀ፡ ሲሳዮሙ፡ ለቅዱሳን፡ ወተንሥአ፡ ይስአላ፡ ለእግዝእትነ",
     "manuscript_count": 95,
+    "most_read": true,
     "translations": [
       {
         "author": "",
@@ -1828,6 +1945,7 @@ const MIRACLES_OF_MARY = [
     "title": "King Tiberius's Son Raised",
     "incipit": "ተአምር፡ ወውዳሴ፡ ክቡር፡ ዘገብረ፡ እግዚእነ፡ ኢየሱስ፡ ክርስቶስ፡ ላዕለ፡ እሙ፡ ድንግል። ወሀሎ፡ አሐዱ፡ ብእሲ፡ ዘስሙ፡ ጢባርዮስ፡ ንጉሠ፡ ሮሜ፡ ዘበመዋዕሊሁ፡ ተሰቅለ፡ እግዚእነ",
     "manuscript_count": 93,
+    "most_read": false,
     "translations": [
       {
         "author": "Allie V. Mangel",
@@ -1844,6 +1962,7 @@ const MIRACLES_OF_MARY = [
     "title": "The Stolen Scissors",
     "incipit": "ወሀሎ፡ በዝንቱ፡ ደብረ፡ ቀልሞን፡ ዘቅዱስ፡ አባ፡ ሳሙኤል፡ ብእሲ፡ ዘይሰመይ፡ ያዕቆብ፡ ሐፂር፡ ዘአድኀነቶ፡ እግዝእትነ፡…. እምማእሰረ፡ ዐረብ",
     "manuscript_count": 92,
+    "most_read": false,
     "translations": [
       {
         "author": "Jeremy Brown with Ekaterina Pukhovaia",
@@ -1860,6 +1979,7 @@ const MIRACLES_OF_MARY = [
     "title": "Contempt for Mary's Icon",
     "incipit": "ወኮነ፡ በመዋዕለ፡ እግዚእ፡ ክቡር፡ ሊቀ፡ ጳጳሳት፡ አባ፡ ገብርኤል፡ ሰማንያ፡ ወሰመንቱ፡ እምሊቃነ፡ ጳጳሳት፡ ዘእለእስክንድርያ፡ ብእሲ፡ ሊቅ፡ በደብረ፡ ቅዱስ፡ ዐቢይ፡ ሳሙኤል፡ ዘቀልሞን፡ ዘስሙ፡ ሰሎሞን",
     "manuscript_count": 92,
+    "most_read": false,
     "translations": [
       {
         "author": "Jeremy Brown & Dawit Muluneh with Wendy Laura Belcher",
@@ -1872,6 +1992,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Felsata la-Maryam??: Dormition: Part 05: Christ celebrates Mass for The Virgin Mary.",
     "incipit": "አመ፡ ፲ወ፮፡ ለነሐሴ፡ አመ፡ ፍልሰተ፡ ሥጋሃ፡ ለእግዝእትነ፡ ማርያም፡ ሠምረ፡ ፍቁር፡ ወልዳ፡ ኢየሱስ፡ ክርስቶስ፡ ይሣሃሎሙ፡ ለእለ፡ ውስተ፡ ሲኦል፡ በትንብል፡ ለእሙ",
     "manuscript_count": 92,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -1884,6 +2005,7 @@ const MIRACLES_OF_MARY = [
     "title": "A knight who tried to seduce his friend's wife but repented when dead people appeared as she read aloud from the Prayer for the Dead",
     "incipit": "ወሀሎ፡ አሐዱ፡ ብእሲ፡ ባዕል፡ ጥቀ፡ ወቦቱ፡ ብእሲተ፡ ሠናየ፡ ወመንክረ፡ ላሕያ፡ ወወሀባ፡ እግዚአብሔር፡ ስነ፡ ወላሕየ፡ ወሞገሰ፡ ወጣዕመ፡ ቃል፡ ዘአልቦ፡ ዘይመስላ፡ በውስተ፡ ይእቲ፡ ሀገር",
     "manuscript_count": 91,
+    "most_read": false,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -1896,6 +2018,7 @@ const MIRACLES_OF_MARY = [
     "title": "A young debauched man who was ready to serve Satan but refused to deny the Virgin Mary",
     "incipit": "ወሀሎ፡ አሐዱ፡ ወሬዛ፡ ሠናይ፡ ዘይነብር፡ ማእከለ፡ ባሕር፡ እምክቡራነ፡ ዘመድ፡ ውእቱ፡ ወኮነ፡ ውእቱ፡ ወሬዛ፡ ያፈቅር፡ በሊዐ፡ ወሰቲየ፡ ወፈግዓ። ወእምድኅረ፡ ዝንቱ፡ ኃልቀ፡ ንዋዩ፡ ወጸልእዎ፡ ፍቁራኒሁ",
     "manuscript_count": 90,
+    "most_read": false,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -1908,6 +2031,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Felsata la-Maryam??: Dormition: Part 11: Christ, together with The Virgin Mary and the angels, appears to the Apostles and asks them to build churches in his name and hers throughout the world.",
     "incipit": "ዘከመ፡ አስተርአየቶሙ፡ እግዝእትነ፡ ማርያም፡ ለሐዋርያት፡ ምስለ፡ ፍቁር፡ ወልዳ፡ ምስለ፡ ሚካኤል፡ ወገብርኤል። ጸሎታ፡…. ወናሁ፡ እግዚእነ፡ ኢየሱስ፡ ክርስቶስ፡ አስተርአየ፡ ማእከሌነ፡ እንዘ፡ ይነብር፡ ዲበ፡ አክናፈ፡ ኪሩቤል",
     "manuscript_count": 89,
+    "most_read": true,
     "translations": [
       {
         "author": "Elliot Galvis",
@@ -1928,6 +2052,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Felsata la-Maryam: [Chaine Part 03] Dormition: A woman whose right eye had been blinded by a demon is healed by The Virgin Mary.",
     "incipit": "ዘከመ፡ አሕየወት፡ ዓይና፡ ለብእሲት። ጸሎታ፡…. ወእንዘ፡ ሀለወት፡ እግዝእትነ፡…. በቤተ፡ ልሔም፡ መጽአት፡ አሐቲ፡ ብእሲት፡ እንተ፡ አዖራ፡ ጋኔን፡ ዓይና፡ ዘየማን",
     "manuscript_count": 88,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -1948,6 +2073,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Felsata la-Maryam: [Chaine Part 07] Dormition: The Holy Spirit recounts the salvific events that have occured on Sunday.",
     "incipit": "ዘከመ፡ ተናገረ፡ መንፈስ፡ ቅዱስ፡ ክብራ፡ ለእግዝእትነ፡…. ጸሎታ፡…. ወእምዝ፡ እምድኅረ፡ አስተርአየ፡ ዝተአምር፡ ላዕለ፡ እግዝእትነ፡ ማርያም፡ ወላዕለ፡ አርድእት፡ ዘተናገረ፡ መንፈስ፡ ቅዱስ፡ ወይቤ፡ አእምሩኬ፡ ከመ፡ በዕለተ፡ እሑድ፡ አብሰራ፡ ገብርኤል፡ መልአክ፡ ለማርያም፡ ቅድስት",
     "manuscript_count": 88,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -1972,6 +2098,7 @@ const MIRACLES_OF_MARY = [
     "title": "Vision of the Trinity",
     "incipit": "ወሀሎ፡ አሐዱ፡ ብእሲ፡ ዘስሙ፡ ጴጥሮስ፡ በዋርስ፡ ወሐነጸ፡ ቤተ፡ ክርስቲያነ፡ በስመ፡ እግዝእትነ፡ ማርያም። ወነበረ፡ ያስተበቍዕ፡ ኀቤሃ፡ ከመ፡ ትስአል፡ ሎቱ፡ ኀበ፡ ወልዳ፡ ያርኢዮ፡ ምስጢረ፡ ሥላሴሁ",
     "manuscript_count": 87,
+    "most_read": true,
     "translations": [
       {
         "author": "Jeremy Brown & Dawit Muluneh with Blaine Kebede",
@@ -1996,6 +2123,7 @@ const MIRACLES_OF_MARY = [
     "title": "The Plundered Monasteries",
     "incipit": "ወኮነ፡ በ፲፻፡ ወ፻፡ ወ፳፡ ዓመተ፡ ሰማዕታት፡ ንጹሓን፡ በመዋዕሊሁ፡ ለአብ፡ እግዚእ፡ ሊቀ፡ ጳጳሳት፡ አባ፡ ማቴዎስ፡ ወኮነ፡ በሀገረ፡ ምስር፡ ረሓብ፡ ዐቢይ",
     "manuscript_count": 86,
+    "most_read": false,
     "translations": [
       {
         "author": "Jeremy Brown & Dawit Muluneh with Wendy Laura Belcher",
@@ -2008,6 +2136,7 @@ const MIRACLES_OF_MARY = [
     "title": "Emperor Theodosius of Constantinople's son, the Saint Alexius [Abd al-Masih], and the story of his life",
     "incipit": "ወሀሎ፡ አሐዱ፡ ንጉሥ፡ በብሔረ፡ ቍስጥንጥንያ፡ ወብእሲቱኒ፡ ሠናይት፡ ወፈራሂተ፡ እግዚአብሔር፡ ወክልኤሆሙ፡ ጻድቃን፡ እሙንቱ፡ ዘይገብሩ፡ ሥምረቶ፡ ለልዑል",
     "manuscript_count": 86,
+    "most_read": true,
     "translations": [
       {
         "author": "Jeremy Brown & Dawit Muluneh with Wendy Laura Belcher",
@@ -2028,6 +2157,7 @@ const MIRACLES_OF_MARY = [
     "title": "King Tiberius's Icon",
     "incipit": "ወኮነ፡ ሶበ፡ ሖረ፡ ዮሐንስ፡ ኀበ፡ ጢባርዮስ፡ ንጉሠ፡ ሀገረ፡ ሮሜ፡ በከመ፡ ይቤሎ፡ እግዚእነ",
     "manuscript_count": 85,
+    "most_read": false,
     "translations": [
       {
         "author": "Jeremy Brown & Dawit Muluneh with Bret Windhauser",
@@ -2040,6 +2170,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Ledata la-Maryam??: OldA: Part 01: Temple: The Virgin Mary stays in the Temple (315, 316-D, 447 similar)",
     "incipit": "ወካዕበ፡ ንነግረክሙ፡ አኃዊነ፡ ኂሩታ፡ ወንጽሕናሃ፡ ለእግዝእትነ፡ ማርያም፡ ወዘከመ፡ ነበረት፡ ውስተ፡ ቤተ፡ መቅደስ። ጸሎታ፡…. ወነበረት፡ እግዝእትነ፡ ማርያም፡ ውስተ፡ ቤተ፡ መቅደስ፡ እንዘ፡ ትትለአክ፡ በንጽሕ፡ ወበሕድአት፡ ወበትሕትና፡ ወኵሎሙ፡ ካህናት፡ ያስተበፅዕዋ፡ ወይባርክዋ፡ ወፈድፋደሰ፡ ስምዖን፡ አረጋዊ፡ ወዘካርያስ፡ ዘመዳ",
     "manuscript_count": 85,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -2056,6 +2187,7 @@ const MIRACLES_OF_MARY = [
     "title": "Yohannes Kama and his wife perserved their virginity throughout their lives after the Virgin Mary appeared to them",
     "incipit": "ወሀሎ፡ አሐዱ፡ ብእሲ፡ ቅዱስ፡ ዘስሙ፡ ዮሐንስ፡ ካማ፡ ዘኀሠሠ፡ እምንእሱ፡ አፍቅሮቶ፡ ለክርስቶስ፡ በዐቢይ፡ ገድል፡ ወአመ፡ ልህቀ፡ ፈኀሩ፡ ሎቱ፡ ወለተ፡ ድንግለ",
     "manuscript_count": 85,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -2068,6 +2200,7 @@ const MIRACLES_OF_MARY = [
     "title": "The girl who was going to be stoned after she was caught committing fornication.",
     "incipit": "ተብህለ፡ ከመ፡ ሀለወት፡ አሐቲ፡ ወለት፡ ዘማዊት፡ ወአሐተ፡ ዕለተ፡ ረከብዋ፡ እንዘ፡ ትዜሙ፡ በሥጋሃ፡ ወአኃዝዋ፡ ከመ፡ ይውግርዋ፡ በእብን",
     "manuscript_count": 85,
+    "most_read": true,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -2084,6 +2217,7 @@ const MIRACLES_OF_MARY = [
     "title": "A monk is saved him from being deceived by Satan when the Virgin Mary appears",
     "incipit": "ተብህለ፡ ከመ፡ ሀሎ፡ አሐዱ፡ መነኮስ፡ ዘያፈቅራ፡ ለእግዝእትነ፡…. በኵሉ፡ ልቡ፡ ወበኵሉ፡ ሕሊናሁ፡ ወኢአበሰ፡ እምንእሱ፡ እስከ፡ ርስአኑ፡ ተመካሒ፡ በአምላኩ። ወዘንተ፡ ብሂሎ፡ ሰይጣን፡ መጽአ፡ ኀቤሁ",
     "manuscript_count": 84,
+    "most_read": true,
     "translations": [
       {
         "author": "",
@@ -2120,6 +2254,7 @@ const MIRACLES_OF_MARY = [
     "title": "Clergy Flees Office",
     "incipit": "ወሀሎ፡ በዝንቱ፡ ደብር፡ ዘዝኩር፡ ብእሲ፡ ቀሲስ፡ ዘይሰመይ፡ ይስሐቅ፡ ወውእቱ፡ ሊቀ፡ ምኔት፡ ወለለ፡ ዓመት፡ በገቢረ፡ በዐል፡ ይፃሙ፡ ብዙኀ",
     "manuscript_count": 83,
+    "most_read": false,
     "translations": [
       {
         "author": "Ellen Li",
@@ -2132,6 +2267,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Felsata la-Maryam??: Dormition: Part 12: Christ appears with his mother to the apostles and makes Saint Peter head of the Church.",
     "incipit": "ዘከመ፡ አስተርአየቶሙ፡ ማርያም፡ ለሐዋርያት። ጸሎታ፡…. ወእንዘ፡ ሐዋርያት፡ ይምሕርዎሙ፡ ለሰብአ፡ ሀገር፡ ወነዋ፡ እግዚእነ፡ ኢየሱስ፡ ክርስቶስ፡ ወረደ፡ እምሰማይ",
     "manuscript_count": 83,
+    "most_read": true,
     "translations": [
       {
         "author": "",
@@ -2156,6 +2292,7 @@ const MIRACLES_OF_MARY = [
     "title": "The Roman official who was prevented from entering the Holy Sepulcher of Christ in Jerusalem by an invisible ram",
     "incipit": "ወሀሎ፡ አሐዱ፡ ብእሲ፡ በሀገረ፡ ኢየሩሳሌም፡ እምመስፍንተ፡ ሮሜ፡ ወመጽአ፡ ከመ፡ ይጸሊ፡ ኀበ፡ መቃብረ፡ እግዚእነ፡ ኢየሱስ፡ ክርስቶስ",
     "manuscript_count": 82,
+    "most_read": false,
     "translations": [
       {
         "author": "Jeremy Brown with Ekaterina Pukhovaia",
@@ -2168,6 +2305,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Nagara Maryam??: OldD: Journey??: The history of Dabra Mahew near Jerusalem and its miraculous spring.",
     "incipit": "ወሀሎ፡ በሀገረ፡ ኢየሩሳሌም፡ መንገለ፡ ሄኖን፡ በቅሩበ፡ ሳሌም፡ በማዕዶተ፡ ዮርዳኖስ",
     "manuscript_count": 82,
+    "most_read": false,
     "translations": [
       {
         "author": "Allie V. Mangel",
@@ -2184,6 +2322,7 @@ const MIRACLES_OF_MARY = [
     "title": "The Däbrä Sedeneya Icon",
     "incipit": "ድርሳን፡ ዘደረሰ፡ አባ፡ ቄርሎስ፡ ኤጲስ፡ ቆጶስ፡ ዘሀገረ፡ ኢየሩሳሌም፡ ቅድስት፡ በእንተ፡ ሥዕለ፡ እግዝእትነ፡…. ዘሀለወት፡ በደብረ፡ ጼዴንያ፡ ኀበ፡ አሐቲ፡ ሀገር፡ እምአህጉረ፡ ዳማስቆ፡…. ወእምድኅረ፡ ዝንቱ፡ ኦፍቁራንየ፡ አነኒ፡ እሬኢ፡ ብእሴ፡ እምኔክሙ፡ ዘይጸውር፡ ተጋድሎ",
     "manuscript_count": 80,
+    "most_read": true,
     "translations": [
       {
         "author": "Jeremy Brown with Ekaterina Pukhovaia",
@@ -2204,6 +2343,7 @@ const MIRACLES_OF_MARY = [
     "title": "The Extortioner Katib",
     "incipit": "ወበዐመት፡ ፲፻፴፡ ወ፰፡ ሖረ፡ ኀበ፡ አቡነ፡ ቆሞስ፡ ዮሐንስ፡ አበ፡ ምኔት፡ ዘደብረ፡ አቡነ፡ እንጦንዮስ፡ ወእሙር፡ ውእቱ፡ በቅድስና፡ ወበንጽሕ",
     "manuscript_count": 80,
+    "most_read": true,
     "translations": [
       {
         "author": "Jeremy Brown & Dawit Muluneh with Blaine Kebede",
@@ -2228,6 +2368,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Ledata la-Maryam??: OldA: Part 02: Engagement: The Virgin Mary is espoused to Saint Joseph.",
     "incipit": "ወካዕበ፡ ንነግረክሙ፡ አኀዊነ፡ ቅዱሳን፡ ውሉደ፡ ቤተ፡ ክርስቲያን፡ ዝናሃ፡ ለእግዝእትነ፡…. ሚመጠነ፡ ሐዘን፡ ዘበጽሐ፡ ላዕሌሃ፡ እምደቂቀ፡ እስራኤል፡ እስከ፡ በጽሐ፡ ኀቤሃ፡ ገብርኤል፡ መልአክ፡ ወዜነዋ፡ ትፍሥሕተ",
     "manuscript_count": 80,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -2244,6 +2385,7 @@ const MIRACLES_OF_MARY = [
     "title": "Ethiopian Pilgrims to Jerusalem",
     "incipit": "ወሀለወት፡ ብእሲት፡ መሃይምንት፡ ቅድስት፡ ወቡርክት፡ ወተኀድር፡ በአሐዱ፡ ሀገር፡ እምአህጉራተ፡ ታሕታይ፡ ግብጽ፡ ዘትሰመይ፡ ስምባጥ",
     "manuscript_count": 79,
+    "most_read": true,
     "translations": [
       {
         "author": "Jeremy Brown with Ekaterina Pukhovaia",
@@ -2260,6 +2402,7 @@ const MIRACLES_OF_MARY = [
     "title": "Buried Alive in a Gold Mine",
     "incipit": "ወሀሎ፡ አሐዱ፡ ብእሲ፡ በሀገረ፡ አረጎን፡ እምአድያመ፡ ቀጰዶቅያ፡ ወያፈቅራ፡ ለእግዝእትነ፡…. ፈድፋደ፡ ወይገብር፡ በዐላ፡ ለለ፡ ኵሉ፡ ዕለት",
     "manuscript_count": 79,
+    "most_read": false,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -2272,6 +2415,7 @@ const MIRACLES_OF_MARY = [
     "title": "Monks Celebrate Holy Week",
     "incipit": "ወበዓመት፡ ፲፻ወ፩፻፡ ፲ወ፪፡ ለሰማዕታት፡ በጽሑ፡ መነኮሳት፡ እምደብረ፡ አቡነ፡ እንጦንዮስ፡ ከመ፡ ይግበሩ፡ ሰሙነ፡ ሕማማት፡ በደብረ፡ ቍስቋም",
     "manuscript_count": 79,
+    "most_read": true,
     "translations": [
       {
         "author": "Rowan Williams",
@@ -2284,6 +2428,7 @@ const MIRACLES_OF_MARY = [
     "title": "A Cairo woman's daughter, who lived by the Nile river and became blind due to too much reading and study but was healed by the Virgin Mary",
     "incipit": "ወሀለወት፡ አሐቲ፡ ብእሲት፡ ምስለ፡ ሐማታ፡ በደወለ፡ ቃሕራ፡ ወቤታኒ፡ በጽንፈ፡ ባሕር፡ ወመዋግዲሁ፡ ይበጽሕ፡ ውስተ፡ አረፍታ",
     "manuscript_count": 79,
+    "most_read": false,
     "translations": [
       {
         "author": "Jeremy Brown & Dawit Muluneh with Ekaterina Pukhovaia",
@@ -2304,6 +2449,7 @@ const MIRACLES_OF_MARY = [
     "title": "Saint Thecla: Part 1: Thecla is taken to Alexandria to see her brother, Abba Esi, in a boat guided by the Archangels Gabriel and Sureyal.",
     "incipit": "ተአምሪሃ፡…. ዘገብረት፡ እንዘ፡ ተሐውር፡ ኀበ፡ ከብካበ፡ መርዓ፡ ስምዖሙ፡ ለአባ፡ ኤሲ፡ ወለቴክላ፡ እኅቱ፡ ኀበ፡ ሀገረ፡ እስክንድርያ። ጸሎታ፡…. ወሀሎ፡ አሐዱ፡ ብእሲ፡ ዘስሙ፡ አባ፡ ኤሲ፡ ወቴክላ፡ እኅቱ፡ እምሰብአ፡ ቡጺር፡ እምአድያመ፡ ግብጽ",
     "manuscript_count": 79,
+    "most_read": true,
     "translations": [
       {
         "author": "Ellen Li",
@@ -2316,6 +2462,7 @@ const MIRACLES_OF_MARY = [
     "title": "Bleeding Woman Healed",
     "incipit": "ወሀለወት፡ አሐቲ፡ ብእሲት፡ እምአንስተ፡ ዐረብ፡ ወባቲ፡ ውሕዘተ፡ ደም፡ እምብዙኅ፡ ዓመታት",
     "manuscript_count": 77,
+    "most_read": false,
     "translations": [
       {
         "author": "Jeremy Brown & Dawit Muluneh with Wendy Laura Belcher and Ekaterina Pukhovaia",
@@ -2328,6 +2475,7 @@ const MIRACLES_OF_MARY = [
     "title": "A couple that were guided by the wife's dream to find buried money with which to build a shrine to the Virgin Mary.",
     "incipit": "ወሀሎ፡ አሐዱ፡ ብእሲ፡ ነዳይ፡ ዘያፈቅራ፡ ለእግዝእትነ፡…. ወይብል፡ ኦእመ፡ ብርሃን፡ እስእለኪ፡ ስምዒ፡ ስእለትየ። ወሀለየ፡ በልቡ፡ እንዘ፡ ይብል፡ ወያስተበፅዕ፡ ወይብል፡ መኑ፡ ይረድአኒ፡ ከመ፡ እሕንጽ፡ መርጡላ፡ ለእግዝእትነ፡….",
     "manuscript_count": 77,
+    "most_read": false,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -2340,6 +2488,7 @@ const MIRACLES_OF_MARY = [
     "title": "Muslim Converts",
     "incipit": "ወሀለዉ፡ በአሐቲ፡ ሀገር፡ ሰብእ፡ ክርስቲያን፡ ወርሕቅት፡ እምኔሆሙ፡ ቤተ፡ ክርስቲያን፡ በስማ፡ ለእግዝእትነ፡…. መጠነ፡ መሕዋረ፡ ፫፡ ሰዓት",
     "manuscript_count": 76,
+    "most_read": false,
     "translations": [
       {
         "author": "Jeremy Brown & Dawit Muluneh with Wendy Laura Belcher and Ekaterina Pukhovaia",
@@ -2352,6 +2501,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Nagara Maryam:?? OldB: Journey:The healing of the Egyptian King Soforon (or Safron).",
     "incipit": "ወሀሎ፡ ንጉሠ፡ ግብጽ፡ ዘስሙ፡ ሶፎሮን። ወናሁ፡ መጽአ፡ ሶፎሮን፡ ኀበ፡ እግዝእትነ፡…. ዘአኃዞ፡ አንበሳ፡ ድማሖ",
     "manuscript_count": 76,
+    "most_read": false,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -2364,6 +2514,7 @@ const MIRACLES_OF_MARY = [
     "title": "The Deacon and the Poor",
     "incipit": "ወሀሎ፡ ብእሲ፡ ክርስቲያናዊ፡ ዲያቆን፡ እምሰብአ፡ መርግ፡ ወኬም፡ ወስሙ፡ ንኳል",
     "manuscript_count": 75,
+    "most_read": false,
     "translations": [
       {
         "author": "Jeremy Brown & Dawit Muluneh",
@@ -2376,6 +2527,7 @@ const MIRACLES_OF_MARY = [
     "title": "Satan destroyed the oven of a monastery and was compelled to serve the monks for twelve years in punishment.",
     "incipit": "ወኮነ፡ በአሐቲ፡ ሀገር፡ እምአድያመ፡ ግብጽ፡ ወውስተ፡ ይእቲ፡ ሀገር፡ ሀለወት፡ ደብር፡ ዘመነኮሳት፡ ወሶበ፡ አመከሮሙ፡ ሰይጣን፡ ለእሙንቱ፡ መነኮሳት፡ ነጺሮ፡ ትጋሆሙ፡ በነሲተ፡ እቶኖሙ፡ እንዘ፡ ይመልእ፡ መሬተ",
     "manuscript_count": 74,
+    "most_read": true,
     "translations": [
       {
         "author": "Rowan Williams",
@@ -2396,6 +2548,7 @@ const MIRACLES_OF_MARY = [
     "title": "The Robbed Monks",
     "incipit": "ወኮነ፡ በአሐዱ፡ እምመዋዕል፡ ሖሩ፡ ሰብእ፡ መነኮሳት፡ እምደብረ፡ አባ፡ ሳሙኤል፡ ዘቀልሞን፡ ለፈጽሞ፡ መፍቅደ፡ ደብር",
     "manuscript_count": 73,
+    "most_read": false,
     "translations": [
       {
         "author": "Jeremy Brown & Dawit Muluneh with Wendy Laura Belcher",
@@ -2408,6 +2561,7 @@ const MIRACLES_OF_MARY = [
     "title": "The Manger Thief",
     "incipit": "ወኮነ፡ በበዐላ፡ ለእግዝእትነ፡…. አመ፡ ፲፡ ወ፮፡ ለወርኀ፡ ነሐሴ፡ ዕርገተ፡ ሥጋሃ፡ ቅዱስ፡ ውስተ፡ ሰማያት፡ ወይትገበር፡ ባቲ፡ በዐል፡ ዐቢይ፡ በቤተ፡ ልሔም",
     "manuscript_count": 73,
+    "most_read": false,
     "translations": [
       {
         "author": "Jeremy Brown & Dawit Muluneh with Wendy Laura Belcher",
@@ -2424,6 +2578,7 @@ const MIRACLES_OF_MARY = [
     "title": "The Barren French Wife",
     "incipit": "ወሀሎ፡ አሐዱ፡ ብእሲ፡ በሀገረ፡ አፍርንጊ፡ እምአድያመ፡ አፍራንሳ፡ ዘያፈቅራ፡ ለእግዝእትነ፡…. እምንእሱ፡ ወይትለአካ፡ በኵሉ፡ ኀይሉ። ወሶበ፡ በጽሐ፡ አምጣነ፡ አውስቦ፡ አስተዋሰብዎ፡ አበዊሁ፡ ወለተ፡ እምአውላደ፡ አፍርንጊ",
     "manuscript_count": 72,
+    "most_read": false,
     "translations": [
       {
         "author": "Jeremy Brown & Dawit Muluneh with Wendy Laura Belcher",
@@ -2436,6 +2591,7 @@ const MIRACLES_OF_MARY = [
     "title": "Untrustworthy Camel Driver",
     "incipit": "ወሀሎ፡ በዝንቱ፡ ደብረ፡ ምጥማቅ፡ ዘእግዝእትነ፡…. ብእሲ፡ ክርስቲያናዊ፡ ጸዐኔ፡ አግማል፡ ለመፍቅደ፡ ደብር",
     "manuscript_count": 72,
+    "most_read": true,
     "translations": [
       {
         "author": "Rowan Williams",
@@ -2448,6 +2604,7 @@ const MIRACLES_OF_MARY = [
     "title": "Lamp Blown Out",
     "incipit": "ወሀሎ፡ አሐዱ፡ ብእሲ፡ ክርስቲያናዊ፡ ይነብር፡ በአሐቲ፡ ሀገር፡ እምአህጉረ፡ ጊዛ፡ ዘይሰመይ፡ ምኔተ፡ ዲያቆን፡ በገቦሃ፡ ለምስር",
     "manuscript_count": 70,
+    "most_read": false,
     "translations": [
       {
         "author": "Jeremy Brown & Dawit Muluneh with Wendy Laura Belcher and Ekaterina Pukhovaia",
@@ -2460,6 +2617,7 @@ const MIRACLES_OF_MARY = [
     "title": "The church offical who wanted to stop the singing of hymns to the Virgin Mary during the Eucharist and heard of an abbot who was punished by Mary for doing so",
     "incipit": "ወሀለዉ፡ ፪፡ ፍቁራን፡ ውስተ፡ አሐቲ፡ ቤተ፡ ክርስቲያን፡ ወአሐዱ፡ እምኔሆሙ፡ ይመልክ፡ ይእተ፡ ቤተ፡ ክርስቲያን",
     "manuscript_count": 70,
+    "most_read": false,
     "translations": [
       {
         "author": "Jeremy Brown & Dawit Muluneh with Blaine Kebede",
@@ -2472,6 +2630,7 @@ const MIRACLES_OF_MARY = [
     "title": "Saint Abba Mardari the Righteous, who overheard twelve angels talking about going to Constantinople to hear Saint John Chrysostom praise the Virgin Mary.",
     "incipit": "ወኮነ፡ አብ፡ ቅዱስ፡ አባ፡ ማርዳሪ፡ ዝንቱ፡ ክቡር፡ በኀበ፡ እግዚአብሔር፡ እንዘ፡ ሀሎ፡ ውስተ፡ ደብሩ፡ በዕለተ፡ እሑድ፡ በጊዜ፡ ጽባሕ፡ እንዘ፡ ይጼሊ፡ ሰምዓ፡ ድምፀ፡ ፲፡ ወ፪፡ መላእክት፡ እንዘ፡ ይወርዱ፡ በጽባሕ",
     "manuscript_count": 70,
+    "most_read": false,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -2484,6 +2643,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Felsata la-Maryam??: Dormition: Part 09: The Virgin Mary prays to be taken from this life.",
     "incipit": "ዘከመ፡ አስተርአየ፡ ገብርኤል፡ መልአክ፡ ለእግዝእትነ፡ ማርያም። ጸሎታ፡…. ወትቤ፡ እግዝእትነ፡ ማርያም፡ እንዘ፡ ሀለወት፡ በቤተ፡ ልሔም፡ ኦእግዚእየ፡ ሊቅ፡ ኄር፡ ፈኑ፡ ወንሥአኒ፡ እምዝዓለም፡ ዘምሉእ፡ ሐዘናት፡ ወሁከታት",
     "manuscript_count": 70,
+    "most_read": false,
     "translations": [
       {
         "author": "Rowan Williams",
@@ -2500,6 +2660,7 @@ const MIRACLES_OF_MARY = [
     "title": "Dabra ʾƎntsǝnā's Abbot Raphael who refused to hear the sacrament of confession during the time of Patriarch Abba Matthew of Alexandria",
     "incipit": "ወሀሎ፡ አሐዱ፡ ብእሲ፡ በሀገረ፡ ስዒድ፡ በደብረ፡ እንጽና፡ ቤተ፡ ክርስቲያን፡ በስመ፡ እግዝእትነ፡…. ወእስከ፡ ይእዜ፡ ሀሎ፡ ወኵሉ፡ አሐዱ፡ አሐዱ፡ የአምሮ፡ ወይሰመይ፡ ምኔተ፡ አቡ፡ ንዕናእ",
     "manuscript_count": 69,
+    "most_read": false,
     "translations": [
       {
         "author": "Rowan Williams",
@@ -2516,6 +2677,7 @@ const MIRACLES_OF_MARY = [
     "title": "Black Dog and Gold",
     "incipit": "ወሀሎ፡ ፩ ብእሲ፡ ውስተ፡ አሐቲ፡ ሀገር፡ ምስለ፡ ብእሲቱ፡ ወክቡራን፡ ፈድፋደ፡ ወነበሩ፡ ክልኤሆሙ፡ እንዘ፡ ይገብሩ፡ ተዝካራ፡ ለእግዝእትነ፡ ማርያም፡ ዘምስለ፡ ወልዳ፡ ኢየሱስ፡ ክርስቶስ። ወተፀነሱ፡ እሙንቱ፡ ወኃጥኡ፡ ዘይገብሩ፡ ተዝካራ፡ ለእግዝእትነ፡ ማርያም፡ ወለወልዳ፡ ፍቁር፡ ወዘይሴሰዩ ፨-፨ ወሀለየ፡ ውእቱ፡ ብእሲ፡ ምክረ፡ ዘይገብር፡ በልቡ፡ ወይቤ፡ እምዝ፡ ሐይው፡ ይኄይሰኒ፡ ሰሪቅ፡ ወሚመ፡ ክሒደ፡ ፈጣሪየ፡ ዘውእቱ፡ ኢየሱስ፡ ክርስቶስ፡ ምስለ፡ እሙ፡ ድ ንግል፡ ማርያም፡ ወክሕዶ፡ ለክርስቶስ፡ ምስለ፡ እሙ፡ ወአምነ፡ ሰይጣነ፡ ወገነየ፡ ሎቱ ፨",
     "manuscript_count": 69,
+    "most_read": false,
     "translations": [
       {
         "author": "Jeremy Brown & Dawit Muluneh with Ekaterina Pukhovaia",
@@ -2528,6 +2690,7 @@ const MIRACLES_OF_MARY = [
     "title": "Saint Basil and the rich man who refused to give him a tablet [saleda] for an icon of the Virgin Mary.",
     "incipit": "ወሀሎ፡ አሐዱ፡ ሊቀ፡ ጳጳሳት፡ ዘስሙ፡ ባስልዮስ፡ ወውእቱ፡ ይጌሥጾሙ፡ ለአብዕልት፡ ወይቤሎሙ፡ ሀቡ፡ እምንዋይክሙ፡ ለነዳያን",
     "manuscript_count": 69,
+    "most_read": false,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -2540,6 +2703,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Felsata la-Maryam??: BOld?: Dormition: Part 01: Saint John the Evangelist sees Christ kissing The Virgin Mary's burial cloth.",
     "incipit": "ዘከመ፡ ዜነዋ፡ ዮሐንስ፡ ወልደ፡ ነጕድጓድ፡ እንዘ፡ ይኤምኅ፡ መግነዘ፡ እንተ፡ ላዕሌሃ። ጸሎታ፡…. አንሰ፡ ርኢክዎ፡ ለእግዚእነ፡ ኢየሱስ፡ ክርስቶስ፡ እንዘ፡ ይኤምኅ፡ ለመግነዝ፡ እንተ፡ ላዕሌሃ",
     "manuscript_count": 68,
+    "most_read": true,
     "translations": [
       {
         "author": "Elliot Galvis",
@@ -2560,6 +2724,7 @@ const MIRACLES_OF_MARY = [
     "title": "A man who would not eat before receiving Holy Communion.",
     "incipit": "ተብህለ፡ ከመ፡ ሀሎ፡ አሐዱ፡ ብእሲ፡ ዘያፈቅር፡ ቍርባነ፡ ወኢይጥዕም፡ እክለ፡ ዘእንበለ፡ ይንሣእ፡ ቍርባነ",
     "manuscript_count": 68,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -2572,6 +2737,7 @@ const MIRACLES_OF_MARY = [
     "title": "Imprisoned Merchant Converts",
     "incipit": "ወሀሎ፡ አሐዱ፡ ተንበላት፡ ወይነግድ፡ ለሀገረ፡ ጽርእ፡ በባሕረ፡ ኢያሪኮ፡ በሐመር። ወሖረ፡ በከመ፡ ልማዱ፡ ወወፅአ፡ እምባሕር፡ ወበጽሐ፡ ሀገረ፡ ናፑል፡",
     "manuscript_count": 67,
+    "most_read": false,
     "translations": [
       {
         "author": "Jeremy Brown & Dawit Muluneh with Blaine Kebede",
@@ -2588,6 +2754,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Felsata la-Maryam??: Dormition: Part 10: The Jews go to Bethlehem to seize The Virgin Mary but are blinded.",
     "incipit": "ዘከመ፡ ዖርያ፡ አዕይንቲሆሙ፡ ለአይሁድ፡  ወተጸለታ። ጸሎታ፡…. ወሶበ፡ ርእዩ፡ ተአምራተ፡ ወመንክራተ፡ ዘይገብር፡ ክርስቶስ፡ በቤተ፡ ልሔም፡ በእንተ፡ እግዝእትነ፡ ወላዲተ፡ አምላክ፡ ወኵሎሙ፡ እለ፡ ቦሙ፡ ደዌ፡ ወሕማመ፡ ይመጽኡ፡ ኀበ፡ እግዝእትነ",
     "manuscript_count": 67,
+    "most_read": false,
     "translations": [
       {
         "author": "Elliot Galvis",
@@ -2604,6 +2771,7 @@ const MIRACLES_OF_MARY = [
     "title": "A poor man is healed of his skin disease by the Virgin Mary when people refused to carry him to church.",
     "incipit": "ተብህለ፡ በእንተ፡ አሐዱ፡ ነዳይ፡ ዘይጸውርዎ፡ በዓራት፡ ወኵለንታሁ፡ አበቅ፡ ወዝልጉስ። ወአሐተ፡ ዕለተ፡ ፈተወ፡ ይንሣእ፡ ቍርባነ፡ አመ፡ ፲፡ ወ፮፡ ለነሐሴ",
     "manuscript_count": 67,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -2616,6 +2784,7 @@ const MIRACLES_OF_MARY = [
     "title": "The sinner whom the Virgin Mary healed after his relatives had spent all his money on physicians.",
     "incipit": "ተብህለ፡ ከመ፡ ሀሎ፡ አሐዱ፡ ብእሲ፡ ዓላዌ፡ ሕገ፡ እግዚአብሔር፡ ወአልቦቱ፡ ምግባረ፡ ሠናይ። ወአሐተ፡ ዕለተ፡ ሖረ፡ ውስተ፡ ፍኖት፡ ወአኀዞ፡ ደዌ፡ ወኮነ፡ ድኩመ። ወይቤልዎ፡ አዝማዲሁ፡ ሀበነ፡ እምንዋይከ፡ ኀበ፡ ዐቃቤ፡ ሥራይ",
     "manuscript_count": 67,
+    "most_read": false,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -2628,6 +2797,7 @@ const MIRACLES_OF_MARY = [
     "title": "Oz, the Byzantine monk, is shown a vision of Hell by Saint Urael.",
     "incipit": "ወሀሎ፡ አሐዱ፡ መነኮስ፡ ሮማዊ፡ ዘስሙ፡ ዖፅ፡ በደብረ፡ ኩራዛ፡ ዘያፈቅራ፡ ለእግዝእትነ፡…. ወበአሐቲ፡ ዕለት፡ አዘዘቶ፡ ለኡራኤል፡ መልአክ፡ ከመ፡ ያርእዮ፡ ማኅደረ፡ ኃጥኣን፡ ጠዋያን",
     "manuscript_count": 67,
+    "most_read": false,
     "translations": [
       {
         "author": "Jeremy Brown & Dawit Muluneh with Esset",
@@ -2640,6 +2810,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Ledata la-Maryam: [Chaine Part 02] Nativity: Salome's hands are burned when she tries to verify The Virgin Mary's virginity, but they are healed when she takes the Christ Child into her arms.",
     "incipit": "ዘከመ፡ ውዕየ፡ እዴሃ፡ ለሰሎሜ፡ በገሲሰ፡ ሥጋሃ፡ ለማርያም፡ ወዘከመ፡ ሕይወ፡ በጸዊረ፡ ወልዳ። ጸሎታ፡…. ወእምዝ፡ አንሥአ፡ አዕይንቲሁ፡ ዮሴፍ፡ መንገለ፡ አድባር፡ ዘቤተ፡ ልሔም፡ ወናሁ፡ ርእየ፡ ብእሲተ፡ እንዘ፡ ትመጽእ",
     "manuscript_count": 66,
+    "most_read": false,
     "translations": [
       {
         "author": "Elliot Galvis",
@@ -2664,6 +2835,7 @@ const MIRACLES_OF_MARY = [
     "title": "Dabra Sedeneya's Icon Endangered: A European allmost steals the famous Icon of the Virgin Mary",
     "incipit": "ስምዑ፡ ተአምረ፡ ዘገብረት፡ እምሥዕል፡ እግዝእትነ፡…. ወሀሎ፡ አሐዱ፡ ነጋዲ፡ ብእሲ፡ እምብሔረ፡ አፍርንጊያ፡ ወባዕል፡ ጥቀ፡ በወርቅ፡ ወበብሩር፡ ወበአልባስ፡ ክቡር። ወውእቱ፡ ብእሲ፡ ሶበ፡ ሰምዓ፡ ዜናሃ፡ ለሥዕል፡ ዘእግዝእትነ፡…. ተፈሥሐ",
     "manuscript_count": 66,
+    "most_read": true,
     "translations": [
       {
         "author": "Getatchew Haile",
@@ -2704,6 +2876,7 @@ const MIRACLES_OF_MARY = [
     "title": "Saint Menas and his jealous brother and the story of the saint's birth",
     "incipit": "ወሀሎ፡ አሐዱ፡ መኰንን፡ በሀገረ፡ ነቂዮስ፡ ወስሙ፡ አውዳክስዮስ፡ ወቦቱ፡ አሐዱ፡ ወልደ፡ ዘይሰመይ፡ ሚናስ",
     "manuscript_count": 65,
+    "most_read": false,
     "translations": [
       {
         "author": "Jeremy Brown & Dawit Muluneh with Blaine Kebede and Wendy Laura Belcher",
@@ -2716,6 +2889,7 @@ const MIRACLES_OF_MARY = [
     "title": "Priest Keeps Nun in His House",
     "incipit": "ወሀሎ፡ ብእሲ፡ በሀገረ፡ ናርዲን፡ ወተሠይመ፡ ቀሲሰ፡ በላዕለ፡ ቤተ፡ ክርስቲያን፡ ድንግል፡ ዘይእቲ፡ ሀገር",
     "manuscript_count": 63,
+    "most_read": false,
     "translations": [
       {
         "author": "Jeremy Brown & Dawit Muluneh with Wendy Laura Belcher and Ekaterina Pukhovaia",
@@ -2728,6 +2902,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Felsata la-Maryam: [Chaine Part 02] Dormition: An Egyptian woman comes to the Virgin Mary in Bethlehem and is healed of her fever.",
     "incipit": "ዘከመ፡ ፈወሰታ፡ ለአሐቲ፡ ብእሲት፡ እምነ፡ ፈጸንታ። ወመጽአት፡ አሐቲ፡ ብእሲት፡ እምምድረ፡ ግብጽ፡ እንዘ፡ ሀለወት፡ እግዝእትነ፡…. በቤተ፡ ልሔም፡ እንዘ፡ ትፈጽን፡ ዐቢየ፡ ፈጸንተ",
     "manuscript_count": 63,
+    "most_read": false,
     "translations": [
       {
         "author": "Ellen Li",
@@ -2740,6 +2915,7 @@ const MIRACLES_OF_MARY = [
     "title": "Saint Abba Besoy of Egypt's brother, Abba Bǝhor, a disciple of ʾAmmoni, sees the glory of the Virgin Mary in a vision of St Mary",
     "incipit": "ወኮነ፡ ሎቱ፡ ለአባ፡ አሞኒ፡ ቅዱስ፡ ረድአ፡ ዘስሙ፡ አባ፡ ብሖር",
     "manuscript_count": 62,
+    "most_read": false,
     "translations": [
       {
         "author": "Jeremy Brown & Dawit Muluneh with Ekaterina Pukhovaia",
@@ -2756,6 +2932,7 @@ const MIRACLES_OF_MARY = [
     "title": "The king's washerman who was attacked by a lion.",
     "incipit": "ተብህለ፡ ከመ፡ ሀሎ፡ አሐዱ፡ ብእሲ፡ ዘያፈቅራ፡ ለእግዝእትነ፡…. በኵሉ፡ ልቡ፡ ወበኵሉ፡ ሕሊናሁ፡ ወየሐጽብ፡ ልብሶ፡ ለንጉሥ። ወአሐተ፡ ዕለተ፡ እንዘ፡ ያሐጽብ፡ ደኒኖ፡ ወመጽአ፡ አንበሳ፡ ወአኀዘ፡ ክሳዶ",
     "manuscript_count": 62,
+    "most_read": false,
     "translations": [
       {
         "author": "Ellen Li",
@@ -2768,6 +2945,7 @@ const MIRACLES_OF_MARY = [
     "title": "Old Woman Favors Saint George",
     "incipit": "ወሀለወት፡ አሐቲ፡ አራጊት፡ እንተ፡ ስማ፡ ስምባት፡ ወፈራሂተ፡ እግዚአብሔር፡ ይእቲ፡ ወታፈቅራ፡ ለእግዝእትነ....",
     "manuscript_count": 61,
+    "most_read": false,
     "translations": [
       {
         "author": "Jeremy Brown with Ekaterina Pukhovaia",
@@ -2784,6 +2962,7 @@ const MIRACLES_OF_MARY = [
     "title": "A wealthy man to whom the Virgin Mary appeared in the form of a bird to save the countryside from pestilence.",
     "incipit": "ወሀሎ፡ አሐዱ፡ ብእሲ፡ በአሐቲ፡ ሀገር፡ ወውእቱ፡ ብእሲ፡ ባዕል፡ ውእቱ፡ ፈድፋደ፡ እምኵሎሙ፡ ሰብአ፡ ይእቲ፡ ሀገር፡ ወቦቱ፡ ወርቀ፡ ወብሩረ፡ ወአልባሰ፡ ክቡረ፡…. ወብዙኅ፡ ግበሪሁ፡ ጥቀ። ወእምዝ፡ መጽአ፡ ሞት፡ ዐቢይ፡ ወአጋታ፡ ለሀገሩ",
     "manuscript_count": 61,
+    "most_read": false,
     "translations": [
       {
         "author": "Rowan Williams",
@@ -2796,6 +2975,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Vision of Anthony of Dabra Qwesqwam: Part 3: People come with their exhausted animals and the Virgin Mary annoints their feet",
     "incipit": "ዘከመ፡ ቀብአት፡ እገሪሆሙ፡ በቅብአ፡ በረከት፡ ወፈወሰቶሙ፡ ለእንስሳ። ጸሎታ፡…. ይቤ፡ እንጦንስ፡ ዘደብረ፡ ቍስቋም፡ እሙነ፡ እነግር፡ አነ፡ ከመ፡ እግዝእትነ፡…. ህየ",
     "manuscript_count": 61,
+    "most_read": false,
     "translations": [
       {
         "author": "Ellen Li",
@@ -2812,6 +2992,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Felsata la-Maryam??: Dormition: Part 01: The Jews try to burn down the house where the Virgin Mary is staying but are burned up instead.",
     "incipit": "ዘከመ፡ ወፅአት፡ እሳት፡ ወአውዓዮሙ፡ ለአይሁድ። ጸሎታ፡…. ወእምድኅረ፡ ኃምስ፡ መዋዕል፡ እንዘ፡ ሀለወት፡ እግዝእትነ፡…. በቤተ፡ ልሔም፡ አእመረ፡ መኰንን፡ ወሊቃነ፡ ካህናት፡ ከመ፡ እግዚእነ፡ ኢየሱስ፡ ክርስቶስ፡ ውስተ፡ ቤታ",
     "manuscript_count": 60,
+    "most_read": false,
     "translations": [
       {
         "author": "Ellen Li",
@@ -2824,6 +3005,7 @@ const MIRACLES_OF_MARY = [
     "title": "Homily of John Chrysostom",
     "incipit": "ይቤ፡ ዮሐንስ፡ አፈ፡ ወርቅ፡ እንዘ፡ ይዜኑ፡ ዘከመ፡ ኃውጸቶ፡ እግዝእትነ፡ ማርያም፡ ምስለ፡ ፍቁር፡ ወልዳ፡ ለዮሐንስ፡ መጥምቅ፡ እንዘ፡ ሀሎ፡ ገዳመ",
     "manuscript_count": 59,
+    "most_read": false,
     "translations": [
       {
         "author": "Jeremy Brown & Dawit Muluneh with Blaine Kebede",
@@ -2844,6 +3026,7 @@ const MIRACLES_OF_MARY = [
     "title": "The Muslim Egyptian man who lived next to Saint Mark Church, the Saint Shenute Church, and a Muslim Mosque in Cairo and was left behind in the desert while on pilgrimage to Mecca",
     "incipit": "ተብህለ፡ ከመ፡ ሀሎ፡ አሐዱ፡ ብእሲ፡ ተንባላታይ፡ እምዘመደ፡ ተንባላት፡ በሀገረ፡ ምስር፡ በጎረ፡ ቤተ፡ ክርስቲያን፡ ዘቅዱስ፡ ማርቆስ፡ ወቤተ፡ ክርስቲያን፡ ዘቅዱስ፡ አባ፡ ሲኖዳ",
     "manuscript_count": 59,
+    "most_read": false,
     "translations": [
       {
         "author": "Jeremy Brown with Ekaterina Pukhovaia",
@@ -2856,6 +3039,7 @@ const MIRACLES_OF_MARY = [
     "title": "Saint John Chrysostom is given the keys of the kingdom by Saint Peter and the Gospels by Saint John the Evangelist and then the Virgin Mary appears",
     "incipit": "ዘከመ፡ አስተርአየቶ፡ ለዮሐንስ፡ አፈ፡ ወርቅ፡ በአልባስ፡ ጸዓዳ፡ ከመ፡ ዘበረድ። ጸሎታ፡…. ወሀሎ፡ አሐዱ፡ ብእሲ፡ ሊቀ፡ ጳጳሳት፡ ዘሀገረ፡ ቍስጥንጥንያ፡ ዘስሙ፡ ዮሐንስ፡ አፈ፡ ወርቅ፡ ወእንዘ፡ ሀሎ፡ ውእቱ፡ እምቅድመ፡ ይንሣእ፡ ሢመተ፡ ቅስና",
     "manuscript_count": 58,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -2872,6 +3056,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Nagara Maryam??: OldH: Journey: A soldier redeems the infant Jesus from another soldier who was thinking of handing him over to King Herod.",
     "incipit": "ተብህለ፡ በእንተ፡ ወለት፡ ዘወለደት፡ በድንግልናሃ፡ እሳተ፡ መለኮት፡ በላዒ፡ አንበሳ፡ ግሩመ፡ በከርሣ፡ ዘጾረት፡ ዘኢለከፋ፡ ደነስ፡ ከናፍሪሃ",
     "manuscript_count": 58,
+    "most_read": false,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -2884,6 +3069,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Ledata la-Maryam??: OldD: Part 01: Nativity: How the Virgin Mary gave birth (see no. 299) (347, 445 similar)",
     "incipit": "እግዚአብሔር፡ ያብርህ፡ አዕይንተ፡ አልባቢክሙ፡ ለሰሚዓ፡ ተአምሪሃ፡ ለእግዝእትነ፨ እምድኅረ፡ ወለደቶ፡ ለእግዚእነ፡ ኢየሱስ፡ ክርስቶስ፨ ወዘከመ፡ ቀንዓ፡ ሄሮድስ፡ ወቀተሎሙ፡ ለሕፃናት፡ ወበእንተዝ፡ ጐየ፡ እግዝእትነ፡ ማርያም፡ ምስለ፡ ፍቁር፡ ወልዳ፡ ኀበ፡ ምድረ፡ ግብጽ፡ በሰላመ፡ እግዚአብሔር፡ አሜን፡ ወኮነ፡ ሶበ፡ ተፈጸመ፡ መዋዕለ፡ ፅንሳ፡ ለእግዝእትነ፡ ማርያም።",
     "manuscript_count": 58,
+    "most_read": true,
     "translations": [
       {
         "author": "",
@@ -2908,6 +3094,7 @@ const MIRACLES_OF_MARY = [
     "title": "Patriarch Gabra Krestos of Alexandria who heard of the withered olive tree that bloomed at the Andalusian church gate every year on the feast of the Virgin Mary (from the History of the Patriarchs)",
     "incipit": "ወሀሎ፡ አሐዱ፡ ሊቀ፡ ጳጳሳት፡ ዘሀገረ፡ እለ፡ እስክንድርያ፡ ዘስሙ፡ ገብረ፡ ክርስቶስ። ወውእቱ፡ አብ፡ ቅዱስ፡ እምኍልቆሙ፡ ለአበው፡ ሊቃነ፡ ጳጳሳት፡ ፷ወ፯። ወኮነ፡ በመዋዕሊሁ፡ ለዝንቱ፡ አብ፡ ተአምራት፡ ወመንክራት፡ ብዙኃት። ወናሁ፡ ውእቱ፡ ሰምዐ፡ በእንተ፡ አሐቲ፡ ቤተ፡ ክርስቲያን፡ ወተሐንጸት፡ በስማ፡ ለእግዝእትነ፡…. በብሔረ፡ እንዱልስ፡ ከመ፡ ሀለወት፡ ዕፀ፡ ዘይት፡ ይብስት፡ ኀበ፡ አንቀጸ፡ ይእቲ፡ ቤተ፡ ክርስቲያን",
     "manuscript_count": 57,
+    "most_read": false,
     "translations": [
       {
         "author": "Jeremy Brown & Dawit Muluneh with Wendy Laura Belcher",
@@ -2920,6 +3107,7 @@ const MIRACLES_OF_MARY = [
     "title": "The Composition of the Maṣḥafa ḥawi",
     "incipit": "ወኮነ፡ በመዋዕለ፡ አብ፡ ክቡር፡ ሊቀ፡ ጳጳሳት፡ አባ፡ ገብርኤል፡ ወልደ፡ ተሪክ፡ ወበጽሖ፡ ለዝንቱ፡ ሊቀ፡ ጳጳሳት፡ በአስ፡ ወጸልእ፡ ምስለ፡ ሕዝቡ",
     "manuscript_count": 56,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher and Fikir Feleke",
@@ -2932,6 +3120,7 @@ const MIRACLES_OF_MARY = [
     "title": "Emperor Zeno in Constantinople builds churches in Scete, Egypt",
     "incipit": "ወኮነ፡ ሶበ፡ አንገሦ፡ እግዚአብሔር፡ ለንጉሥ፡ ዘይኑን፡ ዲበ፡ ሀገረ፡ ሮሜ፡ ወቍስጥንጥንያ፡ ወአድያመ፡ ግብጽ፡ ወተዘከረ፡ በልቡ፡ ወይቤ",
     "manuscript_count": 55,
+    "most_read": false,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -2944,6 +3133,7 @@ const MIRACLES_OF_MARY = [
     "title": "Saint Basil and the Icon: Part 1: The Virgin Mary, together with Saints Irene and Sophia, appears to Saint Basil and tells him where her icon is buried.",
     "incipit": "ዘከመ፡ አስተርአየቶ፡ ለባስልዮስ፡ ምስለ፡ ክልኤ፡ አዋልድ። ጸሎታ፡…. ወእንዘ፡ አነ፡ እነውም፡ ነጸርኩ፡ ራእየ፡ ወነዋ፡ እሬኢ፡ ብእሲተ፡ ወይእቲ፡ ታበርህ፡ ኵለንታሃ፡ ከመ፡ ፀሐይ",
     "manuscript_count": 55,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -2956,6 +3146,7 @@ const MIRACLES_OF_MARY = [
     "title": "Monk Finds Lost Book",
     "incipit": "ወሀሎ፡ በቤተ፡ ክርስቲያነ፡ ቅድስት፡ ወብፅዕት፡ ንጽሕት፡ ወልዕልት፡ እምሰማዕታት፡ በርባራ፡ ብእሲ፡ ዘይሰመይ፡ ዮሐንስ",
     "manuscript_count": 54,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -2968,6 +3159,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Vision of Anthony of Dabra Qwesqwam: Part 2: Anthony narrates about the Virgin Mary having a special connection to the monastery (cont.)",
     "incipit": "ዘከመ፡ አስተርአየቶ፡ ለአሐዱ፡ እምንኡሳን፡ እንዘ፡ ሀሎ፡ ምስለ፡ አባ፡ ጢሞቴዎስ፡ ሊቀ፡ ጳጳሳት፡ ዘእለስክንድርያ። ጸሎታ፡…. ይቤ፡ ውእቱ፡ ቅዱስ፡ ዘርእየ፡ ራእየ፡ ወርኢክዋ፡ ለእግዝእትነ፡…. ወይእቲ፡ ተአወድ፡ አውዳ፡ ለሊቀ፡ ጳጳሳት",
     "manuscript_count": 53,
+    "most_read": false,
     "translations": [
       {
         "author": "Rowan Williams",
@@ -2980,6 +3172,7 @@ const MIRACLES_OF_MARY = [
     "title": "A young man whom his mother had vowed to the service of the Virgin Mary becomes impotent when his parents try to wed him.",
     "incipit": "ተብህለ፡ ከመ፡ ሀለወት፡ አሐቲ፡ ብእሲት፡ እስመ፡ መካን፡ ይእቲ፡ ወነበረት፡ ብዙኃ፡ መዋዕል፡ እንዘ፡ ትብል፡ ኀበ፡ እግዝእትነ፡…. ሀብኒ፡ ውሉደ",
     "manuscript_count": 53,
+    "most_read": false,
     "translations": [
       {
         "author": "Dawit Muluneh with Wendy Laura Belcher and Shawn Benjamin and Jeremy Brown",
@@ -2992,6 +3185,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Felsata la-Maryam??: Dormition: Part 07: The Virgin Mary asks that Saint John be allowed to visit her dwelling place.",
     "incipit": "ዘከመ፡ ሰአለቶ፡ ለወልዳ፡ ከመ፡ ያምጽኦ፡ ለዮሐንስ፡ ወትርአዮ። ጸሎታ፡…. ወጸለየት፡ እግዝእትነ፡ ማርያም፡ እንዘ፡ ትብል፡ ኦእግዚእየ፡ ወአምላኪየ፡ ኢየሱስ፡ ክርስቶስ፡ ዘኀረያ፡ ለአመቱ፡ ድሉተ፡ ለተስብኦቱ",
     "manuscript_count": 52,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -3004,6 +3198,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Felsata la-Maryam??: COld?: Dormition: The Apostles visit the Virgin Mary in heaven (Synaxary entry for 16 Nahase)",
     "incipit": "ተአምሪሃ፡ ለእግዝእትነ፡…. በከመ፡ ተረክበ፡ በመጸሕፍተ፡ ስንክሳር፡ አመ፡ ፲ወ፮፡ ለነሐሴ። በዛቲ፡ ዕለት፡ ኮነት፡ ዕርገተ፡ ሥጋሃ፡ ለእግዝእትነ፡…. ኀበ፡ ሰማይ። እስመ፡ እምድኅረ፡ ዕረፍታ፡ ነበሩ፡ ሐዋርያት፡ እንዘ፡ የሐዝኑ",
     "manuscript_count": 51,
+    "most_read": true,
     "translations": [
       {
         "author": "",
@@ -3032,6 +3227,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Nagara Maryam??: OldA: Journey: The Virgin Mary blesses Scete, which Saint Macarius chooses for his monastery.",
     "incipit": "ወኮነ፡ ሶበ፡ ኀደረት፡ እግዝእትነ፡ ማርያም፡ ምስለ፡ ፍቁር፡ ወልዳ፡ ውስተ፡ ደብረ፡ ምጥማቅ፡ ምስለ፡ ዮሴፍ፡ ወሰሎሜ፡ ወባረኮ፡ እግዚአብሔር፡ ለውእቱ፡ መካን",
     "manuscript_count": 49,
+    "most_read": false,
     "translations": [
       {
         "author": "Jeremy Brown & Dawit Muluneh with Wendy Laura Belcher",
@@ -3044,6 +3240,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Vision of Saint Gregory the Seer of Hidden Matters (of Roha, Syria) of the Virgin Mary in paradise [sinkessar entry?]",
     "incipit": "ይቤ፡ ጎርጎርዮስ፡ ራእየ፡ ኅቡኣት፡ እንዘ፡ ያይድዕ፡ ስብሐቲሃ፡ ለእግዝእትነ፡…. ዘርእየ፡ በሰማይ።",
     "manuscript_count": 49,
+    "most_read": true,
     "translations": [
       {
         "author": "",
@@ -3056,6 +3253,7 @@ const MIRACLES_OF_MARY = [
     "title": "Saint Basil and the Icon: Part 3: The Virgin Mary tells Saint Basil to take two pillars from a pagan temple.",
     "incipit": "ዘከመ፡ አስተርአየቶ፡ ለባስልዮስ። አኮኑ፡ እንዘ፡ እነውም፡ አስተርአየኒ፡ ከመ፡ ቀዳሚ፡ ጊዜ፡ ወትቤለኒ፡ እፎ፡ አንተ፡ ጽሩዕ",
     "manuscript_count": 49,
+    "most_read": false,
     "translations": [
       {
         "author": "Elliot Galvis",
@@ -3068,6 +3266,7 @@ const MIRACLES_OF_MARY = [
     "title": "Abbas sees a vision of the Virgin Mary blessing the monks who were chanting the Psalms.",
     "incipit": "ወሀሎ፡ አሐዱ፡ አባስ፡ ዘይዜምር፡ ወትረ፡ በመዝሙረ፡ ዳዊት። ይቤ፡ ለሊሁ፡ እንዘ፡ እጼሊ፡ ጸሎተ፡ በውስተ፡ ጾማዕትየ፡ ርኢኩ፡ ራእየ፡ ግሩመ",
     "manuscript_count": 49,
+    "most_read": false,
     "translations": [
       {
         "author": "Allie V. Mangel",
@@ -3088,6 +3287,7 @@ const MIRACLES_OF_MARY = [
     "title": "The Egyptian woman who lost a silver plate while bathing in a miraculous spring.",
     "incipit": "ወሀለወት፡ አሐቲ፡ ብእሲት፡ በብሔረ፡ ግብጽ፡ ወበአሐቲ፡ ዕለት፡ እምበዐላተ፡ እግዝእትነ፡…. ሖረት፡ ኀበ፡ ነቅዐ፡ ማይ፡ ዘይሰቅዩ፡ እምኔሁ፡ በለሳነ፡ ወተጠምቀት፡ ወተሐጽበት፡ ምስለ፡ ደቂቃ",
     "manuscript_count": 49,
+    "most_read": false,
     "translations": [
       {
         "author": "Allie V. Mangel",
@@ -3100,6 +3300,7 @@ const MIRACLES_OF_MARY = [
     "title": "Life of Mary: Served at Childbirth",
     "incipit": "ዘከመ፡ ተስእላ፡ ሠለስቱ፡ ደናግል፡ ዘከመ፡ ወለደት፡ አምላከ። ወእምዝ፡ መጽኣ፡ ኀቤሃ፡ ፫፡ ደናግል፡ እለ፡ ይትቀነያ፡ ላቲ፡ ወይቤላሃ፡ ኢትኅዝኒ፡ ኦእግዝእትየ፡ ማርያም፡ ነሕነሰ፡ ንመጽእ፡ ምስሌኪ",
     "manuscript_count": 48,
+    "most_read": false,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -3112,6 +3313,7 @@ const MIRACLES_OF_MARY = [
     "title": "The Sorceress Taludar",
     "incipit": "ተአምሪሃ፡ ለእግዝእትነ፡… እንተ፡ ገብረቶ፡ በላዕለ፡ መሠርይት፡ ጣውሉዳር፡ ወጣማር፡ መርዓታ፡ ለድምሳሴሆን፡ በጽንዐ፡ መዝራዕታ። ነገረ፡ ተአምሪሃ፡ ለእግዝእትነ፡…. ዘነገረቶ፡ ለጢሞቴዎስ፡ ሊቀ፡ ጳጳሳት፡ ዘእለስክንድርያ፡ ወልደ፡ ዲዮስቆሮስ፡ ወትቤ፡ ስማዕ፡ እንግርከ፡ ዘረከበነ፡ አመ፡ ናንሶሱ፡ ውስተ፡ ምድረ፡ ግብጽ",
     "manuscript_count": 48,
+    "most_read": false,
     "translations": [
       {
         "author": "Jeremy Brown & Dawit Muluneh with Wendy Laura Belcher",
@@ -3124,6 +3326,7 @@ const MIRACLES_OF_MARY = [
     "title": "King's Parable: Part 1: Patriarch Abraham of Alexandria (d. 978), King al-Muizz, and the parable of the mustard seed (whole or opening)",
     "incipit": "ወሀሎ፡ አሐዱ፡ አብ፡ ቅዱስ፡ አባ፡ አብርሃም፡ ሶርያዊ፡ ሊቀ፡ ጳጳሳት፡ ዘሀገረ፡ እለ፡ ስክንድርያ፡ ወውእቱ፡ እምኍልቆሙ፡ ለአበው፡ ሊቃነ፡ ጳጳሳት፡ ፷ወ፪። ዝንቱ፡ አብ፡ ኮነ፡ እምነ፡ ክርስቲያን፡ ዘብሔረ፡ ምሥራቅ፡ ወኮነ፡ ነጋዴ",
     "manuscript_count": 47,
+    "most_read": true,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -3144,6 +3347,7 @@ const MIRACLES_OF_MARY = [
     "title": "Saint Paul is taken to the third heaven and there sees the Virgin Mary.",
     "incipit": "ይቤ፡ ጳውሎስ፡ ዘይነግር፡ ስብሐቲሃ፡ ለእግዝእትነ፡…. ዘርእየ፡ በሰማይ፡ አመ፡ መሰጥዎ፡ ውስተ፡ ሰማይ፡ በከመ፡ ይቤ፡ ለሊሁ",
     "manuscript_count": 47,
+    "most_read": false,
     "translations": [
       {
         "author": "Jeremy Brown",
@@ -3160,6 +3364,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Ledata la-Maryam??: OldA: Part 04: Temple: The Virgin Mary is taken to the Temple at three years old (315, 316-D, 447 similar)",
     "incipit": "ወነበሩ፡ ኢያቄም፡ ወሐና፡ እንዘ፡ የሐፅኑ፡ ማርያምሃ፡ ወለቶሙ፡ ፫፡ ዓመተ፡ እንዘ፡ ይሴብሕዎ፡ ወየአኵትዎ፡ ለእግዚአብሔር፡ በእንተ፡ ወለቶሙ፡ ኵሎ፡ ዘገብረ፡ ሎሙ።",
     "manuscript_count": 47,
+    "most_read": true,
     "translations": [
       {
         "author": "",
@@ -3176,6 +3381,7 @@ const MIRACLES_OF_MARY = [
     "title": "The Wife with No Son",
     "incipit": "ወኮነ፡ በዛቲ፡ ሀገር፡ ካዕበ፡ ዘትሰመይ፡ ምኔተ፡ ዲያቆን፡ ወሀሎ፡ ብእሲ፡ ክርስቲያናዊ፡ ዘስሙ፡ ዮሴፍ፡ ወቦቱ፡ ብእሲተ፡ ሠናይተ፡ ላሕይ፡ ጥቀ",
     "manuscript_count": 46,
+    "most_read": false,
     "translations": [
       {
         "author": "Jeremy Brown & Dawit Muluneh with Ekaterina Pukhovaia",
@@ -3188,6 +3394,7 @@ const MIRACLES_OF_MARY = [
     "title": "A Jew is led to baptism by a dream about a lion and a monk; afterwards he curses a Jew at the latter's request.",
     "incipit": "ዘገብረት፡ ተአምረ፡ ወመንክረ፡ በአሐቲ፡ ንስቲት፡ ደወል፡ ወይነብሩ፡ ውስቴታ፡ መብዝኅቶሙ፡ አይሁድ፡ ወይነብሩ፡ ህየ፡ ውሑዳን፡ ክርስቲያን። ወሶበ፡ ሰምዓ፡ እምኔሆሙ፡ አሐዱ፡ ወልድ፡ አይሁዳዊ፡ ትምህርተ፡ ክርስቲያን፡ ወነበረ፡ እንዘ፡ ይብል፡ እሙንኑ፡ ሃይማኖተ፡ ክርስቲያን፡ ወሚመ፡ ሃይማኖተ፡ አይሁድኑ፡ እሙን",
     "manuscript_count": 46,
+    "most_read": true,
     "translations": [
       {
         "author": "Allie V. Mangel",
@@ -3204,6 +3411,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Felsata la-Maryam??: BOld?: Dormition: Part 02: Christ appears to the Apostles after the Dormition of The Virgin Mary.",
     "incipit": "ዘከመ፡ መጽአት፡ ነፍሰ፡ ድንግል፡ በውስተ፡ ደብተራ፡ ብርሃን። ወካዕበ፡ አዘዘ፡ ውእተ፡ ደብተራ፡ ዐባየ፡ መጽአት፡ እምሰማይ፡ ወነፍሰ፡ ድንግል፡ ውስቴታ",
     "manuscript_count": 45,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -3220,6 +3428,7 @@ const MIRACLES_OF_MARY = [
     "title": "Bishop Hildephonsus sees the icon of the Virgin Mary sweating; she asks him to raise a girl from the dead.",
     "incipit": "ወሀሎ፡ አሐዱ፡ ቅዱስ፡ ዘስሙ፡ ደቅስዮስ፡ ኤጲስ፡ ቆጶስ፡ ዘጥልጥልያ፡ ወእንዘ፡ ሀለወ፡ ቀዊሞ፡ በቅዳሴ፡ ርእየ፡ ሥዕላ፡ ለእግዝእትነ፡…. እንዘ፡ ይውኅዝ፡ ኃፍ",
     "manuscript_count": 45,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -3236,6 +3445,7 @@ const MIRACLES_OF_MARY = [
     "title": "The Custodian Quarrels with the Bishop",
     "incipit": "ወሀሎ፡ በአሐቲ፡ ሀገር፡ እምአህጉረ፡ ጽዒድ፡ እምሢመተ፡ ኤጲስ፡ ቆጶሳት፡ ቤተ፡ ክርስቲያን፡ በስመ፡ እግዝእትነ፡…. ወሀሎ፡ በዛቲ፡ ቤተ፡ ክርስቲያን፡ ብእሲ፡ አምኑት፡ ዘውእቱ፡ ዐቃቤ፡ ቤተ፡ ክርስቲያን",
     "manuscript_count": 44,
+    "most_read": false,
     "translations": [
       {
         "author": "Jeremy Brown & Dawit Muluneh with Wendy Laura Belcher and Ekaterina Pukhovaia",
@@ -3248,6 +3458,7 @@ const MIRACLES_OF_MARY = [
     "title": "Dabra Qalemon's Abbot Samuʾel and John of Scete and the miracles that occurred during their captivity",
     "incipit": "ዘከመ፡ አስተርአየቶ፡ ለአባ፡ ሳሙኤል፡ ዘደብረ፡ ቀልሞን፡ አመ፡ ወሰድዎ፡ በርባር፡ ወተመይጠ። ጸሎታ፡…. ወእምዝ፡ ወሰድዎ፡ ሰብኣ፡ በርባር፡ ለአባ፡ ሳሙኤል፡ ዘቀልሞን፡ ኀበ፡ ሀገሮሙ",
     "manuscript_count": 44,
+    "most_read": false,
     "translations": [
       {
         "author": "Elliot Galvis",
@@ -3264,6 +3475,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Vision of Timothy of Alexandria: Part 01? or 02?: The life of the Virgin Mary to the birth of Christ.",
     "incipit": "ዘከመ፡ አስተርአየቶ፡ ለጢሞቴዎስ፡ ሊቀ፡ ጳጳሳት፡ ወነገረቶ፡ ሑረያቲሁ፡ ምስለ፡ ፍቁር፡ ወልዳ፡ ወምስለ፡ ዮሴፍ፡ ወምስለ፡ ሰሎሜ። ጸሎታ፡…. ይቤ፡ ጢሞቴዎስ፡ ሊቀ፡ ጳጳሳት፡ አንሰ፡ ርኢክዋ፡ ለእግዝእትነ፡…. ናሁ፡ ወረደት፡ እምሰማይ",
     "manuscript_count": 43,
+    "most_read": true,
     "translations": [
       {
         "author": "Jeremy Brown & Dawit Muluneh & Mehari Worku with Esset Teshome and Wendy Laura Belcher",
@@ -3284,6 +3496,7 @@ const MIRACLES_OF_MARY = [
     "title": "King Zara Yaqob (Zarʾa Yaʿeqob), the 14th c. Ethiopian monarch, hears of Dabra Metmaq's destruction in 1452 and orders the construction of a new monastery in Ethiopia to take its place.",
     "incipit": "ወኮነ፡ በመዋዕሊሁ፡ ለአስራፍ፡ ንጉሠ፡ ምስር፡ ከሐዲ፡ ኮነ፡ ስደት፡ ዐቢይ፡ ላዕለ፡ አብያተ፡ ክርስቲያናት፡ በመዋዕለ፡ ሢመቱ፡ ለአቡነ፡ ሊቀ፡ ጳጳሳት፡ ዘሀገረ፡ እለ፡ ስክንድርያ፡ አባ፡ ዮሐንስ። ወአሜሃ፡ ተጋብኡ፡ ተንበላት፡ እለ፡ ሀለዉ፡ ውስተ፡ ሀገረ፡ ስንደፋ፡ ወእልማሓሉ፡ ወደብረ፡ ምጥማቅ፡ ወበምክረ፡ ሰይጣን፡ አቡሆሙ፡ ተማከረ፡ ምክረ፡ እኩየ",
     "manuscript_count": 43,
+    "most_read": true,
     "translations": [
       {
         "author": "Rowan Williams",
@@ -3296,6 +3509,7 @@ const MIRACLES_OF_MARY = [
     "title": "The Ethiopian kingdom of Damot's inhabitants who would not observe the feast days of the Virgin Mary are punished by a storm that brings down a mighty tree.",
     "incipit": "ተአምሪሃ፡ ለእግዝእትነ፡…. ዘገብረቶ፡ በምድረ፡ ዳሞት፡ ዘይሰመይ፡ አንስላል፡ ዘኢሰማዕነ፡ ወዘኢርኢነ፡ ወኢነገሩነ፡ አበዊነ፡ ዘኢተገብረ፡ በምልአ፡ ኢትዮጵያ፡ ከመ፡ አውደቀት፡ ኦመ፡ ዐቢየ",
     "manuscript_count": 42,
+    "most_read": true,
     "translations": [
       {
         "author": "",
@@ -3312,6 +3526,7 @@ const MIRACLES_OF_MARY = [
     "title": "Saint Basil and the Icon: Part 4: The Virgin Mary sets up the pillars in the church and makes a miraculous spring flow out at their base.",
     "incipit": "ዘከመ፡ አስተርአየቶ፡ ለባስልዮስ፡ ኤጲስ፡ ቆጶስ። ጸሎታ፡…. ወእንዘ፡ አነ፡ እቀውም፡ ወእጼሊ፡ ረከበኒ፡ ድቃስ፡ ንስቲት፡ ወርኢኩ፡ ከመ፡ ብእሲት፡ ብርህት",
     "manuscript_count": 41,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -3324,6 +3539,7 @@ const MIRACLES_OF_MARY = [
     "title": "Saint Barsuma the Great's disciples are visited by the Virgin Mary in the form of a dove.",
     "incipit": "ዘከመ፡ አስተርአየቶሙ፡ ለአርድእተ፡ አባ፡ በርሱማ፡ በአምሳለ፡ ርግብ፡ ጸዓዳ። ጸሎታ፡…. ወኮነ፡ ሶበ፡ አልጸቀ፡ ጊዜ፡ ጽባሕ፡ ወቆመ፡ ለጸሎት፡ ወጸለየ፡ ቅዱስ፡ ማሪ፡ በርሱማ",
     "manuscript_count": 40,
+    "most_read": false,
     "translations": [
       {
         "author": "Augustine Dickinson",
@@ -3340,6 +3556,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Ledata la-Maryam??: Old: Part 03: Annunciation: God sends Saint Gabriel to the Virgin Mary for the Annunciation (like IDs 295, 297, 435, 437, 536, 1296)",
     "incipit": "ወይቤሎ፡ እግዚአብሔር፡ ለገብርኤል፡ ወበላ፡ ለወለተ፡ ጽዮን፡ ወልደ፡ እግዚአብሔር፡ ይመጽእ፡ ላዕሌኪ፡ ወኃይለ፡ ልዑል፡ ይጸልለኪ፡ ወዝኒ፡ ይትወለድ፡ እምኔኪ",
     "manuscript_count": 40,
+    "most_read": true,
     "translations": [
       {
         "author": "",
@@ -3360,6 +3577,7 @@ const MIRACLES_OF_MARY = [
     "title": "King Dawit I, the 14th c. Ethiopian monarch, and the miracle concerning the golden ink during his reign",
     "incipit": "ስምዑ፡ እንከ፡ ንንግርክሙ፡ ተአምረ፡ ወመንክረ፡ ዘገብረት፡ ሎቱ፡ ለንጉሥ፡ መፍቀሬ፡ እግዚአብሔር፡ ዳዊት፡ ዘተሰምየ፡ ቈስጠንጢኖስ፡ በጸሎተ፡ እግዝእቱ",
     "manuscript_count": 39,
+    "most_read": false,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -3372,6 +3590,7 @@ const MIRACLES_OF_MARY = [
     "title": "King Zara Yaqob (Zarʾa Yaʿeqob), the 14th c. Ethiopian monarch, and the judgment of his court against the Stephanites (Ǝstifanites/Estifanites)",
     "incipit": "ተአምረ፡ መስቀሉ፡ ለወልዳ፡ ዘገብሮ፡ እግዚእነ፡ ኢየሱስ፡ ክርስቶስ፡ በእንተ፡ እሙ፡ ማርያም፡…. በእንተ፡ መስቀሉ። ወሀለወት፡ አሐቲ፡ ሀገር፡ ዐባይ፡ በብሔረ፡ ክርስቲያን፡ ወነገሥታቲሃ፡ ወጳጳሳቲሃ፡ ወኵሎሙ፡ እለ፡ ይነብሩ፡ ውስቴታ፡ ክርስቲያን፡ እሙንቱ፡ ወይገብሩ፡ በዓላቲሃ፡ ለእግዝእትነ፡ ማርያም",
     "manuscript_count": 39,
+    "most_read": true,
     "translations": [
       {
         "author": "Ellen Li",
@@ -3400,6 +3619,7 @@ const MIRACLES_OF_MARY = [
     "title": "King Bartaqu of Greece, who became a monk.",
     "incipit": "ወሀሎ ፡ ፩ብእሲ ፡ ንጉሥ ፡ በደወለ ፡ ፅርዕ ፡ ዘስሙ ፡ በርጠቁ ፡ ወልደ ፡ ኤጴሜን ፡ ኃያል ፡ በመንግሥቱ ፡ ወፅኑዕ ፡ ከመ ፡ አምደ ፡ ሐፂን ። ወያደክሞሙ ፡ ለኵሎሙ ፡ ሰብእ ፡ የሐርፅ ፡ ዘረከበ ፡ ወያደቅቅ ፡ ኃያላነ ፡ ወፅኑዓነ ፡ ነገሥታተ ፡ ግብጽ ፡ ወመስፍንቶሙ ፡ ዘተናገረ ፡ ይገብር ፡ ወይፌጽም",
     "manuscript_count": 39,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -3412,6 +3632,7 @@ const MIRACLES_OF_MARY = [
     "title": "Giyorgis, the monk, who followed the heretical teachings of Za-Mika'el and his fate",
     "incipit": "ስምዑ፡ አበውየ፡ ቅዱሳን፡ አኃው፡ ኄራን፡ እለ፡ ሀለውክሙ፡ በርትዕት፡ ሃይማኖት፡ በትምህርተ፡ ሐዋርያት፡ ንጹሓን፡ ነገረ፡ ተአምር፡ ዘእግዝእትነ፡ ማርያም፡ ዘከሠተት፡ ወበእንተ፡ እለ፡ ያስትቱ፡ ደብረ፡ ጽዮን፡ ወበእንተ፡ ተአምሪሃ፡ ለእግዝእትነ፡ ማርያም። ወሀሎ፡ አሐዱ፡ ብእሲ፡ መነኮስ፡ ዘስሙ፡ ጊዮርጊስ፡ እምውሉደ፡ ዕልወ፡ ሃይማኖት፡ ወዘሚካኤል",
     "manuscript_count": 38,
+    "most_read": true,
     "translations": [
       {
         "author": "Elliot Galvis",
@@ -3432,6 +3653,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Ledata la-Maryam??: Old: Part 07: Nativity: The Virgin Mary gives birth to Jesus Christ, who is adored by shepherds and the Magi (299, 347, 446 similar)",
     "incipit": "ወነበሩ፡ ኅቡረ፡ ዮሴፍ፡ ምስለ፡ ማርያም፡ እንዘ፡ ይባርክዎ፡ ለእግዚአብሔር። ወእምድኅረ፡ ፱፡ አውራኅ፡ ተወልደ፡ ሕፃን፡ በቤተ፡ ልሔም፡ ዘይሁዳ፡ በበዐት",
     "manuscript_count": 38,
+    "most_read": true,
     "translations": [
       {
         "author": "",
@@ -3452,6 +3674,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Felsata la-Maryam??: Dormition: Part 03: The Virgin Mary prays for the release of the souls in judgment.",
     "incipit": "ዘከመ፡ አውፅአት፡ ነፍሳተ፡ እለ፡ እምውስተ፡ ደይን። ጸሎታ፡…. እፈቅድኬ፡ ዮም፡ ከመ፡ ትፈጽም፡ ሊተ፡ ኀሢሦትየ፡ ወታዕርግ፡ ኵሎ፡ ነፍሳተ፡ ዘውስተ፡ ኵነኔ",
     "manuscript_count": 37,
+    "most_read": false,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -3464,6 +3687,7 @@ const MIRACLES_OF_MARY = [
     "title": "Saints Atrasis and Yona, virgins and martyrs, are visited by the Virgin Mary in an apparition",
     "incipit": "ዘከመ፡ አስተርአየቶን፡ ለአጥራሲስ፡ ወለዮና፡ ሰማዕታት፡ ደናግል፡ ወዘከመ፡ ነሥአቶን፡ ወዘከመ፡ አቅረበቶን፡ ኀበ፡ ወልዳ፡ ወባረከ፡ ላዕሌሆን ። ጸሎታ፡…. ወዛቲ፡ አጥራሲስ፡ ወለቱ፡ ይእቲ፡ ለንጉሥ፡ እንድርያኖስ",
     "manuscript_count": 37,
+    "most_read": false,
     "translations": [
       {
         "author": "Augustine Dickinson",
@@ -3476,6 +3700,7 @@ const MIRACLES_OF_MARY = [
     "title": "King Zara Yaqob's (Zarʾa Yaʿeqob) Son: Part 2: Batargela is accused of treason and is imprisoned but delivered from the plague.",
     "incipit": "ዘገብረት፡ ተአምረ፡ ወመንክረ፡ ለዝኩ፡ ወልድ፡ በተርጌላ፡ ማርያም። ጸሎታ፡…. ወኮነ፡ ሶበ፡ ልህቀ፡ ዝኩ፡ ሕፃን፡ በቴርጌላ፡ ማርያም፡ ይጸመድ፡ ወትረ፡ በዴዴ፡ መስፍን",
     "manuscript_count": 37,
+    "most_read": true,
     "translations": [
       {
         "author": "Mika J. Hyman",
@@ -3492,6 +3717,7 @@ const MIRACLES_OF_MARY = [
     "title": "A woman who had poisoned her sister and married her husband is swallowed up by the earth when she anoints herself with the oil that flowed from the Virgin Mary's icon.",
     "incipit": "ዘከመ፡ ውኅጠተታ፡ ምድር፡ ለብእሲት፡ ሶበ፡ ተቀብአት፡ ቅብአ፡ ዘይት፡ ዘውሕዘ፡ እምነ፡ ሥዕላ፡ ለእግዝእትነ፡ ማርያም። ጸሎታ፡…. ወነዋ፡ ብእሲት፡ ቦአት፡ ዘባቲ፡ ውስተ፡ ሥጋሃ፡ ኀጢአት",
     "manuscript_count": 36,
+    "most_read": false,
     "translations": [
       {
         "author": "Rowan Williams",
@@ -3504,6 +3730,7 @@ const MIRACLES_OF_MARY = [
     "title": "Saint Sarabamon, the future bishop of Nikiou and martyr, and Abraham, a relative of Saint Stephen, becomes a Christian when visited by the Virgin Mary (same as 541)",
     "incipit": "ዘከመ፡ አስተርአየቶ፡ ለሰረባሞን፡ ሰማዕት፡ ኤጲስ፡ ቆጶስ፡ ዘሀገረ፡ ነቂዮስ፡ እንዘ፡ ሀሎ፡ ንኡሰ፡ ክርስቲያን፡ እንዘ፡ ኢይጠመቅ፡ ወዘከመ፡ መርሐቶ፡ ኀበ፡ ጥምቀተ፡ ክርስትና። ጸሎታ፡…. ዝንቱ፡ ቅዱስ፡ ኮነ፡ እምዘመዱ፡ ለቅዱስ፡ እስጢፋኖስ",
     "manuscript_count": 36,
+    "most_read": false,
     "translations": [
       {
         "author": "Augustine Dickinson",
@@ -3524,6 +3751,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Felsata la-Maryam??: DOld?: Dormition: Pact: The Virgin Mary receives the Pact of Mercy (kidan mehret) (Synaxary entry for the 16th of Yakkatit). (470, 553, 632 similar)",
     "incipit": "ወኮነ፡ እምድኅረ፡ ዓርገ፡ እግዚእነ፡ ኢየሱስ፡ ክርስቶስ፡ ውስተ፡ ሰማይ፡ ነሢኦ፡ ሥጋሃ፡ ንጹሐ፡ ወነበረ፡ በየማነ፡ አቡሁ፡ ፈጺሞ፡ ኵሎ፡ ሕገ፡ ትስብእት፡ ዘእንበለ፡ ኀጢአት፡ ባሕቲታ፡ ወሰሊጦ፡ ሕማማተ፡ መስቀል፡ በሥጋ፡ በሥምረቱ፡ ወበፈቃዱ፡ ዘገብሮ፡ በእንተ፡ መድኃኒትነ፡ ኃደጋ፡ ለእግዝእትነ፡ ማርያም፡ ውስተ፡ ቤተ፡ ዮሐንስ፡ ረድኡ",
     "manuscript_count": 36,
+    "most_read": true,
     "translations": [
       {
         "author": "",
@@ -3560,6 +3788,7 @@ const MIRACLES_OF_MARY = [
     "title": "Abadir, a district governor of Egypt, who loved the Virgin Mary",
     "incipit": "ወሀሎ፡ አሐዱ፡ መኰንን፡ በደወለ፡ ግብጽ፡ ዘስሙ፡ አባዲር፡ ዘይፈርሆ፡ ለእግዚአብሔር፡ ወዘያፈቅራ፡ ለእግዝእትነ፡…. ወይጼሊ፡ ወትረ፡ ሰላማ፡ በጥቡዕ፡ ህሊና፡ ከመ፡ ታድሕኖ፡ እምእኩይ",
     "manuscript_count": 35,
+    "most_read": false,
     "translations": [
       {
         "author": "Jeremy Brown with Ekaterina Pukhovaia",
@@ -3572,6 +3801,7 @@ const MIRACLES_OF_MARY = [
     "title": "Dabra Metmaq and the Muslims who spent the night in its ruins",
     "incipit": "ነገር፡ ዘከመ፡ ዜነወ፡ አሐዱ፡ ብእሲ፡ ዘተብህለት፡ ዘገብረት፡ ተአምረ፡ በደብረ፡ ምጥማቅ፡ ድኅረ፡ አንሐልዋ፡ ተንበላት፡ ለቤተ፡ ክርስቲያን። ወእንዘ፡ የሐውሩ፡ ተንበላት፡ ፱፡ ወ፪፡ ደቂቆሙ፡ ንዑሳን፡ ኀበ፡ ነጊድ፡ ወአግማለ፡ ወአዕዱገ፡ ፅዒኖሙ፡ ወበጽሑ፡ ኀበ፡ ደብረ፡ ምጥማቅ፡ ወይእቲ፡ ዕለት፡ በዓላ፡ ለእግዝእትነ፡ ማርያም",
     "manuscript_count": 35,
+    "most_read": true,
     "translations": [
       {
         "author": "Jeremy Brown & Dawit Muluneh with Wendy Laura Belcher",
@@ -3592,6 +3822,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book on Ark of Dersana Seyon: Part 3A: King David and all Israel bring back the Ark of Zion.",
     "incipit": "ወእምዝ፡ በመንግሥተ፡ ዳዊት፡ አመ፡ ቀተሎሙ፡ ለኤሎፍሊ፡ ወነሥኦሙ፡ ዳዊት፡ ለኵሎሙ፡ ወራዙት፡ እስራኤል፡ መጠነ፡ ፯፻፻ ወተንሥአ፡ ወሖረ፡ ከመ፡ ያምጽእዋ፡ እምኀበ፡ ሀለወት፡ እግዝእትነ፡ ጽዮን፡ ታቦተ፡ ሕጉ፡ ለእግዚአብሔር፡ ውስተ፡ ቤተ፡ አሚናዳብ፡ ወእንተ፡ እምኅቤሃ፡ ተሰምየ፡ እግዚአ፡ ኃይል፡ ወነሥእዋ፡ ለጽዮን፡ እምህየ፡ ወወሰድዋ፡ እምዝ፡ ይጼልል፡ ኪሩብ፨",
     "manuscript_count": 35,
+    "most_read": false,
     "translations": [
       {
         "author": "Rowan Williams",
@@ -3604,6 +3835,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Felsata la-Maryam: [Chaine Part 04] Dormition: The Virgin Mary heals a woman possessed by evil spirits.",
     "incipit": "ወሀለወት፡ አሐቲ፡ ብእሲት፡ እንተ፡ ያጽሕብዋ፡ ብዙኃን፡ አጋንንት፡ ወመጽአት፡ ኀበ፡ እግዝእትነ፡…. ወጸርሐት፡ በዐቢይ፡ ቃል",
     "manuscript_count": 34,
+    "most_read": false,
     "translations": [
       {
         "author": "Rowan Williams",
@@ -3616,6 +3848,7 @@ const MIRACLES_OF_MARY = [
     "title": "Saint Julius of Aqfahasi (the author of the Biography of Martyrs) who prayed every day before her icon",
     "incipit": "ወሀሎ፡ አሐዱ፡ ብእሲ፡ በሀገረ፡ አቅፋሐሲ፡ ዘስሙ፡ ዮልዮስ፡ ዘያፈቅራ፡ ለእግዝእትነ፡…. ወይጼሊ፡ ወትረ፡ ቅድመ፡ ሥዕላ። ወአስተርአየቶ፡ ከመ፡ ይቅብር፡ ሥጋሆሙ፡ ለሰማዕታት",
     "manuscript_count": 34,
+    "most_read": false,
     "translations": [
       {
         "author": "Augustine Dickinson",
@@ -3628,6 +3861,7 @@ const MIRACLES_OF_MARY = [
     "title": "King's Parable: Part 2: Patriarch Abraham of Alexandria (d. 978), King al-Muizz, and the parable of the mustard seed (continuation)",
     "incipit": "ወከዕበ፡ ኮነ፡ በመዋዕሊሁ፡ ለዝንቱ፡ አብ፡ ሊቀ፡ ጳጳሳት፡ አባ፡ አብርሃም። ወሀሎ፡ ንጉሥ፡ ዘነግሠ፡ ለምስር፡ ዘይሰመይ፡ ለምዕዝ፡ ወቦቱ፡ ሊቀ፡ ሐራ፡ ዘኮነ፡ አይሁዳዊ፡ ወቦአ፡ ውስተ፡ ሕገ፡ ተንበላት፡ ወኮነ፡ ከማሆሙ። ወቦቱ፡ ለውእቱ፡ ሊቀ፡ ሐራ፡ ፩ዐርከ፡ አይሁዳዊ፡ ወኮነ፡ ይበውእ፡ ምስሌሁ፡ ኵሎ፡ ጊዜ፡ ኀበ፡ ንጉሥ፡ ወይትናገር።",
     "manuscript_count": 32,
+    "most_read": false,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -3640,6 +3874,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Ledata la-Maryam??: OldD: Part 02: Nativity: The shepherds and the magi come to worship Christ. (299, 446 similar)",
     "incipit": "ወካዕበ፡ ንነግረክሙ፡ አኃዊነ፡ ዜናሃ፡ ለእግዝእትነ፡ ወእምድኅረ። ወለደቶ፡ ለእግዚእነ፡ በቤተ፡ ልሔም፡ ዘይሁዳ፡ ወሀለው፡ ህየ፡ ኖሎት፨ ወይተግሁ፡ ኵሎ፡ ሌሊተ፡ እንዘ፡ የዓቅቡ፡ መራዕይሆሙ፡ ወአስተርአዮሙ፡ መልአከ፡ እግዚአብሔር፨",
     "manuscript_count": 31,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -3660,6 +3895,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Vision of Timothy of Alexandria: Part 03: The flight into Egypt.",
     "incipit": "ዘከመ፡ አስተርአየቶ፡ ወተናገረቶ፡ ለጢሞቴዎስ፡ ሊቀ፡ ጳጳሳት። ጸሎታ፡…. ወናሁ፡ አስተርአዮ፡ ገብርኤል፡ መልአክ፡ ለዮሴፍ፡ እንዘ፡ ይብል፡ ተንሥእ፡ ወንሣእ፡ ሕፃነ፡ ወእሞ፡ ወሑር፡ እምድረ፡ ግብጽ",
     "manuscript_count": 30,
+    "most_read": false,
     "translations": [
       {
         "author": "Jeremy Brown & Dawit Muluneh with Wendy Laura Belcher and Esset Teshome",
@@ -3676,6 +3912,7 @@ const MIRACLES_OF_MARY = [
     "title": "A woman whose baby daughter was carried off by a hyena.",
     "incipit": "ወሀለወት፡ አሐቲ፡ ብእሲት፡ ወታፈቅራ፡ ለእግዝእትነ፡…. ወወለደት፡ ይእቲ፡ ብእሲት፡ አሐተ፡ ወለተ፡ ወመሰጣ፡ ዝእብ፡ ለይእቲ፡ ወለት",
     "manuscript_count": 30,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -3700,6 +3937,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Vision of Timothy of Alexandria: Part 10: The Holy Family arrives at Dabra Qwesqwam.",
     "incipit": "ዘከመ፡ አስተርአየቶ፡ ወተናገረቶ፡ ለጢሞቴዎስ፡ ሊቀ፡ ጳጳሳት። ጸሎታ፡…. ወሶበ፡ በጻሕነ፡ ኀቤሁ፡ ናንሶሱ፡ ዝየ፡ ወዝየ፡ ዮጊ፡ ለእመ፡ ንረክብ፡ መካነ፡ ሠናየ፡ ከመ፡ ንንበር፡ ውስቴቱ",
     "manuscript_count": 29,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -3712,6 +3950,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Felsata la-Maryam??: Dormition: Part 06: The Virgin Mary asks Christ that the disciples preach her Transitus and Assumption.",
     "incipit": "ዘከመ፡ ተስእለቶ፡ እግዝእትነ፡ ማርያም፡ ለወልዳ፡ ከመ፡ ይስብኩ፡ ፍልሰታ፡ ወዕርገታ። ጸሎታ፡…. በሊ፡ ለአርድእት፡ ከመ፡ በዝንቱ፡ ይስብኩ፡ ቍርባነ፡ ዘዮም",
     "manuscript_count": 29,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -3732,6 +3971,7 @@ const MIRACLES_OF_MARY = [
     "title": "King Zara Yaqob (Zarʾa Yaʿeqob), the 14th c. Ethiopian monarch, and the renegade monk who had become a Jew being hunted down by the king's troops",
     "incipit": "ተአምሪሃ፡ ለእግዝእትነ፡ ማርያም፡ ድንግል፡ በክልኤ፡ ወላዲተ፡ አምላክ፡ እግዚአብሔር፡ ፀባኦት፡ ወላዲተ፡ ኢየሱስ፡ ክርስቶስ፡ ንጉሠ፡ ስብሐት፡ ፀንሰቶ፡ በድንግልና፡ ሕሊና፡ ወበድንግልና፡ ሥጋ፡ ወወለደቶ፡ እንዘ፡ ድንግል፡ በሕሊናሃ፡ ወእንዘ፡ ድንግል፡ በሥጋሃ፡ ወአርአየ፡ ተአምራቲሃ፡ ወምንክራቲሃ፡ ወገብረ፡ ኃይለ፡ ዐቢየ፡ ፍቁር፡ ወልዳ፡ እግዚእነ፡ በእንቲአሃ፡ ላዕለ፡ አሐዱ፡ አይሁዳዊ፡ ቀዲሙሰ፡ ነበረ፡ ክርስቲያናዊ። ጸሎታ፡…. ወሀለወት፡ አሐቲ፡ ሀገር፡ ሀገረ፡ ክርስቲያን፡ ወነገሥታቲሃኒ፡ ክርስቲያን፡ ይነብሩ፡ ምስለ፡ ጳጳሳት፡ ወኤጲስ፡ ቆጶሳት፡ ቀሳውስት፡ ወዲያቆናት፡ ወመነኮሳት፡ ብዙኃን፡ ይነብሩ፡ በይእቲ፡ ሀገር። ወተንሥአ፡ አሐዱ፡ አይሁዳዊ፡ እምነ፡ ክርስቲያነ፡ ካህናት",
     "manuscript_count": 29,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -3744,6 +3984,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Ledata la-Maryam??: Old: Part 06: Pregnancy: The Virgin Mary leaves the Temple and enters the home of Saint Joseph.",
     "incipit": "ወሶበ፡ ፈጸመ፡ አዝማነ፡ ንብረታ፡ ውስተ፡ ቤተ፡ መቅደስ፡ ወሖሩ፡ ኀቤሃ፡ ካህናት፡ ወሊቃነ፡ ካህናት፡ ወሌዋውያን፡ በኅብረቶሙ፡ ወይቤልዋ፡ ንዒ፡ ፃዒ",
     "manuscript_count": 28,
+    "most_read": false,
     "translations": [
       {
         "author": "Getatchew Haile",
@@ -3760,6 +4001,7 @@ const MIRACLES_OF_MARY = [
     "title": "A column falls and breaks the leg of the son of an official when Muslims destroy a church of the Virgin Mary in Homs, Syria",
     "incipit": "ወሀለወት፡ አሐቲ፡ ቤተ፡ ክርስቲያን፡ ዘተሐንጸት፡ በስመ፡ እግዝእትነ፡…. በሀገረ፡ ሕምስ፡ እምአድያመ፡ ሻም፡ ወኮነ፡ ትገበር፡ በውስቴታ፡ ተአምራት፡ ወመንክራት። ወሶበ፡ ርእዩ፡ ተንበላት፡ ዘንተ፡ ቀንኡ፡ ላዕለ፡ ቤተ፡ ክርስቲያን፡ ወአምጽኡ፡ ምክንያተ፡ ወአንሀልዋ",
     "manuscript_count": 28,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -3772,6 +4014,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Ledata la-Maryam??: OldG: Annunciation: Angel appeared, she was terrified (looks like reworking of Luke's gospel) (like IDs 295, 297, 435, 437, 536, 1296)",
     "incipit": "ወበአሐቲ፡ ዕለት፡ አመ፡ ፳ወ፱፡ ለወርኃ፡ መጋቢት፡ ዘውእቱ፡ እኁድ፡ ሰንበት፡ እንዘ፡ ትጼሊ፡ ጸሎተ፡ እግዝእትነ፡…. አስተርአያ፡ ገብርኤል፡ መልአክ፡ በዓቢይ፡ ግርማ፡ ወዜነዋ፡ ትፍሥሕተ። ወሶበ፡ ርእየቶ፡ ደንገፀት",
     "manuscript_count": 28,
+    "most_read": true,
     "translations": [
       {
         "author": "",
@@ -3796,6 +4039,7 @@ const MIRACLES_OF_MARY = [
     "title": "Homily of John, Son of Thunder (Ra'eya Ta'amer): Part 01?: How the Virgin Mary appeared as a lady with twelve stars in her crown.",
     "incipit": "ይቤ፡ ዮሐንስ፡ ወልደ፡ ነጕድጓድ፡ ርኢኩ፡ ወአስተርአየ፡ ተአምር፡ ዐቢይ፡ በውስተ፡ ሰማይ፡ ብእሲት፡ እንተ፡ ትለብስ፡ ፀሐየ፡ ወወርኃ፡ ታሕተ፡ እገሪሃ፡ ወውስተ፡ ርእሳ፡ አክሊል፡ ዘ፲፡ ወ፪፡ ከዋክብት። ዝውእቱ፡ ዮሐንስ፡ ዘርእዮ፡ ለእግዚእ፡ ኢየሱስ፡ ምስለ፡ ማርያም። ወይቤላ፡ ለእሙ፡ ነዋ፡ ወልድኪ። ወይቤሎ፡ ለረድኡ፡ በዲበ፡ ዕፀ፡ መስቀል፡ ነያ፡ እምከ",
     "manuscript_count": 28,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -3820,6 +4064,7 @@ const MIRACLES_OF_MARY = [
     "title": "The priest from Cyprus who brought a particle of the Eucharist to a Jew.",
     "incipit": "ወሀሎ፡ አሐዱ፡ ብእሲ፡ ነዳይ፡ ቀሲስ፡ በሀገረ፡ ቆጵሮስ፡ ወአልቦቱ፡ ምንተኒ፡ እምሲሳየ፡ ዕለት። ወሶበ፡ ጸንዐ፡ ላዕሌሁ፡ ንዲት፡ ወረኅብ፡ ሖረ፡ ኀበ፡ አሐዱ፡ አይሁዳዊ፡ ወተለቅሐ፡ እምኔሁ፡ ሠለስተ፡ ምእተ፡ ዲናረ",
     "manuscript_count": 27,
+    "most_read": false,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -3832,6 +4077,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Vision of Timothy of Alexandria: Part 05: The Holy Family crosses the Nile at Asmunayn.",
     "incipit": "ዘከመ፡ አስተርአየቶ፡ ወተናገረቶ፡ ለጢሞቴዎስ፡ ሊቀ፡ ጳጳሳት። ጸሎታ፡…. ወእምድኅረ፡ ዝንቱ፡ ኃለፍነ፡ ውስተ፡ ሀገር፡ ካልእት፡ ወኢኃደገነ፡ ፍርሃት",
     "manuscript_count": 25,
+    "most_read": false,
     "translations": [
       {
         "author": "Jeremy Brown with Ekaterina Pukhovaia",
@@ -3844,6 +4090,7 @@ const MIRACLES_OF_MARY = [
     "title": "The magicians who tried to cast a spell on the Epiphany water.",
     "incipit": "ንጽሕፍ፡ ተአምረ፡ ልደቱ፡ ለወልደ፡ እግዚአብሔር፡ ወወልደ፡ ማርያም፡ ክቡር፡ ውእቱ፡ ኢየሱስ፡ ክርስቶስ። መቅድመ፡ ቃል፡ ዘሰመዮ፡ ሄኖክ፡ ዘዓርገ፡ በነኰርኳረ፡ ነፋስ",
     "manuscript_count": 25,
+    "most_read": false,
     "translations": [
       {
         "author": "Allie V. Mangel",
@@ -3860,6 +4107,7 @@ const MIRACLES_OF_MARY = [
     "title": "The pilgrim who was journeying to Jerusalem through Hamda.",
     "incipit": "ተብህለ፡ በእንተ፡ አሐዱ፡ ነጋዲ፡ ወእንዘ፡ የሐውር፡ ውስተ፡ ፍኖተ፡ ኢየሩሳሌም፡ ሶበ፡ በጽሐ፡ ኀበ፡ ምድረ፡ በድው፡ እንተ፡ ትሰመይ፡ ሐምዳ፡ ወመዋዕሊሁኒ፡ መዋዕለ፡ ሃጋይ፡ አመ፡ ፲፡ ወ፮፡ ለየካቲት፡ በዕለተ፡ በዐል፡ ዐቢይ፡ በዘነሥአት፡ እግዝእትነ፡…. ኪዳነ፡ ምሕረት፡ እምኀበ፡ ወልዳ፡ ኢየሱስ፡ ክርስቶስ",
     "manuscript_count": 24,
+    "most_read": true,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -3876,6 +4124,7 @@ const MIRACLES_OF_MARY = [
     "title": "A container of oil remains suspended in mid air in a church of the Virgin Mary when the cord by which it was suspended breaks.",
     "incipit": "ወሀለወት፡ አሐቲ፡ ደብር፡ ዘእግዝእትነ፡…. ወሙዳየ፡ ቅብዕኒ፡ ሀሎ፡ በቤተ፡ መቅደስ፡ ስቁል፡ ወተመትረ፡ ህብላ፡ ለይእቲ፡ ቅብዕ",
     "manuscript_count": 24,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -3900,6 +4149,7 @@ const MIRACLES_OF_MARY = [
     "title": "The prodigal son of a man who used, when he was alive, to feed two persons; the Virgin Mary promises him riches, but he finds only two grains of gold.",
     "incipit": "ወሀሎ፡ ፩ብእሲ፡ በአሐቲ፡ ሀገር፡ እምአህጉረ፡ ክርስቲያን፡ ባዕል፡ ጥቀ፡ በወርቅ፡ ወበብሩር፡ ወበንዋያተ፡ ዝ፡ ዓለም፡ ዘሠናይ፡ ግዕዙ፡ ወኄር፡ በኵሉ፡ ግብሩ፡ ኮነ፡ ይሴስዮሙ፡ ዘልፈ፡ ለ፪ዕደው",
     "manuscript_count": 24,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -3912,6 +4162,7 @@ const MIRACLES_OF_MARY = [
     "title": "Archbishop Tilas, who was seized by Jews while carrying a golden chalice.",
     "incipit": "ወሀሎ፡ አሐዱ፡ ብእሲ፡ ጳጳስ፡ በደወለ፡ አፍርንጊ፡ ዘስሙ፡ ጢላስ፡ ዘይፈርሆ፡ ለእግዚአብሔር፡ ወያከብራ፡ ለእግዝእትነ፡…. ወአሐተ፡ ዕለተ፡ እንዘ፡ ሀለወ፡ በንዋሙ፡ አስተርአየቶ፡ እግዝእትነ፡…. በእንተ፡ ጽዋዕ፡ ዘቤተ፡ ክርስቲያን",
     "manuscript_count": 24,
+    "most_read": false,
     "translations": [
       {
         "author": "Allie V. Mangel",
@@ -3924,6 +4175,7 @@ const MIRACLES_OF_MARY = [
     "title": "Vision of a certain saint about the fate of a priest who swore falsely.",
     "incipit": "ዘአስተርአየቶ፡ ለአሐዱ፡ ብእሲ፡ ተአምሪሃ፡ ወመንክራቲሃ፡ ዘገብረት፡ ላዕለ፡ ካህን፡ መሐሊ፡ በሐሰት፡ አርአየቶ፡ እምቅዱሳን",
     "manuscript_count": 23,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -3936,6 +4188,7 @@ const MIRACLES_OF_MARY = [
     "title": "The punishment of an Ethiopian woman who swore falsely that she had not committed adultery with another woman's husband.",
     "incipit": "ንዑኬ፡ ኦደቂቀ፡ ቤተ፡ ክርስቲያን፡ ንንግርክሙ፡ መንክረ፡ ተአምሪሃ፡ ለእግዝእትነ፡…. ዘከመ፡ ገብረት፡ ተአምረ፡ በብሔረ፡ አግዓዚ፡ በመዋዕለ፡ መንግሥቱ፡ ለአሐዱ፡ ንጉሥ፡ ርቱዐ፡ ሃይማኖት፡ ወመፍቀሬ፡ ቤተ፡ ክርስቲያን፡ ቅድስት። ወሀለወት፡ አሐቲ፡ ቤተ፡ ክርስቲያን፡ እንተ፡ ተሐንጸት፡ በስማ፡ ለእግዝእትነ፡…. ወብዙኃን፡ ድውያን፡ ወሕሙማን፡ ይትፌወሱ፡ ሶበ፡ ይገይሱ፡ ወይበጽሑ፡ ኀበ፡ ይእቲ፡ ቤተ፡ ክርስቲያን",
     "manuscript_count": 23,
+    "most_read": true,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -3956,6 +4209,7 @@ const MIRACLES_OF_MARY = [
     "title": "An angel drives away the custodian of a church of the Virgin Mary when he was about to enter after sinning with a woman.",
     "incipit": "ወሀለወት፡ አሐቲ፡ ቤተ፡ ክርስቲያን፡ እንተ፡ ተሐንጸት፡ በስማ፡ ለማርያም፡ ወብዙኃ፡ ተአምረ፡ ወመንክረ፡ ይትገበር፡ በውስቴታ። ወሀሎ፡ ብእሲ፡ ዐቃቤ፡ ዐንቀጸ፡ ቤተ፡ ክርስቲያን፡ መዐልተ፡ ወሌሊተ፡ ውእቱ፡ ይጠቅዕ፡ መጥቅዐ፡ በኵሉ፡ ጊዜ",
     "manuscript_count": 23,
+    "most_read": true,
     "translations": [
       {
         "author": "Ellen Li",
@@ -3972,6 +4226,7 @@ const MIRACLES_OF_MARY = [
     "title": "King Zara Yaqob's (Zarʾa Yaʿeqob) general, who went off to fight the Muslims without the consent of the king.",
     "incipit": "ወሀሎ፡ አሐዱ፡ መኰንን፡ መልአከ፡ ኀይሉ፡ ለንጉሥ፡ ወሖረ፡ ውስተ፡ ጸብዐ፡ ዕልዋን፡ ዘእንበለ፡ ሥምረተ፡ ሕሊናሁ፡ ለንጉሥ",
     "manuscript_count": 23,
+    "most_read": true,
     "translations": [
       {
         "author": "Ellen Li",
@@ -3988,6 +4243,7 @@ const MIRACLES_OF_MARY = [
     "title": "The thieves who stole the furnishings of a church of the Virgin Mary and refused to restore them when she appeared to them.",
     "incipit": "ወሀለወት፡ አሐቲ፡ ቤተ፡ ክርስቲያን፡ እንተ፡ ተሐንጸት፡ በስማ፡ ለእግዝእትነ፡…. ወበአሐቲ፡ እምመዋዕል፡ በሌሊተ፡ እሑድ፡ ቦኡ፡ ሰረቅት፡ ውስተ፡ ቤተ፡ ክርስቲየና፡ ለእግዝእትነ፡ ማርያም፡ ወሰበሩ፡ ዐናቅጺሃ፡ ወነሥኡ፡ ኵሎ፡ ንዋየ፡ ቅድሳት",
     "manuscript_count": 23,
+    "most_read": true,
     "translations": [
       {
         "author": "Allie V. Mangel",
@@ -4004,6 +4260,7 @@ const MIRACLES_OF_MARY = [
     "title": "The icon of the Virgin Mary in the church of the \"Romans\" that rebuked the Ethiopians for approaching with their shoes on.",
     "incipit": "ኀይል፡ ወተአምር፡ ዘገብረት፡ እግዝእትነ፡ ማርያም፡ በኢየሩሳሌም፡ ቅድስት፡ ሀገሩ፡ ለንጉሥ፡ ዐቢይ። ወሀሎ፡ ሥዕለ፡ ዚአሃ፡ ለእግዝእትነ፡ በውስተ፡ ምስጋዶሙ፡ ለሰብአ፡ ሮም፡ ወኵሎሙ፡ ሰብአ፡ ግብጽ፡ ወአፍርንግ፡ ወእስክንድርያ፡ ወሶርያ፡ ወገላትያ፡ ይበውኡ፡ ኀበ፡ ይእቲ፡ ሥዕል",
     "manuscript_count": 23,
+    "most_read": true,
     "translations": [
       {
         "author": "",
@@ -4040,6 +4297,7 @@ const MIRACLES_OF_MARY = [
     "title": "Dabra Maryam's priest, in Sire, has the Virgin Mary appear to him",
     "incipit": "ወሀለወት፡ አሐቲ፡ ቤተ፡ ክርስቲያን፡ በማዕዶተ፡ ተከዜ፡ በምድረ፡ ሲሬ፡ እንተ፡ ትሰመይ፡ ደብረ፡ ማርያም፡ ወአመ፡ ፳፡ ወ፩፡ ለወርኃ፡ ጥር፡ ይትጋብኡ፡ ብዙኃን፡ ሕዝብ፡ ለገቢረ፡ በዓለ፡ ዕረፍታ፡ ለማርያም፡ ወለተዝካረ፡ መምህራንሂ፡ አባ፡ ቶማስ፡ ወአባ፡ ፊቅጦር",
     "manuscript_count": 23,
+    "most_read": true,
     "translations": [
       {
         "author": "",
@@ -4056,6 +4314,7 @@ const MIRACLES_OF_MARY = [
     "title": "Saint Alexius lives for fifteen years near a church of the Virgin Mary in Armenia (maybe same as 130)",
     "incipit": "ስምዑኬ፡ ዘገብረት፡ እግዝእትነ፡…. ኀይለ፡ ወተአምረ፡ በላዕለ፡ ብፁዕ፡ ገብረ፡ ክርስቶስ፡ ወልደ፡ ቴዎዶስዮስ፡ ንጉሠ፡ ቍስጥንጥንያ። ወእምአመ፡ ወፅአ፡ እምቤተ፡ አቡሁ፡ ወእሙ፡ መኒኖ፡ መንግሥተ፡ ወኀዲጎ፡ መርዓተ፡ ኀበ፡ ነገደ፡ ርሑቀ፡ መጠነ፡ አሐቲ፡ ዓመት፡ ወበጽሐ፡ ሀገረ፡ እንተ፡ ስማ፡ አርማንያ",
     "manuscript_count": 23,
+    "most_read": true,
     "translations": [
       {
         "author": "Allie V. Mangel",
@@ -4072,6 +4331,7 @@ const MIRACLES_OF_MARY = [
     "title": "Barnabas from Sandafa, who used to venerate the Virgin Mary's icon.",
     "incipit": "ወሀሎ፡ አሐዱ፡ ብእሲ፡ በሀገረ፡ ሰንደፋ፡ ዘስሙ፡ በርናባስ፡ መፍቀሬ፡ ጸሎት፡ ወጾም፡ ወገያሴ፡ ቤተ፡ ክርስቲያን፡ ዘኮነ፡ ያፈቅራ፡ ለእግዝእትነ፡…. ወይተግህ፡ መዓልተ፡ ወሌሊተ፡ እንበለ፡ አጽርዖ፡ አንብቦ፡ ውዳሴሃ",
     "manuscript_count": 23,
+    "most_read": false,
     "translations": [
       {
         "author": "Amsalu Tefera",
@@ -4084,6 +4344,7 @@ const MIRACLES_OF_MARY = [
     "title": "Tiras, who did not observe holy days, becomes deaf and dumb, but he is healed when his master prays to the Virgin Mary.",
     "incipit": "ስምዑኬ፡ ዘገብረት፡ እግዝእትነ፡…፡ ደቂቀ፡ ቤተ፡ ክርስቲያን፡ ወእግዚአብሔር፡ ያርኁ፡ አናቅጸ፡ ልብክሙ፡ ለሰሚዓ፡ ተአምሪሃ። ወሀሎ፡ አሐዱ፡ ብእሲ፡ ዘይሰመይ፡ ጢራስ፡ ወሖረ፡ ምስለ፡ እግዚኡ፡ መፍቀሬ፡ እግዚአብሔር፡ ልዑል፡ ወመፍቀሬ፡ እሙ፡ ድንግል",
     "manuscript_count": 22,
+    "most_read": true,
     "translations": [
       {
         "author": "Dawit Muluneh with Wendy Laura Belcher and Shawn Benjamin and Jeremy Brown",
@@ -4108,6 +4369,7 @@ const MIRACLES_OF_MARY = [
     "title": "The pious monk who drowned while crossing a river on his way to a feast that was being given by a rich man in honor of the Assumption.",
     "incipit": "ወሀሎ፡ አሐዱ፡ መነኮስ፡ ዘያፈቅሮ፡ ለአግዚአብሔር፡ ልዑል፡ ወይትለአካ፡ ለእግዝእትነ፡…. በኵሉ፡ ልቡ፡ ወበኵሉ፡ ሕሊናሁ፡ ወያነብብ፡ ወትረ፡ ውዳሴያቲሃ፡ ወሰላማቲሃ፡ ዘእንበለ፡ አፅርዖ። ወእንዘ፡ ሀለወ፡ በዘከመዝ፡ ግብር፡ ውእቱ፡ መነኮስ፡ ጸውዖ፡ አሐዱ፡ ባዕል፡ ለገቢረ፡ በዓለ፡ ፍልሰታ፡ ለእግዝእትነ",
     "manuscript_count": 22,
+    "most_read": true,
     "translations": [
       {
         "author": "",
@@ -4120,6 +4382,7 @@ const MIRACLES_OF_MARY = [
     "title": "Dabra Qwesqwam's monks recieve a command from a Muslim official that they give him tribute",
     "incipit": "ዘገብረት፡ ይእዜ፡ በደብረ፡ ቍስቋም፡ በዘመነ፡  ስልጣነ፡ ምስር፡ ቃይታባይ። ወበአሐቲ፡ እምመዋዕል፡ ወፅአ፡ መኰንን፡ ዘእምታሕቴሁ፡ ለንጉሥ፡ ከመ፡ ይዑድ፡ በሀገረ፡ ፅዒድ፡ ያስተገብእ፡ ጸብሐተ፡ ለንጉሥ",
     "manuscript_count": 22,
+    "most_read": false,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -4136,6 +4399,7 @@ const MIRACLES_OF_MARY = [
     "title": "Elias from Elkesus, who was falsely accused and was suspended by the abbot.",
     "incipit": "ወሀሎ፡ አሐዱ፡ ብእሲ፡ በሀገረ፡ እልክሱስ፡ ዘስሙ፡ ኤልያስ፡ ዘያፈቅራ፡ ለእግዝእትነ፡…. ለለ፡ ተጸውዓ፡ ስመ፡ በዓላ፡ ይለብስ፡ አልባሰ፡ ተክህኖ፡ ወይቄድስ፡ ቅዳሴሃ፡ ለእመ፡ ብርሃን። ወሐመይዎ፡ ካህናተ፡ ቤተ፡ ክርስቲያን",
     "manuscript_count": 22,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -4148,6 +4412,7 @@ const MIRACLES_OF_MARY = [
     "title": "Saint Thecla: Part 2: The Virgin Mary blesses Thecla with incense",
     "incipit": "ወእንዘ፡ ተሐውር፡ እግዝእትነ፡…. ኀበ፡ ከብካበ፡ መርዓሆሙ፡ ወስምዖሙ፡ ለአባ፡ ኤሲ፡ ወቴክላ፡ እንዘ፡ ሀለወት፡ መልዕልተ፡ ባሕር፡ ምስለ፡ መላእክት",
     "manuscript_count": 21,
+    "most_read": false,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -4160,6 +4425,7 @@ const MIRACLES_OF_MARY = [
     "title": "The three pious priests and monks who wore fine clothes.",
     "incipit": "ወሀለዉ፡ በአሐዱ፡ ደብር፡ ፫፡ ካህናት፡ ኄራን፡ ወሠናያን፡ ወማእምራነ፡ ቃለ፡ መጻሕፍት፡ ዘብሉይ፡ ወዘሐዲስ፡ ወያፈቅሩ፡ ተሠርግዎተ፡ በአልባስ፡ ቀጠንት",
     "manuscript_count": 21,
+    "most_read": true,
     "translations": [
       {
         "author": "Rowan Williams",
@@ -4180,6 +4446,7 @@ const MIRACLES_OF_MARY = [
     "title": "The new tabot of the Virgin Mary that was found outside the box in which it had been placed.",
     "incipit": "ዛቲ፡ ተአምር፡ ዘገብረት፡ እግዝእትነ፡ ማርያም፡ በመዋዕሊሁ፡ ለአሐዱ፡ ንጉሥ፡ ፍቁረ፡ ዚአሃ፡ ወፍቁረ፡ ወልዳ፡ ኢየሱስ፡ ክርስቶስ። ወሀለወት፡ ውስተ፡ ጽርሐ፡ መንግሥቱ፡ አሐቲ፡ ታቦት፡ ዘግልፍት፡ በስመ፡ እግዝእትነ",
     "manuscript_count": 21,
+    "most_read": true,
     "translations": [
       {
         "author": "Ellen Li",
@@ -4196,6 +4463,7 @@ const MIRACLES_OF_MARY = [
     "title": "The Ethiopian pilgrim who was expelled from the Church (of the Resurrection) in Jerusalem during the Easter services.",
     "incipit": "ስምዑኬ፡ መንክረ፡ ወመድምመ፡ ኀይለ፡ ተአምሪሃ፡ ለእግዝእትነ፡…. ዘገብረት፡ ተአምረ፡ በኢየሩሳሌም፡ ቅድስት፡ ሀገረ፡ እግዚአብሔር። ወበውእቱ፡ መዋዕል፡ ሶበ፡ ገብሩ፡ ሁከከ፡ ወቀትለ፡ በላዕለ፡ ክርስቲያን፡ ተፀርዓ፡ ፍኖተ፡ ነጋድያን፡ እምጸብዓ፡ ፈያት፡ እኩያን",
     "manuscript_count": 21,
+    "most_read": true,
     "translations": [
       {
         "author": "Jeremy Brown & Dawit Muluneh, Shawn Benjamin, based on Allie V. Mangel",
@@ -4208,6 +4476,7 @@ const MIRACLES_OF_MARY = [
     "title": "Saint Giyorgis of Sagla, the Ethiopian author, and the rich man who left the church because the priest was saying the Anaphora (Gwasca) written by Abba Giyorgis of Sagla",
     "incipit": "ኀይል፡ ወተአምር፡ ዘገብረት፡ እግዝእትነ፡ ማርያም። ወሀለወ፡ ህየ፡ አሐዱ፡ ቀሲስ፡ ፈራሄ፡ እግዚአብሔር፡ ዘያፈቅራ፡ ለእግዝእትነ፡ ማርያም፡ በኵሉ፡ ልቡ፡ ወበኵሉ፡ ኃይሉ፡ ወኢይቄድስ፡ ዘእንበለ፡ ቅዳሴሃ፡ ለእግዝእትነ፡ ማርያም",
     "manuscript_count": 21,
+    "most_read": true,
     "translations": [
       {
         "author": "",
@@ -4224,6 +4493,7 @@ const MIRACLES_OF_MARY = [
     "title": "A blind teacher whom his pupils wanted to push over a cliff while they were on their way to a feast being given in honor of the Assumption.",
     "incipit": "ስምዑኬ፡ እንተ፡ ዘገብረት፡ እግዝእትነ፡ ማርያም፡ መንክረ፡ ወመድምመ፡ ወዕፁበ፡ ኀይለ፡ ተአምር፡ በላዕለ፡ አሐዱ፡ ብእሲ፡ ፍቁረ፡ ዚአሃ። ወሀሎ፡ አሐዱ፡ ባዕል፡ ዘይገብር፡ በዓለ፡ ፍልሰታ፡ ለእግዝእትነ፡…. በአምሳለ፡ ትንሣእሁ፡ ለወልዳ፡ በአፅግቦ፡ ርኁባን፡ ወበአርውዮ፡ ጽሙዓን፡ ወበአልብሶ፡ ዕሩያን",
     "manuscript_count": 21,
+    "most_read": true,
     "translations": [
       {
         "author": "Allie V. Mangel",
@@ -4240,6 +4510,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Nagara Maryam??: OldM: Journey: The Virgin Mary travels in Ethiopia and Christ gives Ethiopia to her as a tithe, her belonging",
     "incipit": "ወእምድኅረ፡ ነበረት፡ ማርያም፡ ፮፡ አውራኃ፡ ዘውስተ፡ ብሔረ፡ አግዓዚ፡ ዘስሙ፡ ኢትዮጵያ፡ እስመ፡ ይእቲ፡ ምድር፡ ክብርት፡ እምኵሉ፡ ምድር፡ ዘታሕተ፡ ሰማይ",
     "manuscript_count": 21,
+    "most_read": false,
     "translations": [
       {
         "author": "Allie V. Mangel",
@@ -4256,6 +4527,7 @@ const MIRACLES_OF_MARY = [
     "title": "A monk who was expelled from school when he could not pay his teacher.",
     "incipit": "ወሀሎ፡ አሐዱ፡ መነኮስ፡ ውስተ፡ አሐቲ፡ ደብር፡ እምአድባራተ፡ ምድረ፡ አግዓዚ፡ ዘያፈቅራ፡ ለእግዝእትነ፡…. በኵሉ፡ ልቡ፡ ወበኵሉ፡ ሕሊናሁ፡ ወእንዘ፡ ሀለወ፡ በመዋዕለ፡ ንእሱ፡ ተምህረ፡ መዝሙረ፡ ዳዊት፡ ኀበ፡ አሐዱ፡ ብእሲ፡ መንፈሳዊ",
     "manuscript_count": 20,
+    "most_read": true,
     "translations": [
       {
         "author": "",
@@ -4276,6 +4548,7 @@ const MIRACLES_OF_MARY = [
     "title": "A monk, while guarding a church, has a nocturnal emission and finds himself suddenly outside the courtyard of the church.",
     "incipit": "ስምዑ፡ መንክረ፡ ወመድምመ፡ ተአምሪሃ፡ ለእግዝእትነ፡…. ዘተገብረ፡ በመዋዕሊሁ፡ ለአሐዱ፡ ንጉሥ፡ ፍቁረ፡ ዚአሃ፡ ወፍቁረ፡ ወልዳ፡ እግዚእነ፡ ወመድኃኒነ፡ ኢየሱስ፡ ክርስቶስ። ወውእቱሰ፡ ንጉሥ፡ እምብዝኀ፡ አፍቅሮተ፡ ኪያሃ፡ ሐነጸ፡ ላቲ፡ ቤተ፡ ክርስቲያን፡ በስማ፡ ለቡርክት፡ ወንጽሕት፡ ማርያም",
     "manuscript_count": 20,
+    "most_read": true,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -4300,6 +4573,7 @@ const MIRACLES_OF_MARY = [
     "title": "The punishment of a custodian of a church who did not obey the bishop.",
     "incipit": "ወሀለወት፡ አሐቲ፡ ቤተ፡ ክርስቲያን፡ እንተ፡ ተሐንጸት፡ በስማ፡ ለእግዝእትነ፡…. ወብዙኃን፡ ሕዝብ፡ ወካህናት፡ ይነብሩ፡ ውስቴታ። ወዐቃቢሃ፡ ለይእቲ፡ ቤተ፡ ክርስቲያን፡ ዕቡይ፡ ውእቱ፡ ወዝኁር፡ ወኢይትለአክ፡ በንጹሕ",
     "manuscript_count": 20,
+    "most_read": true,
     "translations": [
       {
         "author": "Getatchew Haile",
@@ -4316,6 +4590,7 @@ const MIRACLES_OF_MARY = [
     "title": "A young monk is horrified when he has a sexual dream.",
     "incipit": "ተብህለ፡ በእንተ፡ አሐዲ፡ ብእሲ፡ ኄር፡ ወፈራሄ፡ እግዚአብሔር፡ ወፍጹም፡ ውእቱ፡ በምግባረ፡ ሠናይ፡ ወበሃይማኖት። ወእንዘ፡ ሀለወ፡ በንእሱ፡ ነሥአ፡ አስኬማ፡ መላእክት፡ በንጽሕ፡ ወበቅድስና። ወእምአመ፡ ለብሰ፡ ልብሰ፡ ምንኵስና፡ ወሶበ፡ ኮኖ፡ ፬፡ ዓመተ፡ አእመረ፡ ሕልመ፡ ሌሊት",
     "manuscript_count": 20,
+    "most_read": true,
     "translations": [
       {
         "author": "",
@@ -4336,6 +4611,7 @@ const MIRACLES_OF_MARY = [
     "title": "A couple tries to get their son to marry, even though they had dedicated him to the Virgin Mary, but he falls sick to the point of death.",
     "incipit": "ወሀሎ፡ አሐዲ፡ ብእሲ፡ ኄር፡ ወፈራሄ፡ እግዚአብሔር፡ ወያፈቅራ፡ ፈድፋደ፡ ለእግዝእትነ፡…. ወባዕል፡ ውእቱ፡ ጥቀ፡ ወብእሲቱኒ፡ ኄርት፡ ይእቲ፡ ወፍጽምት፡ በምግባረ፡ ሠናይ፡ ወበሃይማኖት። ወባሕቱ፡ ብዙኃ፡ ይቴክዙ፡ ወየሐዝኑ፡ በእንተ፡ ሀጢአ፡ ውሉድ",
     "manuscript_count": 20,
+    "most_read": true,
     "translations": [
       {
         "author": "",
@@ -4364,6 +4640,7 @@ const MIRACLES_OF_MARY = [
     "title": "A thief is hung upside down with the objects he stole in the Virgin Mary's church in Sebkahad, Egypt",
     "incipit": "ወሀለወት፡ አሐቲ፡ ቤተ፡ ክርስቲያን፡ በሀገረ፡ ግብጽ፡ ዘተሐንጸት፡ በስመ፡ እግዝእትነ፡…. ወስማ፡ ለሀገር፡ ስብከሐድ። ወበአሐቲ፡ እምመዋዕል፡ መጽኡ፡ ሠረቅት፡ ወቦኡ፡ በሌሊት፡ ወሰበሩ፡ መሰከወ፡ ቤተ፡ ክርስቲያን",
     "manuscript_count": 20,
+    "most_read": false,
     "translations": [
       {
         "author": "Allie V. Mangel",
@@ -4376,6 +4653,7 @@ const MIRACLES_OF_MARY = [
     "title": "King Tarses of Fars, who loved to kill Christians.",
     "incipit": "ወሀሎ፡ አሐዱ፡ ንጉሥ፡ በሀገረ፡ ፋርስ፡ ዘስሙ፡ ጠርስስ፡ ዘፍካሬሁ፡ ቀታሊ፡ ወኢይምሕክ፡ ዕደወ፡ ወአንስተ፡ ወኢየአምር፡ ለእግዚአብሔር",
     "manuscript_count": 20,
+    "most_read": false,
     "translations": [
       {
         "author": "Mika J. Hyman",
@@ -4388,6 +4666,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Nagara Maryam??: OldF: Part 03: Journey: The hunter who discovered the Holy Family in flight is turned into a dog when he violates his oath not to reveal them.",
     "incipit": "ተብህለ፡ እንከ፡ በእንተ፡ አሐዱ፡ ብእሲ፡ ዘመሐለ፡ በሐሰት፡ ወበእንተ፡ አሐዱ፡ መኰንን፡ ዐቢይ፡ ዘየፈቅራ፡ ለእግዝእትነ፡…. ወእንዘ፡ ሀለወት፡ እግዝእትነ፡ ማርያም፡ ውስተ፡ ሐቅለ፡ ገዳም፡ ዘቈላተ፡ ዮሰፍጥ፡ ጐዪየ፡ እምነ፡ ሕምዘ፡ መዐቱ፡ ለአርዌ",
     "manuscript_count": 19,
+    "most_read": true,
     "translations": [
       {
         "author": "",
@@ -4400,6 +4679,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Ledata la-Maryam??: OldB: Nativity: The Virgin Mary gives birth to Jesus Christ. (347, 299, 445 similar)",
     "incipit": "ስምዑኬ፡ ኵልክሙ፡ ደቂቀ፡ ቤተ፡ ክርስቲያን፡ ዜናሃ፡ ለእግዝእትነ፡…. ዘከመ፡ ገብረት፡ ኀይለ፡ ወተአምረ፡ በዕለተ፡ ወለደቶ፡ ለእግዚእነ፡ ወመድኃኒነ፡ ኢየሱስ፡ ክርስቶስ፡ በቤተ፡ ልሔም፡ ዘይሁዳ፡ እስመ፡ ከማሁ፡ ጽሑፍ፡ በነቢይ",
     "manuscript_count": 19,
+    "most_read": true,
     "translations": [
       {
         "author": "",
@@ -4412,6 +4692,7 @@ const MIRACLES_OF_MARY = [
     "title": "King Dawit I, the 14th c. Ethiopian monarch, is summoned by the Ethiopian monasteries and asked to abdicate",
     "incipit": "ስምዑ፡ ኵልክሙ፡ ማኅበረ፡ ቤተ፡ ክርስቲያን፡ ዘገብረት፡ እግዝእትነ፡ ማርያም፡ ዐቢየ፡ ኀይለ፡ ወዕፁበ፡ ተአምረ፡ በላዕለ፡ አሐዱ፡ ንጉሥ፡ ፍቁረ፡ ወልዳ፡ ወላእከ፡ ዚአሃ። እምዘገብረት፡ ሎቱ፡ ብዙኃተ፡ ተአምረ፡ ወመንክራተ፡ ዕፁባተ፡ ወመድምማተ፡ ዘያስተፌሥሕ፡ ልበ፡ ሰማዕያን፡ ወዘይትነከር፡ በዐውደ፡ ጉቡኣን፡ ዝንቱ፡ ውእቱ፡ ቀዳሜ፡ ተአምሪሃ፡ ለእግዝእትነ፡ ማርያም፡ ዘገብረት፡ ሎቱ፡ ለውእቱ፡ ንጉሥ። ወአመ፡ አንበሮ፡ እግዚአብሔር፡ በመንበረ፡ አበዊሁ፡ ዳዊት፡ ወሰሎሞን፡ ሶቤሃ፡ ፈነወ፡ ላእካነ፡ ውስተ፡ ኵሉ፡ አህጉረ፡ መንግሥቱ፡ ኀበ፡ ሀለዉ፡ ቅዱሳን፡ እለ፡ በአድባራት፡ ወገዳማት",
     "manuscript_count": 19,
+    "most_read": true,
     "translations": [
       {
         "author": "",
@@ -4424,6 +4705,7 @@ const MIRACLES_OF_MARY = [
     "title": "Saint Theocleia, the married Egyptian, prepares her for martyrdom and is visited by the Virgin Mary",
     "incipit": "ኀይለ፡ ተአምሪሃ፡ ለእግዝእትነ፡…. ዘገብረት፡ ላዕለ፡ ብፅዕት፡ ወኅሪት፡ ታውክልያ፡ ሰማዕት፡ ወብእሲተ፡ ሰማዕት፡ ዮስጦስ፡ ወእመ፡ አቦሊ፡ ሰማዕት። ወእንዘ፡ ሀለወት፡ ታውክልያ፡ ቀዲማ፡ ውስተ፡ ቤተ፡ ጸሎት",
     "manuscript_count": 19,
+    "most_read": true,
     "translations": [
       {
         "author": "Allie V. Mangel",
@@ -4440,6 +4722,7 @@ const MIRACLES_OF_MARY = [
     "title": "Daniel from Constantinople, who wanted to go to church to receive Communion even when there was fighting in the streets.",
     "incipit": "ወሀሎ፡ አሐዱ፡ ብእሲ፡ በሀገረ፡ ቍስጥንጥንየ፡ ዘስሙ፡ ዳንኤል፡ ዘይፈርሆ፡ ለእግዚአብሔር፡ ዘኵሎ፡ ይእኅዝ፡ በጸንዓ፡ ኃይሉ፡ ዘያርዕድ፡ ለሰማይ፡ ወያድለቅልቃ፡ ለምድር፡ በምጽአቱ",
     "manuscript_count": 19,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -4452,6 +4735,7 @@ const MIRACLES_OF_MARY = [
     "title": "Deganna, the church builder, who was asked by the Syrian King Aktab to build a temple for his pagan gods and refused and was martyred",
     "incipit": "ወሀሎ፡ አሐዱ፡ ብእሲ፡ በሀገረ፡ ሳም፡ ዘስሙ፡ ዴገና፡ ሐናፄ፡ ቤተ፡ ክርስቲያን፡ ዘይጸርብ፡ ዕፀወ፡ ወይወቅር፡ ዕብነ",
     "manuscript_count": 19,
+    "most_read": false,
     "translations": [
       {
         "author": "Amsalu Tefera",
@@ -4468,6 +4752,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Nagara Maryam??: OldE: Part 04: Journey: All Israel is upset by the coming of the Magi; Saint Gabriel tells the Virgin Mary to flee to the mountains of Lebanon",
     "incipit": "ወበውእቱ፡ መዋዕል፡ ኮነ፡ ዐቢይ፡ ትምክህት፡ ላዕለ፡ እስራኤል፡ ወላዕለ፡ ኵሉ፡ አህጉር፡ ወበሓውርት",
     "manuscript_count": 18,
+    "most_read": false,
     "translations": [
       {
         "author": "Jeremy Brown with Ekaterina Pukhovaia",
@@ -4480,6 +4765,7 @@ const MIRACLES_OF_MARY = [
     "title": "The rich persons who stored their wealth in a church.",
     "incipit": "ወሀለወት፡ አሐቲ፡ ቤተ፡ ክርስቲያን፡ እንተ፡ ተሐንጸት፡ በስማ፡ ለእግዝእትነ፡…. ወብዙኃን፡ አብዕልት፡ ወበዓልታተ፡ ቤት፡ ይነብሩ፡ ውስተ፡ ይእቲ፡ ሀገር፡ ወበዑላን፡ ጥቀ፡ በንዋየ፡ ወርቅ፡ ወብሩር፡ ወበአልባሰ፡ ሠርጕ፡ ክቡር",
     "manuscript_count": 18,
+    "most_read": true,
     "translations": [
       {
         "author": "",
@@ -4508,6 +4794,7 @@ const MIRACLES_OF_MARY = [
     "title": "A pestilence was stopped by the Virgin Mary",
     "incipit": "ወሀለወት፡ አሐቲ፡ ሀገር፡ ዐባይ፡ ወብዙኃን፡ ሰብእ፡ ይነብሩ፡ ውስቴታ፡ ጳጳሳት፡ ወኤጲስ፡ ቆጶሳት፡ ቀሳውስት፡ ወዲያቆናት፡ ወመነኮሳት፡ ወሕዝብ፡ ዘኢይትኈለቍ። ወቦአ፡ ውስተ፡ ይእቲ፡ ሀገር፡ ሞተ፡ ሰብእ፡ ወቀተለ፡ ብዙኃነ፡ ሰብአ፡ እደ፡ ወአንስተ",
     "manuscript_count": 17,
+    "most_read": false,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -4520,6 +4807,7 @@ const MIRACLES_OF_MARY = [
     "title": "Emperor Theodosiusof Constantinople's brother Dilasor, who was Abba Kiros.",
     "incipit": "ወሀሎ፡ አሐዱ፡ ብእሲ፡ እኅወ፡ ቴዎዶስዮስ፡ ንጉሥ፡ ዘስሙ፡ ዲላሶር፡ ወአስተርአዮ፡ እግዚእነ፡ ኢየሱስ፡ ክርስቶስ፡ ዘለዘክሮቱ፡ ይደሉ፡ ስግደት፡ ወለጣዕመ፡ ስሙ፡ አኰቴት፡ ሌሊተ፡ በሕልም፡ ወይቤሎ፡ ሑር፡ ውስተ፡ ደብረ፡ ባሳን",
     "manuscript_count": 17,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -4536,6 +4824,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Nagara Maryam??: OldN: Journey: The dogs of the hunter praise the Virgin Mary while in land of Egypt",
     "incipit": "እንዘ፡ ትወርድ፡ እግዝእትነ፡ ማርያም፡ ውስተ፡ ምድረ፡ ግብጽ፡ ኀበ፡ ኃደረት፡ ገዳመ፡ ምስለ፡ ፍቁር፡ ወልዳ፡ ምስለ፡ ዮሴፍ፡ ወሰሎሜ፡ መጽአ፡ ነአዌ፡ ዓረዊት፡ ምስለ፡ አክልብቲሁ፡ ወመጽኡ፡ አክልብት፡ እንዘ፡ ይሴብሕዋ፡ ወይብልዋ፡ ስብሐት፡ ለኪ፡ እመ፡ እግዚአ፡ ኵሉ፡ ፍጥረት",
     "manuscript_count": 17,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -4552,6 +4841,7 @@ const MIRACLES_OF_MARY = [
     "title": "A servant girl under a magic spell was healed by the Virgin Mary",
     "incipit": "ወከመ፡ ኆፀ፡ ባሕር፡ ኍላቋሁ፡ ከማሁ፡ ኢይትረከብ፡ ኍልቈ፡ ተአምሪሃ፡ ለእግዝእትነ፡…. ርኁቅ፡ ውእቱ፡ እምልበ፡ መዋቲ፡ ኢይትረከብ፡ በኃሢሥ፡ ወኢይትሌለይ፡ በጥንቃቄ፡ በልሳነ፡ መዋቲ፡ ነባቢ፡ ኢይክል፡ ፍጻሜሁ። ወይእዜኒ፡ እንግርክሙ፡ በከመ፡ ሰማዕኩ፡ ቀዲሙ፡ በዕዝንየ፡ ወከማሁ፡ ርኢኩ፡ በአዕይንትየ፡ ዘገብረት፡ እግዝእትነ፡…. ተአምር፡ ወእዜኑ፡ ንስቲተ፡ እምተአምሪሃ፡ ለእግዝእትነ፡…. እንዘ፡ ያሌብወኒ፡ መንፈሰ፡ ወልዳ፡ ገባሬ፡ ዓለም፡ በጥበቢሁ፡ ሰጊድ፡ ይደሉ፡ ለስመ፡ ዚአሁ፡ ይእዜኒ፡ ወዘልፈኒ፡ ወለዓለመ፡ ዓለም፡ አሜን። ተብህለ፡ ከመ፡ ሀለወት፡ አሐቲ፡ ዓመት፡ በቤተ፡ አጋዕዝታ፡ ወሶበ፡ ሖሩ፡ አጋዕዝቲሃ፡ ኀዲጎሙ፡ ውስተ፡ ቤቶሙ፡ ወሠወረ፡ ሶቤሃ፡ ፀሐይ፡ ብርሃኖ",
     "manuscript_count": 17,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -4564,6 +4854,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Nagara Maryam??: OldF: Part 04: Journey: The Holy Family visits the king of the Semites.",
     "incipit": "ወሀሎ፡ አሐዱ፡ ብእሲ፡ እምደቂቀ፡ ሴም፡ ዘሠናይ፡ ግዕዙ፡ ወርቱዕ፡ ልቡ",
     "manuscript_count": 16,
+    "most_read": true,
     "translations": [
       {
         "author": "Rowan Williams",
@@ -4576,6 +4867,7 @@ const MIRACLES_OF_MARY = [
     "title": "Patriarch Bartholomew of Alexandria, while saying Mass, is visited by the Virgin Mary and her Son",
     "incipit": "ወሀሎ፡ አሐዱ፡ ሊቀ፡ ጳጳሳት፡ በሀገረ፡ እስክንድርያ፡ ዘስሙ፡ በርተሎሜዎስ፡ ወያሠምሮ፡ ለእግዚአብሔር፡ ወእስከ፡ ለሞት፡ ወያፈቅራ፡ ለእግዝእትነ፡…. ወበአሐቲ፡ ዕለት፡ አጽሐብዎ፡ ካህናት፡ ከመ፡ ይልበስ፡ ተክህኖ፡ አመ፡ ወርኃ፡ ሐምሌ፡ በሠርቀ፡ በዓላ፡ ለእግዝእትነ",
     "manuscript_count": 16,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -4588,6 +4880,7 @@ const MIRACLES_OF_MARY = [
     "title": "Saint Samuel of Waldebba (Samuʾel),the 15th c. Ethiopian saint, was ordered by Christ to celebrate Mass for the feast of the Virgin Mary (same saint and plot as 467)",
     "incipit": "ወካዕበ፡ ስምዑ፡ ዘገብረት፡ ሎቱ፡ ለሳሙኤል፡ እግዝእትነ፡…. ወበተፍጻሚተ፡ ጸሎቱ፡ እንዘ፡ ያነብብ፡ ወትረ፡ ጸሎተ፡ ዚአሃ፡ ዲበ፡ ማይ፡ ወበላዕሌሁ፡ ያነብብ፡ ቅዳሴሃ፡ ለእግዝእትነ፡ ማርያም፡ በእንተ፡ ፍቅረ፡ ዚአሃ፡ ወእምድኅረ፡ ፈጸመ፡ ይሰቲ፡ እምውእቱ፡ ማይ፡ ወይሁቦሙ፡ ለደቂቁ፡ ወይብሎሙ፡ ዑቁ፡ ወኢትክዓው፡ ዘንተ፡ ማየ፡ ውስተ፡ ምድር",
     "manuscript_count": 16,
+    "most_read": false,
     "translations": [
       {
         "author": "Rowan Williams",
@@ -4600,6 +4893,7 @@ const MIRACLES_OF_MARY = [
     "title": "Homily on the greatness of the Virgin Mary. [same as 390, 584, 607, 637??]",
     "incipit": "ስምዑኬ፡ አበውየ፡ ወአኃውየ፡ ሕዝበ፡ ክርስቲያን፡ ዕበያ፡ ለእግዝእትነ፡…. ኀድጉሰ፡ ለሥጋውያን፡ ለመላእክትኒ፡ እሳታውያን፡ ትስእል፡ ሎሙ፡ ምሕረተ፡ ኀበ፡ ፍቁር፡ ወልዳ፡ ሶበ፡ ይትዓደዉ፡ እምትእዛዙ",
     "manuscript_count": 16,
+    "most_read": false,
     "translations": [
       {
         "author": "Getatchew Haile",
@@ -4612,6 +4906,7 @@ const MIRACLES_OF_MARY = [
     "title": "Life: An unbaptized Jewish woman attempts to enter the house of the Virgin Mary, who prevents her and tells her to seek baptism.",
     "incipit": "ወሀለወት፡ አሐቲ፡ ብእሲት፡ አይሁዳዊት፡ ዘቦአት፡ ውስተ፡ ቤታ፡ ለእግዝእትነ፡ ማርያም፡ ዘእንበለ፡ ጥምቀት፡ ወከልአታ፡ እግዝእትነ",
     "manuscript_count": 15,
+    "most_read": false,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -4624,6 +4919,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Felsata la-Maryam??: KOld?: Dormition: Pact: Christ gives the Virgin Mary the Pact of Mercy. (470, 553, 632 similar)",
     "incipit": "ስምዑ፡ ኦሕዝበ፡ ክርስቲያን፡ ዘከመ፡ ወሀባ፡ ኪዳነ፡ ምሕረት፡ ፍሬ፡ ማኅፀና፡ እግዚእነ፡ ኢየሱስ፡ ክርስቶስ፡ ለዘይጸውዕ፡ ስማ። አመ፡ በዓታ፡ ውስተ፡ ኢየሩሳሌም፡ ሰማያዊት፡ ወርእየቶ፡ ለአብ፡ ቅዱስ፡ ወለወልድ፡ ቅዱስ፡ ወለመንፈስ፡ ቅዱስ፡ ጰራቅሊጦስ። ወእምዝ፡ አርአያ፡ ፍቁር፡ ወልዳ፡ ምስጢራተ፡ ኅቡዐቲሁ",
     "manuscript_count": 15,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku",
@@ -4636,6 +4932,7 @@ const MIRACLES_OF_MARY = [
     "title": "A poor man become wealthy with the help of the Virign Mary",
     "incipit": "ስምዑ፡ አበዊነ፡ ወአኃዊነ፡ ዘገብረት፡ እግዝእትነ፡…. ለአሐዱ፡ ብእሲ፡ እንዘ፡ አቡሁ፡ ወእሙ፡ ጽኑሳን፡ ወአልቦሙ፡ ንዋይ፡ እስመ፡ ጽኑሳን፡ እሙንቱ፡ ወውሉዶሙ፡ ሠናይ፡ ውእቱ፡ ወያፈቅራ፡ ለእግዝእትነ፡ ማርያም፡ ወይዜከር፡ ስማ፡ ኵሎ፡ ጊዜ። ወኮነ፡ ውእቱ፡ ይስእል፡ ወትረ፡ ወይሁብ፡ ላቲ፡ አምኃ፡ ዕጣነ፡ ሴጠ፡ ላቲ፡ ዶርሆ፡ ንስቲተ፡ በአምጣነ፡ ይክል",
     "manuscript_count": 14,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -4648,6 +4945,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book on Ark from Kings: Part 1C: The Philistines bring the Ark of Zion to Azotus and put it into the temple of Dagon.",
     "incipit": "ሕዝበ፡ ክርስቲያን፡ ንንግርክሙ፡ ዜናሃ፡ ለታቦተ፡ ሕጉ፡ ለልዑል፡ ዘተረክበ፡ እምመጽሐፈ፡ ነገሥት። ወነሥእዋ፡ ኤሎፍሊ፡ ለታቦተ፡ እግዚአብሔር፡ ጽዮን፡ እምአቤኔዜር፡ ወወሰድዋ፡ ውስተ፡ አዛጦን",
     "manuscript_count": 14,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -4664,6 +4962,7 @@ const MIRACLES_OF_MARY = [
     "title": "The three monks who attempted to say Mass in a mosque.",
     "incipit": "ወሀለዉ፡ ፫፡ መነኮሳት፡ ቀሳውስት፡ በሀገረ፡ ጥልጥልያ፡ ዘያፈቅርዋ፡ ለእግዝእትነ፡…. ወሖሩ፡ እምይእቲ፡ ሀገር፡ መጠነ፡ ፲፡ ምህዋረ፡ ዕለት፡ ወረከቡ፡ ምስጋዶሙ፡ ለአረሚ",
     "manuscript_count": 13,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -4676,6 +4975,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Ledata la-Maryam??: OldA: Part 03: Birth: The Virgin Mary is born on the first of Genbot.",
     "incipit": "ንግባእኬ፡ ሀበ፡ ጥንተ፡ ነገር። ወሶበ፡ ተፈጸመ፡ መዋዕለ፡ ፅንሳ፡ ወለደት፡ ወለተ፡ አመ፡ ፩፡ ለግንቦት፡ እንዘ፡ ትበርህ፡ እምነ፡ ፀሐይ",
     "manuscript_count": 12,
+    "most_read": true,
     "translations": [
       {
         "author": "Ellen Li",
@@ -4692,6 +4992,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book on Ark in Ethiopia: Part 1: The beginning of the history of the Ark of Zion in the giving of the Ten Commandments.",
     "incipit": "ስምዑኒ፡ እንግርክሙ፡ ጥንተ፡ ሙላዳ፡ ለጽዮን፡ ፀወንነ፡ አመ፡ ጾመ፡ ፵፡ መዓልተ፡ ወ፵፡ ሌሊተ፡ በደብረ፡ ሲና፡ ወወሀቦ፡ ጽላተ፡ ዘዕብን፡ ዘውስቴቱ፡ ጽሑፍ፡ ፲፡ ቃላት",
     "manuscript_count": 12,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -4712,6 +5013,7 @@ const MIRACLES_OF_MARY = [
     "title": "The Stephanites (Ǝstifanites/Estifanites) in Egypt and Palestine.",
     "incipit": "ስምዑ፡ ዘኮነ፡ ተአምረ፡ ዐቢየ፡ በደወለ፡ ግብጽ፡ በመዋዕሊሁ፡ ለናዖድ፡ መሢሐ፡ እግዚአብሔር፡ ንጉሠ፡ ኢትዮጵያ። ወሀለዉ፡ መነኮሳት፡ እምደቂቀ፡ እስጢፋ፡ ርኩስ፡ እለ፡ ወረዱ፡ እምኢየሩሳሌም፡ እምኢትዮጵያ። ወሶበ፡ በጽሑ፡ ኢየሩሳሌም፡ ፈቀዱ፡ ይባኡ፡ ኀበ፡ መቃብሩ፡ ለእግዚእነ",
     "manuscript_count": 12,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -4724,6 +5026,7 @@ const MIRACLES_OF_MARY = [
     "title": "Gabra Maryam is healed by the Virgin Mary and Gabriel when they appear to him (opening)",
     "incipit": "ወሀሎ፡ አሐዱ፡ ብእሲ፡ በብሔረ፡ ኢትዮጵያ፡ ኃጥእ፡ ወዓማፂ፡ ዘስሙ፡ ገብረ፡ ማርያም፡ ወባሕቱ፡ ኮነ፡ ያፈቅራ፡ ለእግዝእትነ፡…. ወይገብር፡ ተዝካራ፡ ወካልዕሰ፡ አልቦቱ፡ ምግባረ፡ ሠናይ፡ ዘእንበለ፡ አሚነ፡ ወልዳ፡ ወአፍቅሮ፡ ዚአሃ። ወኮነ፡ በአሐዱ፡ እምመዋዕል፡ በሰንበተ፡ እኁድ፡ ኃደረ፡ ውስተ፡ ቤተ፡ ክርስቲያና፡ እንዘ፡ ይዌድሳ፡ ወይጼብሓ፡ ወይገኒ፡ ለነግሣ",
     "manuscript_count": 12,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -4736,6 +5039,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Felsata la-Maryam??: IOld?: Dormition: Saint Thomas arrives for the funeral of The Virgin Mary.",
     "incipit": "ወበጽሖ ፡ ቶማስ ፡ ኀበ ፡ ሐዋርያት ፤ በይእቲ ፡ ዕለት ፡ ሀገረ ፡ ኢየሩሳሌም ። ወይቤልዎ ፡ እንዘ ፡ ይበⷉ ፡ ሞትት ፡ እመ ፡ ብርሃን",
     "manuscript_count": 11,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -4748,6 +5052,7 @@ const MIRACLES_OF_MARY = [
     "title": "Saint Sarabamon, the future bishop of Nikiou and martyr, and Abraham, a relative of Saint Stephen, becomes a Christian when visited by the Virgin Mary (same as ID 268)",
     "incipit": "ወኮነ፡ ዝንቱ፡ ቅዱስ፡ እምዘመዱ፡ ለቅዱስ፡ እስጢፋኖስ፡ እምነገደ፡ ሌዊ፡ እምኢየሩሳሌም፡ ወኮነ፡ ስሙ፡ ለአቡሁ፡ አብርሃም፡ ወልደ፡ ሌዊ፡ ወልደ፡ ዮሴፍ፡ እኁሁ፡ ለስምዖን፡ እኁሁ፡ ለእመ፡ እስጢፋኖስ፡ ወበጊዜ፡ ልደቱ፡ ሰመይዎ፡ ስመ፡ አቡሁ",
     "manuscript_count": 11,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -4760,6 +5065,7 @@ const MIRACLES_OF_MARY = [
     "title": "Dabra Qwesqwam's cross, used to bless, bows down when the priest saying Mass blessed.",
     "incipit": "ወሀሎ፡ መስቀል፡ ውስተ፡ ደብረ፡ ቍስቋም፡ ዘስቁል፡ ውስተ፡ ቀመረ፡ ቤተ፡ ክርስቲያን፡ ወሶበ፡ ይቄድስ፡ ቍርባነ፡ ለእመ፡ ኮነ፡ ካህነ፡ ንጹሐ፡ ሶበ፡ ይብል፡ ፈኑ፡ ጸጋ፡ መንፈስ፡ ቅዱስ፡ ላዕሌነ፡ ይባርክ፡ ውእቱ፡ መስቀል፡ ላዕለ፡ ኅብስት፡ በከመ፡ ልማድ",
     "manuscript_count": 10,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -4772,6 +5078,7 @@ const MIRACLES_OF_MARY = [
     "title": "King Zara Yaqob (Zarʾa Yaʿeqob), the 14th c. Ethiopian monarch's Homily on the Virgin Mary as the hope of salvation and the flight to Egypt",
     "incipit": "ድርሳን፡ ዘደረሰ፡ ዘርአ፡ ያዕቆብ፡ ርቱዓ፡ ሃይማኖት፡ እግዚአብሔር፡ ይምሐሮ፡ በጸሎታ፡…. ይቤ፡ ከመዝ፡ ስምዑኬ፡ ኦምእምናን፡ ኦክርስቶሳውያን፡ ደቂቀ፡ ወንጌል፡ አልብነ፡ ተስፋ፡ ወኢድሂን፡ ዘእንበለ፡ ማርያም፡ እግዝእትነ",
     "manuscript_count": 10,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -4784,6 +5091,7 @@ const MIRACLES_OF_MARY = [
     "title": "The icon of the Virgin Mary in a church of Alexandria that some Europeans tried to steal.",
     "incipit": "ወሀለወት፡ አሐቲ፡ ቤተ፡ ክርስቲያን፡ በደወለ፡ ግብጽ፡ በምኵናነ፡ ምስር፡ በሀገረ፡ ዐባይ፡ እለ፡ ስክንድርያ፡ በመንበረ፡ ማርቆስ፡ ወንጌላዊ፡ ወሕንጽት፡ ይእቲ፡ በስማ፡ ለእግዝእትነ፡ ማርያም፡ ዘሥዑል፡ በወርቅ",
     "manuscript_count": 9,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -4796,6 +5104,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Nagara Maryam??: OldP: Journey: The Virgin Mary asks for bread from a poor widow during the flight from Herod.",
     "incipit": "ወእምዝ ፡ አስተርአዮ ፡ መልአከ ፡ እግዚአብሔር ፡ ለዮሴፍ ፡ በሕልም ፡ ወይቤሎ ፡ ተንሢአከ ፡ በጽባሕ ፡ ንሣእ ፡ ሕፃነ ፡ ወእሞ ፡ ወጕየይ ፡ ብሔረ ፡ ግብጽ ። ወገብረ ፡ በከመ ፡ አዘዘ ፡ መልአከ ፡ እግዚአብሔር ፡ ወሖረ ፡ ብሔረ ፡ ቍስቋም ፡ ወአልቦ ፡ ዘተወክፎ ፡ ወቦኡ ፡ ቤተ ፡ ዕቤርት",
     "manuscript_count": 9,
+    "most_read": false,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -4808,6 +5117,7 @@ const MIRACLES_OF_MARY = [
     "title": "Saint Samuel of Waldebba (Samuʾel), the 15th c. Ethiopian saint, was almost prevented from praying when Satan seized his prayer book",
     "incipit": "ወእንዘ፡ ሀሎ፡ አቡነ፡ ሳሙኤል፡ ያነብብ፡ መጽሐፈ፡ ጸሎታ፡ ለማርያም፡ ወፈጺሞ፡ መዝሙረ፡ ዳዊት፡ እስመ፡ ከማሁ፡ ልማዱ። ወአሐተ፡ ዕለተ፡ መጽአ፡ ሰይጣን፡ ወመሰጣ፡ ለይእቲ፡ መጽሐፍ",
     "manuscript_count": 8,
+    "most_read": false,
     "translations": [
       {
         "author": "Getatchew Haile",
@@ -4820,6 +5130,7 @@ const MIRACLES_OF_MARY = [
     "title": "An official who used to rob the poor is converted when a monk reveals that Satan was acting as his counsellor.",
     "incipit": "ወሀሎ፡ አሐዱ፡ መኰንን፡ ዘያፈቅራ፡ ለእግዝእትነ፡…. ወይጼሊ፡ ወትረ፡ ሰላመ፡ መልአክ፡ ወኢየአምር፡ ጸሎተ፡ ካልአ፡ ዘእንበሌሁ። ወውእቱ፡ ይትዔገል፡ ነዳያነ፡ ወየኃይድ፡ ንዋዮሙ",
     "manuscript_count": 8,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -4832,6 +5143,7 @@ const MIRACLES_OF_MARY = [
     "title": "Tekta, the ancestor of the Virgin Mary who was then childless, has a dream about ten generations, ending with the moon and the sun.",
     "incipit": "ወሀሎ፡ አሐዱ፡ ብእሲ፡ እምውሉደ፡ እስራኤል፡ ጻድቅ፡ ወፈራሄ፡ እግዚአብሔር፡ ውእቱ፡ በኵሉ። ወይቤላ፡ ለብእሲቱ፡ ቴክታ፡ ብነ፡ ወርቅ፡ ወብሩር፡ ወአልባስ፡ ቀጠንት፡ ዘአልቦ፡ ኍልቍ",
     "manuscript_count": 8,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -4856,6 +5168,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book on Ark in Ethiopia: Part 3: The history of the Ark of Zion during the reigns of David and Solomon; Menelik takes the Ark toward Axum; when they reach the Red Sea, it parts before them.",
     "incipit": "ወእምዝ፡ ነግሠ፡ ዳዊት፡ ንጉሠ፡ እስራኤል፡ ወፄወውዋ፡ ኤሎፍላውያን፡ ለታቦተ፡ ጽዮን፡ ወወሰድዋ፡ ውስተ፡ ሀገሮሙ። ወበህየ፡ አውረደት፡ ሎሙ፡ መቅሠፍተ፡ ብዙኃ",
     "manuscript_count": 8,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -4884,6 +5197,7 @@ const MIRACLES_OF_MARY = [
     "title": "Homily on the Annunciation and the Incarnation: Part 3: The Visitation of the Virgin Mary to St. Elizabeth.",
     "incipit": "ወሖረት፡ እግዝእትነ፡ ማርያም፡ ትርአየ፡ ለዓረጊት፡ ወእንተ፡ በልየት፡ ፀንሰት፡ እስመ፡ አምነት፡ ቃለ፡ ዘሰምዓት",
     "manuscript_count": 8,
+    "most_read": false,
     "translations": [
       {
         "author": "Amsalu Tefera",
@@ -4908,6 +5222,7 @@ const MIRACLES_OF_MARY = [
     "title": "A monk heals two blind hyena cubs with an icon of the Virgin Mary.",
     "incipit": "ተብህለ፡ በእንተ፡ ዝዕብ፡ ዘወለደት፡ ክልኤተ፡ ውሉደ፡ ወዖሩ፡ አዕይንቲሆሙ፡ ለዝዕብ፡ እጓላ። ወነበረ፡ አሐዱ፡ መነኮስ፡ መንገለ፡ ሐቅል፡ ምስለ፡ አራዊት",
     "manuscript_count": 8,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -4920,6 +5235,7 @@ const MIRACLES_OF_MARY = [
     "title": "Saint Samuel of Waldebba (Samuʾel), the 15th c. Ethiopian saint, and how the Virgin Mary appeared to him and Abuna Madganina Egziʾ",
     "incipit": "ስምዑኬ፡ ዘከመ፡ አስተርአየቶ፡ ወዜነወቶ፡ ምስጢረ፡ መንግሥተ፡ ሰማያት፡ ለአቡነ፡ መድኃኒነ፡ እግዚእ፡ ምስለ፡ ወልዱ፡ ሳሙኤል፡ ዘዋሊ፡ እንዘ፡ ይትናገሩ፡ ዕበያቲሁ፡ ለእግዚአብሔር፡ ወባሕረ፡ ንጽሕናሃ፡ ለንጽሐተ፡ ንጹሓን፡ እግዝእትነ፡…. ወበእንተ፡ አፍቀሩ፡ ኪያሃ፡ መጽአት፡ ኀቤሆሙ፡ ምስለ፡ ገብርኤል፡ መልአክ፡ ወትቤሎሙ፡ መንክራ፡ መዓዛ፡ አፉሃ፡ ሰላም፡ ለክሙ",
     "manuscript_count": 8,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -4932,6 +5248,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Felsata la-Maryam??: New: Dormition: Abba Benyami's account of the encounter between Saint Thomas and The Virgin Mary as she gets assumed (third person version of 483?).",
     "incipit": "በከመ፡ ይቤሉ፡ አባ፡ ብንያሚ፡ ለእንቲአከሰ፡ ኵሉ፡ ዘይብል፡ ሀሎ፡ ሥጋሃ፡ ለእግዝእትነ፡ ... ውስተ፡ መቃብር፡ ምስለ፡ ኵሎሙ፡ ጻድቃን፡ ይከውን፡ ክፍሉ፡ ምስለ፡ ኢተጠምቁ፡ ወባሕቱ፡ እግዝእትነ፡ ... ተአቢ፡ እምኵሉ፡ ፍጥረት፡ በከመ፡ የዓቢ፡ ቤተ፡ ማኅደሩ፡ ለንጉሥ፡ ወኮነ፡ እንዘ፡ ሀለዉ፡ ሐዋርያት፡ ተጋቢኦሙ፡ ውስተ፡ ቤታ፡ ለእግዝእትነ፡ ... እምድኅረ፡ ቀበርዋ፡ እንዘ፡ ይላህዉ፡ መሰሎሙ፡ ዘሀሎ፡ ውስተ፡ መቃብር፡ ሥጋሃ፡",
     "manuscript_count": 8,
+    "most_read": false,
     "translations": [
       {
         "author": "Getatchew Haile",
@@ -4944,6 +5261,7 @@ const MIRACLES_OF_MARY = [
     "title": "Arabic: The son of a wealthy man falls off a drifting boat in the city of Euphemia",
     "incipit": "",
     "manuscript_count": 8,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -4956,6 +5274,7 @@ const MIRACLES_OF_MARY = [
     "title": "Arabic: The wife of a rich man gives birth to a child with black skin",
     "incipit": "",
     "manuscript_count": 8,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -4968,6 +5287,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Ledata la-Maryam??: OldC: Annunciation: On the conception of Christ (like IDs 295, 297, 435, 437, 536, 1296)",
     "incipit": "ስምዑኬ፡ ንንግርክሙ፡ ዕበያ፡ ወክብራ፡ ለእግዝእትነ፡ ዘአመ፡ ኮነ፡ ፶፭፻፡ እምፍጥረተ፡ ዓለም፡ ወሠምረ፡ እግዚአብሔር፡ ከመ፡ ይሐውጽ፡ ግብረ፡ እደዊሁ፡ ወያግብኦሙ፡ እምግብርናት፡ መሪር",
     "manuscript_count": 7,
+    "most_read": false,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -4980,6 +5300,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Felsata la-Maryam??: EOld?: Dormition: The Apostle Thomas relates how the Holy Spirit commanded him, while in India, to go back to Jerusalem and receive blessing from The Virgin Mary during her assumption to heaven and how he was taken to Heaven and saw the body of The Virgin Mary.",
     "incipit": "ወእንዘ ፡ ሀሎኩ ፡ እወጽእ ፡ እጋንንተ ፡ ውስተ ፡ ሀገረ ፡ ህንደኬ ፡ ይቤለኒ ፡ መንፈስ ፡ቅዱስ ፡ ዛቲ ፡ ዕለት ፡ አምሳለ ፡ ፋሲካ ።",
     "manuscript_count": 7,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -4992,6 +5313,7 @@ const MIRACLES_OF_MARY = [
     "title": "Homily of John, Son of Thunder (Ra'eya Ta'amer): Part 3?: How the Virgin Mary is a perpetual virgin.",
     "incipit": "አልቦ፡ እምሰብእ፡ ዘይትረከብ፡ እምአዳም፡ አቡነ፡ ወሔዋን፡ እምነ፡ ዘኢአበሰ፡ በሕሊናሁ፡ እመኒ፡ በፍጥወተ፡ ንዋይ፡ ዘዝንቱ፡ ዓለም፡ ዘተሰምየ፡ ዝሙተ፡ በከመ፡ ጸሐፉ፡ ሐዋርያት",
     "manuscript_count": 7,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -5020,6 +5342,7 @@ const MIRACLES_OF_MARY = [
     "title": "Homily of John, Son of Thunder (Ra'eya Ta'amer): Part 4?: How the apostles taught their synod about the virginity of the Virgin Mary.",
     "incipit": "ይቤሉ፡ ሐዋርያት፡ በሲኖዶሶሙ፡ ውእቱ፡ ኢየሱስ፡ ክርስቶስ፡ ዘተወልደ፡ እምማርያም፡ እምቅድስት፡ ድንግል፡ ዘንጽሕት፡ እምትዝብሕት፡ ወርኰስት፡ ወኵሉ፡ ክርስቲያናዊ፡ ዘቦ፡ ላዕሌሁ፡ መንፈስ፡ ቅዱስ፡ ይሜህር፡ ንጽሐ፡ ድንግልናሃ",
     "manuscript_count": 7,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -5048,6 +5371,7 @@ const MIRACLES_OF_MARY = [
     "title": "Homily on the Silver Bird with Gilded Wings: How the glory of the Virgin Mary was preordained before the creation of heaven and earth and on the silver bird with gilded wings (Ps. 67,14)",
     "incipit": "ስምዑኬ፡ ደቂቀ፡ ቤተ፡ ክርስቲያን፡ መአንዝረ፡ ቃላቲሁ፡ ለቅዱሰ፡ እስራኤል፡ አዕዋፈ፡ ወንጌሉ፡ ለዘተወልደ፡ እምርግብ፡ በብሩር፡ ወግቡር፡ አክናፊሃ፡ ወገበዋቲሃ፡ በሐመልማለ፡ ወርቅ፡ ወትሰመይ፡ በአክናፍ፡ እምመንፈስ፡ ለተጋብኦ፡ ውስተ፡ አፀደ፡ ሃይማኖት",
     "manuscript_count": 7,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -5064,6 +5388,7 @@ const MIRACLES_OF_MARY = [
     "title": "The Chalcedonian schism and how the house of Nazareth is miraculously transported.",
     "incipit": "ወኮነ፡ እምድኅረ፡ ዕርገቱ፡ ለእግዚእነ፡ ኢየሱስ፡ ክርስቶስ፡ ሎቱ፡ ስብሐት፡ በክልኤቱ፡ ዓመት፡ ወዘይበዝኅ፡ እምኔሁ፡ ወድኅረ፡ ብስራተ፡ ወንጌል፡ ቅዱስ፡ ተንሥኡ፡ ዓላውያን፡ ነገሥት፡ ወዓለዉ፡ ሃይማኖተ፡ ወነፈቅዋ፡ ለቤተ፡ ክርስቲያን፡ ወሰደዱ፡ መሃይምናነ፡ እለ፡ ኢአመኑ፡ በዕልወቶሙ",
     "manuscript_count": 7,
+    "most_read": false,
     "translations": [
       {
         "author": "Elliot Galvis",
@@ -5076,6 +5401,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Ledata la-Maryam: New: Part 03??: Annunciation: The seven Virgins cast lots, Mary makes linen, Zacharias forces Joseph to drink water of reproach",
     "incipit": "ስምዑ፡ ካዕበ፡ ኦሕዝበ፡ ክርስቲያን፡ ዘከመ፡ አብሰራ፡ ገብርኤል፡ መልአክ፡ ለእግዝእትነ፡…፨ እንዘ፡ ሀለወት፡ ውስተ፡ ቤተ፡ ዮሴፍ፡ ተጋብኡ፡ ሊቃነ፡ ካህናት፡ ከመ፡ ይግበሩ፡ መንጦላዕት፡ ወእምዝ፡ አዘዘ፡ ዘካርያስ፡ ካህን፡ ለደቂቀ፡ እስራኤል፨ ወይቤሎሙ፡ አምጽኡ፡ ፮ደናግል፡ ንጹሐነ፡ እምቤተ፡ ዳዊት፡ ገብሩ፨ ወገብሩ፡ ከማሁ፡ ወተዘከራ፡ ለእግዝእትነ፡",
     "manuscript_count": 7,
+    "most_read": false,
     "translations": [
       {
         "author": "Getatchew Haile",
@@ -5104,6 +5430,7 @@ const MIRACLES_OF_MARY = [
     "title": "Song of Ethiopia: Part 1: The people of Egypt and Ethiopia walk together, singing praises upon the resurrection",
     "incipit": "ስምዑ ፡  ካዕበ ፡  እንግርክሙ ፡  ክብራ ፡  ለማኅሌት ፡  መንፈሳዊት ዘየኀልዩ ፡  ክርስቲያን ፡  በቤተ ፡  አምላኮሙ ወዘይከውን ፡  ወትረ ፡  ተአምረ ፡  ዐቢየ ፡  ለለዓመት ፡  ውስተ ፡  መቃብሪሁ ፡  ለእግዚእነ ። ወኢተፀርዐ ፡  እስከ ፡  ዮም ፡  እም አመ ፡  ተንሥአ ፡  ወልደ ፡  እግዚአብሔር በሥጋ ፡  ዘነሥአ ፡  እምእግዝእትነ ፡  ማርያም።",
     "manuscript_count": 7,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -5124,6 +5451,7 @@ const MIRACLES_OF_MARY = [
     "title": "Mary Appears at Däbrä Metmaq (Part 3)",
     "incipit": "ዘከመ፡ አስተርአየት፡ በድብረ፡ ምጥማቅ። ወበቀዳሚት፡ ዓመት፡ ፍጻሜ። ሕንጸታ፡ ወቅዳሴሃ፡ በስመ፡ እግዝእትነ፡…. አመ፡ ፳፡ ወ፩፡ ለወርኃ፡ ግንቦት። ወእንዘ፡ ጉቡኣን፡ እሙንቱ፡ መነኮሳት፡ እምድኅረ፡ ፍጻሜ፡ ጸሎተ፡ ነግህ፡ ፈቀዱ፡ ይሑሩ፡ ከመ፡ ይትለአኩ፡ ኅብስተ፡ ቍርባን፡ በጽሖሙ፡ ብርሃን፡ ዓቢይ፡ ዘንኩር፡ ጥቀ።",
     "manuscript_count": 6,
+    "most_read": false,
     "translations": [
       {
         "author": "Rowan Williams",
@@ -5140,6 +5468,7 @@ const MIRACLES_OF_MARY = [
     "title": "Dabra Metmaq's Annual Apparition of Our Lady Mary: Summary: The annual apparition of the Virgin Mary at Dabra Metmaq [not the same as 35A, a digest]",
     "incipit": "ወሀለወት፡ አሐቲ፡ ቤተ፡ ክርስቲያን፡ ዘተሐንጸት፡ በስመ፡ እግዝእትነ፡ ወይትጋብኡ፡ ባቲ፡ ኵሎሙ፡ ሕዝበ፡ ክርስቲያን፡ አመ፡ ፳፡ ወ፩፡ ለወርኃ፡ ግንቦት፡ ወይገብሩ፡ በዓለ፡ ዐቢየ፡ በእንተ፡ አስተርእዮተ፡ ገጻ፡ ገሃደ፡ ለእግዝእትነ፡….",
     "manuscript_count": 6,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -5152,6 +5481,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Felsata la-Maryam??: EOld?: Dormition: The Virgin Mary Magdalene, Jesus, and the disciples fly to arrive at the consecration of the first church, the patriarchs are commemorated, rise from the dead, and are baptized",
     "incipit": "ወእንዘ፡ ሀሎነ፡ በምድረ፡ ይሁዳ፡ አመ፡ ፷፡ ለኅዳር፡ ናሁ፡ ደመና፡ ብሩህ፡ ፆረነ፡ ምስሌሁ፡ ወምስለ፡ አርዳኢሁ፡ ወምስለ፡ ማርያም፡ መግደላዊት፡ ወአብጽሐነ፡ ኀበ፡ ዝንቱ፡ ቤት",
     "manuscript_count": 6,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -5164,6 +5494,7 @@ const MIRACLES_OF_MARY = [
     "title": "A barren woman in Ethiopia conceives and bears Salda Masqal [who is...?]",
     "incipit": "ወሀለወት፡ አሐቲ፡ ብእሲት፡ መካን፡ ወይዘነጕጓ፡ ብእሲሃ፡ ወይጸርፋ፡ ብዙኃ፡ ጊዜያት። ወሀለወት፡ አሐቲ፡ ቤተ፡ ክርስቲያን፡ በጥቃ፡ ቤታ፡ ወትገይስ፡ በሌሊት፡ ከመ፡ ኢያእምራ፡ ብእሲሃ፡ ወትስእላ፡ በብካይ",
     "manuscript_count": 6,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -5176,6 +5507,7 @@ const MIRACLES_OF_MARY = [
     "title": "Gabra Maryam is healed by the Virgin Mary and Gabriel when they appear to him (conclusion)",
     "incipit": "ወካዕበ፡ በ፩እመዋዕል፡ ዘገብረት፡ ሎቱ፡ ተአምር፡ ለውእቱ፡  ብእሲ፡ ኢትዮኡያዊ፡ ዘስሙ፡  ገብረ፡ ማርያም፡ እግዝእትነ፡  ... ወትቤሎ፡  ኢትፍራህ፡ ኦፍቁርየ፡ ወላእክየ፡ ገብረ፡ ማርያም፡ እስመ፡ ኀባዕኪከ፡ አምልበ፡ መዋቲ፡ ወእም ገጸ፡ ንጉሥ፡ ምድራዊ። ወው አቱኒ፡ ሖረ፡ በድፋረት፡ ወቦአ፡  ውስተ፡ ቤተ፡ ነጋሢ፡ ወሐመ፡ ፸ ጊዜ፡ ወበሣልሰ፡ ድኅረ፡ አልጸ ቀ፡ ለመዊት፡ አስተርአየቶ፡ በ አምሳለ፡ ንግሥት፡ ወቀርበ፡ ኀ ቤሃ፡ ከመ፡ ይወድሳ፤",
     "manuscript_count": 6,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -5188,6 +5520,7 @@ const MIRACLES_OF_MARY = [
     "title": "Saint Samuel of Waldebba (Samuʾel), the 15th c. Ethiopian saint, and the blind man who recovered his sight at the commemoration of the saint",
     "incipit": "ወእምድኅረ፡ ዕረፍቱ፡ ለአቡነ፡ ሳሙኤል፡ በ፵፡ ዕለት፡ ተጋብኡ፡ ሕዝብ፡ ከመ፡ ይግበሩ፡ ተዝካሮ፡ ኀበ፡ መቃብሪሁ፡ ዘምስለ፡ ቀሳውስት፡ ወዲያቆናት፡ ወመነኮሳት፡ ወመኳንንት፡ እድ፡ ወአንስት፡ እስከ፡ ይከይዱ፡ ቢጾሙ",
     "manuscript_count": 6,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -5200,6 +5533,7 @@ const MIRACLES_OF_MARY = [
     "title": "King Zara Yaqob (Zarʾa Yaʿeqob), the 14th c. Ethiopian monarch, institutes monthly feasts of the Virgin Mary.",
     "incipit": "ወካዕበ ፡ ስምዑ ፡ ዘከመ ፡ ገብረ ፡ ላቲ ፡ ለእግዝእትነ .... ንጉሥነ ፡ ዘርአ ፡ ያዕቆብ ፡ ወበጸጋ ፡ እግዚአብሔር ፡ ዘተሰምየ ፡ ርቱዓ ፡ ሃይማኖት ፡ እስከሬነ ፡ መንፈስ ፡ ቅዱስ ፡ ማኅቶተ ፡ ጥበብ ፡ ወምሉዓ ፡ አእምሮ ፡ ብእሲ",
     "manuscript_count": 6,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -5212,6 +5546,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Laha Maryam??: Old: Crucifixion: The Virgin Mary visits Calvary.",
     "incipit": "ወሖረት፡ መካነ፡ ቀራንዮ፡ ከመ፡ ትርአይ፡ ሕማማተ፡ ፍቁር፡ ወልዳ፡ ርእየት፡ አክሊለ፡ ሦክ፡ ዘአስተቀዘልዎ፡ ወደመ፡ ርእሱ፡ ዘቈስለ፡ በአክሊለ፡ ሦክ",
     "manuscript_count": 6,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -5236,6 +5571,7 @@ const MIRACLES_OF_MARY = [
     "title": "Homily of John, Son of Thunder (Ra'eya Ta'amer): Part 2?: How the Virgin Mary was given great wings.",
     "incipit": "ወካዕበ፡ ላቲ፡ ለይእቲ፡ ብእሲት፡ አክናፍ፡ ዐበይት፡ መንፈሳውያን፡ በዘትሠርር፡ ቦሙ፡ ለበጺሐ፡ ኵሉ፡ ዓለም",
     "manuscript_count": 6,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -5264,6 +5600,7 @@ const MIRACLES_OF_MARY = [
     "title": "Syrian church of the Virgin Mary in Homs collapses in an earthquake.",
     "incipit": "ዘገብረት፡ በሀገረ፡ ፊንቄ፡ እንተ፡ ይብልዋ፡ ኅምስ፡ እምአድያመ፡ ሻም። ወሀለወት፡ አሐቲ፡ ቤተ፡ ክርስቲያን፡ ውስተ፡ ይእቲ፡ ሀገር፡ በስመ፡ እግዝእትነ፡…. ወነበረት፡ እምዘመነ፡ አበዊነ፡ ሐዋርያት፡ ወበልየት፡ እምጽንዓ፡ አዝማናት። ወበአሐዱ፡ እምለያልይ፡ ኮነ፡ ዐቢይ፡ ድልቅልቅ፡ እስከ፡ ወድቀት፡ ይእቲ፡ ቤተ፡ ክርስቲያን",
     "manuscript_count": 6,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -5276,6 +5613,7 @@ const MIRACLES_OF_MARY = [
     "title": "The man who lost a slave that he was about to sell in the Ethiopian market city of Barara.",
     "incipit": "ስምዑኬ፡ ተአምሪሃ፡ ለእግዝእትነ፡ ማርያም። ወሀሎ፡ አሐዱ፡ ነጋዲ፡ በደወለ፡ አግዓዚ፡ ዘይፈርሆ፡ ለእግዚአብሔር፡ ወያፈቅራ፡ ፈድፋደ፡ ለእግዝእትነ፡…. ወአሐተ፡ ዕለተ፡ ተሠየጠ፡ ገብረ፡ እምምሥያተ፡ ዳሞት፡ ወሖረ፡ ለአርብሖ፡ ውስተ፡ ምሥያተ፡ በራራ",
     "manuscript_count": 5,
+    "most_read": false,
     "translations": [
       {
         "author": "Allie V. Mangel",
@@ -5288,6 +5626,7 @@ const MIRACLES_OF_MARY = [
     "title": "The carpenter who asked for a copy of the Gadla Sama'etat (The Lives of the Martyrs) as a reward for his services in building a church.",
     "incipit": "ወሶበ፡ አኃዙ፡ የሐንጹ፡ ቤተ፡ ክርስቲያነ፡ ቅዱሳን፡ እለ፡ ደብረ፡ ማርያም፡ አስተጋብኡ፡ ብዙኃነ፡ ጸረብተ፡ ዕፀው፡ ወአእባን። ወሐነጹ፡ በዐቢይ፡ ትጋህ፡ ስሳ፡ መነኮሳት፡ ዘእንበለ፡ ይደምሩ፡ አሐደ፡ እምሰብአ፡ ዓለም፡ ዳእሙ፡ ኵሎሙ፡ መነኮሳት፡ ልቡሳነ፡ አስኬማ",
     "manuscript_count": 5,
+    "most_read": false,
     "translations": [
       {
         "author": "Grace Matthews",
@@ -5300,6 +5639,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Felsata la-Maryam??: EOld?: Dormition: Revelation: Part 1?: The Assumption as narrated by Saint John to Prochorus (beginnig of story in 484, 487?).",
     "incipit": "ዜና፡ ፍልሰታ። ወይእዜኒ፡ አብሮኮሮስ፡ አነ፡ አንከርኩ፡ እምዕበየ፡ ስብሐት፡ ዘተውህበ፡ ለእምነ፡ ወለእግዝእትነ፡…. ብፅዕት፡ ከርሥ፡ ዘወለደታ፡ ውስተ፡ ዓለም",
     "manuscript_count": 5,
+    "most_read": false,
     "translations": [
       {
         "author": "Augustine Dickinson",
@@ -5316,6 +5656,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Felsata la-Maryam??: EOld?: Dormition: Hell: Christ grants The Virgin Mary a vision of the sufferings of those in Hell.",
     "incipit": "ወትቤ፡ እግዝእትነ፡…. አውሣእክዎ፡ ለወልድየ፡ ወእቤሎ፡ አርእየኒ፡ ሶበ፡ ትወጽእ፡ ነፍሰ፡ ኃጥኣን፡ እምሥጋሃ",
     "manuscript_count": 5,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -5328,6 +5669,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book on Ark of Dersana Seyon: Part 2A: Exhortation based on the conquest of Palestine by the Ark of Zion.",
     "incipit": "ወነበረት፡ ታቦተ፡ ሕጉ፡ ለእግዚአብሔር፡ እንተ፡ ይእቲ፡ ጽዮን፡ ሰማያዊት፡ በስብሐት፡ ብዙኅ፡ ዘኢይትነገር፡ እስከ፡ አእረፈ፡ ሙሴ። ወእምዝ፡ ሶበ፡ ወፅኡ፡ እስራኤል፡ አመ፡ አገትዋ፡ ለኢያሪኮ፡ ወቦኡ፡ ካህናት፡ ውስተ፡ ዮርዳኖስ",
     "manuscript_count": 5,
+    "most_read": false,
     "translations": [
       {
         "author": "Rowan Williams",
@@ -5340,6 +5682,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book on Ark of Dersana Seyon: Part 5: The Ark of Zion is brought into the Temple of Zion.",
     "incipit": "ንትመየጥኬ፡ ኀበ፡ ዜና፡ ነገር፡ ዘጽኑሕ፡ ለነ፡ በእንተ፡ መቅደስ፡ ዘሐነጸ፡ ሰሎሞን፡ ወልደ፡ ዳዊት፡ ይረድኦ፡ ኪራም፡ ወልደ፡ መበለት",
     "manuscript_count": 5,
+    "most_read": false,
     "translations": [
       {
         "author": "Rowan Williams",
@@ -5352,6 +5695,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book on Ark of Dersana Seyon: Part 8: The precious stones used in building the Temple.",
     "incipit": "ይቤ፡ ዕዝራ፡ ከመዝ፡ ህላዌሃ፡ ለጽዮን፡ እንተ፡ እግዝእትነ፡ ማርያም፡…. ወግብረታኒ፡ በአርአያ፡ ሰማይ፡ ወመሠረታቲሃ፡ በዕንቈ፡ ሰንፔር",
     "manuscript_count": 5,
+    "most_read": false,
     "translations": [
       {
         "author": "Rowan Williams",
@@ -5364,6 +5708,7 @@ const MIRACLES_OF_MARY = [
     "title": "Dabra Metmaq's history, including its construction, destruction and reconstruction.",
     "incipit": "ስምዑ፡ ኦአኃውየ፡ ፍቁራን፡ ክርስቶሳውያን፡ ውሉዳ፡ ለቤተ፡ ክርስቲያን፡ ንነግረክሙ፡ ዜና፡ ነገር፡ ዘይከውን፡ ውስተ፡ ቤተ፡ ክርስቲያን፡ ዘሕንጽት፡ በስማ፡ ለእግዝእትነ፡…. ስምዑ፡ በእዝነ፡ ልቡና፡ ንቤ፡ ንዜንወክሙ፡ ዜናሃ፡ ለእግዝእትነ፡ ማርያም፡ እለ፡ ታፈቅርዋ፡ ወአጽምዑ፡ በለብዎ፡ እስመ፡ ዝንቱ፡ ደብር፡ ማኅደረ፡ ስብሐቲሁ፡ ለእግዚአብሔር፡",
     "manuscript_count": 5,
+    "most_read": false,
     "translations": [
       {
         "author": "Jeremy Brown & Dawit Muluneh with Ekaterina Pukhovaia",
@@ -5376,6 +5721,7 @@ const MIRACLES_OF_MARY = [
     "title": "Saint Romanus, the martyr, and his life story",
     "incipit": "ወሀሎ፡ አሐዱ፡ ብእሲ፡ ዘስሙ፡ ሮማኖስ፡ በደወለ፡ ግብጽ፡ አዳም፡ ስነ፡ ራእዩ፡ ወመንክር፡ ኂሩታቲሁ፡ ወሠናይ፡ በኵሉ፡ ግዕዙ፡ ወያፈቅራ፡ ለእግዝእትነ፡…. ወበአሐዱ፡ ዕለት፡ እንዘ፡ ሀሎ፡ በውስተ፡ ጸሎቱ፡ አኃዞ፡ ደቃስ፡ ወመጽአት፡ ኀቤሁ፡ እግዝእትነ",
     "manuscript_count": 5,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -5388,6 +5734,7 @@ const MIRACLES_OF_MARY = [
     "title": "Homily on the greatness of the Virgin Mary and how she was more exalted than the angels and her Son saved the world",
     "incipit": "ስምዑኬ፡ አበውየ፡ ወአኀውየ፡ ሕዝበ፡ ክርስቲያን፡ ዘከመ፡ ተዓቢ፡ እምመላእክት፡ እግዝእትነ፡…. መላእክትኒ፡ ያከብርዋ፡ እፎኬ፡ ኢያከብርዋ፡ መላእክት፡ ለማርያም፡ ፈድፋደ፡ እምሰብእ፡ ለወላዲተ፡ መፍቀሬ፡ ሰብእ",
     "manuscript_count": 5,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -5408,6 +5755,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Felsata la-Maryam: [Chaine Part 06.2] Dormition: When Tafoneya lays hands on the bier of The Virgin Mary, an angel cuts his arms off (continuation of the preceding miracle) [same as 119]",
     "incipit": "ወሶበ፡ ጸብሐ፡ ይቤሎሙ፡ መንፈስ፡ ቅዱስ፡ ለሐዋርያት፡ ንሥእዋ፡ ለማርያም፡ ወአምጽእዋ፡ እምቤተ፡ መቅደስ፡ ወወሰድዋ፡ እንተ፡ ታበጽሕ፡ ውስተ፡ ፈለግ",
     "manuscript_count": 5,
+    "most_read": false,
     "translations": [
       {
         "author": "Getatchew Haile",
@@ -5420,6 +5768,7 @@ const MIRACLES_OF_MARY = [
     "title": "Clerics Get Book of Mary Written by Apostle John",
     "incipit": "ወናሁ፡ ሀለዉ፡ በደብረ፡ ሲና፡ ፫ዕደው፡ ቅዱሳን፡ እለ፡ ይትቀነዩ፡ በመካን፡ ዘአስተርአዮ፡እግዚአብሔር፡ ለሙሴ፡ በኀበ፡ ዕፀ፡ ጸጦስ፨ ወእሉ፡ ፫ዕደው፡ አስማቲሆሙ፡ቀዳሚ፡ ቀሲስ፡ ዳዊት፡ ወዳግማዊ፡ ቀሲስ፡ ዮሐንስ። ወሣልስ፡ ኤልያስ፡ ዲያቆን፡ እስመ፡ እሉ፡ ቅዱሳን፡ ስዩማን፡ ላዕለ፡ ፫፻ወ፳ ምኔታት፡ እስመ፡ ደብረ፡ ሲና፡ ክሉል፡ በስብሐተ፡ እግዚአብሔር።ወናሁ፡ ጸሐፉ፡ ኀበ፡ ቆርያ ኤጲስ፡ ቆጶስ፡ ዘ ኢየሩሳሌም፡ እንዘ፡ ይብሉ፡ ንፈቅድ፡ ንጠይቅ፡ መጽሐፈ፡ ዜናሃ፡ ለእግዝ እትነ፡ ማርያም፡ እስመ፡ ናሁ፡ ሰማዕነ፡ ከመ ሀሎ፡ ኀበ፡ ዮሐንስ፡ ዘይንእስ፡ ዘያፈቅሮ፡ እግዚኡ",
     "manuscript_count": 5,
+    "most_read": false,
     "translations": [
       {
         "author": "Getatchew Haile",
@@ -5432,6 +5781,7 @@ const MIRACLES_OF_MARY = [
     "title": "The famine in Egypt caused by the shortage of water in the Nile during the reign of Patriarch Matthew I (1378-1408).",
     "incipit": "ወበውእቱ፡ መዋዕል፡ በዝኁ፡ ተንባላት፡ ውስተ፡ ብሔረ፡ ግብዕ፡ ወጸንዓ፡ ሕማም፡ ላዕለ፡ ከርለቴያን፡ ወፌድፋደሰ፡ በኀበ፡ እለ፡ በቍለፕንፕንያ፡ ወበኢየሩሰሴም፡ ወእሰ፡ በሶርያ። ወሶበ፡ ርእዩ፡ ዘንተ፡ ግፍዓ፡ ለብአ፡ አፍርንጊ፡ ተጋቢአሙ፡ ደርገ፡ መከፋ፡ ወኀበፋ፡ ቃለ፡ ወጸሐፉ፡ ጦማረ፡ መልእክት፡ ወለአኩ፡ ኀበ፡ ኄር፡ ወጻድቅ፡ ዳዊት፡ ንጉሠ፡ ኢትዮጵያ።",
     "manuscript_count": 5,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -5444,6 +5794,7 @@ const MIRACLES_OF_MARY = [
     "title": "King Naod (Naʾod), the 16th c. Ethiopian monarch, destroys the Arab King with the help of the Virgin Mary",
     "incipit": "ወሀሎ፡ ፩ንጉሥ፡ ዘበመዋዕሊሁ፡ ርትዓ፡ ሃይማኖተ፡ ክርስቲያን፡ ዘያፈቅራ፡ ለእግዝእትነ፡.... ዘስሙ፡ ናኦድ። ወሖረ፡ ኀበ፡ ምህርካ፡ ውስተ፡ ምድረ፡ ኵራዛ።",
     "manuscript_count": 5,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -5456,6 +5807,7 @@ const MIRACLES_OF_MARY = [
     "title": "A wealthy man named Romanos in Alexandria steals another man's wife while the man is lost at sea",
     "incipit": "ወሀሎ፡ አሐዱ፡ ብእሲ፡ በሀገረ፡ እስክንድርያ፡ ዘስሙ፡ ሮማኖስ። ወኮነ፡ ብዑለ፡ ፈድፋደ፡ በወርቅ፡ ወበብሩር። ወቦቱ፡ ንዋየ፡ ብዙኀ፡ ወአዕፃዳተ፡ ወይነ፡ ወገነታት፡ ወአግማለ፡ ወእንስሳ፡ ወመራዕየ፡ አባግዕ፡ ወአጣሌ። ወፈድፋደሰ፡ ቦቱ፡ ወርቀ፡ ወብሩረ፡ ወአልቦ፡ ዘይክል፡ ኆልዎቶሙ፡ ወኮነ፡ ልማዱ፡ ለውእቱ፡ ብእሲ፡ ይገብር፡ ምሕረተ፡ ምስለ፡ ኵሉ፡ ሰብእ፡ ወፈድፋደሰ፡ በዕለተ፡ እሑድ፡ ቅድስት፡ ለለኵሉ፡ ሰሙን።",
     "manuscript_count": 5,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -5468,6 +5820,7 @@ const MIRACLES_OF_MARY = [
     "title": "Arabic: The husband who won't go to confession and so is scorched by hellfire",
     "incipit": "",
     "manuscript_count": 5,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -5480,6 +5833,7 @@ const MIRACLES_OF_MARY = [
     "title": "Arabic: The chorister killed by a crowd of Jewish people and is then brought back by life by St the Virgin Mary",
     "incipit": "",
     "manuscript_count": 5,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -5492,6 +5846,7 @@ const MIRACLES_OF_MARY = [
     "title": "A Muslims who stole the furnishings of a church of the Virgin Mary located near the western boundary of Ethiopia and were struck by lightning.",
     "incipit": "ስምዑኬ፡ ኦደቂቀ፡ ቤተ፡ ክርስቲያን፡ ክርስቶሳውያን፡ ዕበየ፡ ተአምሪሃ፡ ለእግዝእትነ። ወሀለወት፡ አሐቲ፡ ቤተ፡ ክርስቲያን፡ እንተ፡ መንገለ፡ ዐረቢሃ፡ ለብሔረ፡ አግዓዚ፡ ዘሕንጽት፡ በስማ፡ ለእግዝእትነ",
     "manuscript_count": 4,
+    "most_read": false,
     "translations": [
       {
         "author": "Getatchew Haile",
@@ -5504,6 +5859,7 @@ const MIRACLES_OF_MARY = [
     "title": "The icon of the Virgin Mary that did not burn when the rest of the house was destroyed.",
     "incipit": "ኀይለ፡ ወተአምረ፡ ዘገብረት፡ እግዝእትነ፡ ማርያም፡ በላዕለ፡ ሥዕላ። ወሀሎ፡ አሐዱ፡ ነዳይ፡ ዘያፈቅሮ፡ ለእግዚአብሔር፡ ልዑል፡ በኵሉ፡ ልቡ፡ ወበኵሉ፡ ኀይሉ፡ ወይጸውር፡ ሥዕለ፡ ዚአሃ፡ ለማርያም፡ በንጹሕ፡ ዘእንበለ፡ ርስሐት",
     "manuscript_count": 4,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -5516,6 +5872,7 @@ const MIRACLES_OF_MARY = [
     "title": "A man who accepted fine clothes as a bribe for future favors.",
     "incipit": "ወሀለወት፡ አሐቲ፡ ሀገር፡ እምአህጉረ፡ ክርስቲያን፡ ወይነብሩ፡ ውስቴታ፡ ሰብእ፡ ክርስቲያን፡ ዐቢያን፡ በብዙኅ፡ ዕቅበት",
     "manuscript_count": 4,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -5528,6 +5885,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book on Ark of Dersana Seyon: Part 3B: Nathan tells King David that his son, Solomon, will build the Temple for the Ark of Zion.",
     "incipit": "ወእንዘ፡ ሀለወት፡ ጽዮን፡ ውስተ፡ ደብተራ፡ ወፈቀደ፡ ዳዊት፡ ይሕንፅ፡ ማህደረ፡ ቤተ፡ እግዚአብሔር",
     "manuscript_count": 4,
+    "most_read": false,
     "translations": [
       {
         "author": "Rowan Williams",
@@ -5540,6 +5898,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book on Ark of Dersana Seyon: Part 4B: Reflections on the construction of the Temple of Solomon.",
     "incipit": "ኢይምስልክሙ፡ አኃውየ፡ ከመዝ፡ ግብረታ፡ ለታእካ፡ ሰማይ፡ ኀበ፡ ትነብር፡ ጽዮን፡ ቅድስት",
     "manuscript_count": 4,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -5552,6 +5911,7 @@ const MIRACLES_OF_MARY = [
     "title": "Abba Abreham is invited by the king to come and discuss spiritual matters.",
     "incipit": "ወሀሎ፡ አሐዱ፡ ብእሲ፡ ዘስሙ፡ አብርሃም፡ ዘያፈቅሮ፡ ለእግዚአብሔር፡ ወለእግዝእትነ፡…. ወይትጋነይ፡ መዓልተ፡ ወሌሊተ፡ በጾም፡ ወበጸሎት፡ በሰጊድ፡ በባሕር፡ ወበግበብ፡ ወበጽሙድ፡ በፍቅረ፡ አምላኩ፡ ውስተ፡ ልቡ፡ ወውስተ፡ አባሉ፡ እንዘ፡ ይነብር፡ ውስተ፡ ሀገሩ",
     "manuscript_count": 4,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -5564,6 +5924,7 @@ const MIRACLES_OF_MARY = [
     "title": "A bishop asks a man for the prayer that saved him from Satan.",
     "incipit": "ወሀሎ፡ አሐዱ፡ ኤጲስ፡ ቆጶስ፡ ዘይቤሎ፡ ለአሐዱ፡ ብእሲ፡ ንግረኒ፡ ጸሎተ፡ ዘያድኅንከ፡ እምሰይጣን፡ እኩይ",
     "manuscript_count": 4,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -5576,6 +5937,7 @@ const MIRACLES_OF_MARY = [
     "title": "Saint Samuel of Waldebba (Samuʾel), the 15th c. Ethiopian saint, and the blind woman from Zarafta who was unable to come to the saint's tomb",
     "incipit": "ወሀለወት፡ ካዕበ፡ ዕውርት፡ ክልኤሆን፡ አዕይንቲሃ፡ በምድረ፡ ዘረፍታ፡ ወሶበ፡ ስእነት፡ ዘያበጽሐ፡ ኀበ፡ መቃብሪሁ፡ ለብፁዓዊ፡ አቡነ፡ ሳሙኤል፡ እስመ፡ ነዳይት፡ ጥቀ፡ ወአልባቲ፡ ቢጽ፡ ዘይረድአ",
     "manuscript_count": 4,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -5588,6 +5950,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Felsata la-Maryam??: LOld?: Dormition: The Virgin Mary asks Christ to bless those who honor her and pray for her help (Covenant of Mercy)",
     "incipit": "ወካዕበ፡ ጸለየት፡ እግዝእትነ፡…. ወትቤሎ፡ ኦእግዚእየ፡ ኢየሱስ፡ ክርስቶስ፡ ወልደ፡ እግዚአብሔር፡ ልዑል፡ እስእለከ፡ ወአስተበቍዓከ፡ በእንተ፡ ኵሉ፡ ዘገብሩ፡ ሊተ፡ ፈቃድየ፡ በሰማይ፡ ወበምድር። ወትቤሎ፡ ባርክ፡ እግዚኦ፡ ኀበ፡ ዘይገብር፡ ማኅሌተ፡ በስምየ",
     "manuscript_count": 4,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -5600,6 +5963,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Felsata la-Maryam: [Chaine Part 01] Dormition:Three virgins come to serve The Virgin Mary as she is about to die",
     "incipit": "ወበይእቲ፡ ዕለት፡ መኳንንት፡ ዘቤተ፡ ልሔም፡ ጸውእዎሙ፡ ለእሙንቱ፡ ዕደው፡ እለ፡ ተፈወሱ፡ እምደዌሆሙ፡ ኀበ፡ እግዝእትነ፡…. ተስዕልዎሙ፡ ወይቤሎሙ፡ ንግሩነ፡ ዘገብረት፡ መንክረ፡ ለክሙ፡ እግዝእትነ፡ ማርያም",
     "manuscript_count": 4,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -5612,6 +5976,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Felsata la-Maryam: [Chaine Part 05] Dormition: When Agabos from Dalga, who looks like the cannibal of Qemer, enters the church, the icon of the Virgin Mary weeps.",
     "incipit": "ወበሳኒታ፡ ለአከ፡ መኰንን፡ ያስተጋብኦሙ፡ ለካህናት፡ ወለኵሎሙ፡ ሰብአ፡ ቤተ፡ መቅደስ፡ ወይቤሎሙ፡ እኩያን፡ ሕዝብ፡ እለ፡ ሰቀልክምዎ፡ ለክርስቶስ፡ ዘወረደ፡ እምሰማያት",
     "manuscript_count": 4,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -5628,6 +5993,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Nagara Maryam??: OldE: Journey: When the Holy Family encounters bandits during their return journey from Egypt, Christ repairs the broken sword of Tetos.",
     "incipit": "ወእምድኅረዝ፡ አስተርአዮ፡ መልአከ፡ እግዚአብሔር፡ ለዮሴፍ፡ በግብጽ፡ ወይቤሎ፡ ተንሥእ፡ ወንሣእ፡ ሕፃነ፡ ወእሞ፡ ወተመየጥ፡ ምድረ፡ ፍልስጥኤም",
     "manuscript_count": 4,
+    "most_read": false,
     "translations": [
       {
         "author": "Elliot Galvis",
@@ -5640,6 +6006,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Ledata la-Maryam: New: Part 04??: Annunciation: A wise man named John asks Joseph about the Virgin Mary's pregnancy and she says what the angel said to her (see ID 530)",
     "incipit": "ወእምድኅረ ፡ ነሥኣ ፡ ዮሴፍ ፡ ለማርያም ፡ ፍኅርቱ ፡ ወወሰዳ ፡ ወአዕተዋ ፡ ቤቶሖረ ፡ ርኁቀ ፡ ብሔረ ፡ ከመ ፡ ይንግድ ፡ ወነበረ ፡ በህየ ፡ መጠነ ፡ ሠለስቱ ፡ አውራኅ ።",
     "manuscript_count": 4,
+    "most_read": false,
     "translations": [
       {
         "author": "Getatchew Haile",
@@ -5664,6 +6031,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Laha Maryam??: Crucifixion: Part 05: The Virgin Mary sees her son at the tomb and sent to the disciples to say that he is risen",
     "incipit": "ወሶበ ፡ ተንሥአ ፡ እግዚእ ፡ ኢየሱስ ፡ ክርስቶስ ፡ ኮነ ፡ ዐቢይ ፡ ድልቅልቅ ፡ ፈርሑ ፡ ወርዕዱ ፡ ሐራ ፡ ወወድቁ ፡ በገጾሙ ። ወኮነት ፡ ማርያም ፡ መግደላዊት ፡ በደረት ፡ በጺሐ ፡ ኀበ ፡ መቃብር ።",
     "manuscript_count": 4,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -5680,6 +6048,7 @@ const MIRACLES_OF_MARY = [
     "title": "King Menelik (Menilek) II, the 19th c. Ethiopian monarch, and his reign and how the candelabra of the Church of Aksum Seyon Maryam miraculously lights up in 1896",
     "incipit": "ስምዑ፡ ሰብአ፡ ኢትዮጵያ፡ እለ። ታፈቅርዋ፡ ለምነ። ጽዮን፡ ዘአክሱም። ዘኮነ፡ ተአምረ፡ ወመንክረ፡ በ፲ወ፰፻ወ፺ወ፮ዓመተ፡ ምሕረት፡ በመዋዕለ፡ መንግሥቱ። ለንጉሥነ። ዳግማዊ፡ ምኒልክ፡ መዋዔ፡ ፀር፡ ወበመዋዕለ። ሢመቱ፡ ለንቡረ፡ ዕድ፡ ወልደ፡ ጊዮርጊስ። ርቱዓ፡ ሃይማኖት፡ ዓመ፡ ፳ሁ። ለሕዳር፡ ተጋብኡ፡ ካህናት፡ ዘገበዘ፡ አክሱም፡ ሕዝብ። ቅዱሳን፡ ደቂቀ። ጽዮን፡ ውሉደ፡ መርዓ፡ ፍሡኃን።",
     "manuscript_count": 4,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -5692,6 +6061,7 @@ const MIRACLES_OF_MARY = [
     "title": "Kings Abraha and Atsbaha (Abraha and Atsbeha) and Fruementius: Part 1: How the Virgin Mary helps Fruementius (Abba Selama) come to Ethiopia in the 300s during their reign",
     "incipit": "ወበአሐቲ ፡  ዕለት ፡  አመ ፡  ረቡዑ ፡  ለጥር ፡  ነገረቶ ፡  እግዝእትነ ፡  ... ለአባ ፡  አትናቴዎስ ፡  ሊቀ ፡  ጳጳሳት ፡  ዘኢየሩሳሌም ፡  እንዘ ፡  ትብል ፡  ይመጽእ ፡  አሐዱ ፡  ብእሲ ፡  እምሀገርየ ፡  ብሔረ ፡  አግዓዚት ፡  ወእመንበርየ ፡  ኢትዮጵያ ፡  ቡርክት ፡  ዘተወክፈተኒ ፡  በክብር ፡  አመ ፡  ወርኃ ፡  ንግደትየ። ወዘይመጽ እሂ ፡  ው እቱ ፡  ዝንቱ ፡  ፍሬ ፡  ምናጦስ ፡  እኂዞ ፡  ጦማረ ፡  በእንተ ፡  ሊቀ ፡  ጵጵስና ፡  ወላእከ ፡  ከዊኖ ፡  ለጻድቃን ፡  አብርሃ ወአጽብሐ ፡  ነገሥታተ ኢትዮጵያ ፡  ወበጊዜሃ ፡  ፍጡነ ፡  ሢሞ።",
     "manuscript_count": 4,
+    "most_read": false,
     "translations": [
       {
         "author": "Rowan Williams",
@@ -5704,6 +6074,7 @@ const MIRACLES_OF_MARY = [
     "title": "Kings Abraha and Atsbaha (Abraha and Atsbeha) and Fruementius: Part 2: How the Virgin Mary helps Fruementius (Abba Selama) go to Lake Tana during the 300s to baptize the people and the kings",
     "incipit": "ወእም ፡  አመ ፡  ሢመተ ፡  ጵጵስናሁ ፡  ለአባ ፡  ሰላማ ፡  ከሣቴ ፡  ብርሃን ፡  በሠለስቱ ፡  ዓመት ፡  ወሠለስቱ ፡  አውራኅ ፡  እንዘ ፡  ሀሎ ፡  ውስተ ፡  ብሔረ ፡  አክሱም ፡  አስተርአየቶ ፡  እግዝእትነ ፡  ... ወትቤሎ ፡  ሑር ፡  ውስተ ፡  ደሴተ ፡  ጣና ፡  ወበህየ ፡  ታጠምቅ ፡  ወትሜህሮሙ ፡  ሃይማኖተ ፡  ክርስትና። ወንግሮሙ ፡  ለአብርሃ ፡  ወአጽብሐ ፡  ነገሥታተ ፡  ኢትዮጵያ ፡  ጻድቃን ፡  ወኄራን ፡  ይሑሩ ፡  ምስሌከ ፡  ምስለ ፡  ሠራዊቶሙ።",
     "manuscript_count": 4,
+    "most_read": false,
     "translations": [
       {
         "author": "Rowan Williams",
@@ -5716,6 +6087,7 @@ const MIRACLES_OF_MARY = [
     "title": "King Kaleb, the 6th c. Ethiopian monarch, is helped by the Virgin Mary while on his campaign conquering Himyar (Yemen) and after which he becomes a monk",
     "incipit": "ተብህለ ፡  ዘከመ ፡  ወሀበቶ ፡  እግዝእትነ ፡  ኃይለ ፡  መዊዕ ፡  ለካሌብ ፡  ንጉሠ ፡  ኢትዮጵያ ፡  አመ ፡  ተጻብዐ ፡  ምስለ ፡  ንጉሠ ሂማሪያ ፡  አላዊ ፡  ሶበ ፡  አኅለቆሙ ፡  ለሕዝበ ፡  ክርስቲያን ፡  ወአውዐየ ፡  አብያተ ፡  ክርስቲያናት። ወበሰበዓቱ ፡  ምዕት ፡  ዕሥራ ፡  ወዓርባዕቱ ፡  ዓመት ፡  እም አመ ፡  ተወልደ ፡  እግዚ እነ ፡  ኢየሱስ ፡  ክርስቶስ ፡  ኮነ ፡  ዓቢይ ፡  ጸብዕ ፡  ውስተ ፡  ሀገረ ፡ ናግራን ፡  በማዕከሎሙ ፡  ለክርስቲያን ፡  ወአረማውያን።",
     "manuscript_count": 4,
+    "most_read": false,
     "translations": [
       {
         "author": "Rowan Williams",
@@ -5732,6 +6104,7 @@ const MIRACLES_OF_MARY = [
     "title": "Saint Yared, the 6th c. Ethiopian saint, to whom the Virgin Mary gives the gift for composing hymns",
     "incipit": "ኦ ፡  አኃውየ ፡  ክቡራን ፡  ንዑ ፡  ንስ አሎ ፡  ለእግዚአብሔር ፡  አምላክነ ፡  ወናስተብቍዖ ፡  በእንተ ፡  ፍቁሩ ፡  ወበእንተ ፡  ኵሎሙ ፡  ሐዋርያት ፡  አርዳኢሁ ፡  ከመ ፡  ይረስየነ ፡  ድልዋነ ፡  ለሰሚዓ ፡  ተአምሪሃ ፡  ለማርያም ፡  በእደዊሃ ፡  ዘከሠተ። እስመ ፡  መንክር ፡  ወዕፁብ ፡  ኃይለ ፡  ተአምራቲሃ ፡  ለእግዝእትነ ፡  ... ። ወበውእቱ ፡  መዋዕል ፡  በሃምስቱ ፡  ምዕት ፡  ዓመት ፡  እምልደተ ፡  እግዚእነ ፡  ኢየሱስ ፡  ክርስቶስ ፡  ሀሎ ፡  አሐዱ ፡  ካህን ፡  ዘስሙ ፡  ያሬድ ፡  እንተ ፡  ተሐፅነ ፡  ውስተ ፡  ቤተ ፡  እኅወ ፡  አቡሁ ፡  ዘይሰመይ ፡  ጌዴዎን ።",
     "manuscript_count": 4,
+    "most_read": false,
     "translations": [
       {
         "author": "Rowan Williams",
@@ -5744,6 +6117,7 @@ const MIRACLES_OF_MARY = [
     "title": "Saint Takla Haymanot (Takla Haymanot), the 13th c. Ethiopian saint, and the Virgin Mary",
     "incipit": "ወሀሎ ፡  አሐዱ ፡  ካህን ፡  ወጻድቅ ፡  ዘይሰመይ ፡  ዘርዓ ፡  ዮሐንስ ፡  ዘውእቱ ፡  ጸጋ ፡  ዘአብ ፡  ወስመ ፡  ብእሲቱ ፡  ሣራ ፡  ወይ እቲኒ ፡  ትሰመይ ፡  እግዚ እ ፡  ሐረያ ፡  ወእሙንቱሂ ፡  ይነብሩ ፡  ውስተ ፡  ምድረ ፡  ሴዋ ፡  ዘት ሰመይ ፡  ደብረ ፡  ጽላልሽ (ቡልጋ ፡ ) ወኮኑ ፡  ቡዑላነ ፡  በወርቅ ፡  ወበብሩር ፡  ወበአልባስ ፡  ክቡር ፡",
     "manuscript_count": 4,
+    "most_read": false,
     "translations": [
       {
         "author": "Rowan Williams",
@@ -5760,6 +6134,7 @@ const MIRACLES_OF_MARY = [
     "title": "Song of Ethiopia: Part 2: The people in Jerusalem sing a song for the Cross of Christ at the Church of the Cross",
     "incipit": "ሥልሰ ፡  ንነግረክሙ ፡  ክብራ ፡  ለማኅሌት ፡  እንተ ፡  ባቲ ፡  ይሴባሕ ፡  እግዚአብሔር ፡  ወበእንቲአሃ ፡  ይከውን ፡  ተአምር። ወሀለወት ፡  በኢየሩሳሌም ፡  ቤተ ፡  ክርስቲያን ፡  እንተ ፡  ትሰመይ ፡  ቤተ ፡  መስቀል ፡  ወይትጋብኡ ፡  ህየ ፡  በዕለተ ፡  በዓሉ ፡  ለመስቀል ፡  ሕዝብ ፡  ብዙኃን ፡  ወየኀልዩ ፡  ማኅሌተ ፡  በእንተ ፡  መስቀሉ ፡  ለክርስቶስ።",
     "manuscript_count": 4,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -5776,6 +6151,7 @@ const MIRACLES_OF_MARY = [
     "title": "Song of Ethiopia: Part 3: The people Ethiopia sing songs of praise at two churches for the monk Mamas.",
     "incipit": "ወሀለዋ ፡  በብሔረ ፡  ኢትዮጵያ ፡  ክልኤቲ ፡  አብያተ ፡  ክርስቲያናት ፡  አሐቲ ፡  በጎለ ፡  ማክዳ ፡  እንተ ፡  ትሰመይ ፡  ቤተ ፡  መጣዕ ፡  ወካልእታሂ ፡  እንተ ፡  ይብልዋ ፡  ጎግዳ (ወግዳ ፡ ) መካነ ፡  መቃብሪሁ ፡  ለብፁዕ ፡  ማማስ ፡  መነኰስ።",
     "manuscript_count": 4,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -5788,6 +6164,7 @@ const MIRACLES_OF_MARY = [
     "title": "Saint Gabra Manfas Qeddus (Gabra Manfas Qeddus), the Egyptian saint who came to Ethiopia, and the Virgin Mary",
     "incipit": "ወሀሎ ፡  አሐዱ ፡  መነኰስ ፡  መስተጋድል ፡  ኮከበ ፡  ክብር ፡  ዘሠረቀ ፡  እምሀገረ ፡  ገሊላ ፡  ወነበረ ፡  በገዳመ ፡  ግብፅ ፡  ፫ተ፻ተ ዓመተ ፡  ወእምገዳማተ ፡  ኢትዮጵያ ፡  ውስተ ፡  ደብረ ፡  ዝቋላ ፡  ፪ተ ፡  ፻ተ ፡  ፷ወ፪ወ፪ተ ፡  ዓመተ ፡  እንዘ ፡  ኢይበልዕ ፡  እክለ ፡  ወማየ ፡  ኢይሰቲ ፡  ወኢይለብስ ፡  ልብሰ።",
     "manuscript_count": 4,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -5800,6 +6177,7 @@ const MIRACLES_OF_MARY = [
     "title": "Saint Cyriaque (Heryaqos) of Behnesa, Egypt, ecstatically authors the Anaphora of Our Lady the Virgin Mary",
     "incipit": "ወሀሎ ፡  አሐዱ ፡  ኤጲስ ፡  ቆጶስ ፡  ዘይሰመይ ፡  ሕርያቆስ ፡  ዘነበረ ፡  በሀገረ ፡  ብሕንሳ ፡  ወያፈቅራ ፡  ለእግዝእትነ ፡  ... በኵሉ  ፡  ልቡ  ፡  ወበኵሉ  ፡    ኅሊናሁ ። ውእቱኒ ፡  ኤጲስ ፡  ቆጶስ ፡  ጻድቅ ፡  ወኄር ፡  ወኮነ ፡  የኀዝን ፡  ወይቴክዝ ፡",
     "manuscript_count": 4,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -5816,6 +6194,7 @@ const MIRACLES_OF_MARY = [
     "title": "Saint Giyorgis of Sagla, the Ethiopian author, and the Virgin Mary",
     "incipit": "ወሀሎ  ፡  አሐዱ  ፡  ብእሲ  ፡  በምድረ  ፡  አምሐራ  ፡  እምአድያማተ  ፡  ኢትዮጵያ  ፡  ዘስሙ  ፡  ሕዝበ  ፡  ጽዮን  ፡  ወስመ  ፡  ብእሲቱ  ፡  እምነ  ፡  ጽዮን  ፡  ወክልኤሆሙ  ፡  ጽሙዳን  ፡  በሕገ  ፡  እግዚአብሔር  ፡  ዘከመ  ፡  ካህን  ፡  ወነቢይ  ፡  ዘካርያስ  ፡  ወኤልሳቤጥ  ፡  ብእሲቱ ።",
     "manuscript_count": 4,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -5832,6 +6211,7 @@ const MIRACLES_OF_MARY = [
     "title": "King Dawit I, the 14th c. Ethiopian monarch, and how the Virgin Mary helps to bring the Holy Cross to Ethiopia during his reign",
     "incipit": "ተብህለ  ፡  ከመ  ፡  በመዋዕሌሁ  ፡  ለዳዊት  ፡  ንጉሠ  ፡  ኢትዮጵያ  ፡  መጽአ  ፡  ዕፀ  ፡  መስቀሉ  ፡  ለኢየሱስ  ፡  ክርስቶስ  ፡  ዘቦቱ  ፡  ተሰቅለ  ፡  ለሊሁ  ፡  መድኃኒነ  ፡  ለቤዝዎ  ፡  ኵሉ  ፡  ዓለም  ፡  እምኢየሩሳሌም  ፡  ውስተ  ፡  ብሔረ  ፡  ኢትዮጵያ  ፡  በሥምረተ  ፡  እግዚአብሔር  ፡  ወበስእለታ  ፡  ለእግዝእትነ  ፡  ... ።",
     "manuscript_count": 4,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -5848,6 +6228,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Felsata la-Maryam??: EOld?: Dormition: Revelation: Part 3: The Virgin Mary narrates to Saint John a revelation made to her by Christ on Golgotha (continuation of 480?, 484).",
     "incipit": "ወይቤለኒ፡ ፍቁር፡ ወልድየ፡ እንዘ፡ ይብል፡ ኦወላዲትየ፡ ርኢ፡ ኀበ፡ መትሕት፡ ወነጸሪ። ወአንሰ፡ ሶበ፡ ሰማዕኩ፡ እምኔሁ፡ ዘንተ፡ ሐወጽኩ፡ ወርኢኩ",
     "manuscript_count": 3,
+    "most_read": false,
     "translations": [
       {
         "author": "Jeremy Brown & Dawit Muluneh with Wendy Laura Belcher",
@@ -5860,6 +6241,7 @@ const MIRACLES_OF_MARY = [
     "title": "Homily on the Annunciation and the Incarnation: Part 4: Gabriel the Archangel.",
     "incipit": "ወፈነወ፡ በአፈ፡ ገብርኤል፡ መልአክ፡ ኀበ፡ ወለተ፡ ዳዊት፡ ወተምህረት፡ እግዝእትነ፡ ማርያም፡ ምስጢረ፡ ኅቡዓ፡ ባሕቲታ፡ ወከሠተት፡ ለሰብእ፡ ዘታነገራ፡ መልአክ",
     "manuscript_count": 3,
+    "most_read": false,
     "translations": [
       {
         "author": "Amsalu Tefera",
@@ -5872,6 +6254,7 @@ const MIRACLES_OF_MARY = [
     "title": "Homily on the Annunciation and the Incarnation: Part 5: Holy Spirit.",
     "incipit": "ወኤልሳቤጥኒ፡ እንዘ፡ ዓዲ፡ እስመ፡ ምልዕተ፡ መንፈስ፡ ይእቲ፡ አዕመረት፡ አንፈርዕፆቶ፡ ለሕፃን፡ ወቀፀበቶ፡ ለአቡሁ",
     "manuscript_count": 3,
+    "most_read": false,
     "translations": [
       {
         "author": "Amsalu Tefera",
@@ -5884,6 +6267,7 @@ const MIRACLES_OF_MARY = [
     "title": "Homily on the Annunciation and the Incarnation: Part 6: Home of the Virgin Mary",
     "incipit": "ወተመይጠት፡ ትግባዕ፡ ኀበ፡ ቤተ፡ እግዝእትነ፡…. ወእምድኅረ፡ ዝንቱ፡ እስመ፡ በጽሐ፡ ጊዜሃ፡ ትለድ፡ ወሌዋዊ፡ ዮሴፍ፡ ተወክፈ፡ ወአዕመረ፡ ከመ፡ ፀንሰት፡ እግዝእትነ",
     "manuscript_count": 3,
+    "most_read": false,
     "translations": [
       {
         "author": "Amsalu Tefera",
@@ -5896,6 +6280,7 @@ const MIRACLES_OF_MARY = [
     "title": "Homily on the Annunciation and the Incarnation: Part 7: Mysteries.",
     "incipit": "ምስጢር፡ ኅቡዕ፡ ዘተነግረ፡ እምኀበ፡ አብ፡ አምላክከ፡ ይዕቀብዎ፡ ከመ፡ ኢትክሥቱ፡ ለዘአፍአ",
     "manuscript_count": 3,
+    "most_read": false,
     "translations": [
       {
         "author": "Amsalu Tefera",
@@ -5908,6 +6293,7 @@ const MIRACLES_OF_MARY = [
     "title": "Homily on the Virgin Mary's promises to those who are devoted to her",
     "incipit": "ስምዑ፡ እንግርክሙ፡ ውሉደ፡ ጥምቀት፡ ዘትቤ፡ እግዝእትነ፡…. ዕድ፡ ወአንስት፡ አዕሩግ፡ ወሕፃናት፡ ቀሳውስት፡ ወዲያቆናት፡ እለ፡ ትቀውሙ፡ ዝየ፡ ለሰሚዓ፡ ተአምሪሃ፡ ለእግዝእትነ፡…. ወላዲተ፡ አምላክ፡ ክቡር፡ ወልዑል፡ ወሥሙር፡ ወታስምዐነ፡ ቃለ፡ ፍሥሐ፡ ወሐሴት፡ አሜን፡ ወአሜን። ወትቤ፡ ለኒ፡ በዝዓለም፡ አዓቅበክሙ፡ እምዕለት፡ እኪት፡ ወእምሰዓታተ፡ መንሱት",
     "manuscript_count": 3,
+    "most_read": false,
     "translations": [
       {
         "author": "Amsalu Tefera",
@@ -5920,6 +6306,7 @@ const MIRACLES_OF_MARY = [
     "title": "Life: The Virgin Mary prays at the tomb of Christ on the 16th of Yakkatit.",
     "incipit": "አመ፡ ፲ወ፮፡ ለወርኃ፡ የካቲት፡ እንዘ፡ ትጼሊ፡ እግዝእትነ፡ ማርያም፡ ውስተ፡ መቃብረ፡ እግዚእነ፡ ኢየሱስ፡ ክርስቶስ፡ መጽአ፡ ኀቤሃ፡ እግዚእነ፡ ወይቤለ፡ ሰላም፡ ለኪ፡ ኦእምየ፡ ምንተ፡ ተኃሥሢ",
     "manuscript_count": 3,
+    "most_read": false,
     "translations": [
       {
         "author": "Amsalu Tefera",
@@ -5932,6 +6319,7 @@ const MIRACLES_OF_MARY = [
     "title": "The pious deacon who was seized to avenge a homicide committed by his brother.",
     "incipit": "ወሀሎ፡ አሐዱ፡ ብእሲ፡ ዘያፈቅራ፡ ለእግዝእትነ፡…. ወይትአመና፡ በጥቡዕ፡ ልብ፡ ወኢያጸርዕ፡ ዘክሮተ፡ ሰማ፡ መዓልተ፡ ወሌሊተ፡ ወኢያበጥል፡ አንብቦ፡ ውዳሴሃ፡ ለለዕለቱ፡ እስመ፡ ዲያቆን፡ ውእቱ። ወሀሎ፡ እኁሁ፡ ዕቡይ፡ ወቀታሌ፡ ነፍስ",
     "manuscript_count": 3,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -5944,6 +6332,7 @@ const MIRACLES_OF_MARY = [
     "title": "The ruined church of the Virgin Mary that was rebuilt.",
     "incipit": "ወሀለወት ፡ በውስተ ፡ አሐቲ ፡ ሀገር ፡ ቤተ ፡ ክርስቲያን ፡ ዘእግዝእትነ ፡ … ዘምዝብርት ። ወይእቲሰ ፡ ረዳኢቶሙ ፡ ለእለ ፡ ይትአመኑ ፡ ኪያሃ ፡ ወይገይሡ ፡ ኀቤሃ ፡ ወኵሉ ፡ ብእሲ ፡ እመቦ ፡ ዘበጽሖ ፡ ምንዳቤ ፡ ወዓፀባ ፡ ወጸለየ ፡ በዊኦ",
     "manuscript_count": 3,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -5956,6 +6345,7 @@ const MIRACLES_OF_MARY = [
     "title": "A Christian retainer escapes unharmed when his king is defeated by the Muslims.",
     "incipit": "ተብህለ፡ ከመ፡ ሀሎ፡ አሐዱ፡ ብእሲ፡ ዘእምወዓልያኒሁ፡ ለንጉሥ፡ ዘያፈቅራ፡ ለእግዝእትነ፡…. ወያነብብ፡ ውዳሴያቲሃ፡ ወዕበያቲሃ፡ ኵሎ፡ አሚረ፡ ወይትመሐፀን፡ ባቲ። ወበአሐዱ፡ እምመዋዕል፡ ሖረ፡ ምስለ፡ ንጉሥ፡ ውስተ፡ ሰብእ፡ ወውስተ፡ ብሔረ፡ አረሚ",
     "manuscript_count": 3,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -5968,6 +6358,7 @@ const MIRACLES_OF_MARY = [
     "title": "A woman who was crossing a river on a raft [mezlal].",
     "incipit": "ተብህለ፡ ከመ፡ ሀለወት፡ አሐቲ፡ ብእሲት፡ ዘታፈቅራ፡ ለእግዝእትነ፡…. ወትትመሐፀን፡ ኀቤሃ፡ ወታነብብ፡ ሰላመ፡ መልአክ፡ ረሰያ፡ ልማዳ፡ ከመ፡ ትትባላሕ፡ እምመናግንተ፡ ሰይጣን፡ በኅቡዕ፡ ወበገሃድ",
     "manuscript_count": 3,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -5980,6 +6371,7 @@ const MIRACLES_OF_MARY = [
     "title": "Life: The Virgin Mary heals two women whom a demon had made ill (related to )",
     "incipit": "ወካዕበ፡ መጽኣ፡ ኀቤሃ፡ ፪፡ አንስት፡ እለ፡ አድወዮን፡ ጋኔን፡ ወአውየዋ፡ ወይቤላ፡ ተሣሃልነ፡ ወፈውስነ፡ እምደዌነ፡ ኦእግዝእትነ፡…. ወሶቤሃ፡ ጸለየት፡ እግዝእትነ፡…. ወባረከት፡ ላዕሌሆን",
     "manuscript_count": 3,
+    "most_read": false,
     "translations": [
       {
         "author": "Jeremy Brown & Dawit Muluneh, Shawn Benjamin, Alba",
@@ -5992,6 +6384,7 @@ const MIRACLES_OF_MARY = [
     "title": "A Christian from Bethlehem is restored to his community after being sold into slavery by the Turks and beaten and slain by his master.",
     "incipit": "ወሀሎ፡ አሐዱ፡ ብእሲ፡ በቤተ፡ ልሔም፡ ወያፈቅራ፡ ለእግዝእትነ፡…. እንዘ፡ የሐውር፡ በሐመር፡ ምስለ፡ ንዋዩ፡ ወመጽኡ፡ ትርኵ፡ ወአኃዝዎ፡ ወወሰድዎ፡ ወሤጥዎ፡ ውስተ፡ ካልእ፡ ሀገር",
     "manuscript_count": 3,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -6004,6 +6397,7 @@ const MIRACLES_OF_MARY = [
     "title": "Homily on the Dormition and on the reason for the trials and labors of the Apostles [EMIP Part 2 of 282]",
     "incipit": "ነገር፡ በእንተ፡ ፍልሰታ። ወአበዊነሰ፡ ሐዋርያት፡ በእንተ፡ መኑ፡ ኮኑ፡ በውስተ፡ ዓለም፡ ከመ፡ ኳሄላት፡ በከመ፡ ይቤ፡ ቅዱስ፡ ጳውሎስ፡ ልሳነ፡ ዕፍረት፡ በእንተ፡ መኑ፡ ሞቀሕዎሙ",
     "manuscript_count": 3,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -6016,6 +6410,7 @@ const MIRACLES_OF_MARY = [
     "title": "Homily of John, Son of Thunder (Ra'eya Ta'amer): Part 1?: How the Virgin Mary appeared as a lady with twelve stars in her crown.",
     "incipit": "ኦፍቁራን፡ ደቂቀ፡ ወንጌል፡ እለ፡ ዕቁባን፡ በስመ፡ ሥላሴ፡ ወእለ፡ ትትሜክሑ፡ በንጽሐ፡ ድንግልናሃ፡ ለእግዝእትነ፡…. ርኢክሙኒ፡ ዘየዐቢ፡ እምዝንቱ፡ ነገር፡ ዘርእየ፡ ዮሐንስ፡ ወልደ፡ ነጕድጓድ፡ ርዓይ፡ ኅቡአት፡ ዘረፈቀ፡ ውስተ፡ ሕፅነ፡ ነድ",
     "manuscript_count": 3,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -6028,6 +6423,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Felsata la-Maryam: [Chaine Part 08] Dormition: The Dormition. (623, 502, 532, 550 similar)",
     "incipit": "ወእምዝ፡ አውሥአኒ፡ ወልድየ፡ እግዚእየ፡ ወይቤለኒ፡ ኵሎ፡ ዘሰአልኪ፡ ተውህበ፡ ለኪ፡ በኀቤየ። ኵሎ፡ ዘጸውአ፡ ስመኪ፡ እምሕሮ፡ ወእሣሃሎ",
     "manuscript_count": 3,
+    "most_read": false,
     "translations": [
       {
         "author": "Getatchew Haile",
@@ -6040,6 +6436,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Dersana ʿUraʾel: Part 01: The Holy Family meets six lions, Joseph rides on the back of one, and Jesus promises Ethiopia to his mother.",
     "incipit": "ወሶበ ፡ ጐየት ፡ እግዝእትነ፡… እምገጸ ፡ ሄሮድስ ፡ ውስተ ፡ ብሔረ ፡ ግብፅ ፡ ወብሔረ ፡ አግዓዚ ፡ መጽኡ ፡ ኀቤሆሙ ፡ ስድስቱ ፡ አናብስት ፡ ወዮሴፍሰ ፡ ፈርኃ ፡ ወደንገፀ ፡ እምግርማሆሙ ፡ ለአናብስት ፡ ወጐየ ፡ድኅሬሁ ፡ ኀዲጎ ፡ ኪያሃ ፡ ወይእቲኒ ፡ ደንገፀት ፡ ወበከየት ፡ ብዙኃ ።",
     "manuscript_count": 3,
+    "most_read": false,
     "translations": [
       {
         "author": "Getatchew Haile",
@@ -6064,6 +6461,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Dersana ʿUraʾel: Part 03: The Virgin Mary washes Jesus' feet and that water won't mix with the River Gihon in northwestern Ethiopia and that water floats like a boat",
     "incipit": "ወእንዘ ፡ ሀለወት ፡ እግዝእትነ፡… ምስለ ፡ ፍቁር ፡ ወልዳ ፡ ወዮሴፍ ፡ ወሰሎሚ ፡ ውስተ ፡ ሐቅለ ፡ ገዳም ፡ እንተ ፡ መንገለ ፡ ሰሜና ፡ ወምዕራቢሃ ፡ ለብሔረ ፡ አግዓዚ ፡ መጽአ ፡ ገብርኤል ፡ መልአከ ፡ ወተአምኆሙ ፡ ወምስሌሁ ፡ ስድስቱ ፡ አናብስት ፡ ዘሀለዉ ፡ ቀዲሙ ፡ ምስሌሆሙ ፡ ለእሉ ፡ ጻድቃን ፡ ውስተ ፡ ብሔረ ፡ ግብፅ ፡ ወሰገዱ ፡ በቅድሜሆሙ ።",
     "manuscript_count": 3,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -6088,6 +6486,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Dersana ʿUraʾel: Part 04: Jesus tells the Virgin Mary about Ethiopia and the king from Constantinople who comes to Dabra Bizen and Dabra Halellujah",
     "incipit": "ወእምድኅረ ፡ አደዉ ፡ ፈለገ ፡ ግዮን ፡ በመንክር ፡ ኪን ፡ እግዝእትነ ፡ ማርያም ፡ ድንግል ፡ ምስለ ፡ ፍቁር ፡ ወልዳ ፡ ወምስለ ፡ እሉ ፡ ጻድቃን ፡ ኅሩያኒሁ ፡ ለእግዚአብሔር ፡ ዮሴፍ ፡ ወሰሎሜ ፤ ይቤላ ፡ ሕፃን ፡ ለእሙኦ ፡ እምየ ፡ ተንሥኢ ፡ ወንኢ ፡ ንሑር ፡ ካልአ ፡ መካነ ፡ ከመ ፡ ትርአዪ ፡ ሥነ ፡ ራእያ ፡ ለብሔረ ፡ አግዓዚት ፡ አድባራቲሃ ፡ ወአዕፃዳቲሃ ፤ ወአፍላጋቲሃ ፡ ሠናያተ ፡ አብሕርቲሃኒ ፡ ጽሩያተ ፡ ወደስያቲሃኒ ፡ ቅዱሳተ ።",
     "manuscript_count": 3,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -6100,6 +6499,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Dersana ʿUraʾel: Part 05: The Holy Family arrives in Aksum and how they entered into the dwelling place of Zion",
     "incipit": "ወእምድኅረ ፡ ወፅኡ ፡ እምድረ ፡ ግብፅ ፡ ወቦኡ ፡ ብሔረ ፡ አግዓዚ ፡ በወርኃ ፡ ተሰዶ ፡ እግዝእትነ ፡ ማርያም ፡ ዘምስለ ፡ ወልዳ ፡ ፍቁር ፡ ወዮሴፍ ፡ አረጋዊ ፡ ወሰሎሜ ፡ ነበሩ ፡ ኅዳጠ ፡ መዋዕለ ፡ ውስተ ፡ ደብረ ፡ ቢዘን ።",
     "manuscript_count": 3,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -6120,6 +6520,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Dersana ʿUraʾel: Part 06: The Holy Family goes to Dabra Abbay and Waldebba lead by the Angel Gabriel",
     "incipit": "ወእምድኅረ ፡ ነበረት ፡ ኅዳጠ ፡ መዋዕለ ፡ እግዝእትነ፡… ዘምስለ ፡ ፍቁር ፡ ወልዳ ፡ ወዮሴፍ ፡ ወሰሎሜ ፡ ውስተ ፡ ብሔረ ፡ አክሱም ፡ ሖረት ፡ ውስተ ፡ ደብር ፡ ዓባይ ፡ እንዘ ፡ ይመርሓ ፡ ገብርኤል ፡ መልአከ ፡ ወአልጸቀት ፡ ህየ ።",
     "manuscript_count": 3,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -6144,6 +6545,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Dersana ʿUraʾel: Part 07: The Holy Family goes to the island of Lake Tana and meet the prince with an ill son",
     "incipit": "ወሶቤሃ ፡ ተንሥአት ፡ እግዝእትነ፡… እምሐቅለ ፡ ዋሊ ፡ ምስለ ፡ ፍቁር ፡ ወልዳ ፡ ወዮሴፍ ፡ ወሰሎሜ ፡ ወበጽሐት ፡ ውስተ ፡ ድንጋጋ ፡ ለባሕረ ፡ ጣና ። ወተቀበልዎሙ ፡ ሕዝብ ፡ እለ ፡ ይነብሩ ፡ ውስተ ፡ ደሴት ፡ በፍስሐ ፡ ወተበሀሉ ፡ እሙንቱ ፡ አናግድ ፡ ይመስሉ ፡ ከመ ፡ ደቂቀ ፡ ነገሥት ።",
     "manuscript_count": 3,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -6168,6 +6570,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Dersana ʿUraʾel: Part 08: The Holy Family travel on a cloud over all of Ethiopia, which Jesus gives to his mother as her home",
     "incipit": "ወበአሐቲ ፡ ዕለት ፡ እንዘ ፡ ሀለዉ ፡ በደሴተ ፡ ጣና ፡ እግዝእትነ፡… ምስለ ፡ ፍቁር ፡ ወልዳ ፡ ወጻድቅ ፡ ዮሴፍ ፡ ወሰሎሜ ፡ አዕረጋ ፡ ለእሙ ፡ መልዕልተ ፡ ደመና ፡ ውስተ ፡ ዓየር ፡ ፍቁር ፡ ወልዳ ፡ ይቤላ ፡ ነጽሪ ፡ ውስተ ፡ ኲሎን ፡ አህጉራተ ፡ ኢትዮጵያ ፡ ወኲሎሙ ፡ አድባራቲሃ ፡ ዘእሁበኪ ፡ ዓሥራተ ፡ ለተዝካረ ፡ ስምኪ ፡ ዘይከውን ፡ ወነጸረት ፡ መንገለ ፡ ምዕራብ ፡ አርባዕተ ፡ አድባራተ ።",
     "manuscript_count": 3,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -6184,6 +6587,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Dersana ʿUraʾel: Part 09: The Holy Family goes to the land of Shoa and the Virgin Mary blesses Dabra Libanos",
     "incipit": "ወሶቤሃ ፡ ተሰአለቶ ፡ እግዝእትነ ፡ ለወልዳ ፡ ፍዉር ፡ እንዘ ፡ ትብል ፡ ንሑር ፡ ሀገረ ፡ ሸዋ ፡ ከመ ፡ እርአያ ፡ ለምድረ ፡ ግራርያ ፡ ወዓደ ፡ ሸዋ ፡ ወሞረት ፡ እለመ ፡ ያስተፈሥሑኒ ፡ ጥቀ ፡ አስማተ ፡ እሉ ፡ ሠለስቱ ፡ አህጉራት ።",
     "manuscript_count": 3,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -6196,6 +6600,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Dersana ʿUraʾel: Part 10: The Holy Family goes to Dabra Asbo and meets a possessed person and then they go to Dabra Wegeg and Dabra Hazelo",
     "incipit": "ወበአሐቲ ፡ ዕለት ፡ እንዘ ፡ የሐውሩ ፡ ውስተ ፡ ደብረ ፡ አሰቦት ፡ እግዝእትነ ፡ ምስለ ፡ ፍቁር ፡ ወልዳ ፡ ወዮሴፍ ፡ ወሰሎሜ ፡ አመወርኃ ፡ ተሰዶ ፡ ረከቦሙ ፡ አሐዱ ፡ ብእሲ ፡ ዘቦ ፡ ላዕሌሁ ፡ መንፈስ ፡ ርኲስ ፡ ጸርሐ ፡ ወከልሐ ፡ ወይቤ ፡ በዐቢይ ፡ ቃል ፡ ኦ ፡ አንትሙ ፡ ሰብእ ፡ ኢየሩሳሌም ፡ ዘየኃሥሠክሙ ፡ ሄሮድስ ፡ ዘቀተለ ፡ ሕፃናተ ፡ ገሊላ ፡ በበይነ ፡ ዝንቱ ፡ ሕፃን ፡ ዘኅዙል ፡ ዲበ ፡ ዘባነ ፡ እሙ ፡ ምንትኑመ ፡ አብጽሓክሙ ፡ ዝየ ፡ ዓዲ ።",
     "manuscript_count": 3,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -6212,6 +6617,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Dersana ʿUraʾel: Part 11: The Holy Family meet Adam and Eve at Dabra Wegeg",
     "incipit": "ተአምር ፡ ዘተገብረ ፡ በጊዜ ፡ ስደታ ፡ ለእግዝእትነ ፡ ምስለ ፡ ፍቁር ፡ ወልዳ ፡ ወምስለ ፡ ዮሴፍ ፡ ወሰሎሜ ፡ አመ ፡ ነበሩ ፡ ሠለስተ ፡ አውራኃ ፡ ውስተ ፡ ደብረ ፡ ወገግ ።",
     "manuscript_count": 3,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -6224,6 +6630,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Dersana ʿUraʾel: Part 12: The Holy Family goes to Ophir in Ethiopia and Jesus turns five camels into stone",
     "incipit": "ወእምድኅረ ፡ ነበረት ፡ እግዝእትነ ፡ ምስለ ፡ ፍቁር ፡ ወልዳ ፡ ስድስተ ፡ አውራኃ ፡ ወስድስተ ፡ ዕለታተ ፡ እንተ ፡ መንገለ ፡ ጥቃሃ ፡ ለደብረ ፡ ወገግ ፡ ወሀዘሎ ፡ መጽአ ፡ ገብርኤል ፡ መልአክ ፡ ወይቤሎሙ ፡ ተንሥኡ ፡ እምዝየ ፡ ወሑሩ ፡ እንተ ፡ መንገለ ፡ ደቡባ ፡ ወምስራቃቲሃ ፡ ለይእቲ ፡ ሀገር ፡ እንተ ፡ ስማ ፡ ኦፌር ።",
     "manuscript_count": 3,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -6236,6 +6643,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Dersana ʿUraʾel: Part 13: The Holy Family sets out to return to Israel and Gabriel consoles the people of Ophir",
     "incipit": "ወእምድኅረ ፡ ተነግረ ፡ በቃለ ፡ ገብርኤል ፡ መልአክ ፡ ወተሰምዓ ፡ ነገረ ፡ ሞቱ ፡ ለዝኩ ፡ ሄሮድስ ፡ ርጉም ፡ በኀበ ፡ እግዝእትነ ፡ ወፍቁር ፡ ወልዳ ፡ ወበኀበ ፡ ዮሴፍ ፡ ወስሎሜ ፡ እንዘ ፡ ሀለዉ ፡ በደብረ ፡ መጠራ ፡ ዘሀለወት ፡ በአድያመ ፡ ኦፌር ፡ እንተ ፡ መንገለ ፡ ምሥራቃቲሃ ፡ ለይእቲ ፡ ብሔረ ፡ ኢትዮጵያ ፡ ትቤሎ ፡ እሙ ፡ ለሕፃን ፡ ኦ ፡ ወልድየ ፡ እሙነኑ ፡ ሞተ ፡ ዝንቱ ፡ አርዌ ፡ ርጉም ።",
     "manuscript_count": 3,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -6248,6 +6656,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Dersana ʿUraʾel: Part 14: The Holy Family crosses the river Takazze on stones that float like boats (similiar to ID 326)",
     "incipit": "ወከመዝ ፡ ኮነ ፡ አመ ፡ ግብአታ ፡ ለእግዝእትነ፡…እምኀበ ፡ ጐየት ፡ ውስተ ፡ ምድረ ፡ ግብዕ ፡ ወብሔረ ፡ ኢትዮጵያ ፡ እምድኅረ ፡ ሞቱ ፡ እለ ፡ የኀሥሥዎ ፡ ለሕፃን ፡ ከመ ፡ ይቅትልዎ ፡ በትእዛዙ ፡ ወበቃሉ ፡ ለአምላከ ፡ አማልክት ።",
     "manuscript_count": 3,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -6260,6 +6669,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Dersana ʿUraʾel: Part 15: The Holy Family meets a band of thieves as they return to Israel, one of whom is later crucified with Jesus and saved",
     "incipit": "ወእምድኅረ ፡ ተመይጡ ፡ እምተሰዶ ፡ ወበጽሑ ፡ ወቦኡ ፡ ውስተ ፡ ደብረ ፡ ቊስቋም ፡ ወአዕረፉ ፡ እምፃማ ፡ ዘረከቦሙ ፡ በፍኖት ፡ እግዝእትነ ፡ ምስለ ፡ ፍቁር ፡ ወልዳ ፡ ተንሥኡ ፡ ለሐዊር ፡ ሀገሮሙ ፡ ናዝሬተ ፡ በከመ ፡ ነገሮ ፡ መልአክ ፡ ለዮሴፍ ።",
     "manuscript_count": 3,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -6276,6 +6686,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Dersana ʿUraʾel: Part 16: The Holy Family returns to Israel with the possessed person and Jesus goes to school",
     "incipit": "ወእምድኅረ ፡ ገብኡ ፡ ወአተዉ ፡ ብሔሮሙ ፡ ናዝሬተ ፡ እምነ ፡ ተሰዶ ፡ እግዝእትነ፡… ምስለ ፡ ፍቁር ፡ ወልዳ ፡ ወምስለ ፡ ዮሴፍ ፡ ወሰሎሜ ፡ ወምስለ ፡ ዝኩ ፡ ኢትዮጵያዊ ፡ እንተ ፡ አውጽአ",
     "manuscript_count": 3,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -6288,6 +6699,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Dersana ʿUraʾel: Part 17: The Virgin Mary instructs Jesus to shepherd the sheep and reports on her exile in Ethiopia",
     "incipit": "ወእምድኅረ ፡ ኮኖ ፡ ለእግዚእ ፡ ኢየሱስ ፡ ሰመንተ ፡ ክረምተ ፡ ትቤሎ ፡ እሙ ፡ ድንግል ፡ በክልኤ ፤ ማርያም ፡ ኦ ፡ ወልድየ ፡ ቦኑ ፡ ዘትፈቱ ፡ ወትፈቅድ ፡ ትፈር ፡ ገዳመ ፡ ወትርዒ ፡ አባግዓ ፡ አቡከ ፡ ወእምከ ፡ ዘምስለ ፡ ኖሎተ ፡ አባግዕ ፡ ዘገሊላ ።",
     "manuscript_count": 3,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -6300,6 +6712,7 @@ const MIRACLES_OF_MARY = [
     "title": "Life: The Virgin Mary loses Jesus in Jerusalem (reworking of Luke 2, 4)",
     "incipit": "ወእምድኅረ ፡ ገብኡ ፡ ወአተዉ ፡ ብሔሮሙ ፡ ናዝሬተ ፡ እምነ ፡ ተሰዶ ፡ እግዝእትነ፡… ምስለ ፡ ፍቁር ፡ ወልዳ ፡ ወምስለ ፡ ዮሴፍ ፡ ወሰሎሜ ፡ ልኅቀ ፡ ሕፃን ፡ ወጸንዓ ፡ በመንፈስ ፡ ቅዱስ ፡ ወምሉዕ ፡ ጥበበ ፡ ወፍጹም ፡ በጸጋ  ፡ እግዚአብሔር ፡ ዘላዕሌሁ ።",
     "manuscript_count": 3,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -6312,6 +6725,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Dersana ʿUraʾel: Part 18: The Virgin Mary asks Jesus to take her on a tour of the cities of the world",
     "incipit": "ወበውእቱ ፡ መዋዕል ፡ እንዘ ፡ ሀለዉ ፡ ናዝሬተ ፡ እግዝእትነ ፡ ማርያም ፡ ወእግዚእ ፡ ኢየሱስ ፡ ክርስቶስ ፡ ትቤሎ ፡ እግዝእትነ ፡ ለፍቁር ፡ ወልዳ ፡ እምቅድመ ፡ ዐሠርቱ ፡ ወሰመንቱ ፡ ዓመት ፡ ርኢክዎን ፡ ለአህጉራተ ፡ ግብፅ ፡ ወኤትዮጵያ ፡ አመ ፡ ወርኃ ፡ ንግደትነ ፡ በስደት ።",
     "manuscript_count": 3,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -6324,6 +6738,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Dersana ʿUraʾel: Part 19: They go from Athens to Rome and perform healings and prophecies",
     "incipit": "ወእምድኅረ ፡ ነበሩ ፡ ኅዳጠ ፡ መዋዕለ ፡ ተሰሎንቈ ፡ (ቴርማ ፡ ) እንተ ፡ መቄዶንያ ፡ ፈቀዱ ፡ ይሑሩ ፡ ብሔረ ፡ ሮሜ ፡ እግዝእትነ፡… ወእግዚእ ፡ ኢየሱስ ፡ ምስለ ፡ ወዓልያኒሆሙ ፡ ያዕቆብ ፡ ወስምዖን ፡ ወይሁዳ ፡ ወሰሎሜ ፡ ምልዕተ ፡ ክብር ።",
     "manuscript_count": 3,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -6340,6 +6755,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Dersana ʿUraʾel: Part 20: On Mount Nabaw of Solferina, outside of Rome, Jesus prophecizes Rome will have many martyrs and priests.",
     "incipit": "ወእንዘ ፡ ሀለዉ ፡ ውስተ ፡ ከተማሃ ፡ ለደብረ ፡ ናበው ፡ ዘሶልፈሪና ፡ ዘሀለወት ፡ እንተ ፡ መንገለ ፡ ሰሜና ፡ ለትዕይንተ ፡ ሮም ፡ እግዚእ ፡ ኢየሱስ ፡ ወእሙ ፡ ድንግል ፡ ወያዕቆብ ፡ ወሰሎሜ ፡ ወስምዖን ፡ ወይሁዳ ፡ ይቤላ ፡ እግዚእነ ፡ ለእሙ ፡ ኦ ፡ እምየ ፡ ወበደኃሪ ፡ መዋዕል ፡ ትከውን ፡ ይእቲ ፡ ሀገረ ፡ ሮሜ ፡ ደብተራ ፡ ትዕይንቶሙ ፡ ለሐዋርያትየ ።",
     "manuscript_count": 3,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -6352,6 +6768,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Dersana ʿUraʾel: Part 21: They visit the New Lonely World of America, where no one lives, but later people will go there and everyone will become one with it",
     "incipit": "ወበአሐቲ ፡ ዕለት ፡ ይቤላ ፡ እግዚእ ፡ ኢየሱስ ፡ ለእሙ ፡ ድንግል ፡ ኦ ፡ እምየ ፡ ንዒ ፡ ዕርጊ ፡ ውስተ ፡ ዓየር ፡ ወተፀዓኒ ፡ ዲበ ፡ ዝንቱ ፡ ደመና ፡ ብሩህ ፡ ከመ ፡ ትርአዪ ፡ አኅጉራተ ፡ እለ ፡ ውስተ ፡ ኲሎን ፡ ማዕዝናተ ፡ ዓለም ።",
     "manuscript_count": 3,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -6368,6 +6785,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Dersana ʿUraʾel: Part 22: Holy Family Tours the World: Part 5: They go to Galilee and heal blind people and perform the miracles of the loaves and fish and Jesus refuses to be king",
     "incipit": "ወሰምዑ ፡ ሰብአ ፡ ኢየሩሳሌም ፡ ከመ ፡ መጽኡ ፡ እግዚእ ፡ ኢየሱስ ፡ ወእግዝእትነ ፡ ማርያም ፡ ዘምስለ ፡ ሰሎሜ ፡ ቅድስት ፡ ወያዕቆብ ፡ ወይሁዳ ፡ ወስምዖን ፡ እምሀገረ ፡ ሮሜ ፡ ዐሪጎሙ ፡ ሐመረ ፡ ወበጽሑ ፡ ሀገሮሙ ፡ ገሊላ ፡ እንተ ፡ ስማ ፡ ናዝሬት ።",
     "manuscript_count": 3,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -6380,6 +6798,7 @@ const MIRACLES_OF_MARY = [
     "title": "Life: Jesus replenishes the wedding of Cana wine (reworking of John 2)",
     "incipit": "ወበአሐቲ ፡ ዕለት ፡ ጸውዕዎሙ ፡ ለኢየሱስ ፡ ወለአርዳኢሁ ፡ ውስተ ፡ ከብካብ ፡ በቃና ፡ ዘገሊላ ፡ ወሀለወት ፡ ህየ ፡ ድንግል ፡ ማርያም ፡ እሙ ፡ ለኢየሱስ ፡ ክርስቶስ ፡ እስመ ፡ ቤተ ፡ ዘመድ ፡ ይእቲ ።",
     "manuscript_count": 3,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -6396,6 +6815,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Nagara Maryam: Month L: Part 01: The Holy Family flees Herod and Jesus is baptized (reworking of Matthew)",
     "incipit": "ወልደ ፡ እግዚአብሔር ፡ ሕያው ፡ ወወልደ ፡ ማርያም ፡ ሥግው ፡ እግዚእ ፡ ኢየሱስ ፡ ክርስቶስ ፡ ዘሠርዓ ፡ ሕገ ፡ ለሰብእ ፡ ወበተሠግዎቱ ፡ እምቅድስት ፡ ድንግል ፡ ነበረ ፡ እንዘ ፡ ይትኤዘዝ ፡ ለሕገ ፡ እሥራኤል ፡ እንዘ ፡ አምላክ ፡ ውእቱ ፡ ወፈጸመ ፡ ኲሎ ፡ ሕገ ፡ ሰብእ ፡ ዘእንበለ ፡ ኃጢአት ፡ ባሕቲታ ።",
     "manuscript_count": 3,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -6408,6 +6828,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Laha Maryam??: Crucifixion: Part 01: Judas betrays Jesus during Passion Week",
     "incipit": "ወበአሐቲ ፡ ዕለት ፡ እመዋዕል ፡ እቤሎ ፡ እግዝእትነ፡… ለእግዚእ ፡ ኢየሱስ ፡ ክርስቶስ ፡ በጽሚት ፡ ወኮኑ ፡ ሊቃነ ፡ ካህናት ፡ ወጸሐፍት ፡ ፈሪሳውያን ፡ የኀሥሡ ፡ ምክንያተ ፡ በዘይቀትሉከ ፡ እመሰ ፡ ተፈቅድ ፡ ለንትገሃስ ፡ እምዝ ፡ ውስተ ፡ ብሔረ ፡ ባዕድ ፡ ወንትኃ ፡ ባዕ ፡ ከመ ፡ ተኀባዕነ ፡ ቅድመ ፡ እምገጹ ፡ ለኄሮድስ ።",
     "manuscript_count": 3,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -6420,6 +6841,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Laha Maryam??: Crucifixion: Part 02: The Virgin Mary laments the capture of her son during Passion Week",
     "incipit": "ወሶበ ፡ ሰምዓት ፡ እግዝእትነ፡… ዘከመ ፡ አኃዝዎ ፡ ወነሥእዎ ፡ ለኢየሱስ ፡ ክርስቶስ ፡ ወልዳ ፡ በከየት ፡ ወትቤ ፡ ኦ ፡ ወልድየ ፡ ወፍቁርየ ፡ አንሰ ፡ ነበርኩ ፡ እንዘ ፡ እትፌሣሕ ፡ በልብየ ፡ ወዕብል ፡ ኲሎ ፡ ዕለተ ፡ ጌሠመ ፡ ይበጽሕ ፡ ፋሲካ ፡ ከመ ፡ ንግበር ፡ በዓለ ፡ ወንትመየጥ ፡ ውስተ ፡ ብሔርነ ፡ ወበጽሓኒ ፡ ፋሲካየ ።",
     "manuscript_count": 3,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -6432,6 +6854,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Laha Maryam??: Crucifixion: Part 03: The Virgin Mary sees her son in agony on the cross during Passion Week",
     "incipit": "ወለድንግልሰ ፡ ኮነ ፡ ዐቢይ ፡ ብካይ ፡ የዐውዳ ፡ በእንተ ፡ ዘኢርእየቶ ፡ ለወልዳ ፡ አመ ፡ ይሰቅልዎ ፡ አይሁድ ፡ ወኮነት ፡ ትበኪ ፡ በቤተ ፡ ዮሐንስ ፡ ወመጽአ ፡ ዮሐንስ ፡ እንዘ ፡ ይበኪ ፡ ወረከባ ፡ እንዘ ፡ ትበኪ ፡",
     "manuscript_count": 3,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -6448,6 +6871,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Laha Maryam??: Crucifixion: Part 04: The Virgin Mary says goodbye to her son on the cross and goes to John's house lamenting",
     "incipit": "ወሶበ ፡ ርእየቶ ፡ እግዝእትነ፡… ለዋሕድ ፡ ወልዳ ፡ ዲበ ፡ ዕፀ ፡ መስቀል ፡ ኢክህለ ፡ ያርምም ፡ ዓይና ፡ እምአንብዕ ። ተአንበዘ ፡ ልባ ፡ ውስተ ፡ ከርሣ ፡ ወውዕየ ፡ ነፍሳ ፡ ወቀብጸት ፡ ሕይወተ ፡ ነፍሳ ፡ ወሥጋሃ ፡ ወኲሎን ፡ መለያልዪሃ ፡ ይርዕዳ ፡ ወጸልመ ፡ ኅሊናሃ ፡ ወአልጸቀት ፡ ትፃእ ፡ ነፍሳ ።",
     "manuscript_count": 3,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -6464,6 +6888,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Laha Maryam??: Crucifixion: Part 06: The Virgin Mary misses her son after the resurrection and goes looking for him and Jesus tells her to stay with the 120 disciples",
     "incipit": "ወእምድኅረ ፡ ተንሥአ ፡ እሙታን ፡ እግዚእነ ፡ ኢየሱስ ፡ ክርስቶስ ፡ ትቤ ፡ እግዝእትነ፡… በእንተ ፡ ወልዳ ፡ እምአመ ፡ ተንሥአ ፡ ወልድየ ፡ ፍቁር ፡ እሙታን ፡ ኢያስተርአየ ፡ ሊተ ፡ ዘእንበለ ፡ ሠለስቱ ፡ ዕለት ።",
     "manuscript_count": 3,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -6480,6 +6905,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Laha Maryam??: Crucifixion: Part 07: The Virgin Mary goes to heaven after visiting Jesus's tomb and receives homage from the biblical pataricahs and matriarchs",
     "incipit": "ወሶበ ፡ ጸለየት ፡ እግዝእትነ ፡ አመ ፲ወ፮ ፡ ለየካቲት ፡ እምድኅረ ፡ ዕርገቱ ፡ ለእግዚእነ ፡ ኢየሱስ ፡ ክርስቶስ ፡ ወዘከመ ፡ አዕረግዋ ፡ መላእክት ፡ ውስተ ፡ ሰማይ ። ወእምአመ ፡ ኀደጋ ፡ እግዚእነ ፡ ኢየሱስ ፡ ክርስቶስ ፡ በዕለተ ፡ ዓርብ ፡ እንዘሀሎ ፡ መልዕልተ ፡ መስቀል ።",
     "manuscript_count": 3,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -6492,6 +6918,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Laha Maryam??: Crucifixion: Part 08: The Virgin Mary tells John the Evangelist what she saw on visiting heaven and how the souls of the righteous are received",
     "incipit": "ወእምድኅረ ፡ አግብእዋ ፡ መላእክት ፡ ውስተ ፡ መካና ፡ ለእግዝእትነ ፡ እምሰማይ ፡ ትቤሎ ፡ ለዮሐንስ ፡ ወነዋ ፡ እነግረከ ፡ ምሥጢረ ፡ ኅቡአ ፡ በልብ ፡ ወበኅሊና ፡ ዘኢይጤየቅ ፡ ወዘኢይትረአይ ፡ ለዓይን ፡ ዘከመ ፡ ከሠተ ፡ ሊተ ፡ ወልድየ ፡ ወፍቁርየ ፡ እግዚእየ ፡ ኢየሱስ ፡ ክርስቶስ ፡ እንዘ ፡ እጼሊ ፡ በጎልጎታ ፡ በጊዜ ፡ ተሰዓቱ ፡ ሰዓት ፡ ዘውእቱ ፡ ዕለተ ፡ ዓርብ ።",
     "manuscript_count": 3,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -6508,6 +6935,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Laha Maryam??: Crucifixion: Part 09: The Virgin Mary visits hell with twenty-four angels and laments the tormented souls' condition",
     "incipit": "ወእምድኅረ ፡ አግብእዋ ፡ መላእክት ፡ ውስተ ፡ መካና ፡ ለእግዝእትነ፡… ሖረት ፡ ካዕበ ፡ ኀበ ፡ ደብረ ፡ ጎልጎታ ፡ ዘውእቱ ፡ መቃብረ ፡ እግዚእነ ፡ ኢየሱስ ፡ ክርስቶስ ፡ አመ ፡ ዕሥራ ፡ ወአሚሩ ፡ ለሰኔ ።",
     "manuscript_count": 3,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -6520,6 +6948,7 @@ const MIRACLES_OF_MARY = [
     "title": "Homily on the greatness of the Virgin Mary's pact of mercy with Christ",
     "incipit": "ኦ ፡ አኃውየ ፡ ፍቁራን ፡ ንዑ ፡ ስምዑኒ ፡ እንግርክሙ ፡ ኃይለ ፡ አድኅኖተ ፡ ጸውዖ ፡ ስማ ፡ ለእግዝእትነ፡…። እስመ ፡ ጸውዖ ፡ ስማ ፡ ለእግዝእትነ ፡ ዘበርትዕት ፡ ሃይማኖት ፡ ያነሥእ ፡ ዘወድቀ ፡ ወኃጥአኒ ፡ ይሬሲ ፡ ጻድቀ ።",
     "manuscript_count": 3,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -6532,6 +6961,7 @@ const MIRACLES_OF_MARY = [
     "title": "Emperor Tiberius's wife convinces him to make the Virgin Mary queen of Rome and Jesus takes her away to prevent that",
     "incipit": "ወበአሓቲ ፡ ዕለት ፡ እመዋዕል ፡ ተናገረት ፡ ንግሥት ፡ ብእሲተ ፡ ጢባርዮስ ፡ እንዘ ፡ ትብል ፡ ምስሌሁ ፡ ለጢባርዮስ ፡ ኦእግዚእየ ፡ ንጉሥ ፡ አንተ ፡ ተአምር ፡ ከመ ፡ አልቦ ፡ ዘገብረ ፡ ሠናየ ፡ ዘየዐቢ ፡ እምዘገብርት ፡ ምስሌነ ፡ እግዝእትነ ፡ እሙ ፡ ለእግዚእነ ፡ ኢየሱስ ፡ ክርስቶስ ፡ እስመ ፡ አንሥአቶ ፡ ለወልድነ ፡ እሙታን ፡ በስእለታ ።",
     "manuscript_count": 3,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -6548,6 +6978,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Felsata la-Maryam??: New: Dormition: The Apostles are imprisoned for preaching about the Virgin Mary's ascension in the flesh and are freed by an angel and then persecuted after returning to preaching",
     "incipit": "ወሶበ ፡ ተለዓለት ፡ ወዓርገት ፡ በሥጋሃ ፡ ውስተ ፡ ሰማይ ፡ እግዝእትነ፡… ባረከቶሙ ፡ ወናዘዘቶሙ ፡ ለሐዋርያት ፡ ወወሀበቶሙ ፡ ሰበነ ፡ በዘይፈውሱ ፡ ድዉያነ ፡ ወያንሥኡ ፡ ሙታነ ፡ ወእሙንቱሂ ፡ ተካፈልዎ ፡ ለበረከት ።",
     "manuscript_count": 3,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -6560,6 +6991,7 @@ const MIRACLES_OF_MARY = [
     "title": "A bishop's prayers enable his rich dead father to move from hell, body part by body part, and then go to heaven",
     "incipit": "ወሀሎ ፡ አሐዱ ፡ ብእሲ ፡ ባዕል ፡ በአሐቲ ፡ ሀገር ፡ ዘኢይፈርሆ ፡ ለእግዚአብሔር ፡ ወኢይገብር ፡ ሠናየ ፡ ወኢዲበ ፡ ነዳያን ፡ ወለአብያተ ፡ ክርስቲያናት ። ወሀሎ ፡ አሐዱ ፡ ኤጲስ ፡ ቆጶስ ፡ ወፈራሄ ፡ እግዚአብሔር ፡ በይእቲ ፡ ሀገር ፡ ወልዱ ፡ ለውእቱ ፡ እኩይ ፡ ባዕል ፡ ይምዕዶ ፡ ለአቡሁ ፡ ወይጌሥዖ ፡ እንዘ ፡ ይብልኦ ፡ አብ ፡ ፍራህ ፡ ኲነኔሁ ፡ ለእግዚአብሔር ፡ ወተገኃሥ ፡ እምእኩይ ፡ ወረኃቅ ፡ እምኃጢአት ።",
     "manuscript_count": 3,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -6572,6 +7004,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Vision of Barok the Deacon: An apocalyptic book about Baruch, the scribe of the Prophet Jeremiah, being taken on a tour of heaven and hell by the Virgin Mary in the form of a bird",
     "incipit": "ወሀሎ ፡ አሐዱ ፡ ብእሲ ፡ ዲያቆን ፡ (ካህን) ፡ ዘስሙ ፡ ባሮክ ፡ ዘይፈርሆ ፡ ለእግዚአብሔር ፡ በኲሉ ፡ ልቡ ፡ ወይትለአካ ፡ ለእግዝእትነ፡… ወበኲሉ ፡ ኃይሉ ።",
     "manuscript_count": 3,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -6584,6 +7017,7 @@ const MIRACLES_OF_MARY = [
     "title": "Saint George is asked by the Virgin Mary to leave his country and become a martyr for Christ and he does so",
     "incipit": "ኦ ፡ አኃውየ ፡ ንነግረክሙ ፡ ዘከመ ፡ ረሰየቶ ፡ እግዝእትነ፡… ለቅዱስ ፡ ጊዮርጊስ ፡ መርዓዌ ፡ ሰማያዌ ፡ ወድንግለ ፡ ንጹሐ ፡ ወሐረየቶ ፡ ለስምዓ ፡ ፍቁር ፡ ወልዳ ።",
     "manuscript_count": 3,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -6600,6 +7034,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Ledata la-Maryam: New: Part 05??: Life: The Virgin Mary and Joseph take Jesus to the Temple and he meets Simon (same as 1356?)",
     "incipit": "ወአመ ፡ ተፈጸመ ፡ መዋዕለ ፡ ንጽሖሙ ፡ በከመ ፡ ሕገ ፡ ሙሴ ፡ ወሰድዎ ፡ ለሕፃን ፡ ኢየሩሳሌም ፡ ያቅምዎ ፡ ቅድመ ፡ በከመ ፡ ጽሑፍ ፡ ውስተ ፡ ሕገ ፡ እግዚአብሔር ፡ ኲሉ ፡ ተባዕት ፡ ዘይፈትሕ ፡ ማኅፀነ ፡ እሙ ፡ ቅዱሰ ፡ ይሰመይ ፡ ለእግዚአብሔር ።",
     "manuscript_count": 3,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -6612,6 +7047,7 @@ const MIRACLES_OF_MARY = [
     "title": "Homily on the Virgin Mary and the Biblical Patriarchs: Part 1: How the Virgin Mary was in the mind of God before the creation of the world",
     "incipit": "ስምዑ ፡  አበውየ ፡  ወአኃውየ ፡  ዕበያ ፡  ወክብራ ፡  ወዜና ፡  ምጽአታ ፡  ወውዳሴሃ ፡  ለእግዝእትነ ፡  ...።",
     "manuscript_count": 3,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -6624,6 +7060,7 @@ const MIRACLES_OF_MARY = [
     "title": "Homily on the Virgin Mary and the Biblical Patriarchs: Part 3: The Virgin Mary and the biblical patriarch Abraham",
     "incipit": "ወሀሎ ፡  አሐዱ ፡  ብእሲ ፡  ዘእምነገደ ፡  ሴም ፡  ወልደ ፡  ኖኅ ፡  አርከ ፡  እግዚአብሔር ፡  ዘስሙ ፡  አብርሃም ፡  ጻድቅ ፡ ወኄር ፡  ዘያፈቅር ፡  ነግደ ፡  ወፈላሴ ፡  ወያሠምሮ ፡  ለእግዚአብሔር ፡  በኵሉ ፡  ፍናዊሁ ፡  ወስመ ፡  ብእሲቱ ፡  ሣራ።",
     "manuscript_count": 3,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -6636,6 +7073,7 @@ const MIRACLES_OF_MARY = [
     "title": "Homily on the Virgin Mary and the Biblical Patriarchs: Part 4: The Virgin Mary and the biblical patriarch Isaac",
     "incipit": "ወይቤ ፡  እግዚአብሔር ፡  በሰማይ ፡  ብየ ፡  አርክ ፡  ወፍቁር ፡  አብርሃም ፡  በዲበ ፡  ምድር። ወሰሚዖሙ ፡  መላእክት ፡  ሰብሑ ፡  እንዘ ፡  ይብሉ ፡  አብርሃም ፡  ፍቁሩ ፡  ለእግዚአብሔር ፡  አብርሃም ፡  አርከ ፡  እግዚአብሔር።",
     "manuscript_count": 3,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -6652,6 +7090,7 @@ const MIRACLES_OF_MARY = [
     "title": "Homily on the Virgin Mary and the Biblical Patriarchs: Part 5: The Virgin Mary and the biblical patriarch Jacob",
     "incipit": "ወኮነ ፡  እምድኅረ ፡  ሞተ ፡  አብርሃም ፡  ባረኮ ፡  እግዚአብሔር ፡  ለይስሐቅ ፡  ወልዱ ፡  ወአስተርአዮ ፡  በአሐቲ ፡  ሌሊት ፡  ወይቤሎ ፡  አነ ፡  ውእቱ ፡  አምላኩ ፡  ለአብርሃም ፡  አቡከ ፡  ኢትፍራህ ፡  ሀለውኩ ፡  ምስሌከ ፡  ወእባርከከ ፡  ወአበዝኆ ፡  ለዘርዕከ ፡  በእንተ ፡  አብርሃም ፡  አቡከ። ወቦቱ ፡  ወልድ ፡  ለይስሐቅ ፡  ዘይሰመይ ፡  ያዕቆብ።",
     "manuscript_count": 3,
+    "most_read": false,
     "translations": [
       {
         "author": "Veronika Six",
@@ -6664,6 +7103,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Nagara Maryam: Month M: Part 01: Life: A sorcerer named Met'qool is hired to kill The Virgin Mary but she prays and destroys him and his demons",
     "incipit": "ወእንዘ ፡  ሀለወት ፡  እግዝእትነ ፡  ... ውስተ ፡  ቤተ ፡  መቅደስ ፡  ቦአ ፡  ሰይጣን ፡  ውስተ ፡  አልባቢሆሙ ፡  ለሕዝበ ፡  እስራኤል ፡  ወቀንዑ ፡  ዐቢየ ፡  ቅንዓተ ፡  ወአስተጋብኡ ፡  ዓውዶሙ ፡  ወተማከሩ ፡  ወይቤሉ ፡  ኢትሰምዑ ፡  ከመ ፡  አልቦ ፡  ዘትበቍዑ ፡  እስመ ፡  ናሁ ፡  ተንሥ ኡ ፡  ላዕሌነ ፡  ኢያቄም ፡  ወሐና።",
     "manuscript_count": 3,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -6688,6 +7128,7 @@ const MIRACLES_OF_MARY = [
     "title": "An abbot who fell sick while on a missionary journey.",
     "incipit": "ወሀሎ፡ አሐዱ፡ መነኮስ፡ ዘያፈቅራ፡ ለእግዝእትነ፡ ማርያም፡ በኵሉ፡ ልቡ፡ ወበኵሉ፡ ሕሊናሁ፡ እስመ፡ መምህረ፡ ደብር፡ ውእቱ። ወእንዘ፡ ሀለወ፡ ያንሶሱ፡ መካናተ፡ ለሰቢከ፡ እንበይነ፡ ሃይማኖት፡ ርትዕት፡ ወተእኅዘ፡ ሕማመ፡ ፈፀንት",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "Allie V. Mangel",
@@ -6700,6 +7141,7 @@ const MIRACLES_OF_MARY = [
     "title": "Zacharias, the priest, who was about to hang himself so as not to see his son die.",
     "incipit": "ወሀሎ፡ አሐዱ፡ ካህን፡ ዘካርያስ፡ የዋህ፡ ወትሑት፡ ወያፈቅራ፡ ለእግዝእትነ፡ ማርያም፡ ወይገብር፡ ተዝካራ፡ በኵሉ፡ መዋዕለ፡ ሕይወቱ። ወቦቱ፡ አሐዱ፡ ወልድ፡ ዘፈጸመ፡ መዝሙረ፡ ዳዊት፡ ወተምሕረ፡ መጻሕፍተ፡ እምንእሱ",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "Rowan Williams",
@@ -6712,6 +7154,7 @@ const MIRACLES_OF_MARY = [
     "title": "Homily on the greatness of the Virgin Mary [same as 390, 584, 607, 637??]",
     "incipit": "እከሥት፡ በምሳሌ፡ አፉየ፡ ወእነግር፡ አምሳለ፡ ዘርእያ፡ አዕይንቲየ፡ ወቃለ፡ ዘሰምዓ፡ አዕዛንየ",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "Getatchew Haile",
@@ -6724,6 +7167,7 @@ const MIRACLES_OF_MARY = [
     "title": "The dog that ran off with a manuscript of the Taʾammera Maryam (Miracles of the Virgin Mary).",
     "incipit": "ወሀሎ፡ አሐዱ፡ መነኮስ፡ ጸሐፌ፡ ተአምሪሃ፡ ለእግዝእትነ፡…. ወአሐተ፡ ዕለተ፡ ኀበ፡ አንበረ፡ ውእቱ፡ መጽሐፈ፡ ተአምሪሃ፡ ለእግዝእትነ፡…. ውስተ፡ አፍአ፡ ቤት፡ ወመጽአ፡ እኩይ፡ ከልብ፡ ወነሥኦ፡ ወወሰዶ",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -6736,6 +7180,7 @@ const MIRACLES_OF_MARY = [
     "title": "Thomas the priest who sees the Virgin Mary inscribing the names of those who praise her on the fiery chariot of gold.",
     "incipit": "ወሀሎ፡ አሐዱ፡ ደብር፡ ዘመነኮሳት፡ ወያፈቅርዋ፡ ለእግዝእትነ፡ ጥቀ፡ ፈድፋደ፡ ወይገብሩ፡ ተዝካራ፡ በዐቢይ፡ ተጠንቅቆ፡ አመ፡ ፳፡ ወ፩፡ ለወርኃ፡ ጥር",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "Allie V. Mangel",
@@ -6748,6 +7193,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Felsata la-Maryam??: EOld?: Dormition: Revelation: Part 2: The Virgin Mary narrates to Saint John a revelation made to her by Christ on Golgotha (continuation of 480?, 487?).",
     "incipit": "በእንተ፡ ዕበያ፡ ወክብራ፡ ለእግዝእትነ፡…. ይቤ፡ ዮሐንስ፡ ወልደ፡ ንጕድጓድ፡ ዘያፈቅሮ፡ እግዚእ፡ ኢየሱስ፡ በእንተ፡ ዕበየ፡ ንጽሕናሁ፡ ወእግዝእትነ፡…. ታፈቅሮ፡ ፈድፋደ፡ በከመ፡ ያፈቅሮ፡ ወልዳ፡ ወአውሥአቶ፡ ቡርክት፡ ወትቤሎ፡ ስማዕ፡ ኦዮሐንስ፡ እንግርከ፡ ኅቡዓ",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -6760,6 +7206,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book on Ark of Dersana Seyon: Part 4A: The Temple that King Solomon built for the Ark of Zion.",
     "incipit": "ወእምዝ፡ በ፬ዓመተ፡ መንግሥቱ፡ ለሰሎሞን፡ ወልደ፡ ዳዊት፡ በካልእ፡ ወርኅ፡ ዝውእቱ፡ ወርኃ፡ ማያዮስ፡ አዘዘ፡ ከመ፡ ያምጽኡ፡ ዕብነ፡ ዓቢየ፡ ወክብራተ፡ ወአምጽኡ፡ ሎቱ፡ ለሰሎሞን፡ ንጉሥ፡ ወቀብርዎ፡ ደቂቀኪ፡ ራም፡ ወደቂቀ፡ ዚአሁ",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "Rowan Williams",
@@ -6772,6 +7219,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Felsata la-Maryam??: GOld?: Dormition: In a vision the Virgin Mary is shown the Paradise of the Just.",
     "incipit": "ወትቤ፡ እግዝእትነ፡…. ወአውሥአኒ፡ ወይቤለኒ፡ ወልድየ፡ ንዒ፡ ኀቤየ፡ ኦእምየ፡ ናንሶሱ፡ ኀበ፡ ገነተ፡ ጻድቃን",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "Amsalu Tefera",
@@ -6784,6 +7232,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Nagara Maryam??: OldO: Journey: The people of Febor sacrifice pigs at the gate of their city so as to prevent the Holy Family from entering; they themselves are changed into pigs.",
     "incipit": "ስምዑ፡ ኵልክሙ፡ ፍቁራኒሃ፡ ለእግዝእትነ፡…. ዘገብረት፡ ተአምረ፡ በጊዜ፡ ልደታ። ሶበ፡ በጽሐት፡ ሀገረ፡ ፌቦር፡ ርእይዋ፡ እምርኁቅ፡ እነ፡ ትመጽእ፡ ኀቤሆሙ፡ ተባሀሉ፡ በበይናቲሆሙ፡ ዛቲኬ፡ ብእሲት፡ እንተ፡ ሰማዕነ፡ በእንቲአሃ፡ ትሤርያ፡ ለኵላ፡ ሀገር",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "Amsalu Tefera",
@@ -6796,6 +7245,7 @@ const MIRACLES_OF_MARY = [
     "title": "King Zara Yaqob (Zarʾa Yaʿeqob), the 14th c. Ethiopian monarch, kills Badlay ibn Sa'ad ad-Din II and dismembers his body.",
     "incipit": "ስምዑ፡ ዘገብረት፡ ሎቱ፡ ኃይለ፡ ወተአምረ፡ ለንጉሥነ፡ ዘርአ፡ ያዕቆብ፡ ወበጸጋ፡ እግዚአብሔር፡ ዘተሰምየ፡ ቍስጠንጢኖስ፡ ወለኵሉ፡ አበዊሁ፡ ወአኃዊሁ፡ እለ፡ ነግሡ፡ እምቅድሜሁ፡ ገብረት፡ ኃይለ፡ ተአምር፡ በእንተ፡ ኪዳና፡ ዘአልቦ፡ ኍልቍ፡ ቀተሎ፡ ለንጉሠ፡ ሰብአ፡ አደል፡ ዘስሙ፡ በድላይ",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -6808,6 +7258,7 @@ const MIRACLES_OF_MARY = [
     "title": "King Zara Yaqob (Zarʾa Yaʿeqob), the 14th c. Ethiopian monarch, returning victorious, builds a church in the name of the Virgin Mary and commands the observance of her feast.",
     "incipit": "ወእምዝ፡ አቲዎ፡ እምፀብዕ፡ ዘርአ፡ ያዕቆብ፡ በፍሥሐ፡ ወበሐሤት፡ ምስለ፡ ብዙኅ፡ ዕልገቱ፡ ወሰከ፡ አክብሮታ፡ ወአፍቅሮታ፡ ለእግዝእትነ፡ ማርያም",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -6820,6 +7271,7 @@ const MIRACLES_OF_MARY = [
     "title": "King Zara Yaqob (Zarʾa Yaʿeqob), the 14th c. Ethiopian monarch, composes hymns in honor of the Virgin Mary.",
     "incipit": "ወበእንተዝ፡ ሰብሓ፡ ለእግዝእትነ፡ ማርያም፡ ዘርአ፡ ያዕቆብ፡ ወአልዓላ፡ አድመፀ፡ ማኅሌተ፡ ቅኔ፡ በበዓላ",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -6832,6 +7284,7 @@ const MIRACLES_OF_MARY = [
     "title": "King Zara Yaqob (Zarʾa Yaʿeqob), the 14th c. Ethiopian monarch, establishes devotion to the Trinity throughout his empire.",
     "incipit": "ወካዕበ፡ ገብረት፡ ሎቱ፡ ለዘርአ፡ ያዕቆብ፡ ተአምረ፡ ወመድምመ፡ እግዝእትነ፡ ማርያም፡ በእንተ፡ ኪዳና፡ ዳግመ፡ በፍቅረ፡ ዚአሃ፡ ወቆመ፡ ወአቅነተቶ፡ ኃይለ፡ ከመ፡ ኢይኩን፡ ድኩመ",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "Allie V. Mangel",
@@ -6844,6 +7297,7 @@ const MIRACLES_OF_MARY = [
     "title": "King Naod (Naʾod), the 16th c. Ethiopian monarch, humbles his enemies with the Virgin Mary's help",
     "incipit": "ወካዕበ፡ ስምዑ፡ አኃዊነ፡ ዘኮነ፡ በመዋዕሊነ፡ ሶበ፡ አንሥኦ፡ ፀረ፡ ሰይጣን፡ ከመ፡ ይፅባዕ፡ ቅዱሳነ",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -6856,6 +7310,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Felsata la-Maryam??: HOld?: Dormition: Dormition and Assumption of The Virgin Mary's body into Heaven. (623, 502, 532, 550 similar)",
     "incipit": "ወአመ፡ ዕረፍታ፡ ለእግዝእትነ፡…. ተጋብኡ፡ ኵሎሙ፡ ሐዋርያት፡ እለ፡ ተዘርዉ፡ ውስተ፡ ኵሉ፡ በሐውርት፡ ዘእንበለ፡ ቶማስ፡ ባሕቲቱ፡ ወእለኒ፡ እምሐዋርያት፡ ዘሞቱ፡ ተንሥኡ፡ ወመጽኡ። ወአኮ፡ በሥምረተ፡ ርእሶሙ፡ ዘተጋብኡ፡ አላ፡ ሶበ፡ ፈቀደት፡ እግዝእትነ፡.... ከመ፡ ይትጋብኡ፡ በጊዜ፡ ዕረፍታ፡ ለግንዘተ፡ ሥጋሃ፡",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -6868,6 +7323,7 @@ const MIRACLES_OF_MARY = [
     "title": "Dabra Gass's Bishop Deraleyos, who was a lazy monk",
     "incipit": "ወሀሎ ፡ ፩ኤጲስ ፡ ቆጶስ ፡ በደብረ ፡ ገጽ ፡ ዘስሙ ፡ ድራልዮስ ፡ ሐካይ ፡ መነኮስ ። ወኢየአምር ፡ ዘምሮ ፡ ዳዊት ፡ ወአንብቦ ፡ መጻሕፍት ፡ ወሀለወ ፡ በቤተ ፡ መዝገበ ፡ ዳዊት ፡ ሰዓታት ፡ ፍጹም ፡ ወንጌለ ፡ ዮሐንስ ፡ ወአቡቀለምሲስ ፡ ሀለወ ፡ ሎቱ ፡ ለዓይነ ፡ ሰብእ ፡ ዘይትረዓይ ፡ ከመ ፡ ይበልዎ ፡ ጻድቀ ። ወባሕቱ ፡ ኢይቀውም ፡ ወኢይሰግድ ፡ ወነዊም",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -6880,6 +7336,7 @@ const MIRACLES_OF_MARY = [
     "title": "Archbishop Thaddeus, a European, whom the Virgin Mary assisted at Mass.",
     "incipit": "ወሀሎ ፡ ጳጳስ ፡ በደወለ ፡ አፍርንጊ ፡ ዘስሙ ፡ ታዴዎስ ፡ ዘያፈቅራ ፡ ለእግዝእትነ ፡ … በኵሉ ፡ ልቡ ። ወበአሐቲ ፡ ዕለት ፡ እንዘ ፡ ሀለወ ፡ በተክህና ፡ ወይቄድስ ፡ ቅዳሴሃ ፡ ለእመ ፡ ብርሃን ፡ አውረደት ፡ ሎቱ ፡ እግዝእትነ ፡ … ኅብስት ፡ እምሰማይ ። ወተራድአቶ ፡ እስከ ፡ ይሜጥዎሙ",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -6892,6 +7349,7 @@ const MIRACLES_OF_MARY = [
     "title": "Abiathar, a monk in Nubia, who was led to repentance by a vision of the Virgin Mary.",
     "incipit": "ወሀሎ ፡ ፩መነኮስ ፡ ዘስሙ ፡ አብያታር ፡ በሀገረ ፡ ኖባ ፡ ዘያፈቅራ ፡ ለእግዝእትነ ፡ … ወያሤኒ ፡ መቅደሳ ፡ ወይኰሰትር ፡ እምዓፀዳ  ፡ ሣዕረ ፡ ወዕፀ ፡ ዘወድቀ ። ወይገብር ፡ ቀርነ ፡ ወይሠይጥ ፡ ለዘፈቀደ ፡ ይነሥእ ፡ ሤጦ ፡ ወይሁብ ፡ ለነዳያን ፡ ከመ ፡ ያርብሑ",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -6904,6 +7362,7 @@ const MIRACLES_OF_MARY = [
     "title": "Eusebius, whom the Virgin Mary took to Heaven.",
     "incipit": "ወሀሎ ፡ ፩ብእሲ ፡ ዘስሙ ፡ አውሳብዮስ ፡ ወአስተርአየቶ ፡ እግዝእትነ ፡ … ወአኃዘቶ ፡ እዴሁ ፡ ወአግሃሠቶ ፡ እምኃውሶ ፡ ዓለም ። ወወሰደቶ ፡ ውስተ ፡ ምርሶ ፡ ሕይወት ፡ ወቀፃዓት ፡ ሎቱ ፡ ፍኖተ ፡ የማን ፡ ከመ ፡ ይንሣእ ፡ አክሊለ ፡ ብርሃን ፡ ዘአስተዳለወ ፡ እግዚአብሔር ፡ ለእለ ፡ ያፈቅርዎ ፡ ወለእለ ፡ ይሜንኑ",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -6916,6 +7375,7 @@ const MIRACLES_OF_MARY = [
     "title": "Jonah, the biblical prophet who came from Egypt and presciently knew about the Virgin Mary and Christian books, is swallowed by a whale",
     "incipit": "ወሀሎ ፡ ፩ነቢይ ፡ በደወለ ፡ ግብጽ ፡ ዘስሙ ፡ ዮናስ ፡ ዘያፈቅሮ ፡ ለእግዚአብሔር ፡ በኵሉ ፡ ልቡ ። ወየአምን ፡ ከመ ፡ ይርአይ ፡ መዋዕሎ ፡ ለእግዚአብሔር ። ወወሀቦ ፡ እግዚኡ ፡ ክብረ ፡ ወአልበሶ ፡ ልብሰ ፡ ጥበብ ፡ ወትዕግሥት ፡ ወእምዝ ፡ አንበረ ፡ ሕሊናሁ ፡ ውስተ ፡ ሰማይ ፡ ወነጸረ ፡ ኵሎ ፡ ኃይለ ፡ ከመ ፡ ለብሰ ፡ ሥጋ ፡ ሰብእ ፡ ወኢያውዓያ ፡ ለእግዝእትነ ፡",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -6928,6 +7388,7 @@ const MIRACLES_OF_MARY = [
     "title": "Matthias, a student from Bartos in Egypt, who was beaten and imprisoned for teaching about Christ.",
     "incipit": "ወሀሎ ፡ ፩ረድእ ፡ ዘደወለ ፡ ግብጽ ፡ በሀገረ ፡ ባርቶስ ፡ ዘስሙ ፡ ማትያስ ፡ ወኮነ ፡ ያፈቅራ ፡ ለእግዝእትነ ፡ … ወይሰብክ ፡ ወንጌለ ፡ ጸጋሁ ፡ ለኢየሱስ ፡ ክርስቶስ ፡ ወመሀሮሙ ፡ ለሰብአ ፡ ባርቶስ ፡ አምልኮተ ፡ እግዚአብሔር ፡ ቅዱሰ ።",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "Rowan Williams",
@@ -6940,6 +7401,7 @@ const MIRACLES_OF_MARY = [
     "title": "Saint Abba Besoy of Egypt is visited by the Virgin Mary on the feast day of the Assumption",
     "incipit": "ወበዕለተ ፡ ፍልሰተ ፡ ሥጋሃ ፡ እመ ፡ ወርኃ ፡ ነሐሴ ፡ አስተርአየቶ ፡ እግዝእትነ ፡ … ለአባ ፡ ብሶይ ፡ ወአርአየቶ ፡ ምቅዋመ ፡ መላእክት ፡ ግሩማን ። ወክዋኔሆሙ ፡ እምእሳት ፡ እለ ፡ ይፀውሩ ፡ ሰይፈ ፡ መባርቅት ፡ ወይትዓፀፉ ፡ ነበልባለ ፡",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -6952,6 +7414,7 @@ const MIRACLES_OF_MARY = [
     "title": "Saint Abba Besoy of Egypt, as a youth, had destroyed churches and killed people, but repented after killing a pregnant woman.",
     "incipit": "ወሀሎ ፡ ፩ወሬዛ ፡ በደወለ ፡ ግብጽ ፡ ዘስሙ ፡ ብሶይ ፡ ዘተደመረ ፡ ምስለ ፡ ፈያት ፡ ወነበረ ፡ ብዙኃ ፡ መዋዕለ ፡ እንዘ ፡ ያማስን ፡ አብያተ ፡ ክርስቲያናት ፡ ወይቀትል ፡ ነፍሰ ። ወበአሐቲ ፡ ብእሲት ፡ ፅንስት ፡ ወነሥአ ፡ ልብሳ ፡ ወበዝ ፡ ኢኃደጋ ፡ ወቀተላ ፡ ዳግመ ፡ ወሐለየ ፡ በልቡ ፡ ከመ ፡ ይርአይ",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -6964,6 +7427,7 @@ const MIRACLES_OF_MARY = [
     "title": "Saint Abba Paphnutius lives in the desert in Egypt for thirty-three years, being nourished with bread from Heaven.",
     "incipit": "ወሀሎ ፡ ፩ገዳማዊ ፡ ዘስሙ ፡ በብኑዳ ፡ ዘያፈቅራ ፡ ለእግዝእትነ ፡ … ። ወነበረ ፡ እንዘ ፡ ይትለአካ ፡ በሰጊድ ፡ ወያሠምራ ፡ በጾም ፡ ወበጸሎት ፡ ወበጊዜ ፡ ይዜከር ፡ ስማ ፡ በአፈ ፡ ኵሉ ፡ ሰብእ ፡ ይሰግድ ፡ ሥልሰ ፡ ወይኤምኅ ፡ ምድረ",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -6976,6 +7440,7 @@ const MIRACLES_OF_MARY = [
     "title": "Arkaledes from Qawep, who vowed not to look again at a woman, when his mother came to visit him, he died before seeing her.",
     "incipit": "ወሀሎ ፡ ወሬዛ ፡ በሀገረ ፡ ቃውሕ ፡ ዘስሙ ፡ አርከሌድስ ፡ ዘኮነ ፡ ሠናየ ፡ በብዝኃ ፡ ኂሩቱ  ። ወየኃድሩ ፡ ኵሎሙ ፡ ነጋድያን ፡ ውስተ ፡ ቤተ ፡ እሙ ፡ ሶበ ፡ ይወጽኡ ፡ ወይወርዱ ፡ እምኢየሩሳሌም ፡ ዘእንበለ ፡ ነጐርጓር ፡ ወኃዘን ፡ ወተሰምዓ ፡ ዜናሃ ፡ ለእሙ ፡ ወተዓውቀ",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -6988,6 +7453,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Vision of Patriarch Bartholomew of Jerusalem: An apocalyptic book [about the resurrection?? Mary's virginity??}",
     "incipit": "ወሀሎ ፡ ፩ጳጳስ ፡ በሀገረ ፡ ኢየሩሳሌም ፡ ደብረ ፡ መቅደሱ ፡ ለእግዚአብሔር ፡ ውስ ተ፡ ጎልጎታዊት ፡ መካን ። ወስሙ ፡ በርተሎሜዎስ ፡ ውጉዕ ፡ በዘይተ ፡ ፍቅራ ፡ ለእግዝእትነ ፡ … ወይትሜነይ ፡ ከመ ፡ ይርአይ ፡ ክዋኒ ፡ ፀሐይ ፡ መዓልተ ፡ ወሌሊተ ፡ ወይተግህ ፡ በጾም ፡ ወበጸሎት ፡ ወብዙኅ ፡ ስግደት ። ወእምድኅረ ፡ ተፍጻሜተ ፡ ደሎቱ",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "Jeremy Brown & Dawit Muluneh with Wendy Laura Belcher",
@@ -7000,6 +7466,7 @@ const MIRACLES_OF_MARY = [
     "title": "Four thieves break into the church of the Virgin Mary and steal vestments; they are brought back by lions.",
     "incipit": "ወሀለወት ፡ አሐቲ ፡ ቤተ ፡ ክርስቲያን ፡ ዘተሐንጸት ፡ በስማ ፡ ለእግዝእትነ ፡ … ወመጽኡ ፡ ፬ሰረቅት ፡ ወከረዩ ፡ ቤተ ፡ ክርስቲያና ፡ ለእግዝእትነ ፡ … ወቦኡ ፡ ውስተ ፡ መቅደስ ፡፡ ወደፈሩ ፡ ላዕለ ፡ ንዋያ ፡፡ ወነሥኡ ፡ ፬ቀጠንተ ፡ አልባስ ፡ ለለርእሶሙ ፡ ወወጽኡ",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "Jeremy Brown & Dawit Muluneh with Wendy Laura Belcher",
@@ -7012,6 +7479,7 @@ const MIRACLES_OF_MARY = [
     "title": "Scete's thirty monks whom Satan inspired to beat each other.",
     "incipit": "ወሀለዉ ፡ ፴መነኮሳት ፡ በገዳመ ፡ አስቄጥስ ፡ ጽድቆሙ ፡ ብዙኅ ፡ ወሃይኖቶሙ ፡ ርትዕት ፡ ይፀልዑ ፡ እከያተ ፡ ወያፈቅሩ ፡ ሠናያተ ። ወሶበ ፡ ርእየ ፡ ሰይጣን ፡ ጸላኤ ፡ ሰናያት ፡ ዘንተ ፡ ተቃረኖሙ ፡ ወአምጽአ ፡ ላዕሌሆሙ ፡ ጽልዓ ፡ ወጽረፈተ ፡ ወቍጥዓ ፡ ዘዘዚአሆሙ ፡ ወቆመ ፡ በማዕከሎሙ ፡ ከመ ፡ ብእሲ ፡ ሠናይ ፡ ወወሀቦሙ ፡ በትረ ፡ ቀይሐ ፡",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -7024,6 +7492,7 @@ const MIRACLES_OF_MARY = [
     "title": "Satan took the form of a bird to deceive two monks who had lived together in harmony for fifteen years.",
     "incipit": "ወሀለዉ ፡ ፩መነኮሳት ፡ በገዳመ ፡ አስቄጥስ ፡ መስተጋድላን ፡ በጾም ፡ ወበጸሎት ። ወነበሩ ፡ ፲ወ፭ዓመተ ፡ ውስተ ፡ ፩ፆማዕት ፡ በፍቅር ፡ ወበሰላም ፡ ወሶቤሃ ፡ ኀሠሠ ፡ ሰይጣን ፡ ምክንያተ ፡ እከይ ፡ ለአስሕቶቶሙ ፡ ወመጽአ ፡ ተመሲሉ ፡ ከመ ፡ ዖፍ ። ወቆመ ፡ በቅድሜሆሙ ፡ ከዊኖ ፡ ዘ፩ዓይኑ ፡ ወስሞሙ ፡ ለእሉ ፡ ቅዱሳን ፡ ፩እስጢፋኖስ ፡ ወካልኡ ፡ ኤርምያስ ፡ ዘ፩ዓይኑ ፡",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -7036,6 +7505,7 @@ const MIRACLES_OF_MARY = [
     "title": "Archbishop Maximus in Jerusalem and the clergy who wish to receive Communion on the feast of Easter from him",
     "incipit": "ወሀሎ ፡ ፩ጳጳስ ፡ ዘስሙ ፡ መክሲሞስ ፡ በሀገረ ፡ ኢየሩሳሌም ፡ ማእምር ፡ ወለባዊ ፡ ጻድቅ ፡ ወአረጋዊ  ፡ ወስዕነ ፡፡ ቀዊመ ፡ ወደክመ ፡ ኃይሉ ፡ ወኢክህለ ፡ ቀድሶ ፡ ቍርባን ፡ ወመጽኡ ፡ ኀቤሁ ፡ ቀሳውት ፡፡ ወዲያቆናት ፡ ወኤጲስ ፡ ቆጶሳት ፡ ወይቤልዎ ፡ ዘእንበለ ፡ ትሙት ፡ አንተ ፡",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -7048,6 +7518,7 @@ const MIRACLES_OF_MARY = [
     "title": "Saint Abba Daniel of Scete is visited by the Virgin Mary in the desert and she gives him a lion to ride on",
     "incipit": "ወሀሎ ፡ ፩መነኮሳ ፡ በሀገረ ፡ ሮም ፡ ዘስሙ ፡ ዳንኤል ፡ ዘያፈቅራ ፡ ለእግዝእትነ ፡ … ። ወእምብዝኃ ፡ አፍቅሮቱ ፡ ኪያሃ ፡ ወጽአ ፡ ገዳመ ፡ ወአኃዞ ፡ ድካመ ፡ ፍኖት ፡ ወረከበ ፡ ዕፀ ፡ ዘይትይቡሰ ወአስመከ ፡ ታሕቴሁ",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -7060,6 +7531,7 @@ const MIRACLES_OF_MARY = [
     "title": "Zena Krestos, a European monk, who was a herder and whose beasts were attacked by a lion.",
     "incipit": "ወሀሎ ፡ ፩መነኮስ ፡ በደወለ ፡ አፍርንጊ ፡ ዘስሙ ፡ ዜና ፡ ክርስቶስ ፡ ዘይፈቅራ ፡ ለእግዝእትነ ፡ … ። ወኢየአምር ፡ ካልእ ፡ ጸሎተ ፡ ዘእንበለ ፡ ሰላመ ፡ መልአክ ፡ ወኢያበጥል ፡ ግሙራ ፡ እምአፉሁ ፡ ዘክሮተ ፡ ስማ ፡ ውእቱሰ",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -7072,6 +7544,7 @@ const MIRACLES_OF_MARY = [
     "title": "Saints Michael and Saint Gabriel appear while Abbot Eliab is teaching his monks in the desert of Scete, who are given bread from Heaven.",
     "incipit": "ወሀሎ ፡ ፩አበ ፡ ምኔት ፡ ዘስሙ ፡ ኤልያብ ፡ ወእንዘ ፡ ልሎ ፡ በገዳመ ፡ አስቄጥስ ፡ ተራከቦሙ ፡ ለ፷ገዳማውያን ፡ ወተዚያነዎሙ ፡ ነገረ ፡ እግዚአብሔር ፡ ወአይድዕዎ ፡ ዘኮነ ፡ ቅድመ ፡ ዘይመጽእሂ ፡ ድኅረ ፡ ማኅደረ ፡ ጻድቃን ፡ ፍሥሐ ፡ ወኵነኔ ፡ ኃጥአን ፡ ፍዳሆሙ ። ወእንዘ ፡ ይትናገሩ",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -7084,6 +7557,7 @@ const MIRACLES_OF_MARY = [
     "title": "Homily of John the Evangelist on the greatness of the Virgin Mary, which he had seen in a vision. [Is this John, Son of Thunder?]",
     "incipit": "ወበእንተ ፡ ዕበያ ፡ ወክብራ ፡ ለእግዝእትነ ፡ … ። ነገረ ፡ በእንቲአሃ ፡ ዮሐንስ ፡ ወልደ ፡ ነጐድጓድ ፡ እንዘ ፡ ይብል ፡ ርኢኩ ፡ ብእሲተ ፡ እንተ ፡ ትትዓፀፍ ፡ ፀሐየ ፡ ወእንዘ ፡ ሀሎኩ ፡ በደሴተ ፡ ፍጥሞ ፡ መጽአ ፡ ላዕሌየ",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -7096,6 +7570,7 @@ const MIRACLES_OF_MARY = [
     "title": "Armenian Christian villagers who had to buy their water from Jews.",
     "incipit": "ወሀለወት ፡ አሐቲ ፡ ቤተ ፡ ክርስቲያን ፡ ዘሕንጽት ፡ በስማ ፡ ለእግዝእትነ ፡ … በሀገረ ፡ አርማንያ ። ወአልቦ ፡ ማይ ፡፡ውስተ ፡ ይእቲ ፡ ሀገር ፡ ወባሕቱ ፡ ያመጽኡ ፡ ማየ ፡ እምርኁቅ ፡ ወበገቦሃ ፡ ለፈለግ ፡ ይነብሩ ፡ አይሁድ ፡ ወሶበ ፡ ይቀድሑ ፡ ክርስቲያን ፡ ይከልእዎሙ ፡ አይሁድ ፡ ቀዲሐ ፡ ማይ",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -7108,6 +7583,7 @@ const MIRACLES_OF_MARY = [
     "title": "Pelagia, a nun from Caesarea, whom Satan afflicted with leprosy.",
     "incipit": "ወሀለወት ፡ አሐቲ ፡ መበለት ፡ በሀገረ ፡ ቂሳርያ ፡ ዘስማ ፡ ጲላግያ ፡ ዘትፈርሆ ፡ ለእግዚአብሔር ። ወያፈቅራ ፡ ለእግዝእትነ ፡ … ወትገብር ፡ በዓላ ፡ ለለኵሉ ፡ አውራኅ ፡ ወታበውእ ፡ ለቤተ ፡ ክርስቲያና ፡ ንስቲተ ፡ ፀሪቀ ፡ እምዘባ ። ወጊዜ ፡ መንፈቀ ፡ ሌሊት ፡",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -7120,6 +7596,7 @@ const MIRACLES_OF_MARY = [
     "title": "Aqlemeya, a poor woman from Rome, who was tied to a tree by bandits for five days and nights.",
     "incipit": "ወሀለወት ፡ አሐቲ ፡ ብእሲት ፡ በሀገረ ፡ ሮም ፡ ዘስማ ፡ አቅሌምያ ፡ ወአልባቲ ፡ ውሉድ ፡ ወኢንዋይ ፡ ወጥሪት ፡ ወነዳዪት ፡ ይእቲ ። ወባሕቱ ፡ ትሰፊ ፡ ሙዳየ ፡ ለዕጣን ፡ ወለዘቢብ ፡ ወተሐውር ፡ ውስተ ፡ ምሥያጥ ፡ ወታመጽእ ፡ ሤጠ ፡ ዚአሁ ፡ ወትገብር",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "Jeremy Brown & Mehari Worku & Dawit Muluneh with Wendy Laura Belcher",
@@ -7132,6 +7609,7 @@ const MIRACLES_OF_MARY = [
     "title": "King Saladdin of Egypt and his men try to force their way into the house where the Virgin Mary was born",
     "incipit": "ወኮነ፡ እምልደተ፡ እግዚእነ፡ ኢየሱስ፡ ክርስቶስ፡ በ፮፻፳፡ ወ፯፡ ዓመት፡ በመዋዕለ፡ ሰላዲኖስ፡ ንጉሠ፡ ምስር፡ እስላም፡ ሀለወት፡ አሐቲ፡ ቤት፡ ዘናሕስ፡ ግምብ፡ ዘተወልደት፡ ባቲ፡ እግዝእትነ፡…. ለውእቱ፡ ንጉሥ፡ ሐራሁ፡ አምጽኡ፡ አፍራስ፡/አፍራሰ፡ ወይቤሉ፡ ናበውእ፡ ውስተ፡ ዝንቱ፡ ቤት",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -7144,6 +7622,7 @@ const MIRACLES_OF_MARY = [
     "title": "Life: The Virgin Mary heals a large multitude of sick people in Bethlehem who had sought her in the Temple.",
     "incipit": "ወእምዝ፡ ተጋብኡ፡ ብዙኃን፡ ሕዝብ፡ ውስተ፡ ቤተ፡ መቅደስ፡ ወብዙኃን፡ ድውያን፡ መጽኡ፡ ወይቤሉ፡ አይቴ፡ ሀለወት፡ ቡርክት፡ እግዝእትነ፡…. ወአውሥኡ፡ ወይቤልዎሙ፡ ኢሀለወት፡ ዝየ፡ ይእቲሰ፡ ቤተ፡ ልሔም፡ ትነብር፡",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -7156,6 +7635,7 @@ const MIRACLES_OF_MARY = [
     "title": "Homily on the Annunciation, preceded by the gospel text",
     "incipit": "ወበሳድስ፡ ወርኅ፡ ተፈነወ፡ ገብርኤል፡ መልአክ፡ እምኀበ፡ እግዚአብሔር፡ ሀገረ፡ ገሊላ፡…. እንዘ፡ ኢየአምር፡ ብእሴ። ኦቅድስት፡ ድንግል፡ እንተ፡ አውሥአቶ፡ ለመልአክ፡ በግህደት፡ ንጽሕት፡ ድንግልናሃ",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "Rowan Williams",
@@ -7168,6 +7648,7 @@ const MIRACLES_OF_MARY = [
     "title": "Dormition Miracles for Women",
     "incipit": "ስምዑ፡ አበውየ፡ ወአኀውየ፡ ዘገብረት፡ እግዝእትነ፡ እምድኅረ፡ ዕረፍታ ፨ ወከመዝ፡ ገብረት፡ ተአምራተ፡ ወመንክራተ፡ ዘአልቦ፡ ኆልቈ፡ እስመ፡ ተወልደ፡ እምኔሃ፡ ዘወረደ፡ እምሰማይ፡ ወተሰገወ፡ ወረሰያ፡ ቤተ፡ መቅደስ፡ ለክብረ፡ ዚአሁ ፨ ወከመዝ፡ ይሁብ፡ ስብሐተ፡ ሰብአ፡ ቤተ፡ መቅደሳ፡ ለቅድስት፡ ድንግል፡ ማርያም፡ ወዓዲ፡ አንስትኒ፡ ይመፅኣ፡ ኀቤሃ፡ እምኵሉ፡ በሐውርት፡ እምሮሜ፡ ወእምእልስክንድርያ፡ ወአዋልደ፡ ነገሥት፡",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -7180,6 +7661,7 @@ const MIRACLES_OF_MARY = [
     "title": "Angels Celebrate a Poet as a Fountain of Praise",
     "incipit": "ወሀሎ፡ ፩መነኮስ፡ ውስተ፡ ፩ደብር፡ ወሠናይ፡ በኵሉ፡ ግብሩ፡ ወይፈጽም፡ ኵሎ፡ ቃላተ፡ ወንጌል፡ ዘይቤ፡ እግዚእነ፡ ለዘይፈቅድ፡ ይኩን፡ ረድኦ፡ ዘበመንኖ፡ ለተድላ፡ ዓለም፡ ኃላፊ፡ እንዘ፡ ይጸውር፡ መስቀለ፡ ሞቱ፨ ወነበረ፡ ውእቱ፡ መነኮስ፡ እንዘ፡ ይትጋድል፡ ወይጼሊ፡ ማዓልተ፡ ወሌሊተ፡ ቀዊሞ፡ ውስተ፡ ቤተ፡ ክርስቲያና፡ ለእግዝእትነ፡ ቅድስት፡ ማርያም፡ ዘበዕብራይስጢ፡ ማሪሃም፡ ወኮነ፡ አፉሁ፡ ፈልፈለ፡ ነቅዕ፡ ዘማየ፡ ሕይወት። ወይብል፡ ወሶበ፡ ቆምነ፡ ውስተ፡ ጽርኅኪ፡ ንሔሊ፡ ከመ፡ ውስተ፡ ሰማይ፡ ቀዋምያነ።",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "Getatchew Haile",
@@ -7192,6 +7674,7 @@ const MIRACLES_OF_MARY = [
     "title": "Dog Turned into a Statue",
     "incipit": "ስምዑ፡ ዘንተ፡ አበውየ፡ ወአኃውየ፡ ዘገብረት፡ እግዝእትነ፡ ማርያም፡ ተአምረ፡ ወመንክረ፡ በውስተ፡ አሐቲ፡ ሀገር፡ እንተ፡ ትሰመይ፡ ወንድጌ። ወሀለወት፡ ቤተ፡ ክርስቲያን፡ እንተ፡ ተሐንፀት፡ በስማ፡ ለእግዝእትነ፡ …  መስተሣህልት፡ ወእመ፡ ምሕረት። እመ፡ አምላክ፡ ወ እመ፡ ፈጣሪ፡ እሙ፡ ለፀሐየ፡ ጽድቅ፡ ሐመረ፡ መድኃኒት፡ ስምዓ፡ ግዕዛንነ። ወባቲ፡ ድኅነ፡ እምኃጢአት፡ ወባቲ፡ ተንሣእነ፡ እሞጥ ወባቲ፡ ሐዮነ፡ ሕሙማን፡ እምሕማማት። ወባቲ፡ ብዕልነ፡ ነዳያን፡ እምንዴት። ወባቲ፡ ተፈሣሕነ፡ ኅዙናን፡ እምኃዘናት።",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "Getatchew Haile",
@@ -7204,6 +7687,7 @@ const MIRACLES_OF_MARY = [
     "title": "Saint Samuel of Waldebba (Samuʾel), the 15th c. Ethiopian saint, sent his son to the land of dogs to baptize a woman named Arsema",
     "incipit": "ሰምዑኬ፡ አኃውየ፡ ንንግርክሙ፡ ዜና፡ ተአምራቲሃ፡ ለእግዝእትነ፡ ማርያም፡ ለዝክረ፡ ሰማ፡ ይደሉ፡ ሰጊድ። ወሀለወት፡ አሐቲ፡ ብእሲት፡ በምድረ፡ ከለባት፡ እንተ፡ ሰማ፡ ወይጠል። ወአሐተ፡ ዕለተ፡ እንቃዕደወት፡ አእይንቲሃ፡ ውስተ፡ ሰማይ፡ ወነጸረት፡ ድንግል፡ ዘትለብሰ፡ ፀሐየ፡ ወሕፃን፡ ውስተ፡ ሕፃና።",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "Getatchew Haile",
@@ -7216,6 +7700,7 @@ const MIRACLES_OF_MARY = [
     "title": "Mary Returns an Escaped Prisoner",
     "incipit": "ወሀሎ፡ ፩ብእሲ፡ ወዓሊ፡ መስፍን፡ ዘስሙ፡ ዮሴፍ፡ ወያፈቅሮ፡ መኰንን፡ ፈድፋደ። ወውእቱሰ፡ መኰንን፡ ረከበ፡ ጸላኢሁ፡ወአኃዞ፡ ወሞቅሖ። ወይቤሎ፡ ለዮሴፍ፡ ወአሊሁ፡ ንሥኦ፡ ምስሌከ፡ ይንበር፡ ወዕቀቦ፡ ከመ፡ ኢያምሥጥ፡እምእዴከ። ወነሥኦ፡ ወአንበሮ፡ ምስሌሁ፡ እንዘ፡ የዐቅቦ፨ ወውእቱሶ፡ ዮሴፍ፡ወዓሊሁ፡ ንሥአ፡ ምስሌከ፡ይንበር፡ ወዕቀቦ፡ ከመ፡ ኢያመሥጥ፡ እምእዴከ።",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "Getatchew Haile",
@@ -7228,6 +7713,7 @@ const MIRACLES_OF_MARY = [
     "title": "Holy Family Enters Egypt",
     "incipit": "ስምዑ፡ በአታ፡ ውስተ፡ ደብረቍስቋም። ወእንዘ፡ ተሐውር፡ ውስተ፡ ፍኖት፡ ምስለ፡ ፍቁር፡ወልዳ፡ ዮሴፍ፡ ወሰሎሜ፡ ላእካኒሃ፡ አመ፡ ፳ወ፬፡ ለግንቦት፡ ወሶበ፡ በጽሐት፡ ግብጽ፡ ወነበረት፡ አፍአ፡ ሀገር፡ ታሕተ፡ ጽላሎተ፡ ዕፅ፡ ከመ፡ ታዕርፍ፡ እምዋዕየ፡ ፀሐይ፡ እስመ፡ ሐጋይ፡ ውእቱ፡ ወኖመ፡ እምድካመ፡ ፍኖት፡ ዮሴፍ፡ ወሴሎሜ፡ ወእግዝእትነ፡ ማርያም፡ ትጸውር፡ ሕፃነ፡ በገቦሃ፡ ምዕረ፡ ወበዘባና፡ እንዘ፡ ታስተባርዮ፨",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "Getatchew Haile",
@@ -7240,6 +7726,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Dersana ʿUraʾel: Part 02: The Virgin Mary gives perfume to a thief for caring for the child Jesus, the thief gives it to an adulteress he wants to marry, both get filled with the holy spirit and become cured from their sins.",
     "incipit": "ተብህለ ፡ በእንተ ፡ ዘወለደት ፡ እሳተ ፡ መለኮት ፡ በላዔ ፡ በድንግልና ፡ ዘይሰመይ ፡ ዕጓለ ፡ አንበሳ ፡ ግሩመ ፡ ዘዖረት ፡ በከርኃ ፡ በኃይለ ፡ መንፈስ ፡ ቅዱስ ።",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -7260,6 +7747,7 @@ const MIRACLES_OF_MARY = [
     "title": "Emperor Tiberius and how the Virgin Mary tells John the Evangelist to go to Emperor Tiberius to evangelize about her and her son, who was executed under Tiberius",
     "incipit": "ወትቤሎ ፡ እግዝእትነ፡… ለዮሐንስ ፡ ሑር ፡ ኀበ ፡ ጢባርዮስ ፡ ንጉሥ ፡ ከመ ፡ ትኩን ፡ ስምዐ ፡ በኲሉ ፡ ግብር ፡ ዘርኢከ ፡ በኀቤየ ፡ ወበኀበ ፡ ወልድየ ፡ ፍቁር ፡ ወበከመ ፡ ገብሩ ፡ ላዕሌሁ ፡ እኩያን ፡ አይሁድ ፡ እንዘ ፡ ሀሎዲበ ፡ ዕፀ ፡ መስቀል ።",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -7276,6 +7764,7 @@ const MIRACLES_OF_MARY = [
     "title": "Homily on the greatness and effectiveness of the Virgin Mary's prayers on behalf of humanity.",
     "incipit": "ኦ ፡ ማኅበረ ፡ ክርስቲያን ፡ ክሥቱ ፡ ኲልክሙ ፡ አዕዛነ ፡ አልባቢክሙ ፡ ለሰሚዓ ፡ ተአምሪሃ ፡ ለእግዝእትነ ፡ ማርያም ፡ ዘከመ ፡ አድኃነቶሙ ፡ ለኃጥኣን ፡ እምስሕተት ፡ በትንብልናሃ ።",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -7288,6 +7777,7 @@ const MIRACLES_OF_MARY = [
     "title": "Homily on the efficacy of praying through the Virgin Mary",
     "incipit": "ስምዑኬ፡ ኦውሉደ፡ ብርሃን፡ ማኅበረ፡ ቅድስት፡ ቤተ፡ ክርስቲያን፡ ዘደብረ፡ ቂርቆስ፡ በእዝነ፡ ልቡና፡ ወነጽሩ፡ በዓይነ፡ መንፈስክሙ፡ ኀበ፡ ተአምሪሃ፡ ለእግዝእትነ",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -7300,6 +7790,7 @@ const MIRACLES_OF_MARY = [
     "title": "King of Rome: Patriach Dionysius appoints Ermias as the king of Romeya (see ID 70)",
     "incipit": "ወእምድኅረ ፡  ተኀጥአ ፡  ማርቆስ ፡  ንጉሠ ፡  ሮሜ ፡  እመንበረ ፡  መንግሥቱ ፡  ወቦ አ ፡  ገዳመ ፡  መኒኖ ፡  መንግሥቶ። ወተጋብ ኡ ፡  ሕዝብ ፡  ከመ ፡  ቀዳሚ ፡  ወመጽ ኡ ፡  ኀበ ፡  ሊቀ ፡  ጳጳሳት ፡  አባ ፡  ዲዮናስዮስ ፡  ወይቤልዎ ፡  አንግሥ ፡  ለነ",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -7312,6 +7803,7 @@ const MIRACLES_OF_MARY = [
     "title": "A pious man with many enemies is saved by daily praying in front of his icon of the Virgin Mary",
     "incipit": "ወሀሎ ፡  አሐዱ ፡  ብእሲ ፡  በአሐቲ ፡  ሀገር ፡  ዘቦቱ ፡  አጽራር ፡  ወኮኑ ፡  አጽራሪሁ ፡  ይጸንሕዎ ፡  ኵለሄ ፡  ጽሚተ ፡  ወአስተዳለዉ ፡  መሥገርተ ፡  ወይከርዩ ፡  ግበበ ፡  ምድር ፡  ከመ ፡  ይደቅ ፡  ውስቴቱ ፡  እንዘ ፡  የሐውር ፡  ፍኖቶ።",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -7328,6 +7820,7 @@ const MIRACLES_OF_MARY = [
     "title": "King Menelik (Menilek) II, the 19th c. Ethiopian monarch, and his Life: Part 6: He builds the city of Addis Ababa and a beautiful church for the Virgin Mary)",
     "incipit": "ወእምድኅረ ፡  ተመይጠ ፡  እምነ ፡  አድዋ ፡  ዳግማዊ ፡  ምኒልክ ፡  ሥዩመ ፡  እግዚአብሔር ፡  ንጉሠ ፡  ነገሥት ፡  ዘኢትዮጵያ ፡  ገብረ ፡  ትዕይንተ ፡  በሀገረ ፡  ሜታ ፡  ወሰመያ ፡  ለይእቲ ፡  ትእይንት ፡  ሐዲስ ፡  ዓለም። ወእምዝ ፡  ወጠነ ፡  ንድቀ ፡  ሕንፃ ፡  በውስተ ፡  ትዕይንት ፡  ወለአሐቲኒ ፡  ንድቀ ፡  ሕንፃ ፡  አሠነያ ፡",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -7340,6 +7833,7 @@ const MIRACLES_OF_MARY = [
     "title": "Prayer of Ethiopia: Part 01: Ethiopia stretches out her hands and begins to pray to the Virgin Mary",
     "incipit": "በከመ ፡  ይቤ ፡  ዳዊት ፡  ነቢይ ፡  በመዋዕል ፡  ዘቀዲሙ ፡  ኢትዮጵያ ፡  ታበጽሕ ፡  እደዊሃ ፡  ኀበ ፡  እግዚአብሔር ፡  ከማሁ ፡  ትሰፍሕ ፡  አዕዳዊሃ ፡  እምነ ፡  አግዓዚት ፡  ኢትዮጵያ ፡  ኀበ ፡  እግዝ እትነ ፡  ... ወትጼሊ ፡  እንዘ ፡  ትብል ፡  ከመ ፡  ትብል ፡  በአማን።",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -7356,6 +7850,7 @@ const MIRACLES_OF_MARY = [
     "title": "Prayer of Ethiopia: Part 02: Ethiopia's petition is brought by the Virgin Mary to the Holy Trinity",
     "incipit": "ወከመዝ ፡  ትቤ ፡  እምነ ፡  አግዓዚት ፡  ኢትዮጵያ ፡  በቃለ ፡  ዳዊት ፡  ነቢይ ፡  ኦ ፡  እግዝእትነ ፡ ... ። ይምጻእ ፡  ኃይል ፡  ዘይዘርዎ ፡  ለጊሜ ፡  ከመ ፡  ሐመድ ፡  በት እዛዘ ፡  ወልድኪ ፡  ከመ ፡  ይዝርዎሙ ፡  ለእለ ፡  ይፈቅዱ ፡  ባዕሰ ፡  ዚአየ ፡  ወይንስት ፡  ምክሮሙ ፡  ዘመከሩ ፡  እኩየ ፡  ላዕሌየ። ኦ ፡  ድንግል ፡  እመ ፡  እግዚአብሔር ፡  ጸባዖት ፡  እለ ፡  ይባርኩኒ ፡  ይትባረኩ ፡  በአፈ ፡  ፍቁር ፡  ወልድኪ ፡  ወእለ ፡  ይረግሙኒ ፡  ይትረገሙ ፡  በአፈ ፡",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -7368,6 +7863,7 @@ const MIRACLES_OF_MARY = [
     "title": "Prayer of Ethiopia: Part 03: Ethiopia prays for the destruction of her enemies",
     "incipit": "ኦ ፡  አኃውየ ፡  ፍቁራን ፡  ለብዉ ፡  እንከ ፡  ልባዌ ፡  ጥዩቀ ፡  ከመ ፡  ዘልፈ ፡  ትጼሊ ፡  ወት ስ እል ፡  ኀበ ፡  እግዚአብሔር ፡  ወኀበ ፡  እሙ ፡  ቅድስት ፡  ድንግል ፡  ... እምነ ፡  አግዓዚት ፡  ኢትዮጵያ ፡  በሰፊሃ ፡  አዕዳው ፡  ወበአንቃዕድዎ ፡  ኅሊና ፡  በከመ ፡  ይቤ ፡  ዳዊት ፡  ነቢይ ፡  ኢትዮጵያ ፡  ታበጽሕ ፡  እደዊሃ ፡  ኀበ ፡  እግዚአብሔር ፡  በእንተ ፡  ሰላም ፡  ወበእንተ ፡  ድኅነተ ፡  ሕዝባ።",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -7384,6 +7880,7 @@ const MIRACLES_OF_MARY = [
     "title": "Prayer of Ethiopia: Part 04: Ethiopia praises God for the gift of the Virgin Mary",
     "incipit": "ወከመዝ ፡  ትቤ ፡  በመንፈስ ፡  ቅዱስ ፡  እምነ ፡  አግዓዚት ፡  ኢትዮጵያ ፡  እንዘ ፡  ትነግር ፡  ውዳሴሃ ፡  ለእግዝእትነ ፡  ...። በከመ ፡  ይቤ ፡  ጳውሎስ ፡  በመልእክቱ ፡  አቀድም ፡  አእኵቶቶ ፡  ለእግዚአብሔር ፡  በእንተ ፡  እግዚእነ ፡  ኢየሱስ ፡  ክርስቶስ ፡  ወበእንቲኣኪ ፡  እግዝ እትየ ፡  ንግሥት ፡  እሴብሕ ፡  ወእዜምር።",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -7396,6 +7893,7 @@ const MIRACLES_OF_MARY = [
     "title": "Prayer of Ethiopia: Part 05: Ethiopia prays to the Virgin Mary during the civil war of 1974??? to 1991??? (",
     "incipit": "ወበውእቱ ፡  መዋዕል ፡  ሶበ ፡  ኮነ ፡  ምንዳቤ ፡  ዕፁብ ፡  ወተቃትሎ ፡  ሕዝብ ፡  ምስለ ፡  ሕዝብ ፡  ውስተ ፡  ሀገር ፡  ሶቤሃ ፡  ጸለየት ፡  ወትቤ ፡  ከመዝ ፡  እምነ ፡  አግዓዚት ፡  ኢትዮጵያ ፡  ኦ ፡  ድንግል ፡  አዘክሪ ፡  ኀበ ፡  መዘክር ፡  ወልድኪ ፡  እምዘ ፡  ኢይረስእ ፡  ኵሎ ፡  ዘነገርዎ ፡  ወኢይከልእ ፡  ዘሰአልዎ ፡  ከመ ፡  ይፈኑ ፡  ሣህሎ ፡  ወምሕረቶ ፡  ለምድር።",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -7412,6 +7910,7 @@ const MIRACLES_OF_MARY = [
     "title": "Prayer of Ethiopia: Part 06: Ethiopia praises the Virgin Mary for fulfilling the prophecy of the prophet Daniel",
     "incipit": "ወትቤ ፡  እምነ ፡  አግዓዚት ፡  ኢትዮጵያ ፡  በከመ ፡  ይቤ ፡  ዳን ኤል ፡  ነቢይ ፡  ትባርኮ ፡  ምድር ፡  ለእግዚአብሔር ፡  ኦ ፡  ድንግል ፡  ወአነሂ ፡  ከመዝ ፡  እባርከኪ ፡  ወእጼውዕ ፡  ስመኪ።",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -7424,6 +7923,7 @@ const MIRACLES_OF_MARY = [
     "title": "Prayer of Ethiopia: Part 07: Ethiopia marvels at the Incarnation of God in the womb of the Virgin Mary",
     "incipit": "ወከመዝ ፡  ትቤ ፡  እምነ ፡  አግዓዚት ፡  ኢትዮጵያ ፡  በመንፈስ ፡  ቅዱስ ፡  በእንተ ፡  ክብራ ፡  ለእመ ፡  ንጉሥ ፡  ኢየሱስ ፡  ክርስቶስ ፡  ፈጣሬ ፡  ሰማያት ፡  ወምድር።",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -7440,6 +7940,7 @@ const MIRACLES_OF_MARY = [
     "title": "Prayer of Ethiopia: Part 08: Ethiopia beseeches the Virgin Mary for intercession using Psalm 47???",
     "incipit": "በከመ ፡  ተብህለ ፡  በመዋዕል ፡  ዘቀዲሙ ፡  በአፈ ፡  ዳዊት ፡  ነቢይ ፡  ዕግትዋ ፡  ለጽዮን ፡  ወሕቀፍዋ ፡  ወተናገሩ ፡  በውስተ ፡  ማኅፈዲሃ ፡  ደዩ ፡  ልበክሙ ፡  ውስተ ፡  ኃይላ ፡  ወትትካፈልዎ ፡  ለክበዲሃ። ወከማሁ ፡  እንዘ ፡  ተዓቅብ ፡  ዘንተ ፡  ውስተ ፡  ልባ ፡  እምነ ፡  አግዓዚት ፡  ኢትዮጵያ ፡",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -7452,6 +7953,7 @@ const MIRACLES_OF_MARY = [
     "title": "Prayer of Ethiopia: Part 09: Ethiopia praises the Virgin Mary and takes the Virgin Mary's magnificat as a prophecy",
     "incipit": "ወከመዝ ፡  ትቤ ፡  በመንፈስ ፡  ቅዱስ ፡  እምነ ፡  አግዓዚት ፡  ኢትዮጵያ ፡  በእንተ ፡  ወድሶታ ፡  ለእግዝእትነ ፡ ...። ኦ ፡  ድንግል ፡  በከመ ፡  ተነበይኪ ፡  በመንፈስ ፡  ቅዱስ ፡  በብሂል ፡  ናሁ ፡  እምይእዜሰ ፡  ያስተበፅዑኒ ፡  ኵሉ ፡  ትውልድ ፡  እስመ ፡  ገብረ ፡  ሊተ ፡  ኃይለ ፡  ዐቢያተ ፡  ወቅዱስ ፡  ስሙ።",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -7468,6 +7970,7 @@ const MIRACLES_OF_MARY = [
     "title": "Prayer of Ethiopia: Part 10: Ethiopia praises the Virgin Mary using?? the Anaphora?? of the Virgin Mary",
     "incipit": "ወትቤ ፡  እምነ ፡  አግዓዚት ፡  ኢትዮጵያ ፡  እንዘ ፡  ትሴብሕ ፡  ወትዜምር ፡  በእንተ ፡  እግዝእተ ፡  ኵልነ ፡  ... ወሃቤ ፡  ሕይወት ፡  ወበረከት ፡  ወጸጋዌ ፡  ምሕረት ፡  በብዝኃ ፡  ሂሩቱ።",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -7484,6 +7987,7 @@ const MIRACLES_OF_MARY = [
     "title": "Prayer of Ethiopia: Part 11: Ethiopia expresses her zeal to defend the Virgin Mary's honor",
     "incipit": "በከመ ፡  ይቤ ፡  ዳዊት ፡  ነቢይ ፡  በመዝሙር ፡  ቅንዓተ ፡  ቤትከ ፡  በልዓኒ ፡  እስመ ፡  ትዕይርቶሙ ፡  ለእለ ፡  ይትዔየሩከ ፡  ወድቀ ፡  ላዕሌየ። ወከመዝ ፡  ትቤ ፡  እምነ ፡  አግዓዚት ፡  ኢትዮጵያ ፡  በእንተ ፡  ንጽሐ ፡  ድንግልናሃ ፡  ለእግዝእትነ ፡  ኦ ፡  ድንግል ፡  እመቦ ፡  ዘይጸርፍ ፡  ላዕለ ፡  ድንግልናኪ ፡  ቀናዕኩ ፡  በእንቲኣኪ ፡  ወበእንተ ፡  ጽዕለተ ፡  ላዕለ ፡  ድንግልናኪ ፡  ቀናዕኩ ፡  በእንተ ፡  ዘሐሰወ ፡  ላዕለ ፡  ፅንስኪ ፡  መንፈሳዊ ፡  ቀናዕኩ ፡  በእንተ ፡  ዘአለወ ፡  ላዕለ ፡  ወሊዶትኪ ፡  ድንግልናዌ።",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -7500,6 +8004,7 @@ const MIRACLES_OF_MARY = [
     "title": "Prayer of Ethiopia: Part 12: Ethiopia prays conclusion",
     "incipit": "ወበውእቱ ፡  መዋዕል ፡  ሶበ ፡  ኮነ ፡  ረኃብ ፡  ወብድብድ ፡  ውስተ ፡  ኵሎን ፡  አህጉራተ ፡  ኢትዮጵያ ፡  ሶቤሃ ፡  ጸለየት ፡  ወአስተብቍዓት ፡  እምነ ፡  አግዓዚት ፡  ኢትዮጵያ ፡  እንዘ ፡  ትብል ፡  ኀበ ፡  እግዝእትነ ፡  ...።",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -7512,6 +8017,7 @@ const MIRACLES_OF_MARY = [
     "title": "Samiya Yosef of Port Said in Egypt, a pious woman, is healed of a terrible illness of the heart in 1982 [EC?]",
     "incipit": "ወእምድኀረ ፡  ዐሠርቱ ፡  ወተሰዓቱ ፡  ምዕት ፡  ሰማኒያ ፡  ወክልኤቱ ፡  ዓመት ፡  እምልደተ ፡  እግዚ እነ ፡  ኢየሱስ ፡  ክርስቶስ ፡  ተገብረ ፡  ተአምር ፡  ዐቢይ ፡  ውስተ ፡  ምድረ ፡  ግብፅ ፡  በእደዊሃ ፡  ለእግዝእትነ ፡ ...  ገባሪተ ፡  ተአምራት ፡  ወመንክራት ። ወሀለወት ፡  አሐቲ ፡  ብእሲት ፡  ውስተ ፡  ብሔረ ፡  ግብፅ ፡  ዘትነብር ፡  በደሴተ ፡  ፖርት ፡  ሰዒድ ፡  ወስማ ፡  ለይእቲ ፡  ሣሚያ ፡  ዮሴፍ ፡  ወስመ ፡  ምታኒ ፡  ሩኤቅ ፡  ሐና ፡  ው እቱ ፡  ወክልኤሆሙ ፡  እሙንቱ ፡  ፈራህያነ ፡  እግዚአብሔር ፡",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -7524,6 +8030,7 @@ const MIRACLES_OF_MARY = [
     "title": "A child about to be sacrificed to heal an ill king was saved by the Virgin Mary and later the boy became a king",
     "incipit": "ወሀሎ ፡  አሐዱ ፡  ንጉሥ ፡  በውስተ ፡  አሓቲ ፡  ሀገር ፡  ወኮኑ ፡  አቡሁ ፡  ወእሙ ፡  ለውእቱ ፡  ንጉሥ ፡  ያፈቅርዋ ፡  ለእግዝእትነ ፡  ቅድስት ፡  ... ርኅርኅተ ፡  ልብ ፡  ወመፍጠኒተ ፡  ረድኤት ፡  ናዛዚቶሙ ፡  ለኅዙናን ፡  ወረዳኢቶሙ ፡  ለምንዱባን።",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -7536,6 +8043,7 @@ const MIRACLES_OF_MARY = [
     "title": "A rich man who squandered his wealth is told by the Virgin Mary to give his daughter to a man the Virgin Mary had resurrected (continued from ID 203)",
     "incipit": "በከመ ፡  ሀሎ ፡  ጽሑፈ ፡  በካልእ ፡  ገጽ ፡  በውስተ ፡  ዝንቱ ፡  ተአምር ፡  ወበዕለት ፡  ሣልሳዊት ፡  እምድኅረ ፡  ተንሥአ ፡  ውእቱ ፡  ብእሲ ፡  ዘቀተሎ ፡  ሰይጣን ፡  በዝብጠተ ፡  ዕብን ፡  ዘተመሰለ ፡  ወርቀ ፡  መጽአት ፡  እግዝ እትነ ፡  ... ኀቤሁ ፡  ጊዜ ፡  መንፈቀ ፡  ሌሊት ፡  ወአስተርአየቶ ፡  በራእይ ፡  ወትቤሎ ፡  ኦ ፡  ብእሲ አብድ ፡  ለምንት ፡  ክህድኮ ፡  ለእግዚአብሔር ፡  አምላክከ።",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -7548,6 +8056,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Felsata la-Maryam??: New: Dormition: The Virgin Mary appears to the Apostles and reveals to them the mysteries of heaven (ID 251)",
     "incipit": "ወበውእቱ ፡  መዋዕል ፡  ተበሀሉ ፡  በበይናቲሆሙ ፡  አርድእት ፡  ሐዋርያት ፡  ንጹሓን ፡  ንትጋህ ፡  ወንጸሊ ፡  ኀበ ፡  እግዚአብሔር ፡  አምላክነ ፡  በከመ ፡  ረሰየነ ፡  ድልዋነ ፡  ንርአዮ ፡  ለፍቁር ፡  ዮሐንስ ፡  አመ ፡  ግብአቱ ፡  በሰላም ፡  እምብሔረ ፡  ሮሜ ፡  ወከማሁ ፡  ይረስየነ ፡  ካዕበ ፡  ንርአያ ፡",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -7564,6 +8073,7 @@ const MIRACLES_OF_MARY = [
     "title": "Homily on the perpetual Virginity of the Virgin Mary",
     "incipit": "አኃውየ ፡  ፍቁራን ፡  ክርስቶሳውያን ፡  ንዑ ፡  ናዕብያ ፡  ንዑ ፡  ንወድሳ ፡  ንዑ ፡  ናክብራ ፡  ለመድኃኒተ ፡  ኵሉ ፡  ዓለም ፡  እግዝእትነ ፡  ... ክብርት ፡  ይእቲ ፡  ወትረ ፡  በሰማይ ፡  ወበምድር።",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -7576,6 +8086,7 @@ const MIRACLES_OF_MARY = [
     "title": "Saint John Chrysostom's disciple is taken by the Virgin Mary to heaven to see John",
     "incipit": "ወሀሎ ፡  አሐዱ ፡  ኤጲስ ፡  ቆጶስ ፡  በደሴተ ፡  አጥራክያ ፡  ዘው እቱ ፡  ረድ ኡ ፡  ለዮሐንስ ፡  አፈወርቅ ፡  ወኮነ ፡  ይሄሊ ፡  ወትረ ፡  እንዘ ፡  ይብል ፡  ሊቅየአ ፡  ወእግዚእየአ ፡  አፈወርቅ ፡  ዮሐንስ ፡  መምህር ፡  ወመገሥፅ ፡  ዘኢያደሉአ ፡  ለገጽአ ፡  ወኢየኃፍር ፡  ነገሥታተ ፡  ወንግሥታተ። ወበበይነ ፡  ሥነ ፡  ግብሩ ፡  ቦኑ ፡",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -7588,6 +8099,7 @@ const MIRACLES_OF_MARY = [
     "title": "Homily on how the Church of the Apostles praises the Virgin Mary",
     "incipit": "ኦ ፡  አኃውየ ፡  ርእዩ ፡ ከመ ፡  ወደሰታ ፡  ለእግዝእትነ ፡  ቅድስት ፡  ቤተ ፡  ክርስቲያን ፡  እንዘ ፡  ትብል ፡  ኦ ፡  ድንግል ፡  ምልዕተ ፡  ውዳሴ ፡  እስመ ፡  አንቲ ፡  ውድስት ፡  በልሳነ ፡  ኵሉ ፡  ፍጥረት ፡  ወይ እዜኒ ፡  ትዌድሰኪ ፡  ቤተ ፡  ክርስቲያን ፡  ቅድስት ፡  አሐቲ ፡  ጉባዔ ፡ እንተ ፡  ሐዋርያት ።",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -7600,6 +8112,7 @@ const MIRACLES_OF_MARY = [
     "title": "Homily on the rightness of Christians praising the Virgin Mary",
     "incipit": "ኦ ፡  አንትሙ ፡  ምዕመናን ፡  ውሉደ ፡  ቤተ ፡  ክርስቲያን ፡  ተንሥ ኡ ፡  ወቁሙ ፡  በትኅትና ፡  ወፍቅር ፡  ከመ ፡  ናዕብያ ፡  ወንወድሳ ፡  ለምልዕተ ፡  ውዳሴ ፡  እንዘ ፡  ንብል ፡  ንዒ ፡  ማርያም ፡  ለኢሳይያስ ፡  ቀርነ ፡  ትንቢቱ ፡  ወለኤርምያስ ፡  ጽርሐ ፡  ቅድሳቱ ፡  ወለሕዝቅ ኤል ፡  ዋካ ፡  ኆኅቱ ፡  ዘሠረቀ ፡  እምኔኪ ፡  ፀሐየ ፡  አርያም ፡  ዘየሐቱ ፡  ዘአብርሃ ፡  ለደቂቀ ፡  አዳም ፡  ሥነ ፡  መለኮቱ።",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -7612,6 +8125,7 @@ const MIRACLES_OF_MARY = [
     "title": "Homily on the greatness of the Virgin Mary [same as 390, 584, 607, 637??]",
     "incipit": "ንዑ ፡  ኵልክሙ ፡  ማኅበረ ፡  ክርስቲያን ፡  ናስተብፅዓ ፡  ለቅድስት ፡  ...፡  ኵልክሙ ፡  ማኅበረ ፡  መሃይምናን ፡  ከመ ፡  ንወድሳ ፡  ለብፅዕት ፡  ድንግል ፡  ወላዲተ ፡  አምላክ ንዑ ፡",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -7624,6 +8138,7 @@ const MIRACLES_OF_MARY = [
     "title": "Thieves steal a church's Tabot of the Virgin Mary and put it in a nearby mosque and the crescent on the minaret changes into a cross of light",
     "incipit": "ወሀለወት ፡  አሐቲ ፡  ቤተ ፡  ክርስቲያን ፡  ዘእግዝእትነ ፡  ... ውስተ ፡  ብሔረ ፡  ኢትዮጵያ። ወበውስተ ፡  አዕፃዳቲሃኒ ፡  ለይእቲ ፡  ቤተ ፡  ክርስቲያን ፡  ህየ ፡  ሀሎ ፡  ምኵራበ ፡  ተንባላት።",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -7636,6 +8151,7 @@ const MIRACLES_OF_MARY = [
     "title": "King Lalibela, the 13th c. Ethiopian monarch, during the Crusades in the 1200s, hosts refugees from Palestine and Egypt who come to Ethiopia",
     "incipit": "ወሀሎ ፡  አሐዱ ፡  ንጉሥ ፡  ውስተ ፡  ብሔረ ፡  ኢትዮጵያ ፡  ዘይሰመይ ፡  ዓፄ ፡  ላሊበላ ፡  ውእቱኒ ፡  ንጉሥ ፡  ዐቢይ ፡  ወክቡር ፡  ጥቀ ፡  ወስመ ፡  ብእሲቱኒ ፡  ንግሥት ፡  መስቀል ፡  ክብራ ፡  ወክልኤሆሙ ፡  ፈራህያነ ፡  እግዚአብሔር እሙንቱ ፡  ወያከብርዋ ፡  በኵሉ ፡  ክብር ፡  ለእግዝእትነ ... ።",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -7648,6 +8164,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Nagara Maryam: Month C: Part 02: An old man named Aqttisor refuses to sacrifice to idols and a sorcerer kills all 67 of his children but the Virgin Mary brings them back to life",
     "incipit": "ወሀሎ፡ ፩ብእሲ፡ ዘስሙ፡ አቅጢሶር፡ ወልደ፡ ሶር፡ ወልደ፡ አሜንዩ፡ ወልደ፡ ሶፎር፡ ወልደ፡ ሴሌም፡ እምቤቴል፡ ዘእምዘንበራም፨ ወአረጋዊ፡ ጥቀ፡ ወክቡር፡ ፈድፋደ፡ ወአልቦቱ፡ ውሉድ፡ እመሂ፡ ተባዕት፡ ወእመሂ፡ አንስት፡ እስመ፡ ሞቱ፡ ኵሎሙ፡ ደቂቁ፡ ፷ወ፯እስመ፡ ቀተሎሙ፡ ዓቃቤ፡…",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -7660,6 +8177,7 @@ const MIRACLES_OF_MARY = [
     "title": "Crucifier Is Killed for Laughing",
     "incipit": "ወጊዜ፡ መንፈቀ፡ ሌሊት፡ ሐመት፡ እግዝእትነ፡ ማርያም፡ ወበጊዜ፡ ነግህ፡ መጽኡ፡ ኀቤሃ፡ ሐዋርያት፨ ወተባረኩ፡ እምኔሃ፡ በከመ፡ ልማድ፡ ወትቤሎ፡ እግዝእትነ፡ ማርያም፡ ናሁ፡ ደክመ፡ ሥጋየ፡ ወደክመ፡ ልሳንየ፡ ተዘከሩ፡ መምሕረክሙ፡ ዘሤመክሙ፡ …",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -7672,6 +8190,7 @@ const MIRACLES_OF_MARY = [
     "title": "Ramonas [Romanus?], a rich man, is tempted by Satan, through a beautiful woman, to abandon giving alms",
     "incipit": "ወሀሎ ፡ ፩ብእሲ ፡ በሀገረ ፡ እስክንድርያ ፡ ዘስሙ ፡ ሮማኖስ ፡ ወኮነ ፡ ብዑለ ፡ በወርቅ ፤ ወበብሩር ፡ ወቦቱ ፡ ንዋይ ፡ ብዙኅ ፡ ወአዕፃዳተ ፡ ወይን ፡ ወገነታት ፡ ወእንስሳ ፡ ወአግማል ፡ ወመራዕየ ፡ አባግዕ",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -7684,6 +8203,7 @@ const MIRACLES_OF_MARY = [
     "title": "Mary Resurrects a King's Killer, Abba Bulä",
     "incipit": "ወሀሎ ፡ ፩ብእሲ ፡ ዘስሙ ፡ ቡላ ፡ ወአሐተ ፡ ዕለተ ፡ ሖረ ፡ ኀበ ፡ መኰንን ፡ ዓላዊ ፡ ወጸረፈ ፡ ላዕሌሁ ፡ ወተምዓ ፡ መኰንን ፡ ወመተረ ፡ ርእሶ ፡ በሰይፍ ፡ ወተከለለ ፡ አመ ፡ ፲ወ፰ለሚያዝያ ፡ ወወረደ ፡ ቅዱስ ፡ ሚካኤል ፡ እምሰማይ",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -7696,6 +8216,7 @@ const MIRACLES_OF_MARY = [
     "title": "Holy Family in Mountains of Lebanon While Herod Kills Many",
     "incipit": "ወአሐተ ፡ ዕለተ ፡ አዘዞሙ ፡ ሄሮድስ ፡ ለአግብርቲሁ ፡ ከመ ፡ ይጥብሑ ፡ አሥዋረ ፡ ወአልህምተ ፡ ወአባግዓ ፡ ዘአልቦ ፡ ኍልቍ",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -7708,6 +8229,7 @@ const MIRACLES_OF_MARY = [
     "title": "Mary Heals a Traveller to a New Land",
     "incipit": "ወሀሎ፡ ፩ብእሲ፡ ዘኮነ፡ ያፈቅራ፡ ለእግዝእትነ፡ እማዕምቀ፡ ልቡ፡ ወይዜክር። ወትረ፡ ዕበያቲሃ፡ ወመጽሐፈ፡ ውዳሴያቲሃ፡ ወይትዌከል፡ ኪያሃ፡ እማዕምቀ፡ ልቡ፡ ወእንዘ፡ ሀሎ፡ ይነብር፡ በዘከመዝ፡ ግብር፡ እምድኅረ፡ ኅዳጥ፡ መዋዕል፡ ወጽአ፡ እምነ፡ ሀገሩ፡ ወሖረ፡ ብሔረ፡ ባዕድ፡ ወእንዘ፡ ሀሎ፡ ይነብር፡ ውስተ፡ ብሔረ፡ ባዕድ።",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -7720,6 +8242,7 @@ const MIRACLES_OF_MARY = [
     "title": "Mary Resurrects a Rich Famiy",
     "incipit": "ወሀሎ፡ ፩ ብእሲ፡ ሊቀ፡ ሀገር፡ ባዕል፡ በኵሉ፡ ንዋየ፡ ዓለም፡ ኃላፊ። ወያፈቅራ፡ ለብእሲቱ፡ ፈድፋደ። ወሶበ፡ ሞተት፡ ሖረ፡ ኀበ፡ እግዝእትነ፡ ... ወይቤላ፡ ኦእግዝእትየ፡ ... ሞተት፡ ብእሲትየ፡ ወአልቦ፡ ዘይረድአኒ፡ እንበሌሃ፡ ኦእግዝእትየ፡ ናዝዝኒ፡ ኃዘንየ፡ ኵሎ፡ ይትከሃለኒ፡ ወአልቦ፡ ዘይሰአነኪ። ወሖረት፡ እግዝእትነ፡...",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -7732,6 +8255,7 @@ const MIRACLES_OF_MARY = [
     "title": "The Apostles Abandon Mary's Body I",
     "incipit": "ወበአሐቲ፡ ዕለት፡ ተጋብኡ፡ ሐዋርያት፡ እምኵለሄ፡ መካናት፡ ለገኒዘ፡ ሥጋሃ፡ ለእግዝእትነ፡ ማርያም፡ ወገነዝዋ፡ በልብሰ፡ ገርዜን፡ ወአንበርዋ፡ ላዕለ፡ ዐራት፡",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -7744,6 +8268,7 @@ const MIRACLES_OF_MARY = [
     "title": "Arabic: The beautiful daughter of the Frankish king is saved from her wicked stepmother by the Virgin Mary",
     "incipit": "",
     "manuscript_count": 2,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -7756,6 +8281,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Ledata la-Maryam??: OldA: Part 02: Gestation: While still in the womb of her mother Saint Anne, the Virgin Mary heals the daughter of Arsaban (likely a dup of ID 293, not a single attestion in database for 316-B)",
     "incipit": "",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -7768,6 +8294,7 @@ const MIRACLES_OF_MARY = [
     "title": "Hagara Maryam's church needs to remove a tree for its construction but they can't cut it down and so it falls down for them during the night (composed by Ras Semʿon)",
     "incipit": "ስምዑ፡ ዘገብረት፡ ተአምረ፡ በአሐዱ፡ ዘመን፡ ይኃሥሡ፡ ላቲ፡ ጐንደ፡ ዕፀው፡ ገዚፈ፡ ለምግባረ፡ ድፍነት",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Getatchew Haile",
@@ -7780,6 +8307,7 @@ const MIRACLES_OF_MARY = [
     "title": "Hagara Maryam's church needs a stone for its construction and one is found through the help of a vision (composed by Ras Semʿon)",
     "incipit": "አጽምኡ፡ ሕዝብየ፡ ዘገብረት፡ ተአምረ፡ አመ፡ ትትኃነጽ፡ ሀገረ፡ ማርያም፡ እንዘ፡ ይቴከዙ፡ ለኃሢሠ፡ እብን፡ በብዙኅ፡ ፍና",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Getatchew Haile",
@@ -7792,6 +8320,7 @@ const MIRACLES_OF_MARY = [
     "title": "Hagara Maryam's church needs a tree for its pillar but when they cut it down it falls over a cliff,and yet the tree is recovered undamaged (composed by Ras Semʿon)",
     "incipit": "ስምዑ፡ ምእመናን፡ ዘአርአየት፡ ዕፁበ፡ በውስተ፡ ባዕድ፡ ሀገር። ወተንሥአ፡ ስምዖን፡ ፍቁራ፡ ለኃሢሠ፡ ዓምደ፡ ጽሕድ፡ ከመ፡ ይግበር፡ ሰዊቀ፡ ስቅላሃ፡ ለሀገረ፡ ማርያም",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Allie V. Mangel",
@@ -7804,6 +8333,7 @@ const MIRACLES_OF_MARY = [
     "title": "King Zara Yaqob (Zarʾa Yaʿeqob), the 14th c. Ethiopian monarch, and the vision of Malka Sedeq about how Zara Yaqob (Zarʾa Yaʿeqob) was chosen to reign",
     "incipit": "ስምዑ፡ አኀውየ፡ ዘገብረት፡ እግዝእትነ፡ ማርያም። ወጊዜ፡ መንፈቀ፡ ሌሊት፡ እንዘ፡ ሀለውኩ፡ በንዋም፡ ወሶቤሃ፡ ሰማዕኩ፡ ቃለ፡ ወደንገፅኩ፡ ወይቤለኒ፡ ነጽር፡ ወኢትፍራህ። ወአርአየኒ፡ ውእቱ፡ ብእሲ፡ ብሩህ፡ ማዕተበ፡ መስቀል፡ ዘውስተ፡ እዴሁ",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Getatchew Haile",
@@ -7816,6 +8346,7 @@ const MIRACLES_OF_MARY = [
     "title": "Makana Iyyasus Church is where a man with paralysis is cured and he establishes a monastery at the tomb of Abba Anbass and lives there.",
     "incipit": "ወሀሎ፡ አሐዱ፡ መፃጕዕ፡ ድዉይ፡ ወእሱር፡ ኵለንታሁ፡ ወርእሱ፡ ውዱድ፡ ምስለ፡ ብረኪሁ፡ ወኢርእየ፡ በአዕይንቲሁ",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Getatchew Haile",
@@ -7828,6 +8359,7 @@ const MIRACLES_OF_MARY = [
     "title": "King Zara Yaqob (Zarʾa Yaʿeqob), the 14th c. Ethiopian monarch, and the vision of Malka Sedeq in which the Virgin Mary informs him that he will receive favor from the king",
     "incipit": "ወሀሎ፡ አሐዱ፡ ብእሲ፡ ካህን፡ ወድንግል፡ ወመነኮስ፡ እምንእሱ፡ ወትሑተ፡ ልብ፡ ወየዋህ፡ ዘአልቦ፡ ጽልሑተ፡ ወምሁረ፡ መጻሕፍት፡ ወፈካሬ፡ ሐዲስ፡ ወብሉይ",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Getatchew Haile",
@@ -7840,6 +8372,7 @@ const MIRACLES_OF_MARY = [
     "title": "King Zara Yaqob (Zarʾa Yaʿeqob), the 14th c. Ethiopian monarch, and the vision of the blessed and the damned in which the Stephanites (Ǝstifanites/Estifanites) are revealed to be among the damned",
     "incipit": "ስምዑኬ፡ ኦሕዝበ፡ መሀይምናን፡ እለ፡ በክርስቶስ፡ ምእምናን፡ ዘትገብር፡ መንክራተ፡ እግዝእትነ፡ ለእለ፡ ያፈቅርዋ፡ ወትጸግዎሙ፡ ሠናያተ፡ ኀበ፡ ዝዓለም፡ ወበዘይመጽእ",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Getatchew Haile",
@@ -7852,6 +8385,7 @@ const MIRACLES_OF_MARY = [
     "title": "Saint Michael is ordered by the Virgin Mary to pick up the Body of Christ, which fell to the ground unnoticed during communion",
     "incipit": "ወሀለወት፡ ቤተ፡ ክርስቲያን፡ በአሐዱ፡ ደብር፡ ዘመነኮሳት፡ ወሀሎ፡ ህየ፡ ሥዕለ፡ እግዝእትነ፡ ማርያም፡ ምስለ፡ ፍቁር፡ ወልዳ፡ ወሥዕለ፡ ሚካኤል፡ ወገብርኤል፡ ኅቡረ፡ በላዕለ፡ ምጽዋዕ",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Getatchew Haile",
@@ -7864,6 +8398,7 @@ const MIRACLES_OF_MARY = [
     "title": "A Christian of Nubia (also called Sire or Taʾaka Maryam) proves the worthiness of Christianity with fire and converts a Muslim.",
     "incipit": "ወእንዘ፡ ጉቡኣን፡ አኃው፡ በሲራ፡ ዘይብልዎ፡ ኖበ፡ ቀዳሚ፡ ስማ፡ ወካዕበ፡ ተሰይመት፡ ታእከ፡ ማርያም፡ ወሀለዉ፡ ህየ፡ ብዙኃን፡ መነኮሳት፡ ወየአክሉ፡ ፻፡ ወ፴፡ ወሕዝብሰ፡ ብዙኃን",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -7876,6 +8411,7 @@ const MIRACLES_OF_MARY = [
     "title": "A pious woman was asked by the Virgin Maryr to go to a certain town and teach the people the observance of her five feast days, from the 21st to the 25th of Genbot.",
     "incipit": "ወሀለወት፡ አሐቲ፡ ብእሲት፡ ዘታፈቅራ፡ ለእግዝእትነ፡ በተአምኖ፡ ሠናይ፡ ወአሐተ፡ ዕለተ፡ አስተርአየታ፡ እግዝእትነ፡ ማርያም፡ ለይእቲ፡ ብእሲት፡ ወትቤላ፡ ተንሥኢ፡ እምህየ፡ ወሑሪ፡ ምሕዋረ፡ አሐቲ፡ ዕለት፡ ወዜነዊ፡ ለሰብአ፡ ሀገር፡ ዘእነግረኪ፡ አነ",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -7888,6 +8424,7 @@ const MIRACLES_OF_MARY = [
     "title": "A man prays for his sick son before the icon of the Virgin Mary; she sends Saint Qirqos, then comes herself with Saint George to cure him.",
     "incipit": "ወሀሎ፡ አሐዱ፡ ብእሲ፡ ሕሙም፡ ውስተ፡ ሀገር፡ ወጸለየ፡ ቅድመ፡ ሥዕላ፡ ለእግዝእትነ፡ በውዑይ፡ ልብ፡ ወበብዙኅ፡ ብካይ",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -7900,6 +8437,7 @@ const MIRACLES_OF_MARY = [
     "title": "Homily on the Annunciation and the Incarnation: Part 8: Saint Elizabeth.",
     "incipit": "ወበይእቲ፡ ዕለት፡ ብዙኃ፡ ፍቅር፡ ወኃይል፡ ወምሕረት፡ ወብዕል፡ ጸጋሁ፡ ለእግዚአብሔር፡ ዘመንገለ፡ ሰብእ",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Amsalu Tefera",
@@ -7912,6 +8450,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Ledata la-Maryam??: OldF:Life: John the Baptist and his mourning of his mother Elizabeth",
     "incipit": "ወሀሎ፡ ቅዱስ፡ ዮሐንስ፡ መጥምቅ፡ እንዘ፡ ገዳመ፡ አጐየየቶ፡ እሙ፡ ኤልሳቤጥ፡ ውስተ፡ ገዳም፡ አመ፡ ቀተሎሙ፡ ሄሮድስ፡ ለሕፃናት",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Amsalu Tefera",
@@ -7924,6 +8463,7 @@ const MIRACLES_OF_MARY = [
     "title": "Saint Samuel of Waldebba (Samuʾel), the 15th c. Ethiopian saint, and the blind woman brought by her son to the saint's tomb",
     "incipit": "ወመጽአት፡ ብእሲት፡ ዕውርት፡ እምርሑቅ፡ ብሔር፡ እንዘ፡ ይመርሓ፡ ወልዳ፡ ወበጽሐት፡ ኀበ፡ ምኔተ፡ ብፁዓዊ፡ ዕንቈ፡ ጾም፡ አቡነ፡ ሳሙኤል",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -7936,6 +8476,7 @@ const MIRACLES_OF_MARY = [
     "title": "Satan came to some monks and entrusted a child to them; the monks ate the child.",
     "incipit": "ወሀሎ፡ አሐዱ፡ ደብር፡ ዘመነኮሳት፡ ሠናያን፡ እሙንቱ። ወቀንዓ፡ ላዕሌሆሙ፡ ሰይጣን፡ ወመጽአ፡ ተመሲሎ፡ አሐዱ፡ ሕፃን፡ ወአሐዱ፡ አረጋዊ፡ ወይቤሎሙ፡ ለመነኮሳት፡ አንብሩ፡ ሊተ፡ ወልድየ",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -7948,6 +8489,7 @@ const MIRACLES_OF_MARY = [
     "title": "Paul, a monk, who was attacked by bandits.",
     "incipit": "ወሀሎ፡ አሐዱ፡ መነኮስ፡ ዘስሙ፡ ጳውሎስ፡ ውስተ፡ ቤተ፡ ክርስቲያን፡ አሐቲ፡ ዘእግዝእትነ፡…. ብድው፡ ይእቲ፡ ወብእሲት፡ አረጋዊት፡ ዘትገብር፡ ሲሲቱ፡ ለውእቱ፡ መነኮስ፡ ወዘእንበሌሁሰ፡ አልቦ፡ ባዕድ፡ እመሂ፡ ዓቢይ፡ አው፡ ንዑስ",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -7960,6 +8502,7 @@ const MIRACLES_OF_MARY = [
     "title": "A Muslim herder starts to build a shrine to the Virgin Mary on good land; when he dies, she saves his soul from the angels of darkness.",
     "incipit": "ወሀሎ ፤ ፩አረማዊ ፡ ኖሳዌ ፡ አልሕምስ ፡ ወሶበ ፡ ወፈረ ፡ ወሖረ ፡ ውስተ ፡ ገዳም ፡ ምስለ ፡ አልሕምት ፡ ወረከበ ፡ ምድረ ፡ ሠናየ ፡ ዘያስተፌሥሕ ፡ ልበ ፡ ሰብእ ፡ ወይቤ ፡ ምስጋዶሙ ፡ ለክርስቲያን ፡ በውእቱ ፡ መካን ፡ ይሤኒ ፡ ወኃረየ ፡ ምድረ ፡ ሠናየ ፡ ወፈቀደ",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -7972,6 +8515,7 @@ const MIRACLES_OF_MARY = [
     "title": "A man, who had been refused instruction on, was taught how to write by the Virgin Mary",
     "incipit": "ተብህለ፡ ከመ፡ ሀሎ፡ አሐዱ፡ ብእሲ፡ ዘፈቀደ፡ ይትመሐር፡ ጽሒፈ፡ መጽሐፍ፡ ወአበዮ፡ ወኢተከሠተ፡ ሎቱ። ወነበረ፡ ብዙኀ፡ መዋዕለ፡ እንዘ፡ የኃዝን",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -7984,6 +8528,7 @@ const MIRACLES_OF_MARY = [
     "title": "Zakkareyas, an old poor man from the region of Rafa, is locked out of the place where his food was kept by the custodian of the church",
     "incipit": "ወሀሎ፡ አሐዱ፡ ቀሲስ፡ በደወለ፡ ራፋ፡ ዘስሙ፡ ዘካርያስ፡ ዘያፈቅራ፡ ለእግዝእትነ፡…. ወኢይወፅእ፡ እምቤተ፡ ክርስቲያና፡ መዓልተ፡ ወሌሊተ፡ ወየዓጥን፡ ፯፡ ጊዜያተ። ወውእቱሂ፡ አረጋዊ፡ ወነዳይ",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -7996,6 +8541,7 @@ const MIRACLES_OF_MARY = [
     "title": "Abbot Lebdeyos in the land of the Europeans speaks to the people on the feast of the Virgin Mary when they ask him to distribute Communion.",
     "incipit": "ወሀሎ፡ አሐዱ፡ አበ፡ ምኔት፡ በደወለ፡ አፍርንጊ፡ ዘስሙ፡ ልብድዮስ፡ ብእሲ፡ ጻቅድ፡ ወየዋህ፡ እስመ፡ ውእቱ፡ አረጋዊ፡ በኵሉ፡ ልቡ፡ ወበኵሉ፡ ኃይሉ፡ ወያፈቅራ፡ ለእግዝእትነ",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -8008,6 +8554,7 @@ const MIRACLES_OF_MARY = [
     "title": "Bishop Bakkimos of Constantinople, to whom the Virgin Mary appeared concerning Lebaneya, who was sterile.",
     "incipit": "ወሀሎ፡ አሐዱ፡ ኤጲስ፡ ቆጶስ፡ በሀገረ፡ ቍስጥንጥንያ፡ ዘስሙ፡ በኪሞስ፡ ወይገብር፡ በዓሎ፡ ለቅዱስ፡ ሚካኤል፡ ወያፈቅራ፡ ለእግዝእትነ፡…. ወይትአመና፡ በኵሉ፡ መዋዕለ፡ ሕይወቱ፡ ወኢያፀርዕ፡ ዘክሮተ፡ ስማ፡ ወተዓውቀ፡ ዜና፡ ጽድቁ፡ በኵሉ፡ ደወለ፡ ቍስጥንጥንያ። ወሰምዓት፡ ልባንያ፡ ብእሲተ፡ መኪዶር፡ መኰንን",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -8020,6 +8567,7 @@ const MIRACLES_OF_MARY = [
     "title": "Angels worship the Eucharist, the Cross, and the Virgin Mary.",
     "incipit": "ከመ፡ ይትአኰት፡ ወይሴባሕ፡ ስማ፡ በአፈ፡ መላእክት፡ ወሰብእ፡ ለእግዝእትነ፡…. ወእምድኅረ፡ ተወልደ፡ ኢየሱስ፡ እምማርያም፡…. በደሙ፡ ቀደሳ፡ ለቅድስት፡ ቤተ፡ ክርስቲያን፡ ወበዕፀ፡ መስቀሉ፡ ዓታባ፡ ከመ፡ ይትቀደስ፡ ስመ፡ ዚአሃ፡ ለእግዝእትነ፡….",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -8032,6 +8580,7 @@ const MIRACLES_OF_MARY = [
     "title": "Abbot Tasfa Mahebar from Caesarea, who was given a cloud as a chariot and went to visit Abba Zakkareyas in Scete.",
     "incipit": "ወሀሎ፡ አሐዱ፡ አበ፡ ምኔት፡ በሀገረ፡ ቂሳርያ፡ ዘስሙ፡ ተስፋ፡ ማኅበር፡ ዘያፈቅራ፡ ለእግዝእትነ፡…. ወይዌድሶ፡ ፍጹመ፡ ለእግዚአብሔር። ወወሀበቶ፡ ደመና፡ ከመ፡ ይኵኖ፡ ሠረገላ፡ ወከመ፡ ይሑር፡ ኀበ፡ ፈቀደ",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -8044,6 +8593,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Ledata la-Maryam??: OldH: Gestation: While still in the womb of her mother Saint Anne, the Virgin Mary raises Doyq, the son of Taliq, from the dead",
     "incipit": "ተአምር፡ ዘገብረቶ፡ እግዝእትነ፡ ማርያም፡ እንዘ፡ ሀለወት፡ ውስተ፡ ማኅፀና፡ ለሐና፡ ቅድስት። ወሖረት፡ ሐና፡ ኀበ፡ ቤተ፡ ዶይቅ፡ ወልደ፡ ጣሊቅ፡ እስመ፡ እኅወ፡ አቡሃ፡ ውእቱ። ወሞተ፡ ዶይቅ፡ ወልደ፡ ጣሊቅ፡ በውእቱ፡ አዝማን",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -8056,6 +8606,7 @@ const MIRACLES_OF_MARY = [
     "title": "A young servant of a monk gets lost among Muslims but is restored safe and sound when the monk cries to the Virgin Mary.",
     "incipit": "ወሀሎ፡ አሐዱ፡ መነኮስ፡ በውስተ፡ አሐቲ፡ ደብር፡ ወጠፍአ፡ ገብሩ፡ ንዑስ፡ ወልድ፡ ውስተ፡ ብሔረ፡ ተንባሊት። ወሶበ፡ አእመረ፡ ውእቱ፡ መነኮስ፡ ከልሐ፡ ኀበ፡ እግዚአብሔር፡ ወኀበ፡ እግዝእትነ",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -8068,6 +8619,7 @@ const MIRACLES_OF_MARY = [
     "title": "Homily on the Annunciation (dup? only in one mss EMML 683, not available yet)",
     "incipit": "ኀደረ፡ እግዚእ፡ ውስተ፡ ከርሠ፡ ድንግል፡ ፱፡ አውራኃ፡ ወ፭፡ ዕለተ፡ ከመ፡ ሰብእ፡ ልህቀ፡ ውስተ፡ ማኅፀን",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Getatchew Haile",
@@ -8080,6 +8632,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Nagara Maryam??: OldQ: Holy Family in Lebanon: Part 4: When the Virgin Mary departs from the city of Itenin, its people weep.",
     "incipit": "ወተንሥአት፡ እግዝእትነ፡ ማርያም፡ ወኃለፈት፡ እምህየ። ወመጽአት፡ ጊዜ፡ ነግህ፡ ወተለውዋ፡ ዕድ፡ ወአንስት፡ እንዘ፡ ይበክዋ፡ ወየሐዝኑ",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Rowan Williams",
@@ -8092,6 +8645,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Ledata la-Maryam??: OldJ: Life: Part 01: Joachim and Anne, Mary's parents, get married and prophecies are made concerning the birth of the Virgin Mary at the ceremony",
     "incipit": "ንንግርክሙ፡ አሕዛብ፡ መፍቀርያነ፡ እግዚአብሔር፡ እለ፡ ተጸዋዕክሙ፡ በመሐሪ። ወበውእቱ፡ መዋዕል፡ ሀሎ፡ አሐዱ፡ ብእሲ፡ እምዘመደ፡ ይሁዳ፡ ዘስሙ፡ ኢያቄም፡ ቀለዮጳ፡ ዘእምዘርአ፡ ዳዊት",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Getatchew Haile",
@@ -8104,6 +8658,7 @@ const MIRACLES_OF_MARY = [
     "title": "Saint Thecla Goes to Alexandria",
     "incipit": "ወእምድኅረ፡ ዝንቱ፡ በሳኒታ፡ በጽሑ፡ ኀበ፡ ሀገር፡ እንተ፡ ስማ፡ ጣዋ ፨ ወትቤሎ፡ እግዝእትነ፡ ማርያም፡ ለመልአክ፡ ገብርኤል፡ አቁምኬ፡ ለሐመር፡ ዝየ፡ እስመ፡ አነ፡ እፈቅድ፡ እዕርግ፡ ውስተ፡ ዝንቱ፡ መካን ፨ ወሶበ፡ አቆምዋ፡ ለሐመር፡ ተንሥኡ፡ ሶቤሃ፡ ወወጽኡ፡ ውስተ፡ ሀገር፡ ወነሥኡ፡ ቴክላሃ፡ ምስሌሆሙ፡ ወበጽሑ፡ ውስተ፡ ይእቲ፡ መኰንነ፡ ሀገር ፨",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Elliot Galvis",
@@ -8116,6 +8671,7 @@ const MIRACLES_OF_MARY = [
     "title": "Dabra Zamaddo's church and taking a grotto from a poor widow in order to build it in honor of the Virgin Mary",
     "incipit": "ስምዑ፡ ዘንተ፡ አበዊነ፡ ወአኃዊነ፡ ንነግረክሙ፡ ዜና፡ ተአምሪሃ፡ ለእግዝእትነ፡ ማርያም፡ ዘገብረት፡ በደብረ፡ ዘመዶ፡ በውስተ፡ ሐይመተ፡ እብን። ወነበረት፡ ውስቴታ፡ አሐቲ፡ ብእሲት፡ ዘምስ[ለ]፡ ብዙኅ፡ ንዋያ፡ ወብዙኃን፡ ውሉዳ፡ ዘሞተ፡ ምታ። ወስማ፡ ለይእቲ፡ ብእሲት፡ ዘመደ፡ ማርያም። ወሀገራሰ፡ ዘእግዝእትነ፡ ዘወሀባ፡ ወልዳ፡ እግዚእነ፡ ብሂሎ፡ ትኩንኪ፡ ዐሥራተኪ።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -8128,6 +8684,7 @@ const MIRACLES_OF_MARY = [
     "title": "Dabra Zamaddo's Abbot Abuna Yohannǝs is revealed to be a saint as a mere child",
     "incipit": "ስምዑ፡ እነግርክሙ፡ ዘገብረት፡ ሎቱ፡ እግዝእትነ፡ ማርያም፡ ለአቡነ፡ ዮሐንስ፡ እምድኅረ፡ ጸውዐቶ፡ እምነ፡ ሀገሩ፡ ወተራከበቶ፡ በፍኖት፡ ተመሲላ፡ ነዳይተ፡ ወአስተራከበቶ፡ ካዕበ፡ ምስለ፡ አቡነ፡ ተጠምቀ፡ መድኅን፡ ዘፈከረ፡ ሎቱ፡ ኵሎ። ወእምድኅረ፡ ሤመቶ፡ ኖላዌ፡ አባግዒሃ፡ ወሶበ፡ ኮኖ፡ ፪ዓመተ፡ እምድኅረ፡ ተሠይመ፡ ወአመ፡ በጽሐ፡ ጊዜሁ፡ ዘትቤሎ፡ በአፈ፡ ተጠምቀ፡ መድኅን፡ ድኅረ፡ ተሐውር፡ ኢየሩሳሌም፡ ሆከቶ፡ ጸጋ፡ ወአስተናሥአቶ፡ ወኀሠሠ፡ ዘይስእል፡ ኀበ፡ እግዚአብሔር፡ ከመ፡ ያርትዕ፡ [ሎቱ፡] ፍኖቶ፡ ወኀበ፡ እግዝእትነ፡ ማርያም፡ ከመ፡ ትዕቀቦ፡ እምኵሉ፡ እኩይ።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Elliot Galvis",
@@ -8140,6 +8697,7 @@ const MIRACLES_OF_MARY = [
     "title": "Dabra Zamaddo's church and the complaint of the icon for falling on the ground.",
     "incipit": "ነገር፡ ዘገብረት፡ ሎቱ፡ እግዝእትነ፡ ማርያም፡ ወተናገረቶ፡ ለአቡነ፡ ዮሐንስ፡ እምድኅረ፡ ፈጸመ፡ ሐኒፀ፡ ቤታ፡ ወአንበረ፡ ሥዕላ፡ ውስቴቱ፡ ላዕለ፡ መንበር። ወአሐተ፡ ዕለተ፡ ተደግፈት፡ ውስተ፡ ምድር፡ እንዘ፡ ኢየአምሩ፡ ሰብአ፡ ቤታ።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -8152,6 +8710,7 @@ const MIRACLES_OF_MARY = [
     "title": "Dabra Zamaddo's Abbot Abuna Yohannǝs and how the monks revolted against him",
     "incipit": "ተአምር፡ ዘገብረት፡ ሎቱ፡ ለአቡነ፡ ዮሐንስ፡ ሶበ፡ ተዐበዩ፡ ሰብአ፡ ደብር፡ ወአስተሐቀሩ፡ ቃሎ፡ ተሀውከ፡ ወሐዘነ፡ በልቡናሁ፡ ጥቀ፡ በእንተ፡ ሥርዓት፡ በዘኮነ፡ ከዊኖ፡ ሶበ፡ ይምዕዶሙ፡ ወይኤዝዞሙ፡ ይትዐደዉ፡ ቃሎ። አሜሃ፡ የሐዝን፡ ወይቴክዝ።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -8164,6 +8723,7 @@ const MIRACLES_OF_MARY = [
     "title": "Dabra Zamaddo's people evade the forces of iman Ahmad Granyny",
     "incipit": "ወሶበ፡ ኮነ፡ ፳ወ፩፡ዓመተ፡ እምድኅረ፡ አዕረፈ፡ አቡነ፡ ዮሐንስ፡ በጽሐ፡ ትንቢቱ፡ ወመጽኡ፡ አረማውያን፡ ወጐዩ፡ ሕዝበ፡ ክርስቲያን። ወበጺሖሙ፡ አረማውያን፡ ኀበ፡ ደብረ፡ ዘመዶ፡ ወበዊኦሙ፡ ውስተ፡ ቅጽራ፡ ነጸርዎ፡ ለማይ፡ ለዘይወርድ፡ እመልዕልተ፡ ጸድፍ፡ መንገለ፡ ጸፍጸፈ፡ ቤተ፡ ክርስቲያን። ወእምታሕቴሁ፡ ቀርቡ፡ አረማውያን፡ ኀበ፡ ማይ፡ ፈቂዶሙ፡ ለሰትይ። ወጐየ፡ ማይ፡ በማእከለ፡ ጸድፍ፡ መንገለ፡ ቤተ፡ ልሔም። ወተቃደምዎ፡ ውስተ፡ ቤተ፡ ልሔም።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -8176,6 +8736,7 @@ const MIRACLES_OF_MARY = [
     "title": "Dabra Zamaddo's icon sǝʿǝla Adhǝno is exiled to Ruha (Lalibela?) in Ethiopia",
     "incipit": "ወሶበ፡ ኮነ፡ መዋዕለ፡ ስደት፡ ወሖሩ፡ ሰብአ፡ ደብር፡ እንዘ፡ ይጸውሩ፡ እመጻ ሕፍቲሃ፡ ሕዳጠ፡ ዘተክህሎሙ፡ ለጸዊር፡ ወሖሩ፡ ውስተ፡ ካልእ፡ ሀገር፡ ወኢተአ ምረ፡ ክዋኔሆሙ። ወለሥዕላሰ፡ ኀደግዋ፡ በሀገረ፡ ሩሐ፡ ባሕቲታ። ወኢተርፈ፡ ሰብእ፡ ዘየዐቅባ። ወለመጻሕፍትሰ፡ ብዙኃን፡ ወክቡዳን፡ ኀደግዎሙ፡ በአፈ፡ ጾላዕት፡ አፍአ፡ እምቤተ፡ መቅደስ፡ እንዘ፡ ይበውኡ፡ ውስተ፡ ቤተ፡ መቅደስ፡ ዘይተርፍ፡ በፀጋም።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Jeremy Brown & Dawit Muluneh",
@@ -8188,6 +8749,7 @@ const MIRACLES_OF_MARY = [
     "title": "Dabra Zamaddo's icon sǝʿǝla Adhǝno is recovered.",
     "incipit": "ስምዑ፡ ንነግረክሙ፡ ተአምር፡ ዘገብረት፡ እግዝእትነ፡ ማርያም፡ ሶበ፡ ፈቀደት፡ ከመ፡ ትሚጣ፡ ውስተ፡ ደብረ፡ ዘመዶ፡ ለሥዕላ፡ እስመ፡ ኀደግዋ፡ ውስተ፡ ሀገረ፡ ሩሐ። ዜነወቶ፡ ለ፩መነኮስ፡ መፍቀሬ፡ እግዚአብሔር፡ ወመፍቀሬ፡ ዚአሃ፡ እንዘ፡ ሀሎ፡ ውስተ፡ ደብረ፡ አዘዞ፡ መጺኦ፡ እምደብረ፡ ሊባኖስ። ስሙ፡ ለውእቱ፡ መነኮስ፡ ሀብተ፡ ሥላሴ። ወትቤሎ፡ ሰደኒ፡ ውስተ፡ ቤትየ፡ እስመ፡ ሀለውኩ፡ ውስተ፡ ደብረ፡ ላሊበላ፡ እምአመ፡ ወፃእኩ፡ እምሀገርየ።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Elliot Galvis",
@@ -8200,6 +8762,7 @@ const MIRACLES_OF_MARY = [
     "title": "Dabra Zamaddo's icon sǝʿǝla Adhǝno is stolen and returned",
     "incipit": "ተአምር፡ ዘገብረት፡ እግዝእትነ፡ ማርያም፡ በደብረ፡ ዘመዶ፡ እምድኅረ፡ ተመይጠት፡ ሥዕለ፡ አድኅኖ፡ እምኀበ፡ ተሰደት። ወሶበ፡ ሰምዑ፡ ዜናሃ፡ ሰብአ፡ ትእይንት፡ ወሰብአ፡ ቤተ፡ መንግሥት፡ ከመ፡ ሀለወት፡ ሥዕለ፡ አድኅኖ፡ በደብረ፡ ዘመዶ፡ ዘትገብር፡ መንክረ፡ ወመድምም፡ ለሰሚዖቱ፡ ወሥነ፡ ላሕያኒ፡ መደንግፅ፡ ወመፍርህ፡ ለርእዮቱ።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -8212,6 +8775,7 @@ const MIRACLES_OF_MARY = [
     "title": "Dabra Zamaddo's Abbot Abuna Yohannǝs and how he opposed the oppressive ruler of Danagaz",
     "incipit": "ተአምር፡ ዘገብረት፡ እግዝእትነ፡ ማርያም፡ በመዋዕሊሁ፡ ለአቡነ፡ ዮሐንስ፡ አመ፡ በዐሉ፡ ለአቡነ፡ በርተሎሜዎስ፡ መምህረ፡ ዘመዶ። ሶበ፡ ተጋብኡ፡ ሰብእ፡ በዕለተ፡ ተዝካሩ፡ ለገቢረ፡ በዐል፡ እስመ፡ ተሠርዐ፡ ቅድመ፡ ከመ፡ ይትጋብኡ፡ ሰብእ፡ ለገቢረ፡ በዐል፡ እለ፡ ሀለዉ፡ ታሕተ፡ ምኵናኑ፡ ለአቡነ፡ በርተሎሜዎስ፡ ወእለ፡ ተሰምዩ፡ በሢመተ፡ ዚአሁ፡ ወእም፬ ማዕዘኒሃ፡ ለምድር፡ ይትጋብኡ፡ ሰብእ፡ ከመ፡ ይሳተፉ፡ እምበረከታ፡ ለእግዝእትነ፡ ማርያም፡ ወላዲተ፡ አምላክ፡ እስመ፡ ይነጽሩ፡ ሥዕላ፡ በዕለተ፡ ዕረፍቱ፡ ለአቡነ፡ …",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -8224,6 +8788,7 @@ const MIRACLES_OF_MARY = [
     "title": "Dabra Zamaddo's three monks who thought of leaving the monastery but survive for months on the spring of honey milk",
     "incipit": "ተአምር፡ ዘአስተርአየት፡ እግዝእትነ፡ ማርያም፡ በውእቱ፡ ማይ፡ ዘአንቅዐቶ፡ እምታሕተ፡ አገሪሁ፡ ለአቡነ፡ በርተሎሜዎስ። አመ፡ አንቅዐቶ፡ ቀዳሚ፡ ኮነ፡ ሕብሩ፡ ጸዐዳ፡ ወጣዕሙኒ፡ ኮነ፡ ከመ፡ ሐሊብ፡ ወሶበ፡ ሰአላ፡ አቡነ፡ በርተሎሜዎስ፡ ወለጠት፡ አርአያሁ፡ ወረሰየቶ፡ ከመ፡ ማይ። ወእምድኅረ፡ አዕረፈ፡ አቡነ፡ በርተሎሜዎስ፡ እምእለ፡ ተጋብኡ፡ ሰብእ፡ በምክንያተ፡ ጽሙና፡ ወእለ፡ ተወከ ሉ፡ በእግዝእትነ፡ ማርያም፡ ወላዲተ፡ አምላክ፡ ወእለ፡ ተወልዱ፡ እምአቡነ፡ በርተሎሜዎስ፡ በቆብዕ፡ ነበሩ፡ ፫እደው፡ መነኮሳት፡ በተአኅዎ፡ ወበሐብለ፡ ፍቅር።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -8236,6 +8801,7 @@ const MIRACLES_OF_MARY = [
     "title": "Dabra Zamaddo's church and the three huge boulders that ripped off the cliff and destroyed the roof and walls of the church kitchen",
     "incipit": "ተአምር፡ ዘገብረት፡ … በደብረ፡ ዘመዶ። ወሀሎ፡ ደብር፡ መልዕልተ፡ ቤታ፡ ለእግዝእትነ፡ ማርያም። ወተንሥኡ፡ ፫አእባን፡ ዐቢያን፡ ወተገንጰሉ፡ ወወረዱ፡ መንገለ፡ ቤታ፡ እንዘ፡ ይታለዉ። ወቀዳማዊ፡ ወረደ፡ በፀጋመ፡ ቤተ፡ ልሔም፡ እንዘ፡ ኢያማስን፡ ምንተኒ።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -8248,6 +8814,7 @@ const MIRACLES_OF_MARY = [
     "title": "Dabra Zamaddo's church's dangerous cliff side entrance is improved by the abbot and the Virgin Mary",
     "incipit": "ስምዑ፡ ንነግረክሙ፡ አኀዊነ፡ ተአምረ፡ ዘገብረት፡ ሎቱ፡ እግዝእትነ፡ ማርያም፡ ለአቡነ፡ ጻማ፡ ኢየሱስ፡ መምህረ፡ ዘመዶ፡ በይነ፡ ቅድስናሁ፡ ወበይነ፡ አፍቅሮተ፡ ዚአሃ፡ ወበእንተ፡ ተቀንዮቱ፡ ለእግዚአብሔር፡ በጾም፡ ወበጸሎት፡ ወበሰጊድ፡ ወበሀፍ፡ ወመፍቀሬ፡ ሰብእ፡ እስመ፡ ትሑት፡ ውእቱ። በእንተዝ፡ ገብረት፡ ሎቱ፡ ተአምረ። ወለይእቲ፡ ቤተ፡ ክርስቲያን፡ ነበረ፡ ሙባኣ፡ ጸድፈ። ወይበውኡ፡ ሰብእ፡ ውስተ፡ ቤተ፡ መቅ[ደ]ስ፡ በብዙኅ፡ ጻዕቅ፡ ወጻ ማ፡ ይበውኡ፡ ወይወፅኡ፡ እንዘ፡ ይወድቁ፡ ወይትነሥኡ። መንፈቆሙ፡ በቤተ፡ አቡነ፡ ተክለ፡ ሃይማኖት፡ ይበውኡ።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku",
@@ -8264,6 +8831,7 @@ const MIRACLES_OF_MARY = [
     "title": "Dabra Zamaddo's Abbot Abuna tsama Iyyasus averts a raid by the Oromo people with prayers to the Virgin Mary",
     "incipit": "ካልእ፡ ተአምር፡ ዘገብረት፡ እግዝእትነ፡ ማርያም፡ ዘበዕብራይስጢ፡ ማርያም፡ ለአቡነ፡ ፃማ፡ ኢየሱስ። ሶበ፡ ተማከሩ፡ አረሚ፡ ወተአደሙ፡ እምብዙኅ፡ ሀገር፡ ወተአየኑ፡ በምድረ፡ ዋጃ፡ ከመ፡ ያመዝብርዋ፡ ለሀገረ፡ ክርስቲያን፡ ለምድረ፡ ዋካት፡ ወጠጠራ፡ ለምድረ፡ በረሐ፡ ወመቅደላ። በእሉ፡ አህጉራት፡ ተማኪሮሙ፡ ተአየኑ፡ እስመ፡ ልማድ፡ ቦሙ፡ ለአረሚ፡ ሶበ፡ ይነግሡ፡ ያመዘብሩ፡ አህጉረ። አሜሃኒ፡ እስመ፡ ነግሠ፡ ዘይብልዎ፡ ዳዩ፡ ዳባ፡ ወልማዶሙኒ፡ ዘያመዘብርዎ፡ ወይጻብእዎ፡ በወርኀ፡ ኅዳር፡ በበዐሉ፡ ለቅዱስ፡ ሚካኤል፡ ሊቀ፡ መላእክት። አሜሃ፡ ያመዘብሩ።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -8276,6 +8844,7 @@ const MIRACLES_OF_MARY = [
     "title": "Dabra Zamaddo's Abbot Abuna Yohannǝs persuades a husband to give up his second wife and be reconciled to his first",
     "incipit": "ስምዑ፡ አኃዊነ፡ ንነግረክሙ፡ ተአምር፡ ዘገብረት፡ እግዝእትነ፡ ማርያም፡ ወላዲተ፡ አምላክ፡ ለአቡነ፡ ዮሐንስ። ወነበረ፡ ፩ብእሲ፡ በመዋዕሊሁ፡ ለቡነ፡ ዮሐንስ፡ በምድረ፡ መልኮ፡ አምባ። አመ፡ ተበአሰ፡ ምስለ፡ ብእሲቱ፡ ለአከት፡ ብእሲቱ፡ ኀበ፡ አቡነ፡ ዮሐንስ፡ መምህረ፡ ዘመዶ። ለአከት፡ እንዘ፡ ትብል፡ እፎ፡ እከውን፡ እምዝንቱ፡ ብእሲየ። እስመ፡ ብዙኀ፡ አሕዘነኒ፡ ወጥቀ፡ አተከዘኒ። እምፃእኑ፡ ኀቤከ፡ ወእኅድጎ፡ ይትርፍ። እስመ፡ አብአ፡ ብእሲተ፡ በላዕሌየ።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Rowan Williams",
@@ -8288,6 +8857,7 @@ const MIRACLES_OF_MARY = [
     "title": "Dabra Zamaddo's Lady Mahdara Maryam and how the Virgin Mary claimed her house as a church",
     "incipit": "ተአምር፡ ዘገብረት፡ እግዝእትነ፡ ማርያም፡ በሀገረ፡ መግደሎ። ስምዑ፡ ንነግረክሙ፡ ወነበረት፡ ቤተ፡ ክርስቲያን፡ ዘተሐንፀት፡ በስመ፡ እግዝእትነ፡ ማርያም። ወኀበ፡ ዛቲ፡ ቤተ፡ ክርስቲያን፡ ነበረት፡ አሐቲ፡ ብእሲት፡ ቅሩባ፡ ለቤተ፡ ክርስቲያን፡ ዘስማ፡ ማኅደረ፡ ማርያም። ወይእቲ፡ ብእሲት፡ ኅሪት፡ ይእቲ፡ ወክብርት፡ በምግባረ፡ ሠናይ፡ በአማን፡ ማኅደረ፡ ማርያም። እስመ፡ ታፈቅራ፡ ጥቀ፡ ወትትለአካ፡ በዘይትከሀላ፡ ኵሉ።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -8300,6 +8870,7 @@ const MIRACLES_OF_MARY = [
     "title": "Dabra Zamaddo's Lady Mahdara Maryam commits suicide by hunger strike when her son steals the food for the Virgin Mary's feast",
     "incipit": "ተአምር፡ ዘገብረት፡ ላቲ፡ እግዝእትነ፡ ማርያም፡ ለይእቲ፡ ኅሪት፡ ሶበ፡ ነበረት፡ በዐጸዳ፡ ኀበ፡ አመረታ። ወይእቲኒ፡ ነበረት፡ በዐቂበ፡ ሥርዓታ፡ … ወድንግል፡ … ። ወነገረ፡ ምታኒ፡ ለብእሲት፡ ቀዳሚ፡ ኀልቀ፡ ከመ፡ ገደፈቶ፡ ወዳግመ፡ ኢተሐልዮ፡ ወውሉዳኒ፡ ነበሩ፡ ኀበ፡ አመረቶሙ፡ … ። ወይእቲ፡ ተዐቅቦሙ፡ መዐልተ፡ ወሌሊተ። እስመ፡ ውሉዳ፡ ለፍቅርታ፡ እሙንቱ።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -8312,6 +8883,7 @@ const MIRACLES_OF_MARY = [
     "title": "Dabra Zamaddo's storm that engulfed the country with total darkness for four months.",
     "incipit": "… ስምዑ፡ ንነግረክሙ፤ ወሀለወት፡ ቤተ፡ ክርስቲያን፡ ዘተሐንፀት፡ በስማ፡ … በሀገረ፡ ሥምረተ፡ አብ። ወነበረ፡ ፩መነኮስ፡ ውስተ፡ ዛቲ፡ ቤተ፡ ክርስቲያን፡ ዘኢይወፅእ፡ እምቅጽራ፡ መዐልተ፡ ወሌሊተ፡ ፅሙድ፡ ለተግባረ፡ እግዚአብሔር፡ ወእሱር፡ በሐብለ፡ ፍቅራ፡ … ።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -8324,6 +8896,7 @@ const MIRACLES_OF_MARY = [
     "title": "Dabra Zamaddo's Qwǝrbana Dǝngǝl encounters a leopard as a child",
     "incipit": "ተአምር፡ ዘገብረት፡ ሎቱ፡ … በምድረ፡ ግብጻዊት፡ ለ፩ሕፃን፡ ዘተሰምየ፡ ቍርባነ፡ ድንግል። እስመ፡ ታፈቅሮ፡ ለዘተሰምየ፡ በስማ። ወወልዳኒ፡ እስመ፡ ወሀባ፡ ኪዳነ፡ ከመ፡ ታድኅኖ። በእንተዝ፡ ዐቀበቶ፡ ለውእቱ፡ ሕፃን።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -8336,6 +8909,7 @@ const MIRACLES_OF_MARY = [
     "title": "Dabra Zamaddo's Qwǝrbana Dǝngǝl is saved as a child from an attack by the Arami.",
     "incipit": "ተአምር፡ ዘገብረት፡ ሎቱ፡ … ለውእቱ፡ ሕፃን፡ ሶበ፡ ልኅቀ፡ ወሶበ፡ በጽሐ፡ አምጣነ፡ ትምህርት፡ ወሀብዎ፡ ለመምህር። እንዘ፡ ይትመሀር፡ አጽንዐ፡ መልክዐ፡ … ። ሶበ፡ አጽንዐ፡ ኢይደግማ፡ በጽሚት። አላ፡ በክላሕ፡ ወበዜማ፡ እመሠረታ፡ እስከ፡ ፍጻሜሃ፡ ከመ፡ ዘያበጽሕዎ፡ ካህናት፡ በቤተ፡ ክርስቲያን፡ ወውእቱኒ፡ ያበጽሕ፡ ኵለሄ፡ በክላሕ። ወይትአመር፡ ኀበ፡ ሖረ፡ በክላሁ፡ እንዘ፡ ይብላ፡ ሰላም፡ ሰላም፡ እምጊዜ፡ ወፈረ፡ ውስተ፡ ገዳም፡ ጊዜ፡ ጽባሕ፡ እስከ፡ የአቱ፡ ኢየዐርፍ፡ እንዘ፡ ይጸውዕ፡ ስማ፡ በክላሕ።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -8348,6 +8922,7 @@ const MIRACLES_OF_MARY = [
     "title": "Dabra Zamaddo's church and the tree that wrecked havoc on it",
     "incipit": "ተአምር፡ ዘገብረተ፡ እግዝእትነ፡ ማርያም፡ በቤተ፡ ክርስቲያን፡ ዘተሐንጸት፡ በስማ፡ በሀገረ፡ ሥምረተ፡ አብ። ወለይእቲ፡ ቤተ፡ ክርስቲያን፡ ዐጸዳ፡ ሠናይ፡ ጥቀ፡ ዘይመስል፡ ዐጽቀ፡ ጽሕድ፡ በዐውዳ፡ ለቤተ፡ ክርስቲያን። ወይመስል፡ ከመ፡ ቅጽር፡ ዘተሐንጸ። ወ፩እምእሉ፡ ዐጸድ፡ ርሕበ፡ ወገዝፈ፡ ጥቀ። ወመጠነ፡ ግዝፈቱ፡ ይከውን፡ ከመ፡ ንኡስ፡ ቤት፡ ወቆሙኒ፡ ዐቢየ፡ ኮነ፡ ወተልዕለ፡ እምቤተ፡ ክርስቲያን፡ ወእምብዝኀ፡ ተልዕሎቱ፡ አድነነ፡ መንገለ፡ ቤተ፡ መቅደስ፡ ወአልጸቀ፡ ከመ፡ ይደምስሳ።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -8360,6 +8935,7 @@ const MIRACLES_OF_MARY = [
     "title": "Dabra Zamaddo's three adulterous priests who are revealed and defrocked",
     "incipit": "… ስምዑ፡ አኀዊነ፡ ዕጹበ፡ ወመድምመ፡ ዘኮነ። ወነበረት፡ አሐቲ፡ ቤተ፡ ክርስቲያን፡ እምአህጉራተ፡ ኢትዮጵያ፡ ዘተሐንጸት፡ በስማ፡ … በመዋዕሊሁ፡ ለጳ ጳስነ፡ አቡነ፡ ማርቆስ። ኀበ፡ ዛቲ፡ ቤተ፡ ክርስቲያን፡ ዘዘከርናሃ፡ ቅድመ፡ ነበሩ፡ ፫ቀሳውስት፡ ዘይትለአክዋ፡ ለቤተ፡ ክርስቲያን። ለእሉ፡ አዕቀፎሙ፡ ጸላኢ፡ በግብረ፡ ዝሙት። ፩ወለደ፡ ፫ወ፩ወለደ፡ ፪ተ፡ ወሣልሳዊሰ፡ ኢወለደ። ወዘምዎሰ፡ ኢኀደገ። ወእንዘ፡ ይነብሩ፡ በዝንቱ፡ ግብር፡ ከመ፡ አረማዊ፡ ወበ ለፌ፡ ይትበሀሉ፡ ካህናት፡ ወቀዳስያን፡ ወሰብአ፡ ቤታኒ፡ ለእግዝእትነ፡ ማርያም፡ ይትበሀሉ።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Mihret Melaku",
@@ -8372,6 +8948,7 @@ const MIRACLES_OF_MARY = [
     "title": "Dabra Zamaddo's righteous monk who was afflicted by bugs.",
     "incipit": "ተአምር፡ ዘገብረት፡ ሎሙ፡ ለአበው፡ ቅዱሳን፡ ወለአኀው፡ ንጹሓን። ወእምእሉ፡ ፩አቡሆሙ፡ ወአበምኔት፡ ውእቱ፡ ጽሙድ፡ ለገድለ፡ ቅዱሳን። ወኢይወፅእ፡ እምቤታ፡ … መዐልተ፡ ወሌሊተ። ወኢየሐልያ፡ ለትካዘ፡ ዓለም። ለመብልዕኒ፡ ወለመስቴ፡ ኢይዜከሮሙ። ወአራዙኒ፡ አነዳ፡ በግዕ፡ ውእቱ።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Jeremy Brown & Dawit Muluneh",
@@ -8384,6 +8961,7 @@ const MIRACLES_OF_MARY = [
     "title": "Dabra Zamaddo's “Keep yourself from minor things, lest you fall from big things”.",
     "incipit": "ተአምር፡ ዘአስተርአየት፡ … ወዘሠርዐት፡ ሎቱ፡ ሥርዓተ፡ ቤቱ፡ ለውእቱ፡ መነኮስ፡ ዘአምጽአት፡ ሎቱ፡ አዕዋፈ። ወነበሩ፡ ሎቱ፡ አርድእት፡ ዘይትለአክዎ። ወበአቱኒ፡ ቅሩበ፡ ቤታ፡ … ። ወመልዕልቴሁ፡ ሀሎ፡ ዓቢይ፡ ጸድፍ፡ ዘይርሕቅ፡ ርእሱ፡ ለዓይን፡ ዘአልቦቱ፡ ፍኖት፡ ዘያዓርግ፡ ላዕለ፡ ወዘያወርድ፡ ታሕተ። ቆሙኒ፡ ምጡቅ፡ ጥቀ፡ ወግድ ሙኒ፡ ርሒብ፡ ምሕዋረ፡ መንፈቀ፡ መዐልት።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -8396,6 +8974,7 @@ const MIRACLES_OF_MARY = [
     "title": "Dabra Zamaddo's church and the punishment for cutting trees from the church’s precinct.",
     "incipit": "ተአምር፡ ዘግብረት፡ … ለቤተ፡ ክርስቲያን፡ ዘተሐንጸት፡ በስማ፡ በሀገረ፡ ሠምሮ። ወሀሎ፡ ፩ካህን፡ ዘይትለአካ፡ ለቤተ፡ ክርስቲያና። ወምሁረ፡ ጥበብ፡ ብእሲሁ። መጽሐፈኒ፡ የአምር፡ ወግብረ፡ እድኒ፡ ኵሎ፡ በይነ፡ ግብረ፡ እዱኒ፡ ይመትር፡ ዐጸዳ። ወእግዝእትነሂ፡ ትቤሎ፡ ኅድግ። ለዘይመትር፡ ዐጸድየ፡ ኢያፈቅሮ፡ ልብየ። አበየ፡ መቲረኒ፡ ኢየኀድግ። ወነገራኒ፡ ዘትቤሎ፡ ይነግር፡ ለኵሉ፡ ሰብእ።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -8408,6 +8987,7 @@ const MIRACLES_OF_MARY = [
     "title": "Dabra Zamaddo's church and how chewing the body of the Son of the Blessed Virgin is not welcome to the Virgin Mary",
     "incipit": "ተአምር፡ ዘከሠተት፡ ሎቱ፡ ለ፩መነኰስ፡ ዘስሙ፡ ጢሞና፡ ዘይነብር፡ በሀገረ፡ ምሥራቅ። ወዜነወቶ፡ ሐዘነ፡ ልቡናሃ፡ በከመ፡ ዜነዎ፡ ወልዳ፡ መድኃኔ፡ ዓለም፡ ለውእቱ፡ ጢሞና፡ ሶበ፡ ኀዘነ፡ በመባአ፡ ጽዮን። ወይቤሎ፡ ርኢ፡ ጢሞና፡ ዘገብረ፡ መባአ፡ ጽዮን። ሶበ፡ ነደ፡ ልብየ፡ በፍቅረ፡ ዚአሁ፡ ወረቁ፡ ምራቅየ፡ ውስተ፡ ልብሱ፡ ከመ፡ ኢይትፈለጥ፡ እምኔሁ፡ በመዓልት፡ ወበሌሊት። [ወውእቱ፡ አውሐሶ፡ ለካልእ፡] እስኩ፡ ርእዮ፡ ለዝ፡ ነገር። ሰሚኦ፡ ጢሞና፡ ጸውዖ፡ ለመባ አ፡ ጽዮን። ወይቤሎ፡ ለምንት፡ ታውሕስ፡ ልብስከ፡ ለሰብእ። ናሁ፡ ዜነወኒ፡ እግዚእኒ፡ ሐዘኖ። ወይቤሎ፡ መባአ፡ ጽዮን፡ እወ፡ ገበርኩ፡ ሶበ፡ አገበረኒ፡ ሰብ እ።98 ወዘንተ፡ ብሂሎ፡ ወድቀ፡ ወአንገርገረ፡ ዲበ፡ ምድር። ወይቤ፡ እፎ፡ እከውን፡ እምድኅረዝ፡ እመ፡ ሐዘነ፡ እግዚእየ። ወይቤሎ፡ ጢሞና፡ ኢትቅብጽ፡ ወል ድየ፡ ተስፋ። እስመ፡ እግዚእነ፡ መሐሪ፡ ውእቱ። ባሕቱ፡ ንስአሎ። ወዘንተ፡ ብሂሎ፡ አስተሳለሞሙ፡ ወአዕረቆሙ።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Rowan Williams",
@@ -8420,6 +9000,7 @@ const MIRACLES_OF_MARY = [
     "title": "Dabra Zamaddo's Abbot Mahdara Krǝstos who left his office on his own volition.",
     "incipit": "ተአምር፡ ዘገብረት፡ … በደብረ፡ ዘመዶ። ወነበረ፡ ፩መነኮስ፡ ዘስሙ፡ ማኅደረ፡ ክርስቶስ፡ ዘያፈቅራ፡ … ወዘይትለአክ፡ ለቤተ፡ ክርስቲያና። ወአመኒ፡ ሤምዎ፡ ኤጲስ፡ ቆጶሰ፡ ለቤተ፡ ክር ስቲያና፡ ዐቀበ፡ ሥርዓታ፡ ወሕጋ፡ ወአሥመሮሙ፡ ለሰብአ፡ ቤታ። ወሢመቶሂ፡ ኀደገ፡ በፈቃዱ፡ እንዘ፡ ኢይሥዕርዎ፡ አላ፡ እንዘ፡ ይስእልዎ፡ ወይቤልዎ፡ ኢትኅድግ፡ ሢመተከ። እስመ፡ ለእግዚአብሔርኒ፡ ወለሰብእኒ፡ ታሠምር፡ አንተ። ወይ ቤሎሙ፡ ኅድጉኒ፡ ለእመ፡ በዝኀ፡ መዋዕለ፡ ሢመት፡ ይገብእ፡ ንዝህላል። አሜሃ፡ ይትበአስ፡ ሰብእ፡ ምስለ፡ ፈጣሪሁ። ወዘንተ፡ ብሂሎ፡ ኀደገ፡ ሢመቶ።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -8432,6 +9013,7 @@ const MIRACLES_OF_MARY = [
     "title": "Dabra Zamaddo's Mabaʾa tsǝyon church and the density of trees there that prevented two boys from dying in a fire",
     "incipit": "ተአምር፡ ዘገብረት፡ … በቤተ፡ ክርስቲያን፡ ዘተሐነጸት፡ በስማ፡ በሀገረ፡ ሥምረተ፡ አብ። ስምዑ፡ ንነግረክሙ፡ አኀውየ፡ ዘገብረት፡ ተአምረ፡ በከመ፡ ገብረ፡ ወልዳ፡ ለፍቁሩ፡ መባአ፡ ጽዮን፡ ሶበ፡ መጽአት፡ ኀቤሁ፡ ብእሲት፡ ኀዚላ፡ ወልዳ፡ ሕሙመ። ወትቤሎ፡ ንሥኦ፡ ለዝ፡ ሕፃን፡ ወፈውሶ፡ በጸሎትከ፡ ወይኩንከ፡ ገብረ። ወይቤላ፡ አንሰ፡ ለልየ፡ ገብር፡ ለእግዚእየ፡ እፎ፡ እትወከፍ፡ ገብረ። አላ፡ ሀቢዮ፡ ለእግዚኡ፡ መድኀኔ፡ ዓለም። ወሰሚዓ፡ ብእሲት፡ ትቤ፡ ይኩን፡ በከመ፡ ትቤ። ወሶቤሃ፡ አፍአሞ፡ እምፍርፋራተ፡ ተዝካሩ፡ ለመድኀኔ፡ ዓለም። አሜሃ፡ ተፍአ፡ ዘይ መስል፡ ሕመተ፡ ወአቃርብተ።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -8444,6 +9026,7 @@ const MIRACLES_OF_MARY = [
     "title": "Dabra Zamaddo's man who refused to observe holy days.",
     "incipit": "ተአምር፡ ዘገብረት፡ … ንነግረክሙ። ወነበረ፡ ፩ብእሲ፡ በመዋዕሊሁ፡ ለዘወልደ፡ ማርያም። ወውእቱ፡ ብእሲ፡ በስምሰ፡ ክርስቲያናዊ፡ ወበግብርሰ፡ ውፁእ፡ እምሕገ፡ ክርስቲ ያን። ወሀገሩኒ፡ ታሕተ፡ ወግረ፡ ስኂን፡ ሀገረ፡ ቅዱሳን፡ እንዘ፡ ይነብር፡ በሀገ ረ፡ ቅዱሳን፡ ኢይሳተፎሙ፡ ለቅዱሳን፡ በግብር፡ አላ፡ ይገብር፡ ግብረ፡ አረሚ። ለጾምኒ፡ ወለጸሎትኒ፡ ኢያአምሮሙ፡ ወለኵሉ፡ ሥርዐተ፡ ቤተ፡ ክርስቲያን፡ ወለካህናትኒ፡ ኢይትኤዘዞሙ። ወሶበ፡ ይብልዎ፡ ዮም፡ ሰንበት፡ ወዮምሰ፡ በዓለ፡ እግዝእትነ፡ ኢይደሉ፡ ይትገበሩ፡ ሶበ፡ ይብልዎ፡ ይትቃጸቦሙ።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -8456,6 +9039,7 @@ const MIRACLES_OF_MARY = [
     "title": "Dabra Zamaddo's greedy man who did not observe holy days.",
     "incipit": "ተአምር፡ ዘገብረት፡ … [በላዕለ፡፩ብእሲ፡] ዘይነብር፡ ማእከለ፡ ፪ኤ፡ ደብረ፡ ስኂን፡ ወመፍቀሬ፡ ንዋይ፡ ውእቱ። እንዘ፡ ንዋዩ፡ ይከውን፡ ብዙኀ፡ ወኢይመስሎ፡ ዘአጥረየ፡ ፩ደ፡ ኅጠተ። ወገራህቱኒ፡ ብዙኅ፡ ኀበ፡ብዙኅ፡ አህጉር፡ ይትጌበር። ወበዝንቱ፡ ፃማሁ፡ ኢያዐርፎሙ፡ ለድኩማን። ወለቤተ፡ ክርስቲያንሂ፡ ኢያወፊ፡ ሕዳጠ፡ ኢመሥዋዕተ፡ ወኢዕጣነ፡ ዘይከውና፡ መድኃኒተ፡ ለነፍሱ። አላ፡ እመ፡ ይረክብ፡ ንዋየ፡ ቤተ፡ ክርስቲያን፡ ይነሥእ፡ ለርእሱ። ወእምብዝኀ፡ ፍቅረ፡ ንዋይ፡ ይሥዕር፡ በዐለ፡ ብሂሎ፡ እረክብ፡ ብዙኀ።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Getatchew Haile",
@@ -8468,6 +9052,7 @@ const MIRACLES_OF_MARY = [
     "title": "Dabra Zamaddo's righteous Walda hawaryat whom the Blessed Virgin comforted.",
     "incipit": "ተአምር፡ ዘአስተርአየቶ፡ እግዝእትነ፡ ወተናገረቶ፡ ለ፩መነኮስ፡ ዘስሙ፡ ወልደ፡ ሐዋርያት። መጺኦ፡ እምደብረ፡ ሊባኖስ፡ ነበረ፡ ውስተ፡ ደብረ፡ ዘመዶ፡ በተባሕ ትዎ። ወምሁረ፡ መጽሐፍ፡ ውእቱ፡ ምስለ፡ ገቢሮቱ፡ በአማን፡ ወልደ፡ ሐዋርያ ት፡ ውእቱ። ወአሐተ፡ ዕለተ፡ በዊኦ፡ ውስተ፡ ቤተ፡ ሥዕላ፡ … እንዘ፡ ያስቆቁ፡ ተዘኪሮ፡ ስቅለ ቶ፡ ለወልዳ፡ እስመ፡ ልማዱ፡ ውእቱ፡ እንዘ፡ ይዜከር፡ ሕማማቲሁ፡ ለወልደ፡ እግዚአብሔር፡ ይደክም፡ ኃይሉ፡ ወይትቀጠቀጥ፡ አዕፅምቲሁ። አንብዑኒ፡ ይወርድ፡ ከመ፡ ነቅዐ፡ ማይ፡ ወከመ፡ ዝናም፡ ዘአሜ፡ ክረምት፡ ይወሕዝ፡ ዲበ፡ አዕይንቲሁ፡ ወይወርድ፡ ውስተ፡ሐቌሁ፡ ወይበጽሕ፡ ውስተ፡ እገሪሁ። ወትርሕ ስ፡ ምድር፡ በአንብዑ፡ ዘቆመ፡ ባቲ።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Getatchew Haile",
@@ -8480,6 +9065,7 @@ const MIRACLES_OF_MARY = [
     "title": "Dabra Zamaddo's righteous Walda hawaryat and the glory of Mahlet.",
     "incipit": "ተአምር፡ ካዕበ፡ ዘአስተርአየቶ፡ … ለወልደ፡ ሐዋርያት፡ እንዘ፡ ውስተ፡ ቤተ፡ መቅደስ፡ ቀዊሞ፡ ቅድመ፡ ታቦት፡ እንዘ፡ ያነብብ፡ ማኅሌተ፡ ጽጌ፡ ወጠኑ፡ ካህናት፡ ዝማሬ፡ ከዊኖሙ፡ ኀበ፡ ዘወትር፡ ምቅዋሞሙ፡ ሶቤሃ፡ ተንሥአት፡ … ወትቤሎ፡ ወልደ፡ ሐዋርያት፡ ሖርኩ፡ ኀበ፡ ውሉድየ፡ እለ፡ ወጠኑ፡ ማኅሌተ፡ ከመ፡ እቁም፡ ምስሌሆሙ፡ ወአጽን ዖሙ፡ እምድካምአስቄጥስ እምኔበው ፡ ቅዱሳን ፡ ዘአስረፉ ፡ እሌ ፡ አልቦሙ ፡ ኀልቊ ። ወይቤላ፡ ወልደ፡ ሐዋርያት፡ እንዘ፡ ዘልፈ፡ እቀውም፡ ቅድ ሜኪ፡ ወአነብብ፡ ውዳሴኪ፡ ለምንት፡ ኢታወሥእኒ፡ ቃለ፡ ወኢታጸንዕኒ፡ እምድ ካም።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Getatchew Haile",
@@ -8492,6 +9078,7 @@ const MIRACLES_OF_MARY = [
     "title": "Dabra Zamaddo's thief who stole and sold the lectern from the church.",
     "incipit": "ተአምር፡ ዘገብረት፡ … ወዘአስተርአየት፡ ኀይላ፡ ላዕለ፡ ቀሳጢ፡ ሶበ፡ ቀሰጠ፡ አትሮኑሳ፡ ወወሰዶ፡ ኀበ፡ ማኅደረ፡ ክርስቶስ፡ መኰንነ፡ ጠጠራ። ሶበ፡ ርእዮ፡ መኰንን፡ ተፈሥሐ፡ ጥቀ። እስመ፡ ሠናይ፡ ውእቱ፡ ዘጠምዕዎ፡ ወሤረይዎ፡ በቀለም፡ ወወሀቦ፡ ብዙኀ፡ ንዋየ። ሤጦ፡ ለቀሳጢ።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Getatchew Haile",
@@ -8504,6 +9091,7 @@ const MIRACLES_OF_MARY = [
     "title": "King Lalibala, the 13th c. Ethiopian monarch, and his godson at Dabra Zamaddo",
     "incipit": "ተአምር፡ ዘአስተርአየቶ፡ ወዘዜነወቶ፡ ምሥጢረ፡ … ለንጉሥነ፡ የዋህ፡ ወርኅሩኅ፡ ከመ፡ አምላኩ፡ ስሙአ፡ ዜና፡ ላሊበላ፡ ወስመ፡ መንግሥቱ፡ ገብረ፡ መስቀል፡ በእንተ፡ ወልዱ፡ ዘወለዶ፡ በ፪፡ ፍና፡ ፩ዱኒ፡ ወልደ፡ እኍሁ፡ በሥጋ፡ ወ፩ዱኒ፡ ዘተሐበዮ፡ በመንፈስ፡ ቅዱስ። ወነሥኦ፡ እምሕፅነ፡ እሙ፡ ወአንበሮ፡ ምስሌሁ።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Getatchew Haile",
@@ -8516,6 +9104,7 @@ const MIRACLES_OF_MARY = [
     "title": "King Naʾakkwǝto Laʾab, the 13th c. Ethiopian monarch, and how the Virgin Mary informs him about his future at Dabra Zamaddo",
     "incipit": "ተአምር፡ ዘከሠተት፡ ለንጉሥነ፡ ነአኵቶ፡ ለአብ፡ አመ፡ ኀበ፡ ውርዙቱ፡ ወተነበየት፡ ላዕሌሁ፡ ወአለበወቶ፡ ነገረ፡ ዘይከውን፡ ድኅረ፡ በላዕሌሁ። ወትቤሎ፡ ኦሕ ፃን፡ ፍቁረ፡ ወልድየ፡ ወሊተኒ፡ ፍቁርየ፡ ጽናዕ፡ ወተጋደል፡ በዝንቱ፡ ገድልከ፡ ወፈጽም፡ ዘወጠንከ፡ ወኢትግባእ፡ ለድኅር፡ እምዝንቱ፡ ፃማከ። ወአነኒ፡ አዐቅበከ፡ ወኢይትፈለጥ፡ እምኔከ፡ መዓልተ፡ ወሌሊተ። ወአለበወቶ፡ ለ፩ዱ፡ ነገረ፡ ትንቢት፡ ወትቤሎ፡ ዝንቱ፡ አቡከ፡ ላሊበላ፡ ይሁበከ፡ መንግሥቶ፡ እንዘ፡ ሀሎ፡ በሕ ይወቱ። ካዕበኒ፡ ይነሥአከ። አሜሃ፡ ኢትሕዝን፡ ተዐገሥ፡ ወኢይትቈጣዕ፡ ልብከ።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Getatchew Haile",
@@ -8528,6 +9117,7 @@ const MIRACLES_OF_MARY = [
     "title": "Dabra Zamaddo's three monks who starved in the cell that once belonged to the Holy Family.",
     "incipit": "ተአምር፡ ዘአስተርአየቶ፡ … ለ፩መነኮስ፡ ዘስሙ፡ በኵረ፡ ጽዮን፡ ኀበ፡ ተባሕተወ፡ ምስለ፡ አኀዊ ሁ፡ ፬ቱ። ወይእቲ፡ በአት፡ ዘተባሕተወ፡ ባቲ፡ ወይብልዋ፡ ነበረት፡ ባቲ፡ … አመ፡ ጐየት፡ እምነ፡ ሄሮድስ፡ ርጉም። ወሖረት፡ ምድረ፡ ግብጽ፡ ወበህየ፡ በጽ[ሐ]ት፡ ምድረ፡ ኢትዮጵያ፡ ወነበረት፡ ውስተ፡ ይእቲ፡ በአት፡ ፯ተ፡ አውራኀ፡ ምስለ፡ ፍቁር፡ ወልዳ፡ ምስለ፡ ዮሴፍ፡ ወሰሎሜ።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Getatchew Haile",
@@ -8540,6 +9130,7 @@ const MIRACLES_OF_MARY = [
     "title": "King Zara Yaqob (Zarʾa Yaʿeqob), the 14th c. Ethiopian monarch, and how the Virgin Mary rebuked him for leaning against the wall of Dabra Zamaddo",
     "incipit": "ተአምር፡ ዘአለበወቶ፡ … ወከሠተት፡ ሎቱ፡ ምሥጢራ፡ ለቤተ፡ ክርስቲያን፡ ለዘርአ፡ ያዕቆብ፡ ንጉሥ፡ ጻድቅ፡ ወምእመን፡ አመ፡ ቦአ፡ ኀበ፡ ቤተ፡ ክርስቲያን። ወይእቲ፡ ቤተ፡ ክርስቲያን፡ ሕንጽት፡ በስማ፡ …። ሶበ፡ ቆመ፡ ቅድመ፡ ታቦተ፡ ዚአሃ፡ ከመ፡ ይጸሊ፡ *አመ፡ አስመከ፡ ዲበ፡ ዐምድ፡ ገሠጸቶ፡ ወትቤሎ፡ ለምንት፡ ትገፍዐኒ፡ ወኢትጸዐን፡ ላዕሌየ።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Getatchew Haile",
@@ -8552,6 +9143,7 @@ const MIRACLES_OF_MARY = [
     "title": "Dabra Zamaddo's Qwǝrbana Dǝngǝl inflicted by the consequences of aging.",
     "incipit": "ተአምር፡ ዘገብረት፡ ሎቱ፡ … ዘደብረ፡ ዘመዶ፡ ለ፩መነኮሰ፡ ዘስሙ፡ ቍርባነ፡ ድንግል፡ ቀዳሚ፡ ዘአድኀነቶ፡ እምበላዒ፡ ነምር፡ ወእምቀታሊኒ፡ አረሚ። ወእምንእሱ፡ ዘዐቀበቶ፡ እምኵሉ፡ መከራ። ወአመኒ፡ ልህቀ፡ ወደክመ፡ ኀይሉ፡ እመንገነ፡ ጸላኢ።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Getatchew Haile",
@@ -8564,6 +9156,7 @@ const MIRACLES_OF_MARY = [
     "title": "Dabra Zamaddo's monks on the verge of abandoning the monastery. (duplicate?)",
     "incipit": "ስምዑ፡ ንነግረክሙ፡ አኀውየ፡ ቃለ፡ ተአምር፡ ዘአስምዐቶሙ፡ ለሰብአ፡ ደብረ፡ ዘመዶ፡ ወአጽንዐቶሙ። እስመ፡ ነበሩ፡ በየውሀት፡ ወኢየአምርዎ፡ ወኢይትቀነይዎ፡ ለግዕዘ፡ ሥጋ፡ ዘእንበለ፡ ጸሎት፡ ወሰጊድ፡ ኢይትኀሠሡ። እደውኒ፡ ኢይትጌበሩ፡ ገራህተ፡ ዘእንበለ፡ ኅዳጣን። ወአንስትኒ፡ ኢያአምራ፡ ግብረ፡ እድ፡ እንበለ፡ ጸሎት፡ ወሰጊድ። ወኢያጻምዋ፡ ሥጋሆን፡ እደውኒ፡ ወአንስትኒ፡ በኃሢሠ፡ ሲሳይ፡ ወአራዝ። ወበእንተዝ፡ ያጠውቆሙ፡ ምንዳቤ፡ ሥጋ፡ በይነ፡ ኀዲጎቶሙ፡ ግብረ፡ እድ።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Getatchew Haile",
@@ -8576,6 +9169,7 @@ const MIRACLES_OF_MARY = [
     "title": "Dabra Zamaddo's leopard that dug out tombs and ate the corpses.",
     "incipit": "ተአምር፡ ዘገብረት፡ … በመዋዕሊሁ፡ ለፈቃደ፡ ክርስቶስ። ሶበ፡ አጽሐቡ፡ አራዊት፡ ወአፍለሱ፡ መቃብረ፡ ወበልዑ፡ ምውታነ፡ በዊኦሙ፡ ውስተ፡ ቤተ፡ ክርስቲያን። ወሶበ፡ ርእዩ፡ ሰብአ፡ ሀገር፡ ካህናት፡ ወመነኮሳት፡ ወነገርዎ፡ ለአቡሆሙ፡ እንዘ፡ ይብሉ፡ አና ቅጸ፡ ቤተ፡ ክርስቲያን፡ አጺወነ፡ ነሐውር፡ ምሴተኒ። ወጽባሐኒ፡ ንረክቦሙ፡ በከመ፡ ተአጽዉ፡ ወለመቃብር፡ ንረክቦ፡ ርሕወ፡ ወለሥጋ፡ ሰብእ፡ ይትረከብ፡ ከዊኖ፡ ዘተበትከ። በአይቴ፡ በዊኦ፡ ይበልዕ። ዝንቱ፡ ነገር፡ አጥወቀነ፡ ጥቀ።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Getatchew Haile",
@@ -8588,6 +9182,7 @@ const MIRACLES_OF_MARY = [
     "title": "Dabra Zamaddo's Walatta Nǝgǝst whom the Blessed Virgin saved from a raid by the Arami.",
     "incipit": "ወሀለወት፡ አሐቲ፡ ቤተ፡ ክርስቲያን፡ ዘተሐንጸት፡ በስማ፡ … በሀገረ፡ ሥምረተ፡ አብ። ወኀበ፡ ዛቲ፡ ቤተ፡ ክርስቲያን፡ ሀለወት፡ አሐቲ፡ ብእሲት፡ ዘስማ፡ ወለተ፡ ንግሥት። ወታፈቅራ፡ … ። ወመፍቀሪተ፡ ነዳያን፡ ይእቲ። ወእደዊሃ፡ ፍቱሕ፡ ለውሂብ፡ ዘረከበት። ወገይሠ፡ ቤተ፡ ክርስቲያንሂ፡ ኢታፀርዕ፡ መዓልተ፡ ወሌሊተ።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Getatchew Haile",
@@ -8600,6 +9195,7 @@ const MIRACLES_OF_MARY = [
     "title": "Dabra Zamaddo's Abbot Abuna Sinodos whom people opposed to cut the hab tree.",
     "incipit": "ተአምር፡ ዘገብረት፡ ሎቱ፡ … በደብረ፡ ዘመዶ፡ ለአቡነ፡ ሲኖዶስ፡ ዘተሰምየ፡ ወልደ፡ ዮሐንስ፡ አመ፡ ተሠይመ፡ ዐቃቢሃ፡ ወሠራዔ፡ ሕጋ፡ ለደብረ፡ ዘመዶ። ወለይእቲ፡ ቤተ፡ ክርስቲያን፡ የሀውካ፡ ማይ፡ ዘይመጽእ፡ መልዕልተ፡ ጾላዕት፡ እኂዞ፡ እምበ አተ፡ ክረምት፡ እስከ፡ ወርኀ፡ መስከረም፡ የሀውካ፡ ጥቀ፡ ወበካልኣትኒ፡ አውራ ኅ፡ ሶበ፡ ይዘንም፡ ዝናም፡ የሀውካ።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Getatchew Haile",
@@ -8612,6 +9208,7 @@ const MIRACLES_OF_MARY = [
     "title": "Dabra Zamaddo's woman who received the answer to her prayer through her support stick.",
     "incipit": "ተአምር፡ ዘገብረት፡ … በቤተ፡ ክርስቲያና፡ ዘተሐንፀት፡ በስማ፡ በሀገረ፡ ሥምረተ፡ አብ። ወሀለ ወት፡ አሐቲ፡ ብእሲት፡ ኅሪት፡ ዘታፈቅራ፡ ለእግዝእትነ፡ ማርያም፡ ወለወልዳ፡ እግዚእነ፡ ኢየሱስ፡ ክርስቶስ። ወኢትወፅእ፡ እምቤተ፡ ክርስቲያን፡ መዐልተ፡ ወሌሊተ፡ እምቅድመ፡ ይባርክ፡ ቀሲስ፡ በማኅተም፡ [እንዘ፡ ይብል፡] እግዚአብሔ ር፡[የሀሉ፡ ምስለ፡ ኲልክሙ፡]። ወኀበ፡ ትቀውም፡ ይሁብዋ፡ ፩ደ፡ ምርጉዘ፡ እምቅዋመ፡ ዚአሆሙ፡ ዘይትመረጐዙ። ወረሰይዋ፡ ለይእቲ፡ በትር፡ በትረ፡ ብእሲት። ወሶበ፡ ይወፅኡ፡ ካህናት፡ እምቤተ፡ ክርስቲያን፡ ትሁቦሙ፡ ለይእቲ፡ በትር።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Getatchew Haile",
@@ -8624,6 +9221,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Felsata la-Maryam??: New: Dormition: Jesus comes for the Virgin Mary and the Jews oppose the burial and later beg forgiveness (similiar ID 87, 261)",
     "incipit": "በንነግረክሙ፡ ዘከመ፡ እፎ፡ ውእቱ፡ መዋዕሊሃ፡ ለእግዝእትነ፡... በዝ፡ ዓለም፡ ፫ ዓመተ፡ ነበረት፡ በቤተ፡ እማ። ፲ወ፪ ዓመተ፡ በቤተ፡ መቅደስ። ቅድመ፡ ትለዶ፡ ክርስቶስሃ፡ ፴ ዓመተ፡ ቅድመ፡ ይጠመቅ። ፫ ዓመተ፡ ቅድመ፡ ይዕርግ፡ ሰማየ። ፲ወ፪ ዓመት፡ እምድኅረ፡ ዕርገቱ፡ ፷ መዋዕሊሃ፡ ለእግዝእትነ፡... አመ፡ ፳ ለጥር፡ ወረደ፡ እግዚእነ፡ ኀበ፡ አርዳኢሁ፡ ወይቤሎሙ፡ ሰላም፡ ለክሙ፡ ጌሠመ፡ እነሥአ፡ ለእምየ፡ እንተ፡ ጾረተኒ፡ በከርሣ፡ ፱ አውራኃ፡ ወአጥበወተኒ፡ ሀሊበ፡ ጥበ፡ ፪ ዓመት፡ በጕጕዓ፡ ወበኀዘን። ወኢያዕረፈት፡ አሐተ፡ ሰዓት፡ በዝ፡ ዓለም።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -8636,6 +9234,7 @@ const MIRACLES_OF_MARY = [
     "title": "Unpaid Debt for Healing Daughter's Blindness",
     "incipit": "ስምዑ፡ ኦደቂቀ፡ ቤተ፡ ክርስቲያን፡ ወውሉደ፡ ብርሃን። ወውሉዳ፡ ለእግዝእትነ፡ ... እሙ፡ ለብርሃን። እለ፡ ታፈቅርዋ፡ ወ እለ፡ ተአምኑ፡ በተአምራቲሃ። after 13 columns ወሀሎ፡ ፩ አረማዊ፡ በውስተ፡ አሐቲ፡ ሀገር፡ እንተ፡ ይብልዋ፡ ወንድጌ። ወነበረት፡ ወለቱ፡ ዕውርት። ወይቤ፡ በልቡ፡ አሐውር፡ ኀበ፡ ቤተ፡ ክርስቲያና፡ ለማርያም።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Getatchew Haile",
@@ -8648,6 +9247,7 @@ const MIRACLES_OF_MARY = [
     "title": "Pious Deacon Eats with a Blacksmith",
     "incipit": "ወነበረ፡ ፩ ዲያቆን፡ በሀገረ፡ ባባ፡ ዘይትለአክ፡ በኵሉ፡ ኃይሉ፡ በአምጣነ፡ ክሂሎቱ። እመሂ፡ በዕጣን፡ እመሂ፡ በካልእ፡ መባእ፡ ወእመኒ፡ በማኅቶት፡ በኵሉ፡ ጊዜ፡ ዘይትከሀሎ፡ ወያሠምራ፡ ለእግዝእትነ፡ ...። ወቀንዓ፡ ሰይጣን፡ ላዕሌሁ፡ ወተንሥኡ፡ ሰብአ፡ ሀገር፡ ላዕሌሁ፡ ለውእቱ፡ ዲያቆን። ወመከሩ፡ እኩየ፡ ምክረ፡ ከመ፡ ያውፅኡ፡ ቦቱ፡ ስመ፡ እኩየ፡ ወይቤሉ፡ ውእቱ፡ ዲያቆን፡ ይበልዕ፡ ምስለ፡ ነሀቢ፡ ወይሰቲ፡ ምስሌሁ።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Getatchew Haile",
@@ -8660,6 +9260,7 @@ const MIRACLES_OF_MARY = [
     "title": "Bankrupt Youths Bring Mary Gifts",
     "incipit": "ወነበሩ፡  ፪ ወራዙት፡ አረማውያን፡ ወይጸልኡ፡ ዝክረ፡ ስማ፡ ወይጸርፉ፡ ላዕሌሃ። ወያስቆርሩ፡ ድንግልናሃ፡ በኩሉ፡ ልቦሙ። ወነበሩ፡ ብዙኃ፡ መዋዕለ፡ ወኀልቁ፡ ንዋያቲሆሙ፡ ወውሉዶሙ፡ ወጥሪቶሙ፡ ወስእኑ፡ ዘይገብሩ። ወሖሩ፡ ኀበ፡ ቤተ፡ ክርስቲያና፡ ለእግዝ እትነ፡ ... አመ፡ ፳ወ፩ ለወርኃ ጥር። ወነሥኡ፡ ዕጣነ፡ ወመባአ፡ ወወሀቡ፡ ለቀሲስ፡ ወነገሩ፡ ጌጋዮሙ፡ ዘከመ፡ ጸረፉ፡ ላዕሌሃ። ወአእመሩ፡ ዘከመ፡ አጥፍ አቶሙ፡ ወተናገረቶሙ፡ በገሃድ፡ ሑሩ፡ እንዘ፡ ትብል፡",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Getatchew Haile",
@@ -8672,6 +9273,7 @@ const MIRACLES_OF_MARY = [
     "title": "Nobles Devoted to the Miracles of Mary Book",
     "incipit": "ወነበሩ፡ በአሐቲ፡ ሀገር፡ ብዙኃን፡ ዓበይት፡ እለ፡ ሰምዑ፡ ተአምሪሃ፡ ለእግዝእትነ …፨ መንፈቆሙ፡ ዘሰምዑ፡ መንኰሱ፡ ወመንፈቆሙ፡ ተጸምዱ፡ በፍቅረ፡ ዚአሃ፨ ወመጽኡ፡ ካልአን፡ በቅንዓት፡ ከመ፡ ይውግርዎሙ፡ ወተኃብኡ፡ በምክረ፡ መንፈስ፡ ቅዱስ ፨",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Getatchew Haile",
@@ -8684,6 +9286,7 @@ const MIRACLES_OF_MARY = [
     "title": "Mary Complains Her Icon Is Next to Couple's Bed",
     "incipit": "ወሀለወት፡ ሥዕለ፡ እግዝእትነ፡ ... በሀገረ፡ ርእሰ፡ ርኡሳን፡ እንተ፡ ይእቲ፡ መርጡለ፡ ማርያም፡ ሀገር፡ አባይ፡ ዘሐነጽዋ፡ ወአዕበይዋ፡ አብርሃ፡ወአጽብሐ፡ ነገሥተ፡ አክሱም፡ ክቡራን። ወዘቀደሳ፡ አባ፡ ሰላማ፡ ከሣቴ፡ ብርሃን። ይ እቲሰ፡ ሥዕለ፡ እግዝ እትነ፡ ማርያም፡ እንዘ፡ ትመጽ እ፡ እም ኢየሩሳሌም፡ ተሣየጣ፡ በወርቁ፡ እምነ፡ ነጋድያን፡ መነካሳት፡ አለቃ፡ ተሰማ፡ ጸሐፌ፡ ትእዛዝ፡ ሶበ፡ ርእየ፡ ስነ፡ ላህያ፡ ለሥዕል፡ እስመ፡ ነደ፡ ልቡ፡ በፍቅረ፡ እግዝእትነ፡ ... አላ፡ አስተፃፀበ፡ አልባሰ፡ ለሥርጋዌሃ፡ መንበረሰ፡ ዘገብረ፡ ላቲ፡ ምስለ፡ ካልዕታ፡ ሥዕለ፡ እግዝ እትነ፡ ማርያም፡ በምስካቢሁ፡ ላዕለ፡ አራቱ፡ ቅሩበ፡ ትርዓሱ፡ ዘይሰክብ፡ ቦቱ፡ ምስለ፡ ብእሲቱ፡ ውእቱ፡ ኪዳነ፡ ማርያም፡ ዘኮነ፡ ስመ፡ ጥምቀቱ፡ ሥዕልሰ፡ ኢፈቀደት፡ ትንበር፡ በዝንቱ፡ መንበር፡ ዘ ኢኮነ፡ ንጹሐ። አላ፡ ትንበር፡ በመንበር፡ ንጹሕ። በከመ፡ ይቤ፡ ዳዊት፡ በመዝሙር። መሥዋዕተ፡ ወቍርባነ፡ ኢፈቀድኩ። ሥጋከ፡ አንጽሕ፡ ሊተ፡ መሥዋዕተ፡ ዘበ እንተ፡ ኃጢአት፡ ኢሠመርኩ። ወሀሎኩ፡ አነ፡ ኃጥእ፡ ወልደ፡ ኢየሱስ፡ ነዳየ፡ አ እምሮ፡ ወብዑለ፡ ጌጋይ። አሜሃ፡ ርኁቀ፡ መካነ፡ እንዘ፡ ንውም፡ አስተር አየተኒ፡ በሕልም። ዛቲ፡ ሥዕለ፡ እግዝ እትነ፡ እንዘ፡ ይ ኤድም፡ ስነ፡ ላህያ፡ ወትመስል፡ ልብስተ፡ ሥጋ። ወለዘር እያ፡ ይነድድ፡ ልቡ፡ በፍቅረ፡ ዚ አሃ፡ እስመ፡ ይ እቲ፡ ሥዕል፡ ዘኃደረ፡ ላዕሌሃ፡ መንፈስ፡ ቅዱስ፡ በከመ፡ ኃደረ፡ ላዕለ፡ ሥዕለ፡ እግዝ እትነ፡ ማርያም፡ በሀገረ፡ ጼዴንያ። ንግባዕኬ፡ ኀበ፡ ጥንተ፡ ነገር፡ ዛቲ፡ ስዕል፡ መጽ አት፡ በሕልምየ፡ እንዘ፡ ንውም፡ ርኁቀ፡ ብሔረ፡ ትቤለኒ፡ ወልደ፡ ኢየሱስ፡ ወልደ፡ ኢየሱስ፡ ፫ተ ጊዜያተ፡ ጸውዓተኒ፡ ወትቤለኒ፡ ሑር፡ በጽባሕ፡ ወአፍጥን፡ ገይሠ፡ ኀበ፡ እኁከ፡",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Getatchew Haile",
@@ -8696,6 +9299,7 @@ const MIRACLES_OF_MARY = [
     "title": "Man Saved from Foreign Invaders",
     "incipit": "ተብህለ ፡ ከመ ፡ ሀሎ ፡ ፩ብእሲ ፡ በውስተ ፡ አሐቲ ፡ ሀገር ፡ እምድኅረ ፡ ፈጸመ ፡ ምስሆ ፡ በእለተ ፡ እሁድ ። ኮነ ፡ ድልቅልቅ ፡ ወሮድዎ ፡ ሰብአ ፡ አረሚ ፡ ለሰብአ ፡ ይእቲ ፡ ሀገር ፡ መጺኦሙ ፡ እምዕራብ ፡ ከመ ፡ ይማህርኩ ፡ ንዋዮሙ ፡ ወእንስሳሆሙ ፡ ወአንስቲያሆሙ ፡ ወይቅትሉ ፡ ወራዙቲሆሙ ፡ ወውእቱሰ ፡ ብእሲ ፡ ጐየ ፡ ምስለ ፡ እኁሁ",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Getatchew Haile",
@@ -8708,6 +9312,7 @@ const MIRACLES_OF_MARY = [
     "title": "Holy Family Meets Wicked Woman in Wilderness",
     "incipit": "ወሶበ፡ ሰምዓት፡ እግዝእትነ፡ ማርያም፡ ከመ፡ ቀተለ፡ ሄሮድስ፡ ሕፃናተ፡ አንቃዕደወት፡ አዕይንቲሃ፡ ውስተ፡ ሰማይ፨ ወትቤ፡ እግዚኦ፡ እግዚኦ፡ ፍታሕ፡ ማዕከሌነ፡ ወማዕከለ፡ ሄሮድስ፨ እስመ፡ አልቦ፡ ዘገበርነ፡ እኩየ፡ ላዕሌሁ፡ ዳዕሙ፡ በከንቱ፡ …",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Getatchew Haile",
@@ -8720,6 +9325,7 @@ const MIRACLES_OF_MARY = [
     "title": "Mary Gives 68 Mistreated Dogs Justice",
     "incipit": "ወትቤሎ፡ እግዝእትነ፡ ማርያም፡ ለመልእክ፡ ቡሩክ፡ ስሙ፡ ለእግዚአብሔር፡ ዘፈቀደ፡ ይኩን፨ ወዓርገ፡ መልአክ፡ ኀበ፡ ዘፈነዎ፡ ወዮሴፍኒ፡ ወእግዝእትነ፡ ማርያም፡ ሖሩ፡ ፍናዊሆሙ፨ ወበጽሑ፡ ሀገረ፡ ማርክቤስ፡ በአንዳ፡ ባሕር፡ ወተቀበልዎ፡ ሰብአ፡ ሀገር፡ ምስለ፡ ንዋየ፡ ሐቅሎሙ፡ …",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Getatchew Haile",
@@ -8732,6 +9338,7 @@ const MIRACLES_OF_MARY = [
     "title": "Mary Restores to LIfe Those Who Mistreated Dogs",
     "incipit": "ወእምድኅረ፡ ፪አውራኅ፡ ሰገደ፡ ዮሴፍ፡ ቅድመ፡ እግዝእትነ፡ ማርያም፡ ወይቤላ፡ እስእለኪ፡ ስእለተ፨ ወአእመረቶ፡ ምክሮ፡ እግዝእትነ፡ ማርያም፡ ወትቤሎ፡ በእንተ፡ እሉ፡ እኩያን፡ ኢትስእለኒ፡ በእንተ፡ ባዕድሰ፡ በል፡ ዘፈቀድከ፡ ወይቤላ፡ ዮሴፍ፡ አልቦ፡ እግዝእትየ፡ እስእለኪ፡ በእንቲአሆሙ፡ ተአክሎሙ፡ ዛቲ፡ ተግሣጽ፨…",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Getatchew Haile",
@@ -8744,6 +9351,7 @@ const MIRACLES_OF_MARY = [
     "title": "Herod Kills 63 Dogs and a Million Roosters",
     "incipit": "ወሶበ፡ ተፈልጠት፡ እግዝእትነ፡ ማርያም፡ እምደማቴዎናስ፡ ሖረት፡ ፍኖታ፡ ወበጽሐት፡ ደብረ፡ ፌካ፡ ወቤተት፡ በህየ፡ ወበሳኒታ፡ ሐለፈት፡ እምህየ፡ ደብረ፡ ቶራም፡ ወበጽሐት፡ ወቤተት፡ ወኃለፈት፡ እምህየ፡ ወበጽሐት፡ ደብረ፡ ጌን፡ ሲሌም፡ ወቤተት፡ በህየ፨ ወበሳኒታ፡  ተንሥአት፡ ወኃለፈት፡ ወበጽሐት፡ ደብረ፡ ሞር፡ …",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Getatchew Haile",
@@ -8756,6 +9364,7 @@ const MIRACLES_OF_MARY = [
     "title": "Child Walks through Fire Unharmed",
     "incipit": "ወሀሎ ፡ አሐዱ ፡ ሕፃን ፡ ዘያፈቅራ ፡ ለእግዝእትነ ፡ ማርያም ፡ ማሪሃም ፡ ወይቤ ፡ አንሰ ፡ እገብር ፡ ተዝካራ ፡ ለማርያም ፡ ከመ ፡ ታውፅአኒ ፡ እምእሳተ ፡ ገሀነም ፡ ይቤ ፡ ውእቱ ፡ ሕፃን ፡ ወይቤሎ ፡ ፩ወሬዛ ፡ ለውእቱ ፡ ሕፃን ፡ ኢታወፅአ",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Getatchew Haile",
@@ -8768,6 +9377,7 @@ const MIRACLES_OF_MARY = [
     "title": "Ethiopian Magician-monk Repents",
     "incipit": "ወሀሎ ፡ ፩መነኰስ ፡ ዘስሙ ፡ አርሳንዮስ ፡ ውስተ ፡ ደብረ ፡ ደሞ ፡ ወውእቱ ፡ ነዳይ ፡ ወኃጥእ ፡ ወገባሬ ፡ ሥራይ ፡ ዘይጼድቅ ፡ በአፉሁ ፡ ወያጸድቅዎ ፡ ሰብእ ፡ በአፉሁ ፡ ወባሕቱ ፡ እስመ ፡ ኮነ ፡ ብዙኃ ፡ ኃጢአቱ ፡ ወተጽናሱ ፡ ኢያጸርዕ ፡ ስብሐታ ፡ ለማርያም ፡ እንዘ ፡ ይብል ፡",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Getatchew Haile",
@@ -8780,6 +9390,7 @@ const MIRACLES_OF_MARY = [
     "title": "Homily on the Virgin Mary and the Biblical Patriarchs: Part 7: The Virgin Mary and the biblical patriarch Joshua crossing the Jordan River",
     "incipit": "ወሶበ ፡  ግዕዙ ፡  እሥራኤል ፡  እምኀበ ፡  ደብሩ ፡  ለእግዚአብሔር ፡  ምሕዋረ ፡  ሠሉስ ፡  መዋዕል ፡  ተሐውር ፡  ቅድሜሆሙ ፡  ታቦተ ፡  ሕጉ ፡  ለእግዚአብሔር ፡  ከመ ፡  ትርአይ ፡  ሎሙ ፡  ምዕረፈ ።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -8796,6 +9407,7 @@ const MIRACLES_OF_MARY = [
     "title": "Homily on the Virgin Mary and the Biblical Patriarchs: Part 8: The Virgin Mary and the biblical patriarch King David",
     "incipit": "እግዚአብሔር ፡  ይባርክሙ ፡  ወያብርህ ፡  አዕይንተ ፡  አልባቢክሙ ፡  ለሰሚዐ ፡  ተአምሪሃ ፡  ለእግዝእትነ ፡  ...  ዘኢይክሉ ፡  ሰማያውያን ፡  ወምድራውያን ፡  ፈጽሞ ፡  ውዳሴሃ። ጸሎታ ፡  ወበረከታ ፡  የሃሉ ፡  ምስሌነ ፡  ለዓለመ ፡  ዓለም ፡  አሜን። እምቅድመ ፡  ተአምር ፡  ይትነበብ ፡  ወይስምዑ ፡  ሕዝብ ፡  በዕዝነ ፡  ልቡና። ስምዑ ፡  በአዕዛኒክሙ ፡  ወአንብሩ ፡  በልብክሙ ፡  ዕበያ ፡  ወክብራ ፡  ወውዳሴሃ ፡  ለእግዝእትነ ፡  ማርያም ፡  ዘበዕብራይስጢ ፡  ማሪሃም። ማርያም ፡  ብሂል ፡  መርሕ ፡  ለመንግሥተ ፡  ሰማያት።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -8812,6 +9424,7 @@ const MIRACLES_OF_MARY = [
     "title": "God consoled Solomon by promising the Virgin Mary would be born from Solomon's seed",
     "incipit": "እግዚአብሔር ፡  ማእምረ ፡  ልብ ፡  ለኵሉ ፡  ለለአሐዱ ፡  አሐዱ ፡  ዘሰፍሐ ፡  ሰማያተ ፡  በጥበቡ ፡  ወአጽንዓ ፡  ለምድር ፡  ዲበ ፡  ማይ ፡  ወአልቦ ፡  ድንጋግ ፡  ለባሕረ ፡  ጥበቡ ፡  ዘሀሎ ፡  እምቅድም ፡  ዘወሀበ ፡  ኪዳነ ፡  ዘለዓለም ፡  ለአበው ፡  ቀደምት ፡  በእንተ ፡  ተሠግዎቱ ፡  እምወለተ ፡  ዳዊት ፡  ወዘኢይሔሱ ፡  ቃሎ ፡",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Jeremy Brown & Dawit Muluneh with Wendy Laura Belcher",
@@ -8832,6 +9445,7 @@ const MIRACLES_OF_MARY = [
     "title": "King Lebna Dengel (Lebna Dengel, Dawit II), the 16th c. Ethiopian monarch, is visited by the Virgin Mary who foretells his fate: Part 02",
     "incipit": "ወአመ ፡  ሣልስት ፡  ዕለት ፡  እምድኅረ ፡  አስተርአየቶ ፡  እግዝእትነ ፡  ... ለልብነ ፡  ድንግል ፡  ካዕበ ፡  ትቤሎ ፡  ለራጉኤል ፡  ሊቀ ፡  መላእክት ፡",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -8844,6 +9458,7 @@ const MIRACLES_OF_MARY = [
     "title": "King Lebna Dengel (Lebna Dengel, Dawit II), the 16th c. Ethiopian monarch, is visited by the Virgin Mary who foretells his fate: Part 04",
     "incipit": "ወበአሐቲ ፡  እመዋዕል ፡  እንዘ ፡  ሀሎ ፡  ልብነ ፡  ድንግል ፡  ውስተ ፡  ኀዘን ፡  ክቡድ ፡  በይነ ፡  ዘይመጽእ ፡  ላዕሌሁ ፡  ይቤ ፡  በውዑይ ፡  ኅሊና ፡  እንከሰ ፡  አኀዝኩ ፡  እትናገር ፡  ምስለ ፡  እግዝእትየ ፡  እንተ ፡  ፆረት ፡  እሳተ ፡  መለኮት ፡  እንዘ ፡  መሬት ፡  ወሐመድ ፡  አነ።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -8856,6 +9471,7 @@ const MIRACLES_OF_MARY = [
     "title": "King Lebna Dengel (Lebna Dengel, Dawit II), the 16th c. Ethiopian monarch, is visited in the 1500s by the Virgin Mary who foretells his fate: Part 06",
     "incipit": "ወአመ ፡  ዕሥራ ፡  ወአሚሩ ፡  ለወርኃ ፡  ሚያዚያ ፡  ሖረ ፡  ልብነ ፡  ድንግል ፡  ውስተ ፡  ቤተ ፡  ክርስቲያን ፡  ዘእግዝእትነ ፡  ማርያም ፡  ከመ ፡  ይስአል ፡  በህየ ፡  በእንቲአሁ ፡  ወበእንተ ፡  ሀገሩ ፡  ቅድስት።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -8872,6 +9488,7 @@ const MIRACLES_OF_MARY = [
     "title": "King Lebna Dengel (Lebna Dengel, Dawit II), the 16th c. Ethiopian monarch, is visited in the 1500s by the Virgin Mary who foretells his fate: Part 07",
     "incipit": "ወበአሐቲ ፡  ዕለት ፡  እመዋዕል ፡  ጊዜ ፡  መንፈቀ ፡  ሌሊት ፡  ወረደ ፡  እምሰማይ ፡  ቅዱስ ፡  ራጉኤል ፡  ሊቀ ፡  መላእክት ፡  ወአስተርአዮ ፡  በሕልም። ለልብነ ፡  ድንግል ፡  ንጉሠ ፡  ኢትዮጵያ ፡  ወይቤሎ ፡  ኦ ፡  ልብነ ፡  ድንግል ፡  ስማዕ ፡  ዘእነግረከ ፡  እስመ ፡  ወሀብኩከ ፡  ኪዳነ ፡  ቀዲሙ ፡  ከመ ፡  እንግርከ ፡  ዘተርፈ ፡  በከመ ፡  ለአከተኒ ፡  ድንግል ፡  ማርያም ፡  እሙ ፡  ለኢየሱስ ፡  ክርስቶስ።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -8884,6 +9501,7 @@ const MIRACLES_OF_MARY = [
     "title": "King Lebna Dengel (Lebna Dengel, Dawit II), the 16th c. Ethiopian monarch, is visited in the 1500s by the Virgin Mary who foretells his fate: Part 09",
     "incipit": "ወአመ ፡  ነበረ ፡  ሰብዓተ ፡  ዕለታተ ፡  እንዘ ፡  ኢይወጽእ ፡  እምቤተ ፡  መንግሥቱ ፡  ወኢይትረአይ ፡  ለሰብእ ፡  ልብነ ፡  ድንግል ፡  ኮነ ፡  ተሐውኮ ፡  ማዕከለ ፡  ሕዝብ ፡  ወደንገፁ ፡  ሊቃነ ፡  ካህናቲሁ ፡  ወመኳንንቲሁ። ወእምድኅረዝ ፡  ቦኡ ፡  ካህናት ፡  ኀበ ፡  ንጉሥ ፡  ወተሰአልዎ ፡",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -8900,6 +9518,7 @@ const MIRACLES_OF_MARY = [
     "title": "King Sarsa Dengel (sartsa Dengel), the 16th c. Ethiopian monarch, and his rise due to the Virgin Mary",
     "incipit": "ወእምድኅረ ፡  አዕረፈ ፡  ልብነ ፡  ድንግል ፡  ንጉሥ ፡  ነግሠ ፡  ሠርፀ ፡  ድንግል ፡  ንጉሥ ፡  ዘየአምን ፡  በሃይማኖተ ፡  እስክንድርያ። ወሶቤሃ ፡  አስተርአየቶ ፡  እግዝእትነ ፡  ...  ፡  ወትቤሎ ፡  ጸሐፍ ፡  ሎቱ ፡  ራእየ ፡  ዘከመ ፡  አስተርአይክዎ ፡  ቅድመ ፡  አነ ፡  ወዘከመ ፡  ነገሮ ፡  ኵሎ ፡  ዘይመጽእ ፡  ላዕሌሁ።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -8912,6 +9531,7 @@ const MIRACLES_OF_MARY = [
     "title": "King Menelik (Menilek) II, the 19th c. Ethiopian monarch, finds a tabot that had been missing for hundreds of years and returns it to Dabra Libanos with the help of the Virgin Mary",
     "incipit": "ወሀለወት ፡  አሐቲ ፡  ታቦት ፡  ዘእግዝእትነ ፡  ... ውስተ ፡  ገዳም ፡  ዘደብረ ፡  ሊባኖስ ፡  ዘኮነ ፡  ይቄድስ ፡  ወያዓርግ ፡  ባቲ ፡  መሥዋዕተ፤ ክቡር ፡  አቡነ ፡  ተክለ ፡  ሃይማኖት ፡  እንዘ ፡  ሀሎ ፡  በሕይወቱ።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -8924,6 +9544,7 @@ const MIRACLES_OF_MARY = [
     "title": "King Amda Seyon (Amda tseyon) I, the 14th c. Ethiopian monarch: Part 1: In the campaign of 1322 CE, with the help of the Virgin Mary, the king defeats the rebel Sebredin",
     "incipit": "ንጽሕፍ ፡  በረድኤተ ፡  እግዚአብሔር ፡  ዘከመ ፡  ገብረት ፡  ኃይለ ፡  ወመዊዓ ፡  እግዝእትነ ፡  ... በእደዊሁ ፡  ለዓምደ ፡  ጽዮን ፡  ንጉሠ ፡  ነገሥት ፡  ዘኢትዮጵያ።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -8936,6 +9557,7 @@ const MIRACLES_OF_MARY = [
     "title": "King Amda Seyon (Amda tseyon) I, the 14th c. Ethiopian monarch: Part 2: In the campaign of 1322 CE, with the help of the Virgin Mary, the king receives a message from the Virgin Mary through a monk",
     "incipit": "ወበውእቱ ፡  መዋዕል ፡  አመ ፡  ተመይጠ ፡  እምፀብዓ ፡  ቀትል ፡  ዘሀገረ ፡  ደዋሮ ፡  ዓምደ ፡  ጽዮን ፡  ንጉሠ ፡  ኢትዮጵያ ፡  ተንሥአ ፡  ይሑር ፡  ምድረ ፡  ጋላት ፡  አመ ፡  ሰቡዑ ፡  ለመጋቢት ፡  ወበጽሐ ፡  ምስለ ፡  ሠራዊቱ ፡  አመ ፡  ዕሥራ ፡  ወሰሙኑ ፡  ለሚያዚያ ፡  ወበህየ ፡  አብዐለ ፡  በዓለ ፡  ትንሣኤሁ ፡",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -8948,6 +9570,7 @@ const MIRACLES_OF_MARY = [
     "title": "King Amda Seyon (Amda tseyon) I, the 14th c. Ethiopian monarch: Part 3: In the campaign of 1322 CE, with the help of the Virgin Mary, the kinge encourages his soliders to fight the Muslims",
     "incipit": "ወበውእቱ ፡  መዋዕል ፡  እንዘ ፡  ሀሎ ፡  ዓምደ ፡ ጽዮን ፡  ንጉሥ ፡  ውስተ ፡  ሀገረ ፡  ሰማርያ ፡  አመ ፡  መዋዕለ ፡  ፀብዕ ፡  ምስለ ፡  ተንባላት ፡  ሖረ ፡  በሌሊት ፡  ኀበ ፡  ኆኅተ ፡  ደብተራ ፡  እንተ ፡  ሀለወት ፡  ታቦተ ፡  ሕጉ ፡  ለእግዚአብሔር ፡  ወይ እቲኒ ፡  እንተ ፡  ነሥኣ ፡  ምስሌሁ ፡  ትካት ፡  ወሖረ ፡  ውስተ ፡  ፀብዕ።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -8960,6 +9583,7 @@ const MIRACLES_OF_MARY = [
     "title": "King Amda Seyon (Amda tseyon) I, the 14th c. Ethiopian monarch: Part 4: In the campaign of 1322 CE, with the help of the Virgin Mary, he leads the fight against 2,722 soliders near the River Dedessa??? despite being ill",
     "incipit": "ወአመ ፡  ኀሙሱ ፡  ለሐምሌ ፡  ዐርገ ፡  ዓምደ ፡  ጽዮን ፡  እምነ ፡  ሰማርያ ፡  ውስተ ፡  ሀገረ ፡  ኦፌር ፡  ወሖረ ፡  ምሕዋረ ፡  ሰቡዕ ፡  መዋዕል ፡  ወአደወ ፡  ፈለገ ፡  ደስ ፡  ምስለ ፡  ሠራዊቱ ፡  ወበጽሐ ፡  ሞራ ፡  ገሞራ ፡  ወተአየነ ፡  በህየ ፡  ወኮነ ፡  ይተልዉዎ ፡  ካህናት ፡  ወቀሳውስት ፡  ነሢኦሙ ፡  ታቦተ ፡",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -8972,6 +9596,7 @@ const MIRACLES_OF_MARY = [
     "title": "King Amda Seyon (Amda tseyon) I, the 14th c. Ethiopian monarch: Part 5: In the campaign of 1322 CE, with the help of the Virgin Mary, he and his soldiers cross the River Ziba [Ziway?]",
     "incipit": "ወአመ ፡  ተሱዑ ፡  ለሐምሌ ፡  ዘውእቱ ፡  ሳኒታሃ ፡  ለዕለት ፡  እንተ ፡  ባቲ ፡  ተፃብዓ ፡  ዓምደ ፡  ጽዮን ፡  ምስለ ፡  ተንባላት ፡  ወሞዖሙ ፡  በኃይለ ፡  ኢየሱስ ፡  ክርስቶስ ፡  ወልደ ፡  እግዚአብሔር ፡  ወበረድኤታ ፡",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -8984,6 +9609,7 @@ const MIRACLES_OF_MARY = [
     "title": "King Amda Seyon (Amda tseyon) I, the 14th c. Ethiopian monarch: Part 6: In the campaign of 1322 CE, with the help of the Virgin Mary, the king advances on Talag, the capital of Adal, and they convert",
     "incipit": "ወኮነ ፡  እንዘ ፡  ሀለወ ፡  ገብረ ፡  መስቀል ፡  (ዓምደ ፡  ጽዮን) ፡  ውስተ ፡  ሀገረ ፡  ዶቢአ ፡  አንሥአ ፡  ዕይንቲሁ ፡  ወነጸረ ፡  ደብረ ፡  ነዋሃ ፡  እንተ ፡  ይጐድእ ፡  ርእሱ ፡  ሰማየ ፡  እንተ ፡  መንገለ ፡  ጽባሒሃ ፡  ለሀገር ፡  ዘይርኅቅ ፡  እመካን ፡  ወሐተተ ፡  ዘከመ ፡  መኑ ፡  ይእቲ ፡  ወነገርዎ ፡  ከመ ፡  ዛቲ ፡  ሀገር ፡  ትሰመይ ፡  ሀገረ ፡  ተለግ።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -8996,6 +9622,7 @@ const MIRACLES_OF_MARY = [
     "title": "King Amda Seyon (Amda tseyon) I, the 14th c. Ethiopian monarch: Part 7: In the campaign of 1322 CE, with the help of the Virgin Mary, the king defeats the apostates near Talag",
     "incipit": "ወአመ ፡  ሳብዕት ፡  ዕለት ፡  ዘውእቱ ፡  አመ ፡  ዓሡሩ ፡  ወአሚሩ ፡  ለነሐሴ ፡  እም ፡ አመ ፡  ቦአ ፡  ውስተ ፡  ሀገረ ፡  ተለግ ፡  ተንሥአ ፡  ይሑር ፡  ዓምደ ፡ ጽዮን ፡  ውስተ ፡  ካልእ ፡  ብሔር ፡  እንተ ፡  መንገለ ፡  ደቡባ ፡  ለይእቲ ፡  ሀገረ ፡  ተለግ ፡  ወአስተፋነውዎ ፡",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -9008,6 +9635,7 @@ const MIRACLES_OF_MARY = [
     "title": "King Amda Seyon (Amda tseyon) I, the 14th c. Ethiopian monarch: Part 8: In the campaign of 1322 CE, with the help of the Virgin Mary, one of the king's wives prays to the Virgin Mary for his safe return",
     "incipit": "ወበእማንቱ ፡  መዋዕል ፡  አመ ፡  ሖረ ፡  ውስተ ፡  ፀብዕ ፡  ዓምደ ፡  ጽዮን ፡  ንጉሠ ፡  ኢትዮጵያ ፡  ወኮኖ ፡  መጠነ ፡  ተሰዓቱ ፡  አውራኅ ፡  እምዘወፅአ ፡  እመካኑ ፡  ወኢተመይጠ ፡  እንከ ፡  ኀበ ፡  እለ ፡  ሀለዉ ፡  ንግሥታት ፡  አንስቲያሁ ፡  ወውሉዱ ፡  ወኅዳጣን ፡  ሐራሁ ፡  ዐቃብያነ ፡  ትዕይንት ፡  ሶቤሃ ፡  ኮነ ፡  ተሐውኮ ፡  ማዕከለ ፡  ሰብእ። ወይቤሉ ፡  አሌ ፡  ለነ ፡  ወይ ፡  ለነ ፡  ጠፍአ ፡  ንጉሥነ ፡  እንዘ ፡  የኀድገነ ፡  ውስተ ፡  ብሔረ ፡  ተንባላት ፡  ወውስተ ፡  ቆላተ ፡  ገዳም ፡  እንዘ ፡  አልቦ ፡",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -9020,6 +9648,7 @@ const MIRACLES_OF_MARY = [
     "title": "King Amda Seyon (Amda tseyon) I, the 14th c. Ethiopian monarch: Part 9: In the campaign of 1322 CE, with the help of the Virgin Mary, the king advances through Eastern Ethiopia all the way to the Indian Ocean and then returns",
     "incipit": "ወበውእቱ ፡  መዋዕል ፡  በዓሠርቱ ፡  ምዕት ፡  ወሠለስቱ ፡  ምዕት ፡  ዕሥራ ፡  ወሰብዓቱ ፡  ዓመት ፡  እምልደተ ፡  እግዚእነ ፡  ኢየሱስ ፡  ክርስቶስ ፡  ሶበ ፡  ተንሥኡ ፡  ላዕሌሁ ፡  ለንጉሥ ፡  ወገብሩ ፡  ዓመፃ ፡  ዲበ ፡  መንግሥቱ ፡  አበይተ ፡  ሀገር ፡  ወመኳንንት ፡  እለ ፡  ሀለዉ ፡  በምሥራቃቲሃ ፡  ለይእቲ ፡  ሀገረ ፡  ኢትዮጵያ ፡  ሶቤሃ ፡ በጽሐ ፡  ዓምደ ፡  ጽዮን ፡  ንጉሠ ፡  ኢትዮጵያ ፡  ኀበ ፡  ጽንፈ ፡  ባሕር ፡  ዘሕንደኬ ፡  እንዘ ፡  ይትቃተል ፡",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -9032,6 +9661,7 @@ const MIRACLES_OF_MARY = [
     "title": "King Menelik (Menilek) II, the 19th c. Ethiopian monarch, and his Life: Part 1: The Virgin Mary promises his grandfather??? father??? Sahle Selassie??? a great son in the 1800s",
     "incipit": "ወሀሎ ፡  አሐዱ ፡  ንጉሥ ፡  ዘይሰመይ ፡  ሣህለ ፡  ሥላሴ ፡  ዘነግሠ ፡  ውስተ ፡  ብሔረ ፡  ሴዋ። ወለውእቱኒ ፡  ንጉሥ ፡  ኮነ ፡  ሥርወ ፡  መንግሥቱ ፡  ወዘርዓ ፡  ሙላዱ ፡  እምቀዳማዊ ፡  ምኒልክ ፡  ወልዱ ፡  ለሰሎሞን ፡  ንጉሠ ፡  ሳሌም ፡  ወእምንግሥተ ፡  ሳባ ፡  ኢትዮጵያዊት ፡  ወመጽ አ ፡  ሥርወ ፡  ልደቱ ፡  እንዘ ፡  ይትፋለስ ፡  እምክልኤቱ ፡  ፍናዋት ፡  በሥምረተ።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -9044,6 +9674,7 @@ const MIRACLES_OF_MARY = [
     "title": "King Menelik (Menilek) II, the 19th c. Ethiopian monarch, and his Life: Part 2: Menlik is born, just as the Virgin Mary promised",
     "incipit": "ወዝውእቱ ፡  ካልእ ፡  ክፍል ፡  ተአምር ፡  ዘተገብረ ፡  በእንተ ፡  ምኒልክ። ወአመ ፡  በጽሐ ፡  መዋዕለ ፡  ዕድሜሁ ፡  ወኍልቈ ፡  ሱባኤሁ ፡  ለነገር ፡ በእንተ ፡  ልደቱ ፡  ለምኒልክ ፡  በዓሠርቱ ፡  ወሰመንቱ ፡  ምዕት ፡  ሠላሳ ፡  ወስድስቱ ፡  ዓመት ፡  እምአመ ፡  ተወልደ ፡  እግዚእነ ፡  ኢየሱስ ፡  ክርስቶስ ፡  ተወልደ ፡  ወልድ ፡  ኅሩይ ፡  ሣህለ ፡  ማርያም ፡  (ምኒልክ) አመ ፡  ዓሡሩ ፡  ወሰኑዩ ፡  ለወርኃ ፡  ነሐሴ ፡  በከመ ፡  አሰፈወቶ ፡  ትካት ፡  እግዝእትነ ፡  ማርያም ፡  ለሣህለ ፡  ሥላሴ።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -9056,6 +9687,7 @@ const MIRACLES_OF_MARY = [
     "title": "King Menelik (Menilek) II, the 19th c. Ethiopian monarch, and his Life: Part 3: He survives from the age of 11 until he becomes king with the Virgin Mary's help",
     "incipit": "ወአመ ፡  ኮኖ ፡  ዓሠርቱ ፡  ወአሐዱ ፡  ዓመት ፡  ለሣህለ ፡  ማርያም ፡  (ምኒልክ) ፡  እም አመ ፡  ተወልደ ፡  ሞተ ፡  አቡሁ ፡  ኃይለ ፡  መለኮት ፡  ንጉሠ ፡  ሴዋ ፡  ወተቀብረ ፡  ውስተ ፡  ደብረ ፡  በግዕ ፡  ወበጊዜሃ ፡  በከመ ፡  ተብህለ ፡  ቀዳሚ ፡  ተንሥአ ፡  ካሣ ፡  (ቴዎድሮስ ፡ ) ኃያል ፡  ወመዓትም ፡  ውስተ ፡  ሀገረ ፡",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -9068,6 +9700,7 @@ const MIRACLES_OF_MARY = [
     "title": "King Menelik (Menilek) II, the 19th c. Ethiopian monarch, and his Life: Part 4: He defeats the Italians who invade Ethiopia) [Battle of Adwa?]",
     "incipit": "በዓሠርቱ ፡  ወሰመንቱ ፡  ምዕት ፡  ሰማኒያ ፡  ወሰመንቱ ፡  ዓመት ፡  እምልደተ ፡  እግዚእነ ፡  ኢየሱስ ፡  ክርስቶስ ፡  በመዋዕሊሁ ፡  ለምኒልክ ፡  ንጉሠ ፡  ነገሥት ፡  ዘኢትዮጵያ ፡  ተንሥ ኡ ፡  ሰብአ ፡  ሮሜ ፡  በነገረ ፡  ጸብዕ ፡  ወትዝኅርት ፡  ወበግዘፈ ፡  ልቡና ፡  ከመ ፡  ይጽብዕዋ ፡  ለኢትዮጵያ ፡  ወይቅንይዋ ፡  በቅኔት ፡  መሪር ፡  ወይንስቱ ፡  አብያተ ፡  ክርስቲያናት ፡  ወያማስኑ ፡  ሃይማኖተ ፡  ክርስቲያን ፡  ዘኦርቶዶክስ።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -9080,6 +9713,7 @@ const MIRACLES_OF_MARY = [
     "title": "King Menelik (Menilek) II, the 19th c. Ethiopian monarch, and his Life: Part 5: He marches with his wife Taitu into battle against the Italians and defeats them in the Battle of Adwa",
     "incipit": "ወበውእቱ ፡  መዋዕል ፡  እምድኅረ ፡  ዓሠርቱ ፡  ወሰምንቱ ፡  ምዕት ፡  ሃምሳ ፡  ወአርባዕቱ ፡  ዓመት ፡  እምልደተ ፡  እግዚእነ ፡  ኢየሱስ ፡  ክርስቶስ ፡  እምዘ ፡  ነግሠ ፡  ምኒልክ ፡  ንጉሠ ፡  ነገሥት ፡  ዘኢትዮጵያ ፡  በዕሥራ ፡  ወስድስቱ ፡  ዓመት ፡  መጽ ኡ ፡  ሰብአ ፡  ሮሜ ፡  ይጽብዕዎ ፡  ለምኒልክ ፡  ወይቅንይዋ ፡  ለሀገር ፡  ቅድስት ፡  ኢትዮጵያ ፡  በቅኔት ፡  መሪር።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -9092,6 +9726,7 @@ const MIRACLES_OF_MARY = [
     "title": "Zaytoun Apparition: Part 1?: The Virgin Mary appears for seven days in Saint Mary's Church in the neighborhood of Zaytoun, in Cairo, in 1982 [1989 CE]",
     "incipit": "ወበዓሠርቱ ፡  ሰዓቱ ፡  ሰማኒያ ፡  ወክልኤቱ ፡  ዓመት ፡  እምልደተ ፡  እግዚእነ ፡  ኢየሱስ ፡  ክርስቶስ ፡  አመ ፡  ሰኑዩ ፡  ለወርኃ ፡  መጋቢት ፡  አስተርአየት ፡  ገሃደ ፡  እግዝእትነ ፡  ማርያም ፡  ውስተ ፡  ብሔረ ፡  ግብፅ ፡  (ምስር) ፡  በላዕለ ፡  አሐቲ ፡  ቤተ ፡  ክርስቲያን ፡  ኦርቶዶክሳዊት ፡  ዘተሐነፀት ፡  በስማ ፡  ውስተ ፡  ትዕይንት ፡  ዘይሰመይ ፡  ዘይቱን። ወአስተር እዮታኒ ፡  ኮነ ፡  እምቀዳማይ ሰዓተ ፡  ሌሊት ፡  በዘውእቱ ፡",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -9104,6 +9739,7 @@ const MIRACLES_OF_MARY = [
     "title": "Guchen Maryam Tabot: Part 1: Thieves steal the tabot from this church and try to sell it but Muslims see that the thieves are spiritually on fire [spelling]",
     "incipit": "ወሀለወት ፡  አሐቲ ፡  ቤተ ፡  ክርስቲያን ፡  ውስተ ፡  ብሔረ ፡  ኢትዮጵያ ፡  ዘተሐንፀት ፡  በስመ ፡  እግዝእትነ ፡  ወትሰመይ ፡  ግሼን ፡  ማርያም ፡  (ደብረ ፡  ከርቤ) ወሕንፃ ፡  ማኅፈዲሃኒ ፡  ለይእቲ ፡  ቤተ ፡  ክርስቲያን ፡  ኮነ ፡  በመልዕልተ ፡  ደብር ፡  ነዋህ ፡  ዘው እቱ ፡  መካነ ፡  ምዕራፈ ፡  ግማደ ፡  መስቀሉ ፡  ለኢየሱስ ፡  ክርስቶስ ፡  እንተ ፡  አምጽ ኦ ፡  ዳዊት ፡  ንጉሠ ፡  ኢትዮጵያ ፡  እምኢየሩሳሌም ፡  ወበእንተዝ ፡  ኮነት ፡  ይእቲ ፡  ደብረ ፡  ካልእታ ፡  በክብር ፡  ለአክሱም ፡  ጽዮን።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -9116,6 +9752,7 @@ const MIRACLES_OF_MARY = [
     "title": "Guchen Maryam Tabot: Part 2: The Virgin Mary appears in the patriarch's Addis Ababa church and demands to know why her tabot has not been returned to Guechen Maryam [unclear]",
     "incipit": "ተብህለ ፡  ዘከመ ፡  ገብረት ፡  ተአምረ ፡  እግዝእትነ ፡  በደብረ ፡  ቅድስተ ፡  ቅዱሳን ፡  ማርያም ፡  እንተ ፡  ይእቲ ፡  መንበረ ፡  ፓትረያሪክ ፡  ዘኢትዮጵያ። ወበውእቱ ፡  መዋዕል ፡  ኮነት ፡  ትሄሉ ፡  ኅቡረ ፡  ታቦተ ፡  ማርያም ፡  ዘደብረ ፡  ከርቤ ፡  (ግሼን) ፡  ምስለ ፡  ታቦተ ፡  ማርያም ፡  ዘቅድስተ ፡  ቅዱሳን ፡  እንተ ፡  ይእቲ ፡  መንበረ ፡  ፓትረያሪክ ፡  ዘኢትዮጵያ ፡  መጠነ ፡  ፯ቱ ፡  አውራኅ ፡  እምድኅረ ፡  ተረክበት ፡  እምእደ ፡  ሠረቅት።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -9128,6 +9765,7 @@ const MIRACLES_OF_MARY = [
     "title": "Zaytoun Apparition: Part 2?: The Virgin Mary appears for seven days in Saint Mary's Church in the neighborhood of Zaytoun, in Cairo, in 1982 [1989 CE] (cont.)",
     "incipit": "ወበውእቱ ፡  መዋዕል ፡  አስተር አየት ፡  ካዕበ ፡  እግዝእትነ ፡  ... ውስተ ፡  ብሔረ ፡  ግብፅ ፡  በላዕለ ፡  አሐቲ ፡  ቤተ ፡  ክርስቲያን ፡  ዘትሰመይ ፡  ዘይቱን ፡  ቅድስት ፡  ማርያም። ወሶበ ፡  ተሰምዓ ፡  ውስተ ፡  ዓለም ፡  አስተርእዮታ ፡  ለእግዝእትነ ፡  ... ፡  ውስተ ፡  ምድረ ፡  ግብፅ ፡  ተጋብኡ ፡  ሕዝብ ፡  ዘአልቦሙ ፡",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -9140,6 +9778,7 @@ const MIRACLES_OF_MARY = [
     "title": "Thieves, including a man named Salomon Zallaqa, steal valuables from the patriarch's Addis Ababa church but when they try to do it again an invisible being attacks them with whips",
     "incipit": "ወበውእቱ ፡  መዋዕል ፡  ዘውእቱ ፡  አመ ፡  ፳ወ፱ ፡  ለሰኔ ፡  ቦኡ ፡  ሠረቅት ፡  ውስተ ፡  ቤተ ፡  ክርስቲያና ፡  ለቅድስተ ፡  ቅዱሳን ፡  ማርያም ፡  እንተ ፡  ይእቲ ፡  መንበረ ፡  ፓትረያሪክ ፡  ዘኢትዮጵያ። ወእምኔሆሙሰ ፡  ለሠረቅት ፡  አሐዱ ፡  ይሰመይ ፡  ሰሎሞን ፡  ዘለቀ። ወእምድኅረ ፡  ቦኡ ፡  ውስተ ፡  ቤተ ፡  ክርስቲያን ፡  ሠረቁ ፡  ወበርበሩ ፡  ኵሎ ፡  ንብረተ ፡  ቤተ ፡  ክርስቲያን ፡  ወኵሎ ፡  ንዋየ ፡  ቅድሳት ፡  ወነሥኡ ፡  መጠነ ፡  ይክሉ ፡  ነሢአ ፡  ወሖሩ ፡  ወተሠወሩ ፡  በጊዜሃ።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -9152,6 +9791,7 @@ const MIRACLES_OF_MARY = [
     "title": "King Menelik (Menilek) II, the 19th c. Ethiopian monarch, and his gift to Addis Alam Maryam in Shoa and the thieves who enter to steal them but lose their ability to see, hear, and move",
     "incipit": "ወበአሐቲ ፡  ዕለት ፡  እመዋዕል ፡  ዘው እቱ ፡  አመ ፡  ፲ወ፮ ፡  ለመስከረም ፡  ቦኡ ፡  ሠረቅት ፡  ውስተ ፡  ቤተ ፡  ክርስቲያና ፡  ለእግዝእትነ ፡  ማርያም ፡  ዘት ሰመይ ፡  አዲስ ፡  ዓለም ፡  ማርያም ፡  ወይእቲ ፡  ዳግማዊት ፡  ጽዮን ፡  በከመ ፡  ሰመያ ፡  ምኒልክ ፡  ዳግማዊ። ወሶበ ፡  ቦኡ ፡  እልክቱ ፡  ሠረቅት ፡  አኀዙ ፡  ይበርብሩ ፡  ኵሎ ፡  ንዋያተ ፡  ቤተ ፡  ክርስቲያን ፡  ወበህየ ፡  ረከቡ ፡  አክሊላተ ፡  ወዓሣዕነ ፡  ዘወርቅ ፡  ዘወሀባ ፡  ለጽዮን ፡  ማርያም ፡  ምኒልክ ፡  ንጉሠ ፡  ነገሥት ፡  ዘኢትዮጵያ ፡",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -9164,6 +9804,7 @@ const MIRACLES_OF_MARY = [
     "title": "An Ethiopian girl who converts to Protestantism falls ill and is healed by the Virgin Mary and then returns to the faith",
     "incipit": "ወሀለወት ፡  አሐቲ ፡  ወለት ፡  ዘትሰመይ ፡  ዳግማዊት ፡  በትዕይንተ ፡  አዲስ ፡  አበባ ፡  ወታፈቅራ ፡  ለእግዝእትነ ፡  ማርያም ፡  ... እምንእሳ ፡  በኵሉ ፡  ኅሊናሃ ፡  ወበኵሉ ፡  አልባባ ፡  ወኮነት ፡  ትቀንዕ ፡  በእንተ ፡  ሃይማኖታ ፡  ወባሕቱ ፡  አኀዘ ፡  ያመክራ ፡  ሰይጣን ፡  ጸላዔ ፡  ሠናያት። ወበእንተዝ ፡  ወለጠት ፡  ሃይማኖታ ፡  በነገረ ፡  ኂጣን ፡  ወበምክረ ፡  ሰይጣን ፡  ወኀደገታ ፡  ለእግዝእትነ።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -9176,6 +9817,7 @@ const MIRACLES_OF_MARY = [
     "title": "New Ethiopian Church: Part 1: The Virgin Mary demands that the nobles of a certain Ethiopian town build her a large new church and eventually they do",
     "incipit": "ወሀሎ፡ ቤተ፡ ክርስቲያን፡ ዘሕኑጽ፡ በስማ፡ ወፈቀዱ፡ መኳንንት፡ ይሕንጽዋ፡ በክብር፡ ወኢያብሆሙ፡ ትካዘ፡ ዓለም፡ ወይ እቲሰ፡ ታስተር እዮሙ፡ በጻሕቅ፡ በውስተ፡ ሕልሞሙ። ወውእቶሙሰ፡ በዘገብሩ፡ እድሜ፡ ሐዲጎሙ፡ ኪያሃ፡ ሖሩ፡ ኀበ፡ ፀብዕ፡ ከመ፡ ይማህርኩ፡ ሀገረ፡ አረሚ",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -9188,6 +9830,7 @@ const MIRACLES_OF_MARY = [
     "title": "Two nuns named Sefnegya and Atlasya become pregnant and Abba Sofonyos investigates (reworking of 158)",
     "incipit": "ተአምር፡ ወኃይል፡ ዘገብረት፡ እግዝእትነ፡... ድንግለ፡ እስራኤል፡ ጠባብ፡ ናሁ፡ ተማኅፀና፡ ኀበ፡ ሥዕላ፡ መበለታት፡ እለ፡ ይነብራ፡ ውስተ፡ ደብረ፡ አባ ፡ ሶፎንዮስ ፡ ጽኑሳን፡ ክልኤሆን፡ መበለታት።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -9200,6 +9843,7 @@ const MIRACLES_OF_MARY = [
     "title": "Ethiopian Who Curses Mary Healed",
     "incipit": "ወነበረ፡ ፩ ብእሲ፡ ወሬዛ፡ በአሐቲ፡ ሀገር፡ በፈለገ፡ ገነት፡ ወያስቆርር፡ ድንግልናሃ፤ ወውእቱሰ፡ ወሬዛ፡ ሐመ፡ ዓቢየ፡ ሕማመ፡ ወሔከ፡ ልሳኖ፡ ወይጸፍዕ፡ ገጾ፡ ከመ፡ እቡድ፤ ወአንከሩ፡ ሰብአ፡ ሀገር፡ አእሚሮሙ፡ ከመ፡ ጸረፈ፡ ስማ፡ ለእግዝእትነ …፨",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -9212,6 +9856,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Nagara Maryam: Month B: Part 01: A demon-pig (a possessed man who turns into a pig) argues with the Virgin Mary saying that another man is worse than him and the Virgin Mary banishes him into the sea.",
     "incipit": "ወእምዝ፡ ተመይጡ፡ ኀበ፡ እግዝእትነ፡ ማርያም፡ ወአኀዝዋ፡ ወይቤልዋ፡ አሌለኪ፡ ኦወለተ፡ ዳዊት፨ እስመ፡ ትመውቲ፡ በእኩይ፡ ሞት፡ ወወሰድዋ፡ ቤተ፡ አምላክ፡ ወሰገደት፡ ድንግል፡ ውስተ፡ ምድር፡ ሥልሰ፡ ወትቤ፡ በነገረ፡ ዕብራይስጥ፡ ያስርሕ፡ ሮሕሮሕዴ፡ ኪያዴኬ፡ አኅሶርሮስ፡ ወእምዝ፡ ሰትየት፡ ማየ፡ ዘለፋ፡ ወአልቦ፡ ዘነከያ፡ወርእዮሙ፡ ሕዝበ፡ አይሁድ",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -9224,6 +9869,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Nagara Maryam: Month C: Part 01: The Virgin Mary condemns to death the wicked men, women, and children of Gedabierya and lets them stay in hell for two months",
     "incipit": "ወሶበ፡ ተፈጸሙ፡ እሉ፡ ቃላት፡ እምአፉሃ፡ ለእግዝእትነ፡ ... አስተርአያ፡ ለእግዝእትነ፡ ግብተ፡ ገብርኤል፡ መልአክ፨ ወይቤላ፡ አሜን፡ አሜን፡ ለይኵን፡ ለይኩን፡ ወኵሎ፡ ዘሀለይኪ፡ ንግበር፡ ለኪ፨ ወዘንተ፡ ብሂሎ፡ ዓርገ፡ ውስተ፡ ሰማያት፨ ወሖረት፡ እግዝእትነ፡ ማርያም፡ ፍኖታ፡ ወበጽሐት፡ ኀበ፡ ሀገረ፡ ገዳቤርያ፡…",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -9236,6 +9882,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Nagara Maryam: Month C: Part 04: The Virgin Mary blesses the people and animals in the sea",
     "incipit": "ወዓርገ፡ መልአክ፡ እግዚአብሔር፡ ውስተ፡ ሰማይ፡ ወእግዝእትነ፡ ማርያም፡ ነበረት፡ ህየ፡ ፮አውራኃ፡ ወይመጽኡ፡ ኀቤሃ፡ ወይትባረኩ፡ እምኔሃ፡ እድ፡ ወአንስት፡ አዕሩግ፡ ወሕፃናት፨ ወትቤሎሙ፡ እግዝእትነ፡ ማርያም፡ ኢይትረከቡ፡ መካናት፡ አንስት፡ ውስተ፡  ብሔርክሙ፡ …",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -9248,6 +9895,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Nagara Maryam: Month C: Part 07: After the children die who follow the boy Jesus walking on rays of light and he raises his playmates from the dead",
     "incipit": "ወአኀዝዎ፡ ለእግዚእ፡ ኢየሱስ፡ ወወሰድዎ፡ ኀበ፡ ሀሎ፡ አብድንተ፡ ደቂቆሙ፡ ከመ፡ ይቅልዎ፡*  በህየ፡ ወቅተልዎሙ፡ እግዝእትነ፡ ማርያም፡ እንዘ፡ ትበኪ፡ ወትብል፡ ወይ፡ ሊተ፡ አሌሊተ፨ ኢይቤለከኑ፡ * …",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -9260,6 +9908,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Nagara Maryam: Month C: Part 08: Joseph reprimands the Virgin Mary for discplining him and Jesus goes to the sea with his friends",
     "incipit": "ወበአሐቲ፡ ዕለት፡ ትቤሎ፡ እሙ፡ ሑር፡ ወልድየ፡ ወአምጽአ፡ ማየ፡ ወሖረ፡ ውስተ፡ ፈለግ፡ ወሰብሮ፡ ለውእቱ፡ ንዋይ፡ ዘይብልዎ፡ ማሕወ፡ ወአድቅቆ፡ ጥቀ፨ ወዓቈረ፡ ማየ፡ በአልባሲሁ፡ ወፆረ፡ ዲበ፡ ቴከላሁ፡ ወሖረ፡ ወይቤላ፡ ለእሙ፡ ሕንኪ፡ እማየ፤ ወትቢ፡ እግዝእትነ፡ ማርያም፡ ዕፁ፡ ብኬ፡ ዝንቱ፡ ግብር፡ …",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -9272,6 +9921,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Felsata la-Maryam??: New: Dormition: A sequel to The Virgin Mary giving her shroud to Saint Thomas, with people being healed and the apostles each taking a piece",
     "incipit": "ወዘንተ፡ ብሂሎ፡ መጠዎሙ፡ ለሐዋርያት፡ መግነዘ፡ እግዝእትነ፨ ማርያም፡ አሜሃ፡ በከዩ፡ ላዕሌሁ፡ ብካየ፡ መሪረ፨ ወሀለዉ፡ ህየ፡ ፫ ድውያን፡ ፩ መጻጉዕ፡ ፅውስ፡ ወዕውር፡ ወ፩ ወርኃዊ፨ ወካሐዓንሂ፡ ብዙኃን፡ ድውያን፡ ወእልክፍዎሙ፡ እመግነዘ፡ እግዝእትነ፡ ማርያም፡  …",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -9284,6 +9934,7 @@ const MIRACLES_OF_MARY = [
     "title": "Dabra Sedeneya's Icon: Part 3: The chief magistrate goes blind due to disrespecting the icon and begins protection for all pilgrims there",
     "incipit": "ተአምረ፡ ገብረት፡ እግዝእትነ፡...፨ በሀገረ፡ ጼዴንያ፡ በሥዕላ፨ ወእምዝ፡ አበአ፡ እዴሁ፡ ሊቀ፡ መኳንንት፡ ወገሠሣ፡ ለሥዕል፨ ወውኅዘ፡ ቅብዕ፡ እንተ፡ አፃብዒሁ፡ በከመ፡ ቀዳሚ፨ ወካዕበ፡ አብአ፡ እዴሁ፡ እንተ፡ ዘባና፡  …",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -9296,6 +9947,7 @@ const MIRACLES_OF_MARY = [
     "title": "put in Dabra/Dayr QwasqwuamBook of Vision of Timothy of Alexandria Rev?: Part 01???: A wine carrier stumbles and breaks all the church's wine vessels and the Virgin Mary repairs them due to the prayers of Bishop Timothy in Dabra Qwasqwuam",
     "incipit": "ወበ፩እመዋዕል፡ ነሥአት፡ ብእሲተ፡ ልጕነ፡ ወይን፡ ወፃሕበ፡ ዘይት፨ ወይእቲ፡ ትብል፡ ትፈቅድ፡ ትምጻእ፡ ወዖደ፡ ኀቤነ፡ ምስሌሆሙ፡ ኅቡረ፨ ወተዓቀፈ፨ አድጋ፡ ወትሰብሩ፡ ንማዕው፡ ዘኮነ፡ ውስቴቶሙ፡ ወይን፡ ወዘይት፨ ወኢተርፈ፡ ውስተ፡ አጸሕዐት፡ እምኔሆሙ፡ ወኢምንትኒ፡ እስመ፡ ኢትረክብ፡ …",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -9308,6 +9960,7 @@ const MIRACLES_OF_MARY = [
     "title": "put in Dabra/Dayr QwasqwuamBook of Vision of Timothy of Alexandria Rev?: Part 02: The Virgin Mary tells Timothy to write down what she has shown and that whoever believes in the book will receive good things and whoever doesn't will go to hell (dupe) in Dabra Qwasqwam",
     "incipit": "ወይእዜኒ፡ ጸሐፍ፡ ተዝካርየ፡ ዘንተ፡ ኵሎ፡ ዘርኢከ፡ ውስተ፡ ዛቲ፡ ኰጕሕ፡ ወጽናዕ፡ ወተኃየል፨ እስመ፡ ዝንቱ፡ መካን፡ ዘኃደርኩ፡ ውስቴቱ፡ እምቅመ፡ እሑር፡ ኀበ፡ ደብረ፡ ቍስቋም፡ ወጸሐፍ፡ ካዕበ፡ ከመ፡ ኵሉ ዘይጽሕፋ፡ ለዛቲ፤ ገድልየ፡ ወትሕትናየ፡ …",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -9320,6 +9973,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Ledata la-Maryam: New: Part 01??: Conception: Zachariah warns Hanna, the mother of the Virgin Mary, not to sleep with her husband",
     "incipit": "ወርእዮ፡ ዘካርያስ፡ አእመረ፡ ከመ፡ ፀንሰት፡ ይእቲ፡ እስመ፡ በይእቲ፡ ዕለት፤ ቆመ፡ ቅድሜሁ፡ መልአክ፡ እግዚአብሔር፡ ወዜነዎ፡ በእንቲአሃ፡ ከመ፡ ይንግራ፡ ወመልአ፡ መንፈስ፡ ቅዱስ፡ ላዕለ፡ ዘካርያስ፨ ወይቤላ፡ ለሐና፡ ስምዒ፡ ወለተ፡ አሮን፡ ዘንተ፡ ነገረ፡ ዘእብለኪ፡ ወዕቀቢዮ፨…",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -9332,6 +9986,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Nagara Maryam: Month D: Part 02: The Holy Family keeps travelling while the Virgin Mary performs miracles and Joseph and Salome prevent the Virgin Mary from harming those who try to harm them",
     "incipit": "ስምዑ፡ እነግረክሙ፡ አንሰ፡ ፈላሲት፡ እምብሔረ፡ ይሁዳ፡ በእንተ፡ ወልድየ፡ ወበእንቲአየ፡ ተነበዩ፡ ነቢያት፡ ዘእንበለ፡ ሞት፡ ፀነሥኩ፤ ወዘእንበሉ፡ ሕማም፡ ወለድኩ፡ ቃለ፡ አብ፡ ሥጋ፡ ኮነ፡ ዝዘትሬእዪ፨ ወሰሚዖሙ፡ ሕዝብ፡ አንከሩ፨ ወአዕበይዋ፡ ለእግዝእትነ፡ ማርያም፡ ፈድፋደ፡ ወፈወስቶሙ፡ ለብዙኃን፡ ድውያን፡ አጋንንት፡  …",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -9344,6 +9999,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Nagara Maryam: Month D: Part 03: The Virgin Mary heals the governor of Besseta (sp?) by pulling a snake out of him and then travels to Mount Siki and Sem",
     "incipit": "ወመጽአ፡ ኀቤሃ፡ መኰንን፡ ዘብስጣ፡ ወይቤላ፡ ኦእግዝእትየ፡ ፈውስኒ፡ እስመ፡ ቅብው፡ አነ፨ ወትቤሎ፡ እግዝእትነ፡ ማርያም፡ ለእመ፡ ተፈወስከ፡ እምደዌከ፡ አምንኑ፡ በወልድየ፨ ወይቤላ፡ እወ፡ አአምን፡ ወርድእኒ፡ ለአሚኖትየ፡ ወትቤሎ፡ ኀበኒ፡ እዴከ፡  ወመጠዋ፡ …",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -9356,6 +10012,7 @@ const MIRACLES_OF_MARY = [
     "title": "Mary at Her Son's Tomb II",
     "incipit": "ወድንግልሰ፡ ኢጌንደየት፡ ሐዊረ፡ ኀበ፡ መቃብር፡ ነግሃ፡ እሁድ፡ ወኮነት፡ ማርያም፡ መግደላዊት፡ በደረት፡ በጺሐ፡ ኀበ፡ መቃብር፡ ወነጸረት፡ ዕብነ፡ እንኵርኵረ፡ እምኔሁ፡ ወትቤ፡ ዛቲ፡ ተዓምር፡ ትከሥተት፡ በእንተ፡ ወልድየ፡ ወአነሂ፡ እበጽሕ፡ …",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -9368,6 +10025,7 @@ const MIRACLES_OF_MARY = [
     "title": "Mary Escapes Death",
     "incipit": "ወትቤሎ፡  ማርያም፡ ኅድገኒ፡ ወልድየ፡ ዘእንበለ፡ ሕማም፡ ወሞት፨ ወይቤላ፡ ዓሪገሰ፡ አዓርገኪ፡ አእምየ፡ አነ፡ እምየ፡ ሞትኩ፡ በእንቲአሆሙ፡ ኪያኪኑ፡ እምሐር፡ ወኪያሆሙ፡ እቀትል፡ ኢኮነ፡ ሠናየ፡ ዝንቱ፨ ወኢኮነ፡ ፍጹመ፡ ተፋቅሮ፡ ኦእምየ፡ ለምንት፡ ትፈርሂ፡ መዊተ፡ እምድኅሬየ፡ ትወርሲ፡ ሕይወተ፡ ዘለዓለም፡ …",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -9380,6 +10038,7 @@ const MIRACLES_OF_MARY = [
     "title": "Mary Questions Jesus about Humanity",
     "incipit": "ወትቤሎ፡ እግዝእትነ፡ ማርያም፡ ለፍቁር፡ ወልዳ፡ ለምንት፡ ይዘግብ፡ ሰብእ፡ ወርቀ፡ ወብሩረ፡ ወአልባሰ፡ ቀጠንት፡ ወአልቦ፡ ዘይበቍዖ፡ መዝገብሰ፡ ይኄይስ፡ በሰማያት፡ ምንት፡ እብል፡ መኑ፡ እምዜንዎሙ፡ ለደቂቁ፡ አዳም፡ ከመ፡ ይስምዑ፡ ወይለብው፨ ወይርከቡ፡ ሕይወተ፡ ዘለዓለም፨ ወትቤ፡ ማርያም፡ አአኵተከ፡ …",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -9392,6 +10051,7 @@ const MIRACLES_OF_MARY = [
     "title": "Uriel Takes Mary to Hidden Places",
     "incipit": "ወእምዝ፡ እንከ፡ አዘዞ፡ እግዚኦ፡ ለኡርኤል፡ መልአክ፡ ወይቤሎ፡ ኦገብር፡ ኄር፡ ወገብር፡ ምእመን፡ ሑር፡ ሰዳ፡ ለእምየ፡ ወአርእያ፡ ኵሎ፡ ክሡታተ፡ ወኅቡአተ፨ ወመሠጣ፡ በሠረገላ፡ ኤልያስ፡ ወአብአ፡ ውስተ፡ ገነት፡ ዘይበርህ፡ ምስብኢተ፡ እምፀሐይ፡ ወኵሎ፡ ብሔረ፡ ገነት፡ ...",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -9404,6 +10064,7 @@ const MIRACLES_OF_MARY = [
     "title": "High Priest Becomes a Christian",
     "incipit": "ወእምዝ፡ አዘዞሙ፡ እግዚእ፡ ለ፸፯ሊቃነ፡ መላእክት፡ ያውርዱ፡ ሥጋሃ፡ ውስተ፡ ምድር፡ ወገብሩ፡ ከማሁ፡ ወበጽሐት፡ ቤተ፡ ልሄም፡ ወኖመት፡ ዲበ፡ ምስካባ፡ ወዐርጉ፡ መላእክት፡ ውስተ፡ ሰማይ፨ ወነበረት፡ እግዝእትነ፡ ማርያም፡ ፵መዓልተ፡ በዳኅና፡ ወበሰላም፡ እንዘ፡ ታነክር፡ በእንተ፡ ዘርእየት፡ ወሰምዓት፡ ስብሖቶ፡ ለእግዚአብሔር፡ ….",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -9416,6 +10077,7 @@ const MIRACLES_OF_MARY = [
     "title": "The Apostles Abandon Mary's Body III",
     "incipit": "ወእምድኅረ፡ ፬ወርኅ፡ ፲ወ፯ዕለታት፡ ተጋብኡ፡ ሐዋርያት፡ በደብረ፡ ዘይት፡ ወተበሀሉ፡ በበይናቲሆሙ፡ ኃፍረት፡ ለነ፡ ቀዳሚ፡ ጐየይነ፡ ውስተ፡ ምኅባእ፡ ወኀደግነ፡ ወልዳ፡ ከመ፡ ይቅትልዎ፡ ወይእዜኒ፡ ኀደግነ፡ እሞ፡ በዲበ፡ ምድር፡ ወኢያእመርነ፡ ዘኮነት፨ ወተንሥአ፡ ጳውሎስ፡ ወይቤሎሙ፡ ኢርቱዕ፡ ለነ፡ ንንበር፡ …",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -9428,6 +10090,7 @@ const MIRACLES_OF_MARY = [
     "title": "Drunk Rich Man Gives Alms",
     "incipit": "ወሀሎ ፡ ፩ብእሲ ፡ ክርስቲያናዊ ፡ ባዕል ፡ ጥቀ ፡ በንዋየ ፡ ዓለም ፡ ወኢያኅጥኦ ፡ እግዚአብሔር ፡ ምንተኒ ፡ እምዘፈቀደ ፡ ወኮነ ፡ ዝንቱ ፡ ብእሲ ፡ መዓትመ ፡ ወድንፅወ : ወይዘብጥ ፡ ሰብአ ፡ ቤቱ ፡ ወአግዋሪሁ ፡ ወኢይምህኮሙ ፡ ምንተኒ ፡ ወለነዳያንሂ ፡ ኢይምሕሮሙ ፡ ወኢይመጸውቶሙ",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -9440,6 +10103,7 @@ const MIRACLES_OF_MARY = [
     "title": "Mary Brings Forth a Spring",
     "incipit": "ወበአሐቲ ፡ አመ ፡ ዋዕል ፡ ተወጥነ ፡ ሕንፃ ፡ ቤተ ፡ ክርስቲያን ፡ አመ ፡ ፳ሁ ፡ ለኅዳር ፡ ተኅጥአ ፡ ማይ ፡ ለስቴ ፡ ይቢሶ ፡ እምተኃጥአቱ ፡ ለማይ ፡ ተበአሱ ፡ ሰብእ ፡ ደብር ፡ ወየሐውሩ ፡ በሌሊት",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -9452,6 +10116,7 @@ const MIRACLES_OF_MARY = [
     "title": "The Fire in the Church",
     "incipit": "ወበአሐቲ፡ ሀገር፡ ዘዘተገብረ፡ በዛቲ፡ ሀገር። ወሀሎ፡ ፩ብእሲ፡ ዘበጽአ፡ ላቲ፡ ከመ፡ ኃጣነ፡ ወእንዘ፡ ሀሎ፡ አጣን ከመ፡ የሀብ፡ ውእቱ፡ ብእሲ፡  ወርእሲቱ፡ ተንሥአ፡ አሳት፡ ውስተ፡ ቤተ፡ ውእቱ፡ ብእሲ፡ ተንሥአ፡ እሳተ፡ ወአውአየ፡ ኵሎ፡ ንዋዮ፡ ወኢያተረፈ፡ ፩ወ ድኅነ፡ ዕጣን፡ በኀይለ፡ እግዝእትነ፡ ማርያም፡ ወወጽአ፡ ምስለ፡ ሙዳይ፡ ዘእንበለ፡ ይጽል ም፡ ከመ፡ ዘነበረ፡ ውስተ፡ ቤተ፡ ሐዲስ፤፡ ወዘንተ፡ ሰሚዖሙ፡ አንከሩ፡ ሕዝብ፡ ኀደለ፡  እግዝእትነ፡ ማርያም፡ ወሕዝበ፡ ክርስቲያን፡ ወአሐተ፡ ዕለተ፡ እንዘ፡ ይቁድሱ፡ ካህናት፡ ወጽአ፡ ቀሲስ፡ ከመ፡  ደዕጥን፡ ወበጽሐ፡ ኀበ፡  ስአላ፡ ለእግዝእትነ፡",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -9464,6 +10129,7 @@ const MIRACLES_OF_MARY = [
     "title": "Thief Steals Widow's Sheep",
     "incipit": "ወሀለወት፡ አሐቲ፡ ዕቤርት፡ ነዳይት፡ ውስተ፡ አሐቲ፡ ሀገር፡ ወትገብር፡ ተዝካራ፡ ለእግዝእትነ፡ ማርያም፡ ወአልባ፡ ንዋይ፡ ዘእንበለ፡ ፩በግዕ፡ ወትሴሰይ፡ በሤጠ፡ ጻጕሩ፡ ወሀሎ፡ ፩ብእሲ፡ ጐረቤታ፡ ዘስሙ፡ ያዕቆብ፡ ወሠረቃ፡ ውእቱ፡ ወወሰዶ፡ ወኃረዶ፡ ወበልዖ።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -9476,6 +10142,7 @@ const MIRACLES_OF_MARY = [
     "title": "Mary Heals a Possessed Egyptian Man",
     "incipit": "ወሶበ፡ ትወርድ፡ እግዝእትነ፡ ማርያም፡ ውስተ፡ ምድረ፡ ግብጽ፡ ጐይያ፡ እምኀበ፡ ሄሮድስ፡ ርጉም፡ ወረከበት፡ በውስተ፡ ፍኖት፡ ፩ብእሴ፡ ዘጋኔን፡ እንዘ፡ ይደዊ፡ ፸ዓመተ፡ ወኢይነውም፡ መዓልተ፡ ወሌሊተ፡ ወይፄምድ፡ ሥጋሁ፡ በአዕባን፡ ወመዋቅሕትነ፡ ይሰብር፡ ዘልፈ፡",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -9488,6 +10155,7 @@ const MIRACLES_OF_MARY = [
     "title": "The Church in a Cave",
     "incipit": "ስምዑ፡ ዘገብረት፡ ሎቱ፡ ለስምዖን፡ በ፩ዘመን፡ እንዘ፡ ይጽሕቅ፡ ወትረ፡ በዘያሠምራ፡ በሃይማኖት፡ መለኮታዊ፡ ወይትዌከል፡ ባቲ፡ እምአሜ፡ ንእሱ፡ ይተግህ፡ ላቲ፡ ለሐኒጸ፡ ቤተ፡ ክርስቲያና፡ በምድረ፡ አምሐራ።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -9500,6 +10168,7 @@ const MIRACLES_OF_MARY = [
     "title": "The Blessing of the Animals",
     "incipit": "ወእንዘ፡ ሀለወት፡ እግዝእትነ፡ ... ዐርገ፡ መልአከ፡ እግዚአብሔር፡ ውስተ፡ ሰማይ፡ ወነበረት፡ እግዝእትነ፡ ህየ፡ ፯ተ አውራኃ፡ ወይመጽኡ፡ ኀቤሃ፡ ሰብአ ሀገር፡ ወይትባረኩ፡ እምኔሃ፡ እድ፡ ወአንስት፡ አዕሩግ፡ ወሕፃናት፡ ወትቤሎሙ፡ ኢይትረከባ፡ መካናት፡ አንስት፡ ውስተ፡ ብሔርክሙ። ወይለዳ፡",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -9512,6 +10181,7 @@ const MIRACLES_OF_MARY = [
     "title": "Mary's Funeral in Heaven",
     "incipit": "ወእምዝ፡ አዘዞ፡ እግዚእነ፡ ለጴጥሮስ፡ ወይቤሎ፡ ንግሮሙ፡ ለኵሉ፡ ፍጥረት፡ ለሰማያውያን፡ ወምድራውያን፡ ያንብቡ፡ መዝሙረ፡ ማኅሌት፡ በፍሥሕ፡ ወበኃሤት። ውእተ፡ ጊዜ፡ ወፅአት፡ ነፍሳ፡ ለእግዝ እትነ፡ ... ። ወወሰድዋ፡ ውስተ፡ መዛግብተ፡ አብ። ወእምዝ፡ ሰፍሐ፡ እዴሁ፡ ዮሐንስ፡ ወከደነ፡ አዕይንቲሃ፡ ጴጥሮስ፡ ወጳውሎስ፡ አርትዑ፡ እደዊሃ፡ ወእገሪሃ። ወባሕቱ፡ ኢያውጽኡ፡ ልብሳ፡ ዘላዕሌሃ፡ እስመ፡ መንፈስ፡ ቅዱስ፡ አልበሳ፡ ዓቢየ፡ ብርሃነ፡ ዘኢይትዓወቅ።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -9524,6 +10194,7 @@ const MIRACLES_OF_MARY = [
     "title": "Mary Sees the Suffering in Hell",
     "incipit": "ወበአሐቲ፡ ዕለት፡ አንሥአት፡ እግዝ እትነ፡ ... አዕይንቲሃ፡ ወነጸረት፡ ማኅደረ፡ እለ፡ አልቦሙ፡ ኁልቍ ፡ ወእሙንቱ፡ ይበርሁ፡ ፈድፋደ፡ ወይወፅ፡ በህየ፡ ፄና፡ ዕጣን፡ ዘመዓዛሁ፡ ሠናይ፡ ወይሰማዕ፡ ድምፀ፡ ቃለ፡ ቀርን፡ በውስተ፡ እሉ፡ ማኅደራት፡ ወብዙኃን፡ እድ፡ ወአንስት፡ ይቀውሙ፡ ውስቴቶን። ወእምዝ፡ ትቤሎ፡ እግዝእትነ፡ ... ለእግዚ እነ፡ እግዚ እየ፡ ወአምላኪየ፡ እለመኑ፡ እሙንቱ፡ እለ፡ ይነብሩ፡ ውስተዝ፡ ማኅደር።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -9536,6 +10207,7 @@ const MIRACLES_OF_MARY = [
     "title": "Mary Raises a Son from the Dead",
     "incipit": "ወእንዘ፡ ትጼሊ፡ በጎልጎታ፡ እግዝ እትነ፡ ... ረከበት፡ በፍኖት፡ እንዘ፡ ተሐውር፡ እለ፡ ይጸውሩ፡ ቀበረ፡ ብዙኃነ፡ መብክያነ፡ እለይበክዩ፡ ወያስቆቅዉ፡ በበይናቲሆሙ፡ ተበሃሉ፡ ዛቲ፡ እሙ፡ ለኢየሱስ፡ ናዝራዊ። እስመ፡ ነበረ፡ እንዘ፡ ያነሥ እ፡ ሙታነ፡ እም ኢክህለት፡ ዛቲኬ፡ ብ እሲት፡ ከመትግበር፡ በከመ፡ ወልዳ።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -9548,6 +10220,7 @@ const MIRACLES_OF_MARY = [
     "title": "The Rose from Paradise",
     "incipit": "ወበጊዜ፡ ሕማማ፡ ትቤሎ፡ እግዝእትነ፡ ... ለዮሐንስ፡ ደይ፡ ዕጣነ፡ ውስተ፡ ማዕጠንት፡ እስመ፡ ናሁ፡ በጽሐ፡ ጊዜየ፡ ከመ፡ እፍልስ፡ እምዝንቱ፡ ዓለም፡ ወይቤሉ፡ መኑ፡ ዘይክል፡ ረዲኦተነ፡ ከመ፡ ናድኅንኪ፡ ኦዕንቈ፡ ባሕርይ፡ እንተ፡ አልባቲ፡ ጢስ። ኦመርበብተ፡ ጽድቅ፡ ዘአስተጋብአት፡ ዘመደ፡ ዓሣት፡ መኑ፡ ዘያርእየነ፡ ገጸኪ፡",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -9560,6 +10233,7 @@ const MIRACLES_OF_MARY = [
     "title": "Sorcerer Trys to Destroy Mary",
     "incipit": "ወእንዘ፡ ሀለወት፡ እግዝ እትነ፡ ... በውስተ፡ ቤተ፡ መቅደስ፡ ቀንዑ፡ ላዕሌሃ፡ ወሖሩ፡ ወኃሠሱ፡ ወረከቡ፡ ፩ መሰግለ፡ ዘስሙ፡ መጥቁል። ወይቤልዎ፡ እስመ፡ እስመ፡ ተወልዱ",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -9576,6 +10250,7 @@ const MIRACLES_OF_MARY = [
     "title": "Mary Heals Possessed Man",
     "incipit": "ወእንዘ፡ ተኃልፍ፡ በፍኖት፡ እግዝእትነ፡ ... ፡ ረከበት፡ ፩ ብእሴ፡ ዘቦቱ፡ መንፈሰ፡ ሰይጣን፡ ዘይነብር፡ ውስተ፡ ገዳም፡ ወአድባር፡ ወመቃብራት ። ወየዓወዩ፡ መዓልተ፡ ወሌሊተ። ወይገምድ፡ ሥጋሁ፡ በአዕባን፡ ወኢይለብስ፡ ልብሰ፡ ግሙራ።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -9588,6 +10263,7 @@ const MIRACLES_OF_MARY = [
     "title": "Mary Raises Child from the Dead",
     "incipit": "ወሀለወት፡ አሐቲ፡ ብእሲት፡ ውስተ፡ አሐቲ፡ ሀገር፡ ወባቲ፡ ወልድ፡ ዘታፈቅሮ ፡ ጥቀ፡ ወሶቤሃ፡ ሞተ፡ ውእቱ፡ ወልድ፡ ወወሰደቶ፡ እንዘ፡ ታነብእ፡ ኀበ፡ እግዝእትነ፡ ... ወትቤላ፡ ፈውሲዮ፡ ለወልድየ፡ ወፍቁርየ። ወሶበ፡ ር እየቶ፡ እግዝእትነ፡ ... አንብዓት፡ ወትቤላ፡ አስፍንቱ፡ መዋዕለ፡ ልደቱ፡ ወትቤላ፡ አመ፡",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -9600,6 +10276,7 @@ const MIRACLES_OF_MARY = [
     "title": "Homily on the Dormition",
     "incipit": "ወእምድኅረ፡ ኵሉ፡ ኢኃደጋ፡ ትሙት፡ ከመ፡ ኵሉ፡ ሰብእ፡ ወኢትዕርግ፡ ኀበ፡ ሰማይ፡ ወኢተመሰለቶ፡ እስመ፡ ኢገብአት፡ ኀበ፡ ዓለም፡ ወኢኃደጋ፡ ዳግመ፡ ትርከብ፡ ሕማመ። ባሕቱ፡ ዐርገት፡ ውስተ፡ ሰማያት፡ ወኃደረት፡ ውስተ፡ ማኅደረ፡ ብርሃናውያን፡ ኀበ፡ ሀለወት፡ ይእቲ፡ በሥጋ፡ ወኢተኃድገት፡ ይእቲ፡ በዓለም፡ ውስተ፡ ምድር፡ እስከ፡ ይትፌጸም፡ ላቲ፡ ዘውእቱ",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -9612,6 +10289,7 @@ const MIRACLES_OF_MARY = [
     "title": "The Wicked Egyptian Woman",
     "incipit": "ወእንዘ፡ ሀለወት፡ በቤተ፡ ትእማን፡ ወርእይዋ፡ ሰብአ፡ ሀገር፡ ወተበሀሉ፡ እንተ፡ አስጠመታ፡ ለትእማን፡ ወረሰየቶሙ፡ ለሰብአ፡ ቤታ፡ ሐለስትዮ።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -9624,6 +10302,7 @@ const MIRACLES_OF_MARY = [
     "title": "The Apostles Abandon Mary's Body II",
     "incipit": "ወእንዘ፡ ሀለወት፡ እግዝእትነ፡ ... ተሀውኩ፡ አይሁድ፡ ከመ፡ መዋግደ፡ ባሕር፡ ኃሠሡ፡ ለፌ፡ ወለፌ፡ ወስእኑ፡ ረኪቦታ፡ ወተበሀሉ፡ በበይናቲሆሙ፡ ምንትኑ፡ እንጋ፡ ኮነት፡ ማርያም፡ ውኅጣኑ፡ ምድር፡ ወተኃፍሩ፡",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -9636,6 +10315,7 @@ const MIRACLES_OF_MARY = [
     "title": "Mary Converses with the Angel Gabriel",
     "incipit": "አመ፡ ፳ወ፱ ፡ ለመጋቢት፡ ርእየቶ፡ ለመልአክ፡ በፍሥሐ፡ እግዝእትነ፡ ... ፡ ወትቤሎ፡ ርእዮትከ፡ ክቡር፡ ወዜናከ፡ ፍርሃት፡ ወነድከ፡ ይወጽእ፡ ወፍቅሩ፡ ለእግዚእከ፡ ኢይትዓበይ፡ ወከመ፡ እትወከፍከ፡ ዕፁብ፡ ው እቱ፡ ወይቤላ፡ መል አክ፡ ሠናየ፡ ዜና፡ አምጻእኩ፡ ለኪ፡ ከመ፡ ትለዲ፡ ለእግዚእኪ፡ አርአይኩኪ፡ ሕፃነ፡",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -9648,6 +10328,7 @@ const MIRACLES_OF_MARY = [
     "title": "Kings Abraha and Asbeha Build Church in Aksum",
     "incipit": "ስምዑ፡ ዘንነግረክሙ፡ ኦ ሕዝበ፡ ክርስቲያን፡ እግዚአብሔር፡ ያባርክሙ፡ ወያብርህ፡ አዕይንተ፡ አልባቢክሙ፡ ለሰሚዓ፡ ተአምሪሃ፡ ለመቅደሰ፡ እምነ፡ ጽዮን፡ ገበዘ፡ አክሱም፡ እለ፡ ትናፍቁ፡ በልብክሙ፡ ወእትብሉ፡ ኢሀለወት፡ ጽላት፡ ዘሙሴ፡ በምድረ፡ አክሱም፡ ዓባይ፡ ሀገረ፡ እግዚአብሔር፡ ዳግሚት፡ ኢየሩሳሌም፡ ፀወነ፡ ኵሉ፡ ዓለም። ወሰሚዓክሙ፡ ሃይማኖተ፡ እም ዓላውያን። አእምሩ፡ ወለብው፡ ዘገብረ፡ እግዚእነ፡ ተአምረ፡ ወመንክረ፡ በመንግሥተ፡ አብርሃ፡ ወአጽብሐ፡ ነገሥተ፡ አክሱም። እንዘ፡ ጳጳስነ፡ አባ፡ ሰላማ፡ ከሣቴ፡ ብርሃን።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -9660,6 +10341,7 @@ const MIRACLES_OF_MARY = [
     "title": "Zion's Victory over Soldiers in Aksum",
     "incipit": "ወእምዝ፡ ገብሩ፡ ሐውልተ፡ ዘዕብን፡ በአምሳለ፡ ትዕምርተ፡ መስቀል፡ ከመ፡ ኢይጽብዕዎሙ፡ ሰይጣናት፡ ለሰብአ፡ ቤታ፡ ለጽዮን፡ ገበዘ፡ አክሱም፡ እኂዞሙ፡ ሕገ፡ ወንጌል። እስመ፡ ኢተአውቀ፡ ትእምርተ፡ መስቀሉ፡ ለእግዚእነ፡ ወቦ፡ እለ፡ ነበሩ፡ በሕገ፡ ኦሪት፡ መጠነ፡",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -9672,6 +10354,7 @@ const MIRACLES_OF_MARY = [
     "title": "The Holy Spirit in the Church in Aksum",
     "incipit": "ተአምር፡ ወመንክር፡ ይትገበር፡ ለለዕለቱ፡ በመቅደሰ፡ እምነ፡ ጽዮን፡ ገበዘ፡ አክሱም፡ አልቦ፡ ኍልቍ፡ ባሕቱ፡ ሰማዕነ፡ እም አበው፡ ቅዱሳን፡ ከመ፡ ይወርድ፡ መንፈስ፡ ቅዱስ፡ ለለሰዓቱ፡ ፫ ጊዜ፡ ፩ ጊዜ፡ በጸሎተ፡ ዕጣን። ወ፩ ጊዜ፡ ሶበ፡ ይትነበብ፡ መጽሐፈ፡ ተአምሪሃ፡ ለእግዝእትነ፡",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -9684,6 +10367,7 @@ const MIRACLES_OF_MARY = [
     "title": "The Open Secret in the Church in Aksum",
     "incipit": "ወካዕበ፡ ተገብረ፡ በዘመንነ፡ ሶበ፡ ንህለ፡ መቅደሳ፡ ለጽዮን፡ እምነ፡ ከሰተት፡ ሎቱ፡ ጥበበ፡ ለ፩ ፡ ሌዋዊ፡ እምደቂቃ፡ ዘተሰወረ፡ ቀዳሚ፡ እማዕምራን፡ ተሐንፀ፡ በፈቃደ፡ እግዚአብሔር፡ በከመ፡ ይቤ፡ እግዚእነ፡ በወንጌል፡ ዘሠወርኮ፡ እማእምራን፡ ወከሰትከ፡ ለሕፃናት፡ ኦ ሰብአ፡ ኢትዮጵያ፡",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -9696,6 +10380,7 @@ const MIRACLES_OF_MARY = [
     "title": "The Revelation of the Golden Throne",
     "incipit": "ስምዑ፡ ዘገብረት፡ ሎቱ፡ ለገብረ፡ ዜአሃ፡፡ ዘይሰመይ፡ ገብረ፡ ማርያ፡ ወአምጽአት፡ ሎቱ፡ መንበረ፡ ዘወርቅ፡ ዘይሠርቁ፡ ቦቱ፡ ፲ወ፪፡ ብርሃናት፡ ወቦቱ፡ ባዕበ፡ ይሠርቁ፡ ፲ወ፪፡ ከዋከፍት፡ ወይመስል፡ ለውእቱ፡ መንበር፡ ክበቡ፡ ከመ፡",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -9708,6 +10393,7 @@ const MIRACLES_OF_MARY = [
     "title": "Mary Defeats Serpent in Egypt and Goes to Ethiopia",
     "incipit": "*  እምህየ፡ ወወፅአት፡ ጊዜ፡ ነግህ፡ ወተለውዋ፡ እድ፡ ወአንስት፡ እንዘ፡ ይበክዩ፡ ወየኃዝኑ፨ ወይብሉ፡ እግዝእትነ፡ ንበሪ፡ ምስሌነ፨ ወትቤሎ፡ እግዝእትነ፡ ማርያም፡ ለምንት፡ ትሰብሩኒ፡ ልብየ፡ ለእመ፡ ፈቀደ፡ ወልድየ፡ እገብእ፨ …",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -9720,6 +10406,7 @@ const MIRACLES_OF_MARY = [
     "title": "Mary Removes Snake from Official's Belly",
     "incipit": "ወእምዝ፡ አስተርአዮ፡ መልአክ፡ በሕልም፡ ወይቤሎሙ፡ ፃኡ፡ እምዝየኒ፡ ወበሳኒታ፡ ተንሥኡ፡ ወኃለፋ፡ እምኅየ፡ ወበጽሑ፡ ሀገረ፡ አርዴሴባ፡ ወዓቢይ፡ ሀገር፡ ወነበሩ፡ ኀበ፡ አንቀጽ፨  ወርእዮሙ፡ ሰብእ፡ ሀገር፡ ተበሀሉ፡ በበይናቲሆሙ፡ ምንተ፡ ትሤኒ፡ ዛቲ፡ ብእሲት፨ ወዝ፡ ሕፃን፡ ይሤኒ፡ እምኔሃ፡ ወጊዜ፡ ፍና፡  …",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -9732,6 +10419,7 @@ const MIRACLES_OF_MARY = [
     "title": "Mary Saves Those Jesus Drowned",
     "incipit": "ወአንሥአ፡ አዕይንቲሁ፡ ውስተ፡ ሰማይ፡ ወሰፍሐ፡ እደዊሁ፡ ወይቤ፡ ኦአቡየ፡ አባ፡ ኵሉ፡ ይትከሀለከ፡ ወአልቦ፡ ዘይሰአነከ፨ ስምአኒ፡ እግዚኦ፡ ጸሎትየ፡ በእንተ፡ ኵሉ፡ ሕዝብከ፡ ከመ፡ ይእመኑ፡ ብከ፨ ከመ፡ አንተ፡ ፈነውከኒ፡ እብለከ፡ ፍትሐ፡ ለባሕር፡ እማዕሰራ፡ ከመ፡ ትሑር፡ ኀበ፡ ምዕላዳ፡ …",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -9744,6 +10432,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Nagara Maryam: Month N: Part 01: Life: Journey: King Meman in Judah accuses Mary of being a sorceress and Mary turns the people into stone and then back (like ID 1261)",
     "incipit": "ወሶበ፡ በጽሐት፡ እግዝእትነ፡.... ብሔረ፡ አይሁድ፡ ኀበ፡ ንጉሠ፡ ሜማን። ወይቤሎሙ፡ ለመኳንንቱ፡ ትሰምዑኑ፡ ዘንተ፡ ነገረ፡ እስመ፡ ናሁ፡ መጽአት፡ ብእሲት፡ መሠሪቅ፡ እምብሔረ፡ አይሁዳ።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -9756,6 +10445,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Nagara Maryam: Month N: Part 02: Life: Journey: People refuse food to Mary and Jesus turns their crops into stone and causes a famine",
     "incipit": "ወበውእቱ፡ መዋዕል፡ እንዘ፡ የሐውሩ፡ በፍኖት፡ ይቤላ፡ ዮሴፍ፡ ለእግዝእትነ፡.... ኦእግዝእትነ፡ መንተ፡ ንብል፡ አልቦ፡ ማይ፡ በዝ፡ ብሔር። ወትቤሎ፡ ንሑር፡ ኀበ፡ እለ፡ ይከይዩ፡ ዓተረ፡ ወረከቡ፡ በህየ፡ እለ፡ ይሜሕሩ፡ ምሕረተ።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -9768,6 +10458,7 @@ const MIRACLES_OF_MARY = [
     "title": "Homily on the Dormition of Mary and how the people praised Jesus Christ who was born from her",
     "incipit": "ስምዑ፡ ንንግርክሙ፡ በእንተ፡ ፍልሰታ፡ ለእግዝእትነ፡ እምዝ፡ ዓለም፡ ከመ፡ ትሰብሖ፡ ለወልዳ፡ ዘተወለደ፡ እምኔሃ",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -9780,6 +10471,7 @@ const MIRACLES_OF_MARY = [
     "title": "Homily on the spirit of the Virgin Mary’s Son: Part 2: The Virgin Mary preparing the author to praise her",
     "incipit": "ኃይልየኒ፡ መንፈስ፡ ወልዳ፡ ከመ፡ አውጽአ፡ ፪ፍና፡ ድንግልናሃ፡ ወድንግልናሃ፡ በሥጋሃ። ወድንግልናሃ፡ ህሊናሃ፡ ዘኢጽልወትየ፡ እምድር። አውጸውዓት፡ ስማ፡ በአፋየ፡ ርኩስ፡ ወከናፍርየ፡ ጕህልዊት።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Jeremy Brown & Dawit Muluneh with Wendy Laura Belcher",
@@ -9792,6 +10484,7 @@ const MIRACLES_OF_MARY = [
     "title": "Homily on the spirit of the Virgin Mary’s Son: Part 2: The Virgin Mary commanding the author to read out to others the praise of the Virgin",
     "incipit": "አንበረኒ፡ ከመ፡ እንብብ፡ ውኁደ፡ እምውዳሴ፡ እሙ፡ እንዘ፡ እብል፡ ድንግል፡ ይእቲ፡ በ፪ፍና፡ በድንግልና፡ ዘያሠምር፡ በእግዚአብሔር፡ ወበድንግልና፡ ሥጋኒ፡ ድንግል፡ ይእቲ።",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "Jeremy Brown & Dawit Muluneh with Wendy Laura Belcher",
@@ -9804,6 +10497,7 @@ const MIRACLES_OF_MARY = [
     "title": "Arabic: The son of a wealthy church administrator wants to inherit his father's position",
     "incipit": "",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -9816,6 +10510,7 @@ const MIRACLES_OF_MARY = [
     "title": "Arabic: The woman, Euphemia, who cut off her lips to prevent herself from being married",
     "incipit": "",
     "manuscript_count": 1,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -9828,6 +10523,7 @@ const MIRACLES_OF_MARY = [
     "title": "Mary Appears at Däbrä Metmaq (Part 5)",
     "incipit": "ወካዕበ ፡ ይመጽኡ ፡ እምሕዝብ ፡ ነኪራን ፡ ወተንባላት ፡ ወካልዓን ፡ ወይበጽሑ ፡ ኀበ ፡ ደብር ፡ ቅዱስ ፡ እመ ፡ ፳ሁ ፡ ለወርኃ ፡ ግንቦት ፡ ወይነብሩ ፡ እስከ ፡ ፳ወ፭እምኔሁ ፡ ለለኵሉ ፡ ዓመት",
     "manuscript_count": 0,
+    "most_read": false,
     "translations": [
       {
         "author": "Rowan Williams",
@@ -9840,6 +10536,7 @@ const MIRACLES_OF_MARY = [
     "title": "Mary Appears at Däbrä Metmaq (Part 7)",
     "incipit": "ዘከመ፡ አስተርአየት፡ በደብረ፡ ምጥማቅ: ወበ፩ዓመት፡ ዘበዓል፡ መጽአት፡ አመት፡ እምኍልቈ፡ ሰብእ፡ እለ፡ ተጋብኡ፡ ህየ። ወወገረት፡ መንዲላ፡ ላዕለ፡ ወአኃዘቶ፡ እግዝእትነ፡.... ለመንዲል፡ በእዴሃ።",
     "manuscript_count": 0,
+    "most_read": false,
     "translations": [
       {
         "author": "Rowan Williams",
@@ -9852,6 +10549,7 @@ const MIRACLES_OF_MARY = [
     "title": "The noble man from Qemer who ate 78 people, gave a drop of water to a beggar, and went to heaven",
     "incipit": "ወሀሎ፡ አሐዱ፡ ብእሲ፡ በሀገረ፡ ቅምር፡ ክቡረ፡ ዘመድ፡ በስምሰ፡ ክርስቲያናዊ፡ ወኀጢአቱ፡ ዐቢይ፡ እምኀጢአተ፡ ኵሉ፡ ሰብእ",
     "manuscript_count": 0,
+    "most_read": false,
     "translations": [
       {
         "author": "Jeremy Brown & Dawit Muluneh with Wendy Laura Belcher",
@@ -9872,6 +10570,7 @@ const MIRACLES_OF_MARY = [
     "title": "A widow who saved her only son from execution by hanging when she prayed to the Virgin Mary",
     "incipit": "ወኮነት፡ እንከ፡ ብእሲት፡ ነዳይት፡ ወባቲ፡ አሐደ፡ ወልደ፡ ወኮነት፡ ይእቲ፡ ብእሲት፡ ትበውእ፡ ውስተ፡ ቤተ፡ ክርስቲያን፡ ወትበውእ፡ ኀበ፡ ሥዕለ፡ እግዝእትነ፡ ማርያም",
     "manuscript_count": 0,
+    "most_read": true,
     "translations": [
       {
         "author": "Wallis Budge",
@@ -9884,6 +10583,7 @@ const MIRACLES_OF_MARY = [
     "title": "Saint Samuel of Waldebba (Samuʾel), the 15th c. Ethiopian saint, was privileged to have the Virgin Mary bring him gifts",
     "incipit": "ወሀሎ፡ አሐዱ፡ ብእሲ፡ ጻድቅ፡ ወንጹሕ፡ ዘይነብር፡ ውስተ፡ ገዳም፡ ዘስሙ፡ ዋሊ፡ ወይሰመይ፡ ሳሙኤል፡ ወውእቱ፡ ያነብብ፡ ወትረ፡ ውዳሴሃ፡ ለእግዝእትነ፡ በዓንብዕ፡ ወበገዓር፡ ብዙኅ",
     "manuscript_count": 0,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -9896,6 +10596,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book on Ark from Kings: Part 1A: When Israel Sins against the Law, the Philistines defeat them and carry off the Ark of Zion, which then chastizes them.",
     "incipit": "ወአመ፡ ሀለወት፡ ጽዮን፡ ታቦተ፡ ሕጉ፡ ለእግዚአብሔር፡ ዘትከውኖሙ፡ ኀይለ፡ ለእስራኤል፡ ወተሐውር፡ ቅድሜሆሙ",
     "manuscript_count": 0,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -9908,6 +10609,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Felsata la-Maryam??: JOld?: Dormition: The Transitus of The Virgin Mary. (623, 502, 532, 550 similar)",
     "incipit": "ናሁ፡ እዜንወክሙ፡ ዕበያ፡ ለእግዝእትነ፡…. እምአመ፡ ዕረፍታ፡ እስከ፡ ፍልሰተ፡ ሥጋሃ፡ በ፪፻ወ፮፡ ዕለታት፡ ወረደ፡ እግዚእነ፡ ኢየሱስ፡ ክርስቶስ፡ ወተክህነ፡ ላዕለ፡ በድና፡ ለእሙ፡ ወኢኀደጋ፡ ትኑም፡ ከመ፡ ባዕዳን፡ ሰብእ",
     "manuscript_count": 0,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -9920,6 +10622,7 @@ const MIRACLES_OF_MARY = [
     "title": "Life: The Jewish magistrate who believed in Christ when he saw the Virgin Mary's miracles in her house",
     "incipit": "ወሀሎ ፡ ፩መኰንን ፡ አይሁዳዊ ፡ ዘፈነውዎ ፡ ረበናተ ፡ አይሁድ ፡ ወሊቃናተ ፡ ካህናት ፡ ውስተ ፡ ቤታ ፡ ለእግዝእትነ ፡ ... ወሖረ ፡ ምስለ ፡ ወዓልያኒሁ ፡ ፴ውስተ ፡ ቤታ ፡ ሶበ ፡ ርእየ ፡ ተአምረ ፡ ዘገብረት ፡ ዘከመ ፡ አውደቀቶሙ ፡ ወአውዓየቶሙ ፡ በእሳት",
     "manuscript_count": 0,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -9932,6 +10635,7 @@ const MIRACLES_OF_MARY = [
     "title": "Homily on the Virgin Mary's symbolism in Scripture as a dove.",
     "incipit": "ስምዑ፡ ካዕበ፡ ኦሕዝበ፡ ክርስቲያን፡ ተአምሪሃ፡ ለእግዝእትነ፡…. ዘሀለወት፡ እምቅድመ፡ ሰማያት፡ ወምድር፡ በሕሊና፡ አምላክ። ርግብ፡ ዘአምጽአት፡ ብስራተ፡ ለኖኅ",
     "manuscript_count": 0,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku",
@@ -9944,6 +10648,7 @@ const MIRACLES_OF_MARY = [
     "title": "A woman marries seven times, but each time her husband is killed by a demon.",
     "incipit": "ወካዕበ ፡ ንዝኔንወክሙ ፡ ወናየድዓክሙ ፡ ንስቲተ ፡ መጠነ ፡ ንክል ፡ ነጊረ ፡ ዘገብረት ፡ ተአምረ ፡ ወመንክረ ፡ ለአሐቲ : ብእሲት ፡ እንተ ፡ ባቲ ፡ ንኔን ፡ ወይቀትል ፡ ውእቱ መንፈስ ፡ ርኵስ",
     "manuscript_count": 0,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -9956,6 +10661,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Felsata la-Maryam: [Chaine Part 09] Dormition: The Apostles decree that the events concerning the Transitus of The Virgin Mary that they have witnessed three times should be written down and that be commemorated three times a year.",
     "incipit": "ወፈጺሞሙ፡ ሐዋርያት፡ ጸልዩ፡ ወይቤሉ፡ ንጽሕፍ፡ ኵሎ፡ ዘርኢነ፡ ወዘሰማዕነ፡ ወዘጠየቅነ፡ በእንተ፡ ፍልሰታ፡ ለእግዝእትነ፡ ማርያም፡ እምዝዓለም። በ፫፻፵፡ ወ፭፡ ዓመት፡ ኮነ፡ ፍልሰታ፡ ለእግዝእትነ። ወናሁ፡ ሠራዕነ፡ ወአዘዝነ፡ ከመ፡ ይግበሩ፡ ተዝካራ፡ ለእግዝእትነ፡ ማርያም፡ ወቡርክት፡ ለለዓመት፡ ፫፡ ጊዜ",
     "manuscript_count": 0,
+    "most_read": false,
     "translations": [
       {
         "author": "Jeremy Brown with Wendy Laura Belcher",
@@ -9976,6 +10682,7 @@ const MIRACLES_OF_MARY = [
     "title": "Soldiers Ransacking Church Terrified",
     "incipit": "ወሀለወት፡ አሐቲ፡ ቤተ፡ ክርስቲያን፡ ዘኅንፅት፡ በስማ፡ ለግዝእትነ፡... ዘትፌውስ፡ ሕሙማነ፡ እለያመጽኡ፡ ኀቤሃ፡ በተአምና፨ ወኵሎሙ፡መኳንንተ፡ ሀገር፡ ወሕዝብ፡ይትአመንዋ፨ ወሀሎ፩፡ መኰንን፡ ዘተሠይመ፡ እምካልእ፡ ዘመድ፡ ውስተ፡ ይእቲ፡ ሀገር። ወእምዝ፡ አዘዘሙ፡ ለካህናተ፡ ይእቲ፡ ደብር፡እንዘ፡ ይብል፡ እመጽእአ፡ከመ፡ እትአንገድ፡ ወእሰነብት፡ ህየ፨ ወሶበ፡ ሰምዑ፨",
     "manuscript_count": 0,
+    "most_read": false,
     "translations": [
       {
         "author": "Getatchew Haile",
@@ -9988,6 +10695,7 @@ const MIRACLES_OF_MARY = [
     "title": "Man Loses Book while Urinating",
     "incipit": "ወሀሎ፡ ፩ መነኮስ፡ ውስተ፡አሐቲ፡ ሀገር፡ ሠናይ፡ ወፈራሄ፡ እግዚአብሔር፡ ተሑት፡ ወየዋህ፡ ወፍቁር፡ በኀበ፡ ኵሉ፡ ሰብእ፡ ወአበ፡ መንፈሳዌ፡ ለኵሉ፡ ሕዝብ። ወይሬኢ፡ መርዔቶ፡ ለክርስቶስ፡ በፈሪሃ፡ እግዚአብሔር፡ እንበለ፡ ቂም፡ ወጽልሑት። ወኢየአምር፡ ተስናነ፡ ወጋዕዘ፡ እም አመ፡ ልደቱ፡ እስከ፡ ፍልሰቱ፡ እምዝንቱ፡ ዓለም፡ ኀበ፡ እግዚአብሔር፤ ወኮነ፡ ው እቱ፡ መነኮስ፡ ያፈቅራ፡ ለእግዝእትነ፡ ማርያም። ወአሐተ፡ ዕለተ፡ እንዘ፡ የሐውር፡ ምስለ፡ ረድኡ፡ ጸዊሮ፡ ተአምሪሃ፡ ለእግዝእትነ፡ ... ኀበ፡ አሐቲ፡ ሀገር፡ ለምህሮ፡ ሃይማኖት። ወተግሕሠ፡ ረድኡ፡ እምፍኖት፡ ለገቢረ፡ መፍቅዱ፡ ወአውፅአ፡ እምክሳዱ፡ ለመጽሐፈ፡ ተአምሪሃ፡ ለእግዝእትነ፡ ... ወሶበ፡ ተመይጠ፡ እምኀበ፡ ኃደጋ፡ ለመጽሐፍ፡ በህየ፡ እስመ፡ መዋዕለ፡ ክረምት፡ ውእቱ፡ በወርኃ፡ ነሐሴ፤",
     "manuscript_count": 0,
+    "most_read": false,
     "translations": [
       {
         "author": "Getatchew Haile",
@@ -10000,6 +10708,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Felsata la-Maryam??: New: Dormition: An angel gives the Virgin Mary an unnamed book and Jesus promises a church will be built in her name and Peter and Paul build it with special rocks",
     "incipit": "ወአመ፡ ፈቀደ፡ እግዚእ፡ ያዕርግ፡ ሥጋሃ፡ ለእግዝእትነ፡.... መጽአ፡ ኀቤሃ፡ መልአክ፡ ዓቢይ። ወይቤላ፡ ንሥኢ፡ ዘንተ፡ መጽሐፈ፡ ዘወሀበኪ፡ ዘተከላ፡ ለገነት። ወአንቅኒ፡ ወሐብዮሙ፡ ለሐዋርያት፡ ያንብብዋ፡ በቅድሜኪ። ወትቤሎ፡ እግዝእትነ፡ ማርያም፡ ምንትኑዝ፡ መጽሐፍ። ወመኑ፡ ስሙ። ወይቤላ፡ ሑሪ፡ ደብረ፡ ዘይት። ወበህየ፡ ትሰምዒ፡ ስሙ።",
     "manuscript_count": 0,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -10012,6 +10721,7 @@ const MIRACLES_OF_MARY = [
     "title": "Dabra Pantalewon, a monastery in Aksum, Ethiopia, and the man to whom Christ appears as a young beautiful boy",
     "incipit": "ወሀሎ ፡  አሐዱ ፡  ብእሲ ፡  በደብረ ፡  አባ ፡  ጰንጠሌዎን ፡  ዘስሙ ፡  ገብረ ፡  ማርያም። ወእንዘ ፡  ይጽሕፍ ፡  መጽሐፈ ፡  መጽአ ፡  ኀቤሁ ፡  አሐዱ ፡  ሕፃን ፡  ዘይሤኒ ፡  ላሕዩ",
     "manuscript_count": 0,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -10024,6 +10734,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Felsata la-Maryam??: New: Dormition: When The Virgin Mary is about to die, the heavens open and many are healed",
     "incipit": "ወእምዝ፡ ሶበ፡ ፈጸመት፡ ጸሎታ፡ ትቤሎሙ፡ ለኵሎሙ፡ አርድአት፡ አምጽዑ፡ ማዕጠንታተ፡ ወዕጣነ፡ ወአስተብቁዑ፡ ኀበ፡ እግዚእየ፡ ወአምላኪየ፡ ኢየሱስ፡ ክርስቶስ፨ ወገብሩ፡ ወበከመ፡ አዘዘቶሙ፡ ወእንዘ፡ ይጼልዩ፡ ሰምዑ፡ ቃለ፡ መደንግፀ፡ እምሰማይ፡ ከመ፡ ድምጽኡ፡ መስተፀዕናነ፡ አፍራስ፡ ምስለ፡ ሠራዊተ፡ ሊቃነ፡ መላእክት፡ …",
     "manuscript_count": 0,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -10036,6 +10747,7 @@ const MIRACLES_OF_MARY = [
     "title": "Book of Felsata la-Maryam??: The apostles fasted for many days as they searched for Mary's body and thus Christians should keep the fast for the feast of dormition",
     "incipit": "ወእምድኅረዝ፡ እምድኅረ፡ ዕርገተ፡ እግዚእነ፡ ወአምላክነ፡ ወመድኃኒነ፡ ኢየሱስ፡ ክርስቶስ፡ ጾሙ፡ ሐዋርያት፡ ጾመ፡ እግዚእነ፡ ፵መዓልተ፡ ወ፵ሌሊተ፡ በዓቢይ፡ ኃዘን፡ ወሰቆቃው፡ ወበዓቢይ፡ ጸሎት፡ ወስእለት፡ ወአስተብቍዖት፡ ኀበ፡ እግዚአብሔር፡ ጸባዖት፡ ወፈጺሞሙ፡ ጾመ፡ እግዚእነ፡ ወአምላክነ፡ ወመድኃኒነ፡ ኢየሱስ፡ ክርስቶስ፡ አልቦ፡ ዘረከቡ፡ ዘእንበለ፡ ስብሐተ፡ እግዚአብሔር፡ ወብርሃነ፡ ትንሣኤሁ፡ ወኢረከቡ፡ በድነ፡ ሥጋሃ፡ ለእግዝእትነ፡ ማርያም፡ ዘኃሠሡ፡ ወዘተመነዩ።",
     "manuscript_count": 0,
+    "most_read": false,
     "translations": [
       {
         "author": "Jeremy Brown & Dawit Muluneh with Wendy Laura Belcher",
@@ -10048,6 +10760,7 @@ const MIRACLES_OF_MARY = [
     "title": "An adulter is snatched up to heaven and is condemned but he is saved from judgement by Mary",
     "incipit": "ወሀሎ፡ ፩ብእሲ፡ በውስተ፡ አሐቲ፡ ሀገር፡ ዘስሙ፡ ክርስቲያናዊ፡ ለእግዝእትነ፡ ማርያም፡ ወያፈቅራ፡ ወይገብር፡ በዓላ፡ በዕለተ፡ ዕረፍታ፡ በልብ፡ ወበሕሊባ፡ ፍጹም፡ ወያበዝኅ፡ ዝሙት። ወበአሐቲ፡ ሰዓተ፡ ሌሊት፡ እንዘ፡ ሀሎ፡ በንዋሙ፡ መስጥዎ፡ ወአብጽሕዎ፡ ሰማየ፡ ወአቀምዎ፡ ኀበ፡፡መንበረ፡ ፍትሕ፡ ወተትዎ፡ በእንተ፡ ምግባሩ፡ አምነ፡ ወኢከህደ።",
     "manuscript_count": 0,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -10060,6 +10773,7 @@ const MIRACLES_OF_MARY = [
     "title": "A bitter servant commits suicide but is brought back to life by Mary",
     "incipit": "",
     "manuscript_count": 0,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -10072,6 +10786,7 @@ const MIRACLES_OF_MARY = [
     "title": "Homily on the Church of the Rock attributed to Timothy Ailuros (excerpts, in 10 parts)",
     "incipit": "ወካዕበ፡ አዖደተኒ፡ እግዝእትየ፡.... ሊተ፡ መካነ፡ ወአመረተኒ፡ መካነ፡ ዘሐፀበቶ፡ ለፍቁር፡ ወልዳ፡ ውስቴቱ፡ ወመካን፡ አጽባዕቱ፡ ወመካነ፡ ዘአንበረ፡ መንበሮ፡ ውስቴቱ፡ ከመ፡ እሕንጽ፡ ቦቱ፡ ቤተ፡ ክርስቲያን፡ ወአመረተኒ፡ ኵሎ፡ ዘይከውን፡ ለነ፡ በውስተ፡ ቤቱ፡ ለቅዱስ፡ አቡነ፡ ጳኵሚስ፡ በውስተ፡ ጽዒድ፡",
     "manuscript_count": 0,
+    "most_read": false,
     "translations": [
       {
         "author": "Getatchew Haile",
@@ -10084,6 +10799,7 @@ const MIRACLES_OF_MARY = [
     "title": "Homily on the Flight to Egypt by Theophilus of Alexandria (excerpts, in 2 parts)",
     "incipit": "ይቤ፡ በእንተ፡ እግዝእትነ፡.... ወበእንተ፡ ቤት፡ ዘኃደረት፡ ውስቴቱ፡ ምስለ፡ ፍቁር፡ ወልዳ፡ ኢየሱስ፡ ክርስቶስ፡ በደብረ፡ ቍስቋም፡ ዘመልዕልተ፡ ደብር፡ አመ፡ መጽኡ፡ ብሔረ፡ ግብፅ፡ እምፍርሃተ፡ ሄሮድስ፡ ንጉሥ።",
     "manuscript_count": 0,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku",
@@ -10096,6 +10812,7 @@ const MIRACLES_OF_MARY = [
     "title": "Homily on the Flight to Egypt by Theophilus of Alexandria (excerpts, in 10 parts)",
     "incipit": "ምንተ፡ እብል፡ ወምንተ፡ አዓሥዮ፡ ለእግዚአብሔር፡ ዘገብረ፡ ሊተ፡ ዘንተ፡ ኵሎ፡ አነ፡ ነዳይ፡ ወአባሲ፡ ዘወሀበኒ፡ ሥጋሁ፡ ቅዱስ፡ ወደሞ፡ ክቡረ፡ ከመ፡ አሀቦሙ፡ ለአሕዛብ፡ ለሥርየተ፡ ኃጢአቶሙ፡ ወወሀበኒ፡ መንበረ፡ ከመ፡ እንበር፡ ዲቤሁ፡ እንዘ፡ ኢይደልወኒ፡ ወኃረየኒ፡ ከመ፡ እርአይ፡ ሕዝቦ፡ ወወሀበኒ፡ ሠናየ፡ መዋዕል።",
     "manuscript_count": 0,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -10108,6 +10825,7 @@ const MIRACLES_OF_MARY = [
     "title": "Aksum Seyon: Deacon of the church of Our Lady Mary Zion in Aksum is healed of a broken body",
     "incipit": "",
     "manuscript_count": 0,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -10120,6 +10838,7 @@ const MIRACLES_OF_MARY = [
     "title": "Life of Mary condensed into one story, beginning with Joachim and Hanna wanting a baby and ending with Mary receiving the Covenant of Mercy from Jesus",
     "incipit": "ስምዑ፡ ንንግርክሙ፡ ኦሕዝበ፡ ክርስቲያን፡ ዘከመ፡ ኀረየታ፡ ወአፍቀረታ፡ እምኵሉ፡ አኅጉራተ፡ ዓለም፡ ለምድረ፡ አዜብ፡ ዘይእቲ፡ ኢትዮጵያ፡ ወዘከመ፡ ወሀባ፡ ኪዳነ፡ ወአሥራተ፡ ምሕረት፡ እግዚእነ፡ ወመድኀኒነ፡ ኢየሱስ፡ ክርስቶስ፡ እስከ፡ ለዓለም፡ ጸሎታ፡....። ወነበሩ፡ ኢያቄም፡ ወሐና፡ እንዘ፡ አልቦሙ፡ ውሉድ፡ እስመ፡ መዛናት፡ እሙንቱ፡ እስከ፡ ርስዕና፡ እንዘ፡ ይስእሉ፡ ኀበ፡ እግዚአብሔር፡ ከመ፡ የሀቦሙ፡ ወልደ፡",
     "manuscript_count": 0,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -10132,6 +10851,7 @@ const MIRACLES_OF_MARY = [
     "title": "In Cairo, a poor and feeble but pious man named Bahor, and his son La'eka Maryam, encounter a thief named Damas",
     "incipit": "ወኮነ፡ እንከ፡ በሀገረ፡ ቃህራ፡ ባዕል፡ ፩ብእሲ፡ ዘስሙ፡ ብሖር፡ ወውእቱ፡ ብእሲ፡ ሠናይ፡ ወአልቦቱ፡ ጥሪት፡ ወኢምንትኒ፡ ወድኩም፡ ኵለንታሁ፡ ወሀለዎ፡ ወልድ፡ ፩ዘስሙ፡ ላእከ፡ ማርያም፡ ወአውፅኦ፡ ለወልዱ፡ ከመ፡ ሶበ፡ አገብሮ፡ ፍቅራ፡ እግዝእትነ፡.... ንጽሕተ፡ ሕሊና፡ ወሥጋ፡ እንበለ፡ ሕፀት፡ ወንትጋ።",
     "manuscript_count": 0,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -10144,6 +10864,7 @@ const MIRACLES_OF_MARY = [
     "title": "Saint Gabra Maryam saves a young man, who came to be his helper as a monk, when the man is snatched by a spirit and taken to Aksum",
     "incipit": "ስምዑ፡ ዘንተ፡ መንክረ፡ ወመድምም፡ ዘገብረት፡ ሎቱ፡ ለብፁዕ፡ ገብረ፡ ማርያም፡ ዕንቈ፡ [.]ም። ወሀሎ፡ ፩ወሬዛ፡ ዘየኃሥሣ፡ ለመንግሥተ፡ ሰማያት፡ ስላማዊ፡ ውእቱ፡ ምስለ፡ ኵሉ፡ ወሠናይ፡ በአርአያሁ፡ ወበምግባሩ፡",
     "manuscript_count": 0,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -10156,6 +10877,7 @@ const MIRACLES_OF_MARY = [
     "title": "Aksum Seyon: Mary brings Saint Gabra Maryam to Aksum, where she frees bound-up prisoners, as was her custom",
     "incipit": "ወካዕበ፡ ይቤ፡ አቡነ፡ ገብረ፡ ማርያም፡ ብፁዓዊ፡ ዕንቈ፡ ሶም፡ በ፩እመዋዕል፡ መጽአት፡ ኀቤየ፡ እግዝእትየ፡.... ንግሥተ፡ ኵሉ፡ ዓለም። ወትቤለኒ፡ ፍቁርየ፡ ገብረ፡ ማርያም፡ ነዓ፡ እሰድከ፡ ኀበ፡ መቅደስየ፡ ዘአክሱም፡ ከመ፡ ተአምኃ፡ ወሶቤሃ፡ ነሥአቶ፡ በሰፍስ፡ ወሥጋ፡ ወሶበ፡ አብጽሐቶ፡ ኀበ፡ ሐጸውተ፡ ኃዋሕው፡ እንቲ፡ ይእቲ፡ ደፄ፡ ሰላም፡ ነጸረ፡ ብፁዓዊ፡ አቡነ፡ ገብረ፡ ማርያም፡ ብዙኃነ፡ ሰብአ፡ እምጸፍጸፍ፡ እስከ፡ ቅጽር፡ ወኵሎሙ፡ አሡራን።",
     "manuscript_count": 0,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -10168,6 +10890,7 @@ const MIRACLES_OF_MARY = [
     "title": "Mary heals an Egyptian man with two faces and he praises her",
     "incipit": "",
     "manuscript_count": 0,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -10180,6 +10903,7 @@ const MIRACLES_OF_MARY = [
     "title": "Mary heals a man named Wafleqalone who was born blind and paralyzed",
     "incipit": "",
     "manuscript_count": 0,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku",
@@ -10192,6 +10916,7 @@ const MIRACLES_OF_MARY = [
     "title": "A sinner from Rome prays for forgiveness and Mary forgives all his sins",
     "incipit": "ወሀሎ፡ ፩ብእሲ፡ በሀገረ፡ ሮሜ፡ ዘብዙኅ፡ ኃጣውኢሁ። ወይገይስ፡ ወትረ፡ ውስተ፡ ቤተ፡ ክርስቲያና፡ ለእግዝእትነ፡ ወበዊኦ፡ ይቤላ፡ ኦእግዝእትየ፡ አንጽሕኒ፡ እምዝንቱ፡ አባስየ፡ ወኃጢአትየ።",
     "manuscript_count": 0,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku",
@@ -10204,6 +10929,7 @@ const MIRACLES_OF_MARY = [
     "title": "A weary pilgrim woman who was served communion by the angels when she couldn't journey to the church of the Virgin Mary",
     "incipit": "ወሀለወት፡ አሐቲ፡ ብእሲት፡ ዘታፈቅር፡ ገይሠ፡ ቤተ፡ ክርስቲያን። በበዓለ፡ እግዝእትነ፡.... ወእንዘ፡ ተሐውር፡ በፍኖት፡ ደክመት፡ ወጽለለት፡ በታሕተ፡ ኦም። ወመጽኡ፡ ኀቤሃ፡ መላእክተ፡ ሰማይ። ወተከሉ፡ ደብተራ፡ ወሐይመተ።",
     "manuscript_count": 0,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku",
@@ -10216,6 +10942,7 @@ const MIRACLES_OF_MARY = [
     "title": "A pious man traveling with two youths who was troubled by kidnappers on the road and was saved by the Virgin Mary in the form of a white dove",
     "incipit": "ተብህለ፡ ከመ፡ ሀሎ፡ ፩ብእሲ፡ ዘያፈቅራ፡ ለእግዝእትነ፡ ማርያም፡ በኵሉ፡ ልቡ፡ ወያነብብ፡ ወትረ፡ ውዳስያቲሃ፡ ወቡራክያቲሃ፡ ወይሁብ፡ ምጽዋተ፡ በስማ፡ ለእግዝእትነ፡ ወአሐተ፡ ዕለተ፡ ሖረ፡ ብሔረ፡ ምስለ፡ ፪ደቂቁ፡ ከመ፡ ይንሣዕ፡ ደቂቁ፡ ሢመተ፡ ክህነ፡ ወበጽሐ፡ ብሔረ፡ አረሚ።",
     "manuscript_count": 0,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku",
@@ -10228,6 +10955,7 @@ const MIRACLES_OF_MARY = [
     "title": "A man who wants to write of Mary's wonderousness is visited by a radiant man and given a shining white cloth to write upon",
     "incipit": "ወሀሎ፡ ፩ብእሲ፡ ዘያፈቅራ፡ ለእግዝእትነ፡ ቅድስት፡ ድንግል፡ በ፪ማርያም፡ ወላዲተ፡ አምላክ፡ ወይገብር፡ ተዝካረ፡ በዓላቲሃ፡ ወኢያጸርዕ፡ አንብቦ፡ ተአምሪሃ፡ ወውዳሴሃ፡ ወትረ፡ ይቤ፡ ፩እመዋዕል፡ ሶበ፡ ሐለይኩ፡ ከመ፡ እጽሐፍ፡ ውዳሴ፡ መንክራቲሃ፡ ንስቲተ፡ ወመጽአ፡ ኀቤየ፡ ብሩህ፡ ብእሲ፡ ዘይትዓፀፍ፡ በርሃነ፡ ወአስተርአየኒ፡ በሌሊት፡ በራእይ፡ እንዘ፡ ሀሎ፡ ውስተ፡ እዴሁ፡ ልብስ፡ ፀዓዳ፡ ዘብርሃን፡ ሠናይ፡ ወክቡር፡",
     "manuscript_count": 0,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -10240,6 +10968,7 @@ const MIRACLES_OF_MARY = [
     "title": "A woman is traveling to the king and is robbed of all her possessions and jewelry, but an official returns her stolen possessions from the thieves",
     "incipit": "ወነበረት፡ አሐቲ፡ ብእሲት፡ ምስለ፡ ምታ፡ ዘታፈቅራ፡ ለእግዝእትነ፡ ቅድስት፡ ድንግል፡ በ፪ማርያም፡ ወትትአመን፡ በጸሎታ፡ ጊዜ። ወሶበ፡ ተንሥአ ምንሳዌ፡ ዘመን፡ እኩይ፡ ውስተ፡ ኵሉ፡ አህጉር፡ ወጽአት፡ እምቤታ፡ ወሖረት፡ ምስለ፡ ንጉሥ። ወበአሐቲ፡ ዕለት፡ ኀበ፡ አዕረፈት፡ ለኃዲር፡ ጊዜ፡ ፍና፡ ሠርክ፡ ወጽኡ፡ ወራዙት፡ እንዘ፡ ይትበዓሱ፡ በበይናቲሆሙ፡ እኁዛነ፡ ኵናት፡ እሙንቱ፡",
     "manuscript_count": 0,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -10252,6 +10981,7 @@ const MIRACLES_OF_MARY = [
     "title": "A young woman keeps twenty dinar of gold and silver in a tanned leather pouch, but a dog eats it and then vomits it back up",
     "incipit": "ተብህለ፡ በእንተ፡ ወለተ፡ ፩ብእሲ፡ እንተ፡ ስማ፡ ዘማርያም፡ ወባቲ፡ ወርቅ፡ ወብሩር፡ በመስፈርተ፡ ፳ዲናር፡ እንተ፡ ትወድዮ፡ በማዕስ፡ ኅሡይ፡ ወታነብሮ፡ ውስተ፡ ሕፅና፡ ይእቲሰ፡ ትረፍቅ፡ ወትረ፡ ወበ፩እመዋዕል፡ ትረፍቅ፡ ውስተ፡ ማዕደ፡ አቡሃ።",
     "manuscript_count": 0,
+    "most_read": false,
     "translations": [
       {
         "author": "",
@@ -10264,6 +10994,7 @@ const MIRACLES_OF_MARY = [
     "title": "A sick little boy is healed by the Virgin Mary and when he is grown she reveals the woman who is to be his wife",
     "incipit": "ተብህለ፡ ከመ፡ ሀሎ፡ ውስተ፡ አሐቲ፡ ሀገር፡ ወልደ፡ ብእሲ፡ ባዕል፡ እምክቡራነ፡ ዘመድ፡ ዘይደዌ፡ እምንዕሱ፡ ዓቢየ፡ ደዌ፡ አቡሁኒ፡ ወእሙ፡ ነበሩ፡ እንዘ፡ የኃዝኑ፡ ሎቱ፡ ወያማኃፅንዎ፡ ወትረ፡ ኀበ፡ እግዝእትነ፡ ቅድስት፡ ድንግል፡ በ፪ማርያም፡ ወላዲተ፡ አምላክ፡ ፈውሲ፡ ለዝንቱ፡ ወልድነ፡ እምደዌሁ፡ ይኩንኪ፡ ዓቃቤ፡ ወይትለአክ፡ ለቤተ፡ ክርስቲያንኪ፡",
     "manuscript_count": 0,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -10276,6 +11007,7 @@ const MIRACLES_OF_MARY = [
     "title": "Gabra Maryam is presented with a golden throne shining with twelve luminaries and twelve stars and then the Virgin Mary reveals a radiant city to him",
     "incipit": "ስምዑ፡ ዘንተ፡ ለዘገብረት፡ ሎቱ፡ ለገብረ፡ ዚአሃ፡ ዘይሰመይ፡ ገብረ፡ ማርያም፡ ወአምጽአት፡ ሎት፡ መንበረ፡ ዘወርቅ፡ ዘይሠርቁ፡ ቦቱ፡ ፲ወ፪ብርሃናት፡ ወቦቱ፡ ፲ወ፪ከዋክብት፡ ወይመስል፡ ውእቱ፡ መንበር፡ ክበቡ፡ ከመ፡ ማዕከክ፡",
     "manuscript_count": 0,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -10288,6 +11020,7 @@ const MIRACLES_OF_MARY = [
     "title": "Arabic: A poor believer cannot sleep due to illness and pain, but St the Virgin Mary gives him rest and then heals him",
     "incipit": "",
     "manuscript_count": 0,
+    "most_read": false,
     "translations": [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
@@ -10300,6 +11033,7 @@ const MIRACLES_OF_MARY = [
     "title": "Arabic: A sinful man is healed from severe pain by sleeping on a Taʾammera Maryam (Miracles of Mary) book",
     "incipit": "",
     "manuscript_count": 0,
+    "most_read": false,
     "translations": [
       {
         "author": "Jeremy Brown with Wendy Laura Belcher",
