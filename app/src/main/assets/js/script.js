@@ -3772,6 +3772,11 @@ function renderSelectedKidase(addSectionTitleCallback) {
                     p[k] = p[k].replace('{{LECTURA DEL EVANGELIO DE LA MAÑANA}}', '{{LECTURA DEL EVANGELIO DE LA TARDE}}');
                 }
             });
+            
+            if (p.reference) {
+                p.reference = p.reference.replace(/Morning/g, 'Sunset');
+            }
+            
             return p;
         });
 
