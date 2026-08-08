@@ -12005,7 +12005,7 @@ const kidaseData = {
     },
     {
       "instruction": "For afternoon/evening services.",
-      "reference": "Afternoon/Evening Prayer of the Covenant",
+      "reference": "Sunset Prayer of the Covenant",
       "chapter": "Kidan",
       "stanza": "Part3",
       "english": "፨ EVENING PRAYER OF THE COVENANT ፨\nPriest: The Grace of God be with you.\n፨ People: and with Your Spirit.",
@@ -12024,7 +12024,7 @@ const kidaseData = {
     },
     {
       "instruction": "For afternoon/evening services.",
-      "reference": "Afternoon/Evening Prayer of the Covenant",
+      "reference": "Sunset Prayer of the Covenant",
       "chapter": "Kidan",
       "stanza": "Part3",
       "english": "Priest: You give thanks unto our God.\n፨ People: It is right, it is just.",
@@ -12043,7 +12043,7 @@ const kidaseData = {
     },
     {
       "instruction": "For afternoon/evening services. Inaudible Prayer.",
-      "reference": "Afternoon/Evening Prayer of the Covenant",
+      "reference": "Sunset Prayer of the Covenant",
       "chapter": "Kidan",
       "stanza": "Part3",
       "english": "Priest: O immortal Father, Savior of our soul, the Foundation of wisdom, Keeper of our hearts,",
@@ -12062,7 +12062,7 @@ const kidaseData = {
     },
     {
       "instruction": "For afternoon/evening services. Inaudible Prayer.",
-      "reference": "Afternoon/Evening Prayer of the Covenant",
+      "reference": "Sunset Prayer of the Covenant",
       "chapter": "Kidan",
       "stanza": "Part3",
       "english": "Priest: You have granted light to our inward eyes and covered us with Your knowledge against the darkness of our mind.",
@@ -12081,7 +12081,7 @@ const kidaseData = {
     },
     {
       "instruction": "For afternoon/evening services. Inaudible Prayer.",
-      "reference": "Afternoon/Evening Prayer of the Covenant",
+      "reference": "Sunset Prayer of the Covenant",
       "chapter": "Kidan",
       "stanza": "Part3",
       "english": "Priest: You did save the first man, who was given to destruction, by the cross of Your Only-Begotten, and did renew him by the immortal things.",
@@ -12100,7 +12100,7 @@ const kidaseData = {
     },
     {
       "instruction": "For afternoon/evening services. Inaudible Prayer.",
-      "reference": "Afternoon/Evening Prayer of the Covenant",
+      "reference": "Sunset Prayer of the Covenant",
       "chapter": "Kidan",
       "stanza": "Part3",
       "english": "Priest: Iniquities vanished through Your commandment, and You did make redemption through the death of Your Son and did search for the lost one.",
@@ -12119,7 +12119,7 @@ const kidaseData = {
     },
     {
       "instruction": "For afternoon/evening services. Inaudible Prayer.",
-      "reference": "Afternoon/Evening Prayer of the Covenant",
+      "reference": "Sunset Prayer of the Covenant",
       "chapter": "Kidan",
       "stanza": "Part3",
       "english": "Priest: For this reason we, Your servants, glorify You, O Lord.",
@@ -12138,7 +12138,7 @@ const kidaseData = {
     },
     {
       "instruction": "For afternoon/evening services.",
-      "reference": "Afternoon/Evening Prayer of the Covenant",
+      "reference": "Sunset Prayer of the Covenant",
       "chapter": "Kidan",
       "stanza": "Part3",
       "english": "፨ People: O Lord, we glorify You.",
@@ -12157,7 +12157,7 @@ const kidaseData = {
     },
     {
       "instruction": "For afternoon/evening services. Inaudible Prayer.",
-      "reference": "Afternoon/Evening Prayer of the Covenant",
+      "reference": "Sunset Prayer of the Covenant",
       "chapter": "Kidan",
       "stanza": "Part3",
       "english": "Priest: We praise You, O Lord, with glorious song, You Whom the archangels always glorify, unceasingly and without rest,",
@@ -12176,7 +12176,7 @@ const kidaseData = {
     },
     {
       "instruction": "For afternoon/evening services. Inaudible Prayer.",
-      "reference": "Afternoon/Evening Prayer of the Covenant",
+      "reference": "Sunset Prayer of the Covenant",
       "chapter": "Kidan",
       "stanza": "Part3",
       "english": "Priest: and Whom the lords praise singing with the praise of glory and thanksgiving.",
@@ -12195,7 +12195,7 @@ const kidaseData = {
     },
     {
       "instruction": "For afternoon/evening services. Inaudible Prayer.",
-      "reference": "Afternoon/Evening Prayer of the Covenant",
+      "reference": "Sunset Prayer of the Covenant",
       "chapter": "Kidan",
       "stanza": "Part3",
       "english": "Priest: O Lord, You have sent Your counsel, Your Word, Your wisdom, and Your visitation,",
@@ -12214,7 +12214,7 @@ const kidaseData = {
     },
     {
       "instruction": "For afternoon/evening services. Inaudible Prayer.",
-      "reference": "Afternoon/Evening Prayer of the Covenant",
+      "reference": "Sunset Prayer of the Covenant",
       "chapter": "Kidan",
       "stanza": "Part3",
       "english": "Priest: which was with You before the world began, without being created; that is the Word Who was not created,",
@@ -12233,7 +12233,7 @@ const kidaseData = {
     },
     {
       "instruction": "For afternoon/evening services. Inaudible Prayer.",
-      "reference": "Afternoon/Evening Prayer of the Covenant",
+      "reference": "Sunset Prayer of the Covenant",
       "chapter": "Kidan",
       "stanza": "Part3",
       "english": "Priest: Who appeared in flesh for the salvation of mankind. Your beloved Son, our Lord Jesus, has set us free from the yoke of sin.",
@@ -12252,7 +12252,7 @@ const kidaseData = {
     },
     {
       "instruction": "For afternoon/evening services. Inaudible Prayer.",
-      "reference": "Afternoon/Evening Prayer of the Covenant",
+      "reference": "Sunset Prayer of the Covenant",
       "chapter": "Kidan",
       "stanza": "Part3",
       "english": "Priest: For this reason we, Your servants, praise You, O Lord.",
@@ -12271,7 +12271,7 @@ const kidaseData = {
     },
     {
       "instruction": "For afternoon/evening services.",
-      "reference": "Afternoon/Evening Prayer of the Covenant",
+      "reference": "Sunset Prayer of the Covenant",
       "chapter": "Kidan",
       "stanza": "Part3",
       "english": "፨ People: O Lord, we praise You.",
@@ -12290,7 +12290,7 @@ const kidaseData = {
     },
     {
       "instruction": "For afternoon/evening services. Inaudible Prayer.",
-      "reference": "Afternoon/Evening Prayer of the Covenant",
+      "reference": "Sunset Prayer of the Covenant",
       "chapter": "Kidan",
       "stanza": "Part3",
       "english": "Priest: From our heart we offer to You thrice over praise, O Lord, Giver of life.",
@@ -12309,7 +12309,7 @@ const kidaseData = {
     },
     {
       "instruction": "For afternoon/evening services. Inaudible Prayer.",
-      "reference": "Afternoon/Evening Prayer of the Covenant",
+      "reference": "Sunset Prayer of the Covenant",
       "chapter": "Kidan",
       "stanza": "Part3",
       "english": "Priest: You did visit the soul of the humble and did not despise the troubled soul.",
@@ -12328,7 +12328,7 @@ const kidaseData = {
     },
     {
       "instruction": "For afternoon/evening services. Inaudible Prayer.",
-      "reference": "Afternoon/Evening Prayer of the Covenant",
+      "reference": "Sunset Prayer of the Covenant",
       "chapter": "Kidan",
       "stanza": "Part3",
       "english": "Priest: You did accept the persecuted and help them, You did save those in difficulty.",
@@ -12347,7 +12347,7 @@ const kidaseData = {
     },
     {
       "instruction": "For afternoon/evening services. Inaudible Prayer.",
-      "reference": "Afternoon/Evening Prayer of the Covenant",
+      "reference": "Sunset Prayer of the Covenant",
       "chapter": "Kidan",
       "stanza": "Part3",
       "english": "Priest: You did think of the hungry and avenge those against whom sin was committed. You are the Friend of the faithful, Speaker to the righteous, dwelling-place for the pure;",
@@ -12366,7 +12366,7 @@ const kidaseData = {
     },
     {
       "instruction": "For afternoon/evening services. Inaudible Prayer.",
-      "reference": "Afternoon/Evening Prayer of the Covenant",
+      "reference": "Sunset Prayer of the Covenant",
       "chapter": "Kidan",
       "stanza": "Part3",
       "english": "Priest: You hear those who call upon You in righteousness, protect the widow, save the orphan,",
@@ -12385,7 +12385,7 @@ const kidaseData = {
     },
     {
       "instruction": "For afternoon/evening services. Inaudible Prayer.",
-      "reference": "Afternoon/Evening Prayer of the Covenant",
+      "reference": "Sunset Prayer of the Covenant",
       "chapter": "Kidan",
       "stanza": "Part3",
       "english": "Priest: grant right leadership to the church which You have made a dwelling-place of the glorious faith, the council of the spirit, the gift of grace and power.",
@@ -12404,7 +12404,7 @@ const kidaseData = {
     },
     {
       "instruction": "For afternoon/evening services. Inaudible Prayer.",
-      "reference": "Afternoon/Evening Prayer of the Covenant",
+      "reference": "Sunset Prayer of the Covenant",
       "chapter": "Kidan",
       "stanza": "Part3",
       "english": "Priest: While we praise You without rest we know in our hearts Your kingdom which was declared unto us by You",
@@ -12423,7 +12423,7 @@ const kidaseData = {
     },
     {
       "instruction": "For afternoon/evening services.",
-      "reference": "Afternoon/Evening Prayer of the Covenant",
+      "reference": "Sunset Prayer of the Covenant",
       "chapter": "Kidan",
       "stanza": "Part3",
       "english": "Priest: and Your beloved Son, our Lord Jesus, through Whom be glory and dominion to You, world without end.\n፨ People: Amen.",
@@ -20061,7 +20061,7 @@ const kidaseData = {
     },
     {
       "instruction": "For afternoon/evening services.",
-      "reference": "Afternoon/Evening Prayer of the Covenant",
+      "reference": "Sunset Prayer of the Covenant",
       "chapter": "Kidan",
       "stanza": "Part3",
       "english": "፨ EVENING PRAYER OF THE COVENANT ፨\nPriest: The Grace of God be with you.\n፨ People: and with Your Spirit.",
@@ -20080,7 +20080,7 @@ const kidaseData = {
     },
     {
       "instruction": "For afternoon/evening services.",
-      "reference": "Afternoon/Evening Prayer of the Covenant",
+      "reference": "Sunset Prayer of the Covenant",
       "chapter": "Kidan",
       "stanza": "Part3",
       "english": "Priest: You give thanks unto our God.\n፨ People: It is right, it is just.",
@@ -20099,7 +20099,7 @@ const kidaseData = {
     },
     {
       "instruction": "For afternoon/evening services. Inaudible Prayer.",
-      "reference": "Afternoon/Evening Prayer of the Covenant",
+      "reference": "Sunset Prayer of the Covenant",
       "chapter": "Kidan",
       "stanza": "Part3",
       "english": "Priest: O immortal Father, Savior of our soul, the Foundation of wisdom, Keeper of our hearts,",
@@ -20118,7 +20118,7 @@ const kidaseData = {
     },
     {
       "instruction": "For afternoon/evening services. Inaudible Prayer.",
-      "reference": "Afternoon/Evening Prayer of the Covenant",
+      "reference": "Sunset Prayer of the Covenant",
       "chapter": "Kidan",
       "stanza": "Part3",
       "english": "Priest: You have granted light to our inward eyes and covered us with Your knowledge against the darkness of our mind.",
@@ -20137,7 +20137,7 @@ const kidaseData = {
     },
     {
       "instruction": "For afternoon/evening services. Inaudible Prayer.",
-      "reference": "Afternoon/Evening Prayer of the Covenant",
+      "reference": "Sunset Prayer of the Covenant",
       "chapter": "Kidan",
       "stanza": "Part3",
       "english": "Priest: You did save the first man, who was given to destruction, by the cross of Your Only-Begotten, and did renew him by the immortal things.",
@@ -20156,7 +20156,7 @@ const kidaseData = {
     },
     {
       "instruction": "For afternoon/evening services. Inaudible Prayer.",
-      "reference": "Afternoon/Evening Prayer of the Covenant",
+      "reference": "Sunset Prayer of the Covenant",
       "chapter": "Kidan",
       "stanza": "Part3",
       "english": "Priest: Iniquities vanished through Your commandment, and You did make redemption through the death of Your Son and did search for the lost one.",
@@ -20175,7 +20175,7 @@ const kidaseData = {
     },
     {
       "instruction": "For afternoon/evening services. Inaudible Prayer.",
-      "reference": "Afternoon/Evening Prayer of the Covenant",
+      "reference": "Sunset Prayer of the Covenant",
       "chapter": "Kidan",
       "stanza": "Part3",
       "english": "Priest: For this reason we, Your servants, glorify You, O Lord.",
@@ -20194,7 +20194,7 @@ const kidaseData = {
     },
     {
       "instruction": "For afternoon/evening services.",
-      "reference": "Afternoon/Evening Prayer of the Covenant",
+      "reference": "Sunset Prayer of the Covenant",
       "chapter": "Kidan",
       "stanza": "Part3",
       "english": "፨ People: O Lord, we glorify You.",
@@ -20213,7 +20213,7 @@ const kidaseData = {
     },
     {
       "instruction": "For afternoon/evening services. Inaudible Prayer.",
-      "reference": "Afternoon/Evening Prayer of the Covenant",
+      "reference": "Sunset Prayer of the Covenant",
       "chapter": "Kidan",
       "stanza": "Part3",
       "english": "Priest: We praise You, O Lord, with glorious song, You Whom the archangels always glorify, unceasingly and without rest,",
@@ -20232,7 +20232,7 @@ const kidaseData = {
     },
     {
       "instruction": "For afternoon/evening services. Inaudible Prayer.",
-      "reference": "Afternoon/Evening Prayer of the Covenant",
+      "reference": "Sunset Prayer of the Covenant",
       "chapter": "Kidan",
       "stanza": "Part3",
       "english": "Priest: and Whom the lords praise singing with the praise of glory and thanksgiving.",
@@ -20251,7 +20251,7 @@ const kidaseData = {
     },
     {
       "instruction": "For afternoon/evening services. Inaudible Prayer.",
-      "reference": "Afternoon/Evening Prayer of the Covenant",
+      "reference": "Sunset Prayer of the Covenant",
       "chapter": "Kidan",
       "stanza": "Part3",
       "english": "Priest: O Lord, You have sent Your counsel, Your Word, Your wisdom, and Your visitation,",
@@ -20270,7 +20270,7 @@ const kidaseData = {
     },
     {
       "instruction": "For afternoon/evening services. Inaudible Prayer.",
-      "reference": "Afternoon/Evening Prayer of the Covenant",
+      "reference": "Sunset Prayer of the Covenant",
       "chapter": "Kidan",
       "stanza": "Part3",
       "english": "Priest: which was with You before the world began, without being created; that is the Word Who was not created,",
@@ -20289,7 +20289,7 @@ const kidaseData = {
     },
     {
       "instruction": "For afternoon/evening services. Inaudible Prayer.",
-      "reference": "Afternoon/Evening Prayer of the Covenant",
+      "reference": "Sunset Prayer of the Covenant",
       "chapter": "Kidan",
       "stanza": "Part3",
       "english": "Priest: Who appeared in flesh for the salvation of mankind. Your beloved Son, our Lord Jesus, has set us free from the yoke of sin.",
@@ -20308,7 +20308,7 @@ const kidaseData = {
     },
     {
       "instruction": "For afternoon/evening services. Inaudible Prayer.",
-      "reference": "Afternoon/Evening Prayer of the Covenant",
+      "reference": "Sunset Prayer of the Covenant",
       "chapter": "Kidan",
       "stanza": "Part3",
       "english": "Priest: For this reason we, Your servants, praise You, O Lord.",
@@ -20327,7 +20327,7 @@ const kidaseData = {
     },
     {
       "instruction": "For afternoon/evening services.",
-      "reference": "Afternoon/Evening Prayer of the Covenant",
+      "reference": "Sunset Prayer of the Covenant",
       "chapter": "Kidan",
       "stanza": "Part3",
       "english": "፨ People: O Lord, we praise You.",
@@ -20346,7 +20346,7 @@ const kidaseData = {
     },
     {
       "instruction": "For afternoon/evening services. Inaudible Prayer.",
-      "reference": "Afternoon/Evening Prayer of the Covenant",
+      "reference": "Sunset Prayer of the Covenant",
       "chapter": "Kidan",
       "stanza": "Part3",
       "english": "Priest: From our heart we offer to You thrice over praise, O Lord, Giver of life.",
@@ -20365,7 +20365,7 @@ const kidaseData = {
     },
     {
       "instruction": "For afternoon/evening services. Inaudible Prayer.",
-      "reference": "Afternoon/Evening Prayer of the Covenant",
+      "reference": "Sunset Prayer of the Covenant",
       "chapter": "Kidan",
       "stanza": "Part3",
       "english": "Priest: You did visit the soul of the humble and did not despise the troubled soul.",
@@ -20384,7 +20384,7 @@ const kidaseData = {
     },
     {
       "instruction": "For afternoon/evening services. Inaudible Prayer.",
-      "reference": "Afternoon/Evening Prayer of the Covenant",
+      "reference": "Sunset Prayer of the Covenant",
       "chapter": "Kidan",
       "stanza": "Part3",
       "english": "Priest: You did accept the persecuted and help them, You did save those in difficulty.",
@@ -20403,7 +20403,7 @@ const kidaseData = {
     },
     {
       "instruction": "For afternoon/evening services. Inaudible Prayer.",
-      "reference": "Afternoon/Evening Prayer of the Covenant",
+      "reference": "Sunset Prayer of the Covenant",
       "chapter": "Kidan",
       "stanza": "Part3",
       "english": "Priest: You did think of the hungry and avenge those against whom sin was committed. You are the Friend of the faithful, Speaker to the righteous, dwelling-place for the pure;",
@@ -20422,7 +20422,7 @@ const kidaseData = {
     },
     {
       "instruction": "For afternoon/evening services. Inaudible Prayer.",
-      "reference": "Afternoon/Evening Prayer of the Covenant",
+      "reference": "Sunset Prayer of the Covenant",
       "chapter": "Kidan",
       "stanza": "Part3",
       "english": "Priest: You hear those who call upon You in righteousness, protect the widow, save the orphan,",
@@ -20441,7 +20441,7 @@ const kidaseData = {
     },
     {
       "instruction": "For afternoon/evening services. Inaudible Prayer.",
-      "reference": "Afternoon/Evening Prayer of the Covenant",
+      "reference": "Sunset Prayer of the Covenant",
       "chapter": "Kidan",
       "stanza": "Part3",
       "english": "Priest: grant right leadership to the church which You have made a dwelling-place of the glorious faith, the council of the spirit, the gift of grace and power.",
@@ -20460,7 +20460,7 @@ const kidaseData = {
     },
     {
       "instruction": "For afternoon/evening services. Inaudible Prayer.",
-      "reference": "Afternoon/Evening Prayer of the Covenant",
+      "reference": "Sunset Prayer of the Covenant",
       "chapter": "Kidan",
       "stanza": "Part3",
       "english": "Priest: While we praise You without rest we know in our hearts Your kingdom which was declared unto us by You",
@@ -20479,7 +20479,7 @@ const kidaseData = {
     },
     {
       "instruction": "For afternoon/evening services.",
-      "reference": "Afternoon/Evening Prayer of the Covenant",
+      "reference": "Sunset Prayer of the Covenant",
       "chapter": "Kidan",
       "stanza": "Part3",
       "english": "Priest: and Your beloved Son, our Lord Jesus, through Whom be glory and dominion to You, world without end.\n፨ People: Amen.",
