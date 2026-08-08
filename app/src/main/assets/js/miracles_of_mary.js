@@ -403,10 +403,6 @@ const MIRACLES_OF_MARY = [
     "most_read": true,
     "translations": [
       {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
         "author": "Mihret Melaku",
         "text": "<p>There was one woman in the country of Egypt and on one of the days of the feasts of the our Lady the Holy twofold Virgin Mary, she went to a spring which sprung from a plant, and she immersed herself and cleansed herself in the spring with her children. When she had finished her cleansing, a silver platter fell from her hands into the water. And she loved the plate greatly, and she stayed for two days looking (for the platter) but she could not find it. And she sorrowed and cried while saying “O my Lady, the Holy Twofold Virgin Mary, I came for the pilgrimage of this place that I might receive your blessing, and you would lose my possession?” After this she went and arrived at her house while she greatly sorrowed. And one time from among the nights, while she was standing (at prayer) our Lady the Holy Twofold Virgin Mary revealed herself to her and said to her: “Go to so-and-so’s church which is in my name, and there you will find your possession” And she went into the church which our Lady the Holy Twofold Virgin Mary proclaimed to her. And the pathway of her road from the place where she lost the plate to the church was a distance of 2 days. And when she arrived, she asked the keeper of the church that he might look for the plate, and when he looked, he found the plate in the water. And he brought it to her and gave it to her. And when the people saw this they marveled greatly and glorified God and praised our Lady the Holy Twofold Virgin Mary, worker of miracles and wonders, may her prayers and blessings be with her servant Sertse Ab who loves her without limit forever, Amen. [Translation as of 05/21/22]</p>"
       },
@@ -1349,39 +1345,6 @@ const MIRACLES_OF_MARY = [
     ]
   },
   {
-    "id": "316-A",
-    "title": "Book of Ledata la-Maryam??: OldA: Part 01: Conception: The Virgin Mary is conceived and born (whole or opening)",
-    "incipit": "ንነግረክሙ፡ አበዊነ፡ ቅዱሳን፡ ወአኀዊነ፡ ፍቁራን፡ ውሉደ፡ ቤተ፡ ክርስቲያን፡ እግዚአብሔር፡ ይባርክሙ፡ ወያበርህ፡ አዕይንተ፡ አልባቢክሙ፡ ለሰሚዐ፡ ተአምሪሃ፡ ለእግዝእትነ፡ ማርያም፡ ዘያስተፌሥሕ፡ አልባበ፡ ወይመርህ፡ ውስተ፡ መንግሥተ፡ ሰማያት። ሚመጠነ፡ ተአምረ፡ ገብረት፡ በእደዊሆሙ፡ ለአበው፡ ቀደምት፡ ተአምረ፡ ወመንክረ፡ ዘአልቦ፡ ኍልቈ። መቅድመ፡ ኵሉ፡ ንነግረክሙ፡ ሕይወታ፡ ወንጽሕናሃ፡ እስመ፡ ኀረያ፡ እግዚአብሔር፡ እምቀዳሚ። ወሀሎ፡ አሐዱ፡ ብእሲ፡ እምዘመደ፡ ካህናት፡ ዘይሰመይ፡ ኢያቄም፡ ወአውሰበ፡ ብእሲተ፡ እምአዋልደ፡ ይሁዳ፡ ወትሰመይ፡ ሐና",
-    "manuscript_count": 126,
-    "most_read": true,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
     "id": "90",
     "title": "A priest who was warned not to rush when incensing the icon of the Virgin Mary; the patrariach who received miraculous baptismal water; and Hilaria the daughter of Emperor Zeno who became a nun in Scete",
     "incipit": "ወኮነ፡ በአሐቲ፡ ዕለት፡ እንዘ፡ የዐውድ፡ ካህን፡ ወእንዘ፡ የዐጥን፡ ቤተ፡ ክርስቲያነ፡ ወበጽሐ፡ ኀበ፡ ሀለወ፡ ሥዕለ፡ እግዝእትነ",
@@ -1673,10 +1636,6 @@ const MIRACLES_OF_MARY = [
       {
         "author": "Rowan Williams",
         "text": "<p>The Miracles of Our Lady Mary, the Holy Twofold Virgin Theotokos</p><p>May her prayers and blessings be with us to the ages of ages. Amen.</p><p> </p><p>After Our Lady Mary, the Theotokos, had lived in the Temple for fifteen years, including[1] the three years that she spent in the house of her mother and father, the Priests of the Jews said, ‘Behold, this daughter of Israel has reached adolescence.’ 3So Zechariah the High Priest went to the Virgin in the Temple and said to her, ‘O daughter of Israel, what is best for your life?’ 4And Our Lady said to Zechariah, ‘Speak to the Lord and entreat Him on my behalf, so that I may know what I am to do.’ 5Thus Zechariah besought the Lord, saying,[2] ‘What shall I do concerning this great and glorious girl?’ 6And the Lord said to Zechariah, ‘Choose twelve men of the Elders of Israel whose wives have died, and cast lots[3] for each of them.’ 7So the Priests chose twelve men from the twelve tribes of Israel, set them in the house of the Lord and raised incense, 8saying, ‘O Lord, You are the Knower of hearts. Reveal to us the person[4] whom You have chosen to look after Your handmaid Mary.’ 9Then they cast lots[5] for each of them, and[6] the lot fell[7] to Joseph. Now, Joseph[8] was a righteous, meek and God-fearing man of the house of David. 10And they said to him, ‘O Joseph, take her who has been entrusted to you,[9] and keep this Virgin safe until the Lord desires to give you instructions according His good pleasure.’ 11When he heard these words, Joseph[10] wept and rolled around on the ground. Then he bowed down before the Priests and cried,[11] ‘Have mercy on me, for I am an old man! I have children, and my wife has died,[12] and I fear the trials of this world.’ 12But they told him, ‘Do not be afraid, for this counsel is not from us, but from the Lord. 13Take her to you now and have her live in your home. Let her be the Lady of your house,[13] and let her minister to you.’ 14For this reason they called Joseph ‘the betrothed of Mary,’ as it says in the Holy Gospel. 15Then he took her[14] and brought her into his house. 16The Priests blessed them, and Simeon and Zechariah said to them, ‘May the Lord deliver you from all evil.’ 17Furthermore, they said to Mary, the holy twofold Virgin Theotokos, the Lady of us all, ‘The Lord Who chose your fathers has given you to them.[15] May He keep you safe and send His Angel to comfort you.’[16] 18She answered them,[17] ‘Let it be as you have said to me.’</p><p>19   When Our Lady Mary[18] went into the house of Joseph, she met his three boys whose mother had already died. 20The eldest was called Joses the son of Joseph. The one who was younger than him was called Jude. And his third son was James, who was called ‘the brother of Our Lord,’ because Our Lady Mary, the holy twofold Virgin Theotokos, embraced him with the palms of her hands in the house of Joseph. 21Now Our Lady Mary, the holy twofold Virgin Theotokos, remained there spinning cloth of gold and silk. And Joseph continued to honour her and to be dutiful toward her. 22Then he[19] bid Our Lady farewell and went to a faraway land to trade therein.</p><p>May her prayers and blessings be with us to the ages of ages. Amen.</p>"
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },
@@ -1724,10 +1683,6 @@ const MIRACLES_OF_MARY = [
       {
         "author": "Allie V. Mangel",
         "text": "<p>It was in a place where mostly Jews lived.</p><p>The Christians who lived there were few.</p><p>When a young Jew heard these [the Christians] speak of the Christian teaching, he began to say, “Is the faith of Christians true, or is it the faith of Jews?”</p><p>One day, while he was sleeping, he saw in a dream a fire surrounding him to the right and to the left, and many flashes of lightning. The fire left its dwelling toward the house where he was and seized him. </p><p>The Jew cried out in his dream.</p><p>While he cried, a lion came from the east, roaring.</p><p>The young Jew was afraid and said, “I devote myself to the God of Daniel.”</p><p>To the fire he said, “I devote myself to the God of Hananiah, of Azariah and of Mishael. ” And he invoked the name of God.</p><p>When he had said this, the lion mellowed (?), as if it were laughing.</p><p>Behind him was (a being), resembling a monk, in whose hand was a staff [baton] of iron.</p><p>When the lion grew closer to either the fire or the flashes of lightning, these grew afraid and flowed backwards.</p><p>The fire was covered by a veil (?) to the left.</p><p>The lion called the young Jew by his name and said to him, “Come.” And it arrived beside him and took him by the right hand.</p><p>Then the lion made a cross (upon his hand) with its claws and said to the monk, “Take the staff of iron that is in your hand and place the whole of this staff of iron in the blaze: it will be as an ember.”</p><p>It said (again) to the monk: “Come, make a cross.” The monk made a cross with the burning iron there where the lion had made a cross with its claws.</p><p>The lion said to the young Jew, “You happen to rot of a great putridness.” </p><p>The young Jew said to it, “Do the best for me, as you wish it.”</p><p>The lion said to him, “Come, so that I might lead you to the clear sea that is beneath the chasm.” And it led the young Jew to the clear sea.</p><p>The lion said to the young Jew, “Throw yourself down, in this clear sea, and your putridness will be taken away from you.”</p><p>The young Jew threw himself in the sea and immersed himself.</p><p>When he immersed himself in the clear sea, he awoke and cried in terror.</p><p>From that day, he began to love the Christians with a perfect love.</p><p>After that, he was baptised and became Christian.</p><p>After that, he became a priest, made himself a monk, and learned the Holy Scripture. He returned to his birthplace to preach the name of Jesus Christ.</p><p>One day, a Sunday, he began to teach the Christians and the Jews.</p><p>One of the Jews who loved him previously said to him, “Come, so that I might tell you something one-on-one.”</p><p>This Jew spoke to the young Jew, who was a priest and monk, and said to him, “Monk, is it from your heart that you love Christ and have faith in Mary, or is it (only) from your mouth, as you had previously been?” </p><p>The Jew, who was a priest and monk, began to curse him in the name of Jesus Christ and in the name of the Virgin Mary, saying, “May Jesus Christ, Son of God, annihilate you, and may Mary also annihilate you.</p><p>“May he who drowned the Pharaoh in the Red Sea drown you as well.” And he cursed him with every curse in the name of Jesus Christ and in the name of Mary.</p><p>When he had cursed him, the other Jew let out a great laugh, rejoiced, and said to him, “Curse me again.”</p><p>And this Jew left, laughing.</p><p>He was the prefect of the town.</p><p>The young Jew, who was a priest and monk, returned to his house crying and saying, “O my Lady, show me your miracle upon this man.”</p><p>The young Jew, who was a priest and monk, while meditating, met a companion, a young Jew who was a priest and a monk. Both were children of Jews.</p><p>He [original young Jew] told him [the new young Jew] how the other Jew had blasphemed against Our Lady Mary and her Son. The children of Jews both cried.</p><p>They were priests and monks.</p><p>They said to Our Lady Mary, Mother of God, “Listen to what we ask of you: show us one of your miracles upon this Jew who blasphemed against you and against your Son, so that we might not be in doubt, we your servants whom the love for you and the love for your son have made captives far from our fathers and far from our parents.”</p><p>When they had finished praying, they went to sleep in distress and in tears.</p><p>On Monday, the Jew [the one who blasphemed] began to go to his house beside his wife and his children. He arrived at the river, crossed the river, and stripped to plunge himself in the river.</p><p>He sat upon a big rock that was on the river bank, of an unmovable base. (?)</p><p>The rock rose from its place, threw off the Jew, climbed upon him and placed him underneath (itself).</p><p>The servants of the Jew cried out: he was the head of the town. They looked for his body for three months and did not find a trace of his body.</p><p>So acted Our Lady Mary by the power of her Son, Jesus Christ, Savior of the world.[Translation as of 05/21/22]</p>"
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },
@@ -1788,10 +1743,6 @@ const MIRACLES_OF_MARY = [
       {
         "author": "Rowan Williams",
         "text": "<p>The Miracles of Our Lady Mary</p><p> </p><p>May her prayers and blessings be with us. Amen.</p><p>After that, Seth was born, and Mary was passed on from Adam and dwelt in Seth’s body. Next she was passed on and dwelt in the bodies of Enosh, Kenan, Mahalalel, Jared, Enoch, Methuselah, Lamech and Noah. She dwelt in their bodies, being passed on from one body to another.[1] Again she was passed on and dwelt in the bodies of Abraham, Isaac and Jacob. And Jacob beheld her when he blessed Ephrem and Manasseh. He said to his son Joseph,[2] ‘Christ shall be born of the Virgin whose name is Mary at the end of three years.’[3] Moreover, she dwelt in the bodies of the Prophets, being passed on from the body of one to that of another,[4] from Seth to David and Solomon.</p><p>Then she dwelt in the body of Joachim, and Joachim said to his wife Anne, ‘I saw the seven Heavens open, and a white bird went forth from within. She hovered above my head,[5] entered into my ear and dwelt in my inner parts.’ So they discussed this matter in secret on the thirtieth day of the month of hamle,[6] and Our Lady Mary was conceived on the seventh of Nahase, the day which God blessed.</p><p>Blessed are those who clothe the naked; those who feed the hungry;[7] those who comfort the grieving; those who set prisoners free; and those who visit the sick on this day. They shall receive a portion in the Kingdom of Heaven with the Prophets and the Apostles to the ages of ages. Amen.</p>"
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },
@@ -1873,19 +1824,6 @@ const MIRACLES_OF_MARY = [
     ]
   },
   {
-    "id": "385",
-    "title": "The hungry man whom the Virgin Mary used to feed when he prayed to her",
-    "incipit": "ተብህለ፡ ከመ፡ ሀሎ፡ አሐዱ፡ ርኁብ፡ ዘያፈቅራ፡ ለእግዝእትነ፡…. ወይሳእላ፡ ለከርሡ፡ መብልአ፡ ወትረ፡ ወይእቲኒ፡ ትሁቦ፡ ኅብስተ፡ ሠናየ",
-    "manuscript_count": 98,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
     "id": "415",
     "title": "The thief who was caught stealing from the church of the Virgin Mary and was released by his captors when he prayed to her.",
     "incipit": "ተብህለ፡ በእንተ፡ አሐዱ፡ ብእሲ፡ ቀሳጤ፡ ቤተ፡ ክርስቲያን፡ ኵሎ፡ አሚረ፡ ነበረ፡ እንዘ፡ ይቀስጥ፡ እኩየ፡ ልማዶ፡ ወይጸንሕዎ፡ ኵሉ፡ ሰብእ",
@@ -1908,10 +1846,6 @@ const MIRACLES_OF_MARY = [
       {
         "author": "Getatchew Haile",
         "text": "A miracle of Our Lady, the holy twofold Virgin, the Holy Spirit, Mary, Mariham; may her intercession be with our Dengel, with Abuna (= Metropolitan) Mareqos and with all of forever. Amen. There was a Christian king, a lover of God, whose faith was orthodox, and whose actions were good. He loved Our Lady, the holy twofold Virgin, the Ark of the Holy Spirit, Mary, Mariham, with all his heart and with all his soul. Out of his exceeding love for her, he had an image (icon) statuette made in her likeness and adorned (it) with gold and silver and precious stones. He prayed constantly with this image, day and night. He honored it exceedingly in fear and trembling. Whenever he would stand for prayer by that image, it seemed to him that he was standing before his Creator, and so his eyes would shed burning tears and all his members would be trembling and terror-struck, Whenever he would pray (standing) by that image, all his concern(s) and the desire(s) of his heart would be granted and fulfilled. There were times when the image spoke to him openly; and there were times when it spoke to him through visions. One day he prayed with persevering heart, lamenting and weeping, f. 63v/ while standing by the image (of) Our Lady, the holy twofold Virgin, the Ark of the Holy Spirit, Mary, Mariham, saying, \"O My Lady, I ask you that you receive the yearning of my mind, testing my heart and reins (to see) that I love you from the depth of my heart. Behold, this is my petition, O My Lady. If you do not let me inherit the Heavenly Kingdom as well together with the elect kings who have pleased you with all their hearts, take my soul away from this kingdom of the corruptible world, whose passing away is like a shadow and a borrowed garment. I just take refuge in you that you may say, \"yes,\" to me, and may not neglect the supplication of me, your sinful servant, because it has been vouchsafed to you from the Father, the Son and the Holy Spirit that you receive the prayer of us, your people, and obtain the remission of our sins, for to you is meet thanksgiving, glory, worship, power and might at all times, forever and ever. Amen. When he finished his prayer, Our Lady, the holy twofold Virgin, the Ark of the Holy Spirit, Mary, Mariham, came to him openly, not in a vision or in a dream, and said to him, \"O My beloved one, behold I have obtained for you from my Son, Jesus Christ, all that you have asked f. 64r from me. It is not only to you alone that the Kingdom/ of Heaven shall be given; but to all of your children who have come from your loins the Kingdom of Heaven shall be given. As for the earthly Kingdom there shall be some among your children that shall reign and some that shall not reign; the Kingdom of Heaven, however, is vouchsafed to all of them, without discriminating against any one of them. I have given you this convenant while you are alive, that is, that you and your children inherit the Kingdom of Heaven.\" Having said this, Our Lady, the holy twofold Virgin, the Ark of the Holy Spirit, Mary, Mariham, was hidden from him. All this that happented (was) because of the love of Our Lady. See, O doves of the Gospel, the greatness of the generosity and the goodness of this damsel, the Mother of Emmanuel. To a man who loves her from the depths of his heart, when he asks and prays, she bestows an earthly kingdom as well as the Heavenly Kingdom, which is the greatest and the highest. May her prayer and her blessing be with all of her servants and maids, forever and ever. Amen. Now, too, we pray and supplicate you O Mary, Virgin, Mother of the Sovereign. As you received the prayer of this king, your beloved one, today, too, be pleased with the desire of the mind of [Habta Iyyasus] your servant, the son of your maid, forever and ever."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },
@@ -1923,20 +1857,8 @@ const MIRACLES_OF_MARY = [
     "most_read": true,
     "translations": [
       {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
         "author": "Allie V. Mangel",
         "text": "<p>Listen, fathers and brothers, with a luminous heart and an attentive spirit, as we narrate to you what Our Lady, the Holy Twice-Virgin Mary, Mother of God, did. </p><p>One day our father Samuel the Blessed was reciting in prayer the liturgy of Our Lady Mary. </p><p>Having placed water before himself, he made upon the water the sign of the cross. When he wanted to drink the water and took it up in his hand, Our Lady Mary made out of this water a white piece of bread of pleasant appearance and agreeable scent. </p><p>That scent transported his heart and sated his hunger without his having [even] eaten the bread. Our blessed father said, “I placed this bread in my mouth. I did not know what to compare it to, for it was not like the taste of honey and sugar. It intoxicated me fully by the smoothness of the scent of its fragrance. Immediately, I was rejuvenated and renewed, like an eagle, and my bones were vigorous.” </p><p>It is this miracle that Our Lady, the Holy Twice-Virgin Mary, Mother of God, did for our father Samuel when she saw the purity of his body, the steadfastness of his heart, and that he had been broken in the spiritual battle for the love of her Son and in the love of her. </p><p>END PRAYER: O Our Lady who loves the just and visits the virtuous, hope of sinners, may your prayer and benediction be with us for ever and ever, amen. [Translation as of 05/21/22]</p>"
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },
@@ -1988,19 +1910,6 @@ const MIRACLES_OF_MARY = [
     ]
   },
   {
-    "id": "248",
-    "title": "Book of Felsata la-Maryam??: Dormition: Part 05: Christ celebrates Mass for The Virgin Mary.",
-    "incipit": "አመ፡ ፲ወ፮፡ ለነሐሴ፡ አመ፡ ፍልሰተ፡ ሥጋሃ፡ ለእግዝእትነ፡ ማርያም፡ ሠምረ፡ ፍቁር፡ ወልዳ፡ ኢየሱስ፡ ክርስቶስ፡ ይሣሃሎሙ፡ ለእለ፡ ውስተ፡ ሲኦል፡ በትንብል፡ ለእሙ",
-    "manuscript_count": 92,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
     "id": "193",
     "title": "A knight who tried to seduce his friend's wife but repented when dead people appeared as she read aloud from the Prayer for the Dead",
     "incipit": "ወሀሎ፡ አሐዱ፡ ብእሲ፡ ባዕል፡ ጥቀ፡ ወቦቱ፡ ብእሲተ፡ ሠናየ፡ ወመንክረ፡ ላሕያ፡ ወወሀባ፡ እግዚአብሔር፡ ስነ፡ ወላሕየ፡ ወሞገሰ፡ ወጣዕመ፡ ቃል፡ ዘአልቦ፡ ዘይመስላ፡ በውስተ፡ ይእቲ፡ ሀገር",
@@ -2038,10 +1947,6 @@ const MIRACLES_OF_MARY = [
         "text": "<p>And again she [Mary] said, “Jesus Christ, Son of the Lord most high, you who creates all power [quaecumque vis; lit. “anything of power”] in Heaven or on Earth--Lord, bless anywhere there is a festival in my name; receive my prayer, and bless your people and the believers who offer you sacrifice in my name.” </p><p>Our Lord Jesus Christ responded and said to her: “Look [what] I have done for you [so far]. Therefore, rejoice from now on, since all grace and gift is given to you from me and from my Father and from the Holy Spirit; whoever holds in their mind and invokes your name will not perish in this world nor in the next, but will find grace with my Father in Heaven.” [Translation as of 05/21/22]</p>"
       },
       {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
         "author": "Elliot Galvis",
         "text": "<p>And when he [Jesus] came to our lady, the Lord extended his hand over her, saying: “It is good that you came here today, oh my mother, you who deserve all praise; [you came] today, this day of joy and gladness for this church for all eternity, the day of your holy assumption, oh my pure mother.” </p><p>And the virgin said to him: “Oh my king and son Jesus Christ, beloved one whom I adore, you are the one who rightly deserves all praise, all honors, and blessings from heaven and earth. Your good Father and the Holy Spirit live on [vivificans; lit. “be restored to life, made alive”] to the age of ages. Amen. You honored me beyond measure above all men and made me worthy, and I became your mother and dwelling on the earth. Oh my beloved son, you have given me all gifts. Therefore, I also ask today that you fulfill my plea and that you raise all souls who are tormented [quae sunt in tormentis; lit. “who dwell in torments”], since I have heard their cries.” </p><p>And when the virgin said this to the Savior, all sinners loudly rejoiced because of their Mother Mary’s compassion. </p><p>And then the Savior said to her: “Oh my mother, you asked for favors today; and because of them, I rejoice today and say to you: Oh my mother, because of this I will take pity on all creation; for you asked for this on behalf of my creation not by your will, but by the will of my father and on behalf of his creation; and at once, overflowing compassion touched their hearts. Since you have looked on my creation with your pity, the Apostles above will pronounce your memory across time so that everyone will praise you and will be compassionate to the poor in memory of your blessed day.” </p><p>And at once, the Savior ordered the intercession of his mother Mary to be commemorated, and he commanded all torturers who dwelt in darkness [qui sunt in tenebris, qui sunt cruciatores] to release all of those Christian souls who were tormented. He said: “I declare that no soul of those who are baptized in my name will remain in torment, and they will all be freed and will all come saying with a great cry: ‘Our Lord Jesus Christ, your grace and your pity touches all of us among the living because of your pure virgin mother’s supplication.’” </p><p>And in this way, the heavens and the most high and all the blessed will praise Christ and his virgin mother, and all the souls who they free from suffering on this day will not fall back into the places of torment again, but will be like angels in heaven in the Church of the Firstborn. </p><p>[Translation as of 05/21/22]</p>"
       }
@@ -2055,14 +1960,6 @@ const MIRACLES_OF_MARY = [
     "most_read": false,
     "translations": [
       {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
         "author": "Rowan Williams",
         "text": "<p>The Miracles of Our Lady Mary, the Holy Twofold Virgin Theotokos</p><p>May her prayers and blessings be with us to the ages of ages. Amen.</p><p> </p><p>Proclaiming the glory of Our Lady Mary, the holy twofold Virgin Theotokos, in his Second Epistle to the Corinthians, Paul speaks of what he saw in Heaven,[1] when the Angels snatched him up to the third Heaven,[2] 3saying, ‘I, Paul, still plotting evil against the churches, putting the Disciples of Our Lord to death, and still ravaging the houses of men and women and putting them in prison;[3] 4I was travelling to Damascus,[4] having received letters of authorisation from the Chief Priests, when suddenly, lightning flashed upon me from the sky. 5I fell to the ground, and there I heard indescribable words, which no human being can utter.</p><p>6   ‘Now those who were stood with me heard the words, but saw nothing. 7And as I lay fallen to the ground like an aborted fetus, the Angels of Heaven came and appeared to me, and they strengthened me and raised me up to the third Heaven. 8At that time I beheld the Virgin coming to me from afar, and with her were two hundred Angels, singing and giving praise before her and behind her. 9So I asked the Angel who was with me,[5] “Who is this coming in such great glory?” 10And the Angel told me, “This is Mary, the Mother of Jesus, Whom you are persecuting.” 11Then she came to me and greeted me, saying, “Why are you persecuting my beloved Son, Jesus of Nazareth? It is hard for you to kick against the sharp goads.” 12Shaking and seized with anguish, I said, “O my Lady, what would you have me do? For I am a lawless shedder of blood. Forgive the sins which I have committed now, for I see that you are the Mother of Jesus Christ.”[6] 13She said to me, “Behold, I have besought Christ my Son, that He may forgive you your sins, and your sins have been forgiven.[7] I also asked that you might come here in the flesh. 14Moreover, He Himself told me, ‘Wait a short while until he comes, and you will see him here.’ 15But I said to Him, ‘O Lord, do not let me be separated from him. Let him come now, for You know that Your Name is to be greatly glorified by his ministry.’ 16And my Son responded, saying,[8] ‘Yes, that is true, for I have made him a chosen vessel for Myself, that he may carry My Name to kings and nations. And the children of Israel will preach the Gospel of the Kingdom with his sweet words and pleasing speech. 17I shall show him how much he must suffer for My Name.’ Therefore, you must be baptized in the Name of the Holy Trinity. 18Behold, all the Saints will welcome you.” 19Now as the Virgin spoke with me in this way, I saw three men coming toward me, and their faces were radiant. 20So I asked the Angel, “Who are they, my lord?” 21And he told me, “They are Abraham, Isaac and Jacob.” 22Having arrived there, they genuflected before Our Lady and greeted me, and I greeted them. 23After that, she told three of the Angels that were with her to baptize me in the waters of the Jordan, and I was baptized and filled with the power of the Holy Spirit. 24Immediately, all the sins which I committed were removed from my eyes like a woman who spins thread. My eyes were opened, and I looked and was filled with light. 25Then I began to make haste to teach about Jesus Christ, saying, “He is the Son of God.” 26All who heard and saw marvelled, and all the churches of Judea, Samaria and the Galilee dwelt in peace, were built up and walked in the fear of God. Moreover, the people increased through the teaching of the Holy Spirit.’ This Paul said when he was chosen for this honour.</p><p>27   Behold, my beloved children of the Gospel of God and children of peace, the glory of Our Lady Mary, the holy twofold Virgin Theotokos, which Paul saw, as Angels sang before her. 28For her glory is not only proclaimed on Earth,[9] but also by the mouths of the Angels in Heaven. 29We too venerate her as we are able, that she might ever have the Angels greet us as they greeted the Apostle Paul. 30Moreover, as she prayed to her Son for mercy, and caused Paul to be an elect and faithful servant of his Lord,[10] raising him up to the rank of the Apostles; 31may she also lift up our prayers and supplications to her Son Jesus Christ, to Whom glory is due for ever, that He might unite us with His Saints to the ages of ages.</p><p>May her prayers and blessings be with us to the ages of ages. Amen.</p>"
       }
@@ -2075,18 +1972,6 @@ const MIRACLES_OF_MARY = [
     "manuscript_count": 88,
     "most_read": false,
     "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
       {
         "author": "Jeremy Brown & Dawit Muluneh with Wendy Laura Belcher and Esset Teshome",
         "text": "<p>A miracle [performed] by Our Holy Lady Mary, the Two-fold Virgin, the Mother of God. May her prayers be with Her servant Simon, forever and ever, amen.</p><p>Listen, my fathers and brothers, to the miracle that Our Lady Mary, the Two-fold Virgin, performed in a certain place on Her feast day. </p><p>A man in that place was [a priest and custodian,] the one in charge of the church’s keys and who would open the church daily. </p><p>One day, as he usually did, he opened the church, went inside, and remained there until morning, incensing the church–for he was a priest. </p><p>After he finished his task, he exited the church, leaving the keys inside the holy of holies. Then, the priest locked the doors, having forgotten about his keys. </p><p>Later, when he realized that he hadn’t brought the keys out with him, he was terrified and had no idea what to do. He was overwhelmed with fear because he had locked the church [and had no way to get inside].</p><p>He decided to pick up the Miracles of Our Lady Mary, the Two-fold Virgin so that he might read them. </p><p>After the priest finished reading the miracles, he made a vow saying, “My Dear Lady Mary, Two-fold Virgin, if you open the locked door for me, then I will write the miracle of how you unlocked it.” </p><p>Suddenly, it was unlocked.</p><p>Immediately, the priest entered the holy of holies and fell upon his face in front of the icon of Our Lady Mary, the Two-fold Virgin. </p><p>[Then, he wondered if it was actually a miracle.] </p><p>Out of his astonishment, he went outside, locking the door a second time. </p><p>Then, he called for others [to come and try] to open it, so that he would know if they could unlock the doors [without a miracle]. </p><p>Many tried, but it was impossible for anyone to open the doors. Even with the keys! This was because the lock was very strong and could only be opened with difficulty. </p><p>Witness how the power of Our Lady Mary, the Two-Fold Virgin, unlocked the strong doors because she is stronger. </p><p>Also, her son is very strong because he broke down the brass doors. He shook the iron bars and led forth many souls out of damnation and brought them into Paradise. </p><p>Likewise, may he bring us into the kingdom of heaven for the sake of Mary, his mother, who gave birth without blemish to him. Amen.</p>"
@@ -2166,36 +2051,6 @@ const MIRACLES_OF_MARY = [
     ]
   },
   {
-    "id": "315",
-    "title": "Book of Ledata la-Maryam??: OldA: Part 01: Temple: The Virgin Mary stays in the Temple (315, 316-D, 447 similar)",
-    "incipit": "ወካዕበ፡ ንነግረክሙ፡ አኃዊነ፡ ኂሩታ፡ ወንጽሕናሃ፡ ለእግዝእትነ፡ ማርያም፡ ወዘከመ፡ ነበረት፡ ውስተ፡ ቤተ፡ መቅደስ። ጸሎታ፡…. ወነበረት፡ እግዝእትነ፡ ማርያም፡ ውስተ፡ ቤተ፡ መቅደስ፡ እንዘ፡ ትትለአክ፡ በንጽሕ፡ ወበሕድአት፡ ወበትሕትና፡ ወኵሎሙ፡ ካህናት፡ ያስተበፅዕዋ፡ ወይባርክዋ፡ ወፈድፋደሰ፡ ስምዖን፡ አረጋዊ፡ ወዘካርያስ፡ ዘመዳ",
-    "manuscript_count": 85,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "378",
-    "title": "Yohannes Kama and his wife perserved their virginity throughout their lives after the Virgin Mary appeared to them",
-    "incipit": "ወሀሎ፡ አሐዱ፡ ብእሲ፡ ቅዱስ፡ ዘስሙ፡ ዮሐንስ፡ ካማ፡ ዘኀሠሠ፡ እምንእሱ፡ አፍቅሮቶ፡ ለክርስቶስ፡ በዐቢይ፡ ገድል፡ ወአመ፡ ልህቀ፡ ፈኀሩ፡ ሎቱ፡ ወለተ፡ ድንግለ",
-    "manuscript_count": 85,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
     "id": "401",
     "title": "The girl who was going to be stoned after she was caught committing fornication.",
     "incipit": "ተብህለ፡ ከመ፡ ሀለወት፡ አሐቲ፡ ወለት፡ ዘማዊት፡ ወአሐተ፡ ዕለተ፡ ረከብዋ፡ እንዘ፡ ትዜሙ፡ በሥጋሃ፡ ወአኃዝዋ፡ ከመ፡ ይውግርዋ፡ በእብን",
@@ -2219,14 +2074,6 @@ const MIRACLES_OF_MARY = [
     "manuscript_count": 84,
     "most_read": true,
     "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
       {
         "author": "Getatchew Haile",
         "text": "(Against Those Who Rebelled against Zar'a Ya'aqob) A miracle of Our Lady Mary, Mariham; may her prayer and petition be with us, amen. Listen, my brothers, to what Our Lady Mary has done. In the middle of the night while I was asleep, (just) at that time, I heard a voice (of a shining man) and I was startled. He said to me: (f. 132v) \"Look, and fear not.\" And that shining man showed me the sign of the cross which was in his hand and a good land in which was a rampart of the cross whose likeness was iron. He ushered me to the inner side of the gate. There, I saw the awe-inspiring ones of the tribe of Israel. A royal crown, whiter than the snow, was placed on the head of (each) of them. I asked him saying, \"Who are these whose stature(s) are (so) beautiful, whose countenance(s) (so) comely, and (who) are vested in bright clothes?\" He said to me, \"These are the kings of Israel. And Joshua the Son of Nun is among them. Their number is 40.\" I said to him, \"Which of these is David, King of Israel, whom God has given honor and has said about him, 'I found a man according to my heart'? And which one is his son Solomon whom he had given honor, wealth, and wisdom? And which one is Joshua who stopped the sun in broad daylight?\" He showed me these as they were in great splendor. My soul was pleased, and I gave thanks to God. Then the ground where I stood brightened (f. 133r) like broad daylight. I was startled. I lifted up my eyes into the atmosphere. (There) I saw a decorated crown which had the color of the star(s), in the likeness of many (of them). It was better and more honored than the crown(s) of the former kings whom I saw. It was held in the hands of Our Lady Mary. With her were two angels vested in fire, one on her right side and one on her left side. Beneath her was a circle like a rainbow. And above her was (a spot) like a palace. As for her, she stood in the inner side of this picture and spoke in the direction of the voice that spoke from the atmosphere, \"Give me (this) kingdom which I want.\" He said to her, \"I have given (it) to you, a tithe for you in accordance with the previous covenant.\" He delivered the kingdom to her. He thus spoke to her. She, on her part, called him [Zar'a Ya'aqob] and brought him up into the atmosphere to stand where she was. She put the royal crown on the head of Zar'a Ya'aqob with her (own) hands. She blessed him and said to him, \"Keep the kingdom.\" When the kings who were standing under him saw (f. 133r) the man [Zar'a Ya'aqob] arrayed with great honor, they sang (praise). Also those who were in the atmosphere sang praise together in great pleasure and glorified with great glory Our Lady Mary and (the one who was) with her. There are (some) people (who), not understanding the counsel of the Most High, destroyed themselves. (These are) those who conspired in violation of the law. For they have become enemies of God and his Mother Mary. \"He [the Lord] maketh poor and maketh rich; he bringeth low and lifteth up. He [the Lord] killeth and maketh alive.\" He makes a king reign over his people till (the end of) the period he ordained. No one can do evil against what he has made good. No one can shake what he has determined. O Our Lady Mary, who delivered (the kingdom) to Zar'a Ya'aqob, keep his kingdom and root out his enemies and foes, amen and amen."
@@ -2270,16 +2117,8 @@ const MIRACLES_OF_MARY = [
     "most_read": true,
     "translations": [
       {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
         "author": "Elliot Galvis",
         "text": "<p>And I [Saint John] said: “Oh my Lord, where is the virgin mother? And all of her glory? For behold, she is not here.” </p><p>And the Lord Savior responded to me and said: “Oh my chosen son, John, it will not be long until she comes [non tardabit quin veniat; lit. “it will not delay when she comes”] here arriving at the time of the Sacrifice; [as for] you and your disciple brothers, do not forget to go to her to see her dwelling and the great glory in which she resides; for you are her son and the disciples your brothers.” </p><p>And at once my father [Saint] John led [lit. “went forward before”] the disciples to the dwelling of our virgin lady and magistrate; and look, he came into a church of great indescribable glory [where] all the soldiers and heavenly orders were praising her beloved Son. And I, Prochorus, witnessed [these things] for you, [just as] the Lord witnessed for me all that I have described. I clearly saw my father [Saint] John reach his hand to the virgin’s and enter the church with the disciples. </p><p>And the Lord Christ spoke to her saying: “Come and approach me, oh my mother, you who bore me, oh bride and dove pure without stain.” </p><p>I will tell you all, oh my beloved, the miraculous sight which then occurred; while all the saints gazed at the highest loftiness of my noble father [Saint] John and the grace which radiated openly from that woman, our lady mother called [Saint] John to the Lord Savior Christ by saying to him: “Come so that you may approach my true king and my Son Jesus Christ, so that you may plead on behalf of sinners, so that compassion might touch them and He might pity them on this day; for behold, their shouts and tears and sorrow reach my ears [venit ad autidum meum; lit. “come to be heard by me”]; so look, let us beseech him on their behalf so that he may elevate [lit. “raise away”] those who are tormented.” [Translation as of 05/21/22]</p>"
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       },
       {
         "author": "Elliot Galvis",
@@ -2370,10 +2209,6 @@ const MIRACLES_OF_MARY = [
     "manuscript_count": 80,
     "most_read": false,
     "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
       {
         "author": "Ellen Li",
         "text": "<p>There was a paralyzed man in a city. Our Lady appeared to him in a dream, spoke to him and said, “Dwell close to the door of the church until the sixteenth of nahase. On that day, enter the church without anyone knowing or seeing it.”</p><p>When the priest was saying the supplications and the prayers, the sick man cried in a great voice and his members cracked.</p><p>The priests and the people were frightened. </p><p>The priests said, “What is this?” </p><p>One deacon said, “Our Lady, the Holy Twice-Virgin Mary Mother of God, release [délie].”</p><p>The sick man was immediately cured. The priests and the people were filled with wonder.</p><p>One blind woman came and said to him, “Give me your hand which was cured.”</p><p>He gave it to her, touching her with it and she was immediately cured.</p><p>The priests said to him who had been cured, “From now on, be the servant of Our Lady, the Holy Twice-Virgin Mary Mother of God.”</p><p>He swore to them that he would not leave from the enclosure of the church of Our Lady, the Holy Twice-Virgin Mary Mother of God, and he stayed there to serve her.</p><p>Because of that, believers, honor, exalt and recall the name of the mother of the light, there where you will find the hope of salvation [salut] in this transitory world, so that you may be saved from all evil.</p><p>Indeed, whoever serves Our Lady, the Holy Twice-Virgin Mary Mother of God, obtains all that he requests [qu’il demande]. [Translation as of 05/21/22]</p>"
@@ -2648,10 +2483,6 @@ const MIRACLES_OF_MARY = [
       {
         "author": "Rowan Williams",
         "text": "<p>The Miracles of Our Lady Mary, the Holy Twofold Virgin Theotokos</p><p>May her prayers and blessings be with us to the ages of ages. Amen.</p><p> </p><p>My beloved brothers and sisters, as the Holy Spirit has spoken concerning the greatness and the glory of the Virgin, speak likewise and be wise with meekness in all your thoughts; for it is written,[1] ‘Be as wise as serpents and as meek as doves.’ And[2] the Holy Spirit has called you to knowledge of the pure nature of the Virgin.[3] 3Brothers and sisters, understand and know for a certainty that, on the first day of the week, the Angel Gabriel announced to Saint Mary that Christ, the Word of God, would dwell in her. 4And on the first day of the week, the young and old came out to welcome Our Lord Jesus Christ, saying, ‘Hosanna in the highest Heaven! Blessed is He Who comes in the Name of the Lord.’ 5On the first day of the week, the Lord Jesus Christ rose from the dead. 6On the first day of the week, the Lord Jesus Christ came for the departure of the soul of Mary from the world, because of her greatness and her glory. 7On the first day of the week, Our Lady Mary told the Disciples, ‘Our Lord Jesus Christ is coming to me with all His Angels.’ 8And behold, as she spoke with them, Our Lord Jesus Christ came with all His Angels, seated upon the throne of His glory. And numberless Angels appeared before Him. 9Moreover, at the coming of the Son of the living God, a great light appeared brilliantly on the holy and glorious Virgin. 10All the hosts of Heaven bowed down to her, and a voice came to the holy Virgin, saying,[4] ‘O Mary!’ She answered and said, ‘Behold, here I am.’ 11Again, the voice[5] said to her, ‘Rejoice and be glad, and let your soul exult with Me in great glory.’</p><p>12   My beloved children of the Gospel, see how the Holy Spirit spoke about the glory of Our Lady Mary,the Virgin,[6] and we too ought to speak of her greatness and glory.</p><p>May her prayer and blessing be with us to the ages of ages. Amen.</p>"
-      },
-      {
-        "author": "Mehari Worku",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },
@@ -2710,25 +2541,8 @@ const MIRACLES_OF_MARY = [
         "text": "<p>And in Alexandria in the year 352, the second year after our Lord’s ascension into Heaven, and on the 28th day [of the month] on the fourth Sunday, holy and pure Mary took up fire and incense and proceeded to the tomb in Golgotha (in accordance with her habit) in order to pray there, fearing the Jewish people [there as she went]. And arriving, she lit the incense in the holy tomb’s entrance, and she glorified and praised Christ (as she was accustomed to) and said: “Oh my Lord, great master, deliver [mitte et sume; lit. “send and raise”] me from this world full of toils and agitations.” </p><p>And while she was praying, in that same hour, Heaven opened, and the archangel Gabrial descended to her and prostrated himself openly before her, and brought happy news and told her: “Rejoice, oh [Mary] full of grace, look, your prayer rises and reaches our Lord Jesus Christ, who was born from you; and behold, the Lord heard your prayer and plea to him that you wished to leave from this world, to cross over into eternal life.” </p><p>[Translation as of 05/21/22]</p>"
       },
       {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
         "author": "Elliot Galvis",
         "text": "<p>And then, when they saw the great glory and [the worshippers of Mary] praying and reciting psalms [and] lending their praise, the Jewish priests were thoroughly disturbed. Many Jewish men left for Bethlehem in order to arrest the disciples of Christ and his pure mother. And when they had walked for an hour, a great miracle appeared above them in the road; their eyes were blinded, and they were not able to see Bethlehem; and they returned to their city and told the high priests everything that had happened to them on the road and why they were unable to go to Bethlehem.[Translation as of 05/21/22]</p>"
-      }
-    ]
-  },
-  {
-    "id": "383",
-    "title": "A man who would not eat before receiving Holy Communion.",
-    "incipit": "ተብህለ፡ ከመ፡ ሀሎ፡ አሐዱ፡ ብእሲ፡ ዘያፈቅር፡ ቍርባነ፡ ወኢይጥዕም፡ እክለ፡ ዘእንበለ፡ ይንሣእ፡ ቍርባነ",
-    "manuscript_count": 68,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },
@@ -2759,23 +2573,6 @@ const MIRACLES_OF_MARY = [
       {
         "author": "Elliot Galvis",
         "text": "<p>And then our Lord Jesus Christ raised his mighty hand over her, and blessed [Mary] took his hand and kissed it, and said: “I glorify this hand and praise it, [this hand] which held fast Heaven and established the Earth. I ask you--oh king, oh my only born son, who made your handmaid worthy so that you would assume flesh from her, in your prudent wisdom, for the salvation of men–I, your handmaid, [ask] that you hear my prayer and that you grant me [my request] in the greatness of your mercy on behalf of all who supplicate you in my name: pity them, be generous to them, hear the prayers and entreatments from all who seek [them] from you, since all things are possible through you.” </p><p>And as the disciples heard these words from the blessed Mary, they prostrated themselves by her feet in front of her, saying: “Oh mother of our Lord and Savior Jesus Christ, bestow your blessing on this world before your holiness leaves it.” </p><p>Then Our Lord Jesus Christ’s mother said: “Oh Lord, you who, in the multitude of your generosity and your mercy, deemed worthy to send your only son into my body and made me worthy so that he could assume flesh from me, behold: from now on, pity whoever [does] the work of your hands [quidem...operis manuum tuarum; lit. “whoever of the work of your hands”] and all souls who praise your name.” </p><p>[Translation as of 05/21/22]</p>"
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "405",
-    "title": "A poor man is healed of his skin disease by the Virgin Mary when people refused to carry him to church.",
-    "incipit": "ተብህለ፡ በእንተ፡ አሐዱ፡ ነዳይ፡ ዘይጸውርዎ፡ በዓራት፡ ወኵለንታሁ፡ አበቅ፡ ወዝልጉስ። ወአሐተ፡ ዕለተ፡ ፈተወ፡ ይንሣእ፡ ቍርባነ፡ አመ፡ ፲፡ ወ፮፡ ለነሐሴ",
-    "manuscript_count": 67,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },
@@ -2817,16 +2614,8 @@ const MIRACLES_OF_MARY = [
         "text": "<p>And on the fourth day she [Mary] grew sick. And she spoke and commanded the virgins [there] with her to serve her: “Bring me the burner and incense, for I wish to pray.” </p><p>And when they had brought [these things] to her just as she had ordered them, she put the incense in the burner and prayed, saying: “My Lord and my God, Jesus Christ, who made his worthy handmaiden so that she might wrest control from humankind so that men could be sanctified and to take away the sins of the world, hear my prayer and receive my plea at this hour, and send [Saint] John your disciple, who proclaimed your sacred News, so that I might be comforted by his face. And similarly send all your disciples to me–from those who survived, not those who are dead–so that I might see them and be blessed by them before my departure from this age, since you are the God of the living and the dead. I trust that you will hear my prayer on my behalf and will give me whatever I have asked from you.” </p><p>And before her prayer was finished, behold, a bright cloud of the Holy Spirit [physically] seized me, me, [Saint] John, from the land of the Ephesians and deposited me before the holy and pure Mary. And as I stood plainly before her and looked at her, I praised our Lord Christ and our God and said to her: “Rejoice, oh blessed mother of our Lord Christ.” </p><p>And the Holy Spirit spoke to her with my tongue and said to her: “Behold, you will leave from this age with great glory, and Christ will display many signs and miracles over you so that your name will be praised and blessed.” </p><p>And then she remembered the blessing which Christ himself had said at the moment of crucifixion: “Woman, look at your son.” And she looked, and he also said to his disciple, “Look at your mother.” [Translation as of 05/21/22]</p>"
       },
       {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
         "author": "Elliot Galvis",
         "text": "<p>Truthfully, I, Prochorus, stood, looking at the Church of the Firstborn’s events [res; lit. “things”] and its unspeakable beauty. And assuredly, I did not understand the things that had happened to me nor my return [from the previous vision of the assumption], when I found my spirit in Mary’s home in Asia. Again, a crowd approached me and many said to me: “Where on earth did your father [Saint] John go?” </p><p>And I said to them: “He is in the place where the source [causa; lit. “cause,” “reason”] of the prophecy went.” </p><p>And while I was saying this, I saw myself standing to the right with my father [Saint] John. His face was full of light and joy and the [pleasant] scent of his garments smelled vividly and he said to me in the crowd: “Peace to you all, you who did not neglect celebrating in fellowship continuously. You administered the Eucharist on the next day and the day after and made known the mysteries which he had seen, the things which had occurred to the body of the blessed pure virgin and her home at the time of the assumption, since she is now in the dwelling of light that the Lord created, that is to say the foundation [crux; lit. “cross” or “beam”] of the sacred dwellings and the dwellings of his mother the virgin from the beginning of time. </p><p>“And now he himself [Jesus] beseeches his Father for all time, saying: ‘O Father, give me the portion of your glory that was mine before time. Now [give us], the virgin mother and her son, all honor and glory, because she was his dwelling on the earth, her holy womb in which he lived. Truly, it was Mary who was his [my] mother; and therefore the glory of the holy cross is owed to her. And likewise all the soldiers glorifying my holy resurrection and all eyes who watched my glory on the holy cross [are owed to her]. While my light was shining, my mother Mary was standing at my right hand.’” </p><p>My father [Saint] John said these things to the crowd. And then he ordered me to write them all in a book and to copy them in multiple manuscripts so that they would pronounce the memory of our lady the pure virgin across the whole world and so that humanity could not pretend that her tomb is in the valley of Josaphat, nor would they say that her corpse is there; for it is by no means there. But let her tomb be remembered, just as our Lord Jesus Christ had ordered, so that her memory will not depart from Earth until the day of his holy resurrection, when he will summon his angels to assemble all the peoples and he will judge them, when his mother will beg on behalf of the assembly of all sinners that he extend compassion to them who were baptised in his holy name. </p><p>This is the testimony of my father [Saint] John on the transitus of the blessed one and her ascension into heaven on the sixteenth day of the month of Nahase, so that whoever observes this commemoration zealously–if they have done so–their soul will be worthy to cross over and take their inherited place among peace and good, which last for all time. [Translation as of 05/21/22]</p>"
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },
@@ -2840,34 +2629,6 @@ const MIRACLES_OF_MARY = [
       {
         "author": "Getatchew Haile",
         "text": "The miracle of Our Lady Mary, who is Mariham in Hebrew. May her prayer and blessing be with us. Amen. There was a country among the Christian countries. Great Christian people lived in it strictly guarded, because they had a guard who guarded them so that many people should not come to them from other countries with- out the permission of the great ruler. They, too, were made rulers in their turn when God called them to rule the country. Now the ruler appointed a man to guard those great people strictly so that no one should come to them from another country. The official made friends with one of those great people so that he might do him favor when he ascended the highest office. He made a covenant with him and gave him and his wife precious and beautiful clothes. But the great ruler appointed their friend, the official, to another country. When the official, their friend, went away from them they grieved greatly. The man and his wife were very frightened. They said, \"Woe unto us; if our friendship and covenant with the official are discovered the great ruler will kill us. Where shall we hide the clothes which he gave us? It will never remain our secret even if we dig the ground and bury [them], or hide [them] in our grain store or burn [them] with fire.\" Having said this, they went to [another] one of those great people and said to him, \"0 our friend, we have come to you so that you might comfort us in whatever way God reveals to you, because a great grief has befallen us.\" He said to them, \"What is your grief?\" They said to him, \"We adjure you in the name of God that you will not disclose our affair to other people.\" He said to them, \"Let it be so.\" Then they told him about the clothes which their friend the official had given them, and how they could not find [a place] where they might hide [them]. He said to them, \"Give the clothes to the church of St. Mary of such and such city altering1 ^them] as [they] should be for [use in] a church. I trust that Our Lady Mary will remove your grief caused by the calamity you are worried about.\" They said to him, \"You said well, 0 friend; the Spirit of God spoke through you. But we do not know how to sew, 0 our friend.\" He said to them, \"I shall sew [them] for you helped by the power of the prayer of Our Lady Mary, Mother of God.\" They gave him the clothes so that he might sew [them] for them. When they finished sewing [them] they gave [them] to the church of Our Lady Mary, who is Mari ham in Hebrew. She removed their grief and delivered them from the calamity they had anticipated. Then Our Lady Mary, who is Ma riham in Hebrew, appeared to the man who advised those people to give the clothes to the church of Our Lady Mary, on the 29th of the month of Maggabit, the day on which she conceived Our Saviour. She appeared to him in the likeness of a beautiful woman with a red face. The edge of her eyelashes was clear as if she had cried very much. She told him about the beating of his body with a stick which he would receive from the great ruler. Nine months later she held his hands and said to him, \"Did they beat you with a stick? But be not afraid; your bones are not broken.\" Then the man saw on the same night [in a vision], a big white tent pitched. He saw Our Holy Lady Virgin Mary entering into the tent. He , too, entered [the tent] following her. There he found the great ruler lying down and Our Lady Mary, who is Mari ham in Hebrew, sitting by his head. There was a silver ring on the finger of the ruler. She ordered the great ruler to give his ring to the / man. He refused. She ordered the man to take the silver ring from the finger of the ruler. He took [it], as she has ordered him, and put [it] on his finger. Furthermore, she said to him, \"Suckle the breast of the ruler.\" When he suckled [it] there cane out milk for him in great quantity. Furthermore, she said to him, \"Make the memorial of the ruler; I entrust [that] to you. Take heed, never forget his memorial.\" Having said this, she disappeared from him. After that the man sat on the throne of the ruler for many years, appointed to his dominion by the intercession of Our Lady Mary, who is Mariham in Hebrew. May her prayer and blessing be with her slave Bestawros forever. Amen. Haile, Getatchew. 1982. \"Inside the Royal Confinement.\" Northeast African Studies 4 (1): 24-25."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },
@@ -2980,10 +2741,6 @@ const MIRACLES_OF_MARY = [
       {
         "author": "Ellen Li",
         "text": "[STUDENT TRANSLATION: NEEDS REVISION OR PENDING ROWAN UPDATE] Abba Amoni had a disciple of the name of Behor. That man there was an accomplished and abstinent monk , he was adorned with spirit.</p><p> Oftentimes he would see the things of above.</p><p> Next abba Behor left the saint Amoni. One time, he went into the desert and prostrated himself on his face. He stayed forty days and forty nights prostrated before God in the desert, without eating or drinking or lifting his face, in order to not see the sun at its rising and at its setting.</p><p> At the end of the forty days, the mother of the Lord, the Holy Twice-Virgin Mary Mother of God, mother of life, appeared to him. She shined exceedingly with an unspeakable glory.</p><p> Behor said, “When I saw her in this glory, I took fear and fell to the ground before her.</p><p> “She lifted me and said to me, ‘Behor, you are a loyal servant of God; be strong and powerful by the power of God.’</p><p> “I myself said to her, ‘Who are you, you who are in this great glory?’</p><p> “She said to me, ‘I am Mary the Virgin, mother of life, of the Lord of the skies and of the earth, who is incarnated of me to save the entire world. Let us go, raise yourself, Behor the friend of Jesus my Son, to see the Christ whom you adore.’</p><p> “And I myself caught sight towards the Orient a chariot of light in the heights of the sky; forty animals were carrying it and the Savior there reigned. Thousands, myriads and myriads upon myriads glorified him.</p><p>“I myself alas heard him speak to me, saying thus, ‘abba Behor and Amoni, courageous men and enemies of the evil in the world, be victorious, strengthen your heart and dwell until the end of the world.’</p><p>“After that, Christ mounted the skies, far from me.”</p><p>See, my friends, how the Virgin visits and gives visions to the just who labor for justice, and makes them see Jesus her Son!</p><p>Us too, Our Lady, the Holy Twice-Virgin Mary Mother of God, will make us see, just as she appeared to abba Behor, and she will make us see Jesus her Son as he was shown to Behor.[Translation as of 05/21/22]</p>"
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },
@@ -3042,10 +2799,6 @@ const MIRACLES_OF_MARY = [
     "most_read": false,
     "translations": [
       {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
         "author": "Rowan Williams",
         "text": "<p>The Miracles of Our Lady Mary, the Holy Twofold Virgin Theotokos</p><p> </p><p>May her prayers and blessings be with us to the ages of ages. Amen.</p><p>2This a story about how Our Lady[1] anointed the feet of animals with blessed oil and healed them.</p><p>Anthony of Mount Qusqam said, ‘Truly I tell,[2] Our Lady the Virgin Mary[3] was here, not she alone, but her Son, our God,[4] was with her also. His throne was set in the midst of the people, such that the worthy saw Him.[5] 4Let alone those who saw her, the Virgin Theotokos herself came out to welcome us with a vessel of oil in her hand—oil which Our Lord Jesus Christ, Who is the Possessor of all blessings, had blessed. When she wished to anoint us with the blessed oil, she met us as we rode upon animals, gloating and boasting to one another and taking physical rest.[6] 5And the Virgin Theotokos noticed how weary those animals were because of those who whipped them. Then our kind-hearted Lady Mary anointed those animals with that blessed oil down to their feet and released blessings on those senseless animals.’</p><p>6   O how wonderful are the numberless and endless stories of your kindness, Our Lady Mary, which are performed for sinners, adulterers, the slothful and the needy! 7Blessed are those who know of your sweetness and abide in your love, because all of us live our lives for you. 8Blessed are those who believe[7] that your miracles were made manifest for animals, and have pursued you with all their heart, with all their might and with all their soul, to obtain your help. </p><p>May her prayers and blessings be with us to the ages of ages. Amen.</p>"
       }
@@ -3072,20 +2825,8 @@ const MIRACLES_OF_MARY = [
     "most_read": true,
     "translations": [
       {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
         "author": "Elliot Galvis",
         "text": "<p>One day, when Mary was going from Nazareth to draw water from the cistern in the city of David, look, the Lord sent down the angel Gabriel to her. And the angel said to her: “May a great blessing be over you, oh Mary holy and pure, for the Lord has blessed you. He is present with you, and you have found favor within him. You will be exalted more greatly than all the women who are created in the world.” Mary, hearing these words, turned herself to the right and to the left, in order to see who was talking to her, but she saw no one in front of her; after this, she was seized by a great fear and, leaving the jug, fled home and began to knit purple thread. And again the angel of the Lord came, saying to her: “Do not fear, Mary; for behold, you have found favor and great exultation with the Lord; truly you are pregnant by the power of the word of the Lord and of the Holy Spirit.” Mary responded, saying: “How will this happen to me, if I do not know any man?” The angel said to her: “Know truly, Mary, you will not be pregnant in the same way as women are pregnant, but in such a way that the Holy Spirit will come over you and the power of the Most High overshadow you. Truly that man (who will be born from you) is holy and will be called the son of the Most High, and his name will be Jesus; that man will save the people from their sins.” Mary responded and told the angel: “Behold, I am the servant of the Lord, my spirit is in his hands. Let him do with me what he wills, and let it be just as you have told me.” [Translation as of 05/21/22]</p>"
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },
@@ -3129,19 +2870,6 @@ const MIRACLES_OF_MARY = [
     ]
   },
   {
-    "id": "256",
-    "title": "Saint Basil and the Icon: Part 1: The Virgin Mary, together with Saints Irene and Sophia, appears to Saint Basil and tells him where her icon is buried.",
-    "incipit": "ዘከመ፡ አስተርአየቶ፡ ለባስልዮስ፡ ምስለ፡ ክልኤ፡ አዋልድ። ጸሎታ፡…. ወእንዘ፡ አነ፡ እነውም፡ ነጸርኩ፡ ራእየ፡ ወነዋ፡ እሬኢ፡ ብእሲተ፡ ወይእቲ፡ ታበርህ፡ ኵለንታሃ፡ ከመ፡ ፀሐይ",
-    "manuscript_count": 55,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
     "id": "21",
     "title": "Monk Finds Lost Book",
     "incipit": "ወሀሎ፡ በቤተ፡ ክርስቲያነ፡ ቅድስት፡ ወብፅዕት፡ ንጽሕት፡ ወልዕልት፡ እምሰማዕታት፡ በርባራ፡ ብእሲ፡ ዘይሰመይ፡ ዮሐንስ",
@@ -3181,37 +2909,12 @@ const MIRACLES_OF_MARY = [
     ]
   },
   {
-    "id": "250",
-    "title": "Book of Felsata la-Maryam??: Dormition: Part 07: The Virgin Mary asks that Saint John be allowed to visit her dwelling place.",
-    "incipit": "ዘከመ፡ ሰአለቶ፡ ለወልዳ፡ ከመ፡ ያምጽኦ፡ ለዮሐንስ፡ ወትርአዮ። ጸሎታ፡…. ወጸለየት፡ እግዝእትነ፡ ማርያም፡ እንዘ፡ ትብል፡ ኦእግዚእየ፡ ወአምላኪየ፡ ኢየሱስ፡ ክርስቶስ፡ ዘኀረያ፡ ለአመቱ፡ ድሉተ፡ ለተስብኦቱ",
-    "manuscript_count": 52,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
     "id": "281",
     "title": "Book of Felsata la-Maryam??: COld?: Dormition: The Apostles visit the Virgin Mary in heaven (Synaxary entry for 16 Nahase)",
     "incipit": "ተአምሪሃ፡ ለእግዝእትነ፡…. በከመ፡ ተረክበ፡ በመጸሕፍተ፡ ስንክሳር፡ አመ፡ ፲ወ፮፡ ለነሐሴ። በዛቲ፡ ዕለት፡ ኮነት፡ ዕርገተ፡ ሥጋሃ፡ ለእግዝእትነ፡…. ኀበ፡ ሰማይ። እስመ፡ እምድኅረ፡ ዕረፍታ፡ ነበሩ፡ ሐዋርያት፡ እንዘ፡ የሐዝኑ",
     "manuscript_count": 51,
     "most_read": true,
     "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
       {
         "author": "Jeremy Brown & Dawit Muluneh with Wendy Laura Belcher",
         "text": "<p>A miracle [performed] by Our Holy Lady Mary, the Two-fold Virgin, the Mother of God. May her prayers and her blessings be with Her servant, Simon, forever and ever, amen.</p><p>Listen my holy fathers, and excellent brothers, those of you who believe in the orthodox faith and the pure teachings of the apostles: </p><p>This is the matter and miracle that Our Lady Mary performed. This is about those who denied [the theological doctrine regarding] Dabra Seyon and about the miracle of Our Lady Mary. </p><p>A monk named Giyorgis was a follower of the false faith and of Za-Mikael [in the 1400s], who divided the holy church and altered the teachings of the apostles, bringing another teaching, just as Satan had placed in his heart.</p><p>When the King [Zara Yaqob] learned about this, he placed in charge of them a committee of three bishops, named Abba Mikael, Abba Gabriel, and Abba Yohannes.</p><p>Giyorgis and Za-Mikael were defeated with the words of the Holy Books and excommunicated by the bishops because of [their doctrine against] Dabra Seyon and its Sabbath.</p><p>When they did not abandon their evil ways, and their false teachings, the king imprisoned Giyorgis in the palace, just in case Giyorgis would repent of those teachings. Then, the king would approve him as righteous. </p><p>But Giyorgis did not abandon his wicked ways [and didn’t intend to]. So, he said with his lips, “Teach me to repent,” but in his heart he was not planning on repenting. </p><p>Then, God, the examiner of closed hearts, watched him in prison for a long time. </p><p>But then a terrible illness seized Giyorgis such that his entire body rotted. Even the cell where he stayed could be smelled at a distance.</p><p>When the time of Giyorgis’ death approached, Giyorgis sent his guard, named Benabray, to me, John, the poor and wretched. </p><p>The guard told me [Giyorgis’ message, which was], “Come to me, for God’s sake, because I want to make a confession before I die and my soul departs.” </p><p>And when I[, John,] came to him, I found Giyorgis moaning from his [terrible] illness and the pangs of death. I couldn’t stand there long because of the overwhelming smell. [Also,] he had become like a drunken wretch[, raving.] [WLB: or filthy animal] </p><p>While laying there, Giyorgis clutched me with his hand and said to me, “Give us [dissenters] penance, dear father, for my [spiritual] father Za-Mikael was destroyed by his evil teachings and he has destroyed my soul [as well].”</p><p>And I said to Giyorgis, “What happened to you [to change your mind] and what did you see?” </p><p>Giyorgis replied, “Recently, dark-faced and terrifying beings came to me and carried me away. I saw cities shining like the sun and one city shone brighter among them. Near the city was a radiantly bright throne on high. A man robed with light was sitting upon the throne, dazzling as sunbeams. </p><p>“I said to those who carried me there, ‘What are these cities of light? And what is the city that shines brighter than the rest? What is the throne on high and who is the man sitting upon it?’</p><p>“The beings replied, ‘The cities that you see are the cities of the righteous. And the city that shines brighter than all the rest is Dabra Seyon, [the very city] that you denied along with your false teacher Za-Mikael. And as for the throne on high and the man who sits on top of it, that is the [very] one whose teachings you rejected.’</p><p>“Then, those beings became vehemently and furiously angry with me and I became terrified by their loud voices. </p><p>“Turning from side to side, I saw my teacher Za-Mikael robed in darkness. The dark beings surrounded him with what looked like chains of fire.</p><p>“Abba Nob was also [there,] standing outside of the city [of righteous ones], wearing filthy clothes and sobbing.</p><p>“And I said to those who had grown furious with me, ‘Isn’t that the false teacher Za-Mikael, who brought me into this torment? But why has such grief found Abba Nob? For he lived a good life and he traveled on the monks’ path.’</p><p>“The beings answered me, ‘Abba Nob treated the miracles of Our Lady Mary, the Two-fold Holy Virgin contemptuously in his heart and Za-Mikael your teacher is the denier of Dabra Seyon. So, now, confess your crime to see if it will lighten your judgment. For misery has overcome those who followed the same teachings as you.’”’</p><p>This Giyorgis kept raving at me [John] like this. It was like he was drunk! </p><p>Giyorgis’s heart grew weak and his eyes rolled and his tongue wagged. </p><p>So, I became afraid and said, “Now he is going to bite me!” </p><p>I continued, “Repentance is better during one’s life, but we forget that the day of our death will [surely] come. But Satan entices us with a love for worldly things and we enter a state of destruction. But God is merciful.”</p><p>Then, Giyorgis told me, “Tell the king what I’ve said. That way the king may petition God and God might forgive my sins, given that I did not follow his teachings and disparaged them. If I were healthy, then I would tell him myself.”</p><p>Then Giyorgis made me swear precisely this. </p><p>However, due to the terrible stench, I [John] was unable to remain and I went to leave quickly. </p><p>But as I was leaving, Giyorgis cried out with a stammering tongue, “Don’t abandon me, come back to me, father!” </p><p>And I replied, “Later, I will return to you.”</p><p>Immediately I went to my residence. When it was evening, Giyorgis sent one of his guards to me, whose name was Zaru.</p><p>Zaru delivered the message, “Come to me, give me final absolution and prepare my body for burial.”</p><p>But, I was unwilling, so I didn’t go. And, that night Giyorgis died.</p><p>He was chattering constantly, but no one could understand him because of his stammering tongue. The guards said that he [also] screamed loudly.</p><p>When the morning came, I immediately went and found his dead body laid out naked on the ground. Then, I buried him. </p><p>I haven’t added anything to what happened, but I have omitted some of what Giyorgis said. And the witnesses [to the truth of my account] are the Father, and the Son and the Holy Spirit in whose hand is both mercy and judgment.</p><p>If I had gone to him a second time, when he had sent a messenger for me, then Giyorgis would just have told me more of the same.</p><p>Praise be to God the Father, and to his son Jesus Christ, and to the Holy Spirit, three in likeness and in person, who revealed this matter during the days of the reign of our king Zara Yaqob, forever and ever, amen.</p>"
@@ -3232,19 +2935,6 @@ const MIRACLES_OF_MARY = [
       {
         "author": "Jeremy Brown & Dawit Muluneh with Wendy Laura Belcher",
         "text": "<p>A miracle performed by Our Lady Mary, the Holy Virgin, Mother of God, may her prayer and her blessing be with her servant Lebna Dengel forever and ever, amen.</p><br><p>John Chrysostom said [the following:] </p><br><p>He described how Our Lady Mary, with her beloved son, visited John the Baptist, while he was in the wilderness [as a little boy. He was there] because his mother Elizabeth helped him to escape into the wilderness [east of Jerusalem] when Herod was killing the infants. </p><br><p>After his mother passed away, in the glory of pure days, Saint John [the Baptist] remained weeping over her [body] because he didn’t know what to do.</p><br><p>He [and she had] spent six years and six months in the wilderness, until Our Lord Jesus Christ, his mother Mary, and Salome, returned from the land of Egypt [to Israel], after the destruction of Herod, the non-believer. </p><br><p>Our Lord Jesus Christ, the knower of hidden things, knew that his chosen one, John was weeping and heartsick over the death of his mother. The eyes of Our Lord wept. </p><br><p>His mother, the Pure Virgin, the Holy Virgin, Our Lady Mary, said, “Why are you weeping?”</p><br><p>Jesus replied, “Look, your family member died and left [the little boy] John by himself. He is weeping over her.”</p><br><p>Our Lady Mary then began to weep as well. </p><br><p>Suddenly, a cloud arrived and brought them to the wilderness where John and his [dead] mother were. </p><br><p>When John [the Baptist] saw them, he was afraid and fled in terror. But Our Lord Jesus Christ quieted his fear.</p><br><p>Jesus said to him, “Don’t be afraid! For your mother’s family wants to do right by her.”</p><br><p>When John heard this message, he turned and bowed to the Lord Christ, who then commanded Our Lady Mary and Salome to wash the body of John’s mother in the spring of water that had sprung up for John and from which he had been drinking.</p><br><p>Then the angels arrived and split open the earth where her body would be buried. The Lord Savior ordered the angels to go and bring the souls of [the priest] Zachariah and the priest Simon so that they might stand and pray over her body until it was covered over [with earth].</p><br><p>Immediately, Zachariah and Simon came with the angels. Our Lady Mary and Salome stood in front of our Lord Jesus Christ, next to the body of John’s mother, until it was buried and the [grave]place was sealed with the sign of the cross.</p><br><p>The day of John’s mother’s death was on that [very] day.</p><br><p>Then, they[--Jesus, Mary, and Salome–] left John behind in the wilderness.</p><br><p>Our Lord ascended the cloud, to [begin to] return to the place where he had been. </p><br><p>But our pure Lady said to him, “My God and my Lord, why have you silently left John behind alone in the wilderness after his mother’s death? Take him with you so that the wild animals don’t eat him!”</p><br><p>The Lord replied, “This is the will of my father, who is in heaven, that John remain in the wilderness until his revelation to Israel. </p><br><p>“But I will appoint angels to be with John because of the wild animals. The archangel Gabriel is prepared for this duty and he will bring John heavenly bread and a spring of water from which John will drink and I will make it as sweet in his mouth as the milk from his mother’s breast. </p><br><p>“Am I not the one who protected him in the wilderness until today? Because I love him more than anything in the universe. </p><br><p>“And his father Zachariah won’t leave him, rather he will [stay and] comfort him. If he [physically] dies, like all people do, his soul will live and not die.”</p><br><p>“So, now blessed is she[, Elizabeth,] who carried John to ‘Abteramos! May there not be rot in her grave nor stench upon her body because she embraced you and kissed you, and because she prophesied, saying, ‘Blessed is she who believes that it will be done for her!’ For this is she [Elizabeth] about whom it is said, ‘The Lord will not change her burial clothes nor will he destroy her grave.’ And may her body be with her soul as a comfort to him.”</p><br><p>Our Lord Jesus Christ said [all] this for John [the Baptist]’s benefit. </p><br><p>He then went up [on the cloud] and left John the Baptist behind in the wilderness. </p><br><p>Our dear Lady Mary, watch over your servant Lebna Dengel with abundant love and peace, just as you watched over John [the Baptist] in the wilderness when his mother Elizabeth, who was among your family, died. Just as you comforted the orphan [John], comfort Lebna Dengel when he is sorrowful forever with your sweet words.Make him happy with the vision of your illuminated face, which will never darken. Establish him as the head of the kings of the entire world, so that they might bring him tribute, in homage, from every region. Write his name in [the book of] the eternal heavenly Jerusalem, which will never perish or end, forever, amen.</p><br>"
-      }
-    ]
-  },
-  {
-    "id": "215",
-    "title": "Book of Vision of Saint Gregory the Seer of Hidden Matters (of Roha, Syria) of the Virgin Mary in paradise [sinkessar entry?]",
-    "incipit": "ይቤ፡ ጎርጎርዮስ፡ ራእየ፡ ኅቡኣት፡ እንዘ፡ ያይድዕ፡ ስብሐቲሃ፡ ለእግዝእትነ፡…. ዘርእየ፡ በሰማይ።",
-    "manuscript_count": 49,
-    "most_read": true,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },
@@ -3271,14 +2961,6 @@ const MIRACLES_OF_MARY = [
       {
         "author": "Allie V. Mangel",
         "text": "<p>There was a boat that was going northwest on the Red Sea.</p><p>Abba Barsoma boarded the boat with his disciples. When they had entered the middle of the sea, the swell rose and the boat was shaken.</p><p>When the moment of morning was near, the holy mister/lord [seigneur] Barsoma stood up, said a prayer, and cried. He recited among the psalms those which it is customary and accepted to say as a prayer of morning.</p><p>Immediately the winds calmed and the swell of the sea calmed.</p><p>It seemed to the captain, the sailors, and to the large assembly that was in the boat that they would not see land and would not ever reach it, because they had lost hope of surviving.[Translation as of 05/21/22]</p>"
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },
@@ -3367,10 +3049,6 @@ const MIRACLES_OF_MARY = [
     "most_read": true,
     "translations": [
       {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
         "author": "Wallis Budge",
         "text": "<p>There was a certain man who was washing his clothes in a stream.</p> <br> <p>Another man came and diverted the water into another channel.</p> <br> <p>The man who was washing his clothes said to the second man, “By the prayer of Our Lady Mary, Holy Twofold Virgin, the Mother of God, let this water alone.”</p> <br> <p>The man cursed the man who was washing his clothes and filched away the water despite [his protest]. Twice, and then three times, he refused to let the water alone.</p> <br> <p>At that moment, the running water turned backward and flowed up the hill.</p> <br> <p>All the people gathered [to see it], and they marveled at what had taken place.</p> <br> <p>The water continued to flow uphill for many days, and then, by the will of God, the river returned to its former bed.</p> <br> <p>Note: This English translation was composed by Wallis Budge in the early 1900s but updated by the PEMM team for modern readers. We have replaced old-fashioned terms (e.g., thee, thou), stripped old-fashioned word endings (e.g., striketh), and corrected offensive language (e.g., lame, barren). However, Budge made some of these translations from a peculiar manuscript, which often had missing words and sentences, so the translations don't always do justice to the story in its original, earliest form. We hope to retranslate the story from better manuscripts in future. His translations are from what he calls MS A, which is PEMM MS B-Oslo (SCOL) 248; MS B, which is PEMM MS B-Dublin (CBL) 914; and Brit. Mus. Orient. No. 652, which is PEMM MS BOr (BL) 652.</p>"
       }
@@ -3399,10 +3077,6 @@ const MIRACLES_OF_MARY = [
       {
         "author": "Allie V. Mangel",
         "text": "<p>There was a man who sang the Psalms of David.</p><p>This man [lui-meme] said, “I was saying my prayer in my cell, I had a majestic vision: priests were singing at the church on Sunday.</p><p>So Our Lady, the Holy Twice-Virgin Mary, Mother of God, came in the middle of them, a great glory surrounding her.</p><p>“She made them drink a sweet drink in a golden goblet.</p><p>“Me, when I saw this, I burned with the desire to drink with them.</p><p>“The angel that stood with her said to me, ‘You, do not go there; you do not deserve it, for you are lazy.’”</p><p>Now see, Christians, the greatness of carrying out [l’exécution] the chant in the church, how it is loved by God and by Our Lady Mary, Mother of God.</p><p>Happy is he who sings at the church and who praises in the middle of the congregation, according to what the prophet David said: “In the middle of the congregation, I will praise you, Lord.” </p><p>As for those who praise god with cries, they make all the parts of their body serve this purpose [y font servir].</p><p>When the priest sings with great cries, he whose throat swells, as well as all his fibres and all of his body - especially his heart - , his praise [glorification] is united with the praise of the 24 priests of the sky. </p><p>It is they also, the seraphim, who praise the Most High by crying and exclaiming until the sound of their praise fills the palace of heaven.</p><p>According to what the prophet Isaiah said, “I saw God the Most High, here he was seated upon a throne and his glory filled (the House).</p><p>The seraphim were standing around Him, each had six wings; with two wings they covered their feet, with two wings they covered their face, with two wings they flew; they cried, one after another.</p><p>“They were saying, ‘Holy, holy, holy is the God of armies , the holiness of his glory completely fills heaven and earth!’ Then the threshold rose at the voice of those who cried and smoke filled the House.” </p><p>In particular, he who chants and prays in his cell and his abode by whispering without rest, and who chants in the church, his reward [rétribution] will be with those who serve [font le service]. As for the priests, while they make resound the sound of their song, this song is heard ten bow-lengths away and their voice fills the mountains.</p><p>Thanks to this, God gives them as a prize for their praise what the eye did not see nor the ear hear, by the prayer and intercession of Our Lady Mary, Mother of God.[Translation as of 05/21/22]</p>"
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },
@@ -3414,29 +3088,8 @@ const MIRACLES_OF_MARY = [
     "most_read": false,
     "translations": [
       {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
         "author": "Rowan Williams",
         "text": "<p>The Miracles of Our Lady Mary, the Holy Twofold Virgin Theotokos</p><p>May her prayers and blessings be with us to the ages of ages. Amen.</p><p> </p><p>Behold, Our Lord Jesus Christ appeared in the midst of the Apostles,[1] seated upon the wings of the Cherubim. 4His Virgin Mother was seated with Him, and thousands of Angels surrounded them.[2] 5The Archangels Michael and Gabriel were stood at His left and His right hand, 6and the Seraphim said,[3] ‘Glory to God in the Heavens, and on Earth peace, His goodwill towards humankind.’ 7When the Apostles beheld Our Saviour, they bowed down to Him, and He gave them a salutation and greeted them. 8Then the Saviour said,[4] ‘O John, My chosen one, I shall not hide anything from you concerning the counsel that the Father has given, along with the Holy Spirit and I. 9That in which My Father in Heaven delights is that churches may be built throughout the world, in My Name and in the name of My Mother Mary. 10And the Clergy[5] will raise incense and offer[6] the Eucharist day and night therein.’ 11Then the Saviour picked up[7] three rocks[8] and began to work. 12Once again, He began to speak and said, ‘I know that My Father delights in this place.’ 13Then Peter took hold of the side of a rock and picked it up, and went around, working[9] in the way[10] the Saviour was making it. 14And the rocks started to become as pliant as wax.[11] So he effortlessly pulled it, and it went around them as a wall, as was needful for the work of construction. 15After that, the Saviour gave the command, and five pillars of jewels, which bore a pillar of gold, arose. 16They came into the sanctuary and stood in the midst of it. 17Next, golden chalices and silver patens came there, 18along with[12] brocade vestments fit for altar ministry. 19And the entire church was completed on the twentieth day of the month of sane. 20When it was completed,[13] Our Lord ascended into Heaven with His Mother Mary, seated upon the wings of the Cherubim.</p><p>21   O children of the Gospel, hearken to how her Son constructed a church for His Mother with three rocks, which became[14] as pliant as wax!</p><p>May her prayers and blessings be with us to the ages of ages. Amen.</p>"
-      }
-    ]
-  },
-  {
-    "id": "474",
-    "title": "Bishop Hildephonsus sees the icon of the Virgin Mary sweating; she asks him to raise a girl from the dead.",
-    "incipit": "ወሀሎ፡ አሐዱ፡ ቅዱስ፡ ዘስሙ፡ ደቅስዮስ፡ ኤጲስ፡ ቆጶስ፡ ዘጥልጥልያ፡ ወእንዘ፡ ሀለወ፡ ቀዊሞ፡ በቅዳሴ፡ ርእየ፡ ሥዕላ፡ ለእግዝእትነ፡…. እንዘ፡ ይውኅዝ፡ ኃፍ",
-    "manuscript_count": 45,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },
@@ -3512,25 +3165,8 @@ const MIRACLES_OF_MARY = [
     "most_read": true,
     "translations": [
       {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
         "author": "Rowan Williams",
         "text": "<p>The Miracles of Our Lady Mary, the Holy Twofold Virgin Theotokos</p><p>May her prayers and blessings be with us to the ages of ages. Amen.</p><p> </p><p>This is the account of how Our Lady[1] appeared to Abba Serapion, the Bishop-Martyr, while he was a catechumen and had not yet been baptized—how she led him to the Faith which is of her Son, and to Christian baptism.</p><p>3   Now this holy father was from Jerusalem. He was of the tribe of Levi, and was of the family of Stephen. 4The name of his father was Abraham, son of Levi, son of Joseph, and he was the brother of Simeon, the father of Stephen’s mother. 5At the time of his birth, he was called by the name of his father, 6but when his father died, he wished to become a Christian. Then an Angel of the Lord appeared to him so that he might go to Abba John, the Bishop. So he went to him, and Abba John[2] expounded[3] the Mystery of the Incarnation of Christ God to him. 7However,[4] he did not dare to be baptised with Christian baptism in the city of Jerusalem for fear of his Jewish relatives.[5] 8And while the Bishop began to consider what to do concerning him,[6] Our Lady Mary, the holy twofold Virgin Birth-giver of God the Word, appeared to him and told him go to the city of Alexandria, to Pope Theonas, the Archbishop.[7]</p><p>9   Behold, my faithful Christian people, Our Lady Mary, the holy twofold Virgin Theotokos,[8] appeared to Abba Serapion when he was a catechumen.[9] 10And even in many years, the stories of her benevolence cannot be finished.[10]  </p><p>May her prayers and blessings be with us to the ages of ages. Amen.</p>"
-      }
-    ]
-  },
-  {
-    "id": "259",
-    "title": "Saint Basil and the Icon: Part 4: The Virgin Mary sets up the pillars in the church and makes a miraculous spring flow out at their base.",
-    "incipit": "ዘከመ፡ አስተርአየቶ፡ ለባስልዮስ፡ ኤጲስ፡ ቆጶስ። ጸሎታ፡…. ወእንዘ፡ አነ፡ እቀውም፡ ወእጼሊ፡ ረከበኒ፡ ድቃስ፡ ንስቲት፡ ወርኢኩ፡ ከመ፡ ብእሲት፡ ብርህት",
-    "manuscript_count": 41,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },
@@ -3558,10 +3194,6 @@ const MIRACLES_OF_MARY = [
     "manuscript_count": 40,
     "most_read": true,
     "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
       {
         "author": "Getatchew Haile",
         "text": "Miracle of Our Holy Lady Twice Virgin Mary. The miracle and wonder which she worked for a wife of a ruler, by the power of her beloved Son. May her prayer be with her slave Ma'eqaba Egzi' Amen. There was a ruler in a great country from among the countries of the Christians. He had a wife from a family of good people. He loved her dearly. The woman lived for some time with her husband. She, however, was very sorrowful that she could not have children. She lived praying to God the highest and to Our Holy Lady Twice Virgin Mary that she might give her a blessed son who would please her. There was also the mother of the woman whom we mentioned earlier, a good and God-fearing woman, a lover of saints and lover of Christians, of good family. She lived praying to Our Holy [f.l76r] Lady Twice Virgin Mary that she might give her/daughter a blessed and chosen child saying, \" saying, \"How long will you remain barren like God and to Our Holy Lady Twice Virgin Mary who would fear God and please Our Holy Lady daughter answered her saying, \"Yes, I am praying; Lady Twice Virgin Mary that she would give please us and delight Our Holy Lady Twice Virgin with all good deeds. They asked Our Holy Lady she might fulfill their wish and comfort them in them. Once the ruler, the husband of the woman whom called her and said to her, \"How long will you rogation for forty days and forty nights and ask Mary. You pray persistently; I, too, will pray Twice Virgin Mary because she is tender-hearted; prayer and give us a good son who will delight Having admonished her so, he let her go to her mother all that her husband had ordered her. When her mother heard this matter from her daughter (the idea) pleased her. They both prepared them- selves to fast and started to fast the holy fast of Lent.3W hile they were fasting for God and for Our Holy Lady Twice Virgin Mary, the tender-hearted, before they finished the fast of Lent, three days before its end, the wife of the ruler saw a wonderful and an astounding vision while sleeping by night. The woman who saw (the vision) said: While I was asleep in my bed, I found myself praying in a certain place. While I was praying, a certain man of light appeared to me suddenly holding a cane in his left hand and a cross of light in his right hand. He came to me and said to me, \"Peace to you, rise up egalit 4. Behold, God has heard your prayer. You shall bear a child who shall be useful to the whole [world], who will be a chosen one in the kingdom of God.\" Having said this, he brought out with his right hand clean incense. Two (grains) fell down on the ground. When they fell down, I said, to the man, \"I doubt,\" and I explained to him saying, \"Of those you gave me, two fell down on the ground while I was receiving, but before I had received (them) from your hand; however, I took into my hand the one which is the best of them.\" The man of light answered me again saying, \"Leave those; the best one which you took suffices you.\" When he spoke like this to me, I was pleased. I took that clean incense in my hand and asked the man of light saying, \"What is your name, my lord? Who are you sent from?\" The (man) of light answered me saying, \"I am Bartaloméwos [= Bartholomew], the Apostle of Our Lord Jesus Christ. God Our Lord sent me to you.\" I asked him with pleasure, saying, \"What is this in- cense? And what is its significance?\" The (man) of light interpreted for me like this, saying, \"God sent me to you to tell you and to announce (this) to you. This is the significance of the incense: This incense which you saw, the one that is better than the other two, which you took with your hand, is a sign for the son whom God shall give you, who will be useful for the whole world.\" When I heard this annunciation from the mouth of the man of light, [f. 176r] thanked God, /who is praised through me, My Lord, and my Holy Lady Twice Virgin Mary, the support of my head. She went on: \"While I was standing with the man of light, Satan came behind me. In the likeness of a beast called chamelion, he came in haste, opening his mouth, wanting to do evil to me. By the mercy of God, I turned my face to the man of light, and said to him, 'That animal wants to destroy me. O, Holy God, My Lord, help me and save me from the death of Sheol.' Then the Apostle stirred with anger at the beast that was elated. The Apostle thrashed the beast heavily with his stick, and scattered it like burned pieces of cloth, and made him like nothing, that had never been conceived.\" And now may God cover us with hi$ great compassion, and grant us entrance into the bright and shining house of his Trinity, and to me his slave, too. Amen. When the wife of the ruler woke up from her sleep, she told her mother all of the vision she had seen. When her mother heard, she thanked God and Our Holy Lady Twice Virgin Mary saying: \"God has heard me; he who is not aloof from his own is not aloof from me, but heard me, for he has accepted my word.\" She was stunned and astounded by the vision because she was filled with relief. May God clothe me, his slave, the flowery purple cloth of his Trinity.\" When the wife of the ruler completed the rogation of the forty days, when the days were over, the ruler called his wife and was admitted unto her. The woman conceived by the prayer of Our Holy Lady Twice Virgin Mary, Mother of God. Before (the child) was conceived and before it was born and also after it was born, good saints and those to whom Our Holy Lady Twice Virgin Mary appeared bore witness saying, \"It is fulfilled for you; Our Holy Lady Twice Virgin Mary shall give you a male child who will be useful and pleasing.\" From here on, she lived thanking God and Our Holy Lady Twice Virgin Mary. Her day of delivery came, and she gave birth to a male child on the memorial day of Our Holy Lady Twice Virgin Mary, on the 21st of the month of Terr. When the ruler heard that his wife had given birth to a male child, he praised God and thanked Our Holy Lady Twice Virgin Mary. When the (period) of forty days (since his birth) was completed, they took the child to the church of Our Holy Lady Twice Virgin Mary to baptize him. They baptized the child and called his name, his baptismal name, Basenʾa Maryam. But the mother of the wife of the ruler called the name of the child of her daughter Bartaloméwos [= Bartholomew]. Then everyone went home. The mother of the child, too, went home in peace. They lived in great pleasure, making the memorial of Our Holy Lady Twice Virgin Mary every year on the 21st of the month of Terr. They thanked Our Holy Lady Twice Virgin Mary. The child grew up by the power of God, his God, and by the power of Our Holy Lady Twice Virgin Mary, his support. His father called the child and saw him and was pleased. He said to the nurse, \"Did my son grow like this without suckling?\" The nurse of the child said, [f.l77r] \"Yes,/ your son, my lord, grew without suckling. He did not suckle more than five months.\" When the father heard (this), he admired and said, \"Truly, Our Holy Lady Twice Virgin Mary nursed this child of mine. As of now, may the name of this child be Batargéla Maryam\" Since then the child was called Batargéla Maryam. After sometime, the ruler took his son, the child, to the church of Our Holy Lady Twice Virgin Mary and incised his face with a razor and gave him to Our Holy Lady Twice Virgin [Mary], and made him take refuge with her to guard him with her hand in this world and in the world to come. The child grew up by the prayer of Our Lady Twice Virgin Mary Mother of God, the Mother of Our Lord Jesus Christ. May Our Holy Lady Twice Virgin Mary bless today our community; she is the ladder of our prayer and our power forever. Amen. Listen my fathers and brothers, the Christian Orthodox people. This child was conceived and born by the petition of our Holy Lady Twice Virgin Mary and from her Son because he became the son of her house.6 The child said: \"My Holy Lady Twice Virgin Mary became my support. When my soul was about to come out because of the severity of the pain of my illness, she brought me back and healed me well by the mercy of her beloved Son. And her compassion was on me all of a sudden.\" And now, may Our Lady Mary grant me entrance into the Kingdom of Heaven, to me your slave. Amen."
@@ -3595,35 +3227,6 @@ const MIRACLES_OF_MARY = [
       {
         "author": "Ellen Li",
         "text": "<p> As abba Samuel was in the monastery of Qalamoun, alas, pillagers took him into their country.</p><p> Before him, they had imprisoned abba Jean, the hegumen of the desert of Scetis.</p><p> All two encountered each other there, they comforted each other. The master of abba Samuel was full of force and he was firm of heart.</p><p> Next, he attached the foot of Samuel with the foot of a servant, under the counsel of Satan, and he sent them into the desert to graze the camels.</p><p> His master thought that the saint abba Samuel would fall with her in sin and obey him in all that he told him, as for what the devil had advised him.</p><p> Despite all that, abba Samuel was full of force, his heart was firm and he stayed in that way until his master fell ill and was close to death. The saint abba Samuel prayed upon him and cured him of his malady, because Our Lady Mary visited him continually.</p><p> His reputation was known in all the country. One would bring him all those who were ill; he would pray upon them, anoint them with oil and they would be cured of their malady.</p><p> When his master saw that, he was strongly amazed; he prostrated himself before him and said to him, “Pardon me all my sin that I have done against you.”</p><p> He took him in great affection and interrogated him, saying, “Tell me that wich you want, I will do it for you.”</p><p> The saint abba Samuel said to him, “I want to return to my country.”</p><p> Immediately his master prepared for him numerous goods as presents, he took leave of him and sent with him servants until Samuel had reached his monastery.</p><p> His spiritual children assembled around him, and increased until they were ten thousand.</p><p> Our Lady, the Holy Twice-Virgin Mary mother of God, appeared to him and said to him, “This place will be my abode forever.”</p><p> From that day, the infidels no longer came to the monastery of abba Samuel.</p><p> My brothers, consider thus the grandeur of Our Lady, the force of her love and her glory, how she saved Samuel from all the misfortune that had touched him, and how she comforted him by saying, “This place will be my abode for forever.”[Translation as of 05/21/22]</p>"
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "464",
-    "title": "King Bartaqu of Greece, who became a monk.",
-    "incipit": "ወሀሎ ፡ ፩ብእሲ ፡ ንጉሥ ፡ በደወለ ፡ ፅርዕ ፡ ዘስሙ ፡ በርጠቁ ፡ ወልደ ፡ ኤጴሜን ፡ ኃያል ፡ በመንግሥቱ ፡ ወፅኑዕ ፡ ከመ ፡ አምደ ፡ ሐፂን ። ወያደክሞሙ ፡ ለኵሎሙ ፡ ሰብእ ፡ የሐርፅ ፡ ዘረከበ ፡ ወያደቅቅ ፡ ኃያላነ ፡ ወፅኑዓነ ፡ ነገሥታተ ፡ ግብጽ ፡ ወመስፍንቶሙ ፡ ዘተናገረ ፡ ይገብር ፡ ወይፌጽም",
-    "manuscript_count": 39,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },
@@ -3637,14 +3240,6 @@ const MIRACLES_OF_MARY = [
       {
         "author": "Elliot Galvis",
         "text": "<p>And he gave an order from above, and a great tent came from heaven with the soul of the virgin in it. And at once her soul emerged from that tent, entered [amplexa est; lit. “embraced”] her body, and said to her son: “Oh my beloved son, since I wish to be in the place where my body will be, where you dwelled for nine months, let it stay with me [sit mecum; lit. “be with me”] there on the day of resurrection.” </p><p>And at once, the Lord emerged with an assembly of angels and with armies of seraphim and cherubim and with soldiers of light, who shouted praise. And he displayed the body of the virgin so that they would adore her. </p><p>[Translation as of 05/21/22]</p>"
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },
@@ -3655,10 +3250,6 @@ const MIRACLES_OF_MARY = [
     "manuscript_count": 38,
     "most_read": true,
     "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
       {
         "author": "Ellen Li",
         "text": "<p> It was in a city in the territory of Egypt, there was a monastery of monks.</p><p> Seeing the zeal of those there, the devil tried them, knocked over their oven and filled it with dust.</p><p> As the monks no longer had something to bake their bread, they begged Our Lady, the Holy Twice-Virgin Mary, the maker of miracles and wonders.</p><p> Accepting their request, she said to them, “He who knocked over your oven is the devil, he will serve you like a slave for twelve years. From now on, do not be distressed, because I have interceded beside my Son so that you may subjugate the devil by the power of the divinity of my Son. Do not rejoice for this, because you will obtain a greater grace than that, by the power of my prayer, in the skies. Have you not heard that which my Son said to his disciples in the holy Gospel, ‘If the demons obey you, do not rejoice for that; but rejoice, because your names are written in the skies ’?”</p><p> For the accomplishment of the word of the Gospel, the devil served them by the power of Our Lady, the Holy Twice-Virgin Mary, the maker of miracles and wonders.</p><p> They commanded him first to take out quickly the dust from their oven, which he had filled it with. They commanded him also to grind (grain); he grinded it and brought it to them quickly. They commanded him again to knock down a tree; he brought it to them, carrying it, (a tree) that two hundred men could not carry.</p><p> Seeing that, the monks admired Our Lady Mary, mother of God.</p><p> To the devil they said, “With what were you able to carry it?”</p><p> He responded and said to them, “If it does not suffice for you, command me to add that which your heart wishes.”</p><p> The people in the city said amongst themselves, “First we had been tried by this devil and we were distressed. Now, we rejoice, because we rest of all our pains since Our Lady Mary gave us this devil, so that he may serve us as a slave.”</p><p> The monks commanded again the devil to bring them fish. In compliance, he brought them a whale.</p><p> Upon that whale was a great boat with its merchants, with sailors and numerous treasures, innumerable, of these merchants.</p><p> As for the sea (which it had traversed ?), she was as vast as the equivalent of a year long voyage.</p><p> (The sailors) made the whale approach rapidly, the boat and all that there was.</p><p> When the monks saw that, they trembled and said to the devil, “By what artifice have you done this?”</p><p> He said to them, “I have brought them to you so that you may buy what you want. You have commanded a single thing of me, regarding fish; but I, I have done many things for you, that you have not commanded of me, so that you may let me go to my companions.”</p><p> The monks said to him, “We will not let you leave before you have reached where was commanded of you by Our Lady Mary, to (the term of) twelve years.”</p><p> They said to the people of the boat, “Why have you obeyed one who you did not know before, and who is not your master?”</p><p> The people of the boat said to them, “We did not know our thought: he removed our heart and brought us beside you in an instant.”</p><p> The monks responded, saying, “It is not he who made you come by his power, but it is by the power of Our Lady Mary that you have come. Do not admire this devil for this, but admire the queen of the skies above, Mary, who have given us this devil, so that he may serve us. First, he had stayed to try us by knocking over our oven, now he does all that we want by the power of Our Lady Mary.”</p><p> Having heard this miracle, the pagans said, “Your faith is better than our faith. Baptize us so that we may become Christians.”</p><p> The monks baptized them in the name of the Father, the Son, and the Holy Spirit.</p><p> They taught them belief in the holy Trinity and in the unique baptism for the pardon of sin.</p><p> Next, the merchants gave all their goods to the church of Our Lady Mary.</p><p> (The wood of) their boat was for the door, the windows and the needs of all kinds.</p><p> Its iron was for the nails, the keys and the instruments of work (?).</p><p> The people of the boat all made themselves monks in this monastery. They became priests and pleased Our Lady in their priesthood and in their monastic state.</p><p> As for the devil, having finished his service after twelve years, he went to his companions.</p><p> Commemorating this miracle, the assembly of this monastery of monks praised Our Lady.</p><p> The people of the boat who had become Christians redoubled love for Our Lady Mary and celebrated her festival.</p><p> That was marvelous for those who heard of it. They returned grace to Our Lady with numerous actions of grace.</p><p> As for us, children of this monastery, praise her in glory and honor so that she may guard us from the hand of the unknown Enemy.</p><p> That her prayer and her intercession may be for us a rampart, and encircle us like an effective shield, for centuries upon centuries, amen. [Translation as of 05/21/22]</p>"
@@ -3705,10 +3296,6 @@ const MIRACLES_OF_MARY = [
       {
         "author": "Mika J. Hyman",
         "text": "<p>More numerous is the series of tales referring to the negus Zarʾa Yaʿeqob (who reigned from 1434 to 1468). Elsewhere I have already published three of these stories (G n. 93 CR 52, 58; G. N. 94 CR 52, 59; G n. 95) concerning the war of Zarʾa Yaʿeqob against Sultan Badlrry ibn Sa'd ad-din. The volume published in Addis Ababa contains the following two stories of considerable historical interest as they refer to the struggle of the negus Zarʾa Yaʿeqob against the heresy of the Stefanites and another heresy -- that of the Mikl'E'elìti which we will determine below. Here too, if I am not mistaken, is the literary interest for the liveliness of the story joins the historical interest. It was written under the impulse of the emotion that the fierce struggle - one of the decisive moments of Ethiopian Christianity – which had to have provoked the contemporaries: </p><p>(p.152) 24th Miracle. How convenient it is to venerate the Cross and our Lady. A miracle of Our Lady the Saint doubly the Virgin Mary and Mother of God – may her prayer and benediction be with us during centuries and centuries – amen. This is a miracle of the Cross of Her Son, Our Lord Jesus Christ, which He made for His Mother, Our Lady Maria the Saint doubly the Virgin and for His Holy Cross. </p><p>There was a great country in the Christian Lands. And its Kings, the metropolitans, and all the many Christians who lived there loved Our Lady the Saint doubly the Virgin Mary and Mother of God, and they respected the holidays. And they venerated her and prostrated themselves to her. They then respected her feast of the Cross of Her Son and venerated it by prostrating themselves to it (the cross). And they adored it and carried it with faith. </p><p>In that country, a black snake rose, similar to the false messiah and Christian in name. The man was a priest and monk. His behaviour was that of a true Jew, who was the son of the devil in his works. And this rebel and Jew said: ‘I am not venerating Mary. Nor will I come to the Cross of Her Son.’ And he taught many of his cowardly doctrine, which is viler than the carcasses of dogs. (p. 154) This black snake was expelled by the Christians. And our Lord Jesus Christ destroyed him there -- where he had been exiled -- by the intercession of Our Lady, doubly the Virgin and, by the might of His venerable Cross which is strength for Christians. And those followers of this black snake and son of Satan, who remained after him, said: ‘we do not prostrate ourselves to the Virgin Mary, nor do we prostrate ourselves to the Cross of His Son there.’ And many believed in their doctrine, a pernicious doctrine. </p><p>When the King and all the people of the country heard [this], they grieved greatly and pleaded with huge anguish to the Lord saying, ‘Show us, O Lord, the might of these Jewish rebels!’ And our King Zarʾa Yaʿeqob gathered those rebels. Then he brought together the Christian people who venerate with prostrations Our Lady Mary doubly the Virgin, and those who prostrate themselves to the Cross of His Son who is an aid to the Christians. (p155) The King and the Christian people said to those rebels ‘why don’t you prostrate yourself to Our Lady the Saint doubly Virgin Mary Mother of God nor to the Cross of Her Son, anointed with divine blood?’ And those Jewish rebels said, ‘we don’t prostrate ourselves to Mary doubly the Virgin, and nor at the Cross of her Son.’ And the Christian People asked them: ‘Did you find it in the Books (Saints) or is it by speculation of your mind that you say not to prostrate yourselves to our Lady doubly the holy Virgin Mary Mother of God or to the Cross of Her Son?’ And those rebels replied: ‘[we do this] according to what our teacher taught us.’ And the congregation of Christians sentenced them to death, saying ‘Death is convenient to those who say, with his mouth, he is a Christian -- and among them there are priests and deacons by name -- while his action is to act as a Jew, who pains the heart. (p156). Death is the sentence to those most damned. </p><p>And the King ordered that their nose and tongue be cut off. And so, they cut them off for others to fear. But for this, these rebels were unable to perform their evils. Then the Christian people gathered and said: ‘why did you leave these Jewish rebels by only cutting off their noses and tongues? Now it is fitting that they are stoned with rocks because they say they do not prostrate themselves to Our Lady Mary doubly Virgin or to the Cross of Her Son.’ There were, at that time, in Ethiopia some envoys of the Patriarch of Alexandria named Abba Mattewos. There were three envoys: one hegumen (qomos), whose position was higher than the rank of a (simple) priest, an elected and elderly monk, lover of fasting and prayers, and connoisseur of the Books (Saints) of the Old and New (Testament). (p.157) The second (envoy) was a deacon, elderly and elected monk, connoisseur of the Books (Saints). And the third was also a deacon. And they had come on behalf of the Patriarch and the Sultan of Cairo to announce to the Negus of Ethiopia, Zare’a Ya’qob, good and joyful news: that the Sultan of Cairo had allowed the Christians of Egypt to rebuild the already ruined Christian churches and restore the old ones. And they had brought with them some gifts from the Patriarch to the Negus: three tabots and a golden effigy of our Lady Mary, which represented her when she was with her Son, the a Child at Mount Quesquam; and a golden effigy of the Crucifixion of Our Lord and a golden effigy of St. Michael the Archangel; and plenty of holy oil. The King ordered these envoys of the Patriarch to judge those who had refused to prostrate themselves to Our Lady and to the Cross of Her Son. </p><p>(p158) The Patriarch’s envoys interrogated those rebels where they were gathered with the clergyman, the singers, the nebura and all the hosts, saying to them: “Why don’t you prostrate yourselves to our Lady doubly Virgin Mary? Don’t you know that Our Lady, doubly Virgin Mary, is the Mother of God? And why don’t you prostrate yourselves to the Cross of His Son? Don’t you know that Jesus Christ was crucified on it and that our life was for the Cross?” And those rebels replied: “We don’t prostrate ourselves to Mary or to the Cross of Her Son!” And (the Patriarch’s envoys) condemned those rebels to be stoned. And also, the Europeans and those of Constantinople and Syria – as they were all present at that meeting – judged that the infidels were to be stoned. (p159) And all those at the Christian meeting said that it was right that they should be stoned. And, concluded thus the judgement: the King ordered those rebels to be stoned. And so, the Christians organised an assembly and stoned them (the infidels) on the 2nd Friday of the Month of Yakkatit. </p><p>38 days after the stoning of those rebels, allies of the Jews, the Lord made a great miracle for His Mother Our Lady Mary doubly Virgin and for His venerable Cross, on the tenth [day] of the month of Maggābit, Monday, the feast of the Cross of Christ. He came out and saw a great light in the King’s enclosure and even far around the King’s enclosure. And this light appeared in the Churches on their vestments and internal and external curtains, curtains of silk and curtains of… (p160) Then it appeared on men’s tents, on their veils, on the clothes that they wore and the belts that encircled them and, on all the (sacred) furnishings that light appeared. There was a great joy in the court of the King and that light remained visible for several days. And the sight of that light looked like a flame of fire, but it did not burn; and when someone approached, it brightened his face and the heart rejoiced at the sight of his light. </p><p>There was a monk, a servant of the lord and beloved of the King. Before the light appeared, he had asked the King to allow him to go to his country. The King allowed him, and he went. And, after he had gone five stages [in his journey], the King grieved because his favourite monk would not have seen that light. So, he [the King] hastily sent some messengers on horseback to bring him back so he [the monk] could see that light. When they brought him back, he completed the five-stage journey in two days. (p161) This was for the help of God and for the faith of that King, worshiper of the Holy Trinity and learn-ed of the mystery of the Trinity. And that monk said: ‘when the King commanded that seven great messengers were to receive me, a poor monk, I was with five of my brother monks and the seven messengers were with their servants. When we went by this route all together, there being no moonlight, but being dark that night, the clouds had filled the face of the sky so that neither sun nor star could be seen, if not hardly once in a while; suddenly we saw a great light erupt in front of us. We all said, since there was no light and clouds filled the sky: “what is this light that guides us?’ Nor did we understand where that light came from. And when we could not pass a deep torrent, and before that torrent there were great mountains. I, a sinner and poor monk, my fellow monks, and the seven envoys of the King with their servants saw (p.162) -- all of us together, a great column of fire whose summit reached the heavens, and in whose light, there were no impurities of smoke. Indeed, it was as clear as sunlight. When we saw this great miracle together, we said ‘what is this fire whose height reaches the sky? Has the great house of the King burned down?’ Therefore I, the poor monk, was astonished. And I said, ‘My Lord called me to joy to see the light come down in his court! And now instead it pains me because a great fire came out of his court.’ I said this because it seemed to me that it was an earthly fire; [but] God is a witness to me in this matter: as I saw that great column of fire, I and my fellow monks and the messengers of the King and those who were with them. And the light guided us. And when we arrived at the city of that King, that column of light disappeared. </p><p>And that King, who had a fondness for that monk, (p. 163), before sending the messengers to bring back that monk, had pleaded with our Lady Mary, standing before her effigy and saying ‘O my Lady Mary, bring that beloved monk of mine [to me], without any harm to him during the route; because, I ordered them to take him at night and bring him to me in times of darkness, but the way is bad and rough. Even in the daytime if you go that way, you go with difficulty. And that which hastened me to order them to bring him at night is my desire to tell him about this miracle.’ And our Lady Mary doubly the Virgin accepted the plea of that King and made the great column of fire appear in his court until the light reached where that monk was with his five brothers, the great messengers of the King, and with them their servants. And, after guiding them to the light of that pillar of fire, they arrived at his court. </p><p>The King asked them: ‘Is this story true?’ They replied: ‘yes! It is true, because God (p164) is testimony to how we, the five monks, saw the pillar of fire together; and we were guided by its light until we came to your court.’ And also, the seven messengers with the others who followed us said: ‘We too saw that pillar of fire as the monks saw it and we were guided by its light together with the monks until we came to your court, o our Lord. And God is a testament to this: that we do not say what we have seen and what we did not see.’ The King rejoiced, having heard that this great miracle was done by Our Lord Jesus Christ, with the appearance of the column of fire for His Mother Mary, doubly the virgin, and for the veneration of His Cross. And therefore, he praised the Lord with His Mother the Saint doubly the Virgin Mary. He then ordered the King to be shown to that monk who returned from the journey with his monk brothers, the light descended in honour of Our lady Mary doubly virgin and in honour of the Cross of Her Son. (p165) And those to whom the King had given the order led those monks and brought them into Church on Thursday night at the time of the rooster awakening, the 1st of the maggabit, on the fifth day since the light had descended. Before the monks had put their clothes away that light moved. And the light appeared from that garment like a flame of fire no did that light burn. When the monks saw it, they marvelled and went wild with great joy and prostrated themselves on the ground and praised the Son of God who had made the light appear like a blaze of fire that flames in honour of His Mother Mary, doubly the virgin and in honour of His Cross and His pure Blood. Whose prayer and blessing together with mercy of His beloved Son be with us forever and ever! – Amen”[Translation as of 05/21/22]</p>"
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },
@@ -3739,47 +3326,6 @@ const MIRACLES_OF_MARY = [
       {
         "author": "Elliot Galvis",
         "text": "<p>Then he [Joseph] raised his eyes and saw a stable, into which he led Mary, and then he exited in order to find a midwife. While he went down the road, he saw the ground shaking. He also saw cows grazing, looking towards the sky, and he also saw a great stream nearby; when he went nearer in order to drink, he saw a flock of sheep looking towards the sky and standing still. Then Joseph raised his eyes to the hills of Bethlehem and saw a woman approaching, and when she had approached closer, Joseph greeted her. And she said to him: “Where are you going? What are you looking for?” Joseph responded: “I seek a midwife.” And the woman said: “Who is that woman who rests in the stable?” “Mary,” said Joseph, “who conceived by the Holy Spirit.” The woman said to him: “Do you speak the truth?” “Come to her,” said Joseph, and they both went together and entered the stable. And behold, a crown of bright aether enwrapped Mary, and a great light was emanating from the stable, and they beheld the whole region illuminated, and they saw an infant placed in a manger. Then suddenly, that woman shouted in a great voice, saying: “My soul glorifies the Lord on this day, since I saw a new light and great glory.” And heavenly soldiers arose in that same moment and descended to the place in which he was, he who on that day was born the God of Israel, who will save the people from their sins. And when that woman left the stable, look, another woman came, whose name was Salome, sent by the Lord to Mary, and the woman said to her: “Salome, come and see the astonishing thing, which has never happened from the creation of the world nor will it ever happen in the age of ages. For the virgin Mary has given birth and remains a virgin after the birth.” Salome responded, saying, “As the Lord lives, I will not believe this speech unless I see it with my own eyes.” And then they both went together and entered the stable. Then Salome, approaching close to Mary, extended her hands so that she could see, but a burning flame went from Mary’s body and Salome’s hands were burnt. Then with a great uproar she shouted and said: “Woe to me! Woe to me on account of my great sin and my defective faith.” And she prostrated herself on the ground and said: “You Lord and God of Abraham, Isaac, and Jacob, do not leave me in dishonor and disgrace among the sons of Israel, but see my humility: heal me from my affliction, for all who call your name are freed from their troubles.” And suddenly the angel of the Lord appeared to Salome, saying to her: “The Lord has heard your prayer and entreatment; take the infant and carry him with your hands burnt by fire, and you will find great joy.” And thus Salome prostrated herself on the ground, and after she carried the infant with her hands, which had been burnt by fire, suddenly she was healed. Then she exclaimed: “Truly, this is the King of Israel.” And when she left the stable with great joy, behold, a voice came from heaven, saying to her: “Salome, watch yourself, and tell no one what you saw, until the boy goes to Jerusalem.” [Translation as of 05/21/22]</p>"
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "470",
-    "title": "Book of Felsata la-Maryam??: DOld?: Dormition: Pact: The Virgin Mary receives the Pact of Mercy (kidan mehret) (Synaxary entry for the 16th of Yakkatit). (470, 553, 632 similar)",
-    "incipit": "ወኮነ፡ እምድኅረ፡ ዓርገ፡ እግዚእነ፡ ኢየሱስ፡ ክርስቶስ፡ ውስተ፡ ሰማይ፡ ነሢኦ፡ ሥጋሃ፡ ንጹሐ፡ ወነበረ፡ በየማነ፡ አቡሁ፡ ፈጺሞ፡ ኵሎ፡ ሕገ፡ ትስብእት፡ ዘእንበለ፡ ኀጢአት፡ ባሕቲታ፡ ወሰሊጦ፡ ሕማማተ፡ መስቀል፡ በሥጋ፡ በሥምረቱ፡ ወበፈቃዱ፡ ዘገብሮ፡ በእንተ፡ መድኃኒትነ፡ ኃደጋ፡ ለእግዝእትነ፡ ማርያም፡ ውስተ፡ ቤተ፡ ዮሐንስ፡ ረድኡ",
-    "manuscript_count": 36,
-    "most_read": true,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },
@@ -3806,10 +3352,6 @@ const MIRACLES_OF_MARY = [
       {
         "author": "Jeremy Brown & Dawit Muluneh with Wendy Laura Belcher",
         "text": "<p>A miracle [performed] by our Lady, the Holy Two-fold Virgin, the Mother of God. May the blessings of her prayers be with her servant, Helawe Christos, forever and ever, amen. </p><p></p><p>After, Mary remained six months in the land of the free, which is called Ethiopia, since this land is more honorable than all the other lands under heaven. </p><p></p><p>As David said [in Psalms], “Ethiopia stretches out her hands to God” because Ethiopia is the land that is as virginal and pure as [the Apostle] John. </p><p></p><p>Regarding the fame of the land [of Ethiopia], the kingdom of Rome is more famous. However, in the land [of Rome,] Ethiopia is famous. But [the Romans believe that] its men are wolves and predators and chosen ones do not exist [there], except for a few. </p><p></p><p>Previously, Mary had been fleeing from region to region without finding a resting place, except in the land of the free. She remained there for [three years and] six months without sorrow or tears. </p><p></p><p>Meanwhile, her son was blessing the land of Azeb, [that is, Ethiopia,] all day long.</p><p></p><p>So, the Virgin Mary said to him, “My son, what is the reason you are blessing Azeb all day long?” </p><p></p><p>He replied, “[Here,] I have a nation of people who love me and who love you even more. The people say, ‘Without water, they water you; without oil, they invigorate you.’”</p><p></p><p>Mary said, “Give me those people right now!”</p><p></p><p>He replied, “Take them, and let them be a tenth [of my kingdom] for you.”</p><p></p><p>Likewise, let him take us as a tithe!</p><p>May her prayers and blessings be with her servant, Helawe Christos, forever and ever, amen.</p>"
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       },
       {
         "author": "Mehari Worku",
@@ -3877,16 +3419,8 @@ const MIRACLES_OF_MARY = [
     "most_read": false,
     "translations": [
       {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
         "author": "Allie V. Mangel",
         "text": "<p>There was a woman who loved Our Lady, the Holy Twice-Virgin Mary, Mother of God. This woman gave birth to a daughter.</p><p>A hyena took this daughter. They [on; the townspeople?] told the woman this while she was at mealtime. She wailed loudly, saying, “Is it true that a hyena took my daughter?” She did not believe what they had told her.</p><p>She went to the church and prayed near the icon of Our Lady, the Holy Twice-Virgin Mary, Mother of God, saying, “I will take your Son from your bosom.” </p><p>Then she took the icon (the baby Jesus), being in the bosom of Our Lady, and put it in her house. She placed it in a chest, sprayed it with rosewater perfume and covered it with a silk veil.</p><p>That night, the icon emitted in the house a light like that of lightning and, that day, Our Lady Mary brought the woman’s daughter whom the hyena had taken and she [Mary] said to the woman, “Take your daughter and give me the icon of my Son.”</p><p>The woman said to Our Lady Mary, “Take your Son, O Queen of Heaven and Earth. I will commemorate you with incense and a lamp for all the days of my life.” [Translation as of 05/21/22]</p>"
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },
@@ -3908,78 +3442,6 @@ const MIRACLES_OF_MARY = [
     ]
   },
   {
-    "id": "438",
-    "title": "A woman whose baby daughter was carried off by a hyena.",
-    "incipit": "ወሀለወት፡ አሐቲ፡ ብእሲት፡ ወታፈቅራ፡ ለእግዝእትነ፡…. ወወለደት፡ ይእቲ፡ ብእሲት፡ አሐተ፡ ወለተ፡ ወመሰጣ፡ ዝእብ፡ ለይእቲ፡ ወለት",
-    "manuscript_count": 30,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "240",
-    "title": "Book of Vision of Timothy of Alexandria: Part 10: The Holy Family arrives at Dabra Qwesqwam.",
-    "incipit": "ዘከመ፡ አስተርአየቶ፡ ወተናገረቶ፡ ለጢሞቴዎስ፡ ሊቀ፡ ጳጳሳት። ጸሎታ፡…. ወሶበ፡ በጻሕነ፡ ኀቤሁ፡ ናንሶሱ፡ ዝየ፡ ወዝየ፡ ዮጊ፡ ለእመ፡ ንረክብ፡ መካነ፡ ሠናየ፡ ከመ፡ ንንበር፡ ውስቴቱ",
-    "manuscript_count": 29,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "249",
-    "title": "Book of Felsata la-Maryam??: Dormition: Part 06: The Virgin Mary asks Christ that the disciples preach her Transitus and Assumption.",
-    "incipit": "ዘከመ፡ ተስእለቶ፡ እግዝእትነ፡ ማርያም፡ ለወልዳ፡ ከመ፡ ይስብኩ፡ ፍልሰታ፡ ወዕርገታ። ጸሎታ፡…. በሊ፡ ለአርድእት፡ ከመ፡ በዝንቱ፡ ይስብኩ፡ ቍርባነ፡ ዘዮም",
-    "manuscript_count": 29,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "284",
-    "title": "King Zara Yaqob (Zarʾa Yaʿeqob), the 14th c. Ethiopian monarch, and the renegade monk who had become a Jew being hunted down by the king's troops",
-    "incipit": "ተአምሪሃ፡ ለእግዝእትነ፡ ማርያም፡ ድንግል፡ በክልኤ፡ ወላዲተ፡ አምላክ፡ እግዚአብሔር፡ ፀባኦት፡ ወላዲተ፡ ኢየሱስ፡ ክርስቶስ፡ ንጉሠ፡ ስብሐት፡ ፀንሰቶ፡ በድንግልና፡ ሕሊና፡ ወበድንግልና፡ ሥጋ፡ ወወለደቶ፡ እንዘ፡ ድንግል፡ በሕሊናሃ፡ ወእንዘ፡ ድንግል፡ በሥጋሃ፡ ወአርአየ፡ ተአምራቲሃ፡ ወምንክራቲሃ፡ ወገብረ፡ ኃይለ፡ ዐቢየ፡ ፍቁር፡ ወልዳ፡ እግዚእነ፡ በእንቲአሃ፡ ላዕለ፡ አሐዱ፡ አይሁዳዊ፡ ቀዲሙሰ፡ ነበረ፡ ክርስቲያናዊ። ጸሎታ፡…. ወሀለወት፡ አሐቲ፡ ሀገር፡ ሀገረ፡ ክርስቲያን፡ ወነገሥታቲሃኒ፡ ክርስቲያን፡ ይነብሩ፡ ምስለ፡ ጳጳሳት፡ ወኤጲስ፡ ቆጶሳት፡ ቀሳውስት፡ ወዲያቆናት፡ ወመነኮሳት፡ ብዙኃን፡ ይነብሩ፡ በይእቲ፡ ሀገር። ወተንሥአ፡ አሐዱ፡ አይሁዳዊ፡ እምነ፡ ክርስቲያነ፡ ካህናት",
-    "manuscript_count": 29,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
     "id": "298",
     "title": "Book of Ledata la-Maryam??: Old: Part 06: Pregnancy: The Virgin Mary leaves the Temple and enters the home of Saint Joseph.",
     "incipit": "ወሶበ፡ ፈጸመ፡ አዝማነ፡ ንብረታ፡ ውስተ፡ ቤተ፡ መቅደስ፡ ወሖሩ፡ ኀቤሃ፡ ካህናት፡ ወሊቃነ፡ ካህናት፡ ወሌዋውያን፡ በኅብረቶሙ፡ ወይቤልዋ፡ ንዒ፡ ፃዒ",
@@ -3997,19 +3459,6 @@ const MIRACLES_OF_MARY = [
     ]
   },
   {
-    "id": "312",
-    "title": "A column falls and breaks the leg of the son of an official when Muslims destroy a church of the Virgin Mary in Homs, Syria",
-    "incipit": "ወሀለወት፡ አሐቲ፡ ቤተ፡ ክርስቲያን፡ ዘተሐንጸት፡ በስመ፡ እግዝእትነ፡…. በሀገረ፡ ሕምስ፡ እምአድያመ፡ ሻም፡ ወኮነ፡ ትገበር፡ በውስቴታ፡ ተአምራት፡ ወመንክራት። ወሶበ፡ ርእዩ፡ ተንበላት፡ ዘንተ፡ ቀንኡ፡ ላዕለ፡ ቤተ፡ ክርስቲያን፡ ወአምጽኡ፡ ምክንያተ፡ ወአንሀልዋ",
-    "manuscript_count": 28,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
     "id": "536",
     "title": "Book of Ledata la-Maryam??: OldG: Annunciation: Angel appeared, she was terrified (looks like reworking of Luke's gospel) (like IDs 295, 297, 435, 437, 536, 1296)",
     "incipit": "ወበአሐቲ፡ ዕለት፡ አመ፡ ፳ወ፱፡ ለወርኃ፡ መጋቢት፡ ዘውእቱ፡ እኁድ፡ ሰንበት፡ እንዘ፡ ትጼሊ፡ ጸሎተ፡ እግዝእትነ፡…. አስተርአያ፡ ገብርኤል፡ መልአክ፡ በዓቢይ፡ ግርማ፡ ወዜነዋ፡ ትፍሥሕተ። ወሶበ፡ ርእየቶ፡ ደንገፀት",
@@ -4017,45 +3466,8 @@ const MIRACLES_OF_MARY = [
     "most_read": true,
     "translations": [
       {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
         "author": "Mehari Worku",
         "text": "<p>One day, our Lady, the Holy Two-fold Virgin, Mary, the Mother of God (OLHTVMMG) said to [her new husband] Joseph, \"You know that my father, Zachariah the priest, is in the Temple [in Jerusalem]. [His wife] Elizabeth truly became a mother to me when my relatives died. You also know that it has been six months since Zachariah entered the Temple, saw a vision, and has become unable to speak. I want to go to [see] Elizabeth. I am sad for her and her husband, for he is unable to speak.”</p><p></p><p>Joseph replied, \"I too was thinking of going to [visit] him. Come, let us go together.\" So, they went to [see] Elizabeth. </p><p></p><p>When Elizabeth heard that Joseph and our Lady, the Holy Two-fold Virgin Mary, the Mother of God, had come, she rose up quickly and received them. She embraced our Lady, the Holy Two-fold Virgin Mary, the Mother of God, and greeted her. </p><p></p><p>Then, Elizabeth became filled with the holy spirit. She announced loudly, \"Blessed are you among women and blessed is the fruit of your womb! Who am I that you, the mother of my Lord, should come to me? When I heard your voice in greeting, the child leapt joyfully and happily in my womb. Blessed are you [Mary,] who believe what you have been told from the [angel of the] Lord.\" </p><p></p><p>When our Lady, the Holy Two-fold Virgin Mary, the Mother of God, heard this, she knew that the holy spirit had spoken through Elizabeth. She recalled the angel’s words. Then, she too became filled with the holy spirit and announced loudly, </p><p>\"My soul proclaims the greatness of the Lord; </p><p>“My spirit rejoices in God, my savior. </p><p>“He has looked with favor on his lowly servant. </p><p>“From this day forward, all generations will call me blessed. </p><p>“For he has done great things for me. </p><p>“Holy is His name! </p><p>“His mercy is on those who fear him in every generation. </p><p>“He has performed great [feats of] power with his arm. </p><p>“He has scattered the proud due to their conceit. </p><p>“He has cast down the mighty from their thrones. </p><p>“He has lifted up the lowly. </p><p>“He has filled the hungry with his blessings. </p><p>“He has sent away the rich naked. </p><p>“He has received Israel, his young servant. </p><p>“He has remembered the mercy he spoke of to our Fathers Abraham and his descendants for ever.\" </p><p></p><p>Zachariah’s neighbors heard [all] this. [While] Joseph marveled in silence [at what he had heard Mary say], the neighbors approached him. Joseph beckoned to them with his hands and they came closer. Then, Joseph blessed them. </p><p></p><p>Then, Joseph returned to his land. </p><p></p><p>Our Lady, the Holy Two-fold Virgin Mary, the Mother of God, stayed with Elizabeth for she loved her. They talked with one another about the angel’s words and Zachariah’s prophecy. They stayed together for three months until Elizabeth gave birth. </p><p></p><p>May her prayer and blessings and the mercy of her beloved son be with her servant Gadla</p><p>Giyorgis forever and ever. Amen. [Translation as of 05/21/22]</p>"
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "609",
-    "title": "Homily of John, Son of Thunder (Ra'eya Ta'amer): Part 01?: How the Virgin Mary appeared as a lady with twelve stars in her crown.",
-    "incipit": "ይቤ፡ ዮሐንስ፡ ወልደ፡ ነጕድጓድ፡ ርኢኩ፡ ወአስተርአየ፡ ተአምር፡ ዐቢይ፡ በውስተ፡ ሰማይ፡ ብእሲት፡ እንተ፡ ትለብስ፡ ፀሐየ፡ ወወርኃ፡ ታሕተ፡ እገሪሃ፡ ወውስተ፡ ርእሳ፡ አክሊል፡ ዘ፲፡ ወ፪፡ ከዋክብት። ዝውእቱ፡ ዮሐንስ፡ ዘርእዮ፡ ለእግዚእ፡ ኢየሱስ፡ ምስለ፡ ማርያም። ወይቤላ፡ ለእሙ፡ ነዋ፡ ወልድኪ። ወይቤሎ፡ ለረድኡ፡ በዲበ፡ ዕፀ፡ መስቀል፡ ነያ፡ እምከ",
-    "manuscript_count": 28,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },
@@ -4127,33 +3539,8 @@ const MIRACLES_OF_MARY = [
     "most_read": false,
     "translations": [
       {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
         "author": "Mehari Worku with Wendy Laura Belcher",
         "text": "<p>The miracle of Our Lady, Mary, the Holy Virgin, Mariham, the Mother of God, may her prayer and her intercession be with her servant Besttawros,  forever and ever, amen</p><p></p><p>A monk was a scribe [who frequently copied the book] of the miracles of Our Lady, Mariham, the Holy Virgin Mary. </p><p>One day, he left the book [he was copying] of Our Lady, Mariham, the Holy Virgin Mary’s miracles outside of the house. </p><p>A wicked dog came and took that book of Our Lady, Mariham, the Holy Virgin Mary’s miracles. The dog left the book in the woods. </p><p>When it happened that two children were in the woods to collect firewood, they came across that book of Our Lady, Mariham, the Holy Virgin Mary’s miracles. They picked it up and went on their way home. </p><p>While they were returning home with the book, another monk saw them and said, “Show me what you have in your hand.”  </p><p>When he saw the book, he was amazed and he took it from the children and gave it back to the scribe. </p><p>When the scribe saw the book, he rejoiced and was thunderstruck  at [this miracle of] Our Lady, Mariham, the Holy Virgin Mary. </p><p>He told everyone about her generosity. </p><p>The people who heard him glorified Our Lady, Mariham, the Holy Virgin Mary. </p><p>May her prayer and blessings be with her servant Besttawros forever and ever. Amen.     </p>"
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "469",
-    "title": "The prodigal son of a man who used, when he was alive, to feed two persons; the Virgin Mary promises him riches, but he finds only two grains of gold.",
-    "incipit": "ወሀሎ፡ ፩ብእሲ፡ በአሐቲ፡ ሀገር፡ እምአህጉረ፡ ክርስቲያን፡ ባዕል፡ ጥቀ፡ በወርቅ፡ ወበብሩር፡ ወበንዋያተ፡ ዝ፡ ዓለም፡ ዘሠናይ፡ ግዕዙ፡ ወኄር፡ በኵሉ፡ ግብሩ፡ ኮነ፡ ይሴስዮሙ፡ ዘልፈ፡ ለ፪ዕደው",
-    "manuscript_count": 24,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },
@@ -4171,19 +3558,6 @@ const MIRACLES_OF_MARY = [
     ]
   },
   {
-    "id": "277",
-    "title": "Vision of a certain saint about the fate of a priest who swore falsely.",
-    "incipit": "ዘአስተርአየቶ፡ ለአሐዱ፡ ብእሲ፡ ተአምሪሃ፡ ወመንክራቲሃ፡ ዘገብረት፡ ላዕለ፡ ካህን፡ መሐሊ፡ በሐሰት፡ አርአየቶ፡ እምቅዱሳን",
-    "manuscript_count": 23,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
     "id": "330",
     "title": "The punishment of an Ethiopian woman who swore falsely that she had not committed adultery with another woman's husband.",
     "incipit": "ንዑኬ፡ ኦደቂቀ፡ ቤተ፡ ክርስቲያን፡ ንንግርክሙ፡ መንክረ፡ ተአምሪሃ፡ ለእግዝእትነ፡…. ዘከመ፡ ገብረት፡ ተአምረ፡ በብሔረ፡ አግዓዚ፡ በመዋዕለ፡ መንግሥቱ፡ ለአሐዱ፡ ንጉሥ፡ ርቱዐ፡ ሃይማኖት፡ ወመፍቀሬ፡ ቤተ፡ ክርስቲያን፡ ቅድስት። ወሀለወት፡ አሐቲ፡ ቤተ፡ ክርስቲያን፡ እንተ፡ ተሐንጸት፡ በስማ፡ ለእግዝእትነ፡…. ወብዙኃን፡ ድውያን፡ ወሕሙማን፡ ይትፌወሱ፡ ሶበ፡ ይገይሱ፡ ወይበጽሑ፡ ኀበ፡ ይእቲ፡ ቤተ፡ ክርስቲያን",
@@ -4193,14 +3567,6 @@ const MIRACLES_OF_MARY = [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
         "text": "<p>When Our Lady Mary heard that Herod was killing children, she raised her eyes to heaven and prayed, “Lord, [be our] judge between us and Herod. We have done nothing bad to him but he persecutes us.” </p><p><p>Immediately, an angel appeared and said, “Be patient for a little while, my dear Lady. For the day on which God will avenge you against Herod is coming. Indeed, [that day is coming] not just for Herod but for all those who hate you and your son.” </p><p><p>After saying this, the angel disappeared from Mary’s view. </p><p><p>So, our Lady Mary stayed in the wilderness for three days. </p><p><p>Then, she prayed in Hebrew, “Kiermyal, Afdakoda, Yoda, Halmna, Yasoros, Bnyakaiel, Sorobosb, Rossab, Erdad, Lamyanos, eilmas, Ttierattienbyos! I’m asking you to listen to me, your servant. Save me from this suffering!” </p></p><p><p>Immediately, two angels named Mersobyos and Mesobyos came and stood before Mary, holding bread and drink. They gave them to Our Lady Mary, which she gave to the townspeople [who had gathered]. </p><p><p>The angels bowed to Our Lady Mary and returned to heaven. </p><p>Our Lady Mary and those with her ate that bread and drank that drink, staying in that place for three days. Then, Mary and Joseph moved on, reaching a mountain named Arkisan, where they stayed for three days. They did not eat or drink anything. </p></p><p><p>Then, Joseph observed to Our Lady Mary, “My dear Lady, look, there are houses nearby. Let’s go to them [and ask for help]. After all, those people are human like us.” </p><p>Our Lady Mary replied, “[No,] let’s stay [hidden] in this wilderness. If Herod sends spies, they will follow us, [find us easily in the town,] and we will lose our lives.”</p></p><p><p>Joseph asked, “But, how can Herod know that we left Egypt [and came here]?”</p></p><p><p>Our Lady Mary replied, “Alright. Let’s do what you say, my dear Father.” </p></p><p><p>So, they left for the city named Ttlmieda[, which means, “the field of quarrelling,”] at the sixth hour[, that is, noon]. When they reached it, they entered the [courtyard of the] house of a noblewoman who was the most important person in the entire city. </p></p><p><p>Our Lady Mary said [to the people of her house], “[Please,] give me some milk for my son. And, if you have any, bread as well.” Our Lady Mary then put down the child [Jesus] on the ground. </p></p><p>The noblewoman began to question Our Lady Mary, asking “Where is this travelling woman from?” </p></p><p><p>Lady Mary replied, “From Bethlehem of Judah.”</p></p><p><p>The noblewoman said, “Why are you wandering around [begging], woman? Did you do bad things? You should avoid such habits. Your face and figure are beautiful. Have you no strength? Or, is your heart wicked and lazy?”</p></p><p><p>When Our Lady Mary heard these questions, she replied, “Excuse me, have we met before today?” </p></p><p><p>The woman said, “[I know your type.] A person is known by their demeanor.”</p></p><p><p>Our Lady Mary replied, “What you’ve said about me is true. I have received all this suffering because of my sin.” </p></p><p><p>Our Lady Mary then began to beat her chest, raise her eyes, and weep, remembering the [kind] nature of her father and her mother. </p></p><p><p>[On hearing her piteous cries,] a stone would have shattered, a wall of light would have broken. But, the heart of [the noblewoman] T ‘eman did not turn [compassionate], rather she cackled like a wine drinker. </p></p><p><p>Joseph then said to T ‘eman, “It’s only right to give a guest something, if one has something to give. If one doesn’t have anything to give, it’s fine to send the guest away in peace [without ridiculing them]. Why are you speaking bitter words that pierce the heart like an arrow?”</p></p><p><p>T ‘eman replied, “I am within my rights to [insult you and] call you a ‘goat herder!’ How dare you try to teach me manners?” She glared angrily at him from head to toe. </p></p><p><p>When T ‘eman’s servant saw her mistress’ anger, she came out [of the house] stomping the earth heavily. She was from the tribe of Ham, and dark as a crow. She had a five-year-old son [but] she picked up the child [Jesus] with her right hand and threw him away. The child rolled on the ground like a rock. </p></p><p><p>Our Lady Mary, Joseph, and Salome leapt up, [raced over,] and seized Jesus up. They returned to that noblewoman, curious to see what was going to happen to her. Indeed, the earth opened its mouth and swallowed that noblewoman like [the biblical rebels] Dathan and Abiram. She went straight to Sheol, body and soul together[ ,while still alive]. Her servant became a rhinoceros, with half-black and half-white skin, while the servant’s son, T ‘eman’s husband, the whole household, became baboons. They fled together into the mountains, not one was left behind. The people of the city became terrified. </p></p><p><p>Our Lady Mary and her family entered the house of T ‘eman. They found a golden bed with a canopy over it, three containers of wine, three epah (66 Liters) of 7 years old mead, 7 cor [1540 kilograms] of Wheat in sealed [containers], 7 cor [1540 kilograms] of oil, and many more other numerous blessings. Our Lady Mary and Joseph prostrated themselves on the ground because they were terrified [of the divine justice that happened against their enemy and the blessing they were bestowed]. </p></p><p><p>Our Lady Mary said in Hebrew “Sorosoroyarosok, Yakarmiel, Pipiyaiel, Pprsbos, Gwurguasebay, Adielie’, Mtwafon. I praise you! I bless you! You have made the wild animals martyrs and the humans into wild animals. You humble the conceited and lift up the humble. There is nothing impossible to you, who have bestowed on me the house of T ‘eman. As she laughed at me, others laughed at her.” </p></p><p><p>Joseph became the steward of the banquet. He rises up and pours out from the wine and gives it to them [the Holy Family]. First, Our Lady Mary, Joseph, and Salome drank. Then, the three children of Joseph drank. </p></p><p><p>Our Lady Mary said to the child “Drink more of what they refused to give you a little bit! Come drink more!”</p></p><p><p>Joseph said to Our Lady Mary “O My Lady, I have never seen or heard anything like this! How wonderful is what the Lord has done on that woman and her entire family!” Our Lady Mary replied to Joseph “Yes, the Lord has done wonder that it might be a remembrance for the later years.” </p></p><p><p>They [the Holy Family] stayed there for 2 months and 5 days. May her prayer and her blessing be with her servant Gebre Maryam forever and ever. Amen.</p><p>"
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },
@@ -4214,10 +3580,6 @@ const MIRACLES_OF_MARY = [
       {
         "author": "Ellen Li",
         "text": "<p> There was a monk in a monastery among the monasteries of the country of Ethiopia, who loved Our Lady Mary with all his heart and all his mind.</p><p> While he was in the days of his childhood, he learned the psalms of David beside a spiritual father, tied with the children of the rich.</p><p> He finished the apprenticeship of the psalms of David, of the written and the apostles, of the Acts of the Apostles and of the writings of Paul.</p><p> After that, his master refused him (any more [davantage]), saying, “Give me my salary.”</p><p> The student gave his salary in proportion to that which was possible; his father, indeed, was poor in the goods of this world..</p><p> As for the children of the rich, they learned of all the books of the Old and the New (Testament) in proportion to that which they could absorb. Just as the riches of their parents were abundant, and abundant too were the words of their instruction.</p><p> When this monk saw that they prevailed over him in the familiarity with the Scriptures and in the execution of the chant of Yared , he cried and lamented.</p><p> He said, “If my father were rich in the goods of this world, I too would be versed in the word of the Scriptures like these children of the rich. What to do then, and what to say? Beside whom to cry and to beg? Who will console my distressed and saddened soul? By the lack of goods, I am prevented from acquiring instruction! Now, I will go pray and beg my Lady, the Holy Twice-Virgin Mary mother of God, because she liberates the unhappy, consoles the afflicted and lightens (the burden of) him upon whom It weighs.”</p><p> Having said that, the monk rose and went into the church of Our Lady, the Holy Twice-Virgin Mary mother of God. He stood facing the altar, uncovered [découvrit; discovered] the icon of Our Lady and prostrated himself numerous times, to the point where his sweat became like clots of blood while he was mangling his body.</p><p> He made this a habit day and night. He ceased to eat and to pronounce a word with anyone, besides the confession to his master.</p><p> He did not taste anything besides the Eucharist. As for water, he would take it with a sole hand, a half of a palm, in the vase that washed the hands of priests.</p><p> He began fasting and prayer with a harsh labor, to the point where the skin of his stomach adhered to the bones of his sides.</p><p> Because of this affair, when she saw the great vigils and the efforts of this monk, Our Lady went beside him openly with two archangels, bringing two goblets [coupes; cups] the color of gold, which (were) full of the beverage of intelligence and knowledge.</p><p> When the monk saw Our Lady, the Holy Twice-Virgin Mary, he trembled, was afraid and fell upon his face on the ground. Our Lady commanded then to the angels to lift up the monk.</p><p> She said to the monk, “Do not be afraid, my friend, and do not tremble, because I have come beside you when you have called me with a love that burns from the bottom of your heart. I have come beside you for mercy and not for anger. I have come beside you for blessing and not for curse. Indeed, I have come beside you for honor and not for shame. Now, my friend, ask of me all that you wish and that which your heart will think: I will make and accomplish for you all your wishes.”</p><p> When he heard openly these words of joy and enthusiasm from the mouth of Our Lady Mary, the monk prostrated himself and reveled.</p><p> He opened his mouth and told Our Lady all his wishes and his thoughts, how he would seek knowledge and how his master had refused to teach him the Scriptures because of the poverty of his father and his lack of goods.</p><p> The Blessed One responded to him and said to him, “Why, my friend, do you have this thought: to augment the glorifications and seek a great knowledge? Are not a righteous faith and good actions better?”</p><p> The monk responded and said to Our Lady, “If you are not pleased with me, O Blessed One, and you are here to visit your servant – me, sinner and astray -- , could you make for me the will of my heart, o you whose thoughts are tender! Water me with your full cup of that which does not run dry, because you are the one who waters those who believe in you. These are Yared the priest, George [Georges] the monk and others too who have found beside you the beverage of knowledge and the spirit of intelligence, so well that they saw the mystery of the sky, adorned with the purity of the angels while they were beings of dust.”</p><p> Our Lady, the Holy Twice-Virgin Mary, responded to the monk and said to him, “The cup which you have recalled that they had drunk from long ago, is the one which is in the hands of the archangels. While the portion of those there, which were drunk long ago, were to augment their knowledge and understanding of the Scriptures and exegesis, your part is not like theirs; but on the other hand, this (ascetic) struggle [combat] that you have undertaken, it is profitable to you since you began it with firmness (and it will stay) until you have finished it.</p><p> “It will make you a friend with my Son, his Father and the Holy Spirit. Of me too, you will be the friend and faithful if you cease to drink from this cup. Behold that I have spoken to you so that you know well all that is suitable and profitable to you.”</p><p> The monk responded again to Our Lady, the Holy Twice-Virgin Mary, and said to her, “My will and my wish is to drink from this cup that will give me the understanding of your praise, o my Lady, and to multiply your glorifications in this world.”</p><p> The Blessed One responded to the monk and said to him, “Why praises from your part? Do you not know that I, I am praised by the east of the sun to the west, and from the north to south by the mouth of angels and of men? Thereby am I praised and glorified at all times and all hours, day and night, upon the stretches of the earth and in the sky. As for you, I love for you this life of solitude, these trials and this retirement far from the people of the century, and the recitation of the psalms of my father David, the prayer of the gospel of my Son and the salutation of my angel. I authorize for you this (ascetic) struggle that you have commenced.” garbled</p><p> Having heard this word from the mouth of Our Lady Mary, the monk rejoiced and reveled; he said, “May it be as you have said to me.”</p><p> After those words, Our Lady blessed the monk, embraced him in her breast, kissed him upon his lips and, of her breasts, suckled him with an eloquent and blessed milk.</p><p> She said to him, “My Christian son, I will not draw away from you until I have removed you from this transitory world.”</p><p> The monk stayed to serve Our Lady in his life of solitude, through long days.</p><p> Then he died in honor and in glory.</p><p> Our Lady gathered his pure soul according to her promise and the grandeur of her generosity and placed it with her in the kingdom of the skies.</p><p> All that came to be by the intercession of Our Lady, the Holy Twice-Virgin Mary mother of God.[Translation as of 05/21/22]</p>"
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },
@@ -4231,10 +3593,6 @@ const MIRACLES_OF_MARY = [
       {
         "author": "Ellen Li",
         "text": "<p> This is a miracle, made by Our Lady Mary in the days of a king, her friend, and also a friend of her Son Jesus Christ.</p><p> There </p><p>, strictly speaking, a shelf, generwas in the palace of the king an altar which was inscribed [engraved; inscrit] in the name of Our Lady, the Holy Twice-Virgin Mary, that one had placed in the interior of a chest before consecrating it.</p><p> Next, one found it taken out of [sorti de] the interior of the chest, without the locking of the bolt of the chest being opened, placed upon a clothing [blanket; vetement] of silk.</p><p> Seeing that, the guardians of the treasures of the king trembled strongly; they went in haste and narrated to the king that which had come, concerning that altar.</p><p> The king said to them, “Bring and show me this altar of whose splendor you have told me.”</p><p> They brought it to him.</p><p> When the king saw the beauty of the altar, he was amazed and rejoiced. Immediately, at once, he sent it to the archbishop [métropolite] with numerous archpriests, priests and deacons, so that he would consecrate it.</p><p> The altar was consecrated by the hands of the glorious father, the archbishop [métropolite] of Ethiopia.</p><p> One brought it back in honor and glory, with numerous hymns.</p><p> One announced to the king the coming of the altar. Immediately he went out to welcome the altar among the plentiful ovations, the sound of horns, trumpets and zithers, the voice of lyres and harps, the rolling of drums.</p><p> Beautifully, he prepared for it an abode: he planted a somber tent of scarlet (?) and made it enter so that it would dwell there.</p><p> When it was the next day, that somber tent had become white like snow.</p><p> One told the king of this miracle of Our Lady, the Holy Twice-Virgin Mary mother of God.</p><p> The king gave, as gifts, many things that were necessary for the installation of the church. For the church, he also set up many servants who sounded trumpets. For the church, he also instituted priests and deacons who would minister, each in his time, night and day.</p><p> After the king, friend of the church, made and finished all this, they commenced, each according to his duty, the servants sounding trumpets and the priests singing hymns with fierceness and with pride, with pleasantries [banter/jokes; plaisanteries] and multiplying laughter as they would do habitually in the other churches.</p><p> And so, Our Lady Mary was irritated with them.</p><p> The throat of certain ones among them closed, certain ones suffered in the head, certain ones were ill in their entrails.</p><p> All suffered, each of his malady.</p><p> Our Lady appeared also to the king and said to him, “Do not make these arrogant and proud people approach me, because their singing and their glorification do not please me, according to that which my father David said: Only by the unctuousness of sinners, may my head be anointed .”</p><p> After hearing these words from the mouth of Our Lady, the Holy Twice-Virgin Mary, (the king) ordered that no one enter in the enclosure of that place but pure priests, at the moment of offering the Eucharistic sacrifice.</p><p> He placed the altar close to him and, at the moment where sadness and affliction touched him, he would pray close to it and obtain that which he had thought of and that which he had wished.</p><p> He named it for [l’appela du nom] Mary the Solitary One.</p><p> This altar is in the royal palace to this day, the kings multiplying for it, each in his epoch, grandeur and honor. To this day, no one enters nor approaches it who has the stain of a fault or the blemish of an evil thought.</p><p> As for those who approach it with irreverence and human turpitude, they fall into a great malady to the point of saying, “Woe to us, woe to us!”</p><p> They say, “This calamity has attained us by our irreference: we know well that we have been destroyed by the fear [crainte] (inherent to) the human person.”</p><p> Listen thus, you, the assembly of the holy Church.</p><p> Do not institute the habit of entering the church without purification or confession, because they are vigilant and pure, the angels who guard the church continuously.</p><p> They avenge the church of anyone who approaches it in the filth of sin, because her [son] celestial betrothed made her a promise by saying, “If there are sullied ones there who are not pure, may they be moved aside.”</p><p> This is not only in the case of the sexual stain that God commanded to be removed from the church, but the slanderous and the murderer (must) also go away.</p><p> May anyone who has placed prosecution and desire for vengeance in his heart not enter there, for that would be a great fault.</p><p> As for you who are here to hear of the miracle of Our Lady Mary, the mother of our Lord, men and women, old and young, each according to your names, may God place her [son] fear [crainte] into your body/bodies [corps].</p><p> May it be with you during the day; may it be among you during the night.</p><p> For his body and his blood, for Mary his mother, may he pardon you your faults and your sins for centuries upon centuries, amen.[Translation as of 05/21/22]</p>"
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },
@@ -4248,10 +3606,6 @@ const MIRACLES_OF_MARY = [
       {
         "author": "Allie V. Mangel",
         "text": "<p>Now listen to the prodigious and wondrous greatness of the miracle of Our Lady Mary, which was done in the days of a king who was a friend of her and a friend of her Son, Our Lord and Savior Jesus Christ.</p><p>In the greatness of his love for Our Lady, this king constructed for her a church – in the name of Mary blessed and pure, Mother of God – and adorned it with gold, silver, and fine, precious clothing.</p><p>He appointed also for her many priests and deacons who did the service there, night and day, with the recitation of the Psalms of David, with the chant of Yared, and with the Book of Hours of the blessed George.</p><p>Because of these great goods of the church that the king had given at the altar of Mary, no one entered the church who did not know the king and who was not known by the ministers of the church.</p><p>The priests of the church did not leave it, neither night nor day, guarding it in turns.</p><p>One day, while the priests were on guard all through the night, sleeping in the interior of the wall [enceinte] of the church, one among them had a nocturnal dream and the seed of his body spread upon his bed.</p><p>While the man who had dreamed was asleep among his companions, an angel of God took this man from the church, with neither himself nor his companions knowing; he made leave, without waking him from his sleep, this man who had dreamed. He made him (continue to) dream, having made him leave to the exterior of the wall of the church.</p><p>He took him to a distance of 24 cubits away from the wall of the church and the man stayed there until morning came, without being woken from his sleep.</p><p>When he woke, at the moment of morning, the man looked high and low and did not know what had happened to him and who had made him leave to this place.</p><p>As for those who had slept with him, they held among them slanderous words and said to each other, “Where has our companion gone for the whole night, without our knowing, having abandoned the guard of the king’s altar?”</p><p>Having risen from his bed, the man called his companions and said to them, “See where I stayed, I do not know who made me leave the interior of the wall and who took me from among you.”</p><p>His companions responded to him and said to him, “What happened to you because of the bad actions upon your bed? ”</p><p>He said to them, “I dreamed in my sleep; at the moment when I was dreaming, I was not conscious of it; but when I woke from my sleep there where he who separated me from you laid me down, at the moment, I found the sign of the dream in my flesh.”</p><p>When they heard the speech of the man, they took him and led him to the archpriests.</p><p>An archpriest questioned the man and the man told him all as it had happened.</p><p>Then the archpriest led him and made him stand before the king’s tribunal. He made a speech to the king’s advisers so that they might inform the king.</p><p>Having heard this affair, the king wondered and was astonished.</p><p>He gave thanks to Our Lady, the Holy Twice-Virgin Mary, for having done for him this miracle, during his days.</p><p>Immediately a herald came from beside the king and beside the Metropolite, saying, “If someone from among the priests, deacons, and monks, or from among the laypeople enters the wall of a holy church, in the whole of our towns where God gave us power, while he is polluted by a nocturnal dream, may he be anathematized by the word of our fathers the apostles.”</p><p>Previously, no one who experienced a nocturnal dream had kept himself from entering a church; this only happened one day, when there appeared the miracle of Our Lady Mary upon this man.</p><p>After this event, the king and the Metropolite went together into the church that had been constructed in the name of Our Lady, the Holy Twice-Virgin Mary, Mother of God, and offered the sacrifice.</p><p>They gave many gifts because of this miracle that had been done for them by Our Lady during their days and served her finely.</p><p>Listen therefore, you the assembly, [to] the Gospel, as well as [what is said by the voice of the sound-of-faith Paul, tongue of balm/comfort: “All that was written was written for your instruction.” </p><p>Now I say it to you, my fathers and my brothers, assembly of the Holy Church.</p><p>When this man, without knowing, polluted his body in a nocturnal dream, an angel of god removed him from the church until he was 24 cubits away.</p><p>As for he who enters with irreverence, how much more will the anger and punishment affect him.</p><p>Above all, the priests, deacons, and monks who are believers and close to the Lord of minds/spirits [des esprits].</p><p>Only there is no pure [pure] without sin.</p><p>What just man is born (without sin) from a woman outside of this pure Virgin, blessed and praised by the mouth of men and angels?</p><p>As for you, too, who assembled yourselves here to listen to the miracle of Our Lady Mary the Holy, may she free you from the nets of death for ever and ever, amen.[Translation as of 05/21/22]</p>"
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },
@@ -4263,18 +3617,6 @@ const MIRACLES_OF_MARY = [
     "most_read": true,
     "translations": [
       {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
         "author": "Jeremy Brown & Dawit Muluneh with Wendy Laura Belcher",
         "text": "<p>There was one man who went to the adulterous wife of a man having abandoned his wife and he married that second woman. And also [that second woman] left him and she committed adultery with another man. And then a terrible jealousy entered into his heart and he took fire and he got up and he went and burnt the house of that woman in his jealousy. And [those] two people [the woman and husband??] died in that fire. </p><p>And when the people of the town heard, they held a meeting and investigated while saying, “Who is the one who did this great crime and sin?” And all the people of the town truthfully denied it and said “far be it from us [to do this]” and “we did not do this.” And they said amongst themselves “come let us and go to the church to the Virgin Mary, two-fold, the ark of the holy spirit, Mariham, which is in Hebrew Mariham, let us swear all of us so that she can reveal with her miraculous might the one who did this evil.” And all of them entered and swore saying, “If we have done this crime, let Mary reveal her might and a miracle against us?” And also, that man who had done this, pledged a more amazing pledge that was greater than all of the rest. And to this man who swore in falsehood, his [first] wife became pregnant. And when the day of her child-bearing drew near, she gave birth for him two dogs and a child. And as for those dogs, that first wife hid [and buried] them in the muck of a field. And our Lady Mary appeared to yet another woman in a vision of the night, and she said to her that “because the wife of so-and-so [the arsonist] has hidden my sign, [go and] tell the people of the town and you will find in that place the sign, which is not false. [secondary hand for “which is not false”] And dig and bring out from within the muck those dogs.” Ahd she got up from her slumber and she told the people of the town and they went and dug and found the two dogs in the muck, just as our Lady Mary instructed. And they brought out those dogs and they carried them in a basket. And when that man heard this sign, fear and trembling entered into his heart and he came with his wife to the assembly of the people, saying “I am the one who begat those dogs because I vowed in falseness in the church of our Lady Mary, two fold, the ark of the holy spirit, Mary, which is in Hebrew Mariham.” And all the people marvelled because of this sign. And this report was heard in all of the regions until it was heard in the ear of the king and the king having heard, marvelled and was amazed by the sign of our Lady, the holy Virgin two-fold, Mary, in Hebrew Mariham. Immediately, he commanded that they bring that man to him. At that time, the messengers of the king seized him and they were bringing him and while they were bringing him on the road, the eyes of the messengers of the king went dark and one of them slept a little while. And our Lady Mary appeared to the one who slept and she said to him, “Leave this man! Having seized him, don’t take him to the king. If you do this, your eyes will be opened.” And that messenger of the king arose from his slumber and he told his companions how he saw our Lady Mary in his dream and how she commanded him to leave that man. And immediately they abandoned him, and he returned to his home. And after that man had returned, our Lady commanded him to slaughter three cows in the three gates of the church and he did just as our Lady Mary commanded him. She forgave him his sins. And then he died/rested and entered into the kingdom of heaven by the intercession of our Lady Mary the compassionate. May her prayer and her petition and her blessing be with us forever and ever, amen.[Translation as of 05/21/22]</p>"
       },
@@ -4285,10 +3627,6 @@ const MIRACLES_OF_MARY = [
       {
         "author": "Allie V. Mangel",
         "text": "<p>One day among days, on a Sunday night, thieves entered a church of Our Lady Mary, breaking the doors and taking all the sacred vases.</p><p>As they were leaving, the guardian of the church said to them, “May what you have taken not seem to you the goods of men or the goods of the governor, but these are the goods of Our Lady Mary. Do not commit this theft, for it will not result in anything good for you.”</p><p>When he had said this to them, they struck him with great blows, injured him, and left, boasting in the arrogance of their heart.</p><p>As they were on their way, suddenly, Our Lady Mary appeared to them, dressed in clothing the color of lightning, at which it was impossible to gaze and which delighted the eyes. She said to them, “Where are you taking my goods? Leave them and return them, for you will not receive anything good. If you refuse, I will make retribution and calamity come upon you.”</p><p>They refused and advanced a little.</p><p>Our Lady appeared to them openly again and spoke to them as before; they refused (again) .</p><p>She appeared to them a third time and spoke to them with irritation and great anger. They did not listen to her word and went on their way.</p><p>When they were tired on the way, they sat down to eat and drink. But the head of the thieves, when he wanted to eat, had a closed throat and could not swallow.</p><p>Then (his companions) brought him water, having drawn it with a goblet from the church, so that he might drink.</p><p>When he raised the goblet, his hand became hard as stone and he could not bring the goblet to his mouth. As for his neck, it was twisted and turned around toward his back.</p><p>As the thieves were in such a situation, Our Lady Mary went in haste to the house of the governor, having assumed the guise of a widow. She appeared to him in a vision that night and woke him.</p><p>The governor was afraid, trembled, and said to her, “Where do you come from? In this town, I have (never) seen someone that looks like you.”</p><p>Our Lady Mary said to him, “My town is Wada and I have come to you so that you might do for me what I desire.”</p><p>The governor responded and said to her, “What is it, then, that you desire?”</p><p>She said to him, “So it is that tomorrow, they will bring you my goods. Do not bring my goods into your house, but place them together with the goods of the church.</p><p>“Remember this.” [Garde-toi; idiomatic with flexible meanings]</p><p>Having said this, she disappeared from his sight.</p><p>The next day, the robbers arrived before the governor and gave him the goods of the church, just as Our Lady had said to him.</p><p>The governor, having forgotten what Our Lady Mary had said to him in the vision, welcomed the robbers with joy and gave them food, drink, and a sheep.</p><p>After this, Our Lady Mary appeared to the minister of the governor, who was loved and honored by him, and said to him, “Say to your master: ‘Why have you forgotten me, I who appeared to you in a vision concerning my goods? Now, if you do not act as I ordered you - do not welcome these robbers - I will enact my vengeance upon you.’”</p><p>Immediately, the minister of the governor rose and told his master how Our Lady had spoken to him.</p><p>Having heard, the governor was afraid and trembled. He understood the vision that Our Lady Mary had made him see, he immediately seized the robbers and imprisoned them.</p><p>These told the governor all that had happened.</p><p>After this, he sent a messenger to the church so that they might fetch the head [of the church].</p><p>When they had delivered to him the governor’s message, the head of the church rose and arrived before him.</p><p>The governor told him how Our Lady Mary had spoken to him, how she had said to him, “Place my goods with the goods of the church”, and how also he had forgotten.</p><p>Having heard this, the head of the church wondered and was astounded by the miracle of Our Lady, the Holy Twice-Virgin Mary, Mother of God.</p><p>So the governor sent to the people of Wada someone who would tell them how the goods of their church had been found.</p><p>Having heard this message, all the people of the town of Wada came, from eldest to youngest, Christians and Muslims, in joy and jubilation, wondering and admiring.</p><p>When they had arrived before him, the governor told them what he had seen from beginning to end.</p><p>Then the governor gave all the goods of their church to the people of Wada. They went in peace, praising God and praising Our Lady Mary, the doer of miracles and wonders.</p><p>As for the robbers, some among them became mutes, some became mad and perished, and the governor put out the eyes of the others.</p><p>All died in such a way.</p><p>END PRAYER: </p><p>May her prayer and benediction be with us all who are assembled here to hear the miracle of Our Lady.</p><p>May, as of these robbers, she enact vengeance upon those who attack us, for ever and ever, amen. [Translation as of 05/21/22]</p>"
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },
@@ -4299,10 +3637,6 @@ const MIRACLES_OF_MARY = [
     "manuscript_count": 23,
     "most_read": true,
     "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
       {
         "author": "Allie V. Mangel",
         "text": "<p>There was a church that had been constructed in the name of Our Lady Mary.</p><p>There was a priest who loved Our Lady Mary with all his heart and with all his strength.</p><p>He performed [célébrait] only the liturgy of Our Lady Mary.</p><p>One day, during the feast of the Dormition of Our Lady, the 21st of the month of Terr, he began to perform the liturgy of Our Lady Mary, as was his custom.</p><p>Many people, rich and poor, were assembled there to celebrate the feast.</p><p>With them was a rich man who boasted of his great wealth and was proud of the solidity of his power.</p><p>When he heard the liturgy of Our Lady Mary from the mouth of the priest, who was saying, “My heart overflows with beautiful words and I know the liturgy of Mary,” he said to the priest with a blasphemous word, “Overflows with blood!”</p><p>Having said this, he exited the church in the middle of the anaphora, on the day of the great feast, when misled in temptation by the enemy of good, the adversary of the human race. </p><p>After arriving at his house, this rich man with haughty eyes and a proud heart immediately vomited blood to the point where his soul departed (from his body) .</p><p>Before the people assembled in the church had left after having received the eucharist, they learned suddenly the surprising and terrifying news: he was dead, the rich man with the proud chest, he who had fled; he had perished far from the table of God for having vilified the liturgy of Our Lady, the Holy Twice-Virgin Mary, Mother of God.</p><p>Because of this, they were frightened and seized with fear.</p><p>And they trembled, those who had heard the rich man, when he exited the church at the moment of the eucharist, speaking a blasphemous word against the priest of God.</p><p>Here she had rendered public and manifest, the word of the Holy Gospel which says, “He who speaks against the Holy Spirit shall not be forgiven, neither in this world nor in the world to come.” </p><p>The assembled people who had seen the death of the rich man wondered at this affair.</p><p>All the parents and brothers of the rich man shed bitter tears.</p><p>Above all, they cried because he had died far from the love of Our Lady Mary.</p><p>My brothers, beloved by God, who have heard the greatness of this miracle of Our Lady Mary, keep yourselves [gardez-vous] scrupulously and in a steady mutual love.</p><p>When you hear the liturgy, the praises or the hymns of Our Lady Mary, may it not seem to you unimportant to hear her liturgy.</p><p>As for the death of the rich man that has been set in writing, it has been written for our edification.</p><p>And so that in everything may be known the greatness of the miracle of Our Lady Mary.[Translation as of 05/21/22]</p>"
@@ -4319,10 +3653,6 @@ const MIRACLES_OF_MARY = [
       {
         "author": "Allie V. Mangel",
         "text": "<p>Power of the miracle that Our Lady Mary made upon the blessed and elect Theocleia, the wife of the martyr Juste, the mother of Aboli the martyr.</p><p>While Theocleia was standing in an oratory, because Diocletian the impious had apostatized, to know if all that had occurred took place by God or took place by Satan’s design; because of this affair (therefore), Our Lady Mary appeared to her.</p><p>There was with her, at the same time, two queens who were attired in clothes of light.</p><p>These were Elizabeth, the mother of John the Baptist, and Anne, the mother of Our Lady Mary. They were in the oratory where Theocleia was. When she [Theocleia] saw the queens, she threw herself to their feet in fear, trembling and in a great fright.</p><p>She said to them, afraid and trembling, “O my ladies, when I saw the light of your face, my heart grew afraid because I did not know you.</p><p>“And so was I also stunned and astonished that you would journey and visit me, O my ladies.”</p><p>Our Lady said to Theocleia, “Know and understand well that I am Mary, the mother of Jesus Christ. Here is my mother Anne and this is Elizabeth, the mother of John the Baptist.”</p><p>Hearing this, Theoclei was afraid, trembled, and said to Our Lady, “Who am I, I the sinner and stranger, that you might come beside me, queen of heaven and earth?”</p><p>Our Lady Mary said to the blessed Theocleia, “My coming takes place in this way by the good pleasure of my Son, of his Father, and of the Holy Spirit. I was sent beside you to prepare you and invite you to the wedding in the heavens. Indeed, now my Son descended with his angels beside your husband Juste to announce to him the marriage in the heavens.</p><p>“As for the apostasy of Diocletian, it was not surprising for my Son. Indeed, my Son had decided upon the loss of this man, like the Pharaoh, king of Egypt, and like Herod, king of Galilee, when he recalled his many honored martyrs, whose names he wrote in the heavens, who were killed in the days of the reign of Diocletian the impious.</p><p>“As for me, it is because of this that I came, to tell you this and to announce to you that you, Theocleia, your son Aboli, and your beloved Juste will be martyrs by the hands of Diocletian.</p><p>“Do not have fear of death when life in heaven is yours.</p><p>“Now rise, Theocleia, and mind to attire yourself in the crown of glory that never ages nor withers in the kingdom of heaven.”</p><p>When Theocleia had heard this announcement from the mouth of Our Lady Mary, she rejoiced greatly [fort] and was impatient to be a martyr.</p><p>She said to Our Lady Mary in a great joy, “May it happen to me, my Lady, as you said to me.</p><p>“Only, O my Lady, may your aid not separate itself from me, nor from my son Aboli, nor from your servant Juste.</p><p>“Be with us until we drink and empty the goblet to which we were called, so that we might not be seduced nor made to stumble by the serpent who seduced our mother Eve and made Adam our father leave the Garden of delights.</p><p>“So that this serpent might not seduce us, may your aid shepherd us until we have fulfilled our fight and our martyrdom to which we were called, I your servant Theocleia and your servants Juste and Aboli.</p><p>“O my queen, it is suitable that I offer you glory and thanksgiving, honor and adoration, for you journeyed toward me even though you are the queen of heaven and earth.</p><p>“Praise, greatness and benediction by my mouth, to me their servant, suit those who journeyed with you to visit [rendre visite] me.</p><p>“Here are your mother Anne, the queen, and your sister Elizabeth, the blessed.”</p><p>After she had pronounced all these praises, the blessed Theocleia was impatient to be a martyr.</p><p>So Our Lady Mary rose and blessed the blessed Theocleia.</p><p>She said to her, “Be firm and strong for this to which you have been called, and I will not separate myself from you until you have completed your fight.”</p><p>After this, she [Mary] blessed her and ascended to the sky in a great glory with Anne and Elizabeth, her beloved [plural].[Translation as of 05/21/22]</p>"
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },
@@ -4357,23 +3687,6 @@ const MIRACLES_OF_MARY = [
       {
         "author": "Jeremy Brown with Wendy Laura Belcher",
         "text": "<p>There was a priest in a certain city whose wife and children wasted away to death.</p><p></p><p>He went to the Church of Our Lady Mary, and he stood before her and said, “Have mercy on me, my dear Lady, the compassionate, the Mother of Mercy! I will become your servant, and I will burn incense in your sanctuary.”</p><p></p><p>He lived there, serving our Lady Mary, but then he became troubled and left for another country. There, he [fully] lost his mind and stripped off all his clothing.</p><p></p><p>After, he returned [naked] to his city, and said to the people, “Look at how my Lady Mary clothed me [that is, treated me]! ”</p><p></p><p>All the people who saw him were bewildered.</p><p></p><p>But then, he returned to [the church of] Our Lady Mary. There, he wept bitterly, and he was healed through the intercession of the compassionate Intercessor, the Mother of Mercy, Our Lady Mary, the Holy Virgin.</p><p></p><p>May your prayer and your petition be with us, amen.</p>"
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "361",
-    "title": "The pious monk who drowned while crossing a river on his way to a feast that was being given by a rich man in honor of the Assumption.",
-    "incipit": "ወሀሎ፡ አሐዱ፡ መነኮስ፡ ዘያፈቅሮ፡ ለአግዚአብሔር፡ ልዑል፡ ወይትለአካ፡ ለእግዝእትነ፡…. በኵሉ፡ ልቡ፡ ወበኵሉ፡ ሕሊናሁ፡ ወያነብብ፡ ወትረ፡ ውዳሴያቲሃ፡ ወሰላማቲሃ፡ ዘእንበለ፡ አፅርዖ። ወእንዘ፡ ሀለወ፡ በዘከመዝ፡ ግብር፡ ውእቱ፡ መነኮስ፡ ጸውዖ፡ አሐዱ፡ ባዕል፡ ለገቢረ፡ በዓለ፡ ፍልሰታ፡ ለእግዝእትነ",
-    "manuscript_count": 22,
-    "most_read": true,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },
@@ -4391,19 +3704,6 @@ const MIRACLES_OF_MARY = [
       {
         "author": "Wallis Budge",
         "text": "<p>There was a certain young man who had loved prayer from his childhood, and he said to his mother, “Come, let’s go into the church and make a little prayer.”</p> <br> <p>They both went into the church. Inside, they found an image of Our Lady Mary, and it was weeping for the sins of the world.</p> <br> <p>The image said to the youth, “Tell no man what you have seen.”</p> <br> <p>Through the prayer of Our Lady Mary, that youth became a eunuch [i.e., a monk] for the [sake of the] kingdom of heaven. </p> <br> <p>Note: This English translation was composed by Wallis Budge in the early 1900s but updated by the PEMM team for modern readers. We have replaced old-fashioned terms (e.g., thee, thou), stripped old-fashioned word endings (e.g., striketh), and corrected offensive language (e.g., lame, barren). However, Budge made some of these translations from a peculiar manuscript, which often had missing words and sentences, so the translations don't always do justice to the story in its original, earliest form. We hope to retranslate the story from better manuscripts in future. His translations are from what he calls MS A, which is PEMM MS B-Oslo (SCOL) 248; MS B, which is PEMM MS B-Dublin (CBL) 914; and Brit. Mus. Orient. No. 652, which is PEMM MS BOr (BL) 652.</p>"
-      }
-    ]
-  },
-  {
-    "id": "473",
-    "title": "Elias from Elkesus, who was falsely accused and was suspended by the abbot.",
-    "incipit": "ወሀሎ፡ አሐዱ፡ ብእሲ፡ በሀገረ፡ እልክሱስ፡ ዘስሙ፡ ኤልያስ፡ ዘያፈቅራ፡ ለእግዝእትነ፡…. ለለ፡ ተጸውዓ፡ ስመ፡ በዓላ፡ ይለብስ፡ አልባሰ፡ ተክህኖ፡ ወይቄድስ፡ ቅዳሴሃ፡ ለእመ፡ ብርሃን። ወሐመይዎ፡ ካህናተ፡ ቤተ፡ ክርስቲያን",
-    "manuscript_count": 22,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },
@@ -4434,10 +3734,6 @@ const MIRACLES_OF_MARY = [
       {
         "author": "Ellen Li",
         "text": "<p>Now listen, children of the Church, to that which was done by Our Lady, the Holy Twice-Virgin Mary Mother of God, and that God opened the door of your heart so that you could listen to the miracle of Our Lady.</p><p>There was a man who was called Tiras. He went with his master, friend of God the Almighty and friend of his mother the Virgin.</p><p>This Tiras transgressed the Sabbaths and transgressed the festivals. </p><p>Next, while he was with his master in the vestibule of the king in the morning, suddenly he became mute and deaf and could not speak.</p><p>Only, he would show people with his hands that which he needed: bread, water, and other things.</p><p>When his friends and his companions saw him, they let out cries, lamentations, and moans to the point of assembling, those who were close by and those who were far away.</p><p>Having seen him while in distress and sorrow, they returned to their homes.</p><p>After that, he stayed for long days in groaning and in suffering.</p><p>As for this master of his, just and believing in God, the day of the festival of Our Lady, the Holy Twice-Virgin Mary Mother of God, having risen in the middle of the night, he prayed by saying, “O redemptress of all the universe and savior of the children of Adam, sister of angels and prophecy of prophets, sermon of apostles and mother of martyrs, o queen of the skies above, grace of the just ascetics and justifier of sinners, consoler of the afflicted and healer of the suffering, have you no pity in the hour of your festival for this mute with deaf ears?”</p><p>Immediately, the sick man [ce malade] was cured by the intercession of Our Lady, the Holy Twice-Virgin Mary.</p><p>He spoke by saying, “It is through the scorn of this world that the words of justice and peace come out.”</p><p>When those who knew him saw him, hearing that, they turned their affliction into joy.</p><p>As for his master, he organized a festival and made celebrations and a great banquet, admiring the miracles of Our Lady, the Holy Twice-Virgin Mary Mother of God. [Translation as of 05/21/22]</p>"
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },
@@ -4451,10 +3747,6 @@ const MIRACLES_OF_MARY = [
       {
         "author": "Ellen Li",
         "text": "<p>There was, in a monastery, three chosen priests, good and versed in the word of the books of the Old and the New (Testament).</p><p>They loved to don precious clothing, pectoral and pantaloons. They placed a silk turban on their hood. They also loved spiced food and delicious drinks. And the beautiful beds and the soft mattresses which softened adolescents [qui amollissent les adolescents]. But they had been guarded in the nave of their body [corps] and had in no way been submerged by the power of winds and waves of the desire of the flesh.</p><p>All those who saw them would mock them because of the beauty of their clothes, and they would insult them because of their youth without knowing the purity of their body.</p><p>Besides, more than the love of their fathers and mothers, more than the love of their soul, they felt love for Our Lady, the Holy Twice-Virgin Mary.</p><p>When they mentioned her name, they leaped, reveled and stomped their feet [frappaient des pieds] until the hymn of celebration of her name was concluded, without resting and without ceasing for a single instant. The sweat of their face and of all their members was as if they had a fountain of water on their head. </p><p>After the three monks were continuing [furent restés] for numerous days to don and put on precious clothing, a brother amongst the spiritual children of the monastery came beside them, wanting to go in another monastery to celebrate a festival. He asked one of these three monks to give him his ornate clothing.</p><p>This monk here gave it to him and the brother went where he wanted, to celebrate the festival. While the brother was coming back from there where he had gone on his voyage, the three monks sitting together in the courtyard of the church saw him clothed in the precious clothing which he had borrowed.</p><p>When he who had lent it saw him, he said to his companions, “See this brother, my friends, is it that, like him, I am odious and held in contempt in the eyes of all the people, the same as he is today, for me, held in contempt and odious when I see him?”</p><p>His companions responded and said to him, “To us too, when we see him, this clothing appears to us as dirtiness and garbage.”</p><p>From that day, these blessed men no longer put on their finery of clothing. </p><p>See, my brothers, how the Holy Spirit united these three men as if (they spoke) from a single mouth, as says Our Lord in the Gospel of the kingdom, “There where two or three are gathered in my name, I am amidst them .”</p><p>He says still, “By the mouth of two or three witnesses the whole affair is established .”</p><p>These holy men each took then their clothes, tidied them each in three furnishings [meubles] at the altar and exited, having kissed and greeted the numerous altars which were there.</p><p>They went again to the tomb of their holy fathers, who died in upright faith, by saying, “If the good pleasure of God brings us to the city of Jerusalem, may there be our death and our tomb.”</p><p>They left in haste to the countryside like the man of war who leaves to assail the enemy of his master. These blessed men left to the assault, having clothed themselves with cow skins, by saying, “This is the clothing of our father Adam, our father of all.”</p><p>They abandoned all the hymns that they knew, save the psalms of David and save the salutations of Our Lady, the Holy Twice-Virgin Mary Mother of God. They were akin to senseless people while they were wise by the books of the Law and the Prophets and also by the books of the Gospel and the apostles, contemplating the warning of saint Paul, tongue of balm, according to that which he says in saying, God chose the senseless of this world to bring shame upon the wise .</p><p>While they were in such a state, they arrived in a monastery when the time of winter approached – on the road which they wished to follow. They stayed there, awake day and night, in fast and in prayer, devoting themselves also to the needs of the holy men, according to the commandment of the community.</p><p>One amongst them was working at the millstone, the second chopping wood and the third, collecting water. All three resided in this way.</p><p>When the days of winter were past, they left from there and arrived at a church which had been constructed in the name of Our Lady Mary, which was a place of gathering (?) of all travelers.</p><p>He who went away from there and he who stayed were known.</p><p>The holy men, when they arrived in this place, heard a voice saying, “Return to your monastery, because the supplication of your abbot and your brothers reached the ear of the God of armies. Your glory in the skies will not be inferior to the grandeur of the glory of pilgrims.”</p><p>Because of these words, they returned to their city [ville], saying, “May the will of God come to be.”</p><p>When they were close to arriving in their city, having a stage [étape] of a single day, they arrived in a large wadi close to their city. While they had passed a little beyond the course of water of this wadi following the road of their city, a terrible serpent came out from the midst of the stones and bit one among them.</p><p>The venom of the serpent spread in him, into his members; seeing that, his companions were frightened and shed abundant and bitter tears.</p><p>They said to him, “Let us make for you a remedy, our brother and friend, before your soul may depart.”</p><p>When the brother heard this word of remedy by the voice of his brothers, he admonished them. </p><p>He said to them, “Like a dog, do we return to our vomit and again, like a sow, do we go return to a mountain of mud after we are washed ?”</p><p>He said to them again, “My brothers, the useful remedy and salutary medicine, ask for them for me to God the Almighty and his mother, the Twice-Virgin Maru Mother of God.”</p><p>After that, they lifted the brother from there where he had fallen and transported him, having laid him down in the manner of a cadaver. They brought him to a church close to their road and made him enter the courtyard.</p><p>Having sat down to his right and to his left, they began to cry. When the brother heard their tears, he took the word and said to them, “What could your tears accomplish here for me? Leave me instead here and enter, you, into the church, because I hear the consecration of the Eucharist. Pray for me before the body and blood of Our Lord and Savior Jesus Christ and before the icon of Our Lady, the Holy Twice-Virgin Mary.”</p><p>After the brothers went into the church to pray for him during Mass, that brother, while he had been tormented by the bite of the venom of the serpent, began to be truly sick, lying down and in a doze. He began and set himself to recite the salutations of Our Lady, the Holy Twice-Virgin Mary. </p><p>He prayed and said, “Greetings, greetings to all your portraits, mother of God, my mother, my Lady Mary!”</p><p>He arrived there where it is said, “Among the children of men, there is no one who will be like you, Mary virgin of mind and virgin of body; blessed of your hand the sheep of the Gospel your people.”</p><p>Once he finished this prayer, Our Lady Mary came beside him and said to him, “My friend Untel, behold that I have come beside you when you called me of a love burning from the bottom of your heart. I arrive thus quickly, in haste, towards those quo call me with a faith coming from the heart of their thoughts.”</p><p>Having said that, with her fingers she touched the brother there where he had been bitten by the hooks of the serpent: at once, he was cured of all his ills.</p><p>Our Lady said to him, “Rise quickly and go beside your brothers in the church, because they are crying on their feet before my icon. From now on, do not have fear in this world, nor in the world to come, because you will be with me in the kingdom of the skies, with these brothers of yours.”</p><p>He rose then and prostrated himself before Our Lady. She [celle-ci] ascended to the skies in a grand glory.</p><p>Having arrived beside his brothers, he told them everything, to the point where Our Lady Mary had spoken to him about himself and concerning his brothers.</p><p>Having heard that, these holy men celebrated God, the celebrated and glorious, and lauded Our Lady, the Holy Twice-Virgin Mary.</p><p>They added beautiful acts to the preceding ones and returned to their monastery. The sound of their virtue was heard in many countries. Their death of all three was like the death of martyrs: the same day.</p><p>In the same way that they had been united in this world, likewise they were so in the kingdom of the skies by the intercession of Our Lady Mary, receptacle of requests and treasure of all good men [tous les biens]. [Translation as of 05/21/22]</p>"
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },
@@ -4472,23 +3764,6 @@ const MIRACLES_OF_MARY = [
     ]
   },
   {
-    "id": "351",
-    "title": "Saint Giyorgis of Sagla, the Ethiopian author, and the rich man who left the church because the priest was saying the Anaphora (Gwasca) written by Abba Giyorgis of Sagla",
-    "incipit": "ኀይል፡ ወተአምር፡ ዘገብረት፡ እግዝእትነ፡ ማርያም። ወሀለወ፡ ህየ፡ አሐዱ፡ ቀሲስ፡ ፈራሄ፡ እግዚአብሔር፡ ዘያፈቅራ፡ ለእግዝእትነ፡ ማርያም፡ በኵሉ፡ ልቡ፡ ወበኵሉ፡ ኃይሉ፡ ወኢይቄድስ፡ ዘእንበለ፡ ቅዳሴሃ፡ ለእግዝእትነ፡ ማርያም",
-    "manuscript_count": 21,
-    "most_read": true,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
     "id": "362",
     "title": "A blind teacher whom his pupils wanted to push over a cliff while they were on their way to a feast being given in honor of the Assumption.",
     "incipit": "ስምዑኬ፡ እንተ፡ ዘገብረት፡ እግዝእትነ፡ ማርያም፡ መንክረ፡ ወመድምመ፡ ወዕፁበ፡ ኀይለ፡ ተአምር፡ በላዕለ፡ አሐዱ፡ ብእሲ፡ ፍቁረ፡ ዚአሃ። ወሀሎ፡ አሐዱ፡ ባዕል፡ ዘይገብር፡ በዓለ፡ ፍልሰታ፡ ለእግዝእትነ፡…. በአምሳለ፡ ትንሣእሁ፡ ለወልዳ፡ በአፅግቦ፡ ርኁባን፡ ወበአርውዮ፡ ጽሙዓን፡ ወበአልብሶ፡ ዕሩያን",
@@ -4498,10 +3773,6 @@ const MIRACLES_OF_MARY = [
       {
         "author": "Allie V. Mangel",
         "text": "<p>There was a church on the bank of the Takkaze, in the country of Shire, called Dabra Maryam.</p><p>On the 21st of the month of terr, a lot of people assembled to celebrate the Feast of the Dormition of Our Lady Mary and also for the commemoration of the doctors Abba Thomas and Abba Victor.</p><p>In this monastery lived a priest who feared God and loved Our Lady Mary with all his heart.</p><p>He read Scripture assiduously and was equally blessed/fortunate in his manner of acting.</p><p>It was, this day, his turn to celebrate the office, as the priests each did on their turn.</p><p>The name of this priest was Askanafer.</p><p>Askanafer himself said, “While I was worried in the church on this day - this great feast - because of the proceedings of the eucharist and because of the smallness of my knowledge about the reading of Scripture and about the words of the mass, I said in my heart : Today I should not celebrate the mass, during this great feast, when there are many priests here versed in Scripture and of sharp/keen speech; in fact, they will mock and laugh at me, they who will hear the remarks of my mouth and the words of my praise.</p><p>“While I thought of this, suddenly, my Lady Mary came to me and said, ‘Why do you worry, my friend, for the proceedings of the eucharistic sacrifice today?</p><p>“‘As for those whom you say are versed in Scripture and of sharp/keen speech, I do not take pleasure in them.</p><p>“‘But as for you, my friend, my Son and I take pleasure in you because of your humility and your simplicity and the purity of your thought.’</p><p>“Having said this, Our Lady, the Holy Twice-Virgin Mary, Mother of God, blessed me.”</p><p>After the eucharistic sacrifice was finished, Askanafer began to say the benediction to the interior of the saint des saints with the priests and the deacons.</p><p>Then he went outside to bless the assembled people.</p><p>Our Lady made a wonder and miracle by his hand.</p><p>Many are the illnesses that were cured by the benediction of his hands.</p><p>Our Lady also gave him the promise that all those with whom he had communed with his hands would become his own people in the kingdom of heaven.</p><p>All this took place because of the great love of Our Lady, the Holy Twice-Virgin Mary, Mother of God.[Translation as of 05/21/22]</p>"
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },
@@ -4515,31 +3786,6 @@ const MIRACLES_OF_MARY = [
       {
         "author": "Allie V. Mangel",
         "text": "<p>(Miracle) done by Our Lady, the Holy Twice-Virgin Mary, Mother of God, to Dabra Quesquam in the times of the sultan of Egypt Qatbay. </p><p>One day among days, a governor who was under the authority of the king left to roam the region of Upper Egypt in order to gather the taxes of the king and to inquire about lands upon which they would give royalties to the king and about those upon which they would give nothing.</p><p>While the governor circulated within the region of Quesquam, there was a land of Dabra Quesquam that the kings had created many days ago.</p><p>The monks of Dabra Quesquam sowed crops there and fed themselves.</p><p>Muslims came beside the governor and said to him, “There is a land from/of which the monks eat. It is not suitable that the Christians eat of the king’s land for free.” They accused the monks and toughened the heart of the governor.</p><p>After this, the governor called the superior and all the monks. He said to them, “Why do you eat of this land? Who gave it to you and how long have you eaten here?”</p><p>They said to him, “We do not know the days during which our fathers ate of this land, for they are many.”</p><p>The governor had the superior’s hands and feet tied and said to him, “Leave this land and bring much money, for you yourself said, ‘I do not know the number of days that we have eaten of this land.’”</p><p>The superior said to him, “I do not have money to give you, for I am a poor monk.”</p><p>When the governor heard this, he felt a violent rage and ordered that he [superior] be whipped, all the while saying, “Bring the money.”</p><p>When they had tormented him greatly, the superior sent [someone] to search for the patens and chalices, the cross and the silver censer of the church. He gave them to the governor and said to him, “This is what I acquired from the first day until today; I have nothing other than this.”</p><p>The governor said to him, “Bring gold and money. Are you playing with me? I will make you suffer great torture, greater than before. Who will save you from my hand?”</p><p>Having said this, he took the vases of the church. The same night, a stomachache came upon him and he was close to death.</p><p>Then Our Lady, the Holy Twice-Virgin Mary, Mother of God, appeared to him and said, “Who gave you power over the vases of my church - and you beat my servant?</p><p>“You took the land of the monks who serve my church. It is I who made this blow fall on you so that you would be punished. </p><p>“Now quickly give back the vases of the church, leave the land of the monks who serve me, and release my servant, the head of the monks.</p><p>“If you do not do what I order you, I will kill you with an evil death.”</p><p>When the governor woke from his sleep, he sent [someone] in haste to search for the superior. He [governor] freed him, lowered himself before him, and said to him, “Pardon me for what I did against you and take back all the vases of your church.”</p><p>Then he called all the governors of the region and said to them, “This illness only affected me because I harmed the vases of the church in the monastery and also the land of it.”</p><p>He told them all that Our Lady, the Holy Twice-Virgin Mary, Mother of God, had said to him in the vision.</p><p>Then he said to them, “Leave this land and do not harm it.” He made all the governors swear and advised them in the name of the king to not do violence against the monks.</p><p>He said, “May whoever harms this land be an enemy of the king.”</p><p>As for the superior of the monastery, the governor gave him beautiful clothing and cows and bulls for the needs of the monastery.</p><p>The superior went, rejoicing and exalting. He praised God and ga ve thanks to Our Lady, the Holy Twice-Virgin Mary, Mother of God, for having done for him all these good deeds.[Translation as of 05/21/22]</p>"
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "331",
-    "title": "A monk who was expelled from school when he could not pay his teacher.",
-    "incipit": "ወሀሎ፡ አሐዱ፡ መነኮስ፡ ውስተ፡ አሐቲ፡ ደብር፡ እምአድባራተ፡ ምድረ፡ አግዓዚ፡ ዘያፈቅራ፡ ለእግዝእትነ፡…. በኵሉ፡ ልቡ፡ ወበኵሉ፡ ሕሊናሁ፡ ወእንዘ፡ ሀለወ፡ በመዋዕለ፡ ንእሱ፡ ተምህረ፡ መዝሙረ፡ ዳዊት፡ ኀበ፡ አሐዱ፡ ብእሲ፡ መንፈሳዊ",
-    "manuscript_count": 20,
-    "most_read": true,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },
@@ -4555,16 +3801,8 @@ const MIRACLES_OF_MARY = [
         "text": "<p>There was a certain monk, an abbot, who loved God and Our Lady Mary exceedingly.</p> <br> <p>All the holy men laughed at him and mocked him in the matter of intercourse with women.</p> <br> <p>Now he was a chaste man who had never touched the impure thing.</p> <br> <p>One day all [the holy men] gathered and, talking as Satan made them, they reviled the abbot. They said to him, “O abbot, we will ask you one question, which you must answer.”</p> <br> <p>He said, “If you ask the question, then I will answer you.”</p> <br> <p>They said, “Father, have you ever sinned?”</p> <br> <p>The abbot said, “Who has moved you? Perhaps Satan is speaking through your mouths. Be patient; don’t depart from the Law.”</p> <br> <p>They said, “We have not seen you, but it has been told to us that you have had intercourse with a woman.”</p> <br> <p>The abbot rose and went into the sacrarium weeping bitterly. He prayed to God and to Our Lady Mary, saying, “O you who are full of grace, remove from me disgrace and the corruption of this world. Save me from the mouths of the holy men.”</p> <br> <p>As he was praying, Our Lady Mary came to him at the ninth hour in the sacrarium. She said to the men gathered there, “Holy men, why do you sin? Why has the love of the Enemy entered your hearts, and why do you teach abuse? You shall be a laughingstock forever.”</p> <br> <p>Having said this, she went into the sacrarium, took the father up with her, and disappeared from their sight.</p> <br> <p>She carried the abbot up to heaven, and he inherited the kingdom of heaven through her intercession.</p> <br> <p>Afterward, she sent a punishment of wrath upon the monks, and they came to a useless end.</p> <br> <p>Note: This English translation was composed by Wallis Budge in the early 1900s but updated by the PEMM team for modern readers. We have replaced old-fashioned terms (e.g., thee, thou), stripped old-fashioned word endings (e.g., striketh), and corrected offensive language (e.g., lame, barren). However, Budge made some of these translations from a peculiar manuscript, which often had missing words and sentences, so the translations don't always do justice to the story in its original, earliest form. We hope to retranslate the story from better manuscripts in future. His translations are from what he calls MS A, which is PEMM MS B-Oslo (SCOL) 248; MS B, which is PEMM MS B-Dublin (CBL) 914; and Brit. Mus. Orient. No. 652, which is PEMM MS BOr (BL) 652.</p>"
       },
       {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
         "author": "Ellen Li",
         "text": "<p>Now come, children of the Church, so that we may narrate to you the wondrous miracle of Our Lady, the Holy Twice-Virgin Mary, and how she made this miracle in the country of the Ethiopians, in the days of the reign of a king of upright faith and a friend of the holy Church.</p><p>There was a church which had been constructed in the name of Our Lady Mary. Many sick and suffering people were cured when they arrived early in the morning at this church.</p><p>There was a woman whose husband was taken by a prostitute, she was always sad and lamenting because of the prostitute who took and pleasured her man.</p><p>One day, when she encountered the prostitute on the street, she challenged her by saying, “You are a prostitute and an evil woman who took my husband and took the joy from the days of my life.”</p><p>When the prostitute woman heard the other’s challenge, she gave her assurances by saying, “I have not approached your husband in carnal union.”</p><p>The afflicted woman responded in turn and said to the prostitute, “I say to you, I am sure of it, that you took my husband from me, and the fruit that is in your belly is my husband’s.”</p><p>The prostitute said to her, “No, and this fruit of mine is not your husband’s.”</p><p>The other woman said again, “I make an oath before the altar of my Lady Mary by saying, ‘May my Lady Mary show a miracle of hers by me if I have lied about you (in saying that you are pregnant) without having approached my husband.”</p><p>The prostitute said to her, “I accept these words with the oath that you, you have said to me.”</p><p>This sinner-woman thus swore, by fear of saying her sin and by fear of revealing her fault, “May my Lady Mary make a miracle against me if I approached your husband in carnal union.”</p><p>Because of these words, this woman gave birth to four horns [cornes], all full of worms and blemishes – two bull horns and two ram horns – in great pains and many torments, crying and screaming.</p><p>While she was lying down [couchée], saying to all the strangers and people, “See what my Lady Mary has done to me,” this woman who had sworn died, having become mad and lost reason.</p><p>The four horns are in the windows of the church of Our Lady, the Holy Twice-Virgin Mary mother of God.</p><p>Those who saw the miracle were greatly amazed, and also the king with his people and the metropolitan (bishop) with his prelates.</p><p>As for this king of upright faith, he constructed this sanctuary with precious stones.</p><p>He embellished its finery with gold, silver, and precious clothes.</p><p>All that came from the miracle of Our Lady Mary.[Translation as of 05/21/22]</p>"
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },
@@ -4593,16 +3831,8 @@ const MIRACLES_OF_MARY = [
     "most_read": true,
     "translations": [
       {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
         "author": "Allie V. Mangel",
         "text": "<p>There was a church that had been constructed in the name of Our Lady, the Holy Twice-Virgin Mary, Mother of God.</p><p>Many people and priests resided there.</p><p>The guardian of this church was prideful and insolent, he did not carry out his service in purity.</p><p>During many days, the bishop admonished him, reprimanded him, and corrected him in the assembly.</p><p>But the prideful man did not listen to the word of the bishop and did not accept the reprimand, for his heart had been injured by the poison of the enemy of good.</p><p>While he was in such bad behavior, on the 27th of the fifth month, on the day of the great feast, Our Lady descended from heaven to bless the people assembled who were gathered to celebrate the feast.</p><p>She appeared to the bishop in a vision.</p><p>So she commanded that they make the bad and insolent guardian come.</p><p>The angels whipped him with a concealed hand, the bishop watching this through the eye of the spirit.</p><p>When it was morning, the bishop set off, trembling and frightened of the reprimanding word of Our Lady Mary that he had heard in the vision.</p><p>Having arrived there where the guardian was, he commanded that they make him [guardian] come before him [bishop].</p><p>When the envoys had gone there, they found the guardian lying like a corpse, fallen on his face.</p><p>Having entered there, the bishop questioned him about what had happened to him. The guardian told him of all the reprimanding torment that had affected him on the part of Our Lady Mary due to the fact that he had shown himself prideful about the church and with regard to all its priests.</p><p>He said to the bishop, “Listen/Mind, O master, to you Our Lady did not hide anything from you and she did not punish you like me. </p><p>“But because you reprimanded me and because you corrected me before the assembly; because, therefore, of this your virtue, Our Lady Mary has shown herself merciful and mild toward you.</p><p>“As for me, all this punishment happened to me because I transgressed your command and your admonishment, O master.”</p><p>When all the assembled members of the community of the church saw that the whole body of the guardian was colored black like a root that one had removed from a boiler/cauldron, they all cried and shed bitter sobs.</p><p>They spoke among themselves, saying, “May these reprimands and punishments of our brother bring us intelligence and knowledge.”</p><p>The doleful man spoke to the priests and the deacons, urging them, “Be careful, my brothers and my fathers, and do not be insolent and prideful of heart like me; do not officiate with disrespect during the proceedings of the holy mysteries, having seen the misfortune and punishment that affected me on the part of Our Lady, the Holy Twice-Virgin Mary.</p><p>“On the contrary, beg and pray in my favor for the pardon of my sins.”</p><p>When he had said this to them with sorrowful sobs and bitter tears, his soul departed from his body.</p><p>When they saw the death of this man, many people and priests rejected the century; abandoned heritage, houses and position; and devoted themselves to God the Most High.</p><p>They loved the service of Our Lady, the Holy Twice-Virgin Mary, in holiness and purity until the day of their death.[Translation as of 05/21/22]</p>"
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },
@@ -4614,24 +3844,12 @@ const MIRACLES_OF_MARY = [
     "most_read": true,
     "translations": [
       {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
         "author": "Allie V. Mangel",
         "text": "<p>There was a monk who loved God the Most High and served Our Lady Mary the Virgin with all his heart and all his thought. He constantly read her praises and greetings, without interruption.</p><p>While this monk was acting in such a manner, a rich man invited him to celebrate the feast of the Assumption of Our Lady Mary on the 16th of Nahase. The monk headed for the place where he had been invited.</p><p>While he was en route, he arrived at a great river. He wanted to cross, but the current of the river took him, for it was the time of the rainy season.</p><p>So he removed his clothes, placed them upon his head, and entered the water to cross.</p><p>Suddenly, a demon emerged from the river’s depths, touched the monk, and dragged him into the depths, trying to make him perish.</p><p>Then the monk lost hope of his life and was abandoned within the depths.</p><p>While he was in such grave danger, the poor monk recalled the help of Our Lady. He said to her, “Where has it gone, the pact that you received from your son Jesus Christ concerning he who commemorates you and invokes your name: he must not see destruction in this world nor in the world to come? </p><p>“Is it not in remembering your pact, my Lady, that I left on a journey in the time of the rainy season for the solemn feast of your Assumption, while my eyes were seeing and my heart well knowing that rivers with (violent) currents were on my route?</p><p>“O aid to those who are in danger and mountain of refuge for the oppressed, may your aid make itself seen upon me so that I recount and proclaim your justice by my greeting.</p><p>“May glory, honor, and adoration return to you from the mouths of all generations for ever and ever, amen.”</p><p>While he prayed thus, submerged in the bosom of the great river, Our Lady Mary came beside him and reprimanded the spirit of the demon who tormented the poor monk whom she loved.</p><p>She commanded the monk, saying to him, “Rise, stand upon your feet, and recite the book of my praises and my greetings, as is your custom.”</p><p>She showed him where to stand up within the river. He remained and stayed there, within the river, to recite the praises and the greetings of Mary without interruption until there arrived beside him all the people and priests who had learned of his submersion in the river.</p><p>Having arrived on the river bank, all the people and priests stopped and asked the monk’s disciple, who had followed his master, what he had seen when the river’s current had taken him [the monk], to the extent that he had been submerged within the river.</p><p>He [the disciple] showed them the path by which his master had entered the river and where he had been submerged, to the extent that he had disappeared from view.</p><p>Having entered the depths, the men who knew how to swim found the monk standing, reciting the praises of Our Lady Mary.</p><p>He delivered the praises there where it is said, “Mary the Virgin cried in the Temple, saying, ‘God knows that I know nothing else than the sound of the voice of the angel.’” </p><p>They found him reciting these words, standing. They made him get out onto the dry land. His clothes had not been moistened by the river’s current. All greeted him, amazed that he was alive and safe.</p><p>They questioned him about everything: how the danger of the river had touched him, how he had been invited to celebrate the feast of the Assumption of Our Lady Mary, and how Our Lady had visited him and saved him from the demonic spirit and the submersion in the river.</p><p>He said to them again, “It would have been better for me if you had not come beside me, for I would remain light of heart and surrounded by the grace of the majesty of Our Lady Mary.”</p><p>Then he went with his companions there where he had been invited for the feast and returned to his house. He devoted himself to God the Most High and finely promised to serve Our Lady Mary until he should die and leave this transitory world.[Translation as of 05/21/22]</p>"
       },
       {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
         "author": "Allie V. Mangel",
         "text": "p>Now listen to the wonder, the astounding act, the marvelous miracle that Our Lady Mary made upon a man whom she loved.</p><p>There was a rich man who celebrated the feast of the Assumption of Our Lady Mary in the same way as the resurrection of her Son: by satiating the famished, giving water to the thirsty, and clothing those who were nude.</p><p>His story was heard in all the towns. There came by him, from distant regions, many sick men, poor men, men who were nude, who desired alms from the hands of this rich man.</p><p>After this, the rich man invited a priest to celebrate the feast.</p><p>This priest did not have eyes; he was born blind from his mother’s womb.</p><p>But the eyes of his heart were luminous; he taught many priests and deacons and made them understand the holy books of the Old and New (Testament).</p><p>Immediately, the priest came to celebrate the feast there where he had been invited, leading with him in his wake many young people to whom he was teaching the Psalms of the prophet David and the writings of the holy apostles.</p><p>The number of these adolescents was forty one.</p><p>One of these adolescents was good in his behavior and loved his master as himself, more than all his companions.</p><p>While they were on their way, they arrived at a great chasm that was in the middle of the road.</p><p>So the adolescents contemplated an evil plan against their master: they were going to throw him in the chasm.</p><p>The boy whose behavior was good begged his companions, saying, “My brothers, don’t do so evil an action against our master. How has he done you wrong?</p><p>“Did he not make us understand and taught us the voice of God? Therefore, do not do wrong against this elect man if you do not want God to hold you accountable for the blood of this just man.</p><p>“Will we not be named as Cain, the murderer of his brother, and as Judas the impious, seller of his master, husband of his mother and murderer of his father?</p><p>“And so too will we become like those children that were killed by the bear in the days of Elijah.” </p><p>While he made all these entreaties to them from the books of the Old and New (Testament), none turned to the words of the boy full of knowledge. Indeed, the poison of Satan, the adversary of the human race, had turned their heads and intoxicated them.</p><p>When the boy saw that they refused his entreaty and did not welcome his words, he separated himself from them and left them, saying, “Me, I am going in order to not join myself to your assembly of blood.”</p><p>Having said this, the boy, when he wanted to go, approached his master; he [boy] kissed [baisa] his [priest’s] mouth and, having kissed [embrassé] his neck, shed bitter tears, crying and lamenting vehemently.</p><p>He could not free nor save his master from the hands of his companions, for they outweighed him thanks to their number, and it was a deserted place.</p><p>Because of this, the boy went with haste, saying, “(I will see) if ever I find someone who will help me to carry the corpse of my master.” And he went quickly, crying and moaning, until he arrived at the place where his master had been invited and called on to celebrate the feast.</p><p>As for the evil adolescents, they did as they wanted and acted as they had contemplated. So they threw their master in the depths of the great chasm, of which one could not see the bottom and from which one could not get out.</p><p>As soon as they lowered and threw this just man in the depths of the chasm, this man placed his hope in the aid of Our Lady Mary.</p><p>While he recited, without interrupting his mouth, the greeting of Gabriel, the priest was thrown in the chasm. Suddenly, at the same moment, came beside him in a great majesty the mother of the poor, sweet of thought; the liberator of those who are in danger, the support of those who stagger, Mary - Marihám. She said to him, “Do not be afraid and do not tremble, my friend.</p><p>“Indeed, it is by love for me that you departed on your journey. I too, departed on my journey and came rapidly to help you when I noticed your dangers.</p><p>“In this way do I rapidly arrive, in the moment of their danger, beside those who love me with a valiant heart.”</p><p>And upon the wings of the angels who serve her, Our Lady rapidly took the priest, in the blink of an eye, to the place where he had been invited to celebrate the feast.</p><p>Our Lady herself was with him, but no one saw her except for him.</p><p>Having entered in this place that had been constructed in her name, there where they celebrated the assumption of her body, Our Lady Mary blessed the priest who had been mistreated at the hand of these evil dogs, sons of cruel vipers. She gave him a pact according to which he would be with her in the kingdom of heaven.</p><p>She also blessed the rich man who celebrated the feast of her assumption.</p><p>All the people assembled whom the rich man had invited, Our Lady Mary blessed them.</p><p>As for the adolescent who had separated himself from the assembly of these evil dogs, she rewarded him with the grace to be associated with his master in the kingdom of heaven.</p><p>As for the evil adolescents, she commanded the powerful Angel of Death to beat them with a lance of iron without sparing them; they perished and disappeared, all in only one day. The priest made known and told this miracle of Our Lady Mary, such as he had learned of it and well understood it from the mouth of Our Lady Mary.[Translation as of 05/21/22]</p>"
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },
@@ -4662,45 +3880,6 @@ const MIRACLES_OF_MARY = [
     ]
   },
   {
-    "id": "323",
-    "title": "Book of Nagara Maryam??: OldF: Part 03: Journey: The hunter who discovered the Holy Family in flight is turned into a dog when he violates his oath not to reveal them.",
-    "incipit": "ተብህለ፡ እንከ፡ በእንተ፡ አሐዱ፡ ብእሲ፡ ዘመሐለ፡ በሐሰት፡ ወበእንተ፡ አሐዱ፡ መኰንን፡ ዐቢይ፡ ዘየፈቅራ፡ ለእግዝእትነ፡…. ወእንዘ፡ ሀለወት፡ እግዝእትነ፡ ማርያም፡ ውስተ፡ ሐቅለ፡ ገዳም፡ ዘቈላተ፡ ዮሰፍጥ፡ ጐዪየ፡ እምነ፡ ሕምዘ፡ መዐቱ፡ ለአርዌ",
-    "manuscript_count": 19,
-    "most_read": true,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "347",
-    "title": "Book of Ledata la-Maryam??: OldB: Nativity: The Virgin Mary gives birth to Jesus Christ. (347, 299, 445 similar)",
-    "incipit": "ስምዑኬ፡ ኵልክሙ፡ ደቂቀ፡ ቤተ፡ ክርስቲያን፡ ዜናሃ፡ ለእግዝእትነ፡…. ዘከመ፡ ገብረት፡ ኀይለ፡ ወተአምረ፡ በዕለተ፡ ወለደቶ፡ ለእግዚእነ፡ ወመድኃኒነ፡ ኢየሱስ፡ ክርስቶስ፡ በቤተ፡ ልሔም፡ ዘይሁዳ፡ እስመ፡ ከማሁ፡ ጽሑፍ፡ በነቢይ",
-    "manuscript_count": 19,
-    "most_read": true,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "354",
-    "title": "King Dawit I, the 14th c. Ethiopian monarch, is summoned by the Ethiopian monasteries and asked to abdicate",
-    "incipit": "ስምዑ፡ ኵልክሙ፡ ማኅበረ፡ ቤተ፡ ክርስቲያን፡ ዘገብረት፡ እግዝእትነ፡ ማርያም፡ ዐቢየ፡ ኀይለ፡ ወዕፁበ፡ ተአምረ፡ በላዕለ፡ አሐዱ፡ ንጉሥ፡ ፍቁረ፡ ወልዳ፡ ወላእከ፡ ዚአሃ። እምዘገብረት፡ ሎቱ፡ ብዙኃተ፡ ተአምረ፡ ወመንክራተ፡ ዕፁባተ፡ ወመድምማተ፡ ዘያስተፌሥሕ፡ ልበ፡ ሰማዕያን፡ ወዘይትነከር፡ በዐውደ፡ ጉቡኣን፡ ዝንቱ፡ ውእቱ፡ ቀዳሜ፡ ተአምሪሃ፡ ለእግዝእትነ፡ ማርያም፡ ዘገብረት፡ ሎቱ፡ ለውእቱ፡ ንጉሥ። ወአመ፡ አንበሮ፡ እግዚአብሔር፡ በመንበረ፡ አበዊሁ፡ ዳዊት፡ ወሰሎሞን፡ ሶቤሃ፡ ፈነወ፡ ላእካነ፡ ውስተ፡ ኵሉ፡ አህጉረ፡ መንግሥቱ፡ ኀበ፡ ሀለዉ፡ ቅዱሳን፡ እለ፡ በአድባራት፡ ወገዳማት",
-    "manuscript_count": 19,
-    "most_read": true,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
     "id": "363",
     "title": "Saint Theocleia, the married Egyptian, prepares her for martyrdom and is visited by the Virgin Mary",
     "incipit": "ኀይለ፡ ተአምሪሃ፡ ለእግዝእትነ፡…. ዘገብረት፡ ላዕለ፡ ብፅዕት፡ ወኅሪት፡ ታውክልያ፡ ሰማዕት፡ ወብእሲተ፡ ሰማዕት፡ ዮስጦስ፡ ወእመ፡ አቦሊ፡ ሰማዕት። ወእንዘ፡ ሀለወት፡ ታውክልያ፡ ቀዲማ፡ ውስተ፡ ቤተ፡ ጸሎት",
@@ -4710,23 +3889,6 @@ const MIRACLES_OF_MARY = [
       {
         "author": "Allie V. Mangel",
         "text": "<p>This is said about a pilgrim: while he followed the path of Jerusalem, he arrived in a desert land called Hamda.</p><p>The time was the time of the dry season, the sixteenth of yakkatit, day of the great feast, during which Our Lady Mary received the Pact of Mercy from her Son Jesus Christ. </p><p>On this day, the sun’s heat [ardeur] was so great that the soul of all the pilgrims fainted under the torments inflicted by the sun.</p><p>This pilgrim fell to the earth on his face.</p><p>He abandoned his soul like a corpse.</p><p>Suddenly, at the same time, Our Lady Mary came to him and said, “Rise from your slumber and be strong by the power of my Son Jesus Christ. The sun’s heat will not burn you (anymore), neither you nor any of the pilgrims who are with you.”</p><p>A luminous cloud thus arose and sheltered them so that the sun’s heat would not burn them.</p><p>Our Lady also showed the pilgrim a trickle of milk which flowed from three springs.</p><p>All the pilgrims went toward this stream of milk.</p><p>Our Lady said to the pilgrim, “See this river of milk in which your pilgrim companions walk. Do not separate yourself from them.”</p><p>So the pilgrim rose and was strong by the command[ment] of Our Lady Mary.</p><p>Having said this, Our Lady evaded/shied from his view.</p><p>The pilgrim went on his path praising God Most High and wondering at the greatness of the miracle of Our Lady, the Holy Twice-Virgin Mary, Mother of God.</p><p>So he arrived at Jerusalem safely and in peace, with neither torment nor fatigue, by the intercession of Our Lady, the Holy Twice-Virgin Mary, Mother of God.[Translation as of 05/21/22]</p>"
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "504",
-    "title": "Daniel from Constantinople, who wanted to go to church to receive Communion even when there was fighting in the streets.",
-    "incipit": "ወሀሎ፡ አሐዱ፡ ብእሲ፡ በሀገረ፡ ቍስጥንጥንየ፡ ዘስሙ፡ ዳንኤል፡ ዘይፈርሆ፡ ለእግዚአብሔር፡ ዘኵሎ፡ ይእኅዝ፡ በጸንዓ፡ ኃይሉ፡ ዘያርዕድ፡ ለሰማይ፡ ወያድለቅልቃ፡ ለምድር፡ በምጽአቱ",
-    "manuscript_count": 19,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },
@@ -4761,35 +3923,6 @@ const MIRACLES_OF_MARY = [
     ]
   },
   {
-    "id": "352",
-    "title": "The rich persons who stored their wealth in a church.",
-    "incipit": "ወሀለወት፡ አሐቲ፡ ቤተ፡ ክርስቲያን፡ እንተ፡ ተሐንጸት፡ በስማ፡ ለእግዝእትነ፡…. ወብዙኃን፡ አብዕልት፡ ወበዓልታተ፡ ቤት፡ ይነብሩ፡ ውስተ፡ ይእቲ፡ ሀገር፡ ወበዑላን፡ ጥቀ፡ በንዋየ፡ ወርቅ፡ ወብሩር፡ ወበአልባሰ፡ ሠርጕ፡ ክቡር",
-    "manuscript_count": 18,
-    "most_read": true,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
     "id": "421",
     "title": "A pestilence was stopped by the Virgin Mary",
     "incipit": "ወሀለወት፡ አሐቲ፡ ሀገር፡ ዐባይ፡ ወብዙኃን፡ ሰብእ፡ ይነብሩ፡ ውስቴታ፡ ጳጳሳት፡ ወኤጲስ፡ ቆጶሳት፡ ቀሳውስት፡ ወዲያቆናት፡ ወመነኮሳት፡ ወሕዝብ፡ ዘኢይትኈለቍ። ወቦአ፡ ውስተ፡ ይእቲ፡ ሀገር፡ ሞተ፡ ሰብእ፡ ወቀተለ፡ ብዙኃነ፡ ሰብአ፡ እደ፡ ወአንስተ",
@@ -4803,53 +3936,6 @@ const MIRACLES_OF_MARY = [
     ]
   },
   {
-    "id": "466",
-    "title": "Emperor Theodosiusof Constantinople's brother Dilasor, who was Abba Kiros.",
-    "incipit": "ወሀሎ፡ አሐዱ፡ ብእሲ፡ እኅወ፡ ቴዎዶስዮስ፡ ንጉሥ፡ ዘስሙ፡ ዲላሶር፡ ወአስተርአዮ፡ እግዚእነ፡ ኢየሱስ፡ ክርስቶስ፡ ዘለዘክሮቱ፡ ይደሉ፡ ስግደት፡ ወለጣዕመ፡ ስሙ፡ አኰቴት፡ ሌሊተ፡ በሕልም፡ ወይቤሎ፡ ሑር፡ ውስተ፡ ደብረ፡ ባሳን",
-    "manuscript_count": 17,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "478",
-    "title": "Book of Nagara Maryam??: OldN: Journey: The dogs of the hunter praise the Virgin Mary while in land of Egypt",
-    "incipit": "እንዘ፡ ትወርድ፡ እግዝእትነ፡ ማርያም፡ ውስተ፡ ምድረ፡ ግብጽ፡ ኀበ፡ ኃደረት፡ ገዳመ፡ ምስለ፡ ፍቁር፡ ወልዳ፡ ምስለ፡ ዮሴፍ፡ ወሰሎሜ፡ መጽአ፡ ነአዌ፡ ዓረዊት፡ ምስለ፡ አክልብቲሁ፡ ወመጽኡ፡ አክልብት፡ እንዘ፡ ይሴብሕዋ፡ ወይብልዋ፡ ስብሐት፡ ለኪ፡ እመ፡ እግዚአ፡ ኵሉ፡ ፍጥረት",
-    "manuscript_count": 17,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "503",
-    "title": "A servant girl under a magic spell was healed by the Virgin Mary",
-    "incipit": "ወከመ፡ ኆፀ፡ ባሕር፡ ኍላቋሁ፡ ከማሁ፡ ኢይትረከብ፡ ኍልቈ፡ ተአምሪሃ፡ ለእግዝእትነ፡…. ርኁቅ፡ ውእቱ፡ እምልበ፡ መዋቲ፡ ኢይትረከብ፡ በኃሢሥ፡ ወኢይትሌለይ፡ በጥንቃቄ፡ በልሳነ፡ መዋቲ፡ ነባቢ፡ ኢይክል፡ ፍጻሜሁ። ወይእዜኒ፡ እንግርክሙ፡ በከመ፡ ሰማዕኩ፡ ቀዲሙ፡ በዕዝንየ፡ ወከማሁ፡ ርኢኩ፡ በአዕይንትየ፡ ዘገብረት፡ እግዝእትነ፡…. ተአምር፡ ወእዜኑ፡ ንስቲተ፡ እምተአምሪሃ፡ ለእግዝእትነ፡…. እንዘ፡ ያሌብወኒ፡ መንፈሰ፡ ወልዳ፡ ገባሬ፡ ዓለም፡ በጥበቢሁ፡ ሰጊድ፡ ይደሉ፡ ለስመ፡ ዚአሁ፡ ይእዜኒ፡ ወዘልፈኒ፡ ወለዓለመ፡ ዓለም፡ አሜን። ተብህለ፡ ከመ፡ ሀለወት፡ አሐቲ፡ ዓመት፡ በቤተ፡ አጋዕዝታ፡ ወሶበ፡ ሖሩ፡ አጋዕዝቲሃ፡ ኀዲጎሙ፡ ውስተ፡ ቤቶሙ፡ ወሠወረ፡ ሶቤሃ፡ ፀሐይ፡ ብርሃኖ",
-    "manuscript_count": 17,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
     "id": "324",
     "title": "Book of Nagara Maryam??: OldF: Part 04: Journey: The Holy Family visits the king of the Semites.",
     "incipit": "ወሀሎ፡ አሐዱ፡ ብእሲ፡ እምደቂቀ፡ ሴም፡ ዘሠናይ፡ ግዕዙ፡ ወርቱዕ፡ ልቡ",
@@ -4859,19 +3945,6 @@ const MIRACLES_OF_MARY = [
       {
         "author": "Rowan Williams",
         "text": "<p>The Miracles of Our Lady Mary, the Holy Twofold Virgin Theotokos</p><p>May her prayers and blessings be with us to the ages of ages. Amen.</p><p> </p><p>Now we shall tell you how Our Lady Mary is much more honourable than her relatives, and indeed the whole world, that you may discern the greatness of her Nativity.[1] 3When the days of Anne’s pregnancy were completed, on the first day of the month of Gǝnbot, she gave birth to a daughter that shone brighter than the sun; the beauty of her appearance was sweeter than honey and sugar, and the fragrance of her aroma was more pleasant than every kind of perfume. 4When her relatives and her neighbours heard about this, they rejoiced with great gladness. Then they gathered together and came to her, and when they beheld her daughter, they marvelled and were greatly amazed, saying to one another,[2] ‘We have never seen anyone like this girl, for the grace of God in her is full, and all of her members are full of the light of the Lord.’ 5They spent seven days rejoicing with Joachim and his wife Anne, declaring the greatness[3] of the Lord. Then they called the girl Mary, which means ‘the grace of God’. 6At the end of those seven days, they returned to their homes in peace. And Joachim and Anne remained there, raising their daughter Mary for three years, and giving thanks and praise to the Lord for their daughter and for what He had done for them. And they increased their good works with prayer and fasting and almsgiving to the poor and needy.    </p><p>May her prayers and blessings be with us to the ages of ages. Amen.</p>"
-      }
-    ]
-  },
-  {
-    "id": "545",
-    "title": "Patriarch Bartholomew of Alexandria, while saying Mass, is visited by the Virgin Mary and her Son",
-    "incipit": "ወሀሎ፡ አሐዱ፡ ሊቀ፡ ጳጳሳት፡ በሀገረ፡ እስክንድርያ፡ ዘስሙ፡ በርተሎሜዎስ፡ ወያሠምሮ፡ ለእግዚአብሔር፡ ወእስከ፡ ለሞት፡ ወያፈቅራ፡ ለእግዝእትነ፡…. ወበአሐቲ፡ ዕለት፡ አጽሐብዎ፡ ካህናት፡ ከመ፡ ይልበስ፡ ተክህኖ፡ አመ፡ ወርኃ፡ ሐምሌ፡ በሠርቀ፡ በዓላ፡ ለእግዝእትነ",
-    "manuscript_count": 16,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },
@@ -4928,49 +4001,6 @@ const MIRACLES_OF_MARY = [
     ]
   },
   {
-    "id": "444",
-    "title": "A poor man become wealthy with the help of the Virign Mary",
-    "incipit": "ስምዑ፡ አበዊነ፡ ወአኃዊነ፡ ዘገብረት፡ እግዝእትነ፡…. ለአሐዱ፡ ብእሲ፡ እንዘ፡ አቡሁ፡ ወእሙ፡ ጽኑሳን፡ ወአልቦሙ፡ ንዋይ፡ እስመ፡ ጽኑሳን፡ እሙንቱ፡ ወውሉዶሙ፡ ሠናይ፡ ውእቱ፡ ወያፈቅራ፡ ለእግዝእትነ፡ ማርያም፡ ወይዜከር፡ ስማ፡ ኵሎ፡ ጊዜ። ወኮነ፡ ውእቱ፡ ይስእል፡ ወትረ፡ ወይሁብ፡ ላቲ፡ አምኃ፡ ዕጣነ፡ ሴጠ፡ ላቲ፡ ዶርሆ፡ ንስቲተ፡ በአምጣነ፡ ይክል",
-    "manuscript_count": 14,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "460-C",
-    "title": "Book on Ark from Kings: Part 1C: The Philistines bring the Ark of Zion to Azotus and put it into the temple of Dagon.",
-    "incipit": "ሕዝበ፡ ክርስቲያን፡ ንንግርክሙ፡ ዜናሃ፡ ለታቦተ፡ ሕጉ፡ ለልዑል፡ ዘተረክበ፡ እምመጽሐፈ፡ ነገሥት። ወነሥእዋ፡ ኤሎፍሊ፡ ለታቦተ፡ እግዚአብሔር፡ ጽዮን፡ እምአቤኔዜር፡ ወወሰድዋ፡ ውስተ፡ አዛጦን",
-    "manuscript_count": 14,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "477",
-    "title": "The three monks who attempted to say Mass in a mosque.",
-    "incipit": "ወሀለዉ፡ ፫፡ መነኮሳት፡ ቀሳውስት፡ በሀገረ፡ ጥልጥልያ፡ ዘያፈቅርዋ፡ ለእግዝእትነ፡…. ወሖሩ፡ እምይእቲ፡ ሀገር፡ መጠነ፡ ፲፡ ምህዋረ፡ ዕለት፡ ወረከቡ፡ ምስጋዶሙ፡ ለአረሚ",
-    "manuscript_count": 13,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
     "id": "316-C",
     "title": "Book of Ledata la-Maryam??: OldA: Part 03: Birth: The Virgin Mary is born on the first of Genbot.",
     "incipit": "ንግባእኬ፡ ሀበ፡ ጥንተ፡ ነገር። ወሶበ፡ ተፈጸመ፡ መዋዕለ፡ ፅንሳ፡ ወለደት፡ ወለተ፡ አመ፡ ፩፡ ለግንቦት፡ እንዘ፡ ትበርህ፡ እምነ፡ ፀሐይ",
@@ -4995,107 +4025,8 @@ const MIRACLES_OF_MARY = [
     "most_read": false,
     "translations": [
       {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
         "author": "Ellen Li",
         "text": "<p>While he stood at the moment of the Eucharistic consecration, the saint Ildefonse, bishop of Toledo, saw sweat to flow [s’écouler] from the icon of Our Lady, the Holy Twice-Virgin Mary mother of God. The people of the church were amazed.</p><p>Our Lady said to Ildefonse, “Make rise this young girl who is in the tomb and take the veil from her head so that it may be the salvation for those who suffer [pour qui souffre].”</p><p>When he learned of this miracle, a man arrived before Ildefonse and said to him, “My lord, here is my son who was captured by a demon. One took him to the church, ten men (tried to) master him, but they could not. I leave it to you, my father.”</p><p>When Ildefonse heard that, he prostrated himself before the icon of Our Lady, the Holy Twice-Virgin Mary Mother of God.</p><p>He seized the veil from his hand and with it covered the possessed. This one here was cured and his face gleamed.</p><p>The people of the town [ville] were amazed when they saw this miracle. </p><p>Thanks to this veil, he came back to life from the dead and the ill, seven thousand nine hundred in number.</p><p>They said, “Glory to God in the skies and to his mother, the Virgin Mary!” [Translation as of 05/21/22]</p>"
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "535",
-    "title": "The Stephanites (Ǝstifanites/Estifanites) in Egypt and Palestine.",
-    "incipit": "ስምዑ፡ ዘኮነ፡ ተአምረ፡ ዐቢየ፡ በደወለ፡ ግብጽ፡ በመዋዕሊሁ፡ ለናዖድ፡ መሢሐ፡ እግዚአብሔር፡ ንጉሠ፡ ኢትዮጵያ። ወሀለዉ፡ መነኮሳት፡ እምደቂቀ፡ እስጢፋ፡ ርኩስ፡ እለ፡ ወረዱ፡ እምኢየሩሳሌም፡ እምኢትዮጵያ። ወሶበ፡ በጽሑ፡ ኢየሩሳሌም፡ ፈቀዱ፡ ይባኡ፡ ኀበ፡ መቃብሩ፡ ለእግዚእነ",
-    "manuscript_count": 12,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "540-A",
-    "title": "Gabra Maryam is healed by the Virgin Mary and Gabriel when they appear to him (opening)",
-    "incipit": "ወሀሎ፡ አሐዱ፡ ብእሲ፡ በብሔረ፡ ኢትዮጵያ፡ ኃጥእ፡ ወዓማፂ፡ ዘስሙ፡ ገብረ፡ ማርያም፡ ወባሕቱ፡ ኮነ፡ ያፈቅራ፡ ለእግዝእትነ፡…. ወይገብር፡ ተዝካራ፡ ወካልዕሰ፡ አልቦቱ፡ ምግባረ፡ ሠናይ፡ ዘእንበለ፡ አሚነ፡ ወልዳ፡ ወአፍቅሮ፡ ዚአሃ። ወኮነ፡ በአሐዱ፡ እምመዋዕል፡ በሰንበተ፡ እኁድ፡ ኃደረ፡ ውስተ፡ ቤተ፡ ክርስቲያና፡ እንዘ፡ ይዌድሳ፡ ወይጼብሓ፡ ወይገኒ፡ ለነግሣ",
-    "manuscript_count": 12,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "538",
-    "title": "Book of Felsata la-Maryam??: IOld?: Dormition: Saint Thomas arrives for the funeral of The Virgin Mary.",
-    "incipit": "ወበጽሖ ፡ ቶማስ ፡ ኀበ ፡ ሐዋርያት ፤ በይእቲ ፡ ዕለት ፡ ሀገረ ፡ ኢየሩሳሌም ። ወይቤልዎ ፡ እንዘ ፡ ይበⷉ ፡ ሞትት ፡ እመ ፡ ብርሃን",
-    "manuscript_count": 11,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "541",
-    "title": "Saint Sarabamon, the future bishop of Nikiou and martyr, and Abraham, a relative of Saint Stephen, becomes a Christian when visited by the Virgin Mary (same as ID 268)",
-    "incipit": "ወኮነ፡ ዝንቱ፡ ቅዱስ፡ እምዘመዱ፡ ለቅዱስ፡ እስጢፋኖስ፡ እምነገደ፡ ሌዊ፡ እምኢየሩሳሌም፡ ወኮነ፡ ስሙ፡ ለአቡሁ፡ አብርሃም፡ ወልደ፡ ሌዊ፡ ወልደ፡ ዮሴፍ፡ እኁሁ፡ ለስምዖን፡ እኁሁ፡ ለእመ፡ እስጢፋኖስ፡ ወበጊዜ፡ ልደቱ፡ ሰመይዎ፡ ስመ፡ አቡሁ",
-    "manuscript_count": 11,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "556",
-    "title": "Dabra Qwesqwam's cross, used to bless, bows down when the priest saying Mass blessed.",
-    "incipit": "ወሀሎ፡ መስቀል፡ ውስተ፡ ደብረ፡ ቍስቋም፡ ዘስቁል፡ ውስተ፡ ቀመረ፡ ቤተ፡ ክርስቲያን፡ ወሶበ፡ ይቄድስ፡ ቍርባነ፡ ለእመ፡ ኮነ፡ ካህነ፡ ንጹሐ፡ ሶበ፡ ይብል፡ ፈኑ፡ ጸጋ፡ መንፈስ፡ ቅዱስ፡ ላዕሌነ፡ ይባርክ፡ ውእቱ፡ መስቀል፡ ላዕለ፡ ኅብስት፡ በከመ፡ ልማድ",
-    "manuscript_count": 10,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "641",
-    "title": "King Zara Yaqob (Zarʾa Yaʿeqob), the 14th c. Ethiopian monarch's Homily on the Virgin Mary as the hope of salvation and the flight to Egypt",
-    "incipit": "ድርሳን፡ ዘደረሰ፡ ዘርአ፡ ያዕቆብ፡ ርቱዓ፡ ሃይማኖት፡ እግዚአብሔር፡ ይምሐሮ፡ በጸሎታ፡…. ይቤ፡ ከመዝ፡ ስምዑኬ፡ ኦምእምናን፡ ኦክርስቶሳውያን፡ ደቂቀ፡ ወንጌል፡ አልብነ፡ ተስፋ፡ ወኢድሂን፡ ዘእንበለ፡ ማርያም፡ እግዝእትነ",
-    "manuscript_count": 10,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "358",
-    "title": "The icon of the Virgin Mary in a church of Alexandria that some Europeans tried to steal.",
-    "incipit": "ወሀለወት፡ አሐቲ፡ ቤተ፡ ክርስቲያን፡ በደወለ፡ ግብጽ፡ በምኵናነ፡ ምስር፡ በሀገረ፡ ዐባይ፡ እለ፡ ስክንድርያ፡ በመንበረ፡ ማርቆስ፡ ወንጌላዊ፡ ወሕንጽት፡ ይእቲ፡ በስማ፡ ለእግዝእትነ፡ ማርያም፡ ዘሥዑል፡ በወርቅ",
-    "manuscript_count": 9,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },
@@ -5126,73 +4057,6 @@ const MIRACLES_OF_MARY = [
     ]
   },
   {
-    "id": "476",
-    "title": "An official who used to rob the poor is converted when a monk reveals that Satan was acting as his counsellor.",
-    "incipit": "ወሀሎ፡ አሐዱ፡ መኰንን፡ ዘያፈቅራ፡ ለእግዝእትነ፡…. ወይጼሊ፡ ወትረ፡ ሰላመ፡ መልአክ፡ ወኢየአምር፡ ጸሎተ፡ ካልአ፡ ዘእንበሌሁ። ወውእቱ፡ ይትዔገል፡ ነዳያነ፡ ወየኃይድ፡ ንዋዮሙ",
-    "manuscript_count": 8,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "479",
-    "title": "Tekta, the ancestor of the Virgin Mary who was then childless, has a dream about ten generations, ending with the moon and the sun.",
-    "incipit": "ወሀሎ፡ አሐዱ፡ ብእሲ፡ እምውሉደ፡ እስራኤል፡ ጻድቅ፡ ወፈራሄ፡ እግዚአብሔር፡ ውእቱ፡ በኵሉ። ወይቤላ፡ ለብእሲቱ፡ ቴክታ፡ ብነ፡ ወርቅ፡ ወብሩር፡ ወአልባስ፡ ቀጠንት፡ ዘአልቦ፡ ኍልቍ",
-    "manuscript_count": 8,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "491",
-    "title": "Book on Ark in Ethiopia: Part 3: The history of the Ark of Zion during the reigns of David and Solomon; Menelik takes the Ark toward Axum; when they reach the Red Sea, it parts before them.",
-    "incipit": "ወእምዝ፡ ነግሠ፡ ዳዊት፡ ንጉሠ፡ እስራኤል፡ ወፄወውዋ፡ ኤሎፍላውያን፡ ለታቦተ፡ ጽዮን፡ ወወሰድዋ፡ ውስተ፡ ሀገሮሙ። ወበህየ፡ አውረደት፡ ሎሙ፡ መቅሠፍተ፡ ብዙኃ",
-    "manuscript_count": 8,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
     "id": "512",
     "title": "Homily on the Annunciation and the Incarnation: Part 3: The Visitation of the Virgin Mary to St. Elizabeth.",
     "incipit": "ወሖረት፡ እግዝእትነ፡ ማርያም፡ ትርአየ፡ ለዓረጊት፡ ወእንተ፡ በልየት፡ ፀንሰት፡ እስመ፡ አምነት፡ ቃለ፡ ዘሰምዓት",
@@ -5214,32 +4078,6 @@ const MIRACLES_OF_MARY = [
       {
         "author": "Amsalu Tefera",
         "text": "(35) And now my fathers and brothers, encircle Zion and embrace the glory of Her feast while chanting. As for Her, She is adorned in the beauty of praise. She is more exalted than the heavens and She is more glorious than all the saints and the vigilant ones. Zion, the country of Immanuel, Our God. O Zion our mother, holder of dew of the divinity. (36) The bride of Lebanon, who is like the throne of the father of Rehoboam when he reigned over the horn of bondage, on which twelve fearsome lions were depicted. (37) What kind of honor is given to Her, and what kind of grace from the Father of the Light? (38) The Ark of our Law, Zion, our Lady, who was established before the world, in the mind of God, the Father, and by the favor of [His] only Son, and by the gift of the Holy Spirit, the Paraclete, [who are] co-equal in sovereignty, to be His dwelling, as the scripture says ‘For the Lord has chosen Zion and He has given precedence to Her to be His dwelling. I will dwell here for I have chosen Her and this is My resting place forever’. (39) Truly He chose and loved Zion and built His sanctuary in the Highest. And He watches over Her always with His angels. Her gates are not closed day or night. Those who abide within Her do not hunger, thirst, grieve nor weep. There is no sorrow within Her, only joy and gladness. There is no burning or coldness, no day or night, no moon, stars or sun which gives light within Her. (40) and she does not desire within Her anything under Heaven, nothing other than those saints who purified their garments with the Blood of the Lamb, who acquired Her by the effort of their struggle. (41) Those are they who carry palm branches. They sing (praises) as Moses, the servant of the Lord, praised in the canticle of the Lamb, while they stand in Her courts and in all Her paths, saying ‘Hallelujah, He who elevated Zion above all worlds; Hallelujah for Her who became the dwelling of His praise’. (42) ‘Hallelujah for Him one who sanctified the Sabbath and purified Her in order that all the angels, archangels, lords dominions, powers, thrones, tribunals, Cherubim, and Seraphim might greet Her’. They worship in the threshold of Her gates and He watches over Her with His might always and He illuminates her forever and ever with His light of Divinity which never sets. (43) Sometimes she is like an orchard whose fruits are many and more fragrant than all perfumes. Sometimes she is like the city of happiness. There are also times when she looks like the palace of a king. And sometimes she looks like the Ark and the Tablet with the Ten Commandments which are in Her womb. (44) As for Her, She is the one that the saints wish to see. Blessed are all those who stand within Her and sing Her praises. Blessed is the man for whom She became a mother when He was travelling and whom She received when He kissed Her door, as the prophet said ‘Blessed are all those who live on earth [and] let them praise you forever and ever’. Truly, the stars of Zion our mother ‡…‡ are praising the Lord. (45) Let us come back to the remaining matter which awaits us, concerning the story of Zion, who did miracles and wonders four hundred years after the children of Israel went out of Egypt, in the time of the prophesy of Samuel. When Eli because old, his sons who were priests were wicked and walked in the path of evil before the Lord. (46) The Lord was angered at the Israelites and made them fall before the Philistines and four thousand men died in battle in the desert. The surviving Israelites escaped and entered to their country and said ‘For what reason did the Lord make us to be given into the hands of the Philistines?’ (47) They did not know it was due to the sins of Eli and his sons’ evil deeds (that they perished). After this, they took the Ark of our God together with the image of the Cherub. And the two priests, the sons of Eli, Afnin and Finhas, went to fight the Philistines. Then they cried out in the encampment when Zion reached them. (48) When the Philistines heard (this), they became afraid and said ‘Woe to us! Woe to us! For all the Hebrews have come with their God to wipe us out. Woe to us! Woe to us! Who shall save us from those who smote Egypt with many calamities?’ (49) But the hand of the Lord was with the Philistines to make war on them because of the sins of Eli and of his sons, the priests, who had made the sacrifice of our God unclean; and because they abused Zion. (50) After that, the Israelites fought against the Philistines and the Israelites were killed at the hands of the Philistines. The number of those who died on that day was 30,000 men. Afnin and Finhas also died. And the Philistines took and captured the Ark. (51) A certain man from the battlefield ran to Eli, and he entered and told him that the Israelites had been destroyed and that his sons had died, and that they [Philistines] had carried off Zion. And Eli the priest, after hearing that the Ark was captured and everything that had happened, fell over backwards from his chair and died; for the hand of our God was heavy upon him. (52) Then the Philistines took the Ark and brought Her to the house of Dagon, their god, proclaiming ‘Dagon, our god is stronger than all’. (53) So, listen that I may speak to you, I who am weak in power, of stammering tongue and humble heart more than all [my] brothers, about the many prodigies, miracles and wonders that She performed upon Israel and the Philistines. (54) When the priests corrupted the Law of the Lord, she caused Israel to perish by the spear. Further, when they brought Her into the house of Dagon, the people of Azaton got up in the morning and found Dagon there fallen on his face before the Ark. They immediately raised him up and stood him up in his place in honor. (55) And the Lord became angry against them over Zion and He punished the people of Azaton and their territory with a great punishment. And when again in the morning they went into the house of Dagon, they found him fallen on his face at the feet of Zion, our Queen. His head was cut off, his two hands and his palms were fallen on the doorway. Nothing remained of him except his trunk. (56) On account of this astonishing miracle, there was much agitation, moaning and lamentation among the priests of Dagon. And they did not go up to sacrifice to him as was their custom. There was lamentation and wailing, and the hand of the Lord was heavy upon the people of Azaton. (57) And He brought [an infestation] to their country, (namely) mice in boats, which destroyed all. There was a terrible calamity which happened to this country. And they were shouting [and lamenting] by saying ‘Let the Ark of the God of Israel not remain with us, for Her hand is severe upon us and upon Dagon, our god’. (58) Hence, they sent to the lords of Philistines and assembled them and said to them, ‘What shall we do with Zion?’ Then the wise men, people of Get, said: ‘Let the Ark of the Lord be removed from us’. And they sent away Zion. (59) And then after they sent away Zion to the city, there was great shouting. He punished the people of that country: adult and child, man and woman. The people of Get made an image for those who were punished and they sent the Ark of the God of Israel to the city of Asqalona. (60) When they took Her [into Asqalona], they said ‘By what deed, by what matter and why did you leave Zion, the Ark of God of Israel, to us, for Her to kill us together with our people, our wives, our children and all our cattle?’ Then, they sent for the lords of the Philistines and gathered them. They said to them ‘Send away Zion so that She should dwell in to Her [own] place. (61) Let you send Zion to reign over Her [own] people and let Her not kill us with a bitter death’. For there was great punishment indeed in the country when Zion entered to them. Both the living and the dead were punished. The wailing of the city ascended unto heaven. Then they brought forth Zion to the desert and she dwelt there for seven months and She remained alone. (62) The end was worse than the beginning. When the Ark of the Lord our God sent out to the desert, their country was infested by mice as the land of Egypt had suffered with frogs during the Exodus of Israel. Likewise, their land was infested because of Zion. (63) During this time, the Philistines and people of Asqalona called the soothsayers and magicians and conjurers. They asked them, ‘What shall we do with Zion, the Ark of the God of Israel? Please tell us and advise us what to do with Her and in what manner we should send Her to Her country and Her place so that She should stay (there)’. (64) And the magicians, very zealous for Dagon their god, told them ‘Let Zion return to Her country and to Her people. And let us not send Her back alone and empty-handed but let Her sending be (accompanied) with much compensation’. (65) And the people said to the magicians ‘What is the compensation that She deserves? And what objects shall we cause to follow Her? As for us, we what have no fear nor sorrow at all about the objects of Her compensation. As for us, what we are deeply sorrowful about is the affliction that befell us because of Her and from Her’. (66) Then the magicians said ‘Let compensation be offered because you seized and captured Her. And do not return Her empty in order that She may be gracious to you. And let Her compensations be according to the number of the five lords of the Philistines. As she devastated your land by sending mice, then you must give many golden mice. And you must praise the God of Israel in order that He remove His hand from upon you and from upon your gods’. (67) However, when the people heard (this) they kept silent and were not willing to return Zion. Hence, they [the] declared to them again ‘Why should you harden your hearts as the Egyptians hardened their hearts against the release of the children of Israel?’ (68) When His hand was hardened over them, Pharaoh then sent them away and they departed. In the same way, you should return Zion and make Her new carts. Let you bring two cows, which have first-born. Let their calves remain at home. Then put those carts upon the cows and place the Ark in the carts. And make follow those golden objects after Her. (69) ‘Do not make Her a box into Her side, but you just dispatch Her in order to return Her to Her country’. And then they did as they ordered them. And they took two cows which had first-born and they shut up the house with their calves [inside]. They brought a cart[s] and they placed them upon the cows. Then they put Zion, the Ark of our Law, upon them, with the Ten Commandments in Her interior. (70) Moreover, they brought doves and mice and had them follow after Her. The cows went straight in the path, [without deviating] either to the right or to the left. And the five lords of the Philistines followed Her: the first of Azaton, the second of Get, the third of Aqaron, the fourth of Gaza and the fifth of [Asqalona] ‡…‡ [They brought five] golden mice according to their number of all their cities. And they proceeded until they reached [Beta] Samis. And that time was the harvest season. (71) The people of [Beta] Samis were reaping wheat. When they saw Zion, they rejoiced and exulted, and they welcomed and positioned Her together with the cart in the field. And the people of Beta Samis, those who welcomed Her, made a sacrifice there to the Lord, at that time. The cows, at that time ‡…‡. At this moment, great praise was done. And from there the priests welcomed Zion, the Ark of the Law of the God of Israel. (72) And they ‡…‡ over Her; and as for the golden objects, they caused them to accompany Her. Upon seeing this, the five lords, with their troops, returned to Asqalona saying ‘We have freed ourselves of Zion and have abandoned Her’. And at that time, when the sons of Ikonǝyu together with the people of [Beta] Samis looked upon Zion, they did not welcome Her; and She killed fifty thousand and seventy people. (73) Those who remained wept and said ‘The Lord has punished us because of Zion’. After She did that, the people of [Beta] Samis, said that ‘What shall we do with Zion and in which place should we put Her?’ Then, they sent messengers to those who live at Qaryat-(ye)arim saying ‘The Philistines have returned Zion the Ark. Come, welcome Her among you’. (74) Hearing this, they rejoiced, came, welcomed Her and brought Her to the house of Aminadab, which was on the hill. At that time, they sanctified Her and gave Her to Alʿazar to guard Zion and to become a priest. In this manner She lived a long time, for about twenty years. Amsalu Tefera. 2015. The Ethiopian Homily on the Ark of the Covenant: Critical Edition and Annotated Translation of Dersana Seyon, pp. 155-160. BRILL."
-      }
-    ]
-  },
-  {
-    "id": "547",
-    "title": "A monk heals two blind hyena cubs with an icon of the Virgin Mary.",
-    "incipit": "ተብህለ፡ በእንተ፡ ዝዕብ፡ ዘወለደት፡ ክልኤተ፡ ውሉደ፡ ወዖሩ፡ አዕይንቲሆሙ፡ ለዝዕብ፡ እጓላ። ወነበረ፡ አሐዱ፡ መነኮስ፡ መንገለ፡ ሐቅል፡ ምስለ፡ አራዊት",
-    "manuscript_count": 8,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "554",
-    "title": "Saint Samuel of Waldebba (Samuʾel), the 15th c. Ethiopian saint, and how the Virgin Mary appeared to him and Abuna Madganina Egziʾ",
-    "incipit": "ስምዑኬ፡ ዘከመ፡ አስተርአየቶ፡ ወዜነወቶ፡ ምስጢረ፡ መንግሥተ፡ ሰማያት፡ ለአቡነ፡ መድኃኒነ፡ እግዚእ፡ ምስለ፡ ወልዱ፡ ሳሙኤል፡ ዘዋሊ፡ እንዘ፡ ይትናገሩ፡ ዕበያቲሁ፡ ለእግዚአብሔር፡ ወባሕረ፡ ንጽሕናሃ፡ ለንጽሐተ፡ ንጹሓን፡ እግዝእትነ፡…. ወበእንተ፡ አፍቀሩ፡ ኪያሃ፡ መጽአት፡ ኀቤሆሙ፡ ምስለ፡ ገብርኤል፡ መልአክ፡ ወትቤሎሙ፡ መንክራ፡ መዓዛ፡ አፉሃ፡ ሰላም፡ ለክሙ",
-    "manuscript_count": 8,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },
@@ -5270,19 +4108,6 @@ const MIRACLES_OF_MARY = [
     ]
   },
   {
-    "id": "5005",
-    "title": "Arabic: The wife of a rich man gives birth to a child with black skin",
-    "incipit": "",
-    "manuscript_count": 8,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
     "id": "437",
     "title": "Book of Ledata la-Maryam??: OldC: Annunciation: On the conception of Christ (like IDs 295, 297, 435, 437, 536, 1296)",
     "incipit": "ስምዑኬ፡ ንንግርክሙ፡ ዕበያ፡ ወክብራ፡ ለእግዝእትነ፡ ዘአመ፡ ኮነ፡ ፶፭፻፡ እምፍጥረተ፡ ዓለም፡ ወሠምረ፡ እግዚአብሔር፡ ከመ፡ ይሐውጽ፡ ግብረ፡ እደዊሁ፡ ወያግብኦሙ፡ እምግብርናት፡ መሪር",
@@ -5296,48 +4121,6 @@ const MIRACLES_OF_MARY = [
     ]
   },
   {
-    "id": "483",
-    "title": "Book of Felsata la-Maryam??: EOld?: Dormition: The Apostle Thomas relates how the Holy Spirit commanded him, while in India, to go back to Jerusalem and receive blessing from The Virgin Mary during her assumption to heaven and how he was taken to Heaven and saw the body of The Virgin Mary.",
-    "incipit": "ወእንዘ ፡ ሀሎኩ ፡ እወጽእ ፡ እጋንንተ ፡ ውስተ ፡ ሀገረ ፡ ህንደኬ ፡ ይቤለኒ ፡ መንፈስ ፡ቅዱስ ፡ ዛቲ ፡ ዕለት ፡ አምሳለ ፡ ፋሲካ ።",
-    "manuscript_count": 7,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "612",
-    "title": "Homily of John, Son of Thunder (Ra'eya Ta'amer): Part 3?: How the Virgin Mary is a perpetual virgin.",
-    "incipit": "አልቦ፡ እምሰብእ፡ ዘይትረከብ፡ እምአዳም፡ አቡነ፡ ወሔዋን፡ እምነ፡ ዘኢአበሰ፡ በሕሊናሁ፡ እመኒ፡ በፍጥወተ፡ ንዋይ፡ ዘዝንቱ፡ ዓለም፡ ዘተሰምየ፡ ዝሙተ፡ በከመ፡ ጸሐፉ፡ ሐዋርያት",
-    "manuscript_count": 7,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
     "id": "613",
     "title": "Homily of John, Son of Thunder (Ra'eya Ta'amer): Part 4?: How the apostles taught their synod about the virginity of the Virgin Mary.",
     "incipit": "ይቤሉ፡ ሐዋርያት፡ በሲኖዶሶሙ፡ ውእቱ፡ ኢየሱስ፡ ክርስቶስ፡ ዘተወልደ፡ እምማርያም፡ እምቅድስት፡ ድንግል፡ ዘንጽሕት፡ እምትዝብሕት፡ ወርኰስት፡ ወኵሉ፡ ክርስቲያናዊ፡ ዘቦ፡ ላዕሌሁ፡ መንፈስ፡ ቅዱስ፡ ይሜህር፡ ንጽሐ፡ ድንግልናሃ",
@@ -5345,24 +4128,8 @@ const MIRACLES_OF_MARY = [
     "most_read": false,
     "translations": [
       {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
         "author": "Rowan Williams",
         "text": "<p>The Miracles of Our Lady Mary, the Holy Twofold Virgin Theotokos</p><p></p><p>May her blessings keep her servant________ to the ages of ages. Amen. </p><p>This is a miracle Our Lady performed in the womb of Saint Anne.</p><p>Now Anne went to the house of Doyq, son of taliq, because he was the brother of her father, but Doyq, son of taliq, had died at that time. And as she went around the burial of the dead man, blessed Anne began to weep. At that moment the eyes of the dead man opened, and he arose from his bier and bowed down to Saint Anne and greeted her, saying,[1] ‘Salutation to you, blessed and holy Anne! You are the mother of the sun of righteousness, and grandmother of He Who created Heaven and Earth.’ After he had said this, he went back and laid down on his bier.[2] (Truly the sun of righteousness of whom he spoke is Our Lady, the sun of those whom the frigidity of sin has made cold,[3] and He Who created Heaven and Earth is her Son Jesus Christ, the Lord our God.) Now when the people there heard the dead man say this, when he arose from the bier, they marvelled and were greatly amazed,[4] and they blessed the Lord Most High, Who showed them this miracle. But there were some who were jealous of Anne and Joachim. Then the Angel, whose name is Gabriel,[5] appeared to them and took them to Mount Lebanon, and Our Lady was born there.[6] For this reason the Scriptures say, ‘The bride shall go forth from Lebanon.’[7]  </p><p>May the prayers and blessings of Our Lady, the holy Virgin Theotokos, be with her servant ________ to the ages of ages. Amen.</p>"
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },
@@ -5373,10 +4140,6 @@ const MIRACLES_OF_MARY = [
     "manuscript_count": 7,
     "most_read": false,
     "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
       {
         "author": "Rowan Williams",
         "text": "<p>The Miracles of Our Lady Mary, the Holy Twofold Virgin Theotokos</p><p> </p><p>May her prayers and blessings be with us to the ages of ages. Amen.</p><p>Our Lady Mary went to the place called Calvary to witness the Passion of her beloved Son,[1] 2and she saw the crown of thorns with which they had crowned Him and the blood from His head,[2] which had been wounded by the crown of thorns, dripping upon His shoulders. 3She saw the blood of His scourging, with which the whips had covered Him.[3] Blood was dripping upon blood, for they had whipped Him severely. She also saw the blood of His scourging pouring into the trunk of the Cross. 4When she saw this, her heart burned with the heat of sorrow as the crowd of the Jews rejoiced[4] because of His Crucifixion. Floods of tears poured from her eyes as she gazed upon Him, yet the hearts of the crucifiers had no pity. 5In that moment the heart of the Virgin was moved with grief,[5] even as Jacob wept for Joseph and Jeremiah lamented the captivity of his people.</p><p6  Now there remained with Jacob eleven of his sons,[6] and those who were with Jeremiah helped one another when they were carried away captive. 7How then could the Virgin not weep as her Son suffered the Passion of the Cross?[7] How could the Virgin not weep for her only Son, to Whom she had given birth in virginity?[8] 8How could the Virgin not weep as she beheld the mockery of the Righteous One, the humiliation of the Glorious One?</p><p>  He Who was crucified looked upon His Mother and His youngest Disciple, and said to His Mother, ‘Behold your Son,’ and to His Disciple He said, ‘Behold your Mother.’ 9He entrusted His Disciple to His Mother for her to keep him as her son,[9] not as a servant.[10] 10And He entrusted His Mother to His Disciple so that he may regard her as a mother,[11] not as a mistress.[12]</p><p>11 Woe to that hour of suffering in which the parting of[13] the Son and His Mother came to pass! 12Woe to that hour of sorrow which darkened the sun and made the sky shudder! 13Woe to that hour of lamentation which shook the earth and troubled the deeps!</p><p14 For three days,[14] the lamentation of the Virgin grieved the Disciples, and the sound of her mourning melted their bodies. 15She did not cease her lamentation until He arose, nor would she find consolation until she saw the sky and greeted the sun on the morning of the first day of the week, and even the stars exulted with her when they saw their Master. 16The pure suckling kissed the fatted calf, and the flock rejoiced with her[15] when they saw the Chief Shepherd. 17Moreover, the daughter of David received the fruit of her womb, and her servants rejoiced with her, proclaiming the Resurrection of their Lord.[16]</p><p>18 O Our Lord, heal us for the sake of Your Passion; make us whole, O Lord, for the sake of the wounds of Your death; and comfort us for the sake of Your Mother Mary’s lamentation. 19Comfort us, O You who comforted Your Disciples, surround us with the grace of Your Cross and clothe us all in the light of Your Resurrection to the ages of ages. Amen.</p>"
@@ -5426,27 +4189,6 @@ const MIRACLES_OF_MARY = [
     ]
   },
   {
-    "id": "1156",
-    "title": "Song of Ethiopia: Part 1: The people of Egypt and Ethiopia walk together, singing praises upon the resurrection",
-    "incipit": "ስምዑ ፡  ካዕበ ፡  እንግርክሙ ፡  ክብራ ፡  ለማኅሌት ፡  መንፈሳዊት ዘየኀልዩ ፡  ክርስቲያን ፡  በቤተ ፡  አምላኮሙ ወዘይከውን ፡  ወትረ ፡  ተአምረ ፡  ዐቢየ ፡  ለለዓመት ፡  ውስተ ፡  መቃብሪሁ ፡  ለእግዚእነ ። ወኢተፀርዐ ፡  እስከ ፡  ዮም ፡  እም አመ ፡  ተንሥአ ፡  ወልደ ፡  እግዚአብሔር በሥጋ ፡  ዘነሥአ ፡  እምእግዝእትነ ፡  ማርያም።",
-    "manuscript_count": 7,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
     "id": "35-B",
     "title": "Mary Appears at Däbrä Metmaq (Part 3)",
     "incipit": "ዘከመ፡ አስተርአየት፡ በድብረ፡ ምጥማቅ። ወበቀዳሚት፡ ዓመት፡ ፍጻሜ። ሕንጸታ፡ ወቅዳሴሃ፡ በስመ፡ እግዝእትነ፡…. አመ፡ ፳፡ ወ፩፡ ለወርኃ፡ ግንቦት። ወእንዘ፡ ጉቡኣን፡ እሙንቱ፡ መነኮሳት፡ እምድኅረ፡ ፍጻሜ፡ ጸሎተ፡ ነግህ፡ ፈቀዱ፡ ይሑሩ፡ ከመ፡ ይትለአኩ፡ ኅብስተ፡ ቍርባን፡ በጽሖሙ፡ ብርሃን፡ ዓቢይ፡ ዘንኩር፡ ጥቀ።",
@@ -5464,109 +4206,6 @@ const MIRACLES_OF_MARY = [
     ]
   },
   {
-    "id": "471",
-    "title": "Dabra Metmaq's Annual Apparition of Our Lady Mary: Summary: The annual apparition of the Virgin Mary at Dabra Metmaq [not the same as 35A, a digest]",
-    "incipit": "ወሀለወት፡ አሐቲ፡ ቤተ፡ ክርስቲያን፡ ዘተሐንጸት፡ በስመ፡ እግዝእትነ፡ ወይትጋብኡ፡ ባቲ፡ ኵሎሙ፡ ሕዝበ፡ ክርስቲያን፡ አመ፡ ፳፡ ወ፩፡ ለወርኃ፡ ግንቦት፡ ወይገብሩ፡ በዓለ፡ ዐቢየ፡ በእንተ፡ አስተርእዮተ፡ ገጻ፡ ገሃደ፡ ለእግዝእትነ፡….",
-    "manuscript_count": 6,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "488",
-    "title": "Book of Felsata la-Maryam??: EOld?: Dormition: The Virgin Mary Magdalene, Jesus, and the disciples fly to arrive at the consecration of the first church, the patriarchs are commemorated, rise from the dead, and are baptized",
-    "incipit": "ወእንዘ፡ ሀሎነ፡ በምድረ፡ ይሁዳ፡ አመ፡ ፷፡ ለኅዳር፡ ናሁ፡ ደመና፡ ብሩህ፡ ፆረነ፡ ምስሌሁ፡ ወምስለ፡ አርዳኢሁ፡ ወምስለ፡ ማርያም፡ መግደላዊት፡ ወአብጽሐነ፡ ኀበ፡ ዝንቱ፡ ቤት",
-    "manuscript_count": 6,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "539",
-    "title": "A barren woman in Ethiopia conceives and bears Salda Masqal [who is...?]",
-    "incipit": "ወሀለወት፡ አሐቲ፡ ብእሲት፡ መካን፡ ወይዘነጕጓ፡ ብእሲሃ፡ ወይጸርፋ፡ ብዙኃ፡ ጊዜያት። ወሀለወት፡ አሐቲ፡ ቤተ፡ ክርስቲያን፡ በጥቃ፡ ቤታ፡ ወትገይስ፡ በሌሊት፡ ከመ፡ ኢያእምራ፡ ብእሲሃ፡ ወትስእላ፡ በብካይ",
-    "manuscript_count": 6,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "540-B",
-    "title": "Gabra Maryam is healed by the Virgin Mary and Gabriel when they appear to him (conclusion)",
-    "incipit": "ወካዕበ፡ በ፩እመዋዕል፡ ዘገብረት፡ ሎቱ፡ ተአምር፡ ለውእቱ፡  ብእሲ፡ ኢትዮኡያዊ፡ ዘስሙ፡  ገብረ፡ ማርያም፡ እግዝእትነ፡  ... ወትቤሎ፡  ኢትፍራህ፡ ኦፍቁርየ፡ ወላእክየ፡ ገብረ፡ ማርያም፡ እስመ፡ ኀባዕኪከ፡ አምልበ፡ መዋቲ፡ ወእም ገጸ፡ ንጉሥ፡ ምድራዊ። ወው አቱኒ፡ ሖረ፡ በድፋረት፡ ወቦአ፡  ውስተ፡ ቤተ፡ ነጋሢ፡ ወሐመ፡ ፸ ጊዜ፡ ወበሣልሰ፡ ድኅረ፡ አልጸ ቀ፡ ለመዊት፡ አስተርአየቶ፡ በ አምሳለ፡ ንግሥት፡ ወቀርበ፡ ኀ ቤሃ፡ ከመ፡ ይወድሳ፤",
-    "manuscript_count": 6,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "542",
-    "title": "Saint Samuel of Waldebba (Samuʾel), the 15th c. Ethiopian saint, and the blind man who recovered his sight at the commemoration of the saint",
-    "incipit": "ወእምድኅረ፡ ዕረፍቱ፡ ለአቡነ፡ ሳሙኤል፡ በ፵፡ ዕለት፡ ተጋብኡ፡ ሕዝብ፡ ከመ፡ ይግበሩ፡ ተዝካሮ፡ ኀበ፡ መቃብሪሁ፡ ዘምስለ፡ ቀሳውስት፡ ወዲያቆናት፡ ወመነኮሳት፡ ወመኳንንት፡ እድ፡ ወአንስት፡ እስከ፡ ይከይዱ፡ ቢጾሙ",
-    "manuscript_count": 6,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "558",
-    "title": "King Zara Yaqob (Zarʾa Yaʿeqob), the 14th c. Ethiopian monarch, institutes monthly feasts of the Virgin Mary.",
-    "incipit": "ወካዕበ ፡ ስምዑ ፡ ዘከመ ፡ ገብረ ፡ ላቲ ፡ ለእግዝእትነ .... ንጉሥነ ፡ ዘርአ ፡ ያዕቆብ ፡ ወበጸጋ ፡ እግዚአብሔር ፡ ዘተሰምየ ፡ ርቱዓ ፡ ሃይማኖት ፡ እስከሬነ ፡ መንፈስ ፡ ቅዱስ ፡ ማኅቶተ ፡ ጥበብ ፡ ወምሉዓ ፡ አእምሮ ፡ ብእሲ",
-    "manuscript_count": 6,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "606",
-    "title": "Book of Laha Maryam??: Old: Crucifixion: The Virgin Mary visits Calvary.",
-    "incipit": "ወሖረት፡ መካነ፡ ቀራንዮ፡ ከመ፡ ትርአይ፡ ሕማማተ፡ ፍቁር፡ ወልዳ፡ ርእየት፡ አክሊለ፡ ሦክ፡ ዘአስተቀዘልዎ፡ ወደመ፡ ርእሱ፡ ዘቈስለ፡ በአክሊለ፡ ሦክ",
-    "manuscript_count": 6,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
     "id": "611",
     "title": "Homily of John, Son of Thunder (Ra'eya Ta'amer): Part 2?: How the Virgin Mary was given great wings.",
     "incipit": "ወካዕበ፡ ላቲ፡ ለይእቲ፡ ብእሲት፡ አክናፍ፡ ዐበይት፡ መንፈሳውያን፡ በዘትሠርር፡ ቦሙ፡ ለበጺሐ፡ ኵሉ፡ ዓለም",
@@ -5574,37 +4213,8 @@ const MIRACLES_OF_MARY = [
     "most_read": false,
     "translations": [
       {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
         "author": "Jeremy Brown with Wendy Laura Belcher",
         "text": "<p>A miracle performed by Our Lady Mary, the Holy twofold Virgin, Mother of God. May her prayers and her blessings be with her servant Hayla Giyorgis forever and ever, amen. </p><p>There once was a man and he wanted to learn to write. </p><p>But he [the teacher] refused [to teach] him, and the process of writing was not revealed to the man. </p><p>He continued grieving for many days [about this], until he said to himself, “What should I do?”</p><p>So, he entered the church and stood in front of the icon of Our Lady Mary and said to her, “Reveal how to write to me and perform [this] miracle upon me.”</p><p>As soon as he said this to her, she revealed it to him. </p><p>After, he lived writing [the book of] the Miracles of Our Lady Mary.</p><p>By the intercession of the Intercessor, the man was clothed and fed [every day,] until the day of her feast. </p><p>Then he died, entering into the kingdom of heaven. </p><p>May her prayers and her blessings be with her servant Walda Mikael, forever and ever, amen. </p>"
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "635",
-    "title": "Syrian church of the Virgin Mary in Homs collapses in an earthquake.",
-    "incipit": "ዘገብረት፡ በሀገረ፡ ፊንቄ፡ እንተ፡ ይብልዋ፡ ኅምስ፡ እምአድያመ፡ ሻም። ወሀለወት፡ አሐቲ፡ ቤተ፡ ክርስቲያን፡ ውስተ፡ ይእቲ፡ ሀገር፡ በስመ፡ እግዝእትነ፡…. ወነበረት፡ እምዘመነ፡ አበዊነ፡ ሐዋርያት፡ ወበልየት፡ እምጽንዓ፡ አዝማናት። ወበአሐዱ፡ እምለያልይ፡ ኮነ፡ ዐቢይ፡ ድልቅልቅ፡ እስከ፡ ወድቀት፡ ይእቲ፡ ቤተ፡ ክርስቲያን",
-    "manuscript_count": 6,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },
@@ -5644,23 +4254,6 @@ const MIRACLES_OF_MARY = [
       {
         "author": "Augustine Dickinson",
         "text": "<p>A miracle of Our Lady, the holy twofold Virgin Mary, the Birth-giver of God. May her prayer and blessing and the mercy of her beloved son be with us unto ages of ages, amen.</p><p>There was a certain man, a monk of Dabra timonā, whose name was Ephrem. He was a fisherman for the monks of the monastery. Every year he commemorated the feast of Our Lady, the holy twofold Virgin Mary, the Birth-giver of God, on which she received the Covenant of Mercy from her son. On the day of her feast, he would give fish to all the men of the monastery.</p><p>One day, he called the monks of the monastery so that he could catch some fish, and 270 men followed him in order to carry the fish. Arriving at the edge of the sea, he stood and cast his net over the sea and, dragging the net, took the fish out. Suddenly, a serpent devoured him and the monks fled and told the abbot.</p><p>The abbot ordered that they should sound the semantron. The monks gathered and he announced to them that a serpent had devoured Ephrem. Immediately, they went into the church and stood before the icon of Our Lady, the holy twofold Virgin Mary, the Birth-giver of God, and supplicated to her, saying prayers so that she might release Ephrem from the death of the marsh. And she appeared to the abbot that night in a dream, showing him the place where the serpent would rest at the edge of the sea. And the abbot took the monks to the place where Our Lady, the holy twofold Virgin Mary, the Birth-giver of God, appeared to him. And the serpent came out and approached them, wishing to devour them, and the monks cried out to Our Lady Mary, the Birth-giver of God, and prayed the Salutation of the Angel.1 And she received their prayer and commanded the beast and made it spit him up.</p><p>Ten days and ten nights after the serpent had devoured him, Ephrem came out of the belly of the beast alive, having not been harmed him at all. They washed him of the foul odor, perfumed him, and led him to a feast. And they praised Our Lady, the holy twofold Virgin Mary, the Birth-giver of God, and, until the day of their deaths, they increased their celebration of her feast and their honoring of the name of Our Lady, the holy twofold Virgin Mary, the Birth-giver of God.</p><p>May her prayer and blessing and the mercy of her beloved son be with us unto ages of ages, amen.</p>"
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "485",
-    "title": "Book of Felsata la-Maryam??: EOld?: Dormition: Hell: Christ grants The Virgin Mary a vision of the sufferings of those in Hell.",
-    "incipit": "ወትቤ፡ እግዝእትነ፡…. አውሣእክዎ፡ ለወልድየ፡ ወእቤሎ፡ አርእየኒ፡ ሶበ፡ ትወጽእ፡ ነፍሰ፡ ኃጥኣን፡ እምሥጋሃ",
-    "manuscript_count": 5,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },
@@ -5717,40 +4310,6 @@ const MIRACLES_OF_MARY = [
     ]
   },
   {
-    "id": "595",
-    "title": "Saint Romanus, the martyr, and his life story",
-    "incipit": "ወሀሎ፡ አሐዱ፡ ብእሲ፡ ዘስሙ፡ ሮማኖስ፡ በደወለ፡ ግብጽ፡ አዳም፡ ስነ፡ ራእዩ፡ ወመንክር፡ ኂሩታቲሁ፡ ወሠናይ፡ በኵሉ፡ ግዕዙ፡ ወያፈቅራ፡ ለእግዝእትነ፡…. ወበአሐዱ፡ ዕለት፡ እንዘ፡ ሀሎ፡ በውስተ፡ ጸሎቱ፡ አኃዞ፡ ደቃስ፡ ወመጽአት፡ ኀቤሁ፡ እግዝእትነ",
-    "manuscript_count": 5,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "607",
-    "title": "Homily on the greatness of the Virgin Mary and how she was more exalted than the angels and her Son saved the world",
-    "incipit": "ስምዑኬ፡ አበውየ፡ ወአኀውየ፡ ሕዝበ፡ ክርስቲያን፡ ዘከመ፡ ተዓቢ፡ እምመላእክት፡ እግዝእትነ፡…. መላእክትኒ፡ ያከብርዋ፡ እፎኬ፡ ኢያከብርዋ፡ መላእክት፡ ለማርያም፡ ፈድፋደ፡ እምሰብእ፡ ለወላዲተ፡ መፍቀሬ፡ ሰብእ",
-    "manuscript_count": 5,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
     "id": "619",
     "title": "Book of Felsata la-Maryam: [Chaine Part 06.2] Dormition: When Tafoneya lays hands on the bier of The Virgin Mary, an angel cuts his arms off (continuation of the preceding miracle) [same as 119]",
     "incipit": "ወሶበ፡ ጸብሐ፡ ይቤሎሙ፡ መንፈስ፡ ቅዱስ፡ ለሐዋርያት፡ ንሥእዋ፡ ለማርያም፡ ወአምጽእዋ፡ እምቤተ፡ መቅደስ፡ ወወሰድዋ፡ እንተ፡ ታበጽሕ፡ ውስተ፡ ፈለግ",
@@ -5773,32 +4332,6 @@ const MIRACLES_OF_MARY = [
       {
         "author": "Getatchew Haile",
         "text": "A miracle which Our Lady revealed and spoke to a certain monk called Walda hawaryat: He came from Dabra Libanos and lived in Dabra Zamaddo in seclusion. He was versed in the Scriptures and was practicing them. He was truly Walda hawaryat. One day, he entered the chapel of the icon of Our Holy Lady, Virgin in two ways, Mary, Bearer of God, to mourn, remembering the crucifixion of her Son, because this was his habit. Whenever he remembered the sufferings of the Son of God, his energy would be weakened and his bones would be crushed. His tears, too, would come down like water from a fountain; and they would flow from his eyes like the rain of the time of Kramt and run down to his waist and reach his feet. The ground on which he stood would be wet with his tears. One day, as he was crying, Our Holy Lady, Virgin in two ways, Mary, Bearer of God, said to him, “Walda hawaryat, why do you shed so many tears so that the ground is wetted?” He said to her, “O My Lady, I remember the sufferings of your Son”. And she said to him, “Was my Son crucified for you only? Was he not crucified for the whole world?” She said this and disappeared from him. Saintly people, whom Our Lady loved, heard her and wrote down this miracle. They also explained the matter to us: They said, “The reason she said, ‘Why do you shed so many tears’ was not for trivializing (the importance of) tears, but to strengthen (Walda hawaryat) from exhaustion and to show the strength of her love to all people who put their trust in her”. May her prayer and petition keep Walda Iyyasus forever and ever. Amen. Getachew Haile, 1st ed., 2013. Voices from Dabra Zamaddo: Acts of Abba Bartalomewos and Abba Yohannǝs 45 Miracles of Mary, p. 249. Harrassowitz Verlag. JSTOR, www.jstor.org/stable/j.ctvc2rjq6"
-      }
-    ]
-  },
-  {
-    "id": "1119",
-    "title": "The famine in Egypt caused by the shortage of water in the Nile during the reign of Patriarch Matthew I (1378-1408).",
-    "incipit": "ወበውእቱ፡ መዋዕል፡ በዝኁ፡ ተንባላት፡ ውስተ፡ ብሔረ፡ ግብዕ፡ ወጸንዓ፡ ሕማም፡ ላዕለ፡ ከርለቴያን፡ ወፌድፋደሰ፡ በኀበ፡ እለ፡ በቍለፕንፕንያ፡ ወበኢየሩሰሴም፡ ወእሰ፡ በሶርያ። ወሶበ፡ ርእዩ፡ ዘንተ፡ ግፍዓ፡ ለብአ፡ አፍርንጊ፡ ተጋቢአሙ፡ ደርገ፡ መከፋ፡ ወኀበፋ፡ ቃለ፡ ወጸሐፉ፡ ጦማረ፡ መልእክት፡ ወለአኩ፡ ኀበ፡ ኄር፡ ወጻድቅ፡ ዳዊት፡ ንጉሠ፡ ኢትዮጵያ።",
-    "manuscript_count": 5,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1131",
-    "title": "King Naod (Naʾod), the 16th c. Ethiopian monarch, destroys the Arab King with the help of the Virgin Mary",
-    "incipit": "ወሀሎ፡ ፩ንጉሥ፡ ዘበመዋዕሊሁ፡ ርትዓ፡ ሃይማኖተ፡ ክርስቲያን፡ ዘያፈቅራ፡ ለእግዝእትነ፡.... ዘስሙ፡ ናኦድ። ወሖረ፡ ኀበ፡ ምህርካ፡ ውስተ፡ ምድረ፡ ኵራዛ።",
-    "manuscript_count": 5,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },
@@ -5855,32 +4388,6 @@ const MIRACLES_OF_MARY = [
     ]
   },
   {
-    "id": "360",
-    "title": "The icon of the Virgin Mary that did not burn when the rest of the house was destroyed.",
-    "incipit": "ኀይለ፡ ወተአምረ፡ ዘገብረት፡ እግዝእትነ፡ ማርያም፡ በላዕለ፡ ሥዕላ። ወሀሎ፡ አሐዱ፡ ነዳይ፡ ዘያፈቅሮ፡ ለእግዚአብሔር፡ ልዑል፡ በኵሉ፡ ልቡ፡ ወበኵሉ፡ ኀይሉ፡ ወይጸውር፡ ሥዕለ፡ ዚአሃ፡ ለማርያም፡ በንጹሕ፡ ዘእንበለ፡ ርስሐት",
-    "manuscript_count": 4,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "420",
-    "title": "A man who accepted fine clothes as a bribe for future favors.",
-    "incipit": "ወሀለወት፡ አሐቲ፡ ሀገር፡ እምአህጉረ፡ ክርስቲያን፡ ወይነብሩ፡ ውስቴታ፡ ሰብእ፡ ክርስቲያን፡ ዐቢያን፡ በብዙኅ፡ ዕቅበት",
-    "manuscript_count": 4,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
     "id": "495-B",
     "title": "Book on Ark of Dersana Seyon: Part 3B: Nathan tells King David that his son, Solomon, will build the Temple for the Ark of Zion.",
     "incipit": "ወእንዘ፡ ሀለወት፡ ጽዮን፡ ውስተ፡ ደብተራ፡ ወፈቀደ፡ ዳዊት፡ ይሕንፅ፡ ማህደረ፡ ቤተ፡ እግዚአብሔር",
@@ -5894,94 +4401,12 @@ const MIRACLES_OF_MARY = [
     ]
   },
   {
-    "id": "496-B",
-    "title": "Book on Ark of Dersana Seyon: Part 4B: Reflections on the construction of the Temple of Solomon.",
-    "incipit": "ኢይምስልክሙ፡ አኃውየ፡ ከመዝ፡ ግብረታ፡ ለታእካ፡ ሰማይ፡ ኀበ፡ ትነብር፡ ጽዮን፡ ቅድስት",
-    "manuscript_count": 4,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "533",
-    "title": "Abba Abreham is invited by the king to come and discuss spiritual matters.",
-    "incipit": "ወሀሎ፡ አሐዱ፡ ብእሲ፡ ዘስሙ፡ አብርሃም፡ ዘያፈቅሮ፡ ለእግዚአብሔር፡ ወለእግዝእትነ፡…. ወይትጋነይ፡ መዓልተ፡ ወሌሊተ፡ በጾም፡ ወበጸሎት፡ በሰጊድ፡ በባሕር፡ ወበግበብ፡ ወበጽሙድ፡ በፍቅረ፡ አምላኩ፡ ውስተ፡ ልቡ፡ ወውስተ፡ አባሉ፡ እንዘ፡ ይነብር፡ ውስተ፡ ሀገሩ",
-    "manuscript_count": 4,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "534",
-    "title": "A bishop asks a man for the prayer that saved him from Satan.",
-    "incipit": "ወሀሎ፡ አሐዱ፡ ኤጲስ፡ ቆጶስ፡ ዘይቤሎ፡ ለአሐዱ፡ ብእሲ፡ ንግረኒ፡ ጸሎተ፡ ዘያድኅንከ፡ እምሰይጣን፡ እኩይ",
-    "manuscript_count": 4,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "544",
-    "title": "Saint Samuel of Waldebba (Samuʾel), the 15th c. Ethiopian saint, and the blind woman from Zarafta who was unable to come to the saint's tomb",
-    "incipit": "ወሀለወት፡ ካዕበ፡ ዕውርት፡ ክልኤሆን፡ አዕይንቲሃ፡ በምድረ፡ ዘረፍታ፡ ወሶበ፡ ስእነት፡ ዘያበጽሐ፡ ኀበ፡ መቃብሪሁ፡ ለብፁዓዊ፡ አቡነ፡ ሳሙኤል፡ እስመ፡ ነዳይት፡ ጥቀ፡ ወአልባቲ፡ ቢጽ፡ ዘይረድአ",
-    "manuscript_count": 4,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "604",
-    "title": "Book of Felsata la-Maryam??: LOld?: Dormition: The Virgin Mary asks Christ to bless those who honor her and pray for her help (Covenant of Mercy)",
-    "incipit": "ወካዕበ፡ ጸለየት፡ እግዝእትነ፡…. ወትቤሎ፡ ኦእግዚእየ፡ ኢየሱስ፡ ክርስቶስ፡ ወልደ፡ እግዚአብሔር፡ ልዑል፡ እስእለከ፡ ወአስተበቍዓከ፡ በእንተ፡ ኵሉ፡ ዘገብሩ፡ ሊተ፡ ፈቃድየ፡ በሰማይ፡ ወበምድር። ወትቤሎ፡ ባርክ፡ እግዚኦ፡ ኀበ፡ ዘይገብር፡ ማኅሌተ፡ በስምየ",
-    "manuscript_count": 4,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "617",
-    "title": "Book of Felsata la-Maryam: [Chaine Part 01] Dormition:Three virgins come to serve The Virgin Mary as she is about to die",
-    "incipit": "ወበይእቲ፡ ዕለት፡ መኳንንት፡ ዘቤተ፡ ልሔም፡ ጸውእዎሙ፡ ለእሙንቱ፡ ዕደው፡ እለ፡ ተፈወሱ፡ እምደዌሆሙ፡ ኀበ፡ እግዝእትነ፡…. ተስዕልዎሙ፡ ወይቤሎሙ፡ ንግሩነ፡ ዘገብረት፡ መንክረ፡ ለክሙ፡ እግዝእትነ፡ ማርያም",
-    "manuscript_count": 4,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
     "id": "618",
     "title": "Book of Felsata la-Maryam: [Chaine Part 05] Dormition: When Agabos from Dalga, who looks like the cannibal of Qemer, enters the church, the icon of the Virgin Mary weeps.",
     "incipit": "ወበሳኒታ፡ ለአከ፡ መኰንን፡ ያስተጋብኦሙ፡ ለካህናት፡ ወለኵሎሙ፡ ሰብአ፡ ቤተ፡ መቅደስ፡ ወይቤሎሙ፡ እኩያን፡ ሕዝብ፡ እለ፡ ሰቀልክምዎ፡ ለክርስቶስ፡ ዘወረደ፡ እምሰማያት",
     "manuscript_count": 4,
     "most_read": false,
     "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
       {
         "author": "Getatchew Haile",
         "text": "Translated in Getatchew Haile, Mariology of Zara Yaeqob, p. 70-73."
@@ -6023,23 +4448,6 @@ const MIRACLES_OF_MARY = [
       {
         "author": "Getatchew Haile",
         "text": "A miracle which Our Holy Lady, Virgin in two ways, Mary, Bearer of God, worked at Dabra Zamaddo for Abuna Sinodos who was called Walda Yohannǝs when he was appointed keeper and legislator of the law of Dabra Zamaddo: The water that came down on the grotto used to trouble the church. It troubled it very much, starting with the beginning of the Kramt until the month of Maskaram. At other months, too, it would trouble it if it rained. When Abuna Walda Yohannǝs saw this during the time of his tenure, he wanted to improve the way the water streamed and to build a pavement at the mouth of the grotto. He searched for wood that would go on par with the pavement. People reported to him, saying, “There is a hab tree at the top of the mountain that can be good for this construction”. Hearing this, Abuna Sinodos went with many people to cut the hab tree. When the people of the country heard that he went to cut the hab tree, they came together and went to the tree. They found our father having arrived there. They said to him, “Unless you first kill us, we will neither be quiet nor let you cut it”. Abuna Walda Yohannǝs said to them, “Why do you think evil? Is not our church for us all as well? And is it not the abode of Our Lady Mary? How did the enemy make you think of an evil matter? Leave this matter”. Those who opposed him said to him, “Your words are not sweet to us. As for leaving, you leave, (not we). If you want to cut it, kill us first. But while we see, we will not let you cut it”. When Walda Yohannǝs heard these, their evil words, he was very sad. He said (to himself), “If I insist on cutting it, these people will clash with my people. And people could die because of this”. He said this, and having counseled with himself, he abandoned cutting the tree and left for home, saddened and distressed. See this humility of this father, and meekness of his heart and his love for people! He did not want to cut it by force. Even though he was the ruler of these people and a huge host had followed him, he chose to abandon cutting the tree. He only said to Our Lady, “See the crooked- ness of these people! What does that tree in the wilderness benefit them? Would it not be better for them, if your house was constructed?” As for Our Lady, she heard and kept silent (for the moment). She was patient for three days. When she saw these people’s stubbornness of the heart – that they neither humbled themselves nor turned from their wicked counsel – despite the fact that their father exhibited meekness, and their ruler humbled himself, she made the tree fall from its root and be divided it into three parts, without a human hand touching it. When people heard (it), they brought to Abuna Sinodos the good news of the fall of the tree from its root. And those people who prevented its cutting humbled themselves after its fall from its root, (humility) void of praise. They said to Abuna Walda Yohannǝs, “Do what you want to do”. He said, disappointed in his heart, “This praise, after the fall of the tree from its root, is not for people but for God and his Bearer, Our Holy Lady, Virgin in two ways, Mary, Bearer of God”. As she moved (the church of) Dabra ʿƎqwana, she moved the tree in the same fashion. But she did not damage the foundation (of the church) of Dabra ʿƎqwana when she moved it; she only took it from place to place; and there, she kept it firmly as before. But her moving of this tree was not for a good (reason) but for its destruction. And she cut it into such (useless) parts. And its end was not good. She made the tree fall from its root to show her power, because of the diligence and righteousness (of Abuna Sinodos) and his servitude to Our Lady Mary. Its end was not good also because of the crookedness of the people, because ruse destroys the straight path. And (the abbot) could not improve this building (using) the tree because its cutting was not done peacefully (but only) because he loved (Mary) and because of the straight- ness of his mind. She saw his love for her, and it moved it from its place; but because of the crookedness of the people, she did not accept it. And so its end was not good. If the beginning (of anything) is not with love, its end will not be good. See this miracle which Our Lady Mary worked! Lest people say about her, “She does not help her beloved ones”, she removed (the tree) from its place to show her love to Abuna Sinodos. And lest the people who quarrelled before say, “She is a lover of money”, she (arranged) that (her) people would not cut it. Therefore, the end (of the tree) was not good. May her prayer and her blessing and the mercy of her beloved Son be with her servant Gabra Maryam forever and ever. Amen. Getachew Haile, 1st ed., 2013. Voices from Dabra Zamaddo: Acts of Abba Bartalomewos and Abba Yohannǝs 45 Miracles of Mary, pp. 261-263. Harrassowitz Verlag. JSTOR, www.jstor.org/stable/j.ctvc2rjq6"
-      }
-    ]
-  },
-  {
-    "id": "1104",
-    "title": "Book of Laha Maryam??: Crucifixion: Part 05: The Virgin Mary sees her son at the tomb and sent to the disciples to say that he is risen",
-    "incipit": "ወሶበ ፡ ተንሥአ ፡ እግዚእ ፡ ኢየሱስ ፡ ክርስቶስ ፡ ኮነ ፡ ዐቢይ ፡ ድልቅልቅ ፡ ፈርሑ ፡ ወርዕዱ ፡ ሐራ ፡ ወወድቁ ፡ በገጾሙ ። ወኮነት ፡ ማርያም ፡ መግደላዊት ፡ በደረት ፡ በጺሐ ፡ ኀበ ፡ መቃብር ።",
-    "manuscript_count": 4,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },
@@ -6126,100 +4534,6 @@ const MIRACLES_OF_MARY = [
       {
         "author": "Rowan Williams",
         "text": "<p>The Miracles of Our Lady Mary, the Holy Twofold Virgin Theotokos</p><p>May her prayers and blessings be with us to the ages of ages. Amen.</p><p> </p><p>Next, Our Lady Mary, the Virgin Theotokos, was passed on and came to the house of Jesse, and to the house of David, the son of Jesse, being described in many symbolic forms. 3Do the Scriptures not say, ‘A rod will come forth from the root of Jesse, and a flower will come up from its stem’? This rod is a type of Saint Mary.  </p><p>4   Now there was a certain man of the tribe of Judah called Jesse, and he had a son called David who was younger than his brothers, and he kept the sheep of his father. 5One day the Lord said to Samuel, ‘Take a horn of oil,[1] go to Bethlehem and anoint David, who is the youngest of the sons of Jesse,[2] for I have chosen him and let him rule over Israel instead of Saul.’ 6So Samuel did as the Lord commanded him: he went to Bethlehem and called the sons of Jesse to the altar and sanctified them. 7Then Samuel said to Jesse, ‘Bring me your sons, for the Lord has commanded me to anoint one of them[3] with the oil of kingship.’ 8Thus Jesse brought forward seven of his sons, but Samuel told him, ‘The Lord has not taken pleasure in[4] these sons.’ 9Moreover, Samuel asked[5] Jesse, ‘Do you not have another son apart from these?’[6] 10Jesse answered Samuel, ‘There is a son who is younger than his brothers. He is keeping the sheep.’ 11Samuel told him,[7] ‘Bring that son to me at once!’ And he brought him to him. Now that son was ruddy, and he was handsome. 12And straight away the Lord said to Samuel, ‘This is the son concerning whom I spoke to you. Take him and anoint him.’ 13Then Samuel took the horn of oil and anointed David in the midst of his brothers, and the Spirit of the Lord dwelt in him[8] from that day forward.’[9] </p><p>14   Now in those days there was a battle between Israel and the Philistines. And Jesse sent David, saying,[10] ‘Here, take these provisions to your brothers who are in the midst of the battle.’ 15So David rose up early in the morning and had someone keep his flock, taking what his father Jesse had told him to take to his brothers. 16At that time the battle between the Israelites and the Philistines was fierce. And when David saw that, he put down what he was holding, left it with someone for safekeeping[11] and ran to the troops, asking them about his brothers’ safety. 17While David was speaking to his brothers, behold, Goliath, the strong and mighty Philistine, came forth from the hosts of the Philistines and uttered curses against Israel, and David heard those words. 18Then David asked[12] those who were beside him, ‘What is the reward of[13] the man who kills this Philistine and removes the reproach from Israel?’ 19The people told him,[14] ‘To the man who does all this the king will give his daughter to be his wife; he will exalt him and release the household of his father from all troublesome taxes in Israel.’ 20Straight away, David took a staff in his hand and chose three stones from the wadi, and there was a sling in his hand. Then he approached Goliath. 21And Goliath the Philistine came forth and drew near to[15] David. He looked upon him[16] as if he were nothing and belittled him. 22Then Goliath said to David, ‘What is this staff that you have brought to come against me? Am I a dog? Come now, draw near and I will chop your body into pieces and give it to the birds of the air and the beasts of the earth.’ 23David answered[17] Golaith, ‘Though you come with raised sword and spear,[18] I come to you in the Name of the God of Israel. 24The Lord will deliver you into my hand. This very day[19] I shall crush you on the earth, take your head from you and give your flesh to the birds of the air and the beasts of the earth. For the battle is the Lord’s.’ 25When David had said that to Goliath, he cried out and rose up to meet David, and David ran towards him. He took a single stone in his sling and slung it into his forehead, and Goliath the Philistine fell on his face and died. 26Then David ran to Goliath, stood over him, picked up his sword and beheaded him[20] and removed the reproach from the children of Israel.[21]    </p><p>27   When David returned from battle, the daughters of Israel came and welcomed him,[22] ululating, singing upon drums and rejoicing with great joy. 28After that, the Elders of Israel and the Princes of Judah came to Hebron, where David was, and said to him, ‘It is fitting for you to reign over Israel in Jerusalem. Was not the prophecy which says, “A King will go out to shepherd My people Israel,” spoken concerning you?’ 29Having said that, they anointed him and made him reign in Shiloh and Judah. 30So David made a covenant with the Elders of Israel before the Lord and became King over Israel. 31He was a lover of God, and he made his way upright before the Lord. 32As the psalm says,[23] ‘I have found my servant David, a man as faithful as my heart; with my holy oil I have anointed him. My hand will help him,[24] and my arm will strengthen him,[25] for he is a King and a Prophet.’</p><p>33   He prophesied about this through the Spirit of prophesy, knowing that Our Lady Mary, the Theotokos, would come forth from his loins and said, ‘Listen, my daughter, look and lend your ear. Forget your people and your father’s house, for the King has desired your beauty, that you might be His dwelling-place.’ 34Furthermore, David said, ‘For the Lord has chosen Zion; He has desired her to be His dwelling-place, saying, “This is my resting-place for ever; here I will reside, for I have chosen it”.’[26] and ‘Hers were the silver-decked wings of a dove, and her flanks were adorned with golden verdure.’[27]  </p><p>35   Listen, my brothers and sisters:[28] truly the words of Scripture—which the Holy Spirit spoke by the mouth of David concerning Our Lady Mary, the Virgin Theotokos—had to come to pass. 36Of his seed, the Lord brought forth salvation for Israel: Jesus Who was born of the holy Virgin Mary. 37Because of this, it is known that Our Lady Mary, the Theotokos, is the daughter of David.  </p><p>May her prayers and blessings be with us to the ages of ages. Amen.</p>"
-      }
-    ]
-  },
-  {
-    "id": "1157",
-    "title": "Song of Ethiopia: Part 2: The people in Jerusalem sing a song for the Cross of Christ at the Church of the Cross",
-    "incipit": "ሥልሰ ፡  ንነግረክሙ ፡  ክብራ ፡  ለማኅሌት ፡  እንተ ፡  ባቲ ፡  ይሴባሕ ፡  እግዚአብሔር ፡  ወበእንቲአሃ ፡  ይከውን ፡  ተአምር። ወሀለወት ፡  በኢየሩሳሌም ፡  ቤተ ፡  ክርስቲያን ፡  እንተ ፡  ትሰመይ ፡  ቤተ ፡  መስቀል ፡  ወይትጋብኡ ፡  ህየ ፡  በዕለተ ፡  በዓሉ ፡  ለመስቀል ፡  ሕዝብ ፡  ብዙኃን ፡  ወየኀልዩ ፡  ማኅሌተ ፡  በእንተ ፡  መስቀሉ ፡  ለክርስቶስ።",
-    "manuscript_count": 4,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1158",
-    "title": "Song of Ethiopia: Part 3: The people Ethiopia sing songs of praise at two churches for the monk Mamas.",
-    "incipit": "ወሀለዋ ፡  በብሔረ ፡  ኢትዮጵያ ፡  ክልኤቲ ፡  አብያተ ፡  ክርስቲያናት ፡  አሐቲ ፡  በጎለ ፡  ማክዳ ፡  እንተ ፡  ትሰመይ ፡  ቤተ ፡  መጣዕ ፡  ወካልእታሂ ፡  እንተ ፡  ይብልዋ ፡  ጎግዳ (ወግዳ ፡ ) መካነ ፡  መቃብሪሁ ፡  ለብፁዕ ፡  ማማስ ፡  መነኰስ።",
-    "manuscript_count": 4,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1159",
-    "title": "Saint Gabra Manfas Qeddus (Gabra Manfas Qeddus), the Egyptian saint who came to Ethiopia, and the Virgin Mary",
-    "incipit": "ወሀሎ ፡  አሐዱ ፡  መነኰስ ፡  መስተጋድል ፡  ኮከበ ፡  ክብር ፡  ዘሠረቀ ፡  እምሀገረ ፡  ገሊላ ፡  ወነበረ ፡  በገዳመ ፡  ግብፅ ፡  ፫ተ፻ተ ዓመተ ፡  ወእምገዳማተ ፡  ኢትዮጵያ ፡  ውስተ ፡  ደብረ ፡  ዝቋላ ፡  ፪ተ ፡  ፻ተ ፡  ፷ወ፪ወ፪ተ ፡  ዓመተ ፡  እንዘ ፡  ኢይበልዕ ፡  እክለ ፡  ወማየ ፡  ኢይሰቲ ፡  ወኢይለብስ ፡  ልብሰ።",
-    "manuscript_count": 4,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1160",
-    "title": "Saint Cyriaque (Heryaqos) of Behnesa, Egypt, ecstatically authors the Anaphora of Our Lady the Virgin Mary",
-    "incipit": "ወሀሎ ፡  አሐዱ ፡  ኤጲስ ፡  ቆጶስ ፡  ዘይሰመይ ፡  ሕርያቆስ ፡  ዘነበረ ፡  በሀገረ ፡  ብሕንሳ ፡  ወያፈቅራ ፡  ለእግዝእትነ ፡  ... በኵሉ  ፡  ልቡ  ፡  ወበኵሉ  ፡    ኅሊናሁ ። ውእቱኒ ፡  ኤጲስ ፡  ቆጶስ ፡  ጻድቅ ፡  ወኄር ፡  ወኮነ ፡  የኀዝን ፡  ወይቴክዝ ፡",
-    "manuscript_count": 4,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "Mehari Worku with Wendy Laura Belcher",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1162",
-    "title": "Saint Giyorgis of Sagla, the Ethiopian author, and the Virgin Mary",
-    "incipit": "ወሀሎ  ፡  አሐዱ  ፡  ብእሲ  ፡  በምድረ  ፡  አምሐራ  ፡  እምአድያማተ  ፡  ኢትዮጵያ  ፡  ዘስሙ  ፡  ሕዝበ  ፡  ጽዮን  ፡  ወስመ  ፡  ብእሲቱ  ፡  እምነ  ፡  ጽዮን  ፡  ወክልኤሆሙ  ፡  ጽሙዳን  ፡  በሕገ  ፡  እግዚአብሔር  ፡  ዘከመ  ፡  ካህን  ፡  ወነቢይ  ፡  ዘካርያስ  ፡  ወኤልሳቤጥ  ፡  ብእሲቱ ።",
-    "manuscript_count": 4,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "Mehari Worku with Wendy Laura Belcher",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1163",
-    "title": "King Dawit I, the 14th c. Ethiopian monarch, and how the Virgin Mary helps to bring the Holy Cross to Ethiopia during his reign",
-    "incipit": "ተብህለ  ፡  ከመ  ፡  በመዋዕሌሁ  ፡  ለዳዊት  ፡  ንጉሠ  ፡  ኢትዮጵያ  ፡  መጽአ  ፡  ዕፀ  ፡  መስቀሉ  ፡  ለኢየሱስ  ፡  ክርስቶስ  ፡  ዘቦቱ  ፡  ተሰቅለ  ፡  ለሊሁ  ፡  መድኃኒነ  ፡  ለቤዝዎ  ፡  ኵሉ  ፡  ዓለም  ፡  እምኢየሩሳሌም  ፡  ውስተ  ፡  ብሔረ  ፡  ኢትዮጵያ  ፡  በሥምረተ  ፡  እግዚአብሔር  ፡  ወበስእለታ  ፡  ለእግዝእትነ  ፡  ... ።",
-    "manuscript_count": 4,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },
@@ -6315,58 +4629,6 @@ const MIRACLES_OF_MARY = [
     ]
   },
   {
-    "id": "549",
-    "title": "The pious deacon who was seized to avenge a homicide committed by his brother.",
-    "incipit": "ወሀሎ፡ አሐዱ፡ ብእሲ፡ ዘያፈቅራ፡ ለእግዝእትነ፡…. ወይትአመና፡ በጥቡዕ፡ ልብ፡ ወኢያጸርዕ፡ ዘክሮተ፡ ሰማ፡ መዓልተ፡ ወሌሊተ፡ ወኢያበጥል፡ አንብቦ፡ ውዳሴሃ፡ ለለዕለቱ፡ እስመ፡ ዲያቆን፡ ውእቱ። ወሀሎ፡ እኁሁ፡ ዕቡይ፡ ወቀታሌ፡ ነፍስ",
-    "manuscript_count": 3,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "561",
-    "title": "The ruined church of the Virgin Mary that was rebuilt.",
-    "incipit": "ወሀለወት ፡ በውስተ ፡ አሐቲ ፡ ሀገር ፡ ቤተ ፡ ክርስቲያን ፡ ዘእግዝእትነ ፡ … ዘምዝብርት ። ወይእቲሰ ፡ ረዳኢቶሙ ፡ ለእለ ፡ ይትአመኑ ፡ ኪያሃ ፡ ወይገይሡ ፡ ኀቤሃ ፡ ወኵሉ ፡ ብእሲ ፡ እመቦ ፡ ዘበጽሖ ፡ ምንዳቤ ፡ ወዓፀባ ፡ ወጸለየ ፡ በዊኦ",
-    "manuscript_count": 3,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "588",
-    "title": "A Christian retainer escapes unharmed when his king is defeated by the Muslims.",
-    "incipit": "ተብህለ፡ ከመ፡ ሀሎ፡ አሐዱ፡ ብእሲ፡ ዘእምወዓልያኒሁ፡ ለንጉሥ፡ ዘያፈቅራ፡ ለእግዝእትነ፡…. ወያነብብ፡ ውዳሴያቲሃ፡ ወዕበያቲሃ፡ ኵሎ፡ አሚረ፡ ወይትመሐፀን፡ ባቲ። ወበአሐዱ፡ እምመዋዕል፡ ሖረ፡ ምስለ፡ ንጉሥ፡ ውስተ፡ ሰብእ፡ ወውስተ፡ ብሔረ፡ አረሚ",
-    "manuscript_count": 3,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "589",
-    "title": "A woman who was crossing a river on a raft [mezlal].",
-    "incipit": "ተብህለ፡ ከመ፡ ሀለወት፡ አሐቲ፡ ብእሲት፡ ዘታፈቅራ፡ ለእግዝእትነ፡…. ወትትመሐፀን፡ ኀቤሃ፡ ወታነብብ፡ ሰላመ፡ መልአክ፡ ረሰያ፡ ልማዳ፡ ከመ፡ ትትባላሕ፡ እምመናግንተ፡ ሰይጣን፡ በኅቡዕ፡ ወበገሃድ",
-    "manuscript_count": 3,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
     "id": "600",
     "title": "Life: The Virgin Mary heals two women whom a demon had made ill (related to )",
     "incipit": "ወካዕበ፡ መጽኣ፡ ኀቤሃ፡ ፪፡ አንስት፡ እለ፡ አድወዮን፡ ጋኔን፡ ወአውየዋ፡ ወይቤላ፡ ተሣሃልነ፡ ወፈውስነ፡ እምደዌነ፡ ኦእግዝእትነ፡…. ወሶቤሃ፡ ጸለየት፡ እግዝእትነ፡…. ወባረከት፡ ላዕሌሆን",
@@ -6376,45 +4638,6 @@ const MIRACLES_OF_MARY = [
       {
         "author": "Jeremy Brown & Dawit Muluneh, Shawn Benjamin, Alba",
         "text": "<p>And there was a certain monk whose name was Abyatar [Abiathar] in the town of Noba [Nubia?) who loved our Lady, the Holy Two-fold Virgin, Mary, Mother of God. </p><p>And he beautified her sanctuary, and he swept the courtyard for any grass and branches that had fallen. And he made a trumpet/drum. And he would sell to whomever he liked, taking the proceeds and handing them to the poor so that they might turn a [heavenly] profit for him. And he [also] would give fine linen garments and embroidered garments to our Lady, the Holy Two-fold Virgin, Mary, Mother of God. </p><p>And one day, our Lady, the Holy Two-fold Virgin Mary, Mother of God came to Abyatar while he was beautifying the trumpet/drum for her church. And she spoke to him with her voice, which is sweeter than the trumpet/drum of heaven and is the delight that refreshes the heart that hears it and that tastes sweeter to the throat than the honeycomb of new honey and the vineyard wine. [Song of Song 5:16 allusion, Septuagint, doesn’t get revised with the Arabic, knows the Psalter] </p><p>And she announced everything to him, and she revealed to him [She’ol,] the place where sinners will be judged and [heaven,] the place where the saints will rejoice in the garden. </p><p>And immediately, Abyatar grieved for the sake of his soul and he chastised his soul. And he said, “As for me, I was raised like a headstrong horse [faras] and like the farm animals that attend only to the grass for their bellies. I have carried out the entirety of my life in futility, [wearing] glorious clothes and [eating] good food. But now death and She’ol await me.” </p><p>And he gave [away] the trumpet/drums that he had made on the day of the feast of our Lady, the Holy Two fold Virgin, Mary, Mother of God, and he rejected this fleeting world and trampled it like a muddy plot of land. And then he went out into the wilderness for the sake of the love of our Lady, the Holy two-fold, Virgin Mary, Mother of God and he remained there for fifteen years while pleasing her with fasting and prayer. </p><p>Then he died and three lions buried his corpse at the command of our Lady the Holy Two-Fold Virgin, Mary, Mother of God. And she received his soul with the trumpets/drums of the spirit while the angels entertained him. And she settled him in the eternal garden. </p><p>May her blessings be with us, amen.</p>"
-      }
-    ]
-  },
-  {
-    "id": "605",
-    "title": "A Christian from Bethlehem is restored to his community after being sold into slavery by the Turks and beaten and slain by his master.",
-    "incipit": "ወሀሎ፡ አሐዱ፡ ብእሲ፡ በቤተ፡ ልሔም፡ ወያፈቅራ፡ ለእግዝእትነ፡…. እንዘ፡ የሐውር፡ በሐመር፡ ምስለ፡ ንዋዩ፡ ወመጽኡ፡ ትርኵ፡ ወአኃዝዎ፡ ወወሰድዎ፡ ወሤጥዎ፡ ውስተ፡ ካልእ፡ ሀገር",
-    "manuscript_count": 3,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "608",
-    "title": "Homily on the Dormition and on the reason for the trials and labors of the Apostles [EMIP Part 2 of 282]",
-    "incipit": "ነገር፡ በእንተ፡ ፍልሰታ። ወአበዊነሰ፡ ሐዋርያት፡ በእንተ፡ መኑ፡ ኮኑ፡ በውስተ፡ ዓለም፡ ከመ፡ ኳሄላት፡ በከመ፡ ይቤ፡ ቅዱስ፡ ጳውሎስ፡ ልሳነ፡ ዕፍረት፡ በእንተ፡ መኑ፡ ሞቀሕዎሙ",
-    "manuscript_count": 3,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "610",
-    "title": "Homily of John, Son of Thunder (Ra'eya Ta'amer): Part 1?: How the Virgin Mary appeared as a lady with twelve stars in her crown.",
-    "incipit": "ኦፍቁራን፡ ደቂቀ፡ ወንጌል፡ እለ፡ ዕቁባን፡ በስመ፡ ሥላሴ፡ ወእለ፡ ትትሜክሑ፡ በንጽሐ፡ ድንግልናሃ፡ ለእግዝእትነ፡…. ርኢክሙኒ፡ ዘየዐቢ፡ እምዝንቱ፡ ነገር፡ ዘርእየ፡ ዮሐንስ፡ ወልደ፡ ነጕድጓድ፡ ርዓይ፡ ኅቡአት፡ ዘረፈቀ፡ ውስተ፡ ሕፅነ፡ ነድ",
-    "manuscript_count": 3,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },
@@ -6448,10 +4671,6 @@ const MIRACLES_OF_MARY = [
       },
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "Mehari Worku with Wendy Laura Belcher",
         "text": "<p>Listen to what Our Lady Mary did, dear Fathers and brothers. </p><p>This is a miracle and wonder [that happened] in a town named Wandge. There was a church that had been built in the name of Our Lady, the Holy Virgin Mary, </p><p>the Compassionate One, the Mother of Mercy, </p><p>the Mother of God, the Mother of the Creator, the Mother of the Maker, </p><p>the Mother of the Sun of Righteousness, </p><p>the Ark of Salvation, the Witness to Our Freedom.</p><p>By her, we are saved from sin. </p><p>By her, we arise from death. </p><p>By her, we the sick are healed from suffering. </p><p>By her, we the poor become rich from poverty. </p><p>By her, we the sad rejoice from sadnesses. </p><p>By her, we the laboring find rest from toil. </p><p>By her, we the hungry become satisfied with abundant life. </p><p>By her, we the thirsty quench our thirst with salvation’s cup. </p><p>By her, we the naked become clothed with the garments of joy and delight. </p><p>By her, we the lowly are lifted up to the heavens. </p><p>She is the angels’ glory. </p><p>She is the prophets’ prophecy.</p><p>She is the apostles’ news. </p><p>She is the martyrs’ crown. </p><p>She is the righteous’ splendor. </p><p>She is the jewel of the daughters of Eve. </p><p>She is the bride of the resurrection. </p><p>She is the mother of light. </p><p>Our Lady, the Pure Virgin Mary, the Mother of God.</p><p>We heard an astonishing story, told to us by those from among the faithful [who were there]. </p><p>There was a stone for grinding wheat in that church [of Wandge, to prepare the bread] for the service of the Divine Mystery [the Eucharist]. </p><p>[One day,] a dog came up and licked the millstone. When the people saw this they were scared and terrified. So, they reported to the town mayor that a dog had licked the millstone. </p><p>After hearing this, the mayor said, “Throw that millstone away. I will give you another one.”</p><p>So, the people threw the millstone away and installed a new one. </p><p>But, after a few days, that dog came again to lick the millstone, as it was accustomed to doing. Before it could come close to the millstone, however, Our Lady Mary killed the dog. She made it rigid as a stone, but without falling to the ground. Rather, she made it stand still like a plant, without moving to the right or to the left. </p><p>When the people saw this, they were [again] scared and terrified, and praised Our Lady, the Praised one, the Glorified one, the Compassionate one, the Mother of Life, Mary. </p><p>Who can be compared to her? </p><p>Who is like her, whether human or angel?</p><p>With whom can we compare her?</p><p>With the heaven of Gelgela? </p><p>With the entire earth?</p><p>With the sun, the stars, and the moon?</p><p>She is the one who bore the creator in her pure womb.</p><p>Her words are sweeter than honey and sugar.</p><p>May she ask mercy for us from her son,</p><p>Jesus Christ, the bequeather of joy.</p><p>May she protect us from the front and from the back,</p><p>So that Belhor the snatching wolf may not draw near.</p><p>[May her prayer be] with me, the steward of her church,</p><p>And with all of us men and women who bow down to the greatness of her power.</p><p>Those who say we do not bow down to Mary and her icon,</p><p>and do not believe in her miracles, </p><p>may they be thrown into the very depths of Gehanna!</p><p>Forever and ever, amen!</p><p>May her prayer be with her servant Welde Selassie, forever and ever. Amen.</p> [WLB: notes missing]"
       }
     ]
@@ -6470,27 +4689,6 @@ const MIRACLES_OF_MARY = [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
         "text": "<p>An icon of Our Lady Mary, the Holy Two-Fold Virgin, the Mother of God, is in the city of the Ruler of Rulers,  [the monastery of] Martula Maryam, that glorious city that was built by the glorious Kings of Axum Abraha and Atsbaha.  </p><p>This monastery was consecrated by Abba Salama the Illuminator.  </p><p>When that icon of Our Lady Mary came from Jerusalem, the head scribe [for the king of Gojjam] Aleqa Tessema  bought the icon from some pilgrim monks with his own gold. </p><p>After that man bought the icon, his heart was burning with love for Our Lady Mary, the Holy Two-Fold Virgin, the Mother of God, because of the icon’s beauty. [He also bought] a second icon in the region of Hamasen.  </p><p>When the icon arrived from Jerusalem [and he bought it], he put her in a place in his house that was impure. [But,] he bought her because he was devoted to her. [Indeed, after] he bought the icon, he was devoted to it and adorned it with silk cloth. He also made an extraordinary, flawless, pedestal for the icon of Our Lady Mary, the Holy Two-Fold Virgin, the Mother of God, adorning [that] with cloth [too]. </p><p>However, the pedestal he had made for this icon, as well as for the other icon of Our Lady Mary, was close to the head of his bed, where he slept with his wife. By the way, this man, [Tessema,] his baptismal name was Kidana Maryam.</p><p>Therefore, the icon did not want to be on this pedestal, which was [in an] impure [place]. Rather, she wanted to be on a pure pedestal. </p><p>As David says in the Psalms, “I do not want your sacrifices and offerings. Rather, clean your body for me! I do not want a sin offering.”  </p><p>[Meanwhile,] while I, the sinner Walda Iyasus, who is a pauper in knowledge and an owner of many sins, was sleeping in a distant place, that very icon appeared to me [in a dream]. Her beauty was marvelous; she looked as if she was [alive,] in the flesh. Whoever saw that icon would have his heart consumed with love for her. For the Holy Spirit was dwelling in that icon just as the Holy Spirit dwelled in that [famous] icon of Our Lady Mary in the [Syrian] town of Sedeneya. </p><p></p><p>[But,] let’s return to the earlier story.  That icon came [to me] in my dream, while I was sleeping in a distant place. </p><p>The icon called out to me three times saying, “Walda Iyasus! Walda Iyasus!” </p><p>[Then, the icon instructed me. She] said, “In the morning, rush to visit your brother. Before [you do that, though], let me tell you what your brother did to me! He brought me from the pilgrim monks, where I had been living in a pure place. But, today, he put me in an unseemly place, inside his house where he sleeps with his wife.”  </p><p>I replied with fear and trembling in my dream, [because] I thought I was awake. [I said,] “What shall I do?”</p><p>The icon replied, “Tell him, ‘Why did you put me on an impure pedestal, where you lie down and sleep with your wife! This place where I am now is impure. Take me and put me inside the Church of St. George that is in the middle of the town of Od Teklay.”  </p><p>That night, the icon told me this three times. [When] I woke up in the morning, I went to where that icon had sent me. </p><p>I asked my brother, “Is there an icon of Mary in your house?” </p><p>He replied, “Yes, there are two icons.” </p><p>When he showed [them to] me, one was that icon that had spoken to me in the dream! It was [placed] just like the icon had told me. </p><p>[When I told] my brother, he became terrified and acted immediately. He took the icon to a nearby church and placed her in the sanctuary in a place of honor. </p><p>Then, in a few days, he took the icon out, got the other icon, and sent them both with one of his servants. The servant brought the icons to the Gojjam region, taking the [first] icon to [the monastery of] Martula Maryam and the other icon to Dabbo.  Both icons remain in those places in glory. </p><p></p><p>I wrote this [miracle story], not for the sake of vain glory, but rather because that icon kept appearing to me day and night [and demanding I do so]. My mind continued to be troubled because of this matter. </p><p>[After all this,] the icon [returned and] said to me, “Write the miracle story for my sake and send it to where I am now [in Martula Maryam].” </p><p>[Indeed,] after I wrote it, I found well-being and respite from my mind’s troubles. The icon never appeared to me again. </p><p>May her prayers and blessings be with us forever and ever. Amen. </p><p> </p><p>This book belongs to Martula Maryam, the Church of [King] Abraha.</p>"
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1078",
-    "title": "Book of Dersana ʿUraʾel: Part 04: Jesus tells the Virgin Mary about Ethiopia and the king from Constantinople who comes to Dabra Bizen and Dabra Halellujah",
-    "incipit": "ወእምድኅረ ፡ አደዉ ፡ ፈለገ ፡ ግዮን ፡ በመንክር ፡ ኪን ፡ እግዝእትነ ፡ ማርያም ፡ ድንግል ፡ ምስለ ፡ ፍቁር ፡ ወልዳ ፡ ወምስለ ፡ እሉ ፡ ጻድቃን ፡ ኅሩያኒሁ ፡ ለእግዚአብሔር ፡ ዮሴፍ ፡ ወሰሎሜ ፤ ይቤላ ፡ ሕፃን ፡ ለእሙኦ ፡ እምየ ፡ ተንሥኢ ፡ ወንኢ ፡ ንሑር ፡ ካልአ ፡ መካነ ፡ ከመ ፡ ትርአዪ ፡ ሥነ ፡ ራእያ ፡ ለብሔረ ፡ አግዓዚት ፡ አድባራቲሃ ፡ ወአዕፃዳቲሃ ፤ ወአፍላጋቲሃ ፡ ሠናያተ ፡ አብሕርቲሃኒ ፡ ጽሩያተ ፡ ወደስያቲሃኒ ፡ ቅዱሳተ ።",
-    "manuscript_count": 3,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },
@@ -6504,14 +4702,6 @@ const MIRACLES_OF_MARY = [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
         "text": "<p>The miracle [performed] by Our Lady, the Holy Virgin Mary, the Mother of God, may her prayer and blessing be with us forever and ever, amen.</p><p></p><p>A man named Yoseph was an official of a governor.</p><p>The governor loved him very much. </p><p>[One day,] the governor caught an enemy of his and imprisoned him. </p><p>He said to Yoseph his official, “Take him and watch him. Make sure he doesn’t escape from your hands!” </p><p>Yoseph took the prisoner to his house and began watching him. </p><p>However, Yoseph wanted to observe the feast of Our Lady Mary’s assumption, so he prepared a feast and gathered all his family and his neighbors, men and women. </p><p>He presented the food to them, and they ate. </p><p>Meanwhile, the prisoner was groaning because of the tight shackles on his hands and feet. His neck was tied with a rope fastened to a log. He was groaning in pain. </p><p>The rich man [Yoseph] saw the prisoner[’s suffering] and gave him food to eat. </p><p>But the prisoner did not eat. </p><p>Yoseph asked him, “Why aren’t you eating?”</p><p>The prisoner replied, “Can’t you see the pain I am in?!” </p><p>After the prisoner said this, Yoseph wanted to give him a little relief. In front of [Yoseph’s house] was a church built in the name of Our Lady Mary, the Holy Two-Fold Virgin. </p><p>So, Yoseph said to the prisoner, “Vow in Mary’s name that you won’t try to fool me and escape. [If you escape,] my lord will be angry with me. Now, I will give you a little relief.” </p><p>The prisoner said, “Good. Let it be as you say.”</p><p>Yoseph untied [the rope that tied] the log to his neck. Then, the prisoner ate his fill, although Yoseph did not loosen the shackles on his hands and feet.</p><p>What did this prisoner do next?</p><p>He melted the shackles in the fire and, slipping out, he escaped at night. Yoseph and his household had no idea how he had escaped. </p><p>When Yoseph learned of the prisoner’s escape, he screamed and cried. He prayed, “Our dear Lady Mary, I take refuge in you. Blind that prisoner’s eyes and return him to my hand. For he vowed in your name [not to escape].” </p><p>Now, that prisoner did not know about Mary’s miraculous power. He thought he had escaped to a far region but, when he was running in the night, he only circled back to where he had been. </p><p>[Upon his return to Yoseph], the man was given even worse imprisonment than he had had before. </p><p>The sinners in Sheol also try to escape, when they are taken out of Sheol on Friday evenings. They run away and do not rest for they think that they can escape the fire. But, around their necks is a fiery chain they do not notice. </p><p>That prisoner did not know about the miraculous power of Our Lady Mary, the Holy Two-Fold Virgin, and so he was returned [to prison] in shame and ignominy. </p><p>Listen my dear brothers, she always consoles anyone who trusts in her and calls on her name. She saves them from their suffering. </p><p>May her prayer and blessing be with her servant Werede Qal, forever and ever. Amen.</p>"
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },
@@ -6522,14 +4712,6 @@ const MIRACLES_OF_MARY = [
     "manuscript_count": 3,
     "most_read": false,
     "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "Mehari Worku with Wendy Laura Belcher",
-        "text": "An English translation of this story is not yet available."
-      },
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
         "text": "<p>After two months, the angel Gabriel came to Our Lady Mary at midnight. </p><p>He said, “Peace to you, O blessed among women! You have stayed in this town for too long. You have been entertained and happy here, but Herod is looking for you, so you need to leave here. Herod’s servants will arrive in this town [soon].”</p><p>When Our Lady Mary heard this, she was afraid. In the morning, she said to Joseph, “Get up! Let’s get out of here.”</p><p>Joseph replied, “Yes, ma’am.”</p><p>They got up and left the town immediately, but all the townspeople followed her, begging her tearfully and sorrowfully to stay with them.</p><p>Our Lady Mary replied, “Why do you break my heart? Please go back home. If my son wills it, I will return to you again.”</p><p>The people returned to their homes, feeling forlorn and grieving because of their love for Our Lady Mary.</p><p></p><p>Our Lady Mary went on her way and reached the hot lowlands of Biegor. She stayed there for three days. In that wilderness was a shrine to the Egyptian gods. As sacrifices to these gods, the people brought numerous cattle and sheep. [Each of the statues of the] gods had the shape of a rhinoceros or a baboon. </p><p>Our Lady Mary saw them from afar and prayed, “Tbyatotolan, Tt’byaqopperan, Pp’awyas, Ppieagawyans, Awsabieq, Grmasea, Awawaw, Awaayas, Adonay! May the demons be ashamed because of your Holy Name!”</p><p>Immediately, the demons [in the god statues] fled. </p><p>The Egyptians cried out, “Why are you abandoning us? From now on, our country is doomed! Our enemies will come and besiege us! There will be no one to help us!” </p><p>They put ashes on their heads, tore their clothes, and groaned as if they were dying. </p><p>[When the demons heard this pleading], they tried to return to the Egyptians. But, when they approached [the shrine from above, which had] a wine pressing [rock], and tried to enter [their former home], they plummeted to the ground. For the Lord’s power was planted there [because Our Lady Mary had prayed] and the demons had no idea who was chasing them away.</p><p>The people said to each other, “What’s been happening to us!?” [Bewildered,] they looked to the right and to the left, [here and there]. And when they saw Joseph, they chased him down.</p><p>They demanded, “Where are you from, man?”</p><p>He replied, “From the Bethlehem of Judah.”</p><p>They said, “Are you truly from Bethlehem? We have heard that you people are sorcerers. It must be because of your sorcery that our gods have fled!”</p><p>So, they bound his hands behind his back, tied his feet, and laid him on the ground on his stomach. Then, they whipped him 40 times with [a lash made from] a palm tree.</p><p>Joseph screamed out, “My dear Lady, because of you and your son, I’m about to die!”</p><p>Our Lady Mary heard Joseph’s voice and thought that Herod’s soldiers were chasing after her. Terrified, she fled while praying in Hebrew, “Rokbadise, Amdariel, Amanuiel, Iyaiel, Berbadis!”</p><p></p><p>Immediately, the angel Gabriel came down holding a burning spear.</p><p>Gabriel said, “My dear Lady Mary, don’t be scared! For I am with you, day and night. I’m never going to leave your side.”</p><p>Our Lady Mary replied, “Dear angel of the Lord, save me from Herod’s soldiers.” </p><p>Gabriel replied, “Don’t think that [what you’re hearing] is Herod’s soldiers. Rather, these are the idolater Egyptians. Even if all of the gentiles in the world gathered together and stood against you, I would have mowed them down like grain. They wouldn’t have been able to cut a single hair from your head.”</p><p>She replied, “[Please], help me in any way you can! For they are killing Joseph!”</p><p>Gabriel replied, “Don’t be afraid, my dear Lady Mary. Even if he dies, he will rise [again]. Even if he becomes sad, he will rejoice. Stay here to see a miracle!”</p><p>Then, Gabriel went to where they were beating Joseph. He unsheathed his burning sword and beat the ground with his wings [so that] a 39-cubit [tall pillar of] fire shot up from the earth into the air. He chased those Egyptians and that fire, which sprang from of his wings, incinerated them, every one of them, none of them was left. There were 99 [who died]. </p><p></p><p>Gabriel then turned to Joseph, a Son of David, [and said,] “The Lord is your help.”  </p><p>Immediately, Gabriel touched Joseph and healed him [from the abuse of the Egyptians]. He returned to health, as if nothing had happened to him. Joseph, then, went to that [shrine’s] wine-pressing rock. </p><p>The angel said to Joseph, “Measure this wine-pressing rock so that it might be recorded for later generations!”</p><p>Joseph measured the length of that rock. Its width was 190 [cubits] and its height was 49 [cubits]. Gabriel then picked up that [huge] rock and flipped it upside down so that the bowl side [where they pressed the grapes] faced down and its underside faced up. </p><p></p><p>Then, Joseph and Gabriel left that place[, the Egyptian shrine,] and went to Our Lady Mary, where the angel bowed down to her. </p><p>When Our Lady Mary saw Joseph, she hugged him, and said [with deep emotion,] “All this happened to you because of me and my son! Dear Joseph, my Father, let’s go [home,] to the Land of Judah. If we die there in Herod’s hand[, so be it.] Let our relatives bury us in the graveyard of our fathers.” </p><p>Joseph wept, remembering the country of his fathers. [He then sang:]</p><p>“Greetings to you, dear Bethlehem,</p><p>the land of the prophets of God,</p><p>Who is better than all wine!</p><p>Peace to you, dear Jerusalem, </p><p>the city of the Great King!</p><p>All you youth in the Land of Judah, </p><p>in Bethlehem and Jerusalem,</p><p>come and lament over my old age,</p><p>[come and lament] over that cursed hour </p><p>When the lot to be Our Lady Mary’s guardian befell me!”</p><p></p><p>They both cried so much that Gabriel himself cried with them.</p><p>But the angel told them, “This sadness will be forgotten. It won’t measure up to even a single day of your later joy. For the reward of sorrow is joy and the reward of joy is sorrow.” </p><p></p><p>May her prayer and blessing and the mercy of her beloved son be with her servant Gabra Maryam, forever and ever. Amen. </p>"
@@ -6554,31 +4736,6 @@ const MIRACLES_OF_MARY = [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
         "text": "<p>After Our Lady Mary departed from [King] Dematyanos,  she went to Mount Feka  and stayed [overnight] there. </p><p>In the morning, she went to Mount Toram  and stayed [overnight] there. </p><p>Then, she went to Mount Giensieliem  and stayed [overnight] there. </p><p>The next day, she rose up and went to Mount Mor [for the night].  </p><p>From there, she saw [in the distance] Bethlehem, the Land of the Prophets and the Joy of all the Saints. </p><p>[Meanwhile,] she stayed [overnight] in Mount Mor. In the morning, she woke up early and continued her journey. </p><p>At the ninth hour [that is, 3:00 pm], she reached Bethlehem. </p><p>All those who knew her came and said, “Did you travel well?” </p><p>[They then warned her,] “Herod is looking for you every day!”</p><p>When Our Lady heard this, she was terrified. She said, “But, why is he looking for me?”</p><p>They replied, “It’s not for anything good. Rather [only] for evil. [If he finds you,] it won’t be just you who will die. Rather he will kill all of us [in Bethlehem] because of you.”</p><p>[Worried,] she sat down at the gate of her house without eating or drinking anything. She stayed there [into the night]. </p><p>At midnight, the Archangel Gabriel appeared to Joseph in a dream, and said, “Dear Joseph, the son of [King] David, take the child and his mother and flee to Egypt. For when you arrived here yesterday, a certain man, who has Satan’s spirit in him, mounted a horse [and went] to tell Herod. He should arrive there in the morning. So, dear Joseph, beware!”</p><p>When the rooster crowed, Joseph told Our Lady Mary what the angel of the Lord had told him. </p><p>Our Lady Mary [instantly] arose, tied her child on her back for carrying, and said, “Rise up, let’s get away from this place!”</p><p>At the third hour [9:00 am], Herod besieged that town.</p><p>Herod demanded of the people, “Where is Mary?”</p><p>The people replied, “We haven’t seen her. It’s been seven months since she left town.”</p><p>Herod commanded his eunuchs [in charge] and his servants to search the people, their houses, their underground places, their caves, and their forests. </p><p>But, his servants couldn’t find the Holy Family and so they returned to Herod.</p><p>Herod asked his informant [in that town], “Where did you see Mary?”</p><p>The man replied, “Yesterday at the ninth hour. But I left them behind in town [and came to you].”</p><p>Herod said [angrily], “How dare you embarrass me [in front of everyone]?”</p><p>Herod then commanded Drsaiel  the Executioner to cut off the informant’s neck by sword.</p><p>So, Drsaiel cut the man’s head off.</p><p>Immediately, the angels of darkness came and took the informant’s soul to the abyss [of hell]. The earth opened her mouth and swallowed the informant’s corpse while Herod’s soldiers of Herod watched.</p><p>Herod said, “Brothers, you see how angry the gods were with this man [for embarrassing me]?”</p><p>Herod ordered his soldiers and his officers to bring all the people of the town [in front of him]. </p><p>They brought [everyone:] men and women, old and young, male and female servants. Herod then ordered the soldiers to cut off their heads. The number [of the dead] was 650 and they received Crowns of Martyrdom in the imperishable Kingdom of Heaven. </p><p>Herod did not leave one living creature in that town. [He killed them all]. The number of the animals [killed] was 600,097, [including] 63 dogs still barking, and 90,000 roosters still crowing. </p><p>All those Herod killed with the sword became numbered among the saints and all the martyrs, [even the animals]. Indeed, Herod’s soldiers saw the angels descending from heaven to put the Crown of Life on the heads of the martyrs.</p><p>[Instantly,] the soldiers cried out, “We believe in Jesus Christ and his mother Our Lady Mary! O Herod, the sinful, don’t you see the glory the Lord gives to his servants?”</p><p>Herod became enraged. He ordered [other soldiers] to cut off their heads with the sword. So, they cut their heads off [as] he commanded. They [also] received the Crown of Martyrdom in the Kingdom of Heaven. </p><p>Then, Herod commanded [that those soldiers] gather all the dead bodies of those killed. They also brought all the wood in the city and piled it over the dead bodies. Herod then ordered a fire to be lit [to burn the bodies]. </p><p>But, [the Archangels] Michael and Gabriel descended from heaven, with all their armies, and struck down [Herod’s soldiers] with burning swords. The number of the soldiers [killed] was 60. They went from destruction [on earth] to destruction [in hell].</p><p>Herod fled away, exclaiming, “We came to a place of sorcerers!”</p><p>The angels took the bodies of the saints—the townspeople, [the first group of] Herod’s soldiers, and the animals who died for the sake of Christ—and put them in a place in the land of Lebanon where Our Lady Mary was. </p><p>The archangels Michael and Gabriel put the angel Raguel and his army in charge of guarding the dead bodies. They are still there. And they will be there forever. </p><p>May her prayers and blessings be with her servant, Gabra Maryam, forever and ever. Amen.</p>"
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1082",
-    "title": "Book of Dersana ʿUraʾel: Part 08: The Holy Family travel on a cloud over all of Ethiopia, which Jesus gives to his mother as her home",
-    "incipit": "ወበአሐቲ ፡ ዕለት ፡ እንዘ ፡ ሀለዉ ፡ በደሴተ ፡ ጣና ፡ እግዝእትነ፡… ምስለ ፡ ፍቁር ፡ ወልዳ ፡ ወጻድቅ ፡ ዮሴፍ ፡ ወሰሎሜ ፡ አዕረጋ ፡ ለእሙ ፡ መልዕልተ ፡ ደመና ፡ ውስተ ፡ ዓየር ፡ ፍቁር ፡ ወልዳ ፡ ይቤላ ፡ ነጽሪ ፡ ውስተ ፡ ኲሎን ፡ አህጉራተ ፡ ኢትዮጵያ ፡ ወኲሎሙ ፡ አድባራቲሃ ፡ ዘእሁበኪ ፡ ዓሥራተ ፡ ለተዝካረ ፡ ስምኪ ፡ ዘይከውን ፡ ወነጸረት ፡ መንገለ ፡ ምዕራብ ፡ አርባዕተ ፡ አድባራተ ።",
-    "manuscript_count": 3,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },
@@ -6592,496 +4749,6 @@ const MIRACLES_OF_MARY = [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
         "text": "<p>A miracle [performed] by Our Lady Mary, the Holy Two-Fold Virgin, the Mother of God may her prayer and blessing be with us forever and ever, amen.</p><p></p><p>Our Lady Mary, the Holy Two-Fold Virgin, the Mother of God, fled from Herod to Egypt and they went to the land of the free, [that is, Ethiopia.] There, six lions came at them. </p><p>Joseph became fearful, terrified of the lions’ fearsomeness. He ran away backwards, abandoning Mary behind, where she wept and wept.</p><p>Then, she took her child from Salome, who was carrying him on her back, and Mary placed him on her own back, and she ran towards the Yosaft Wilderness. </p><p>Her beloved son wrapped his arms around her neck, and said, “Stop, don’t be afraid. Don’t run away in haste. You’ll be exhausted because of all this running. Look, these lions won’t come to you.”</p><p>Having said this, he turned [his head] towards the lions and rebuked them, saying, “Go to Joseph, approach him, and call out to him. Don’t terrify him because I want him to be able to ride on your back and come back to me from where he fled.”</p><p>He then ordered the five lions, “Come close to my mother and bow down to her.” Immediately, they came close and bowed down to her.</p><p>While her beloved son was on her back, he turned a bit south, raised his hand, and blessed [Ethiopia] three times with the sign of the Cross.</p><p>After he made this order, the [sixth] lion went to Joseph and bowed down to him, saying, “Come, ride on my back. For Our God has ordered me to carry you to him.”</p><p>The lion spoke to Joseph in human language. Immediately, Joseph’s fear vanished and he rode the lion back to Mary.</p><p>Then, [after Joseph returned,] her beloved son said, “Let the lions walk ahead of us, on our path.”</p><p>Mary asked him, “My dear son, where are we going? I’m exhausted from running. Give me a little rest today, even if it is in death. So long as I don’t see your death.”</p><p>He replied, “My death is going to be a joy for the whole world. [Yes,] you will be saddened by my death, but you will rejoice in my resurrection. Your Israelite relatives will also rejoice because of my resurrection. For, after my death, as your forefather David prophesied: ‘Jacob will rejoice and Israel will be happy when the Lord brings back his exiled people.’ I came to bring back the exiled of Sheol by wearing your immaculate body, which I united with my divinity.”</p><p>She replied, “Let it happen to me according to what you’re saying to me. But, I beg you to explain one thing to me, my dear son. Kindly say yes.”</p><p>He said, “Of course, let whatever you want, be done.” </p><p>Then she asked him, “Why are you blessing the southern lands all the time, whenever you are on my back?”</p><p>He replied, “Let me explain it to you, my dear mother, so listen to me. In the future, many saints will be born in that land called the Land of the Free, [that is, Ethiopia,] who will believe in my true human incarnation from you without seeing it.</p><p>“The Jews will kill me because of their envy, despite listening to and knowing Isaiah’s prophecy, which says, ‘The virgin shall conceive and give birth to a son. She will name him Immanuel, meaning ‘the Lord is with us.’</p><p>“While you are with my relatives, they will do everything evil against me. It is because of the Jews’ envy that you are in anguished exile with me in Egypt and the Land of the Free.</p><p>“So, my dear mother, I give you this land, which I am blessing, as a tithe. Let the people of the Land of Ethiopia be your portion forever.”</p><p>The Blessed Virgin said, “Blessed is the Father who sent you, His only Son, into the world! Blessed are you who was born from me according to your will. Blessed is the Holy Spirit who strengthened me to give birth to you.</p><p>“Now, my dear son, if you will, I would like to see this country, because it amazed me due to what you told me earlier.”</p><p>Her beloved son replied, “Of course, my dear mother, I will show you at the right time. Did I not come to fulfill your will?”</p><p>At that time, she blessed her beloved son and praised him for the covenant he gave her.</p><p>May her prayer and blessing be with us, forever and ever. Amen.</p>"
-      }
-    ]
-  },
-  {
-    "id": "1084",
-    "title": "Book of Dersana ʿUraʾel: Part 10: The Holy Family goes to Dabra Asbo and meets a possessed person and then they go to Dabra Wegeg and Dabra Hazelo",
-    "incipit": "ወበአሐቲ ፡ ዕለት ፡ እንዘ ፡ የሐውሩ ፡ ውስተ ፡ ደብረ ፡ አሰቦት ፡ እግዝእትነ ፡ ምስለ ፡ ፍቁር ፡ ወልዳ ፡ ወዮሴፍ ፡ ወሰሎሜ ፡ አመወርኃ ፡ ተሰዶ ፡ ረከቦሙ ፡ አሐዱ ፡ ብእሲ ፡ ዘቦ ፡ ላዕሌሁ ፡ መንፈስ ፡ ርኲስ ፡ ጸርሐ ፡ ወከልሐ ፡ ወይቤ ፡ በዐቢይ ፡ ቃል ፡ ኦ ፡ አንትሙ ፡ ሰብእ ፡ ኢየሩሳሌም ፡ ዘየኃሥሠክሙ ፡ ሄሮድስ ፡ ዘቀተለ ፡ ሕፃናተ ፡ ገሊላ ፡ በበይነ ፡ ዝንቱ ፡ ሕፃን ፡ ዘኅዙል ፡ ዲበ ፡ ዘባነ ፡ እሙ ፡ ምንትኑመ ፡ አብጽሓክሙ ፡ ዝየ ፡ ዓዲ ።",
-    "manuscript_count": 3,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1085",
-    "title": "Book of Dersana ʿUraʾel: Part 11: The Holy Family meet Adam and Eve at Dabra Wegeg",
-    "incipit": "ተአምር ፡ ዘተገብረ ፡ በጊዜ ፡ ስደታ ፡ ለእግዝእትነ ፡ ምስለ ፡ ፍቁር ፡ ወልዳ ፡ ወምስለ ፡ ዮሴፍ ፡ ወሰሎሜ ፡ አመ ፡ ነበሩ ፡ ሠለስተ ፡ አውራኃ ፡ ውስተ ፡ ደብረ ፡ ወገግ ።",
-    "manuscript_count": 3,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1086",
-    "title": "Book of Dersana ʿUraʾel: Part 12: The Holy Family goes to Ophir in Ethiopia and Jesus turns five camels into stone",
-    "incipit": "ወእምድኅረ ፡ ነበረት ፡ እግዝእትነ ፡ ምስለ ፡ ፍቁር ፡ ወልዳ ፡ ስድስተ ፡ አውራኃ ፡ ወስድስተ ፡ ዕለታተ ፡ እንተ ፡ መንገለ ፡ ጥቃሃ ፡ ለደብረ ፡ ወገግ ፡ ወሀዘሎ ፡ መጽአ ፡ ገብርኤል ፡ መልአክ ፡ ወይቤሎሙ ፡ ተንሥኡ ፡ እምዝየ ፡ ወሑሩ ፡ እንተ ፡ መንገለ ፡ ደቡባ ፡ ወምስራቃቲሃ ፡ ለይእቲ ፡ ሀገር ፡ እንተ ፡ ስማ ፡ ኦፌር ።",
-    "manuscript_count": 3,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1087",
-    "title": "Book of Dersana ʿUraʾel: Part 13: The Holy Family sets out to return to Israel and Gabriel consoles the people of Ophir",
-    "incipit": "ወእምድኅረ ፡ ተነግረ ፡ በቃለ ፡ ገብርኤል ፡ መልአክ ፡ ወተሰምዓ ፡ ነገረ ፡ ሞቱ ፡ ለዝኩ ፡ ሄሮድስ ፡ ርጉም ፡ በኀበ ፡ እግዝእትነ ፡ ወፍቁር ፡ ወልዳ ፡ ወበኀበ ፡ ዮሴፍ ፡ ወስሎሜ ፡ እንዘ ፡ ሀለዉ ፡ በደብረ ፡ መጠራ ፡ ዘሀለወት ፡ በአድያመ ፡ ኦፌር ፡ እንተ ፡ መንገለ ፡ ምሥራቃቲሃ ፡ ለይእቲ ፡ ብሔረ ፡ ኢትዮጵያ ፡ ትቤሎ ፡ እሙ ፡ ለሕፃን ፡ ኦ ፡ ወልድየ ፡ እሙነኑ ፡ ሞተ ፡ ዝንቱ ፡ አርዌ ፡ ርጉም ።",
-    "manuscript_count": 3,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1088",
-    "title": "Book of Dersana ʿUraʾel: Part 14: The Holy Family crosses the river Takazze on stones that float like boats (similiar to ID 326)",
-    "incipit": "ወከመዝ ፡ ኮነ ፡ አመ ፡ ግብአታ ፡ ለእግዝእትነ፡…እምኀበ ፡ ጐየት ፡ ውስተ ፡ ምድረ ፡ ግብዕ ፡ ወብሔረ ፡ ኢትዮጵያ ፡ እምድኅረ ፡ ሞቱ ፡ እለ ፡ የኀሥሥዎ ፡ ለሕፃን ፡ ከመ ፡ ይቅትልዎ ፡ በትእዛዙ ፡ ወበቃሉ ፡ ለአምላከ ፡ አማልክት ።",
-    "manuscript_count": 3,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1089",
-    "title": "Book of Dersana ʿUraʾel: Part 15: The Holy Family meets a band of thieves as they return to Israel, one of whom is later crucified with Jesus and saved",
-    "incipit": "ወእምድኅረ ፡ ተመይጡ ፡ እምተሰዶ ፡ ወበጽሑ ፡ ወቦኡ ፡ ውስተ ፡ ደብረ ፡ ቊስቋም ፡ ወአዕረፉ ፡ እምፃማ ፡ ዘረከቦሙ ፡ በፍኖት ፡ እግዝእትነ ፡ ምስለ ፡ ፍቁር ፡ ወልዳ ፡ ተንሥኡ ፡ ለሐዊር ፡ ሀገሮሙ ፡ ናዝሬተ ፡ በከመ ፡ ነገሮ ፡ መልአክ ፡ ለዮሴፍ ።",
-    "manuscript_count": 3,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1090",
-    "title": "Book of Dersana ʿUraʾel: Part 16: The Holy Family returns to Israel with the possessed person and Jesus goes to school",
-    "incipit": "ወእምድኅረ ፡ ገብኡ ፡ ወአተዉ ፡ ብሔሮሙ ፡ ናዝሬተ ፡ እምነ ፡ ተሰዶ ፡ እግዝእትነ፡… ምስለ ፡ ፍቁር ፡ ወልዳ ፡ ወምስለ ፡ ዮሴፍ ፡ ወሰሎሜ ፡ ወምስለ ፡ ዝኩ ፡ ኢትዮጵያዊ ፡ እንተ ፡ አውጽአ",
-    "manuscript_count": 3,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1091",
-    "title": "Book of Dersana ʿUraʾel: Part 17: The Virgin Mary instructs Jesus to shepherd the sheep and reports on her exile in Ethiopia",
-    "incipit": "ወእምድኅረ ፡ ኮኖ ፡ ለእግዚእ ፡ ኢየሱስ ፡ ሰመንተ ፡ ክረምተ ፡ ትቤሎ ፡ እሙ ፡ ድንግል ፡ በክልኤ ፤ ማርያም ፡ ኦ ፡ ወልድየ ፡ ቦኑ ፡ ዘትፈቱ ፡ ወትፈቅድ ፡ ትፈር ፡ ገዳመ ፡ ወትርዒ ፡ አባግዓ ፡ አቡከ ፡ ወእምከ ፡ ዘምስለ ፡ ኖሎተ ፡ አባግዕ ፡ ዘገሊላ ።",
-    "manuscript_count": 3,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1092",
-    "title": "Life: The Virgin Mary loses Jesus in Jerusalem (reworking of Luke 2, 4)",
-    "incipit": "ወእምድኅረ ፡ ገብኡ ፡ ወአተዉ ፡ ብሔሮሙ ፡ ናዝሬተ ፡ እምነ ፡ ተሰዶ ፡ እግዝእትነ፡… ምስለ ፡ ፍቁር ፡ ወልዳ ፡ ወምስለ ፡ ዮሴፍ ፡ ወሰሎሜ ፡ ልኅቀ ፡ ሕፃን ፡ ወጸንዓ ፡ በመንፈስ ፡ ቅዱስ ፡ ወምሉዕ ፡ ጥበበ ፡ ወፍጹም ፡ በጸጋ  ፡ እግዚአብሔር ፡ ዘላዕሌሁ ።",
-    "manuscript_count": 3,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1093",
-    "title": "Book of Dersana ʿUraʾel: Part 18: The Virgin Mary asks Jesus to take her on a tour of the cities of the world",
-    "incipit": "ወበውእቱ ፡ መዋዕል ፡ እንዘ ፡ ሀለዉ ፡ ናዝሬተ ፡ እግዝእትነ ፡ ማርያም ፡ ወእግዚእ ፡ ኢየሱስ ፡ ክርስቶስ ፡ ትቤሎ ፡ እግዝእትነ ፡ ለፍቁር ፡ ወልዳ ፡ እምቅድመ ፡ ዐሠርቱ ፡ ወሰመንቱ ፡ ዓመት ፡ ርኢክዎን ፡ ለአህጉራተ ፡ ግብፅ ፡ ወኤትዮጵያ ፡ አመ ፡ ወርኃ ፡ ንግደትነ ፡ በስደት ።",
-    "manuscript_count": 3,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1094",
-    "title": "Book of Dersana ʿUraʾel: Part 19: They go from Athens to Rome and perform healings and prophecies",
-    "incipit": "ወእምድኅረ ፡ ነበሩ ፡ ኅዳጠ ፡ መዋዕለ ፡ ተሰሎንቈ ፡ (ቴርማ ፡ ) እንተ ፡ መቄዶንያ ፡ ፈቀዱ ፡ ይሑሩ ፡ ብሔረ ፡ ሮሜ ፡ እግዝእትነ፡… ወእግዚእ ፡ ኢየሱስ ፡ ምስለ ፡ ወዓልያኒሆሙ ፡ ያዕቆብ ፡ ወስምዖን ፡ ወይሁዳ ፡ ወሰሎሜ ፡ ምልዕተ ፡ ክብር ።",
-    "manuscript_count": 3,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1095",
-    "title": "Book of Dersana ʿUraʾel: Part 20: On Mount Nabaw of Solferina, outside of Rome, Jesus prophecizes Rome will have many martyrs and priests.",
-    "incipit": "ወእንዘ ፡ ሀለዉ ፡ ውስተ ፡ ከተማሃ ፡ ለደብረ ፡ ናበው ፡ ዘሶልፈሪና ፡ ዘሀለወት ፡ እንተ ፡ መንገለ ፡ ሰሜና ፡ ለትዕይንተ ፡ ሮም ፡ እግዚእ ፡ ኢየሱስ ፡ ወእሙ ፡ ድንግል ፡ ወያዕቆብ ፡ ወሰሎሜ ፡ ወስምዖን ፡ ወይሁዳ ፡ ይቤላ ፡ እግዚእነ ፡ ለእሙ ፡ ኦ ፡ እምየ ፡ ወበደኃሪ ፡ መዋዕል ፡ ትከውን ፡ ይእቲ ፡ ሀገረ ፡ ሮሜ ፡ ደብተራ ፡ ትዕይንቶሙ ፡ ለሐዋርያትየ ።",
-    "manuscript_count": 3,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "Mehari Worku with Wendy Laura Belcher",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1096",
-    "title": "Book of Dersana ʿUraʾel: Part 21: They visit the New Lonely World of America, where no one lives, but later people will go there and everyone will become one with it",
-    "incipit": "ወበአሐቲ ፡ ዕለት ፡ ይቤላ ፡ እግዚእ ፡ ኢየሱስ ፡ ለእሙ ፡ ድንግል ፡ ኦ ፡ እምየ ፡ ንዒ ፡ ዕርጊ ፡ ውስተ ፡ ዓየር ፡ ወተፀዓኒ ፡ ዲበ ፡ ዝንቱ ፡ ደመና ፡ ብሩህ ፡ ከመ ፡ ትርአዪ ፡ አኅጉራተ ፡ እለ ፡ ውስተ ፡ ኲሎን ፡ ማዕዝናተ ፡ ዓለም ።",
-    "manuscript_count": 3,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1097",
-    "title": "Book of Dersana ʿUraʾel: Part 22: Holy Family Tours the World: Part 5: They go to Galilee and heal blind people and perform the miracles of the loaves and fish and Jesus refuses to be king",
-    "incipit": "ወሰምዑ ፡ ሰብአ ፡ ኢየሩሳሌም ፡ ከመ ፡ መጽኡ ፡ እግዚእ ፡ ኢየሱስ ፡ ወእግዝእትነ ፡ ማርያም ፡ ዘምስለ ፡ ሰሎሜ ፡ ቅድስት ፡ ወያዕቆብ ፡ ወይሁዳ ፡ ወስምዖን ፡ እምሀገረ ፡ ሮሜ ፡ ዐሪጎሙ ፡ ሐመረ ፡ ወበጽሑ ፡ ሀገሮሙ ፡ ገሊላ ፡ እንተ ፡ ስማ ፡ ናዝሬት ።",
-    "manuscript_count": 3,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1098",
-    "title": "Life: Jesus replenishes the wedding of Cana wine (reworking of John 2)",
-    "incipit": "ወበአሐቲ ፡ ዕለት ፡ ጸውዕዎሙ ፡ ለኢየሱስ ፡ ወለአርዳኢሁ ፡ ውስተ ፡ ከብካብ ፡ በቃና ፡ ዘገሊላ ፡ ወሀለወት ፡ ህየ ፡ ድንግል ፡ ማርያም ፡ እሙ ፡ ለኢየሱስ ፡ ክርስቶስ ፡ እስመ ፡ ቤተ ፡ ዘመድ ፡ ይእቲ ።",
-    "manuscript_count": 3,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1099",
-    "title": "Book of Nagara Maryam: Month L: Part 01: The Holy Family flees Herod and Jesus is baptized (reworking of Matthew)",
-    "incipit": "ወልደ ፡ እግዚአብሔር ፡ ሕያው ፡ ወወልደ ፡ ማርያም ፡ ሥግው ፡ እግዚእ ፡ ኢየሱስ ፡ ክርስቶስ ፡ ዘሠርዓ ፡ ሕገ ፡ ለሰብእ ፡ ወበተሠግዎቱ ፡ እምቅድስት ፡ ድንግል ፡ ነበረ ፡ እንዘ ፡ ይትኤዘዝ ፡ ለሕገ ፡ እሥራኤል ፡ እንዘ ፡ አምላክ ፡ ውእቱ ፡ ወፈጸመ ፡ ኲሎ ፡ ሕገ ፡ ሰብእ ፡ ዘእንበለ ፡ ኃጢአት ፡ ባሕቲታ ።",
-    "manuscript_count": 3,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1100",
-    "title": "Book of Laha Maryam??: Crucifixion: Part 01: Judas betrays Jesus during Passion Week",
-    "incipit": "ወበአሐቲ ፡ ዕለት ፡ እመዋዕል ፡ እቤሎ ፡ እግዝእትነ፡… ለእግዚእ ፡ ኢየሱስ ፡ ክርስቶስ ፡ በጽሚት ፡ ወኮኑ ፡ ሊቃነ ፡ ካህናት ፡ ወጸሐፍት ፡ ፈሪሳውያን ፡ የኀሥሡ ፡ ምክንያተ ፡ በዘይቀትሉከ ፡ እመሰ ፡ ተፈቅድ ፡ ለንትገሃስ ፡ እምዝ ፡ ውስተ ፡ ብሔረ ፡ ባዕድ ፡ ወንትኃ ፡ ባዕ ፡ ከመ ፡ ተኀባዕነ ፡ ቅድመ ፡ እምገጹ ፡ ለኄሮድስ ።",
-    "manuscript_count": 3,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1101",
-    "title": "Book of Laha Maryam??: Crucifixion: Part 02: The Virgin Mary laments the capture of her son during Passion Week",
-    "incipit": "ወሶበ ፡ ሰምዓት ፡ እግዝእትነ፡… ዘከመ ፡ አኃዝዎ ፡ ወነሥእዎ ፡ ለኢየሱስ ፡ ክርስቶስ ፡ ወልዳ ፡ በከየት ፡ ወትቤ ፡ ኦ ፡ ወልድየ ፡ ወፍቁርየ ፡ አንሰ ፡ ነበርኩ ፡ እንዘ ፡ እትፌሣሕ ፡ በልብየ ፡ ወዕብል ፡ ኲሎ ፡ ዕለተ ፡ ጌሠመ ፡ ይበጽሕ ፡ ፋሲካ ፡ ከመ ፡ ንግበር ፡ በዓለ ፡ ወንትመየጥ ፡ ውስተ ፡ ብሔርነ ፡ ወበጽሓኒ ፡ ፋሲካየ ።",
-    "manuscript_count": 3,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1102",
-    "title": "Book of Laha Maryam??: Crucifixion: Part 03: The Virgin Mary sees her son in agony on the cross during Passion Week",
-    "incipit": "ወለድንግልሰ ፡ ኮነ ፡ ዐቢይ ፡ ብካይ ፡ የዐውዳ ፡ በእንተ ፡ ዘኢርእየቶ ፡ ለወልዳ ፡ አመ ፡ ይሰቅልዎ ፡ አይሁድ ፡ ወኮነት ፡ ትበኪ ፡ በቤተ ፡ ዮሐንስ ፡ ወመጽአ ፡ ዮሐንስ ፡ እንዘ ፡ ይበኪ ፡ ወረከባ ፡ እንዘ ፡ ትበኪ ፡",
-    "manuscript_count": 3,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1103",
-    "title": "Book of Laha Maryam??: Crucifixion: Part 04: The Virgin Mary says goodbye to her son on the cross and goes to John's house lamenting",
-    "incipit": "ወሶበ ፡ ርእየቶ ፡ እግዝእትነ፡… ለዋሕድ ፡ ወልዳ ፡ ዲበ ፡ ዕፀ ፡ መስቀል ፡ ኢክህለ ፡ ያርምም ፡ ዓይና ፡ እምአንብዕ ። ተአንበዘ ፡ ልባ ፡ ውስተ ፡ ከርሣ ፡ ወውዕየ ፡ ነፍሳ ፡ ወቀብጸት ፡ ሕይወተ ፡ ነፍሳ ፡ ወሥጋሃ ፡ ወኲሎን ፡ መለያልዪሃ ፡ ይርዕዳ ፡ ወጸልመ ፡ ኅሊናሃ ፡ ወአልጸቀት ፡ ትፃእ ፡ ነፍሳ ።",
-    "manuscript_count": 3,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1105",
-    "title": "Book of Laha Maryam??: Crucifixion: Part 06: The Virgin Mary misses her son after the resurrection and goes looking for him and Jesus tells her to stay with the 120 disciples",
-    "incipit": "ወእምድኅረ ፡ ተንሥአ ፡ እሙታን ፡ እግዚእነ ፡ ኢየሱስ ፡ ክርስቶስ ፡ ትቤ ፡ እግዝእትነ፡… በእንተ ፡ ወልዳ ፡ እምአመ ፡ ተንሥአ ፡ ወልድየ ፡ ፍቁር ፡ እሙታን ፡ ኢያስተርአየ ፡ ሊተ ፡ ዘእንበለ ፡ ሠለስቱ ፡ ዕለት ።",
-    "manuscript_count": 3,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1106",
-    "title": "Book of Laha Maryam??: Crucifixion: Part 07: The Virgin Mary goes to heaven after visiting Jesus's tomb and receives homage from the biblical pataricahs and matriarchs",
-    "incipit": "ወሶበ ፡ ጸለየት ፡ እግዝእትነ ፡ አመ ፲ወ፮ ፡ ለየካቲት ፡ እምድኅረ ፡ ዕርገቱ ፡ ለእግዚእነ ፡ ኢየሱስ ፡ ክርስቶስ ፡ ወዘከመ ፡ አዕረግዋ ፡ መላእክት ፡ ውስተ ፡ ሰማይ ። ወእምአመ ፡ ኀደጋ ፡ እግዚእነ ፡ ኢየሱስ ፡ ክርስቶስ ፡ በዕለተ ፡ ዓርብ ፡ እንዘሀሎ ፡ መልዕልተ ፡ መስቀል ።",
-    "manuscript_count": 3,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1107",
-    "title": "Book of Laha Maryam??: Crucifixion: Part 08: The Virgin Mary tells John the Evangelist what she saw on visiting heaven and how the souls of the righteous are received",
-    "incipit": "ወእምድኅረ ፡ አግብእዋ ፡ መላእክት ፡ ውስተ ፡ መካና ፡ ለእግዝእትነ ፡ እምሰማይ ፡ ትቤሎ ፡ ለዮሐንስ ፡ ወነዋ ፡ እነግረከ ፡ ምሥጢረ ፡ ኅቡአ ፡ በልብ ፡ ወበኅሊና ፡ ዘኢይጤየቅ ፡ ወዘኢይትረአይ ፡ ለዓይን ፡ ዘከመ ፡ ከሠተ ፡ ሊተ ፡ ወልድየ ፡ ወፍቁርየ ፡ እግዚእየ ፡ ኢየሱስ ፡ ክርስቶስ ፡ እንዘ ፡ እጼሊ ፡ በጎልጎታ ፡ በጊዜ ፡ ተሰዓቱ ፡ ሰዓት ፡ ዘውእቱ ፡ ዕለተ ፡ ዓርብ ።",
-    "manuscript_count": 3,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1108",
-    "title": "Book of Laha Maryam??: Crucifixion: Part 09: The Virgin Mary visits hell with twenty-four angels and laments the tormented souls' condition",
-    "incipit": "ወእምድኅረ ፡ አግብእዋ ፡ መላእክት ፡ ውስተ ፡ መካና ፡ ለእግዝእትነ፡… ሖረት ፡ ካዕበ ፡ ኀበ ፡ ደብረ ፡ ጎልጎታ ፡ ዘውእቱ ፡ መቃብረ ፡ እግዚእነ ፡ ኢየሱስ ፡ ክርስቶስ ፡ አመ ፡ ዕሥራ ፡ ወአሚሩ ፡ ለሰኔ ።",
-    "manuscript_count": 3,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1109",
-    "title": "Homily on the greatness of the Virgin Mary's pact of mercy with Christ",
-    "incipit": "ኦ ፡ አኃውየ ፡ ፍቁራን ፡ ንዑ ፡ ስምዑኒ ፡ እንግርክሙ ፡ ኃይለ ፡ አድኅኖተ ፡ ጸውዖ ፡ ስማ ፡ ለእግዝእትነ፡…። እስመ ፡ ጸውዖ ፡ ስማ ፡ ለእግዝእትነ ፡ ዘበርትዕት ፡ ሃይማኖት ፡ ያነሥእ ፡ ዘወድቀ ፡ ወኃጥአኒ ፡ ይሬሲ ፡ ጻድቀ ።",
-    "manuscript_count": 3,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1110",
-    "title": "Emperor Tiberius's wife convinces him to make the Virgin Mary queen of Rome and Jesus takes her away to prevent that",
-    "incipit": "ወበአሓቲ ፡ ዕለት ፡ እመዋዕል ፡ ተናገረት ፡ ንግሥት ፡ ብእሲተ ፡ ጢባርዮስ ፡ እንዘ ፡ ትብል ፡ ምስሌሁ ፡ ለጢባርዮስ ፡ ኦእግዚእየ ፡ ንጉሥ ፡ አንተ ፡ ተአምር ፡ ከመ ፡ አልቦ ፡ ዘገብረ ፡ ሠናየ ፡ ዘየዐቢ ፡ እምዘገብርት ፡ ምስሌነ ፡ እግዝእትነ ፡ እሙ ፡ ለእግዚእነ ፡ ኢየሱስ ፡ ክርስቶስ ፡ እስመ ፡ አንሥአቶ ፡ ለወልድነ ፡ እሙታን ፡ በስእለታ ።",
-    "manuscript_count": 3,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1112",
-    "title": "Book of Felsata la-Maryam??: New: Dormition: The Apostles are imprisoned for preaching about the Virgin Mary's ascension in the flesh and are freed by an angel and then persecuted after returning to preaching",
-    "incipit": "ወሶበ ፡ ተለዓለት ፡ ወዓርገት ፡ በሥጋሃ ፡ ውስተ ፡ ሰማይ ፡ እግዝእትነ፡… ባረከቶሙ ፡ ወናዘዘቶሙ ፡ ለሐዋርያት ፡ ወወሀበቶሙ ፡ ሰበነ ፡ በዘይፈውሱ ፡ ድዉያነ ፡ ወያንሥኡ ፡ ሙታነ ፡ ወእሙንቱሂ ፡ ተካፈልዎ ፡ ለበረከት ።",
-    "manuscript_count": 3,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1115",
-    "title": "A bishop's prayers enable his rich dead father to move from hell, body part by body part, and then go to heaven",
-    "incipit": "ወሀሎ ፡ አሐዱ ፡ ብእሲ ፡ ባዕል ፡ በአሐቲ ፡ ሀገር ፡ ዘኢይፈርሆ ፡ ለእግዚአብሔር ፡ ወኢይገብር ፡ ሠናየ ፡ ወኢዲበ ፡ ነዳያን ፡ ወለአብያተ ፡ ክርስቲያናት ። ወሀሎ ፡ አሐዱ ፡ ኤጲስ ፡ ቆጶስ ፡ ወፈራሄ ፡ እግዚአብሔር ፡ በይእቲ ፡ ሀገር ፡ ወልዱ ፡ ለውእቱ ፡ እኩይ ፡ ባዕል ፡ ይምዕዶ ፡ ለአቡሁ ፡ ወይጌሥዖ ፡ እንዘ ፡ ይብልኦ ፡ አብ ፡ ፍራህ ፡ ኲነኔሁ ፡ ለእግዚአብሔር ፡ ወተገኃሥ ፡ እምእኩይ ፡ ወረኃቅ ፡ እምኃጢአት ።",
-    "manuscript_count": 3,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1116",
-    "title": "Book of Vision of Barok the Deacon: An apocalyptic book about Baruch, the scribe of the Prophet Jeremiah, being taken on a tour of heaven and hell by the Virgin Mary in the form of a bird",
-    "incipit": "ወሀሎ ፡ አሐዱ ፡ ብእሲ ፡ ዲያቆን ፡ (ካህን) ፡ ዘስሙ ፡ ባሮክ ፡ ዘይፈርሆ ፡ ለእግዚአብሔር ፡ በኲሉ ፡ ልቡ ፡ ወይትለአካ ፡ ለእግዝእትነ፡… ወበኲሉ ፡ ኃይሉ ።",
-    "manuscript_count": 3,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1117",
-    "title": "Saint George is asked by the Virgin Mary to leave his country and become a martyr for Christ and he does so",
-    "incipit": "ኦ ፡ አኃውየ ፡ ንነግረክሙ ፡ ዘከመ ፡ ረሰየቶ ፡ እግዝእትነ፡… ለቅዱስ ፡ ጊዮርጊስ ፡ መርዓዌ ፡ ሰማያዌ ፡ ወድንግለ ፡ ንጹሐ ፡ ወሐረየቶ ፡ ለስምዓ ፡ ፍቁር ፡ ወልዳ ።",
-    "manuscript_count": 3,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1118",
-    "title": "Book of Ledata la-Maryam: New: Part 05??: Life: The Virgin Mary and Joseph take Jesus to the Temple and he meets Simon (same as 1356?)",
-    "incipit": "ወአመ ፡ ተፈጸመ ፡ መዋዕለ ፡ ንጽሖሙ ፡ በከመ ፡ ሕገ ፡ ሙሴ ፡ ወሰድዎ ፡ ለሕፃን ፡ ኢየሩሳሌም ፡ ያቅምዎ ፡ ቅድመ ፡ በከመ ፡ ጽሑፍ ፡ ውስተ ፡ ሕገ ፡ እግዚአብሔር ፡ ኲሉ ፡ ተባዕት ፡ ዘይፈትሕ ፡ ማኅፀነ ፡ እሙ ፡ ቅዱሰ ፡ ይሰመይ ፡ ለእግዚአብሔር ።",
-    "manuscript_count": 3,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1139",
-    "title": "Homily on the Virgin Mary and the Biblical Patriarchs: Part 1: How the Virgin Mary was in the mind of God before the creation of the world",
-    "incipit": "ስምዑ ፡  አበውየ ፡  ወአኃውየ ፡  ዕበያ ፡  ወክብራ ፡  ወዜና ፡  ምጽአታ ፡  ወውዳሴሃ ፡  ለእግዝእትነ ፡  ...።",
-    "manuscript_count": 3,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "Mehari Worku with Wendy Laura Belcher",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1141",
-    "title": "Homily on the Virgin Mary and the Biblical Patriarchs: Part 3: The Virgin Mary and the biblical patriarch Abraham",
-    "incipit": "ወሀሎ ፡  አሐዱ ፡  ብእሲ ፡  ዘእምነገደ ፡  ሴም ፡  ወልደ ፡  ኖኅ ፡  አርከ ፡  እግዚአብሔር ፡  ዘስሙ ፡  አብርሃም ፡  ጻድቅ ፡ ወኄር ፡  ዘያፈቅር ፡  ነግደ ፡  ወፈላሴ ፡  ወያሠምሮ ፡  ለእግዚአብሔር ፡  በኵሉ ፡  ፍናዊሁ ፡  ወስመ ፡  ብእሲቱ ፡  ሣራ።",
-    "manuscript_count": 3,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "Mehari Worku with Wendy Laura Belcher",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1142",
-    "title": "Homily on the Virgin Mary and the Biblical Patriarchs: Part 4: The Virgin Mary and the biblical patriarch Isaac",
-    "incipit": "ወይቤ ፡  እግዚአብሔር ፡  በሰማይ ፡  ብየ ፡  አርክ ፡  ወፍቁር ፡  አብርሃም ፡  በዲበ ፡  ምድር። ወሰሚዖሙ ፡  መላእክት ፡  ሰብሑ ፡  እንዘ ፡  ይብሉ ፡  አብርሃም ፡  ፍቁሩ ፡  ለእግዚአብሔር ፡  አብርሃም ፡  አርከ ፡  እግዚአብሔር።",
-    "manuscript_count": 3,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },
@@ -7105,18 +4772,6 @@ const MIRACLES_OF_MARY = [
     "manuscript_count": 3,
     "most_read": false,
     "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
       {
         "author": "Rowan Williams",
         "text": "<p>The Miracles of Our Lady Mary, the Holy Twofold Virgin Theotokos</p><p>May her prayers and blessings be with us to the ages of ages. Amen.</p><p>My fathers, brothers and sisters, hearken to the greatness and the glory and the honour of Our Lady Mary, the holy twofold Virgin Theotokos, and listen to the stories of her advent. 4O you who hope in the power of her help and believe in her prayers, come down from your lofty places. You who are seated, stand up and gird your loins. Bow your heads, lower your head coverings and take off your jewellery.[1] 5For just now you have heard that which says, ‘Let those who are able receive the Eucharist, and let those who are not able to do so listen to the Miracles of Our Lady Mary, the Theotokos. It will be like the reception of the Eucharist for them.’ 6And Our Lady Mary,[2] the holy twofold Virgin Theotokos, loves and honours those who, with a ready heart, listen to it without negligence. 7Prepare to listen to her miracles now to receive your eternal reward.</p><p> 8 In the beginning God created Heaven and Earth. 9Furthermore, He created all creatures in Heaven and on Earth, in the seas and on the dry land, each according to its own kind. 10After this, the Lord said, ‘Let us make humankind in Our image and after Our likeness.’ So God created a man[3] and breathed the breath of life into his face. 11Then God said, ‘It is not good for that man[4] to be alone. Let us make someone for him who will help him.’ 12For this cause the Lord brought a deep sleep upon Adam, and he slept. Then He took a rib from his side and filled up flesh in its place. 13And the Lord fashioned and made the rib which He had taken from Adam’s side into a woman, and He brought her to Adam. 14Then Adam said, ‘This is bone of my bones and flesh of my flesh. Let her be my wife, for she has come forth from her husband for my life.’ 15(Adam said this knowing that Our Lady Mary would go forth from his loins and from the womb of his wife.)</p><p>16 Now the Lord God planted Paradise eastward in Eden; and there He put Adam and Eve. 17A river went out before it to water Paradise, and from there it divided into the four corners of the world. 18The name of the first river is the Pishon. It is the one that encircles the whole land of Heuilat. 19The name of the second river is the Gihon, which encircles the whole land of Ethiopia. 20The third river is the Tigris, which goes over against Persia. And the fourth river is the Euphrates. 21Then the Lord took the people He had created and put them in Paradise. 22And He[1] told Adam, ‘You may eat of all the trees in Paradise. 23But you shall not eat of the tree that gives understanding and reveals good and evil, for on the day you eat of it you will surely die.’[2]</p><p>24 One day the serpent, which was more cunning than any other wild animals of the field which the Lord had made, came and said to Eve, ‘Why has the Lord said, “You shall not eat of all the trees in Paradise”?’ 25Eve answered the serpent,[3] ‘We shall eat of the trees that produce fruit in the midst of Paradise, but of the tree in the very midst of Paradise the Lord has commanded us not to eat, or even touch it, lest we die.’[4] 26The serpent said to Eve, ‘You shall not surely die, for the Lord knows[5] that on the day you eat of it your eyes will be opened, and you will be like God, knowing good and evil.’ 27When the woman beheld that the tree was pleasing to the eyes and good to look upon and to eat, and that it gave good understanding, she plucked its fruit, ate and gave it to her husband who was with her, and they both ate together. 28At that moment the Father, the Son and the Holy Spirit said, ‘Adam has become like One of Us.’ 29(The Lord said this to signify His Incarnation from the holy Virgin for the salvation of humankind in the latter days.) 30Then the Lord brought Adam out of the Paradise of delight to till the ground and said to Him, ‘By the sweat of your face, may you eat your bread. You will return to the dust from which you came, until the completion of five and a half days, when I shall be born of your daughter’s daughter and bring you back to Paradise again.’ 31(She, concerning whom He said ‘your daughter,’ is Our Lady Mary, for she was in the mind of God before He created Adam in His image and likeness.)</p><p>32 O children of  the Gospel, behold the greatness and glory of Our Lady Mary, the holy Virgin: how the Lord made a promise to Adam when he was cast out of Paradise, saying, ‘I shall be born of your daughter’s daughter,’ who is the holy Virgin Mary; 33for the Lord made her the deliverance of Adam and his children.   </p><p>May her prayers and blessings be with us to the ages of ages. Amen.</p>"
@@ -7163,19 +4818,6 @@ const MIRACLES_OF_MARY = [
     ]
   },
   {
-    "id": "430",
-    "title": "The dog that ran off with a manuscript of the Taʾammera Maryam (Miracles of the Virgin Mary).",
-    "incipit": "ወሀሎ፡ አሐዱ፡ መነኮስ፡ ጸሐፌ፡ ተአምሪሃ፡ ለእግዝእትነ፡…. ወአሐተ፡ ዕለተ፡ ኀበ፡ አንበረ፡ ውእቱ፡ መጽሐፈ፡ ተአምሪሃ፡ ለእግዝእትነ፡…. ውስተ፡ አፍአ፡ ቤት፡ ወመጽአ፡ እኩይ፡ ከልብ፡ ወነሥኦ፡ ወወሰዶ",
-    "manuscript_count": 2,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
     "id": "459",
     "title": "Thomas the priest who sees the Virgin Mary inscribing the names of those who praise her on the fiery chariot of gold.",
     "incipit": "ወሀሎ፡ አሐዱ፡ ደብር፡ ዘመነኮሳት፡ ወያፈቅርዋ፡ ለእግዝእትነ፡ ጥቀ፡ ፈድፋደ፡ ወይገብሩ፡ ተዝካራ፡ በዐቢይ፡ ተጠንቅቆ፡ አመ፡ ፳፡ ወ፩፡ ለወርኃ፡ ጥር",
@@ -7185,19 +4827,6 @@ const MIRACLES_OF_MARY = [
       {
         "author": "Allie V. Mangel",
         "text": "<p>There was a monastery of Our Lady, the Holy Twice-Virgin Mary, Mother of God. A container of oil was suspended in the sanctuary.</p><p>The attaching cord of the container of oil was cut; the container neither descended nor rose.</p><p>When the priest saw this admirable and tremendous thing, such as had never been done before nor would again after, so did he sound the bell so that all the Christian people would assemble and see the miracle.</p><p>When all the people were assembled and had seen the container of oil suspended by the power of Our Lady, the Holy Twice-Virgin Mary, Mother of God, they praised God the Most High and praised Our Lady, the Holy Twice-Virgin Mary, Mother of God, the palace of the Trinity. </p><p>They said, “Miraculous is the power of Our Lady, the Holy Twice-Virgin Mary, Mother of God, and sweet is her voice. She listens to him who implores her and allows him to enter the Garden of Delights.”[Translation as of 05/21/22]</p>"
-      }
-    ]
-  },
-  {
-    "id": "484",
-    "title": "Book of Felsata la-Maryam??: EOld?: Dormition: Revelation: Part 2: The Virgin Mary narrates to Saint John a revelation made to her by Christ on Golgotha (continuation of 480?, 487?).",
-    "incipit": "በእንተ፡ ዕበያ፡ ወክብራ፡ ለእግዝእትነ፡…. ይቤ፡ ዮሐንስ፡ ወልደ፡ ንጕድጓድ፡ ዘያፈቅሮ፡ እግዚእ፡ ኢየሱስ፡ በእንተ፡ ዕበየ፡ ንጽሕናሁ፡ ወእግዝእትነ፡…. ታፈቅሮ፡ ፈድፋደ፡ በከመ፡ ያፈቅሮ፡ ወልዳ፡ ወአውሥአቶ፡ ቡርክት፡ ወትቤሎ፡ ስማዕ፡ ኦዮሐንስ፡ እንግርከ፡ ኅቡዓ",
-    "manuscript_count": 2,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },
@@ -7241,45 +4870,6 @@ const MIRACLES_OF_MARY = [
     ]
   },
   {
-    "id": "523",
-    "title": "King Zara Yaqob (Zarʾa Yaʿeqob), the 14th c. Ethiopian monarch, kills Badlay ibn Sa'ad ad-Din II and dismembers his body.",
-    "incipit": "ስምዑ፡ ዘገብረት፡ ሎቱ፡ ኃይለ፡ ወተአምረ፡ ለንጉሥነ፡ ዘርአ፡ ያዕቆብ፡ ወበጸጋ፡ እግዚአብሔር፡ ዘተሰምየ፡ ቍስጠንጢኖስ፡ ወለኵሉ፡ አበዊሁ፡ ወአኃዊሁ፡ እለ፡ ነግሡ፡ እምቅድሜሁ፡ ገብረት፡ ኃይለ፡ ተአምር፡ በእንተ፡ ኪዳና፡ ዘአልቦ፡ ኍልቍ፡ ቀተሎ፡ ለንጉሠ፡ ሰብአ፡ አደል፡ ዘስሙ፡ በድላይ",
-    "manuscript_count": 2,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "525",
-    "title": "King Zara Yaqob (Zarʾa Yaʿeqob), the 14th c. Ethiopian monarch, returning victorious, builds a church in the name of the Virgin Mary and commands the observance of her feast.",
-    "incipit": "ወእምዝ፡ አቲዎ፡ እምፀብዕ፡ ዘርአ፡ ያዕቆብ፡ በፍሥሐ፡ ወበሐሤት፡ ምስለ፡ ብዙኅ፡ ዕልገቱ፡ ወሰከ፡ አክብሮታ፡ ወአፍቅሮታ፡ ለእግዝእትነ፡ ማርያም",
-    "manuscript_count": 2,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "526",
-    "title": "King Zara Yaqob (Zarʾa Yaʿeqob), the 14th c. Ethiopian monarch, composes hymns in honor of the Virgin Mary.",
-    "incipit": "ወበእንተዝ፡ ሰብሓ፡ ለእግዝእትነ፡ ማርያም፡ ዘርአ፡ ያዕቆብ፡ ወአልዓላ፡ አድመፀ፡ ማኅሌተ፡ ቅኔ፡ በበዓላ",
-    "manuscript_count": 2,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
     "id": "527",
     "title": "King Zara Yaqob (Zarʾa Yaʿeqob), the 14th c. Ethiopian monarch, establishes devotion to the Trinity throughout his empire.",
     "incipit": "ወካዕበ፡ ገብረት፡ ሎቱ፡ ለዘርአ፡ ያዕቆብ፡ ተአምረ፡ ወመድምመ፡ እግዝእትነ፡ ማርያም፡ በእንተ፡ ኪዳና፡ ዳግመ፡ በፍቅረ፡ ዚአሃ፡ ወቆመ፡ ወአቅነተቶ፡ ኃይለ፡ ከመ፡ ኢይኩን፡ ድኩመ",
@@ -7293,97 +4883,6 @@ const MIRACLES_OF_MARY = [
     ]
   },
   {
-    "id": "528",
-    "title": "King Naod (Naʾod), the 16th c. Ethiopian monarch, humbles his enemies with the Virgin Mary's help",
-    "incipit": "ወካዕበ፡ ስምዑ፡ አኃዊነ፡ ዘኮነ፡ በመዋዕሊነ፡ ሶበ፡ አንሥኦ፡ ፀረ፡ ሰይጣን፡ ከመ፡ ይፅባዕ፡ ቅዱሳነ",
-    "manuscript_count": 2,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "532",
-    "title": "Book of Felsata la-Maryam??: HOld?: Dormition: Dormition and Assumption of The Virgin Mary's body into Heaven. (623, 502, 532, 550 similar)",
-    "incipit": "ወአመ፡ ዕረፍታ፡ ለእግዝእትነ፡…. ተጋብኡ፡ ኵሎሙ፡ ሐዋርያት፡ እለ፡ ተዘርዉ፡ ውስተ፡ ኵሉ፡ በሐውርት፡ ዘእንበለ፡ ቶማስ፡ ባሕቲቱ፡ ወእለኒ፡ እምሐዋርያት፡ ዘሞቱ፡ ተንሥኡ፡ ወመጽኡ። ወአኮ፡ በሥምረተ፡ ርእሶሙ፡ ዘተጋብኡ፡ አላ፡ ሶበ፡ ፈቀደት፡ እግዝእትነ፡.... ከመ፡ ይትጋብኡ፡ በጊዜ፡ ዕረፍታ፡ ለግንዘተ፡ ሥጋሃ፡",
-    "manuscript_count": 2,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "566",
-    "title": "Dabra Gass's Bishop Deraleyos, who was a lazy monk",
-    "incipit": "ወሀሎ ፡ ፩ኤጲስ ፡ ቆጶስ ፡ በደብረ ፡ ገጽ ፡ ዘስሙ ፡ ድራልዮስ ፡ ሐካይ ፡ መነኮስ ። ወኢየአምር ፡ ዘምሮ ፡ ዳዊት ፡ ወአንብቦ ፡ መጻሕፍት ፡ ወሀለወ ፡ በቤተ ፡ መዝገበ ፡ ዳዊት ፡ ሰዓታት ፡ ፍጹም ፡ ወንጌለ ፡ ዮሐንስ ፡ ወአቡቀለምሲስ ፡ ሀለወ ፡ ሎቱ ፡ ለዓይነ ፡ ሰብእ ፡ ዘይትረዓይ ፡ ከመ ፡ ይበልዎ ፡ ጻድቀ ። ወባሕቱ ፡ ኢይቀውም ፡ ወኢይሰግድ ፡ ወነዊም",
-    "manuscript_count": 2,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "567",
-    "title": "Archbishop Thaddeus, a European, whom the Virgin Mary assisted at Mass.",
-    "incipit": "ወሀሎ ፡ ጳጳስ ፡ በደወለ ፡ አፍርንጊ ፡ ዘስሙ ፡ ታዴዎስ ፡ ዘያፈቅራ ፡ ለእግዝእትነ ፡ … በኵሉ ፡ ልቡ ። ወበአሐቲ ፡ ዕለት ፡ እንዘ ፡ ሀለወ ፡ በተክህና ፡ ወይቄድስ ፡ ቅዳሴሃ ፡ ለእመ ፡ ብርሃን ፡ አውረደት ፡ ሎቱ ፡ እግዝእትነ ፡ … ኅብስት ፡ እምሰማይ ። ወተራድአቶ ፡ እስከ ፡ ይሜጥዎሙ",
-    "manuscript_count": 2,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "568",
-    "title": "Abiathar, a monk in Nubia, who was led to repentance by a vision of the Virgin Mary.",
-    "incipit": "ወሀሎ ፡ ፩መነኮስ ፡ ዘስሙ ፡ አብያታር ፡ በሀገረ ፡ ኖባ ፡ ዘያፈቅራ ፡ ለእግዝእትነ ፡ … ወያሤኒ ፡ መቅደሳ ፡ ወይኰሰትር ፡ እምዓፀዳ  ፡ ሣዕረ ፡ ወዕፀ ፡ ዘወድቀ ። ወይገብር ፡ ቀርነ ፡ ወይሠይጥ ፡ ለዘፈቀደ ፡ ይነሥእ ፡ ሤጦ ፡ ወይሁብ ፡ ለነዳያን ፡ ከመ ፡ ያርብሑ",
-    "manuscript_count": 2,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "569",
-    "title": "Eusebius, whom the Virgin Mary took to Heaven.",
-    "incipit": "ወሀሎ ፡ ፩ብእሲ ፡ ዘስሙ ፡ አውሳብዮስ ፡ ወአስተርአየቶ ፡ እግዝእትነ ፡ … ወአኃዘቶ ፡ እዴሁ ፡ ወአግሃሠቶ ፡ እምኃውሶ ፡ ዓለም ። ወወሰደቶ ፡ ውስተ ፡ ምርሶ ፡ ሕይወት ፡ ወቀፃዓት ፡ ሎቱ ፡ ፍኖተ ፡ የማን ፡ ከመ ፡ ይንሣእ ፡ አክሊለ ፡ ብርሃን ፡ ዘአስተዳለወ ፡ እግዚአብሔር ፡ ለእለ ፡ ያፈቅርዎ ፡ ወለእለ ፡ ይሜንኑ",
-    "manuscript_count": 2,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "570",
-    "title": "Jonah, the biblical prophet who came from Egypt and presciently knew about the Virgin Mary and Christian books, is swallowed by a whale",
-    "incipit": "ወሀሎ ፡ ፩ነቢይ ፡ በደወለ ፡ ግብጽ ፡ ዘስሙ ፡ ዮናስ ፡ ዘያፈቅሮ ፡ ለእግዚአብሔር ፡ በኵሉ ፡ ልቡ ። ወየአምን ፡ ከመ ፡ ይርአይ ፡ መዋዕሎ ፡ ለእግዚአብሔር ። ወወሀቦ ፡ እግዚኡ ፡ ክብረ ፡ ወአልበሶ ፡ ልብሰ ፡ ጥበብ ፡ ወትዕግሥት ፡ ወእምዝ ፡ አንበረ ፡ ሕሊናሁ ፡ ውስተ ፡ ሰማይ ፡ ወነጸረ ፡ ኵሎ ፡ ኃይለ ፡ ከመ ፡ ለብሰ ፡ ሥጋ ፡ ሰብእ ፡ ወኢያውዓያ ፡ ለእግዝእትነ ፡",
-    "manuscript_count": 2,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
     "id": "571",
     "title": "Matthias, a student from Bartos in Egypt, who was beaten and imprisoned for teaching about Christ.",
     "incipit": "ወሀሎ ፡ ፩ረድእ ፡ ዘደወለ ፡ ግብጽ ፡ በሀገረ ፡ ባርቶስ ፡ ዘስሙ ፡ ማትያስ ፡ ወኮነ ፡ ያፈቅራ ፡ ለእግዝእትነ ፡ … ወይሰብክ ፡ ወንጌለ ፡ ጸጋሁ ፡ ለኢየሱስ ፡ ክርስቶስ ፡ ወመሀሮሙ ፡ ለሰብአ ፡ ባርቶስ ፡ አምልኮተ ፡ እግዚአብሔር ፡ ቅዱሰ ።",
@@ -7393,58 +4892,6 @@ const MIRACLES_OF_MARY = [
       {
         "author": "Rowan Williams",
         "text": "<p>The Miracles of Our Lady Mary, the Holy Twofold Virgin Theotokos</p><p> </p><p>May her prayers and blessings be with us to the ages of ages. Amen.</p><p>This is the account of how Our Lady[1] appeared to Abba Serapion, the Bishop-Martyr, while he was a catechumen and had not yet been baptized, and how she led him to the Faith which is of her Son, and to Christian baptism.</p><p>3  Now this holy father was from Jerusalem. He was of the tribe of Levi, and was of the family of Stephen. 4The name of his father was Abraham, son of Levi, son of Joseph, and he was the brother of Simeon, the father of Stephen’s mother. 5At the time of his birth, he was called by the name of his father, 6but when his father died, he wished to become a Christian. Then an Angel of the Lord appeared to him and told him to go to Abba John,[2] the Bishop. So he went to him, and Abba John[3] expounded the Mystery of the Incarnation of Christ God to him.[4] 7However, he did not dare to be baptized with Christian baptism[5] in the city of Jerusalem for fear of his Jewish relatives.[6] 8And while the Bishop began to consider what to do concerning him,[7] Our Lady Mary, the holy twofold Virgin Birth-giver of God the Word, appeared to him and told him go to the city of Alexandria, to Abba Theonas, the Archbishop.[8]</p><p>9 Behold, my faithful Christian people, Our Lady Mary, the holy twofold Virgin Theotokos,[9] appeared to Abba Serapion when he was a catechumen.[10] 10And even in many years, the stories of her benevolence cannot be finished.[11] </p><p>May her prayers and blessings be with us to the ages of ages. Amen.</p>"
-      }
-    ]
-  },
-  {
-    "id": "572",
-    "title": "Saint Abba Besoy of Egypt is visited by the Virgin Mary on the feast day of the Assumption",
-    "incipit": "ወበዕለተ ፡ ፍልሰተ ፡ ሥጋሃ ፡ እመ ፡ ወርኃ ፡ ነሐሴ ፡ አስተርአየቶ ፡ እግዝእትነ ፡ … ለአባ ፡ ብሶይ ፡ ወአርአየቶ ፡ ምቅዋመ ፡ መላእክት ፡ ግሩማን ። ወክዋኔሆሙ ፡ እምእሳት ፡ እለ ፡ ይፀውሩ ፡ ሰይፈ ፡ መባርቅት ፡ ወይትዓፀፉ ፡ ነበልባለ ፡",
-    "manuscript_count": 2,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "573",
-    "title": "Saint Abba Besoy of Egypt, as a youth, had destroyed churches and killed people, but repented after killing a pregnant woman.",
-    "incipit": "ወሀሎ ፡ ፩ወሬዛ ፡ በደወለ ፡ ግብጽ ፡ ዘስሙ ፡ ብሶይ ፡ ዘተደመረ ፡ ምስለ ፡ ፈያት ፡ ወነበረ ፡ ብዙኃ ፡ መዋዕለ ፡ እንዘ ፡ ያማስን ፡ አብያተ ፡ ክርስቲያናት ፡ ወይቀትል ፡ ነፍሰ ። ወበአሐቲ ፡ ብእሲት ፡ ፅንስት ፡ ወነሥአ ፡ ልብሳ ፡ ወበዝ ፡ ኢኃደጋ ፡ ወቀተላ ፡ ዳግመ ፡ ወሐለየ ፡ በልቡ ፡ ከመ ፡ ይርአይ",
-    "manuscript_count": 2,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "574",
-    "title": "Saint Abba Paphnutius lives in the desert in Egypt for thirty-three years, being nourished with bread from Heaven.",
-    "incipit": "ወሀሎ ፡ ፩ገዳማዊ ፡ ዘስሙ ፡ በብኑዳ ፡ ዘያፈቅራ ፡ ለእግዝእትነ ፡ … ። ወነበረ ፡ እንዘ ፡ ይትለአካ ፡ በሰጊድ ፡ ወያሠምራ ፡ በጾም ፡ ወበጸሎት ፡ ወበጊዜ ፡ ይዜከር ፡ ስማ ፡ በአፈ ፡ ኵሉ ፡ ሰብእ ፡ ይሰግድ ፡ ሥልሰ ፡ ወይኤምኅ ፡ ምድረ",
-    "manuscript_count": 2,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "575",
-    "title": "Arkaledes from Qawep, who vowed not to look again at a woman, when his mother came to visit him, he died before seeing her.",
-    "incipit": "ወሀሎ ፡ ወሬዛ ፡ በሀገረ ፡ ቃውሕ ፡ ዘስሙ ፡ አርከሌድስ ፡ ዘኮነ ፡ ሠናየ ፡ በብዝኃ ፡ ኂሩቱ  ። ወየኃድሩ ፡ ኵሎሙ ፡ ነጋድያን ፡ ውስተ ፡ ቤተ ፡ እሙ ፡ ሶበ ፡ ይወጽኡ ፡ ወይወርዱ ፡ እምኢየሩሳሌም ፡ ዘእንበለ ፡ ነጐርጓር ፡ ወኃዘን ፡ ወተሰምዓ ፡ ዜናሃ ፡ ለእሙ ፡ ወተዓውቀ",
-    "manuscript_count": 2,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },
@@ -7475,123 +4922,6 @@ const MIRACLES_OF_MARY = [
     ]
   },
   {
-    "id": "578",
-    "title": "Scete's thirty monks whom Satan inspired to beat each other.",
-    "incipit": "ወሀለዉ ፡ ፴መነኮሳት ፡ በገዳመ ፡ አስቄጥስ ፡ ጽድቆሙ ፡ ብዙኅ ፡ ወሃይኖቶሙ ፡ ርትዕት ፡ ይፀልዑ ፡ እከያተ ፡ ወያፈቅሩ ፡ ሠናያተ ። ወሶበ ፡ ርእየ ፡ ሰይጣን ፡ ጸላኤ ፡ ሰናያት ፡ ዘንተ ፡ ተቃረኖሙ ፡ ወአምጽአ ፡ ላዕሌሆሙ ፡ ጽልዓ ፡ ወጽረፈተ ፡ ወቍጥዓ ፡ ዘዘዚአሆሙ ፡ ወቆመ ፡ በማዕከሎሙ ፡ ከመ ፡ ብእሲ ፡ ሠናይ ፡ ወወሀቦሙ ፡ በትረ ፡ ቀይሐ ፡",
-    "manuscript_count": 2,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "579",
-    "title": "Satan took the form of a bird to deceive two monks who had lived together in harmony for fifteen years.",
-    "incipit": "ወሀለዉ ፡ ፩መነኮሳት ፡ በገዳመ ፡ አስቄጥስ ፡ መስተጋድላን ፡ በጾም ፡ ወበጸሎት ። ወነበሩ ፡ ፲ወ፭ዓመተ ፡ ውስተ ፡ ፩ፆማዕት ፡ በፍቅር ፡ ወበሰላም ፡ ወሶቤሃ ፡ ኀሠሠ ፡ ሰይጣን ፡ ምክንያተ ፡ እከይ ፡ ለአስሕቶቶሙ ፡ ወመጽአ ፡ ተመሲሉ ፡ ከመ ፡ ዖፍ ። ወቆመ ፡ በቅድሜሆሙ ፡ ከዊኖ ፡ ዘ፩ዓይኑ ፡ ወስሞሙ ፡ ለእሉ ፡ ቅዱሳን ፡ ፩እስጢፋኖስ ፡ ወካልኡ ፡ ኤርምያስ ፡ ዘ፩ዓይኑ ፡",
-    "manuscript_count": 2,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "580",
-    "title": "Archbishop Maximus in Jerusalem and the clergy who wish to receive Communion on the feast of Easter from him",
-    "incipit": "ወሀሎ ፡ ፩ጳጳስ ፡ ዘስሙ ፡ መክሲሞስ ፡ በሀገረ ፡ ኢየሩሳሌም ፡ ማእምር ፡ ወለባዊ ፡ ጻድቅ ፡ ወአረጋዊ  ፡ ወስዕነ ፡፡ ቀዊመ ፡ ወደክመ ፡ ኃይሉ ፡ ወኢክህለ ፡ ቀድሶ ፡ ቍርባን ፡ ወመጽኡ ፡ ኀቤሁ ፡ ቀሳውት ፡፡ ወዲያቆናት ፡ ወኤጲስ ፡ ቆጶሳት ፡ ወይቤልዎ ፡ ዘእንበለ ፡ ትሙት ፡ አንተ ፡",
-    "manuscript_count": 2,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "581",
-    "title": "Saint Abba Daniel of Scete is visited by the Virgin Mary in the desert and she gives him a lion to ride on",
-    "incipit": "ወሀሎ ፡ ፩መነኮሳ ፡ በሀገረ ፡ ሮም ፡ ዘስሙ ፡ ዳንኤል ፡ ዘያፈቅራ ፡ ለእግዝእትነ ፡ … ። ወእምብዝኃ ፡ አፍቅሮቱ ፡ ኪያሃ ፡ ወጽአ ፡ ገዳመ ፡ ወአኃዞ ፡ ድካመ ፡ ፍኖት ፡ ወረከበ ፡ ዕፀ ፡ ዘይትይቡሰ ወአስመከ ፡ ታሕቴሁ",
-    "manuscript_count": 2,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "582",
-    "title": "Zena Krestos, a European monk, who was a herder and whose beasts were attacked by a lion.",
-    "incipit": "ወሀሎ ፡ ፩መነኮስ ፡ በደወለ ፡ አፍርንጊ ፡ ዘስሙ ፡ ዜና ፡ ክርስቶስ ፡ ዘይፈቅራ ፡ ለእግዝእትነ ፡ … ። ወኢየአምር ፡ ካልእ ፡ ጸሎተ ፡ ዘእንበለ ፡ ሰላመ ፡ መልአክ ፡ ወኢያበጥል ፡ ግሙራ ፡ እምአፉሁ ፡ ዘክሮተ ፡ ስማ ፡ ውእቱሰ",
-    "manuscript_count": 2,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "583",
-    "title": "Saints Michael and Saint Gabriel appear while Abbot Eliab is teaching his monks in the desert of Scete, who are given bread from Heaven.",
-    "incipit": "ወሀሎ ፡ ፩አበ ፡ ምኔት ፡ ዘስሙ ፡ ኤልያብ ፡ ወእንዘ ፡ ልሎ ፡ በገዳመ ፡ አስቄጥስ ፡ ተራከቦሙ ፡ ለ፷ገዳማውያን ፡ ወተዚያነዎሙ ፡ ነገረ ፡ እግዚአብሔር ፡ ወአይድዕዎ ፡ ዘኮነ ፡ ቅድመ ፡ ዘይመጽእሂ ፡ ድኅረ ፡ ማኅደረ ፡ ጻድቃን ፡ ፍሥሐ ፡ ወኵነኔ ፡ ኃጥአን ፡ ፍዳሆሙ ። ወእንዘ ፡ ይትናገሩ",
-    "manuscript_count": 2,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "584",
-    "title": "Homily of John the Evangelist on the greatness of the Virgin Mary, which he had seen in a vision. [Is this John, Son of Thunder?]",
-    "incipit": "ወበእንተ ፡ ዕበያ ፡ ወክብራ ፡ ለእግዝእትነ ፡ … ። ነገረ ፡ በእንቲአሃ ፡ ዮሐንስ ፡ ወልደ ፡ ነጐድጓድ ፡ እንዘ ፡ ይብል ፡ ርኢኩ ፡ ብእሲተ ፡ እንተ ፡ ትትዓፀፍ ፡ ፀሐየ ፡ ወእንዘ ፡ ሀሎኩ ፡ በደሴተ ፡ ፍጥሞ ፡ መጽአ ፡ ላዕሌየ",
-    "manuscript_count": 2,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "585",
-    "title": "Armenian Christian villagers who had to buy their water from Jews.",
-    "incipit": "ወሀለወት ፡ አሐቲ ፡ ቤተ ፡ ክርስቲያን ፡ ዘሕንጽት ፡ በስማ ፡ ለእግዝእትነ ፡ … በሀገረ ፡ አርማንያ ። ወአልቦ ፡ ማይ ፡፡ውስተ ፡ ይእቲ ፡ ሀገር ፡ ወባሕቱ ፡ ያመጽኡ ፡ ማየ ፡ እምርኁቅ ፡ ወበገቦሃ ፡ ለፈለግ ፡ ይነብሩ ፡ አይሁድ ፡ ወሶበ ፡ ይቀድሑ ፡ ክርስቲያን ፡ ይከልእዎሙ ፡ አይሁድ ፡ ቀዲሐ ፡ ማይ",
-    "manuscript_count": 2,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "586",
-    "title": "Pelagia, a nun from Caesarea, whom Satan afflicted with leprosy.",
-    "incipit": "ወሀለወት ፡ አሐቲ ፡ መበለት ፡ በሀገረ ፡ ቂሳርያ ፡ ዘስማ ፡ ጲላግያ ፡ ዘትፈርሆ ፡ ለእግዚአብሔር ። ወያፈቅራ ፡ ለእግዝእትነ ፡ … ወትገብር ፡ በዓላ ፡ ለለኵሉ ፡ አውራኅ ፡ ወታበውእ ፡ ለቤተ ፡ ክርስቲያና ፡ ንስቲተ ፡ ፀሪቀ ፡ እምዘባ ። ወጊዜ ፡ መንፈቀ ፡ ሌሊት ፡",
-    "manuscript_count": 2,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
     "id": "587",
     "title": "Aqlemeya, a poor woman from Rome, who was tied to a tree by bandits for five days and nights.",
     "incipit": "ወሀለወት ፡ አሐቲ ፡ ብእሲት ፡ በሀገረ ፡ ሮም ፡ ዘስማ ፡ አቅሌምያ ፡ ወአልባቲ ፡ ውሉድ ፡ ወኢንዋይ ፡ ወጥሪት ፡ ወነዳዪት ፡ ይእቲ ። ወባሕቱ ፡ ትሰፊ ፡ ሙዳየ ፡ ለዕጣን ፡ ወለዘቢብ ፡ ወተሐውር ፡ ውስተ ፡ ምሥያጥ ፡ ወታመጽእ ፡ ሤጠ ፡ ዚአሁ ፡ ወትገብር",
@@ -7605,32 +4935,6 @@ const MIRACLES_OF_MARY = [
     ]
   },
   {
-    "id": "599",
-    "title": "King Saladdin of Egypt and his men try to force their way into the house where the Virgin Mary was born",
-    "incipit": "ወኮነ፡ እምልደተ፡ እግዚእነ፡ ኢየሱስ፡ ክርስቶስ፡ በ፮፻፳፡ ወ፯፡ ዓመት፡ በመዋዕለ፡ ሰላዲኖስ፡ ንጉሠ፡ ምስር፡ እስላም፡ ሀለወት፡ አሐቲ፡ ቤት፡ ዘናሕስ፡ ግምብ፡ ዘተወልደት፡ ባቲ፡ እግዝእትነ፡…. ለውእቱ፡ ንጉሥ፡ ሐራሁ፡ አምጽኡ፡ አፍራስ፡/አፍራሰ፡ ወይቤሉ፡ ናበውእ፡ ውስተ፡ ዝንቱ፡ ቤት",
-    "manuscript_count": 2,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "603",
-    "title": "Life: The Virgin Mary heals a large multitude of sick people in Bethlehem who had sought her in the Temple.",
-    "incipit": "ወእምዝ፡ ተጋብኡ፡ ብዙኃን፡ ሕዝብ፡ ውስተ፡ ቤተ፡ መቅደስ፡ ወብዙኃን፡ ድውያን፡ መጽኡ፡ ወይቤሉ፡ አይቴ፡ ሀለወት፡ ቡርክት፡ እግዝእትነ፡…. ወአውሥኡ፡ ወይቤልዎሙ፡ ኢሀለወት፡ ዝየ፡ ይእቲሰ፡ ቤተ፡ ልሔም፡ ትነብር፡",
-    "manuscript_count": 2,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
     "id": "620",
     "title": "Homily on the Annunciation, preceded by the gospel text",
     "incipit": "ወበሳድስ፡ ወርኅ፡ ተፈነወ፡ ገብርኤል፡ መልአክ፡ እምኀበ፡ እግዚአብሔር፡ ሀገረ፡ ገሊላ፡…. እንዘ፡ ኢየአምር፡ ብእሴ። ኦቅድስት፡ ድንግል፡ እንተ፡ አውሥአቶ፡ ለመልአክ፡ በግህደት፡ ንጽሕት፡ ድንግልናሃ",
@@ -7640,19 +4944,6 @@ const MIRACLES_OF_MARY = [
       {
         "author": "Rowan Williams",
         "text": "<p>The Miracles of Our Lady Mary, the Holy Twofold Virgin Theotokos</p><p>May her prayers and blessings be with us to the ages of ages. Amen.</p><p>Moreover, John recounted[1] how he beheld the hidden mysteries concerning that woman: how she had great, spiritual wings, with which she flew to where the glory of her Son was proclaimed and where the commemoration of her name was observed[2] by the mouths of all creatures. 3That woman, who departed from the world, appeared in the clothing of the sun, with the moon under her feet and a crown of stars on her head. She is Mary, who shed light upon those who sat in darkness and the shadow of death. 4And the light of the sun which she wears gives heat to those whom the frigidness of iniquity has made cold, 5for that woman is adorned in all spiritual beautification, which will never pass away, nor will come to an end. 6Her adornment is inexpressible among Angels and humans, 7for she does not possess the apparel of this world,[3] 8and from the time that she was born, her ways were entirely kept[4] from the honour of this world. 9Her adornment was not as the daughters of Zion adorn themselves: in chains,[5] necklaces, pearls, gold,[6] silk, fine linen and other costly garments; rather, she put away from herself all[7] kinds of inner[8] and outer garments which cause boasting, and was not arrayed in any kind of adornment of this world. 10Moreover, she did not desire them to bring her horses from Beth-Togarmah, nor riders nor chariots.[9] 11For Mary is far from the honour of this world, with[10] all its love and pleasure. 12Not once did a perverse thought enter her mind; not once were the thoughts of the Holy Spirit removed from[11] her heart. 13For this reason, we say Mary is the twofold Virgin, in virginity of the body and virginity of thought. 14And there is no one who can be compared to her in the pure virginity of her body and the pure virginity of her thought,[12] neither the thoughts of the pure Angels nor the thoughts of the righteous. 15There was not one of the entire human race, or even the hosts of Heaven, who was made a twofold virgin like the holy Virgin Mary, who became the dwelling-place of the Holy Spirit. 16For the Lord chose her and desired her beauty, that He might be incarnate of her for the redemption of the whole world as He promised her father Adam and her mother Eve in the beginning. 17He sanctified her more than all other people in the womb of her mother, and granted her a purity[13] that is more exalted than every pure creaturely nature. 18For this cause, we glorify the Lord Who has granted us this pure Virgin daughter that He might visit us and have compassion on us through the flesh that He assumed from her.  </p><p>May her prayers and blessings be with us to the ages of ages. Amen.</p>"
-      }
-    ]
-  },
-  {
-    "id": "1002",
-    "title": "Dormition Miracles for Women",
-    "incipit": "ስምዑ፡ አበውየ፡ ወአኀውየ፡ ዘገብረት፡ እግዝእትነ፡ እምድኅረ፡ ዕረፍታ ፨ ወከመዝ፡ ገብረት፡ ተአምራተ፡ ወመንክራተ፡ ዘአልቦ፡ ኆልቈ፡ እስመ፡ ተወልደ፡ እምኔሃ፡ ዘወረደ፡ እምሰማይ፡ ወተሰገወ፡ ወረሰያ፡ ቤተ፡ መቅደስ፡ ለክብረ፡ ዚአሁ ፨ ወከመዝ፡ ይሁብ፡ ስብሐተ፡ ሰብአ፡ ቤተ፡ መቅደሳ፡ ለቅድስት፡ ድንግል፡ ማርያም፡ ወዓዲ፡ አንስትኒ፡ ይመፅኣ፡ ኀቤሃ፡ እምኵሉ፡ በሐውርት፡ እምሮሜ፡ ወእምእልስክንድርያ፡ ወአዋልደ፡ ነገሥት፡",
-    "manuscript_count": 2,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },
@@ -7743,436 +5034,6 @@ const MIRACLES_OF_MARY = [
     ]
   },
   {
-    "id": "1111",
-    "title": "Emperor Tiberius and how the Virgin Mary tells John the Evangelist to go to Emperor Tiberius to evangelize about her and her son, who was executed under Tiberius",
-    "incipit": "ወትቤሎ ፡ እግዝእትነ፡… ለዮሐንስ ፡ ሑር ፡ ኀበ ፡ ጢባርዮስ ፡ ንጉሥ ፡ ከመ ፡ ትኩን ፡ ስምዐ ፡ በኲሉ ፡ ግብር ፡ ዘርኢከ ፡ በኀቤየ ፡ ወበኀበ ፡ ወልድየ ፡ ፍቁር ፡ ወበከመ ፡ ገብሩ ፡ ላዕሌሁ ፡ እኩያን ፡ አይሁድ ፡ እንዘ ፡ ሀሎዲበ ፡ ዕፀ ፡ መስቀል ።",
-    "manuscript_count": 2,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1114",
-    "title": "Homily on the greatness and effectiveness of the Virgin Mary's prayers on behalf of humanity.",
-    "incipit": "ኦ ፡ ማኅበረ ፡ ክርስቲያን ፡ ክሥቱ ፡ ኲልክሙ ፡ አዕዛነ ፡ አልባቢክሙ ፡ ለሰሚዓ ፡ ተአምሪሃ ፡ ለእግዝእትነ ፡ ማርያም ፡ ዘከመ ፡ አድኃነቶሙ ፡ ለኃጥኣን ፡ እምስሕተት ፡ በትንብልናሃ ።",
-    "manuscript_count": 2,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1121",
-    "title": "Homily on the efficacy of praying through the Virgin Mary",
-    "incipit": "ስምዑኬ፡ ኦውሉደ፡ ብርሃን፡ ማኅበረ፡ ቅድስት፡ ቤተ፡ ክርስቲያን፡ ዘደብረ፡ ቂርቆስ፡ በእዝነ፡ ልቡና፡ ወነጽሩ፡ በዓይነ፡ መንፈስክሙ፡ ኀበ፡ ተአምሪሃ፡ ለእግዝእትነ",
-    "manuscript_count": 2,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1165",
-    "title": "King of Rome: Patriach Dionysius appoints Ermias as the king of Romeya (see ID 70)",
-    "incipit": "ወእምድኅረ ፡  ተኀጥአ ፡  ማርቆስ ፡  ንጉሠ ፡  ሮሜ ፡  እመንበረ ፡  መንግሥቱ ፡  ወቦ አ ፡  ገዳመ ፡  መኒኖ ፡  መንግሥቶ። ወተጋብ ኡ ፡  ሕዝብ ፡  ከመ ፡  ቀዳሚ ፡  ወመጽ ኡ ፡  ኀበ ፡  ሊቀ ፡  ጳጳሳት ፡  አባ ፡  ዲዮናስዮስ ፡  ወይቤልዎ ፡  አንግሥ ፡  ለነ",
-    "manuscript_count": 2,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1166",
-    "title": "A pious man with many enemies is saved by daily praying in front of his icon of the Virgin Mary",
-    "incipit": "ወሀሎ ፡  አሐዱ ፡  ብእሲ ፡  በአሐቲ ፡  ሀገር ፡  ዘቦቱ ፡  አጽራር ፡  ወኮኑ ፡  አጽራሪሁ ፡  ይጸንሕዎ ፡  ኵለሄ ፡  ጽሚተ ፡  ወአስተዳለዉ ፡  መሥገርተ ፡  ወይከርዩ ፡  ግበበ ፡  ምድር ፡  ከመ ፡  ይደቅ ፡  ውስቴቱ ፡  እንዘ ፡  የሐውር ፡  ፍኖቶ።",
-    "manuscript_count": 2,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1195",
-    "title": "King Menelik (Menilek) II, the 19th c. Ethiopian monarch, and his Life: Part 6: He builds the city of Addis Ababa and a beautiful church for the Virgin Mary)",
-    "incipit": "ወእምድኅረ ፡  ተመይጠ ፡  እምነ ፡  አድዋ ፡  ዳግማዊ ፡  ምኒልክ ፡  ሥዩመ ፡  እግዚአብሔር ፡  ንጉሠ ፡  ነገሥት ፡  ዘኢትዮጵያ ፡  ገብረ ፡  ትዕይንተ ፡  በሀገረ ፡  ሜታ ፡  ወሰመያ ፡  ለይእቲ ፡  ትእይንት ፡  ሐዲስ ፡  ዓለም። ወእምዝ ፡  ወጠነ ፡  ንድቀ ፡  ሕንፃ ፡  በውስተ ፡  ትዕይንት ፡  ወለአሐቲኒ ፡  ንድቀ ፡  ሕንፃ ፡  አሠነያ ፡",
-    "manuscript_count": 2,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "Mehari Worku with Wendy Laura Belcher",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1196",
-    "title": "Prayer of Ethiopia: Part 01: Ethiopia stretches out her hands and begins to pray to the Virgin Mary",
-    "incipit": "በከመ ፡  ይቤ ፡  ዳዊት ፡  ነቢይ ፡  በመዋዕል ፡  ዘቀዲሙ ፡  ኢትዮጵያ ፡  ታበጽሕ ፡  እደዊሃ ፡  ኀበ ፡  እግዚአብሔር ፡  ከማሁ ፡  ትሰፍሕ ፡  አዕዳዊሃ ፡  እምነ ፡  አግዓዚት ፡  ኢትዮጵያ ፡  ኀበ ፡  እግዝ እትነ ፡  ... ወትጼሊ ፡  እንዘ ፡  ትብል ፡  ከመ ፡  ትብል ፡  በአማን።",
-    "manuscript_count": 2,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "Mehari Worku with Wendy Laura Belcher",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "Mehari Worku with Wendy Laura Belcher",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1197",
-    "title": "Prayer of Ethiopia: Part 02: Ethiopia's petition is brought by the Virgin Mary to the Holy Trinity",
-    "incipit": "ወከመዝ ፡  ትቤ ፡  እምነ ፡  አግዓዚት ፡  ኢትዮጵያ ፡  በቃለ ፡  ዳዊት ፡  ነቢይ ፡  ኦ ፡  እግዝእትነ ፡ ... ። ይምጻእ ፡  ኃይል ፡  ዘይዘርዎ ፡  ለጊሜ ፡  ከመ ፡  ሐመድ ፡  በት እዛዘ ፡  ወልድኪ ፡  ከመ ፡  ይዝርዎሙ ፡  ለእለ ፡  ይፈቅዱ ፡  ባዕሰ ፡  ዚአየ ፡  ወይንስት ፡  ምክሮሙ ፡  ዘመከሩ ፡  እኩየ ፡  ላዕሌየ። ኦ ፡  ድንግል ፡  እመ ፡  እግዚአብሔር ፡  ጸባዖት ፡  እለ ፡  ይባርኩኒ ፡  ይትባረኩ ፡  በአፈ ፡  ፍቁር ፡  ወልድኪ ፡  ወእለ ፡  ይረግሙኒ ፡  ይትረገሙ ፡  በአፈ ፡",
-    "manuscript_count": 2,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "Mehari Worku with Wendy Laura Belcher",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1198",
-    "title": "Prayer of Ethiopia: Part 03: Ethiopia prays for the destruction of her enemies",
-    "incipit": "ኦ ፡  አኃውየ ፡  ፍቁራን ፡  ለብዉ ፡  እንከ ፡  ልባዌ ፡  ጥዩቀ ፡  ከመ ፡  ዘልፈ ፡  ትጼሊ ፡  ወት ስ እል ፡  ኀበ ፡  እግዚአብሔር ፡  ወኀበ ፡  እሙ ፡  ቅድስት ፡  ድንግል ፡  ... እምነ ፡  አግዓዚት ፡  ኢትዮጵያ ፡  በሰፊሃ ፡  አዕዳው ፡  ወበአንቃዕድዎ ፡  ኅሊና ፡  በከመ ፡  ይቤ ፡  ዳዊት ፡  ነቢይ ፡  ኢትዮጵያ ፡  ታበጽሕ ፡  እደዊሃ ፡  ኀበ ፡  እግዚአብሔር ፡  በእንተ ፡  ሰላም ፡  ወበእንተ ፡  ድኅነተ ፡  ሕዝባ።",
-    "manuscript_count": 2,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "Mehari Worku with Wendy Laura Belcher",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "Mehari Worku with Wendy Laura Belcher",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1199",
-    "title": "Prayer of Ethiopia: Part 04: Ethiopia praises God for the gift of the Virgin Mary",
-    "incipit": "ወከመዝ ፡  ትቤ ፡  በመንፈስ ፡  ቅዱስ ፡  እምነ ፡  አግዓዚት ፡  ኢትዮጵያ ፡  እንዘ ፡  ትነግር ፡  ውዳሴሃ ፡  ለእግዝእትነ ፡  ...። በከመ ፡  ይቤ ፡  ጳውሎስ ፡  በመልእክቱ ፡  አቀድም ፡  አእኵቶቶ ፡  ለእግዚአብሔር ፡  በእንተ ፡  እግዚእነ ፡  ኢየሱስ ፡  ክርስቶስ ፡  ወበእንቲኣኪ ፡  እግዝ እትየ ፡  ንግሥት ፡  እሴብሕ ፡  ወእዜምር።",
-    "manuscript_count": 2,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "Mehari Worku with Wendy Laura Belcher",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1200",
-    "title": "Prayer of Ethiopia: Part 05: Ethiopia prays to the Virgin Mary during the civil war of 1974??? to 1991??? (",
-    "incipit": "ወበውእቱ ፡  መዋዕል ፡  ሶበ ፡  ኮነ ፡  ምንዳቤ ፡  ዕፁብ ፡  ወተቃትሎ ፡  ሕዝብ ፡  ምስለ ፡  ሕዝብ ፡  ውስተ ፡  ሀገር ፡  ሶቤሃ ፡  ጸለየት ፡  ወትቤ ፡  ከመዝ ፡  እምነ ፡  አግዓዚት ፡  ኢትዮጵያ ፡  ኦ ፡  ድንግል ፡  አዘክሪ ፡  ኀበ ፡  መዘክር ፡  ወልድኪ ፡  እምዘ ፡  ኢይረስእ ፡  ኵሎ ፡  ዘነገርዎ ፡  ወኢይከልእ ፡  ዘሰአልዎ ፡  ከመ ፡  ይፈኑ ፡  ሣህሎ ፡  ወምሕረቶ ፡  ለምድር።",
-    "manuscript_count": 2,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "Mehari Worku with Wendy Laura Belcher",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "Mehari Worku with Wendy Laura Belcher",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1201",
-    "title": "Prayer of Ethiopia: Part 06: Ethiopia praises the Virgin Mary for fulfilling the prophecy of the prophet Daniel",
-    "incipit": "ወትቤ ፡  እምነ ፡  አግዓዚት ፡  ኢትዮጵያ ፡  በከመ ፡  ይቤ ፡  ዳን ኤል ፡  ነቢይ ፡  ትባርኮ ፡  ምድር ፡  ለእግዚአብሔር ፡  ኦ ፡  ድንግል ፡  ወአነሂ ፡  ከመዝ ፡  እባርከኪ ፡  ወእጼውዕ ፡  ስመኪ።",
-    "manuscript_count": 2,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "Mehari Worku with Wendy Laura Belcher",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1202",
-    "title": "Prayer of Ethiopia: Part 07: Ethiopia marvels at the Incarnation of God in the womb of the Virgin Mary",
-    "incipit": "ወከመዝ ፡  ትቤ ፡  እምነ ፡  አግዓዚት ፡  ኢትዮጵያ ፡  በመንፈስ ፡  ቅዱስ ፡  በእንተ ፡  ክብራ ፡  ለእመ ፡  ንጉሥ ፡  ኢየሱስ ፡  ክርስቶስ ፡  ፈጣሬ ፡  ሰማያት ፡  ወምድር።",
-    "manuscript_count": 2,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "Mehari Worku with Wendy Laura Belcher",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "Mehari Worku with Wendy Laura Belcher",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1203",
-    "title": "Prayer of Ethiopia: Part 08: Ethiopia beseeches the Virgin Mary for intercession using Psalm 47???",
-    "incipit": "በከመ ፡  ተብህለ ፡  በመዋዕል ፡  ዘቀዲሙ ፡  በአፈ ፡  ዳዊት ፡  ነቢይ ፡  ዕግትዋ ፡  ለጽዮን ፡  ወሕቀፍዋ ፡  ወተናገሩ ፡  በውስተ ፡  ማኅፈዲሃ ፡  ደዩ ፡  ልበክሙ ፡  ውስተ ፡  ኃይላ ፡  ወትትካፈልዎ ፡  ለክበዲሃ። ወከማሁ ፡  እንዘ ፡  ተዓቅብ ፡  ዘንተ ፡  ውስተ ፡  ልባ ፡  እምነ ፡  አግዓዚት ፡  ኢትዮጵያ ፡",
-    "manuscript_count": 2,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "Mehari Worku with Wendy Laura Belcher",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1204",
-    "title": "Prayer of Ethiopia: Part 09: Ethiopia praises the Virgin Mary and takes the Virgin Mary's magnificat as a prophecy",
-    "incipit": "ወከመዝ ፡  ትቤ ፡  በመንፈስ ፡  ቅዱስ ፡  እምነ ፡  አግዓዚት ፡  ኢትዮጵያ ፡  በእንተ ፡  ወድሶታ ፡  ለእግዝእትነ ፡ ...። ኦ ፡  ድንግል ፡  በከመ ፡  ተነበይኪ ፡  በመንፈስ ፡  ቅዱስ ፡  በብሂል ፡  ናሁ ፡  እምይእዜሰ ፡  ያስተበፅዑኒ ፡  ኵሉ ፡  ትውልድ ፡  እስመ ፡  ገብረ ፡  ሊተ ፡  ኃይለ ፡  ዐቢያተ ፡  ወቅዱስ ፡  ስሙ።",
-    "manuscript_count": 2,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "Mehari Worku with Wendy Laura Belcher",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1205",
-    "title": "Prayer of Ethiopia: Part 10: Ethiopia praises the Virgin Mary using?? the Anaphora?? of the Virgin Mary",
-    "incipit": "ወትቤ ፡  እምነ ፡  አግዓዚት ፡  ኢትዮጵያ ፡  እንዘ ፡  ትሴብሕ ፡  ወትዜምር ፡  በእንተ ፡  እግዝእተ ፡  ኵልነ ፡  ... ወሃቤ ፡  ሕይወት ፡  ወበረከት ፡  ወጸጋዌ ፡  ምሕረት ፡  በብዝኃ ፡  ሂሩቱ።",
-    "manuscript_count": 2,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "Mehari Worku with Wendy Laura Belcher",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1206",
-    "title": "Prayer of Ethiopia: Part 11: Ethiopia expresses her zeal to defend the Virgin Mary's honor",
-    "incipit": "በከመ ፡  ይቤ ፡  ዳዊት ፡  ነቢይ ፡  በመዝሙር ፡  ቅንዓተ ፡  ቤትከ ፡  በልዓኒ ፡  እስመ ፡  ትዕይርቶሙ ፡  ለእለ ፡  ይትዔየሩከ ፡  ወድቀ ፡  ላዕሌየ። ወከመዝ ፡  ትቤ ፡  እምነ ፡  አግዓዚት ፡  ኢትዮጵያ ፡  በእንተ ፡  ንጽሐ ፡  ድንግልናሃ ፡  ለእግዝእትነ ፡  ኦ ፡  ድንግል ፡  እመቦ ፡  ዘይጸርፍ ፡  ላዕለ ፡  ድንግልናኪ ፡  ቀናዕኩ ፡  በእንቲኣኪ ፡  ወበእንተ ፡  ጽዕለተ ፡  ላዕለ ፡  ድንግልናኪ ፡  ቀናዕኩ ፡  በእንተ ፡  ዘሐሰወ ፡  ላዕለ ፡  ፅንስኪ ፡  መንፈሳዊ ፡  ቀናዕኩ ፡  በእንተ ፡  ዘአለወ ፡  ላዕለ ፡  ወሊዶትኪ ፡  ድንግልናዌ።",
-    "manuscript_count": 2,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "Mehari Worku with Wendy Laura Belcher",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1207",
-    "title": "Prayer of Ethiopia: Part 12: Ethiopia prays conclusion",
-    "incipit": "ወበውእቱ ፡  መዋዕል ፡  ሶበ ፡  ኮነ ፡  ረኃብ ፡  ወብድብድ ፡  ውስተ ፡  ኵሎን ፡  አህጉራተ ፡  ኢትዮጵያ ፡  ሶቤሃ ፡  ጸለየት ፡  ወአስተብቍዓት ፡  እምነ ፡  አግዓዚት ፡  ኢትዮጵያ ፡  እንዘ ፡  ትብል ፡  ኀበ ፡  እግዝእትነ ፡  ...።",
-    "manuscript_count": 2,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1209",
-    "title": "Samiya Yosef of Port Said in Egypt, a pious woman, is healed of a terrible illness of the heart in 1982 [EC?]",
-    "incipit": "ወእምድኀረ ፡  ዐሠርቱ ፡  ወተሰዓቱ ፡  ምዕት ፡  ሰማኒያ ፡  ወክልኤቱ ፡  ዓመት ፡  እምልደተ ፡  እግዚ እነ ፡  ኢየሱስ ፡  ክርስቶስ ፡  ተገብረ ፡  ተአምር ፡  ዐቢይ ፡  ውስተ ፡  ምድረ ፡  ግብፅ ፡  በእደዊሃ ፡  ለእግዝእትነ ፡ ...  ገባሪተ ፡  ተአምራት ፡  ወመንክራት ። ወሀለወት ፡  አሐቲ ፡  ብእሲት ፡  ውስተ ፡  ብሔረ ፡  ግብፅ ፡  ዘትነብር ፡  በደሴተ ፡  ፖርት ፡  ሰዒድ ፡  ወስማ ፡  ለይእቲ ፡  ሣሚያ ፡  ዮሴፍ ፡  ወስመ ፡  ምታኒ ፡  ሩኤቅ ፡  ሐና ፡  ው እቱ ፡  ወክልኤሆሙ ፡  እሙንቱ ፡  ፈራህያነ ፡  እግዚአብሔር ፡",
-    "manuscript_count": 2,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1210",
-    "title": "A child about to be sacrificed to heal an ill king was saved by the Virgin Mary and later the boy became a king",
-    "incipit": "ወሀሎ ፡  አሐዱ ፡  ንጉሥ ፡  በውስተ ፡  አሓቲ ፡  ሀገር ፡  ወኮኑ ፡  አቡሁ ፡  ወእሙ ፡  ለውእቱ ፡  ንጉሥ ፡  ያፈቅርዋ ፡  ለእግዝእትነ ፡  ቅድስት ፡  ... ርኅርኅተ ፡  ልብ ፡  ወመፍጠኒተ ፡  ረድኤት ፡  ናዛዚቶሙ ፡  ለኅዙናን ፡  ወረዳኢቶሙ ፡  ለምንዱባን።",
-    "manuscript_count": 2,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1211",
-    "title": "A rich man who squandered his wealth is told by the Virgin Mary to give his daughter to a man the Virgin Mary had resurrected (continued from ID 203)",
-    "incipit": "በከመ ፡  ሀሎ ፡  ጽሑፈ ፡  በካልእ ፡  ገጽ ፡  በውስተ ፡  ዝንቱ ፡  ተአምር ፡  ወበዕለት ፡  ሣልሳዊት ፡  እምድኅረ ፡  ተንሥአ ፡  ውእቱ ፡  ብእሲ ፡  ዘቀተሎ ፡  ሰይጣን ፡  በዝብጠተ ፡  ዕብን ፡  ዘተመሰለ ፡  ወርቀ ፡  መጽአት ፡  እግዝ እትነ ፡  ... ኀቤሁ ፡  ጊዜ ፡  መንፈቀ ፡  ሌሊት ፡  ወአስተርአየቶ ፡  በራእይ ፡  ወትቤሎ ፡  ኦ ፡  ብእሲ አብድ ፡  ለምንት ፡  ክህድኮ ፡  ለእግዚአብሔር ፡  አምላክከ።",
-    "manuscript_count": 2,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1212",
-    "title": "Book of Felsata la-Maryam??: New: Dormition: The Virgin Mary appears to the Apostles and reveals to them the mysteries of heaven (ID 251)",
-    "incipit": "ወበውእቱ ፡  መዋዕል ፡  ተበሀሉ ፡  በበይናቲሆሙ ፡  አርድእት ፡  ሐዋርያት ፡  ንጹሓን ፡  ንትጋህ ፡  ወንጸሊ ፡  ኀበ ፡  እግዚአብሔር ፡  አምላክነ ፡  በከመ ፡  ረሰየነ ፡  ድልዋነ ፡  ንርአዮ ፡  ለፍቁር ፡  ዮሐንስ ፡  አመ ፡  ግብአቱ ፡  በሰላም ፡  እምብሔረ ፡  ሮሜ ፡  ወከማሁ ፡  ይረስየነ ፡  ካዕበ ፡  ንርአያ ፡",
-    "manuscript_count": 2,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1215",
-    "title": "Homily on the perpetual Virginity of the Virgin Mary",
-    "incipit": "አኃውየ ፡  ፍቁራን ፡  ክርስቶሳውያን ፡  ንዑ ፡  ናዕብያ ፡  ንዑ ፡  ንወድሳ ፡  ንዑ ፡  ናክብራ ፡  ለመድኃኒተ ፡  ኵሉ ፡  ዓለም ፡  እግዝእትነ ፡  ... ክብርት ፡  ይእቲ ፡  ወትረ ፡  በሰማይ ፡  ወበምድር።",
-    "manuscript_count": 2,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1216",
-    "title": "Saint John Chrysostom's disciple is taken by the Virgin Mary to heaven to see John",
-    "incipit": "ወሀሎ ፡  አሐዱ ፡  ኤጲስ ፡  ቆጶስ ፡  በደሴተ ፡  አጥራክያ ፡  ዘው እቱ ፡  ረድ ኡ ፡  ለዮሐንስ ፡  አፈወርቅ ፡  ወኮነ ፡  ይሄሊ ፡  ወትረ ፡  እንዘ ፡  ይብል ፡  ሊቅየአ ፡  ወእግዚእየአ ፡  አፈወርቅ ፡  ዮሐንስ ፡  መምህር ፡  ወመገሥፅ ፡  ዘኢያደሉአ ፡  ለገጽአ ፡  ወኢየኃፍር ፡  ነገሥታተ ፡  ወንግሥታተ። ወበበይነ ፡  ሥነ ፡  ግብሩ ፡  ቦኑ ፡",
-    "manuscript_count": 2,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1217",
-    "title": "Homily on how the Church of the Apostles praises the Virgin Mary",
-    "incipit": "ኦ ፡  አኃውየ ፡  ርእዩ ፡ ከመ ፡  ወደሰታ ፡  ለእግዝእትነ ፡  ቅድስት ፡  ቤተ ፡  ክርስቲያን ፡  እንዘ ፡  ትብል ፡  ኦ ፡  ድንግል ፡  ምልዕተ ፡  ውዳሴ ፡  እስመ ፡  አንቲ ፡  ውድስት ፡  በልሳነ ፡  ኵሉ ፡  ፍጥረት ፡  ወይ እዜኒ ፡  ትዌድሰኪ ፡  ቤተ ፡  ክርስቲያን ፡  ቅድስት ፡  አሐቲ ፡  ጉባዔ ፡ እንተ ፡  ሐዋርያት ።",
-    "manuscript_count": 2,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1218",
-    "title": "Homily on the rightness of Christians praising the Virgin Mary",
-    "incipit": "ኦ ፡  አንትሙ ፡  ምዕመናን ፡  ውሉደ ፡  ቤተ ፡  ክርስቲያን ፡  ተንሥ ኡ ፡  ወቁሙ ፡  በትኅትና ፡  ወፍቅር ፡  ከመ ፡  ናዕብያ ፡  ወንወድሳ ፡  ለምልዕተ ፡  ውዳሴ ፡  እንዘ ፡  ንብል ፡  ንዒ ፡  ማርያም ፡  ለኢሳይያስ ፡  ቀርነ ፡  ትንቢቱ ፡  ወለኤርምያስ ፡  ጽርሐ ፡  ቅድሳቱ ፡  ወለሕዝቅ ኤል ፡  ዋካ ፡  ኆኅቱ ፡  ዘሠረቀ ፡  እምኔኪ ፡  ፀሐየ ፡  አርያም ፡  ዘየሐቱ ፡  ዘአብርሃ ፡  ለደቂቀ ፡  አዳም ፡  ሥነ ፡  መለኮቱ።",
-    "manuscript_count": 2,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1219",
-    "title": "Homily on the greatness of the Virgin Mary [same as 390, 584, 607, 637??]",
-    "incipit": "ንዑ ፡  ኵልክሙ ፡  ማኅበረ ፡  ክርስቲያን ፡  ናስተብፅዓ ፡  ለቅድስት ፡  ...፡  ኵልክሙ ፡  ማኅበረ ፡  መሃይምናን ፡  ከመ ፡  ንወድሳ ፡  ለብፅዕት ፡  ድንግል ፡  ወላዲተ ፡  አምላክ ንዑ ፡",
-    "manuscript_count": 2,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1220",
-    "title": "Thieves steal a church's Tabot of the Virgin Mary and put it in a nearby mosque and the crescent on the minaret changes into a cross of light",
-    "incipit": "ወሀለወት ፡  አሐቲ ፡  ቤተ ፡  ክርስቲያን ፡  ዘእግዝእትነ ፡  ... ውስተ ፡  ብሔረ ፡  ኢትዮጵያ። ወበውስተ ፡  አዕፃዳቲሃኒ ፡  ለይእቲ ፡  ቤተ ፡  ክርስቲያን ፡  ህየ ፡  ሀሎ ፡  ምኵራበ ፡  ተንባላት።",
-    "manuscript_count": 2,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1228",
-    "title": "King Lalibela, the 13th c. Ethiopian monarch, during the Crusades in the 1200s, hosts refugees from Palestine and Egypt who come to Ethiopia",
-    "incipit": "ወሀሎ ፡  አሐዱ ፡  ንጉሥ ፡  ውስተ ፡  ብሔረ ፡  ኢትዮጵያ ፡  ዘይሰመይ ፡  ዓፄ ፡  ላሊበላ ፡  ውእቱኒ ፡  ንጉሥ ፡  ዐቢይ ፡  ወክቡር ፡  ጥቀ ፡  ወስመ ፡  ብእሲቱኒ ፡  ንግሥት ፡  መስቀል ፡  ክብራ ፡  ወክልኤሆሙ ፡  ፈራህያነ ፡  እግዚአብሔር እሙንቱ ፡  ወያከብርዋ ፡  በኵሉ ፡  ክብር ፡  ለእግዝእትነ ... ።",
-    "manuscript_count": 2,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1243",
-    "title": "Book of Nagara Maryam: Month C: Part 02: An old man named Aqttisor refuses to sacrifice to idols and a sorcerer kills all 67 of his children but the Virgin Mary brings them back to life",
-    "incipit": "ወሀሎ፡ ፩ብእሲ፡ ዘስሙ፡ አቅጢሶር፡ ወልደ፡ ሶር፡ ወልደ፡ አሜንዩ፡ ወልደ፡ ሶፎር፡ ወልደ፡ ሴሌም፡ እምቤቴል፡ ዘእምዘንበራም፨ ወአረጋዊ፡ ጥቀ፡ ወክቡር፡ ፈድፋደ፡ ወአልቦቱ፡ ውሉድ፡ እመሂ፡ ተባዕት፡ ወእመሂ፡ አንስት፡ እስመ፡ ሞቱ፡ ኵሎሙ፡ ደቂቁ፡ ፷ወ፯እስመ፡ ቀተሎሙ፡ ዓቃቤ፡…",
-    "manuscript_count": 2,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
     "id": "1268",
     "title": "Crucifier Is Killed for Laughing",
     "incipit": "ወጊዜ፡ መንፈቀ፡ ሌሊት፡ ሐመት፡ እግዝእትነ፡ ማርያም፡ ወበጊዜ፡ ነግህ፡ መጽኡ፡ ኀቤሃ፡ ሐዋርያት፨ ወተባረኩ፡ እምኔሃ፡ በከመ፡ ልማድ፡ ወትቤሎ፡ እግዝእትነ፡ ማርያም፡ ናሁ፡ ደክመ፡ ሥጋየ፡ ወደክመ፡ ልሳንየ፡ ተዘከሩ፡ መምሕረክሙ፡ ዘሤመክሙ፡ …",
@@ -8182,19 +5043,6 @@ const MIRACLES_OF_MARY = [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
         "text": "<p>After [confronting Joseph], the Jews returned to [threaten] Our Lady Mary. </p><p>They grabbed her, saying, “Horror to you, O daughter of David! For you are going to die a terrible evil death!” </p><p>They took her to the Temple, where the Virgin three times prostrated herself on the ground, saying in Hebrew [some of the mysterious and hidden names of God], “Yasarh, Rohrohdie, Kieyadiekie, Ahsorros!”  </p><p>Then, she drank the Water of Condemnation  but it didn’t do anything to her. </p><p>The Jewish people saw this and marveled. For they thought that she would die immediately. </p><p>They said to one another, “How far she has gone [down the road] of treachery! Look, she has learned sorcery from sorcerers! That’s how she saved herself from the Water of Condemnation.” </p><p>Our Lady Mary replied, “Tarotas, Eeyaieas, Gbratos,  perform your miracle against these people!” </p><p>Immediately, the earth opened its mouth and swallowed all of them who were there in the Temple. Not one of them was spared except the Virgin. </p><p>[News of] this [miracle] was heard everywhere, across Judea and Galilee.</p><p></p><p>When she left that place, she came across a man possessed by Satan’s spirit. He lived [alone] in the hills, the mountains, and the graveyards, shouting night and day. He cut his flesh with rocks and wore no clothes. He cried out to Our Lady, saying “Have mercy upon me, O Daughter of David! The Palace of God.” </p><p>When Our Lady heard this, she was surprised, and said, “Yakeeyaiel, Tormasiel, Eeyaiel, I rebuke you, unclean spirit! Get out of him! And, don’t return to him again! Ever!” </p><p>The unclean spirit left the man to stand in front of Our Lady Mary in the form of a pig. He said to her, “O Mother of the maker of heaven and earth, judge [the case] between me and this man. He doesn’t honor the Lord’s Sabbath. He’s a robber and an adulterer. His sins are countless. He is [even a] murderer, drenched in human blood like water throughout his life. It’s for these reasons that I possessed him. Now, he’s begging you as if he was a kind and righteous person, hiding all his sins!”</p><p>Our Lady replied [to unclean spirit], “You despise human beings this much!? You told me the [wicked] deeds of this man, but what are your deeds then? Are you kind?”</p><p>The unclean spirit replied, “My actions are eating human flesh and drinking their blood. I [take them over and] live in them. I cause them to fall into pits, bodies of water, and fires. I [also] make them cut their bodies with rocks.”</p><p>Our Lady replied, “Enough! Shut your mouth, unclean spirit! Get out of here! Go down into the sea! May you have no power over human beings!”</p><p>Immediately, he vanished like smoke. </p><p>The healed man prostrated himself on the ground, saying “My dear Lady Mary, I don’t want to be separated from you!”</p><p>Our Lady Mary replied, “No, that’s not going to happen. Rather, go to your relatives and tell them what the Lord has done for you.”</p><p>He said, “My dear Lady, remember me in your prayers!”</p><p>Our Lady Mary replied, “Don’t ever be afraid again. From now on, no evil will find you, only goodness.”</p><p></p><p>Then, she left that place and entered a town. There, she found a mother who was despondent because she had [just] lost her only son.  </p><p>Our Lady Mary wept. She asked, “How old was he?” </p><p>The mother replied, “He was twelve years old.” </p><p>Our Lady Mary said, “Ieras, Iesiera, Amtsr, Eeyasielies!”   Then, she held the boy’s right hand, telling him, “Rise up! The Lord has shown mercy to you!”</p><p>Immediately, the boy awoke, opened his eyes, and saw. </p><p>Mary commanded the mourners to give him food. Those who saw it, or [even just] heard about it, marveled.</p><p></p><p>Mary left that place and went to the house of Joseph the carpenter[, her future husband]. She told him everything that [had happened and what] the people had said to her, from beginning to end.</p><p>He said: “My soul praises the Lord! </p><p>“My soul rejoices in His deliverance,</p><p>“For He judges humanity justly, and</p><p>“He saves the downtrodden.</p><p>“The light has arisen for the just ones,</p><p>“Faith’s scepter has been planted for all the nations.” </p><p>They[, Joseph and Salome,] stayed together there with Our Lady Mary, all blessing the Lord. </p><p>May her prayer, blessing, and the mercy of her son be with her servant, Gabra Maryam forever and ever. Amen.</p>"
-      }
-    ]
-  },
-  {
-    "id": "1273",
-    "title": "Ramonas [Romanus?], a rich man, is tempted by Satan, through a beautiful woman, to abandon giving alms",
-    "incipit": "ወሀሎ ፡ ፩ብእሲ ፡ በሀገረ ፡ እስክንድርያ ፡ ዘስሙ ፡ ሮማኖስ ፡ ወኮነ ፡ ብዑለ ፡ በወርቅ ፤ ወበብሩር ፡ ወቦቱ ፡ ንዋይ ፡ ብዙኅ ፡ ወአዕፃዳተ ፡ ወይን ፡ ወገነታት ፡ ወእንስሳ ፡ ወአግማል ፡ ወመራዕየ ፡ አባግዕ",
-    "manuscript_count": 2,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },
@@ -8260,32 +5108,6 @@ const MIRACLES_OF_MARY = [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
         "text": "<p>[That night, in the town Egersem where she had raised a son,] at midnight, the angel of the Lord appeared to Joseph and said, “Wake up from your sleep! Take the child and his mother and return to the land of Israel. All those who were seeking to take the life of this child have died.” </p><p>Waking up, Joseph did as the angel of the Lord commanded him. </p><p>Joseph went to Our Lady Mary and said, “Rise up! Let’s go to the Land of Judea.” He then told her everything that the angel of the Lord had said. </p><p>She arose instantly, turned to the east, stretched out her hands to heaven, and prayed, “I thank you, my Lord, who is returning me to the land of my father. I exalt you! I bless your name! You are my assurance. Straighten my path and my journey [home]. Thwart any powers of darkness!” </p><p>Then, she turned to the west and blessed the places [they had been]. </p><p>As they [Mary and Joseph? Nagara Maryam helps?] were prostrating themselves on the ground, her words became fulfilled quickly. </p><p>[Immediately,] she left Egersem, travelled to Gaza, and reached the people of Dierdies,  who lived close to the sea. There, she healed many sick people who were suffering from different diseases. </p><p>[From there,] she travelled on to a perverted people. Because of them the earth [there] was cursed and had become a waterless, treeless, and grassless desert. </p><p>From there, she travelled on and reached the northeastern city of Qaqra,  which she entered. </p><p>When the people saw her, they said to each other, “How beautiful is this woman?! And this child is even more beautiful than her! Where is she from?” </p><p>They went to Our Lady Mary and asked her, “Where are you from?”</p><p>She replied, “From Bethlehem of Judea.”</p><p>They whistled [and said], “Oh yeah, from the land of Judea—these are those sorcerers we heard about!” </p><p>Then, they agreed with one another, saying, “Let’s chase her out of our country.”</p><p>Then, they said to her, “Get out of our province!”</p><p>Our Lady Mary replied, “What you’re planning  isn’t good. For blood won’t be cleansed without blood. The dark stone of [we] Milattos  will break the white stones of the north. The western red will turn kings’ necks and bring war on the nations. The thoughts and desires of a human is inside of them. I say to you, foolish people, don’t think evil thoughts otherwise you might be killed. Don’t begin what you can’t finish!” </p><p>When the people heard this, they couldn’t understand what her words meant, so [some of] them became enraged and sought to stone her. </p><p>Our Lady Mary understood their wicked intentions and said, “Sarasis, Ngranis, Tseratsieb, Alsaday!  Help me! Turn [these] city people [trying to stone me] into lifeless stones!”  </p><p>Immediately, what she asked for happened. </p><p>All those people cried out[, as they were turning into stone], “We are undone!” </p><p>The [very ground of the] whole city and the surrounding provinces shook. Thunder clapped and was heard all the way [south] to Noba  and Arabia. </p><p>The [other] men and women [from near and far] said to one another, “What is this that we are hearing? We are hearing something our fathers before us never heard! What can we say about this woman? We can’t understand her words. For she is very strange!” </p><p>Our Lady Mary knew what those nearby were thinking and [saying about her, so she] prayed again, “Sarasor, Fisasor, Gbtomr! Listen to your servant’s supplication. Turn [these] city people into lifeless stones!”</p><p>In a moment, her words became fulfilled. </p><p>Seeing this miracle, Joseph and Salome glorified the Lord, the God of Israel. </p><p>Glory, honor, and dominion in heaven and on earth are due to him, forever and ever. Amen.</p>"
-      }
-    ]
-  },
-  {
-    "id": "5006",
-    "title": "Arabic: The beautiful daughter of the Frankish king is saved from her wicked stepmother by the Virgin Mary",
-    "incipit": "",
-    "manuscript_count": 2,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "316-B",
-    "title": "Book of Ledata la-Maryam??: OldA: Part 02: Gestation: While still in the womb of her mother Saint Anne, the Virgin Mary heals the daughter of Arsaban (likely a dup of ID 293, not a single attestion in database for 316-B)",
-    "incipit": "",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },
@@ -8407,32 +5229,6 @@ const MIRACLES_OF_MARY = [
     ]
   },
   {
-    "id": "397",
-    "title": "A pious woman was asked by the Virgin Maryr to go to a certain town and teach the people the observance of her five feast days, from the 21st to the 25th of Genbot.",
-    "incipit": "ወሀለወት፡ አሐቲ፡ ብእሲት፡ ዘታፈቅራ፡ ለእግዝእትነ፡ በተአምኖ፡ ሠናይ፡ ወአሐተ፡ ዕለተ፡ አስተርአየታ፡ እግዝእትነ፡ ማርያም፡ ለይእቲ፡ ብእሲት፡ ወትቤላ፡ ተንሥኢ፡ እምህየ፡ ወሑሪ፡ ምሕዋረ፡ አሐቲ፡ ዕለት፡ ወዜነዊ፡ ለሰብአ፡ ሀገር፡ ዘእነግረኪ፡ አነ",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "399",
-    "title": "A man prays for his sick son before the icon of the Virgin Mary; she sends Saint Qirqos, then comes herself with Saint George to cure him.",
-    "incipit": "ወሀሎ፡ አሐዱ፡ ብእሲ፡ ሕሙም፡ ውስተ፡ ሀገር፡ ወጸለየ፡ ቅድመ፡ ሥዕላ፡ ለእግዝእትነ፡ በውዑይ፡ ልብ፡ ወበብዙኅ፡ ብካይ",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
     "id": "517",
     "title": "Homily on the Annunciation and the Incarnation: Part 8: Saint Elizabeth.",
     "incipit": "ወበይእቲ፡ ዕለት፡ ብዙኃ፡ ፍቅር፡ ወኃይል፡ ወምሕረት፡ ወብዕል፡ ጸጋሁ፡ ለእግዚአብሔር፡ ዘመንገለ፡ ሰብእ",
@@ -8455,162 +5251,6 @@ const MIRACLES_OF_MARY = [
       {
         "author": "Amsalu Tefera",
         "text": "(107) ‡…‡ ‘As for you, if you walk in My Law as did your father David, I will establish your kingdom forever. But if you abandon My Law which I gave to My servant and turn back to the idols and worship them, then I will obliterate you from the face of the earth’. (108) And also, I will obliterate and cast away this Temple which has been sanctified in My name, from before My face. And for the Holy Zion, which I built and established by My hand, I will make Her the dwelling of My praise in the highest heavens. And the angels will rejoice in splendor in Her courts saying ‘Hallelujah’ in all Her ways. (109) And similarly saying, ‘The Lord God gave a promise to King Solomon regarding Holy Zion, the dwelling of His praise’. In this way, Zion, the true Ark of Law, dwelt in the building of Solomon. (110) Then Solomon, slept with his fathers after reigning for forty years. And he was buried in the city of David, his father. Amsalu Tefera. 2015. The Ethiopian Homily on the Ark of the Covenant: Critical Edition and Annotated Translation of Dersana Seyon, p. 166. BRILL."
-      }
-    ]
-  },
-  {
-    "id": "543",
-    "title": "Saint Samuel of Waldebba (Samuʾel), the 15th c. Ethiopian saint, and the blind woman brought by her son to the saint's tomb",
-    "incipit": "ወመጽአት፡ ብእሲት፡ ዕውርት፡ እምርሑቅ፡ ብሔር፡ እንዘ፡ ይመርሓ፡ ወልዳ፡ ወበጽሐት፡ ኀበ፡ ምኔተ፡ ብፁዓዊ፡ ዕንቈ፡ ጾም፡ አቡነ፡ ሳሙኤል",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "546",
-    "title": "Satan came to some monks and entrusted a child to them; the monks ate the child.",
-    "incipit": "ወሀሎ፡ አሐዱ፡ ደብር፡ ዘመነኮሳት፡ ሠናያን፡ እሙንቱ። ወቀንዓ፡ ላዕሌሆሙ፡ ሰይጣን፡ ወመጽአ፡ ተመሲሎ፡ አሐዱ፡ ሕፃን፡ ወአሐዱ፡ አረጋዊ፡ ወይቤሎሙ፡ ለመነኮሳት፡ አንብሩ፡ ሊተ፡ ወልድየ",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "548",
-    "title": "Paul, a monk, who was attacked by bandits.",
-    "incipit": "ወሀሎ፡ አሐዱ፡ መነኮስ፡ ዘስሙ፡ ጳውሎስ፡ ውስተ፡ ቤተ፡ ክርስቲያን፡ አሐቲ፡ ዘእግዝእትነ፡…. ብድው፡ ይእቲ፡ ወብእሲት፡ አረጋዊት፡ ዘትገብር፡ ሲሲቱ፡ ለውእቱ፡ መነኮስ፡ ወዘእንበሌሁሰ፡ አልቦ፡ ባዕድ፡ እመሂ፡ ዓቢይ፡ አው፡ ንዑስ",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "557",
-    "title": "A Muslim herder starts to build a shrine to the Virgin Mary on good land; when he dies, she saves his soul from the angels of darkness.",
-    "incipit": "ወሀሎ ፤ ፩አረማዊ ፡ ኖሳዌ ፡ አልሕምስ ፡ ወሶበ ፡ ወፈረ ፡ ወሖረ ፡ ውስተ ፡ ገዳም ፡ ምስለ ፡ አልሕምት ፡ ወረከበ ፡ ምድረ ፡ ሠናየ ፡ ዘያስተፌሥሕ ፡ ልበ ፡ ሰብእ ፡ ወይቤ ፡ ምስጋዶሙ ፡ ለክርስቲያን ፡ በውእቱ ፡ መካን ፡ ይሤኒ ፡ ወኃረየ ፡ ምድረ ፡ ሠናየ ፡ ወፈቀደ",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "590",
-    "title": "A man, who had been refused instruction on, was taught how to write by the Virgin Mary",
-    "incipit": "ተብህለ፡ ከመ፡ ሀሎ፡ አሐዱ፡ ብእሲ፡ ዘፈቀደ፡ ይትመሐር፡ ጽሒፈ፡ መጽሐፍ፡ ወአበዮ፡ ወኢተከሠተ፡ ሎቱ። ወነበረ፡ ብዙኀ፡ መዋዕለ፡ እንዘ፡ የኃዝን",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "591",
-    "title": "Zakkareyas, an old poor man from the region of Rafa, is locked out of the place where his food was kept by the custodian of the church",
-    "incipit": "ወሀሎ፡ አሐዱ፡ ቀሲስ፡ በደወለ፡ ራፋ፡ ዘስሙ፡ ዘካርያስ፡ ዘያፈቅራ፡ ለእግዝእትነ፡…. ወኢይወፅእ፡ እምቤተ፡ ክርስቲያና፡ መዓልተ፡ ወሌሊተ፡ ወየዓጥን፡ ፯፡ ጊዜያተ። ወውእቱሂ፡ አረጋዊ፡ ወነዳይ",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "592",
-    "title": "Abbot Lebdeyos in the land of the Europeans speaks to the people on the feast of the Virgin Mary when they ask him to distribute Communion.",
-    "incipit": "ወሀሎ፡ አሐዱ፡ አበ፡ ምኔት፡ በደወለ፡ አፍርንጊ፡ ዘስሙ፡ ልብድዮስ፡ ብእሲ፡ ጻቅድ፡ ወየዋህ፡ እስመ፡ ውእቱ፡ አረጋዊ፡ በኵሉ፡ ልቡ፡ ወበኵሉ፡ ኃይሉ፡ ወያፈቅራ፡ ለእግዝእትነ",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "594",
-    "title": "Bishop Bakkimos of Constantinople, to whom the Virgin Mary appeared concerning Lebaneya, who was sterile.",
-    "incipit": "ወሀሎ፡ አሐዱ፡ ኤጲስ፡ ቆጶስ፡ በሀገረ፡ ቍስጥንጥንያ፡ ዘስሙ፡ በኪሞስ፡ ወይገብር፡ በዓሎ፡ ለቅዱስ፡ ሚካኤል፡ ወያፈቅራ፡ ለእግዝእትነ፡…. ወይትአመና፡ በኵሉ፡ መዋዕለ፡ ሕይወቱ፡ ወኢያፀርዕ፡ ዘክሮተ፡ ስማ፡ ወተዓውቀ፡ ዜና፡ ጽድቁ፡ በኵሉ፡ ደወለ፡ ቍስጥንጥንያ። ወሰምዓት፡ ልባንያ፡ ብእሲተ፡ መኪዶር፡ መኰንን",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "596",
-    "title": "Angels worship the Eucharist, the Cross, and the Virgin Mary.",
-    "incipit": "ከመ፡ ይትአኰት፡ ወይሴባሕ፡ ስማ፡ በአፈ፡ መላእክት፡ ወሰብእ፡ ለእግዝእትነ፡…. ወእምድኅረ፡ ተወልደ፡ ኢየሱስ፡ እምማርያም፡…. በደሙ፡ ቀደሳ፡ ለቅድስት፡ ቤተ፡ ክርስቲያን፡ ወበዕፀ፡ መስቀሉ፡ ዓታባ፡ ከመ፡ ይትቀደስ፡ ስመ፡ ዚአሃ፡ ለእግዝእትነ፡….",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "597",
-    "title": "Abbot Tasfa Mahebar from Caesarea, who was given a cloud as a chariot and went to visit Abba Zakkareyas in Scete.",
-    "incipit": "ወሀሎ፡ አሐዱ፡ አበ፡ ምኔት፡ በሀገረ፡ ቂሳርያ፡ ዘስሙ፡ ተስፋ፡ ማኅበር፡ ዘያፈቅራ፡ ለእግዝእትነ፡…. ወይዌድሶ፡ ፍጹመ፡ ለእግዚአብሔር። ወወሀበቶ፡ ደመና፡ ከመ፡ ይኵኖ፡ ሠረገላ፡ ወከመ፡ ይሑር፡ ኀበ፡ ፈቀደ",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "598",
-    "title": "Book of Ledata la-Maryam??: OldH: Gestation: While still in the womb of her mother Saint Anne, the Virgin Mary raises Doyq, the son of Taliq, from the dead",
-    "incipit": "ተአምር፡ ዘገብረቶ፡ እግዝእትነ፡ ማርያም፡ እንዘ፡ ሀለወት፡ ውስተ፡ ማኅፀና፡ ለሐና፡ ቅድስት። ወሖረት፡ ሐና፡ ኀበ፡ ቤተ፡ ዶይቅ፡ ወልደ፡ ጣሊቅ፡ እስመ፡ እኅወ፡ አቡሃ፡ ውእቱ። ወሞተ፡ ዶይቅ፡ ወልደ፡ ጣሊቅ፡ በውእቱ፡ አዝማን",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "601",
-    "title": "A young servant of a monk gets lost among Muslims but is restored safe and sound when the monk cries to the Virgin Mary.",
-    "incipit": "ወሀሎ፡ አሐዱ፡ መነኮስ፡ በውስተ፡ አሐቲ፡ ደብር፡ ወጠፍአ፡ ገብሩ፡ ንዑስ፡ ወልድ፡ ውስተ፡ ብሔረ፡ ተንባሊት። ወሶበ፡ አእመረ፡ ውእቱ፡ መነኮስ፡ ከልሐ፡ ኀበ፡ እግዚአብሔር፡ ወኀበ፡ እግዝእትነ",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },
@@ -8667,19 +5307,6 @@ const MIRACLES_OF_MARY = [
     ]
   },
   {
-    "id": "1005",
-    "title": "Dabra Zamaddo's church and taking a grotto from a poor widow in order to build it in honor of the Virgin Mary",
-    "incipit": "ስምዑ፡ ዘንተ፡ አበዊነ፡ ወአኃዊነ፡ ንነግረክሙ፡ ዜና፡ ተአምሪሃ፡ ለእግዝእትነ፡ ማርያም፡ ዘገብረት፡ በደብረ፡ ዘመዶ፡ በውስተ፡ ሐይመተ፡ እብን። ወነበረት፡ ውስቴታ፡ አሐቲ፡ ብእሲት፡ ዘምስ[ለ]፡ ብዙኅ፡ ንዋያ፡ ወብዙኃን፡ ውሉዳ፡ ዘሞተ፡ ምታ። ወስማ፡ ለይእቲ፡ ብእሲት፡ ዘመደ፡ ማርያም። ወሀገራሰ፡ ዘእግዝእትነ፡ ዘወሀባ፡ ወልዳ፡ እግዚእነ፡ ብሂሎ፡ ትኩንኪ፡ ዐሥራተኪ።",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
     "id": "1007",
     "title": "Dabra Zamaddo's Abbot Abuna Yohannǝs is revealed to be a saint as a mere child",
     "incipit": "ስምዑ፡ እነግርክሙ፡ ዘገብረት፡ ሎቱ፡ እግዝእትነ፡ ማርያም፡ ለአቡነ፡ ዮሐንስ፡ እምድኅረ፡ ጸውዐቶ፡ እምነ፡ ሀገሩ፡ ወተራከበቶ፡ በፍኖት፡ ተመሲላ፡ ነዳይተ፡ ወአስተራከበቶ፡ ካዕበ፡ ምስለ፡ አቡነ፡ ተጠምቀ፡ መድኅን፡ ዘፈከረ፡ ሎቱ፡ ኵሎ። ወእምድኅረ፡ ሤመቶ፡ ኖላዌ፡ አባግዒሃ፡ ወሶበ፡ ኮኖ፡ ፪ዓመተ፡ እምድኅረ፡ ተሠይመ፡ ወአመ፡ በጽሐ፡ ጊዜሁ፡ ዘትቤሎ፡ በአፈ፡ ተጠምቀ፡ መድኅን፡ ድኅረ፡ ተሐውር፡ ኢየሩሳሌም፡ ሆከቶ፡ ጸጋ፡ ወአስተናሥአቶ፡ ወኀሠሠ፡ ዘይስእል፡ ኀበ፡ እግዚአብሔር፡ ከመ፡ ያርትዕ፡ [ሎቱ፡] ፍኖቶ፡ ወኀበ፡ እግዝእትነ፡ ማርያም፡ ከመ፡ ትዕቀቦ፡ እምኵሉ፡ እኩይ።",
@@ -8689,45 +5316,6 @@ const MIRACLES_OF_MARY = [
       {
         "author": "Elliot Galvis",
         "text": "<p>And when day broke, the Holy Spirit said to the apostles: “Take Mary, lead her out from the gates of Jerusalem and go down a certain road, which leads to a place where there are three caves and where there is a bed from part of the east; lift her, and put her on top of the bed. And pray over her until day breaks.” </p><p>And when it broke, they led Mary out of Jerusalem. </p><p>Afterwards, many Jews came together and said to Tafonya: “We know that you are strong and hard, so go now, lift the bed of Mary and throw in onto the ground, and we will burn her body with fire so that her disciples will not see that we men of Jerusalem have killed [her].” </p><p>Then Tafonya stood up, and raised his hands to break Mary’s bed; but in that moment the angel of the Lord descended and struck him with his burning sword, and cut off both of his arms from his shoulders, which remained fixed to the bed. </p><p>Then wailing and ululating at the apostles, he [Tafonya] said to them: “Bring forth merciful and gentle acts for me, and you, Christ son of God, grant me your great mercy as well.” </p><p>The apostles responded and said to him: “Pray to Mary, whose bed you tried to break.” </p><p>Then Tafonya said: “Oh mother of the Lord, bring forth gentle works for me.” </p><p>Responding, Mary told Peter: “Return his arms to him, which have been cut off and cling to the bed, just as before.” </p><p>And, after taking the two arms, which had been cut off, Peter said, “In the name of our Lord Jesus Christ and in the name of holy Mary, let it be again just as before,” and he [Tafonya] was healed immediately. </p><p>Then taking a stick, Peter gave it to Tafonya and said to him, “Go off, and from this hour openly profess the power of the Lord to all Jews, and tell them what Mary did for you; truly, they have a hatred for Mary and they speak ill, saying, ‘She destroys us by living, so let us burn her body with fire.’ For the infidels are ignorant and do not know that our Lord Jesus Christ will not leave the body of his mother in this world.” </p><p>Behold, lovers of Christ, therefore I tell you all: all who love Mary and celebrate her commemoration and believe in her son cannot join in friendship with Jews, lest they wander far from the friendship of Christ.”[Translation as of 05/21/22]</p>"
-      }
-    ]
-  },
-  {
-    "id": "1008",
-    "title": "Dabra Zamaddo's church and the complaint of the icon for falling on the ground.",
-    "incipit": "ነገር፡ ዘገብረት፡ ሎቱ፡ እግዝእትነ፡ ማርያም፡ ወተናገረቶ፡ ለአቡነ፡ ዮሐንስ፡ እምድኅረ፡ ፈጸመ፡ ሐኒፀ፡ ቤታ፡ ወአንበረ፡ ሥዕላ፡ ውስቴቱ፡ ላዕለ፡ መንበር። ወአሐተ፡ ዕለተ፡ ተደግፈት፡ ውስተ፡ ምድር፡ እንዘ፡ ኢየአምሩ፡ ሰብአ፡ ቤታ።",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1010",
-    "title": "Dabra Zamaddo's Abbot Abuna Yohannǝs and how the monks revolted against him",
-    "incipit": "ተአምር፡ ዘገብረት፡ ሎቱ፡ ለአቡነ፡ ዮሐንስ፡ ሶበ፡ ተዐበዩ፡ ሰብአ፡ ደብር፡ ወአስተሐቀሩ፡ ቃሎ፡ ተሀውከ፡ ወሐዘነ፡ በልቡናሁ፡ ጥቀ፡ በእንተ፡ ሥርዓት፡ በዘኮነ፡ ከዊኖ፡ ሶበ፡ ይምዕዶሙ፡ ወይኤዝዞሙ፡ ይትዐደዉ፡ ቃሎ። አሜሃ፡ የሐዝን፡ ወይቴክዝ።",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1011",
-    "title": "Dabra Zamaddo's people evade the forces of iman Ahmad Granyny",
-    "incipit": "ወሶበ፡ ኮነ፡ ፳ወ፩፡ዓመተ፡ እምድኅረ፡ አዕረፈ፡ አቡነ፡ ዮሐንስ፡ በጽሐ፡ ትንቢቱ፡ ወመጽኡ፡ አረማውያን፡ ወጐዩ፡ ሕዝበ፡ ክርስቲያን። ወበጺሖሙ፡ አረማውያን፡ ኀበ፡ ደብረ፡ ዘመዶ፡ ወበዊኦሙ፡ ውስተ፡ ቅጽራ፡ ነጸርዎ፡ ለማይ፡ ለዘይወርድ፡ እመልዕልተ፡ ጸድፍ፡ መንገለ፡ ጸፍጸፈ፡ ቤተ፡ ክርስቲያን። ወእምታሕቴሁ፡ ቀርቡ፡ አረማውያን፡ ኀበ፡ ማይ፡ ፈቂዶሙ፡ ለሰትይ። ወጐየ፡ ማይ፡ በማእከለ፡ ጸድፍ፡ መንገለ፡ ቤተ፡ ልሔም። ወተቃደምዎ፡ ውስተ፡ ቤተ፡ ልሔም።",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },
@@ -8758,58 +5346,6 @@ const MIRACLES_OF_MARY = [
     ]
   },
   {
-    "id": "1014",
-    "title": "Dabra Zamaddo's icon sǝʿǝla Adhǝno is stolen and returned",
-    "incipit": "ተአምር፡ ዘገብረት፡ እግዝእትነ፡ ማርያም፡ በደብረ፡ ዘመዶ፡ እምድኅረ፡ ተመይጠት፡ ሥዕለ፡ አድኅኖ፡ እምኀበ፡ ተሰደት። ወሶበ፡ ሰምዑ፡ ዜናሃ፡ ሰብአ፡ ትእይንት፡ ወሰብአ፡ ቤተ፡ መንግሥት፡ ከመ፡ ሀለወት፡ ሥዕለ፡ አድኅኖ፡ በደብረ፡ ዘመዶ፡ ዘትገብር፡ መንክረ፡ ወመድምም፡ ለሰሚዖቱ፡ ወሥነ፡ ላሕያኒ፡ መደንግፅ፡ ወመፍርህ፡ ለርእዮቱ።",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1016",
-    "title": "Dabra Zamaddo's Abbot Abuna Yohannǝs and how he opposed the oppressive ruler of Danagaz",
-    "incipit": "ተአምር፡ ዘገብረት፡ እግዝእትነ፡ ማርያም፡ በመዋዕሊሁ፡ ለአቡነ፡ ዮሐንስ፡ አመ፡ በዐሉ፡ ለአቡነ፡ በርተሎሜዎስ፡ መምህረ፡ ዘመዶ። ሶበ፡ ተጋብኡ፡ ሰብእ፡ በዕለተ፡ ተዝካሩ፡ ለገቢረ፡ በዐል፡ እስመ፡ ተሠርዐ፡ ቅድመ፡ ከመ፡ ይትጋብኡ፡ ሰብእ፡ ለገቢረ፡ በዐል፡ እለ፡ ሀለዉ፡ ታሕተ፡ ምኵናኑ፡ ለአቡነ፡ በርተሎሜዎስ፡ ወእለ፡ ተሰምዩ፡ በሢመተ፡ ዚአሁ፡ ወእም፬ ማዕዘኒሃ፡ ለምድር፡ ይትጋብኡ፡ ሰብእ፡ ከመ፡ ይሳተፉ፡ እምበረከታ፡ ለእግዝእትነ፡ ማርያም፡ ወላዲተ፡ አምላክ፡ እስመ፡ ይነጽሩ፡ ሥዕላ፡ በዕለተ፡ ዕረፍቱ፡ ለአቡነ፡ …",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1017",
-    "title": "Dabra Zamaddo's three monks who thought of leaving the monastery but survive for months on the spring of honey milk",
-    "incipit": "ተአምር፡ ዘአስተርአየት፡ እግዝእትነ፡ ማርያም፡ በውእቱ፡ ማይ፡ ዘአንቅዐቶ፡ እምታሕተ፡ አገሪሁ፡ ለአቡነ፡ በርተሎሜዎስ። አመ፡ አንቅዐቶ፡ ቀዳሚ፡ ኮነ፡ ሕብሩ፡ ጸዐዳ፡ ወጣዕሙኒ፡ ኮነ፡ ከመ፡ ሐሊብ፡ ወሶበ፡ ሰአላ፡ አቡነ፡ በርተሎሜዎስ፡ ወለጠት፡ አርአያሁ፡ ወረሰየቶ፡ ከመ፡ ማይ። ወእምድኅረ፡ አዕረፈ፡ አቡነ፡ በርተሎሜዎስ፡ እምእለ፡ ተጋብኡ፡ ሰብእ፡ በምክንያተ፡ ጽሙና፡ ወእለ፡ ተወከ ሉ፡ በእግዝእትነ፡ ማርያም፡ ወላዲተ፡ አምላክ፡ ወእለ፡ ተወልዱ፡ እምአቡነ፡ በርተሎሜዎስ፡ በቆብዕ፡ ነበሩ፡ ፫እደው፡ መነኮሳት፡ በተአኅዎ፡ ወበሐብለ፡ ፍቅር።",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1018",
-    "title": "Dabra Zamaddo's church and the three huge boulders that ripped off the cliff and destroyed the roof and walls of the church kitchen",
-    "incipit": "ተአምር፡ ዘገብረት፡ … በደብረ፡ ዘመዶ። ወሀሎ፡ ደብር፡ መልዕልተ፡ ቤታ፡ ለእግዝእትነ፡ ማርያም። ወተንሥኡ፡ ፫አእባን፡ ዐቢያን፡ ወተገንጰሉ፡ ወወረዱ፡ መንገለ፡ ቤታ፡ እንዘ፡ ይታለዉ። ወቀዳማዊ፡ ወረደ፡ በፀጋመ፡ ቤተ፡ ልሔም፡ እንዘ፡ ኢያማስን፡ ምንተኒ።",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
     "id": "1019",
     "title": "Dabra Zamaddo's church's dangerous cliff side entrance is improved by the abbot and the Virgin Mary",
     "incipit": "ስምዑ፡ ንነግረክሙ፡ አኀዊነ፡ ተአምረ፡ ዘገብረት፡ ሎቱ፡ እግዝእትነ፡ ማርያም፡ ለአቡነ፡ ጻማ፡ ኢየሱስ፡ መምህረ፡ ዘመዶ፡ በይነ፡ ቅድስናሁ፡ ወበይነ፡ አፍቅሮተ፡ ዚአሃ፡ ወበእንተ፡ ተቀንዮቱ፡ ለእግዚአብሔር፡ በጾም፡ ወበጸሎት፡ ወበሰጊድ፡ ወበሀፍ፡ ወመፍቀሬ፡ ሰብእ፡ እስመ፡ ትሑት፡ ውእቱ። በእንተዝ፡ ገብረት፡ ሎቱ፡ ተአምረ። ወለይእቲ፡ ቤተ፡ ክርስቲያን፡ ነበረ፡ ሙባኣ፡ ጸድፈ። ወይበውኡ፡ ሰብእ፡ ውስተ፡ ቤተ፡ መቅ[ደ]ስ፡ በብዙኅ፡ ጻዕቅ፡ ወጻ ማ፡ ይበውኡ፡ ወይወፅኡ፡ እንዘ፡ ይወድቁ፡ ወይትነሥኡ። መንፈቆሙ፡ በቤተ፡ አቡነ፡ ተክለ፡ ሃይማኖት፡ ይበውኡ።",
@@ -8819,23 +5355,6 @@ const MIRACLES_OF_MARY = [
       {
         "author": "Mehari Worku",
         "text": "<p>She told him all what the angel said to her that night. At midnight, Dematyanos stood and raised his eyes “O Lord the God of Israel listen to my prayer. May my groaning come before you. I call you at this difficult hour because of the departure of Our Lady Mary. If I leave her to go, she and her child will die in the hands of Herod. Their blood will be on me. If I forbid her, I am afraid that she will be angry at me. Reveal to me, Lord, what is better for her and what is better for me.” He prostrated 40 times and tears flowed from his eyes.</p><p>Immediately, the angel Uriel descended to him and said “May the peace of the Lord be with you. Your sorrow, groaning and commemoration has reached God.”</p><p>“Let Our Lady go to Bethlehem. From there she will pass to Egypt so that the word of God which said ‘I called my son out of Egypt’ might be fulfilled.”</p><p>Again the angel said “O Dematyanos, you have received great grace and a lot of blessing.” The angel showed Dematyanos the cross in his hand and said “Make like this to win over your enemies.”</p><p>Having said this the angel ascended to heaven.</p><p>In the morning, Dematyanos went to Holy Mary. He bowed down before her and said “Go wherever you want.” Then, he offered her the gifts [he brought with him]. She said “May the Lord give you good!” But she refused to accept. She said “Go to your country and give it to the poor and the wretched so that you might find treasure [in heaven].”</p><p>He bowed down and said “Take my Lady, let it be your provision for the road.”</p><p>She said “Truly, I am telling you Dematyanos that my heart doesn’t desire it at all. I do not seek gold and silver. If I am saved from Herod, this would have been as a gift for me.”</p><p>When he heard this, Dematyanos became very sad. He left Our Lady Mary. He climbed his chariot and went a day’s journey before her all the way to Mount Tona from where one can see the Land of Judea.</p><p>Our Lady Mary turned around and cried saying “Peace be upon you, mountains of Lebanon which give good fruit and bloom sweetness. Peace to you, the daughters who live on the mountains of Lebanon. Come cry over me for I am going to die in destruction.”</p><p>Hearing this, Dematyanos cried bitterly. Joseph and Salome also cried.</p><p>Dematyanos said to Our Lady Mary “If I return you back to my country, I am afraid that I will anger God. If I leave you to go, my heart is burning with your love. Again, I am afraid because of Herod. For I know that he is roaring like a lion for murder. What can I say about you? But I tell you one thing: if Herod searches out for you, send one of your people. I will come to you. If the God of Israel gives me I will plunder the entire Judea, Jerusalem, all the way to Msr and Egypt, Zebulun and Naphtali, all the way to Hasiebon. I am going to kill, not just the people and animals. Rather, I will raze their trees; and I am not going to leave any grass standing. I will make it into ashes. I will plunder their cities.” When she heard this her heart became consoled from sadness. They stayed that night together. In the morning they greeted one another. Dematyanos returned to his country in sadness because of Our Lady Mary. May the prayer of Giegar the Martyr, the reward of the love of Dematyanos the humble one and the beloved of Queen Mary be with her servant Gebre Maryam forever and ever. Amen. </p><p> [Translation as of 05/21/22]</p>"
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1020",
-    "title": "Dabra Zamaddo's Abbot Abuna tsama Iyyasus averts a raid by the Oromo people with prayers to the Virgin Mary",
-    "incipit": "ካልእ፡ ተአምር፡ ዘገብረት፡ እግዝእትነ፡ ማርያም፡ ዘበዕብራይስጢ፡ ማርያም፡ ለአቡነ፡ ፃማ፡ ኢየሱስ። ሶበ፡ ተማከሩ፡ አረሚ፡ ወተአደሙ፡ እምብዙኅ፡ ሀገር፡ ወተአየኑ፡ በምድረ፡ ዋጃ፡ ከመ፡ ያመዝብርዋ፡ ለሀገረ፡ ክርስቲያን፡ ለምድረ፡ ዋካት፡ ወጠጠራ፡ ለምድረ፡ በረሐ፡ ወመቅደላ። በእሉ፡ አህጉራት፡ ተማኪሮሙ፡ ተአየኑ፡ እስመ፡ ልማድ፡ ቦሙ፡ ለአረሚ፡ ሶበ፡ ይነግሡ፡ ያመዘብሩ፡ አህጉረ። አሜሃኒ፡ እስመ፡ ነግሠ፡ ዘይብልዎ፡ ዳዩ፡ ዳባ፡ ወልማዶሙኒ፡ ዘያመዘብርዎ፡ ወይጻብእዎ፡ በወርኀ፡ ኅዳር፡ በበዐሉ፡ ለቅዱስ፡ ሚካኤል፡ ሊቀ፡ መላእክት። አሜሃ፡ ያመዘብሩ።",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },
@@ -8849,84 +5368,6 @@ const MIRACLES_OF_MARY = [
       {
         "author": "Rowan Williams",
         "text": "<p>The Miracles of Our Lady Mary, the Holy Twofold Virgin Theotokos </p><p>May her prayers and blessings be with us to the ages of ages. Amen.</p><p>Now there was a certain man in Jerusalem whose name was Zechariah, and he served in the presence of the Lord. He lived in the fortieth generation from Jacob. His wife was of the daughters of Aaron, and her name was Elizabeth. They lived in the hill country of Judea, as the Lord commanded Joshua, the son of Nun, to divide the land according to the twelve tribes of Israel and give the Priests a city in the midst of every land, that they might be for the Priests. (For the children of Israel are twelve tribes, apart from the tribe of Levi, and the sons of Joseph are two tribes: Ephraim and Manasseh.) Zechariah lived in the hill country of Judea with his tribe, and he was numbered among the Priests in the Temple in Jerusalem, for among the people of that generation, he was known throughout the whole house of Israel for his righteousness and for the gift of prophesy.[1] And he went from his city to Jerusalem to fulfil the days of his service at the Ark of the Lord, as instituted by our forefathers.[2]</p><p>Now Joachim and Zechariah loved one another dearly.[3] And Elizabeth and Anne loved one another likewise,[4] as they were of the same family, and were born of the same father.[5] When the two of them discussed their barrenness[6] and how they suffered because of this, they said to one another, ‘The Lord brought joy to many of our ancestors upon whom this affliction came,[7] and in the end[8] He granted them good things. We too must wait upon the Lord and do His good pleasure. May the will of God be done.’</p><p>The next year, Joachim saw a vision that his wife would conceive. When he woke up, he said, ‘I saw a vision, and it appeared to me as though someone were stood over a well of very sweet-tasting, pure water. And behold, a dove came and alighted on my head for a long time.’ When his wife heard this, she said, ‘May the will of God be done.’ The next night in her sleep, his wife saw a vision, and it appeared to her as though a tree was planted beside rivers of water. In it was a white dove, and it came down and sat in her hands.[9] Then it sat upon her womb for a long time. When she woke up, she told her husband Joachim about this, and at that time she conceived Our Lady Mary. In that season,[10] the Hebrews kept the Feast of Tabernacles. So Joachim and his wife entered the Temple, and Anne stood on her own and prayed, and all the men and women stood up at the hour of prayer. Then the Angel of the Lord appeared to Anne as a resplendent man, and he said to her, ‘Behold, Anne, wife of Joachim, you are pregnant. Take care of this now, for the fruit of your womb shall be a fragrance to the Lord God of Israel, which is chosen much more nobly than many other souls born in the house of Israel. Blessed are you, O wife of Joachim, for the fruit of your womb will go forth as a fragrant unguent before the throne of God the Pantocrator, and will be exalted before people on Earth, and will be glorified that they might receive eternal life.’ </p><p>May her prayers and blessings be with us to the ages of ages. Amen.</p>"
-      }
-    ]
-  },
-  {
-    "id": "1022",
-    "title": "Dabra Zamaddo's Lady Mahdara Maryam and how the Virgin Mary claimed her house as a church",
-    "incipit": "ተአምር፡ ዘገብረት፡ እግዝእትነ፡ ማርያም፡ በሀገረ፡ መግደሎ። ስምዑ፡ ንነግረክሙ፡ ወነበረት፡ ቤተ፡ ክርስቲያን፡ ዘተሐንፀት፡ በስመ፡ እግዝእትነ፡ ማርያም። ወኀበ፡ ዛቲ፡ ቤተ፡ ክርስቲያን፡ ነበረት፡ አሐቲ፡ ብእሲት፡ ቅሩባ፡ ለቤተ፡ ክርስቲያን፡ ዘስማ፡ ማኅደረ፡ ማርያም። ወይእቲ፡ ብእሲት፡ ኅሪት፡ ይእቲ፡ ወክብርት፡ በምግባረ፡ ሠናይ፡ በአማን፡ ማኅደረ፡ ማርያም። እስመ፡ ታፈቅራ፡ ጥቀ፡ ወትትለአካ፡ በዘይትከሀላ፡ ኵሉ።",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1023",
-    "title": "Dabra Zamaddo's Lady Mahdara Maryam commits suicide by hunger strike when her son steals the food for the Virgin Mary's feast",
-    "incipit": "ተአምር፡ ዘገብረት፡ ላቲ፡ እግዝእትነ፡ ማርያም፡ ለይእቲ፡ ኅሪት፡ ሶበ፡ ነበረት፡ በዐጸዳ፡ ኀበ፡ አመረታ። ወይእቲኒ፡ ነበረት፡ በዐቂበ፡ ሥርዓታ፡ … ወድንግል፡ … ። ወነገረ፡ ምታኒ፡ ለብእሲት፡ ቀዳሚ፡ ኀልቀ፡ ከመ፡ ገደፈቶ፡ ወዳግመ፡ ኢተሐልዮ፡ ወውሉዳኒ፡ ነበሩ፡ ኀበ፡ አመረቶሙ፡ … ። ወይእቲ፡ ተዐቅቦሙ፡ መዐልተ፡ ወሌሊተ። እስመ፡ ውሉዳ፡ ለፍቅርታ፡ እሙንቱ።",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1024",
-    "title": "Dabra Zamaddo's storm that engulfed the country with total darkness for four months.",
-    "incipit": "… ስምዑ፡ ንነግረክሙ፤ ወሀለወት፡ ቤተ፡ ክርስቲያን፡ ዘተሐንፀት፡ በስማ፡ … በሀገረ፡ ሥምረተ፡ አብ። ወነበረ፡ ፩መነኮስ፡ ውስተ፡ ዛቲ፡ ቤተ፡ ክርስቲያን፡ ዘኢይወፅእ፡ እምቅጽራ፡ መዐልተ፡ ወሌሊተ፡ ፅሙድ፡ ለተግባረ፡ እግዚአብሔር፡ ወእሱር፡ በሐብለ፡ ፍቅራ፡ … ።",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1025",
-    "title": "Dabra Zamaddo's Qwǝrbana Dǝngǝl encounters a leopard as a child",
-    "incipit": "ተአምር፡ ዘገብረት፡ ሎቱ፡ … በምድረ፡ ግብጻዊት፡ ለ፩ሕፃን፡ ዘተሰምየ፡ ቍርባነ፡ ድንግል። እስመ፡ ታፈቅሮ፡ ለዘተሰምየ፡ በስማ። ወወልዳኒ፡ እስመ፡ ወሀባ፡ ኪዳነ፡ ከመ፡ ታድኅኖ። በእንተዝ፡ ዐቀበቶ፡ ለውእቱ፡ ሕፃን።",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1026",
-    "title": "Dabra Zamaddo's Qwǝrbana Dǝngǝl is saved as a child from an attack by the Arami.",
-    "incipit": "ተአምር፡ ዘገብረት፡ ሎቱ፡ … ለውእቱ፡ ሕፃን፡ ሶበ፡ ልኅቀ፡ ወሶበ፡ በጽሐ፡ አምጣነ፡ ትምህርት፡ ወሀብዎ፡ ለመምህር። እንዘ፡ ይትመሀር፡ አጽንዐ፡ መልክዐ፡ … ። ሶበ፡ አጽንዐ፡ ኢይደግማ፡ በጽሚት። አላ፡ በክላሕ፡ ወበዜማ፡ እመሠረታ፡ እስከ፡ ፍጻሜሃ፡ ከመ፡ ዘያበጽሕዎ፡ ካህናት፡ በቤተ፡ ክርስቲያን፡ ወውእቱኒ፡ ያበጽሕ፡ ኵለሄ፡ በክላሕ። ወይትአመር፡ ኀበ፡ ሖረ፡ በክላሁ፡ እንዘ፡ ይብላ፡ ሰላም፡ ሰላም፡ እምጊዜ፡ ወፈረ፡ ውስተ፡ ገዳም፡ ጊዜ፡ ጽባሕ፡ እስከ፡ የአቱ፡ ኢየዐርፍ፡ እንዘ፡ ይጸውዕ፡ ስማ፡ በክላሕ።",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1027",
-    "title": "Dabra Zamaddo's church and the tree that wrecked havoc on it",
-    "incipit": "ተአምር፡ ዘገብረተ፡ እግዝእትነ፡ ማርያም፡ በቤተ፡ ክርስቲያን፡ ዘተሐንጸት፡ በስማ፡ በሀገረ፡ ሥምረተ፡ አብ። ወለይእቲ፡ ቤተ፡ ክርስቲያን፡ ዐጸዳ፡ ሠናይ፡ ጥቀ፡ ዘይመስል፡ ዐጽቀ፡ ጽሕድ፡ በዐውዳ፡ ለቤተ፡ ክርስቲያን። ወይመስል፡ ከመ፡ ቅጽር፡ ዘተሐንጸ። ወ፩እምእሉ፡ ዐጸድ፡ ርሕበ፡ ወገዝፈ፡ ጥቀ። ወመጠነ፡ ግዝፈቱ፡ ይከውን፡ ከመ፡ ንኡስ፡ ቤት፡ ወቆሙኒ፡ ዐቢየ፡ ኮነ፡ ወተልዕለ፡ እምቤተ፡ ክርስቲያን፡ ወእምብዝኀ፡ ተልዕሎቱ፡ አድነነ፡ መንገለ፡ ቤተ፡ መቅደስ፡ ወአልጸቀ፡ ከመ፡ ይደምስሳ።",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },
@@ -8970,19 +5411,6 @@ const MIRACLES_OF_MARY = [
     ]
   },
   {
-    "id": "1031",
-    "title": "Dabra Zamaddo's church and the punishment for cutting trees from the church’s precinct.",
-    "incipit": "ተአምር፡ ዘግብረት፡ … ለቤተ፡ ክርስቲያን፡ ዘተሐንጸት፡ በስማ፡ በሀገረ፡ ሠምሮ። ወሀሎ፡ ፩ካህን፡ ዘይትለአካ፡ ለቤተ፡ ክርስቲያና። ወምሁረ፡ ጥበብ፡ ብእሲሁ። መጽሐፈኒ፡ የአምር፡ ወግብረ፡ እድኒ፡ ኵሎ፡ በይነ፡ ግብረ፡ እዱኒ፡ ይመትር፡ ዐጸዳ። ወእግዝእትነሂ፡ ትቤሎ፡ ኅድግ። ለዘይመትር፡ ዐጸድየ፡ ኢያፈቅሮ፡ ልብየ። አበየ፡ መቲረኒ፡ ኢየኀድግ። ወነገራኒ፡ ዘትቤሎ፡ ይነግር፡ ለኵሉ፡ ሰብእ።",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
     "id": "1032",
     "title": "Dabra Zamaddo's church and how chewing the body of the Son of the Blessed Virgin is not welcome to the Virgin Mary",
     "incipit": "ተአምር፡ ዘከሠተት፡ ሎቱ፡ ለ፩መነኰስ፡ ዘስሙ፡ ጢሞና፡ ዘይነብር፡ በሀገረ፡ ምሥራቅ። ወዜነወቶ፡ ሐዘነ፡ ልቡናሃ፡ በከመ፡ ዜነዎ፡ ወልዳ፡ መድኃኔ፡ ዓለም፡ ለውእቱ፡ ጢሞና፡ ሶበ፡ ኀዘነ፡ በመባአ፡ ጽዮን። ወይቤሎ፡ ርኢ፡ ጢሞና፡ ዘገብረ፡ መባአ፡ ጽዮን። ሶበ፡ ነደ፡ ልብየ፡ በፍቅረ፡ ዚአሁ፡ ወረቁ፡ ምራቅየ፡ ውስተ፡ ልብሱ፡ ከመ፡ ኢይትፈለጥ፡ እምኔሁ፡ በመዓልት፡ ወበሌሊት። [ወውእቱ፡ አውሐሶ፡ ለካልእ፡] እስኩ፡ ርእዮ፡ ለዝ፡ ነገር። ሰሚኦ፡ ጢሞና፡ ጸውዖ፡ ለመባ አ፡ ጽዮን። ወይቤሎ፡ ለምንት፡ ታውሕስ፡ ልብስከ፡ ለሰብእ። ናሁ፡ ዜነወኒ፡ እግዚእኒ፡ ሐዘኖ። ወይቤሎ፡ መባአ፡ ጽዮን፡ እወ፡ ገበርኩ፡ ሶበ፡ አገበረኒ፡ ሰብ እ።98 ወዘንተ፡ ብሂሎ፡ ወድቀ፡ ወአንገርገረ፡ ዲበ፡ ምድር። ወይቤ፡ እፎ፡ እከውን፡ እምድኅረዝ፡ እመ፡ ሐዘነ፡ እግዚእየ። ወይቤሎ፡ ጢሞና፡ ኢትቅብጽ፡ ወል ድየ፡ ተስፋ። እስመ፡ እግዚእነ፡ መሐሪ፡ ውእቱ። ባሕቱ፡ ንስአሎ። ወዘንተ፡ ብሂሎ፡ አስተሳለሞሙ፡ ወአዕረቆሙ።",
@@ -8992,45 +5420,6 @@ const MIRACLES_OF_MARY = [
       {
         "author": "Rowan Williams",
         "text": "<p>The Miracles of Our Lady Mary, the Holy Twofold Virgin Theotokos</p><p>May her prayers and blessings be with us to the ages of ages. Amen.</p><p>After that, the Angel of the Lord appeared to Joseph and said to him, ‘Arise, take the Child and His Mother and return to the land of Palestine. For behold, King Herod, who sought the Child, has perished, and died.’ So he took Our Lord and His Mother, and they returned to the land of Palestine.</p><p>Now as they journeyed along the road,[1] they came to a desert in which were thieves who would take turns to steal[2] the possessions of all who journeyed there.[3] When they saw Our Lady with her beloved Son and Joseph from afar, one of the thieves said to his companion, ‘Today is your turn. Arise, let us go and take away the possessions of the people who are coming; let us take it for you.’ So they went down to seize their possessions. But when one of the thieves saw Our Lord Jesus Christ in the bosom of His pure Virgin Mother Mary as she rode upon a donkey, his heart took pity on her, and he took the Child from the bosom of His Mother at once and kissed His eyes, cheeks, and mouth. Then he threw to the Child, Our Lord Jesus, the pieces of silver that were with him. And he said to Our Lady Mary, the pure Virgin, ‘The power of Jesus Christ prevented me from stealing your possessions.’ And he said to his companions, ‘Leave me the share of these people’s possessions that would have fallen to you, and let it be my share. In its place, take what is due to you from what we stole in Bethlehem yesterday.’[4] So Joseph took the Child and His Mother, and the thief went with them to send them off. </p><p>Now as the thief was sending them off,[5] he fell on his face, and his sword broke into three pieces on a rock. So the Child said to him, ‘Gather the pieces of your sword and give them to Me, Titus.’ And Titus the thief picked up the broken pieces of his sword and gave it to Him. Our Lord Jesus Christ put the pieces of his sword back together and made them one, as it was at first. When the thief saw the actions of Our Lord—how He fixed his sword which had broken, and called him by his name, which He did not know before—he marveled greatly and worshipped Him, giving glory, saying to Our Lord Jesus Christ, ‘O my Lord, make me one of those who abide with You and follow Your ways.’ Then Joseph let the thief join him and took the palms of Our Lord and laid His hands on him. The thief bowed his head and said, ‘Bless me, my Lord.’[6] Our Lord responded and said to him, ‘Truly I tell you, you will go into Paradise before Adam, and the Kingdom of Heaven will be granted to you from the Father.’ When one of the other thieves heard this, he laughed at him and derided him, saying, ‘If this Child is a Child of the Prophets, how can He say that he who was a shedder of blood all the days of his life will go into Paradise? or that its keys will be given to him? or that he will enter before our father Adam?’ Then Our Lord saw him laughing and deriding him, and He said to him, ‘Dumachus,[7] because you did not believe the words of your Lord and God, you will not inherit eternal life with Titus.’ The thief marveled at the words of Our Lord Jesus Christ, Who called him by his name before He knew who he was,[8] and he said in his soul, ‘How can this Child know this? From where did He learn this secret?[9] I perceive that He is indeed a Child of the Prophets.’ Then Nemhur, the senior thief, answered and said to him, ‘Is this Jesus, the true Saviour of the world, Who has now been born as a Child? And is this His Virgin Mother?’ </p><p>After that, they were scattered and went to their places of abode. And Joseph took the Child and His Mother to the village of Nazareth, so that the words which were spoken by the Prophet might be fulfilled: ‘When the God of Heaven and Earth comes,[10] He will be called a Nazorean. For the Lord will be seen in Nazareth[11] in the latter days, and He will remove the kingdom, the priesthood and prophesy from the children of Israel.’ Moreover, when Our Lord Jesus Christ lived in the village of Nazareth with His pure Virgin Mother, He began to perform signs and wonders. </p><p>May her prayers and blessings and the mercy of her beloved Son be with her sinful servant, our father Walda sellase, to the ages of ages. Amen.</p>"
-      }
-    ]
-  },
-  {
-    "id": "1033",
-    "title": "Dabra Zamaddo's Abbot Mahdara Krǝstos who left his office on his own volition.",
-    "incipit": "ተአምር፡ ዘገብረት፡ … በደብረ፡ ዘመዶ። ወነበረ፡ ፩መነኮስ፡ ዘስሙ፡ ማኅደረ፡ ክርስቶስ፡ ዘያፈቅራ፡ … ወዘይትለአክ፡ ለቤተ፡ ክርስቲያና። ወአመኒ፡ ሤምዎ፡ ኤጲስ፡ ቆጶሰ፡ ለቤተ፡ ክር ስቲያና፡ ዐቀበ፡ ሥርዓታ፡ ወሕጋ፡ ወአሥመሮሙ፡ ለሰብአ፡ ቤታ። ወሢመቶሂ፡ ኀደገ፡ በፈቃዱ፡ እንዘ፡ ኢይሥዕርዎ፡ አላ፡ እንዘ፡ ይስእልዎ፡ ወይቤልዎ፡ ኢትኅድግ፡ ሢመተከ። እስመ፡ ለእግዚአብሔርኒ፡ ወለሰብእኒ፡ ታሠምር፡ አንተ። ወይ ቤሎሙ፡ ኅድጉኒ፡ ለእመ፡ በዝኀ፡ መዋዕለ፡ ሢመት፡ ይገብእ፡ ንዝህላል። አሜሃ፡ ይትበአስ፡ ሰብእ፡ ምስለ፡ ፈጣሪሁ። ወዘንተ፡ ብሂሎ፡ ኀደገ፡ ሢመቶ።",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1034",
-    "title": "Dabra Zamaddo's Mabaʾa tsǝyon church and the density of trees there that prevented two boys from dying in a fire",
-    "incipit": "ተአምር፡ ዘገብረት፡ … በቤተ፡ ክርስቲያን፡ ዘተሐነጸት፡ በስማ፡ በሀገረ፡ ሥምረተ፡ አብ። ስምዑ፡ ንነግረክሙ፡ አኀውየ፡ ዘገብረት፡ ተአምረ፡ በከመ፡ ገብረ፡ ወልዳ፡ ለፍቁሩ፡ መባአ፡ ጽዮን፡ ሶበ፡ መጽአት፡ ኀቤሁ፡ ብእሲት፡ ኀዚላ፡ ወልዳ፡ ሕሙመ። ወትቤሎ፡ ንሥኦ፡ ለዝ፡ ሕፃን፡ ወፈውሶ፡ በጸሎትከ፡ ወይኩንከ፡ ገብረ። ወይቤላ፡ አንሰ፡ ለልየ፡ ገብር፡ ለእግዚእየ፡ እፎ፡ እትወከፍ፡ ገብረ። አላ፡ ሀቢዮ፡ ለእግዚኡ፡ መድኀኔ፡ ዓለም። ወሰሚዓ፡ ብእሲት፡ ትቤ፡ ይኩን፡ በከመ፡ ትቤ። ወሶቤሃ፡ አፍአሞ፡ እምፍርፋራተ፡ ተዝካሩ፡ ለመድኀኔ፡ ዓለም። አሜሃ፡ ተፍአ፡ ዘይ መስል፡ ሕመተ፡ ወአቃርብተ።",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1035",
-    "title": "Dabra Zamaddo's man who refused to observe holy days.",
-    "incipit": "ተአምር፡ ዘገብረት፡ … ንነግረክሙ። ወነበረ፡ ፩ብእሲ፡ በመዋዕሊሁ፡ ለዘወልደ፡ ማርያም። ወውእቱ፡ ብእሲ፡ በስምሰ፡ ክርስቲያናዊ፡ ወበግብርሰ፡ ውፁእ፡ እምሕገ፡ ክርስቲ ያን። ወሀገሩኒ፡ ታሕተ፡ ወግረ፡ ስኂን፡ ሀገረ፡ ቅዱሳን፡ እንዘ፡ ይነብር፡ በሀገ ረ፡ ቅዱሳን፡ ኢይሳተፎሙ፡ ለቅዱሳን፡ በግብር፡ አላ፡ ይገብር፡ ግብረ፡ አረሚ። ለጾምኒ፡ ወለጸሎትኒ፡ ኢያአምሮሙ፡ ወለኵሉ፡ ሥርዐተ፡ ቤተ፡ ክርስቲያን፡ ወለካህናትኒ፡ ኢይትኤዘዞሙ። ወሶበ፡ ይብልዎ፡ ዮም፡ ሰንበት፡ ወዮምሰ፡ በዓለ፡ እግዝእትነ፡ ኢይደሉ፡ ይትገበሩ፡ ሶበ፡ ይብልዎ፡ ይትቃጸቦሙ።",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },
@@ -9386,40 +5775,6 @@ const MIRACLES_OF_MARY = [
     ]
   },
   {
-    "id": "1145",
-    "title": "Homily on the Virgin Mary and the Biblical Patriarchs: Part 7: The Virgin Mary and the biblical patriarch Joshua crossing the Jordan River",
-    "incipit": "ወሶበ ፡  ግዕዙ ፡  እሥራኤል ፡  እምኀበ ፡  ደብሩ ፡  ለእግዚአብሔር ፡  ምሕዋረ ፡  ሠሉስ ፡  መዋዕል ፡  ተሐውር ፡  ቅድሜሆሙ ፡  ታቦተ ፡  ሕጉ ፡  ለእግዚአብሔር ፡  ከመ ፡  ትርአይ ፡  ሎሙ ፡  ምዕረፈ ።",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1146",
-    "title": "Homily on the Virgin Mary and the Biblical Patriarchs: Part 8: The Virgin Mary and the biblical patriarch King David",
-    "incipit": "እግዚአብሔር ፡  ይባርክሙ ፡  ወያብርህ ፡  አዕይንተ ፡  አልባቢክሙ ፡  ለሰሚዐ ፡  ተአምሪሃ ፡  ለእግዝእትነ ፡  ...  ዘኢይክሉ ፡  ሰማያውያን ፡  ወምድራውያን ፡  ፈጽሞ ፡  ውዳሴሃ። ጸሎታ ፡  ወበረከታ ፡  የሃሉ ፡  ምስሌነ ፡  ለዓለመ ፡  ዓለም ፡  አሜን። እምቅድመ ፡  ተአምር ፡  ይትነበብ ፡  ወይስምዑ ፡  ሕዝብ ፡  በዕዝነ ፡  ልቡና። ስምዑ ፡  በአዕዛኒክሙ ፡  ወአንብሩ ፡  በልብክሙ ፡  ዕበያ ፡  ወክብራ ፡  ወውዳሴሃ ፡  ለእግዝእትነ ፡  ማርያም ፡  ዘበዕብራይስጢ ፡  ማሪሃም። ማርያም ፡  ብሂል ፡  መርሕ ፡  ለመንግሥተ ፡  ሰማያት።",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
     "id": "1147",
     "title": "God consoled Solomon by promising the Virgin Mary would be born from Solomon's seed",
     "incipit": "እግዚአብሔር ፡  ማእምረ ፡  ልብ ፡  ለኵሉ ፡  ለለአሐዱ ፡  አሐዱ ፡  ዘሰፍሐ ፡  ሰማያተ ፡  በጥበቡ ፡  ወአጽንዓ ፡  ለምድር ፡  ዲበ ፡  ማይ ፡  ወአልቦ ፡  ድንጋግ ፡  ለባሕረ ፡  ጥበቡ ፡  ዘሀሎ ፡  እምቅድም ፡  ዘወሀበ ፡  ኪዳነ ፡  ዘለዓለም ፡  ለአበው ፡  ቀደምት ፡  በእንተ ፡  ተሠግዎቱ ፡  እምወለተ ፡  ዳዊት ፡  ወዘኢይሔሱ ፡  ቃሎ ፡",
@@ -9429,40 +5784,6 @@ const MIRACLES_OF_MARY = [
       {
         "author": "Jeremy Brown & Dawit Muluneh with Wendy Laura Belcher",
         "text": "<p>When the Virgin Mary was in the city of Sidag (ሲደጋ), the king of Rahrahie/Rawrahe (ራውርኄ)  took her to his city in the chamber constructed of gold. And he brought her animals and food. </p><br> <p>And he said: “My lady rejoice with this.” </p><br> <p>And she responded: “You will receive the bread of heaven in Jerusalem.” </p><br> <p>And the king prostrated himself to her and she lifted him up and sat him upon his throne. And when the Virgin learned something from the Holy Spirit, she said to him: “You have no child?” </p><br> <p>And he responded: “That’s correct.” </p><br> <p>And she asked: “How is it you do not have a child while you have a wife?” [WLB: correct, he has only one wife] </p><br> <p>And he responded: “Because my sins prevent me from doing so.” </p><br> <p>The Virgin then made him bring his young women [his concubines] and spat on their hands, and touched their stomachs. </p><br> <p>Their total number of women was 70. And in one night they all became pregnant. </p><br> <p>The virgin Mary stayed there for six months. </p><br> <p>The king then pleaded with the virgin to stay a little bit longer, until his women gave birth. </p><br> <p>The Virgin Mary agreed on account of his love. </p><br> <p>In one night, they gave birth to 70 sons. </p><br> <p>The king was greatly amazed and went to the Virgin. </p><br> <p>The Virgin told him he had received everything he wanted in one day. </p><br> <p>The King mentioned he received everything he wished for through her intercession. </p><br>"
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1168",
-    "title": "King Lebna Dengel (Lebna Dengel, Dawit II), the 16th c. Ethiopian monarch, is visited by the Virgin Mary who foretells his fate: Part 02",
-    "incipit": "ወአመ ፡  ሣልስት ፡  ዕለት ፡  እምድኅረ ፡  አስተርአየቶ ፡  እግዝእትነ ፡  ... ለልብነ ፡  ድንግል ፡  ካዕበ ፡  ትቤሎ ፡  ለራጉኤል ፡  ሊቀ ፡  መላእክት ፡",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1170",
-    "title": "King Lebna Dengel (Lebna Dengel, Dawit II), the 16th c. Ethiopian monarch, is visited by the Virgin Mary who foretells his fate: Part 04",
-    "incipit": "ወበአሐቲ ፡  እመዋዕል ፡  እንዘ ፡  ሀሎ ፡  ልብነ ፡  ድንግል ፡  ውስተ ፡  ኀዘን ፡  ክቡድ ፡  በይነ ፡  ዘይመጽእ ፡  ላዕሌሁ ፡  ይቤ ፡  በውዑይ ፡  ኅሊና ፡  እንከሰ ፡  አኀዝኩ ፡  እትናገር ፡  ምስለ ፡  እግዝእትየ ፡  እንተ ፡  ፆረት ፡  እሳተ ፡  መለኮት ፡  እንዘ ፡  መሬት ፡  ወሐመድ ፡  አነ።",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },
@@ -9476,79 +5797,6 @@ const MIRACLES_OF_MARY = [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
         "text": "<p>The miracle that Our Lady Mary, the Holy Two-fold Virgin, Mother of God performed in the city of Tsedenia [Saidnaya, Saydnaya, Sednaya, tsaydnāyā, in Syria] through her icon. </p><p>A man said, “I asked a God-fearing old man [named John, an Egyptian monk,] about how the icon in Tsedenia does miracles.  He replied [as follows]”:</p><p>Listen, my dear son. Let me tell you what I saw with my own eyes [when I was a pilgrim there for some time]. It, [what I have to relate,] is not just news about the icon, but also about what the Church of Tsedenia looks like and how it does miracles. </p><p>The Church is built on a tall mountain. [At its feet,] there is a big city in which lived many Christians. There is no one [in that city] from among the unclean, the Muslims, and there are no synagogues. There are two [parts of the] city: one upper and one lower. There is a big church in the upper one, which pilgrims can see from afar, and it has two wide sanctuaries. One of them belongs to the Jacobites [the non-Chalcedonian Christians], the other belongs to the Melkites [the Chalcedonian Christians].  </p><p>The icon resides in the window of [the church and under] a baldachin structure  that was built for her in the east of the [Jacobites] sanctuary. In front of the icon is an alabaster container for oil. The oil drips from the icon into the container. The icon’s place is a mosaic with different [colored] stones. The canopy is filled with a sweet aroma that is sweeter than any perfume. A light in front of the icon burns night and day. </p><p>The window is covered with an iron lattice with an iron latch, the key to which stays with the abbess of that monastery. [This is] according to the command of the [church] leaders who said “Let no man minister to this icon of Our Lady Mary, the Holy Two Fold Virgin, Mother of God, except a virgin monk [who has been] chosen. If not [a monk, then] a virgin girl who has been raised to become a nun in the same monastery.” </p><p></p><p>Also, there are seven candlesticks in front of the window. Between them are lamps of white light that burn day and night. The canopy had two gates, parallel to one another; one on the right side and one on the left side. The gate on the right takes you to the [women’s] monastery. Women who come [to visit the icon] enter through that gate. Then, men enter through the left gate.</p><p>One day, I, John, was standing with another Christian in front of the gate of the icon of Our Lady Mary. We were looking at the icon, which looked like it was real[, a living person]. The [icon’s] oil was dripping fragrantly into the alabaster container. </p><p>We spoke about the greatness of God. We marveled at the power of God, for whom nothing is impossible. We said to one another, “In Jerusalem, at the Sepulcher of Our Lord a sign appears [only] once a year through the descent of a luminous light. But here, the icon of Our Lady Mary, the Holy Two-Fold Virgin, Mother of God performs miracles and wonders every [single] day, [both] day and night.” </p><p>May her prayers, blessings, and the mercy of her beloved son be with her maidservant Walatta Yohannes forever and ever, amen.</p>"
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1173",
-    "title": "King Lebna Dengel (Lebna Dengel, Dawit II), the 16th c. Ethiopian monarch, is visited in the 1500s by the Virgin Mary who foretells his fate: Part 07",
-    "incipit": "ወበአሐቲ ፡  ዕለት ፡  እመዋዕል ፡  ጊዜ ፡  መንፈቀ ፡  ሌሊት ፡  ወረደ ፡  እምሰማይ ፡  ቅዱስ ፡  ራጉኤል ፡  ሊቀ ፡  መላእክት ፡  ወአስተርአዮ ፡  በሕልም። ለልብነ ፡  ድንግል ፡  ንጉሠ ፡  ኢትዮጵያ ፡  ወይቤሎ ፡  ኦ ፡  ልብነ ፡  ድንግል ፡  ስማዕ ፡  ዘእነግረከ ፡  እስመ ፡  ወሀብኩከ ፡  ኪዳነ ፡  ቀዲሙ ፡  ከመ ፡  እንግርከ ፡  ዘተርፈ ፡  በከመ ፡  ለአከተኒ ፡  ድንግል ፡  ማርያም ፡  እሙ ፡  ለኢየሱስ ፡  ክርስቶስ።",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1175",
-    "title": "King Lebna Dengel (Lebna Dengel, Dawit II), the 16th c. Ethiopian monarch, is visited in the 1500s by the Virgin Mary who foretells his fate: Part 09",
-    "incipit": "ወአመ ፡  ነበረ ፡  ሰብዓተ ፡  ዕለታተ ፡  እንዘ ፡  ኢይወጽእ ፡  እምቤተ ፡  መንግሥቱ ፡  ወኢይትረአይ ፡  ለሰብእ ፡  ልብነ ፡  ድንግል ፡  ኮነ ፡  ተሐውኮ ፡  ማዕከለ ፡  ሕዝብ ፡  ወደንገፁ ፡  ሊቃነ ፡  ካህናቲሁ ፡  ወመኳንንቲሁ። ወእምድኅረዝ ፡  ቦኡ ፡  ካህናት ፡  ኀበ ፡  ንጉሥ ፡  ወተሰአልዎ ፡",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1177",
-    "title": "King Sarsa Dengel (sartsa Dengel), the 16th c. Ethiopian monarch, and his rise due to the Virgin Mary",
-    "incipit": "ወእምድኅረ ፡  አዕረፈ ፡  ልብነ ፡  ድንግል ፡  ንጉሥ ፡  ነግሠ ፡  ሠርፀ ፡  ድንግል ፡  ንጉሥ ፡  ዘየአምን ፡  በሃይማኖተ ፡  እስክንድርያ። ወሶቤሃ ፡  አስተርአየቶ ፡  እግዝእትነ ፡  ...  ፡  ወትቤሎ ፡  ጸሐፍ ፡  ሎቱ ፡  ራእየ ፡  ዘከመ ፡  አስተርአይክዎ ፡  ቅድመ ፡  አነ ፡  ወዘከመ ፡  ነገሮ ፡  ኵሎ ፡  ዘይመጽእ ፡  ላዕሌሁ።",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1179",
-    "title": "King Menelik (Menilek) II, the 19th c. Ethiopian monarch, finds a tabot that had been missing for hundreds of years and returns it to Dabra Libanos with the help of the Virgin Mary",
-    "incipit": "ወሀለወት ፡  አሐቲ ፡  ታቦት ፡  ዘእግዝእትነ ፡  ... ውስተ ፡  ገዳም ፡  ዘደብረ ፡  ሊባኖስ ፡  ዘኮነ ፡  ይቄድስ ፡  ወያዓርግ ፡  ባቲ ፡  መሥዋዕተ፤ ክቡር ፡  አቡነ ፡  ተክለ ፡  ሃይማኖት ፡  እንዘ ፡  ሀሎ ፡  በሕይወቱ።",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1181",
-    "title": "King Amda Seyon (Amda tseyon) I, the 14th c. Ethiopian monarch: Part 1: In the campaign of 1322 CE, with the help of the Virgin Mary, the king defeats the rebel Sebredin",
-    "incipit": "ንጽሕፍ ፡  በረድኤተ ፡  እግዚአብሔር ፡  ዘከመ ፡  ገብረት ፡  ኃይለ ፡  ወመዊዓ ፡  እግዝእትነ ፡  ... በእደዊሁ ፡  ለዓምደ ፡  ጽዮን ፡  ንጉሠ ፡  ነገሥት ፡  ዘኢትዮጵያ።",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },
@@ -9575,409 +5823,6 @@ const MIRACLES_OF_MARY = [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
         "text": "<p>The miracle [performed] by Our Holy Lady Mary, the Two-Fold Virgin, the Mother of God, may her prayer and blessings be with us forever and ever, amen.</p><p></p><p>Three days after Our Lady Mary, Mariham in Hebrew, appeared to Lǝbna Dǝngǝl, she said to the Archangel Ragu‘el, “Go to King Lǝbna Dǝngǝl and tell him everything that will happen in the years to come.”</p><p>Instantly, Ragu‘el came down from heaven, appeared to King Lǝbna Dǝngǝl, and said, “Listen to what I have to tell you, Lǝbna Dǝngǝl. Take to heart what I say to you, for the Virgin, Immanuel’s Mother, the Intercessor Who Asks for Mercy for All Creation, sent me.”</p><p>Then, in fear and trembling, King Lǝbna Dǝngǝl replied, “Please, tell me the message you have brought to me. </p><p>“But, I beg you in the name of Our Lady Mary, the Mother of God, to tell me without terrifying me. For I have never seen such a petrifying creature in my life!”</p><p>“When I saw your beautiful face and your sword, fear and trembling came upon me.”</p><p>Then, King Lǝbna Dǝngǝl continued, and said to the Luminaries’ Angel Ragu‘el, “What are you created from: earth or lightning?”</p><p>He replied, “I am Angel Ragu‘el, the friend of your father Na‘od, who built my church in [the town of] Hagara Maryam, named Dabra Ledata, which is also called Adashawa the New Calf.  Hagara Maryam is the town of Zion’s Priests, Bakimos’ Children,  and Zašamžen Nabrid,  who was born from the righteous Takla Haymanot, Ethiopia’s Enlightener, he who banished sin’s darkness with the sun of his luminous prayer.</p><p>“Listen to me without fear and trembling. For you are my beloved Na‘od’s son. Don’t let my fiery nature terrify you.</p><p>“Take to heart what I have to tell you, and what I will now write down for you, with characters of mysterious meaning.” </p><p>The archangel then wrote for him.</p><p>This is what he wrote: </p><p>“Mi will be sold. </p><p>“Ga will become king. </p><p>“Fi will die. </p><p>“Ya will live peacefully in your country until the God of the faithful, righteous, and generous Abraham, your ancestor, saves the country.</p><p>“Also, you are going to live for twelve years in exile. </p><p>“After that, you will do penance according to the Apostolic Canons and the God of Abraham, your ancestor, will forgive you. For He is merciful and forgiving; he doesn’t want human beings to die without repentance. </p><p>“Then, you will die in peace on Mount Da. </p><p>“If you don’t repent, you will die a terrible death at the Muslim’s hand; your soul will go to hell; and the Virgin Mary, the Mother of Our God, Jesus Christ, won’t pray for you.</p><p>“For you have desecrated the Church of her son’s body with Saṭaṭira, [that is, tobacco] the venom of the evil Diabolo’s sorcery, which you smoked after listening to a sorcerer, the Holy Trinity’s enemy. [start here]</p><p>“When Ga becomes a king like you, if he rules his people in righteousness and becomes firm in the Alexandrian holy religion, his kingdom will be like Na‘od, you father, a beloved to the Virgin Mary, the mother of the merciful God.  </p><p>“However, if he becomes like you, a violator of your father -the beloved of the Mother of Tsabaot- Na‘od’s law, after three years he will be killed by this Muslim king’s brother whose name is Ma. </p><p>“After this, Mi will come in later days from where he was sold due to his implore to Our Creator’s Mother, to be a king on your throne.</p><p>“But, I don’t think he will be a [righteous] king like your righteous father was. For he has an evil heart. </p><p>“But, Our Merciful Creator will make him a king for a short period by defeating this King of Muslims whose name is Ma- whose mysterious news I have already told you-  through the Mother of Light’s prayer.</p><p>“If Our God makes him a king according to His will and his rule and orders are like your righteous and generous ancestors, he will live long. His descendants will [continue to] be kings until the end of the world. </p><p>“If he becomes like you, his time as a king will be short. Rather, he and his children will be kings only for forty years in town' Ǝ, which is on the western side of Mount Yarar, Amba Maryam, the town of the righteous Dawit II. As I told you earlier, that town is named ' Ǝ. </p><p>“If his children are like you, what has happened to you will happen to them. For this town is holy and the sanctuary for the Mother of the Holy Lord of all.</p><p> “Our God will make it a wilderness for lions and leopards for two hundred and fifty years so that idol priests might not defile it with idolatry and by smoking an unclean tree before your orthodox father Na‘od’s priests.</p><p>“During the time of the Muslims, I guard this town until the Muslim’s [rule of] 250 years are complete so that none of them enters or lives in it.</p><p>“The morning dawned while Saint Ragu‘el, the Archangel, was telling this to the king. Then, the Archangel disappeared from him.</p><p>May her prayer and blessings be with us forever and ever. Amen.</p>"
-      }
-    ]
-  },
-  {
-    "id": "1184",
-    "title": "King Amda Seyon (Amda tseyon) I, the 14th c. Ethiopian monarch: Part 4: In the campaign of 1322 CE, with the help of the Virgin Mary, he leads the fight against 2,722 soliders near the River Dedessa??? despite being ill",
-    "incipit": "ወአመ ፡  ኀሙሱ ፡  ለሐምሌ ፡  ዐርገ ፡  ዓምደ ፡  ጽዮን ፡  እምነ ፡  ሰማርያ ፡  ውስተ ፡  ሀገረ ፡  ኦፌር ፡  ወሖረ ፡  ምሕዋረ ፡  ሰቡዕ ፡  መዋዕል ፡  ወአደወ ፡  ፈለገ ፡  ደስ ፡  ምስለ ፡  ሠራዊቱ ፡  ወበጽሐ ፡  ሞራ ፡  ገሞራ ፡  ወተአየነ ፡  በህየ ፡  ወኮነ ፡  ይተልዉዎ ፡  ካህናት ፡  ወቀሳውስት ፡  ነሢኦሙ ፡  ታቦተ ፡",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "Mehari Worku with Wendy Laura Belcher",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1185",
-    "title": "King Amda Seyon (Amda tseyon) I, the 14th c. Ethiopian monarch: Part 5: In the campaign of 1322 CE, with the help of the Virgin Mary, he and his soldiers cross the River Ziba [Ziway?]",
-    "incipit": "ወአመ ፡  ተሱዑ ፡  ለሐምሌ ፡  ዘውእቱ ፡  ሳኒታሃ ፡  ለዕለት ፡  እንተ ፡  ባቲ ፡  ተፃብዓ ፡  ዓምደ ፡  ጽዮን ፡  ምስለ ፡  ተንባላት ፡  ወሞዖሙ ፡  በኃይለ ፡  ኢየሱስ ፡  ክርስቶስ ፡  ወልደ ፡  እግዚአብሔር ፡  ወበረድኤታ ፡",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "Mehari Worku with Wendy Laura Belcher",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1186",
-    "title": "King Amda Seyon (Amda tseyon) I, the 14th c. Ethiopian monarch: Part 6: In the campaign of 1322 CE, with the help of the Virgin Mary, the king advances on Talag, the capital of Adal, and they convert",
-    "incipit": "ወኮነ ፡  እንዘ ፡  ሀለወ ፡  ገብረ ፡  መስቀል ፡  (ዓምደ ፡  ጽዮን) ፡  ውስተ ፡  ሀገረ ፡  ዶቢአ ፡  አንሥአ ፡  ዕይንቲሁ ፡  ወነጸረ ፡  ደብረ ፡  ነዋሃ ፡  እንተ ፡  ይጐድእ ፡  ርእሱ ፡  ሰማየ ፡  እንተ ፡  መንገለ ፡  ጽባሒሃ ፡  ለሀገር ፡  ዘይርኅቅ ፡  እመካን ፡  ወሐተተ ፡  ዘከመ ፡  መኑ ፡  ይእቲ ፡  ወነገርዎ ፡  ከመ ፡  ዛቲ ፡  ሀገር ፡  ትሰመይ ፡  ሀገረ ፡  ተለግ።",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "Mehari Worku with Wendy Laura Belcher",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1187",
-    "title": "King Amda Seyon (Amda tseyon) I, the 14th c. Ethiopian monarch: Part 7: In the campaign of 1322 CE, with the help of the Virgin Mary, the king defeats the apostates near Talag",
-    "incipit": "ወአመ ፡  ሳብዕት ፡  ዕለት ፡  ዘውእቱ ፡  አመ ፡  ዓሡሩ ፡  ወአሚሩ ፡  ለነሐሴ ፡  እም ፡ አመ ፡  ቦአ ፡  ውስተ ፡  ሀገረ ፡  ተለግ ፡  ተንሥአ ፡  ይሑር ፡  ዓምደ ፡ ጽዮን ፡  ውስተ ፡  ካልእ ፡  ብሔር ፡  እንተ ፡  መንገለ ፡  ደቡባ ፡  ለይእቲ ፡  ሀገረ ፡  ተለግ ፡  ወአስተፋነውዎ ፡",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "Mehari Worku with Wendy Laura Belcher",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1188",
-    "title": "King Amda Seyon (Amda tseyon) I, the 14th c. Ethiopian monarch: Part 8: In the campaign of 1322 CE, with the help of the Virgin Mary, one of the king's wives prays to the Virgin Mary for his safe return",
-    "incipit": "ወበእማንቱ ፡  መዋዕል ፡  አመ ፡  ሖረ ፡  ውስተ ፡  ፀብዕ ፡  ዓምደ ፡  ጽዮን ፡  ንጉሠ ፡  ኢትዮጵያ ፡  ወኮኖ ፡  መጠነ ፡  ተሰዓቱ ፡  አውራኅ ፡  እምዘወፅአ ፡  እመካኑ ፡  ወኢተመይጠ ፡  እንከ ፡  ኀበ ፡  እለ ፡  ሀለዉ ፡  ንግሥታት ፡  አንስቲያሁ ፡  ወውሉዱ ፡  ወኅዳጣን ፡  ሐራሁ ፡  ዐቃብያነ ፡  ትዕይንት ፡  ሶቤሃ ፡  ኮነ ፡  ተሐውኮ ፡  ማዕከለ ፡  ሰብእ። ወይቤሉ ፡  አሌ ፡  ለነ ፡  ወይ ፡  ለነ ፡  ጠፍአ ፡  ንጉሥነ ፡  እንዘ ፡  የኀድገነ ፡  ውስተ ፡  ብሔረ ፡  ተንባላት ፡  ወውስተ ፡  ቆላተ ፡  ገዳም ፡  እንዘ ፡  አልቦ ፡",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "Mehari Worku with Wendy Laura Belcher",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1189",
-    "title": "King Amda Seyon (Amda tseyon) I, the 14th c. Ethiopian monarch: Part 9: In the campaign of 1322 CE, with the help of the Virgin Mary, the king advances through Eastern Ethiopia all the way to the Indian Ocean and then returns",
-    "incipit": "ወበውእቱ ፡  መዋዕል ፡  በዓሠርቱ ፡  ምዕት ፡  ወሠለስቱ ፡  ምዕት ፡  ዕሥራ ፡  ወሰብዓቱ ፡  ዓመት ፡  እምልደተ ፡  እግዚእነ ፡  ኢየሱስ ፡  ክርስቶስ ፡  ሶበ ፡  ተንሥኡ ፡  ላዕሌሁ ፡  ለንጉሥ ፡  ወገብሩ ፡  ዓመፃ ፡  ዲበ ፡  መንግሥቱ ፡  አበይተ ፡  ሀገር ፡  ወመኳንንት ፡  እለ ፡  ሀለዉ ፡  በምሥራቃቲሃ ፡  ለይእቲ ፡  ሀገረ ፡  ኢትዮጵያ ፡  ሶቤሃ ፡ በጽሐ ፡  ዓምደ ፡  ጽዮን ፡  ንጉሠ ፡  ኢትዮጵያ ፡  ኀበ ፡  ጽንፈ ፡  ባሕር ፡  ዘሕንደኬ ፡  እንዘ ፡  ይትቃተል ፡",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "Mehari Worku with Wendy Laura Belcher",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1190",
-    "title": "King Menelik (Menilek) II, the 19th c. Ethiopian monarch, and his Life: Part 1: The Virgin Mary promises his grandfather??? father??? Sahle Selassie??? a great son in the 1800s",
-    "incipit": "ወሀሎ ፡  አሐዱ ፡  ንጉሥ ፡  ዘይሰመይ ፡  ሣህለ ፡  ሥላሴ ፡  ዘነግሠ ፡  ውስተ ፡  ብሔረ ፡  ሴዋ። ወለውእቱኒ ፡  ንጉሥ ፡  ኮነ ፡  ሥርወ ፡  መንግሥቱ ፡  ወዘርዓ ፡  ሙላዱ ፡  እምቀዳማዊ ፡  ምኒልክ ፡  ወልዱ ፡  ለሰሎሞን ፡  ንጉሠ ፡  ሳሌም ፡  ወእምንግሥተ ፡  ሳባ ፡  ኢትዮጵያዊት ፡  ወመጽ አ ፡  ሥርወ ፡  ልደቱ ፡  እንዘ ፡  ይትፋለስ ፡  እምክልኤቱ ፡  ፍናዋት ፡  በሥምረተ።",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "Mehari Worku with Wendy Laura Belcher",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1191",
-    "title": "King Menelik (Menilek) II, the 19th c. Ethiopian monarch, and his Life: Part 2: Menlik is born, just as the Virgin Mary promised",
-    "incipit": "ወዝውእቱ ፡  ካልእ ፡  ክፍል ፡  ተአምር ፡  ዘተገብረ ፡  በእንተ ፡  ምኒልክ። ወአመ ፡  በጽሐ ፡  መዋዕለ ፡  ዕድሜሁ ፡  ወኍልቈ ፡  ሱባኤሁ ፡  ለነገር ፡ በእንተ ፡  ልደቱ ፡  ለምኒልክ ፡  በዓሠርቱ ፡  ወሰመንቱ ፡  ምዕት ፡  ሠላሳ ፡  ወስድስቱ ፡  ዓመት ፡  እምአመ ፡  ተወልደ ፡  እግዚእነ ፡  ኢየሱስ ፡  ክርስቶስ ፡  ተወልደ ፡  ወልድ ፡  ኅሩይ ፡  ሣህለ ፡  ማርያም ፡  (ምኒልክ) አመ ፡  ዓሡሩ ፡  ወሰኑዩ ፡  ለወርኃ ፡  ነሐሴ ፡  በከመ ፡  አሰፈወቶ ፡  ትካት ፡  እግዝእትነ ፡  ማርያም ፡  ለሣህለ ፡  ሥላሴ።",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "Mehari Worku with Wendy Laura Belcher",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1192",
-    "title": "King Menelik (Menilek) II, the 19th c. Ethiopian monarch, and his Life: Part 3: He survives from the age of 11 until he becomes king with the Virgin Mary's help",
-    "incipit": "ወአመ ፡  ኮኖ ፡  ዓሠርቱ ፡  ወአሐዱ ፡  ዓመት ፡  ለሣህለ ፡  ማርያም ፡  (ምኒልክ) ፡  እም አመ ፡  ተወልደ ፡  ሞተ ፡  አቡሁ ፡  ኃይለ ፡  መለኮት ፡  ንጉሠ ፡  ሴዋ ፡  ወተቀብረ ፡  ውስተ ፡  ደብረ ፡  በግዕ ፡  ወበጊዜሃ ፡  በከመ ፡  ተብህለ ፡  ቀዳሚ ፡  ተንሥአ ፡  ካሣ ፡  (ቴዎድሮስ ፡ ) ኃያል ፡  ወመዓትም ፡  ውስተ ፡  ሀገረ ፡",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1193",
-    "title": "King Menelik (Menilek) II, the 19th c. Ethiopian monarch, and his Life: Part 4: He defeats the Italians who invade Ethiopia) [Battle of Adwa?]",
-    "incipit": "በዓሠርቱ ፡  ወሰመንቱ ፡  ምዕት ፡  ሰማኒያ ፡  ወሰመንቱ ፡  ዓመት ፡  እምልደተ ፡  እግዚእነ ፡  ኢየሱስ ፡  ክርስቶስ ፡  በመዋዕሊሁ ፡  ለምኒልክ ፡  ንጉሠ ፡  ነገሥት ፡  ዘኢትዮጵያ ፡  ተንሥ ኡ ፡  ሰብአ ፡  ሮሜ ፡  በነገረ ፡  ጸብዕ ፡  ወትዝኅርት ፡  ወበግዘፈ ፡  ልቡና ፡  ከመ ፡  ይጽብዕዋ ፡  ለኢትዮጵያ ፡  ወይቅንይዋ ፡  በቅኔት ፡  መሪር ፡  ወይንስቱ ፡  አብያተ ፡  ክርስቲያናት ፡  ወያማስኑ ፡  ሃይማኖተ ፡  ክርስቲያን ፡  ዘኦርቶዶክስ።",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1194",
-    "title": "King Menelik (Menilek) II, the 19th c. Ethiopian monarch, and his Life: Part 5: He marches with his wife Taitu into battle against the Italians and defeats them in the Battle of Adwa",
-    "incipit": "ወበውእቱ ፡  መዋዕል ፡  እምድኅረ ፡  ዓሠርቱ ፡  ወሰምንቱ ፡  ምዕት ፡  ሃምሳ ፡  ወአርባዕቱ ፡  ዓመት ፡  እምልደተ ፡  እግዚእነ ፡  ኢየሱስ ፡  ክርስቶስ ፡  እምዘ ፡  ነግሠ ፡  ምኒልክ ፡  ንጉሠ ፡  ነገሥት ፡  ዘኢትዮጵያ ፡  በዕሥራ ፡  ወስድስቱ ፡  ዓመት ፡  መጽ ኡ ፡  ሰብአ ፡  ሮሜ ፡  ይጽብዕዎ ፡  ለምኒልክ ፡  ወይቅንይዋ ፡  ለሀገር ፡  ቅድስት ፡  ኢትዮጵያ ፡  በቅኔት ፡  መሪር።",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "Mehari Worku with Wendy Laura Belcher",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1213",
-    "title": "Zaytoun Apparition: Part 1?: The Virgin Mary appears for seven days in Saint Mary's Church in the neighborhood of Zaytoun, in Cairo, in 1982 [1989 CE]",
-    "incipit": "ወበዓሠርቱ ፡  ሰዓቱ ፡  ሰማኒያ ፡  ወክልኤቱ ፡  ዓመት ፡  እምልደተ ፡  እግዚእነ ፡  ኢየሱስ ፡  ክርስቶስ ፡  አመ ፡  ሰኑዩ ፡  ለወርኃ ፡  መጋቢት ፡  አስተርአየት ፡  ገሃደ ፡  እግዝእትነ ፡  ማርያም ፡  ውስተ ፡  ብሔረ ፡  ግብፅ ፡  (ምስር) ፡  በላዕለ ፡  አሐቲ ፡  ቤተ ፡  ክርስቲያን ፡  ኦርቶዶክሳዊት ፡  ዘተሐነፀት ፡  በስማ ፡  ውስተ ፡  ትዕይንት ፡  ዘይሰመይ ፡  ዘይቱን። ወአስተር እዮታኒ ፡  ኮነ ፡  እምቀዳማይ ሰዓተ ፡  ሌሊት ፡  በዘውእቱ ፡",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1221",
-    "title": "Guchen Maryam Tabot: Part 1: Thieves steal the tabot from this church and try to sell it but Muslims see that the thieves are spiritually on fire [spelling]",
-    "incipit": "ወሀለወት ፡  አሐቲ ፡  ቤተ ፡  ክርስቲያን ፡  ውስተ ፡  ብሔረ ፡  ኢትዮጵያ ፡  ዘተሐንፀት ፡  በስመ ፡  እግዝእትነ ፡  ወትሰመይ ፡  ግሼን ፡  ማርያም ፡  (ደብረ ፡  ከርቤ) ወሕንፃ ፡  ማኅፈዲሃኒ ፡  ለይእቲ ፡  ቤተ ፡  ክርስቲያን ፡  ኮነ ፡  በመልዕልተ ፡  ደብር ፡  ነዋህ ፡  ዘው እቱ ፡  መካነ ፡  ምዕራፈ ፡  ግማደ ፡  መስቀሉ ፡  ለኢየሱስ ፡  ክርስቶስ ፡  እንተ ፡  አምጽ ኦ ፡  ዳዊት ፡  ንጉሠ ፡  ኢትዮጵያ ፡  እምኢየሩሳሌም ፡  ወበእንተዝ ፡  ኮነት ፡  ይእቲ ፡  ደብረ ፡  ካልእታ ፡  በክብር ፡  ለአክሱም ፡  ጽዮን።",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1222",
-    "title": "Guchen Maryam Tabot: Part 2: The Virgin Mary appears in the patriarch's Addis Ababa church and demands to know why her tabot has not been returned to Guechen Maryam [unclear]",
-    "incipit": "ተብህለ ፡  ዘከመ ፡  ገብረት ፡  ተአምረ ፡  እግዝእትነ ፡  በደብረ ፡  ቅድስተ ፡  ቅዱሳን ፡  ማርያም ፡  እንተ ፡  ይእቲ ፡  መንበረ ፡  ፓትረያሪክ ፡  ዘኢትዮጵያ። ወበውእቱ ፡  መዋዕል ፡  ኮነት ፡  ትሄሉ ፡  ኅቡረ ፡  ታቦተ ፡  ማርያም ፡  ዘደብረ ፡  ከርቤ ፡  (ግሼን) ፡  ምስለ ፡  ታቦተ ፡  ማርያም ፡  ዘቅድስተ ፡  ቅዱሳን ፡  እንተ ፡  ይእቲ ፡  መንበረ ፡  ፓትረያሪክ ፡  ዘኢትዮጵያ ፡  መጠነ ፡  ፯ቱ ፡  አውራኅ ፡  እምድኅረ ፡  ተረክበት ፡  እምእደ ፡  ሠረቅት።",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1223",
-    "title": "Zaytoun Apparition: Part 2?: The Virgin Mary appears for seven days in Saint Mary's Church in the neighborhood of Zaytoun, in Cairo, in 1982 [1989 CE] (cont.)",
-    "incipit": "ወበውእቱ ፡  መዋዕል ፡  አስተር አየት ፡  ካዕበ ፡  እግዝእትነ ፡  ... ውስተ ፡  ብሔረ ፡  ግብፅ ፡  በላዕለ ፡  አሐቲ ፡  ቤተ ፡  ክርስቲያን ፡  ዘትሰመይ ፡  ዘይቱን ፡  ቅድስት ፡  ማርያም። ወሶበ ፡  ተሰምዓ ፡  ውስተ ፡  ዓለም ፡  አስተርእዮታ ፡  ለእግዝእትነ ፡  ... ፡  ውስተ ፡  ምድረ ፡  ግብፅ ፡  ተጋብኡ ፡  ሕዝብ ፡  ዘአልቦሙ ፡",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1224",
-    "title": "Thieves, including a man named Salomon Zallaqa, steal valuables from the patriarch's Addis Ababa church but when they try to do it again an invisible being attacks them with whips",
-    "incipit": "ወበውእቱ ፡  መዋዕል ፡  ዘውእቱ ፡  አመ ፡  ፳ወ፱ ፡  ለሰኔ ፡  ቦኡ ፡  ሠረቅት ፡  ውስተ ፡  ቤተ ፡  ክርስቲያና ፡  ለቅድስተ ፡  ቅዱሳን ፡  ማርያም ፡  እንተ ፡  ይእቲ ፡  መንበረ ፡  ፓትረያሪክ ፡  ዘኢትዮጵያ። ወእምኔሆሙሰ ፡  ለሠረቅት ፡  አሐዱ ፡  ይሰመይ ፡  ሰሎሞን ፡  ዘለቀ። ወእምድኅረ ፡  ቦኡ ፡  ውስተ ፡  ቤተ ፡  ክርስቲያን ፡  ሠረቁ ፡  ወበርበሩ ፡  ኵሎ ፡  ንብረተ ፡  ቤተ ፡  ክርስቲያን ፡  ወኵሎ ፡  ንዋየ ፡  ቅድሳት ፡  ወነሥኡ ፡  መጠነ ፡  ይክሉ ፡  ነሢአ ፡  ወሖሩ ፡  ወተሠወሩ ፡  በጊዜሃ።",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1225",
-    "title": "King Menelik (Menilek) II, the 19th c. Ethiopian monarch, and his gift to Addis Alam Maryam in Shoa and the thieves who enter to steal them but lose their ability to see, hear, and move",
-    "incipit": "ወበአሐቲ ፡  ዕለት ፡  እመዋዕል ፡  ዘው እቱ ፡  አመ ፡  ፲ወ፮ ፡  ለመስከረም ፡  ቦኡ ፡  ሠረቅት ፡  ውስተ ፡  ቤተ ፡  ክርስቲያና ፡  ለእግዝእትነ ፡  ማርያም ፡  ዘት ሰመይ ፡  አዲስ ፡  ዓለም ፡  ማርያም ፡  ወይእቲ ፡  ዳግማዊት ፡  ጽዮን ፡  በከመ ፡  ሰመያ ፡  ምኒልክ ፡  ዳግማዊ። ወሶበ ፡  ቦኡ ፡  እልክቱ ፡  ሠረቅት ፡  አኀዙ ፡  ይበርብሩ ፡  ኵሎ ፡  ንዋያተ ፡  ቤተ ፡  ክርስቲያን ፡  ወበህየ ፡  ረከቡ ፡  አክሊላተ ፡  ወዓሣዕነ ፡  ዘወርቅ ፡  ዘወሀባ ፡  ለጽዮን ፡  ማርያም ፡  ምኒልክ ፡  ንጉሠ ፡  ነገሥት ፡  ዘኢትዮጵያ ፡",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1227",
-    "title": "An Ethiopian girl who converts to Protestantism falls ill and is healed by the Virgin Mary and then returns to the faith",
-    "incipit": "ወሀለወት ፡  አሐቲ ፡  ወለት ፡  ዘትሰመይ ፡  ዳግማዊት ፡  በትዕይንተ ፡  አዲስ ፡  አበባ ፡  ወታፈቅራ ፡  ለእግዝእትነ ፡  ማርያም ፡  ... እምንእሳ ፡  በኵሉ ፡  ኅሊናሃ ፡  ወበኵሉ ፡  አልባባ ፡  ወኮነት ፡  ትቀንዕ ፡  በእንተ ፡  ሃይማኖታ ፡  ወባሕቱ ፡  አኀዘ ፡  ያመክራ ፡  ሰይጣን ፡  ጸላዔ ፡  ሠናያት። ወበእንተዝ ፡  ወለጠት ፡  ሃይማኖታ ፡  በነገረ ፡  ኂጣን ፡  ወበምክረ ፡  ሰይጣን ፡  ወኀደገታ ፡  ለእግዝእትነ።",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1229",
-    "title": "New Ethiopian Church: Part 1: The Virgin Mary demands that the nobles of a certain Ethiopian town build her a large new church and eventually they do",
-    "incipit": "ወሀሎ፡ ቤተ፡ ክርስቲያን፡ ዘሕኑጽ፡ በስማ፡ ወፈቀዱ፡ መኳንንት፡ ይሕንጽዋ፡ በክብር፡ ወኢያብሆሙ፡ ትካዘ፡ ዓለም፡ ወይ እቲሰ፡ ታስተር እዮሙ፡ በጻሕቅ፡ በውስተ፡ ሕልሞሙ። ወውእቶሙሰ፡ በዘገብሩ፡ እድሜ፡ ሐዲጎሙ፡ ኪያሃ፡ ሖሩ፡ ኀበ፡ ፀብዕ፡ ከመ፡ ይማህርኩ፡ ሀገረ፡ አረሚ",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1232",
-    "title": "Two nuns named Sefnegya and Atlasya become pregnant and Abba Sofonyos investigates (reworking of 158)",
-    "incipit": "ተአምር፡ ወኃይል፡ ዘገብረት፡ እግዝእትነ፡... ድንግለ፡ እስራኤል፡ ጠባብ፡ ናሁ፡ ተማኅፀና፡ ኀበ፡ ሥዕላ፡ መበለታት፡ እለ፡ ይነብራ፡ ውስተ፡ ደብረ፡ አባ ፡ ሶፎንዮስ ፡ ጽኑሳን፡ ክልኤሆን፡ መበለታት።",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1235",
-    "title": "Ethiopian Who Curses Mary Healed",
-    "incipit": "ወነበረ፡ ፩ ብእሲ፡ ወሬዛ፡ በአሐቲ፡ ሀገር፡ በፈለገ፡ ገነት፡ ወያስቆርር፡ ድንግልናሃ፤ ወውእቱሰ፡ ወሬዛ፡ ሐመ፡ ዓቢየ፡ ሕማመ፡ ወሔከ፡ ልሳኖ፡ ወይጸፍዕ፡ ገጾ፡ ከመ፡ እቡድ፤ ወአንከሩ፡ ሰብአ፡ ሀገር፡ አእሚሮሙ፡ ከመ፡ ጸረፈ፡ ስማ፡ ለእግዝእትነ …፨",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1239",
-    "title": "Book of Nagara Maryam: Month B: Part 01: A demon-pig (a possessed man who turns into a pig) argues with the Virgin Mary saying that another man is worse than him and the Virgin Mary banishes him into the sea.",
-    "incipit": "ወእምዝ፡ ተመይጡ፡ ኀበ፡ እግዝእትነ፡ ማርያም፡ ወአኀዝዋ፡ ወይቤልዋ፡ አሌለኪ፡ ኦወለተ፡ ዳዊት፨ እስመ፡ ትመውቲ፡ በእኩይ፡ ሞት፡ ወወሰድዋ፡ ቤተ፡ አምላክ፡ ወሰገደት፡ ድንግል፡ ውስተ፡ ምድር፡ ሥልሰ፡ ወትቤ፡ በነገረ፡ ዕብራይስጥ፡ ያስርሕ፡ ሮሕሮሕዴ፡ ኪያዴኬ፡ አኅሶርሮስ፡ ወእምዝ፡ ሰትየት፡ ማየ፡ ዘለፋ፡ ወአልቦ፡ ዘነከያ፡ወርእዮሙ፡ ሕዝበ፡ አይሁድ",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1242",
-    "title": "Book of Nagara Maryam: Month C: Part 01: The Virgin Mary condemns to death the wicked men, women, and children of Gedabierya and lets them stay in hell for two months",
-    "incipit": "ወሶበ፡ ተፈጸሙ፡ እሉ፡ ቃላት፡ እምአፉሃ፡ ለእግዝእትነ፡ ... አስተርአያ፡ ለእግዝእትነ፡ ግብተ፡ ገብርኤል፡ መልአክ፨ ወይቤላ፡ አሜን፡ አሜን፡ ለይኵን፡ ለይኩን፡ ወኵሎ፡ ዘሀለይኪ፡ ንግበር፡ ለኪ፨ ወዘንተ፡ ብሂሎ፡ ዓርገ፡ ውስተ፡ ሰማያት፨ ወሖረት፡ እግዝእትነ፡ ማርያም፡ ፍኖታ፡ ወበጽሐት፡ ኀበ፡ ሀገረ፡ ገዳቤርያ፡…",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1245-A",
-    "title": "Book of Nagara Maryam: Month C: Part 04: The Virgin Mary blesses the people and animals in the sea",
-    "incipit": "ወዓርገ፡ መልአክ፡ እግዚአብሔር፡ ውስተ፡ ሰማይ፡ ወእግዝእትነ፡ ማርያም፡ ነበረት፡ ህየ፡ ፮አውራኃ፡ ወይመጽኡ፡ ኀቤሃ፡ ወይትባረኩ፡ እምኔሃ፡ እድ፡ ወአንስት፡ አዕሩግ፡ ወሕፃናት፨ ወትቤሎሙ፡ እግዝእትነ፡ ማርያም፡ ኢይትረከቡ፡ መካናት፡ አንስት፡ ውስተ፡  ብሔርክሙ፡ …",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1246",
-    "title": "Book of Nagara Maryam: Month C: Part 07: After the children die who follow the boy Jesus walking on rays of light and he raises his playmates from the dead",
-    "incipit": "ወአኀዝዎ፡ ለእግዚእ፡ ኢየሱስ፡ ወወሰድዎ፡ ኀበ፡ ሀሎ፡ አብድንተ፡ ደቂቆሙ፡ ከመ፡ ይቅልዎ፡*  በህየ፡ ወቅተልዎሙ፡ እግዝእትነ፡ ማርያም፡ እንዘ፡ ትበኪ፡ ወትብል፡ ወይ፡ ሊተ፡ አሌሊተ፨ ኢይቤለከኑ፡ * …",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1247",
-    "title": "Book of Nagara Maryam: Month C: Part 08: Joseph reprimands the Virgin Mary for discplining him and Jesus goes to the sea with his friends",
-    "incipit": "ወበአሐቲ፡ ዕለት፡ ትቤሎ፡ እሙ፡ ሑር፡ ወልድየ፡ ወአምጽአ፡ ማየ፡ ወሖረ፡ ውስተ፡ ፈለግ፡ ወሰብሮ፡ ለውእቱ፡ ንዋይ፡ ዘይብልዎ፡ ማሕወ፡ ወአድቅቆ፡ ጥቀ፨ ወዓቈረ፡ ማየ፡ በአልባሲሁ፡ ወፆረ፡ ዲበ፡ ቴከላሁ፡ ወሖረ፡ ወይቤላ፡ ለእሙ፡ ሕንኪ፡ እማየ፤ ወትቢ፡ እግዝእትነ፡ ማርያም፡ ዕፁ፡ ብኬ፡ ዝንቱ፡ ግብር፡ …",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1248",
-    "title": "Book of Felsata la-Maryam??: New: Dormition: A sequel to The Virgin Mary giving her shroud to Saint Thomas, with people being healed and the apostles each taking a piece",
-    "incipit": "ወዘንተ፡ ብሂሎ፡ መጠዎሙ፡ ለሐዋርያት፡ መግነዘ፡ እግዝእትነ፨ ማርያም፡ አሜሃ፡ በከዩ፡ ላዕሌሁ፡ ብካየ፡ መሪረ፨ ወሀለዉ፡ ህየ፡ ፫ ድውያን፡ ፩ መጻጉዕ፡ ፅውስ፡ ወዕውር፡ ወ፩ ወርኃዊ፨ ወካሐዓንሂ፡ ብዙኃን፡ ድውያን፡ ወእልክፍዎሙ፡ እመግነዘ፡ እግዝእትነ፡ ማርያም፡  …",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1250",
-    "title": "Dabra Sedeneya's Icon: Part 3: The chief magistrate goes blind due to disrespecting the icon and begins protection for all pilgrims there",
-    "incipit": "ተአምረ፡ ገብረት፡ እግዝእትነ፡...፨ በሀገረ፡ ጼዴንያ፡ በሥዕላ፨ ወእምዝ፡ አበአ፡ እዴሁ፡ ሊቀ፡ መኳንንት፡ ወገሠሣ፡ ለሥዕል፨ ወውኅዘ፡ ቅብዕ፡ እንተ፡ አፃብዒሁ፡ በከመ፡ ቀዳሚ፨ ወካዕበ፡ አብአ፡ እዴሁ፡ እንተ፡ ዘባና፡  …",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1252",
-    "title": "put in Dabra/Dayr QwasqwuamBook of Vision of Timothy of Alexandria Rev?: Part 01???: A wine carrier stumbles and breaks all the church's wine vessels and the Virgin Mary repairs them due to the prayers of Bishop Timothy in Dabra Qwasqwuam",
-    "incipit": "ወበ፩እመዋዕል፡ ነሥአት፡ ብእሲተ፡ ልጕነ፡ ወይን፡ ወፃሕበ፡ ዘይት፨ ወይእቲ፡ ትብል፡ ትፈቅድ፡ ትምጻእ፡ ወዖደ፡ ኀቤነ፡ ምስሌሆሙ፡ ኅቡረ፨ ወተዓቀፈ፨ አድጋ፡ ወትሰብሩ፡ ንማዕው፡ ዘኮነ፡ ውስቴቶሙ፡ ወይን፡ ወዘይት፨ ወኢተርፈ፡ ውስተ፡ አጸሕዐት፡ እምኔሆሙ፡ ወኢምንትኒ፡ እስመ፡ ኢትረክብ፡ …",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1254",
-    "title": "put in Dabra/Dayr QwasqwuamBook of Vision of Timothy of Alexandria Rev?: Part 02: The Virgin Mary tells Timothy to write down what she has shown and that whoever believes in the book will receive good things and whoever doesn't will go to hell (dupe) in Dabra Qwasqwam",
-    "incipit": "ወይእዜኒ፡ ጸሐፍ፡ ተዝካርየ፡ ዘንተ፡ ኵሎ፡ ዘርኢከ፡ ውስተ፡ ዛቲ፡ ኰጕሕ፡ ወጽናዕ፡ ወተኃየል፨ እስመ፡ ዝንቱ፡ መካን፡ ዘኃደርኩ፡ ውስቴቱ፡ እምቅመ፡ እሑር፡ ኀበ፡ ደብረ፡ ቍስቋም፡ ወጸሐፍ፡ ካዕበ፡ ከመ፡ ኵሉ ዘይጽሕፋ፡ ለዛቲ፤ ገድልየ፡ ወትሕትናየ፡ …",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1255",
-    "title": "Book of Ledata la-Maryam: New: Part 01??: Conception: Zachariah warns Hanna, the mother of the Virgin Mary, not to sleep with her husband",
-    "incipit": "ወርእዮ፡ ዘካርያስ፡ አእመረ፡ ከመ፡ ፀንሰት፡ ይእቲ፡ እስመ፡ በይእቲ፡ ዕለት፤ ቆመ፡ ቅድሜሁ፡ መልአክ፡ እግዚአብሔር፡ ወዜነዎ፡ በእንቲአሃ፡ ከመ፡ ይንግራ፡ ወመልአ፡ መንፈስ፡ ቅዱስ፡ ላዕለ፡ ዘካርያስ፨ ወይቤላ፡ ለሐና፡ ስምዒ፡ ወለተ፡ አሮን፡ ዘንተ፡ ነገረ፡ ዘእብለኪ፡ ወዕቀቢዮ፨…",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },
@@ -10060,32 +5905,6 @@ const MIRACLES_OF_MARY = [
     ]
   },
   {
-    "id": "1267",
-    "title": "High Priest Becomes a Christian",
-    "incipit": "ወእምዝ፡ አዘዞሙ፡ እግዚእ፡ ለ፸፯ሊቃነ፡ መላእክት፡ ያውርዱ፡ ሥጋሃ፡ ውስተ፡ ምድር፡ ወገብሩ፡ ከማሁ፡ ወበጽሐት፡ ቤተ፡ ልሄም፡ ወኖመት፡ ዲበ፡ ምስካባ፡ ወዐርጉ፡ መላእክት፡ ውስተ፡ ሰማይ፨ ወነበረት፡ እግዝእትነ፡ ማርያም፡ ፵መዓልተ፡ በዳኅና፡ ወበሰላም፡ እንዘ፡ ታነክር፡ በእንተ፡ ዘርእየት፡ ወሰምዓት፡ ስብሖቶ፡ ለእግዚአብሔር፡ ….",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1269",
-    "title": "The Apostles Abandon Mary's Body III",
-    "incipit": "ወእምድኅረ፡ ፬ወርኅ፡ ፲ወ፯ዕለታት፡ ተጋብኡ፡ ሐዋርያት፡ በደብረ፡ ዘይት፡ ወተበሀሉ፡ በበይናቲሆሙ፡ ኃፍረት፡ ለነ፡ ቀዳሚ፡ ጐየይነ፡ ውስተ፡ ምኅባእ፡ ወኀደግነ፡ ወልዳ፡ ከመ፡ ይቅትልዎ፡ ወይእዜኒ፡ ኀደግነ፡ እሞ፡ በዲበ፡ ምድር፡ ወኢያእመርነ፡ ዘኮነት፨ ወተንሥአ፡ ጳውሎስ፡ ወይቤሎሙ፡ ኢርቱዕ፡ ለነ፡ ንንበር፡ …",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
     "id": "1274",
     "title": "Drunk Rich Man Gives Alms",
     "incipit": "ወሀሎ ፡ ፩ብእሲ ፡ ክርስቲያናዊ ፡ ባዕል ፡ ጥቀ ፡ በንዋየ ፡ ዓለም ፡ ወኢያኅጥኦ ፡ እግዚአብሔር ፡ ምንተኒ ፡ እምዘፈቀደ ፡ ወኮነ ፡ ዝንቱ ፡ ብእሲ ፡ መዓትመ ፡ ወድንፅወ : ወይዘብጥ ፡ ሰብአ ፡ ቤቱ ፡ ወአግዋሪሁ ፡ ወኢይምህኮሙ ፡ ምንተኒ ፡ ወለነዳያንሂ ፡ ኢይምሕሮሙ ፡ ወኢይመጸውቶሙ",
@@ -10125,19 +5944,6 @@ const MIRACLES_OF_MARY = [
     ]
   },
   {
-    "id": "1280",
-    "title": "Thief Steals Widow's Sheep",
-    "incipit": "ወሀለወት፡ አሐቲ፡ ዕቤርት፡ ነዳይት፡ ውስተ፡ አሐቲ፡ ሀገር፡ ወትገብር፡ ተዝካራ፡ ለእግዝእትነ፡ ማርያም፡ ወአልባ፡ ንዋይ፡ ዘእንበለ፡ ፩በግዕ፡ ወትሴሰይ፡ በሤጠ፡ ጻጕሩ፡ ወሀሎ፡ ፩ብእሲ፡ ጐረቤታ፡ ዘስሙ፡ ያዕቆብ፡ ወሠረቃ፡ ውእቱ፡ ወወሰዶ፡ ወኃረዶ፡ ወበልዖ።",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
     "id": "1281",
     "title": "Mary Heals a Possessed Egyptian Man",
     "incipit": "ወሶበ፡ ትወርድ፡ እግዝእትነ፡ ማርያም፡ ውስተ፡ ምድረ፡ ግብጽ፡ ጐይያ፡ እምኀበ፡ ሄሮድስ፡ ርጉም፡ ወረከበት፡ በውስተ፡ ፍኖት፡ ፩ብእሴ፡ ዘጋኔን፡ እንዘ፡ ይደዊ፡ ፸ዓመተ፡ ወኢይነውም፡ መዓልተ፡ ወሌሊተ፡ ወይፄምድ፡ ሥጋሁ፡ በአዕባን፡ ወመዋቅሕትነ፡ ይሰብር፡ ዘልፈ፡",
@@ -10147,32 +5953,6 @@ const MIRACLES_OF_MARY = [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
         "text": "<p>One day his mother said to [her son Jesus Christ,] “My son, go and fetch water.” </p><p>He went to the river but [accidently] broke a[n valuable] bottle made of glass. He [totally] shattered it. </p><p>So, [instead], he put the water in his clothes and carried them home. </p><p>He said to his mother, “Here mommy!”  </p><p>Our Lady said, “This is wonderful! [But] where’s my glass bottle that I gave you?” </p><p>Then, she snatched up the twisted cloth with which she used to carry him on her back. </p><p>She trampled him down on the ground, grabbed his legs [to keep him still], and beat him sternly, saying, “I am destroyed because of you. All this suffering and pain I have is because of you. You were born to destroy me.”  </p><p>Jesus cried out, “My dear mother, why are you beating me like this? Your glass bottle will not be gone forever. Isn’t this [amount of beating] enough?” </p><p>So, she stopped beating him. </p><p>Then, Jesus went to the river and put the broken pieces together. He made them whole, like they had been before, without [the bottle having] any problem. </p><p>He brought it to his mother, saying, “Here is your glass bottle, for which you beat me.” He placed it in front of her and ran off to play with the other children. </p><p></p><p>Then, Jesus brought [clay] mud from the river and created big [life-sized] birds with it. He breathed on them, and they flew! Some of them were white, some were spotted with color, some were black. Some of them were snow white. </p><p>All the other children began to try to create [birds] like him [and breathe life into them]. However, their [mud] figures kept falling apart and returning to dust, [without] ever moving. The children wondered [why their efforts weren’t working]. </p><p>One child, named Jacob the son of Joseph,  said to Jesus, “What’s the reason why we can’t [create living clay birds]?” </p><p>Lord Jesus replied, “Because of your lack of faith. Also, God can do whatever he wants, while a human being can’t breathe the spirit [of life] because a human being is just a creature.” </p><p>The boy Jacob fell down at the feet of Our Lord Jesus Christ, crying. He said, “My Lord, enable me to do what you do. My heart has swollen up and my throat is sore because of all my breathing [attempts]! Yet the clay birds did not move.” </p><p>Jesus replied, “You can’t do what I do. Rather say to the birds, ‘The son of Mary tells you to rise!’” </p><p>Jacob did as Jesus commanded him and breathed on the clay birds three times. Instantly, the clay birds flew up into the air. All of the children were astounded. </p><p>That evening at dusk, Our Lady Mary and Joseph came looking for Jesus when they didn’t find him [at home]. </p><p>Joseph said to Mary, “Why did you beat him? Didn’t you carry him in your womb? Didn’t you breastfeed him?” </p><p>While Joseph was saying this, tears flowed from her eyes. They finally came to where Jesus was. His mother said, “My dear son, why did you do this to us? I and your father were looking for you.” </p><p>Jesus replied, “My dear mother, didn’t you know that I’m [always] with my Father?” </p><p>Our Lady wondered about the meaning of this statement, but took Jesus’s hand and took him home. </p><p>[Later,] the children told her all about what Jesus did. She wondered but kept it in her heart. </p><p></p><p>After ten days, the Egyptian children told Jesus about what their fathers were doing, saying, “There is a stream where our parents do sorcery, and that stream does anything they ask it to do.  Our parents reward it with an animal head [as payment,] such as a dog’s head or a cat’s head. They tell it, ‘Carry us like a chariot.’ Then, it will carry them, with their animals and [the whole] city, for a seven-month trip and bring them back in just one day. If our parents tell it, ‘Kill [so and so] for us,’ it will kill for them by stoning. Our parents consider it to be like God’s power. But, it is just Satan’s power!”</p><p>Jesus said to the children who told him, “My friends, let’s go to the stream so that we might check it out.”</p><p>The children replied, “If we go to it, our parents will kill us and the stream will be angry at us as well.” </p><p>Lord Jesus replied, “I say to you, not even one hair will fall from your head.”</p><p>So, all of them got up and went to the stream. </p><p>[When] Jesus saw the stream, he said, “Yado’, Yada’, Kerboda’.” He then seized the stream with his hand, wrapped it up like a garment, carried it up from its stream bed, and placed it down in one spot where it looked like a hill. The stream’s depth [became its height and it] was 370 cubits, [tall, as measured] by a human arm. Jesus saw in the stream the homes of numerous demons, male and female, [the type who live in the water and] who keep giving birth and multiplying [in the flesh].</p><p>He captured the demons and told them, “Come out and go to the city of Rome. Fulfil the commands of the Roman people and do whatever they wish, whatever that might be.”</p><p>About this, the book says, “The Romans will subdue the demons.” </p><p></p><p>After this, Jesus left, and the children went to their homes.</p><p>Our Lady said, “Where did you spend the day, my son?”</p><p>He replied, “I spent the day revealing my heavenly Father’s power.” </p><p>When she heard this, she was fascinated. </p><p>Then, those Egyptian children told their parents everything that had happened and what Jesus had done to the stream, how he had cast out demons. </p><p>The parents stayed at home that night, but in the morning, they all went to Our Lady Mary. They bowed down before her and said, “You and we have taken a solemn vow not to harm one another.”</p><p>Our Lady replied, “What’s happened? Tell me.”</p><p>They said, “That stream was our father! It was our mother! When our enemies surrounded us, we used to go to the stream and say, ‘We will give you the head of an animal.’ Then, immediately, God would hear us and annihilate all our enemies by stoning them.”</p><p>Our Lady replied to the Egyptians, “Wait, let’s go and see this stream.”</p><p>They all—men and women, old and young—went with her. </p><p>Lord Jesus also went with them, to show them the stream that he had stood up like a hill and how its riverbed had now become an immeasurable abyss.</p><p>Our Lady Mary then begged Our Lord Jesus, “Release the stream so it can return to its riverbed. Otherwise, there will be hostility between these people and us.”</p><p>When Jesus heard his mother’s request, he [instantly] longed to erase the people because of the blindness of their hearts.</p><p>But, his mother said, “If you want to erase them, then erase me from the Book of Life.” </p><p>Lord Jesus replied, “May all those who hate you be erased, forever and ever. Amen.”</p><p>May her prayers, blessings, and the mercy of her son be with her servant Gabra Maryam, forever and ever. Amen.</p>"
-      }
-    ]
-  },
-  {
-    "id": "1283",
-    "title": "The Church in a Cave",
-    "incipit": "ስምዑ፡ ዘገብረት፡ ሎቱ፡ ለስምዖን፡ በ፩ዘመን፡ እንዘ፡ ይጽሕቅ፡ ወትረ፡ በዘያሠምራ፡ በሃይማኖት፡ መለኮታዊ፡ ወይትዌከል፡ ባቲ፡ እምአሜ፡ ንእሱ፡ ይተግህ፡ ላቲ፡ ለሐኒጸ፡ ቤተ፡ ክርስቲያና፡ በምድረ፡ አምሐራ።",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1284",
-    "title": "The Blessing of the Animals",
-    "incipit": "ወእንዘ፡ ሀለወት፡ እግዝእትነ፡ ... ዐርገ፡ መልአከ፡ እግዚአብሔር፡ ውስተ፡ ሰማይ፡ ወነበረት፡ እግዝእትነ፡ ህየ፡ ፯ተ አውራኃ፡ ወይመጽኡ፡ ኀቤሃ፡ ሰብአ ሀገር፡ ወይትባረኩ፡ እምኔሃ፡ እድ፡ ወአንስት፡ አዕሩግ፡ ወሕፃናት፡ ወትቤሎሙ፡ ኢይትረከባ፡ መካናት፡ አንስት፡ ውስተ፡ ብሔርክሙ። ወይለዳ፡",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "Mehari Worku with Wendy Laura Belcher",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },
@@ -10298,175 +6078,6 @@ const MIRACLES_OF_MARY = [
     ]
   },
   {
-    "id": "1295-B",
-    "title": "The Apostles Abandon Mary's Body II",
-    "incipit": "ወእንዘ፡ ሀለወት፡ እግዝእትነ፡ ... ተሀውኩ፡ አይሁድ፡ ከመ፡ መዋግደ፡ ባሕር፡ ኃሠሡ፡ ለፌ፡ ወለፌ፡ ወስእኑ፡ ረኪቦታ፡ ወተበሀሉ፡ በበይናቲሆሙ፡ ምንትኑ፡ እንጋ፡ ኮነት፡ ማርያም፡ ውኅጣኑ፡ ምድር፡ ወተኃፍሩ፡",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "Mehari Worku with Wendy Laura Belcher",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1296",
-    "title": "Mary Converses with the Angel Gabriel",
-    "incipit": "አመ፡ ፳ወ፱ ፡ ለመጋቢት፡ ርእየቶ፡ ለመልአክ፡ በፍሥሐ፡ እግዝእትነ፡ ... ፡ ወትቤሎ፡ ርእዮትከ፡ ክቡር፡ ወዜናከ፡ ፍርሃት፡ ወነድከ፡ ይወጽእ፡ ወፍቅሩ፡ ለእግዚእከ፡ ኢይትዓበይ፡ ወከመ፡ እትወከፍከ፡ ዕፁብ፡ ው እቱ፡ ወይቤላ፡ መል አክ፡ ሠናየ፡ ዜና፡ አምጻእኩ፡ ለኪ፡ ከመ፡ ትለዲ፡ ለእግዚእኪ፡ አርአይኩኪ፡ ሕፃነ፡",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "Mehari Worku with Wendy Laura Belcher",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1297",
-    "title": "Kings Abraha and Asbeha Build Church in Aksum",
-    "incipit": "ስምዑ፡ ዘንነግረክሙ፡ ኦ ሕዝበ፡ ክርስቲያን፡ እግዚአብሔር፡ ያባርክሙ፡ ወያብርህ፡ አዕይንተ፡ አልባቢክሙ፡ ለሰሚዓ፡ ተአምሪሃ፡ ለመቅደሰ፡ እምነ፡ ጽዮን፡ ገበዘ፡ አክሱም፡ እለ፡ ትናፍቁ፡ በልብክሙ፡ ወእትብሉ፡ ኢሀለወት፡ ጽላት፡ ዘሙሴ፡ በምድረ፡ አክሱም፡ ዓባይ፡ ሀገረ፡ እግዚአብሔር፡ ዳግሚት፡ ኢየሩሳሌም፡ ፀወነ፡ ኵሉ፡ ዓለም። ወሰሚዓክሙ፡ ሃይማኖተ፡ እም ዓላውያን። አእምሩ፡ ወለብው፡ ዘገብረ፡ እግዚእነ፡ ተአምረ፡ ወመንክረ፡ በመንግሥተ፡ አብርሃ፡ ወአጽብሐ፡ ነገሥተ፡ አክሱም። እንዘ፡ ጳጳስነ፡ አባ፡ ሰላማ፡ ከሣቴ፡ ብርሃን።",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1298",
-    "title": "Zion's Victory over Soldiers in Aksum",
-    "incipit": "ወእምዝ፡ ገብሩ፡ ሐውልተ፡ ዘዕብን፡ በአምሳለ፡ ትዕምርተ፡ መስቀል፡ ከመ፡ ኢይጽብዕዎሙ፡ ሰይጣናት፡ ለሰብአ፡ ቤታ፡ ለጽዮን፡ ገበዘ፡ አክሱም፡ እኂዞሙ፡ ሕገ፡ ወንጌል። እስመ፡ ኢተአውቀ፡ ትእምርተ፡ መስቀሉ፡ ለእግዚእነ፡ ወቦ፡ እለ፡ ነበሩ፡ በሕገ፡ ኦሪት፡ መጠነ፡",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "Mehari Worku with Wendy Laura Belcher",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1299",
-    "title": "The Holy Spirit in the Church in Aksum",
-    "incipit": "ተአምር፡ ወመንክር፡ ይትገበር፡ ለለዕለቱ፡ በመቅደሰ፡ እምነ፡ ጽዮን፡ ገበዘ፡ አክሱም፡ አልቦ፡ ኍልቍ፡ ባሕቱ፡ ሰማዕነ፡ እም አበው፡ ቅዱሳን፡ ከመ፡ ይወርድ፡ መንፈስ፡ ቅዱስ፡ ለለሰዓቱ፡ ፫ ጊዜ፡ ፩ ጊዜ፡ በጸሎተ፡ ዕጣን። ወ፩ ጊዜ፡ ሶበ፡ ይትነበብ፡ መጽሐፈ፡ ተአምሪሃ፡ ለእግዝእትነ፡",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1300",
-    "title": "The Open Secret in the Church in Aksum",
-    "incipit": "ወካዕበ፡ ተገብረ፡ በዘመንነ፡ ሶበ፡ ንህለ፡ መቅደሳ፡ ለጽዮን፡ እምነ፡ ከሰተት፡ ሎቱ፡ ጥበበ፡ ለ፩ ፡ ሌዋዊ፡ እምደቂቃ፡ ዘተሰወረ፡ ቀዳሚ፡ እማዕምራን፡ ተሐንፀ፡ በፈቃደ፡ እግዚአብሔር፡ በከመ፡ ይቤ፡ እግዚእነ፡ በወንጌል፡ ዘሠወርኮ፡ እማእምራን፡ ወከሰትከ፡ ለሕፃናት፡ ኦ ሰብአ፡ ኢትዮጵያ፡",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "Mehari Worku with Wendy Laura Belcher",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1301",
-    "title": "The Revelation of the Golden Throne",
-    "incipit": "ስምዑ፡ ዘገብረት፡ ሎቱ፡ ለገብረ፡ ዜአሃ፡፡ ዘይሰመይ፡ ገብረ፡ ማርያ፡ ወአምጽአት፡ ሎቱ፡ መንበረ፡ ዘወርቅ፡ ዘይሠርቁ፡ ቦቱ፡ ፲ወ፪፡ ብርሃናት፡ ወቦቱ፡ ባዕበ፡ ይሠርቁ፡ ፲ወ፪፡ ከዋከፍት፡ ወይመስል፡ ለውእቱ፡ መንበር፡ ክበቡ፡ ከመ፡",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1302",
-    "title": "Mary Defeats Serpent in Egypt and Goes to Ethiopia",
-    "incipit": "*  እምህየ፡ ወወፅአት፡ ጊዜ፡ ነግህ፡ ወተለውዋ፡ እድ፡ ወአንስት፡ እንዘ፡ ይበክዩ፡ ወየኃዝኑ፨ ወይብሉ፡ እግዝእትነ፡ ንበሪ፡ ምስሌነ፨ ወትቤሎ፡ እግዝእትነ፡ ማርያም፡ ለምንት፡ ትሰብሩኒ፡ ልብየ፡ ለእመ፡ ፈቀደ፡ ወልድየ፡ እገብእ፨ …",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1303",
-    "title": "Mary Removes Snake from Official's Belly",
-    "incipit": "ወእምዝ፡ አስተርአዮ፡ መልአክ፡ በሕልም፡ ወይቤሎሙ፡ ፃኡ፡ እምዝየኒ፡ ወበሳኒታ፡ ተንሥኡ፡ ወኃለፋ፡ እምኅየ፡ ወበጽሑ፡ ሀገረ፡ አርዴሴባ፡ ወዓቢይ፡ ሀገር፡ ወነበሩ፡ ኀበ፡ አንቀጽ፨  ወርእዮሙ፡ ሰብእ፡ ሀገር፡ ተበሀሉ፡ በበይናቲሆሙ፡ ምንተ፡ ትሤኒ፡ ዛቲ፡ ብእሲት፨ ወዝ፡ ሕፃን፡ ይሤኒ፡ እምኔሃ፡ ወጊዜ፡ ፍና፡  …",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1304",
-    "title": "Mary Saves Those Jesus Drowned",
-    "incipit": "ወአንሥአ፡ አዕይንቲሁ፡ ውስተ፡ ሰማይ፡ ወሰፍሐ፡ እደዊሁ፡ ወይቤ፡ ኦአቡየ፡ አባ፡ ኵሉ፡ ይትከሀለከ፡ ወአልቦ፡ ዘይሰአነከ፨ ስምአኒ፡ እግዚኦ፡ ጸሎትየ፡ በእንተ፡ ኵሉ፡ ሕዝብከ፡ ከመ፡ ይእመኑ፡ ብከ፨ ከመ፡ አንተ፡ ፈነውከኒ፡ እብለከ፡ ፍትሐ፡ ለባሕር፡ እማዕሰራ፡ ከመ፡ ትሑር፡ ኀበ፡ ምዕላዳ፡ …",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1305",
-    "title": "Book of Nagara Maryam: Month N: Part 01: Life: Journey: King Meman in Judah accuses Mary of being a sorceress and Mary turns the people into stone and then back (like ID 1261)",
-    "incipit": "ወሶበ፡ በጽሐት፡ እግዝእትነ፡.... ብሔረ፡ አይሁድ፡ ኀበ፡ ንጉሠ፡ ሜማን። ወይቤሎሙ፡ ለመኳንንቱ፡ ትሰምዑኑ፡ ዘንተ፡ ነገረ፡ እስመ፡ ናሁ፡ መጽአት፡ ብእሲት፡ መሠሪቅ፡ እምብሔረ፡ አይሁዳ።",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1306",
-    "title": "Book of Nagara Maryam: Month N: Part 02: Life: Journey: People refuse food to Mary and Jesus turns their crops into stone and causes a famine",
-    "incipit": "ወበውእቱ፡ መዋዕል፡ እንዘ፡ የሐውሩ፡ በፍኖት፡ ይቤላ፡ ዮሴፍ፡ ለእግዝእትነ፡.... ኦእግዝእትነ፡ መንተ፡ ንብል፡ አልቦ፡ ማይ፡ በዝ፡ ብሔር። ወትቤሎ፡ ንሑር፡ ኀበ፡ እለ፡ ይከይዩ፡ ዓተረ፡ ወረከቡ፡ በህየ፡ እለ፡ ይሜሕሩ፡ ምሕረተ።",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1307",
-    "title": "Homily on the Dormition of Mary and how the people praised Jesus Christ who was born from her",
-    "incipit": "ስምዑ፡ ንንግርክሙ፡ በእንተ፡ ፍልሰታ፡ ለእግዝእትነ፡ እምዝ፡ ዓለም፡ ከመ፡ ትሰብሖ፡ ለወልዳ፡ ዘተወለደ፡ እምኔሃ",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
     "id": "1308",
     "title": "Homily on the spirit of the Virgin Mary’s Son: Part 2: The Virgin Mary preparing the author to praise her",
     "incipit": "ኃይልየኒ፡ መንፈስ፡ ወልዳ፡ ከመ፡ አውጽአ፡ ፪ፍና፡ ድንግልናሃ፡ ወድንግልናሃ፡ በሥጋሃ። ወድንግልናሃ፡ ህሊናሃ፡ ዘኢጽልወትየ፡ እምድር። አውጸውዓት፡ ስማ፡ በአፋየ፡ ርኩስ፡ ወከናፍርየ፡ ጕህልዊት።",
@@ -10489,32 +6100,6 @@ const MIRACLES_OF_MARY = [
       {
         "author": "Jeremy Brown & Dawit Muluneh with Wendy Laura Belcher",
         "text": "<p>A miracle [performed] by Our Holy Lady Mary, the Two-fold Virgin, the Mother of God, may her prayers and her blessings and the mercy of her beloved son, be with her servant Walda Yohannes, forever and ever, amen.</p><p>What follows is what happened [regarding fire and incense] in a certain town. </p><p>A certain man made a vow to her[, that is, Our Lady Mary,] giving her incense when he had it.</p><p>One day, a fire arose in the house of that man. </p><p>The fire rose up and burned all his possessions. Nothing remained. Only the incense was saved by the power of Our Lady Mary[, since it belonged to her]. </p><p>He walked out with his uncharred box of incense, which looked [undamaged,] as though it had been sitting in a new house. </p><p>Having heard about this, the Christian people marveled at the power of Our Lady Mary. </p><p>A different day [in that same town], while the clergy were performing the mass, a priest came out to [swing the censer and] incense [the church]. </p><p>When the clergy arrived at the icon of Our Holy Lady Mary, the Two-fold Virgin, a deacon stood in front of it and lit a candle.</p><p>But, that lit candle [set them on fire and] burnt all the way up the curtains to the church ceiling. </p><p>However, while the clergy were staring at it, the fire went out due to the power of Our Lady. </p><p>May her prayer and her blessing and the mercy of her beloved son be with us, forever and ever, amen.</p>"
-      }
-    ]
-  },
-  {
-    "id": "5007",
-    "title": "Arabic: The son of a wealthy church administrator wants to inherit his father's position",
-    "incipit": "",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "5008",
-    "title": "Arabic: The woman, Euphemia, who cut off her lips to prevent herself from being married",
-    "incipit": "",
-    "manuscript_count": 1,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },
@@ -10579,58 +6164,6 @@ const MIRACLES_OF_MARY = [
     ]
   },
   {
-    "id": "388",
-    "title": "Saint Samuel of Waldebba (Samuʾel), the 15th c. Ethiopian saint, was privileged to have the Virgin Mary bring him gifts",
-    "incipit": "ወሀሎ፡ አሐዱ፡ ብእሲ፡ ጻድቅ፡ ወንጹሕ፡ ዘይነብር፡ ውስተ፡ ገዳም፡ ዘስሙ፡ ዋሊ፡ ወይሰመይ፡ ሳሙኤል፡ ወውእቱ፡ ያነብብ፡ ወትረ፡ ውዳሴሃ፡ ለእግዝእትነ፡ በዓንብዕ፡ ወበገዓር፡ ብዙኅ",
-    "manuscript_count": 0,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "460-A",
-    "title": "Book on Ark from Kings: Part 1A: When Israel Sins against the Law, the Philistines defeat them and carry off the Ark of Zion, which then chastizes them.",
-    "incipit": "ወአመ፡ ሀለወት፡ ጽዮን፡ ታቦተ፡ ሕጉ፡ ለእግዚአብሔር፡ ዘትከውኖሙ፡ ኀይለ፡ ለእስራኤል፡ ወተሐውር፡ ቅድሜሆሙ",
-    "manuscript_count": 0,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "550",
-    "title": "Book of Felsata la-Maryam??: JOld?: Dormition: The Transitus of The Virgin Mary. (623, 502, 532, 550 similar)",
-    "incipit": "ናሁ፡ እዜንወክሙ፡ ዕበያ፡ ለእግዝእትነ፡…. እምአመ፡ ዕረፍታ፡ እስከ፡ ፍልሰተ፡ ሥጋሃ፡ በ፪፻ወ፮፡ ዕለታት፡ ወረደ፡ እግዚእነ፡ ኢየሱስ፡ ክርስቶስ፡ ወተክህነ፡ ላዕለ፡ በድና፡ ለእሙ፡ ወኢኀደጋ፡ ትኑም፡ ከመ፡ ባዕዳን፡ ሰብእ",
-    "manuscript_count": 0,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "551",
-    "title": "Life: The Jewish magistrate who believed in Christ when he saw the Virgin Mary's miracles in her house",
-    "incipit": "ወሀሎ ፡ ፩መኰንን ፡ አይሁዳዊ ፡ ዘፈነውዎ ፡ ረበናተ ፡ አይሁድ ፡ ወሊቃናተ ፡ ካህናት ፡ ውስተ ፡ ቤታ ፡ ለእግዝእትነ ፡ ... ወሖረ ፡ ምስለ ፡ ወዓልያኒሁ ፡ ፴ውስተ ፡ ቤታ ፡ ሶበ ፡ ርእየ ፡ ተአምረ ፡ ዘገብረት ፡ ዘከመ ፡ አውደቀቶሙ ፡ ወአውዓየቶሙ ፡ በእሳት",
-    "manuscript_count": 0,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
     "id": "552",
     "title": "Homily on the Virgin Mary's symbolism in Scripture as a dove.",
     "incipit": "ስምዑ፡ ካዕበ፡ ኦሕዝበ፡ ክርስቲያን፡ ተአምሪሃ፡ ለእግዝእትነ፡…. ዘሀለወት፡ እምቅድመ፡ ሰማያት፡ ወምድር፡ በሕሊና፡ አምላክ። ርግብ፡ ዘአምጽአት፡ ብስራተ፡ ለኖኅ",
@@ -10644,19 +6177,6 @@ const MIRACLES_OF_MARY = [
     ]
   },
   {
-    "id": "602",
-    "title": "A woman marries seven times, but each time her husband is killed by a demon.",
-    "incipit": "ወካዕበ ፡ ንዝኔንወክሙ ፡ ወናየድዓክሙ ፡ ንስቲተ ፡ መጠነ ፡ ንክል ፡ ነጊረ ፡ ዘገብረት ፡ ተአምረ ፡ ወመንክረ ፡ ለአሐቲ : ብእሲት ፡ እንተ ፡ ባቲ ፡ ንኔን ፡ ወይቀትል ፡ ውእቱ መንፈስ ፡ ርኵስ",
-    "manuscript_count": 0,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
     "id": "614",
     "title": "Book of Felsata la-Maryam: [Chaine Part 09] Dormition: The Apostles decree that the events concerning the Transitus of The Virgin Mary that they have witnessed three times should be written down and that be commemorated three times a year.",
     "incipit": "ወፈጺሞሙ፡ ሐዋርያት፡ ጸልዩ፡ ወይቤሉ፡ ንጽሕፍ፡ ኵሎ፡ ዘርኢነ፡ ወዘሰማዕነ፡ ወዘጠየቅነ፡ በእንተ፡ ፍልሰታ፡ ለእግዝእትነ፡ ማርያም፡ እምዝዓለም። በ፫፻፵፡ ወ፭፡ ዓመት፡ ኮነ፡ ፍልሰታ፡ ለእግዝእትነ። ወናሁ፡ ሠራዕነ፡ ወአዘዝነ፡ ከመ፡ ይግበሩ፡ ተዝካራ፡ ለእግዝእትነ፡ ማርያም፡ ወቡርክት፡ ለለዓመት፡ ፫፡ ጊዜ",
@@ -10666,14 +6186,6 @@ const MIRACLES_OF_MARY = [
       {
         "author": "Jeremy Brown with Wendy Laura Belcher",
         "text": "<p>A miracle performed by Our Lady Mary, the Holy twofold Virgin, Mother of God. May her prayers and her blessings be with us, forever and ever, amen. </p><p>A second time, we will tell you and describe for you the little bit we are able to tell you about the miracle and wonder that Mary performed for a certain woman who had a demon inside of her. </p><p>That impure spirit [in her] killed anyone who married that woman. </p><p>The woman killed seven men and then all of the people were afraid of her.</p><p>So she lived alone, living with no man.</p><p>She begged God [for freedom from the demon], with much prayer and fasting. </p><p>So, Our Lady Mary brought up that woman’s petition to God. Through Our Lady Mary’s prayer and her petition, she healed the woman from that demon, driving it out.</p><p>May her prayer and her blessing be with her beloved [name erased] forever and ever, amen.</p>"
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      },
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },
@@ -10704,45 +6216,6 @@ const MIRACLES_OF_MARY = [
     ]
   },
   {
-    "id": "1135",
-    "title": "Book of Felsata la-Maryam??: New: Dormition: An angel gives the Virgin Mary an unnamed book and Jesus promises a church will be built in her name and Peter and Paul build it with special rocks",
-    "incipit": "ወአመ፡ ፈቀደ፡ እግዚእ፡ ያዕርግ፡ ሥጋሃ፡ ለእግዝእትነ፡.... መጽአ፡ ኀቤሃ፡ መልአክ፡ ዓቢይ። ወይቤላ፡ ንሥኢ፡ ዘንተ፡ መጽሐፈ፡ ዘወሀበኪ፡ ዘተከላ፡ ለገነት። ወአንቅኒ፡ ወሐብዮሙ፡ ለሐዋርያት፡ ያንብብዋ፡ በቅድሜኪ። ወትቤሎ፡ እግዝእትነ፡ ማርያም፡ ምንትኑዝ፡ መጽሐፍ። ወመኑ፡ ስሙ። ወይቤላ፡ ሑሪ፡ ደብረ፡ ዘይት። ወበህየ፡ ትሰምዒ፡ ስሙ።",
-    "manuscript_count": 0,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1164",
-    "title": "Dabra Pantalewon, a monastery in Aksum, Ethiopia, and the man to whom Christ appears as a young beautiful boy",
-    "incipit": "ወሀሎ ፡  አሐዱ ፡  ብእሲ ፡  በደብረ ፡  አባ ፡  ጰንጠሌዎን ፡  ዘስሙ ፡  ገብረ ፡  ማርያም። ወእንዘ ፡  ይጽሕፍ ፡  መጽሐፈ ፡  መጽአ ፡  ኀቤሁ ፡  አሐዱ ፡  ሕፃን ፡  ዘይሤኒ ፡  ላሕዩ",
-    "manuscript_count": 0,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1238",
-    "title": "Book of Felsata la-Maryam??: New: Dormition: When The Virgin Mary is about to die, the heavens open and many are healed",
-    "incipit": "ወእምዝ፡ ሶበ፡ ፈጸመት፡ ጸሎታ፡ ትቤሎሙ፡ ለኵሎሙ፡ አርድአት፡ አምጽዑ፡ ማዕጠንታተ፡ ወዕጣነ፡ ወአስተብቁዑ፡ ኀበ፡ እግዚእየ፡ ወአምላኪየ፡ ኢየሱስ፡ ክርስቶስ፨ ወገብሩ፡ ወበከመ፡ አዘዘቶሙ፡ ወእንዘ፡ ይጼልዩ፡ ሰምዑ፡ ቃለ፡ መደንግፀ፡ እምሰማይ፡ ከመ፡ ድምጽኡ፡ መስተፀዕናነ፡ አፍራስ፡ ምስለ፡ ሠራዊተ፡ ሊቃነ፡ መላእክት፡ …",
-    "manuscript_count": 0,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
     "id": "1310",
     "title": "Book of Felsata la-Maryam??: The apostles fasted for many days as they searched for Mary's body and thus Christians should keep the fast for the feast of dormition",
     "incipit": "ወእምድኅረዝ፡ እምድኅረ፡ ዕርገተ፡ እግዚእነ፡ ወአምላክነ፡ ወመድኃኒነ፡ ኢየሱስ፡ ክርስቶስ፡ ጾሙ፡ ሐዋርያት፡ ጾመ፡ እግዚእነ፡ ፵መዓልተ፡ ወ፵ሌሊተ፡ በዓቢይ፡ ኃዘን፡ ወሰቆቃው፡ ወበዓቢይ፡ ጸሎት፡ ወስእለት፡ ወአስተብቍዖት፡ ኀበ፡ እግዚአብሔር፡ ጸባዖት፡ ወፈጺሞሙ፡ ጾመ፡ እግዚእነ፡ ወአምላክነ፡ ወመድኃኒነ፡ ኢየሱስ፡ ክርስቶስ፡ አልቦ፡ ዘረከቡ፡ ዘእንበለ፡ ስብሐተ፡ እግዚአብሔር፡ ወብርሃነ፡ ትንሣኤሁ፡ ወኢረከቡ፡ በድነ፡ ሥጋሃ፡ ለእግዝእትነ፡ ማርያም፡ ዘኃሠሡ፡ ወዘተመነዩ።",
@@ -10752,32 +6225,6 @@ const MIRACLES_OF_MARY = [
       {
         "author": "Jeremy Brown & Dawit Muluneh with Wendy Laura Belcher",
         "text": "<p>A miracle [performed] by Our Holy Lady Mary, the Two-fold Virgin, the Mother of God, may her prayers and her blessings be with her servant, forever and ever, amen.</p><p>A certain man loved Our Holy Lady Mary, the Two-fold Virgin, the Mother of God, from the bottom of his heart. </p><p>He commorated her greatness and [read] the Book of Her Praises [that is, ውዳሴ ማርያም (the Weddase Maryam),] every day. He relied on her from the bottom of his heart.</p><p>He was living in this way for a short while, when he left his city and went to another land.</p><p>While living in that other land, one holy Sabbath, the [day of] rest for humanity, a feverish illness seized him.</p><p>He became severely ill and was upon the point of death. </p><p>The next morning, he got up from his bed and went to the church of Our Holy Lady Mary, the Two-Fold Virgin, the Mother of God.</p><p>He stood in front of her icon and prayed to her, beseeching her, \"My dear Holy Lady Mary, the Two-Fold Virgin, the Mother of God, I take refuge in you because you are ‘a mighty fortress.’ And you are the Shield Bearer of Salvation for all of creation. Heal me from this terrible illness, because I am a stranger in this land and I do not have any family except for you and your only begotten son.\" </p><p>Then he took water [from the church fount] and over that water, read the book that is called Golgotha[, that is, the prayer Mary prays at Golgotha]. He did so three times in the church while standing and weeping abundantly. </p><p>After this, he drank that water of prayer [to Mary] and he was healed quickly from his illness through the petition of Our Holy Lady Mary, the Two-Fold Virgin, the Mother of God.</p><p>Indeed, it seemed to him that he went entirely unharmed by this illness. </p><p>Our Holy Lady Mary, the Two-Fold Virgin, the Mother of God, does likewise every day for those who take refuge in her with a steadfast heart. </p><p>May her prayer and blessing be with her servant, forever and ever, amen. </p>"
-      }
-    ]
-  },
-  {
-    "id": "1311",
-    "title": "An adulter is snatched up to heaven and is condemned but he is saved from judgement by Mary",
-    "incipit": "ወሀሎ፡ ፩ብእሲ፡ በውስተ፡ አሐቲ፡ ሀገር፡ ዘስሙ፡ ክርስቲያናዊ፡ ለእግዝእትነ፡ ማርያም፡ ወያፈቅራ፡ ወይገብር፡ በዓላ፡ በዕለተ፡ ዕረፍታ፡ በልብ፡ ወበሕሊባ፡ ፍጹም፡ ወያበዝኅ፡ ዝሙት። ወበአሐቲ፡ ሰዓተ፡ ሌሊት፡ እንዘ፡ ሀሎ፡ በንዋሙ፡ መስጥዎ፡ ወአብጽሕዎ፡ ሰማየ፡ ወአቀምዎ፡ ኀበ፡፡መንበረ፡ ፍትሕ፡ ወተትዎ፡ በእንተ፡ ምግባሩ፡ አምነ፡ ወኢከህደ።",
-    "manuscript_count": 0,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1312",
-    "title": "A bitter servant commits suicide but is brought back to life by Mary",
-    "incipit": "",
-    "manuscript_count": 0,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },
@@ -10817,19 +6264,6 @@ const MIRACLES_OF_MARY = [
       {
         "author": "Mehari Worku with Wendy Laura Belcher",
         "text": "<p>The miracle [performed] by Our Holy Lady Mary, the Two-fold Virgin, the Mother of God, may her prayer and blessings and the mercy of her Son, be with her servant Gadla Giyorgis, forever and ever, amen.</p><p></p><p>A mayor of a certain city was rich in the wealth of this fleeting world and he loved his wife very much. </p><p></p><p>When his wife died, he [immediately] went to Our Lady, the Holy Two-fold Virgin Mary, the Mother of God, and said, “My Lady, my wife has died. Without my wife, there is no one to help me. My dear Lady, console me in my sadness! For nothing is impossible to you.” </p><p></p><p>Mary went to the mayor’s wife [where she lay dead,] and then asked the mayor, “What is her name?” </p><p></p><p>He replied “Deena.” </p><p></p><p>Mary held the dead woman’s hand and called out, “Deena! Deena! Get up!” </p><p></p><p>Immediately, the dead woman opened her eyes and got up. </p><p></p><p>When the people saw this miracle, they were astounded and tore their clothes, shouting, “’Gods have come down to us in the likeness of human beings!’” </p><p></p><p>However, Mary responded, “I am not what you think I am[: a godess]. But, if you believe in my Son, you will see his glory, which is greater than this [miracle].” </p><p></p><p>Then, the city’s people treated Mary as if she was their father and their mother. They brought her their sick and diseased, and she healed them all. </p><p></p><p>Then, the mayor came to Mary, and said, “My father and mother died [a long time ago]. I alone remain.” </p><p></p><p>Mary asked him, “Where is their grave?” </p><p></p><p>So, the governor took her to where there was a mausoleum. </p><p></p><p>Mary turned her face to the east, stretched out her hands, and said, “My son, who has become incarnate through your own will, so that all the dead could be raised, help me!” </p><p></p><p>Immediately, the dead [parents] came back to life, stood up before Mary, and bowed down to her. </p><p></p><p>They said, “In Sheol[, where we were being tormented,] we heard the [demonic] army of Gehanna saying to us, 'Go! The Mother of the Creator of All is calling you!' And now, we have seen your face. ‘What we were told about we have now seen.’” [They then begged her,] “Don’t return us to [that place of] judgment again!” </p><p></p><p>So, Mary stomped on the ground, opened Paradise, and instructed them, “Step into the holy city!” </p><p></p><p>And, they entered into eternal happiness. </p><p></p><p>May her prayer and blessing be upon us, forever and ever, amen. </p>"
-      }
-    ]
-  },
-  {
-    "id": "1315",
-    "title": "Aksum Seyon: Deacon of the church of Our Lady Mary Zion in Aksum is healed of a broken body",
-    "incipit": "",
-    "manuscript_count": 0,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },
@@ -10886,19 +6320,6 @@ const MIRACLES_OF_MARY = [
     ]
   },
   {
-    "id": "1320",
-    "title": "Mary heals an Egyptian man with two faces and he praises her",
-    "incipit": "",
-    "manuscript_count": 0,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
     "id": "1321",
     "title": "Mary heals a man named Wafleqalone who was born blind and paralyzed",
     "incipit": "",
@@ -10947,45 +6368,6 @@ const MIRACLES_OF_MARY = [
       {
         "author": "Mehari Worku",
         "text": "When OLHMTVMG was in the house of T'eman, the people of the town saw her. They said to one another \"The one who sent to hades alive and changed T'eman and her family members into baboons.\" They came to Mary and said \"How are you? May your coming to us be in good.\" The elders of the town stood before OLHMTVMG and said \"Why are you very angry and mad? We are weak. You have wisdom. You know what it is to be satisfied and how to be hungry is. You know what it is to be sad and how being happy is.\" OLHMTVMG said to them \"Where do you know me being angry?\" They replied \"We have seen what you have done on T'eman, her husband and her household.\" OLHMTVMG said \"You too, if you don't turn to God in repentance with your whole heart and treasure haughtiness, you will be like them.\" When the elders of the town heard this they became terrified and said \"We are your people. You are not a stranger to us. We will do everything you want. We will not transgress your command. Please, enter to our town.\" OLHMTVMG said \"If you do what I tell you, you will be saved from trials. If you don't listen to me, you will die and ordain curse to your children.\" They replied \"May what you say come upon us, if we transgress your command.\" OLHMTVMG entered into their city. They gave her a place with beautiful hall and they stretched out beautiful clothes [on the place where she will be sitting/ resting]. OLM said \"How is the house of T'eman?\" They told her all that happened that the relatives of T'eman and the relatives of her husband divided all T'eman's wealth amongst themselves. OLHMTVMG was astonished to hear this story and said \"Do you see her husband and her household?\" They replied \"Ofcourse! We see them everyday. They cry out in the mountains and hills. When we approach them, they flee from us and hide in cliffs.\" OLHMTVMG smiled and said \"Do you think, you can return them back to their houses?\" The people said \"Yes, we think we can because of our ignorance.\" She said \"Whoever God blesses will remain blessed. Whoever God curses will remain cursed. Can you make the hyena and the foxes to live in a house?\" The people replied \"O Our Lady, that is impossible.\"Such is the case with the household of T'eman,\" she said. The people returned to their homes rejoicing."
-      }
-    ]
-  },
-  {
-    "id": "1325",
-    "title": "A man who wants to write of Mary's wonderousness is visited by a radiant man and given a shining white cloth to write upon",
-    "incipit": "ወሀሎ፡ ፩ብእሲ፡ ዘያፈቅራ፡ ለእግዝእትነ፡ ቅድስት፡ ድንግል፡ በ፪ማርያም፡ ወላዲተ፡ አምላክ፡ ወይገብር፡ ተዝካረ፡ በዓላቲሃ፡ ወኢያጸርዕ፡ አንብቦ፡ ተአምሪሃ፡ ወውዳሴሃ፡ ወትረ፡ ይቤ፡ ፩እመዋዕል፡ ሶበ፡ ሐለይኩ፡ ከመ፡ እጽሐፍ፡ ውዳሴ፡ መንክራቲሃ፡ ንስቲተ፡ ወመጽአ፡ ኀቤየ፡ ብሩህ፡ ብእሲ፡ ዘይትዓፀፍ፡ በርሃነ፡ ወአስተርአየኒ፡ በሌሊት፡ በራእይ፡ እንዘ፡ ሀሎ፡ ውስተ፡ እዴሁ፡ ልብስ፡ ፀዓዳ፡ ዘብርሃን፡ ሠናይ፡ ወክቡር፡",
-    "manuscript_count": 0,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1326",
-    "title": "A woman is traveling to the king and is robbed of all her possessions and jewelry, but an official returns her stolen possessions from the thieves",
-    "incipit": "ወነበረት፡ አሐቲ፡ ብእሲት፡ ምስለ፡ ምታ፡ ዘታፈቅራ፡ ለእግዝእትነ፡ ቅድስት፡ ድንግል፡ በ፪ማርያም፡ ወትትአመን፡ በጸሎታ፡ ጊዜ። ወሶበ፡ ተንሥአ ምንሳዌ፡ ዘመን፡ እኩይ፡ ውስተ፡ ኵሉ፡ አህጉር፡ ወጽአት፡ እምቤታ፡ ወሖረት፡ ምስለ፡ ንጉሥ። ወበአሐቲ፡ ዕለት፡ ኀበ፡ አዕረፈት፡ ለኃዲር፡ ጊዜ፡ ፍና፡ ሠርክ፡ ወጽኡ፡ ወራዙት፡ እንዘ፡ ይትበዓሱ፡ በበይናቲሆሙ፡ እኁዛነ፡ ኵናት፡ እሙንቱ፡",
-    "manuscript_count": 0,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
-      }
-    ]
-  },
-  {
-    "id": "1327",
-    "title": "A young woman keeps twenty dinar of gold and silver in a tanned leather pouch, but a dog eats it and then vomits it back up",
-    "incipit": "ተብህለ፡ በእንተ፡ ወለተ፡ ፩ብእሲ፡ እንተ፡ ስማ፡ ዘማርያም፡ ወባቲ፡ ወርቅ፡ ወብሩር፡ በመስፈርተ፡ ፳ዲናር፡ እንተ፡ ትወድዮ፡ በማዕስ፡ ኅሡይ፡ ወታነብሮ፡ ውስተ፡ ሕፅና፡ ይእቲሰ፡ ትረፍቅ፡ ወትረ፡ ወበ፩እመዋዕል፡ ትረፍቅ፡ ውስተ፡ ማዕደ፡ አቡሃ።",
-    "manuscript_count": 0,
-    "most_read": false,
-    "translations": [
-      {
-        "author": "",
-        "text": "An English translation of this story is not yet available."
       }
     ]
   },

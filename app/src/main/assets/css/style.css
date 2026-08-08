@@ -1191,7 +1191,8 @@ body.view-mode-unified .info-panel-content {
     border-radius: 4px;
 }
 
-.kidase-lectionary-item .settings-subtitle {
+.kidase-lectionary-item .settings-subtitle,
+#anaphora-settings .settings-subtitle {
     margin-top: 0;
     font-size: 0.8rem;
     color: var(--accent-color);

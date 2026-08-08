@@ -1541,13 +1541,13 @@ async function shareScriptures() {
         const readings = [];
         
         if (showVespers) {
-            readings.push({ key: 'eveningPsalm', title: '፨ Vespers Psalm | ምስባክ ዘሠርክ', isPsalm: true });
-            readings.push({ key: 'eveningGospel', title: '፨ Vespers Gospel | ወንጌል ዘሠርክ', isPsalm: false });
+            readings.push({ key: 'eveningPsalm', title: '፨ Sunset Psalm | ምስባክ ዘሠርክ', isPsalm: true });
+            readings.push({ key: 'eveningGospel', title: '፨ Sunset Gospel | ወንጌል ዘሠርክ', isPsalm: false });
         }
 
         if (showMatins) {
-            readings.push({ key: 'morningPsalm', title: '፨ Matins Psalm | ምስባክ ዘነግህ', isPsalm: true });
-            readings.push({ key: 'morningGospel', title: '፨ Matins Gospel | ወንጌል ዘነግህ', isPsalm: false });
+            readings.push({ key: 'morningPsalm', title: '፨ Morning Psalm | ምስባክ ዘነግህ', isPsalm: true });
+            readings.push({ key: 'morningGospel', title: '፨ Morning Gospel | ወንጌል ዘነግህ', isPsalm: false });
         }
         
         if (isKidaseModeActive) {
@@ -6524,6 +6524,8 @@ function updateSelectedMiracleUI() {
     if (selectedMiracleId === 'none') {
         selectedMiracleText.textContent = 'None selected';
         miraclePositionContainer.style.display = 'none';
+        const clearMiracleBtn = document.getElementById('clear-miracle-btn');
+        if (clearMiracleBtn) clearMiracleBtn.style.display = 'none';
     } else {
         const miracle = MIRACLES_OF_MARY?.find(m => m.id === selectedMiracleId);
         if (miracle) {
@@ -6536,9 +6538,13 @@ function updateSelectedMiracleUI() {
             }
             selectedMiracleText.innerHTML = html;
             miraclePositionContainer.style.display = 'block';
+            const clearMiracleBtn = document.getElementById('clear-miracle-btn');
+            if (clearMiracleBtn) clearMiracleBtn.style.display = 'block';
         } else {
             selectedMiracleText.textContent = 'None selected';
             miraclePositionContainer.style.display = 'none';
+            const clearMiracleBtn = document.getElementById('clear-miracle-btn');
+            if (clearMiracleBtn) clearMiracleBtn.style.display = 'none';
         }
     }
 }
@@ -7582,6 +7588,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     document.querySelectorAll('.clickable-reading-title').forEach(title => {
         title.addEventListener('click', () => {
             const targetId = title.dataset.readingTarget;
+            if (!targetId) return;
 
             // 1. Collapse sidebar first
             collapseSidebar();
@@ -7620,6 +7627,130 @@ document.addEventListener('DOMContentLoaded', async () => {
             }, 500);
         });
     });
+
+    // Setup Eucharist Settings Navigation
+    function attachSectionTitleJumpListeners() {
+        const anaphoraBtn = document.getElementById('anaphora-title-btn');
+        const melkaBtn = document.getElementById('melka-title-btn');
+        const miracleBtn = document.getElementById('miracle-title-btn');
+
+        function jumpToCard(cardId) {
+            collapseSidebar();
+            setTimeout(() => {
+                const card = document.querySelector(`.prayer-card[data-card-id="${cardId}"]`);
+                if (card) {
+                    let prev = card.previousElementSibling;
+                    while (prev) {
+                        if (prev.classList.contains('section-title')) {
+                            if (prev.classList.contains('collapsed')) {
+                                prev.click();
+                            }
+                            break;
+                        }
+                        prev = prev.previousElementSibling;
+                    }
+
+                    requestAnimationFrame(() => {
+                        card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        card.classList.add('highlight-reading');
+                        setTimeout(() => card.classList.remove('highlight-reading'), 2000);
+                    });
+                } else {
+                    const kidaseToggle = document.getElementById('kidase-mode-toggle');
+                    if (kidaseToggle && !kidaseToggle.checked) {
+                        showCopyNotification("Please enable 'Order of the Liturgy' first.", 3000);
+                    } else {
+                        showCopyNotification("Section not found in current view.", 3000);
+                    }
+                }
+            }, 500);
+        }
+
+        function getAnaphoraChapter() {
+            const anaphoraSelector = document.getElementById('anaphora-selector');
+            const val = anaphoraSelector ? anaphoraSelector.value : 'apostles';
+            return val === 'mary' ? 'St.Mary' : 'Apostles';
+        }
+
+        if (anaphoraBtn) {
+            anaphoraBtn.addEventListener('click', () => {
+                const chapter = getAnaphoraChapter();
+                jumpToCard(`${chapter}-1`);
+            });
+        }
+
+        if (melkaBtn) {
+            melkaBtn.addEventListener('click', () => {
+                const chapter = getAnaphoraChapter();
+                jumpToCard(`${chapter}-Melk’aKwirban-1`);
+            });
+        }
+
+        if (miracleBtn) {
+            miracleBtn.addEventListener('click', () => {
+                if (selectedMiracleId && selectedMiracleId !== 'none') {
+                    jumpToCard('Miracle-1');
+                } else {
+                    showCopyNotification("Please select a Miracle first.", 3000);
+                }
+            });
+        }
+        
+        const theotokiaBtn = document.getElementById('theotokia-title-btn');
+        if (theotokiaBtn) {
+            theotokiaBtn.addEventListener('click', () => {
+                jumpToCard('Daily-11');
+            });
+        }
+
+        const psalmsBtn = document.getElementById('psalms-title-btn');
+        if (psalmsBtn) {
+            psalmsBtn.addEventListener('click', () => {
+                jumpToCard('Psalms-Intro');
+            });
+        }
+
+        const prophetsBtn = document.getElementById('prophets-title-btn');
+        if (prophetsBtn) {
+            prophetsBtn.addEventListener('click', () => {
+                if (selectedProphetSongs && selectedProphetSongs.length > 0) {
+                    const firstSongKey = selectedProphetSongs[0];
+                    const song = prophetSongs.find(s => s.key === firstSongKey);
+                    if (song) {
+                        let card = null;
+                        if (song.refs && song.refs.prayerKey) {
+                             card = document.querySelector(`.prayer-card[data-card-id^="ProphetSong-${song.refs.prayerKey}"]`);
+                        } 
+                        if (!card) {
+                             card = document.querySelector(`.prayer-card[data-card-id^="${song.key}-"]`);
+                        }
+                        
+                        if (card) {
+                            jumpToCard(card.dataset.cardId);
+                        } else {
+                            showCopyNotification("Reading card not found. Ensure it is enabled in settings.", 3000);
+                        }
+                    }
+                } else {
+                    showCopyNotification("Please select a Song of the Prophets first.", 3000);
+                }
+            });
+        }
+    }
+    attachSectionTitleJumpListeners();
+
+    // Clear Miracle logic
+    const clearMiracleBtn = document.getElementById('clear-miracle-btn');
+    if (clearMiracleBtn) {
+        clearMiracleBtn.addEventListener('click', () => {
+            selectedMiracleId = 'none';
+            localStorage.setItem('selectedMiracleId', 'none');
+            const selectedMiracleText = document.getElementById('selected-miracle-text');
+            if (selectedMiracleText) selectedMiracleText.textContent = 'None selected';
+            clearMiracleBtn.style.display = 'none';
+            renderPrayers();
+        });
+    }
 
     // PWA Service Worker Registration
     if ('serviceWorker' in navigator) {
