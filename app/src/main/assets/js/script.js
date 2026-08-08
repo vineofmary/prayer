@@ -444,7 +444,7 @@ let selectedCovenantPrayer = 'morning';
 let showAnaphora = true;
 let hideQuietPrayers = false;
 let isHolyFiftyDays = false;
-let useExternalBibleAPI = false;
+let useExternalBibleAPI = true;
 let isInitializing = true;
 let kidaseLectionaryRefs = {
     morningPsalm: 'Psalms 34:7-8',
@@ -1744,7 +1744,7 @@ async function loadSettings() {
         selectedAnaphora: 'apostles',
         showSeatatReadings: false,
         showMatins: true,
-        useExternalBibleAPI: false,
+        useExternalBibleAPI: true,
         showTeklil: false,
         bridegroomName: '',
         brideName: '',
@@ -1829,7 +1829,7 @@ async function loadSettings() {
         selectedAnaphora = localStorage.getItem('selectedAnaphora') || defaultSettings.selectedAnaphora;
         showSeatatReadings = localStorage.getItem('showSeatatReadings') === 'true';
         showMatins = localStorage.getItem('showMatins') !== null ? localStorage.getItem('showMatins') === 'true' : defaultSettings.showMatins;
-        useExternalBibleAPI = localStorage.getItem('useExternalBibleAPI') === 'true';
+        useExternalBibleAPI = localStorage.getItem('useExternalBibleAPI') !== null ? localStorage.getItem('useExternalBibleAPI') === 'true' : defaultSettings.useExternalBibleAPI;
         showTeklil = localStorage.getItem('showTeklil') === 'true';
         bridegroomName = localStorage.getItem('bridegroomName') || defaultSettings.bridegroomName;
         brideName = localStorage.getItem('brideName') || defaultSettings.brideName;
@@ -1991,7 +1991,7 @@ function updateAllTogglesInSettingsPanel() {
     if (seatatReadingsSettings) seatatReadingsSettings.style.display = showSeatatReadings ? 'block' : 'none';
     showMatinsToggle.checked = showMatins;
     if (useExternalBibleAPIToggle) useExternalBibleAPIToggle.checked = useExternalBibleAPI;
-    if (useExternalBibleAPILabel) useExternalBibleAPILabel.style.display = isScribeLoggedIn ? 'block' : 'none';
+    if (useExternalBibleAPILabel) useExternalBibleAPILabel.style.display = '';
     showVespersToggle.checked = showVespers;
     morningPsalmGospelSettings.style.display = showMatins ? 'block' : 'none';
     vespersPsalmGospelSettings.style.display = showVespers ? 'block' : 'none';
