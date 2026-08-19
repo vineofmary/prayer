@@ -481,19 +481,19 @@ const LANGUAGE_REGISTRY = {
     'geez_phonetic': { name: 'Ge\'ez Phonetic', category: 'main', isAuto: false },
     'amharic_script': { name: 'አማርኛ (Amharic)', category: 'main', isAuto: false, isEthiopic: true },
     'amharic_phonetic': { name: 'Amharic Phonetic', category: 'main', isAuto: false },
-    'oromoo': { name: 'ኦሮምኛ (Oromo)**', category: 'unofficial', isAuto: false, isEthiopic: true, isSeekingScribe: true },
+    'oromoo': { name: 'ኦሮምኛ (Oromo)', category: 'unofficial', isAuto: false, isEthiopic: true, isSeekingScribe: true },
     'tigrinya_script': { name: 'ትግርኛ (Tigrinya)', category: 'main', isAuto: false, isEthiopic: true },
     'tigrinya_phonetic': { name: 'Tigrinya Phonetic', category: 'main', isAuto: false },
     'spanish': { name: 'Español (Spanish)*', category: 'main', isAuto: true },
+    'french': { name: 'Français (French)*', category: 'main', isAuto: true },
     'coptic': { name: 'ϯⲙⲉⲧⲣⲉⲙⲛ̀ⲭⲏⲙⲓ (Coptic)', category: 'main', isAuto: false },
-    'syriac': { name: 'ܣܘܪܝܝܐ (Syriac)**', category: 'unofficial', isAuto: false, isSeekingScribe: true },
-    'armenian': { name: 'Հայերեն (Armenian)**', category: 'unofficial', isAuto: false, isSeekingScribe: true },
+    'syriac': { name: 'ܣܘܪܝܝܐ (Syriac)', category: 'unofficial', isAuto: false, isSeekingScribe: true },
+    'armenian': { name: 'Հայերեն (Armenian)', category: 'unofficial', isAuto: false, isSeekingScribe: true },
 
     // Phonetics (Main Section)
     // (Note: Already moved above for grouping but keeping IDs consistent)
 
     // Unofficial Section (Advanced)
-    'french': { name: 'Français (French)*', category: 'unofficial', isAuto: true },
     'arabic': { name: 'العربية (Arabic)*', category: 'unofficial', isAuto: true },
     'greek': { name: 'Ελληνικά (Greek)*', category: 'unofficial', isAuto: true },
     'hebrew': { name: 'עברית (Hebrew)*', category: 'unofficial', isAuto: true },
