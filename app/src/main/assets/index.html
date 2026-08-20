@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mount of Mercy</title>
-    <link rel="stylesheet" href="css/style.css?v=10">
+    <link rel="stylesheet" href="css/style.css?v=31">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Abyssinica+SIL&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Lato&family=Roboto&display=swap"
@@ -400,6 +400,15 @@
 
                             <h4 class="settings-subtitle"
                                 style="margin-top: 1rem; border-top: 1px solid var(--border-color); padding-top: 0.75rem;">
+                                DAY OF ḲIDASÉ</h4>
+                            <select id="kidase-day-selector" class="settings-select">
+                                <option value="sunday" selected>Sunday / Major Feasts | ዘእሁድ ወበዓላት ዐበይት</option>
+                                <option value="saturday">Saturday (First Sabbath) | ዘቀዳሚት (ቀዳሚት ሰንበት)</option>
+                                <option value="weekday">Weekday (Mon–Fri) | ዘሰኑይ–ዓርብ</option>
+                            </select>
+
+                            <h4 class="settings-subtitle"
+                                style="margin-top: 0.75rem;">
                                 TIME OF ḲIDASÉ</h4>
                             <select id="covenant-prayer-selector" class="settings-select">
                                 <option value="none">None | አልቦ</option>
@@ -1311,7 +1320,7 @@
     <script src="js/miracles_of_mary.js"></script>
 
     <!-- UI Interaction and Data Scripts -->
-    <script src="js/script.js?v=29"></script>
+    <script src="js/script.js?v=35"></script>
 </body>
 
 </html>

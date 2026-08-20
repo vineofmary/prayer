@@ -388,6 +388,7 @@ const anaphoraSelector = document.getElementById('anaphora-selector');
 const showAnaphoraToggle = document.getElementById('show-anaphora-toggle');
 const anaphoraSettings = document.getElementById('anaphora-settings');
 const showVespersToggle = document.getElementById('show-vespers');
+const kidaseDaySelector = document.getElementById('kidase-day-selector');
 const covenantPrayerSelector = document.getElementById('covenant-prayer-selector');
 const hideQuietPrayersToggle = document.getElementById('hide-quiet-prayers');
 const openMiracleModalBtn = document.getElementById('open-miracle-modal-btn');
@@ -453,6 +454,7 @@ let showTeklil = false;
 let bridegroomName = '';
 let brideName = '';
 let showVespers = false;
+let selectedKidaseDay = 'sunday';
 let selectedCovenantPrayer = 'morning';
 let showAnaphora = true;
 let hideQuietPrayers = false;
@@ -513,6 +515,9 @@ let languageOrder = [
 let searchMatches = [];
 let currentMatchIndex = -1;
 let currentSlideIndex = 0;
+let _pendingSlideSignature = null; // Persists target slide identity across async re-renders
+let _pendingSlideId = null; // Used for jump-to buttons that trigger a DOM rebuild
+let _pendingSlidePredicate = null;
 let areAllSectionsCollapsed = false;
 
 function getSeatatLiturgicalDay() {
@@ -1696,6 +1701,7 @@ function saveSettings() {
     localStorage.setItem('bridegroomName', bridegroomName);
     localStorage.setItem('brideName', brideName);
     localStorage.setItem('showVespers', showVespers);
+    localStorage.setItem('selectedKidaseDay', selectedKidaseDay);
     localStorage.setItem('selectedCovenantPrayer', selectedCovenantPrayer);
     localStorage.setItem('hideQuietPrayers', hideQuietPrayers);
     localStorage.setItem('isHolyFiftyDays', isHolyFiftyDays);
@@ -1776,6 +1782,7 @@ async function loadSettings() {
         bridegroomName: '',
         brideName: '',
         showVespers: false,
+        selectedKidaseDay: 'sunday',
         selectedCovenantPrayer: 'morning',
         showAnaphora: true,
         selectedMiracleId: 'none',
@@ -1820,6 +1827,7 @@ async function loadSettings() {
         selectedWidaseMaryamDay = defaultSettings.selectedWidaseMaryamDay;
         isKidaseModeActive = defaultSettings.isKidaseModeActive;
         selectedAnaphora = defaultSettings.selectedAnaphora;
+        selectedKidaseDay = defaultSettings.selectedKidaseDay;
         selectedCovenantPrayer = defaultSettings.selectedCovenantPrayer;
         hideQuietPrayers = defaultSettings.hideQuietPrayers;
         isHolyFiftyDays = defaultSettings.isHolyFiftyDays;
@@ -1864,6 +1872,7 @@ async function loadSettings() {
         bridegroomName = localStorage.getItem('bridegroomName') || defaultSettings.bridegroomName;
         brideName = localStorage.getItem('brideName') || defaultSettings.brideName;
         showVespers = localStorage.getItem('showVespers') === 'true';
+        selectedKidaseDay = localStorage.getItem('selectedKidaseDay') || defaultSettings.selectedKidaseDay;
         selectedCovenantPrayer = localStorage.getItem('selectedCovenantPrayer') || defaultSettings.selectedCovenantPrayer;
         showAnaphora = localStorage.getItem('showAnaphora') !== null ? localStorage.getItem('showAnaphora') === 'true' : defaultSettings.showAnaphora;
         hideQuietPrayers = localStorage.getItem('hideQuietPrayers') !== null ? localStorage.getItem('hideQuietPrayers') === 'true' : defaultSettings.hideQuietPrayers;
@@ -2025,6 +2034,7 @@ function updateAllTogglesInSettingsPanel() {
     showVespersToggle.checked = showVespers;
     morningPsalmGospelSettings.style.display = showMatins ? 'block' : 'none';
     vespersPsalmGospelSettings.style.display = showVespers ? 'block' : 'none';
+    if (kidaseDaySelector) kidaseDaySelector.value = selectedKidaseDay;
     covenantPrayerSelector.value = selectedCovenantPrayer;
     hideQuietPrayersToggle.checked = hideQuietPrayers;
     if (holyFiftyDaysToggle) holyFiftyDaysToggle.checked = isHolyFiftyDays;
@@ -3474,7 +3484,15 @@ function createPrayerCardElement(prayer, prayerIndex, isKidase = false) {
     // Store card identity for cross-card navigation (e.g. creed jump buttons)
     if (prayer.chapter && prayer.stanza) {
         prayerCard.dataset.cardId = `${prayer.chapter}-${prayer.stanza}`;
+    } else if (prayer.chapter && prayer.verseNum) {
+        prayerCard.dataset.cardId = `${prayer.chapter}-${prayer.verseNum}`;
+    } else if (prayer.reference) {
+        prayerCard.dataset.cardId = prayer.reference;
     }
+
+    // Unique prayer signature for exact 1-to-1 card matching between scroll and slides mode
+    const sigText = (prayer.english || prayer.geez_script || prayer.amharic_script || '').replace(/\s+/g, ' ').trim().slice(0, 50);
+    prayerCard.dataset.prayerSignature = `${prayer.chapter || ''}_${prayer.stanza || ''}_${prayer.verseNum || ''}_${sigText}`;
 
     // Handle initial collapse state (from renderPrayers context)
     // IMPORTANT: Do not hide cards in slides mode even if the section is collapsed
@@ -3601,12 +3619,10 @@ function createPrayerCardElement(prayer, prayerIndex, isKidase = false) {
     enterSlidesBtn.title = 'Enter Slides Mode';
     enterSlidesBtn.addEventListener('click', (event) => {
         const clickedCard = event.currentTarget.closest('.prayer-card');
-        const allCards = Array.from(prayerDisplay.querySelectorAll('.prayer-card, .section-title.collapsible'));
-        const cardIndex = allCards.indexOf(clickedCard);
-        if (cardIndex !== -1) {
-            currentSlideIndex = cardIndex;
-            togglePresentationMode();
-        }
+        const signature = clickedCard.dataset.prayerSignature;
+        const cardId = clickedCard.dataset.cardId;
+        const prayerIdx = clickedCard.dataset.prayerIndex;
+        togglePresentationMode({ signature, cardId, prayerIndex: prayerIdx });
     });
     prayerActions.appendChild(enterSlidesBtn);
 
@@ -4152,11 +4168,31 @@ function renderSelectedKidase(addSectionTitleCallback) {
         }
 
         if (!hideQuietPrayers && !overrideQuietFilter) {
-            const isSunday = new Date().getDay() === 0;
             filtered = filtered.filter(p => {
                 if (p.instruction && p.instruction.includes("Inaudible Prayer")) return false;
-                if (isSunday && ((p.chapter === '3' && p.stanza === '119') || (p.chapter === '2' && (p.stanza === '73' || p.stanza === '74')))) {
-                    return false;
+                return true;
+            });
+        }
+
+        // Apply Liturgy Day filtering (Chapter 2 & Chapter 3 day variants) ONLY in slides mode
+        if (displayOptions.presentationMode === 'slides') {
+            filtered = filtered.filter(p => {
+                if (p.chapter === '2') {
+                    if (p.stanza === '73' && selectedKidaseDay !== 'weekday') return false;
+                    if (p.stanza === '74' && selectedKidaseDay !== 'saturday') return false;
+                    if (p.stanza === '75' && selectedKidaseDay !== 'sunday') return false;
+                }
+                if (p.chapter === '3') {
+                    const s = parseInt(p.stanza);
+                    if (s === 119) {
+                        const isSundayNisgid = p.english && p.english.toLowerCase().includes("worship");
+                        if (selectedKidaseDay === 'sunday' && !isSundayNisgid) return false;
+                        if (selectedKidaseDay !== 'sunday' && isSundayNisgid) return false;
+                    }
+                    if (s >= 120 && s <= 122) {
+                        // 3-120 to 3-122 are only for Sunday / Major Feasts
+                        if (selectedKidaseDay !== 'sunday') return false;
+                    }
                 }
                 return true;
             });
@@ -4433,12 +4469,13 @@ function renderSelectedKidase(addSectionTitleCallback) {
 
             const card = createPrayerCardElement(p, -1, true);
 
-            // Add cross-navigation buttons for creed cards
+            // Add cross-navigation buttons for creed cards & day-variant liturgy chants
             const cardId = `${p.chapter}-${p.stanza}`;
+            const jumpIconSVG = `<svg class="creed-nav-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>`;
+
             if (cardId === '4-33' || cardId === 'The300-1') {
                 const navBtn = document.createElement('button');
                 navBtn.className = 'settings-button creed-nav-btn';
-                const jumpIconSVG = `<svg class="creed-nav-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>`;
                 if (cardId === '4-33') {
                     navBtn.innerHTML = `${jumpIconSVG} <span>NICENE CREED | ጸሎተ ሐይማኖት</span>`;
                     navBtn.title = 'Jump to the Nicene Creed (The 300)';
@@ -4452,6 +4489,110 @@ function renderSelectedKidase(addSectionTitleCallback) {
                     navBtn.addEventListener('click', (e) => {
                         e.preventDefault();
                         navigateToCard('4-33');
+                    });
+                }
+
+                const pFooter = card.querySelector('.prayer-footer');
+                const pActions = card.querySelector('.prayer-actions');
+                if (pFooter && pActions) {
+                    pFooter.insertBefore(navBtn, pActions);
+                }
+            } else if (p.chapter === '2' && (p.stanza === '73' || p.stanza === '74' || p.stanza === '75')) {
+                // Only attach navigation buttons to the first 2-75 card if multiple 2-75 cards exist
+                const isFirstStanza75 = p.stanza !== '75' || (p.english && p.english.includes("Blessed is he who does blessed deeds and honors the Sabbath. Let him not question"));
+                if (isFirstStanza75) {
+                    const navGroup = document.createElement('div');
+                    navGroup.className = 'day-nav-group';
+
+                    if (p.stanza === '75') {
+                        // On Sunday chant (ኵሉ ዘገብራ): provide Saturday and Weekday options
+                        const btnSat = document.createElement('button');
+                        btnSat.className = 'settings-button day-nav-btn';
+                        btnSat.innerHTML = `${jumpIconSVG} <span>SATURDAY | ዘቀዳሚት (መስቀል አብርሃ)</span>`;
+                        btnSat.title = 'Switch to Saturday Liturgy chant (መስቀል አብርሃ)';
+                        btnSat.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            switchKidaseDayAndNavigate('saturday', '2-74');
+                        });
+                        navGroup.appendChild(btnSat);
+
+                        const btnWk = document.createElement('button');
+                        btnWk.className = 'settings-button day-nav-btn';
+                        btnWk.innerHTML = `${jumpIconSVG} <span>WEEKDAY | ዘሰኑይ–ዓርብ (እምነ በሀ)</span>`;
+                        btnWk.title = 'Switch to Weekday Liturgy chant (እምነ በሀ)';
+                        btnWk.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            switchKidaseDayAndNavigate('weekday', '2-73');
+                        });
+                        navGroup.appendChild(btnWk);
+                    } else if (p.stanza === '74') {
+                        // On Saturday chant (መስቀል አብርሃ): provide Sunday and Weekday options
+                        const btnSun = document.createElement('button');
+                        btnSun.className = 'settings-button day-nav-btn';
+                        btnSun.innerHTML = `${jumpIconSVG} <span>SUNDAY | ዘእሁድ (ኵሉ ዘገብራ)</span>`;
+                        btnSun.title = 'Switch to Sunday Liturgy chant (ኵሉ ዘገብራ)';
+                        btnSun.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            switchKidaseDayAndNavigate('sunday', '2-75');
+                        });
+                        navGroup.appendChild(btnSun);
+
+                        const btnWk = document.createElement('button');
+                        btnWk.className = 'settings-button day-nav-btn';
+                        btnWk.innerHTML = `${jumpIconSVG} <span>WEEKDAY | ዘሰኑይ–ዓርብ (እምነ በሀ)</span>`;
+                        btnWk.title = 'Switch to Weekday Liturgy chant (እምነ በሀ)';
+                        btnWk.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            switchKidaseDayAndNavigate('weekday', '2-73');
+                        });
+                        navGroup.appendChild(btnWk);
+                    } else if (p.stanza === '73') {
+                        // On Weekday chant (እምነ በሀ): provide Sunday and Saturday options
+                        const btnSun = document.createElement('button');
+                        btnSun.className = 'settings-button day-nav-btn';
+                        btnSun.innerHTML = `${jumpIconSVG} <span>SUNDAY | ዘእሁድ (ኵሉ ዘገብራ)</span>`;
+                        btnSun.title = 'Switch to Sunday Liturgy chant (ኵሉ ዘገብራ)';
+                        btnSun.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            switchKidaseDayAndNavigate('sunday', '2-75');
+                        });
+                        navGroup.appendChild(btnSun);
+
+                        const btnSat = document.createElement('button');
+                        btnSat.className = 'settings-button day-nav-btn';
+                        btnSat.innerHTML = `${jumpIconSVG} <span>SATURDAY | ዘቀዳሚት (መስቀል አብርሃ)</span>`;
+                        btnSat.title = 'Switch to Saturday Liturgy chant (መስቀል አብርሃ)';
+                        btnSat.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            switchKidaseDayAndNavigate('saturday', '2-74');
+                        });
+                        navGroup.appendChild(btnSat);
+                    }
+
+                    const pFooter = card.querySelector('.prayer-footer');
+                    const pActions = card.querySelector('.prayer-actions');
+                    if (pFooter && pActions) {
+                        pFooter.insertBefore(navGroup, pActions);
+                    }
+                }
+            } else if (p.chapter === '3' && p.stanza === '119') {
+                const isSundayNisgid = p.english && p.english.toLowerCase().includes("worship");
+                const navBtn = document.createElement('button');
+                navBtn.className = 'settings-button day-nav-btn';
+
+                if (isSundayNisgid) {
+                    navBtn.innerHTML = `${jumpIconSVG} <span>GOLDEN CENSER | ማዕጠንት ዘወርቅ (Mon–Sat)</span>`;
+                    navBtn.title = 'Switch to Mon–Sat Golden Censer chant (አንቲ ውእቱ ማዕጠንት ዘወርቅ)';
+                    navBtn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        switchKidaseDayAndNavigate('saturday', '3-119');
+                    });
+                } else {
+                    navBtn.innerHTML = `${jumpIconSVG} <span>LET US WORSHIP | ንስግድ (Sunday / Feasts)</span>`;
+                    navBtn.title = 'Switch to Sunday Nisgid chant (ካህን፤ ንስግድ / Priest: Let us worship)';
+                    navBtn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        switchKidaseDayAndNavigate('sunday', '3-119');
                     });
                 }
 
@@ -4909,8 +5050,8 @@ function _renderPrayersSync() {
 function smoothRender(callback) {
     prayerDisplay.classList.add('is-transitioning');
     setTimeout(() => {
-        if (callback) callback();
         renderPrayers();
+        if (callback) callback();
         prayerDisplay.classList.remove('is-transitioning');
     }, 150);
 }
@@ -5075,6 +5216,35 @@ function updateFontStylesAndPreview() {
 function setupSlides() {
     prayerDisplay.className = ''; // Clear existing classes
     prayerDisplay.classList.add(`transition-${displayOptions.slideTransition}`);
+    // If a pending slide target was set (e.g. from "Enter Slides" button), resolve it
+    // by signature to survive DOM rebuilds from async re-renders.
+    if (_pendingSlideSignature) {
+        const allSlides = Array.from(prayerDisplay.querySelectorAll('.prayer-card, .section-title.collapsible'));
+        const targetCard = allSlides.find(c => c.dataset && c.dataset.prayerSignature === _pendingSlideSignature);
+        if (targetCard) {
+            const idx = allSlides.indexOf(targetCard);
+            if (idx !== -1) {
+                currentSlideIndex = idx;
+            }
+        }
+    } else if (_pendingSlideId) {
+        let targetCard = null;
+        if (_pendingSlidePredicate && typeof _pendingSlidePredicate === 'function') {
+            const matchingCards = Array.from(prayerDisplay.querySelectorAll(`.prayer-card[data-card-id="${_pendingSlideId}"]`));
+            targetCard = matchingCards.find(_pendingSlidePredicate) || matchingCards[0];
+        } else {
+            targetCard = prayerDisplay.querySelector(`.prayer-card[data-card-id="${_pendingSlideId}"]`);
+        }
+        if (targetCard) {
+            const allSlides = Array.from(prayerDisplay.querySelectorAll('.prayer-card, .section-title.collapsible'));
+            const idx = allSlides.indexOf(targetCard);
+            if (idx !== -1) {
+                currentSlideIndex = idx;
+            }
+        }
+        _pendingSlideId = null;
+        _pendingSlidePredicate = null;
+    }
     showSlide(currentSlideIndex);
 }
 
@@ -5117,11 +5287,44 @@ function prevSlide() {
 }
 
 /**
+ * Switch the Liturgy Day setting and navigate directly to a target prayer card.
+ * @param {string} newDay - 'sunday' | 'saturday' | 'weekday'
+ * @param {string} targetCardId - e.g. '2-74', '2-75', '3-119'
+ * @param {Function} [predicate] - Optional filter function for matching cards
+ */
+function switchKidaseDayAndNavigate(newDay, targetCardId, predicate) {
+    selectedKidaseDay = newDay;
+    if (kidaseDaySelector) {
+        kidaseDaySelector.value = newDay;
+    }
+
+    if (displayOptions.presentationMode === 'slides') {
+        _pendingSlideId = targetCardId;
+        _pendingSlidePredicate = predicate;
+    }
+
+    saveSettings();
+    smoothRender(() => {
+        if (displayOptions.presentationMode !== 'slides') {
+            navigateToCard(targetCardId, predicate);
+        }
+    });
+}
+
+/**
  * Navigate to a prayer card by its chapter-stanza ID (e.g. 'The300-1', '4-33').
  * Works in both scroll mode (scrollIntoView) and slides mode (jump to slide).
+ * @param {string} targetCardId - e.g. '2-74', '2-75', '3-119'
+ * @param {Function} [predicate] - Optional filter function for disambiguating multiple matching cards
  */
-function navigateToCard(targetCardId) {
-    const targetCard = prayerDisplay.querySelector(`.prayer-card[data-card-id="${targetCardId}"]`);
+function navigateToCard(targetCardId, predicate) {
+    let targetCard = null;
+    if (predicate && typeof predicate === 'function') {
+        const matchingCards = Array.from(prayerDisplay.querySelectorAll(`.prayer-card[data-card-id="${targetCardId}"]`));
+        targetCard = matchingCards.find(predicate) || matchingCards[0];
+    } else {
+        targetCard = prayerDisplay.querySelector(`.prayer-card[data-card-id="${targetCardId}"]`);
+    }
     if (!targetCard) return;
 
     if (displayOptions.presentationMode === 'slides') {
@@ -5838,6 +6041,9 @@ function renderSelectedPsalmsWithDoxology(addSectionTitleCallback) {
                 geez_script: displayedLanguages.geez_script && verse.geez_psalms,
                 coptic: displayedLanguages.coptic && verse.coptic
             };
+            prayerCard.dataset.cardId = `Psalms-${lxxChapter}:${verse.verseNum}`;
+            prayerCard.dataset.prayerSignature = `Psalms_${lxxChapter}_${verse.verseNum}_${(verse.nkjv || verse.geez_psalms || '').replace(/\s+/g, ' ').trim().slice(0, 50)}`;
+
             const activeLanguageCount = Object.values(activePsalmTranslations).filter(Boolean).length;
             if (activeLanguageCount === 0) return;
 
@@ -5915,12 +6121,9 @@ function renderSelectedPsalmsWithDoxology(addSectionTitleCallback) {
             enterSlidesBtn.title = 'Enter Slides Mode';
             enterSlidesBtn.addEventListener('click', (event) => {
                 const clickedCard = event.currentTarget.closest('.prayer-card');
-                const allCards = Array.from(prayerDisplay.querySelectorAll('.prayer-card, .section-title.collapsible'));
-                const cardIndex = allCards.indexOf(clickedCard);
-                if (cardIndex !== -1) {
-                    currentSlideIndex = cardIndex;
-                    togglePresentationMode();
-                }
+                const signature = clickedCard.dataset.prayerSignature;
+                const cardId = clickedCard.dataset.cardId;
+                togglePresentationMode({ signature, cardId });
             });
             prayerActions.appendChild(enterSlidesBtn);
             const exitSlidesBtn = document.createElement('button');
@@ -6691,6 +6894,14 @@ showVespersToggle.addEventListener('change', () => {
     smoothRender();
 });
 
+if (kidaseDaySelector) {
+    kidaseDaySelector.addEventListener('change', () => {
+        selectedKidaseDay = kidaseDaySelector.value;
+        saveSettings();
+        smoothRender();
+    });
+}
+
 covenantPrayerSelector.addEventListener('change', () => {
     selectedCovenantPrayer = covenantPrayerSelector.value;
     saveSettings();
@@ -6734,13 +6945,19 @@ function toggleLayout() {
     saveSettings();
 }
 
-function togglePresentationMode() {
+function togglePresentationMode(targetCardIdentifier) {
     const isEnteringSlides = displayOptions.presentationMode !== 'slides';
     displayOptions.presentationMode = isEnteringSlides ? 'slides' : 'scroll';
 
     if (isEnteringSlides) {
         displayOptions.showPrayerLabels = true; // Ensure labels are on for context
         collapseSidebar();
+        // Set pending signature BEFORE renderPrayers so that setupSlides() can use it
+        if (targetCardIdentifier && targetCardIdentifier.signature) {
+            _pendingSlideSignature = targetCardIdentifier.signature;
+        }
+    } else {
+        _pendingSlideSignature = null;
     }
 
     applyTheme();
@@ -6748,10 +6965,37 @@ function togglePresentationMode() {
     updateAllTogglesInSettingsPanel();
     saveSettings();
 
-    if (!isEnteringSlides) {
+    if (isEnteringSlides) {
+        // setupSlides() inside renderPrayers() already resolved the signature.
+        // But do a final verification here in case it didn't find the target.
+        if (targetCardIdentifier) {
+            let targetCard = null;
+            if (targetCardIdentifier.signature) {
+                targetCard = Array.from(prayerDisplay.querySelectorAll('.prayer-card'))
+                    .find(c => c.dataset.prayerSignature === targetCardIdentifier.signature);
+            }
+            if (!targetCard && targetCardIdentifier.cardId) {
+                targetCard = prayerDisplay.querySelector(`.prayer-card[data-card-id="${targetCardIdentifier.cardId}"]`);
+            } else if (!targetCard && targetCardIdentifier.prayerIndex !== undefined && targetCardIdentifier.prayerIndex !== '-1' && targetCardIdentifier.prayerIndex !== -1) {
+                targetCard = prayerDisplay.querySelector(`.prayer-card[data-prayer-index="${targetCardIdentifier.prayerIndex}"]`);
+            }
+            if (targetCard) {
+                const allSlides = Array.from(prayerDisplay.querySelectorAll('.prayer-card, .section-title.collapsible'));
+                const slideIdx = allSlides.indexOf(targetCard);
+                if (slideIdx !== -1) {
+                    currentSlideIndex = slideIdx;
+                    showSlide(currentSlideIndex);
+                    return;
+                }
+            }
+        }
+        showSlide(currentSlideIndex);
+    } else {
+        _pendingSlideSignature = null;
         // Exiting slides mode: scroll to the previously active card
         setTimeout(() => {
-            const cardToView = prayerDisplay.querySelector(`.prayer-card[data-prayer-index="${currentSlideIndex}"]`);
+            const allSlides = Array.from(prayerDisplay.querySelectorAll('.prayer-card, .section-title.collapsible'));
+            const cardToView = allSlides[currentSlideIndex];
             if (cardToView) {
                 cardToView.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }

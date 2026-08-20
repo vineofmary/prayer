@@ -1869,6 +1869,10 @@ body.presentation-mode-slides #prayer-display.transition-slide > * {
     flex-shrink: 0;
 }
 
+body.presentation-mode-slides #prayer-display > *:not(.prayer-card):not(.section-title.collapsible) {
+    display: none !important;
+}
+
 
 /* "Fade" Transition */
 body.presentation-mode-slides #prayer-display.transition-fade {
@@ -3402,7 +3406,7 @@ body.presentation-mode-slides .card-inline-lectionary-picker {
     z-index: 10;
 }
 
-/* Creed cross-navigation button */
+/* Creed cross-navigation button (appears in both modes) */
 .creed-nav-btn {
     display: inline-flex;
     align-items: center;
@@ -3418,7 +3422,43 @@ body.presentation-mode-slides .card-inline-lectionary-picker {
     margin-right: 0.5rem;
 }
 
-.creed-nav-btn .creed-nav-icon {
+/* Day cross-navigation buttons (only visible in slides mode) */
+.day-nav-btn,
+.day-nav-group {
+    display: none;
+}
+
+body.presentation-mode-slides .day-nav-group {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: 0.5rem;
+}
+
+body.presentation-mode-slides .day-nav-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.72rem;
+    padding: 0.25rem 0.6rem;
+    white-space: nowrap;
+    letter-spacing: 0.03em;
+    flex-shrink: 0;
+    width: auto;
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: 0.5rem;
+}
+
+body.presentation-mode-slides .day-nav-group .day-nav-btn {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.creed-nav-btn .creed-nav-icon,
+.day-nav-btn .creed-nav-icon {
     flex-shrink: 0;
     opacity: 0.85;
 }
