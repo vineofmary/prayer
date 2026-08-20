@@ -422,8 +422,8 @@ const kidaseGospelRefContainer = document.getElementById('kidase-gospel-ref-cont
 
 
 // --- State Variables ---
-const SETTINGS_VERSION = '4.2.4'; // Update this to force refresh load settings
-const APP_VERSION = '0.8.2-beta';
+const SETTINGS_VERSION = '4.2.5'; // Update this to force refresh load settings
+const APP_VERSION = '0.8.4-beta';
 const STATIC_CHANGELOG = [
     { date: '2026-04-26', message: 'fix: clear verse prayer content when language data is empty', author: 'vineofmary' },
     { date: '2026-04-26', message: 'fix: constrain language-specific rubrication colors to legacy theme', author: 'vineofmary' },
