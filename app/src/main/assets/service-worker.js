@@ -50,13 +50,14 @@ self.addEventListener('fetch', event => {
 
       return cache.match(event.request, options).then(response => {
         const fetchPromise = fetch(event.request).then(networkResponse => {
-          // If we got a valid response, update the cache
-          if (networkResponse && networkResponse.status === 200) {
+          // If we got a valid response, update the cache. Ensure scheme is http(s) to avoid Cache.put errors.
+          if (networkResponse && networkResponse.status === 200 && event.request.url.startsWith('http')) {
             cache.put(event.request, networkResponse.clone());
           }
           return networkResponse;
         }).catch(error => {
-          console.error('Fetch failed: ', error);
+          console.error('Fetch failed for url ' + event.request.url + ':', error);
+          throw error; // Rethrow to avoid resolving with undefined and causing TypeError
         });
 
         // Return the cached response if it exists, otherwise wait for the network
