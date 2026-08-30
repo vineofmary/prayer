@@ -8626,7 +8626,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         try {
             if (docId) {
-                await db.collection('prayers').doc(docId).update(updatedData);
+                await db.collection('prayers').doc(docId).set(updatedData, { merge: true });
             } else {
                 // Use metadata values for the new document ID
                 const customId = `${updatedData.chapter}_${updatedData.stanza}_${updatedData.reference}`.replace(/[^a-zA-Z0-9]/g, '_');
