@@ -1,0 +1,38 @@
+name: Sync Prayers from Firestore
+
+on:
+  schedule:
+    # Runs at 20:00 UTC every day (approx. 1 PM Pacific Time)
+    - cron: '0 20 * * *'
+  workflow_dispatch: # Allows manual trigger from the GitHub Actions tab
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          # Required to trigger subsequent workflows if needed, or to allow auto-commit to work correctly
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Dependencies
+        run: npm install firebase-admin
+        
+      - name: Run Sync Script
+        env:
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+        run: node scripts/sync_prayers.js
+
+      - name: Commit and Push Changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: Auto-sync published prayers from Firestore"
+          file_pattern: app/src/main/assets/js/prayers.js
+          branch: main
