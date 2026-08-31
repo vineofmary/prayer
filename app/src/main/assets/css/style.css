@@ -1181,6 +1181,7 @@ body.view-mode-unified .info-panel-content {
 .speaker-label {
     color: var(--speaker-label-color);
     font-style: italic;
+    font-size: 0.85em;
     margin-right: 0.3em;
 }
 

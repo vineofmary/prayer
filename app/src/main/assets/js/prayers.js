@@ -2598,7 +2598,7 @@ Líder: Ante el trono de Nuestro Señor.
     "reference": `Thursday Praise of Mary`,
     "chapter": `Thurs`,
     "stanza": `Intro`,
-    "english": `፨ Leader: Praises for Our Lady Mary, Virgin, Bearer of God, that is read on Thursday.`,
+    "english": `፨ Leader: The Praise of Our Lady Mary, Virgin Bearer of God, which is read on Monday.`,
     "geez_script": `፨ መሪሕ፤ ውዳሴሃ ለእግዝእትነ ማርያም ድንግል ወላዲተ አምላክ ዘይትነበብ በዕለተ ሐሙስ`,
     "geez_phonetic": `፨ merīḥ: wdaséha le'igz'itne maryam dngl weladīte 'amlak zeytnebeb be'ilete ḥamus`,
     "amharic_script": ``,
