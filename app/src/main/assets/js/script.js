@@ -3093,8 +3093,22 @@ function getGospelAuthor(langKey, lectionaryKey = 'gospel') {
     return authorObj[langKey] || authorObj.english;
 }
 
+function applyParentheticalFormatting(text) {
+    if (!text) return text;
+    return text.replace(/\([^)]+\)/g, (match, offset, fullString) => {
+        const before = fullString.substring(Math.max(0, offset - 25), offset);
+        if (match === '(Mary)' && /O\s+holy\s+one\s*$/i.test(before)) {
+            return match;
+        }
+        return `<span class="parenthetical-text">${match}</span>`;
+    });
+}
+
 function formatPrayerText(text, langKey, query, isFirstLanguage, chapter = null, verseNum = null) {
     let processedText = text;
+
+    // Apply parenthetical text formatting (greys out additional context, excluding refrain)
+    processedText = applyParentheticalFormatting(processedText);
 
     // Replace Kidase placeholders
     processedText = replaceKidasePlaceholders(processedText, langKey, isFirstLanguage);
@@ -4676,6 +4690,9 @@ function _renderPrayersSync() {
     let currentNonCollapsibleTitleHtml = null;
     const addSectionTitle = (title, isCollapsible = true, metadata = null) => {
         if (title && title !== lastSectionTitle) {
+            if (title === "→ Prayer of Saint Ephraim: The Praises of Mary | ውዳሴ ማርያም") {
+                hasRenderedPraiseOfMaryMainTitle = true;
+            }
             const titleEl = document.createElement('h2');
             titleEl.classList.add('section-title');
             
@@ -4864,7 +4881,12 @@ function _renderPrayersSync() {
     const mainPrayers = prayers.filter(p => {
         if (p.chapter === 'Psalms' || p.chapter === 'ProphetSong') return false;
 
-        // Always include Daily prayers
+        // Include Daily stanzas 11 and 12 (Praise of Mary intro cards) if any Praise of Mary day is selected
+        if (p.chapter === 'Daily' && (p.stanza === '11' || p.stanza === '12')) {
+            return selectedWidaseMaryamDay !== 'None';
+        }
+
+        // Always include Daily prayers (stanzas 0-10)
         if (p.chapter === 'Daily') return displayOptions.showDailyPrayer;
 
         if (p.chapter === 'Anqetse Birhan' && !displayOptions.showGateOfLight) return false;
@@ -4909,14 +4931,22 @@ function _renderPrayersSync() {
     mapped.forEach(item => mainPrayers.push(item.value));
 
     let hasRenderedTheotokiaTitle = false;
+    let hasRenderedPraiseOfMaryMainTitle = false;
 
     mainPrayers.forEach((prayer, prayerIndex) => {
         const isTheotokia = (prayer.chapter === 'Daily' && (prayer.stanza === '11' || prayer.stanza === '12')) || 
                             ['Sun', 'Mon', 'Tue', 'Wed', 'Thurs', 'Fri', 'Sat', 'Angels', 'Anqetse Birhan'].includes(prayer.chapter);
 
+        const isPraiseOfMaryDay = ['Sun', 'Mon', 'Tue', 'Wed', 'Thurs', 'Fri', 'Sat'].includes(prayer.chapter);
+
         if (isTheotokia && !hasRenderedTheotokiaTitle && selectedWidaseMaryamDay !== 'None') {
             addSectionTitle("<i>Theotokia</i> — The Praises of the Mother of God", false);
             hasRenderedTheotokiaTitle = true;
+        }
+
+        if (isPraiseOfMaryDay && !hasRenderedPraiseOfMaryMainTitle && selectedWidaseMaryamDay !== 'None') {
+            addSectionTitle("→ Prayer of Saint Ephraim: The Praises of Mary | ውዳሴ ማርያም", true);
+            hasRenderedPraiseOfMaryMainTitle = true;
         }
 
         if (prayer.chapter === 'Daily' && prayer.stanza === '0') {

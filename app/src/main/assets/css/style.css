@@ -1184,6 +1184,12 @@ body.view-mode-unified .info-panel-content {
     margin-right: 0.3em;
 }
 
+.parenthetical-text {
+    opacity: 0.6;
+    font-style: italic;
+    font-size: 0.85em;
+}
+
 .kidase-lectionary-item {
     margin-top: 0.75rem;
     padding: 0.5rem;
