@@ -3547,6 +3547,11 @@ function createPrayerCardElement(prayer, prayerIndex, isKidase = false) {
     }
     prayerContent.dataset.activeColumns = cardVisibleLanguageCount;
 
+    const kidaseChapters = ['Kidan', 'order', 'Apostles', 'St.Mary', 'Chrysostom', 'The300', 'mary', 'apostles'];
+    const chapterStr = prayer.chapter || '';
+    const isNumericChapter = /^\d+$/.test(chapterStr);
+    const isKidaseCard = isKidase || isNumericChapter || kidaseChapters.some(c => c.toLowerCase() === chapterStr.toLowerCase());
+
     let isFirstLanguage = true;
     languagesToDisplay.forEach(langKey => {
         const langCfg = LANGUAGE_REGISTRY[langKey];
@@ -3560,15 +3565,28 @@ function createPrayerCardElement(prayer, prayerIndex, isKidase = false) {
         const langHeader = document.createElement('h4');
         let labelText = langCfg.name.replace(/\*+$/, '');
 
-        const isOfficial = prayer[`${langKey}_is_official`] !== undefined ?
-            prayer[`${langKey}_is_official`] : !langCfg.isAuto;
+        let isOfficial;
+        if (prayer[`${langKey}_is_official`] !== undefined) {
+            isOfficial = prayer[`${langKey}_is_official`];
+        } else if (langKey === 'spanish' || langKey === 'french') {
+            isOfficial = !isKidaseCard;
+        } else {
+            isOfficial = !langCfg.isAuto;
+        }
 
-        if (langCfg.isAuto && !isOfficial) {
-            labelText += ' [Unofficial Translation]';
+        if (!isOfficial) {
+            if (labelText.endsWith(')')) {
+                labelText = labelText.slice(0, -1) + ', Unofficial Translation)';
+            } else {
+                labelText += ' (Unofficial Translation)';
+            }
         }
 
         langHeader.textContent = labelText;
-        if (!displayOptions.showLanguageLabels) langHeader.classList.add('hidden');
+
+        // Force header visibility for Spanish and French in Kidase prayers regardless of setting
+        const isForcedKidaseLabel = isKidaseCard && (langKey === 'spanish' || langKey === 'french');
+        if (!displayOptions.showLanguageLabels && !isForcedKidaseLabel) langHeader.classList.add('hidden');
 
         const langText = document.createElement('p');
         langText.classList.add('language-text');
