@@ -459,7 +459,7 @@ let selectedCovenantPrayer = 'morning';
 let showAnaphora = true;
 let hideQuietPrayers = false;
 let isHolyFiftyDays = false;
-let useExternalBibleAPI = true;
+let useExternalBibleAPI = false;
 let isInitializing = true;
 let kidaseLectionaryRefs = {
     morningPsalm: 'Psalms 34:7-8',
@@ -1777,7 +1777,7 @@ async function loadSettings() {
         selectedAnaphora: 'apostles',
         showSeatatReadings: false,
         showMatins: true,
-        useExternalBibleAPI: true,
+        useExternalBibleAPI: false,
         showTeklil: false,
         bridegroomName: '',
         brideName: '',
