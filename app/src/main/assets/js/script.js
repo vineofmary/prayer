@@ -6089,14 +6089,14 @@ function renderSelectedPsalmsWithDoxology(addSectionTitleCallback) {
                 geez_script: displayedLanguages.geez_script && verse.geez_psalms,
                 coptic: displayedLanguages.coptic && verse.coptic
             };
-            prayerCard.dataset.cardId = `Psalms-${lxxChapter}:${verse.verseNum}`;
-            prayerCard.dataset.prayerSignature = `Psalms_${lxxChapter}_${verse.verseNum}_${(verse.nkjv || verse.geez_psalms || '').replace(/\s+/g, ' ').trim().slice(0, 50)}`;
 
             const activeLanguageCount = Object.values(activePsalmTranslations).filter(Boolean).length;
             if (activeLanguageCount === 0) return;
 
             const prayerCard = document.createElement('div');
             prayerCard.classList.add('prayer-card', 'psalm-card');
+            prayerCard.dataset.cardId = `Psalms-${lxxChapter}:${verse.verseNum}`;
+            prayerCard.dataset.prayerSignature = `Psalms_${lxxChapter}_${verse.verseNum}_${(verse.nkjv || verse.geez_psalms || '').replace(/\s+/g, ' ').trim().slice(0, 50)}`;
 
             // Handle initial collapse state
             if (window.isRenderingCollapsed && displayOptions.presentationMode !== 'slides') {
