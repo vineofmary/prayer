@@ -2174,7 +2174,19 @@ function getBibleVersesFromRef(ref) {
     let usedWeahadu = false;
     if (useExternalBibleAPI && window.WeahaduBibleService && WeahaduBibleService.canon) {
         const nkjv = WeahaduBibleService.getVersesSync('en-kjv', ref);
-        const am2000 = WeahaduBibleService.getVersesSync('am-2000', ref);
+        let am2000Ref = ref;
+        if (bookName === 'Psalms' || bookName === 'Psalm') {
+            const typical = typeof findTypicalPsalm === 'function' ? findTypicalPsalm(bookName, chapterNum, startVerse, endVerse) : null;
+            if (typical) {
+                const amEnd = (typical.ls !== typical.le) ? `-${typical.le}` : '';
+                am2000Ref = `Psalms ${typical.lc}:${typical.ls}${amEnd}`;
+            } else if (typeof convertMtToLxx === 'function') {
+                const lxxCh = convertMtToLxx(chapterNum);
+                const amEnd = (startVerse !== endVerse) ? (endVerse === 999 ? '-End' : `-${endVerse}`) : '';
+                am2000Ref = `Psalms ${lxxCh}:${startVerse}${amEnd}`;
+            }
+        }
+        const am2000 = WeahaduBibleService.getVersesSync('am-2000', am2000Ref);
         const gez1980 = WeahaduBibleService.getVersesSync('gez-1980', ref);
         const ti1997 = WeahaduBibleService.getVersesSync('ti-1997', ref);
         
@@ -5794,6 +5806,18 @@ function convertLxxToMt(lxxChapter) {
     if (lxxChapter === 146 || lxxChapter === 147) return [147];
     if (lxxChapter >= 148 && lxxChapter <= 150) return [lxxChapter];
     return []; // Should not happen
+}
+
+function convertMtToLxx(mtChapter) {
+    if (mtChapter >= 1 && mtChapter <= 8) return mtChapter;
+    if (mtChapter === 9 || mtChapter === 10) return 9;
+    if (mtChapter >= 11 && mtChapter <= 113) return mtChapter - 1;
+    if (mtChapter === 114 || mtChapter === 115) return 113;
+    if (mtChapter === 116) return 114;
+    if (mtChapter >= 117 && mtChapter <= 146) return mtChapter - 1;
+    if (mtChapter === 147) return 146;
+    if (mtChapter >= 148 && mtChapter <= 150) return mtChapter;
+    return mtChapter;
 }
 
 function populatePsalmSelector() {

@@ -347,12 +347,12 @@ const TYPICAL_PSALMS = [
     {
         "p": "Egziabihierise Gehad Yimetsie",
         "g": "እግዚአብሔርሰ ገሀደ ይመጽእ ወአምላክነሂ ኢያረምም እሳት ይነድድ ቅድሜሁ",
-        "mc": 49,
+        "mc": 50,
         "ms": 2,
-        "me": 2,
+        "me": 3,
         "lc": 49,
         "ls": 2,
-        "le": 2
+        "le": 3
     },
     {
         "p": "Egziabihierise Nigus WuEtu Imqidme Alem",
