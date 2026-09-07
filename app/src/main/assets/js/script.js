@@ -2181,9 +2181,20 @@ function getBibleVersesFromRef(ref) {
                 const amEnd = (typical.ls !== typical.le) ? `-${typical.le}` : '';
                 am2000Ref = `Psalms ${typical.lc}:${typical.ls}${amEnd}`;
             } else if (typeof convertMtToLxx === 'function') {
-                const lxxCh = convertMtToLxx(chapterNum);
-                const amEnd = (startVerse !== endVerse) ? (endVerse === 999 ? '-End' : `-${endVerse}`) : '';
-                am2000Ref = `Psalms ${lxxCh}:${startVerse}${amEnd}`;
+                const lxxStart = convertMtToLxx(chapterNum, startVerse);
+                const lxxCh = typeof lxxStart === 'object' ? lxxStart.lxxChapter : lxxStart;
+                const lxxStartV = typeof lxxStart === 'object' ? lxxStart.lxxVerse : startVerse;
+                let amEnd = '';
+                if (startVerse !== endVerse) {
+                    if (endVerse === 999) {
+                        amEnd = '-End';
+                    } else {
+                        const lxxEnd = convertMtToLxx(chapterNum, endVerse);
+                        const lxxEndV = typeof lxxEnd === 'object' ? lxxEnd.lxxVerse : endVerse;
+                        amEnd = `-${lxxEndV}`;
+                    }
+                }
+                am2000Ref = `Psalms ${lxxCh}:${lxxStartV}${amEnd}`;
             }
         }
         const am2000 = WeahaduBibleService.getVersesSync('am-2000', am2000Ref);
@@ -2241,10 +2252,15 @@ function getBibleVersesFromRef(ref) {
 
     // 3. Ge'ez Psalms - Nested structure
     if (!results.geez_script && (bookName === 'Psalms' || bookName === 'Psalm') && bibleData.geez_psalms) {
-        const chapter = bibleData.geez_psalms.find(ch => ch.id === chapterNum);
+        const lxxStart = typeof convertMtToLxx === 'function' ? convertMtToLxx(chapterNum, startVerse) : null;
+        const lxxCh = typeof lxxStart === 'object' ? lxxStart.lxxChapter : (typeof convertMtToLxx === 'function' ? convertMtToLxx(chapterNum) : chapterNum);
+        const lxxStartV = typeof lxxStart === 'object' ? lxxStart.lxxVerse : startVerse;
+        const lxxEnd = typeof convertMtToLxx === 'function' ? convertMtToLxx(chapterNum, endVerse) : null;
+        const lxxEndV = typeof lxxEnd === 'object' ? lxxEnd.lxxVerse : endVerse;
+        const chapter = bibleData.geez_psalms.find(ch => ch.id === lxxCh);
         if (chapter && chapter.verses) {
             results.geez_script = chapter.verses
-                .filter(v => v.verse_number >= startVerse && v.verse_number <= endVerse)
+                .filter(v => v.verse_number >= lxxStartV && v.verse_number <= lxxEndV)
                 .map(v => ({ verseNum: v.verse_number, text: v.text }));
         }
     }
@@ -5205,10 +5221,16 @@ function copyPrayer(prayer) {
 function copyPsalm(verse, lxxChapter) {
     let textToCopy = ``;
     let labelText;
-    if (lxxChapter == verse.mtChapter) {
+    if (lxxChapter === 151) {
+        labelText = `Psalm 151:${verse.verseNum}`;
+    } else if (lxxChapter == verse.mtChapter && (!verse.mtVerseNum || verse.verseNum == verse.mtVerseNum)) {
         labelText = `Psalm ${lxxChapter}:${verse.verseNum}`;
-    } else {
+    } else if (lxxChapter == verse.mtChapter) {
+        labelText = `Psalm ${lxxChapter}:${verse.verseNum} (${verse.mtVerseNum})`;
+    } else if (!verse.mtVerseNum || verse.verseNum == verse.mtVerseNum) {
         labelText = `Psalm ${lxxChapter} (${verse.mtChapter}):${verse.verseNum}`;
+    } else {
+        labelText = `Psalm ${lxxChapter}:${verse.verseNum} (${verse.mtChapter}:${verse.mtVerseNum})`;
     }
 
     textToCopy += `፨ ${labelText} ፨\n\n`;
@@ -5224,6 +5246,10 @@ function copyPsalm(verse, lxxChapter) {
     if (displayedLanguages.amharic_script && verse.am54) {
         textToCopy += `--- አማርኛ ---\n`;
         textToCopy += `[${verse.verseNum}] ${verse.am54}\n\n`;
+    }
+    if (displayedLanguages.tigrinya_script && verse.tigrinya_script) {
+        textToCopy += `--- ትግርኛ ---\n`;
+        textToCopy += `[${verse.verseNum}] ${verse.tigrinya_script}\n\n`;
     }
     if (displayedLanguages.coptic && verse.coptic) {
         textToCopy += `--- ϯⲙⲉⲧⲣⲉⲙⲛ̀ⲭⲏⲙⲓ ---\n`;
@@ -5805,19 +5831,82 @@ function convertLxxToMt(lxxChapter) {
     if (lxxChapter >= 116 && lxxChapter <= 145) return [lxxChapter + 1];
     if (lxxChapter === 146 || lxxChapter === 147) return [147];
     if (lxxChapter >= 148 && lxxChapter <= 150) return [lxxChapter];
+    if (lxxChapter === 151) return [151];
     return []; // Should not happen
 }
 
-function convertMtToLxx(mtChapter) {
-    if (mtChapter >= 1 && mtChapter <= 8) return mtChapter;
-    if (mtChapter === 9 || mtChapter === 10) return 9;
-    if (mtChapter >= 11 && mtChapter <= 113) return mtChapter - 1;
-    if (mtChapter === 114 || mtChapter === 115) return 113;
-    if (mtChapter === 116) return 114;
-    if (mtChapter >= 117 && mtChapter <= 146) return mtChapter - 1;
-    if (mtChapter === 147) return 146;
-    if (mtChapter >= 148 && mtChapter <= 150) return mtChapter;
-    return mtChapter;
+function getMtFromLxx(lxxChapter, lxxVerse = 1) {
+    const v = Number(lxxVerse) || 1;
+    if (lxxChapter >= 1 && lxxChapter <= 8) return { mtChapter: lxxChapter, mtVerse: v };
+    if (lxxChapter === 9) return v <= 20 ? { mtChapter: 9, mtVerse: v } : { mtChapter: 10, mtVerse: v - 20 };
+    if (lxxChapter >= 10 && lxxChapter <= 112) return { mtChapter: lxxChapter + 1, mtVerse: v };
+    if (lxxChapter === 113) return v <= 8 ? { mtChapter: 114, mtVerse: v } : { mtChapter: 115, mtVerse: v - 8 };
+    if (lxxChapter === 114) return { mtChapter: 116, mtVerse: v };
+    if (lxxChapter === 115) return { mtChapter: 116, mtVerse: v + 9 };
+    if (lxxChapter >= 116 && lxxChapter <= 145) return { mtChapter: lxxChapter + 1, mtVerse: v };
+    if (lxxChapter === 146) return { mtChapter: 147, mtVerse: v };
+    if (lxxChapter === 147) return { mtChapter: 147, mtVerse: v + 11 };
+    if (lxxChapter >= 148 && lxxChapter <= 150) return { mtChapter: lxxChapter, mtVerse: v };
+    if (lxxChapter === 151) return { mtChapter: 151, mtVerse: v };
+    return { mtChapter: lxxChapter, mtVerse: v };
+}
+
+function convertMtToLxx(mtChapter, mtVerse) {
+    const hasVerse = (mtVerse !== undefined && mtVerse !== null && !isNaN(Number(mtVerse)));
+    const v = hasVerse ? Number(mtVerse) : 1;
+
+    let lxxChapter = mtChapter;
+    let lxxVerse = v;
+
+    if (mtChapter >= 1 && mtChapter <= 8) {
+        lxxChapter = mtChapter;
+        lxxVerse = v;
+    } else if (mtChapter === 9) {
+        lxxChapter = 9;
+        lxxVerse = v;
+    } else if (mtChapter === 10) {
+        lxxChapter = 9;
+        lxxVerse = v + 20;
+    } else if (mtChapter >= 11 && mtChapter <= 113) {
+        lxxChapter = mtChapter - 1;
+        lxxVerse = v;
+    } else if (mtChapter === 114) {
+        lxxChapter = 113;
+        lxxVerse = v;
+    } else if (mtChapter === 115) {
+        lxxChapter = 113;
+        lxxVerse = v + 8;
+    } else if (mtChapter === 116) {
+        if (!hasVerse || v <= 9) {
+            lxxChapter = 114;
+            lxxVerse = v;
+        } else {
+            lxxChapter = 115;
+            lxxVerse = v - 9;
+        }
+    } else if (mtChapter >= 117 && mtChapter <= 146) {
+        lxxChapter = mtChapter - 1;
+        lxxVerse = v;
+    } else if (mtChapter === 147) {
+        if (!hasVerse || v <= 11) {
+            lxxChapter = 146;
+            lxxVerse = v;
+        } else {
+            lxxChapter = 147;
+            lxxVerse = v - 11;
+        }
+    } else if (mtChapter >= 148 && mtChapter <= 150) {
+        lxxChapter = mtChapter;
+        lxxVerse = v;
+    } else if (mtChapter === 151) {
+        lxxChapter = 151;
+        lxxVerse = v;
+    }
+
+    if (!hasVerse) {
+        return lxxChapter;
+    }
+    return { lxxChapter, lxxVerse };
 }
 
 function populatePsalmSelector() {
@@ -5924,7 +6013,7 @@ function renderSelectedPsalmsWithDoxology(addSectionTitleCallback) {
     let rgvPsalms = rgvVersesAll.filter(v => v[psalmBookData.rgv.bookKey] === psalmBookData.rgv.name);
     
     let tigrinyaPsalms = [];
-
+    let am2000Psalms = [];
     let gezWeahaduPsalms = [];
 
     if (useExternalBibleAPI && window.WeahaduBibleService && WeahaduBibleService.canon) {
@@ -5934,7 +6023,7 @@ function renderSelectedPsalmsWithDoxology(addSectionTitleCallback) {
         }
         const weahaduAm = WeahaduBibleService.cache.get('am-2000-19-psalms.json');
         if (weahaduAm) {
-            am54Psalms = weahaduAm.chapters.flatMap(ch => ch.verses.map(v => ({ chapter: ch.n, verse: parseInt(v.n), text: v.t })));
+            am2000Psalms = weahaduAm.chapters.flatMap(ch => ch.verses.map(v => ({ chapter: ch.n, verse: parseInt(v.n), text: v.t })));
         }
         const weahaduGez = WeahaduBibleService.cache.get('gez-1980-19-psalms.json');
         if (weahaduGez) {
@@ -5952,156 +6041,139 @@ function renderSelectedPsalmsWithDoxology(addSectionTitleCallback) {
         addSectionTitleCallback(lxxChapter);
         let allVerses = [];
 
-        // Special handling for LXX Psalm 9
+        const geezPsalmChapter = geezPsalmsAll.find(c => c.id === lxxChapter);
+        const geezVerses = geezPsalmChapter ? geezPsalmChapter.verses : [];
+        const copticPsalmChapter = copticPsalmsAll.find(c => c.chapter === lxxChapter);
+        const copticVerses = copticPsalmChapter ? copticPsalmChapter.verses : [];
+        const am2000ChVerses = am2000Psalms.filter(v => v.chapter === lxxChapter);
+
+        let maxVerseNum = 0;
         if (lxxChapter === 9) {
-            const nkjv9 = nkjvPsalms.filter(v => v.chapter == 9);
-            const nkjv10 = nkjvPsalms.filter(v => v.chapter == 10);
-            const am54_9 = am54Psalms.filter(v => v.chapter == 9);
-            const am54_10 = am54Psalms.filter(v => v.chapter == 10);
-            const rgv9 = rgvPsalms.filter(v => v.chapter == 9);
-            const rgv10 = rgvPsalms.filter(v => v.chapter == 10);
-            const ti9 = tigrinyaPsalms.filter(v => v.chapter == 9);
-            const ti10 = tigrinyaPsalms.filter(v => v.chapter == 10);
-            const gezWeahadu9 = gezWeahaduPsalms.filter(v => v.chapter == 9);
-            const gezWeahadu10 = gezWeahaduPsalms.filter(v => v.chapter == 10);
-            const geezPsalmChapter = geezPsalmsAll.find(c => c.id === 9);
-            const geezVerses = geezPsalmChapter ? geezPsalmChapter.verses : [];
-            const copticPsalmChapter = copticPsalmsAll.find(c => c.chapter === 9);
-            const copticVerses = copticPsalmChapter ? copticPsalmChapter.verses : [];
-
-            for (let lxxVerseNum = 1; lxxVerseNum <= 38; lxxVerseNum++) {
-                let mtChapter, mtVerseNum;
-                let nkjvSrc, am54Src, rgvSrc, tiSrc, gezWeahaduSrc;
-
-                if (lxxVerseNum <= 20) {
-                    mtChapter = 9;
-                    mtVerseNum = lxxVerseNum;
-                    nkjvSrc = nkjv9;
-                    am54Src = am54_9;
-                    rgvSrc = rgv9;
-                    tiSrc = ti9;
-                    gezWeahaduSrc = gezWeahadu9;
-                } else {
-                    mtChapter = 10;
-                    mtVerseNum = lxxVerseNum - 20;
-                    nkjvSrc = nkjv10;
-                    am54Src = am54_10;
-                    rgvSrc = rgv10;
-                    tiSrc = ti10;
-                    gezWeahaduSrc = gezWeahadu10;
-                }
-
-                const findVerse = (verses, verseNum, key = 'verse') => verses.find(v => v && v[key] == verseNum);
-
-                const nkjvVerse = findVerse(nkjvSrc, mtVerseNum);
-                const am54Verse = findVerse(am54Src, mtVerseNum);
-                const rgvVerse = findVerse(rgvSrc, mtVerseNum);
-                const tiVerse = findVerse(tiSrc, mtVerseNum);
-                let geezVerseText = '';
-                if (useExternalBibleAPI && gezWeahaduPsalms.length > 0) {
-                    const gV = findVerse(gezWeahaduSrc, mtVerseNum);
-                    if (gV) geezVerseText = gV.text;
-                } else {
-                    const gV = findVerse(geezVerses, lxxVerseNum, 'verse_number');
-                    if (gV) geezVerseText = gV.text;
-                }
-                const copticVerse = findVerse(copticVerses, String(lxxVerseNum), 'verse');
-
-                    if (nkjvVerse || am54Verse || rgvVerse || tiVerse || geezVerseText || copticVerse) {
-                    allVerses.push({
-                        verseNum: lxxVerseNum, // LXX verse number
-                        mtChapter: mtChapter,
-                        mtVerseNum: mtVerseNum,
-                        nkjv: nkjvVerse ? nkjvVerse.text : '',
-                        am54: am54Verse ? am54Verse.text : '',
-                        rgv: rgvVerse ? rgvVerse.text : '',
-                        tigrinya_script: tiVerse ? tiVerse.text : '',
-                        geez_psalms: geezVerseText,
-                        coptic: copticVerse ? copticVerse.text_coptic : '',
-                    });
-                }
-            }
+            maxVerseNum = 38;
+        } else if (lxxChapter === 113) {
+            maxVerseNum = 26;
+        } else if (lxxChapter === 114) {
+            maxVerseNum = 9;
+        } else if (lxxChapter === 115) {
+            maxVerseNum = 10;
+        } else if (lxxChapter === 146) {
+            maxVerseNum = 11;
+        } else if (lxxChapter === 147) {
+            maxVerseNum = 9;
+        } else if (lxxChapter === 151) {
+            maxVerseNum = 8;
         } else {
-            // Original logic for all other psalms
-            const mtChapters = convertLxxToMt(lxxChapter);
-            const geezPsalmChapter = geezPsalmsAll.find(c => c.id === lxxChapter);
-            const geezVerses = geezPsalmChapter ? geezPsalmChapter.verses : [];
-            const copticPsalmChapter = copticPsalmsAll.find(c => c.chapter === lxxChapter);
-            const copticVerses = copticPsalmChapter ? copticPsalmChapter.verses : [];
-
-            mtChapters.forEach(mtChapter => {
-                const nkjvVerses = nkjvPsalms.filter(v => v.chapter == mtChapter);
-                const am54Verses = am54Psalms.filter(v => v.chapter == mtChapter);
-                const rgvVerses = rgvPsalms.filter(v => v.chapter == mtChapter);
-                const tiVerses = tigrinyaPsalms.filter(v => v.chapter == mtChapter);
-                const gezWeahaduVerses = gezWeahaduPsalms.filter(v => v.chapter == mtChapter);
-
-                let maxVerseNum = 0;
-                [...nkjvVerses, ...am54Verses, ...rgvVerses, ...tiVerses, ...gezWeahaduVerses].forEach(v => {
-                    if (v && v.verse) {
-                        const verseParts = String(v.verse).split('-').map(Number);
-                        const endVerse = verseParts.length > 1 ? verseParts[1] : verseParts[0];
-                        if (endVerse > maxVerseNum) maxVerseNum = endVerse;
-                    }
-                });
-
-                // If maxVerseNum is still 0 but we have geezVerses or copticVerses, use that
-                if (maxVerseNum === 0) {
-                    if (geezVerses.length > 0) {
-                        maxVerseNum = Math.max(...geezVerses.map(v => v.verse_number));
-                    } else if (copticVerses.length > 0) {
-                        maxVerseNum = Math.max(...copticVerses.map(v => Number(v.verse)));
-                    }
-                }
-
-                for (let i = 1; i <= maxVerseNum; i++) {
-                    const findVerse = (verses, verseNum) => verses.find(v => {
-                        if (!v || !v.verse) return false;
-                        const parts = String(v.verse).split('-').map(Number);
-                        return verseNum >= parts[0] && verseNum <= (parts.length > 1 ? parts[1] : parts[0]);
-                    });
-
-                    let verseData = { verseNum: i, mtChapter: mtChapter, mtVerseNum: i };
-                    const nkjvVerse = findVerse(nkjvVerses, i);
-                    if (nkjvVerse) verseData.nkjv = nkjvVerse.text;
-
-                    const rgvVerse = findVerse(rgvVerses, i);
-                    if (rgvVerse) {
-                        verseData.rgv = rgvVerse.text;
-                    }
-
-                    const am54Verse = findVerse(am54Verses, i);
-                    if (am54Verse) {
-                        verseData.am54 = am54Verse.text;
-                    }
-                    
-                    const tiVerse = findVerse(tiVerses, i);
-                    if (tiVerse) {
-                        verseData.tigrinya_script = tiVerse.text;
-                    }
-
-                    let geezVerseText = '';
-                    if (useExternalBibleAPI && gezWeahaduPsalms.length > 0) {
-                        const gV = findVerse(gezWeahaduVerses, i);
-                        if (gV) geezVerseText = gV.text;
-                    } else {
-                        const gV = geezVerses.find(v => v.verse_number == i);
-                        if (gV) geezVerseText = gV.text;
-                    }
-                    if (geezVerseText) {
-                        verseData.geez_psalms = geezVerseText;
-                    }
-
-                    const copticVerse = copticVerses.find(v => v.verse == String(i));
-                    if (copticVerse) {
-                        verseData.coptic = copticVerse.text_coptic;
-                    }
-
-                    if (verseData.nkjv || verseData.rgv || verseData.am54 || verseData.tigrinya_script || verseData.geez_psalms || verseData.coptic) {
-                        allVerses.push(verseData);
-                    }
+            const { mtChapter } = getMtFromLxx(lxxChapter, 1);
+            const nkjvCh = nkjvPsalms.filter(v => v.chapter == mtChapter);
+            const am54Ch = am54Psalms.filter(v => v.chapter == mtChapter);
+            const rgvCh = rgvPsalms.filter(v => v.chapter == mtChapter);
+            const tiCh = tigrinyaPsalms.filter(v => v.chapter == mtChapter);
+            [...nkjvCh, ...am54Ch, ...rgvCh, ...tiCh].forEach(v => {
+                if (v && v.verse) {
+                    const verseParts = String(v.verse).split('-').map(Number);
+                    const endVerse = verseParts.length > 1 ? verseParts[1] : verseParts[0];
+                    if (endVerse > maxVerseNum) maxVerseNum = endVerse;
                 }
             });
+        }
+
+        if (geezVerses.length > 0) {
+            const maxG = Math.max(...geezVerses.map(v => v.verse_number));
+            if (maxG > maxVerseNum) maxVerseNum = maxG;
+        }
+        if (copticVerses.length > 0) {
+            const maxC = Math.max(...copticVerses.map(v => Number(v.verse)));
+            if (maxC > maxVerseNum) maxVerseNum = maxC;
+        }
+        if (useExternalBibleAPI && am2000ChVerses.length > 0) {
+            const maxAm = Math.max(...am2000ChVerses.map(v => v.verse));
+            if (maxAm > maxVerseNum) maxVerseNum = maxAm;
+        }
+
+        const findVerse = (verses, vNum, key = 'verse') => verses.find(v => {
+            if (!v || v[key] === undefined) return false;
+            const val = v[key];
+            const parts = String(val).split('-').map(Number);
+            return vNum >= parts[0] && vNum <= (parts.length > 1 ? parts[1] : parts[0]);
+        });
+
+        for (let i = 1; i <= maxVerseNum; i++) {
+            const { mtChapter, mtVerse: mtVerseNum } = getMtFromLxx(lxxChapter, i);
+            let verseData = { verseNum: i, mtChapter: mtChapter, mtVerseNum: mtVerseNum };
+
+            if (lxxChapter !== 151) {
+                const nkjvVerse = findVerse(nkjvPsalms.filter(v => v.chapter == mtChapter), mtVerseNum);
+                if (nkjvVerse) verseData.nkjv = nkjvVerse.text;
+
+                const rgvVerse = findVerse(rgvPsalms.filter(v => v.chapter == mtChapter), mtVerseNum);
+                if (rgvVerse) verseData.rgv = rgvVerse.text;
+
+                if (useExternalBibleAPI && am2000Psalms.length > 0) {
+                    const amVerse = findVerse(am2000ChVerses, i);
+                    if (amVerse) verseData.am54 = amVerse.text;
+                } else {
+                    const amVerse = findVerse(am54Psalms.filter(v => v.chapter == mtChapter), mtVerseNum);
+                    if (amVerse) verseData.am54 = amVerse.text;
+                }
+
+                const tiChVerses = tigrinyaPsalms.filter(v => v.chapter == mtChapter);
+                let tiVerse = findVerse(tiChVerses, mtVerseNum);
+                if (!tiVerse && mtChapter === 116 && mtVerseNum === 19) {
+                    tiVerse = findVerse(tiChVerses, 18);
+                }
+                if (tiVerse) verseData.tigrinya_script = tiVerse.text;
+            }
+
+            let geezVerseText = '';
+            if (useExternalBibleAPI && gezWeahaduPsalms.length > 0) {
+                let gezCh = mtChapter;
+                let gezV = mtVerseNum;
+                if (lxxChapter === 113) { gezCh = 114; gezV = i; }
+                else if (lxxChapter === 114) { gezCh = 115; gezV = i; }
+                else if (lxxChapter === 115) { gezCh = 116; gezV = i; }
+                else if (lxxChapter === 146) { gezCh = 147; gezV = i; }
+                else if (lxxChapter === 147) { gezCh = 148; gezV = i; }
+                else if (lxxChapter >= 148 && lxxChapter <= 150) { gezCh = lxxChapter + 1; gezV = i; }
+                const gV = findVerse(gezWeahaduPsalms.filter(v => v.chapter == gezCh), gezV);
+                if (gV) geezVerseText = gV.text;
+            }
+            if (!geezVerseText && geezVerses.length > 0) {
+                if (lxxChapter === 115) {
+                    if (i <= 4) {
+                        const gV = findVerse(geezVerses, i, 'verse_number');
+                        if (gV) geezVerseText = gV.text;
+                    } else if (i === 5) {
+                        geezVerseText = 'ወእሁብ ብፅአትየ ለእግዚአብሔር፤ በቅድመ ኵሉ ሕዝብ።';
+                    } else if (i === 6) {
+                        const gV = findVerse(geezVerses, 5, 'verse_number');
+                        if (gV) geezVerseText = gV.text;
+                    } else if (i === 7) {
+                        const v6 = findVerse(geezVerses, 6, 'verse_number');
+                        const v7 = findVerse(geezVerses, 7, 'verse_number');
+                        geezVerseText = [v6?.text, v7?.text].filter(Boolean).join(' ');
+                    } else if (i === 8) {
+                        geezVerseText = 'ለከ እሠውዕ መሥዋዕተ ስብሓት፤';
+                    } else if (i === 9) {
+                        geezVerseText = 'ወእሁብ ብፅአትየ ለእግዚአብሔር፤ በቅድመ ኵሉ ሕዝብ።';
+                    } else if (i === 10) {
+                        const gV = findVerse(geezVerses, 9, 'verse_number');
+                        if (gV) geezVerseText = gV.text;
+                    }
+                } else {
+                    const gV = findVerse(geezVerses, i, 'verse_number');
+                    if (gV) geezVerseText = gV.text;
+                }
+            }
+            if (geezVerseText) verseData.geez_psalms = geezVerseText;
+
+            if (copticVerses.length > 0) {
+                const copticVerse = findVerse(copticVerses, String(i), 'verse');
+                if (copticVerse) verseData.coptic = copticVerse.text_coptic;
+            }
+
+            if (verseData.nkjv || verseData.rgv || verseData.am54 || verseData.tigrinya_script || verseData.geez_psalms || verseData.coptic) {
+                allVerses.push(verseData);
+            }
         }
 
         allVerses.forEach(verse => {
@@ -6163,18 +6235,16 @@ function renderSelectedPsalmsWithDoxology(addSectionTitleCallback) {
             prayerLabel.classList.add('prayer-label');
 
             let labelText;
-            if (lxxChapter === 9) {
-                if (verse.mtChapter === 9) {
-                    labelText = `Psalm 9:${verse.verseNum}`;
-                } else { // mtChapter is 10
-                    labelText = `Psalm 9:${verse.verseNum} (10:${verse.mtVerseNum})`;
-                }
+            if (lxxChapter === 151) {
+                labelText = `Psalm 151:${verse.verseNum}`;
+            } else if (lxxChapter == verse.mtChapter && (!verse.mtVerseNum || verse.verseNum == verse.mtVerseNum)) {
+                labelText = `Psalm ${lxxChapter}:${verse.verseNum}`;
+            } else if (lxxChapter == verse.mtChapter) {
+                labelText = `Psalm ${lxxChapter}:${verse.verseNum} (${verse.mtVerseNum})`;
+            } else if (!verse.mtVerseNum || verse.verseNum == verse.mtVerseNum) {
+                labelText = `Psalm ${lxxChapter} (${verse.mtChapter}):${verse.verseNum}`;
             } else {
-                if (lxxChapter == verse.mtChapter) {
-                    labelText = `Psalm ${lxxChapter}:${verse.verseNum}`;
-                } else {
-                    labelText = `Psalm ${lxxChapter} (${verse.mtChapter}):${verse.verseNum}`;
-                }
+                labelText = `Psalm ${lxxChapter}:${verse.verseNum} (${verse.mtChapter}:${verse.mtVerseNum})`;
             }
             prayerLabel.textContent = labelText;
 
@@ -6430,7 +6500,6 @@ function getSeatatBibleVerses(bookKey, chapter, rangeString, customEnglish = nul
     }
 
     const verseResults = [];
-    const mtChapters = (bookKey === 'Psalms') ? convertLxxToMt(chapter) : [chapter];
 
     for (let vNum = startVerse; vNum <= endVerse; vNum++) {
         const verseObj = {
@@ -6446,11 +6515,11 @@ function getSeatatBibleVerses(bookKey, chapter, rangeString, customEnglish = nul
             tigrinya_script: ''
         };
 
-        const mtChapter = mtChapters[0];
+        const { mtChapter, mtVerse } = (bookKey === 'Psalms') ? getMtFromLxx(chapter, vNum) : { mtChapter: chapter, mtVerse: vNum };
 
         // NKJV
         if (bibleData.nkjv) {
-            const v = bibleData.nkjv.find(v => v.book === mapping.nkjv && v.chapter === mtChapter && v.verse === vNum);
+            const v = bibleData.nkjv.find(v => v.book === mapping.nkjv && v.chapter === mtChapter && v.verse === mtVerse);
             if (v) verseObj.english = v.text;
         }
 
@@ -6459,15 +6528,15 @@ function getSeatatBibleVerses(bookKey, chapter, rangeString, customEnglish = nul
             const book = bibleData.am54.books.find(b => b.title === mapping.am54);
             if (book && book.chapters) {
                 const ch = book.chapters.find(c => Number(c.chapter) === mtChapter);
-                if (ch && ch.verses && ch.verses[vNum - 1]) {
-                    verseObj.amharic_script = ch.verses[vNum - 1];
+                if (ch && ch.verses && ch.verses[mtVerse - 1]) {
+                    verseObj.amharic_script = ch.verses[mtVerse - 1];
                 }
             }
         }
 
         // RGV
         if (bibleData.rgv && bibleData.rgv.verses) {
-            const v = bibleData.rgv.verses.find(v => v.book_name === mapping.rgv && v.chapter === mtChapter && v.verse === vNum);
+            const v = bibleData.rgv.verses.find(v => v.book_name === mapping.rgv && v.chapter === mtChapter && v.verse === mtVerse);
             if (v) verseObj.spanish = v.text;
         }
 
@@ -6484,8 +6553,31 @@ function getSeatatBibleVerses(bookKey, chapter, rangeString, customEnglish = nul
             } else {
                 const ch = bibleData.geez_psalms.find(c => c.id === chapter);
                 if (ch && ch.verses) {
-                    const v = ch.verses.find(gv => gv.verse_number === vNum);
-                    if (v) verseObj.geez_script = v.text;
+                    if (chapter === 115) {
+                        if (vNum <= 4) {
+                            const v = ch.verses.find(gv => gv.verse_number === vNum);
+                            if (v) verseObj.geez_script = v.text;
+                        } else if (vNum === 5) {
+                            verseObj.geez_script = 'ወእሁብ ብፅአትየ ለእግዚአብሔር፤ በቅድመ ኵሉ ሕዝብ።';
+                        } else if (vNum === 6) {
+                            const v = ch.verses.find(gv => gv.verse_number === 5);
+                            if (v) verseObj.geez_script = v.text;
+                        } else if (vNum === 7) {
+                            const v6 = ch.verses.find(gv => gv.verse_number === 6);
+                            const v7 = ch.verses.find(gv => gv.verse_number === 7);
+                            verseObj.geez_script = [v6?.text, v7?.text].filter(Boolean).join(' ');
+                        } else if (vNum === 8) {
+                            verseObj.geez_script = 'ለከ እሠውዕ መሥዋዕተ ስብሓት፤';
+                        } else if (vNum === 9) {
+                            verseObj.geez_script = 'ወእሁብ ብፅአትየ ለእግዚአብሔር፤ በቅድመ ኵሉ ሕዝብ።';
+                        } else if (vNum === 10) {
+                            const v = ch.verses.find(gv => gv.verse_number === 9);
+                            if (v) verseObj.geez_script = v.text;
+                        }
+                    } else {
+                        const v = ch.verses.find(gv => gv.verse_number === vNum);
+                        if (v) verseObj.geez_script = v.text;
+                    }
                 }
             }
         }
