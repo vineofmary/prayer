@@ -486,7 +486,8 @@ const LANGUAGE_REGISTRY = {
     'oromoo': { name: 'ኦሮምኛ (Oromo)', category: 'unofficial', isAuto: false, isEthiopic: true, isSeekingScribe: true },
     'tigrinya_script': { name: 'ትግርኛ (Tigrinya)', category: 'main', isAuto: false, isEthiopic: true },
     'tigrinya_phonetic': { name: 'Tigrinya Phonetic', category: 'main', isAuto: false },
-    'spanish': { name: 'Español (Spanish)*', category: 'main', isAuto: true },
+    'spanish': { name: 'Español - General (Spanish)*', category: 'main', isAuto: true },
+    'spanish_pr': { name: 'Español - Puerto Rico (Spanish)', category: 'main', isAuto: false },
     'french': { name: 'Français (French)*', category: 'main', isAuto: true },
     'coptic': { name: 'ϯⲙⲉⲧⲣⲉⲙⲛ̀ⲭⲏⲙⲓ (Coptic)', category: 'main', isAuto: false },
     'syriac': { name: 'ܣܘܪܝܝܐ (Syriac)', category: 'unofficial', isAuto: false, isSeekingScribe: true },
@@ -508,7 +509,7 @@ const languageLabels = Object.fromEntries(
 
 let languageOrder = [
     'english', 'geez_script', 'amharic_script', 'oromoo', 'tigrinya_script',
-    'spanish', 'french', 'arabic', 'greek', 'hebrew', 'malayalam',
+    'spanish', 'spanish_pr', 'french', 'arabic', 'greek', 'hebrew', 'malayalam',
     'syriac', 'armenian', 'coptic',
     'geez_phonetic', 'amharic_phonetic', 'tigrinya_phonetic'
 ];
@@ -974,6 +975,12 @@ const rubricRedWords = {
         "Santísima Trinidad", "Te damos gracias, Señor", "Señor", "Dios", "Rey", "Padre nuestro que estás en los cielos",
         "Jesucristo", "Amén", "Santo, santo, santo", "Cristo", "Salvador", "Virgen María", "María",
         "porque para siempre es su misericordia", "porque para siempre [es] su misericordia"
+    ],
+    spanish_pr: [
+        "En el nombre del Padre, del Hijo y del Espíritu Santo, un solo Dios, Amén", "Padre", "Hijo", "Espíritu Santo", "un solo Dios",
+        "Santísima Trinidad", "Te damos gracias, Señor", "Señor", "Dios", "Rey", "Padre nuestro que estás en los cielos",
+        "Jesucristo", "Amén", "Santo, santo, santo", "Cristo", "Salvador", "Virgen María", "María",
+        "porque para siempre es su misericordia", "porque para siempre [es] su misericordia"
     ]
 };
 
@@ -992,7 +999,10 @@ const rubricGoldWords = {
         "ኆኅተ ምሥራቅ ወእሙ ለብርሃን", "ማርያም ኅሪት ወክብርት", "마리아"
     ],
     spanish: [
-        "María de Sión", "Nuestra Señora María", "Virgen Madre de Dios", "Santa Virgen", "María la Virgen", "Llena de gracia"
+        "María de Sión", "Nuestra Señora María", "Virgen Madre de Dios", "Santa Virgen María", "Santa Virgen", "Santa María", "María la Virgen", "Llena de gracia"
+    ],
+    spanish_pr: [
+        "María de Sión", "Nuestra Señora María", "Virgen Madre de Dios", "Santa Virgen María", "Santa Virgen", "Santa María", "María la Virgen", "Llena de gracia"
     ]
 };
 
@@ -1021,11 +1031,13 @@ const rubricRedRegex = {
     english: buildRegex(rubricRedWords.english),
     geez_script: buildRegex(rubricRedWords.geez_script, true),
     spanish: buildRegex(rubricRedWords.spanish),
+    spanish_pr: buildRegex(rubricRedWords.spanish_pr),
 };
 const rubricGoldRegex = {
     english: buildRegex(rubricGoldWords.english),
     geez_script: buildRegex(rubricGoldWords.geez_script, true),
     spanish: buildRegex(rubricGoldWords.spanish),
+    spanish_pr: buildRegex(rubricGoldWords.spanish_pr),
 };
 
 
@@ -1038,7 +1050,8 @@ const speakerKeywords = {
     oromoo: ["Lubbuu", "Luba", "Diyaaqonii", "Uummata", "Hunda", "Garsee"],
     tigrinya_script: ["ካህን", "ካህን ንፍቅ", "ዲያቆን", "ሕዝብ", "ንፍቀ ዲያቆን", "ኩሉኹም", "መራሒ", "ነባቢ", "መርዓዊ", "መርዓት"],
     tigrinya_phonetic: ["kahn", "kahin", "diyakon", "ḥizb", "hizb", "kulukhum", "merahi", "meraḥī", "nebabi", "Priest", "Deacon", "People", "Leader"],
-    spanish: ["Sacerdote", "Diácono", "Pueblo", "Subdiácono", "Todos", "Líder", "Gente", "Lector", "Novio", "Novia"],
+    spanish: ["Sacerdote Asistente y Pueblo", "Asistente. Sacerdote", "Asistente. Diácono", "Diácono o Sacerdote", "Sacerdote o Diácono", "Sacerdotes auxiliares", "Sacerdote Asistente", "Sacerdote asistente", "Sacerdote auxiliar", "Sacerdote Celebrante", "Sacerdote celebrante", "Diácono Asistente", "Diácono asistente", "Diácono auxiliar", "Asistente del diácono", "Obispo/Patriarca", "Clérigos", "Clero", "Sacerdotes", "Sacerdote", "Diácono", "Pueblo", "Subdiácono", "Todos", "TODOS", "Líder", "Gente", "Lector", "Novio", "Novia"],
+    spanish_pr: ["Sacerdote Asistente y Pueblo", "Asistente. Sacerdote", "Asistente. Diácono", "Diácono o Sacerdote", "Sacerdote o Diácono", "Sacerdotes auxiliares", "Sacerdote Asistente", "Sacerdote asistente", "Sacerdote auxiliar", "Sacerdote Celebrante", "Sacerdote celebrante", "Diácono Asistente", "Diácono asistente", "Diácono auxiliar", "Asistente del diácono", "Obispo/Patriarca", "Clérigos", "Clero", "Sacerdotes", "Sacerdote", "Diácono", "Pueblo", "Subdiácono", "Todos", "TODOS", "Líder", "Gente", "Lector", "Novio", "Novia"],
     french: ["Prêtre", "Diacre", "Peuple", "Sous-diacre", "Tous", "Leader", "Lecteur", "Marié", "Mariée"],
     arabic: ["الكاهن", "الشعب", "الشماس", "القارئ", "الجميع", "الرب", "الناس"],
     greek: ["Ιερέας", "Διάκονος", "Λαός", "Λαοί", "Όλοι", "Αναγνώστης"],
@@ -1453,8 +1466,9 @@ async function loadStateFromUrl() {
         if (state.t !== undefined) currentTheme = { ...currentTheme, ...state.t };
         if (state.do !== undefined) displayOptions = { ...displayOptions, ...state.do };
         if (state.fs !== undefined) fontSizes = { ...fontSizes, ...state.fs };
-        if (state.lo !== undefined && Array.isArray(state.lo) && state.lo.length === languageOrder.length) {
-            languageOrder = state.lo;
+        if (state.lo !== undefined && Array.isArray(state.lo)) {
+            const missing = languageOrder.filter(k => !state.lo.includes(k));
+            languageOrder = [...state.lo.filter(k => languageOrder.includes(k)), ...missing];
         }
         if (state.cn !== undefined) customNames = { ...customNames, ...state.cn };
 
@@ -1725,7 +1739,9 @@ async function loadSettings() {
             defaultLanguages[id] = (id === 'english' || id === 'geez_script');
         } else {
             // For desktop, turn on main scripts but leave auto-translations and phonetics off
-            if (cfg.category === 'main' && !cfg.isAuto && !id.includes('phonetic')) {
+            if (id === 'spanish_pr') {
+                defaultLanguages[id] = false;
+            } else if (cfg.category === 'main' && !cfg.isAuto && !id.includes('phonetic')) {
                 defaultLanguages[id] = true;
             } else if (id === 'spanish') {
                 defaultLanguages[id] = true;
@@ -1854,8 +1870,9 @@ async function loadSettings() {
         const savedLanguageOrder = localStorage.getItem('languageOrder');
         if (savedLanguageOrder) {
             const loadedOrder = JSON.parse(savedLanguageOrder);
-            if (Array.isArray(loadedOrder) && loadedOrder.length === languageOrder.length) {
-                languageOrder = loadedOrder;
+            if (Array.isArray(loadedOrder)) {
+                const missing = languageOrder.filter(k => !loadedOrder.includes(k));
+                languageOrder = [...loadedOrder.filter(k => languageOrder.includes(k)), ...missing];
             }
         }
 
@@ -2217,10 +2234,12 @@ function getBibleVersesFromRef(ref) {
     }
 
     // 1b. Spanish (RGV) - Flat list in .verses
-    if (!results.spanish && bookCfg && bibleData.rgv && bibleData.rgv.verses) {
-        results.spanish = bibleData.rgv.verses
+    if ((!results.spanish || !results.spanish_pr) && bookCfg && bibleData.rgv && bibleData.rgv.verses) {
+        const rgvMapped = bibleData.rgv.verses
             .filter(v => v.book_name === bookCfg.rgv && v.chapter === chapterNum && v.verse >= startVerse && v.verse <= endVerse)
             .map(v => ({ verseNum: v.verse, text: v.text }));
+        if (!results.spanish) results.spanish = rgvMapped;
+        if (!results.spanish_pr) results.spanish_pr = rgvMapped;
     }
 
     // 2. Amharic (am54) - Nested structure
@@ -2293,13 +2312,15 @@ const LITURGY_LECTIONARY_CONFIG = [
             geez_script: '{{ዮም አንበበ መልእክተ ጳውሎስ}}',
             amharic_script: '{{የዛሬው የቅዱስ ጳውሎስ መልእክት ይነበባል}}',
             tigrinya_script: '{{ናይ ሎሚ ንባብ መልእኽቲ ጳውሎስ}}',
-            spanish: '{{LECTURA DE LA EPÍSTOLA PAULINA DE HOY}}'
+            spanish: '{{LECTURA DE LA EPÍSTOLA PAULINA DE HOY}}',
+            spanish_pr: '{{LECTURA DE LA EPÍSTOLA PAULINA DE HOY}}'
         },
         prefixes: {
             english: 'Epistle: ',
             amharic_script: 'መልእክት፤ ',
             geez_script: 'መልእክት፤ ',
-            spanish: 'Epístola: '
+            spanish: 'Epístola: ',
+            spanish_pr: 'Epístola: '
         }
     },
     {
@@ -2310,13 +2331,15 @@ const LITURGY_LECTIONARY_CONFIG = [
             geez_script: '{{ዮም አንበበ መልእክተ ካቶሊካ}}',
             amharic_script: '{{የዛሬው የሁለተኛው መልእክት ይነበባል}}',
             tigrinya_script: '{{ናይ ሎሚ ካልኣይ ንባብ መልእኽቲ}}',
-            spanish: '{{LECTURA DE LA EPÍSTOLA UNIVERSAL DE HOY}}'
+            spanish: '{{LECTURA DE LA EPÍSTOLA UNIVERSAL DE HOY}}',
+            spanish_pr: '{{LECTURA DE LA EPÍSTOLA UNIVERSAL DE HOY}}'
         },
         prefixes: {
             english: 'Epistle: ',
             amharic_script: 'መልእክት፤ ',
             geez_script: 'መልእክት፤ ',
-            spanish: 'Epístola: '
+            spanish: 'Epístola: ',
+            spanish_pr: 'Epístola: '
         }
     },
     {
@@ -2327,7 +2350,8 @@ const LITURGY_LECTIONARY_CONFIG = [
             geez_script: '{{ዮም አንበበ ግብረ ሐዋርያት}}',
             amharic_script: '{{የዛሬው የሐዋርያት ስራ ንባብ}}',
             tigrinya_script: '{{ናይ ሎሚ ግብሪ ሃዋርያት ንባብ}}',
-            spanish: '{{LECTURA DE ACTOS DE HOY}}'
+            spanish: '{{LECTURA DE ACTOS DE HOY}}',
+            spanish_pr: '{{LECTURA DE ACTOS DE HOY}}'
         },
         prefixes: {}
     },
@@ -2339,7 +2363,8 @@ const LITURGY_LECTIONARY_CONFIG = [
             geez_script: '{{ዮም ምስባክ}}',
             amharic_script: '{{የዛሬው ምስባክ}}',
             tigrinya_script: '{{ናይ ሎሚ ንባብ መዝሙር ዳዊት}}',
-            spanish: '{{LECTURA DE LOS SALMOS DE HOY}}'
+            spanish: '{{LECTURA DE LOS SALMOS DE HOY}}',
+            spanish_pr: '{{LECTURA DE LOS SALMOS DE HOY}}'
         },
         prefixes: {
             amharic_script: 'ምስባክ፤ ',
@@ -2354,11 +2379,13 @@ const LITURGY_LECTIONARY_CONFIG = [
             geez_script: '{{ዮም አንበበ ወንጌል}}',
             amharic_script: '{{የዛሬው ወንጌል ንባብ}}',
             tigrinya_script: '{{ናይ ሎሚ ንባብ ወንጌል}}',
-            spanish: '{{LECTURA DEL EVANGELIO DE HOY}}'
+            spanish: '{{LECTURA DEL EVANGELIO DE HOY}}',
+            spanish_pr: '{{LECTURA DEL EVANGELIO DE HOY}}'
         },
         prefixes: {
             english: 'Gospel of ',
-            spanish: 'Evangelio de '
+            spanish: 'Evangelio de ',
+            spanish_pr: 'Evangelio de '
         }
     },
     {
@@ -2369,7 +2396,8 @@ const LITURGY_LECTIONARY_CONFIG = [
             geez_script: '{{ዮም ምስባክ ዘነግህ}}',
             amharic_script: '{{የዛሬው ምስባክ ዘነግህ}}',
             tigrinya_script: '{{ናይ ንግሆ ንባብ መዝሙር ዳዊት}}',
-            spanish: '{{LECTURA DE LOS SALMOS DE LA MAÑANA}}'
+            spanish: '{{LECTURA DE LOS SALMOS DE LA MAÑANA}}',
+            spanish_pr: '{{LECTURA DE LOS SALMOS DE LA MAÑANA}}'
         },
         prefixes: {
             amharic_script: 'ምስባክ፤ ',
@@ -2384,11 +2412,13 @@ const LITURGY_LECTIONARY_CONFIG = [
             geez_script: '{{ዮም አንበበ ወንጌል ዘነግህ}}',
             amharic_script: '{{የዛሬው ወንጌል ዘነግህ ንባብ}}',
             tigrinya_script: '{{ናይ ንግሆ ንባብ ወንጌል}}',
-            spanish: '{{LECTURA DEL EVANGELIO DE LA MAÑANA}}'
+            spanish: '{{LECTURA DEL EVANGELIO DE LA MAÑANA}}',
+            spanish_pr: '{{LECTURA DEL EVANGELIO DE LA MAÑANA}}'
         },
         prefixes: {
             english: 'Gospel of ',
-            spanish: 'Evangelio de '
+            spanish: 'Evangelio de ',
+            spanish_pr: 'Evangelio de '
         }
     },
     {
@@ -2399,7 +2429,8 @@ const LITURGY_LECTIONARY_CONFIG = [
             geez_script: '{{ዮም ምስባክ ዘሠርክ}}',
             amharic_script: '{{የዛሬው ምስባክ ዘሠርክ}}',
             tigrinya_script: '{{ናይ ምሸት ንባብ መዝሙር ዳዊት}}',
-            spanish: '{{LECTURA DE LOS SALMOS DE LA TARDE}}'
+            spanish: '{{LECTURA DE LOS SALMOS DE LA TARDE}}',
+            spanish_pr: '{{LECTURA DE LOS SALMOS DE LA TARDE}}'
         },
         prefixes: {
             amharic_script: 'ምስባክ፤ ',
@@ -2414,11 +2445,13 @@ const LITURGY_LECTIONARY_CONFIG = [
             geez_script: '{{ዮም አንበበ ወንጌል ዘሠርክ}}',
             amharic_script: '{{የዛሬው ወንጌል ዘሠርክ ንባብ}}',
             tigrinya_script: '{{ናይ ምሸት ንባብ ወንጌል}}',
-            spanish: '{{LECTURA DEL EVANGELIO DE LA TARDE}}'
+            spanish: '{{LECTURA DEL EVANGELIO DE LA TARDE}}',
+            spanish_pr: '{{LECTURA DEL EVANGELIO DE LA TARDE}}'
         },
         prefixes: {
             english: 'Gospel of ',
-            spanish: 'Evangelio de '
+            spanish: 'Evangelio de ',
+            spanish_pr: 'Evangelio de '
         }
     }
 ];
@@ -2987,6 +3020,7 @@ function getUniversalEpistleAuthor(langKey) {
             tigrinya_script: 'ያዕቆብ',
             tigrinya_phonetic: "Yā'iḳob",
             spanish: 'Santiago',
+            spanish_pr: 'Santiago',
             french: 'Jacques',
             arabic: 'يعقوب',
             greek: 'Ιακώβου',
@@ -3002,6 +3036,7 @@ function getUniversalEpistleAuthor(langKey) {
             tigrinya_script: 'ጴጥሮስ',
             tigrinya_phonetic: "Péṭros",
             spanish: 'Pedro',
+            spanish_pr: 'Pedro',
             french: 'Pierre',
             arabic: 'بطرس',
             greek: 'Πέτρου',
@@ -3017,6 +3052,7 @@ function getUniversalEpistleAuthor(langKey) {
             tigrinya_script: 'ዮሐንስ',
             tigrinya_phonetic: 'Yōḥannes',
             spanish: 'Juan',
+            spanish_pr: 'Juan',
             french: 'Jean',
             arabic: 'يوحنا',
             greek: 'Ιωάννη',
@@ -3032,6 +3068,7 @@ function getUniversalEpistleAuthor(langKey) {
             tigrinya_script: 'ይሁዳ',
             tigrinya_phonetic: 'Yhuda',
             spanish: 'Judas',
+            spanish_pr: 'Judas',
             french: 'Jude',
             arabic: 'يهوذا',
             greek: 'Ιούዳ',
@@ -3064,6 +3101,7 @@ function getGospelAuthor(langKey, lectionaryKey = 'gospel') {
             tigrinya_script: 'ማቴዎስ',
             tigrinya_phonetic: 'Mātéwos',
             spanish: 'Mateo',
+            spanish_pr: 'Mateo',
             french: 'Matthieu',
             arabic: 'متى',
             greek: 'Ματθαίον',
@@ -3079,6 +3117,7 @@ function getGospelAuthor(langKey, lectionaryKey = 'gospel') {
             tigrinya_script: 'ማርቆስ',
             tigrinya_phonetic: 'Mārḳos',
             spanish: 'Marcos',
+            spanish_pr: 'Marcos',
             french: 'Marc',
             arabic: 'مرقس',
             greek: 'Μάρκον',
@@ -3094,6 +3133,7 @@ function getGospelAuthor(langKey, lectionaryKey = 'gospel') {
             tigrinya_script: 'ሉቃስ',
             tigrinya_phonetic: 'Luḳās',
             spanish: 'Lucas',
+            spanish_pr: 'Lucas',
             french: 'Luc',
             arabic: 'لوقا',
             greek: 'Loukan',
@@ -3109,6 +3149,7 @@ function getGospelAuthor(langKey, lectionaryKey = 'gospel') {
             tigrinya_script: 'ዮሐንስ',
             tigrinya_phonetic: 'Yōḥannes',
             spanish: 'Juan',
+            spanish_pr: 'Juan',
             french: 'Jean',
             arabic: 'يوحنا',
             greek: 'Ιωάννη',
@@ -3170,14 +3211,16 @@ function formatPrayerText(text, langKey, query, isFirstLanguage, chapter = null,
         processedText = processedText.replace(/\{\{מחבר האיגרת האוניبرסלית\}\}/gi, universalAuthor);
     }
 
-    if (processedText.includes('{{GOSPEL AUTHOR}}')) {
+    if (processedText.includes('{{GOSPEL AUTHOR}}') || processedText.includes('{{AUTOR DEL EVANGELIO}}')) {
         const gospelAuthor = getGospelAuthor(langKey, 'gospel');
-        processedText = processedText.replace(/\{\{GOSPEL AUTHOR\}\}/g, gospelAuthor);
+        processedText = processedText.replace(/\{\{GOSPEL AUTHOR\}\}/gi, gospelAuthor);
+        processedText = processedText.replace(/\{\{AUTOR DEL EVANGELIO\}\}/gi, gospelAuthor);
     }
 
-    if (processedText.includes('{{MORNING GOSPEL AUTHOR}}')) {
+    if (processedText.includes('{{MORNING GOSPEL AUTHOR}}') || processedText.includes('{{AUTOR DEL EVANGELIO DE LA MAÑANA}}')) {
         const morningGospelAuthor = getGospelAuthor(langKey, 'morningGospel');
-        processedText = processedText.replace(/\{\{MORNING GOSPEL AUTHOR\}\}/g, morningGospelAuthor);
+        processedText = processedText.replace(/\{\{MORNING GOSPEL AUTHOR\}\}/gi, morningGospelAuthor);
+        processedText = processedText.replace(/\{\{AUTOR DEL EVANGELIO DE LA MAÑANA\}\}/gi, morningGospelAuthor);
     }
 
     // Apply superscription formatting for Psalms, Songs of the Prophets, and Lectionary readings
@@ -3188,7 +3231,7 @@ function formatPrayerText(text, langKey, query, isFirstLanguage, chapter = null,
         }
         const supTag = displayVerseNum ? `<sup>${displayVerseNum}</sup> ` : '';
 
-        if (langKey === 'spanish') {
+        if (langKey === 'spanish' || langKey === 'spanish_pr') {
             // Match leading Spanish superscriptions (using both literal « and Unicode \u00ab, and handle variations)
             // Some entries might use literal characters or escaped sequences.
             const rgvSuperscriptionRegex = /^([«\u00ab](.*?)[»\u00bb])/;
@@ -3225,12 +3268,12 @@ function formatPrayerText(text, langKey, query, isFirstLanguage, chapter = null,
 
     // Replace custom name placeholders
     processedText = processedText.replace(/\{\{Servant's Names\}\}/g, customNames.servant || '');
-    processedText = processedText.replace(/\{\{PATRIARCH NAME\}\}/g, customNames.patriarch || '');
-    processedText = processedText.replace(/\{\{BISHOP NAME\}\}/g, customNames.bishop || '');
-    processedText = processedText.replace(/\{\{COUNTRY\}\}/g, customNames.country || '');
+    processedText = processedText.replace(/\{\{(?:PATRIARCH NAME|NOMBRE DEL PATRIARCA)\}\}/gi, customNames.patriarch || '');
+    processedText = processedText.replace(/\{\{(?:BISHOP NAME|NOMBRE DEL OBISPO)\}\}/gi, customNames.bishop || '');
+    processedText = processedText.replace(/\{\{(?:COUNTRY|PAÍS)\}\}/gi, customNames.country || '');
     processedText = processedText.replace(/\{\{Leader \/ President \/ Emperor\}\}/g, customNames.headOfState || '');
-    processedText = processedText.replace(/\{\{BISHOP(S) IN ATTENDANCE\}\}/g, customNames.attendingBishops || '');
-    processedText = processedText.replace(/\{\{CHURCH NAME\}\}/g, customNames.churchName || '');
+    processedText = processedText.replace(/\{\{(?:BISHOP\(S\) IN ATTENDANCE|OBISPO\(S\) PRESENTE\(S\))\}\}/gi, customNames.attendingBishops || '');
+    processedText = processedText.replace(/\{\{(?:CHURCH NAME|NOMBRE DE LA IGLESIA)\}\}/gi, customNames.churchName || '');
 
     // Format enclosed prayer titles / references on their own line (e.g. ፨ THE SALUTATION OF SAINT GABRIEL ፨ or (Psalms 117:1))
     const innerTitleRegex = /^\s*(?:<[^>]+>)*\s*(?:(፨\s*[^፨\n\r]+?\s*፨)|(\({1,2}\s*[^()\n\r]+?\s*\){1,2}))\s*(?:<[^>]+>)*\s*(?:\r?\n|<br\s*\/?>|$)/i;
@@ -3260,10 +3303,11 @@ function formatPrayerText(text, langKey, query, isFirstLanguage, chapter = null,
     if (keywords) {
         const sortedKeywords = [...keywords].sort((a, b) => b.length - a.length);
         const escapedKeywords = sortedKeywords.map(k => k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
-        const regex = new RegExp(`(፨\\s*)?(${escapedKeywords.join('|')})(?:\\s*(?:or|ወይም|ወ|o|ou|\\/|-)\\s*(?:${escapedKeywords.join('|')}))*(?:\\s*\\([^)]*\\))?([:፡።፤፣])`, 'gi');
+        const regex = new RegExp(`(፨\\s*)?(${escapedKeywords.join('|')})(?:\\s*(?:or|and|ወይም|ወ|o|y|ou|et|\\/|-)\\s*(?:${escapedKeywords.join('|')}))*(?:\\s*(?:<span class="parenthetical-text">)?\\([^)]*\\)(?:<\\/span>)?)*([:፡።፤፣])`, 'gi');
         processedText = processedText.replace(regex, (match) => {
             if (displayOptions.showSpeakerLabels) {
-                return `<span class="speaker-label">${match}</span>`;
+                const cleanMatch = match.replace(/<\/?span[^>]*>/g, '');
+                return `<span class="speaker-label">${cleanMatch}</span>`;
             }
             return '';
         }).trim();
@@ -3409,7 +3453,7 @@ function isChantStanza(prayer) {
 
     const PEOPLE_LABEL_REGEX = /^(?:፨\s*)?(?:People|ALL|All|Pueblo|Todos|Gente|ሕዝብ|ኵሎሙ|ሁሉም|ኩሉኹም|Ḥizb|Hizb|Kwllomu|Kullomu|Kwlomu|Hizbi|Ḥizbi|(?:Priest|Asst\.\s*Priest|Deacon|Subdeacon|Leader|Reader|Bridegroom|Bride|ካህን|ካህን\s*ንፍቅ|ዲያቆን|ንፍቀ\s*ዲያቆን|መሪሕ|መሪ|መራሒ|አንባቢ|ነባቢ|ሙሽራው|ሙሽራዋ|መርዓዊ|መርዓት|Sacerdote|Diácono|Subdiácono|Líder|Lector|Novio|Novia|Merīḥ|Meriḥ|Merih|Kahn|Kahin|Diyakon|Dīyakon|Meraḥi|Meraḥī)\s*\([^)]*(?:People|repeat|ከምኡ|ይበሉ|መልሰው|repite|kem'u)[^)]*\))(?:\s*\([^)]*\))?[:፡።፤፣]/i;
 
-    for (const langKey of ['english', 'geez_script', 'amharic_script', 'tigrinya_script', 'spanish', 'geez_phonetic']) {
+    for (const langKey of ['english', 'geez_script', 'amharic_script', 'tigrinya_script', 'spanish', 'spanish_pr', 'geez_phonetic']) {
         if (prayer[langKey]) {
             const lines = prayer[langKey].split(/(?:<br\s*\/?>|\n)+/);
             for (let line of lines) {
@@ -3504,17 +3548,40 @@ function filterGeezPhoneticForPeople(phoneticText, prayer) {
 function createPrayerCardElement(prayer, prayerIndex, isKidase = false) {
     const searchQuery = searchInput.value;
 
+    const kidaseChapters = ['Kidan', 'order', 'Apostles', 'St.Mary', 'Chrysostom', 'The300', 'mary', 'apostles'];
+    const chapterStr = prayer.chapter || '';
+    const isNumericChapter = /^\d+$/.test(chapterStr);
+    const isKidaseCard = isKidase || isNumericChapter || kidaseChapters.some(c => c.toLowerCase() === chapterStr.toLowerCase());
+
+    const getCardLangText = (langKey) => {
+        if (!isKidaseCard && langKey === 'spanish_pr') {
+            return prayer.spanish_pr || prayer.spanish;
+        }
+        return prayer[langKey];
+    };
+
     // Filter languages that actually have content for THIS specific card
+    let seenNonKidaseSpanish = false;
     const languagesToDisplay = languageOrder.filter(langKey => {
         const langCfg = LANGUAGE_REGISTRY[langKey] || { name: langKey, isAuto: false, category: 'main' };
 
         // Basic global visibility checks
         if (!displayedLanguages[langKey]) return false;
         if (langCfg.category === 'unofficial' && !isScribeLoggedIn) return false;
-        if (!prayer[langKey] || !prayer[langKey].trim()) return false;
+
+        const rawCardText = getCardLangText(langKey);
+        if (!rawCardText || !rawCardText.trim()) return false;
 
         // Smart content check: hide if it ONLY contains speaker keywords
-        return hasActualContent(prayer[langKey], langKey);
+        if (!hasActualContent(rawCardText, langKey)) return false;
+
+        // For non-Kidase prayers, deduplicate if both Spanish options are enabled
+        if (!isKidaseCard && (langKey === 'spanish' || langKey === 'spanish_pr')) {
+            if (seenNonKidaseSpanish) return false;
+            seenNonKidaseSpanish = true;
+        }
+
+        return true;
     });
 
     const cardVisibleLanguageCount = languagesToDisplay.length;
@@ -3575,11 +3642,6 @@ function createPrayerCardElement(prayer, prayerIndex, isKidase = false) {
     }
     prayerContent.dataset.activeColumns = cardVisibleLanguageCount;
 
-    const kidaseChapters = ['Kidan', 'order', 'Apostles', 'St.Mary', 'Chrysostom', 'The300', 'mary', 'apostles'];
-    const chapterStr = prayer.chapter || '';
-    const isNumericChapter = /^\d+$/.test(chapterStr);
-    const isKidaseCard = isKidase || isNumericChapter || kidaseChapters.some(c => c.toLowerCase() === chapterStr.toLowerCase());
-
     let isFirstLanguage = true;
     languagesToDisplay.forEach(langKey => {
         const langCfg = LANGUAGE_REGISTRY[langKey];
@@ -3592,6 +3654,9 @@ function createPrayerCardElement(prayer, prayerIndex, isKidase = false) {
 
         const langHeader = document.createElement('h4');
         let labelText = langCfg.name.replace(/\*+$/, '');
+        if (!isKidaseCard && (langKey === 'spanish' || langKey === 'spanish_pr')) {
+            labelText = 'Español (Spanish)';
+        }
 
         let isOfficial;
         if (prayer[`${langKey}_is_official`] !== undefined) {
@@ -3619,7 +3684,7 @@ function createPrayerCardElement(prayer, prayerIndex, isKidase = false) {
         const langText = document.createElement('p');
         langText.classList.add('language-text');
 
-        let content = formatPrayerText(prayer[langKey], langKey, searchQuery, isFirstLanguage, prayer.chapter, prayer.verseNum);
+        let content = formatPrayerText(getCardLangText(langKey), langKey, searchQuery, isFirstLanguage, prayer.chapter, prayer.verseNum);
 
         // Append Ge'ez Phonetics to Ge'ez Script if setting is active and this is a chant
         if (langKey === 'geez_script' && displayOptions.showGeezPhoneticChants && isChantStanza(prayer)) {
@@ -3859,7 +3924,8 @@ function getStandardPrayerSequence() {
         amharic_phonetic: "[tselot]",
         tigrinya_script: "[ጸሎት]",
         tigrinya_phonetic: "[tselot]",
-        spanish: "[Oración]"
+        spanish: "[Oración]",
+        spanish_pr: "[Oración]"
     };
     const lordsPrayerParts = prayers.filter(p => p.chapter === 'Daily' && p.stanza === '3');
     const gabrielGreetingParts = prayers.filter(p => p.chapter === 'Daily' && p.stanza === '4');
@@ -3974,7 +4040,7 @@ function renderSelectedKidase(addSectionTitleCallback) {
         
         // Deep clone the chunk and swap morning placeholders for evening placeholders
         const eveningGospelChunk = JSON.parse(JSON.stringify(morningGospelChunk)).map(p => {
-            const keys = ['english', 'geez_script', 'amharic_script', 'tigrinya_script', 'spanish'];
+            const keys = ['english', 'geez_script', 'amharic_script', 'tigrinya_script', 'spanish', 'spanish_pr'];
             keys.forEach(k => {
                 if (p[k]) {
                     p[k] = p[k].replace('{{MORNING PSALMS READING}}', '{{EVENING PSALMS READING}}');
@@ -4054,6 +4120,7 @@ function renderSelectedKidase(addSectionTitleCallback) {
                     amharic_script: ephesiansVerses['amharic_script']?.[i]?.text || '',
                     tigrinya_script: ephesiansVerses['tigrinya_script']?.[i]?.text || '',
                     spanish: ephesiansVerses['spanish']?.[i]?.text || '',
+                    spanish_pr: ephesiansVerses['spanish_pr']?.[i]?.text || '',
                     chapter: "Ephesians",
                     stanza: "5:" + (25 + i),
                     reference: "Ephesians 5:25-33",
@@ -4141,6 +4208,7 @@ function renderSelectedKidase(addSectionTitleCallback) {
                         amharic_script: ephesiansVerses['amharic_script']?.[i]?.text || '',
                         tigrinya_script: ephesiansVerses['tigrinya_script']?.[i]?.text || '',
                         spanish: ephesiansVerses['spanish']?.[i]?.text || '',
+                        spanish_pr: ephesiansVerses['spanish_pr']?.[i]?.text || '',
                         chapter: "Ephesians",
                         stanza: "5:" + (25 + i),
                         reference: "Ephesians 5:25-33",
@@ -4298,7 +4366,7 @@ function renderSelectedKidase(addSectionTitleCallback) {
 
             // Replace Teklil placeholders if they exist
             if (showTeklil) {
-                const keys = ['english', 'geez_script', 'amharic_script', 'tigrinya_script', 'spanish'];
+                const keys = ['english', 'geez_script', 'amharic_script', 'tigrinya_script', 'spanish', 'spanish_pr'];
                 const groom = bridegroomName.trim() || "Bridegroom";
                 const bride = brideName.trim() || "Bride";
                 keys.forEach(k => {
@@ -4414,7 +4482,7 @@ function renderSelectedKidase(addSectionTitleCallback) {
                                     // Others (Amharic, etc.)
                                     if (langKey === 'amharic_script') {
                                         header = `${bookCfg.am54} ${chapter}:${rangeSuffix} (አም1954)`;
-                                    } else if (langKey === 'spanish') {
+                                    } else if (langKey === 'spanish' || langKey === 'spanish_pr') {
                                         header = `${bookCfg.rgv} ${chapter}:${rangeSuffix} (RVG)`;
                                     }
                                 }
@@ -4477,7 +4545,7 @@ function renderSelectedKidase(addSectionTitleCallback) {
                                                     header = `${bookCfg.am54} ${range} (አም1954)`;
                                                 } else if (langKey === 'english') {
                                                     header = `${bookName} ${range} (NKJV)`;
-                                                } else if (langKey === 'spanish') {
+                                                } else if (langKey === 'spanish' || langKey === 'spanish_pr') {
                                                     header = `${bookCfg.rgv} ${range} (RVG)`;
                                                 }
                                             }
@@ -5172,16 +5240,30 @@ function fallbackCopyTextToClipboard(text) {
 function copyPrayer(prayer) {
     let textToCopy = ``;
     textToCopy += `፨ ${getPrayerLabel(prayer)} ፨\n\n`;
+    const kidaseChapters = ['Kidan', 'order', 'Apostles', 'St.Mary', 'Chrysostom', 'The300', 'mary', 'apostles'];
+    const chapterStr = prayer.chapter || '';
+    const isNumericChapter = /^\d+$/.test(chapterStr);
+    const isKidaseCard = isNumericChapter || kidaseChapters.some(c => c.toLowerCase() === chapterStr.toLowerCase());
+    let seenNonKidaseSpanish = false;
+
     languageOrder.forEach(langKey => {
         const langCfg = LANGUAGE_REGISTRY[langKey] || { category: 'main' };
         if (langCfg.category === 'unofficial' && !isScribeLoggedIn) return;
 
-        if (displayedLanguages[langKey] && prayer[langKey] && prayer[langKey].trim()) {
+        let rawText = (!isKidaseCard && langKey === 'spanish_pr') ? (prayer.spanish_pr || prayer.spanish) : prayer[langKey];
+        if (displayedLanguages[langKey] && rawText && rawText.trim()) {
             // Check for actual content
-            if (!hasActualContent(prayer[langKey], langKey)) return;
+            if (!hasActualContent(rawText, langKey)) return;
 
-            textToCopy += `--- ${languageLabels[langKey]} ---\n`;
-            let rawText = prayer[langKey];
+            if (!isKidaseCard && (langKey === 'spanish' || langKey === 'spanish_pr')) {
+                if (seenNonKidaseSpanish) return;
+                seenNonKidaseSpanish = true;
+            }
+
+            const headerLabel = (!isKidaseCard && (langKey === 'spanish' || langKey === 'spanish_pr'))
+                ? 'Español (Spanish)'
+                : languageLabels[langKey];
+            textToCopy += `--- ${headerLabel} ---\n`;
             // Format for clipboard: replace <br> with newlines, strip HTML and replace placeholders
             let cleanText = rawText.replace(/<br\s*\/?>/gi, '\n').replace(/<[^>]*>?/gm, '');
             cleanText = formatPrayerText(cleanText, langKey, null, false, prayer.chapter, prayer.stanza);
@@ -5255,7 +5337,7 @@ function copyPsalm(verse, lxxChapter) {
         textToCopy += `--- ϯⲙⲉⲧⲣⲉⲙⲛ̀ⲭⲏⲙⲓ ---\n`;
         textToCopy += `[${verse.verseNum}] ${verse.coptic}\n\n`;
     }
-    if (displayedLanguages.spanish && verse.rgv) {
+    if ((displayedLanguages.spanish || displayedLanguages.spanish_pr) && verse.rgv) {
         textToCopy += `--- Español ---\n`;
         // The rgv text can have HTML, need to strip it
         const tempDiv = document.createElement('div');
@@ -6181,6 +6263,7 @@ function renderSelectedPsalmsWithDoxology(addSectionTitleCallback) {
                 english: displayedLanguages.english && verse.nkjv,
                 amharic_script: displayedLanguages.amharic_script && verse.am54,
                 spanish: displayedLanguages.spanish && verse.rgv,
+                spanish_pr: !displayedLanguages.spanish && displayedLanguages.spanish_pr && verse.rgv,
                 tigrinya_script: displayedLanguages.tigrinya_script && verse.tigrinya_script,
                 geez_script: displayedLanguages.geez_script && verse.geez_psalms,
                 coptic: displayedLanguages.coptic && verse.coptic
@@ -6210,13 +6293,13 @@ function renderSelectedPsalmsWithDoxology(addSectionTitleCallback) {
             prayerContent.dataset.activeColumns = activeLanguageCount;
 
             const langKeyToPsalmVerseProp = {
-                'english': 'nkjv', 'amharic_script': 'am54', 'spanish': 'rgv', 'tigrinya_script': 'tigrinya_script', 'geez_script': 'geez_psalms', 'coptic': 'coptic'
+                'english': 'nkjv', 'amharic_script': 'am54', 'spanish': 'rgv', 'spanish_pr': 'rgv', 'tigrinya_script': 'tigrinya_script', 'geez_script': 'geez_psalms', 'coptic': 'coptic'
             };
             const langKeyToIsEthiopic = {
-                'english': false, 'amharic_script': true, 'spanish': false, 'geez_script': true, 'coptic': false
+                'english': false, 'amharic_script': true, 'spanish': false, 'spanish_pr': false, 'geez_script': true, 'coptic': false
             };
             const langKeyToLangName = {
-                'english': 'English', 'amharic_script': 'አማርኛ', 'spanish': 'Español', 'geez_script': 'ግእዝ', 'coptic': 'ϯⲙⲉⲧⲣⲉⲙⲛ̀ⲭⲏⲙⲓ'
+                'english': 'English', 'amharic_script': 'አማርኛ', 'spanish': 'Español', 'spanish_pr': 'Español', 'geez_script': 'ግእዝ', 'coptic': 'ϯⲙⲉⲧⲣⲉⲙⲛ̀ⲭⲏⲙⲓ'
             };
 
             const firstVisibleLang = languageOrder.find(langKey => activePsalmTranslations[langKey]);
@@ -6313,6 +6396,7 @@ function renderSelectedProphetSongs(addSectionTitleCallback) {
                         const versePrayer = {
                             english: verseData.english || '',
                             spanish: verseData.spanish || '',
+                            spanish_pr: verseData.spanish_pr || verseData.spanish || '',
                             amharic_script: verseData.amharic_script || '',
                             geez_script: verseData.geez_script || '',
                             geez_phonetic: verseData.geez_phonetic || '',
@@ -6437,6 +6521,7 @@ function renderSelectedProphetSongs(addSectionTitleCallback) {
                 const versePrayer = {
                     english: verse.nkjv || '',
                     spanish: verse.rgv || '',
+                    spanish_pr: verse.rgv || '',
                     amharic_script: verse.am54 || '',
                     geez_script: verse.geez_script || '',
                     geez_phonetic: '',
@@ -6510,6 +6595,7 @@ function getSeatatBibleVerses(bookKey, chapter, rangeString, customEnglish = nul
             english: '',
             amharic_script: '',
             spanish: '',
+            spanish_pr: '',
             geez_script: '', // Usually empty for NT
             coptic: '',
             tigrinya_script: ''
@@ -6537,7 +6623,10 @@ function getSeatatBibleVerses(bookKey, chapter, rangeString, customEnglish = nul
         // RGV
         if (bibleData.rgv && bibleData.rgv.verses) {
             const v = bibleData.rgv.verses.find(v => v.book_name === mapping.rgv && v.chapter === mtChapter && v.verse === mtVerse);
-            if (v) verseObj.spanish = v.text;
+            if (v) {
+                verseObj.spanish = v.text;
+                verseObj.spanish_pr = v.text;
+            }
         }
 
         // Ge'ez Psalms
@@ -6595,7 +6684,7 @@ function getSeatatBibleVerses(bookKey, chapter, rangeString, customEnglish = nul
             }
         }
 
-        if (verseObj.english || verseObj.amharic_script || verseObj.spanish) {
+        if (verseObj.english || verseObj.amharic_script || verseObj.spanish || verseObj.spanish_pr) {
             verseResults.push(verseObj);
         }
     }
@@ -6628,6 +6717,7 @@ function renderSelectedSeatatLectionary(addSectionTitleCallback) {
                 geez_script: verses.map(v => reading.customGeez && reading.customGeez.includes('[') ? v.geez_script : `<sup>${v.verseNum}</sup> ${v.geez_script}`).join(' '),
                 amharic_script: verses.map(v => `<sup>${v.verseNum}</sup> ${v.amharic_script}`).join(' '),
                 spanish: verses.map(v => `<sup>${v.verseNum}</sup> ${v.spanish}`).join(' '),
+                spanish_pr: verses.map(v => `<sup>${v.verseNum}</sup> ${v.spanish_pr}`).join(' '),
                 coptic: '',
                 tigrinya_script: ''
             };
@@ -8548,7 +8638,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             'english', 'geez_script', 'geez_phonetic',
             'amharic_script', 'amharic_phonetic',
             'tigrinya_script', 'tigrinya_phonetic',
-            'spanish', 'french', 'arabic', 'greek', 'hebrew', 'malayalam',
+            'spanish', 'spanish_pr', 'french', 'arabic', 'greek', 'hebrew', 'malayalam',
             'oromoo', 'syriac', 'armenian', 'coptic'
         ];
 
@@ -8769,7 +8859,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         const languages = [
             'english', 'geez_script', 'geez_phonetic',
             'amharic_script', 'amharic_phonetic',
-            'tigrinya_script', 'tigrinya_phonetic', 'spanish', 'coptic',
+            'tigrinya_script', 'tigrinya_phonetic', 'spanish', 'spanish_pr', 'coptic',
             'french', 'arabic', 'greek', 'hebrew', 'malayalam', 'oromoo', 'syriac', 'armenian'
         ];
 
