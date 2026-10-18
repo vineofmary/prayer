@@ -424,8 +424,9 @@ const kidaseGospelRefContainer = document.getElementById('kidase-gospel-ref-cont
 
 // --- State Variables ---
 const SETTINGS_VERSION = '4.2.5'; // Update this to force refresh load settings
-const APP_VERSION = '0.8.4-beta';
+const APP_VERSION = '0.8.5-beta';
 const STATIC_CHANGELOG = [
+    { date: '2026-10-17', message: 'feat: add Puerto Rican Spanish liturgy translation and update refresh button', author: 'vineofmary' },
     { date: '2026-04-26', message: 'fix: clear verse prayer content when language data is empty', author: 'vineofmary' },
     { date: '2026-04-26', message: 'fix: constrain language-specific rubrication colors to legacy theme', author: 'vineofmary' },
     { date: '2026-04-26', message: 'feat: add interactive navigation to jump to prayer cards', author: 'vineofmary' },
@@ -8257,15 +8258,18 @@ document.addEventListener('DOMContentLoaded', async () => {
                 .then(reg => {
                     console.log('Service worker registered successfully', reg);
 
+                    // Proactively check for updates on every page load
+                    reg.update().catch(err => console.log('SW update check failed:', err));
+
                     // Check for updates
                     reg.onupdatefound = () => {
                         const installingWorker = reg.installing;
                         installingWorker.onstatechange = () => {
                             if (installingWorker.state === 'installed') {
                                 if (navigator.serviceWorker.controller) {
-                                    // New content is available; please refresh.
-                                    console.log('New content is available; please refresh.');
-                                    // We could trigger a UI notification here
+                                    // New content is available; auto-activate immediately
+                                    console.log('New content is available; auto-activating...');
+                                    installingWorker.postMessage('skipWaiting');
                                 } else {
                                     // Content is cached for offline use.
                                     console.log('Content is cached for offline use.');
@@ -8898,11 +8902,69 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // App Version & Changelog Logic
     if (appVersionContainer) {
-        appVersionContainer.textContent = APP_VERSION;
+        appVersionContainer.textContent = `v${APP_VERSION}`;
         appVersionContainer.addEventListener('click', () => {
             openModal(changelogModal);
             fetchGithubCommits();
         });
+    }
+
+    // Hard Refresh / Check for Updates Logic (Force cache invalidation)
+    const hardRefreshButton = document.getElementById('hard-refresh-button');
+    if (hardRefreshButton) {
+        hardRefreshButton.addEventListener('click', async () => {
+            await executeHardRefresh(hardRefreshButton);
+        });
+    }
+
+    async function executeHardRefresh(btn) {
+        if (!btn) return;
+        btn.disabled = true;
+        btn.classList.add('updating');
+        const labelSpan = btn.querySelector('span');
+        const originalText = labelSpan ? labelSpan.textContent : 'Check for Updates';
+        if (labelSpan) labelSpan.textContent = 'Updating...';
+
+        try {
+            // 1. Tell all active/waiting/installing Service Workers to skipWaiting and update
+            if ('serviceWorker' in navigator) {
+                try {
+                    const registrations = await navigator.serviceWorker.getRegistrations();
+                    for (const reg of registrations) {
+                        if (reg.waiting) reg.waiting.postMessage('skipWaiting');
+                        if (reg.installing) reg.installing.postMessage('skipWaiting');
+                        await reg.update().catch(() => {});
+                        await reg.unregister().catch(() => {});
+                    }
+                } catch (swErr) {
+                    console.warn('Service worker update/unregister error:', swErr);
+                }
+            }
+
+            // 2. Clear all browser CacheStorage instances (purges all cached HTML, JS, CSS, JSON)
+            if ('caches' in window) {
+                try {
+                    const cacheNames = await caches.keys();
+                    await Promise.all(cacheNames.map(name => caches.delete(name)));
+                    console.log('Cleared CacheStorage:', cacheNames);
+                } catch (cacheErr) {
+                    console.warn('CacheStorage deletion error:', cacheErr);
+                }
+            }
+
+            if (labelSpan) labelSpan.textContent = 'Reloading...';
+
+            // 3. Force reload with cache-busting timestamp parameter to bypass HTTP disk cache
+            const currentUrl = new URL(window.location.href);
+            currentUrl.searchParams.set('_t', Date.now().toString());
+            window.location.replace(currentUrl.toString());
+        } catch (err) {
+            console.error('Hard refresh failed:', err);
+            if (labelSpan) labelSpan.textContent = originalText;
+            btn.disabled = false;
+            btn.classList.remove('updating');
+            window.location.reload();
+        }
     }
 
     async function fetchGithubCommits() {

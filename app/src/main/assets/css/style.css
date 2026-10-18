@@ -2687,8 +2687,60 @@ body.presentation-mode-slides .hareg-ornament {
     margin-top: 2rem !important;
 }
 
+.hard-refresh-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    background-color: var(--card-bg, #222);
+    color: var(--text-color, #e0e0e0);
+    border: 1px solid var(--border-color, #444);
+    border-radius: 6px;
+    padding: 7px 14px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    font-family: var(--english-font-family, serif);
+    cursor: pointer;
+    margin-bottom: 0.6rem;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.hard-refresh-btn svg {
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+}
+
+.hard-refresh-btn:hover {
+    background-color: var(--hover-color, #333);
+    border-color: var(--accent-color, #d4af37);
+    color: var(--accent-color, #d4af37);
+}
+
+.hard-refresh-btn:hover svg {
+    transform: rotate(45deg);
+}
+
+.hard-refresh-btn:active {
+    transform: scale(0.97);
+}
+
+.hard-refresh-btn.updating {
+    opacity: 0.75;
+    pointer-events: none;
+}
+
+.hard-refresh-btn.updating svg {
+    animation: hard-refresh-spin 0.8s linear infinite;
+}
+
+@keyframes hard-refresh-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
 #app-version-container {
-    display: inline-block;
+    display: block;
     font-size: 0.75rem;
     color: var(--text-color);
     opacity: 0.4;

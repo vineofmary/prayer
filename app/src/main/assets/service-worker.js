@@ -1,16 +1,20 @@
-const CACHE_NAME = 'divine-liturgy-cache-v34';
+const CACHE_NAME = 'divine-liturgy-cache-v35';
 const urlsToCache = [
   './',
   './index.html',
   './manifest.json',
-  './css/style.css?v=10',
+  './css/style.css?v=32',
   './js/icons.js?v=10',
   './js/prayers.js?v=10',
   './js/songs.js?v=10',
   './js/servants.js?v=10',
-  './js/kidase.js?v=10',
+  './js/kidase.js?v=11',
+  './js/teklil.js?v=2',
   './js/typical_psalms.js?v=3',
-  './js/script.js?v=29',
+  './js/st_athanasius_psalms.js?v=2',
+  './js/bible_service.js',
+  './js/miracles_of_mary.js',
+  './js/script.js?v=36',
   './icons/icon-192x192.png',
   './icons/icon-512x512.png',
   './bible/NKJV_New_King_James_English_Bible_1982AD.json',
@@ -26,41 +30,59 @@ self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then(cache => {
-        console.log('Opened cache');
-        // Use cache.addAll and wrap in a try-catch or handle individual failures if preferred.
-        // For now, we'll stick to addAll but ensure paths are correct.
+        console.log('Opened cache', CACHE_NAME);
         return cache.addAll(urlsToCache);
       })
   );
 });
 
 self.addEventListener('fetch', event => {
-  // Fix: Only cache GET requests. Firebase uses POST for many operations.
+  // Only cache GET requests. Firebase uses POST for many operations.
   if (event.request.method !== 'GET') {
     return;
   }
 
+  const url = new URL(event.request.url);
+  const isHtmlOrRoot = event.request.mode === 'navigate' ||
+    url.pathname === '/' ||
+    url.pathname.endsWith('/') ||
+    url.pathname.endsWith('/index.html') ||
+    !url.pathname.includes('.');
+
+  if (isHtmlOrRoot) {
+    // Network-First for HTML/navigation requests:
+    // Ensures users always receive the latest index.html and version tags when online,
+    // while seamlessly falling back to cached index.html when offline.
+    event.respondWith(
+      fetch(event.request).then(networkResponse => {
+        if (networkResponse && networkResponse.status === 200 && event.request.url.startsWith('http')) {
+          const responseClone = networkResponse.clone();
+          caches.open(CACHE_NAME).then(cache => {
+            cache.put(event.request, responseClone);
+          });
+        }
+        return networkResponse;
+      }).catch(() => {
+        return caches.match(event.request, { ignoreSearch: true });
+      })
+    );
+    return;
+  }
+
+  // Cache-First with Network Update for versioned static assets (JS, CSS, images, JSON)
   event.respondWith(
     caches.open(CACHE_NAME).then(cache => {
-      // Only ignore search query parameters for HTML and root requests,
-      // so versioned JS/CSS/JSON assets are correctly fetched when versions change.
-      const url = new URL(event.request.url);
-      const isHtmlOrRoot = url.pathname === '/' || url.pathname.endsWith('/index.html') || url.pathname === '' || !url.pathname.includes('.');
-      const options = isHtmlOrRoot ? { ignoreSearch: true } : {};
-
-      return cache.match(event.request, options).then(response => {
+      return cache.match(event.request).then(response => {
         const fetchPromise = fetch(event.request).then(networkResponse => {
-          // If we got a valid response, update the cache. Ensure scheme is http(s) to avoid Cache.put errors.
           if (networkResponse && networkResponse.status === 200 && event.request.url.startsWith('http')) {
             cache.put(event.request, networkResponse.clone());
           }
           return networkResponse;
         }).catch(error => {
           console.error('Fetch failed for url ' + event.request.url + ':', error);
-          throw error; // Rethrow to avoid resolving with undefined and causing TypeError
+          throw error;
         });
 
-        // Return the cached response if it exists, otherwise wait for the network
         return response || fetchPromise;
       });
     })
