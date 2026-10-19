@@ -28,104 +28,198 @@ try {
 }
 
 // --- Application Logic ---
-const header = document.querySelector('header');
-const leftSidebar = document.getElementById('left-sidebar');
-const rightSidebar = document.getElementById('right-sidebar');
-const mainContent = document.querySelector('.main-content');
-const sidebarToggle = document.getElementById('sidebar-toggle');
-const prayersPanelToggle = document.getElementById('prayers-panel-toggle');
-const sidebarBackdrop = document.getElementById('sidebar-backdrop');
-const themeToggle = document.getElementById('theme-toggle');
-const paletteSelector = document.getElementById('palette-selector');
-const geezFontSizeSlider = document.getElementById('geez-font-size-slider');
-const englishFontSizeSlider = document.getElementById('english-font-size-slider');
-const lockFontSizesToggle = document.getElementById('lock-font-sizes');
-const boldTextToggle = document.getElementById('bold-text-toggle');
-const ethiopicFontSelect = document.getElementById('ethiopic-font-select');
-const englishFontSelect = document.getElementById('english-font-select');
-const languageTogglesDiv = document.getElementById('language-toggles');
-const unofficialLanguageTogglesDiv = document.getElementById('unofficial-language-toggles');
-const unofficialLanguagesSection = document.getElementById('unofficial-languages-section');
-const prayerDisplay = document.getElementById('prayer-display');
-const languageOrderList = document.getElementById('language-order-list');
-const copyNotification = document.getElementById('copy-notification');
-const presentationModeToggleHeader = document.getElementById('presentation-mode-toggle-header');
-const presModeIconSlides = presentationModeToggleHeader.querySelector('.pres-mode-icon-slides');
-const presModeIconScroll = presentationModeToggleHeader.querySelector('.pres-mode-icon-scroll');
-const layoutToggleHeader = document.getElementById('layout-toggle-header');
-const layoutIconColumn = layoutToggleHeader.querySelector('.layout-icon-column');
-const layoutIconRow = layoutToggleHeader.querySelector('.layout-icon-row');
 
-const showLanguageLabelsToggle = document.getElementById('show-language-labels');
-const showSpeakerLabelsToggle = document.getElementById('show-speaker-labels');
-const paragraphModeToggle = document.getElementById('paragraph-mode');
-const showRubricationToggle = document.getElementById('show-rubrication');
-const languageColorCodingSelect = document.getElementById('language-color-coding-select');
-const dynamicFontSizingLabel = document.getElementById('dynamic-font-sizing-label');
-const dynamicFontSizingToggle = document.getElementById('dynamic-font-sizing');
-const forceUniformFontSizeLabel = document.getElementById('force-uniform-font-size-label');
-const forceUniformFontSizeToggle = document.getElementById('force-uniform-font-size');
-const slideTransitionSelect = document.getElementById('slide-transition-select');
-const searchContainer = document.getElementById('search-container');
-const searchToggle = document.getElementById('search-toggle');
-const searchClose = document.getElementById('search-close');
-const searchInput = document.getElementById('search-input');
-const searchCount = document.getElementById('search-count');
-const searchPrev = document.getElementById('search-prev');
-const searchNext = document.getElementById('search-next');
-const helpButton = document.getElementById('help-button');
-const showSupplicationsToggle = document.getElementById('show-supplications-toggle');
-const showDailyPrayerToggle = document.getElementById('show-daily-prayer-toggle');
-const showGateOfLightToggle = document.getElementById('show-gate-of-light-toggle');
-const showYewediswaMelaektToggle = document.getElementById('show-yewediswa-melaekt-toggle');
-const showGeezPhoneticChantsToggle = document.getElementById('show-geez-phonetic-chants');
-const showLoanwordOriginsToggle = document.getElementById('show-loanword-origins');
-const useExternalBibleAPIToggle = document.getElementById('use-external-bible-api');
-const useExternalBibleAPILabel = document.getElementById('external-bible-api-label');
-const expandCollapseAllButton = document.getElementById('expand-collapse-all-button');
-const feedbackButton = document.getElementById('feedback-button');
-const helpModal = document.getElementById('help-modal');
-const feedbackModal = document.getElementById('feedback-modal');
-const ephremStoryModal = document.getElementById('ephrem-story-modal');
-const ephremStoryInfoBtn = document.getElementById('ephrem-story-info-btn');
-const closeEphremModal = document.getElementById('close-ephrem-modal');
-const eusebiusModal = document.getElementById('eusebius-modal');
-const eusebiusInfoBtn = document.getElementById('eusebius-info-btn');
-const closeEusebiusModal = document.getElementById('close-eusebius-modal');
-const psalmCombinationsBtn = document.getElementById('psalm-combinations-btn');
-const psalmCombinationsModal = document.getElementById('psalm-combinations-modal');
-const closePsalmCombinationsModal = document.getElementById('close-psalm-combinations-modal');
-const psalmCombinationsAccordion = document.getElementById('psalm-combinations-accordion');
-const typicalPsalmsModal = document.getElementById('typical-psalms-modal');
-const closeTypicalPsalmsModalBtn = document.getElementById('close-typical-psalms-modal');
-const typicalPsalmsList = document.getElementById('typical-psalms-list');
-const scribeLoginModal = document.getElementById('scribe-login-modal');
-const scribeEditorModal = document.getElementById('scribe-editor-modal');
-const changelogModal = document.getElementById('changelog-modal');
-const changelogList = document.getElementById('changelog-list');
-const closeChangelogModal = document.getElementById('close-changelog-modal');
-const athanasiusModal = document.getElementById('athanasius-modal');
-const athanasiusGuideBtn = document.getElementById('athanasius-guide-btn');
-const closeAthanasiusModal = document.getElementById('close-athanasius-modal');
-const athanasiusSearchInput = document.getElementById('athanasius-search-input');
-const athanasiusCategoryChips = document.getElementById('athanasius-category-chips');
-const athanasiusResultsCount = document.getElementById('athanasius-results-count');
-const athanasiusPrescriptionsList = document.getElementById('athanasius-prescriptions-list');
-const appVersionContainer = document.getElementById('app-version-container');
-const modalBackdrop = document.getElementById('modal-backdrop');
+// --- DOM Element References ---
+let header, leftSidebar, rightSidebar, mainContent, sidebarToggle, prayersPanelToggle, sidebarBackdrop,
+    themeToggle, paletteSelector, geezFontSizeSlider, englishFontSizeSlider, lockFontSizesToggle,
+    boldTextToggle, ethiopicFontSelect, englishFontSelect, languageTogglesDiv, unofficialLanguageTogglesDiv,
+    unofficialLanguagesSection, prayerDisplay, languageOrderList, copyNotification, presentationModeToggleHeader,
+    presModeIconSlides, presModeIconScroll, layoutToggleHeader, layoutIconColumn, layoutIconRow,
+    showLanguageLabelsToggle, showSpeakerLabelsToggle, paragraphModeToggle, showRubricationToggle,
+    languageColorCodingSelect, dynamicFontSizingLabel, dynamicFontSizingToggle, forceUniformFontSizeLabel,
+    forceUniformFontSizeToggle, slideTransitionSelect, searchContainer, searchToggle, searchClose,
+    searchInput, searchCount, searchPrev, searchNext, helpButton, showSupplicationsToggle,
+    showDailyPrayerToggle, showGateOfLightToggle, showYewediswaMelaektToggle, showGeezPhoneticChantsToggle,
+    showLoanwordOriginsToggle, useExternalBibleAPIToggle, useExternalBibleAPILabel, expandCollapseAllButton,
+    feedbackButton, helpModal, feedbackModal, ephremStoryModal, ephremStoryInfoBtn, closeEphremModal,
+    eusebiusModal, eusebiusInfoBtn, closeEusebiusModal, psalmCombinationsBtn, psalmCombinationsModal,
+    closePsalmCombinationsModal, psalmCombinationsAccordion, typicalPsalmsModal, closeTypicalPsalmsModalBtn,
+    typicalPsalmsList, scribeLoginModal, scribeEditorModal, changelogModal, changelogList, closeChangelogModal,
+    athanasiusModal, athanasiusGuideBtn, closeAthanasiusModal, athanasiusSearchInput, athanasiusCategoryChips,
+    athanasiusResultsCount, athanasiusPrescriptionsList, appVersionContainer, modalBackdrop,
+    sendFeedbackButtonHelp, sendFeedbackButtonModal, fontPreview, psalmSelectorContainer, psalmSummary,
+    clearPsalmsButton, prophetSongsSelectorContainer, prophetSongsSummary, clearProphetSongsButton,
+    kidaseGatedSection, kidaseModeToggle, kidaseSettings, showMatinsToggle, showTeklilToggle,
+    teklilNamesSettings, bridegroomNameInput, brideNameInput, morningPsalmGospelSettings,
+    morningPsalmRefContainer, morningGospelRefContainer, vespersPsalmGospelSettings,
+    eveningPsalmRefContainer, eveningGospelRefContainer, anaphoraSelector, showAnaphoraToggle,
+    anaphoraSettings, showVespersToggle, kidaseDaySelector, covenantPrayerSelector,
+    hideQuietPrayersToggle, openMiracleModalBtn, miracleModal, closeMiracleModalBtn,
+    miracleSearchInput, miracleMostReadToggle, miracleListContainer, selectedMiracleText,
+    miraclePositionContainer, miraclePositionRadios, holyFiftyDaysToggle, servantNameInput,
+    shareLinkButton, shareScripturesButton, patriarchNameInput, bishopNameInput, attendingBishopsInput,
+    churchNameInput, countryNameInput, headOfStateInput, anglicizeNamesToggle, bibleVerseSidebar,
+    kidasePaulineRefContainer, kidaseUniversalRefContainer, kidaseActsRefContainer,
+    kidasePsalmRefContainer, kidaseGospelRefContainer, hardRefreshButton;
 
 // Scribe State
 let isScribeLoggedIn = false;
 let isScribeModeActive = false;
 let currentScribeUser = null;
 let prayersFromFirestore = []; // Cache for Firestore data
-const sendFeedbackButtonHelp = document.getElementById('send-feedback-button-help');
-const sendFeedbackButtonModal = document.getElementById('send-feedback-button'); // feedback-modal one
-const fontPreview = document.getElementById('font-preview');
-const psalmSelectorContainer = document.getElementById('psalm-selector-container');
-const psalmSummary = document.getElementById('psalm-summary');
-const clearPsalmsButton = document.getElementById('clear-psalms-button');
-// Old select removed
+
+function bindDOMElements() {
+    header = document.querySelector('header');
+    leftSidebar = document.getElementById('left-sidebar');
+    rightSidebar = document.getElementById('right-sidebar');
+    mainContent = document.querySelector('.main-content');
+    sidebarToggle = document.getElementById('sidebar-toggle');
+    prayersPanelToggle = document.getElementById('prayers-panel-toggle');
+    sidebarBackdrop = document.getElementById('sidebar-backdrop');
+    themeToggle = document.getElementById('theme-toggle');
+    paletteSelector = document.getElementById('palette-selector');
+    geezFontSizeSlider = document.getElementById('geez-font-size-slider');
+    englishFontSizeSlider = document.getElementById('english-font-size-slider');
+    lockFontSizesToggle = document.getElementById('lock-font-sizes');
+    boldTextToggle = document.getElementById('bold-text-toggle');
+    ethiopicFontSelect = document.getElementById('ethiopic-font-select');
+    englishFontSelect = document.getElementById('english-font-select');
+    languageTogglesDiv = document.getElementById('language-toggles');
+    unofficialLanguageTogglesDiv = document.getElementById('unofficial-language-toggles');
+    unofficialLanguagesSection = document.getElementById('unofficial-languages-section');
+    prayerDisplay = document.getElementById('prayer-display');
+    languageOrderList = document.getElementById('language-order-list');
+    copyNotification = document.getElementById('copy-notification');
+    presentationModeToggleHeader = document.getElementById('presentation-mode-toggle-header');
+    if (presentationModeToggleHeader) {
+        presModeIconSlides = presentationModeToggleHeader.querySelector('.pres-mode-icon-slides');
+        presModeIconScroll = presentationModeToggleHeader.querySelector('.pres-mode-icon-scroll');
+    }
+    layoutToggleHeader = document.getElementById('layout-toggle-header');
+    if (layoutToggleHeader) {
+        layoutIconColumn = layoutToggleHeader.querySelector('.layout-icon-column');
+        layoutIconRow = layoutToggleHeader.querySelector('.layout-icon-row');
+    }
+
+    showLanguageLabelsToggle = document.getElementById('show-language-labels');
+    showSpeakerLabelsToggle = document.getElementById('show-speaker-labels');
+    paragraphModeToggle = document.getElementById('paragraph-mode');
+    showRubricationToggle = document.getElementById('show-rubrication');
+    languageColorCodingSelect = document.getElementById('language-color-coding-select');
+    dynamicFontSizingLabel = document.getElementById('dynamic-font-sizing-label');
+    dynamicFontSizingToggle = document.getElementById('dynamic-font-sizing');
+    forceUniformFontSizeLabel = document.getElementById('force-uniform-font-size-label');
+    forceUniformFontSizeToggle = document.getElementById('force-uniform-font-size');
+    slideTransitionSelect = document.getElementById('slide-transition-select');
+    searchContainer = document.getElementById('search-container');
+    searchToggle = document.getElementById('search-toggle');
+    searchClose = document.getElementById('search-close');
+    searchInput = document.getElementById('search-input');
+    searchCount = document.getElementById('search-count');
+    searchPrev = document.getElementById('search-prev');
+    searchNext = document.getElementById('search-next');
+    helpButton = document.getElementById('help-button');
+    showSupplicationsToggle = document.getElementById('show-supplications-toggle');
+    showDailyPrayerToggle = document.getElementById('show-daily-prayer-toggle');
+    showGateOfLightToggle = document.getElementById('show-gate-of-light-toggle');
+    showYewediswaMelaektToggle = document.getElementById('show-yewediswa-melaekt-toggle');
+    showGeezPhoneticChantsToggle = document.getElementById('show-geez-phonetic-chants');
+    showLoanwordOriginsToggle = document.getElementById('show-loanword-origins');
+    useExternalBibleAPIToggle = document.getElementById('use-external-bible-api');
+    useExternalBibleAPILabel = document.getElementById('external-bible-api-label');
+    expandCollapseAllButton = document.getElementById('expand-collapse-all-button');
+    feedbackButton = document.getElementById('feedback-button');
+    helpModal = document.getElementById('help-modal');
+    feedbackModal = document.getElementById('feedback-modal');
+    ephremStoryModal = document.getElementById('ephrem-story-modal');
+    ephremStoryInfoBtn = document.getElementById('ephrem-story-info-btn');
+    closeEphremModal = document.getElementById('close-ephrem-modal');
+    eusebiusModal = document.getElementById('eusebius-modal');
+    eusebiusInfoBtn = document.getElementById('eusebius-info-btn');
+    closeEusebiusModal = document.getElementById('close-eusebius-modal');
+    psalmCombinationsBtn = document.getElementById('psalm-combinations-btn');
+    psalmCombinationsModal = document.getElementById('psalm-combinations-modal');
+    closePsalmCombinationsModal = document.getElementById('close-psalm-combinations-modal');
+    psalmCombinationsAccordion = document.getElementById('psalm-combinations-accordion');
+    typicalPsalmsModal = document.getElementById('typical-psalms-modal');
+    closeTypicalPsalmsModalBtn = document.getElementById('close-typical-psalms-modal');
+    typicalPsalmsList = document.getElementById('typical-psalms-list');
+    scribeLoginModal = document.getElementById('scribe-login-modal');
+    scribeEditorModal = document.getElementById('scribe-editor-modal');
+    changelogModal = document.getElementById('changelog-modal');
+    changelogList = document.getElementById('changelog-list');
+    closeChangelogModal = document.getElementById('close-changelog-modal');
+    athanasiusModal = document.getElementById('athanasius-modal');
+    athanasiusGuideBtn = document.getElementById('athanasius-guide-btn');
+    closeAthanasiusModal = document.getElementById('close-athanasius-modal');
+    athanasiusSearchInput = document.getElementById('athanasius-search-input');
+    athanasiusCategoryChips = document.getElementById('athanasius-category-chips');
+    athanasiusResultsCount = document.getElementById('athanasius-results-count');
+    athanasiusPrescriptionsList = document.getElementById('athanasius-prescriptions-list');
+    appVersionContainer = document.getElementById('app-version-container');
+    modalBackdrop = document.getElementById('modal-backdrop');
+
+    sendFeedbackButtonHelp = document.getElementById('send-feedback-button-help');
+    sendFeedbackButtonModal = document.getElementById('send-feedback-button');
+    fontPreview = document.getElementById('font-preview');
+    psalmSelectorContainer = document.getElementById('psalm-selector-container');
+    psalmSummary = document.getElementById('psalm-summary');
+    clearPsalmsButton = document.getElementById('clear-psalms-button');
+
+    prophetSongsSelectorContainer = document.getElementById('prophet-songs-selector-container');
+    prophetSongsSummary = document.getElementById('prophet-songs-summary');
+    clearProphetSongsButton = document.getElementById('clear-prophet-songs-button');
+    kidaseGatedSection = document.getElementById('kidase-gated-section');
+    kidaseModeToggle = document.getElementById('kidase-mode-toggle');
+    kidaseSettings = document.getElementById('kidase-settings');
+    showMatinsToggle = document.getElementById('show-matins');
+    showTeklilToggle = document.getElementById('show-teklil');
+    teklilNamesSettings = document.getElementById('teklil-names-settings');
+    bridegroomNameInput = document.getElementById('bridegroom-name-input');
+    brideNameInput = document.getElementById('bride-name-input');
+    morningPsalmGospelSettings = document.getElementById('morning-psalm-gospel-settings');
+    morningPsalmRefContainer = document.getElementById('morning-psalm-ref-container');
+    morningGospelRefContainer = document.getElementById('morning-gospel-ref-container');
+    vespersPsalmGospelSettings = document.getElementById('vespers-psalm-gospel-settings');
+    eveningPsalmRefContainer = document.getElementById('evening-psalm-ref-container');
+    eveningGospelRefContainer = document.getElementById('evening-gospel-ref-container');
+    anaphoraSelector = document.getElementById('anaphora-selector');
+    showAnaphoraToggle = document.getElementById('show-anaphora-toggle');
+    anaphoraSettings = document.getElementById('anaphora-settings');
+    showVespersToggle = document.getElementById('show-vespers');
+    kidaseDaySelector = document.getElementById('kidase-day-selector');
+    covenantPrayerSelector = document.getElementById('covenant-prayer-selector');
+    hideQuietPrayersToggle = document.getElementById('hide-quiet-prayers');
+    openMiracleModalBtn = document.getElementById('open-miracle-modal-btn');
+    miracleModal = document.getElementById('miracle-modal');
+    closeMiracleModalBtn = document.getElementById('close-miracle-modal');
+    miracleSearchInput = document.getElementById('miracle-search-input');
+    miracleMostReadToggle = document.getElementById('miracle-most-read-toggle');
+    miracleListContainer = document.getElementById('miracle-list-container');
+    selectedMiracleText = document.getElementById('selected-miracle-text');
+
+    miraclePositionContainer = document.getElementById('miracle-position-container');
+    miraclePositionRadios = document.getElementsByName('miracle-position');
+    holyFiftyDaysToggle = document.getElementById('holy-fifty-days-toggle');
+    servantNameInput = document.getElementById('servant-name-input');
+    shareLinkButton = document.getElementById('share-link-button');
+    shareScripturesButton = document.getElementById('share-scriptures-button');
+    patriarchNameInput = document.getElementById('patriarch-name-input');
+    bishopNameInput = document.getElementById('bishop-name-input');
+    attendingBishopsInput = document.getElementById('attending-bishops-input');
+    churchNameInput = document.getElementById('church-name-input');
+    countryNameInput = document.getElementById('country-name-input');
+    headOfStateInput = document.getElementById('head-of-state-input');
+    anglicizeNamesToggle = document.getElementById('anglicize-names-toggle');
+    bibleVerseSidebar = document.querySelector('.bible-verse-sidebar');
+
+    kidasePaulineRefContainer = document.getElementById('kidase-pauline-ref-container');
+    kidaseUniversalRefContainer = document.getElementById('kidase-universal-ref-container');
+    kidaseActsRefContainer = document.getElementById('kidase-acts-ref-container');
+    kidasePsalmRefContainer = document.getElementById('kidase-psalm-ref-container');
+    kidaseGospelRefContainer = document.getElementById('kidase-gospel-ref-container');
+    hardRefreshButton = document.getElementById('hard-refresh-button');
+}
 const PSALM_COMBINATIONS = {
     'daily': {
         name: 'Daily Prayer',
@@ -367,61 +461,6 @@ const PSALM_CATEGORIES = [
         items: ['nativity', 'baptism', 'crucifixion', 'resurrection', 'ascension', 'pentecost']
     }
 ];
-const prophetSongsSelectorContainer = document.getElementById('prophet-songs-selector-container');
-const prophetSongsSummary = document.getElementById('prophet-songs-summary');
-const clearProphetSongsButton = document.getElementById('clear-prophet-songs-button');
-const kidaseGatedSection = document.getElementById('kidase-gated-section');
-const kidaseModeToggle = document.getElementById('kidase-mode-toggle');
-const kidaseSettings = document.getElementById('kidase-settings');
-const showMatinsToggle = document.getElementById('show-matins');
-const showTeklilToggle = document.getElementById('show-teklil');
-const teklilNamesSettings = document.getElementById('teklil-names-settings');
-const bridegroomNameInput = document.getElementById('bridegroom-name-input');
-const brideNameInput = document.getElementById('bride-name-input');
-const morningPsalmGospelSettings = document.getElementById('morning-psalm-gospel-settings');
-const morningPsalmRefContainer = document.getElementById('morning-psalm-ref-container');
-const morningGospelRefContainer = document.getElementById('morning-gospel-ref-container');
-const vespersPsalmGospelSettings = document.getElementById('vespers-psalm-gospel-settings');
-const eveningPsalmRefContainer = document.getElementById('evening-psalm-ref-container');
-const eveningGospelRefContainer = document.getElementById('evening-gospel-ref-container');
-const anaphoraSelector = document.getElementById('anaphora-selector');
-const showAnaphoraToggle = document.getElementById('show-anaphora-toggle');
-const anaphoraSettings = document.getElementById('anaphora-settings');
-const showVespersToggle = document.getElementById('show-vespers');
-const kidaseDaySelector = document.getElementById('kidase-day-selector');
-const covenantPrayerSelector = document.getElementById('covenant-prayer-selector');
-const hideQuietPrayersToggle = document.getElementById('hide-quiet-prayers');
-const openMiracleModalBtn = document.getElementById('open-miracle-modal-btn');
-const miracleModal = document.getElementById('miracle-modal');
-const closeMiracleModalBtn = document.getElementById('close-miracle-modal');
-const miracleSearchInput = document.getElementById('miracle-search-input');
-const miracleMostReadToggle = document.getElementById('miracle-most-read-toggle');
-const miracleListContainer = document.getElementById('miracle-list-container');
-const selectedMiracleText = document.getElementById('selected-miracle-text');
-
-const miraclePositionContainer = document.getElementById('miracle-position-container');
-const miraclePositionRadios = document.getElementsByName('miracle-position');
-const holyFiftyDaysToggle = document.getElementById('holy-fifty-days-toggle');
-const servantNameInput = document.getElementById('servant-name-input');
-const shareLinkButton = document.getElementById('share-link-button');
-const shareScripturesButton = document.getElementById('share-scriptures-button');
-const patriarchNameInput = document.getElementById('patriarch-name-input');
-const bishopNameInput = document.getElementById('bishop-name-input');
-const attendingBishopsInput = document.getElementById('attending-bishops-input');
-const churchNameInput = document.getElementById('church-name-input');
-const countryNameInput = document.getElementById('country-name-input');
-const headOfStateInput = document.getElementById('head-of-state-input');
-const anglicizeNamesToggle = document.getElementById('anglicize-names-toggle');
-const bibleVerseSidebar = document.querySelector('.bible-verse-sidebar');
-
-// Kidase Lectionary Inputs
-const kidasePaulineRefContainer = document.getElementById('kidase-pauline-ref-container');
-const kidaseUniversalRefContainer = document.getElementById('kidase-universal-ref-container');
-const kidaseActsRefContainer = document.getElementById('kidase-acts-ref-container');
-const kidasePsalmRefContainer = document.getElementById('kidase-psalm-ref-container');
-const kidaseGospelRefContainer = document.getElementById('kidase-gospel-ref-container');
-
-
 // --- State Variables ---
 const SETTINGS_VERSION = '4.2.5'; // Update this to force refresh load settings
 const APP_VERSION = '0.8.5-beta';
@@ -6748,233 +6787,18 @@ function renderSelectedSeatatLectionary(addSectionTitleCallback) {
 }
 
 
-// --- Event Listeners ---
-document.querySelectorAll('input[name="seatat-lectionary-day"]').forEach(radio => {
-    radio.addEventListener('change', (event) => {
-        selectedSeatatLectionaryDay = event.target.value;
-        saveSettings();
-        renderPrayers();
-    });
-});
-
-document.querySelectorAll('input[name="praise-of-mary-day"]').forEach(radio => {
-    radio.addEventListener('change', (event) => {
-        selectedWidaseMaryamDay = event.target.value;
-        saveSettings();
-        renderPrayers();
-    });
-});
-
-sidebarToggle.addEventListener('click', toggleLeftSidebar);
-if (prayersPanelToggle) {
-    prayersPanelToggle.addEventListener('click', toggleRightSidebar);
+function safeOn(el, event, handler, opts) {
+    if (!el) return;
+    if (typeof el.addEventListener === 'function') {
+        el.addEventListener(event, handler, opts);
+    } else if (el.length !== undefined) {
+        Array.from(el).forEach(node => {
+            if (node && typeof node.addEventListener === 'function') {
+                node.addEventListener(event, handler, opts);
+            }
+        });
+    }
 }
-sidebarBackdrop.addEventListener('click', collapseSidebar);
-
-// --- Prevent sliders from closing sidebar when dragging ---
-const stopSliderEventPropagation = (event) => {
-    event.stopPropagation();
-};
-
-// We define the events and attach them with the passive option.
-['mousedown', 'pointerdown'].forEach(eventType => {
-    geezFontSizeSlider.addEventListener(eventType, stopSliderEventPropagation);
-    englishFontSizeSlider.addEventListener(eventType, stopSliderEventPropagation);
-});
-geezFontSizeSlider.addEventListener('touchstart', stopSliderEventPropagation, { passive: true });
-englishFontSizeSlider.addEventListener('touchstart', stopSliderEventPropagation, { passive: true });
-
-// For touchmove, we add the { passive: true } option to resolve the violation.
-// This tells the browser our listener won't block scrolling, fixing the conflict.
-['touchmove', 'pointermove'].forEach(eventType => {
-    geezFontSizeSlider.addEventListener(eventType, stopSliderEventPropagation, { passive: true });
-    englishFontSizeSlider.addEventListener(eventType, stopSliderEventPropagation, { passive: true });
-});
-
-
-
-themeToggle.addEventListener('click', () => {
-    currentTheme.mode = currentTheme.mode === 'light' ? 'dark' : 'light';
-    applyTheme();
-    saveSettings();
-});
-
-paletteSelector.addEventListener('change', (event) => {
-    currentTheme.palette = event.target.value;
-    applyTheme();
-    saveSettings();
-});
-
-geezFontSizeSlider.addEventListener('input', () => {
-    fontSizes.geez = geezFontSizeSlider.value;
-    if (fontSizes.locked) {
-        fontSizes.english = geezFontSizeSlider.value;
-        englishFontSizeSlider.value = geezFontSizeSlider.value;
-    }
-    updateFontStylesAndPreview();
-    clearTimeout(geezFontSizeSlider.timer);
-    geezFontSizeSlider.timer = setTimeout(saveSettings, 300);
-});
-
-englishFontSizeSlider.addEventListener('input', () => {
-    fontSizes.english = englishFontSizeSlider.value;
-    if (fontSizes.locked) {
-        fontSizes.geez = englishFontSizeSlider.value;
-        geezFontSizeSlider.value = englishFontSizeSlider.value;
-    }
-    updateFontStylesAndPreview();
-    clearTimeout(englishFontSizeSlider.timer);
-    englishFontSizeSlider.timer = setTimeout(saveSettings, 300);
-});
-
-
-// --- Font Size Sliders ---
-const handleGeezFontChange = (event) => {
-    const newSize = event.target.value;
-    document.documentElement.style.setProperty('--geez-font-size', `${newSize}px`);
-    fontSizes.geez = newSize;
-    if (fontSizes.locked) {
-        document.documentElement.style.setProperty('--english-font-size', `${newSize}px`);
-        englishFontSizeSlider.value = newSize;
-        fontSizes.english = newSize;
-    }
-    saveSettings();
-};
-
-const handleEnglishFontChange = (event) => {
-    const newSize = event.target.value;
-    document.documentElement.style.setProperty('--english-font-size', `${newSize}px`);
-    fontSizes.english = newSize;
-    if (fontSizes.locked) {
-        document.documentElement.style.setProperty('--geez-font-size', `${newSize}px`);
-        geezFontSizeSlider.value = newSize;
-        fontSizes.geez = newSize;
-    }
-    saveSettings();
-};
-
-// Apply debounce with a 50ms delay
-geezFontSizeSlider.addEventListener('input', debounce(handleGeezFontChange, 50));
-englishFontSizeSlider.addEventListener('input', debounce(handleEnglishFontChange, 50));
-
-
-
-lockFontSizesToggle.addEventListener('change', () => {
-    fontSizes.locked = lockFontSizesToggle.checked;
-    saveSettings();
-});
-
-boldTextToggle.addEventListener('change', () => {
-    displayOptions.boldText = boldTextToggle.checked;
-    body.classList.toggle('bold-text', displayOptions.boldText);
-    saveSettings();
-});
-
-ethiopicFontSelect.addEventListener('change', () => {
-    updateFontStylesAndPreview();
-    saveSettings();
-});
-
-englishFontSelect.addEventListener('change', () => {
-    updateFontStylesAndPreview();
-    saveSettings();
-});
-
-servantNameInput.addEventListener('input', () => {
-    customNames.servant = servantNameInput.value;
-    saveSettings();
-    renderPrayers();
-});
-
-patriarchNameInput.addEventListener('input', () => {
-    customNames.patriarch = patriarchNameInput.value;
-    saveSettings();
-    renderPrayers();
-});
-
-bishopNameInput.addEventListener('input', () => {
-    customNames.bishop = bishopNameInput.value;
-    saveSettings();
-    renderPrayers();
-});
-
-attendingBishopsInput.addEventListener('input', () => {
-    customNames.attendingBishops = attendingBishopsInput.value;
-    saveSettings();
-    renderPrayers();
-});
-
-churchNameInput.addEventListener('input', () => {
-    customNames.churchName = churchNameInput.value;
-    saveSettings();
-    renderPrayers();
-});
-
-countryNameInput.addEventListener('input', () => {
-    customNames.country = countryNameInput.value;
-    saveSettings();
-    renderPrayers();
-});
-
-headOfStateInput.addEventListener('input', () => {
-    customNames.headOfState = headOfStateInput.value;
-    saveSettings();
-    renderPrayers();
-});
-
-
-// --- Kidase (Liturgy) Event Listeners ---
-kidaseModeToggle.addEventListener('change', () => {
-    isKidaseModeActive = kidaseModeToggle.checked;
-    kidaseSettings.style.display = isKidaseModeActive ? 'block' : 'none';
-    saveSettings();
-    smoothRender();
-});
-
-showMatinsToggle.addEventListener('change', () => {
-    showMatins = showMatinsToggle.checked;
-    morningPsalmGospelSettings.style.display = showMatins ? 'block' : 'none';
-
-    saveSettings();
-    smoothRender();
-});
-
-showTeklilToggle.addEventListener('change', () => {
-    showTeklil = showTeklilToggle.checked;
-    teklilNamesSettings.style.display = showTeklil ? 'block' : 'none';
-    
-    if (showTeklil) {
-        // Default Matins lectionary when Teklil is toggled ON
-        kidaseLectionaryRefs.morningPsalm = 'Psalms 19:5-5'; // 18:5 in Orthodox is 19:5 in NKJV
-        kidaseLectionaryRefs.morningGospel = 'Matthew 9:1-13';
-        
-        // Re-initialize pickers to update the UI with new defaults
-        initializeLectionaryPickers();
-    }
-
-    saveSettings();
-    smoothRender();
-});
-
-bridegroomNameInput.addEventListener('input', () => {
-    bridegroomName = bridegroomNameInput.value;
-    saveSettings();
-    renderPrayers();
-});
-
-brideNameInput.addEventListener('input', () => {
-    brideName = brideNameInput.value;
-    saveSettings();
-    renderPrayers();
-});
-
-
-
-anaphoraSelector.addEventListener('change', () => {
-    selectedAnaphora = anaphoraSelector.value;
-    saveSettings();
-    smoothRender();
-});
 
 // --- Miracles of Mary Modal Setup ---
 function updateSelectedMiracleUI() {
@@ -7024,7 +6848,7 @@ function renderMiracleModalList() {
     noneBtn.style.border = selectedMiracleId === 'none' ? '2px solid var(--primary-color)' : '1px solid var(--border-color)';
     noneBtn.style.marginBottom = '5px';
     noneBtn.textContent = 'None selected';
-    noneBtn.addEventListener('click', () => {
+    safeOn(noneBtn, 'click', () => {
         selectedMiracleId = 'none';
         updateSelectedMiracleUI();
         saveSettings();
@@ -7069,7 +6893,7 @@ function renderMiracleModalList() {
         }
         btn.innerHTML = html;
         
-        btn.addEventListener('click', () => {
+        safeOn(btn, 'click', () => {
             selectedMiracleId = miracle.id;
             selectedMiracleTranslationIndex = 0; // Reset translation index when a new miracle is picked
             updateSelectedMiracleUI();
@@ -7081,116 +6905,6 @@ function renderMiracleModalList() {
         miracleListContainer.appendChild(btn);
     });
 }
-
-if (openMiracleModalBtn && miracleModal && closeMiracleModalBtn) {
-    updateSelectedMiracleUI(); // Initial UI update
-    
-    openMiracleModalBtn.addEventListener('click', () => {
-        miracleModal.style.display = 'block';
-        renderMiracleModalList();
-    });
-    
-    closeMiracleModalBtn.addEventListener('click', () => {
-        miracleModal.style.display = 'none';
-    });
-    
-    miracleSearchInput.addEventListener('input', renderMiracleModalList);
-    miracleMostReadToggle.addEventListener('change', renderMiracleModalList);
-}
-
-if (miraclePositionRadios) {
-    miraclePositionRadios.forEach(radio => {
-        if (radio.value === miraclePosition) {
-            radio.checked = true;
-        }
-        radio.addEventListener('change', (e) => {
-            if (e.target.checked) {
-                miraclePosition = e.target.value;
-                saveSettings();
-                smoothRender();
-            }
-        });
-    });
-}
-// ------------------------------
-
-const showAnaphoraToggleEl = document.getElementById('show-anaphora-toggle');
-if (showAnaphoraToggleEl) {
-    showAnaphoraToggleEl.addEventListener('change', () => {
-        showAnaphora = showAnaphoraToggleEl.checked;
-        const anaphoraSettingsEl = document.getElementById('anaphora-settings');
-        if (anaphoraSettingsEl) {
-            anaphoraSettingsEl.style.display = showAnaphora ? 'block' : 'none';
-        }
-        localStorage.setItem('showAnaphora', showAnaphora);
-        saveSettings();
-        smoothRender();
-    });
-}
-
-const showSeatatReadingsToggle = document.getElementById('show-seatat-readings-toggle');
-if (showSeatatReadingsToggle) {
-    showSeatatReadingsToggle.addEventListener('change', () => {
-        showSeatatReadings = showSeatatReadingsToggle.checked;
-        const seatatReadingsSettings = document.getElementById('seatat-readings-settings');
-        if (seatatReadingsSettings) {
-            seatatReadingsSettings.style.display = showSeatatReadings ? 'block' : 'none';
-        }
-        localStorage.setItem('showSeatatReadings', showSeatatReadings);
-        saveSettings();
-        smoothRender();
-    });
-}
-
-showVespersToggle.addEventListener('change', () => {
-    showVespers = showVespersToggle.checked;
-    vespersPsalmGospelSettings.style.display = showVespers ? 'block' : 'none';
-    saveSettings();
-    smoothRender();
-});
-
-if (kidaseDaySelector) {
-    kidaseDaySelector.addEventListener('change', () => {
-        selectedKidaseDay = kidaseDaySelector.value;
-        saveSettings();
-        smoothRender();
-    });
-}
-
-covenantPrayerSelector.addEventListener('change', () => {
-    selectedCovenantPrayer = covenantPrayerSelector.value;
-    saveSettings();
-    smoothRender();
-});
-
-hideQuietPrayersToggle.addEventListener('change', () => {
-    hideQuietPrayers = hideQuietPrayersToggle.checked;
-    saveSettings();
-    smoothRender();
-});
-
-if (holyFiftyDaysToggle) {
-    holyFiftyDaysToggle.addEventListener('change', () => {
-        isHolyFiftyDays = holyFiftyDaysToggle.checked;
-        saveSettings();
-        smoothRender();
-    });
-}
-
-
-
-languageTogglesDiv.addEventListener('change', (event) => {
-    if (event.target.type === 'checkbox') {
-        const langKey = event.target.value;
-        if (displayedLanguages.hasOwnProperty(langKey)) {
-            displayedLanguages[langKey] = event.target.checked;
-        }
-        checkAndEnforceLayoutRules();
-        saveSettings();
-        updateLanguageOrderList();
-        smoothRender();
-    }
-});
 
 
 function toggleLayout() {
@@ -7256,72 +6970,6 @@ function togglePresentationMode(targetCardIdentifier) {
             }
         }, 100); // A slight delay ensures the DOM is ready
     }
-}
-
-
-// Psalm Selector Listener using event delegation
-psalmSelectorContainer.addEventListener('change', (event) => {
-    if (event.target.type === 'checkbox') {
-        if (event.target.id === 'select-all-psalms') {
-            const isChecked = event.target.checked;
-            const checkboxes = psalmSelectorContainer.querySelectorAll('input[type="checkbox"]');
-            
-            if (isChecked) {
-                selectedPsalms = Array.from({length: 150}, (_, i) => i + 1);
-            } else {
-                selectedPsalms = [];
-            }
-
-            checkboxes.forEach(cb => {
-                if (cb.id !== 'select-all-psalms') {
-                    cb.checked = isChecked;
-                }
-            });
-        } else {
-            const psalmNum = Number(event.target.value);
-            if (!isNaN(psalmNum)) {
-                if (event.target.checked) {
-                    if (!selectedPsalms.includes(psalmNum)) {
-                        selectedPsalms.push(psalmNum);
-                    }
-                } else {
-                    selectedPsalms = selectedPsalms.filter(p => p !== psalmNum);
-                }
-            }
-        }
-
-        updatePsalmSummary();
-        saveSettings();
-        smoothRender();
-    }
-});
-
-const psalmSequenceInput = document.getElementById('psalm-sequence-input');
-if (psalmSequenceInput) {
-    psalmSequenceInput.addEventListener('change', (e) => {
-        const rawText = e.target.value;
-        const newSequence = rawText.split(',')
-            .map(s => Number(s.trim()))
-            .filter(n => !isNaN(n) && n > 0 && n <= 150);
-        
-        selectedPsalms = newSequence;
-        
-        const checkboxes = psalmSelectorContainer.querySelectorAll('input[type="checkbox"]');
-        checkboxes.forEach(cb => {
-            if (cb.id !== 'select-all-psalms') {
-                cb.checked = selectedPsalms.includes(Number(cb.value));
-            }
-        });
-        
-        const selectAllPsalmCheckbox = document.getElementById('select-all-psalms');
-        if (selectAllPsalmCheckbox) {
-            selectAllPsalmCheckbox.checked = selectedPsalms.length === 150;
-        }
-
-        updatePsalmSummary(); // To format it cleanly if they typed weird spaces
-        saveSettings();
-        smoothRender();
-    });
 }
 
 // --- Custom Psalm Combinations Modal Logic ---
@@ -7418,7 +7066,7 @@ function renderPsalmCombinationsModal() {
                 ${translit ? `<span class="combo-translit">${translit}</span>` : ''}
             `;
             
-            optionDiv.addEventListener('click', () => {
+            safeOn(optionDiv, 'click', () => {
                 selectPsalmCombination(comboKey);
                 closeModal();
             });
@@ -7431,7 +7079,7 @@ function renderPsalmCombinationsModal() {
         itemDiv.appendChild(contentDiv);
         
         // Accordion toggle logic
-        headerDiv.addEventListener('click', () => {
+        safeOn(headerDiv, 'click', () => {
             const isActive = itemDiv.classList.contains('active');
             
             // Close all other accordions
@@ -7484,238 +7132,6 @@ function selectPsalmCombination(comboKey) {
         smoothRender();
     }
 }
-
-// Modal open/close listeners
-if (psalmCombinationsBtn) {
-    psalmCombinationsBtn.addEventListener('click', () => {
-        console.log('psalmCombinationsBtn clicked!');
-        console.log('psalmCombinationsModal:', psalmCombinationsModal);
-        openModal(psalmCombinationsModal);
-        // Ensure backdrop is under this modal (openModal handles basic display)
-        modalBackdrop.style.zIndex = '1000'; 
-        psalmCombinationsModal.style.zIndex = '1001';
-    });
-}
-
-if (closePsalmCombinationsModal) {
-    closePsalmCombinationsModal.addEventListener('click', () => {
-        closeModal();
-    });
-}
-
-if (closeTypicalPsalmsModalBtn) {
-    closeTypicalPsalmsModalBtn.addEventListener('click', () => {
-        closeModal();
-    });
-}
-
-clearPsalmsButton.addEventListener('click', () => {
-    selectedPsalms = [];
-    document.querySelectorAll('#psalm-selector-container input[type="checkbox"]').forEach(checkbox => {
-        checkbox.checked = false;
-    });
-    if (psalmCombinationsBtn) psalmCombinationsBtn.textContent = 'Typical Psalm Combinations...';
-    updatePsalmSummary();
-    saveSettings();
-    renderPrayers();
-});
-
-prophetSongsSelectorContainer.addEventListener('change', (event) => {
-    if (event.target.type === 'checkbox') {
-        if (event.target.id === 'select-all-prophet-songs') {
-            const isChecked = event.target.checked;
-            const checkboxes = prophetSongsSelectorContainer.querySelectorAll('input[type="checkbox"]');
-            checkboxes.forEach(cb => {
-                if (cb.id !== 'select-all-prophet-songs') {
-                    cb.checked = isChecked;
-                }
-            });
-        }
-
-        selectedProphetSongs = Array.from(prophetSongsSelectorContainer.querySelectorAll('input[type="checkbox"]:checked'))
-            .map(cb => cb.value)
-            .filter(value => value !== 'on' && value !== 'auto-select'); // Filter out helper checkboxes
-
-        updateProphetSongsSummary();
-        saveSettings();
-        smoothRender();
-    }
-});
-
-clearProphetSongsButton.addEventListener('click', () => {
-    selectedProphetSongs = [];
-    document.querySelectorAll('#prophet-songs-selector-container input[type="checkbox"]').forEach(checkbox => {
-        checkbox.checked = false;
-    });
-    updateProphetSongsSummary();
-    saveSettings();
-    renderPrayers();
-});
-
-
-// Display Options Listeners
-presentationModeToggleHeader.addEventListener('click', () => {
-    currentSlideIndex = 0; // Reset to start when using the header toggle
-    togglePresentationMode();
-});
-layoutToggleHeader.addEventListener('click', toggleLayout);
-
-expandCollapseAllButton.addEventListener('click', () => {
-    areAllSectionsCollapsed = !areAllSectionsCollapsed;
-    const sections = document.querySelectorAll('.section-title.collapsible');
-    sections.forEach(section => {
-        const title = section.textContent;
-        const isCollapsed = areAllSectionsCollapsed;
-        section.classList.toggle('collapsed', isCollapsed);
-        collapsedSections[title] = isCollapsed;
-
-        let nextEl = section.nextElementSibling;
-        while (nextEl && !nextEl.classList.contains('section-title')) {
-            nextEl.style.display = isCollapsed ? 'none' : '';
-            nextEl = nextEl.nextElementSibling;
-        }
-    });
-    updateExpandCollapseAllIcon();
-    saveSettings();
-});
-
-if (shareLinkButton) {
-    shareLinkButton.addEventListener('click', generateShortLink);
-}
-
-if (shareScripturesButton) {
-    shareScripturesButton.addEventListener('click', shareScriptures);
-}
-
-showLanguageLabelsToggle.addEventListener('change', () => {
-    displayOptions.showLanguageLabels = showLanguageLabelsToggle.checked;
-    renderPrayers();
-    saveSettings();
-});
-
-showSpeakerLabelsToggle.addEventListener('change', () => {
-    displayOptions.showSpeakerLabels = showSpeakerLabelsToggle.checked;
-    renderPrayers();
-    saveSettings();
-});
-
-paragraphModeToggle.addEventListener('change', () => {
-    displayOptions.paragraphMode = paragraphModeToggle.checked;
-    applyTheme();
-    renderPrayers();
-    saveSettings();
-});
-
-showRubricationToggle.addEventListener('change', () => {
-    displayOptions.showRubrication = showRubricationToggle.checked;
-    applyTheme();
-    renderPrayers();
-    saveSettings();
-});
-
-languageColorCodingSelect.addEventListener('change', () => {
-    displayOptions.languageColors = languageColorCodingSelect.value;
-    applyTheme();
-    renderPrayers();
-    saveSettings();
-});
-
-
-dynamicFontSizingToggle.addEventListener('change', () => {
-    displayOptions.dynamicFontSizing = dynamicFontSizingToggle.checked;
-    if (displayOptions.presentationMode === 'slides') {
-        renderPrayers();
-    }
-    saveSettings();
-});
-
-forceUniformFontSizeToggle.addEventListener('change', () => {
-    displayOptions.forceUniformFontSize = forceUniformFontSizeToggle.checked;
-    if (displayOptions.presentationMode === 'slides') {
-        adjustSlideFontSize();
-    }
-    saveSettings();
-});
-
-slideTransitionSelect.addEventListener('change', () => {
-    displayOptions.slideTransition = slideTransitionSelect.value;
-    if (displayOptions.presentationMode === 'slides') {
-        setupSlides(); // Re-apply slide classes
-    }
-    saveSettings();
-});
-
-anglicizeNamesToggle.addEventListener('change', () => {
-    displayOptions.anglicizeNames = anglicizeNamesToggle.checked;
-    renderPrayers();
-    saveSettings();
-});
-
-showSupplicationsToggle.addEventListener('change', () => {
-    displayOptions.showSupplications = showSupplicationsToggle.checked;
-    smoothRender();
-    saveSettings();
-});
-
-
-showDailyPrayerToggle.addEventListener('change', () => {
-    displayOptions.showDailyPrayer = showDailyPrayerToggle.checked;
-    smoothRender();
-    saveSettings();
-});
-
-if (showGateOfLightToggle) {
-    showGateOfLightToggle.addEventListener('change', () => {
-        displayOptions.showGateOfLight = showGateOfLightToggle.checked;
-        smoothRender();
-        saveSettings();
-    });
-}
-
-if (showYewediswaMelaektToggle) {
-    showYewediswaMelaektToggle.addEventListener('change', () => {
-        displayOptions.showYewediswaMelaekt = showYewediswaMelaektToggle.checked;
-        smoothRender();
-        saveSettings();
-    });
-}
-
-if (showGeezPhoneticChantsToggle) {
-    showGeezPhoneticChantsToggle.addEventListener('change', () => {
-        displayOptions.showGeezPhoneticChants = showGeezPhoneticChantsToggle.checked;
-        smoothRender();
-        saveSettings();
-    });
-}
-
-if (showLoanwordOriginsToggle) {
-    showLoanwordOriginsToggle.addEventListener('change', () => {
-        displayOptions.showLoanwordOrigins = showLoanwordOriginsToggle.checked;
-        renderPrayers();
-        saveSettings();
-    });
-}
-
-// Search Listeners
-searchToggle.addEventListener('click', () => {
-    header.classList.add('search-active');
-    searchInput.focus();
-});
-searchClose.addEventListener('click', closeSearch);
-searchInput.addEventListener('input', performSearch);
-
-searchNext.addEventListener('click', () => {
-    if (searchMatches.length === 0) return;
-    currentMatchIndex = (currentMatchIndex + 1) % searchMatches.length;
-    updateSearchMatches();
-});
-
-searchPrev.addEventListener('click', () => {
-    if (searchMatches.length === 0) return;
-    currentMatchIndex = (currentMatchIndex - 1 + searchMatches.length) % searchMatches.length;
-    updateSearchMatches();
-});
-
 
 // Modal Listeners
 function openModal(modal) {
@@ -7787,7 +7203,7 @@ function renderTypicalPsalmsModal() {
             </div>
         `;
 
-        optionDiv.addEventListener('click', () => {
+        safeOn(optionDiv, 'click', () => {
             if (currentTypicalPsalmCallback) {
                 currentTypicalPsalmCallback(idx);
             }
@@ -7795,58 +7211,6 @@ function renderTypicalPsalmsModal() {
         });
 
         typicalPsalmsList.appendChild(optionDiv);
-    });
-}
-
-// Global listener for closing modals when clicking outside modal-content
-document.addEventListener('click', (e) => {
-    if (e.target.classList.contains('modal')) {
-        closeModal();
-    }
-
-    // Loanword Origin Tooltip Handling
-    const loanwordEl = e.target.closest('.loanword-origin');
-    if (loanwordEl) {
-        e.preventDefault();
-        e.stopPropagation();
-        showLoanwordTooltip(loanwordEl);
-    } else if (!e.target.closest('.loanword-tooltip')) {
-        hideLoanwordTooltip();
-    }
-});
-
-helpButton.addEventListener('click', () => openModal(helpModal));
-feedbackButton.addEventListener('click', () => openModal(feedbackModal));
-modalBackdrop.addEventListener('click', closeModal);
-document.querySelectorAll('.close-button').forEach(btn => btn.addEventListener('click', closeModal));
-
-// Help Modal Feedback
-if (sendFeedbackButtonHelp) {
-    sendFeedbackButtonHelp.addEventListener('click', () => {
-        const feedbackText = document.getElementById('feedback-textarea-help').value;
-        if (feedbackText.trim()) {
-            const mailtoLink = `mailto:vineofmary@gmail.com?subject=Feedback for Prayer App&body=${encodeURIComponent(feedbackText)}`;
-            window.location.href = mailtoLink;
-            showCopyNotification('Feedback sent!', 3000);
-            closeModal();
-        } else {
-            alert('Please enter your feedback before sending.');
-        }
-    });
-}
-
-// Feedback Modal Feedback
-if (sendFeedbackButtonModal) {
-    sendFeedbackButtonModal.addEventListener('click', () => {
-        const feedbackText = document.getElementById('feedback-textarea').value;
-        if (feedbackText.trim()) {
-            const mailtoLink = `mailto:vineofmary@gmail.com?subject=Feedback for Prayer App&body=${encodeURIComponent(feedbackText)}`;
-            window.location.href = mailtoLink;
-            showCopyNotification('Feedback sent!', 3000);
-            closeModal();
-        } else {
-            alert('Please enter your feedback before sending.');
-        }
     });
 }
 
@@ -7909,12 +7273,12 @@ function handleDrop(e) {
 
 function addDragAndDropListeners() {
     languageOrderList.querySelectorAll('li').forEach(item => {
-        item.addEventListener('dragstart', handleDragStart, false);
-        item.addEventListener('dragenter', handleDragEnter, false);
-        item.addEventListener('dragover', handleDragOver, false);
-        item.addEventListener('dragleave', handleDragLeave, false);
-        item.addEventListener('drop', handleDrop, false);
-        item.addEventListener('dragend', handleDragEnd, false);
+        safeOn(item, 'dragstart', handleDragStart, false);
+        safeOn(item, 'dragenter', handleDragEnter, false);
+        safeOn(item, 'dragover', handleDragOver, false);
+        safeOn(item, 'dragleave', handleDragLeave, false);
+        safeOn(item, 'drop', handleDrop, false);
+        safeOn(item, 'dragend', handleDragEnd, false);
     });
 }
 
@@ -7992,7 +7356,768 @@ function handleSlideSwipe() {
     }
 }
 
-mainContent.addEventListener('click', (e) => {
+
+
+// Global Window Exposures
+if (typeof window !== 'undefined') {
+    window.togglePresentationMode = togglePresentationMode;
+    window.renderPsalmCombinationsModal = renderPsalmCombinationsModal;
+    window.toggleLayout = toggleLayout;
+    window.updateSelectedMiracleUI = updateSelectedMiracleUI;
+    window.renderMiracleModalList = renderMiracleModalList;
+    window.selectPsalmCombination = selectPsalmCombination;
+    window.openModal = openModal;
+    window.closeModal = closeModal;
+    window.openTypicalPsalmsModal = openTypicalPsalmsModal;
+    window.renderTypicalPsalmsModal = renderTypicalPsalmsModal;
+    window.executeHardRefresh = executeHardRefresh;
+}
+async function executeHardRefresh(btn) {
+        if (!btn) return;
+        btn.disabled = true;
+        btn.classList.add('updating');
+        const labelSpan = btn.querySelector('span');
+        const originalText = labelSpan ? labelSpan.textContent : 'Check for Updates';
+        if (labelSpan) labelSpan.textContent = 'Updating...';
+
+        try {
+            // 1. Tell all active/waiting/installing Service Workers to skipWaiting and update
+            if ('serviceWorker' in navigator) {
+                try {
+                    const registrations = await navigator.serviceWorker.getRegistrations();
+                    for (const reg of registrations) {
+                        if (reg.waiting) reg.waiting.postMessage('skipWaiting');
+                        if (reg.installing) reg.installing.postMessage('skipWaiting');
+                        await reg.update().catch(() => {});
+                        await reg.unregister().catch(() => {});
+                    }
+                } catch (swErr) {
+                    console.warn('Service worker update/unregister error:', swErr);
+                }
+            }
+
+            // 2. Clear all browser CacheStorage instances (purges all cached HTML, JS, CSS, JSON)
+            if ('caches' in window) {
+                try {
+                    const cacheNames = await caches.keys();
+                    await Promise.all(cacheNames.map(name => caches.delete(name)));
+                    console.log('Cleared CacheStorage:', cacheNames);
+                } catch (cacheErr) {
+                    console.warn('CacheStorage deletion error:', cacheErr);
+                }
+            }
+
+            if (labelSpan) labelSpan.textContent = 'Reloading...';
+
+            // 3. Force reload with cache-busting timestamp parameter to bypass HTTP disk cache
+            const currentUrl = new URL(window.location.href);
+            currentUrl.searchParams.set('_t', Date.now().toString());
+            window.location.replace(currentUrl.toString());
+        } catch (err) {
+            console.error('Hard refresh failed:', err);
+            if (labelSpan) labelSpan.textContent = originalText;
+            btn.disabled = false;
+            btn.classList.remove('updating');
+            window.location.reload();
+        }
+    }
+
+    
+
+function setupEventListeners() {
+    safeOn(hardRefreshButton, 'click', async () => { await executeHardRefresh(hardRefreshButton); });
+
+safeOn(sidebarToggle, 'click', toggleLeftSidebar);
+if (prayersPanelToggle) {
+    safeOn(prayersPanelToggle, 'click', toggleRightSidebar);
+}
+safeOn(sidebarBackdrop, 'click', collapseSidebar);
+
+// --- Prevent sliders from closing sidebar when dragging ---
+const stopSliderEventPropagation = (event) => {
+    event.stopPropagation();
+};
+
+// We define the events and attach them with the passive option.
+['mousedown', 'pointerdown'].forEach(eventType => {
+    safeOn(geezFontSizeSlider, eventType, stopSliderEventPropagation);
+    safeOn(englishFontSizeSlider, eventType, stopSliderEventPropagation);
+});
+safeOn(geezFontSizeSlider, 'touchstart', stopSliderEventPropagation, { passive: true });
+safeOn(englishFontSizeSlider, 'touchstart', stopSliderEventPropagation, { passive: true });
+
+// For touchmove, we add the { passive: true } option to resolve the violation.
+// This tells the browser our listener won't block scrolling, fixing the conflict.
+['touchmove', 'pointermove'].forEach(eventType => {
+    safeOn(geezFontSizeSlider, eventType, stopSliderEventPropagation, { passive: true });
+    safeOn(englishFontSizeSlider, eventType, stopSliderEventPropagation, { passive: true });
+});
+
+
+
+safeOn(themeToggle, 'click', () => {
+    currentTheme.mode = currentTheme.mode === 'light' ? 'dark' : 'light';
+    applyTheme();
+    saveSettings();
+});
+
+safeOn(paletteSelector, 'change', (event) => {
+    currentTheme.palette = event.target.value;
+    applyTheme();
+    saveSettings();
+});
+
+safeOn(geezFontSizeSlider, 'input', () => {
+    fontSizes.geez = geezFontSizeSlider.value;
+    if (fontSizes.locked) {
+        fontSizes.english = geezFontSizeSlider.value;
+        englishFontSizeSlider.value = geezFontSizeSlider.value;
+    }
+    updateFontStylesAndPreview();
+    clearTimeout(geezFontSizeSlider.timer);
+    geezFontSizeSlider.timer = setTimeout(saveSettings, 300);
+});
+
+safeOn(englishFontSizeSlider, 'input', () => {
+    fontSizes.english = englishFontSizeSlider.value;
+    if (fontSizes.locked) {
+        fontSizes.geez = englishFontSizeSlider.value;
+        geezFontSizeSlider.value = englishFontSizeSlider.value;
+    }
+    updateFontStylesAndPreview();
+    clearTimeout(englishFontSizeSlider.timer);
+    englishFontSizeSlider.timer = setTimeout(saveSettings, 300);
+});
+
+
+// --- Font Size Sliders ---
+const handleGeezFontChange = (event) => {
+    const newSize = event.target.value;
+    document.documentElement.style.setProperty('--geez-font-size', `${newSize}px`);
+    fontSizes.geez = newSize;
+    if (fontSizes.locked) {
+        document.documentElement.style.setProperty('--english-font-size', `${newSize}px`);
+        englishFontSizeSlider.value = newSize;
+        fontSizes.english = newSize;
+    }
+    saveSettings();
+};
+
+const handleEnglishFontChange = (event) => {
+    const newSize = event.target.value;
+    document.documentElement.style.setProperty('--english-font-size', `${newSize}px`);
+    fontSizes.english = newSize;
+    if (fontSizes.locked) {
+        document.documentElement.style.setProperty('--geez-font-size', `${newSize}px`);
+        geezFontSizeSlider.value = newSize;
+        fontSizes.geez = newSize;
+    }
+    saveSettings();
+};
+
+// Apply debounce with a 50ms delay
+safeOn(geezFontSizeSlider, 'input', debounce(handleGeezFontChange, 50));
+safeOn(englishFontSizeSlider, 'input', debounce(handleEnglishFontChange, 50));
+
+
+
+safeOn(lockFontSizesToggle, 'change', () => {
+    fontSizes.locked = lockFontSizesToggle.checked;
+    saveSettings();
+});
+
+safeOn(boldTextToggle, 'change', () => {
+    displayOptions.boldText = boldTextToggle.checked;
+    body.classList.toggle('bold-text', displayOptions.boldText);
+    saveSettings();
+});
+
+safeOn(ethiopicFontSelect, 'change', () => {
+    updateFontStylesAndPreview();
+    saveSettings();
+});
+
+safeOn(englishFontSelect, 'change', () => {
+    updateFontStylesAndPreview();
+    saveSettings();
+});
+
+safeOn(servantNameInput, 'input', () => {
+    customNames.servant = servantNameInput.value;
+    saveSettings();
+    renderPrayers();
+});
+
+safeOn(patriarchNameInput, 'input', () => {
+    customNames.patriarch = patriarchNameInput.value;
+    saveSettings();
+    renderPrayers();
+});
+
+safeOn(bishopNameInput, 'input', () => {
+    customNames.bishop = bishopNameInput.value;
+    saveSettings();
+    renderPrayers();
+});
+
+safeOn(attendingBishopsInput, 'input', () => {
+    customNames.attendingBishops = attendingBishopsInput.value;
+    saveSettings();
+    renderPrayers();
+});
+
+safeOn(churchNameInput, 'input', () => {
+    customNames.churchName = churchNameInput.value;
+    saveSettings();
+    renderPrayers();
+});
+
+safeOn(countryNameInput, 'input', () => {
+    customNames.country = countryNameInput.value;
+    saveSettings();
+    renderPrayers();
+});
+
+safeOn(headOfStateInput, 'input', () => {
+    customNames.headOfState = headOfStateInput.value;
+    saveSettings();
+    renderPrayers();
+});
+
+
+// --- Kidase (Liturgy) Event Listeners ---
+safeOn(kidaseModeToggle, 'change', () => {
+    isKidaseModeActive = kidaseModeToggle.checked;
+    kidaseSettings.style.display = isKidaseModeActive ? 'block' : 'none';
+    saveSettings();
+    smoothRender();
+});
+
+safeOn(showMatinsToggle, 'change', () => {
+    showMatins = showMatinsToggle.checked;
+    morningPsalmGospelSettings.style.display = showMatins ? 'block' : 'none';
+
+    saveSettings();
+    smoothRender();
+});
+
+safeOn(showTeklilToggle, 'change', () => {
+    showTeklil = showTeklilToggle.checked;
+    teklilNamesSettings.style.display = showTeklil ? 'block' : 'none';
+    
+    if (showTeklil) {
+        // Default Matins lectionary when Teklil is toggled ON
+        kidaseLectionaryRefs.morningPsalm = 'Psalms 19:5-5'; // 18:5 in Orthodox is 19:5 in NKJV
+        kidaseLectionaryRefs.morningGospel = 'Matthew 9:1-13';
+        
+        // Re-initialize pickers to update the UI with new defaults
+        initializeLectionaryPickers();
+    }
+
+    saveSettings();
+    smoothRender();
+});
+
+safeOn(bridegroomNameInput, 'input', () => {
+    bridegroomName = bridegroomNameInput.value;
+    saveSettings();
+    renderPrayers();
+});
+
+safeOn(brideNameInput, 'input', () => {
+    brideName = brideNameInput.value;
+    saveSettings();
+    renderPrayers();
+});
+
+
+
+safeOn(anaphoraSelector, 'change', () => {
+    selectedAnaphora = anaphoraSelector.value;
+    saveSettings();
+    smoothRender();
+});
+
+
+
+if (openMiracleModalBtn && miracleModal && closeMiracleModalBtn) {
+    updateSelectedMiracleUI(); // Initial UI update
+    
+    safeOn(openMiracleModalBtn, 'click', () => {
+        miracleModal.style.display = 'block';
+        renderMiracleModalList();
+    });
+    
+    safeOn(closeMiracleModalBtn, 'click', () => {
+        miracleModal.style.display = 'none';
+    });
+    
+    safeOn(miracleSearchInput, 'input', renderMiracleModalList);
+    safeOn(miracleMostReadToggle, 'change', renderMiracleModalList);
+}
+
+if (miraclePositionRadios) {
+    miraclePositionRadios.forEach(radio => {
+        if (radio.value === miraclePosition) {
+            radio.checked = true;
+        }
+        safeOn(radio, 'change', (e) => {
+            if (e.target.checked) {
+                miraclePosition = e.target.value;
+                saveSettings();
+                smoothRender();
+            }
+        });
+    });
+}
+// ------------------------------
+
+const showAnaphoraToggleEl = document.getElementById('show-anaphora-toggle');
+if (showAnaphoraToggleEl) {
+    safeOn(showAnaphoraToggleEl, 'change', () => {
+        showAnaphora = showAnaphoraToggleEl.checked;
+        const anaphoraSettingsEl = document.getElementById('anaphora-settings');
+        if (anaphoraSettingsEl) {
+            anaphoraSettingsEl.style.display = showAnaphora ? 'block' : 'none';
+        }
+        localStorage.setItem('showAnaphora', showAnaphora);
+        saveSettings();
+        smoothRender();
+    });
+}
+
+const showSeatatReadingsToggle = document.getElementById('show-seatat-readings-toggle');
+if (showSeatatReadingsToggle) {
+    safeOn(showSeatatReadingsToggle, 'change', () => {
+        showSeatatReadings = showSeatatReadingsToggle.checked;
+        const seatatReadingsSettings = document.getElementById('seatat-readings-settings');
+        if (seatatReadingsSettings) {
+            seatatReadingsSettings.style.display = showSeatatReadings ? 'block' : 'none';
+        }
+        localStorage.setItem('showSeatatReadings', showSeatatReadings);
+        saveSettings();
+        smoothRender();
+    });
+}
+
+safeOn(showVespersToggle, 'change', () => {
+    showVespers = showVespersToggle.checked;
+    vespersPsalmGospelSettings.style.display = showVespers ? 'block' : 'none';
+    saveSettings();
+    smoothRender();
+});
+
+if (kidaseDaySelector) {
+    safeOn(kidaseDaySelector, 'change', () => {
+        selectedKidaseDay = kidaseDaySelector.value;
+        saveSettings();
+        smoothRender();
+    });
+}
+
+safeOn(covenantPrayerSelector, 'change', () => {
+    selectedCovenantPrayer = covenantPrayerSelector.value;
+    saveSettings();
+    smoothRender();
+});
+
+safeOn(hideQuietPrayersToggle, 'change', () => {
+    hideQuietPrayers = hideQuietPrayersToggle.checked;
+    saveSettings();
+    smoothRender();
+});
+
+if (holyFiftyDaysToggle) {
+    safeOn(holyFiftyDaysToggle, 'change', () => {
+        isHolyFiftyDays = holyFiftyDaysToggle.checked;
+        saveSettings();
+        smoothRender();
+    });
+}
+
+
+
+safeOn(languageTogglesDiv, 'change', (event) => {
+    if (event.target.type === 'checkbox') {
+        const langKey = event.target.value;
+        if (displayedLanguages.hasOwnProperty(langKey)) {
+            displayedLanguages[langKey] = event.target.checked;
+        }
+        checkAndEnforceLayoutRules();
+        saveSettings();
+        updateLanguageOrderList();
+        smoothRender();
+    }
+});
+
+
+
+
+// Psalm Selector Listener using event delegation
+safeOn(psalmSelectorContainer, 'change', (event) => {
+    if (event.target.type === 'checkbox') {
+        if (event.target.id === 'select-all-psalms') {
+            const isChecked = event.target.checked;
+            const checkboxes = psalmSelectorContainer.querySelectorAll('input[type="checkbox"]');
+            
+            if (isChecked) {
+                selectedPsalms = Array.from({length: 150}, (_, i) => i + 1);
+            } else {
+                selectedPsalms = [];
+            }
+
+            checkboxes.forEach(cb => {
+                if (cb.id !== 'select-all-psalms') {
+                    cb.checked = isChecked;
+                }
+            });
+        } else {
+            const psalmNum = Number(event.target.value);
+            if (!isNaN(psalmNum)) {
+                if (event.target.checked) {
+                    if (!selectedPsalms.includes(psalmNum)) {
+                        selectedPsalms.push(psalmNum);
+                    }
+                } else {
+                    selectedPsalms = selectedPsalms.filter(p => p !== psalmNum);
+                }
+            }
+        }
+
+        updatePsalmSummary();
+        saveSettings();
+        smoothRender();
+    }
+});
+
+const psalmSequenceInput = document.getElementById('psalm-sequence-input');
+if (psalmSequenceInput) {
+    safeOn(psalmSequenceInput, 'change', (e) => {
+        const rawText = e.target.value;
+        const newSequence = rawText.split(',')
+            .map(s => Number(s.trim()))
+            .filter(n => !isNaN(n) && n > 0 && n <= 150);
+        
+        selectedPsalms = newSequence;
+        
+        const checkboxes = psalmSelectorContainer.querySelectorAll('input[type="checkbox"]');
+        checkboxes.forEach(cb => {
+            if (cb.id !== 'select-all-psalms') {
+                cb.checked = selectedPsalms.includes(Number(cb.value));
+            }
+        });
+        
+        const selectAllPsalmCheckbox = document.getElementById('select-all-psalms');
+        if (selectAllPsalmCheckbox) {
+            selectAllPsalmCheckbox.checked = selectedPsalms.length === 150;
+        }
+
+        updatePsalmSummary(); // To format it cleanly if they typed weird spaces
+        saveSettings();
+        smoothRender();
+    });
+}
+
+
+
+// Modal open/close listeners
+if (psalmCombinationsBtn) {
+    safeOn(psalmCombinationsBtn, 'click', () => {
+        console.log('psalmCombinationsBtn clicked!');
+        console.log('psalmCombinationsModal:', psalmCombinationsModal);
+        openModal(psalmCombinationsModal);
+        // Ensure backdrop is under this modal (openModal handles basic display)
+        modalBackdrop.style.zIndex = '1000'; 
+        psalmCombinationsModal.style.zIndex = '1001';
+    });
+}
+
+if (closePsalmCombinationsModal) {
+    safeOn(closePsalmCombinationsModal, 'click', () => {
+        closeModal();
+    });
+}
+
+if (closeTypicalPsalmsModalBtn) {
+    safeOn(closeTypicalPsalmsModalBtn, 'click', () => {
+        closeModal();
+    });
+}
+
+safeOn(clearPsalmsButton, 'click', () => {
+    selectedPsalms = [];
+    document.querySelectorAll('#psalm-selector-container input[type="checkbox"]').forEach(checkbox => {
+        checkbox.checked = false;
+    });
+    if (psalmCombinationsBtn) psalmCombinationsBtn.textContent = 'Typical Psalm Combinations...';
+    updatePsalmSummary();
+    saveSettings();
+    renderPrayers();
+});
+
+safeOn(prophetSongsSelectorContainer, 'change', (event) => {
+    if (event.target.type === 'checkbox') {
+        if (event.target.id === 'select-all-prophet-songs') {
+            const isChecked = event.target.checked;
+            const checkboxes = prophetSongsSelectorContainer.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(cb => {
+                if (cb.id !== 'select-all-prophet-songs') {
+                    cb.checked = isChecked;
+                }
+            });
+        }
+
+        selectedProphetSongs = Array.from(prophetSongsSelectorContainer.querySelectorAll('input[type="checkbox"]:checked'))
+            .map(cb => cb.value)
+            .filter(value => value !== 'on' && value !== 'auto-select'); // Filter out helper checkboxes
+
+        updateProphetSongsSummary();
+        saveSettings();
+        smoothRender();
+    }
+});
+
+safeOn(clearProphetSongsButton, 'click', () => {
+    selectedProphetSongs = [];
+    document.querySelectorAll('#prophet-songs-selector-container input[type="checkbox"]').forEach(checkbox => {
+        checkbox.checked = false;
+    });
+    updateProphetSongsSummary();
+    saveSettings();
+    renderPrayers();
+});
+
+
+// Display Options Listeners
+safeOn(presentationModeToggleHeader, 'click', () => {
+    currentSlideIndex = 0; // Reset to start when using the header toggle
+    togglePresentationMode();
+});
+safeOn(layoutToggleHeader, 'click', toggleLayout);
+
+safeOn(expandCollapseAllButton, 'click', () => {
+    areAllSectionsCollapsed = !areAllSectionsCollapsed;
+    const sections = document.querySelectorAll('.section-title.collapsible');
+    sections.forEach(section => {
+        const title = section.textContent;
+        const isCollapsed = areAllSectionsCollapsed;
+        section.classList.toggle('collapsed', isCollapsed);
+        collapsedSections[title] = isCollapsed;
+
+        let nextEl = section.nextElementSibling;
+        while (nextEl && !nextEl.classList.contains('section-title')) {
+            nextEl.style.display = isCollapsed ? 'none' : '';
+            nextEl = nextEl.nextElementSibling;
+        }
+    });
+    updateExpandCollapseAllIcon();
+    saveSettings();
+});
+
+if (shareLinkButton) {
+    safeOn(shareLinkButton, 'click', generateShortLink);
+}
+
+if (shareScripturesButton) {
+    safeOn(shareScripturesButton, 'click', shareScriptures);
+}
+
+safeOn(showLanguageLabelsToggle, 'change', () => {
+    displayOptions.showLanguageLabels = showLanguageLabelsToggle.checked;
+    renderPrayers();
+    saveSettings();
+});
+
+safeOn(showSpeakerLabelsToggle, 'change', () => {
+    displayOptions.showSpeakerLabels = showSpeakerLabelsToggle.checked;
+    renderPrayers();
+    saveSettings();
+});
+
+safeOn(paragraphModeToggle, 'change', () => {
+    displayOptions.paragraphMode = paragraphModeToggle.checked;
+    applyTheme();
+    renderPrayers();
+    saveSettings();
+});
+
+safeOn(showRubricationToggle, 'change', () => {
+    displayOptions.showRubrication = showRubricationToggle.checked;
+    applyTheme();
+    renderPrayers();
+    saveSettings();
+});
+
+safeOn(languageColorCodingSelect, 'change', () => {
+    displayOptions.languageColors = languageColorCodingSelect.value;
+    applyTheme();
+    renderPrayers();
+    saveSettings();
+});
+
+
+safeOn(dynamicFontSizingToggle, 'change', () => {
+    displayOptions.dynamicFontSizing = dynamicFontSizingToggle.checked;
+    if (displayOptions.presentationMode === 'slides') {
+        renderPrayers();
+    }
+    saveSettings();
+});
+
+safeOn(forceUniformFontSizeToggle, 'change', () => {
+    displayOptions.forceUniformFontSize = forceUniformFontSizeToggle.checked;
+    if (displayOptions.presentationMode === 'slides') {
+        adjustSlideFontSize();
+    }
+    saveSettings();
+});
+
+safeOn(slideTransitionSelect, 'change', () => {
+    displayOptions.slideTransition = slideTransitionSelect.value;
+    if (displayOptions.presentationMode === 'slides') {
+        setupSlides(); // Re-apply slide classes
+    }
+    saveSettings();
+});
+
+safeOn(anglicizeNamesToggle, 'change', () => {
+    displayOptions.anglicizeNames = anglicizeNamesToggle.checked;
+    renderPrayers();
+    saveSettings();
+});
+
+safeOn(showSupplicationsToggle, 'change', () => {
+    displayOptions.showSupplications = showSupplicationsToggle.checked;
+    smoothRender();
+    saveSettings();
+});
+
+
+safeOn(showDailyPrayerToggle, 'change', () => {
+    displayOptions.showDailyPrayer = showDailyPrayerToggle.checked;
+    smoothRender();
+    saveSettings();
+});
+
+if (showGateOfLightToggle) {
+    safeOn(showGateOfLightToggle, 'change', () => {
+        displayOptions.showGateOfLight = showGateOfLightToggle.checked;
+        smoothRender();
+        saveSettings();
+    });
+}
+
+if (showYewediswaMelaektToggle) {
+    safeOn(showYewediswaMelaektToggle, 'change', () => {
+        displayOptions.showYewediswaMelaekt = showYewediswaMelaektToggle.checked;
+        smoothRender();
+        saveSettings();
+    });
+}
+
+if (showGeezPhoneticChantsToggle) {
+    safeOn(showGeezPhoneticChantsToggle, 'change', () => {
+        displayOptions.showGeezPhoneticChants = showGeezPhoneticChantsToggle.checked;
+        smoothRender();
+        saveSettings();
+    });
+}
+
+if (showLoanwordOriginsToggle) {
+    safeOn(showLoanwordOriginsToggle, 'change', () => {
+        displayOptions.showLoanwordOrigins = showLoanwordOriginsToggle.checked;
+        renderPrayers();
+        saveSettings();
+    });
+}
+
+if (useExternalBibleAPIToggle) {
+    safeOn(useExternalBibleAPIToggle, 'change', () => {
+        useExternalBibleAPI = useExternalBibleAPIToggle.checked;
+        if (!bulkUpdatingSettings) {
+            saveSettings();
+            renderPrayers();
+        }
+    });
+}
+
+// Search Listeners
+safeOn(searchToggle, 'click', () => {
+    header.classList.add('search-active');
+    searchInput.focus();
+});
+safeOn(searchClose, 'click', closeSearch);
+safeOn(searchInput, 'input', performSearch);
+
+safeOn(searchNext, 'click', () => {
+    if (searchMatches.length === 0) return;
+    currentMatchIndex = (currentMatchIndex + 1) % searchMatches.length;
+    updateSearchMatches();
+});
+
+safeOn(searchPrev, 'click', () => {
+    if (searchMatches.length === 0) return;
+    currentMatchIndex = (currentMatchIndex - 1 + searchMatches.length) % searchMatches.length;
+    updateSearchMatches();
+});
+
+
+
+// Global listener for closing modals when clicking outside modal-content
+safeOn(document, 'click', (e) => {
+    if (e.target.classList.contains('modal')) {
+        closeModal();
+    }
+
+    // Loanword Origin Tooltip Handling
+    const loanwordEl = e.target.closest('.loanword-origin');
+    if (loanwordEl) {
+        e.preventDefault();
+        e.stopPropagation();
+        showLoanwordTooltip(loanwordEl);
+    } else if (!e.target.closest('.loanword-tooltip')) {
+        hideLoanwordTooltip();
+    }
+});
+
+safeOn(helpButton, 'click', () => openModal(helpModal));
+safeOn(feedbackButton, 'click', () => openModal(feedbackModal));
+safeOn(modalBackdrop, 'click', closeModal);
+document.querySelectorAll('.close-button').forEach(btn => safeOn(btn, 'click', closeModal));
+
+// Help Modal Feedback
+if (sendFeedbackButtonHelp) {
+    safeOn(sendFeedbackButtonHelp, 'click', () => {
+        const feedbackText = document.getElementById('feedback-textarea-help').value;
+        if (feedbackText.trim()) {
+            const mailtoLink = `mailto:vineofmary@gmail.com?subject=Feedback for Prayer App&body=${encodeURIComponent(feedbackText)}`;
+            window.location.href = mailtoLink;
+            showCopyNotification('Feedback sent!', 3000);
+            closeModal();
+        } else {
+            alert('Please enter your feedback before sending.');
+        }
+    });
+}
+
+// Feedback Modal Feedback
+if (sendFeedbackButtonModal) {
+    safeOn(sendFeedbackButtonModal, 'click', () => {
+        const feedbackText = document.getElementById('feedback-textarea').value;
+        if (feedbackText.trim()) {
+            const mailtoLink = `mailto:vineofmary@gmail.com?subject=Feedback for Prayer App&body=${encodeURIComponent(feedbackText)}`;
+            window.location.href = mailtoLink;
+            showCopyNotification('Feedback sent!', 3000);
+            closeModal();
+        } else {
+            alert('Please enter your feedback before sending.');
+        }
+    });
+}
+
+
+
+safeOn(mainContent, 'click', (e) => {
     if (displayOptions.presentationMode !== 'slides') return;
     if (e.target.closest('button, a, select, option, label, .info-panel, .info-toggle, .share-btn, .language-order-handle, .card-inline-lectionary-picker')) return;
 
@@ -8007,7 +8132,7 @@ mainContent.addEventListener('click', (e) => {
     }
 });
 
-document.addEventListener('keydown', (e) => {
+safeOn(document, 'keydown', (e) => {
     if (e.key === 'Escape' && displayOptions.presentationMode === 'slides') {
         togglePresentationMode();
         return;
@@ -8024,13 +8149,13 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-document.addEventListener('touchstart', handleTouchStart, { passive: true });
-document.addEventListener('touchend', handleTouchEnd, { passive: true });
+safeOn(document, 'touchstart', handleTouchStart, { passive: true });
+safeOn(document, 'touchend', handleTouchEnd, { passive: true });
 
 
 // --- Hide Header on Scroll ---
 let lastScrollTop = 0;
-window.addEventListener('scroll', function () {
+safeOn(window, 'scroll', function () {
     if (displayOptions.presentationMode === 'slides') {
         header.classList.remove('header-hidden');
         return;
@@ -8045,8 +8170,12 @@ window.addEventListener('scroll', function () {
     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
 }, false);
 
+
+}
 // --- Initial Load ---
-document.addEventListener('DOMContentLoaded', async () => {
+
+async function initApp() {
+
     const splashScreen = document.getElementById('splash-screen');
     const appContainer = document.getElementById('app-container');
 
@@ -8258,18 +8387,15 @@ document.addEventListener('DOMContentLoaded', async () => {
                 .then(reg => {
                     console.log('Service worker registered successfully', reg);
 
-                    // Proactively check for updates on every page load
-                    reg.update().catch(err => console.log('SW update check failed:', err));
-
                     // Check for updates
                     reg.onupdatefound = () => {
                         const installingWorker = reg.installing;
                         installingWorker.onstatechange = () => {
                             if (installingWorker.state === 'installed') {
                                 if (navigator.serviceWorker.controller) {
-                                    // New content is available; auto-activate immediately
-                                    console.log('New content is available; auto-activating...');
-                                    installingWorker.postMessage('skipWaiting');
+                                    // New content is available; please refresh.
+                                    console.log('New content is available; please refresh.');
+                                    // We could trigger a UI notification here
                                 } else {
                                     // Content is cached for offline use.
                                     console.log('Content is cached for offline use.');
@@ -8642,7 +8768,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             'english', 'geez_script', 'geez_phonetic',
             'amharic_script', 'amharic_phonetic',
             'tigrinya_script', 'tigrinya_phonetic',
-            'spanish', 'spanish_pr', 'french', 'arabic', 'greek', 'hebrew', 'malayalam',
+            'spanish', 'french', 'arabic', 'greek', 'hebrew', 'malayalam',
             'oromoo', 'syriac', 'armenian', 'coptic'
         ];
 
@@ -8863,7 +8989,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         const languages = [
             'english', 'geez_script', 'geez_phonetic',
             'amharic_script', 'amharic_phonetic',
-            'tigrinya_script', 'tigrinya_phonetic', 'spanish', 'spanish_pr', 'coptic',
+            'tigrinya_script', 'tigrinya_phonetic', 'spanish', 'coptic',
             'french', 'arabic', 'greek', 'hebrew', 'malayalam', 'oromoo', 'syriac', 'armenian'
         ];
 
@@ -8902,69 +9028,11 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // App Version & Changelog Logic
     if (appVersionContainer) {
-        appVersionContainer.textContent = `v${APP_VERSION}`;
+        appVersionContainer.textContent = APP_VERSION;
         appVersionContainer.addEventListener('click', () => {
             openModal(changelogModal);
             fetchGithubCommits();
         });
-    }
-
-    // Hard Refresh / Check for Updates Logic (Force cache invalidation)
-    const hardRefreshButton = document.getElementById('hard-refresh-button');
-    if (hardRefreshButton) {
-        hardRefreshButton.addEventListener('click', async () => {
-            await executeHardRefresh(hardRefreshButton);
-        });
-    }
-
-    async function executeHardRefresh(btn) {
-        if (!btn) return;
-        btn.disabled = true;
-        btn.classList.add('updating');
-        const labelSpan = btn.querySelector('span');
-        const originalText = labelSpan ? labelSpan.textContent : 'Check for Updates';
-        if (labelSpan) labelSpan.textContent = 'Updating...';
-
-        try {
-            // 1. Tell all active/waiting/installing Service Workers to skipWaiting and update
-            if ('serviceWorker' in navigator) {
-                try {
-                    const registrations = await navigator.serviceWorker.getRegistrations();
-                    for (const reg of registrations) {
-                        if (reg.waiting) reg.waiting.postMessage('skipWaiting');
-                        if (reg.installing) reg.installing.postMessage('skipWaiting');
-                        await reg.update().catch(() => {});
-                        await reg.unregister().catch(() => {});
-                    }
-                } catch (swErr) {
-                    console.warn('Service worker update/unregister error:', swErr);
-                }
-            }
-
-            // 2. Clear all browser CacheStorage instances (purges all cached HTML, JS, CSS, JSON)
-            if ('caches' in window) {
-                try {
-                    const cacheNames = await caches.keys();
-                    await Promise.all(cacheNames.map(name => caches.delete(name)));
-                    console.log('Cleared CacheStorage:', cacheNames);
-                } catch (cacheErr) {
-                    console.warn('CacheStorage deletion error:', cacheErr);
-                }
-            }
-
-            if (labelSpan) labelSpan.textContent = 'Reloading...';
-
-            // 3. Force reload with cache-busting timestamp parameter to bypass HTTP disk cache
-            const currentUrl = new URL(window.location.href);
-            currentUrl.searchParams.set('_t', Date.now().toString());
-            window.location.replace(currentUrl.toString());
-        } catch (err) {
-            console.error('Hard refresh failed:', err);
-            if (labelSpan) labelSpan.textContent = originalText;
-            btn.disabled = false;
-            btn.classList.remove('updating');
-            window.location.reload();
-        }
     }
 
     async function fetchGithubCommits() {
@@ -9152,7 +9220,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
 
     initAthanasiusModal();
-});
+}
 
 // St. Athanasius Psalter Guide Modal Logic
 let currentAthanasiusCategory = 'all';
@@ -9383,13 +9451,26 @@ function applyAthanasiusPsalms(psalmsList, mode, btnElement) {
         }, 150);
     }
 }
-// 80 Weahadu toggle
-if (useExternalBibleAPIToggle) {
-    useExternalBibleAPIToggle.addEventListener('change', () => {
-        useExternalBibleAPI = useExternalBibleAPIToggle.checked;
-        if (!bulkUpdatingSettings) {
-            saveSettings();
-            renderPrayers();
+
+window.initMountOfMercyEngine = async function() {
+    if (window._mountOfMercyInitialized) return;
+    bindDOMElements();
+    setupEventListeners();
+    await initApp();
+    window._mountOfMercyInitialized = true;
+};
+
+// Autostart if DOM is already ready
+if (typeof document !== 'undefined') {
+    if (document.readyState === 'complete' || document.readyState === 'interactive') {
+        if (document.getElementById('prayer-display')) {
+            window.initMountOfMercyEngine();
         }
-    });
+    } else {
+        document.addEventListener('DOMContentLoaded', () => {
+            if (document.getElementById('prayer-display')) {
+                window.initMountOfMercyEngine();
+            }
+        });
+    }
 }

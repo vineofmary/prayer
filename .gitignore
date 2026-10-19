@@ -50,3 +50,10 @@ firebase/
 
 # Project configuration
 GEMINI.md
+
+# AI Studio Build & Preview outputs
+.aistudio/
+.build-outputs/
+dist/
+bun.lock
+debug.keystore.base64
