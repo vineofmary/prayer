@@ -1,0 +1,92 @@
+# Module Build Configuration: app
+# Declarative Android Application specification parsed by Lightbuild CLI & Android Studio
+# Reference: https://developer.android.com/tools/agents/lightbuild
+format_version: "1.0"
+type: "android-application"
+
+metadata:
+  package_name: "app.mountofmercy.prayer"
+  application_id: "app.mountofmercy.prayer"
+  version_code: 3
+  version_name: "1.0.0"
+  app_name: "Mount of Mercy (ደብረ ምሕረት)"
+
+sdk:
+  compile: 36
+  min: 24
+  target: 36
+
+build_features:
+  compose: true
+  build_config: true
+  view_binding: false
+
+compose:
+  compiler_plugin: "org.jetbrains.kotlin.plugin.compose"
+  material_version: "material3"
+
+packaging:
+  resources:
+    excludes:
+      - "/META-INF/{AL2.0,LGPL2.1}"
+  assets:
+    directories:
+      - "src/main/assets"
+
+dependencies:
+  # Core Android & Architecture Components
+  - id: "androidx.core:core-ktx:1.15.0"
+    scope: "implementation"
+  - id: "androidx.appcompat:appcompat:1.7.0"
+    scope: "implementation"
+  - id: "com.google.android.material:material:1.12.0"
+    scope: "implementation"
+  - id: "androidx.activity:activity-compose:1.9.3"
+    scope: "implementation"
+
+  # Jetpack Compose BOM & UI Components
+  - id: "androidx.compose:compose-bom:2024.12.01"
+    scope: "platform"
+  - id: "androidx.compose.ui:ui"
+    scope: "implementation"
+  - id: "androidx.compose.ui:ui-graphics"
+    scope: "implementation"
+  - id: "androidx.compose.ui:ui-tooling-preview"
+    scope: "implementation"
+  - id: "androidx.compose.material3:material3"
+    scope: "implementation"
+  - id: "androidx.compose.material:material-icons-extended"
+    scope: "implementation"
+  - id: "androidx.lifecycle:lifecycle-runtime-compose:2.8.7"
+    scope: "implementation"
+  - id: "androidx.lifecycle:lifecycle-viewmodel-compose:2.8.7"
+    scope: "implementation"
+  - id: "androidx.navigation:navigation-compose:2.8.5"
+    scope: "implementation"
+
+  # Coroutines & JSON
+  - id: "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0"
+    scope: "implementation"
+  - id: "org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.3"
+    scope: "implementation"
+
+  # Tooling & Tests
+  - id: "androidx.compose.ui:ui-tooling"
+    scope: "debug_implementation"
+  - id: "junit:junit:4.13.2"
+    scope: "test_implementation"
+  - id: "androidx.test.ext:junit:1.2.1"
+    scope: "android_test_implementation"
+  - id: "androidx.test.espresso:espresso-core:3.6.1"
+    scope: "android_test_implementation"
+
+build_types:
+  debug:
+    debuggable: true
+    application_id_suffix: ".debug"
+  release:
+    debuggable: false
+    minify_enabled: true
+    shrink_resources: true
+    proguard_files:
+      - "proguard-rules.pro"
