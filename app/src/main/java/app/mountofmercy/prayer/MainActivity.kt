@@ -12,6 +12,8 @@ import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 
 /**
  * Main Android Activity for The Mount of Mercy (ደብረ ምሕረት).
@@ -19,6 +21,9 @@ import androidx.appcompat.app.AppCompatActivity
  * Hosts the full, authentic liturgical web application from local assets with 100% precision.
  * Preserves all prayers, Ge'ez, Amharic, Tigrinya, English, and Puerto Rican Spanish scriptures,
  * audio chants, rubrics, dark/traditional themes, presentation modes, and search.
+ *
+ * Correctly applies window insets to avoid overlapping with status bar, clock, battery indicator,
+ * camera cutout, or system navigation bars.
  */
 class MainActivity : AppCompatActivity() {
 
@@ -29,7 +34,18 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val rootLayout = findViewById<View>(R.id.root_layout)
         webView = findViewById(R.id.main_webview)
+
+        // Handle edge-to-edge window insets: pad root layout so the header buttons
+        // sit cleanly below the clock, battery, camera cutout, and status bar icons
+        ViewCompat.setOnApplyWindowInsetsListener(rootLayout) { view, windowInsets ->
+            val insets = windowInsets.getInsets(
+                WindowInsetsCompat.Type.systemBars() or WindowInsetsCompat.Type.displayCutout()
+            )
+            view.setPadding(insets.left, insets.top, insets.right, insets.bottom)
+            windowInsets
+        }
 
         setupWebView()
 
