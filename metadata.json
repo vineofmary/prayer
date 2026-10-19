@@ -1,0 +1,6 @@
+{
+  "name": "The Mount of Mercy | ደብረ ምሕረት",
+  "description": "Ethiopian Orthodox Tewahedo Church Liturgy (Kidase), Daily Prayers, Miracles of Mary, and Scripture in Ge'ez, Amharic, Tigrinya, and English.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

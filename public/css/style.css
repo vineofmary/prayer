@@ -1,0 +1,3953 @@
+#splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #1a1a1a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 1.5s ease-out;
+}
+
+#splash-screen img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    animation: fadeIn 0.4s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.hidden {
+    display: none !important;
+}
+
+:root {
+    --transition-speed: 0.3s;
+    --sidebar-width: 350px;
+    --header-height: 61px;
+    --column-gap: 1.25rem;
+    --mobile-column-gap: 0.75rem;
+    --english-font-size: 16px;
+    --geez-font-size: 16px;
+}
+
+/* --- Traditional Palette (Default) --- */
+body.theme-traditional-light {
+    --text-color: #333;
+    --background-color: #f4f4f4;
+    --card-background: #ffffff;
+    --border-color: #eee;
+    --accent-color: #8a1c14;
+    --hover-color: #f0f0f0;
+    --speaker-label-color: #757575;
+    --rubric-red: #ff3131;
+    --rubric-gold: #b8860b;
+    --highlight-bg: #f5de31;
+    --highlight-text: #000;
+    --nav-arrow-bg: rgba(0, 0, 0, 0.3);
+    --accent-text-color: #ffffff;
+}
+body.theme-traditional-dark {
+    --text-color: #e0e0e0;
+    --background-color: #2c2c2c;
+    --card-background: #3c3c3c;
+    --border-color: #555;
+    --accent-color: #e57373;
+    --hover-color: #4a4a4a;
+    --speaker-label-color: #bdbdbd;
+    --rubric-red: #ff5e5e;
+    --rubric-gold: #e1ad01;
+    --highlight-bg: #b49600;
+    --highlight-text: #fff;
+    --nav-arrow-bg: rgba(255, 255, 255, 0.2);
+    --accent-text-color: #ffffff;
+}
+
+/* --- Sepia Palette --- */
+body.theme-sepia-light {
+    --text-color: #5b4636;
+    --background-color: #fbf5e9;
+    --card-background: #ffffff;
+    --border-color: #e9e2d5;
+    --accent-color: #8d6e63;
+    --hover-color: #f5efe2;
+    --speaker-label-color: #8d6e63;
+    --rubric-red: #c62828;
+    --rubric-gold: #b8860b;
+    --highlight-bg: #f5de31;
+    --highlight-text: #000;
+    --nav-arrow-bg: rgba(91, 70, 54, 0.3);
+    --accent-text-color: #ffffff;
+}
+body.theme-sepia-dark {
+    --text-color: #d3c5b5;
+    --background-color: #3e3228;
+    --card-background: #514237;
+    --border-color: #6a584a;
+    --accent-color: #bcaaa4;
+    --hover-color: #605145;
+    --speaker-label-color: #bcaaa4;
+    --rubric-red: #ef9a9a;
+    --rubric-gold: #e1ad01;
+    --highlight-bg: #b49600;
+    --highlight-text: #fff;
+    --nav-arrow-bg: rgba(211, 197, 181, 0.2);
+}
+
+/* --- Oceanic Palette --- */
+body.theme-oceanic-light {
+    --text-color: #263238;
+    --background-color: #eceff1;
+    --card-background: #ffffff;
+    --border-color: #cfd8dc;
+    --accent-color: #0277bd;
+    --hover-color: #e3e8eb;
+    --speaker-label-color: #546e7a;
+    --rubric-red: #d32f2f;
+    --rubric-gold: #b8860b;
+    --highlight-bg: #f5de31;
+    --highlight-text: #000;
+    --nav-arrow-bg: rgba(38, 50, 56, 0.3);
+    --accent-text-color: #ffffff;
+}
+body.theme-oceanic-dark {
+    --text-color: #b0bec5;
+    --background-color: #263238;
+    --card-background: #37474f;
+    --border-color: #546e7a;
+    --accent-color: #4fc3f7;
+    --hover-color: #455a64;
+    --speaker-label-color: #90a4ae;
+    --rubric-red: #ef9a9a;
+    --rubric-gold: #e1ad01;
+    --highlight-bg: #b49600;
+    --highlight-text: #fff;
+    --nav-arrow-bg: rgba(176, 190, 197, 0.2);
+    --accent-text-color: #ffffff;
+}
+
+/* --- High Contrast Palette --- */
+body.theme-high-contrast-light {
+    --text-color: #000000;
+    --background-color: #ffffff;
+    --card-background: #ffffff;
+    --border-color: #cccccc;
+    --accent-color: #0000ff;
+    --hover-color: #e0e0e0;
+    --speaker-label-color: #333333;
+    --rubric-red: #ff0000;
+    --rubric-gold: #b8860b;
+    --highlight-bg: #ffff00;
+    --highlight-text: #000;
+    --nav-arrow-bg: rgba(0, 0, 0, 0.4);
+    --accent-text-color: #ffffff;
+}
+body.theme-high-contrast-dark {
+    --text-color: #ffffff;
+    --background-color: #000000;
+    --card-background: #1a1a1a;
+    --border-color: #666666;
+    --accent-color: #00ffff;
+    --hover-color: #333333;
+    --speaker-label-color: #dddddd;
+    --rubric-red: #ff4d4d;
+    --rubric-gold: #ffd700;
+    --highlight-bg: #ffff00;
+    --highlight-text: #000;
+    --nav-arrow-bg: rgba(255, 255, 255, 0.3);
+    --accent-text-color: #000000;
+}
+
+/* --- Legacy Palette --- */
+body.theme-legacy-light {
+    --text-color: #000000;
+    --background-color: #ffffff;
+    --card-background: #ffffff;
+    --border-color: #cccccc;
+    --accent-color: #8a1c14;
+    --hover-color: #f0f0f0;
+    --speaker-label-color: #555555;
+    --rubric-red: #d32f2f;
+    --rubric-gold: #b8860b;
+    --highlight-bg: #f5de31;
+    --highlight-text: #000;
+    --nav-arrow-bg: rgba(0, 0, 0, 0.3);
+    --accent-text-color: #ffffff;
+}
+
+body.theme-legacy-dark {
+    --text-color: #ffffff;
+    --background-color: #000000;
+    --card-background: #000000;
+    --border-color: #333333;
+    --accent-color: #ffff00;
+    --hover-color: #1a1a1a;
+    --speaker-label-color: #cccccc;
+    --rubric-red: #ff3131;
+    --rubric-gold: #e1ad01;
+    --highlight-bg: #444444;
+    --highlight-text: #fff;
+    --nav-arrow-bg: rgba(255, 255, 255, 0.2);
+    --accent-text-color: #000000;
+}
+
+/* Specific language colors for Legacy theme - only when color coding is active */
+body[class*="language-colors-"].theme-legacy-dark .language-section.lang-geez_script .language-text,
+body[class*="language-colors-"].theme-legacy-dark .language-section.lang-geez_phonetic .language-text {
+    color: #ffff00 !important;
+}
+
+body[class*="language-colors-"].theme-legacy-light .language-section.lang-geez_script .language-text,
+body[class*="language-colors-"].theme-legacy-light .language-section.lang-geez_phonetic .language-text {
+    color: #b8860b !important; /* Gold on light */
+}
+
+body[class*="language-colors-"].theme-legacy-dark .language-section.lang-english .language-text {
+    color: #ffffff !important;
+}
+
+body[class*="language-colors-"].theme-legacy-light .language-section.lang-english .language-text {
+    color: #000000 !important;
+}
+
+body[class*="language-colors-"].theme-legacy-dark .language-section.lang-amharic_script .language-text,
+body[class*="language-colors-"].theme-legacy-dark .language-section.lang-amharic_phonetic .language-text {
+    color: #00ffff !important;
+}
+
+body[class*="language-colors-"].theme-legacy-light .language-section.lang-amharic_script .language-text,
+body[class*="language-colors-"].theme-legacy-light .language-section.lang-amharic_phonetic .language-text {
+    color: #0000ff !important; /* Darker blue on light */
+}
+
+body[class*="language-colors-"].theme-legacy-dark .language-section.lang-tigrinya_script .language-text,
+body[class*="language-colors-"].theme-legacy-dark .language-section.lang-tigrinya_phonetic .language-text {
+    color: #00ff00 !important;
+}
+
+body[class*="language-colors-"].theme-legacy-light .language-section.lang-tigrinya_script .language-text,
+body[class*="language-colors-"].theme-legacy-light .language-section.lang-tigrinya_phonetic .language-text {
+    color: #008000 !important; /* Darker green on light */
+}
+
+body[class*="language-colors-"].theme-legacy-dark .language-section.lang-spanish .language-text,
+body[class*="language-colors-"].theme-legacy-dark .language-section.lang-spanish_pr .language-text {
+    color: #ff9800 !important; /* Bright Orange */
+}
+body[class*="language-colors-"].theme-legacy-light .language-section.lang-spanish .language-text,
+body[class*="language-colors-"].theme-legacy-light .language-section.lang-spanish_pr .language-text {
+    color: #e65100 !important; /* Dark Orange */
+}
+
+body[class*="language-colors-"].theme-legacy-dark .language-section.lang-french .language-text {
+    color: #ff69b4 !important; /* Hot Pink */
+}
+body[class*="language-colors-"].theme-legacy-light .language-section.lang-french .language-text {
+    color: #c2185b !important; /* Dark Pink */
+}
+
+body[class*="language-colors-"].theme-legacy-dark .language-section.lang-arabic .language-text {
+    color: #00ffcc !important; /* Bright Teal */
+}
+body[class*="language-colors-"].theme-legacy-light .language-section.lang-arabic .language-text {
+    color: #00695c !important; /* Dark Teal */
+}
+
+body[class*="language-colors-"].theme-legacy-dark .language-section.lang-greek .language-text {
+    color: #cc99ff !important; /* Bright Lavender */
+}
+body[class*="language-colors-"].theme-legacy-light .language-section.lang-greek .language-text {
+    color: #4a148c !important; /* Dark Purple */
+}
+
+body[class*="language-colors-"].theme-legacy-dark .language-section.lang-hebrew .language-text {
+    color: #ffb6c1 !important; /* Light Pink */
+}
+body[class*="language-colors-"].theme-legacy-light .language-section.lang-hebrew .language-text {
+    color: #880e4f !important; /* Dark Red-Pink */
+}
+
+body[class*="language-colors-"].theme-legacy-dark .language-section.lang-malayalam .language-text {
+    color: #adff2f !important; /* Green Yellow */
+}
+body[class*="language-colors-"].theme-legacy-light .language-section.lang-malayalam .language-text {
+    color: #558b2f !important; /* Olive Green */
+}
+
+/* In Legacy theme, English retains its unique colors for rubrication and labels regardless of position */
+body[class*="theme-legacy-"] .language-section.lang-english .rubric-red {
+    color: var(--rubric-red) !important;
+}
+body[class*="theme-legacy-"] .language-section.lang-english .rubric-gold {
+    color: var(--rubric-gold) !important;
+}
+body[class*="theme-legacy-"] .language-section.lang-english .speaker-label {
+    color: var(--speaker-label-color) !important;
+    opacity: 1 !important;
+}
+
+/* In Legacy theme, explicitly brightly-colored languages should inherit their color for rubrication */
+body[class*="theme-legacy-"] .language-section.lang-spanish .rubric-red,
+body[class*="theme-legacy-"] .language-section.lang-spanish_pr .rubric-red,
+body[class*="theme-legacy-"] .language-section.lang-french .rubric-red,
+body[class*="theme-legacy-"] .language-section.lang-arabic .rubric-red,
+body[class*="theme-legacy-"] .language-section.lang-greek .rubric-red,
+body[class*="theme-legacy-"] .language-section.lang-hebrew .rubric-red,
+body[class*="theme-legacy-"] .language-section.lang-malayalam .rubric-red,
+body[class*="theme-legacy-"] .language-section.lang-spanish .rubric-gold,
+body[class*="theme-legacy-"] .language-section.lang-spanish_pr .rubric-gold,
+body[class*="theme-legacy-"] .language-section.lang-french .rubric-gold,
+body[class*="theme-legacy-"] .language-section.lang-arabic .rubric-gold,
+body[class*="theme-legacy-"] .language-section.lang-greek .rubric-gold,
+body[class*="theme-legacy-"] .language-section.lang-hebrew .rubric-gold,
+body[class*="theme-legacy-"] .language-section.lang-malayalam .rubric-gold {
+    color: inherit !important;
+}
+
+/* --- Language FONT Color Palettes --- */
+/* Greyscale (Light) */
+body.language-colors-greyscale {
+    --lang-font-color-1: #212121;
+    --lang-font-color-2: #424242;
+    --lang-font-color-3: #616161;
+    --lang-font-color-4: #757575;
+    --lang-font-color-5: #9e9e9e;
+    --lang-font-color-6: #bdbdbd;
+    --lang-font-color-7: #e0e0e0;
+}
+/* Pastel (Light) */
+body.language-colors-pastel {
+    --lang-font-color-1: #0277bd; /* Blue */
+    --lang-font-color-2: #388e3c; /* Green */
+    --lang-font-color-3: #f57f17; /* Yellow/Orange */
+    --lang-font-color-4: #d84315; /* Orange/Red */
+    --lang-font-color-5: #6a1b9a; /* Purple */
+    --lang-font-color-6: #00897b; /* Teal */
+    --lang-font-color-7: #558b2f; /* Light Green */
+}
+/* Vibrant (Light) */
+body.language-colors-vibrant {
+    --lang-font-color-1: #01579b;
+    --lang-font-color-2: #1b5e20;
+    --lang-font-color-3: #e65100;
+    --lang-font-color-4: #bf360c;
+    --lang-font-color-5: #4a148c;
+    --lang-font-color-6: #004d40;
+    --lang-font-color-7: #33691e;
+}
+/* Greyscale (Dark) */
+body.language-colors-greyscale.theme-traditional-dark,
+body.language-colors-greyscale.theme-sepia-dark,
+body.language-colors-greyscale.theme-oceanic-dark,
+body.language-colors-greyscale.theme-high-contrast-dark {
+    --lang-font-color-1: #f5f5f5;
+    --lang-font-color-2: #e0e0e0;
+    --lang-font-color-3: #bdbdbd;
+    --lang-font-color-4: #9e9e9e;
+    --lang-font-color-5: #757575;
+    --lang-font-color-6: #616161;
+    --lang-font-color-7: #424242;
+}
+/* Pastel (Dark) */
+body.language-colors-pastel.theme-traditional-dark, body.language-colors-pastel.theme-sepia-dark, body.language-colors-pastel.theme-oceanic-dark, body.language-colors-pastel.theme-high-contrast-dark {
+    --lang-font-color-1: #81d4fa; /* Light Blue */
+    --lang-font-color-2: #a5d6a7; /* Light Green */
+    --lang-font-color-3: #fff59d; /* Light Yellow */
+    --lang-font-color-4: #ffab91; /* Light Orange */
+    --lang-font-color-5: #ce93d8; /* Light Purple */
+    --lang-font-color-6: #80cbc4; /* Light Teal */
+    --lang-font-color-7: #c5e1a5; /* Light Lime */
+}
+/* Vibrant (Dark) */
+body.language-colors-vibrant.theme-traditional-dark, body.language-colors-vibrant.theme-sepia-dark, body.language-colors-vibrant.theme-oceanic-dark, body.language-colors-vibrant.theme-high-contrast-dark {
+    --lang-font-color-1: #4fc3f7;
+    --lang-font-color-2: #81c784;
+    --lang-font-color-3: #fff176;
+    --lang-font-color-4: #ff8a65;
+    --lang-font-color-5: #ba68c8;
+    --lang-font-color-6: #4db6ac;
+    --lang-font-color-7: #aed581;
+}
+
+
+body {
+    font-family: var(--english-font-family, serif);
+margin: 0;
+    padding: 0;
+background-color: var(--background-color, #f4f4f4);
+color: var(--text-color, #333);
+transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+    overflow-x: hidden;
+    padding-top: var(--header-height); /* Make space for fixed header */
+}
+
+.psalm-superscription {
+    color: var(--speaker-label-color) !important;
+    display: block;
+    margin-bottom: 0.5rem;
+    font-style: italic !important;
+}
+
+.language-section .language-text .psalm-superscription {
+    color: var(--speaker-label-color) !important;
+    font-style: italic !important;
+}
+
+.language-text i {
+    margin-right: 0.1em; /* Adjust this value as needed */
+}
+
+body.bold-text .language-text {
+    font-weight: bold;
+}
+
+header {
+/* background-color: var(--card-background);*/
+/* border-bottom: 1px solid var(--border-color);*/
+    background-color: var(--card-background, #ffffff);
+border-bottom: 1px solid var(--border-color, #eee);
+padding: 0 1.5rem;
+    height: var(--header-height);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    z-index: 10;
+    position: fixed; /* Changed to fixed */
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* transition: transform 0.3s ease-in-out;*/
+    transition: transform 0.3s ease-in-out, background-color var(--transition-speed) ease;
+}
+
+header.header-hidden {
+    transform: translateY(-100%);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-shrink: 0;
+}
+
+h1 {
+    margin: 0;
+    font-size: 1.25rem;
+    color: var(--accent-color);
+    white-space: nowrap;
+    transition: opacity var(--transition-speed) ease;
+}
+
+.ethiopic-label {
+    font-family: 'Merriweather', serif !important;
+}
+
+.settings-button {
+    background-color: var(--hover-color);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    width: 100%;
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+.settings-button:hover {
+    background-color: var(--accent-color);
+    color: var(--card-background);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+#sidebar-toggle, #prayers-panel-toggle, #theme-toggle, #search-toggle, #help-button, #layout-toggle-header, #presentation-mode-toggle-header, #search-close, #expand-collapse-all-button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-color);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#sidebar-toggle:hover, #prayers-panel-toggle:hover, #theme-toggle:hover, #search-toggle:hover, #help-button:hover, #layout-toggle-header:hover, #presentation-mode-toggle-header:hover, #search-close:hover, #expand-collapse-all-button:hover {
+    background-color: var(--hover-color);
+}
+#sidebar-toggle svg, #prayers-panel-toggle svg, #theme-toggle svg, #search-toggle svg, #layout-toggle-header svg, #presentation-mode-toggle-header svg, #expand-collapse-all-button svg {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+}
+#help-button {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+#search-close {
+    display: none;
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+/* Search Bar */
+#search-container {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    flex-grow: 1;
+    justify-content: flex-end;
+}
+#search-input {
+    display: none; /* Hidden by default */
+    border: 1px solid var(--border-color);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    padding: 0.3rem 0.6rem;
+    border-radius: 20px;
+    width: 0;
+    transition: width 0.3s ease-in-out, padding 0.3s ease-in-out;
+}
+
+header.search-active .header-content,
+header.search-active #layout-toggle-header,
+header.search-active #presentation-mode-toggle-header,
+header.search-active #theme-toggle,
+header.search-active #help-button {
+    display: none;
+}
+
+header.search-active #search-toggle { display: none; }
+header.search-active #search-close { display: flex; }
+
+header.search-active #search-input {
+    display: block;
+    width: 100%;
+    padding: 0.3rem 0.6rem;
+}
+
+#search-count {
+    display: none;
+    font-size: 0.8rem;
+    padding: 0 0.5rem;
+    opacity: 0.7;
+}
+
+header.search-active #search-count {
+    display: block;
+}
+
+#search-prev, #search-next {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-color);
+    padding: 0.2rem;
+    border-radius: 4px;
+}
+header.search-active #search-prev, header.search-active #search-next {
+    display: block;
+}
+#search-prev:hover, #search-next:hover {
+    background-color: var(--hover-color);
+}
+
+.container {
+    display: flex;
+    max-width: 100%;
+    margin: 0 auto;
+    width: 100%;
+    /* No height needed as body has padding-top */
+}
+
+.sidebar {
+    width: var(--sidebar-width);
+    background-color: var(--card-background, #ffffff);
+    flex-shrink: 0;
+    transition: width var(--transition-speed) ease, padding var(--transition-speed) ease, transform var(--transition-speed) ease, margin var(--transition-speed) ease, background-color var(--transition-speed) ease;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - var(--header-height));
+    position: fixed;
+    top: var(--header-height);
+}
+
+.sidebar-left {
+    left: 0;
+    border-right: 1px solid var(--border-color, #eee);
+}
+
+.sidebar-right {
+    right: 0;
+    border-left: 1px solid var(--border-color, #eee);
+}
+
+.sidebar.sidebar-left.collapsed {
+    width: 0;
+    padding: 1rem 0;
+    overflow: hidden;
+    border-right: none;
+}
+
+.sidebar.sidebar-right.collapsed {
+    width: 0;
+    padding: 1rem 0;
+    overflow: hidden;
+    border-left: none;
+}
+
+#sidebar-backdrop {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 4; /* Below sidebar (5), above content */
+}
+
+body.sidebar-open #sidebar-backdrop,
+body.sidebar-left-open #sidebar-backdrop,
+body.sidebar-right-open #sidebar-backdrop {
+    display: block;
+}
+
+.settings-panel {
+    padding: 1rem;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+/* Styling for links within the help modal */
+.modal-content a {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+.modal-content a:hover {
+    text-decoration: none;
+}
+
+.setting-group {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px dashed var(--border-color);
+}
+.setting-group:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.setting-group h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+    font-size: 1.1rem;
+}
+
+#font-preview {
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    background-color: var(--background-color);
+    transition: all var(--transition-speed) ease;
+    margin-top: 0.5rem;
+}
+#font-preview p {
+    margin: 0;
+    line-height: 1.6;
+}
+.preview-english {
+    font-family: var(--english-font-family, serif);
+font-size: var(--english-font-size, 16px);
+}
+.preview-geez {
+    font-family: var(--ethiopic-font-family, 'Noto Sans Ethiopic', sans-serif);
+font-size: var(--geez-font-size, 16px);
+}
+.preview-phonetic {
+    font-family: var(--english-font-family, serif);
+font-size: var(--english-font-size, 16px);
+    font-style: italic;
+}
+
+
+.settings-subtitle {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+.clickable-reading-title {
+    cursor: pointer;
+    transition: all 0.2s ease;
+    padding: 2px 4px;
+    border-radius: 4px;
+    margin-left: -4px;
+}
+
+.clickable-reading-title:hover {
+    color: var(--accent-color);
+    background-color: var(--hover-color);
+    opacity: 1;
+}
+
+@keyframes reading-highlight {
+    0% { background-color: var(--highlight-bg); }
+    100% { background-color: transparent; }
+}
+
+.highlight-reading {
+    animation: reading-highlight 2s ease-out;
+}
+
+
+.settings-summary {    font-size: 0.9em;
+    color: var(--speaker-label-color);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+
+input[type="range"], select {
+    width: 100%;
+    margin-top: 0.5rem;
+    padding: 0.4rem;
+}
+
+/* Psalm Selector Checkbox Styles */
+#psalm-selector-container, #prophet-songs-selector-container {
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid var(--border-color);
+    padding: 0.5rem;
+    border-radius: 4px;
+    background-color: var(--background-color);
+}
+
+#psalm-selector-container label, #prophet-songs-selector-container label {
+    display: block;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    user-select: none;
+    padding: 0.2rem;
+    border-radius: 3px;
+}
+
+#psalm-selector-container label:hover, #prophet-songs-selector-container label:hover {
+    background-color: var(--hover-color);
+}
+
+#psalm-selector-container input[type="checkbox"], #prophet-songs-selector-container input[type="checkbox"] {
+    margin-right: 0.5rem;
+}
+
+
+#language-toggles label, #display-options-toggles label {
+    display: block;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    user-select: none;
+}
+
+#layout-toggle:disabled + .toggle-label,
+#horizontal-scroll-toggle:disabled + span {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+#language-order-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 0.8rem;
+}
+
+#language-order-list li {
+    background-color: var(--hover-color);
+    border: 1px solid var(--border-color);
+    padding: 0.5rem;
+    margin-bottom: 0.3rem;
+    border-radius: 3px;
+    cursor: grab;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+#language-order-list li.dragging {
+    opacity: 0.5;
+    border: 1px dashed var(--accent-color);
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 1rem 2rem;
+    min-height: calc(100vh - var(--header-height) - 2rem);
+    position: relative; /* Needed for slide navigation arrows */
+    transition: margin-left var(--transition-speed) ease, margin-right var(--transition-speed) ease;
+}
+
+@media (min-width: 901px) {
+    body.sidebar-left-open .main-content {
+        margin-left: var(--sidebar-width);
+    }
+    body.sidebar-right-open .main-content {
+        margin-right: var(--sidebar-width);
+    }
+}
+
+.empty-state-message {
+    text-align: center;
+    padding: 4rem 1rem;
+    color: var(--text-color);
+    opacity: 0.7;
+}
+#prayer-display {
+    transition: opacity 0.2s ease-out;
+}
+#prayer-display.is-transitioning {
+    opacity: 0;
+}
+
+.section-title.collapsible {
+    cursor: pointer;
+    position: relative;
+    padding-right: 2rem; /* Space for the arrow */
+}
+
+.section-title {
+    font-size: 1.8rem;
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+    margin-top: 2.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent-color);
+    scroll-margin-top: calc(var(--header-height) + 1.5rem);
+}
+
+.section-title:not(.collapsible) {
+    border-bottom: none;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0;
+    opacity: 0.85;
+}
+
+.sub-section-title {
+    margin-left: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.section-metadata {
+    font-size: 0.85rem;
+    opacity: 0.8;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    padding-left: 0.2rem;
+    font-style: italic;
+    line-height: 1.3;
+    font-weight: normal;
+    display: block;
+    pointer-events: none;
+}
+
+.section-title.collapsed .section-metadata {
+    display: none;
+}
+
+.section-title.collapsible::before {
+    content: "-";
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+.section-title.collapsible.collapsed::before {
+    content: "+";
+}
+
+
+
+/* Card View Styles */
+.prayer-card {
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.03);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    scroll-margin-top: calc(var(--header-height) + 1rem);
+}
+
+.prayer-card-main-content {
+    padding: 1.5rem;
+}
+
+/* Unified View Styles */
+body.view-mode-unified #prayer-display {
+    padding: 1rem;
+    background-color: var(--card-background);
+    border-radius: 8px;
+}
+body.view-mode-unified .prayer-card {
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 2.5rem;
+    box-shadow: none;
+    border-bottom: 1px solid var(--border-color);
+}
+body.view-mode-unified .prayer-card-main-content {
+    padding: 0;
+}
+
+body.view-mode-unified #prayer-display > .prayer-card:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+/* Paragraph Mode Styles */
+body.paragraph-mode .prayer-card {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    margin-bottom: 0;
+}
+
+body.paragraph-mode .prayer-card-main-content {
+    padding: 0.5rem 0;
+}
+
+body.paragraph-mode .prayer-footer {
+    display: none;
+}
+
+body.paragraph-mode .language-section h4 {
+    display: none; /* Usually only one language, so title is redundant per stanza */
+}
+
+body.paragraph-mode .language-text {
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+body.paragraph-mode .section-icon, 
+body.paragraph-mode .holy-trinity-icon {
+    max-width: 100px;
+    margin: 1rem auto;
+}
+
+.prayer-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--border-color);
+    margin-top: 1rem;
+}
+body.view-mode-unified .prayer-footer {
+    border-top: none;
+}
+
+.prayer-card.psalm-card .prayer-footer {
+    border-top: none;
+    justify-content: space-between;
+}
+
+.prayer-label {
+    font-size: 0.8rem;
+    color: var(--text-color);
+    opacity: 0.6;
+}
+.prayer-label.hidden {
+    display: none;
+}
+
+.prayer-content {
+    display: flex;
+}
+.prayer-content.layout-column {
+    flex-direction: row;
+    gap: var(--column-gap);
+    align-items: flex-start; /* Vertically align all columns to the top */
+}
+.prayer-content.layout-column.horizontal-scroll {
+    overflow-x: auto;
+}
+.prayer-content.layout-row {
+    flex-direction: column;
+}
+
+.language-section {
+    flex-shrink: 0;
+    transition: opacity 0.3s ease-in-out, background-color var(--transition-speed) ease;
+    width: 100%;
+    padding: 0;
+    border-radius: 4px;
+}
+
+/* Language Color Coding Styles */
+.colored-languages .language-section:first-child .language-text {
+    color: var(--text-color);
+}
+.colored-languages .language-section:nth-child(2) .language-text { color: var(--lang-font-color-1); }
+.colored-languages .language-section:nth-child(3) .language-text { color: var(--lang-font-color-2); }
+.colored-languages .language-section:nth-child(4) .language-text { color: var(--lang-font-color-3); }
+.colored-languages .language-section:nth-child(5) .language-text { color: var(--lang-font-color-4); }
+.colored-languages .language-section:nth-child(6) .language-text { color: var(--lang-font-color-5); }
+.colored-languages .language-section:nth-child(7) .language-text { color: var(--lang-font-color-6); }
+.colored-languages .language-section:nth-child(8) .language-text { color: var(--lang-font-color-7); }
+
+.colored-languages .language-section:not(:first-child) .rubric-red,
+.colored-languages .language-section:not(:first-child) .rubric-gold {
+    color: inherit;
+}
+.colored-languages .language-section .speaker-label {
+    color: var(--speaker-label-color);
+    font-style: italic;
+}
+
+.prayer-content.layout-column .language-section {
+    flex: 1 1 0;
+    min-width: 200px;
+}
+.prayer-content.layout-row .language-section {
+    margin-bottom: 1.5rem;
+}
+
+.prayer-actions {
+    display: flex;
+    gap: 0.25rem;
+    align-items: center;
+}
+
+.exit-slides-mode-btn {
+    display: none; /* Hidden by default */
+    background: transparent;
+    border: none;
+    padding: 0.2rem;
+    color: var(--text-color);
+    opacity: 0.6;
+    cursor: pointer;
+    font-size: 1.5rem;
+    line-height: 1;
+    font-weight: 300;
+    transition: opacity 0.2s ease, background-color 0.2s ease;
+}
+.exit-slides-mode-btn:hover {
+    opacity: 1;
+    background-color: var(--hover-color);
+    border-radius: 4px;
+}
+
+.enter-slides-mode-btn {
+    display: flex;
+    background: transparent;
+    border: none;
+    padding: 0.2rem;
+    color: var(--text-color);
+    opacity: 0.6;
+    cursor: pointer;
+    transition: opacity 0.2s ease, background-color 0.2s ease;
+}
+.enter-slides-mode-btn:hover {
+    opacity: 1;
+    background-color: var(--hover-color);
+    border-radius: 4px;
+}
+
+
+.share-btn, .info-toggle {
+    background: transparent;
+    border: none;
+    padding: 0.2rem;
+    color: var(--text-color);
+    opacity: 0.6;
+    cursor: pointer;
+    transition: opacity 0.2s ease, background-color 0.2s ease;
+}
+.share-btn:hover, .info-toggle:hover {
+    opacity: 1;
+    background-color: var(--hover-color);
+    border-radius: 4px;
+}
+.share-btn svg, .info-toggle {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+    font-size: 1rem;
+    line-height: 1;
+    display: block;
+}
+
+
+.info-panel {
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+}
+.info-panel.active {
+    max-height: 200px;
+    opacity: 1;
+}
+.info-panel-content {
+    background-color: var(--hover-color);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    padding: 1rem;
+    margin: 0 1.5rem 1rem;
+}
+body.view-mode-unified .info-panel-content {
+    margin: 1rem 0;
+}
+.info-panel p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+}
+
+.language-section h4 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+    font-size: 1rem;
+    border-bottom: 1px dashed var(--border-color);
+    padding-bottom: 0.3rem;
+}
+.language-section h4.hidden {
+    display: none;
+}
+
+.language-text {
+    white-space: pre-wrap;
+    font-size: var(--english-font-size, 16px);
+    line-height: 1.7;
+    transition: color var(--transition-speed) ease;
+    overflow-wrap: break-word; /* Break long words */
+    word-break: break-word; /* For Safari and older browsers */
+}
+
+.language-text sup {
+    font-size: 0.7em;
+    color: var(--speaker-label-color);
+    margin-right: 0.2em;
+    font-weight: bold;
+}
+
+.lang-phonetic .language-text {
+    font-style: italic;
+}
+
+.geez-phonetic-append {
+    font-size: 0.9em;
+    opacity: 0.8;
+    display: block;
+    margin-top: 0.4rem;
+    font-style: italic;
+    font-family: var(--english-font-family, serif);
+}
+
+.speaker-label {
+    color: var(--speaker-label-color);
+    font-style: italic;
+    font-size: 0.85em;
+    margin-right: 0.3em;
+}
+
+.parenthetical-text {
+    opacity: 0.6;
+    font-style: italic;
+    font-size: 0.85em;
+}
+
+.kidase-lectionary-item {
+    margin-top: 0.75rem;
+    padding: 0.5rem;
+    background-color: var(--hover-color);
+    border-radius: 4px;
+}
+
+.kidase-lectionary-item .settings-subtitle,
+#anaphora-settings .settings-subtitle {
+    margin-top: 0;
+    font-size: 0.8rem;
+    color: var(--accent-color);
+}
+
+.settings-input {
+    width: 100%;
+    padding: 0.4rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--card-background);
+    color: var(--text-color);
+    font-family: inherit;
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
+}
+
+/* Lectionary Picker Styles */
+.lectionary-picker-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.lectionary-picker-row {
+    display: flex;
+    gap: 0.4rem;
+}
+
+.lectionary-picker-row .picker-field {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.picker-field label {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    opacity: 0.7;
+    margin-bottom: 0.1rem;
+}
+
+.picker-field select {
+    width: 100%;
+    padding: 0.3rem;
+    font-size: 0.85rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--card-background);
+    color: var(--text-color);
+    margin-top: 0;
+}
+
+.lectionary-picker-book-select {
+    font-weight: bold;
+}
+
+.typical-psalms-select {
+    width: 100%;
+    font-size: 0.8rem;
+    padding: 0.4rem;
+    max-width: 100%;
+}
+
+.lectionary-separator {
+    margin: 0.75rem 0;
+    border: 0;
+    border-top: 1px solid var(--border-color);
+    opacity: 0.3;
+}
+
+#kidase-settings {
+    background-color: var(--card-background);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-top: 0.5rem;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.05);
+}
+
+.rubric-red, .rubric-gold {
+    transition: color 0.2s ease-in-out;
+}
+
+.rubrication-disabled .rubric-red,
+.rubrication-disabled .rubric-gold {
+    color: inherit;
+}
+.rubric-red { color: var(--rubric-red); }
+.rubric-gold { color: var(--rubric-gold); }
+
+.lang-ethiopic-script, .ethiopic-label {
+    font-family: var(--ethiopic-font-family, 'Noto Sans Ethiopic', sans-serif);
+}
+
+.lang-ethiopic-script {
+    font-size: var(--geez-font-size, 16px);
+}
+
+.language-order-handle {
+    cursor: grab;
+    padding: 0.2rem 0.5rem;
+    user-select: none;
+}
+
+.notification {
+    position: fixed;
+    top: 20px; /* Changed from bottom */
+    left: 50%;
+    transform: translateX(-50%) translateY(-100px); /* Changed for top animation */
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s, visibility 0.5s, transform 0.5s;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.notification.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Modal Styles */
+.modal {
+    display: none; position: fixed; z-index: 1001;
+    left: 0; top: 0; width: 100%; height: 100%;
+    overflow: auto; background-color: rgba(0,0,0,0.5);
+}
+.modal-content {
+    background-color: var(--card-background);
+    margin: 10% auto; padding: 2rem;
+    border: 1px solid var(--border-color); border-radius: 8px;
+    width: 80%; max-width: 600px; position: relative;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+.modal-content h2 { color: var(--accent-color); margin-top: 0; }
+.modal-content .disclaimer {
+    font-size: 0.8rem; opacity: 0.7; margin-top: 2rem;
+    border-top: 1px dashed var(--border-color); padding-top: 1rem;
+}
+.close-button {
+    color: #aaa; float: right; font-size: 28px;
+    font-weight: bold; cursor: pointer;
+}
+.close-button:hover, .close-button:focus { color: var(--text-color); }
+
+/* Ephrem Story Modal Specifics */
+.ephrem-story-content {
+    max-width: 800px;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    max-height: 90vh;
+}
+
+.ephrem-story-content h2 {
+    margin-bottom: 0.5rem;
+}
+
+.story-header {
+    padding: 2rem;
+    text-align: center;
+    background-color: var(--hover-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.story-main-icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1rem;
+}
+
+.story-subtitle {
+    font-style: italic;
+    opacity: 0.8;
+}
+
+.story-body {
+    padding: 2rem;
+    overflow-y: auto;
+    flex: 1;
+}
+
+.story-section {
+    margin-bottom: 2rem;
+}
+
+.summary-box, .homily-box, .intro-box {
+    background-color: var(--hover-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--accent-color);
+}
+
+.summary-box h3, .homily-box h3, .intro-box h3 {
+    margin-top: 0;
+    font-size: 1.1rem;
+}
+
+.story-inner-title {
+    font-family: var(--ethiopic-font-family, serif);
+    color: var(--accent-color);
+    text-align: center;
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+    line-height: 1.4;
+    border-bottom: 1px double var(--border-color);
+    padding-bottom: 1rem;
+}
+
+.settings-summary {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0.5rem 0;
+    line-height: 1.4;
+    word-break: break-word;
+}
+
+.psalm-sequence-container {
+    margin: 1rem 0 0.5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.psalm-sequence-container label {
+    font-size: 0.85rem;
+    color: var(--speaker-label-color);
+    font-weight: bold;
+}
+
+.settings-sequence-input {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 0.95rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--card-background);
+    color: var(--text-color);
+    box-sizing: border-box;
+    font-family: monospace;
+}
+
+.settings-sequence-input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+.story-tabs-nav {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.story-tab-btn {
+    background: transparent;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    color: var(--text-color);
+    opacity: 0.6;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.story-tab-btn:hover {
+    background-color: var(--hover-color);
+    opacity: 1;
+}
+
+.story-tab-btn.active {
+    background-color: var(--accent-color);
+    color: var(--accent-text-color);
+    opacity: 1;
+}
+
+.story-day-pane {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.story-day-pane.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.story-day-pane h4 {
+    margin-top: 0;
+    color: var(--accent-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.story-body blockquote {
+    margin: 1.5rem 0;
+    padding: 1rem 1.5rem;
+    border-left: 2px solid var(--border-color);
+    font-style: italic;
+    line-height: 1.6;
+    background-color: var(--hover-color);
+}
+
+.story-blessing {
+    margin-top: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.story-servant-name {
+    color: var(--rubric-red);
+}
+
+.share-button {
+    background-color: var(--accent-color) !important;
+    color: var(--accent-text-color) !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0.8rem !important;
+    font-weight: 600;
+    transition: transform 0.2s, background-color 0.2s;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 0.95rem;
+}
+
+.share-button:hover {
+    transform: scale(1.02);
+    filter: brightness(1.1);
+}
+
+.share-button:active {
+    transform: scale(0.98);
+}
+
+.share-hint {
+    font-size: 0.75rem;
+    opacity: 0.6;
+    margin-top: 0.25rem;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+    color: var(--text-color);
+}
+
+.settings-divider {
+    border: 0;
+    border-top: 1px solid var(--border-color);
+    margin: 1rem 0;
+    opacity: 0.3;
+}
+
+.technical-context h3 {
+    font-size: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.tech-item strong {
+    display: block;
+    font-size: 0.8rem;
+    opacity: 0.7;
+    margin-bottom: 0.25rem;
+}
+
+.tech-item span {
+    font-size: 0.9rem;
+}
+
+.tech-item.full-width {
+    grid-column: 1 / -1;
+}
+
+.geez-text {
+    line-height: 1.8;
+}
+
+.notes-section h3 {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.story-notes {
+    font-size: 0.85rem;
+    opacity: 0.8;
+    padding-left: 1.2rem;
+}
+
+.story-notes li {
+    margin-bottom: 0.5rem;
+}
+
+.sup-ref {
+    vertical-align: super;
+    font-size: 0.7rem;
+    text-decoration: none;
+    margin-left: 2px;
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+.story-citation {
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px dashed var(--border-color);
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+.citation-detail {
+    margin-top: 0.5rem;
+    font-style: italic;
+}
+
+/* Info Toggle Alignment */
+.title-with-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.title-with-info h3 {
+    margin: 0;
+}
+
+.info-toggle-btn {
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    color: var(--text-color);
+    opacity: 0.6;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s;
+}
+
+.info-toggle-btn:hover {
+    opacity: 1;
+}
+
+.info-toggle-btn svg {
+    fill: currentColor;
+}
+
+/* Collapsible Technical Context */
+.technical-toggle-btn {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--hover-color);
+    border: 1px solid var(--border-color);
+    padding: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    color: var(--text-color);
+    font-weight: bold;
+    font-family: inherit;
+    transition: background-color 0.2s;
+}
+
+.technical-toggle-btn:hover {
+    background-color: var(--border-color);
+}
+
+.technical-content-pane {
+    padding: 1.5rem;
+    border: 1px solid var(--border-color);
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    background-color: var(--background-color);
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease;
+}
+
+.technical-content-pane.collapsed {
+    display: none;
+}
+
+.toggle-icon {
+    transition: transform 0.3s ease;
+}
+
+.technical-toggle-btn.active .toggle-icon {
+    transform: rotate(180deg);
+}
+
+.summary-sub-box {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px dashed var(--border-color);
+}
+
+.summary-sub-box strong {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--accent-color);
+}
+
+#modal-backdrop {
+    display: none; position: fixed; top: 0; left: 0;
+    width: 100%; height: 100%; background-color: rgba(0,0,0,0.5);
+    z-index: 1000;
+}
+
+/* Bible Verses */
+.bible-verse-about {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+    opacity: 0.8;
+}
+.bible-verse-about p {
+    margin: 0;
+    line-height: 1.4;
+}
+.bible-verse-about .citation {
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+.bible-verse-sidebar {
+    text-align: center;
+    padding: 1rem 0;
+    font-style: italic;
+    opacity: 0.7;
+    border-top: 1px dashed var(--border-color);
+}
+.bible-verse-sidebar p {
+    margin: 0.2rem 0;
+}
+.bible-verse-sidebar .citation {
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+
+/* Feedback Section */
+.feedback-section { text-align: center; }
+#feedback-button {
+    background-color: var(--accent-color);
+    color: var(--accent-text-color);
+    padding: 0.8rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: background-color 0.2s, transform 0.2s;
+    width: 100%;
+    border: none;
+}
+#feedback-button:hover { 
+    filter: brightness(1.1);
+    transform: scale(1.01);
+}
+
+#feedback-textarea {
+    width: 100%; height: 150px; margin: 1rem 0; padding: 0.5rem;
+    border-radius: 5px; border: 1px solid var(--border-color);
+    background-color: var(--background-color); color: var(--text-color);
+    resize: vertical;
+}
+#send-feedback-button {
+    width: 100%; padding: 0.8rem; background-color: var(--accent-color);
+    color: var(--accent-text-color); border: none; border-radius: 5px; cursor: pointer;
+}
+
+/* Highlighted Text */
+.highlight {
+    background-color: var(--highlight-bg-color);
+    color: var(--highlight-text-color);
+    border-radius: 3px;
+    padding: 1px 3px;
+}
+
+.anglicized-name {
+    font-style: italic;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   SETTINGS PANEL
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.highlight.current {
+    outline: 2px solid var(--accent-color);
+}
+
+/* --- Slides Presentation Mode --- */
+body.presentation-mode-slides {
+    padding-top: 0; /* Remove padding for header */
+}
+body.presentation-mode-slides .enter-slides-mode-btn {
+    display: none;
+}
+body.presentation-mode-slides header {
+    display: none; /* Hide header completely */
+}
+body.presentation-mode-slides .exit-slides-mode-btn {
+    display: block; /* Show exit button */
+}
+body.presentation-mode-slides .main-content {
+    overflow: hidden;
+    padding: 0;
+    height: 100vh;
+}
+body.presentation-mode-slides .section-title {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0;
+    border: none;
+    font-size: 3rem;
+}
+
+body.presentation-mode-slides .section-title.non-collapsible {
+    display: none !important;
+}
+
+body:not(.presentation-mode-slides) .parent-title-header {
+    display: none !important;
+}
+
+body.presentation-mode-slides .parent-title-header {
+    display: block;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: var(--primary-gold, #d4af37);
+    opacity: 0.95;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+body.presentation-mode-slides .sub-title-content {
+    font-size: 2.8rem;
+    font-weight: 700;
+}
+
+
+/* Default "Slide" Transition */
+body.presentation-mode-slides #prayer-display.transition-slide {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.4s ease-in-out;
+}
+body.presentation-mode-slides #prayer-display.transition-slide > * {
+    width: 100%;
+    flex-shrink: 0;
+}
+
+body.presentation-mode-slides #prayer-display > *:not(.prayer-card):not(.section-title.collapsible) {
+    display: none !important;
+}
+
+
+/* "Fade" Transition */
+body.presentation-mode-slides #prayer-display.transition-fade {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+body.presentation-mode-slides #prayer-display.transition-fade .prayer-card,
+body.presentation-mode-slides #prayer-display.transition-fade .section-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s;
+    z-index: 1;
+}
+
+body.presentation-mode-slides #prayer-display.transition-fade .active-slide {
+    opacity: 1;
+    visibility: visible;
+    z-index: 2;
+}
+
+/* "None" Transition */
+body.presentation-mode-slides #prayer-display.transition-none {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+body.presentation-mode-slides .holy-trinity-icon,
+body.presentation-mode-slides .section-icon {
+    display: none;
+}
+
+body.presentation-mode-slides #prayer-display.transition-none .prayer-card,
+body.presentation-mode-slides #prayer-display.transition-none .section-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: none;
+    z-index: 1;
+}
+
+body.presentation-mode-slides #prayer-display.transition-none .active-slide {
+    opacity: 1;
+    visibility: visible;
+    z-index: 2;
+}
+
+
+body.presentation-mode-slides .prayer-card {
+    height: 100%;
+    border-radius: 0;
+    border: none;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+body.presentation-mode-slides .prayer-footer {
+/*    padding-top: 0.25rem;*/
+    margin-top: 0.05rem;
+/*    padding-bottom: 0.05rem;*/
+}
+
+body.presentation-mode-slides .prayer-card-main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 1.5rem 1.5rem 1.5rem; /* Adjusted padding for better spacing */
+}
+
+body.presentation-mode-slides .prayer-content {
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+body.presentation-mode-slides .language-section h4 {
+    padding-top: 0.2rem;
+}
+
+
+body.presentation-mode-slides .language-text {
+    line-height: 1.2;
+    margin: 0;
+    padding-top: 0.1em;
+    padding-bottom: 0.15em;
+}
+
+body.presentation-mode-slides .lang-ethiopic-script .language-text {
+    line-height: 1.1;
+}
+
+
+body.presentation-mode-slides .prayer-content.layout-column {
+    align-items: stretch;
+    height: 100%;
+}
+
+body.presentation-mode-slides .prayer-content.layout-column .language-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+}
+
+body.presentation-mode-slides .prayer-content.layout-column .language-section:not(:last-child) {
+    border-right: 1px solid var(--border-color);
+    padding-right: var(--column-gap);
+}
+
+body.presentation-mode-slides .prayer-content.layout-row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center the whole group of prayers vertically */
+    gap: 0.5rem;
+    height: 100%;
+}
+
+
+body.presentation-mode-slides .prayer-content.layout-row .language-section {
+    flex: 0 0 auto; /* Let each section take its natural height */
+    margin-bottom: 0;
+    width: 100%;
+}
+
+
+
+
+/* --- MOBILE STYLES --- */
+@media (max-width: 900px) {
+    body.sidebar-open {
+        overflow: hidden;
+    }
+
+    header {
+        padding: 0 0.5rem 0 1rem;
+        gap: 0.5rem;
+    }
+
+    .header-content h1 {
+        display: block;
+        opacity: 1;
+    }
+
+    header:not(.sidebar-visible-in-mobile) .header-content h1 {
+        display: none;
+    }
+
+    header.search-active .header-content,
+    header.search-active .header-actions:not(#search-close) {
+        display: none;
+    }
+    header.search-active #search-container {
+        justify-content: flex-start;
+        padding-right: 0.5rem;
+    }
+
+    #search-input { padding: 0.4rem 0.8rem; }
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        height: 100dvh;
+        width: var(--sidebar-width);
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        transform: translateX(0);
+        padding-top: var(--header-height);
+        box-sizing: border-box;
+    }
+    .sidebar-left {
+        left: 0;
+    }
+    .sidebar-right {
+        right: 0;
+    }
+    body.presentation-mode-slides .sidebar {
+        padding-top: 0;
+    }
+
+    .sidebar-left.collapsed {
+        transform: translateX(-100%);
+        width: var(--sidebar-width);
+    }
+    .sidebar-right.collapsed {
+        transform: translateX(100%);
+        width: var(--sidebar-width);
+    }
+
+    .settings-panel { height: 100%; overflow-y: auto; }
+
+    body.sidebar-open .main-content,
+    body.sidebar-left-open .main-content,
+    body.sidebar-right-open .main-content {
+        filter: blur(4px) brightness(0.7);
+        pointer-events: none;
+    }
+
+    .main-content { padding: 1rem; }
+
+    .container { flex-direction: column; }
+
+    .prayer-content.layout-column {
+        display: flex;
+        gap: var(--mobile-column-gap);
+    }
+
+    .prayer-content.layout-column.horizontal-scroll {
+        overflow-x: auto;
+    }
+
+    .prayer-content.layout-column .language-section {
+        flex-shrink: 0;
+        min-width: 0;
+    }
+
+    .prayer-content[data-active-columns="1"] .language-section {
+        flex-basis: 100%;
+    }
+
+    .prayer-content[data-active-columns="2"] .language-section {
+        flex-basis: calc((100% - var(--mobile-column-gap)) / 2);
+}
+
+.prayer-content[data-active-columns="3"] .language-section {
+    flex-basis: calc((100% - (var(--mobile-column-gap) * 2)) / 3);
+}
+
+.prayer-content[data-active-columns~="4"] .language-section,
+.prayer-content[data-active-columns~="5"] .language-section,
+.prayer-content[data-active-columns~="6"] .language-section,
+.prayer-content[data-active-columns~="7"] .language-section {
+    flex-basis: 80%;
+}
+}
+
+/* Ensure the section title slide itself is a positioning context and takes full space */
+body.presentation-mode-slides .section-title.active-slide {
+    position: relative; /* Establishes positioning context for absolute children */
+    width: 100%;
+    height: 100%;
+    display: flex; /* Use flexbox to center the title text */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px; /* Add some padding around the title text */
+    box-sizing: border-box; /* Include padding in width/height */
+}
+
+/* Style and position the exit button directly within the section title slide */
+body.presentation-mode-slides .section-title.active-slide .section-title-exit-btn {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    z-index: 100;
+    font-size: 1.5em;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    padding: 0;
+}
+
+/* The .exit-slides-mode-btn class already handles hiding/showing the button
+   in scroll vs. slides mode, so we don't need extra rules for a container. */
+body.presentation-mode-slides .hareg-ornament {
+    display: none;
+}
+
+/* Base class for all Hareg ornaments */
+.hareg-ornament {
+  display: block;
+  width: 100%;
+/*  max-width: 350px; *//* Prevents it from being too large on desktops */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Specific spacing for the header */
+.hareg-header {
+  margin-top: 0.05rem;   /* Space above the ornament */
+  margin-bottom: 0.5rem;  /* Space between ornament and first card */
+}
+
+/* Specific spacing for the footer */
+.hareg-footer {
+  margin-top: 0.05rem;   /* Space above the ornament */
+  margin-bottom: 0.05rem; /* Space below the ornament */
+}
+
+/* Styling for the Holy Trinity Icon */
+.holy-trinity-icon {
+  display: block;
+  width: 100%; /* Default for mobile/narrow screens */
+/*  max-width: 350px; *//* Prevents it from being too large */
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 901px) { /* For desktop/larger screens */
+  .holy-trinity-icon {
+    width: 50%;
+  }
+}
+
+/* Styling for the Section Icons */
+.section-icon {
+  display: block;
+  width: 100%; /* Default for mobile/narrow screens */
+/*  max-width: 350px; *//* Prevents it from being too large */
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 901px) { /* For desktop/larger screens */
+  .section-icon {
+    width: 50%;
+  }
+}
+
+.editor-field-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.verified-toggle-label {
+    font-size: 0.75rem;
+    color: var(--rubric-red);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: bold;
+}
+
+.verified-toggle-label input {
+    cursor: pointer;
+}
+
+/* --- Scribe System Styles --- */
+.scribe-entry-point {
+    margin-top: 3rem; /* Increased spacing */
+    opacity: 0.15;
+    transition: opacity 0.3s ease;
+}
+.scribe-entry-point:hover {
+    opacity: 0.8;
+}
+#scribe-login-link {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 0.7rem;
+    cursor: pointer;
+    text-decoration: underline;
+    padding: 0;
+}
+
+.scribe-login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+.scribe-login-form input {
+    padding: 0.8rem;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+    background: var(--background-color);
+    color: var(--text-color);
+}
+#scribe-login-btn {
+    background-color: var(--accent-color);
+    color: var(--accent-text-color);
+    border: none;
+    padding: 0.8rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.error-text {
+    color: #ff5252;
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+}
+
+/* Scribe Mode Visual Indicators */
+.scribe-mode-active .prayer-card {
+    border: 1px solid var(--accent-color);
+}
+
+.edit-stanza-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: var(--accent-color);
+    color: var(--accent-text-color);
+    border: none;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 0.8rem;
+    z-index: 10;
+    opacity: 0.8;
+}
+.edit-stanza-btn:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+.scribe-mode-active .edit-stanza-btn {
+    display: flex;
+}
+
+/* Scribe Editor Modal */
+.scribe-editor-content {
+    max-width: 800px;
+    width: 90%;
+}
+#scribe-editor-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+    max-height: 60vh;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+}
+.editor-field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.editor-field-group label {
+    font-weight: bold;
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+.editor-field-group textarea {
+    width: 100%;
+    min-height: 80px;
+    padding: 0.6rem;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+    background: var(--background-color);
+    color: var(--text-color);
+    font-family: inherit;
+    resize: vertical;
+}
+
+.scribe-editor-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--border-color);
+    padding-top: 1.5rem;
+    margin-top: 1rem;
+}
+#scribe-status-select {
+    width: auto;
+    padding: 0.5rem;
+}
+#scribe-save-btn {
+    background-color: var(--accent-color);
+    color: var(--accent-text-color);
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+#scribe-save-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Icon Metadata Modal Styles */
+.icon-metadata-content {
+    max-width: 800px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.icon-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.icon-header h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.icon-header h3 {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    font-weight: normal;
+}
+
+.icon-images-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+    margin-bottom: 2rem;
+    background: #000;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    box-sizing: border-box;
+}
+
+.metadata-original-img {
+    flex: 1 1 300px;
+    max-width: 100%;
+    max-height: 60vh;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+@media (min-width: 601px) {
+    .metadata-original-img {
+        max-width: calc(50% - 0.5rem);
+    }
+}
+
+.icon-description-section {
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.icon-description-section p {
+    margin-bottom: 1rem;
+}
+
+.icon-metadata-detail {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background: var(--hover-color);
+    border-radius: 4px;
+    border-left: 4px solid var(--accent-color);
+}
+
+.icon-source-section {
+    font-size: 0.85rem;
+    opacity: 0.8;
+    border-top: 1px dashed var(--border-color);
+    padding-top: 1.5rem;
+    margin-top: 1rem;
+    line-height: 1.6;
+}
+
+.icon-source-section a {
+    color: var(--accent-color);
+    text-decoration: underline;
+    word-break: break-all;
+}
+
+.icon-metadata-content .close-button {
+    position: sticky;
+    top: 0;
+    right: 0;
+    z-index: 10;
+}
+
+.scribe-editor-fields textarea {
+    min-height: 100px;
+}
+
+/* Scribe Save Icon Button */
+#scribe-save-icon-btn {
+    background-color: var(--accent-color);
+    color: var(--accent-text-color);
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+#scribe-save-icon-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Make icons clickable */
+.holy-trinity-icon, .section-icon, .hareg-ornament {
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.holy-trinity-icon:hover, .section-icon:hover, .hareg-ornament:hover {
+    transform: scale(1.02);
+}
+
+.eusebius-content {
+    max-width: 800px;
+}
+
+.eusebius-body {
+    padding-top: 1rem;
+}
+
+.modal-image-container {
+    margin: 0 0 1.5rem 0;
+    text-align: center;
+}
+
+.modal-image-container img {
+    max-width: 100%;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.modal-image-container figcaption {
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+    opacity: 0.8;
+    font-style: italic;
+}
+
+.modal-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 0.4rem;
+    margin-bottom: 2rem;
+    padding: 4px;
+    background: var(--hover-color);
+    border-radius: 12px;
+}
+
+.modal-tab-btn, .help-tab-btn, .story-tab-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-color);
+    padding: 0.6rem 1rem;
+    cursor: pointer;
+    opacity: 0.7;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    font-size: 0.85rem;
+    flex: 1;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.modal-tab-btn:hover, .help-tab-btn:hover, .story-tab-btn:hover {
+    opacity: 1;
+    background: rgba(128, 128, 128, 0.1);
+}
+
+.modal-tab-btn.active, .help-tab-btn.active, .story-tab-btn.active {
+    opacity: 1;
+    background: var(--accent-color);
+    color: var(--accent-text-color);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.modal-pane, .help-pane, .story-day-pane {
+    display: none;
+    line-height: 1.6;
+}
+
+.modal-pane.active, .help-pane.active, .story-day-pane.active {
+    display: block;
+}
+
+.modal-pane p {
+    margin-bottom: 1rem;
+}
+
+/* --- Help Modal Specific Styles --- */
+.help-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.help-header h2 {
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+.help-tabs {
+    background: var(--hover-color);
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 6px;
+    border-radius: 14px;
+    border: 1px solid var(--border-color);
+    display: flex;
+    gap: 4px;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.help-tab-btn {
+    font-size: 0.85rem !important;
+    padding: 0.6rem 0.5rem !important;
+}
+
+.help-pane h3 {
+    color: var(--accent-color);
+    margin: 1.5rem 0 1rem 0;
+    font-size: 1.2rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.3rem;
+}
+
+.help-pane h4 {
+    margin: 1.2rem 0 0.5rem 0;
+    font-size: 1rem;
+    color: var(--text-color);
+    opacity: 0.9;
+}
+
+.help-pane ul {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+}
+
+.help-pane li {
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+.license-box strong {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--accent-color);
+}
+
+.footnotes-separator {
+    margin: 2rem 0 1rem 0;
+    border: 0;
+    border-top: 1px solid var(--border-color);
+    opacity: 0.5;
+}
+
+.modal-footnotes {
+    font-size: 0.85rem;
+    opacity: 0.9;
+    line-height: 1.4;
+}
+
+.footnote-item {
+    margin-bottom: 0.75rem;
+}
+
+.footnote-backref {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 0.25rem;
+}
+
+/* --- App Version & Changelog Styles --- */
+.app-version-section {
+    text-align: center;
+    padding-top: 1rem !important;
+    border-top: 1px dashed var(--border-color);
+    margin-top: 2rem !important;
+}
+
+.hard-refresh-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    background-color: var(--card-bg, #222);
+    color: var(--text-color, #e0e0e0);
+    border: 1px solid var(--border-color, #444);
+    border-radius: 6px;
+    padding: 7px 14px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    font-family: var(--english-font-family, serif);
+    cursor: pointer;
+    margin-bottom: 0.6rem;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.hard-refresh-btn svg {
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+}
+
+.hard-refresh-btn:hover {
+    background-color: var(--hover-color, #333);
+    border-color: var(--accent-color, #d4af37);
+    color: var(--accent-color, #d4af37);
+}
+
+.hard-refresh-btn:hover svg {
+    transform: rotate(45deg);
+}
+
+.hard-refresh-btn:active {
+    transform: scale(0.97);
+}
+
+.hard-refresh-btn.updating {
+    opacity: 0.75;
+    pointer-events: none;
+}
+
+.hard-refresh-btn.updating svg {
+    animation: hard-refresh-spin 0.8s linear infinite;
+}
+
+@keyframes hard-refresh-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+#app-version-container {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--text-color);
+    opacity: 0.4;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    font-family: var(--english-font-family, serif);
+}
+
+#app-version-container:hover {
+    opacity: 0.9;
+    background-color: var(--hover-color);
+    color: var(--accent-color);
+}
+
+.changelog-content {
+    max-width: 600px;
+}
+
+.changelog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.changelog-header h2 {
+    margin: 0;
+    font-size: 1.25rem;
+    color: var(--accent-color);
+}
+
+.active-badge {
+    background-color: #4caf50;
+    color: white;
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 12px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.changelog-intro {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    opacity: 0.8;
+}
+
+.changelog-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-height: 50vh;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+}
+
+.changelog-item {
+    padding: 0.75rem;
+    background-color: var(--background-color);
+    border-left: 3px solid var(--accent-color);
+    border-radius: 4px;
+}
+
+.changelog-item .commit-date {
+    font-size: 0.7rem;
+    opacity: 0.6;
+    margin-bottom: 0.25rem;
+    display: block;
+}
+
+.changelog-item .commit-message {
+    font-size: 0.9rem;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.changelog-item .commit-author {
+    font-size: 0.75rem;
+    margin-top: 0.5rem;
+    opacity: 0.7;
+    font-style: italic;
+}
+
+.changelog-loading, .changelog-error {
+    text-align: center;
+    padding: 2rem;
+    font-style: italic;
+    opacity: 0.7;
+}
+
+.changelog-error {
+    color: var(--rubric-red);
+}
+/* Greek Loanword Origins Feature */
+.loanword-origin {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    cursor: help;
+    border-bottom: 1px dotted var(--accent-color);
+    transition: all 0.2s ease;
+    text-decoration: none;
+    color: inherit;
+}
+
+.loanword-origin:hover {
+    background-color: var(--hover-color);
+    border-bottom: 1px solid var(--accent-color);
+}
+
+.loanword-tooltip {
+    position: fixed;
+    z-index: 2000;
+    background-color: var(--card-background, #ffffff);
+    border: 1px solid var(--accent-color);
+    border-radius: 12px;
+    padding: 1.25rem;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    width: 280px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transform: translateY(10px);
+}
+
+.loanword-tooltip.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.tooltip-title {
+    display: block;
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    margin-bottom: 0.25rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.tooltip-phonetic {
+    display: block;
+    font-size: 0.9rem;
+    font-style: italic;
+    opacity: 0.7;
+    text-align: center;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.75rem;
+}
+
+.tooltip-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    gap: 1rem;
+}
+
+.tooltip-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    opacity: 0.6;
+    font-weight: 600;
+}
+
+.tooltip-value {
+    font-size: 0.95rem;
+    text-align: right;
+    font-weight: 500;
+}
+
+.tooltip-geez {
+    color: var(--accent-color);
+    font-size: 1.1rem;
+}
+
+/* Psalm Combinations Modal & Accordion Styles */
+.psalm-combinations-content {
+    max-width: 650px;
+    padding: 0;
+    overflow-y: auto; /* scroll the entire modal content block */
+    max-height: 80vh;
+    max-height: 80dvh;
+    display: block; /* standard block layout */
+}
+
+.psalm-combinations-header {
+    padding: 1.5rem 2rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    background-color: var(--hover-color);
+    position: sticky; /* keep header visible on scroll */
+    top: 0;
+    z-index: 10;
+}
+
+.psalm-combinations-header h2 {
+    margin: 0;
+    font-size: 1.4rem;
+    color: var(--accent-color);
+}
+
+.psalm-combinations-header .close-button {
+    font-size: 2rem;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    color: var(--speaker-label-color);
+    transition: color var(--transition-speed);
+}
+
+.psalm-combinations-header .close-button:hover {
+    color: var(--text-color);
+}
+
+.psalm-combinations-body {
+    padding: 1.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.accordion-item {
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background-color: var(--card-background);
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+}
+
+.accordion-item:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.25rem;
+    cursor: pointer;
+    background-color: var(--hover-color);
+    color: var(--text-color);
+    transition: background-color var(--transition-speed);
+    user-select: none;
+}
+
+.accordion-header:hover {
+    background-color: var(--border-color);
+}
+
+.accordion-header-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+    text-align: left;
+    padding-right: 0.5rem;
+}
+
+.accordion-title {
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--text-color);
+    line-height: 1.2;
+}
+
+.accordion-citation {
+    font-size: 0.8rem;
+    font-weight: normal;
+    color: var(--text-color);
+    opacity: 0.65;
+    font-style: italic;
+    line-height: 1.2;
+}
+
+.accordion-icon {
+    font-size: 0.75rem;
+    transition: transform 0.3s ease;
+    opacity: 0.7;
+    flex-shrink: 0;
+}
+
+.accordion-item.active .accordion-icon {
+    transform: rotate(180deg);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: var(--card-background);
+}
+
+.accordion-content-inner {
+    padding: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.combo-option {
+    padding: 0.85rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid var(--border-color);
+    background-color: var(--hover-color);
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.combo-option:hover {
+    background-color: var(--card-background);
+    border-color: var(--accent-color);
+    transform: translateY(-1px);
+}
+
+.combo-option:active {
+    transform: translateY(0);
+}
+
+.combo-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.5rem;
+    width: 100%;
+    flex-wrap: wrap; /* Allows wrap on narrow mobile layouts */
+}
+
+.combo-title {
+    font-weight: bold;
+    color: var(--accent-color);
+    font-size: 0.95rem;
+    line-height: 1.2;
+}
+
+.combo-chapters {
+    font-size: 0.8rem;
+    color: var(--text-color);
+    opacity: 0.7;
+    font-style: italic;
+    line-height: 1.2;
+}
+
+.combo-geez {
+    font-size: 0.95rem;
+    color: var(--text-color);
+    margin-top: 0.1rem;
+    font-style: normal; /* Ge'ez text should not be italicized */
+}
+
+.combo-translit {
+    font-size: 0.8rem;
+    color: var(--text-color);
+    opacity: 0.7;
+    font-style: italic; /* Transliteration should be italicized */
+    line-height: 1.3;
+}
+
+.psalm-combinations-instructions {
+    padding: 1rem 2rem 0.5rem;
+    font-size: 0.85rem;
+    line-height: 1.45;
+    color: var(--text-color);
+    opacity: 0.8;
+    border-bottom: 1px solid var(--border-color);
+    background-color: var(--card-background);
+}
+
+/* Typical Liturgy Psalms Modal Styles */
+.typical-psalms-modal-content {
+    max-width: 650px;
+    padding: 0;
+    overflow-y: auto;
+    max-height: 80vh;
+    max-height: 80dvh;
+    display: block;
+}
+
+.typical-psalms-modal-header {
+    padding: 1.5rem 2rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    background-color: var(--hover-color);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.typical-psalms-modal-header h2 {
+    margin: 0;
+    font-size: 1.4rem;
+    color: var(--accent-color);
+}
+
+.typical-psalms-modal-header .close-button {
+    font-size: 2rem;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    color: var(--speaker-label-color);
+    transition: color var(--transition-speed);
+    cursor: pointer;
+}
+
+.typical-psalms-modal-header .close-button:hover {
+    color: var(--text-color);
+}
+
+.typical-psalms-modal-instructions {
+    padding: 1rem 2rem 0.5rem;
+    font-size: 0.85rem;
+    line-height: 1.45;
+    color: var(--text-color);
+    opacity: 0.8;
+    border-bottom: 1px solid var(--border-color);
+    background-color: var(--card-background);
+}
+
+.typical-psalms-modal-body {
+    padding: 1.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.typical-psalm-option {
+    padding: 0.85rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background-color: var(--card-background);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.typical-psalm-option:hover {
+    background-color: var(--hover-color);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.typical-psalm-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.typical-psalm-left {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    flex: 1;
+}
+
+.typical-psalm-right {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    align-items: flex-end;
+    flex-shrink: 0;
+    text-align: right;
+}
+
+.typical-psalm-phonetic {
+    font-weight: bold;
+    color: var(--accent-color);
+    font-size: 0.95rem;
+}
+
+.typical-psalm-geez {
+    font-size: 0.95rem;
+    color: var(--text-color);
+}
+
+.typical-psalm-ref-nkjv,
+.typical-psalm-ref-lxx {
+    font-size: 0.75rem;
+    color: var(--text-color);
+    opacity: 0.7;
+    font-style: italic;
+}
+
+.typical-psalm-ref-geez {
+    font-size: 0.8rem;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+/* Chant selection button — two-line display when active */
+.typical-psalms-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    text-align: left;
+    height: auto;
+    min-height: 2.4rem;
+    line-height: 1.35;
+}
+
+.typical-psalms-btn .chant-btn-phonetic {
+    font-weight: 600;
+    font-size: 0.88rem;
+}
+
+.typical-psalms-btn .chant-btn-geez {
+    font-size: 0.82rem;
+    opacity: 0.8;
+    margin-top: 0.1rem;
+}
+
+/* Clear Psalm Chant button */
+.clear-psalm-chant-btn {
+    margin-top: 0.35rem;
+    width: 100%;
+    font-size: 0.8rem;
+    opacity: 0.75;
+}
+
+.clear-psalm-chant-btn:hover {
+    opacity: 1;
+}
+
+
+@media (max-width: 900px) {
+    .psalm-combinations-content {
+        margin: 1.5rem auto;
+        width: 92%;
+        max-height: 80vh;
+        max-height: 80dvh;
+    }
+    
+    .psalm-combinations-header {
+        padding: 1.25rem 1.5rem 0.85rem;
+    }
+
+    .psalm-combinations-instructions {
+        padding: 1rem 1.5rem 0.5rem;
+        font-size: 0.8rem;
+    }
+    
+    .psalm-combinations-body {
+        padding: 1.25rem 1.5rem;
+        gap: 0.5rem;
+    }
+    
+    .accordion-header {
+        padding: 0.85rem 1.1rem;
+    }
+    
+    .combo-option {
+        padding: 0.75rem 0.9rem;
+    }
+
+    .typical-psalms-modal-content {
+        margin: 1.5rem auto;
+        width: 92%;
+        max-height: 80vh;
+        max-height: 80dvh;
+    }
+    
+    .typical-psalms-modal-header {
+        padding: 1.25rem 1.5rem 0.85rem;
+    }
+
+    .typical-psalms-modal-instructions {
+        padding: 1rem 1.5rem 0.5rem;
+        font-size: 0.8rem;
+    }
+    
+    .typical-psalms-modal-body {
+        padding: 1.25rem 1.5rem;
+        gap: 0.5rem;
+    }
+    
+    .typical-psalm-option {
+        padding: 0.75rem 0.9rem;
+    }
+}
+
+.sub-sub-section-title {
+    margin-left: 3rem;
+    font-size: 1.5rem;
+}
+
+.sub-sub-sub-section-title {
+    margin-left: 4.5rem;
+    font-size: 1.5rem;
+}
+
+/* Card Inline Lectionary Picker (Footer) */
+.card-inline-lectionary-picker {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    font-size: 0.8rem;
+    pointer-events: auto;
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.card-inline-lectionary-picker .lectionary-picker-single-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 0.65rem;
+    max-width: 100%;
+}
+
+.card-inline-lectionary-picker .psalm-nkjv-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--speaker-label-color);
+    margin-right: 0.35rem;
+    flex-shrink: 0;
+    letter-spacing: 0.04em;
+}
+
+.card-inline-lectionary-picker .lectionary-picker-book-select {
+    max-width: 250px;
+    font-size: 0.76rem;
+    padding: 0.15rem 1.6rem 0.15rem 0.45rem;
+    height: 24px;
+    line-height: 1.2;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-right: 0.2rem;
+}
+
+.card-inline-lectionary-picker .picker-field {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    flex-shrink: 0;
+}
+
+.card-inline-lectionary-picker .picker-field label {
+    font-size: 0.7rem;
+    color: var(--speaker-label-color);
+    font-weight: 600;
+    margin: 0;
+    flex-shrink: 0;
+}
+
+.card-inline-lectionary-picker .picker-field select {
+    font-size: 0.76rem;
+    padding: 0.15rem 1.1rem 0.15rem 0.35rem;
+    border-radius: 4px;
+    height: 24px;
+    line-height: 1.2;
+    width: 62px;
+    max-width: 68px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+.card-inline-lectionary-picker .typical-psalms-btn {
+    font-size: 0.72rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    height: auto;
+    min-height: 24px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 220px;
+    margin-left: 0.25rem;
+    text-align: left;
+}
+
+.card-inline-lectionary-picker .typical-psalms-btn .chant-btn-phonetic {
+    display: block;
+    font-size: 0.7rem;
+    line-height: 1.1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.card-inline-lectionary-picker .typical-psalms-btn .chant-btn-geez {
+    display: block;
+    font-size: 0.68rem;
+    line-height: 1.1;
+    opacity: 0.85;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.card-inline-lectionary-picker .clear-psalm-chant-btn {
+    font-size: 0.7rem;
+    padding: 0.15rem 0.35rem;
+    border-radius: 4px;
+    height: 24px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    max-width: 50px;
+    margin-left: 0.15rem;
+}
+
+/* Slide mode adjustments for card inline picker */
+body.presentation-mode-slides .card-inline-lectionary-picker {
+    position: relative;
+    z-index: 10;
+}
+
+/* Creed cross-navigation button (appears in both modes) */
+.creed-nav-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.72rem;
+    padding: 0.25rem 0.6rem;
+    white-space: nowrap;
+    letter-spacing: 0.03em;
+    flex-shrink: 0;
+    width: auto;
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: 0.5rem;
+}
+
+/* Day cross-navigation buttons (only visible in slides mode) */
+.day-nav-btn,
+.day-nav-group {
+    display: none;
+}
+
+body.presentation-mode-slides .day-nav-group {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: 0.5rem;
+}
+
+body.presentation-mode-slides .day-nav-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.72rem;
+    padding: 0.25rem 0.6rem;
+    white-space: nowrap;
+    letter-spacing: 0.03em;
+    flex-shrink: 0;
+    width: auto;
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: 0.5rem;
+}
+
+body.presentation-mode-slides .day-nav-group .day-nav-btn {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.creed-nav-btn .creed-nav-icon,
+.day-nav-btn .creed-nav-icon {
+    flex-shrink: 0;
+    opacity: 0.85;
+}
+
+/* Highlight animation when navigating to a card */
+@keyframes nav-highlight-pulse {
+    0% { box-shadow: 0 0 0 0 rgba(var(--accent-rgb, 100, 149, 237), 0.5); }
+    50% { box-shadow: 0 0 12px 4px rgba(var(--accent-rgb, 100, 149, 237), 0.35); }
+    100% { box-shadow: 0 0 0 0 rgba(var(--accent-rgb, 100, 149, 237), 0); }
+}
+
+.prayer-card.nav-highlight {
+    animation: nav-highlight-pulse 0.75s ease-in-out 2;
+}
+
+/* ==========================================
+ * ST. ATHANASIUS PSALTER GUIDE STYLES
+ * ========================================== */
+
+.athanasius-modal-content {
+    max-width: 850px;
+    width: 90%;
+    max-height: 88vh;
+    max-height: 88dvh;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    padding: 1.5rem;
+}
+
+.athanasius-modal-header {
+    text-align: center;
+    margin-bottom: 0.85rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.athanasius-modal-header h2 {
+    margin: 0;
+    font-size: 1.4rem;
+    color: var(--accent-color);
+}
+
+.athanasius-subtitle {
+    font-size: 0.82rem;
+    opacity: 0.8;
+    margin-top: 0.25rem;
+}
+
+.athanasius-search-container {
+    margin-bottom: 0.75rem;
+    box-sizing: border-box;
+}
+
+.athanasius-search-container input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.65rem 0.9rem;
+    font-size: 0.9rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--bg-color);
+    color: var(--text-color);
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.athanasius-search-container input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(184, 134, 11, 0.2);
+}
+
+.athanasius-category-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-bottom: 0.75rem;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+.athanasius-chip {
+    background: var(--hover-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    padding: 0.3rem 0.65rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    white-space: nowrap;
+}
+
+.athanasius-chip:hover {
+    background: var(--border-color);
+}
+
+.athanasius-chip.active {
+    background: var(--accent-color);
+    color: var(--accent-text-color, #fff);
+    border-color: var(--accent-color);
+    font-weight: bold;
+}
+
+.athanasius-results-count {
+    font-size: 0.8rem;
+    opacity: 0.8;
+    margin-bottom: 0.6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.athanasius-scroll-hint {
+    font-size: 0.75rem;
+    opacity: 0.75;
+    font-style: italic;
+    color: var(--accent-color);
+}
+
+.athanasius-prescriptions-list {
+    overflow-y: auto;
+    max-height: 52vh;
+    max-height: 52dvh;
+    padding-right: 0.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    box-sizing: border-box;
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-color) var(--hover-color);
+}
+
+.athanasius-prescriptions-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.athanasius-prescriptions-list::-webkit-scrollbar-track {
+    background: var(--hover-color);
+    border-radius: 3px;
+}
+
+.athanasius-prescriptions-list::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+    border-radius: 3px;
+}
+
+.athanasius-card {
+    background: var(--card-bg, rgba(255, 255, 255, 0.05));
+    border: 1px solid var(--border-color);
+    border-left: 4px solid var(--accent-color);
+    border-radius: 8px;
+    padding: 0.85rem;
+    box-sizing: border-box;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.athanasius-card:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.athanasius-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 0.4rem;
+}
+
+.athanasius-card-title {
+    font-weight: bold;
+    font-size: 0.98rem;
+    color: var(--accent-color);
+    line-height: 1.3;
+}
+
+.athanasius-card-quote {
+    font-size: 0.88rem;
+    line-height: 1.45;
+    margin-bottom: 0.6rem;
+    font-style: italic;
+    color: var(--text-color);
+}
+
+.athanasius-card-footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.6rem;
+    border-top: 1px dashed var(--border-color);
+    padding-top: 0.5rem;
+    margin-top: 0.4rem;
+}
+
+.athanasius-psalms-pills {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.athanasius-psalms-label {
+    font-size: 0.78rem;
+    font-weight: bold;
+    opacity: 0.85;
+}
+
+.athanasius-psalm-badge {
+    background: var(--accent-color);
+    color: var(--accent-text-color, #fff);
+    font-size: 0.78rem;
+    padding: 0.12rem 0.45rem;
+    border-radius: 12px;
+    font-weight: bold;
+}
+
+.athanasius-actions {
+    display: flex;
+    gap: 0.4rem;
+}
+
+.ath-btn {
+    font-size: 0.78rem;
+    padding: 0.35rem 0.75rem;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.15s ease;
+}
+
+.ath-set-btn {
+    background: var(--accent-color);
+    color: var(--accent-text-color, #fff);
+    border-color: var(--accent-color);
+}
+
+.ath-set-btn:hover {
+    filter: brightness(1.1);
+}
+
+.ath-add-btn {
+    background: var(--hover-color);
+    color: var(--text-color);
+}
+
+.ath-add-btn:hover {
+    background: var(--border-color);
+}
+
+/* St. Athanasius Reader Badge */
+.athanasius-reader-badge {
+    margin: 0.5rem 0 1rem 0;
+    padding: 0.6rem 0.9rem;
+    background: var(--hover-color);
+    border-left: 3px solid var(--accent-color);
+    border-radius: 4px;
+    font-size: 0.88rem;
+    line-height: 1.4;
+}
+
+.athanasius-reader-badge-title {
+    font-weight: bold;
+    font-size: 0.8rem;
+    color: var(--accent-color);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.2rem;
+}
+
+.athanasius-reader-badge-text {
+    font-style: italic;
+    opacity: 0.9;
+}
+
+/* Mobile Adjustments for St. Athanasius Guide Modal */
+@media (max-width: 900px) {
+    .athanasius-modal-content {
+        margin: 0.75rem auto;
+        width: 92%;
+        padding: 1rem 0.85rem;
+        max-height: 86vh;
+        max-height: 86dvh;
+        box-sizing: border-box;
+    }
+    .athanasius-modal-header h2 {
+        font-size: 1.2rem;
+    }
+    .athanasius-subtitle {
+        font-size: 0.78rem;
+    }
+    .athanasius-search-container input {
+        padding: 0.55rem 0.75rem;
+        font-size: 0.85rem;
+    }
+    .athanasius-chip {
+        padding: 0.25rem 0.55rem;
+        font-size: 0.76rem;
+    }
+    .athanasius-prescriptions-list {
+        max-height: 54vh;
+        max-height: 54dvh;
+        padding-right: 0.25rem;
+    }
+    .athanasius-card {
+        padding: 0.75rem;
+    }
+    .athanasius-card-title {
+        font-size: 0.92rem;
+    }
+    .athanasius-card-quote {
+        font-size: 0.83rem;
+    }
+    .athanasius-card-footer {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.4rem;
+    }
+    .athanasius-actions {
+        justify-content: flex-end;
+        width: 100%;
+    }
+    .ath-btn {
+        flex: 1;
+        text-align: center;
+        padding: 0.4rem 0.5rem;
+        font-size: 0.76rem;
+    }
+}
+
+/* Se'atat Lectionary Info Modal */
+.seatat-info-modal-content {
+    max-width: 920px;
+    width: 94%;
+    max-height: 88vh;
+    max-height: 88dvh;
+    overflow-y: auto;
+    padding: 1.5rem;
+    box-sizing: border-box;
+}
+
+.seatat-info-modal-header {
+    text-align: center;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+.seatat-info-modal-header h2 {
+    margin: 0;
+    font-size: 1.4rem;
+    color: var(--accent-color);
+}
+
+.seatat-subtitle {
+    font-size: 0.85rem;
+    opacity: 0.85;
+    margin-top: 0.3rem;
+}
+
+.table-responsive {
+    overflow-x: auto;
+    margin-bottom: 1rem;
+    -webkit-overflow-scrolling: touch;
+}
+
+.seatat-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+    text-align: left;
+    min-width: 680px;
+}
+
+.seatat-table th, .seatat-table td {
+    padding: 0.6rem 0.75rem;
+    border: 1px solid var(--border-color);
+    vertical-align: top;
+}
+
+.seatat-table th {
+    background: var(--hover-color);
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+.seatat-footnote {
+    font-size: 0.78rem;
+    font-style: italic;
+    opacity: 0.85;
+    margin-bottom: 1.25rem;
+    line-height: 1.4;
+}
+
+.seatat-psalms-title {
+    font-size: 1rem;
+    color: var(--accent-color);
+    margin-bottom: 0.75rem;
+    border-bottom: 1px dashed var(--border-color);
+    padding-bottom: 0.3rem;
+}
+
+.seatat-psalms-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    font-size: 0.88rem;
+}
+
+.seatat-psalms-list li {
+    background: var(--hover-color);
+    border-left: 3px solid var(--accent-color);
+    padding: 0.6rem 0.85rem;
+    border-radius: 4px;
+    line-height: 1.5;
+}
+
+
+

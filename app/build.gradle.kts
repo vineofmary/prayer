@@ -3,17 +3,17 @@ plugins {
 }
 
 android {
-    namespace = "com.example.prayer"
+    namespace = "app.mountofmercy.prayer"
     compileSdk {
         version = release(36)
     }
 
     defaultConfig {
-        applicationId = "com.example.prayer"
+        applicationId = "app.mountofmercy.prayer"
         minSdk = 24
         targetSdk = 36
-        versionCode = 2
-        versionName = "0.8.3"
+        versionCode = 3
+        versionName = "1.0.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -27,9 +27,14 @@ android {
             )
         }
     }
+
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    buildFeatures {
+        buildConfig = true
     }
 }
 
@@ -39,6 +44,7 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

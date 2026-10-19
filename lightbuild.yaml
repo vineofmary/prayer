@@ -1,0 +1,45 @@
+# Lightbuild Root Workspace Configuration
+# Official Android Declarative Build Specification for AI Agents and Android CLI
+# Documentation & Guide: https://developer.android.com/tools/agents/lightbuild
+# Schema Version: 1.0 (declarative build system for Android Studio & Agentic workflows)
+
+format_version: "1.0"
+
+workspace:
+  name: "mount-of-mercy"
+  description: "The Mount of Mercy (ደብረ ምሕረት) — Orthodox Tewahedo Prayer & Liturgy Native Android Application"
+  default_module: "app"
+  sdk:
+    compile: 36
+    min: 24
+    target: 36
+    build_tools: "36.0.0"
+  jdk:
+    version: 17
+  declarative_features:
+    compose: true
+    multiplatform_ready: false
+    agentic_tooling: true
+
+modules:
+  - path: "app"
+    type: "android-application"
+    build_file: "build.light.yaml"
+
+# Agentic developer workflow integration settings for AI Studio phone browser authoring
+agent_workflow:
+  platform: "ai-studio"
+  mobile_phone_authoring: true
+  preview_engine: "vite-web-applet"
+  transpiler: "lightbuild-to-gradle"
+  supported_languages:
+    - "en"        # English
+    - "gez"       # Ge'ez
+    - "am"        # Amharic
+    - "ti"        # Tigrinya
+    - "es-PR"     # Puerto Rican Spanish
+  capabilities:
+    - "offline_first_storage"
+    - "multilingual_parallel_script"
+    - "rubric_color_coding"
+    - "phone_screen_touch_optimization"

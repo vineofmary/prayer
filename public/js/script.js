@@ -1,0 +1,9476 @@
+// --- DOM Elements ---
+const body = document.body;
+// --- Firebase Configuration ---
+const firebaseConfig = {
+    apiKey: "AIzaSyAu50q3NfDNaZUWsxU0-YIlql3bQsc6_QQ",
+    authDomain: "mount-of-mercy.firebaseapp.com",
+    projectId: "mount-of-mercy",
+    storageBucket: "mount-of-mercy.firebasestorage.app",
+    messagingSenderId: "974361367981",
+    appId: "1:974361367981:web:752f9a6fb815e208f4fd24",
+    measurementId: "G-2B968Y7B26"
+};
+
+// Initialize Firebase (Compat)
+firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth();
+const db = firebase.firestore();
+
+let analytics = null;
+try {
+    if (window.location.protocol.startsWith('http') && typeof firebase.analytics === 'function') {
+        analytics = firebase.analytics();
+    } else {
+        console.warn("Firebase Analytics is blocked by ad-blocker or not in http/https environment. Skipping.");
+    }
+} catch (e) {
+    console.warn("Firebase Analytics initialization failed:", e);
+}
+
+// --- Application Logic ---
+
+// --- DOM Element References ---
+let header, leftSidebar, rightSidebar, mainContent, sidebarToggle, prayersPanelToggle, sidebarBackdrop,
+    themeToggle, paletteSelector, geezFontSizeSlider, englishFontSizeSlider, lockFontSizesToggle,
+    boldTextToggle, ethiopicFontSelect, englishFontSelect, languageTogglesDiv, unofficialLanguageTogglesDiv,
+    unofficialLanguagesSection, prayerDisplay, languageOrderList, copyNotification, presentationModeToggleHeader,
+    presModeIconSlides, presModeIconScroll, layoutToggleHeader, layoutIconColumn, layoutIconRow,
+    showLanguageLabelsToggle, showSpeakerLabelsToggle, paragraphModeToggle, showRubricationToggle,
+    languageColorCodingSelect, dynamicFontSizingLabel, dynamicFontSizingToggle, forceUniformFontSizeLabel,
+    forceUniformFontSizeToggle, slideTransitionSelect, searchContainer, searchToggle, searchClose,
+    searchInput, searchCount, searchPrev, searchNext, helpButton, showSupplicationsToggle,
+    showDailyPrayerToggle, showGateOfLightToggle, showYewediswaMelaektToggle, showGeezPhoneticChantsToggle,
+    showLoanwordOriginsToggle, useExternalBibleAPIToggle, useExternalBibleAPILabel, expandCollapseAllButton,
+    feedbackButton, helpModal, feedbackModal, ephremStoryModal, ephremStoryInfoBtn, closeEphremModal,
+    eusebiusModal, eusebiusInfoBtn, closeEusebiusModal, psalmCombinationsBtn, psalmCombinationsModal,
+    closePsalmCombinationsModal, psalmCombinationsAccordion, typicalPsalmsModal, closeTypicalPsalmsModalBtn,
+    typicalPsalmsList, scribeLoginModal, scribeEditorModal, changelogModal, changelogList, closeChangelogModal,
+    athanasiusModal, athanasiusGuideBtn, closeAthanasiusModal, athanasiusSearchInput, athanasiusCategoryChips,
+    athanasiusResultsCount, athanasiusPrescriptionsList, appVersionContainer, modalBackdrop,
+    sendFeedbackButtonHelp, sendFeedbackButtonModal, fontPreview, psalmSelectorContainer, psalmSummary,
+    clearPsalmsButton, prophetSongsSelectorContainer, prophetSongsSummary, clearProphetSongsButton,
+    kidaseGatedSection, kidaseModeToggle, kidaseSettings, showMatinsToggle, showTeklilToggle,
+    teklilNamesSettings, bridegroomNameInput, brideNameInput, morningPsalmGospelSettings,
+    morningPsalmRefContainer, morningGospelRefContainer, vespersPsalmGospelSettings,
+    eveningPsalmRefContainer, eveningGospelRefContainer, anaphoraSelector, showAnaphoraToggle,
+    anaphoraSettings, showVespersToggle, kidaseDaySelector, covenantPrayerSelector,
+    hideQuietPrayersToggle, openMiracleModalBtn, miracleModal, closeMiracleModalBtn,
+    miracleSearchInput, miracleMostReadToggle, miracleListContainer, selectedMiracleText,
+    miraclePositionContainer, miraclePositionRadios, holyFiftyDaysToggle, servantNameInput,
+    shareLinkButton, shareScripturesButton, patriarchNameInput, bishopNameInput, attendingBishopsInput,
+    churchNameInput, countryNameInput, headOfStateInput, anglicizeNamesToggle, bibleVerseSidebar,
+    kidasePaulineRefContainer, kidaseUniversalRefContainer, kidaseActsRefContainer,
+    kidasePsalmRefContainer, kidaseGospelRefContainer, hardRefreshButton;
+
+// Scribe State
+let isScribeLoggedIn = false;
+let isScribeModeActive = false;
+let currentScribeUser = null;
+let prayersFromFirestore = []; // Cache for Firestore data
+
+function bindDOMElements() {
+    header = document.querySelector('header');
+    leftSidebar = document.getElementById('left-sidebar');
+    rightSidebar = document.getElementById('right-sidebar');
+    mainContent = document.querySelector('.main-content');
+    sidebarToggle = document.getElementById('sidebar-toggle');
+    prayersPanelToggle = document.getElementById('prayers-panel-toggle');
+    sidebarBackdrop = document.getElementById('sidebar-backdrop');
+    themeToggle = document.getElementById('theme-toggle');
+    paletteSelector = document.getElementById('palette-selector');
+    geezFontSizeSlider = document.getElementById('geez-font-size-slider');
+    englishFontSizeSlider = document.getElementById('english-font-size-slider');
+    lockFontSizesToggle = document.getElementById('lock-font-sizes');
+    boldTextToggle = document.getElementById('bold-text-toggle');
+    ethiopicFontSelect = document.getElementById('ethiopic-font-select');
+    englishFontSelect = document.getElementById('english-font-select');
+    languageTogglesDiv = document.getElementById('language-toggles');
+    unofficialLanguageTogglesDiv = document.getElementById('unofficial-language-toggles');
+    unofficialLanguagesSection = document.getElementById('unofficial-languages-section');
+    prayerDisplay = document.getElementById('prayer-display');
+    languageOrderList = document.getElementById('language-order-list');
+    copyNotification = document.getElementById('copy-notification');
+    presentationModeToggleHeader = document.getElementById('presentation-mode-toggle-header');
+    if (presentationModeToggleHeader) {
+        presModeIconSlides = presentationModeToggleHeader.querySelector('.pres-mode-icon-slides');
+        presModeIconScroll = presentationModeToggleHeader.querySelector('.pres-mode-icon-scroll');
+    }
+    layoutToggleHeader = document.getElementById('layout-toggle-header');
+    if (layoutToggleHeader) {
+        layoutIconColumn = layoutToggleHeader.querySelector('.layout-icon-column');
+        layoutIconRow = layoutToggleHeader.querySelector('.layout-icon-row');
+    }
+
+    showLanguageLabelsToggle = document.getElementById('show-language-labels');
+    showSpeakerLabelsToggle = document.getElementById('show-speaker-labels');
+    paragraphModeToggle = document.getElementById('paragraph-mode');
+    showRubricationToggle = document.getElementById('show-rubrication');
+    languageColorCodingSelect = document.getElementById('language-color-coding-select');
+    dynamicFontSizingLabel = document.getElementById('dynamic-font-sizing-label');
+    dynamicFontSizingToggle = document.getElementById('dynamic-font-sizing');
+    forceUniformFontSizeLabel = document.getElementById('force-uniform-font-size-label');
+    forceUniformFontSizeToggle = document.getElementById('force-uniform-font-size');
+    slideTransitionSelect = document.getElementById('slide-transition-select');
+    searchContainer = document.getElementById('search-container');
+    searchToggle = document.getElementById('search-toggle');
+    searchClose = document.getElementById('search-close');
+    searchInput = document.getElementById('search-input');
+    searchCount = document.getElementById('search-count');
+    searchPrev = document.getElementById('search-prev');
+    searchNext = document.getElementById('search-next');
+    helpButton = document.getElementById('help-button');
+    showSupplicationsToggle = document.getElementById('show-supplications-toggle');
+    showDailyPrayerToggle = document.getElementById('show-daily-prayer-toggle');
+    showGateOfLightToggle = document.getElementById('show-gate-of-light-toggle');
+    showYewediswaMelaektToggle = document.getElementById('show-yewediswa-melaekt-toggle');
+    showGeezPhoneticChantsToggle = document.getElementById('show-geez-phonetic-chants');
+    showLoanwordOriginsToggle = document.getElementById('show-loanword-origins');
+    useExternalBibleAPIToggle = document.getElementById('use-external-bible-api');
+    useExternalBibleAPILabel = document.getElementById('external-bible-api-label');
+    expandCollapseAllButton = document.getElementById('expand-collapse-all-button');
+    feedbackButton = document.getElementById('feedback-button');
+    helpModal = document.getElementById('help-modal');
+    feedbackModal = document.getElementById('feedback-modal');
+    ephremStoryModal = document.getElementById('ephrem-story-modal');
+    ephremStoryInfoBtn = document.getElementById('ephrem-story-info-btn');
+    closeEphremModal = document.getElementById('close-ephrem-modal');
+    eusebiusModal = document.getElementById('eusebius-modal');
+    eusebiusInfoBtn = document.getElementById('eusebius-info-btn');
+    closeEusebiusModal = document.getElementById('close-eusebius-modal');
+    psalmCombinationsBtn = document.getElementById('psalm-combinations-btn');
+    psalmCombinationsModal = document.getElementById('psalm-combinations-modal');
+    closePsalmCombinationsModal = document.getElementById('close-psalm-combinations-modal');
+    psalmCombinationsAccordion = document.getElementById('psalm-combinations-accordion');
+    typicalPsalmsModal = document.getElementById('typical-psalms-modal');
+    closeTypicalPsalmsModalBtn = document.getElementById('close-typical-psalms-modal');
+    typicalPsalmsList = document.getElementById('typical-psalms-list');
+    scribeLoginModal = document.getElementById('scribe-login-modal');
+    scribeEditorModal = document.getElementById('scribe-editor-modal');
+    changelogModal = document.getElementById('changelog-modal');
+    changelogList = document.getElementById('changelog-list');
+    closeChangelogModal = document.getElementById('close-changelog-modal');
+    athanasiusModal = document.getElementById('athanasius-modal');
+    athanasiusGuideBtn = document.getElementById('athanasius-guide-btn');
+    closeAthanasiusModal = document.getElementById('close-athanasius-modal');
+    athanasiusSearchInput = document.getElementById('athanasius-search-input');
+    athanasiusCategoryChips = document.getElementById('athanasius-category-chips');
+    athanasiusResultsCount = document.getElementById('athanasius-results-count');
+    athanasiusPrescriptionsList = document.getElementById('athanasius-prescriptions-list');
+    appVersionContainer = document.getElementById('app-version-container');
+    modalBackdrop = document.getElementById('modal-backdrop');
+
+    sendFeedbackButtonHelp = document.getElementById('send-feedback-button-help');
+    sendFeedbackButtonModal = document.getElementById('send-feedback-button');
+    fontPreview = document.getElementById('font-preview');
+    psalmSelectorContainer = document.getElementById('psalm-selector-container');
+    psalmSummary = document.getElementById('psalm-summary');
+    clearPsalmsButton = document.getElementById('clear-psalms-button');
+
+    prophetSongsSelectorContainer = document.getElementById('prophet-songs-selector-container');
+    prophetSongsSummary = document.getElementById('prophet-songs-summary');
+    clearProphetSongsButton = document.getElementById('clear-prophet-songs-button');
+    kidaseGatedSection = document.getElementById('kidase-gated-section');
+    kidaseModeToggle = document.getElementById('kidase-mode-toggle');
+    kidaseSettings = document.getElementById('kidase-settings');
+    showMatinsToggle = document.getElementById('show-matins');
+    showTeklilToggle = document.getElementById('show-teklil');
+    teklilNamesSettings = document.getElementById('teklil-names-settings');
+    bridegroomNameInput = document.getElementById('bridegroom-name-input');
+    brideNameInput = document.getElementById('bride-name-input');
+    morningPsalmGospelSettings = document.getElementById('morning-psalm-gospel-settings');
+    morningPsalmRefContainer = document.getElementById('morning-psalm-ref-container');
+    morningGospelRefContainer = document.getElementById('morning-gospel-ref-container');
+    vespersPsalmGospelSettings = document.getElementById('vespers-psalm-gospel-settings');
+    eveningPsalmRefContainer = document.getElementById('evening-psalm-ref-container');
+    eveningGospelRefContainer = document.getElementById('evening-gospel-ref-container');
+    anaphoraSelector = document.getElementById('anaphora-selector');
+    showAnaphoraToggle = document.getElementById('show-anaphora-toggle');
+    anaphoraSettings = document.getElementById('anaphora-settings');
+    showVespersToggle = document.getElementById('show-vespers');
+    kidaseDaySelector = document.getElementById('kidase-day-selector');
+    covenantPrayerSelector = document.getElementById('covenant-prayer-selector');
+    hideQuietPrayersToggle = document.getElementById('hide-quiet-prayers');
+    openMiracleModalBtn = document.getElementById('open-miracle-modal-btn');
+    miracleModal = document.getElementById('miracle-modal');
+    closeMiracleModalBtn = document.getElementById('close-miracle-modal');
+    miracleSearchInput = document.getElementById('miracle-search-input');
+    miracleMostReadToggle = document.getElementById('miracle-most-read-toggle');
+    miracleListContainer = document.getElementById('miracle-list-container');
+    selectedMiracleText = document.getElementById('selected-miracle-text');
+
+    miraclePositionContainer = document.getElementById('miracle-position-container');
+    miraclePositionRadios = document.getElementsByName('miracle-position');
+    holyFiftyDaysToggle = document.getElementById('holy-fifty-days-toggle');
+    servantNameInput = document.getElementById('servant-name-input');
+    shareLinkButton = document.getElementById('share-link-button');
+    shareScripturesButton = document.getElementById('share-scriptures-button');
+    patriarchNameInput = document.getElementById('patriarch-name-input');
+    bishopNameInput = document.getElementById('bishop-name-input');
+    attendingBishopsInput = document.getElementById('attending-bishops-input');
+    churchNameInput = document.getElementById('church-name-input');
+    countryNameInput = document.getElementById('country-name-input');
+    headOfStateInput = document.getElementById('head-of-state-input');
+    anglicizeNamesToggle = document.getElementById('anglicize-names-toggle');
+    bibleVerseSidebar = document.querySelector('.bible-verse-sidebar');
+
+    kidasePaulineRefContainer = document.getElementById('kidase-pauline-ref-container');
+    kidaseUniversalRefContainer = document.getElementById('kidase-universal-ref-container');
+    kidaseActsRefContainer = document.getElementById('kidase-acts-ref-container');
+    kidasePsalmRefContainer = document.getElementById('kidase-psalm-ref-container');
+    kidaseGospelRefContainer = document.getElementById('kidase-gospel-ref-container');
+    hardRefreshButton = document.getElementById('hard-refresh-button');
+}
+const PSALM_COMBINATIONS = {
+    'daily': {
+        name: 'Daily Prayer',
+        psalms: [12, 15, 22, 50, 90, 102, 135]
+    },
+    'all': {
+        name: 'All | ኵሉ',
+        dropdownLabel: 'All | ኵሉ (1-150)',
+        psalms: Array.from({length: 150}, (_, i) => i + 1),
+        prophetSongs: []
+    },
+    'monday': {
+        name: 'Monday | ሰኑይ',
+        dropdownLabel: 'Monday | ሰኑይ (1-30)',
+        psalms: Array.from({length: 30}, (_, i) => i + 1),
+        prophetSongs: []
+    },
+    'tuesday': {
+        name: 'Tuesday | ሠሉስ',
+        dropdownLabel: 'Tuesday | ሠሉስ (31-60)',
+        psalms: Array.from({length: 30}, (_, i) => i + 31),
+        prophetSongs: []
+    },
+    'wednesday': {
+        name: 'Wednesday | ረቡዕ',
+        dropdownLabel: 'Wednesday | ረቡዕ (61-80)',
+        psalms: Array.from({length: 20}, (_, i) => i + 61),
+        prophetSongs: []
+    },
+    'thursday': {
+        name: 'Thursday | ሐሙስ',
+        dropdownLabel: 'Thursday | ሐሙስ (81-110)',
+        psalms: Array.from({length: 30}, (_, i) => i + 81),
+        prophetSongs: []
+    },
+    'friday': {
+        name: 'Friday | ዓርብ',
+        dropdownLabel: 'Friday | ዓርብ (111-130)',
+        psalms: Array.from({length: 20}, (_, i) => i + 111),
+        prophetSongs: []
+    },
+    'saturday': {
+        name: 'Saturday | ቀዳሚት',
+        dropdownLabel: 'Saturday | ቀዳሚት (131-150, Song of Songs 1-5)',
+        psalms: Array.from({length: 20}, (_, i) => i + 131),
+        prophetSongs: ['songOfSongs']
+    },
+    'sunday': {
+        name: 'Sunday | እሁድ',
+        dropdownLabel: 'Sunday | እሁድ (Songs of the Prophets: Moses, Hannah, Hezekiah, Manasseh, Jonah, Three Youths, Habakkuk, Isaiah, Mary, Zachariah, Simeon)',
+        psalms: [],
+        prophetSongs: [
+            'firstSongOfMoses',
+            'secondSongOfMoses',
+            'thirdSongOfMoses',
+            'prayerOfHannah',
+            'prayerOfHezekiah',
+            'prayerOfManasseh',
+            'firstPrayerOfThreeYouths',
+            'secondPrayerOfThreeYouths',
+            'thirdPrayerOfThreeYouths',
+            'prayerOfHabakkuk',
+            'prayerOfIsaiah',
+            'prayerOfMary',
+            'songOfZachariah',
+            'prayerOfSimeon',
+            'prayerOfJonah'
+        ]
+    },
+    'nigus1': {
+        name: 'Nigus #1',
+        dropdownLabel: 'Nigus #1: Fikarie Zetsadiqan Wezehatian… | ፍካሬ ዘጻድቃን ወዘኃጥኣን… | The exposition of the righteous and of the sinners… (1-10)',
+        psalms: Array.from({length: 10}, (_, i) => i + 1),
+        prophetSongs: []
+    },
+    'nigus2': {
+        name: 'Nigus #2',
+        dropdownLabel: 'Nigus #2: Adihineni Egzio… | አድኅነኒ እግዚኦ… | Help, Lord… (11-20)',
+        psalms: Array.from({length: 10}, (_, i) => i + 11),
+        prophetSongs: []
+    },
+    'nigus3': {
+        name: 'Nigus #3',
+        dropdownLabel: 'Nigus #3: Amlakiye Amlakiye… | አምላኪየ አምላኪየ… | My God, My God… (21-30)',
+        psalms: Array.from({length: 10}, (_, i) => i + 21),
+        prophetSongs: []
+    },
+    'nigus4': {
+        name: 'Nigus #4',
+        dropdownLabel: 'Nigus #4: Bitsuan Ele… | ብፁዓን እለ… | Blessed are those… (31-40)',
+        psalms: Array.from({length: 10}, (_, i) => i + 31),
+        prophetSongs: []
+    },
+    'nigus5': {
+        name: 'Nigus #5',
+        dropdownLabel: 'Nigus #5: Keme Yafeqir Hayel… | ከመ ያፈቅር ኀየል… | As the deer pants… (41-50)',
+        psalms: Array.from({length: 10}, (_, i) => i + 41),
+        prophetSongs: []
+    },
+    'nigus6': {
+        name: 'Nigus #6',
+        dropdownLabel: 'Nigus #6: Lemint Yiziehar… | ለምንት ይዜኃር… | Why do you boast… (51-60)',
+        psalms: Array.from({length: 10}, (_, i) => i + 51),
+        prophetSongs: []
+    },
+    'nigus7': {
+        name: 'Nigus #7',
+        dropdownLabel: 'Nigus #7: Akonu LeEgziabihier Tigeni Nefsiye… | አኮኑ ለእግዚአብሔር ትገኒ ነፍስየ… | Truly… (61-70)',
+        psalms: Array.from({length: 10}, (_, i) => i + 61),
+        prophetSongs: []
+    },
+    'nigus8': {
+        name: 'Nigus #8',
+        dropdownLabel: 'Nigus #8: Egzio Kuneneke Habo LeNigus… | እግዚኦ ኵነኔከ ሀቦ ለንጉሥ… | Give the king Your judgments, O God… (71-80)',
+        psalms: Array.from({length: 10}, (_, i) => i + 71),
+        prophetSongs: []
+    },
+    'nigus9': {
+        name: 'Nigus #9',
+        dropdownLabel: 'Nigus #9: Egziabihier Qome… | እግዚአብሔር ቆመ… | God stands… (81-90)',
+        psalms: Array.from({length: 10}, (_, i) => i + 81),
+        prophetSongs: []
+    },
+    'nigus10': {
+        name: 'Nigus #10',
+        dropdownLabel: 'Nigus #10: Yihieyis Teamino BeEgziabihier… | ይኄይስ ተአምኖ በእግዚአብሔር… | It is good to give thanks to the Lord… (91-100)',
+        psalms: Array.from({length: 10}, (_, i) => i + 91),
+        prophetSongs: []
+    },
+    'nigus11': {
+        name: 'Nigus #11',
+        dropdownLabel: 'Nigus #11: Simeani Egzio Tselotiye… | ስምዓኒ እግዚኦ ጸሎትየ… | Hear my prayer, O Lord… (101-110)',
+        psalms: Array.from({length: 10}, (_, i) => i + 101),
+        prophetSongs: []
+    },
+    'nigus12': {
+        name: 'Nigus #12',
+        dropdownLabel: 'Nigus #12: Bitsui Beisi Zeyiferho LeEgziabihier… | ብፁዕ ብእሲ ዘይፈርሆ ለእግዚአብሔር… | Blessed is the man who fears the Lord… (111-120)',
+        psalms: Array.from({length: 10}, (_, i) => i + 111),
+        prophetSongs: []
+    },
+    'nigus13': {
+        name: 'Nigus #13',
+        dropdownLabel: 'Nigus #13: Tefesahiku Isme Yibeluni… | ተፈሣሕኩ እስመ ይቤሉኒ… | I was glad when they said to me… (121-130)',
+        psalms: Array.from({length: 10}, (_, i) => i + 121),
+        prophetSongs: []
+    },
+    'nigus14': {
+        name: 'Nigus #14',
+        dropdownLabel: 'Nigus #14: Tezekero Egzio LeDawit… | ተዘከሮ እግዚኦ ለዳዊት… | Lord, remember David… (131-140)',
+        psalms: Array.from({length: 10}, (_, i) => i + 131),
+        prophetSongs: []
+    },
+    'nigus15': {
+        name: 'Nigus #15',
+        dropdownLabel: 'Nigus #15: Qaliye Habe Egziabihier Tserahku… | ቃልየ ኀበ እግዚአብሔር ጸራኅኩ… | I cry out to the Lord with my voice… (141-150)',
+        psalms: Array.from({length: 10}, (_, i) => i + 141),
+        prophetSongs: []
+    },
+    'dawn': {
+        name: 'Dawn (1st Hour) | ነግህ',
+        dropdownLabel: 'Dawn (1st Hour) | Negih | ነግህ (62, 50, 112, 110, 99, Prayer of Zachariah)',
+        psalms: [62, 50, 112, 110, 99],
+        prophetSongs: ['songOfZachariah']
+    },
+    'sunset': {
+        name: 'Sunset (11th Hour) | ሠርክ',
+        dropdownLabel: 'Sunset (11th Hour) | Serk | ሠርክ (23, 140, 14, 145, 66, Prayer of Simeon)',
+        psalms: [23, 140, 14, 145, 66],
+        prophetSongs: ['prayerOfSimeon']
+    },
+    'nativity': {
+        name: 'Nativity | ልደት',
+        dropdownLabel: 'Nativity | Lidet | ልደት (19, 45, 85, 89, 110, 132)',
+        psalms: [19, 45, 85, 89, 110, 132],
+        prophetSongs: []
+    },
+    'baptism': {
+        name: 'Baptism | ጥምቀት',
+        dropdownLabel: 'Baptism | Timqet | ጥምቀት (42, 77, 114, 74, 85, 118)',
+        psalms: [42, 77, 114, 74, 85, 118],
+        prophetSongs: []
+    },
+    'crucifixion': {
+        name: 'Crucifixion | ስቅለት',
+        dropdownLabel: 'Crucifixion | Siqlet | ስቅለት (22, 40, 54, 69, 88)',
+        psalms: [22, 40, 54, 69, 88],
+        prophetSongs: []
+    },
+    'resurrection': {
+        name: 'Resurrection | ትንሥኤ',
+        dropdownLabel: 'Resurrection | Tinsaie | ትንሥኤ (2, 57, 111, 113, 114, 118)',
+        psalms: [2, 57, 111, 113, 114, 118],
+        prophetSongs: []
+    },
+    'ascension': {
+        name: 'Ascension | እርገት',
+        dropdownLabel: 'Ascension | Irget | እርገት (8, 15, 21, 24, 47, 108)',
+        psalms: [8, 15, 21, 24, 47, 108],
+        prophetSongs: []
+    },
+    'pentecost': {
+        name: 'Pentecost | ጰራቅሊቶስ',
+        dropdownLabel: 'Pentecost | Peraqlitos | ጰራቅሊቶስ (48, 68, 104, 145)',
+        psalms: [48, 68, 104, 145],
+        prophetSongs: []
+    }
+};
+
+const PSALM_CATEGORIES = [
+    {
+        id: 'general',
+        label: 'General Psalters',
+        items: ['daily']
+    },
+    {
+        id: 'desert_fathers',
+        label: 'Daily Psalter (Desert Fathers & Mothers, c. 4th century)',
+        items: ['all']
+    },
+    {
+        id: 'weekly',
+        label: 'Weekly Psalter (St. Yared of Aksum, c. 6th century)',
+        items: ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
+    },
+    {
+        id: 'nigus',
+        label: 'Nigus / Sibhat Psalter (St. Yared of Aksum, c. 6th century)',
+        items: ['nigus1', 'nigus2', 'nigus3', 'nigus4', 'nigus5', 'nigus6', 'nigus7', 'nigus8', 'nigus9', 'nigus10', 'nigus11', 'nigus12', 'nigus13', 'nigus14', 'nigus15']
+    },
+    {
+        id: 'hourly',
+        label: 'Hourly Psalters (Echegé Gebre-Giyorgis of Debre Libanos, 1938 AD)',
+        items: ['dawn', 'sunset']
+    },
+    {
+        id: 'feasts',
+        label: 'Feast Day Psalters (Echegé Gebre-Giyorgis of Debre Libanos, 1938 AD)',
+        items: ['nativity', 'baptism', 'crucifixion', 'resurrection', 'ascension', 'pentecost']
+    }
+];
+// --- State Variables ---
+const SETTINGS_VERSION = '4.2.5'; // Update this to force refresh load settings
+const APP_VERSION = '0.8.5-beta';
+const STATIC_CHANGELOG = [
+    { date: '2026-10-17', message: 'feat: add Puerto Rican Spanish liturgy translation and update refresh button', author: 'vineofmary' },
+    { date: '2026-04-26', message: 'fix: clear verse prayer content when language data is empty', author: 'vineofmary' },
+    { date: '2026-04-26', message: 'fix: constrain language-specific rubrication colors to legacy theme', author: 'vineofmary' },
+    { date: '2026-04-26', message: 'feat: add interactive navigation to jump to prayer cards', author: 'vineofmary' },
+    { date: '2026-04-26', message: 'refactor: optimize layout and font-size scaling for presentation mode', author: 'vineofmary' },
+    { date: '2026-04-26', message: 'feat: add toggle setting for Ge\'ez phonetics for chants', author: 'vineofmary' }
+];
+let currentTheme = {};
+let isLeftSidebarCollapsed = false;
+let isRightSidebarCollapsed = true;
+let isServantsCornerActive = false;
+let displayOptions = {};
+let displayedLanguages = {};
+let fontSizes = {};
+let selectedPsalms = [];
+let selectedProphetSongs = [];
+let selectedSeatatLectionaryDay = 'None';
+let selectedWidaseMaryamDay = 'monday';
+let isKidaseModeActive = false;
+let selectedAnaphora = 'apostles';
+let selectedMiracleId = 'none';
+let miraclePosition = 'anaphora';
+let selectedMiracleTranslationIndex = 0;
+let showSeatatReadings = false;
+let showMatins = true;
+let showTeklil = false;
+let bridegroomName = '';
+let brideName = '';
+let showVespers = false;
+let selectedKidaseDay = 'sunday';
+let selectedCovenantPrayer = 'morning';
+let showAnaphora = true;
+let hideQuietPrayers = false;
+let isHolyFiftyDays = false;
+let useExternalBibleAPI = false;
+let isInitializing = true;
+let kidaseLectionaryRefs = {
+    morningPsalm: 'Psalms 34:7-8',
+    morningGospel: 'Matthew 24:30-36',
+    eveningPsalm: 'Psalms 141:1-2',
+    eveningGospel: 'Matthew 14:15-21',
+    pauline: 'Romans 9:17-30',
+    universal: 'Jude 1:6-14',
+    acts: 'Acts 10:3-9',
+    psalm: 'Psalms 33:16-17',
+    gospel: 'Luke 18:1-9'
+};
+let customNames = {};
+let bibleData = { nkjv: null, am54: null, rgv: null, geez_psalms: null, coptic: null, loaded: false };
+
+// --- Language Registry ---
+const LANGUAGE_REGISTRY = {
+    // Main Section
+    'english': { name: 'English', category: 'main', isAuto: false },
+    'geez_script': { name: 'ግእዝ (Ge\'ez)', category: 'main', isAuto: false, isEthiopic: true },
+    'geez_phonetic': { name: 'Ge\'ez Phonetic', category: 'main', isAuto: false },
+    'amharic_script': { name: 'አማርኛ (Amharic)', category: 'main', isAuto: false, isEthiopic: true },
+    'amharic_phonetic': { name: 'Amharic Phonetic', category: 'main', isAuto: false },
+    'oromoo': { name: 'ኦሮምኛ (Oromo)', category: 'unofficial', isAuto: false, isEthiopic: true, isSeekingScribe: true },
+    'tigrinya_script': { name: 'ትግርኛ (Tigrinya)', category: 'main', isAuto: false, isEthiopic: true },
+    'tigrinya_phonetic': { name: 'Tigrinya Phonetic', category: 'main', isAuto: false },
+    'spanish': { name: 'Español - General (Spanish)*', category: 'main', isAuto: true },
+    'spanish_pr': { name: 'Español - Puerto Rico (Spanish)', category: 'main', isAuto: false },
+    'french': { name: 'Français (French)*', category: 'main', isAuto: true },
+    'coptic': { name: 'ϯⲙⲉⲧⲣⲉⲙⲛ̀ⲭⲏⲙⲓ (Coptic)', category: 'main', isAuto: false },
+    'syriac': { name: 'ܣܘܪܝܝܐ (Syriac)', category: 'unofficial', isAuto: false, isSeekingScribe: true },
+    'armenian': { name: 'Հայերեն (Armenian)', category: 'unofficial', isAuto: false, isSeekingScribe: true },
+
+    // Phonetics (Main Section)
+    // (Note: Already moved above for grouping but keeping IDs consistent)
+
+    // Unofficial Section (Advanced)
+    'arabic': { name: 'العربية (Arabic)*', category: 'unofficial', isAuto: true },
+    'greek': { name: 'Ελληνικά (Greek)*', category: 'unofficial', isAuto: true },
+    'hebrew': { name: 'עברית (Hebrew)*', category: 'unofficial', isAuto: true },
+    'malayalam': { name: 'മലയാളം (Malayalam)*', category: 'unofficial', isAuto: true }
+};
+
+const languageLabels = Object.fromEntries(
+    Object.entries(LANGUAGE_REGISTRY).map(([id, cfg]) => [id, cfg.name])
+);
+
+let languageOrder = [
+    'english', 'geez_script', 'amharic_script', 'oromoo', 'tigrinya_script',
+    'spanish', 'spanish_pr', 'french', 'arabic', 'greek', 'hebrew', 'malayalam',
+    'syriac', 'armenian', 'coptic',
+    'geez_phonetic', 'amharic_phonetic', 'tigrinya_phonetic'
+];
+let searchMatches = [];
+let currentMatchIndex = -1;
+let currentSlideIndex = 0;
+let _pendingSlideSignature = null; // Persists target slide identity across async re-renders
+let _pendingSlideId = null; // Used for jump-to buttons that trigger a DOM rebuild
+let _pendingSlidePredicate = null;
+let areAllSectionsCollapsed = false;
+
+function getSeatatLiturgicalDay() {
+    const now = new Date();
+    const hours = now.getHours();
+    let dayIndex = now.getDay(); // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
+
+    // Liturgical day starts at 6 PM (18:00)
+    if (hours >= 18) {
+        dayIndex = (dayIndex + 1) % 7;
+    }
+
+    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    return days[dayIndex];
+}
+
+const BIBLE_BOOK_MAPPING = {
+    'Matthew': { nkjv: 40, am54: 'የማቴዎስ ወንጌል', rgv: 'Mateo', geez: 'ማቴዎስ' },
+    'Mark': { nkjv: 41, am54: 'የማርቆስ ወንጌል', rgv: 'Marcos', geez: 'ማርቆስ' },
+    'Luke': { nkjv: 42, am54: 'የሉቃስ ወንጌል', rgv: 'Lucas', geez: 'ሉቃስ' },
+    'John': { nkjv: 43, am54: 'የዮሐንስ ወንጌል', rgv: 'Juan', geez: 'ዮሐንስ' },
+    'Acts': { nkjv: 44, am54: 'የሐዋርያት ሥራ', rgv: 'Hechos', geez: 'ግብረ ሐዋርያት' },
+    'Romans': { nkjv: 45, am54: 'ወደ ሮሜ ሰዎች', rgv: 'Romanos', geez: 'ሮሜ' },
+    '1 Corinthians': { nkjv: 46, am54: '1ኛ ወደ ቆሮንቶስ ሰዎች', rgv: '1 Corintios', geez: 'ቆሮንቶስ ቀዳማዊ' },
+    '2 Corinthians': { nkjv: 47, am54: '2ኛ ወደ ቆሮንቶስ ሰዎች', rgv: '2 Corintios', geez: 'ቆሮንቶስ ዳግማዊ' },
+    'Galatians': { nkjv: 48, am54: 'ወደ ገላትያ ሰዎች', rgv: 'Gálatas', geez: 'ገላትያ' },
+    'Ephesians': { nkjv: 49, am54: 'ወደ ኤፌሶን ሰዎች', rgv: 'Efesios', geez: 'ኤፌሶን' },
+    'Philippians': { nkjv: 50, am54: 'ወደ ፊልጵስዩስ ሰዎች', rgv: 'Filipenses', geez: 'ፊልጵስዩስ' },
+    'Colossians': { nkjv: 51, am54: 'ወደ ቆላስይስ ሰዎች', rgv: 'Colosenses', geez: 'ቆላስይስ' },
+    '1 Thessalonians': { nkjv: 52, am54: '1ኛ ወደ ተሰሎንቄ ሰዎች', rgv: '1 Tesalonicenses', geez: 'ተሰሎንቄ ቀዳማዊ' },
+    '2 Thessalonians': { nkjv: 53, am54: '2ኛ ወደ ተሰሎንቄ ሰዎች', rgv: '2 Tesalonicenses', geez: 'ተሰሎንቄ ዳግማዊ' },
+    '1 Timothy': { nkjv: 54, am54: '1ኛ ወደ ጢሞቴዎስ', rgv: '1 Timoteo', geez: 'ጢሞቴዎስ ቀዳማዊ' },
+    '2 Timothy': { nkjv: 55, am54: '2ኛ ወደ ጢሞቴዎስ', rgv: '2 Timoteo', geez: 'ጢሞቴዎስ ዳግማዊ' },
+    'Titus': { nkjv: 56, am54: 'ወደ ቲቶ', rgv: 'Tito', geez: 'ቲቶ' },
+    'Philemon': { nkjv: 57, am54: 'ወደ ፊልሞና', rgv: 'Filemón', geez: 'ፊልሞና' },
+    'Hebrews': { nkjv: 58, am54: 'ወደ ዕብራውያን', rgv: 'Hebreos', geez: 'ዕብራውያን' },
+    'James': { nkjv: 59, am54: 'የያዕቆብ መልእክት', rgv: 'Santiago', geez: 'ያዕቆብ' },
+    '1 Peter': { nkjv: 60, am54: '1ኛ የጴጥሮስ መልእክት', rgv: '1 Pedro', geez: 'ጴጥሮስ ቀዳማዊ' },
+    '2 Peter': { nkjv: 61, am54: '2ኛ የጴጥሮስ መልእክት', rgv: '2 Pedro', geez: 'ጴጥሮስ ዳግማዊ' },
+    '1 John': { nkjv: 62, am54: '1ኛ የዮሐንስ መልእክት', rgv: '1 Juan', geez: 'ዮሐንስ ቀዳማዊ' },
+    '2 John': { nkjv: 63, am54: '2ኛ የዮሐንስ መልእክት', rgv: '2 Juan', geez: 'ዮሐንስ ዳግማዊ' },
+    '3 John': { nkjv: 64, am54: '3ኛ የዮሐንስ መልእክት', rgv: '3 Juan', geez: 'ዮሐንስ ሣልሳዊ' },
+    'Jude': { nkjv: 65, am54: 'የይሁዳ መልእክት', rgv: 'Judas', geez: 'ይሁዳ' },
+    'Revelation': { nkjv: 66, am54: 'የዮሐንስ ራእይ', rgv: 'Apocalipsis', geez: 'ራእይ' },
+    'Psalms': { nkjv: 19, am54: 'መዝሙረ ዳዊት', rgv: 'Salmos', geez: 'መዝሙረ ዳዊት' },
+    'Psalm': { nkjv: 19, am54: 'መዝሙረ ዳዊት', rgv: 'Salmos', geez: 'መዝሙረ ዳዊት' },
+    'Leviticus': { nkjv: 3, am54: 'ኦሪት ዘሌዋውያን', rgv: 'Levítico', geez: 'ዘሌዋውያን' },
+    'Jeremiah': { nkjv: 24, am54: 'ትንቢተ ኤርምያስ', rgv: 'Jeremías', geez: 'ኤርምያስ' }
+};
+
+// TYPICAL_PSALMS moved to js/typical_psalms.js
+
+const BIBLE_METADATA = {
+    'Matthew': { chapters: 28, maxVerses: 80 },
+    'Mark': { chapters: 16, maxVerses: 80 },
+    'Luke': { chapters: 24, maxVerses: 80 },
+    'John': { chapters: 21, maxVerses: 80 },
+    'Acts': { chapters: 28, maxVerses: 60 },
+    'Romans': { chapters: 16, maxVerses: 40 },
+    '1 Corinthians': { chapters: 16, maxVerses: 40 },
+    '2 Corinthians': { chapters: 13, maxVerses: 35 },
+    'Galatians': { chapters: 6, maxVerses: 35 },
+    'Ephesians': { chapters: 6, maxVerses: 35 },
+    'Philippians': { chapters: 4, maxVerses: 35 },
+    'Colossians': { chapters: 4, maxVerses: 35 },
+    '1 Thessalonians': { chapters: 5, maxVerses: 35 },
+    '2 Thessalonians': { chapters: 3, maxVerses: 35 },
+    '1 Timothy': { chapters: 6, maxVerses: 35 },
+    '2 Timothy': { chapters: 4, maxVerses: 35 },
+    'Titus': { chapters: 3, maxVerses: 35 },
+    'Philemon': { chapters: 1, maxVerses: 35 },
+    'Hebrews': { chapters: 13, maxVerses: 45 },
+    'James': { chapters: 5, maxVerses: 30 },
+    '1 Peter': { chapters: 5, maxVerses: 30 },
+    '2 Peter': { chapters: 3, maxVerses: 30 },
+    '1 John': { chapters: 5, maxVerses: 30 },
+    '2 John': { chapters: 1, maxVerses: 30 },
+    '3 John': { chapters: 1, maxVerses: 30 },
+    'Jude': { chapters: 1, maxVerses: 25 },
+    'Revelation': { chapters: 22, maxVerses: 35 },
+    'Psalms': { chapters: 151, maxVerses: 176 }
+};
+
+const SEATAT_LECTIONARY_DATA = {
+    'Monday': [
+        { type: 'Pauline Epistle (1 Thessalonians 4:15-18) | መልእክተ ጳውሎስ ዘሰዓታት', book: '1 Thessalonians', chapter: 4, verses: '15-18' },
+        { type: 'Universal Epistle (1 Peter 5:5-12) | መልእክተ ካልእ ዘሰዓታት', book: '1 Peter', chapter: 5, verses: '5-12' },
+        { type: 'Acts of the Apostles (Acts 16:25-35) | ግብረ ሐዋርያት ዘሰዓታት', book: 'Acts', chapter: 16, verses: '25-35' },
+        { type: 'Psalm (Psalm 1:2-3) | ምስባክ ዘሰዓታት', book: 'Psalms', chapter: 1, verses: '2-3', customEnglish: '[2] And in His law he meditates day and night. [3] He shall be like a tree planted by the rivers of water, that brings forth its fruit in its season.', customGeez: '[2] ወዘሕጎ ያነብብ መዕልተ ወሌሊተ። [3] ወየከውን ከመ ዕፅ እንተ ትክልት ኀበ ሙሓዘ ማይ፤ እንተ ትሁብ ፍሬሃ በበጊዜሃ；' },
+        { type: 'Gospel (Matthew 25:1-14) | ወንጌል ዘሰዓታት', book: 'Matthew', chapter: 25, verses: '1-14' }
+    ],
+    'Tuesday': [
+        { type: 'Pauline Epistle (Galations 5:13-26) | መልእክተ ጳውሎስ ዘሰዓታት', book: 'Galatians', chapter: 5, verses: '13-26' },
+        { type: 'Universal Epistle (1 Peter 1:13-25) | መልእክተ ካልእ ዘሰዓታት', book: '1 Peter', chapter: 1, verses: '13-25' },
+        { type: 'Acts of the Apostles (Acts 5:17-31) | ግብረ ሐዋርያት ዘሰዓታት', book: 'Acts', chapter: 5, verses: '17-31' },
+        { type: 'Psalm (Psalm 118:62-63) | ምስባክ ዘሰዓታት', book: 'Psalms', chapter: 118, verses: '62-63', customEnglish: '[62] At midnight I will rise to give thanks to You, Because of Your righteous judgments. [63] I am a companion of all who fear You...', customGeez: '[62] መንፍቀ ሌሊት እትነሣእ ከመ እግነይ ለከ፤ በእንተ ኵነኔ ጽድቅከ። [63] ከማሆሙ አነ ለኵሎሙ እለ ይፈርሁከ፤' },
+        { type: 'Gospel (Mark 13:32-37) | ወንጌል ዘሰዓታት', book: 'Mark', chapter: 13, verses: '32-37' }
+    ],
+    'Wednesday': [
+        { type: 'Pauline Epistle (Ephesians 6:10-21) | መልእክተ ጳውሎስ ዘሰዓታት', book: 'Ephesians', chapter: 6, verses: '10-21' },
+        { type: 'Universal Epistle (2 Peter 2:9-22) | መልእክተ ካልእ ዘሰዓታት', book: '2 Peter', chapter: 2, verses: '9-22' },
+        { type: 'Acts of the Apostles (Acts 12:1-12) | ግብረ ሐዋርያት ዘሰዓታት', book: 'Acts', chapter: 12, verses: '1-12' },
+        { type: 'Psalm (Psalm 138:12) | ምስባክ ዘሰዓታት', book: 'Psalms', chapter: 138, verses: '12', customEnglish: 'Indeed, the darkness shall not hide from You, But the night shines as the day; The darkness and the light are both alike to You.', customGeez: 'እስመ ጽልመትኒ ኢይጸልም በኀቤከ፤ ወሌሊትኒ ብሩህ ከመ መዐልት፤ በአምጣነ ጽልመታ ከማሁ ብርሃነ።' },
+        { type: 'Gospel (Luke 13:23-31) | ወንጌል ዘሰዓታት', book: 'Luke', chapter: 13, verses: '23-31' }
+    ],
+    'Thursday': [
+        { type: 'Pauline Epistle (2 Corinthians 8:1-16) | መልእክተ ጳውሎስ ዘሰዓታት', book: '2 Corinthians', chapter: 8, verses: '1-16' },
+        { type: 'Universal Epistle (1 Peter 4:12-19) | መልእክተ ካልእ ዘሰዓታት', book: '1 Peter', chapter: 4, verses: '12-19' },
+        { type: 'Acts of the Apostles (Acts 16:35-40) | ግብረ ሐዋርያት ዘሰዓታት', book: 'Acts', chapter: 16, verses: '35-40' },
+        { type: 'Psalm (Psalm 87:1-2) | ምስባክ ዘሰዓታት', book: 'Psalms', chapter: 87, verses: '1-2', customEnglish: '[1] O Lord, God of my salvation, I have cried out day and night before You. [2] Let my prayer come before You...', customGeez: '[1] እግዚአብሔር አምላከ መድኀኒትየ፤ ዕለትየ ጸራኅኩ ኀቤከ ወሌሊትየኒ ቅድሜከ። [2] ለትባእ ጸሎትየ ቅድሜከ；' },
+        { type: 'Gospel (Matt 24:36-51) | ወንጌል ዘሰዓታት', book: 'Matthew', chapter: 24, verses: '36-51' }
+    ],
+    'Friday': [
+        { type: 'Pauline Epistle (Romans 13:11-14) | መልእክተ ጳውሎስ ዘሰዓታት', book: 'Romans', chapter: 13, verses: '11-14' },
+        { type: 'Universal Epistle (2 Peter 3:8-14) | መልእክተ ካልእ ዘሰዓታት', book: '2 Peter', chapter: 3, verses: '8-14' },
+        { type: 'Acts of the Apostles (Acts 8:26-40) | ግብረ ሐዋርያት ዘሰዓታት', book: 'Acts', chapter: 8, verses: '26-40' },
+        { type: 'Psalm (Psalm 118:55-56) | ምስባክ ዘሰዓታት', book: 'Psalms', chapter: 118, verses: '55-56', customEnglish: '[55] I remember Your name in the night, O Lord, And I keep Your law. [56] This has become mine...', customGeez: '[55] ተዘከርኩ በሌሊት ስመከ እግዚኦ፤ ወዐቀብኩ ሕገከ። [56] ወይእቲ ኮነተኒ；' },
+        { type: 'Gospel (Luke 12:35-49) | ወንጌል ዘሰዓታት', book: 'Luke', chapter: 12, verses: '35-49' }
+    ],
+    'Saturday': [
+        { type: 'Torah (Leviticus 23:1-4) | ኦሪት ዘሰዓታት', book: 'Leviticus', chapter: 23, verses: '1-4' },
+        { type: 'Prophecy (Jeremiah 17:26-27) | ትንቢት ዘሰዓታት', book: 'Jeremiah', chapter: 17, verses: '26-27' },
+        { type: 'Acts of the Apostles (Acts 17:2-5) | ግብረ ሐዋርያት ዘሰዓታት', book: 'Acts', chapter: 17, verses: '2-5' },
+        { type: 'Psalm (Psalm 133:2-3) | ምስባክ ዘሰዓታት', book: 'Psalms', chapter: 133, verses: '2-3', customEnglish: '[2] Lift up your hands in the sanctuary, and bless the Lord. [3] The Lord who made heaven and earth bless you from Zion!', customGeez: '[2] በሌሊት አንሥኡ እደዊክሙ በቤተ መቅደስ፤ ወባርክዎ ለእግዚአብሔር። [3] ይባርከከ እግዚአብሔር እምጽዮን；' },
+        { type: 'Gospel (John 5:5-23) | ወንጌል ዘሰዓታት', book: 'John', chapter: 5, verses: '5-23' }
+    ],
+    'Sunday': [
+        { type: 'Pauline Epistle (1 Corinthians 15:51-16:3) | መልእክተ ጳውሎስ ዘሰዓታት', book: '1 Corinthians', chapter: 15, verses: '51-58', extra: { book: '1 Corinthians', chapter: 16, verses: '1-3' } },
+        { type: 'Universal Epistle (1 John 1:1-10) | መልእክተ ካልእ ዘሰዓታት', book: '1 John', chapter: 1, verses: '1-10' },
+        { type: 'Acts of the Apostles (Acts 20:7-12) | ግብረ ሐዋርያት ዘሰዓታት', book: 'Acts', chapter: 20, verses: '7-12' },
+        { type: 'Psalm (Psalm 125:2) | ምስባክ ዘሰዓታት', book: 'Psalms', chapter: 125, verses: '2', customEnglish: 'Then our mouth was filled with laughter, And our tongue with singing. Then they said among the nations...', customGeez: 'አሜሃ መልአ ፍሥሓ አፉነ፤ ወተሐሥየ ልሳንነ； አሜሃ ይቤሉ አሕዛብ፦' },
+        { type: 'Gospel (John 3:1-22) | ወንጌል ዘሰዓታት', book: 'John', chapter: 3, verses: '1-22' }
+    ]
+};
+
+const prophetSongs = [
+    { key: 'songOfSongs', author: 'Solomon', name: 'Prayer of Songs of King Solomon | ማሓለየ ማሓለይ ዘሰሎሞን', verseRange: '(Songs of Songs 1:1-5:16)', time: 'Saturday', purpose: 'Spiritual communion and expression of divine love.', refs: { nkjv: { book: 22, bookName: 'Song of Solomon', chapters: [1, 2, 3, 4, 5] }, rgv: { book: 'Canción de canciones', chapters: [1, 2, 3, 4, 5] }, am54: { book: 'መኃልየ መኃልይ ዘሰሎሞን', chapters: ['1', '2', '3', '4', '5'] } } },
+    { key: 'firstSongOfMoses', author: 'Moses', name: 'First Prayer of Moses the Prophet | ጸሎተ ሙሴ ቀዳማዊ', verseRange: '(Exodus 15:1–19)', time: 'Monday – 9 a.m.', purpose: 'For sickness, hopelessness, and feeling of weakness.', refs: { nkjv: { book: 2, bookName: 'Exodus', chapter: 15, verses: { start: 1, end: 19 } }, rgv: { book: 'Éxodo', chapter: 15, verses: { start: 1, end: 19 } }, am54: { book: 'ኦሪት ዘጸአት', chapter: '15', verses: { start: 1, end: 19 } } } },
+    { key: 'secondSongOfMoses', author: 'Moses', name: 'Second Prayer of Moses the Prophet | ጸሎተ ሙሴ ካልእ', verseRange: '(Deuteronomy 32:1–21)', time: 'Monday – Noon', purpose: 'For sickness, hopelessness, and feeling of weakness.', refs: { nkjv: { book: 5, bookName: 'Deuteronomy', chapter: 32, verses: { start: 1, end: 21 } }, rgv: { book: 'Deuteronomio', chapter: 32, verses: { start: 1, end: 21 } }, am54: { book: 'ኦሪት ዘዳግም', chapter: '32', verses: { start: 1, end: 21 } } } },
+    { key: 'thirdSongOfMoses', author: 'Moses', name: 'Third Prayer of Moses the Prophet | ጸሎተ ሙሴ ሣልስ', verseRange: '(Deuteronomy 32:22–43)', time: 'Monday – 3 p.m.', purpose: 'For sickness, hopelessness, feeling of weakness; also for safe maternity.', refs: { nkjv: { book: 5, bookName: 'Deuteronomy', chapter: 32, verses: { start: 22, end: 43 } }, rgv: { book: 'Deuteronomio', chapter: 32, verses: { start: 22, end: 43 } }, am54: { book: 'ኦሪት ዘዳግም', chapter: '32', verses: { start: 22, end: 43 } } } },
+    { key: 'prayerOfHannah', author: 'Hannah', name: 'Prayer of Hannah the Mother of Samuel the Prophet | ጸሎተ ሐና እመ ሳሙኤል ነቢይ', verseRange: '(1 Kingdoms 2:1-10 LXX, 1 Samuel 2:1–10 NKJV)', time: 'Tuesday – 9 a.m.', purpose: 'For safe maternity and for sudden sickness.', refs: { nkjv: { book: 9, bookName: '1 Samuel', chapter: 2, verses: { start: 1, end: 10 } }, rgv: { book: '1 Samuel', chapter: 2, verses: { start: 1, end: 10 } }, am54: { book: 'መጽሐፈ ሳሙኤል ቀዳማዊ', chapter: '2', verses: { start: 1, end: 10 } } } },
+    { key: 'prayerOfHezekiah', author: 'Hezekiah', name: 'Prayer of King Hezekiah | ጸሎተ ሕዝቅያስ', verseRange: '(Isaiah 38:10–20)', time: 'Tuesday – Noon', purpose: 'For sudden sickness, for safe maternity, and for trouble in finding missing property or ideas.', refs: { nkjv: { book: 23, bookName: 'Isaiah', chapter: 38, verses: { start: 10, end: 20 } }, rgv: { book: 'Isaías', chapter: 38, verses: { start: 10, end: 20 } }, am54: { book: 'ትንቢተ ኢሳይያስ', chapter: '38', verses: { start: 10, end: 20 } } } },
+    { key: 'prayerOfManasseh', author: 'Manasseh', name: 'Prayer of King Manasseh | ጸሎተ ምናሴ', verseRange: '(2 Chronicles 36 LXX)', time: 'Tuesday – 3 p.m.', purpose: 'For sickness or trouble in finding missing property or ideas.', refs: { prayerKey: 'Manasseh' } },
+    { key: 'prayerOfJonah', author: 'Jonah', name: 'Prayer of Jonah the Prophet | ጸሎተ ዮናስ ነቢይ', verseRange: '(Jonah 2:2–9)', time: 'Wednesday – 9 a.m.', purpose: 'For sickness or trouble in finding missing property or ideas.', refs: { prayerKey: 'Jonah' } },
+    { key: 'firstPrayerOfThreeYouths', author: 'Three Youths', name: 'First Prayer of the Three Youths | ጸሎተ ፫ ደቂቅ ቀዳማዊ', verseRange: '(Daniel 3:26–45 LXX)', aka: 'The Prayer/Song of Azarias', time: 'Wednesday – Noon', purpose: 'For protecting oneself and wealth from evil.', refs: { prayerKey: 'ThreeYouths1' } },
+    { key: 'secondPrayerOfThreeYouths', author: 'Three Youths', name: 'Second Prayer of the Three Youths | ጸሎተ ፫ ደቂቅ ካልእ', verseRange: '(Daniel 3:52–56 LXX)', aka: 'The Blessing of Ananias, Azarias, and Misael', time: 'Thursday – 9 a.m.', purpose: 'Used during moments of frustration.', refs: { prayerKey: 'ThreeYouths2' } },
+    { key: 'thirdPrayerOfThreeYouths', author: 'Three Youths', name: 'Third Prayer of the Three Youths | ጸሎተ ፫ ደቂቅ ሣልስ', verseRange: '(Daniel 3:57–88 LXX)', aka: 'The Song of the Three Holy Children', time: 'Wednesday – 3 p.m.', purpose: 'Used during moments of frustration.', refs: { prayerKey: 'ThreeYouths3' } },
+    { key: 'prayerOfHabakkuk', author: 'Habakkuk', name: 'Prayer of Habakkuk the Prophet | ጸሎተ ዕንባቆም ነቢይ', verseRange: '(Habakkuk 3:1–19)', time: 'Thursday – Noon', purpose: 'For finding missing property or ideas.', refs: { nkjv: { book: 35, bookName: 'Habakkuk', chapter: 3, verses: { start: 1, end: 19 } }, rgv: { book: 'Habacuc', chapter: 3, verses: { start: 1, end: 19 } }, am54: { book: 'ትንቢተ ዕንባቆም', chapter: '3', verses: { start: 1, end: 19 } } } },
+    { key: 'prayerOfIsaiah', author: 'Isaiah', name: 'Prayer of Isaiah the Prophet | ጸሎተ ኢሳይያስ ነቢይ', verseRange: '(Isaiah 26:9–20)', time: 'Thursday – 3 p.m.', purpose: 'For achieving a brighter tomorrow.', refs: { nkjv: { book: 23, bookName: 'Isaiah', chapter: 26, verses: { start: 9, end: 20 } }, rgv: { book: 'Isaías', chapter: 26, verses: { start: 9, end: 20 } }, am54: { book: 'ትንቢተ ኢሳይያስ', chapter: '26', verses: { start: 9, end: 20 } } } },
+    { key: 'prayerOfMary', author: 'Mary', name: 'Prayer of Mary the Bearer of God | ጸሎተ ማርያም ወላዲተ አምላክ', verseRange: '(Luke 1:46–55)', aka: 'The Magnificat', time: 'Friday – 9 a.m.', purpose: 'For those who are grieving.', refs: { nkjv: { book: 42, bookName: 'Luke', chapter: 1, verses: { start: 46, end: 55 } }, rgv: { book: 'Lucas', chapter: 1, verses: { start: 46, end: 55 } }, am54: { book: 'የሉቃስ ወንጌል', chapter: '1', verses: { start: 46, end: 55 } } } },
+    { key: 'songOfZachariah', author: 'Zachariah', name: 'Prayer of Zachariah the Prophet | ጸሎተ ዘካርያስ ነቢይ', verseRange: '(Luke 1:68–79)', aka: 'The Benedictus', time: 'Friday – Noon', purpose: 'For offering a worthy service to God.', refs: { nkjv: { book: 42, bookName: 'Luke', chapter: 1, verses: { start: 68, end: 79 } }, rgv: { book: 'Lucas', chapter: 1, verses: { start: 68, end: 79 } }, am54: { book: 'የሉቃስ ወንጌል', chapter: '1', verses: { start: 68, end: 79 } } } },
+    { key: 'prayerOfSimeon', author: 'Simeon', name: 'Prayer of Simeon the Elder | ጸሎተ ስምዖን አረጋዊ', verseRange: '(Luke 2:29–32)', aka: 'Nunc dimittis', time: 'Friday – 3 p.m.', purpose: 'For building up faith in God.', refs: { nkjv: { book: 42, bookName: 'Luke', chapter: 2, verses: { start: 29, end: 32 } }, rgv: { book: 'Lucas', chapter: 2, verses: { start: 29, end: 32 } }, am54: { book: 'የሉቃስ ወንጌል', chapter: '2', verses: { start: 29, end: 32 } } } },
+];
+
+
+const sunIcon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24px" height="24px"><path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0 8c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zM2 13h2v-2H2v2zm18 0h2v-2h-2v2zM11 2v2h2V2h-2zm0 18v2h2v-2h-2zM4.22 5.64l1.42-1.42L7.05 5.64 5.64 7.05 4.22 5.64zM16.95 18.36l1.42-1.42L19.78 18.36l-1.41 1.41-1.42-1.41zM18.36 5.64l1.42 1.41L18.36 8.46l-1.42-1.41L18.36 5.64zM5.64 18.36l1.41 1.41L8.46 18.36l-1.41-1.42L5.64 18.36z"/></svg>`;
+const moonIcon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 2c-1.82 0-3.53.5-5 1.35 2.99 1.73 5 4.95 5 8.65s-2.01 6.92-5 8.65C6.47 21.5 8.18 22 10 22c5.52 0 10-4.48 10-10S15.52 2 10 2z"/></svg>`;
+const shareIconSVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3s3-1.34 3-3-1.34-3-3-3z"></path></svg>`;
+
+function getDefaultProphetSongsForCurrentTime() {
+    const now = new Date();
+    const day = now.getDay(); // 0 = Sunday, 1 = Monday, ...
+    const hour = now.getHours();
+
+    if (day === 0) { // Sunday
+        return prophetSongs.map(s => s.key);
+    }
+    if (day === 6) { // Saturday
+        return ['songOfSongs'];
+    }
+
+    const is9am = hour >= 6 && hour < 12; // Broadened to include early morning until noon
+    const isNoon = hour >= 12 && hour < 15;
+    const is3pm = hour >= 15 || hour < 6; // Afternoon until early morning next day
+
+    if (day === 1) { // Monday
+        if (is9am) return ['firstSongOfMoses'];
+        if (isNoon) return ['secondSongOfMoses'];
+        if (is3pm) return ['thirdSongOfMoses'];
+    }
+    if (day === 2) { // Tuesday
+        if (is9am) return ['prayerOfHannah'];
+        if (isNoon) return ['prayerOfHezekiah'];
+        if (is3pm) return ['prayerOfManasseh'];
+    }
+    if (day === 3) { // Wednesday
+        if (is9am) return ['prayerOfJonah'];
+        if (isNoon) return ['firstPrayerOfThreeYouths'];
+        if (is3pm) return ['thirdPrayerOfThreeYouths'];
+    }
+    if (day === 4) { // Thursday
+        if (is9am) return ['secondPrayerOfThreeYouths'];
+        if (isNoon) return ['prayerOfHabakkuk'];
+        if (is3pm) return ['prayerOfIsaiah'];
+    }
+    if (day === 5) { // Friday
+        if (is9am) return ['prayerOfMary'];
+        if (isNoon) return ['songOfZachariah'];
+        if (is3pm) return ['prayerOfSimeon'];
+    }
+
+    return [];
+}
+
+// --- Anglicization Data ---
+const anglicizedNameMap = {
+    "Mary": "Maryam",
+    "Zion": "Tsion",
+    "Mary of Zion": "Maryam Tsion",
+    "Jesus Christ": "Iyesus Kristos",
+    "Jesus": "Iyesus",
+    "Christ": "Kristos",
+    "Pontius Pilate": "Pontios Pilatos",
+    "Church": "Béte Kristiyan",
+    "Bearer of God": "Theotokos",
+    "Mother of God": "Theotokos",
+    //    "Amen": "Amén",
+    "Anne": "Hanna",
+    "Joachim": "Iyaqém",
+    "Moses": "Musé",
+    "Eve": "Héwan",
+    "Joseph": "Yoséf",
+    "Emmanuel": "Amanuel",
+    "David": "Dawit",
+    "Ephrata": "Efrata",
+    "Jacob": "Ya'qob",
+    "Bethlehem": "Bételehém",
+    "Judah": "Yihuda",
+    "Galilee": "Gelila",
+    "Nazareth": "Nazrét",
+    "Elizabeth": "Elsabét",
+    "Stephen": "Estifanos",
+    "John": "Yohannes",
+    "Seventh Heaven": "Aryam",
+    "the Seventh Heaven": "Aryam",
+};
+
+const LOANWORD_MAPPING = {
+    "አውሎግዮስ": { lang: "Greek", original: "(\u03b5\u03c5\u03bb\u03cc\u03b3\u03b9\u03bf\u03c2)", phonetic: "ev-lo-gi-os", meaning: "Blessed", geez: "ቡሩክ" },
+    "ጌርዮስ": { lang: "Greek", original: "(\u03ba\u03cd\u03c1\u03b9\u03bf\u03c2)", phonetic: "ky-ri-os", meaning: "Lord", geez: "እግዚእ" },
+    "አግዮስ": { lang: "Greek", original: "(\u1f03\u03b3\u03b9\u03bf\u03c2)", phonetic: "ha-gi-os", meaning: "Holy", geez: "ቅዱስ" },
+    "ማንጦን": { lang: "Greek", original: "(\u03c0\u03ac\u03bd\u03c4\u03c9\u03bd)", phonetic: "pan-ton", meaning: "of all", geez: "ዘኵሉ" },
+    "ፖንዋማንጦን": { lang: "Greek", original: "(\u03c0\u03bd\u03b5\u03c5\u03bc\u03ac\u03c4\u03c9\u03bd)", phonetic: "pnev-ma-ton", meaning: "of spirits", geez: "ዘመንፈሳት" },
+    "አላቲኖን": { lang: "Greek", original: "(\u1f00\u03bb\u03b7\u03b8\u03b9\u03bd\u03cc\u03bd)", phonetic: "a-le-thi-non", meaning: "True", geez: "አማናዊ (በአማን)" },
+    "ኪርያላይሶን": { lang: "Greek", original: "(\u039a\u03cd\u03c1\u03b9\u03b5 \u1f10\u03bb\u03ad\u03b7\u03c3\u03bf\u03bd)", phonetic: "ky-ri-e e-le-i-son", meaning: "Lord have mercy", geez: "እግዚኦ ተሣሃለነ" },
+    "ጵርስፎራ": { lang: "Greek", original: "(\u03c0\u03c1\u03bf\u03c3\u03c6\u03bf\u03c1\u03ac)", phonetic: "pros-fo-ra", meaning: "The Sacrificial/Eucharistic Offering", geez: "ቍርባን (መባዕ)" },
+    "እንፎራ": { lang: "Greek", original: "(\u1f00\u03bd\u03b1\u03c6\u03bf\u03c1\u03ac)", phonetic: "a-na-fo-ra", meaning: "The Lifting Up (of the offering)", geez: "አኰቴተ ቍርባን" },
+    "ጳራቅሊጦስ": { lang: "Greek", original: "(\u03a0\u03b1\u03c1\u03ac\u03ba\u03bb\u03b7\u03c4\u03bf\u03c2)", phonetic: "pa-ra-kli-tos", meaning: "Paraclete (Advocate, Helper, Comforter)", geez: "ናዛዚ" },
+    "አምንስቲቲ ሙኪርያ": { lang: "Greek", original: "(\u039c\u03bd\u03ae\u03c3\u03b8\u03b7\u03c4\u03af \u03bc\u03bf\u03c5, \u039a\u03cd\u03c1\u03b9\u03b5)", phonetic: "mni-sthi-ti mou ky-ri-e", meaning: "Remember me, O Lord", geez: "ተዘከረኒ እግዚኦ" },
+    "አንቲ ፋሲልያሱ": { lang: "Greek", original: "(\u1f10\u03bd \u03c4\u1fc7 \u03b2\u03b1\u03c3\u03b9\u03bb\u03b5\u03af\u1fb3 \u03c3\u03bf\u03c5)", phonetic: "en ti va-si-li-a sou", meaning: "in your kingdom", geez: "በመንግሥትከ" },
+
+    // Additional Liturgical & Theological Terms
+    "ሃሌ ሉያ": { lang: "Hebrew", original: "(\u05d4\u05b7\u05dc\u05b0\u05dc\u05d5\u05bc-\u05d9\u05b8\u05d4\u05bc)", phonetic: "ha-le-lu-yah", meaning: "Praise the Lord", geez: "ስብሐት ለእግዚአብሔር" },
+    "አሜን": { lang: "Hebrew", original: "(\u05d0\u05b8\u05de\u05b5\u05df)", phonetic: "a-men", meaning: "Verily / So be it", geez: "ለይኩን (በአማን)" },
+    "ወንጌል": { lang: "Greek", original: "(\u03b5\u1f50\u03b1\u03b3\u03b3\u03ad\u03bb\u03b9\u03bf\u03bd)", phonetic: "ev-an-ge-li-on", meaning: "Good News / Gospel", geez: "ብሥራት" },
+    "ኦሪት": { lang: "Aramaic", original: "(\u05d0\u05d5\u05b9\u05e8\u05b8\u05d9\u05b0\u05ea\u05b8\u05d0)", phonetic: "o-ray-ta", meaning: "Law / Instruction", geez: "ሕግ" },
+    "ታቦት": { lang: "Hebrew", original: "(\u05ea\u05bc\u05b5\u05d9\u05d1\u05b8\u05d4)", phonetic: "tey-vah", meaning: "Ark / Chest", geez: "ሣጥን (ማኅደር)" },
+    "መሲሕ": { lang: "Hebrew", original: "(\u05de\u05b8\u05e9\u05b4\u05c1\u05d9\u05d7\u05b7)", phonetic: "ma-shi-ach", meaning: "Anointed One", geez: "ቅቡዕ" },
+    "ሰይጣን": { lang: "Hebrew", original: "(\u05e9\u05c2\u05b8\u05d8\u05b8\u05df)", phonetic: "sa-tan", meaning: "Adversary / Accuser", geez: "ጸላኢ (ጋኔን)" },
+    "ቀሲስ": { lang: "Syriac", original: "(\u072a\u072b\u072a\u072b\u0710)", phonetic: "qa-shshi-sha", meaning: "Elder / Priest", geez: "ካህን (ሊቅ)" },
+    "ዲያቆን": { lang: "Greek", original: "(\u03b4\u03b9\u03ac\u03ba\u03bf\u03bd\u03bf\u03c2)", phonetic: "di-a-ko-nos", meaning: "Servant / Minister", geez: "ላእክ" },
+    "ኤጲስ ቆጶስ": { lang: "Greek", original: "(\u1f10\u03c0\u03af\u03c3\u03ba\u03bf\u03c0\u03bf\u03c2)", phonetic: "e-pis-ko-pos", meaning: "Overseer / Bishop", geez: "ጳጳስ (ሐዋርያ)" },
+    "ፓትርያርክ": { lang: "Greek", original: "(\u03c0\u03b1\u03c4\u03c1\u03b9\u03ac\u03c1\u03c7\u03b7\u03c2)", phonetic: "pa-tri-ar-khes", meaning: "Chief Father / Patriarch", geez: "ርእሰ አበው" },
+
+    // Names & Entities
+    "ኢየሱስ": { lang: "Hebrew", original: "(\u05d9\u05b5\u05e9\u05c1\u05d5\u05bc\u05e2\u05b7)", phonetic: "ye-shu-a", meaning: "Yahweh is Salvation", geez: "መድኃኒት" },
+    "ክርስቶስ": { lang: "Greek", original: "(\u03a7\u03c1\u03b9\u03c3\u03c4\u03cc\u03c2)", phonetic: "khris-tos", meaning: "Anointed One", geez: "መሲሕ (ቅቡዕ)" },
+    "አማኑኤል": { lang: "Hebrew", original: "(\u05e2\u05b4\u05de\u05bc\u05b8\u05e0\u05d5\u05bc\u05d0\u05b5\u05dc)", phonetic: "im-ma-nu-el", meaning: "God with us", geez: "እግዚአብሔር ምስሌነ" },
+    "ማርያም": { lang: "Hebrew", original: "(\u05de\u05b4\u05e8\u05b0\u05d9\u05b8\u05dd)", phonetic: "mir-yam", meaning: "Beloved / Exalted One", geez: "እግዝእት" },
+    "ሚካኤል": { lang: "Hebrew", original: "(\u05de\u05b4\u05d9\u05db\u05b8\u05d0\u05b5\u05dc)", phonetic: "mi-kha-el", meaning: "Who is like God?", geez: "መኑ ከመ እግዚአብሔር" },
+    "ገብርኤል": { lang: "Hebrew", original: "(\u05d2\u05bc\u05b7\u05d1\u05b0\u05e8\u05b4\u05d9\u05d0\u05b5\u05dc)", phonetic: "gav-ri-el", meaning: "God is my strength", geez: "ኃይሌ እግዚአብሔር" },
+    "ሱራፌል": { lang: "Hebrew", original: "(\u05e9\u05c2\u05b0\u05e8\u05b8\u05e4\u05b4\u05d9\u05dd)", phonetic: "se-ra-fim", meaning: "Burning Ones", geez: "መላእክት" },
+    "ኪሩቤል": { lang: "Hebrew", original: "(\u05db\u05bc\u05b0\u05e8\u05d5\u05bc\u05d1\u05b4\u05d9\u05dd)", phonetic: "ke-ru-vim", meaning: "Guardian Ones", geez: "መላእክት" },
+    "ጽዮን": { lang: "Hebrew", original: "(\u05e6\u05b4\u05d9\u05bc\u05d5\u05b9\u05df)", phonetic: "tsi-yon", meaning: "Fortress", geez: "አምባ" },
+
+    // Notable Figures
+    "አቤል": { lang: "Hebrew", original: "(\u05d4\u05b6\u05d1\u05b6\u05dc)", phonetic: "he-vel", meaning: "Breath / Vanity", geez: "ትነት" },
+    "ኖኅ": { lang: "Hebrew", original: "(\u05e0\u05b9\u05d7\u05b7)", phonetic: "no-ach", meaning: "Rest", geez: "ዕረፍት" },
+    "አብርሃም": { lang: "Hebrew", original: "(\u05d0\u05b7\u05d1\u05b0\u05e8\u05b8\u05d4\u05b8\u05dd)", phonetic: "av-ra-ham", meaning: "Father of a Multitude", geez: "አበ ብዙኃን" },
+    "ይስሐቅ": { lang: "Hebrew", original: "(\u05d9\u05b4\u05e6\u05b0\u05d7\u05b8\u05e7)", phonetic: "yits-chak", meaning: "He will laugh", geez: "ስሕቅ" },
+    "ያዕቆብ": { lang: "Hebrew", original: "(\u05d9\u05b7\u05e2\u05b2\u05e7\u05b9\u05d1)", phonetic: "ya-a-kov", meaning: "Supplanter", geez: "አታላይ" },
+    "ዮሴፍ": { lang: "Hebrew", original: "(\u05d9\u05d5\u05b9\u05e1\u05b5\u05e3)", phonetic: "yo-sef", meaning: "He will add", geez: "ይስክ (ይጨምር)" },
+    "ዳዊት": { lang: "Hebrew", original: "(\u05d3\u05bc\u05b8\u05d5\u05b4\u05d3)", phonetic: "da-vid", meaning: "Beloved", geez: "ፍቁር" },
+    "ሰሎሞን": { lang: "Hebrew", original: "(\u05e9\u05b0\u05c1\u05dc\u05b9\u05de\u05b9\u05d4)", phonetic: "shlo-mo", meaning: "Peaceable", geez: "ሰላማዊ" },
+    "ጳውሎስ": { lang: "Latin", original: "(Paulus)", phonetic: "pau-lus", meaning: "Small / Humble", geez: "ንኡስ (ትሑት)" },
+    "ጴጥሮስ": { lang: "Greek", original: "(\u03a0\u03ad\u03c4\u03c1\u03bf\u03c2)", phonetic: "pe-tros", meaning: "Rock / Stone", geez: "ኰኵሕ (ዕብን)" }
+};
+
+function applyLoanwordOrigins(text, langKey) {
+    if (!displayOptions.showLoanwordOrigins || (langKey !== 'geez_script' && langKey !== 'geez_phonetic')) {
+        return text;
+    }
+
+    let transformedText = text;
+
+    // Build a single regex to match all loanwords in one pass to avoid nested replacements
+    const sortedKeys = Object.keys(LOANWORD_MAPPING).sort((a, b) => b.length - a.length);
+    const pattern = sortedKeys.map(k => k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|');
+    const regex = new RegExp(`(${pattern})([\\s\\:\\፡\\፡\\፤\\፨\\።]?)`, 'g');
+
+    transformedText = transformedText.replace(regex, (match, p1, p2) => {
+        const data = LOANWORD_MAPPING[p1];
+        return `<span class="loanword-origin" 
+            data-word="${p1}" 
+            data-lang="${data.lang}"
+            data-original="${data.original.replace(/[()]/g, '')}" 
+            data-phonetic="${data.phonetic}" 
+            data-meaning="${data.meaning}" 
+            data-geez="${data.geez}">${p1} ${data.original}</span>${p2}`;
+    });
+
+    return transformedText;
+}
+
+function createLoanwordTooltip() {
+    let tooltip = document.querySelector('.loanword-tooltip');
+    if (!tooltip) {
+        tooltip = document.createElement('div');
+        tooltip.className = 'loanword-tooltip';
+        tooltip.innerHTML = `
+            <div class="tooltip-title"></div>
+            <div class="tooltip-phonetic"></div>
+            <div class="tooltip-row">
+                <div class="tooltip-label">English</div>
+                <div class="tooltip-value tooltip-meaning"></div>
+            </div>
+            <div class="tooltip-row">
+                <div class="tooltip-label tooltip-lang-label">Original</div>
+                <div class="tooltip-value tooltip-original"></div>
+            </div>
+            <div class="tooltip-row">
+                <div class="tooltip-label">Ge'ez</div>
+                <div class="tooltip-value tooltip-geez"></div>
+            </div>
+        `;
+        document.body.appendChild(tooltip);
+    }
+    return tooltip;
+}
+
+function showLoanwordTooltip(element) {
+    const tooltip = createLoanwordTooltip();
+    const word = element.getAttribute('data-word');
+    const lang = element.getAttribute('data-lang');
+    const original = element.getAttribute('data-original');
+    const phonetic = element.getAttribute('data-phonetic');
+    const meaning = element.getAttribute('data-meaning');
+    const geez = element.getAttribute('data-geez');
+
+    tooltip.querySelector('.tooltip-title').textContent = word;
+    tooltip.querySelector('.tooltip-phonetic').innerHTML = `From ${lang}, <i>${phonetic}</i>`;
+    tooltip.querySelector('.tooltip-meaning').textContent = meaning;
+    tooltip.querySelector('.tooltip-original').textContent = original;
+    tooltip.querySelector('.tooltip-geez').textContent = geez;
+    tooltip.querySelector('.tooltip-lang-label').textContent = lang.toUpperCase();
+
+    // Show but keep transparent to measure
+    tooltip.style.display = 'block';
+    tooltip.style.opacity = '0';
+    tooltip.style.visibility = 'visible';
+    tooltip.classList.remove('active'); // Ensure no transition yet
+
+    // Positioning
+    const rect = element.getBoundingClientRect();
+    const tooltipHeight = tooltip.offsetHeight;
+    const tooltipWidth = tooltip.offsetWidth;
+
+    let top = rect.top - tooltipHeight - 15;
+    let left = rect.left + (rect.width / 2) - (tooltipWidth / 2);
+
+    // Boundary checks
+    if (top < 10) {
+        top = rect.bottom + 15;
+    }
+
+    if (left < 10) left = 10;
+    if (left + tooltipWidth > window.innerWidth - 10) {
+        left = window.innerWidth - tooltipWidth - 10;
+    }
+
+    tooltip.style.top = `${top}px`;
+    tooltip.style.left = `${left}px`;
+
+    // Clean up manual styles and let CSS transition take over
+    tooltip.style.display = '';
+    tooltip.style.opacity = '';
+    tooltip.style.visibility = '';
+
+    // Force reflow
+    void tooltip.offsetWidth;
+
+    tooltip.classList.add('active');
+}
+
+function hideLoanwordTooltip() {
+    const tooltip = document.querySelector('.loanword-tooltip');
+    if (tooltip) {
+        tooltip.classList.remove('active');
+    }
+}
+
+function applyAnglicization(text, langKey) {
+    if (langKey !== 'english' || !displayOptions.anglicizeNames) {
+        return text;
+    }
+
+    let processedText = text;
+    // Sort keys by length descending to match longer phrases first
+    const sortedKeys = Object.keys(anglicizedNameMap).sort((a, b) => b.length - a.length);
+
+    sortedKeys.forEach(nameToReplace => {
+        const anglicizedName = anglicizedNameMap[nameToReplace];
+        // Use a regex to replace whole words only, case-insensitively
+        const regex = new RegExp(`\\b${nameToReplace}\\b`, 'gi');
+        processedText = processedText.replace(regex, `<i class="anglicized-name">${anglicizedName}</i>`);
+    });
+
+    return processedText;
+}
+
+// --- Rubrication Data ---
+const rubricRedWords = {
+    english: [
+        "In the Name of the Father, and of the Son, and of the Holy Spirit, One God, Amen", "I seal my face", "Father", "Son", "Son's", "Son of God", "Son of the Highest", "Holy Spirit", "Holy One", "One God",
+        "Holy Trinity", "We thank You, Lord", "Lord", "God", "King", "Jesus", "Our Father in Heaven",
+        "With the Greeting of Saint Gabriel", "Lord God of hosts", "Jesus Christ", "Iyesus Kristos", "Iyesus", "We believe in one God", "one God",
+        "Light", "True God from True God", "Amen", "Holy, holy, holy, is the Lord of hosts", "Holy, holy, holy", "Holy, Holy, Holy", "Christ",
+        "I worship the Father, and the Son, and the Holy Spirit", "Godhead", "Glory to the Father, glory to the Son, glory to the Holy Spirit",
+        "Most High God", "Greetings to you, we say as we bow to you", "Prayer of Our Lady Mary, Virgin Bearer of God",
+        "Savior", "My soul magnifies the Lord", "Glory to the Father, to the Son, and to the Holy Spirit, forever and to the age of ages",
+        "Praises for Our Lady Mary, Virgin, Bearer of God", "O holy one (", "), pray for us.", "Son of Man", "Only-begotten", "only-begotten",
+        "Word of God", "Emmanuel", "Amanuel", "Word", "God the Word", "One Spirit", "Good Father", "The Angels Praise Mary",
+        "And now in the sixth month", "peace to you", "Peace to you", "peace be unto you", "Peace be unto you", "Most High",
+        "Glory be to the Father, and to the Son, and to the Holy Spirit, forever and to the age of ages.",
+        "Come to me, David, King of Israel", "Ask for us, Mary", "For His mercy endures forever", "For His mercy <i>endures</i> forever", "LORD",
+        "And sing a hymn to Him, And exalt Him beyond measure unto the ages.",
+        "And sing a hymn to the Lord, And exalt Him beyond measure unto the ages.",
+        "And let it sing a hymn to Him, And exalt Him beyond measure unto the ages."
+    ],
+    geez_script: [
+        "በስመ አብ ወወልድ ወመንፈስ ቅዱስ", "አአትብ ገጽየ", "አብ", "ወልድ", "ወወልድ", "መንፈስ ቅዱስ", "አሐዱ አምላክ", "አሐዱ አምላክ，",
+        "ሥላሴ", "ነአኵተከ እግዚኦ", "እግዚ", "እግዚእ", "እግዚኦ", "እግዚአብሔር", "እግዚአ", "አምላክ", "ንጉሥ", "ንጉሠ", "ወንጉሠ", "አቡነ ዘበሰማያት",
+        "በሰላመ ቅዱስ ገብርኤል መልአክ", "እግዚአብሔር ጸባዖት", "እግዚአብሔር ጸባዖት", "ኢየሱስ ክርስቶስ",
+        "ንኣምን በአሐዱ አምላክ", "ነአምን በአሐዱ አምላክ", "አምላክ ዘእምአምላክ ዘበአማን", "ድንግል ማርያም", "ማርያም ድንግል", "አሜን", "ቅዱስ ቅዱስ ቅዱስ እግዚአብሔር ጸባኦት",
+        "ቅዱስ ቅዱስ ቅዱስ እግዚአብሔር ጸባዖት", "ቅዱስ ቅዱስ ቅዱስ", "ቅዱስ， ቅዱስ， ቅዱስ", "ክርስቶስ", "እሰግድ ለአብ ወወልድ ወመንፈስ ቅዱስ አሐቲ ስግደት。", "መለኮት",
+        "ስብሐት ለአብ ወወልድ ወመንፈስ ቅዱስ", "ልዑል እግዚአብሔር", "እግዚአብሔር ልዑል", "ሰላም ለኪ እንዘ ንሰግድ ንብለኪ", "ሰላም ለኪ",
+        "ጸሎተ እግዝእትነ ማርያም ድንግል ወላዲተ አምላክ", "መድኀኒየ", "ወመድኀኒየ", "ታዐብዮ ነፍስየ ለእግዚአብሔር",
+        "ስብሐት ለአብ ወወልድ ወመንፈስ ቅዱስ ለዓለም ወለዓለመ ዓለም", "ውዳሴሃ ለእግዝእትነ ማርያም ድንግል ወላዲተ አምላክ", "ይዌድስዋ መላእክት ለማርያም",
+        "ወበሳድስ ወርኅ", "ሰላም ለከ", "ሰላም ለኪ", "ልዑል", "ንዒ ኀቤየ ኦ ዳዊት ንጉሠ እስራኤል", "ነዓ ኀቤየ ዳዊት ንጉሠ እሥራኤል", "ሰአሊ ለነ ማርያም",
+        "ወእግዚአ", "አምላከ", "ወልድከ"
+    ],
+    spanish: [
+        "En el nombre del Padre, del Hijo y del Espíritu Santo, un solo Dios, Amén", "Padre", "Hijo", "Espíritu Santo", "un solo Dios",
+        "Santísima Trinidad", "Te damos gracias, Señor", "Señor", "Dios", "Rey", "Padre nuestro que estás en los cielos",
+        "Jesucristo", "Amén", "Santo, santo, santo", "Cristo", "Salvador", "Virgen María", "María",
+        "porque para siempre es su misericordia", "porque para siempre [es] su misericordia"
+    ],
+    spanish_pr: [
+        "En el nombre del Padre, del Hijo y del Espíritu Santo, un solo Dios, Amén", "Padre", "Hijo", "Espíritu Santo", "un solo Dios",
+        "Santísima Trinidad", "Te damos gracias, Señor", "Señor", "Dios", "Rey", "Padre nuestro que estás en los cielos",
+        "Jesucristo", "Amén", "Santo, santo, santo", "Cristo", "Salvador", "Virgen María", "María",
+        "porque para siempre es su misericordia", "porque para siempre [es] su misericordia"
+    ]
+};
+
+const rubricGoldWords = {
+    english: [
+        "Virgin Mary", "Mary of Zion", "Lady Mary", "Virgin Mother of God", "Virgin Bearer of God", "God-bearer", "Theotokos",
+        "Lady", "Holy Virgin", "Mary the Virgin", "Mary, the holy one", "Mary, the praised", "Mary, the pure",
+        "Mary, the joyous", "Mary, the beatific", "Mary, the blessed", "The dwelling place of the Godhead",
+        "The perfect Tabernacle", "Sister of the angels", "mother of all people", "Peaceful one", "Mary, the embellished",
+        "The gate of the East and the Mother of Light", "Mary, the chosen and honored one", "Mary", "Mariam"
+    ],
+    geez_script: [
+        "ማርያም ጽዮን", "እግዝእትነ ማርያም", "እግዝእትየ ማርያም", "ድንግል ወላዲተ አምላክ", "ወላዲተ አምላክ", "እግዝእትየ", "እግዝእትነ",
+        "ቅድስት ድንግል", "ማርያም ድንግል", "ማርያም ቅድስት", "ማርያም ውድስት", "ማርያም ንጽሕት", "ማርያም ፍሥሕት", "ማርያም ብጽዕት", "ማርያም ብፅዕት", "ማርያም ቡርክት",
+        "ማኅደረ መለኮት", "ደብተራ ፍጽምት", "እኅተ መላእክት", "ወእመ ኵሉ ሕዝብ", "ሰላማዊት", "ማርያም ሥርጉት",
+        "ኆኅተ ምሥራቅ ወእሙ ለብርሃን", "ማርያም ኅሪት ወክብርት", "마리아"
+    ],
+    spanish: [
+        "María de Sión", "Nuestra Señora María", "Virgen Madre de Dios", "Santa Virgen María", "Santa Virgen", "Santa María", "María la Virgen", "Llena de gracia"
+    ],
+    spanish_pr: [
+        "María de Sión", "Nuestra Señora María", "Virgen Madre de Dios", "Santa Virgen María", "Santa Virgen", "Santa María", "María la Virgen", "Llena de gracia"
+    ]
+};
+
+function buildRegex(words, isGeez = false) {
+    // Sort words by length, descending, to match longer phrases first
+    const sortedWords = words.sort((a, b) => b.length - a.length)
+        .map(word => word.replace(/[.*+?^${}()|[\]\\\/]/g, '\\$&')); // Escape regex special chars including /
+
+    const regexString = sortedWords.join('|');
+
+    // Improved boundary pattern: space, start of line, or common punctuation
+    // leadBoundary matches character before word (e.g. > in <i>Word)
+    // trailBoundary looks ahead for character after word (e.g. < in Word</i>)
+    // Added em-dash (—), en-dash (–), and hyphen (-) to boundaries
+    const leadBoundary = '(?:^|[\\s\\(\\)\\[\\]\\{\\}.,:;!?፨።፤፣፥<>—–-])';
+    const trailBoundary = '(?=[\\s\\(\\)\\[\\]\\{\\}.,:;!?፨።፤፣፥<>—–-]|$)';
+
+    if (isGeez) {
+        return new RegExp(`(${leadBoundary})((?:ወ|ለ|እም)?)(?:${regexString})${trailBoundary}`, 'g');
+    }
+    // No 'i' flag here to ensure case-sensitivity for English/Spanish
+    return new RegExp(`(${leadBoundary})(${regexString})${trailBoundary}`, 'g');
+}
+
+const rubricRedRegex = {
+    english: buildRegex(rubricRedWords.english),
+    geez_script: buildRegex(rubricRedWords.geez_script, true),
+    spanish: buildRegex(rubricRedWords.spanish),
+    spanish_pr: buildRegex(rubricRedWords.spanish_pr),
+};
+const rubricGoldRegex = {
+    english: buildRegex(rubricGoldWords.english),
+    geez_script: buildRegex(rubricGoldWords.geez_script, true),
+    spanish: buildRegex(rubricGoldWords.spanish),
+    spanish_pr: buildRegex(rubricGoldWords.spanish_pr),
+};
+
+
+// --- Speaker Label Data ---
+const speakerKeywords = {
+    english: ["Deacon or Priest", "Priest or Deacon", "Priest", "Asst. Priest", "Deacon", "People", "Subdeacon", "All", "ALL", "Leader", "Reader", "Bridegroom", "Bride"],
+    geez_script: ["ካህን", "ካህን ንፍቅ", "ዲያቆን", "ሕዝብ", "ንፍቀ ዲያቆን", "ኵሎሙ", "መሪሕ", "አንባቢ", "ሙሽራው", "ሙሽራዋ"],
+    amharic_script: ["ካህን", "ካህን ንፍቅ", "ዲያቆን", "ሕዝብ", "ንፍቀ ዲያቆን", "ሁሉም", "መሪ", "አንባቢ", "ሙሽራው", "ሙሽራዋ"],
+    amharic_phonetic: ["kahn", "kahin", "diyakon", "ḥizb", "hizb", "hulumu", "meri", "anbabi", "Priest", "Deacon", "People", "Leader"],
+    oromoo: ["Lubbuu", "Luba", "Diyaaqonii", "Uummata", "Hunda", "Garsee"],
+    tigrinya_script: ["ካህን", "ካህን ንፍቅ", "ዲያቆን", "ሕዝብ", "ንፍቀ ዲያቆን", "ኩሉኹም", "መራሒ", "ነባቢ", "መርዓዊ", "መርዓት"],
+    tigrinya_phonetic: ["kahn", "kahin", "diyakon", "ḥizb", "hizb", "kulukhum", "merahi", "meraḥī", "nebabi", "Priest", "Deacon", "People", "Leader"],
+    spanish: ["Sacerdote Asistente y Pueblo", "Asistente. Sacerdote", "Asistente. Diácono", "Diácono o Sacerdote", "Sacerdote o Diácono", "Sacerdotes auxiliares", "Sacerdote Asistente", "Sacerdote asistente", "Sacerdote auxiliar", "Sacerdote Celebrante", "Sacerdote celebrante", "Diácono Asistente", "Diácono asistente", "Diácono auxiliar", "Asistente del diácono", "Obispo/Patriarca", "Clérigos", "Clero", "Sacerdotes", "Sacerdote", "Diácono", "Pueblo", "Subdiácono", "Todos", "TODOS", "Líder", "Gente", "Lector", "Novio", "Novia"],
+    spanish_pr: ["Sacerdote Asistente y Pueblo", "Asistente. Sacerdote", "Asistente. Diácono", "Diácono o Sacerdote", "Sacerdote o Diácono", "Sacerdotes auxiliares", "Sacerdote Asistente", "Sacerdote asistente", "Sacerdote auxiliar", "Sacerdote Celebrante", "Sacerdote celebrante", "Diácono Asistente", "Diácono asistente", "Diácono auxiliar", "Asistente del diácono", "Obispo/Patriarca", "Clérigos", "Clero", "Sacerdotes", "Sacerdote", "Diácono", "Pueblo", "Subdiácono", "Todos", "TODOS", "Líder", "Gente", "Lector", "Novio", "Novia"],
+    french: ["Prêtre", "Diacre", "Peuple", "Sous-diacre", "Tous", "Leader", "Lecteur", "Marié", "Mariée"],
+    arabic: ["الكاهن", "الشعب", "الشماس", "القارئ", "الجميع", "الرب", "الناس"],
+    greek: ["Ιερέας", "Διάκονος", "Λαός", "Λαοί", "Όλοι", "Αναγνώστης"],
+    hebrew: ["כהן", "כוهاء", "עם", "אנשים", "דיאקון"],
+    malayalam: ["പുരോഹിതൻ", "ജനതകൾ", "ആളുകൾ", "ജനങ്ങൾ", "ശെമ്മാശൻ"],
+    geez_phonetic: ["kwlomu", "ḥzb", "hzb", "merīḥ", "meriḥ", "merih", "kahn", "kahin", "diyakon", "dīyakon", "ḥizb", "hizb", "kwllomu", "kullomu", "meraḥi", "meraḥī", "anbabi", "anbabī", "nebabi", "nebabī", "Kahn", "Kahin", "Asst. Kahn", "Diyakon", "Dīyakon", "Nfq Diyakon", "Ḥizb", "Hizb", "Kwllomu", "Kullomu", "Kwlomu", "Merīḥ", "Meriḥ", "Merih", "Meraḥi", "Meraḥī", "Anbabi", "Anbabī", "Nebabi", "Nebabī", "Priest", "Asst. Priest", "Deacon", "People", "Subdeacon", "All", "ALL", "Leader", "Reader", "Bridegroom", "Bride"]
+};
+
+function toGeez(n) {
+    if (n <= 0) return "";
+    const geezMap = {
+        1: "፩", 2: "፪", 3: "፫", 4: "፬", 5: "፭",
+        6: "፮", 7: "፯", 8: "፰", 9: "፱", 10: "፲",
+        20: "፳", 30: "፴", 40: "፵", 50: "፶",
+        60: "፷", 70: "፸", 80: "፹", 90: "፺", 100: "፻"
+    };
+    if (geezMap[n]) return geezMap[n];
+
+    if (n > 100) {
+        const hundreds = Math.floor(n / 100);
+        const remainder = n % 100;
+        if (hundreds > 1) {
+            return toGeez(hundreds) + geezMap[100] + toGeez(remainder);
+        } else {
+            return geezMap[100] + toGeez(remainder);
+        }
+    } else if (n > 10) {
+        const tens = Math.floor(n / 10) * 10;
+        const ones = n % 10;
+        return geezMap[tens] + toGeez(ones);
+    }
+    return ""; // Should not be reached for n > 0
+}
+
+// --- Functions ---
+function updatePsalmSummary() {
+    const psalmSequenceInput = document.getElementById('psalm-sequence-input');
+    if (psalmSequenceInput) {
+        psalmSequenceInput.value = selectedPsalms.join(', ');
+    }
+    syncPsalmCombinationsButton();
+}
+
+function updateProphetSongsSummary() {
+    if (selectedProphetSongs.length > 0) {
+        // Map keys to authors and get unique ones in the order they appear in prophetSongs
+        const selectedAuthors = [];
+        prophetSongs.forEach(song => {
+            if (selectedProphetSongs.includes(song.key) && !selectedAuthors.includes(song.author)) {
+                selectedAuthors.push(song.author);
+            }
+        });
+        prophetSongsSummary.textContent = `Selected Songs: ${selectedAuthors.join(', ')}`;
+    } else {
+        prophetSongsSummary.textContent = 'Selected Songs: None';
+    }
+    syncPsalmCombinationsButton();
+}
+
+function syncPsalmCombinationsButton() {
+    let matchedCombination = "";
+    const stringifiedSelectedPsalms = JSON.stringify(selectedPsalms);
+    const stringifiedSelectedProphetSongs = JSON.stringify(selectedProphetSongs);
+
+    if (selectedPsalms.length > 0 || selectedProphetSongs.length > 0) {
+        for (const [key, combo] of Object.entries(PSALM_COMBINATIONS)) {
+            if (JSON.stringify(combo.psalms || []) === stringifiedSelectedPsalms && 
+                JSON.stringify(combo.prophetSongs || []) === stringifiedSelectedProphetSongs) {
+                matchedCombination = key;
+                break;
+            }
+        }
+    }
+    if (psalmCombinationsBtn) {
+        if (matchedCombination && PSALM_COMBINATIONS[matchedCombination]) {
+            psalmCombinationsBtn.textContent = PSALM_COMBINATIONS[matchedCombination].name;
+        } else {
+            psalmCombinationsBtn.textContent = 'Typical Psalm Combinations...';
+        }
+        
+        // Update selected state in the modal
+        document.querySelectorAll('.combo-option').forEach(opt => {
+            if (opt.dataset.value === matchedCombination) {
+                opt.classList.add('selected');
+            } else {
+                opt.classList.remove('selected');
+            }
+        });
+    }
+}
+
+
+
+
+// --- NEW: Debounce Utility Function ---
+// Delays invoking a function until after 'wait' ms have passed since the last time it was invoked.
+function debounce(func, wait) {
+    let timeout;
+    return function (...args) {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => {
+            func.apply(this, args);
+        }, wait);
+    };
+}
+
+
+function applyRubrication(text, langKey, isFirstLanguage, chapter = null) {
+    if (!displayOptions.showRubrication) return text;
+
+    let isColored = false;
+    if (displayOptions.languageColors !== 'off') {
+        if (currentTheme.palette === 'legacy') {
+            // Legacy palette: only Ge'ez, Amharic, Tigrinya are colored. 
+            // Others like English, Spanish are white/black.
+            const coloredLegacyLangs = ['geez_script', 'geez_phonetic', 'amharic_script', 'amharic_phonetic', 'tigrinya_script', 'tigrinya_phonetic'];
+            if (coloredLegacyLangs.includes(langKey)) {
+                isColored = true;
+            }
+        } else {
+            // Standard palettes: only the first language is white/black (base color).
+            if (!isFirstLanguage) {
+                isColored = true;
+            }
+        }
+    }
+
+    if (isColored) return text;
+
+    // Disable rubrication for Ge'ez Psalms and Se'atat Lectionary as requested
+    if (langKey === 'geez_script' && (chapter === 'Psalms' || chapter === 'SeatatLectionary')) {
+        return text;
+    }
+
+    let processedText = text;
+
+    // Apply Gold Rubrication first
+    const goldRegex = rubricGoldRegex[langKey];
+    if (goldRegex) {
+        processedText = processedText.replace(goldRegex, (fullMatch, p1, p2) => {
+            // Find which word from the list matched
+            const matchIndex = fullMatch.indexOf(p2, p1.length);
+            const actualMatchedWord = fullMatch.substring(p1.length);
+
+            if (langKey === 'geez_script') {
+                // p1 is leading boundary, p2 is prefix
+                // actualMatchedWord includes prefix + root
+                return `${p1}<span class="rubric-gold">${actualMatchedWord}</span>`;
+            }
+            // p1 is leading boundary, p2 is main word
+            return `${p1}<span class="rubric-gold">${p2}</span>`;
+        });
+    }
+
+    // Apply Red Rubrication second
+    const redRegex = rubricRedRegex[langKey];
+    if (redRegex) {
+        processedText = processedText.replace(redRegex, (fullMatch, p1, p2) => {
+            const actualMatchedWord = fullMatch.substring(p1.length);
+            if (langKey === 'geez_script') {
+                return `${p1}<span class="rubric-red">${actualMatchedWord}</span>`;
+            }
+            return `${p1}<span class="rubric-red">${p2}</span>`;
+        });
+    }
+
+    return processedText;
+}
+
+
+function applyTheme() {
+    body.className = ''; // Clear all classes first
+
+    // Add theme and mode
+    body.classList.add(`theme-${currentTheme.palette}-${currentTheme.mode}`);
+
+    // Add view mode
+    body.classList.add(`view-mode-${displayOptions.viewMode}`);
+
+    // Preserve Scribe Mode
+    if (isScribeModeActive) {
+        body.classList.add('scribe-mode-active');
+    }
+
+    // Add language color class if active
+    if (displayOptions.languageColors !== 'off') {
+        body.classList.add(`language-colors-${displayOptions.languageColors}`);
+    }
+
+    // Add presentation mode
+    if (displayOptions.presentationMode === 'slides') {
+        body.classList.add('presentation-mode-slides');
+        dynamicFontSizingLabel.style.display = 'block';
+        forceUniformFontSizeLabel.style.display = 'block';
+    } else {
+        dynamicFontSizingLabel.style.display = 'none';
+        forceUniformFontSizeLabel.style.display = 'none';
+    }
+
+    // Handle sidebar state
+    if (leftSidebar) {
+        if (isLeftSidebarCollapsed) {
+            leftSidebar.classList.add('collapsed');
+            body.classList.remove('sidebar-left-open');
+            header.classList.remove('sidebar-visible-in-mobile');
+        } else {
+            leftSidebar.classList.remove('collapsed');
+            body.classList.add('sidebar-left-open');
+            header.classList.add('sidebar-visible-in-mobile');
+        }
+    }
+
+    if (rightSidebar) {
+        if (isRightSidebarCollapsed) {
+            rightSidebar.classList.add('collapsed');
+            body.classList.remove('sidebar-right-open');
+        } else {
+            rightSidebar.classList.remove('collapsed');
+            body.classList.add('sidebar-right-open');
+        }
+    }
+
+    if (!isLeftSidebarCollapsed || !isRightSidebarCollapsed) {
+        body.classList.add('sidebar-open');
+    } else {
+        body.classList.remove('sidebar-open');
+    }
+
+    // Handle rubrication state
+    if (!displayOptions.showRubrication) {
+        body.classList.add('rubrication-disabled');
+    }
+
+    // Handle bold text state
+    if (displayOptions.boldText) {
+        body.classList.add('bold-text');
+    }
+
+    // Handle Paragraph Mode
+    const activeLanguageCount = Object.values(displayedLanguages).filter(Boolean).length;
+    if (displayOptions.paragraphMode && activeLanguageCount === 1 && displayOptions.presentationMode === 'scroll') {
+        body.classList.add('paragraph-mode');
+    }
+
+    themeToggle.innerHTML = currentTheme.mode === 'light' ? moonIcon : sunIcon;
+    themeToggle.title = currentTheme.mode === 'light' ? 'Toggle Dark Mode' : 'Toggle Light Mode';
+}
+
+// --- Deep Hashing (URL State Persistence) ---
+
+// Unicode-safe Base64 encoding
+function toBase64(str) {
+    try {
+        return btoa(new TextEncoder().encode(str).reduce((data, byte) => data + String.fromCharCode(byte), ''));
+    } catch (e) {
+        console.error("Base64 encoding failed:", e);
+        return "";
+    }
+}
+
+// Unicode-safe Base64 decoding
+function fromBase64(str) {
+    try {
+        return new TextDecoder().decode(Uint8Array.from(atob(str), c => c.charCodeAt(0)));
+    } catch (e) {
+        console.error("Base64 decoding failed:", e);
+        return "";
+    }
+}
+
+function syncStateToUrl() {
+    if (isInitializing) return;
+    try {
+        const state = {
+            v: '2', // State Version
+            k: isKidaseModeActive,
+            a: selectedAnaphora,
+            mi: selectedMiracleId,
+            mp: miraclePosition,
+            mit: selectedMiracleTranslationIndex,
+            c: selectedCovenantPrayer,
+            hq: hideQuietPrayers,
+            h50: isHolyFiftyDays,
+            ps: selectedPsalms,
+            ss: selectedProphetSongs,
+            sd: selectedSeatatLectionaryDay,
+            wd: selectedWidaseMaryamDay,
+            lr: kidaseLectionaryRefs,
+            sm: showMatins,
+            st: showTeklil,
+            bgn: bridegroomName,
+            bn: brideName,
+            sv: showVespers,
+            l: Object.keys(displayedLanguages).filter(lang => displayedLanguages[lang]),
+            t: currentTheme,
+            do: displayOptions,
+            fs: fontSizes,
+            lo: languageOrder,
+            cn: customNames,
+            cs: serializeCollapsedSections(),
+            ac: areAllSectionsCollapsed // All Collapsed flag
+        };
+        const encoded = toBase64(JSON.stringify(state));
+        if (encoded) {
+            history.replaceState(null, null, "#s=" + encoded);
+        }
+    } catch (e) {
+        console.error("Failed to sync state to URL:", e);
+    }
+}
+
+const SECTION_SLUGS = {
+    "Daily Prayer | ዘዘወትር ጸሎት": "dp",
+    "Prayer of Saint Ephraim: The Praises of Mary (Theotokia) | ውዳሴ ማርያም": "pm",
+    "Opening Prayer for the Psalms and the Songs of the Prophets | ነዓ ኀቤየ ዳዊት": "ps_in",
+    "Closing Prayer for the Psalms and Songs of the Prophets | ሰአሊ ለነ ማርያም": "ps_out",
+    "Prayer of Abba Giyorgis: The Angels Praise Mary | ይዌድስዋ መላእክት ለማርያም": "ap",
+    "Order of the Liturgy | ሥርዐተ ቅዳሴ": "ok",
+    "Anaphora of the Apostles | አኰቴተ ቍርባን ዘሐዋርያት": "aa",
+    "Anaphora of Our Lady Mary | አኰቴተ ቍርባን ዘእግዝእትነ ማርያም": "am",
+    "Sunday | ዘእሁድ": "d_sun",
+    "Monday | ዘሰኑይ": "d_mon",
+    "Tuesday | ዘሠሉስ": "d_tue",
+    "Wednesday | ዘረቡዕ": "d_wed",
+    "Thursday | ዘሐሙስ": "d_thu",
+    "Friday | ዘዓርብ": "d_fri",
+    "Saturday | ዘቀዳሚት": "d_sat"
+};
+
+function slugifyTitle(title) {
+    if (!title) return "";
+    if (SECTION_SLUGS[title]) return SECTION_SLUGS[title];
+    return title.split('|')[0].trim().toLowerCase().replace(/[^a-z0-9]/g, '').substring(0, 12);
+}
+
+function serializeCollapsedSections() {
+    if (areAllSectionsCollapsed) return {}; // No need to list them all if ac flag is true
+    const serialized = {};
+    Object.entries(collapsedSections).forEach(([title, isCollapsed]) => {
+        if (isCollapsed) {
+            serialized[slugifyTitle(title)] = true;
+        }
+    });
+    return serialized;
+}
+
+function deserializeCollapsedSections(serialized, version) {
+    const deserialized = {};
+    if (!serialized) return deserialized;
+
+    if (version === '1') return serialized; // Legacy version
+
+    // Version 2: Map slugs back to titles (or at least keep slugs as keys)
+    // Actually, since we render titles dynamically, we need to make sure 
+    // addSectionTitle can find its state.
+    return serialized;
+}
+
+async function loadStateFromUrl() {
+    const hash = window.location.hash;
+    if (!hash) return false;
+
+    try {
+        let state = null;
+        let v = '1';
+
+        if (hash.startsWith('#s=')) {
+            const encoded = hash.substring(3);
+            const jsonStr = fromBase64(encoded);
+            if (!jsonStr) return false;
+            state = JSON.parse(jsonStr);
+            v = state.v || '1';
+        } else if (hash.startsWith('#id=')) {
+            const id = hash.substring(4);
+            const doc = await db.collection('short_links').doc(id).get();
+            if (doc.exists) {
+                state = JSON.parse(doc.data().state);
+                v = state.v || '2';
+            } else {
+                console.warn("Short link not found");
+                return false;
+            }
+        } else {
+            return false;
+        }
+
+        if (!state) return false;
+
+        if (state.k !== undefined) isKidaseModeActive = state.k;
+        if (state.a !== undefined) selectedAnaphora = state.a;
+        if (state.mi !== undefined) selectedMiracleId = state.mi;
+        if (state.mp !== undefined) miraclePosition = state.mp;
+        if (state.mit !== undefined) selectedMiracleTranslationIndex = state.mit;
+        if (state.c !== undefined) selectedCovenantPrayer = state.c;
+        if (state.hq !== undefined) hideQuietPrayers = state.hq;
+        if (state.h50 !== undefined) isHolyFiftyDays = state.h50;
+        if (state.ps !== undefined) selectedPsalms = state.ps;
+        if (state.ss !== undefined) selectedProphetSongs = state.ss;
+        if (state.sd !== undefined) selectedSeatatLectionaryDay = state.sd;
+        if (state.wd !== undefined) selectedWidaseMaryamDay = state.wd;
+        if (state.lr !== undefined) kidaseLectionaryRefs = { ...kidaseLectionaryRefs, ...state.lr };
+        if (state.sm !== undefined) showMatins = state.sm;
+        if (state.st !== undefined) showTeklil = state.st;
+        if (state.bgn !== undefined) bridegroomName = state.bgn;
+        if (state.bn !== undefined) brideName = state.bn;
+        if (state.sv !== undefined) showVespers = state.sv;
+
+        if (state.l !== undefined) {
+            Object.keys(displayedLanguages).forEach(lang => displayedLanguages[lang] = state.l.includes(lang));
+        }
+
+        if (state.t !== undefined) currentTheme = { ...currentTheme, ...state.t };
+        if (state.do !== undefined) displayOptions = { ...displayOptions, ...state.do };
+        if (state.fs !== undefined) fontSizes = { ...fontSizes, ...state.fs };
+        if (state.lo !== undefined && Array.isArray(state.lo)) {
+            const missing = languageOrder.filter(k => !state.lo.includes(k));
+            languageOrder = [...state.lo.filter(k => languageOrder.includes(k)), ...missing];
+        }
+        if (state.cn !== undefined) customNames = { ...customNames, ...state.cn };
+
+        if (state.ac !== undefined) areAllSectionsCollapsed = state.ac;
+        if (state.cs !== undefined) {
+            collapsedSections = deserializeCollapsedSections(state.cs, v);
+        }
+
+        console.log("State successfully loaded from URL (V" + v + ")");
+        return true;
+    } catch (e) {
+        console.error("Failed to load state from URL:", e);
+        return false;
+    }
+}
+
+async function createShortLinkUrl() {
+    const state = {
+        v: '2',
+        k: isKidaseModeActive,
+        a: selectedAnaphora,
+        mi: selectedMiracleId,
+        mp: miraclePosition,
+        mit: selectedMiracleTranslationIndex,
+        c: selectedCovenantPrayer,
+        hq: hideQuietPrayers,
+        ps: selectedPsalms,
+        ss: selectedProphetSongs,
+        sd: selectedSeatatLectionaryDay,
+        wd: selectedWidaseMaryamDay,
+        lr: kidaseLectionaryRefs,
+        sm: showMatins,
+        st: showTeklil,
+        bgn: bridegroomName,
+        bn: brideName,
+        sv: showVespers,
+        l: Object.keys(displayedLanguages).filter(lang => displayedLanguages[lang]),
+        t: currentTheme,
+        do: displayOptions,
+        fs: fontSizes,
+        lo: languageOrder,
+        cn: customNames,
+        cs: {}, // Empty collapsed sections
+        ac: true // Recipients see everything collapsed by default as requested
+    };
+
+    const stateJson = JSON.stringify(state);
+    const docRef = await db.collection('short_links').add({
+        state: stateJson,
+        createdAt: firebase.firestore.FieldValue.serverTimestamp()
+    });
+
+    return `${window.location.origin}${window.location.pathname}#id=${docRef.id}`;
+}
+
+async function generateShortLink() {
+    if (!shareLinkButton) return;
+    const originalContent = shareLinkButton.innerHTML;
+    shareLinkButton.innerHTML = '<span>Generating...</span>';
+    shareLinkButton.disabled = true;
+
+    try {
+        const shortUrl = await createShortLinkUrl();
+        await navigator.clipboard.writeText(shortUrl);
+        showCopyNotification('Short link copied to clipboard!');
+    } catch (e) {
+        console.error("Failed to generate short link:", e);
+        showCopyNotification('Failed to generate link.', 3000);
+    } finally {
+        shareLinkButton.innerHTML = originalContent;
+        shareLinkButton.disabled = false;
+    }
+}
+
+async function shareScriptures() {
+    if (!shareScripturesButton) return;
+    const originalContent = shareScripturesButton.innerHTML;
+    shareScripturesButton.innerHTML = '<span>Generating...</span>';
+    shareScripturesButton.disabled = true;
+
+    try {
+        if (!bibleData.loaded) {
+            await loadBibleData();
+        }
+        
+        const shortUrl = await createShortLinkUrl();
+        
+        let text = "";
+        const readings = [];
+        
+        if (showVespers) {
+            readings.push({ key: 'eveningPsalm', title: '፨ Sunset Psalm | ምስባክ ዘሠርክ', isPsalm: true });
+            readings.push({ key: 'eveningGospel', title: '፨ Sunset Gospel | ወንጌል ዘሠርክ', isPsalm: false });
+        }
+
+        if (showMatins) {
+            readings.push({ key: 'morningPsalm', title: '፨ Morning Psalm | ምስባክ ዘነግህ', isPsalm: true });
+            readings.push({ key: 'morningGospel', title: '፨ Morning Gospel | ወንጌል ዘነግህ', isPsalm: false });
+        }
+        
+        if (isKidaseModeActive) {
+            readings.push({ key: 'pauline', title: '፨ Liturgy Pauline Epistle | መልእክተ ጳውሎስ', isPsalm: false });
+            readings.push({ key: 'universal', title: '፨ Liturgy Universal Epistle | መልእክተ ካልእ', isPsalm: false });
+            readings.push({ key: 'acts', title: '፨ Liturgy Acts of the Apostles | ግብረ ሐዋርያት', isPsalm: false });
+            readings.push({ key: 'psalm', title: '፨ Liturgy Psalm | ምስባክ ዘቅዳሴ', isPsalm: true });
+            readings.push({ key: 'gospel', title: '፨ Liturgy Gospel | ወንጌል ዘቅዳሴ', isPsalm: false });
+        }
+        
+        for (const r of readings) {
+            const refStr = kidaseLectionaryRefs[r.key];
+            if (!refStr) continue;
+            
+            const match = refStr.match(/(.+) (\d+):(.+)/);
+            if (!match) continue;
+            
+            let book = match[1];
+            let chapter = parseInt(match[2]);
+            let versesStr = match[3];
+            
+            let lookupName = book;
+            if (book === 'Psalm') lookupName = 'Psalms';
+            
+            let startVerse = 1;
+            let endVerse = 1;
+            if (versesStr.includes('-')) {
+                const parts = versesStr.split('-');
+                startVerse = parseInt(parts[0]);
+                if (parts[1].toLowerCase() === 'end') {
+                    endVerse = getActualVerseCount(lookupName, chapter) || 999;
+                } else {
+                    endVerse = parseInt(parts[1]);
+                }
+            } else {
+                startVerse = endVerse = parseInt(versesStr);
+            }
+            const actualEndVerse = (startVerse !== endVerse) ? `${startVerse}-${endVerse}` : `${startVerse}`;
+            
+            const bookCfg = BIBLE_BOOK_MAPPING[lookupName];
+            let geezBook = bookCfg ? bookCfg.geez : book;
+            
+            const engRef = `${book} ${chapter}:${actualEndVerse} (NKJV)`;
+            let citationLine = engRef;
+            
+            let misbak = null;
+            if (r.isPsalm && typeof TYPICAL_PSALMS !== 'undefined') {
+                misbak = TYPICAL_PSALMS.find(p => p.mc === chapter && p.ms === startVerse && p.me === endVerse);
+            }
+            
+            if (r.isPsalm) {
+                if (misbak) {
+                    const osbEndVerse = (misbak.ls !== misbak.le) ? `${misbak.ls}-${misbak.le}` : `${misbak.ls}`;
+                    const osbRef = `Psalms ${misbak.lc}:${osbEndVerse} (OSB)`;
+                    
+                    const endGeez = (misbak.ls !== misbak.le) ? '-' + toGeezNumeral(misbak.le) : '';
+                    const geezRef = `${geezBook} ${toGeezNumeral(misbak.lc)}፡${toGeezNumeral(misbak.ls)}${endGeez} (ግእዝ)`;
+                    
+                    citationLine = `${engRef} | ${osbRef} | ${geezRef}`;
+                } else {
+                    citationLine = engRef;
+                }
+            } else {
+                const endGeez = (startVerse !== endVerse) ? '-' + toGeezNumeral(endVerse) : '';
+                const geezRef = `${geezBook} ${toGeezNumeral(chapter)}፡${toGeezNumeral(startVerse)}${endGeez}`;
+                citationLine = `${engRef} | ${geezRef}`;
+            }
+            
+            if (text !== "") {
+                text += `\n`;
+            }
+            text += `${r.title}\n`;
+            text += `${citationLine}\n`;
+            
+            if (r.isPsalm) {
+                if (misbak) {
+                    text += `${misbak.g}\n`;
+                }
+                
+                const engTextArray = [];
+                const nkjvBookName = bookCfg ? bookCfg.nkjv : "Psalms";
+                if (bibleData.nkjv) {
+                    for (let vNum = startVerse; vNum <= endVerse; vNum++) {
+                        const v = bibleData.nkjv.find(v => v.book === nkjvBookName && v.chapter === chapter && v.verse === vNum);
+                        if (v) {
+                            engTextArray.push(String(v.text).replace(/<[^>]+>/g, ''));
+                        }
+                    }
+                }
+                const engText = engTextArray.join(' ');
+                if (engText) {
+                    text += `${engText}\n`;
+                }
+            } else {
+                const engVerses = getSeatatBibleVerses(lookupName, chapter, actualEndVerse);
+                if (engVerses && engVerses.length > 0) {
+                    const firstVerseText = engVerses.map(v => String(v.english).replace(/<[^>]+>/g, '')).filter(Boolean).join(' ');
+                    if (firstVerseText) {
+                        const words = firstVerseText.split(/\s+/);
+                        const incipit = words.slice(0, 15).join(' ') + (words.length > 15 ? '...' : '');
+                        text += `"${incipit}"\n`;
+                    }
+                }
+            }
+        }
+        
+        text += `\n${shortUrl}`;
+        
+        await navigator.clipboard.writeText(text.trim());
+        showCopyNotification('Link and scriptures copied!');
+    } catch (e) {
+        console.error("Failed to generate scriptures text:", e);
+        showCopyNotification('Failed to copy.', 3000);
+    } finally {
+        shareScripturesButton.innerHTML = originalContent;
+        shareScripturesButton.disabled = false;
+    }
+}
+
+function saveSettings() {
+    if (isInitializing) return;
+    localStorage.setItem('settingsVersion', SETTINGS_VERSION);
+    localStorage.setItem('theme', JSON.stringify(currentTheme));
+    localStorage.setItem('sidebarLeftCollapsed', isLeftSidebarCollapsed);
+    localStorage.setItem('sidebarRightCollapsed', isRightSidebarCollapsed);
+    localStorage.setItem('displayOptions', JSON.stringify(displayOptions));
+    localStorage.setItem('fontSizes', JSON.stringify(fontSizes));
+    localStorage.setItem('ethiopicFont', ethiopicFontSelect.value);
+    localStorage.setItem('englishFont', englishFontSelect.value);
+    localStorage.setItem('displayedLanguages', JSON.stringify(displayedLanguages));
+    localStorage.setItem('languageOrder', JSON.stringify(languageOrder));
+    localStorage.setItem('selectedPsalms', JSON.stringify(selectedPsalms));
+    localStorage.setItem('selectedProphetSongs', JSON.stringify(selectedProphetSongs));
+    localStorage.setItem('selectedSeatatLectionaryDay', selectedSeatatLectionaryDay);
+    localStorage.setItem('selectedWidaseMaryamDay', selectedWidaseMaryamDay);
+    localStorage.setItem('isKidaseModeActive', isKidaseModeActive);
+    localStorage.setItem('selectedAnaphora', selectedAnaphora);
+    localStorage.setItem('selectedMiracleId', selectedMiracleId);
+    localStorage.setItem('miraclePosition', miraclePosition);
+    localStorage.setItem('selectedMiracleTranslationIndex', selectedMiracleTranslationIndex);
+    localStorage.setItem('showAnaphora', showAnaphora);
+    localStorage.setItem('showSeatatReadings', showSeatatReadings);
+    localStorage.setItem('showMatins', showMatins);
+    localStorage.setItem('showTeklil', showTeklil);
+    localStorage.setItem('useExternalBibleAPI', useExternalBibleAPI);
+    localStorage.setItem('bridegroomName', bridegroomName);
+    localStorage.setItem('brideName', brideName);
+    localStorage.setItem('showVespers', showVespers);
+    localStorage.setItem('selectedKidaseDay', selectedKidaseDay);
+    localStorage.setItem('selectedCovenantPrayer', selectedCovenantPrayer);
+    localStorage.setItem('hideQuietPrayers', hideQuietPrayers);
+    localStorage.setItem('isHolyFiftyDays', isHolyFiftyDays);
+    localStorage.setItem('kidaseLectionaryRefs', JSON.stringify(kidaseLectionaryRefs));
+    localStorage.setItem('customNames', JSON.stringify(customNames));
+    localStorage.setItem('collapsedSections', JSON.stringify(collapsedSections));
+    syncStateToUrl();
+}
+
+
+async function loadSettings() {
+    const isMobile = window.innerWidth < 900;
+    const savedVersion = localStorage.getItem('settingsVersion');
+
+    // Auto-generate default languages from the registry
+    const defaultLanguages = {};
+    Object.keys(LANGUAGE_REGISTRY).forEach(id => {
+        const cfg = LANGUAGE_REGISTRY[id];
+        if (isMobile) {
+            // For new mobile users, only initially display English and Ge'ez
+            defaultLanguages[id] = (id === 'english' || id === 'geez_script');
+        } else {
+            // For desktop, turn on main scripts but leave auto-translations and phonetics off
+            if (id === 'spanish_pr') {
+                defaultLanguages[id] = false;
+            } else if (cfg.category === 'main' && !cfg.isAuto && !id.includes('phonetic')) {
+                defaultLanguages[id] = true;
+            } else if (id === 'spanish') {
+                defaultLanguages[id] = true;
+            } else {
+                defaultLanguages[id] = false;
+            }
+        }
+    });
+
+    const defaultSettings = {
+        sidebarCollapsed: isMobile,
+        theme: { palette: 'legacy', mode: 'dark' },
+        displayOptions: {
+            presentationMode: 'scroll',
+            viewMode: 'card',
+            layout: 'column',
+            horizontalScroll: true,
+            showPrayerLabels: true,
+            showLanguageLabels: true,
+            showSpeakerLabels: true,
+            showRubrication: true,
+            dynamicFontSizing: true,
+            forceUniformFontSize: false,
+            paragraphMode: false,
+            slideTransition: 'fade',
+            languageColors: 'vibrant',
+            boldText: false,
+            anglicizeNames: false,
+            showSupplications: true,
+            showDailyPrayer: true,
+            showGeezPhoneticChants: false,
+            showLoanwordOrigins: false,
+            showGateOfLight: false,
+            showYewediswaMelaekt: true
+        },
+        displayedLanguages: defaultLanguages,
+        fontSizes: {
+            geez: 16,
+            english: 16,
+            locked: true
+        },
+        ethiopicFont: "'Noto Sans Ethiopic', sans-serif",
+        englishFont: "'Merriweather', serif",
+        selectedPsalms: [12, 15, 22, 50, 90, 102, 135], // Default LXX Psalms
+        selectedProphetSongs: [],
+        selectedSeatatLectionaryDay: getSeatatLiturgicalDay(),
+        selectedWidaseMaryamDay: getSeatatLiturgicalDay(),
+        isKidaseModeActive: false,
+        selectedAnaphora: 'apostles',
+        showSeatatReadings: false,
+        showMatins: true,
+        useExternalBibleAPI: false,
+        showTeklil: false,
+        bridegroomName: '',
+        brideName: '',
+        showVespers: false,
+        selectedKidaseDay: 'sunday',
+        selectedCovenantPrayer: 'morning',
+        showAnaphora: true,
+        selectedMiracleId: 'none',
+        miraclePosition: 'anaphora',
+        selectedMiracleTranslationIndex: 0,
+        hideQuietPrayers: false,
+        isHolyFiftyDays: false,
+        // Default Custom Names
+        customNames: {
+            servant: '{Names}',
+            patriarch: 'Abba Mathias I (አባ ማትያስ ቀዳማዊ)',
+            bishop: 'Abba Theophilus (አባ ቴዎፍሎስ)',
+            country: 'Ethiopia, Eritrea, and America',
+            headOfState: '...'
+        },
+        collapsedSections: {},
+        kidaseLectionaryRefs: {
+            morningPsalm: 'Psalms 34:7-8',
+            morningGospel: 'Matthew 24:30-36',
+            eveningPsalm: 'Psalms 141:1-2',
+            eveningGospel: 'Matthew 14:15-21',
+            pauline: 'Romans 9:17-30',
+            universal: 'Jude 1:6-14',
+            acts: 'Acts 10:3-9',
+            psalm: 'Psalms 33:16-17',
+            gospel: 'Luke 18:1-9'
+        }
+    };
+
+    if (savedVersion !== SETTINGS_VERSION) {
+        // Clear old settings and start fresh if version mismatch
+        isSidebarCollapsed = defaultSettings.sidebarCollapsed;
+        currentTheme = defaultSettings.theme;
+        displayOptions = defaultSettings.displayOptions;
+        displayedLanguages = defaultSettings.displayedLanguages;
+        fontSizes = defaultSettings.fontSizes;
+        ethiopicFontSelect.value = defaultSettings.ethiopicFont;
+        englishFontSelect.value = defaultSettings.englishFont;
+        selectedPsalms = defaultSettings.selectedPsalms;
+        selectedProphetSongs = defaultSettings.selectedProphetSongs;
+        selectedSeatatLectionaryDay = defaultSettings.selectedSeatatLectionaryDay;
+        selectedWidaseMaryamDay = defaultSettings.selectedWidaseMaryamDay;
+        isKidaseModeActive = defaultSettings.isKidaseModeActive;
+        selectedAnaphora = defaultSettings.selectedAnaphora;
+        selectedKidaseDay = defaultSettings.selectedKidaseDay;
+        selectedCovenantPrayer = defaultSettings.selectedCovenantPrayer;
+        hideQuietPrayers = defaultSettings.hideQuietPrayers;
+        isHolyFiftyDays = defaultSettings.isHolyFiftyDays;
+        customNames = defaultSettings.customNames; // Use defaults
+        collapsedSections = defaultSettings.collapsedSections;
+    } else {
+        // Load saved settings and merge with defaults to ensure all keys exist
+        currentTheme = JSON.parse(localStorage.getItem('theme')) || defaultSettings.theme;
+        isLeftSidebarCollapsed = localStorage.getItem('sidebarLeftCollapsed') !== null 
+            ? localStorage.getItem('sidebarLeftCollapsed') === 'true' 
+            : (localStorage.getItem('sidebarCollapsed') !== null ? localStorage.getItem('sidebarCollapsed') === 'true' : isMobile);
+        isRightSidebarCollapsed = localStorage.getItem('sidebarRightCollapsed') !== null 
+            ? localStorage.getItem('sidebarRightCollapsed') === 'true' 
+            : true;
+        const savedDisplayOptions = JSON.parse(localStorage.getItem('displayOptions')) || {};
+        displayOptions = { ...defaultSettings.displayOptions, ...savedDisplayOptions };
+        const savedDisplayedLanguages = JSON.parse(localStorage.getItem('displayedLanguages')) || {};
+        displayedLanguages = { ...defaultSettings.displayedLanguages, ...savedDisplayedLanguages };
+        const savedFontSizes = JSON.parse(localStorage.getItem('fontSizes')) || {};
+        fontSizes = { ...defaultSettings.fontSizes, ...savedFontSizes };
+        ethiopicFontSelect.value = localStorage.getItem('ethiopicFont') || defaultSettings.ethiopicFont;
+        englishFontSelect.value = localStorage.getItem('englishFont') || defaultSettings.englishFont;
+
+        const savedLanguageOrder = localStorage.getItem('languageOrder');
+        if (savedLanguageOrder) {
+            const loadedOrder = JSON.parse(savedLanguageOrder);
+            if (Array.isArray(loadedOrder)) {
+                const missing = languageOrder.filter(k => !loadedOrder.includes(k));
+                languageOrder = [...loadedOrder.filter(k => languageOrder.includes(k)), ...missing];
+            }
+        }
+
+        selectedPsalms = JSON.parse(localStorage.getItem('selectedPsalms')) || defaultSettings.selectedPsalms;
+        selectedProphetSongs = JSON.parse(localStorage.getItem('selectedProphetSongs')) || defaultSettings.selectedProphetSongs;
+        selectedSeatatLectionaryDay = localStorage.getItem('selectedSeatatLectionaryDay') || defaultSettings.selectedSeatatLectionaryDay;
+        selectedWidaseMaryamDay = localStorage.getItem('selectedWidaseMaryamDay') || defaultSettings.selectedWidaseMaryamDay;
+        isKidaseModeActive = localStorage.getItem('isKidaseModeActive') === 'true';
+        selectedAnaphora = localStorage.getItem('selectedAnaphora') || defaultSettings.selectedAnaphora;
+        showSeatatReadings = localStorage.getItem('showSeatatReadings') === 'true';
+        showMatins = localStorage.getItem('showMatins') !== null ? localStorage.getItem('showMatins') === 'true' : defaultSettings.showMatins;
+        useExternalBibleAPI = localStorage.getItem('useExternalBibleAPI') !== null ? localStorage.getItem('useExternalBibleAPI') === 'true' : defaultSettings.useExternalBibleAPI;
+        showTeklil = localStorage.getItem('showTeklil') === 'true';
+        bridegroomName = localStorage.getItem('bridegroomName') || defaultSettings.bridegroomName;
+        brideName = localStorage.getItem('brideName') || defaultSettings.brideName;
+        showVespers = localStorage.getItem('showVespers') === 'true';
+        selectedKidaseDay = localStorage.getItem('selectedKidaseDay') || defaultSettings.selectedKidaseDay;
+        selectedCovenantPrayer = localStorage.getItem('selectedCovenantPrayer') || defaultSettings.selectedCovenantPrayer;
+        showAnaphora = localStorage.getItem('showAnaphora') !== null ? localStorage.getItem('showAnaphora') === 'true' : defaultSettings.showAnaphora;
+        hideQuietPrayers = localStorage.getItem('hideQuietPrayers') !== null ? localStorage.getItem('hideQuietPrayers') === 'true' : defaultSettings.hideQuietPrayers;
+        isHolyFiftyDays = localStorage.getItem('isHolyFiftyDays') !== null ? localStorage.getItem('isHolyFiftyDays') === 'true' : defaultSettings.isHolyFiftyDays;
+        const savedKidaseLectionaryRefs = JSON.parse(localStorage.getItem('kidaseLectionaryRefs')) || {};
+        kidaseLectionaryRefs = { ...defaultSettings.kidaseLectionaryRefs, ...savedKidaseLectionaryRefs };
+        const savedCustomNames = JSON.parse(localStorage.getItem('customNames')) || {};
+        customNames = { ...defaultSettings.customNames, ...savedCustomNames };
+        collapsedSections = JSON.parse(localStorage.getItem('collapsedSections')) || defaultSettings.collapsedSections;
+    }
+
+    // Override settings from URL if present
+    await loadStateFromUrl();
+
+    // Set UI elements from the loaded/default settings
+    servantNameInput.value = customNames.servant;
+    patriarchNameInput.value = customNames.patriarch;
+    bishopNameInput.value = customNames.bishop;
+    attendingBishopsInput.value = customNames.attendingBishops || '';
+    churchNameInput.value = customNames.churchName || '';
+    countryNameInput.value = customNames.country;
+    headOfStateInput.value = customNames.headOfState;
+
+    initializeLectionaryPickers();
+
+    showTeklilToggle.checked = showTeklil;
+    bridegroomNameInput.value = bridegroomName;
+    brideNameInput.value = brideName;
+    teklilNamesSettings.style.display = showTeklil ? 'block' : 'none';
+
+    geezFontSizeSlider.value = fontSizes.geez;
+    englishFontSizeSlider.value = fontSizes.english;
+    lockFontSizesToggle.checked = fontSizes.locked;
+
+    applyTheme();
+    paletteSelector.value = currentTheme.palette;
+    updateFontStylesAndPreview();
+    updateLanguageToggles();
+    checkAndEnforceLayoutRules();
+    updateAllTogglesInSettingsPanel();
+    populatePsalmSelector();
+    renderPsalmCombinationsModal();
+    populateProphetSongsSelector();
+    renderPrayers();
+}
+
+function checkAndEnforceLayoutRules() {
+    const activeLanguageCount = Object.values(displayedLanguages).filter(Boolean).length;
+    const isNarrowScreen = window.innerWidth <= 900;
+
+    if (activeLanguageCount >= 4) {
+        displayOptions.horizontalScroll = true;
+    } else {
+        displayOptions.horizontalScroll = false;
+    }
+
+    if (isNarrowScreen) {
+        if (activeLanguageCount >= 4 && !displayOptions.horizontalScroll) {
+            if (displayOptions.layout !== 'row') {
+                displayOptions.layout = 'row';
+            }
+        }
+    }
+    applyTheme();
+    updateAllTogglesInSettingsPanel();
+}
+
+
+function updateLayoutToggleIcon() {
+    const isRowLayout = displayOptions.layout === 'row';
+    if (isRowLayout) {
+        layoutIconColumn.style.display = 'none';
+        layoutIconRow.style.display = 'block';
+    } else {
+        layoutIconColumn.style.display = 'block';
+        layoutIconRow.style.display = 'none';
+    }
+}
+
+function updatePresentationModeToggleIcon() {
+    const isSlidesMode = displayOptions.presentationMode === 'slides';
+    if (isSlidesMode) {
+        presModeIconSlides.style.display = 'none';
+        presModeIconScroll.style.display = 'block';
+    } else {
+        presModeIconSlides.style.display = 'block';
+        presModeIconScroll.style.display = 'none';
+    }
+}
+
+function updateExpandCollapseAllIcon() {
+    const collapseIcon = expandCollapseAllButton.querySelector('.icon-collapse-all');
+    const expandIcon = expandCollapseAllButton.querySelector('.icon-expand-all');
+    if (areAllSectionsCollapsed) {
+        collapseIcon.style.display = 'none';
+        expandIcon.style.display = 'block';
+        expandCollapseAllButton.title = 'Expand All';
+    } else {
+        collapseIcon.style.display = 'block';
+        expandIcon.style.display = 'none';
+        expandCollapseAllButton.title = 'Collapse All';
+    }
+}
+
+
+function updateAllTogglesInSettingsPanel() {
+    showLanguageLabelsToggle.checked = displayOptions.showLanguageLabels;
+    showSpeakerLabelsToggle.checked = displayOptions.showSpeakerLabels;
+    paragraphModeToggle.checked = displayOptions.paragraphMode;
+    const activeLanguageCount = Object.values(displayedLanguages).filter(Boolean).length;
+    paragraphModeToggle.parentElement.style.display = (activeLanguageCount === 1 && displayOptions.presentationMode === 'scroll') ? 'block' : 'none';
+    showRubricationToggle.checked = displayOptions.showRubrication;
+    languageColorCodingSelect.value = displayOptions.languageColors;
+    dynamicFontSizingToggle.checked = displayOptions.dynamicFontSizing;
+    forceUniformFontSizeToggle.checked = displayOptions.forceUniformFontSize;
+    slideTransitionSelect.value = displayOptions.slideTransition;
+    boldTextToggle.checked = displayOptions.boldText;
+    anglicizeNamesToggle.checked = displayOptions.anglicizeNames;
+    showSupplicationsToggle.checked = displayOptions.showSupplications;
+    showDailyPrayerToggle.checked = displayOptions.showDailyPrayer;
+    if (showGateOfLightToggle) showGateOfLightToggle.checked = displayOptions.showGateOfLight;
+    if (showYewediswaMelaektToggle) showYewediswaMelaektToggle.checked = displayOptions.showYewediswaMelaekt !== false;
+    if (showGeezPhoneticChantsToggle) showGeezPhoneticChantsToggle.checked = displayOptions.showGeezPhoneticChants;
+    if (showLoanwordOriginsToggle) showLoanwordOriginsToggle.checked = displayOptions.showLoanwordOrigins;
+
+    // Seatat Lectionary Selector
+    const lectionaryRadios = document.querySelectorAll('input[name="seatat-lectionary-day"]');
+    lectionaryRadios.forEach(radio => {
+        if (radio.value === selectedSeatatLectionaryDay) {
+            radio.checked = true;
+        }
+    });
+
+    const maryRadios = document.querySelectorAll('input[name="praise-of-mary-day"]');
+    maryRadios.forEach(radio => {
+        if (radio.value === selectedWidaseMaryamDay) {
+            radio.checked = true;
+        }
+    });
+
+    // Kidase Settings
+    if (kidaseGatedSection) {
+        kidaseGatedSection.style.display = 'block';
+    }
+    kidaseModeToggle.checked = isKidaseModeActive;
+    kidaseSettings.style.display = isKidaseModeActive ? 'block' : 'none';
+    anaphoraSelector.value = selectedAnaphora;
+    const showAnaphoraToggleEl = document.getElementById('show-anaphora-toggle');
+    const anaphoraSettingsEl = document.getElementById('anaphora-settings');
+    if (showAnaphoraToggleEl) showAnaphoraToggleEl.checked = showAnaphora;
+    if (anaphoraSettingsEl) anaphoraSettingsEl.style.display = showAnaphora ? 'block' : 'none';
+    const showSeatatReadingsToggle = document.getElementById('show-seatat-readings-toggle');
+    const seatatReadingsSettings = document.getElementById('seatat-readings-settings');
+    if (showSeatatReadingsToggle) showSeatatReadingsToggle.checked = showSeatatReadings;
+    if (seatatReadingsSettings) seatatReadingsSettings.style.display = showSeatatReadings ? 'block' : 'none';
+    showMatinsToggle.checked = showMatins;
+    if (useExternalBibleAPIToggle) useExternalBibleAPIToggle.checked = useExternalBibleAPI;
+    if (useExternalBibleAPILabel) useExternalBibleAPILabel.style.display = '';
+    showVespersToggle.checked = showVespers;
+    morningPsalmGospelSettings.style.display = showMatins ? 'block' : 'none';
+    vespersPsalmGospelSettings.style.display = showVespers ? 'block' : 'none';
+    if (kidaseDaySelector) kidaseDaySelector.value = selectedKidaseDay;
+    covenantPrayerSelector.value = selectedCovenantPrayer;
+    hideQuietPrayersToggle.checked = hideQuietPrayers;
+    if (holyFiftyDaysToggle) holyFiftyDaysToggle.checked = isHolyFiftyDays;
+
+    updateLayoutToggleIcon();
+    updatePresentationModeToggleIcon();
+    updateExpandCollapseAllIcon();
+}
+
+function updateLanguageToggles() {
+    languageTogglesDiv.innerHTML = '';
+    unofficialLanguageTogglesDiv.innerHTML = '';
+
+    // Toggle visibility of the unofficial section container
+    if (unofficialLanguagesSection) {
+        unofficialLanguagesSection.style.display = isScribeLoggedIn ? 'block' : 'none';
+    }
+
+    Object.entries(LANGUAGE_REGISTRY).forEach(([id, cfg]) => {
+        const label = document.createElement('label');
+        if (cfg.isEthiopic) label.classList.add('ethiopic-label');
+
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.value = id;
+        checkbox.checked = displayedLanguages[id] || false;
+
+        const span = document.createElement('span');
+        if (id.includes('phonetic')) {
+            const italic = document.createElement('i');
+            italic.textContent = cfg.name;
+            span.appendChild(italic);
+        } else {
+            span.textContent = cfg.name;
+        }
+
+        // Handle "Seeking Scribes" graying out
+        if (cfg.isSeekingScribe) {
+            // Check if there is ANY translation for this language in the current view
+            const hasTranslations = prayers.some(p => p[id] && p[id].trim()) ||
+                prayersFromFirestore.some(p => p[id] && p[id].trim());
+
+            if (!hasTranslations) {
+                // If no translations and not a scribe, hide it entirely
+                if (!isScribeLoggedIn) return;
+
+                label.style.opacity = '0.5';
+                // label.title = 'No translations yet. Seeking Scribes!';
+            }
+        }
+
+        label.appendChild(checkbox);
+        label.appendChild(document.createTextNode(' '));
+        label.appendChild(span);
+
+        // Sort into respective containers
+        if (cfg.category === 'unofficial') {
+            // Extra safety: only show unofficial languages if scribe is logged in
+            if (!isScribeLoggedIn) return;
+
+            label.style.display = 'block'; // One per line
+            unofficialLanguageTogglesDiv.appendChild(label);
+        } else {
+            languageTogglesDiv.appendChild(label);
+        }
+
+        checkbox.addEventListener('change', () => {
+            displayedLanguages[id] = checkbox.checked;
+            updateLanguageOrderList();
+            saveSettings();
+            renderPrayers();
+        });
+    });
+}
+
+function updateLanguageOrderList() {
+    languageOrderList.innerHTML = '';
+    languageOrder.forEach(langKey => {
+        const langCfg = LANGUAGE_REGISTRY[langKey] || { category: 'main' };
+
+        // Skip unofficial languages for non-scribes
+        if (langCfg.category === 'unofficial' && !isScribeLoggedIn) return;
+
+        // Skip empty 'seeking scribe' languages for non-scribes
+        if (langCfg.isSeekingScribe && !isScribeLoggedIn) {
+            const hasTranslations = prayers.some(p => p[langKey] && p[langKey].trim()) ||
+                prayersFromFirestore.some(p => p[langKey] && p[langKey].trim());
+            if (!hasTranslations) return;
+        }
+
+        if (displayedLanguages[langKey]) {
+            const li = document.createElement('li');
+            li.draggable = true;
+            li.dataset.langKey = langKey;
+            li.innerHTML = `<span>${languageLabels[langKey] || langKey}</span> <span class="language-order-handle">⠿</span>`;
+
+            if (langKey.includes('_script')) {
+                li.querySelector('span').classList.add('ethiopic-label');
+            }
+            if (langKey.includes('_phonetic')) {
+                li.querySelector('span').style.fontStyle = 'italic';
+            }
+            languageOrderList.appendChild(li);
+        }
+    });
+    addDragAndDropListeners();
+}
+
+function escapeRegExp(string) {
+    return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+function highlightText(text, query) {
+    if (!query) return text;
+    const regex = new RegExp(`(${escapeRegExp(query)})`, 'gi');
+    return text.replace(regex, '<mark class="highlight">$1</mark>');
+}
+
+function getBibleVersesFromRef(ref) {
+    if (!ref || !bibleData.loaded) return null;
+
+    // Simple parser for "Book Chapter:Verse-Verse" or "Book Chapter:Verse"
+    const match = ref.match(/^(.+?)\s+(\d+):(\d+)(?:-(End|\d+))?$/);
+    if (!match) return null;
+
+    const bookName = match[1];
+    const chapterNum = parseInt(match[2]);
+    const startVerse = parseInt(match[3]);
+    let endVerse = startVerse;
+    if (match[4]) {
+        endVerse = match[4] === 'End' ? 999 : parseInt(match[4]);
+    }
+
+    const bookCfg = BIBLE_BOOK_MAPPING[bookName];
+    const results = {};
+    
+    let usedWeahadu = false;
+    if (useExternalBibleAPI && window.WeahaduBibleService && WeahaduBibleService.canon) {
+        const nkjv = WeahaduBibleService.getVersesSync('en-kjv', ref);
+        let am2000Ref = ref;
+        if (bookName === 'Psalms' || bookName === 'Psalm') {
+            const typical = typeof findTypicalPsalm === 'function' ? findTypicalPsalm(bookName, chapterNum, startVerse, endVerse) : null;
+            if (typical) {
+                const amEnd = (typical.ls !== typical.le) ? `-${typical.le}` : '';
+                am2000Ref = `Psalms ${typical.lc}:${typical.ls}${amEnd}`;
+            } else if (typeof convertMtToLxx === 'function') {
+                const lxxStart = convertMtToLxx(chapterNum, startVerse);
+                const lxxCh = typeof lxxStart === 'object' ? lxxStart.lxxChapter : lxxStart;
+                const lxxStartV = typeof lxxStart === 'object' ? lxxStart.lxxVerse : startVerse;
+                let amEnd = '';
+                if (startVerse !== endVerse) {
+                    if (endVerse === 999) {
+                        amEnd = '-End';
+                    } else {
+                        const lxxEnd = convertMtToLxx(chapterNum, endVerse);
+                        const lxxEndV = typeof lxxEnd === 'object' ? lxxEnd.lxxVerse : endVerse;
+                        amEnd = `-${lxxEndV}`;
+                    }
+                }
+                am2000Ref = `Psalms ${lxxCh}:${lxxStartV}${amEnd}`;
+            }
+        }
+        const am2000 = WeahaduBibleService.getVersesSync('am-2000', am2000Ref);
+        const gez1980 = WeahaduBibleService.getVersesSync('gez-1980', ref);
+        const ti1997 = WeahaduBibleService.getVersesSync('ti-1997', ref);
+        
+        if (nkjv) results.english = nkjv.map(v => ({ verseNum: parseInt(v.n), text: v.t }));
+        if (am2000) results.amharic_script = am2000.map(v => ({ verseNum: parseInt(v.n), text: v.t }));
+        if (gez1980) results.geez_script = gez1980.map(v => ({ verseNum: parseInt(v.n), text: v.t }));
+        if (ti1997) results.tigrinya_script = ti1997.map(v => ({ verseNum: parseInt(v.n), text: v.t }));
+        
+        usedWeahadu = !!(nkjv || am2000 || gez1980 || ti1997);
+    }
+
+    // 1. English (NKJV) - Flat list
+    if (!results.english && bookCfg && bibleData.nkjv) {
+        results.english = bibleData.nkjv
+            .filter(v => v.book === bookCfg.nkjv && v.chapter === chapterNum && v.verse >= startVerse && v.verse <= endVerse)
+            .map(v => ({ verseNum: v.verse, text: v.text }));
+    }
+
+    // 1b. Spanish (RGV) - Flat list in .verses
+    if ((!results.spanish || !results.spanish_pr) && bookCfg && bibleData.rgv && bibleData.rgv.verses) {
+        const rgvMapped = bibleData.rgv.verses
+            .filter(v => v.book_name === bookCfg.rgv && v.chapter === chapterNum && v.verse >= startVerse && v.verse <= endVerse)
+            .map(v => ({ verseNum: v.verse, text: v.text }));
+        if (!results.spanish) results.spanish = rgvMapped;
+        if (!results.spanish_pr) results.spanish_pr = rgvMapped;
+    }
+
+    // 2. Amharic (am54) - Nested structure
+    if (!results.amharic_script && bookCfg && bibleData.am54 && bibleData.am54.books) {
+        const amBook = bibleData.am54.books.find(b => b.title === bookCfg.am54);
+        if (amBook) {
+            // Find chapter by matching numeric value, or fallback to index if label is non-numeric
+            let amChapter = amBook.chapters.find(ch => {
+                const chNum = parseInt(ch.chapter);
+                return !isNaN(chNum) && chNum === chapterNum;
+            });
+
+            // Special case for non-numeric labels (like Luke 24 which is "እነሆ" in our data)
+            if (!amChapter && amBook.chapters[chapterNum - 1]) {
+                amChapter = amBook.chapters[chapterNum - 1];
+            }
+
+            if (amChapter && amChapter.verses) {
+                results.amharic_script = [];
+                for (let v = startVerse; v <= endVerse; v++) {
+                    const verseText = amChapter.verses[v - 1]; // 0-indexed
+                    if (verseText) {
+                        results.amharic_script.push({ verseNum: v, text: verseText });
+                    }
+                }
+            }
+        }
+    }
+
+    // 3. Ge'ez Psalms - Nested structure
+    if (!results.geez_script && (bookName === 'Psalms' || bookName === 'Psalm') && bibleData.geez_psalms) {
+        const lxxStart = typeof convertMtToLxx === 'function' ? convertMtToLxx(chapterNum, startVerse) : null;
+        const lxxCh = typeof lxxStart === 'object' ? lxxStart.lxxChapter : (typeof convertMtToLxx === 'function' ? convertMtToLxx(chapterNum) : chapterNum);
+        const lxxStartV = typeof lxxStart === 'object' ? lxxStart.lxxVerse : startVerse;
+        const lxxEnd = typeof convertMtToLxx === 'function' ? convertMtToLxx(chapterNum, endVerse) : null;
+        const lxxEndV = typeof lxxEnd === 'object' ? lxxEnd.lxxVerse : endVerse;
+        const chapter = bibleData.geez_psalms.find(ch => ch.id === lxxCh);
+        if (chapter && chapter.verses) {
+            results.geez_script = chapter.verses
+                .filter(v => v.verse_number >= lxxStartV && v.verse_number <= lxxEndV)
+                .map(v => ({ verseNum: v.verse_number, text: v.text }));
+        }
+    }
+
+    return results;
+}
+
+function findTypicalPsalm(book, chapter, start, end) {
+    if (book !== 'Psalms' && book !== 'Psalm') return null;
+    return TYPICAL_PSALMS.find(p => p.mc === chapter && p.ms === start && p.me === end);
+}
+
+function getPsalmVerses(chapterNum, start, end, langKey) {
+    // This is now redundant with getBibleVersesFromRef but keeping for backwards compat if needed elsewhere
+    if (!bibleData.geez_psalms) return "";
+    const chapter = bibleData.geez_psalms.find(ch => ch.id === chapterNum);
+    if (!chapter) return "";
+
+    const verses = chapter.verses.filter(v => v.verse_number >= start && v.verse_number <= end);
+    return verses.map(v => `[${v.verse_number}] ${v.text}`).join(" ");
+}
+
+// --- Liturgy Lectionary Config ---
+const LITURGY_LECTIONARY_CONFIG = [
+    {
+        id: 'pauline',
+        ref: () => kidaseLectionaryRefs.pauline,
+        placeholders: {
+            english: '{{TODAY\'S PAULINE EPISTLE READING}}',
+            geez_script: '{{ዮም አንበበ መልእክተ ጳውሎስ}}',
+            amharic_script: '{{የዛሬው የቅዱስ ጳውሎስ መልእክት ይነበባል}}',
+            tigrinya_script: '{{ናይ ሎሚ ንባብ መልእኽቲ ጳውሎስ}}',
+            spanish: '{{LECTURA DE LA EPÍSTOLA PAULINA DE HOY}}',
+            spanish_pr: '{{LECTURA DE LA EPÍSTOLA PAULINA DE HOY}}'
+        },
+        prefixes: {
+            english: 'Epistle: ',
+            amharic_script: 'መልእክት፤ ',
+            geez_script: 'መልእክት፤ ',
+            spanish: 'Epístola: ',
+            spanish_pr: 'Epístola: '
+        }
+    },
+    {
+        id: 'universal',
+        ref: () => kidaseLectionaryRefs.universal,
+        placeholders: {
+            english: '{{TODAY\'S UNIVERSAL EPISTLE READING}}',
+            geez_script: '{{ዮም አንበበ መልእክተ ካቶሊካ}}',
+            amharic_script: '{{የዛሬው የሁለተኛው መልእክት ይነበባል}}',
+            tigrinya_script: '{{ናይ ሎሚ ካልኣይ ንባብ መልእኽቲ}}',
+            spanish: '{{LECTURA DE LA EPÍSTOLA UNIVERSAL DE HOY}}',
+            spanish_pr: '{{LECTURA DE LA EPÍSTOLA UNIVERSAL DE HOY}}'
+        },
+        prefixes: {
+            english: 'Epistle: ',
+            amharic_script: 'መልእክት፤ ',
+            geez_script: 'መልእክት፤ ',
+            spanish: 'Epístola: ',
+            spanish_pr: 'Epístola: '
+        }
+    },
+    {
+        id: 'acts',
+        ref: () => kidaseLectionaryRefs.acts,
+        placeholders: {
+            english: '{{TODAY\'S ACTS READING}}',
+            geez_script: '{{ዮም አንበበ ግብረ ሐዋርያት}}',
+            amharic_script: '{{የዛሬው የሐዋርያት ስራ ንባብ}}',
+            tigrinya_script: '{{ናይ ሎሚ ግብሪ ሃዋርያት ንባብ}}',
+            spanish: '{{LECTURA DE ACTOS DE HOY}}',
+            spanish_pr: '{{LECTURA DE ACTOS DE HOY}}'
+        },
+        prefixes: {}
+    },
+    {
+        id: 'psalm',
+        ref: () => kidaseLectionaryRefs.psalm,
+        placeholders: {
+            english: '{{TODAY\'S PSALMS READING}}',
+            geez_script: '{{ዮም ምስባክ}}',
+            amharic_script: '{{የዛሬው ምስባክ}}',
+            tigrinya_script: '{{ናይ ሎሚ ንባብ መዝሙር ዳዊት}}',
+            spanish: '{{LECTURA DE LOS SALMOS DE HOY}}',
+            spanish_pr: '{{LECTURA DE LOS SALMOS DE HOY}}'
+        },
+        prefixes: {
+            amharic_script: 'ምስባክ፤ ',
+            geez_script: 'ምስባክ፤ '
+        }
+    },
+    {
+        id: 'gospel',
+        ref: () => kidaseLectionaryRefs.gospel,
+        placeholders: {
+            english: '{{TODAY\'S GOSPEL READING}}',
+            geez_script: '{{ዮም አንበበ ወንጌል}}',
+            amharic_script: '{{የዛሬው ወንጌል ንባብ}}',
+            tigrinya_script: '{{ናይ ሎሚ ንባብ ወንጌል}}',
+            spanish: '{{LECTURA DEL EVANGELIO DE HOY}}',
+            spanish_pr: '{{LECTURA DEL EVANGELIO DE HOY}}'
+        },
+        prefixes: {
+            english: 'Gospel of ',
+            spanish: 'Evangelio de ',
+            spanish_pr: 'Evangelio de '
+        }
+    },
+    {
+        id: 'morningPsalm',
+        ref: () => kidaseLectionaryRefs.morningPsalm,
+        placeholders: {
+            english: '{{MORNING PSALMS READING}}',
+            geez_script: '{{ዮም ምስባክ ዘነግህ}}',
+            amharic_script: '{{የዛሬው ምስባክ ዘነግህ}}',
+            tigrinya_script: '{{ናይ ንግሆ ንባብ መዝሙር ዳዊት}}',
+            spanish: '{{LECTURA DE LOS SALMOS DE LA MAÑANA}}',
+            spanish_pr: '{{LECTURA DE LOS SALMOS DE LA MAÑANA}}'
+        },
+        prefixes: {
+            amharic_script: 'ምስባክ፤ ',
+            geez_script: 'ምስባክ፤ '
+        }
+    },
+    {
+        id: 'morningGospel',
+        ref: () => kidaseLectionaryRefs.morningGospel,
+        placeholders: {
+            english: '{{MORNING GOSPEL READING}}',
+            geez_script: '{{ዮም አንበበ ወንጌል ዘነግህ}}',
+            amharic_script: '{{የዛሬው ወንጌል ዘነግህ ንባብ}}',
+            tigrinya_script: '{{ናይ ንግሆ ንባብ ወንጌል}}',
+            spanish: '{{LECTURA DEL EVANGELIO DE LA MAÑANA}}',
+            spanish_pr: '{{LECTURA DEL EVANGELIO DE LA MAÑANA}}'
+        },
+        prefixes: {
+            english: 'Gospel of ',
+            spanish: 'Evangelio de ',
+            spanish_pr: 'Evangelio de '
+        }
+    },
+    {
+        id: 'eveningPsalm',
+        ref: () => kidaseLectionaryRefs.eveningPsalm,
+        placeholders: {
+            english: '{{EVENING PSALMS READING}}',
+            geez_script: '{{ዮም ምስባክ ዘሠርክ}}',
+            amharic_script: '{{የዛሬው ምስባክ ዘሠርክ}}',
+            tigrinya_script: '{{ናይ ምሸት ንባብ መዝሙር ዳዊት}}',
+            spanish: '{{LECTURA DE LOS SALMOS DE LA TARDE}}',
+            spanish_pr: '{{LECTURA DE LOS SALMOS DE LA TARDE}}'
+        },
+        prefixes: {
+            amharic_script: 'ምስባክ፤ ',
+            geez_script: 'ምስባክ፤ '
+        }
+    },
+    {
+        id: 'eveningGospel',
+        ref: () => kidaseLectionaryRefs.eveningGospel,
+        placeholders: {
+            english: '{{EVENING GOSPEL READING}}',
+            geez_script: '{{ዮም አንበበ ወንጌል ዘሠርክ}}',
+            amharic_script: '{{የዛሬው ወንጌል ዘሠርክ ንባብ}}',
+            tigrinya_script: '{{ናይ ምሸት ንባብ ወንጌል}}',
+            spanish: '{{LECTURA DEL EVANGELIO DE LA TARDE}}',
+            spanish_pr: '{{LECTURA DEL EVANGELIO DE LA TARDE}}'
+        },
+        prefixes: {
+            english: 'Gospel of ',
+            spanish: 'Evangelio de ',
+            spanish_pr: 'Evangelio de '
+        }
+    }
+];
+
+function getActualVerseCount(bookName, chapterNum) {
+    if (!bibleData.loaded) return null;
+
+    let lookupName = bookName;
+    if (bookName === 'Psalm') lookupName = 'Psalms';
+
+    const bookCfg = BIBLE_BOOK_MAPPING[lookupName];
+    if (!bookCfg) return null;
+
+    // Try NKJV (flat array)
+    if (bibleData.nkjv) {
+        const nkjvName = bookCfg.nkjv;
+        const chapterVerses = bibleData.nkjv.filter(v => v.book === nkjvName && v.chapter === chapterNum);
+        if (chapterVerses.length > 0) {
+            return Math.max(...chapterVerses.map(v => v.verse));
+        }
+    }
+
+    // Try AM54 (structured)
+    if (bibleData.am54 && bibleData.am54.books) {
+        const am54Name = bookCfg.am54;
+        const book = bibleData.am54.books.find(b => b.title === am54Name);
+        if (book && book.chapters && book.chapters[chapterNum - 1]) {
+            return book.chapters[chapterNum - 1].verses.length;
+        }
+    }
+
+    return null;
+}
+
+function toGeezNumeral(n) {
+    if (n === 0) return "";
+    const ones = ["", "፩", "፪", "፫", "፬", "፭", "፮", "፯", "፰", "፱"];
+    const tens = ["", "፲", "፳", "፴", "፵", "፶", "፷", "፸", "፹", "፺"];
+
+    let result = "";
+    if (n >= 100) {
+        let hundreds = Math.floor(n / 100);
+        if (hundreds > 1) result += toGeezNumeral(hundreds);
+        result += "፻";
+        n %= 100;
+    }
+
+    if (n >= 10) {
+        result += tens[Math.floor(n / 10)];
+        n %= 10;
+    }
+
+    if (n > 0) {
+        result += ones[n];
+    }
+
+    return result;
+}
+
+const GEEZ_PHONETIC_CHAR_MAP = {
+    "፣": ",", "።": ".", "፤": ":", "፥": ";", "፦": ":", "፧": "?", "፡": " ",
+    "፩": "ahadu", "፪": "kil'etu", "፫": "selestu", "፬": "arba'tu", "፭": "hamistu",
+    "፮": "sidistu", "፯": "seb'atu", "፰": "semantu", "፱": "tes'atu", "፲": "asertu",
+    "፳": "isra", "፴": "selasa", "፵": "arb'a", "፶": "hamsa", "፷": "sidsa",
+    "፸": "seb'a", "፹": "semanya", "፺": "tese'a", "፻": "mi't", "፼": "asertu mi't",
+    "ሀ": "ha", "ሁ": "hu", "ሂ": "hī", "ሃ": "ha", "ሄ": "hé", "ህ": "h", "ሆ": "ho",
+    "ለ": "le", "ሉ": "lu", "ሊ": "lī", "ላ": "la", "ሌ": "lé", "ል": "l", "ሎ": "lo", "ሏ": "lwa",
+    "ሐ": "ḥa", "ሑ": "ḥu", "ሒ": "ḥī", "ሓ": "ḥa", "ሔ": "ḥé", "ሕ": "ḥ", "ሖ": "ḥo", "ሗ": "ḥwa",
+    "መ": "me", "ሙ": "mu", "ሚ": "mī", "ማ": "ma", "ሜ": "mé", "ም": "m", "ሞ": "mo", "ሟ": "mwa", "ፙ": "mya",
+    "ሠ": "se", "ሡ": "su", "ሢ": "sī", "ሣ": "sa", "ሤ": "sé", "ሥ": "s", "ሦ": "so", "ሧ": "swa",
+    "ረ": "re", "ሩ": "ru", "ሪ": "rī", "ራ": "ra", "ሬ": "ré", "ር": "r", "ሮ": "ro", "ሯ": "rwa", "ፘ": "rya",
+    "ሰ": "se", "ሱ": "su", "ሲ": "sī", "ሳ": "sa", "ሴ": "sé", "ስ": "s", "ሶ": "so", "ሷ": "swa",
+    "ቀ": "ḳe", "ቁ": "ḳu", "ቂ": "ḳī", "ቃ": "ḳa", "ቄ": "ḳé", "ቅ": "ḳ", "ቆ": "ḳo", "ቇ": "ḳwa",
+    "በ": "be", "ቡ": "bu", "ቢ": "bī", "ባ": "ba", "ቤ": "bé", "ብ": "b", "ቦ": "bo", "ቧ": "bwa",
+    "ተ": "te", "ቱ": "tu", "ቲ": "tī", "ታ": "ta", "ቴ": "té", "ት": "t", "ቶ": "to", "ቷ": "twa",
+    "ኀ": "ha", "ኁ": "hu", "ኂ": "hī", "ኃ": "ha", "ኄ": "hé", "ኅ": "h", "ኆ": "ho", "ኇ": "hwa",
+    "ነ": "ne", "ኑ": "nu", "ኒ": "nī", "ና": "na", "ኔ": "né", "ን": "n", "ኖ": "no", "ኗ": "nwa",
+    "አ": "'a", "ኡ": "'u", "ኢ": "'ī", "ኣ": "'a", "ኤ": "'é", "እ": "'i", "ኦ": "'o", "ኧ": "'wa",
+    "ከ": "ke", "ኩ": "ku", "ኪ": "kī", "ካ": "ka", "ኬ": "ké", "ክ": "k", "ኮ": "ko", "ኯ": "kwa",
+    "ወ": "we", "ዉ": "wu", "ዊ": "wī", "ዋ": "wa", "ዌ": "wé", "ው": "w", "ዎ": "wo", "ዏ": "wua",
+    "ዐ": "'a", "ዑ": "'u", "ዒ": "'ī", "ዓ": "'a", "ዔ": "'é", "ዕ": "'i", "ዖ": "'o",
+    "ዘ": "ze", "ዙ": "zu", "ዚ": "zī", "ዛ": "za", "ዜ": "zé", "ዝ": "z", "ዞ": "zo", "ዟ": "zwa",
+    "የ": "ye", "ዩ": "yu", "ዪ": "yī", "ያ": "ya", "ዬ": "yé", "ይ": "y", "ዮ": "yo", "ዯ": "ywa",
+    "ደ": "de", "ዱ": "du", "ዲ": "dī", "ዳ": "da", "ዴ": "dé", "ድ": "d", "ዶ": "do", "ዷ": "dwa",
+    "ገ": "ge", "ጉ": "gu", "ጊ": "gī", "ጋ": "ga", "ጌ": "gé", "ግ": "g", "ጎ": "go", "ጏ": "gwa",
+    "ጠ": "ṭe", "ጡ": "ṭu", "ጢ": "ṭī", "ጣ": "ṭa", "ጤ": "ṭé", "ጥ": "ṭ", "ጦ": "ṭo", "ጧ": "ṭwa",
+    "ጰ": "p̣e", "ጱ": "p̣u", "ጲ": "p̣ī", "ጳ": "p̣a", "ጴ": "p̣é", "ጵ": "p̣", "ጶ": "p̣o", "ጷ": "p̣wa",
+    "ጸ": "tse", "ጹ": "tsu", "ጺ": "tsī", "ጻ": "tsa", "ጼ": "tsé", "ጽ": "ts", "ጾ": "tso", "ጿ": "tswa",
+    "ፀ": "tse", "ፁ": "tsu", "ፂ": "tsī", "ፃ": "tsa", "ፄ": "tsé", "ፅ": "ts", "ፆ": "tso", "ፇ": "tswa",
+    "ፈ": "fe", "ፉ": "fu", "ፊ": "fī", "ፋ": "fa", "ፌ": "fé", "ፍ": "f", "ፎ": "fo", "ፏ": "fwa", "ፚ": "fya",
+    "ፐ": "pe", "ፑ": "pu", "ፒ": "pī", "ፓ": "pa", "ፔ": "pé", "ፕ": "p", "ፖ": "po", "ፗ": "pwa",
+    "ቈ": "ḳwe", "ቊ": "ḳwī", "ቋ": "ḳwa", "ቌ": "ḳwé", "ቍ": "ḳw",
+    "ቘ": "ḳhwe", "ቚ": "ḳhwī", "ቛ": "ḳhwa", "ቜ": "ḳhwé", "ቝ": "ḳhw",
+    "ኈ": "hwe", "ኊ": "hwī", "ኋ": "hwa", "ኌ": "hwé", "ኍ": "hw",
+    "ኰ": "kwe", "ኲ": "kwī", "ኳ": "kwa", "ኴ": "kwé", "ኵ": "kw",
+    "ጐ": "gwe", "ጒ": "gwī", "ጓ": "gwa", "ጔ": "gwé", "ጕ": "gw",
+    "ቐ": "qhe", "ቑ": "qhu", "ቒ": "qhī", "ቓ": "qha", "ቔ": "qhé", "ቕ": "qh", "ቖ": "qho",
+    "ቸ": "che", "ቹ": "chu", "ቺ": "chī", "ቻ": "cha", "ቼ": "ché", "ች": "ch", "ቾ": "cho",
+    "ኘ": "ñe", "ኙ": "ñu", "ኚ": "ñī", "ኛ": "ña", "ኜ": "ñé", "ኝ": "ñ", "ኞ": "ño",
+    "ኸ": "khe", "ኹ": "khu", "ኺ": "khī", "ኻ": "kha", "ኼ": "khé", "ኽ": "kh", "ኾ": "kho",
+    "ዠ": "zhe", "ዡ": "zhu", "ዢ": "zhī", "ዣ": "zha", "ዤ": "zhé", "ዥ": "zh", "ዦ": "zho",
+    "ጀ": "je", "ጁ": "ju", "ጂ": "jī", "ጃ": "ja", "ጄ": "jé", "ጅ": "j", "ጆ": "jo",
+    "ጨ": "che", "ጩ": "chu", "ጪ": "chī", "ጫ": "cha", "ጬ": "ché", "ጭ": "ch", "ጮ": "cho",
+    "ቨ": "ve", "ቩ": "vu", "ቪ": "vī", "ቫ": "va", "ቬ": "vé", "ቭ": "v", "ቮ": "vo",
+    "ዧ": "zhwa", "ጯ": "chwa", "ቿ": "chwa", "ጇ": "jwa", "ኟ": "ñwa",
+    "ሸ": "she", "ሹ": "shu", "ሺ": "shī", "ሻ": "sha", "ሼ": "shé", "ሽ": "sh", "ሾ": "sho", "ሿ": "shwa"
+};
+
+function transliterateGeezToPhonetic(text) {
+    if (!text) return '';
+    let result = '';
+    for (const char of text) {
+        if (GEEZ_PHONETIC_CHAR_MAP[char] !== undefined) {
+            result += GEEZ_PHONETIC_CHAR_MAP[char];
+        } else {
+            result += char;
+        }
+    }
+    return result;
+}
+
+function syncAllLectionaryPickers(lectionaryKey, originContainer = null) {
+    document.querySelectorAll(`.lectionary-picker-container[data-lectionary-key="${lectionaryKey}"]`).forEach(c => {
+        if (c !== originContainer && typeof c.syncPicker === 'function') {
+            c.syncPicker(true);
+        }
+    });
+}
+
+function createLectionaryPicker(containerOrId, lectionaryKey, bookOptions = [], typicalPsalms = null) {
+    const container = (typeof containerOrId === 'string') ? document.getElementById(containerOrId) : containerOrId;
+    if (!container) return;
+
+    container.classList.add('lectionary-picker-container');
+    container.dataset.lectionaryKey = lectionaryKey;
+
+    container.innerHTML = ''; // Clear
+
+    const isCardInline = container.classList.contains('card-inline-lectionary-picker');
+
+    let typicalBtn = null;
+    let bookSelect = null;
+
+    const createField = (label, className) => {
+        const field = document.createElement('div');
+        field.className = `picker-field ${className}`;
+        const lbl = document.createElement('label');
+        lbl.textContent = label;
+        const sel = document.createElement('select');
+        sel.className = 'settings-select';
+        field.appendChild(lbl);
+        field.appendChild(sel);
+        return { field, sel };
+    };
+
+    const chapterField = createField('Ch', 'chapter-field');
+    const startField = createField('Start', 'start-field');
+    const endField = createField('End', 'end-field');
+
+    if (isCardInline) {
+        // --- Single Horizontal Row for Card Footer ---
+        const pickerRow = document.createElement('div');
+        pickerRow.className = 'lectionary-picker-single-row';
+
+        if (lectionaryKey === 'psalm') {
+            const nkjvLabel = document.createElement('span');
+            nkjvLabel.className = 'psalm-nkjv-label';
+            nkjvLabel.textContent = 'NKJV';
+            pickerRow.appendChild(nkjvLabel);
+        } else if (bookOptions.length > 1) {
+            bookSelect = document.createElement('select');
+            bookSelect.className = 'lectionary-picker-book-select settings-select';
+            bookOptions.forEach(bookName => {
+                const opt = document.createElement('option');
+                opt.value = bookName;
+                const bookCfg = BIBLE_BOOK_MAPPING[bookName];
+                const geezName = bookCfg ? bookCfg.geez : "";
+                opt.textContent = geezName ? `${bookName} | ${geezName}` : bookName;
+                bookSelect.appendChild(opt);
+            });
+            pickerRow.appendChild(bookSelect);
+        }
+
+        pickerRow.appendChild(chapterField.field);
+        pickerRow.appendChild(startField.field);
+        pickerRow.appendChild(endField.field);
+
+        if (typicalPsalms) {
+            typicalBtn = document.createElement('button');
+            typicalBtn.className = 'settings-button typical-psalms-btn';
+            typicalBtn.textContent = 'Typical Psalms...';
+            typicalBtn.title = 'Select a Typical Psalm Chant';
+            typicalBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                openTypicalPsalmsModal((idx) => {
+                    const data = typicalPsalms[idx];
+                    if (bookSelect) bookSelect.value = "Psalms";
+
+                    const metadata = BIBLE_METADATA["Psalms"];
+                    populateSelect(chapterField.sel, metadata.chapters, data.mc);
+                    populateSelect(startField.sel, metadata.maxVerses, data.ms);
+                    populateSelect(endField.sel, metadata.maxVerses, data.me, true);
+
+                    updateRefs();
+                    syncPicker(true);
+                });
+            });
+            pickerRow.appendChild(typicalBtn);
+
+            const clearChantBtn = document.createElement('button');
+            clearChantBtn.className = 'settings-button clear-psalm-chant-btn';
+            clearChantBtn.textContent = 'Clear';
+            clearChantBtn.title = 'Clear Psalm Chant';
+            clearChantBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                if (bookSelect) bookSelect.value = 'Psalms';
+                const metadata = BIBLE_METADATA['Psalms'];
+                populateSelect(chapterField.sel, metadata.chapters, 1);
+                populateSelect(startField.sel, metadata.maxVerses, 1);
+                populateSelect(endField.sel, metadata.maxVerses, 'End', true);
+                updateRefs();
+                typicalBtn.textContent = 'Typical Psalms...';
+                typicalBtn.classList.remove('selected');
+            });
+            pickerRow.appendChild(clearChantBtn);
+        }
+
+        container.appendChild(pickerRow);
+    } else {
+        // --- Original 2-Row Layout for Settings Panel ---
+        if (bookOptions.length > 1) {
+            bookSelect = document.createElement('select');
+            bookSelect.className = 'lectionary-picker-book-select settings-select';
+            bookOptions.forEach(bookName => {
+                const opt = document.createElement('option');
+                opt.value = bookName;
+                const bookCfg = BIBLE_BOOK_MAPPING[bookName];
+                const geezName = bookCfg ? bookCfg.geez : "";
+                opt.textContent = geezName ? `${bookName} | ${geezName}` : bookName;
+                bookSelect.appendChild(opt);
+            });
+            container.appendChild(bookSelect);
+        }
+
+        const row = document.createElement('div');
+        row.className = 'lectionary-picker-row';
+        row.appendChild(chapterField.field);
+        row.appendChild(startField.field);
+        row.appendChild(endField.field);
+        container.appendChild(row);
+
+        if (typicalPsalms) {
+            const typicalContainer = document.createElement('div');
+            typicalContainer.className = 'typical-psalms-container';
+            typicalContainer.style.marginTop = '0.5rem';
+
+            typicalBtn = document.createElement('button');
+            typicalBtn.className = 'settings-button typical-psalms-btn';
+            typicalBtn.textContent = 'Typical Psalm Chants...';
+            typicalBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                openTypicalPsalmsModal((idx) => {
+                    const data = typicalPsalms[idx];
+                    if (bookSelect) bookSelect.value = "Psalms";
+
+                    const metadata = BIBLE_METADATA["Psalms"];
+                    populateSelect(chapterField.sel, metadata.chapters, data.mc);
+                    populateSelect(startField.sel, metadata.maxVerses, data.ms);
+                    populateSelect(endField.sel, metadata.maxVerses, data.me, true);
+
+                    updateRefs();
+                    syncPicker();
+                });
+            });
+            typicalContainer.appendChild(typicalBtn);
+
+            const clearChantBtn = document.createElement('button');
+            clearChantBtn.className = 'settings-button clear-psalm-chant-btn';
+            clearChantBtn.textContent = 'Clear Psalm Chant';
+            clearChantBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                if (bookSelect) bookSelect.value = 'Psalms';
+                const metadata = BIBLE_METADATA['Psalms'];
+                populateSelect(chapterField.sel, metadata.chapters, 1);
+                populateSelect(startField.sel, metadata.maxVerses, 1);
+                populateSelect(endField.sel, metadata.maxVerses, 'End', true);
+                updateRefs();
+                typicalBtn.innerHTML = 'Typical Psalm Chants...';
+                typicalBtn.classList.remove('selected');
+            });
+            typicalContainer.appendChild(clearChantBtn);
+            container.appendChild(typicalContainer);
+        }
+    }
+
+    const updateRefs = (skipReRender = false) => {
+        const book = bookOptions.length === 1 ? bookOptions[0] : (bookSelect ? bookSelect.value : bookOptions[0]);
+        const ch = parseInt(chapterField.sel.value);
+        const start = startField.sel.value;
+        const end = endField.sel.value;
+
+        // Sync "End" option display text
+        const endOptions = endField.sel.options;
+        const endOpt = endOptions[endOptions.length - 1];
+        if (endOpt && endOpt.value === 'End') {
+            const actualMax = getActualVerseCount(book, ch);
+            if (actualMax) {
+                if (end === 'End') {
+                    endOpt.textContent = `${actualMax}  ${toGeezNumeral(actualMax)}`;
+                } else {
+                    endOpt.textContent = `End (${actualMax}) | ፍጻሜ (${toGeezNumeral(actualMax)})`;
+                }
+            } else {
+                endOpt.textContent = 'End | ፍጻሜ';
+            }
+        }
+
+        kidaseLectionaryRefs[lectionaryKey] = `${book} ${ch}:${start}-${end}`;
+        saveSettings();
+        syncAllLectionaryPickers(lectionaryKey, container);
+
+        if (isCardInline) {
+            // Keep sections expanded so prayer view does not collapse in scroll mode
+            areAllSectionsCollapsed = false;
+            Object.keys(collapsedSections).forEach(k => {
+                collapsedSections[k] = false;
+            });
+        }
+
+        if (!skipReRender) {
+            const targetCard = container.closest('.prayer-card');
+            const targetReadingType = targetCard ? targetCard.dataset.readingType : null;
+
+            renderPrayers();
+
+            if (isCardInline && targetReadingType && displayOptions.presentationMode !== 'slides') {
+                const reRenderedCard = document.querySelector(`.prayer-card[data-reading-type="${targetReadingType}"]`);
+                if (reRenderedCard) {
+                    reRenderedCard.scrollIntoView({ block: 'center', behavior: 'instant' });
+                }
+            }
+        }
+    };
+
+    const populateSelect = (select, max, selected, isEndField = false) => {
+        select.innerHTML = '';
+
+        let cappedSelected = selected;
+        if (selected !== 'End' && !isNaN(parseInt(selected)) && parseInt(selected) > max) {
+            cappedSelected = max;
+        }
+
+        for (let i = 1; i <= max; i++) {
+            const opt = document.createElement('option');
+            opt.value = i;
+            opt.textContent = `${i}  ${toGeezNumeral(i)}`;
+            if (i == cappedSelected) opt.selected = true;
+            select.appendChild(opt);
+        }
+
+        if (isEndField) {
+            const endOpt = document.createElement('option');
+            endOpt.value = 'End';
+            endOpt.textContent = 'End | ፍጻሜ';
+            if (selected === 'End') endOpt.selected = true;
+            select.appendChild(endOpt);
+        }
+    };
+
+    // Listeners
+    if (bookSelect) {
+        bookSelect.addEventListener('change', () => {
+            const book = bookSelect.value;
+            const metadata = BIBLE_METADATA[book] || { chapters: 50, maxVerses: 100 };
+            const actualMax = getActualVerseCount(book, 1) || metadata.maxVerses;
+
+            populateSelect(chapterField.sel, metadata.chapters, 1);
+            populateSelect(startField.sel, actualMax, 1);
+            populateSelect(endField.sel, actualMax, 'End', true);
+            updateRefs();
+        });
+    }
+
+    chapterField.sel.addEventListener('change', () => {
+        const book = bookOptions.length === 1 ? bookOptions[0] : (bookSelect ? bookSelect.value : bookOptions[0]);
+        const ch = parseInt(chapterField.sel.value);
+        const metadata = BIBLE_METADATA[book] || { chapters: 50, maxVerses: 100 };
+        const actualMax = getActualVerseCount(book, ch) || metadata.maxVerses;
+
+        const currentStart = startField.sel.value;
+        const currentEnd = endField.sel.value;
+
+        populateSelect(startField.sel, actualMax, currentStart);
+        populateSelect(endField.sel, actualMax, currentEnd, true);
+
+        updateRefs();
+    });
+
+    startField.sel.addEventListener('change', () => updateRefs());
+    endField.sel.addEventListener('change', () => updateRefs());
+
+    // Restore full "End" text when the user clicks to choose
+    endField.sel.addEventListener('mousedown', () => {
+        const book = bookOptions.length === 1 ? bookOptions[0] : (bookSelect ? bookSelect.value : bookOptions[0]);
+        const ch = parseInt(chapterField.sel.value);
+        const endOptions = endField.sel.options;
+        const endOpt = endOptions[endOptions.length - 1];
+        if (endOpt && endOpt.value === 'End') {
+            const actualMax = getActualVerseCount(book, ch);
+            if (actualMax) {
+                endOpt.textContent = `End (${actualMax}) | ፍጻሜ (${toGeezNumeral(actualMax)})`;
+            } else {
+                endOpt.textContent = 'End | ፍጻሜ';
+            }
+        }
+    });
+
+    // Restore shortened text on blur if End is still selected
+    endField.sel.addEventListener('blur', () => updateRefs());
+
+    const syncPicker = (skipUpdateRefs = false) => {
+        const currentRef = kidaseLectionaryRefs[lectionaryKey] || "";
+        const match = currentRef.match(/^(.+?)\s+(\d+):(\d+)(?:-(\d+|End))?$/);
+
+        let book = bookOptions[0];
+        let ch = 1;
+        let start = 1;
+        let end = 'End';
+
+        if (match) {
+            book = match[1].trim();
+            ch = parseInt(match[2]);
+            start = match[3];
+            end = match[4] || 'End';
+        }
+
+        if (bookSelect) {
+            for (let i = 0; i < bookSelect.options.length; i++) {
+                if (bookSelect.options[i].value === book) {
+                    bookSelect.selectedIndex = i;
+                    break;
+                }
+            }
+        }
+
+        let metadataKey = (book === 'Psalm') ? 'Psalms' : book;
+        const metadata = BIBLE_METADATA[metadataKey] || { chapters: 50, maxVerses: 100 };
+        const actualMax = getActualVerseCount(book, ch) || metadata.maxVerses;
+
+        populateSelect(chapterField.sel, metadata.chapters, ch);
+        populateSelect(startField.sel, actualMax, start);
+        populateSelect(endField.sel, actualMax, end, true);
+
+        if (typicalBtn && typicalPsalms) {
+            const numericEnd = (end === 'End') ? actualMax : parseInt(end);
+            const foundIdx = typicalPsalms.findIndex(p =>
+                (book === 'Psalms' || book === 'Psalm') &&
+                p.mc === ch && p.ms === parseInt(start) && p.me === numericEnd
+            );
+            if (foundIdx !== -1) {
+                const chantMatch = typicalPsalms[foundIdx];
+                typicalBtn.innerHTML = `<span class="chant-btn-phonetic">${chantMatch.p.split(/\s+/).slice(0, 4).join(' ')}...</span><span class="chant-btn-geez ethiopic-label">${chantMatch.g.split(/\s+/).slice(0, 4).join(' ')}...</span>`;
+                typicalBtn.title = `Typical Psalm Chant: ${chantMatch.p} (${chantMatch.g})`;
+                typicalBtn.classList.add('selected');
+            } else {
+                typicalBtn.textContent = isCardInline ? 'Typical Psalms...' : 'Typical Psalm Chants...';
+                typicalBtn.title = 'Select a Typical Psalm Chant';
+                typicalBtn.classList.remove('selected');
+            }
+        }
+
+        if (!skipUpdateRefs) {
+            updateRefs(true);
+        }
+    };
+
+    // Initial sync
+    syncPicker();
+
+    // Store sync function on container for external calls
+    container.syncPicker = syncPicker;
+}
+
+function initializeLectionaryPickers() {
+    createLectionaryPicker('morning-psalm-ref-container', 'morningPsalm', ['Psalms'], TYPICAL_PSALMS);
+    createLectionaryPicker('morning-gospel-ref-container', 'morningGospel', ['Matthew', 'Mark', 'Luke', 'John']);
+    createLectionaryPicker('evening-psalm-ref-container', 'eveningPsalm', ['Psalms'], TYPICAL_PSALMS);
+    createLectionaryPicker('evening-gospel-ref-container', 'eveningGospel', ['Matthew', 'Mark', 'Luke', 'John']);
+    createLectionaryPicker('kidase-pauline-ref-container', 'pauline', ['Romans', '1 Corinthians', '2 Corinthians', 'Galatians', 'Ephesians', 'Philippians', 'Colossians', '1 Thessalonians', '2 Thessalonians', '1 Timothy', '2 Timothy', 'Titus', 'Philemon', 'Hebrews']);
+    createLectionaryPicker('kidase-universal-ref-container', 'universal', ['James', '1 Peter', '2 Peter', '1 John', '2 John', '3 John', 'Jude', 'Revelation']);
+    createLectionaryPicker('kidase-acts-ref-container', 'acts', ['Acts']);
+    createLectionaryPicker('kidase-psalm-ref-container', 'psalm', ['Psalms'], TYPICAL_PSALMS);
+    createLectionaryPicker('kidase-gospel-ref-container', 'gospel', ['Matthew', 'Mark', 'Luke', 'John']);
+}
+
+function replaceKidasePlaceholders(text, langKey, isFirstLanguage) {
+    let processed = text;
+
+    for (const cfg of LITURGY_LECTIONARY_CONFIG) {
+        // Check all language placeholders for this config
+        for (const [pLang, placeholder] of Object.entries(cfg.placeholders)) {
+            if (processed.includes(placeholder)) {
+                // If we get here, it means the main card renderer didn't split it (e.g. static view)
+                // We provide a fallback or simple label.
+                if (isFirstLanguage) {
+                    const results = getBibleVersesFromRef(cfg.ref());
+                    if (results && results[langKey]) {
+                        const prefix = (cfg.prefixes && cfg.prefixes[langKey]) || "";
+                        const headerText = `${prefix}${cfg.ref()}`.trim();
+                        const formattedBody = results[langKey].map(v => {
+                            let dVN = v.verseNum;
+                            if (langKey === 'geez_script' || langKey === 'geez_psalms') {
+                                dVN = String(dVN).split('-').map(n => toGeezNumeral(parseInt(n, 10))).join('-');
+                            }
+                            return `<sup>${dVN}</sup> ${v.text}`;
+                        }).join(" ");
+                        return processed.replace(placeholder, `<span class="speaker-label">${headerText}</span><br>${formattedBody}`);
+                    }
+                    return processed.replace(placeholder, `[Bible Reading]`);
+                } else {
+                    return ""; // Keep other columns clean if not first
+                }
+            }
+        }
+    }
+    return processed;
+}
+
+
+function getGeezDateInfo() {
+    // Basic implementation for now - could be expanded with a real calendar conversion
+    return {
+        month: "Current",
+        date: "Today",
+        year: "Year",
+        dayOfWeekGeez: "ዕለተ",
+        geezMonth: "ወርኅ",
+        geezDate: "ዕለት",
+        geezYear: "ዓመት"
+    };
+}
+
+function getUniversalEpistleAuthor(langKey) {
+    const currentRef = kidaseLectionaryRefs.universal || "1 Peter 1:1-End";
+    const match = currentRef.match(/^(.+?)\s+\d+:/);
+    const book = match ? match[1].trim() : "1 Peter";
+
+    let authorKey = 'Peter';
+    if (book === 'James') {
+        authorKey = 'James';
+    } else if (book === '1 Peter' || book === '2 Peter') {
+        authorKey = 'Peter';
+    } else if (book === '1 John' || book === '2 John' || book === '3 John' || book === 'Revelation') {
+        authorKey = 'John';
+    } else if (book === 'Jude') {
+        authorKey = 'Jude';
+    }
+
+    const AUTHORS = {
+        James: {
+            english: 'James',
+            geez_script: 'ያዕቆብ',
+            geez_phonetic: "Yā'iḳob",
+            amharic_script: 'ያዕቆብ',
+            amharic_phonetic: "Yā'iḳob",
+            tigrinya_script: 'ያዕቆብ',
+            tigrinya_phonetic: "Yā'iḳob",
+            spanish: 'Santiago',
+            spanish_pr: 'Santiago',
+            french: 'Jacques',
+            arabic: 'يعقوب',
+            greek: 'Ιακώβου',
+            hebrew: 'יעקב',
+            malayalam: 'യാക്കോബ്'
+        },
+        Peter: {
+            english: 'Peter',
+            geez_script: 'ጴጥሮስ',
+            geez_phonetic: "Péṭros",
+            amharic_script: 'ጴጥሮስ',
+            amharic_phonetic: "Péṭros",
+            tigrinya_script: 'ጴጥሮስ',
+            tigrinya_phonetic: "Péṭros",
+            spanish: 'Pedro',
+            spanish_pr: 'Pedro',
+            french: 'Pierre',
+            arabic: 'بطرس',
+            greek: 'Πέτρου',
+            hebrew: 'פטרוס',
+            malayalam: 'പത്രോസ്'
+        },
+        John: {
+            english: 'John',
+            geez_script: 'ዮሐንስ',
+            geez_phonetic: 'Yōḥannes',
+            amharic_script: 'ዮሐንስ',
+            amharic_phonetic: 'Yōḥannes',
+            tigrinya_script: 'ዮሐንስ',
+            tigrinya_phonetic: 'Yōḥannes',
+            spanish: 'Juan',
+            spanish_pr: 'Juan',
+            french: 'Jean',
+            arabic: 'يوحنا',
+            greek: 'Ιωάννη',
+            hebrew: 'יוחנן',
+            malayalam: 'യോഹന്നാൻ'
+        },
+        Jude: {
+            english: 'Jude',
+            geez_script: 'ይሁዳ',
+            geez_phonetic: 'Yhuda',
+            amharic_script: 'ይሁዳ',
+            amharic_phonetic: 'Yhuda',
+            tigrinya_script: 'ይሁዳ',
+            tigrinya_phonetic: 'Yhuda',
+            spanish: 'Judas',
+            spanish_pr: 'Judas',
+            french: 'Jude',
+            arabic: 'يهوذا',
+            greek: 'Ιούዳ',
+            hebrew: 'יהודה',
+            malayalam: 'യൂദാ'
+        }
+    };
+
+    const authorObj = AUTHORS[authorKey] || AUTHORS.Peter;
+    return authorObj[langKey] || authorObj.english;
+}
+
+function getGospelAuthor(langKey, lectionaryKey = 'gospel') {
+    const currentRef = kidaseLectionaryRefs[lectionaryKey] || "Matthew 1:1-End";
+    const match = currentRef.match(/^(.+?)\s+\d+:/);
+    const book = match ? match[1].trim() : "Matthew";
+
+    let authorKey = 'Matthew';
+    if (book.includes('Mark')) authorKey = 'Mark';
+    else if (book.includes('Luke')) authorKey = 'Luke';
+    else if (book.includes('John')) authorKey = 'John';
+
+    const AUTHORS = {
+        Matthew: {
+            english: 'Matthew',
+            geez_script: 'ማቴዎስ',
+            geez_phonetic: 'Mātéwos',
+            amharic_script: 'ማቴዎስ',
+            amharic_phonetic: 'Mātéwos',
+            tigrinya_script: 'ማቴዎስ',
+            tigrinya_phonetic: 'Mātéwos',
+            spanish: 'Mateo',
+            spanish_pr: 'Mateo',
+            french: 'Matthieu',
+            arabic: 'متى',
+            greek: 'Ματθαίον',
+            hebrew: 'מתי',
+            malayalam: 'മത്തായി'
+        },
+        Mark: {
+            english: 'Mark',
+            geez_script: 'ማርቆስ',
+            geez_phonetic: 'Mārḳos',
+            amharic_script: 'ማርቆስ',
+            amharic_phonetic: 'Mārḳos',
+            tigrinya_script: 'ማርቆስ',
+            tigrinya_phonetic: 'Mārḳos',
+            spanish: 'Marcos',
+            spanish_pr: 'Marcos',
+            french: 'Marc',
+            arabic: 'مرقس',
+            greek: 'Μάρκον',
+            hebrew: 'מרקוס',
+            malayalam: 'മർക്കോസ്'
+        },
+        Luke: {
+            english: 'Luke',
+            geez_script: 'ሉቃስ',
+            geez_phonetic: 'Luḳās',
+            amharic_script: 'ሉቃስ',
+            amharic_phonetic: 'Luḳās',
+            tigrinya_script: 'ሉቃስ',
+            tigrinya_phonetic: 'Luḳās',
+            spanish: 'Lucas',
+            spanish_pr: 'Lucas',
+            french: 'Luc',
+            arabic: 'لوقا',
+            greek: 'Loukan',
+            hebrew: 'לוקס',
+            malayalam: 'ലൂക്കോസ്'
+        },
+        John: {
+            english: 'John',
+            geez_script: 'ዮሐንስ',
+            geez_phonetic: 'Yōḥannes',
+            amharic_script: 'ዮሐንስ',
+            amharic_phonetic: 'Yōḥannes',
+            tigrinya_script: 'ዮሐንስ',
+            tigrinya_phonetic: 'Yōḥannes',
+            spanish: 'Juan',
+            spanish_pr: 'Juan',
+            french: 'Jean',
+            arabic: 'يوحنا',
+            greek: 'Ιωάννη',
+            hebrew: 'יוחנן',
+            malayalam: 'യോഹന്നാൻ'
+        }
+    };
+
+    const authorObj = AUTHORS[authorKey] || AUTHORS.Matthew;
+    return authorObj[langKey] || authorObj.english;
+}
+
+function applyParentheticalFormatting(text) {
+    if (!text) return text;
+    return text.replace(/\([^)]+\)/g, (match, offset, fullString) => {
+        const before = fullString.substring(Math.max(0, offset - 25), offset);
+        if (match === '(Mary)' && /O\s+holy\s+one\s*$/i.test(before)) {
+            return match;
+        }
+        return `<span class="parenthetical-text">${match}</span>`;
+    });
+}
+
+function formatPrayerText(text, langKey, query, isFirstLanguage, chapter = null, verseNum = null) {
+    let processedText = text;
+
+    // Apply parenthetical text formatting (greys out additional context, excluding refrain)
+    processedText = applyParentheticalFormatting(processedText);
+
+    // Replace Kidase placeholders
+    processedText = replaceKidasePlaceholders(processedText, langKey, isFirstLanguage);
+
+    // Convert bracketed verse numbers [1], [2] to superscripted tags <sup>1</sup>, <sup>2</sup>
+    processedText = processedText.replace(/\[(\d+)\]/g, '<sup>$1</sup>');
+
+    // Replace Date placeholders
+    const geezDateInfo = getGeezDateInfo();
+    processedText = processedText.replace(/\{\{GE'EZ MONTH\}\}/g, geezDateInfo.month);
+    processedText = processedText.replace(/\{\{GE'EZ DATE\}\}/g, geezDateInfo.date);
+    processedText = processedText.replace(/\{\{GE'EZ YEAR\}\}/g, geezDateInfo.year);
+    processedText = processedText.replace(/\{\{ዕለት ዘሰሙን\}\}/g, geezDateInfo.dayOfWeekGeez);
+    processedText = processedText.replace(/\{\{ወርኅ\}\}/g, geezDateInfo.geezMonth);
+    processedText = processedText.replace(/\{\{ዕለት\}\}/g, geezDateInfo.geezDate);
+    processedText = processedText.replace(/\{\{ዓመት\}\}/g, geezDateInfo.geezYear);
+
+    // Replace Universal Epistle & Gospel Author placeholders
+    if (processedText.includes('{{UNIVERSAL EPISTLE AUTHOR}}') ||
+        processedText.includes('{{AUTOR DE LA EPÍSTOLA UNIVERSAL}}') ||
+        processedText.includes('{{AUTEUR DE L’ÉPÎTRE UNIVERSEL}}') ||
+        processedText.includes('{{مؤلف الرسالة العالمية}}') ||
+        processedText.includes('{{ΣΥΓΓΡΑΦΕΑ ΠΑΓΚΟΣΜΙΩΝ ΕΠİΣΤΟΛΩΝ}}') ||
+        processedText.includes('{{מחבר האיגרת האוניبرסלית}}')) {
+        const universalAuthor = getUniversalEpistleAuthor(langKey);
+        processedText = processedText.replace(/\{\{UNIVERSAL EPISTLE AUTHOR\}\}/gi, universalAuthor);
+        processedText = processedText.replace(/\{\{AUTOR DE LA EPÍSTOLA UNIVERSAL\}\}/gi, universalAuthor);
+        processedText = processedText.replace(/\{\{AUTEUR DE L’ÉPÎTRE UNIVERSEL\}\}/gi, universalAuthor);
+        processedText = processedText.replace(/\{\{مؤلف الرسالة العالمية\}\}/gi, universalAuthor);
+        processedText = processedText.replace(/\{\{ΣΥΓΓΡΑΦΕΑ ΠΑΓΚΟΣΜΙΩΝ ΕΠİΣΤΟΛΩΝ\}\}/gi, universalAuthor);
+        processedText = processedText.replace(/\{\{מחבר האיגרת האוניبرסלית\}\}/gi, universalAuthor);
+    }
+
+    if (processedText.includes('{{GOSPEL AUTHOR}}') || processedText.includes('{{AUTOR DEL EVANGELIO}}')) {
+        const gospelAuthor = getGospelAuthor(langKey, 'gospel');
+        processedText = processedText.replace(/\{\{GOSPEL AUTHOR\}\}/gi, gospelAuthor);
+        processedText = processedText.replace(/\{\{AUTOR DEL EVANGELIO\}\}/gi, gospelAuthor);
+    }
+
+    if (processedText.includes('{{MORNING GOSPEL AUTHOR}}') || processedText.includes('{{AUTOR DEL EVANGELIO DE LA MAÑANA}}')) {
+        const morningGospelAuthor = getGospelAuthor(langKey, 'morningGospel');
+        processedText = processedText.replace(/\{\{MORNING GOSPEL AUTHOR\}\}/gi, morningGospelAuthor);
+        processedText = processedText.replace(/\{\{AUTOR DEL EVANGELIO DE LA MAÑANA\}\}/gi, morningGospelAuthor);
+    }
+
+    // Apply superscription formatting for Psalms, Songs of the Prophets, and Lectionary readings
+    if (chapter === 'Psalms' || chapter === 'ProphetSong' || chapter === 'SeatatLectionary') {
+        let displayVerseNum = verseNum;
+        if (displayVerseNum && (langKey === 'geez_script' || langKey === 'geez_psalms')) {
+            displayVerseNum = String(displayVerseNum).split('-').map(n => toGeezNumeral(parseInt(n, 10))).join('-');
+        }
+        const supTag = displayVerseNum ? `<sup>${displayVerseNum}</sup> ` : '';
+
+        if (langKey === 'spanish' || langKey === 'spanish_pr') {
+            // Match leading Spanish superscriptions (using both literal « and Unicode \u00ab, and handle variations)
+            // Some entries might use literal characters or escaped sequences.
+            const rgvSuperscriptionRegex = /^([«\u00ab](.*?)[»\u00bb])/;
+            if (rgvSuperscriptionRegex.test(processedText)) {
+                // Use $2 to capture only the text content, effectively removing the markers
+                processedText = processedText.replace(rgvSuperscriptionRegex, '<span class="psalm-superscription">$2</span><br>' + supTag);
+            } else {
+                processedText = supTag + processedText;
+            }
+        } else if (langKey === 'english') {
+            // Match leading English superscriptions for Psalms and specific other categories
+            // Restricted to verse 1 to avoid misidentifying leading italicized words in later verses
+            // Handles nested <i> tags and stray trailing </i> tags found in some NKJV data
+            const nkjvSuperscriptionRegex = /^((?:<i>(?:<i>.*?<\/i>|.)*?<\/i>(?:\s*<\/i>)*\s*)+)/;
+            if (Number(verseNum) === 1 && nkjvSuperscriptionRegex.test(processedText)) {
+                processedText = processedText.replace(nkjvSuperscriptionRegex, '<span class="psalm-superscription">$1</span><br>' + supTag);
+            } else {
+                processedText = supTag + processedText;
+            }
+        } else {
+            // For other languages, just prepend the verse number if provided
+            processedText = supTag + processedText;
+        }
+    }
+
+    // Apply Rubrication before Anglicization to ensure fixed sacred phrases match correctly
+    processedText = applyRubrication(processedText, langKey, isFirstLanguage, chapter);
+
+    // Apply Anglicization
+    processedText = applyAnglicization(processedText, langKey);
+
+    // Apply Loanword Origins
+    processedText = applyLoanwordOrigins(processedText, langKey);
+
+    // Replace custom name placeholders
+    processedText = processedText.replace(/\{\{Servant's Names\}\}/g, customNames.servant || '');
+    processedText = processedText.replace(/\{\{(?:PATRIARCH NAME|NOMBRE DEL PATRIARCA)\}\}/gi, customNames.patriarch || '');
+    processedText = processedText.replace(/\{\{(?:BISHOP NAME|NOMBRE DEL OBISPO)\}\}/gi, customNames.bishop || '');
+    processedText = processedText.replace(/\{\{(?:COUNTRY|PAÍS)\}\}/gi, customNames.country || '');
+    processedText = processedText.replace(/\{\{Leader \/ President \/ Emperor\}\}/g, customNames.headOfState || '');
+    processedText = processedText.replace(/\{\{(?:BISHOP\(S\) IN ATTENDANCE|OBISPO\(S\) PRESENTE\(S\))\}\}/gi, customNames.attendingBishops || '');
+    processedText = processedText.replace(/\{\{(?:CHURCH NAME|NOMBRE DE LA IGLESIA)\}\}/gi, customNames.churchName || '');
+
+    // Format enclosed prayer titles / references on their own line (e.g. ፨ THE SALUTATION OF SAINT GABRIEL ፨ or (Psalms 117:1))
+    const innerTitleRegex = /^\s*(?:<[^>]+>)*\s*(?:(፨\s*[^፨\n\r]+?\s*፨)|(\({1,2}\s*[^()\n\r]+?\s*\){1,2}))\s*(?:<[^>]+>)*\s*(?:\r?\n|<br\s*\/?>|$)/i;
+    if (innerTitleRegex.test(processedText)) {
+        processedText = processedText.replace(innerTitleRegex, (match, titleMatch1, titleMatch2) => {
+            const titleMatch = titleMatch1 || titleMatch2;
+            if (displayOptions.showSpeakerLabels) {
+                return `<span class="speaker-label">${titleMatch}</span><br>`;
+            }
+            return '';
+        }).trim();
+    }
+
+    // Format standalone Scripture / Psalm headers on top line (e.g. Psalm 33:16-17 (NKJV) or መዝሙር ዘዳዊት ፴፫፥፲፮-፲፯ (ግእዝ፲፱፻፹))
+    const scriptureHeaderRegex = /^\s*(?:<[^>]+>)*\s*((?:Psalm|Psalms|መዝሙር|መዝሙረ|Salmo|Salmos)\s+[^<\n\r]+?\((?:NKJV|OSB|አም\d+|ግእዝ\d+|RVG|VRG|GNT)\))\s*(?:<[^>]+>)*\s*(?:\r?\n|<br\s*\/?>|$)/i;
+    if (scriptureHeaderRegex.test(processedText)) {
+        processedText = processedText.replace(scriptureHeaderRegex, (match, headerMatch) => {
+            if (displayOptions.showSpeakerLabels) {
+                return `<span class="speaker-label">${headerMatch}</span><br>`;
+            }
+            return '';
+        }).trim();
+    }
+
+    const keywords = speakerKeywords[langKey];
+
+    if (keywords) {
+        const sortedKeywords = [...keywords].sort((a, b) => b.length - a.length);
+        const escapedKeywords = sortedKeywords.map(k => k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+        const regex = new RegExp(`(፨\\s*)?(${escapedKeywords.join('|')})(?:\\s*(?:or|and|ወይም|ወ|o|y|ou|et|\\/|-)\\s*(?:${escapedKeywords.join('|')}))*(?:\\s*(?:<span class="parenthetical-text">)?\\([^)]*\\)(?:<\\/span>)?)*([:፡።፤፣])`, 'gi');
+        processedText = processedText.replace(regex, (match) => {
+            if (displayOptions.showSpeakerLabels) {
+                const cleanMatch = match.replace(/<\/?span[^>]*>/g, '');
+                return `<span class="speaker-label">${cleanMatch}</span>`;
+            }
+            return '';
+        }).trim();
+    }
+
+    // Format instructions enclosed in triple asterisks (e.g. ***ALL SHALL NOW PROSTRATE (BOW DOWN)***)
+    processedText = processedText.replace(/\*{3}\s*([^\*\n\r]+?)\s*\*{3}/g, (match) => {
+        if (displayOptions.showSpeakerLabels) {
+            return `<span class="speaker-label">${match}</span>`;
+        }
+        return '';
+    });
+
+    // Specific formatting: Place English Psalm 135, Three Holy Youth, and Praise of Mary refrains on a new line
+    if ((chapter === 'Psalms' || chapter === 'ProphetSong' || chapter === 'Thurs') && langKey === 'english') {
+        // Find refrains (with or without the red span) and insert a line break before them.
+        // Handles "For His mercy endures forever", the Three Holy Youth variations, 
+        // and "O holy one (Mary), pray for us."
+        const refrainRegex = /\s*(<span class="rubric-red">)?(For His mercy|And (?:sing a hymn|let it sing a hymn)|O holy one)/gi;
+        processedText = processedText.replace(refrainRegex, (match) => {
+            return '<br>' + match.trim();
+        });
+    }
+
+    return highlightText(processedText, query);
+}
+
+function getPrayerLabel(prayer, isKidase = false) {
+    // Detect Kidase prayers (Liturgy)
+    const kidaseChapters = ['Kidan', 'order', 'Apostles', 'St.Mary', 'Chrysostom', 'The300', 'mary', 'apostles'];
+    const chapter = prayer.chapter || '';
+    const isNumericChapter = /^\d+$/.test(chapter);
+    const isKidaseChapter = isKidase || isNumericChapter || kidaseChapters.some(c => c.toLowerCase() === chapter.toLowerCase());
+
+    if (isKidaseChapter && (chapter || prayer.stanza)) {
+        let chapterPrefix = chapter;
+        if (isNumericChapter) {
+            chapterPrefix = chapter; // Keep number as per user request
+        } else if (chapter.toLowerCase() === 'st.mary' || chapter.toLowerCase() === 'mary') {
+            chapterPrefix = 'Mary';
+        } else if (chapter.toLowerCase() === 'apostles') {
+            chapterPrefix = 'Apostles';
+        } else if (!chapter && isKidase) {
+            chapterPrefix = 'Liturgy';
+        }
+
+        const source = prayer.stanza ? `${chapterPrefix}-${prayer.stanza}` : chapterPrefix;
+        const reference = (prayer.reference && prayer.reference.trim() && prayer.reference.trim().toLowerCase() !== 'n/a') ? prayer.reference.trim() : "";
+        const instruction = (prayer.instruction && prayer.instruction.trim() && prayer.instruction.trim().toLowerCase() !== 'n/a') ? prayer.instruction.trim() : "";
+
+        let label = source;
+        if (reference) label += ` ፨ ${reference}`;
+        if (instruction) label += ` ፨ ${instruction}`;
+        return label;
+    }
+
+    const prayerKey = `${prayer.chapter}-${prayer.stanza}`;
+    const customLabels = {
+        "Daily-0": "",
+        "Daily-1": "Daily Prayer | ዘዘወትር ጸሎት - I Seal My Face...",
+        "Daily-2": "Daily Prayer | ዘዘወትር ጸሎት - We Thank You, Lord...",
+        "Daily-3": "Daily Prayer | ዘዘወትር ጸሎት - Lord's Prayer",
+        "Daily-4": "Daily Prayer | ዘዘወትር ጸሎት - Greeting of Saint Gabriel",
+        "Daily-5": "Daily Prayer | ዘዘወትር ጸሎት - Prayer of the Faith (Creed)",
+        "Daily-6": "Daily Prayer | ዘዘወትር ጸሎት - Holy, Holy, Holy... (Seraphic Hymn)",
+        "Daily-7": "Daily Prayer | ዘዘወትር ጸሎት - I worship...",
+        "Daily-8": "Daily Prayer | ዘዘወትር ጸሎት - Glory...",
+        "Daily-9": "Daily Prayer | ዘዘወትር ጸሎት - Greetings to You, [Mary]...",
+        "Daily-10": "Daily Prayer | ዘዘወትር ጸሎት - Prayer of Our Lady Mary",
+        "Daily-11": "→ Prayer of Saint Ephraim: The Praises of Mary | ውዳሴ ማርያም",
+        "Daily-12": "→ Prayer of Saint Ephraim: The Praises of Mary | ውዳሴ ማርያም - O my Lady, loose me...",
+        "Personal-0": "Prayer"
+    };
+
+    const dayTitles = {
+        'Sun': '→ → → Sunday | ዘእሁድ',
+        'Mon': '→ → → Monday | ዘሰኑይ',
+        'Tue': '→ → → Tuesday | ዘሠሉስ',
+        'Wed': '→ → → Wednesday | ዘረቡዕ',
+        'Thurs': '→ → → Thursday | ዘሐሙስ',
+        'Fri': '→ → → Friday | ዘዓርብ',
+        'Sat': '→ → → Saturday | ዘቀዳሚት'
+    };
+
+    if (customLabels[prayerKey]) {
+        return customLabels[prayerKey];
+    } else if (prayer.chapter === 'SeatatLectionary') {
+        return prayer.reference;
+    } else if (dayTitles[prayer.chapter]) {
+        return dayTitles[prayer.chapter];
+    } else if (prayer.chapter === 'Angels') {
+        return '→ Prayer of Abba Giyorgis: The Angels Praise Mary | ይዌድስዋ መላእክት ለማርያም';
+    } else if (prayer.chapter === 'Anqetse Birhan') {
+        return '→ Prayer of Saint Yared: The Gate of Light | አንቀጸ ብርሃን';
+    } else if (prayer.chapter === 'Psalms' && prayer.stanza === 'Intro') {
+        return '→ Opening Prayer | ነዓ ኀቤየ ዳዊት';
+    } else if (prayer.chapter === 'Psalms' && prayer.stanza === 'Closing') {
+        return '→ Closing Prayer | ሰአሊ ለነ ማርያም';
+    }
+    return prayer.reference; // Default fallback
+}
+
+function getSectionTitle(prayer) {
+    const label = getPrayerLabel(prayer);
+    if (label.startsWith("Daily Prayer | ዘዘወትር ጸሎት - ")) {
+        return "Daily Prayer | ዘዘወትር ጸሎት";
+    } else if (label === "Trinitarian Invocation") {
+        return "";
+    } else if (label.startsWith("→ Prayer of Saint Ephraim: The Praises of Mary | ውዳሴ ማርያም") && (selectedWidaseMaryamDay === 'None')) {
+        // Hide the section title if None is selected
+        return "";
+    }
+    return label.replace(/ - .*/, '');
+}
+
+function hasActualContent(text, langKey) {
+    if (!text || !text.trim()) return false;
+
+    // If it contains a placeholder, it has content
+    if (text.includes('{{') && text.includes('}}')) return true;
+
+    let cleanText = text.replace(/<[^>]*>?/gm, ''); // Strip HTML
+
+    // Remove speaker keywords for this language
+    let keywords = speakerKeywords[langKey];
+    if (keywords) {
+        // Sort keywords by length descending to match longer phrases first (e.g. "ካህን ንፍቅ" before "ካህን")
+        const sortedKeywords = [...keywords].sort((a, b) => b.length - a.length);
+        // Create regex to match keywords followed by common separators (including Ethiopic ones)
+        const regex = new RegExp(`(፨ )?(${sortedKeywords.join('|')})([:፡።፤፣\\s]*)`, 'g');
+        cleanText = cleanText.replace(regex, '');
+    }
+
+    // Remove other common structural characters and whitespace
+    // Added Ethiopic full stop (።) and word separator (፡)
+    cleanText = cleanText.replace(/[፨:፡።፤፣\\s\\.\\!\\?\\-]/g, '').trim();
+
+    return cleanText.length > 0;
+}
+
+function isChantStanza(prayer) {
+    if (!prayer) return false;
+
+    const PEOPLE_LABEL_REGEX = /^(?:፨\s*)?(?:People|ALL|All|Pueblo|Todos|Gente|ሕዝብ|ኵሎሙ|ሁሉም|ኩሉኹም|Ḥizb|Hizb|Kwllomu|Kullomu|Kwlomu|Hizbi|Ḥizbi|(?:Priest|Asst\.\s*Priest|Deacon|Subdeacon|Leader|Reader|Bridegroom|Bride|ካህን|ካህን\s*ንፍቅ|ዲያቆን|ንፍቀ\s*ዲያቆን|መሪሕ|መሪ|መራሒ|አንባቢ|ነባቢ|ሙሽራው|ሙሽራዋ|መርዓዊ|መርዓት|Sacerdote|Diácono|Subdiácono|Líder|Lector|Novio|Novia|Merīḥ|Meriḥ|Merih|Kahn|Kahin|Diyakon|Dīyakon|Meraḥi|Meraḥī)\s*\([^)]*(?:People|repeat|ከምኡ|ይበሉ|መልሰው|repite|kem'u)[^)]*\))(?:\s*\([^)]*\))?[:፡።፤፣]/i;
+
+    for (const langKey of ['english', 'geez_script', 'amharic_script', 'tigrinya_script', 'spanish', 'spanish_pr', 'geez_phonetic']) {
+        if (prayer[langKey]) {
+            const lines = prayer[langKey].split(/(?:<br\s*\/?>|\n)+/);
+            for (let line of lines) {
+                if (PEOPLE_LABEL_REGEX.test(line.trim())) {
+                    return true;
+                }
+            }
+        }
+    }
+    return false;
+}
+
+function filterGeezPhoneticForPeople(phoneticText, prayer) {
+    if (!phoneticText || !phoneticText.trim()) return '';
+
+    const INNER_TITLE_LINE_REGEX = /^\s*(?:፨\s*[^፨\n\r]+?\s*፨|\({1,2}\s*[^()\n\r]+?\s*\){1,2})\s*$/i;
+    const PEOPLE_LABEL_REGEX = /^(?:፨\s*)?(?:People|ALL|All|Pueblo|Todos|Gente|ሕዝብ|ኵሎሙ|ሁሉም|ኩሉኹም|Ḥizb|Hizb|Kwllomu|Kullomu|Kwlomu|Hizbi|Ḥizbi|(?:Priest|Asst\.\s*Priest|Deacon|Subdeacon|Leader|Reader|Bridegroom|Bride|ካህን|ካህን\s*ንፍቅ|ዲያቆን|ንፍቀ\s*ዲያቆን|መሪሕ|መሪ|መራሒ|አንባቢ|ነባቢ|ሙሽራው|ሙሽራዋ|መርዓዊ|መርዓት|Sacerdote|Diácono|Subdiácono|Líder|Lector|Novio|Novia|Merīḥ|Meriḥ|Merih|Kahn|Kahin|Diyakon|Dīyakon|Meraḥi|Meraḥī)\s*\([^)]*(?:People|repeat|ከምኡ|ይበሉ|መልሰው|repite|kem'u)[^)]*\))(?:\s*\([^)]*\))?[:፡።፤፣]/i;
+    const LEADER_LABEL_REGEX = /^(?:፨\s*)?(?:Priest|Asst\.\s*Priest|Deacon|Subdeacon|Leader|Reader|Bridegroom|Bride|ካህን|ካህን\s*ንፍቅ|ዲያቆን|ንፍቀ\s*ዲያቆን|መሪሕ|መሪ|መራሒ|አንባቢ|ነባቢ|ሙሽራው|ሙሽራዋ|መርዓዊ|መርዓት|Sacerdote|Diácono|Subdiácono|Líder|Lector|Novio|Novia|Merīḥ|Meriḥ|Merih|Kahn|Kahin|Diyakon|Dīyakon|Meraḥi|Meraḥī)(?:\s*\([^)]*\))?[:፡።፤፣]/i;
+
+    const filterTitleLines = (text) => {
+        if (!text) return [];
+        return text.split(/(?:<br\s*\/?>|\n)+/).map(p => p.trim()).filter(p => p && !INNER_TITLE_LINE_REGEX.test(p));
+    };
+
+    // Filter out top inner title/reference header lines first across all language paragraph lists for index alignment
+    const paragraphs = filterTitleLines(phoneticText);
+    if (paragraphs.length === 0) return '';
+
+    const checkStringForLeader = (str) => {
+        if (!str) return false;
+        const lines = filterTitleLines(str);
+        return lines.some(line => LEADER_LABEL_REGEX.test(line));
+    };
+    const hasLeaderLabel = checkStringForLeader(phoneticText) ||
+                           checkStringForLeader(prayer?.geez_script) ||
+                           checkStringForLeader(prayer?.english) ||
+                           checkStringForLeader(prayer?.amharic_script);
+
+    // If there is no leader label anywhere in the card, return all non-title paragraphs
+    if (!hasLeaderLabel) {
+        const delimiter = phoneticText.includes('<br>') ? '<br><br>' : '\n\n';
+        return paragraphs.join(delimiter);
+    }
+
+    const geezScriptParagraphs = filterTitleLines(prayer?.geez_script);
+    const englishParagraphs = filterTitleLines(prayer?.english);
+    const amharicParagraphs = filterTitleLines(prayer?.amharic_script);
+
+    const keptParagraphs = [];
+    let currentSpeakerIsPeople = false;
+
+    paragraphs.forEach((para, index) => {
+        const trimmedPara = para.trim();
+        if (!trimmedPara) return;
+
+        const geezPara = (geezScriptParagraphs[index] || '').trim();
+        const engPara = (englishParagraphs[index] || '').trim();
+        const amhPara = (amharicParagraphs[index] || '').trim();
+
+        if (PEOPLE_LABEL_REGEX.test(trimmedPara) || PEOPLE_LABEL_REGEX.test(geezPara) || PEOPLE_LABEL_REGEX.test(engPara) || PEOPLE_LABEL_REGEX.test(amhPara)) {
+            currentSpeakerIsPeople = true;
+        } else if (LEADER_LABEL_REGEX.test(trimmedPara) || LEADER_LABEL_REGEX.test(geezPara) || LEADER_LABEL_REGEX.test(engPara) || LEADER_LABEL_REGEX.test(amhPara)) {
+            currentSpeakerIsPeople = false;
+        }
+
+        if (currentSpeakerIsPeople) {
+            keptParagraphs.push(para);
+        }
+    });
+
+    // Deduplicate identical People phonetic responses (e.g. repeated "Amen" / "፨ ḥzb: 'amén.")
+    const uniqueParagraphs = [];
+    const seenNormalized = new Set();
+
+    keptParagraphs.forEach(para => {
+        const norm = para.replace(/<[^>]*>?/g, '')
+                        .replace(PEOPLE_LABEL_REGEX, '')
+                        .replace(/[^a-zA-Z'ĀāĒēĪīŌōŪū\u1200-\u137F0-9]/g, '')
+                        .trim()
+                        .toLowerCase();
+
+        if (!norm || !seenNormalized.has(norm)) {
+            if (norm) seenNormalized.add(norm);
+            uniqueParagraphs.push(para);
+        }
+    });
+
+    const delimiter = phoneticText.includes('<br>') ? '<br><br>' : '\n\n';
+    return uniqueParagraphs.join(delimiter);
+}
+
+function createPrayerCardElement(prayer, prayerIndex, isKidase = false) {
+    const searchQuery = searchInput.value;
+
+    const kidaseChapters = ['Kidan', 'order', 'Apostles', 'St.Mary', 'Chrysostom', 'The300', 'mary', 'apostles'];
+    const chapterStr = prayer.chapter || '';
+    const isNumericChapter = /^\d+$/.test(chapterStr);
+    const isKidaseCard = isKidase || isNumericChapter || kidaseChapters.some(c => c.toLowerCase() === chapterStr.toLowerCase());
+
+    const getCardLangText = (langKey) => {
+        if (!isKidaseCard && langKey === 'spanish_pr') {
+            return prayer.spanish_pr || prayer.spanish;
+        }
+        return prayer[langKey];
+    };
+
+    // Filter languages that actually have content for THIS specific card
+    let seenNonKidaseSpanish = false;
+    const languagesToDisplay = languageOrder.filter(langKey => {
+        const langCfg = LANGUAGE_REGISTRY[langKey] || { name: langKey, isAuto: false, category: 'main' };
+
+        // Basic global visibility checks
+        if (!displayedLanguages[langKey]) return false;
+        if (langCfg.category === 'unofficial' && !isScribeLoggedIn) return false;
+
+        const rawCardText = getCardLangText(langKey);
+        if (!rawCardText || !rawCardText.trim()) return false;
+
+        // Smart content check: hide if it ONLY contains speaker keywords
+        if (!hasActualContent(rawCardText, langKey)) return false;
+
+        // For non-Kidase prayers, deduplicate if both Spanish options are enabled
+        if (!isKidaseCard && (langKey === 'spanish' || langKey === 'spanish_pr')) {
+            if (seenNonKidaseSpanish) return false;
+            seenNonKidaseSpanish = true;
+        }
+
+        return true;
+    });
+
+    const cardVisibleLanguageCount = languagesToDisplay.length;
+
+    const prayerCard = document.createElement('div');
+    prayerCard.classList.add('prayer-card');
+    prayerCard.dataset.prayerIndex = prayerIndex;
+
+    // Store card identity for cross-card navigation (e.g. creed jump buttons)
+    if (prayer.chapter && prayer.stanza) {
+        prayerCard.dataset.cardId = `${prayer.chapter}-${prayer.stanza}`;
+    } else if (prayer.chapter && prayer.verseNum) {
+        prayerCard.dataset.cardId = `${prayer.chapter}-${prayer.verseNum}`;
+    } else if (prayer.reference) {
+        prayerCard.dataset.cardId = prayer.reference;
+    }
+
+    // Unique prayer signature for exact 1-to-1 card matching between scroll and slides mode
+    const sigText = (prayer.english || prayer.geez_script || prayer.amharic_script || '').replace(/\s+/g, ' ').trim().slice(0, 50);
+    prayerCard.dataset.prayerSignature = `${prayer.chapter || ''}_${prayer.stanza || ''}_${prayer.verseNum || ''}_${sigText}`;
+
+    // Handle initial collapse state (from renderPrayers context)
+    // IMPORTANT: Do not hide cards in slides mode even if the section is collapsed
+    if (window.isRenderingCollapsed && displayOptions.presentationMode !== 'slides') {
+        prayerCard.style.display = 'none';
+    }
+
+    // Scribe Edit Button (Only for Scribable content)
+    const isScribable = prayer.chapter !== 'Psalms' &&
+        prayer.chapter !== 'Bible' &&
+        prayer.chapter !== 'SeatatLectionary' &&
+        (prayer.chapter !== 'ProphetSong' || prayer.stanza === 'Manasseh');
+
+    if (isScribeModeActive && isScribable) {
+        const editBtn = document.createElement('button');
+        editBtn.classList.add('edit-stanza-btn');
+        editBtn.innerHTML = '&#9998;'; // Pencil icon
+        editBtn.title = 'Edit Stanza (Scribe Mode)';
+        editBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            window.openScribeEditor(prayer);
+        });
+        prayerCard.appendChild(editBtn);
+    }
+
+    const prayerCardMainContent = document.createElement('div');
+    prayerCardMainContent.classList.add('prayer-card-main-content');
+
+    const prayerContent = document.createElement('div');
+    prayerContent.classList.add('prayer-content', displayOptions.layout === 'row' ? 'layout-row' : 'layout-column');
+
+    if (displayOptions.languageColors !== 'off') {
+        prayerContent.classList.add('colored-languages');
+    }
+
+    if (displayOptions.layout === 'column' && cardVisibleLanguageCount > 3 && displayOptions.horizontalScroll) {
+        prayerContent.classList.add('horizontal-scroll');
+    }
+    prayerContent.dataset.activeColumns = cardVisibleLanguageCount;
+
+    let isFirstLanguage = true;
+    languagesToDisplay.forEach(langKey => {
+        const langCfg = LANGUAGE_REGISTRY[langKey];
+
+        const langSection = document.createElement('div');
+        langSection.classList.add('language-section', `lang-${langKey}`);
+        if (langKey.includes('phonetic')) {
+            langSection.classList.add('lang-phonetic');
+        }
+
+        const langHeader = document.createElement('h4');
+        let labelText = langCfg.name.replace(/\*+$/, '');
+        if (!isKidaseCard && (langKey === 'spanish' || langKey === 'spanish_pr')) {
+            labelText = 'Español (Spanish)';
+        }
+
+        let isOfficial;
+        if (prayer[`${langKey}_is_official`] !== undefined) {
+            isOfficial = prayer[`${langKey}_is_official`];
+        } else if (langKey === 'spanish' || langKey === 'french') {
+            isOfficial = !isKidaseCard;
+        } else {
+            isOfficial = !langCfg.isAuto;
+        }
+
+        if (!isOfficial) {
+            if (labelText.endsWith(')')) {
+                labelText = labelText.slice(0, -1) + ', Unofficial Translation)';
+            } else {
+                labelText += ' (Unofficial Translation)';
+            }
+        }
+
+        langHeader.textContent = labelText;
+
+        // Force header visibility for Spanish and French in Kidase prayers regardless of setting
+        const isForcedKidaseLabel = isKidaseCard && (langKey === 'spanish' || langKey === 'french');
+        if (!displayOptions.showLanguageLabels && !isForcedKidaseLabel) langHeader.classList.add('hidden');
+
+        const langText = document.createElement('p');
+        langText.classList.add('language-text');
+
+        let content = formatPrayerText(getCardLangText(langKey), langKey, searchQuery, isFirstLanguage, prayer.chapter, prayer.verseNum);
+
+        // Append Ge'ez Phonetics to Ge'ez Script if setting is active and this is a chant
+        if (langKey === 'geez_script' && displayOptions.showGeezPhoneticChants && isChantStanza(prayer)) {
+            const rawPhoneticText = prayer['geez_phonetic'];
+            if (rawPhoneticText && rawPhoneticText.trim()) {
+                const phoneticText = filterGeezPhoneticForPeople(rawPhoneticText, prayer);
+                if (phoneticText && phoneticText.trim()) {
+                    const formattedPhonetic = formatPrayerText(phoneticText, 'geez_phonetic', searchQuery, false, prayer.chapter, prayer.verseNum);
+                    content += `<br><i class="geez-phonetic-append">${formattedPhonetic}</i>`;
+                }
+            }
+        }
+
+        langText.innerHTML = content;
+
+        if (langCfg.isEthiopic) {
+            langHeader.classList.add('ethiopic-label');
+            langText.classList.add('lang-ethiopic-script');
+        }
+
+        langSection.appendChild(langHeader);
+        langSection.appendChild(langText);
+        prayerContent.appendChild(langSection);
+        isFirstLanguage = false;
+    });
+
+    prayerCardMainContent.appendChild(prayerContent);
+
+    const prayerFooter = document.createElement('div');
+    prayerFooter.classList.add('prayer-footer');
+
+    const prayerLabel = document.createElement('div');
+    prayerLabel.classList.add('prayer-label');
+    if (!displayOptions.showPrayerLabels) prayerLabel.classList.add('hidden');
+    prayerLabel.textContent = getPrayerLabel(prayer, isKidase).replace(/→\s*/g, '');
+    prayerFooter.appendChild(prayerLabel);
+
+    const prayerActions = document.createElement('div');
+    prayerActions.classList.add('prayer-actions');
+
+    const infoToggle = document.createElement('button');
+    infoToggle.classList.add('info-toggle');
+    infoToggle.innerHTML = '&#9432;';
+    infoToggle.title = 'Show/Hide Details';
+    prayerActions.appendChild(infoToggle);
+
+    const copyButton = document.createElement('button');
+    copyButton.classList.add('share-btn');
+    copyButton.innerHTML = shareIconSVG;
+    copyButton.title = 'Copy visible languages';
+    copyButton.addEventListener('click', () => copyPrayer(prayer));
+    prayerActions.appendChild(copyButton);
+
+    const enterSlidesBtn = document.createElement('button');
+    enterSlidesBtn.classList.add('enter-slides-mode-btn');
+    enterSlidesBtn.innerHTML = `<svg class="pres-mode-icon-slides" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v2h8v-2h5c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 14H3V5h18v12z"/></svg>`;
+    enterSlidesBtn.title = 'Enter Slides Mode';
+    enterSlidesBtn.addEventListener('click', (event) => {
+        const clickedCard = event.currentTarget.closest('.prayer-card');
+        const signature = clickedCard.dataset.prayerSignature;
+        const cardId = clickedCard.dataset.cardId;
+        const prayerIdx = clickedCard.dataset.prayerIndex;
+        togglePresentationMode({ signature, cardId, prayerIndex: prayerIdx });
+    });
+    prayerActions.appendChild(enterSlidesBtn);
+
+    const exitSlidesBtn = document.createElement('button');
+    exitSlidesBtn.classList.add('exit-slides-mode-btn');
+    exitSlidesBtn.innerHTML = '&times;';
+    exitSlidesBtn.title = 'Exit Slides Mode';
+    exitSlidesBtn.addEventListener('click', togglePresentationMode);
+    prayerActions.appendChild(exitSlidesBtn);
+
+    prayerFooter.appendChild(prayerActions);
+    prayerCardMainContent.appendChild(prayerFooter);
+    prayerCard.appendChild(prayerCardMainContent);
+
+    const infoPanel = document.createElement('div');
+    infoPanel.classList.add('info-panel');
+    const infoPanelContent = document.createElement('div');
+    infoPanelContent.classList.add('info-panel-content');
+
+    let infoHTML = "";
+    const isKidaseChapter = /^\d+$/.test(prayer.chapter) || ['Kidan', 'order', 'Apostles', 'St.Mary', 'Chrysostom', 'The300', 'mary', 'apostles'].some(c => c.toLowerCase() === (prayer.chapter || '').toLowerCase());
+    const isKidasePrayer = isKidase || (isKidaseChapter && prayer.chapter && prayer.stanza);
+
+    if (!isKidasePrayer || prayer._isMiracle) {
+        if (prayer.reference) {
+            infoHTML = `<p><strong>Reference:</strong> ${prayer.reference}</p>`;
+        }
+        if (prayer.instruction && prayer.instruction.trim().toLowerCase() !== 'n/a') {
+            infoHTML += `<p><strong>Instruction:</strong> ${prayer.instruction}</p>`;
+        }
+        if (prayer._isMiracle && prayer._miracleData) {
+            infoHTML += `<p><strong>Citation:</strong> Princeton Ethiopian, Eritrean, and Egyptian Miracles of Mary (PEMM) Project.</p>`;
+            if (prayer._miracleData.incipit) {
+                infoHTML += `<p><strong>Ge'ez Incipit:</strong> <span class="geez-font">${prayer._miracleData.incipit}</span></p>`;
+            }
+        }
+    }
+
+    infoPanelContent.innerHTML = infoHTML;
+    infoPanel.appendChild(infoPanelContent);
+    prayerCard.appendChild(infoPanel);
+
+    infoToggle.addEventListener('click', () => infoPanel.classList.toggle('active'));
+
+    return prayerCard;
+}
+
+
+function getSupplicatoryPrayers() {
+    return [
+        {
+            instruction: "Repeated 3 times.",
+            reference: "Supplications | ምሕላ",
+            chapter: "Supplications",
+            stanza: "1",
+            geez_script: "መሪሕ: እግዚኦ መሐረነ ክርስቶስ<br><br>፨ ሕዝብ: እግዚኦ መሐረነ ክርስቶስ (፫)",
+            geez_phonetic: "Merīḥ: 'Igzī'o meḥarene Krstos<br><br>፨ Ḥizb: 'Igzī'o meḥarene Krstos (3x)",
+            english: "Leader: O Lord, have compassion upon us, O Christ.<br><br>፨ People: O Lord, have compassion upon us, O Christ. (3x)",
+            amharic_script: "መሪ: አቤቱ ክርስቶስ ሆይ ማረን።<br><br>፨ ሕዝብ: አቤቱ ክርስቶስ ሆይ ማረን። (፫)",
+            tigrinya_script: "መራሒ: ጐይታይ ክርስቶስ መሓረና።<br><br>፨ ሕዝብ: ጐይታይ ክርስቶስ መሓረና። (፫)"
+        },
+        {
+            instruction: "Repeated 3 times.",
+            reference: "Supplications | ምሕላ",
+            chapter: "Supplications",
+            stanza: "2",
+            geez_script: "መሪሕ: በእንተ ማርያም መሐረነ ክርስቶስ<br><br>፨ ሕዝብ: በእንተ ማርያም መሐረነ ክርስቶስ (፫)",
+            geez_phonetic: "Merīḥ: Be'inte Maryam meḥarene Krstos<br><br>፨ Ḥizb: Be'inte Maryam meḥarene Krstos (3x)",
+            english: "Leader: For the sake of Mary, have compassion upon us, O Christ.<br><br>፨ People: For the sake of Mary, have compassion upon us, O Christ. (3x)",
+            amharic_script: "መሪ: ስለ ማርያም ብለህ ክርስቶስ ሆይ ማረን።<br><br>፨ ሕዝብ: ስለ ማርያም ብለህ ክርስቶስ ሆይ ማረን። (፫)",
+            tigrinya_script: "መራሒ: ምእንቲ ማርያም ኢልካ ክርስቶስ መሓረና።<br><br>፨ ሕዝብ: ምእንቲ ማርያም ኢልካ ክርስቶስ መሓረና። (፫)"
+        },
+        {
+            instruction: "Repeated 3 times.",
+            reference: "Supplications | ምሕላ",
+            chapter: "Supplications",
+            stanza: "3",
+            geez_script: "መሪሕ: ኪርያላይሶን<br><br>፨ ሕዝብ: ኪርያላይሶን (፫)",
+            geez_phonetic: "Merīḥ: Kīryalayson<br><br>፨ Ḥizb: Kīryalayson (3x)",
+            english: "Leader: Lord, have mercy.<br><br>፨ People: Lord, have mercy. (3x)",
+            amharic_script: "መሪ: ጌታ ሆይ ማረን (ኪርያላይሶን)።<br><br>፨ ሕዝብ: ጌታ ሆይ ማረን (ኪርያላይሶን)። (፫)",
+            tigrinya_script: "መራሒ: ጐይታይ መሓረና (ኪርያላይሶን)።<br><br>፨ ሕዝብ: ጐይታይ መሓረና (ኪርያላይሶን)። (፫)"
+        },
+        {
+            instruction: "Repeated 3 times.",
+            reference: "Supplications | ምሕላ",
+            chapter: "Supplications",
+            stanza: "4",
+            geez_script: "መሪሕ: ኦ አምላክ<br><br>፨ ሕዝብ: ኦ አምላክ (፫)",
+            geez_phonetic: "Merīḥ: 'O 'Amlak<br><br>፨ Ḥizb: 'O 'Amlak (3x)",
+            english: "Leader: O God.<br><br>፨ People: O God. (3x)",
+            amharic_script: "መሪ: አምላክ ሆይ።<br><br>፨ ሕዝብ: አምላክ ሆይ። (፫)",
+            tigrinya_script: "መራሒ: ኦ ኣምላኽ።<br><br>፨ ሕዝብ: ኦ ኣምላኽ። (፫)"
+        },
+        {
+            instruction: "Repeated 3 times.",
+            reference: "Supplications | ምሕላ",
+            chapter: "Supplications",
+            stanza: "5",
+            geez_script: "መሪሕ: ኦ ክርስቶስ<br><br>፨ ሕዝብ: ኦ ክርስቶስ (፫)",
+            geez_phonetic: "Merīḥ: 'O Krstos<br><br>፨ Ḥizb: 'O Krstos (3x)",
+            english: "Leader: O Christ.<br><br>፨ People: O Christ. (3x)",
+            amharic_script: "መሪ: ክርስቶስ ሆይ።<br><br>፨ ሕዝብ: ክርስቶስ ሆይ። (፫)",
+            tigrinya_script: "መራሒ: ኦ ክርስቶስ።<br><br>፨ ሕዝብ: ኦ ክርስቶስ። (፫)"
+        },
+        {
+            instruction: "Repeated 3 times.",
+            reference: "Supplications | ምሕላ",
+            chapter: "Supplications",
+            stanza: "6",
+            geez_script: "መሪሕ: ያድኅነነ እመዓቱ ይሰውረነ በምሕረቱ በእንተ ማርያም ወላዲቱ<br><br>፨ ሕዝብ: ያድኅነነ እመዓቱ ይሰውረነ በምሕረቱ በእንተ ማርያም ወላዲቱ (፫)",
+            geez_phonetic: "Merīḥ: Yadḥnene 'ime'atu, yisewrene bemiḥretu, be'inte Maryam weladītu.<br><br>፨ Ḥizb: Yadḥnene 'ime'atu, yisewrene bemiḥretu, be'inte Maryam weladītu. (3x)",
+            english: "Leader: May He save us from His wrath and shield us with His mercy, for the sake of Mary, His mother.<br><br>፨ People: May He save us from His wrath and shield us with His mercy, for the sake of Mary, His mother. (3x)",
+            amharic_script: "መሪ: ከቁጣው ያድነን፣ በምሕረቱ ይሰውረን፣ ስለ ወለደችው ስለ ማርያም።<br><br>፨ ሕዝብ: ከቁጣው ያድነን፣ በምሕረቱ ይሰውረን፣ ስለ ወለደችው ስለ ማርያም። (፫)",
+            tigrinya_script: "መራሒ: ካብ ቚጥዓኡ የድሕነና፡ ብምሕረቱ ይሰውረና፡ ምእንቲታ ዝወለደቶ ማርያም።<br><br>፨ ሕዝብ: ካብ ቚጥዓኡ የድሕነና፡ ብምሕረቱ ይሰውረና፡ ምእንቲታ ዝወለደቶ ማርያም። (፫)"
+        },
+        {
+            instruction: "Repeated 3 times.",
+            reference: "Supplications | ምሕላ",
+            chapter: "Supplications",
+            stanza: "7",
+            geez_script: "መሪሕ: ስማዐነ አምላክነ ወመድኃኒነ<br><br>፨ ሕዝብ: ስማዐነ አምላክነ ወመድኃኒነ (፫)",
+            geez_phonetic: "Merīḥ: Sma'ane 'Amlakine wemedḥanīne.<br><br>፨ Ḥizb: Sma'ane 'Amlakine wemedḥanīne. (3x)",
+            english: "Leader: Hear us, our God and our Savior.<br><br>፨ People: Hear us, our God and our Savior. (3x)",
+            amharic_script: "መሪ: አምላካችንና መድኃኒታችን ሆይ ስማን።<br><br>፨ ሕዝብ: አምላካችንና መድኃኒታችን ሆይ ስማን። (፫)",
+            tigrinya_script: "መራሒ: ኣምላኽናን መድሓኒናን ስምዓና።<br><br>፨ ሕዝብ: ኣምላኽናን መድሓኒናን ስምዓና። (፫)"
+        },
+        {
+            instruction: "",
+            reference: "Supplications | ምሕላ",
+            chapter: "Supplications",
+            stanza: "8",
+            geez_script: "፨ ኵሎሙ: ሰአሊ ለነ ማርያም ምሕረተ ወልድኪ የሐውጸነ እምአርያም።",
+            geez_phonetic: "፨ Kwllomu: Se'alī lene Maryam mḥrete weldkī yeḥewtsene 'im'aryam.",
+            english: "፨ ALL: Pray for us, Mary, that the mercy of your Son may visit us from the highest heaven.",
+            amharic_script: "፨ ሁሉም: ማርያም ሆይ ለምኚልን፣ የልጅሽ ምሕረት ከአርያም ይጎበኘን ዘንድ።",
+            tigrinya_script: "፨ ኩሉኹም: ማርያም ለምንልና፡ ምሕረት ወድኺ ካብ ኣርያም ምእንቲ ክበጽሓና።"
+        },
+        {
+            instruction: "",
+            reference: "Supplications | ምሕላ",
+            chapter: "Supplications",
+            stanza: "9",
+            geez_script: "፨ ኵሎሙ: ሰአሊ ለነ ማርያም ለለሰዓቱ፣ ተግባረ እደዊሁ ለወልድኪ ኢንጥፋእ በከንቱ።",
+            geez_phonetic: "፨ Kwllomu: Se'alī lene Maryam lelese'atu, tigbare 'idewīhu leweldkī īnṭfa' bekentu.",
+            english: "፨ ALL: Pray for us, Mary, at every hour, that we, the work of your Son's hands, may not perish in vain.",
+            amharic_script: "፨ ሁሉም: ማርያም ሆይ በየሰዓቱ ለምኚልን፣ የልጅሽ የእጆቹ ሥራ የሆንን እኛ በከንቱ እንዳንጠፋ።",
+            tigrinya_script: "፨ ኩሉኹም: ማርያም ኣብ ኵሉ ሰዓት ለምንልና፡ ንሕና ግብሪ ኣእዳው ወድኺ ዝኾንና ብኸንቱ ምእንቲ ኸይነጥፍእ።"
+        },
+        {
+            instruction: "",
+            reference: "Supplications | ምሕላ",
+            chapter: "Supplications",
+            stanza: "10",
+            geez_script: "፨ ኵሎሙ: ኵሎ መዓልተ ወኵሎ ሌሊተ ብዙኃ ኃጢአተ ዘገበርነ፣ በእንተ ማርያም እምከ ተማኅፀነ። ስምዐነ እግዚኦ ከመ ታድኅነነ።",
+            geez_phonetic: "፨ Kwllomu: Kwllo me'alte wekwllo lēlīte bizuḫa ḫaṭī'ate zegeberne, be'inte Maryam 'imike temaḫtsenne. Sim'ane 'Igzī'o keme tadḥnene.",
+            english: "፨ ALL: All day and all night, the many sins we have committed, for the sake of Mary Your mother we take refuge. Hear us, O Lord, that You may save us.",
+            amharic_script: "፨ ሁሉም: ቀኑን ሁሉና ሌሊቱን ሁሉ የሠራነውን ብዙ ኃጢአት (ይቅር ትለን ዘንድ)፣ ስለ እናትህ ስለ ማርያም ተማጸንን። አቤቱ ጌታ ሆይ ታድነን ዘንድ ስማን።",
+            tigrinya_script: "፨ ኩሉኹም: ምሉእ መዓልትን ምሉእ ለይትን ዝገበርናዮ ብዙሕ ኃጢኣት፡ ምእንቲ ኣዴኻ ማርያም ኢልና ተማሕጸንና። ኦ ጐይታ ከተድሕነና ስምዓና።"
+        }
+    ];
+}
+
+function getStandardPrayerSequence() {
+    const personalPrayer = {
+        instruction: "The leader or priest offers a personal prayer or benediction here.",
+        reference: "Personal Prayer",
+        chapter: "Personal",
+        stanza: "0",
+        english: "[Prayer]",
+        geez_script: "[ጸሎት]",
+        geez_phonetic: "[tselot]",
+        amharic_script: "[ጸሎት]",
+        amharic_phonetic: "[tselot]",
+        tigrinya_script: "[ጸሎት]",
+        tigrinya_phonetic: "[tselot]",
+        spanish: "[Oración]",
+        spanish_pr: "[Oración]"
+    };
+    const lordsPrayerParts = prayers.filter(p => p.chapter === 'Daily' && p.stanza === '3');
+    const gabrielGreetingParts = prayers.filter(p => p.chapter === 'Daily' && p.stanza === '4');
+
+    return [personalPrayer, ...lordsPrayerParts, ...gabrielGreetingParts];
+}
+
+window.updateMiracleTranslation = function(idx) {
+    selectedMiracleTranslationIndex = parseInt(idx);
+    saveSettings();
+    // Re-render prayers to show new translation
+    if (typeof _renderPrayersSync === 'function') {
+        _renderPrayersSync();
+    } else {
+        renderPrayers();
+    }
+};
+
+function renderSelectedMiracle(addSectionTitleCallback, renderKidaseSectionCallback) {
+    if (selectedMiracleId === 'none' || typeof MIRACLES_OF_MARY === 'undefined') return;
+    
+    const miracle = MIRACLES_OF_MARY.find(m => m.id === selectedMiracleId);
+    if (!miracle || !miracle.translations || miracle.translations.length === 0) return;
+    
+    const translationIndex = Math.min(selectedMiracleTranslationIndex || 0, miracle.translations.length - 1);
+    const translation = miracle.translations[translationIndex];
+    
+    addSectionTitleCallback("→ Miracle of Mary | ተአምረ ማርያም");
+    
+    const miracleCards = [];
+    
+    let textToSplit = translation.text.replace(/<br\s*\/?>/gi, '\n');
+    textToSplit = textToSplit.replace(/<\/p>\s*<p>/gi, '\n\n');
+    textToSplit = textToSplit.replace(/<[^>]+>/g, ''); 
+    
+    const paragraphs = textToSplit.split(/\n\s*\n/).filter(p => p.trim().length > 0);
+    
+    paragraphs.forEach((pText, i) => {
+        let reference = `Miracles of Mary`;
+        let instructionHtml = "";
+        let englishText = pText.trim();
+        let geezText = "";
+        
+        if (i === 0) {
+            reference = `Miracle: ${miracle.title || miracle.id} (Translated by ${translation.author})`;
+            if (miracle.translations.length > 1) {
+                instructionHtml = `
+                    <div style="margin-bottom: 0.5rem; text-align: center;">
+                        <label style="font-size: 0.8rem; opacity: 0.8;">Translation Version:</label>
+                        <select onchange="window.updateMiracleTranslation(this.value)" class="settings-select" style="display: inline-block; width: auto; padding: 2px 5px; font-size: 0.8rem; margin-left: 5px; min-width: 150px;">
+                            ${miracle.translations.map((t, idx) => `<option value="${idx}" ${idx === translationIndex ? 'selected' : ''}>${t.author}</option>`).join('')}
+                        </select>
+                    </div>
+                `;
+            }
+        }
+        
+        miracleCards.push({
+            chapter: "Miracle",
+            stanza: `${i + 1}`,
+            english: pText.trim(),
+            geez_script: i === 0 ? (miracle.incipit || '') : '',
+            reference: reference,
+            instruction: instructionHtml,
+            _isMiracle: true,
+            _miracleData: miracle
+        });
+    });
+    
+    renderKidaseSectionCallback(miracleCards);
+}
+
+let collapsedSections = {};
+
+function renderSelectedKidase(addSectionTitleCallback) {
+    if (typeof kidaseData === 'undefined') return;
+    if (!showVespers && !showMatins && !showTeklil && !isKidaseModeActive && !showAnaphora) return;
+
+    const allOrderPrayers = kidaseData.order;
+
+    // 1. Find dynamic markers to divide the sequence
+    // Morning Gospel Section starts specifically at 3-179
+    const mGospelIdx = allOrderPrayers.findIndex(p => p.chapter === '3' && p.stanza === '179');
+
+    // Pre-Liturgy Kidan starts at the first occurrence of Chapter "Kidan"
+    const kStartIdx = allOrderPrayers.findIndex(p => p.chapter === 'Kidan');
+
+    // Order of the Liturgy starts at the specific "Start of the Liturgy of the Word" marker
+    const lStartIdx = allOrderPrayers.findIndex(p => p.reference && p.reference.includes("Start of the Liturgy of the Word"));
+
+    // Default fallbacks for safety if markers are missing
+    const mGospelStart = mGospelIdx !== -1 ? mGospelIdx : 476;
+    const kidanStart = kStartIdx !== -1 ? kStartIdx : 549;
+    const liturgyStart = lStartIdx !== -1 ? lStartIdx : 650;
+
+    // 2. Prepare chunks
+    const morningGospelChunk = allOrderPrayers.slice(mGospelStart, kidanStart);
+    const preLiturgyKidanChunk = allOrderPrayers.slice(kidanStart, liturgyStart);
+
+    // "Order of the Liturgy" is the catch-all for everything else (Prep + Main Liturgy)
+    const mainLiturgyArray = [];
+
+    // Add Preparatory prayers (everything before Morning Gospel start 3-179)
+    mainLiturgyArray.push(...allOrderPrayers.slice(0, mGospelStart));
+
+    // 3. Render Sections
+
+    // A. Vespers (Evening Prayers)
+    if (showVespers) {
+        addSectionTitleCallback("<i>Vespers</i> — Sunset Prayer | ጸሎተ ሠርክ", false);
+        addSectionTitleCallback("→ Prayer of the Gospel | ጸሎተ ወንጌል");
+        
+        // Deep clone the chunk and swap morning placeholders for evening placeholders
+        const eveningGospelChunk = JSON.parse(JSON.stringify(morningGospelChunk)).map(p => {
+            const keys = ['english', 'geez_script', 'amharic_script', 'tigrinya_script', 'spanish', 'spanish_pr'];
+            keys.forEach(k => {
+                if (p[k]) {
+                    p[k] = p[k].replace('{{MORNING PSALMS READING}}', '{{EVENING PSALMS READING}}');
+                    p[k] = p[k].replace('{{MORNING GOSPEL READING}}', '{{EVENING GOSPEL READING}}');
+                    p[k] = p[k].replace('{{ዮም ምስባክ ዘነግህ}}', '{{ዮም ምስባክ ዘሠርክ}}');
+                    p[k] = p[k].replace('{{ዮም አንበበ ወንጌል ዘነግህ}}', '{{ዮም አንበበ ወንጌል ዘሠርክ}}');
+                    p[k] = p[k].replace('{{የዛሬው ምስባክ ዘነግህ}}', '{{የዛሬው ምስባክ ዘሠርክ}}');
+                    p[k] = p[k].replace('{{የዛሬው ወንጌል ዘነግህ ንባብ}}', '{{የዛሬው ወንጌል ዘሠርክ ንባብ}}');
+                    p[k] = p[k].replace('{{ናይ ንግሆ ንባብ መዝሙር ዳዊት}}', '{{ናይ ምሸት ንባብ መዝሙር ዳዊት}}');
+                    p[k] = p[k].replace('{{ናይ ንግሆ ንባብ ወንጌል}}', '{{ናይ ምሸት ንባብ ወንጌል}}');
+                    p[k] = p[k].replace('{{LECTURA DE LOS SALMOS DE LA MAÑANA}}', '{{LECTURA DE LOS SALMOS DE LA TARDE}}');
+                    p[k] = p[k].replace('{{LECTURA DEL EVANGELIO DE LA MAÑANA}}', '{{LECTURA DEL EVANGELIO DE LA TARDE}}');
+                }
+            });
+            
+            if (p.reference) {
+                p.reference = p.reference.replace(/Morning/g, 'Sunset');
+            }
+            
+            return p;
+        });
+
+        renderKidaseSection(eveningGospelChunk);
+        addSectionTitleCallback("→ <i>Kidan</i> — Prayer of the Covenant | ጸሎተ ኪዳን");
+        renderKidaseSection(preLiturgyKidanChunk);
+    }
+
+    // B. Crowning (Matrimony / Teklil) - Render standalone if Matins is not active
+    if (showTeklil && !showMatins && typeof teklilData !== 'undefined') {
+        addSectionTitleCallback("<i>Teklil</i> — Crowning (Matrimony) | ተክሊል", false);
+        
+        // 1. Render main block of Teklil (up to Thanksgiving) - Stanzas 1 to 75
+        const mainTeklil = teklilData.prayers.filter(p => parseInt(p.stanza) <= 75);
+        renderKidaseSection(mainTeklil);
+        
+        // 2. Fetch Thanksgiving (3-31 to 3-39)
+        const thanksgiving = allOrderPrayers.filter(p => p.chapter === '3' && parseInt(p.stanza) >= 31 && parseInt(p.stanza) <= 39);
+        renderKidaseSection(thanksgiving);
+
+        // 3. Stand up for prayer / Peace be unto you (3-118)
+        const standUp = allOrderPrayers.filter(p => p.chapter === '3' && parseInt(p.stanza) === 118);
+        renderKidaseSection(standUp);
+
+        // 4. Fetch Oblation (3-41 to 3-44)
+        const oblation = allOrderPrayers.filter(p => p.chapter === '3' && parseInt(p.stanza) >= 41 && parseInt(p.stanza) <= 44);
+        renderKidaseSection(oblation);
+
+        // 5. Fetch "Let us worship" sequence (3-119 to 3-122)
+        const worshipSequence = allOrderPrayers.filter(p => {
+            if (p.chapter !== '3') return false;
+            const s = parseInt(p.stanza);
+            if (s === 119) return p.english.toLowerCase().includes("worship");
+            return s >= 120 && s <= 122;
+        });
+        renderKidaseSection(worshipSequence);
+
+        // 6. Deacon Intro to Ephesians
+        const ephesiansIntroCard = {
+            chapter: "Ephesians",
+            stanza: "Intro",
+            instruction: "",
+            reference: "Epistle to the Ephesians",
+            english: "DEACON: A reading from the Epistle of St. Paul to the Ephesians, chapter 5, verses 25-33. May his prayer and blessing be with us all. Amen."
+        };
+        renderKidaseSection([ephesiansIntroCard]);
+        
+        // 7. Fetch Ephesians 5:25-33
+        const ephesiansVerses = getBibleVersesFromRef('Ephesians 5:25-33');
+        if (ephesiansVerses) {
+            const verseCounts = Object.values(ephesiansVerses).map(arr => arr.length);
+            const maxVerses = Math.max(0, ...verseCounts);
+            
+            for (let i = 0; i < maxVerses; i++) {
+                const versePrayer = {
+                    english: ephesiansVerses['english']?.[i]?.text || '',
+                    geez_script: ephesiansVerses['geez_script']?.[i]?.text || '',
+                    amharic_script: ephesiansVerses['amharic_script']?.[i]?.text || '',
+                    tigrinya_script: ephesiansVerses['tigrinya_script']?.[i]?.text || '',
+                    spanish: ephesiansVerses['spanish']?.[i]?.text || '',
+                    spanish_pr: ephesiansVerses['spanish_pr']?.[i]?.text || '',
+                    chapter: "Ephesians",
+                    stanza: "5:" + (25 + i),
+                    reference: "Ephesians 5:25-33",
+                    instruction: ""
+                };
+                renderKidaseSection([versePrayer]);
+            }
+        }
+        
+        // 8. Fetch Blessing (3-136 to 3-137)
+        const blessing = allOrderPrayers.filter(p => 
+            p.chapter === '3' && 
+            (parseInt(p.stanza) === 136 || parseInt(p.stanza) === 137) &&
+            !p.english.includes("{{TODAY'S PAULINE EPISTLE READING}}")
+        );
+        renderKidaseSection(blessing);
+
+        addSectionTitleCallback("→ <i>Teklil</i> — Exhortation | ምክር");
+        const exhortationLiturgy = allOrderPrayers.filter(p => 
+            (p.chapter === '4' && parseInt(p.stanza) >= 6 && parseInt(p.stanza) <= 12) ||
+            (p.chapter === '4' && parseInt(p.stanza) >= 23 && parseInt(p.stanza) <= 31) ||
+            (p.chapter === 'The300' && parseInt(p.stanza) >= 1 && parseInt(p.stanza) <= 10)
+        );
+        renderKidaseSection(exhortationLiturgy, false, true); 
+        const exhortationTeklil = teklilData.prayers.filter(p => parseInt(p.stanza) >= 76);
+        renderKidaseSection(exhortationTeklil);
+    }
+
+    // C. Matins (Morning Prayers)
+    if (showMatins) {
+        addSectionTitleCallback("<i>Matins</i> — Morning Prayer | ጸሎተ ነግህ", false);
+
+        if (miraclePosition === 'matins') {
+            renderSelectedMiracle(addSectionTitleCallback, renderKidaseSection);
+        }
+
+        if (showTeklil && typeof teklilData !== 'undefined') {
+            addSectionTitleCallback("→ <i>Teklil</i> — Crowning (Matrimony) | ተክሊል");
+            
+            // 1. Render main block of Teklil (up to Thanksgiving) - Stanzas 1 to 75
+            const mainTeklil = teklilData.prayers.filter(p => parseInt(p.stanza) <= 75);
+            renderKidaseSection(mainTeklil);
+            
+            // 2. Fetch Thanksgiving (3-31 to 3-39)
+            const thanksgiving = allOrderPrayers.filter(p => p.chapter === '3' && parseInt(p.stanza) >= 31 && parseInt(p.stanza) <= 39);
+            renderKidaseSection(thanksgiving);
+
+            // 3. Stand up for prayer / Peace be unto you (3-118)
+            const standUp = allOrderPrayers.filter(p => p.chapter === '3' && parseInt(p.stanza) === 118);
+            renderKidaseSection(standUp);
+
+            // 4. Fetch Oblation (3-41 to 3-44)
+            const oblation = allOrderPrayers.filter(p => p.chapter === '3' && parseInt(p.stanza) >= 41 && parseInt(p.stanza) <= 44);
+            renderKidaseSection(oblation);
+
+            // 5. Fetch "Let us worship" sequence (3-119 to 3-122). Note: 3-119 has two variants, we want the Sunday one containing "worship" in english
+            const worshipSequence = allOrderPrayers.filter(p => {
+                if (p.chapter !== '3') return false;
+                const s = parseInt(p.stanza);
+                if (s === 119) return p.english.toLowerCase().includes("worship");
+                return s >= 120 && s <= 122;
+            });
+            renderKidaseSection(worshipSequence);
+
+            // 6. Deacon Intro to Ephesians
+            const ephesiansIntroCard = {
+                chapter: "Ephesians",
+                stanza: "Intro",
+                instruction: "",
+                reference: "Epistle to the Ephesians",
+                english: "DEACON: A reading from the Epistle of St. Paul to the Ephesians, chapter 5, verses 25-33. May his prayer and blessing be with us all. Amen."
+            };
+            renderKidaseSection([ephesiansIntroCard]);
+            
+            // 7. Fetch Ephesians 5:25-33
+            const ephesiansVerses = getBibleVersesFromRef('Ephesians 5:25-33');
+            if (ephesiansVerses) {
+                const verseCounts = Object.values(ephesiansVerses).map(arr => arr.length);
+                const maxVerses = Math.max(0, ...verseCounts);
+                
+                for (let i = 0; i < maxVerses; i++) {
+                    const versePrayer = {
+                        english: ephesiansVerses['english']?.[i]?.text || '',
+                        geez_script: ephesiansVerses['geez_script']?.[i]?.text || '',
+                        amharic_script: ephesiansVerses['amharic_script']?.[i]?.text || '',
+                        tigrinya_script: ephesiansVerses['tigrinya_script']?.[i]?.text || '',
+                        spanish: ephesiansVerses['spanish']?.[i]?.text || '',
+                        spanish_pr: ephesiansVerses['spanish_pr']?.[i]?.text || '',
+                        chapter: "Ephesians",
+                        stanza: "5:" + (25 + i),
+                        reference: "Ephesians 5:25-33",
+                        instruction: ""
+                    };
+                    renderKidaseSection([versePrayer]);
+                }
+            }
+            
+            // 8. Fetch Blessing (3-136 to 3-137)
+            const blessing = allOrderPrayers.filter(p => 
+                p.chapter === '3' && 
+                (parseInt(p.stanza) === 136 || parseInt(p.stanza) === 137) &&
+                !p.english.includes("{{TODAY'S PAULINE EPISTLE READING}}")
+            );
+            renderKidaseSection(blessing);
+        }
+
+        addSectionTitleCallback("→ Prayer of the Gospel | ጸሎተ ወንጌል");
+        renderKidaseSection(morningGospelChunk);
+        addSectionTitleCallback("→ <i>Kidan</i> — Prayer of the Covenant | ጸሎተ ኪዳን");
+        renderKidaseSection(preLiturgyKidanChunk);
+
+        if (showTeklil && typeof teklilData !== 'undefined') {
+            addSectionTitleCallback("→ <i>Teklil</i> — Exhortation | ምክር");
+            
+            // 5. Exhortation specific liturgy insertions (4-6 to 4-12, 4-23 to 4-31, The300-1 to 10)
+            const exhortationLiturgy = allOrderPrayers.filter(p => 
+                (p.chapter === '4' && parseInt(p.stanza) >= 6 && parseInt(p.stanza) <= 12) ||
+                (p.chapter === '4' && parseInt(p.stanza) >= 23 && parseInt(p.stanza) <= 31) ||
+                (p.chapter === 'The300' && parseInt(p.stanza) >= 1 && parseInt(p.stanza) <= 10)
+            );
+            renderKidaseSection(exhortationLiturgy, false, true); 
+            
+            // 6. Concluding Teklil prayers
+            const exhortationTeklil = teklilData.prayers.filter(p => parseInt(p.stanza) >= 76);
+            renderKidaseSection(exhortationTeklil);
+        }
+    }
+
+    // D. Order of the Liturgy | ሥርዓተ ቅዳሴ
+    if (isKidaseModeActive) {
+        addSectionTitleCallback("<i>Ḳidasé</i> — Liturgy | ቅዳሴ", false);
+        addSectionTitleCallback("→ Order of the Liturgy | ሥርዓተ ቅዳሴ");
+        mainLiturgyArray.push(...allOrderPrayers.slice(liturgyStart));
+        renderKidaseSection(mainLiturgyArray, true); // true means apply version filtering to any embedded Kidan
+    }
+
+    // E. Eucharistic Prayer | አኰቴተ ቍርባን (Anaphora)
+    if (showAnaphora) {
+        const anaphoraMap = {
+            'apostles': { name: '→ Anaphora of the Apostles | ቅዳሴ ሐዋርያት', data: kidaseData.apostles },
+            'mary': { name: '→ Anaphora of Mary | ቅዳሴ ማርያም', data: kidaseData.mary }
+        };
+
+        const anaphora = anaphoraMap[selectedAnaphora];
+        if (anaphora) {
+            if (!isKidaseModeActive) {
+                addSectionTitleCallback("<i>Ḳidasé</i> — Liturgy | ቅዳሴ", false);
+            }
+            addSectionTitleCallback(anaphora.name);
+            renderKidaseSection(anaphora.data);
+        }
+
+        if (miraclePosition === 'anaphora') {
+            renderSelectedMiracle(addSectionTitleCallback, renderKidaseSection);
+        }
+    }
+
+    // Helper to render a chunk of kidase prayers with current filters
+    function renderKidaseSection(prayers, isLiturgyCore = false, overrideQuietFilter = false) {
+        let filtered = prayers;
+
+        // Apply Liturgy-embedded Covenant Prayer filtering (only for Core) BEFORE hideQuietPrayers
+        if (isLiturgyCore) {
+            filtered = filtered.filter((p) => {
+                if (p.chapter === 'Kidan') {
+                    if (selectedCovenantPrayer === 'none') return false;
+                    if (p.stanza === 'Part1' && selectedCovenantPrayer !== 'midnight') return false;
+                    if (p.stanza === 'Part2' && selectedCovenantPrayer !== 'morning') return false;
+                    if (p.stanza === 'Part3' && selectedCovenantPrayer !== 'afternoon') return false;
+                }
+                return true;
+            });
+        }
+
+        if (!hideQuietPrayers && !overrideQuietFilter) {
+            filtered = filtered.filter(p => {
+                if (p.instruction && p.instruction.includes("Inaudible Prayer")) return false;
+                return true;
+            });
+        }
+
+        // Apply Liturgy Day filtering (Chapter 2 & Chapter 3 day variants) ONLY in slides mode
+        if (displayOptions.presentationMode === 'slides') {
+            filtered = filtered.filter(p => {
+                if (p.chapter === '2') {
+                    if (p.stanza === '73' && selectedKidaseDay !== 'weekday') return false;
+                    if (p.stanza === '74' && selectedKidaseDay !== 'saturday') return false;
+                    if (p.stanza === '75' && selectedKidaseDay !== 'sunday') return false;
+                }
+                if (p.chapter === '3') {
+                    const s = parseInt(p.stanza);
+                    if (s === 119) {
+                        const isSundayNisgid = p.english && p.english.toLowerCase().includes("worship");
+                        if (selectedKidaseDay === 'sunday' && !isSundayNisgid) return false;
+                        if (selectedKidaseDay !== 'sunday' && isSundayNisgid) return false;
+                    }
+                    if (s >= 120 && s <= 122) {
+                        // 3-120 to 3-122 are only for Sunday / Major Feasts
+                        if (selectedKidaseDay !== 'sunday') return false;
+                    }
+                }
+                return true;
+            });
+        }
+
+        // Apply Holy 50 Days filtering (3-160..3-172 vs 3-173)
+        filtered = filtered.filter(p => {
+            if (p.chapter === '3' && p.stanza) {
+                const sNum = parseInt(p.stanza);
+                if (isHolyFiftyDays) {
+                    // When ON: hide cards 3-160 through 3-172
+                    if (!isNaN(sNum) && sNum >= 160 && sNum <= 172) return false;
+                } else {
+                    // When OFF (default): hide card 3-173
+                    if (!isNaN(sNum) && sNum === 173) return false;
+                }
+            }
+            return true;
+        });
+
+        // Apply Gospel Conclusion/Response filtering (3-213..3-216)
+        // Each gospel book has its own conclusion & response cards:
+        //   Matthew → 3-213, Mark → 3-214, Luke → 3-215, John → 3-216
+        const GOSPEL_STANZA_MAP = { 'Matthew': 213, 'Mark': 214, 'Luke': 215, 'John': 216 };
+        const gospelRef = kidaseLectionaryRefs.gospel || '';
+        const gospelBookMatch = gospelRef.match(/^(\w+)\s/);
+        const selectedGospelBook = gospelBookMatch ? gospelBookMatch[1] : '';
+        const activeGospelStanza = GOSPEL_STANZA_MAP[selectedGospelBook];
+
+        filtered = filtered.filter(p => {
+            if (p.chapter === '3' && p.stanza) {
+                const sNum = parseInt(p.stanza);
+                if (!isNaN(sNum) && sNum >= 213 && sNum <= 216) {
+                    // Only show the stanza matching the selected gospel book
+                    return sNum === activeGospelStanza;
+                }
+            }
+            return true;
+        });
+
+        filtered.forEach((pOriginal, relativeIdx) => {
+            const p = { ...pOriginal }; // clone to avoid modifying original array
+
+            // Replace Teklil placeholders if they exist
+            if (showTeklil) {
+                const keys = ['english', 'geez_script', 'amharic_script', 'tigrinya_script', 'spanish', 'spanish_pr'];
+                const groom = bridegroomName.trim() || "Bridegroom";
+                const bride = brideName.trim() || "Bride";
+                keys.forEach(k => {
+                    if (p[k]) {
+                        p[k] = p[k].replace(/\{\{BRIDEGROOM_NAME\}\}/g, groom);
+                        p[k] = p[k].replace(/\{\{BRIDE_NAME\}\}/g, bride);
+                    }
+                });
+            }
+
+            // Check if this prayer contains a reading placeholder from the config
+            let activeCfg = null;
+            for (const cfg of LITURGY_LECTIONARY_CONFIG) {
+                const hasPlaceholder = Object.values(cfg.placeholders).some(ph =>
+                    (p.english && p.english.includes(ph)) ||
+                    (p.geez_script && p.geez_script.includes(ph)) ||
+                    (p.amharic_script && p.amharic_script.includes(ph))
+                );
+
+                if (hasPlaceholder) {
+                    activeCfg = cfg;
+                    break;
+                }
+            }
+
+            if (activeCfg) {
+                const bibleResults = getBibleVersesFromRef(activeCfg.ref());
+                if (bibleResults) {
+                    const verseCounts = Object.values(bibleResults).map(arr => arr.length);
+                    const maxVerses = Math.max(0, ...verseCounts);
+
+                    if (maxVerses > 0) {
+                        const refStr = activeCfg.ref();
+                        const match = refStr.match(/^(.+?)\s+(\d+):(\d+)(?:-(End|\d+))?$/);
+                        const bookName = match ? match[1] : "";
+                        const chapter = match ? parseInt(match[2]) : 0;
+                        const start = match ? parseInt(match[3]) : 0;
+                        const end = match ? (match[4] === 'End' ? 999 : (match[4] ? parseInt(match[4]) : start)) : start;
+
+                        if (bookName === 'Psalms' || bookName === 'Psalm') {
+                            // Combine all verses into one card for Psalm chants
+                            const versePrayer = { ...p };
+                            const typical = findTypicalPsalm(bookName, chapter, start, end);
+
+                            // Only populate languages that are currently enabled
+                            const visibleLangs = languageOrder.filter(id => displayedLanguages[id]);
+
+                            // Always pre-compute phonetic raw text so showGeezPhoneticChants can append it
+                            // under the Ge'ez script column even if geez_phonetic column is not displayed
+                            let psalmPhoneticRaw = '';
+                            if (typical && typical.g) {
+                                psalmPhoneticRaw = transliterateGeezToPhonetic(typical.g);
+                            } else if (bibleResults['geez_script']) {
+                                const rawGeez = bibleResults['geez_script'].map(v => v.text).join("\n");
+                                psalmPhoneticRaw = transliterateGeezToPhonetic(rawGeez);
+                            } else if (typical && typical.p) {
+                                psalmPhoneticRaw = typical.p;
+                            }
+
+                            visibleLangs.forEach(langKey => {
+                                const langPlaceholder = activeCfg.placeholders[langKey] || activeCfg.placeholders.english;
+                                let combinedText = "";
+
+                                if (langKey === 'geez_script' && typical) {
+                                    combinedText = typical.g;
+                                } else if (langKey === 'geez_phonetic') {
+                                    if (typical && typical.g) {
+                                        combinedText = transliterateGeezToPhonetic(typical.g);
+                                    } else if (bibleResults['geez_script']) {
+                                        const rawGeez = bibleResults['geez_script'].map(v => v.text).join("\n");
+                                        combinedText = transliterateGeezToPhonetic(rawGeez);
+                                    } else if (typical && typical.p) {
+                                        combinedText = typical.p;
+                                    }
+                                } else if (bibleResults[langKey]) {
+                                    // Remove verse numbers in brackets for Psalm chants
+                                    combinedText = bibleResults[langKey].map(v => v.text).join("\n");
+                                }
+
+                                // Construct localized header
+                                let header = refStr;
+                                const bookCfg = BIBLE_BOOK_MAPPING[bookName];
+                                const rangeSuffix = `${start}${end !== start && end !== 999 ? '-' + end : (end === 999 ? '-End' : '')}`;
+
+                                if (langKey === 'geez_script') {
+                                    // Ge'ez Column: መዝሙር ዘዳዊት ፲፩፥፭ (ግእዝ፲፱፻፹)
+                                    let gCh = chapter, gS = start, gE = end;
+                                    if (typical) {
+                                        gCh = typical.lc; gS = typical.ls; gE = typical.le;
+                                    }
+                                    const chG = toGeezNumeral(gCh);
+                                    const sG = toGeezNumeral(gS);
+                                    const eG = (gE !== gS && gE !== 999) ? '-' + toGeezNumeral(gE) : (gE === 999 ? '-ፍጻሜ' : '');
+                                    header = `መዝሙር ዘዳዊት ${chG}፥${sG}${eG} (ግእዝ${toGeezNumeral(1980)})`;
+                                } else if (langKey === 'geez_phonetic') {
+                                    if (typical) {
+                                        const lxxRange = `${typical.ls}${typical.le !== typical.ls ? '-' + typical.le : ''}`;
+                                        const mcRange = `${typical.ms}${typical.me !== typical.ms ? '-' + typical.me : ''}`;
+                                        header = `Mezmure Dawīt ${typical.lc}:${lxxRange} OSB (${typical.mc}:${mcRange} NKJV)`;
+                                    } else {
+                                        header = `Mezmure Dawīt ${chapter}:${rangeSuffix} (Ge'ez Phonetic)`;
+                                    }
+                                } else if (langKey === 'english') {
+                                    // English Column: Psalm 94:7-8 OSB (95:7-8 NKJV) OR Psalm 12:5 (NKJV)
+                                    if (typical) {
+                                        const lxxRange = `${typical.ls}${typical.le !== typical.ls ? '-' + typical.le : ''}`;
+                                        const mcRange = `${typical.ms}${typical.me !== typical.ms ? '-' + typical.me : ''}`;
+                                        header = `Psalm ${typical.lc}:${lxxRange} OSB (${typical.mc}:${mcRange} NKJV)`;
+                                    } else {
+                                        header = `Psalm ${chapter}:${rangeSuffix} (NKJV)`;
+                                    }
+                                } else if (bookCfg) {
+                                    // Others (Amharic, etc.)
+                                    if (langKey === 'amharic_script') {
+                                        header = `${bookCfg.am54} ${chapter}:${rangeSuffix} (አም1954)`;
+                                    } else if (langKey === 'spanish' || langKey === 'spanish_pr') {
+                                        header = `${bookCfg.rgv} ${chapter}:${rangeSuffix} (RVG)`;
+                                    }
+                                }
+
+                                // For Psalm chants, we replace the entire card content to remove the Deacon prompt
+                                // But only if we have actual content for this language
+                                if (combinedText && combinedText.trim()) {
+                                    versePrayer[langKey] = `<span class="speaker-label">${header}</span><br>${combinedText}`;
+                                } else {
+                                    versePrayer[langKey] = "";
+                                }
+                            });
+
+                            // Ensure geez_phonetic raw text is always available for
+                            // the "showGeezPhoneticChants" append feature (appended under Ge'ez script column),
+                            // even when the geez_phonetic language column is not displayed.
+                            if (!displayedLanguages['geez_phonetic'] && psalmPhoneticRaw) {
+                                versePrayer['geez_phonetic'] = psalmPhoneticRaw;
+                            }
+
+                            const card = createPrayerCardElement(versePrayer, -1, true);
+                            card.dataset.readingType = activeCfg.id;
+
+                            const pickerFooter = document.createElement('div');
+                            pickerFooter.classList.add('card-inline-lectionary-picker');
+                            createLectionaryPicker(pickerFooter, activeCfg.id, ['Psalms'], TYPICAL_PSALMS);
+                            const pFooter = card.querySelector('.prayer-footer');
+                            const pActions = card.querySelector('.prayer-actions');
+                            if (pFooter && pActions) {
+                                pFooter.insertBefore(pickerFooter, pActions);
+                            } else {
+                                card.appendChild(pickerFooter);
+                            }
+
+                            prayerDisplay.appendChild(card);
+                        } else {
+                            // Split into multiple cards for Gospel/Epistles
+                            for (let i = 0; i < maxVerses; i++) {
+                                const versePrayer = { ...p };
+                                const visibleLangs = languageOrder.filter(id => displayedLanguages[id]);
+                                visibleLangs.forEach(langKey => {
+                                    const langPlaceholder = activeCfg.placeholders[langKey] || activeCfg.placeholders.english;
+
+                                    if (bibleResults[langKey] && bibleResults[langKey][i]) {
+                                        const v = bibleResults[langKey][i];
+                                        let dVN = v.verseNum;
+                                        if (langKey === 'geez_script' || langKey === 'geez_psalms') {
+                                            dVN = String(dVN).split('-').map(n => toGeezNumeral(parseInt(n, 10))).join('-');
+                                        }
+                                        const verseText = `<sup>${dVN}</sup> ${v.text}`;
+                                        if (i === 0) {
+                                            // Construct localized header
+                                            const range = match ? match[2] + ":" + match[3] + (match[4] ? "-" + match[4] : "") : "";
+                                            let header = refStr;
+                                            const bookCfg = BIBLE_BOOK_MAPPING[bookName];
+                                            if (bookCfg) {
+                                                if (langKey === 'geez_script') {
+                                                    header = `${bookCfg.am54} ${range} (ግእዝ${toGeezNumeral(1980)})`;
+                                                } else if (langKey === 'amharic_script') {
+                                                    header = `${bookCfg.am54} ${range} (አም1954)`;
+                                                } else if (langKey === 'english') {
+                                                    header = `${bookName} ${range} (NKJV)`;
+                                                } else if (langKey === 'spanish' || langKey === 'spanish_pr') {
+                                                    header = `${bookCfg.rgv} ${range} (RVG)`;
+                                                }
+                                            }
+                                            const prefix = (activeCfg.prefixes && activeCfg.prefixes[langKey]) || "";
+                                            const headerText = `${prefix}${header}`.trim();
+                                            const fullText = `<span class="speaker-label">${headerText}</span><br>${verseText}`;
+
+                                            // Replace the language-specific placeholder
+                                            if (p[langKey]) {
+                                                versePrayer[langKey] = p[langKey].replace(langPlaceholder, fullText);
+                                            } else {
+                                                versePrayer[langKey] = fullText;
+                                            }
+                                        } else {
+                                            versePrayer[langKey] = verseText;
+                                        }
+                                    } else {
+                                        // If no results for this language, clear it so it doesn't show placeholders/empty columns
+                                        versePrayer[langKey] = "";
+                                    }
+                                });
+                                const card = createPrayerCardElement(versePrayer, -1, true);
+                                if (i === 0) {
+                                    card.dataset.readingType = activeCfg.id;
+                                    const pickerFooter = document.createElement('div');
+                                    pickerFooter.classList.add('card-inline-lectionary-picker');
+
+                                    const bookOpts = (activeCfg.id === 'pauline') ? ['Romans', '1 Corinthians', '2 Corinthians', 'Galatians', 'Ephesians', 'Philippians', 'Colossians', '1 Thessalonians', '2 Thessalonians', '1 Timothy', '2 Timothy', 'Titus', 'Philemon', 'Hebrews']
+                                        : (activeCfg.id === 'universal') ? ['James', '1 Peter', '2 Peter', '1 John', '2 John', '3 John', 'Jude', 'Revelation']
+                                        : (activeCfg.id === 'acts') ? ['Acts']
+                                        : ['Matthew', 'Mark', 'Luke', 'John'];
+
+                                    createLectionaryPicker(pickerFooter, activeCfg.id, bookOpts, null);
+                                    const pFooter = card.querySelector('.prayer-footer');
+                                    const pActions = card.querySelector('.prayer-actions');
+                                    if (pFooter && pActions) {
+                                        pFooter.insertBefore(pickerFooter, pActions);
+                                    } else {
+                                        card.appendChild(pickerFooter);
+                                    }
+                                }
+                                prayerDisplay.appendChild(card);
+                            }
+                        }
+                        return;
+                    }
+                }
+            }
+
+            const card = createPrayerCardElement(p, -1, true);
+
+            // Add cross-navigation buttons for creed cards & day-variant liturgy chants
+            const cardId = `${p.chapter}-${p.stanza}`;
+            const jumpIconSVG = `<svg class="creed-nav-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>`;
+
+            if (cardId === '4-33' || cardId === 'The300-1') {
+                const navBtn = document.createElement('button');
+                navBtn.className = 'settings-button creed-nav-btn';
+                if (cardId === '4-33') {
+                    navBtn.innerHTML = `${jumpIconSVG} <span>NICENE CREED | ጸሎተ ሐይማኖት</span>`;
+                    navBtn.title = 'Jump to the Nicene Creed (The 300)';
+                    navBtn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        navigateToCard('The300-1');
+                    });
+                } else {
+                    navBtn.innerHTML = `${jumpIconSVG} <span>APOSTLE'S CREED | አመክንዮ ዘሐዋርያት</span>`;
+                    navBtn.title = "Jump to the Apostle's Creed";
+                    navBtn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        navigateToCard('4-33');
+                    });
+                }
+
+                const pFooter = card.querySelector('.prayer-footer');
+                const pActions = card.querySelector('.prayer-actions');
+                if (pFooter && pActions) {
+                    pFooter.insertBefore(navBtn, pActions);
+                }
+            } else if (p.chapter === '2' && (p.stanza === '73' || p.stanza === '74' || p.stanza === '75')) {
+                // Only attach navigation buttons to the first 2-75 card if multiple 2-75 cards exist
+                const isFirstStanza75 = p.stanza !== '75' || (p.english && p.english.includes("Blessed is he who does blessed deeds and honors the Sabbath. Let him not question"));
+                if (isFirstStanza75) {
+                    const navGroup = document.createElement('div');
+                    navGroup.className = 'day-nav-group';
+
+                    if (p.stanza === '75') {
+                        // On Sunday chant (ኵሉ ዘገብራ): provide Saturday and Weekday options
+                        const btnSat = document.createElement('button');
+                        btnSat.className = 'settings-button day-nav-btn';
+                        btnSat.innerHTML = `${jumpIconSVG} <span>SATURDAY | ዘቀዳሚት (መስቀል አብርሃ)</span>`;
+                        btnSat.title = 'Switch to Saturday Liturgy chant (መስቀል አብርሃ)';
+                        btnSat.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            switchKidaseDayAndNavigate('saturday', '2-74');
+                        });
+                        navGroup.appendChild(btnSat);
+
+                        const btnWk = document.createElement('button');
+                        btnWk.className = 'settings-button day-nav-btn';
+                        btnWk.innerHTML = `${jumpIconSVG} <span>WEEKDAY | ዘሰኑይ–ዓርብ (እምነ በሀ)</span>`;
+                        btnWk.title = 'Switch to Weekday Liturgy chant (እምነ በሀ)';
+                        btnWk.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            switchKidaseDayAndNavigate('weekday', '2-73');
+                        });
+                        navGroup.appendChild(btnWk);
+                    } else if (p.stanza === '74') {
+                        // On Saturday chant (መስቀል አብርሃ): provide Sunday and Weekday options
+                        const btnSun = document.createElement('button');
+                        btnSun.className = 'settings-button day-nav-btn';
+                        btnSun.innerHTML = `${jumpIconSVG} <span>SUNDAY | ዘእሁድ (ኵሉ ዘገብራ)</span>`;
+                        btnSun.title = 'Switch to Sunday Liturgy chant (ኵሉ ዘገብራ)';
+                        btnSun.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            switchKidaseDayAndNavigate('sunday', '2-75');
+                        });
+                        navGroup.appendChild(btnSun);
+
+                        const btnWk = document.createElement('button');
+                        btnWk.className = 'settings-button day-nav-btn';
+                        btnWk.innerHTML = `${jumpIconSVG} <span>WEEKDAY | ዘሰኑይ–ዓርብ (እምነ በሀ)</span>`;
+                        btnWk.title = 'Switch to Weekday Liturgy chant (እምነ በሀ)';
+                        btnWk.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            switchKidaseDayAndNavigate('weekday', '2-73');
+                        });
+                        navGroup.appendChild(btnWk);
+                    } else if (p.stanza === '73') {
+                        // On Weekday chant (እምነ በሀ): provide Sunday and Saturday options
+                        const btnSun = document.createElement('button');
+                        btnSun.className = 'settings-button day-nav-btn';
+                        btnSun.innerHTML = `${jumpIconSVG} <span>SUNDAY | ዘእሁድ (ኵሉ ዘገብራ)</span>`;
+                        btnSun.title = 'Switch to Sunday Liturgy chant (ኵሉ ዘገብራ)';
+                        btnSun.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            switchKidaseDayAndNavigate('sunday', '2-75');
+                        });
+                        navGroup.appendChild(btnSun);
+
+                        const btnSat = document.createElement('button');
+                        btnSat.className = 'settings-button day-nav-btn';
+                        btnSat.innerHTML = `${jumpIconSVG} <span>SATURDAY | ዘቀዳሚት (መስቀል አብርሃ)</span>`;
+                        btnSat.title = 'Switch to Saturday Liturgy chant (መስቀል አብርሃ)';
+                        btnSat.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            switchKidaseDayAndNavigate('saturday', '2-74');
+                        });
+                        navGroup.appendChild(btnSat);
+                    }
+
+                    const pFooter = card.querySelector('.prayer-footer');
+                    const pActions = card.querySelector('.prayer-actions');
+                    if (pFooter && pActions) {
+                        pFooter.insertBefore(navGroup, pActions);
+                    }
+                }
+            } else if (p.chapter === '3' && p.stanza === '119') {
+                const isSundayNisgid = p.english && p.english.toLowerCase().includes("worship");
+                const navBtn = document.createElement('button');
+                navBtn.className = 'settings-button day-nav-btn';
+
+                if (isSundayNisgid) {
+                    navBtn.innerHTML = `${jumpIconSVG} <span>GOLDEN CENSER | ማዕጠንት ዘወርቅ (Mon–Sat)</span>`;
+                    navBtn.title = 'Switch to Mon–Sat Golden Censer chant (አንቲ ውእቱ ማዕጠንት ዘወርቅ)';
+                    navBtn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        switchKidaseDayAndNavigate('saturday', '3-119');
+                    });
+                } else {
+                    navBtn.innerHTML = `${jumpIconSVG} <span>LET US WORSHIP | ንስግድ (Sunday / Feasts)</span>`;
+                    navBtn.title = 'Switch to Sunday Nisgid chant (ካህን፤ ንስግድ / Priest: Let us worship)';
+                    navBtn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        switchKidaseDayAndNavigate('sunday', '3-119');
+                    });
+                }
+
+                const pFooter = card.querySelector('.prayer-footer');
+                const pActions = card.querySelector('.prayer-actions');
+                if (pFooter && pActions) {
+                    pFooter.insertBefore(navBtn, pActions);
+                }
+            }
+
+            prayerDisplay.appendChild(card);
+        });
+    }
+}
+
+
+function renderSequence() {
+    const sequence = getStandardPrayerSequence();
+    sequence.forEach(p => {
+        const card = createPrayerCardElement(p, -1, false);
+        prayerDisplay.appendChild(card);
+    });
+}
+
+
+let isRendering = false;
+let pendingRender = false;
+
+async function renderPrayers() {
+    if (isServantsCornerActive) return;
+    
+    if (isRendering) {
+        pendingRender = true;
+        return;
+    }
+    isRendering = true;
+
+    try {
+        if (useExternalBibleAPI && window.WeahaduBibleService) {
+            const refsToPreload = [];
+            for (const key in kidaseLectionaryRefs) {
+                refsToPreload.push(kidaseLectionaryRefs[key]);
+            }
+            if (typeof selectedProphetSongs !== 'undefined') {
+                selectedProphetSongs.forEach(songKey => {
+                    const song = typeof prophetSongs !== 'undefined' ? prophetSongs.find(s => s.key === songKey) : null;
+                    if (song && !song.refs?.prayerKey && song.refs?.nkjv) {
+                        const bookName = song.refs.nkjv.bookName || song.refs.nkjv.book;
+                        refsToPreload.push(`${bookName} 1:1`);
+                    }
+                });
+            }
+            if (typeof BIBLE_BOOK_MAPPING !== 'undefined') {
+                 // Psalms are heavily used, might as well preload it
+                 refsToPreload.push("Psalms 1:1");
+            }
+            await WeahaduBibleService.preloadBooks(['en-kjv', 'am-2000', 'gez-1980', 'ti-1997'], refsToPreload);
+        }
+    } catch (e) {
+        console.error("Failed to preload Weahadu books", e);
+    }
+    
+    _renderPrayersSync();
+    
+    isRendering = false;
+    if (pendingRender) {
+        pendingRender = false;
+        renderPrayers();
+    }
+}
+
+function _renderPrayersSync() {
+    prayerDisplay.innerHTML = '';
+    const activeLanguageCount = Object.values(displayedLanguages).filter(Boolean).length;
+    if (activeLanguageCount === 0) {
+        prayerDisplay.innerHTML = `<div class="empty-state-message"><p>Please select a language from the settings panel to begin.</p></div>`;
+        return;
+    }
+
+    let lastSectionTitle = null;
+    let currentNonCollapsibleTitleHtml = null;
+    const addSectionTitle = (title, isCollapsible = true, metadata = null) => {
+        if (title && title !== lastSectionTitle) {
+            if (title === "→ Prayer of Saint Ephraim: The Praises of Mary | ውዳሴ ማርያም") {
+                hasRenderedPraiseOfMaryMainTitle = true;
+            }
+            const titleEl = document.createElement('h2');
+            titleEl.classList.add('section-title');
+            
+            let actualTitle = title;
+            let indentLevel = 0;
+            if (actualTitle.startsWith("→ → → ")) {
+                indentLevel = 3;
+                actualTitle = actualTitle.substring(6);
+            } else if (actualTitle.startsWith("→ → ")) {
+                indentLevel = 2;
+                actualTitle = actualTitle.substring(4);
+            } else if (actualTitle.startsWith("→ ")) {
+                indentLevel = 1;
+                actualTitle = actualTitle.substring(2);
+            }
+            
+            const titleContent = document.createElement('div');
+            titleContent.classList.add('sub-title-content');
+            titleContent.innerHTML = actualTitle.replace(/\(Theotokia\)/g, '<i>(Theotokia)</i>');
+
+            if (!isCollapsible) {
+                titleEl.classList.add('non-collapsible');
+                currentNonCollapsibleTitleHtml = actualTitle.replace(/\(Theotokia\)/g, '<i>(Theotokia)</i>');
+                titleEl.appendChild(titleContent);
+            } else {
+                titleEl.classList.add('collapsible');
+                if (currentNonCollapsibleTitleHtml) {
+                    const parentHeader = document.createElement('div');
+                    parentHeader.classList.add('parent-title-header');
+                    parentHeader.innerHTML = currentNonCollapsibleTitleHtml;
+                    titleEl.appendChild(parentHeader);
+                    currentNonCollapsibleTitleHtml = null;
+                }
+                titleEl.appendChild(titleContent);
+            }
+            
+            const subSections = [
+                "Sunday | ዘእሁድ", "Monday | ዘሰኑይ", "Tuesday | ዘሠሉስ", 
+                "Wednesday | ዘረቡዕ", "Thursday | ዘሐሙስ", "Friday | ዘዓርብ", 
+                "Saturday | ዘቀዳሚት"
+            ];
+            const isPsalm = /^Psalm \d+/.test(actualTitle);
+            const isProphetSong = typeof prophetSongs !== 'undefined' && prophetSongs.some(s => actualTitle.startsWith(s.name));
+            if (indentLevel === 3) {
+                titleEl.classList.add('sub-sub-sub-section-title');
+            } else if (indentLevel === 2) {
+                titleEl.classList.add('sub-sub-section-title');
+            } else if (indentLevel === 1 || subSections.includes(actualTitle) || isPsalm || isProphetSong) {
+                titleEl.classList.add('sub-section-title');
+            }
+
+            if (isCollapsible) {
+                const slug = slugifyTitle(title);
+                const isCollapsed = areAllSectionsCollapsed || collapsedSections[title] || collapsedSections[slug];
+
+                if (isCollapsed) {
+                    titleEl.classList.add('collapsed');
+                }
+                titleEl.addEventListener('click', () => {
+                    // Do not allow collapsing/expanding in slides mode
+                    if (displayOptions.presentationMode === 'slides') {
+                        return;
+                    }
+
+                    // The button's own listener will stop propagation
+                    const isCollapsed = titleEl.classList.toggle('collapsed');
+                    collapsedSections[title] = isCollapsed;
+                    saveSettings();
+
+                    let nextEl = titleEl.nextElementSibling;
+                    while (nextEl && !nextEl.classList.contains('section-title')) {
+                        nextEl.style.display = isCollapsed ? 'none' : '';
+                        nextEl = nextEl.nextElementSibling;
+                    }
+                });
+            }
+
+            // Add action buttons for slide mode functionality
+            const exitSlidesBtn = document.createElement('button');
+            exitSlidesBtn.classList.add('exit-slides-mode-btn', 'section-title-exit-btn');
+            exitSlidesBtn.innerHTML = '&times;';
+            exitSlidesBtn.title = 'Exit Slides Mode';
+            exitSlidesBtn.addEventListener('click', (e) => {
+                e.stopPropagation(); // Prevent the h2's click listener from firing
+                togglePresentationMode();
+            });
+            titleEl.appendChild(exitSlidesBtn);
+
+            prayerDisplay.appendChild(titleEl);
+
+            // NEW: Initial visibility state based on collapse status
+            const slug = slugifyTitle(title);
+            const isInitiallyCollapsed = areAllSectionsCollapsed || collapsedSections[title] || collapsedSections[slug];
+
+            // This is a marker to help createPrayerCardElement know if it should be hidden
+            titleEl.dataset.isCollapsed = isInitiallyCollapsed;
+
+            if (metadata) {
+                const metadataEl = document.createElement('div');
+                metadataEl.className = 'section-metadata';
+
+                let parts = [];
+                if (metadata.aka) parts.push(`Commonly known as: ${metadata.aka}`);
+                if (metadata.time) parts.push(`Time: ${metadata.time}`);
+                if (metadata.purpose) parts.push(`Purpose: ${metadata.purpose}`);
+
+                metadataEl.innerHTML = parts.join('<br>');
+                titleEl.appendChild(metadataEl);
+            }
+
+            if (title === "Daily Prayer | ዘዘወትር ጸሎት") {
+                const iconImg = document.createElement('img');
+                iconImg.src = 'img/Silus-Kidus.svg';
+                iconImg.alt = 'Holy Trinity Icon';
+                iconImg.classList.add('holy-trinity-icon'); // Add a class for styling
+                if (isInitiallyCollapsed) iconImg.style.display = 'none';
+                prayerDisplay.appendChild(iconImg);
+            } else if (title === "→ Prayer of Saint Ephraim: The Praises of Mary | ውዳሴ ማርያም") {
+                const iconImg = document.createElement('img');
+                iconImg.src = 'img/Mary-Blesses-Ephraim.svg';
+                iconImg.alt = 'Mary Blesses Ephraim Icon';
+                iconImg.classList.add('section-icon');
+                if (isInitiallyCollapsed) iconImg.style.display = 'none';
+                prayerDisplay.appendChild(iconImg);
+            } else if (title === "→ → → Thursday | ዘሐሙስ") {
+                const iconImg = document.createElement('img');
+                iconImg.src = 'img/Ephraim-and-Mary-on-Thursday.svg';
+                iconImg.alt = 'Ephraim and Mary on Thursday Icon';
+                iconImg.classList.add('section-icon');
+                if (isInitiallyCollapsed) iconImg.style.display = 'none';
+                prayerDisplay.appendChild(iconImg);
+            } else if (title === "→ Prayer of Abba Giyorgis: The Angels Praise Mary | ይዌድስዋ መላእክት ለማርያም") {
+                const iconImg = document.createElement('img');
+                iconImg.src = 'img/Mary-with-her-beloved-Son.svg';
+                iconImg.alt = 'Mary with her beloved Son Icon';
+                iconImg.classList.add('section-icon');
+                if (isInitiallyCollapsed) iconImg.style.display = 'none';
+                prayerDisplay.appendChild(iconImg);
+            } else if (title === "→ Opening Prayer | ነዓ ኀቤየ ዳዊት") {
+                const iconImg = document.createElement('img');
+                iconImg.src = 'img/Covenant-of-Mercy.svg';
+                iconImg.alt = 'Covenant of Mercy Icon';
+                iconImg.classList.add('section-icon');
+                if (isInitiallyCollapsed) iconImg.style.display = 'none';
+                prayerDisplay.appendChild(iconImg);
+            } else if (title === "→ Closing Prayer | ሰአሊ ለነ ማርያም") {
+                const iconImg = document.createElement('img');
+                iconImg.src = 'img/Covenant-of-Mercy-with-Psalm.svg';
+                iconImg.alt = 'Covenant of Mercy with Psalm Icon';
+                iconImg.classList.add('section-icon');
+                if (isInitiallyCollapsed) iconImg.style.display = 'none';
+                prayerDisplay.appendChild(iconImg);
+            }
+            lastSectionTitle = title;
+            window.isRenderingCollapsed = isInitiallyCollapsed;
+        }
+    };
+
+    const addSectionTitleIfNeeded = (prayer) => {
+        const title = getSectionTitle(prayer);
+        addSectionTitle(title, true);
+    };
+
+    // Reset rendering context at start of renderPrayers
+    window.isRenderingCollapsed = false;
+
+    const renderSequence = () => {
+        const prayerSequence = getStandardPrayerSequence();
+        prayerSequence.forEach(p => {
+            const prayerCard = createPrayerCardElement(p, -1);
+            prayerDisplay.appendChild(prayerCard);
+        });
+    };
+
+    // Render main prayers (non-Psalms, non-Prophet Songs)
+    const widaseMaryamChapters = {
+        'Sunday': ['Sun', 'Anqetse Birhan', 'Angels'],
+        'Monday': ['Mon', 'Anqetse Birhan', 'Angels'],
+        'Tuesday': ['Tue', 'Anqetse Birhan', 'Angels'],
+        'Wednesday': ['Wed', 'Anqetse Birhan', 'Angels'],
+        'Thursday': ['Thurs', 'Anqetse Birhan', 'Angels'],
+        'Friday': ['Fri', 'Anqetse Birhan', 'Angels'],
+        'Saturday': ['Sat', 'Anqetse Birhan', 'Angels']
+    };
+
+    const mainPrayers = prayers.filter(p => {
+        if (p.chapter === 'Psalms' || p.chapter === 'ProphetSong') return false;
+
+        // Include Daily stanzas 11 and 12 (Praise of Mary intro cards) if any Praise of Mary day is selected
+        if (p.chapter === 'Daily' && (p.stanza === '11' || p.stanza === '12')) {
+            return selectedWidaseMaryamDay !== 'None';
+        }
+
+        // Always include Daily prayers (stanzas 0-10)
+        if (p.chapter === 'Daily') return displayOptions.showDailyPrayer;
+
+        if (p.chapter === 'Anqetse Birhan' && !displayOptions.showGateOfLight) return false;
+        if (p.chapter === 'Angels' && displayOptions.showYewediswaMelaekt === false) return false;
+
+        // Filter Praise of Mary (and related) based on selection
+        if (selectedWidaseMaryamDay === 'None') return false;
+        if (selectedWidaseMaryamDay === 'All') return true;
+
+        const targetChapters = widaseMaryamChapters[selectedWidaseMaryamDay] || [];
+        return targetChapters.includes(p.chapter);
+    });
+
+    // Traditional liturgical ordering: Gate of Light (Anqetse Birhan) ALWAYS before The Angels Praise Mary (Angels)
+    const chapterOrder = {
+        'Daily': 1,
+        'Mon': 2,
+        'Tue': 3,
+        'Wed': 4,
+        'Thurs': 5,
+        'Fri': 6,
+        'Sat': 7,
+        'Sun': 8,
+        'Anqetse Birhan': 9,
+        'Angels': 10
+    };
+    
+    const mapped = mainPrayers.map((el, i) => {
+        let ch = (el.chapter || '').trim();
+        if (ch === 'Thursday') ch = 'Thurs';
+        return { index: i, value: el, order: chapterOrder[ch] || 99 };
+    });
+    
+    mapped.sort((a, b) => {
+        if (a.order !== b.order) {
+            return a.order - b.order;
+        }
+        return a.index - b.index; // Guaranteed stable sort
+    });
+    
+    mainPrayers.length = 0;
+    mapped.forEach(item => mainPrayers.push(item.value));
+
+    let hasRenderedTheotokiaTitle = false;
+    let hasRenderedPraiseOfMaryMainTitle = false;
+
+    mainPrayers.forEach((prayer, prayerIndex) => {
+        const isTheotokia = (prayer.chapter === 'Daily' && (prayer.stanza === '11' || prayer.stanza === '12')) || 
+                            ['Sun', 'Mon', 'Tue', 'Wed', 'Thurs', 'Fri', 'Sat', 'Angels', 'Anqetse Birhan'].includes(prayer.chapter);
+
+        const isPraiseOfMaryDay = ['Sun', 'Mon', 'Tue', 'Wed', 'Thurs', 'Fri', 'Sat'].includes(prayer.chapter);
+
+        if (isTheotokia && !hasRenderedTheotokiaTitle && selectedWidaseMaryamDay !== 'None') {
+            addSectionTitle("<i>Theotokia</i> — The Praises of the Mother of God", false);
+            hasRenderedTheotokiaTitle = true;
+        }
+
+        if (isPraiseOfMaryDay && !hasRenderedPraiseOfMaryMainTitle && selectedWidaseMaryamDay !== 'None') {
+            addSectionTitle("→ Prayer of Saint Ephraim: The Praises of Mary | ውዳሴ ማርያም", true);
+            hasRenderedPraiseOfMaryMainTitle = true;
+        }
+
+        if (prayer.chapter === 'Daily' && prayer.stanza === '0') {
+            const prayerCard = createPrayerCardElement(prayer, prayerIndex);
+            prayerDisplay.appendChild(prayerCard);
+            addSectionTitleIfNeeded(prayer);
+        } else {
+            addSectionTitleIfNeeded(prayer);
+            const prayerCard = createPrayerCardElement(prayer, prayerIndex);
+            prayerDisplay.appendChild(prayerCard);
+
+            // Apply initial collapsed state after the card is added
+            if (displayOptions.presentationMode !== 'slides' && lastSectionTitle && collapsedSections[lastSectionTitle]) {
+                prayerCard.style.display = 'none';
+            }
+        }
+    });
+
+    // Conditionally render Psalm-related prayers
+    const psalmsRendered = selectedPsalms.length > 0 && bibleData.loaded;
+    const prophetSongsRendered = selectedProphetSongs.length > 0;
+
+    if (psalmsRendered || prophetSongsRendered) {
+        addSectionTitle("Psalms | መዝሙር ዘዳዊት", false);
+
+        // Inject preset combination subtitle if matched
+        const stringifiedSelectedPsalms = JSON.stringify(selectedPsalms);
+        const stringifiedSelectedProphetSongs = JSON.stringify(selectedProphetSongs);
+        let matchedCombinationName = null;
+        for (const [key, combo] of Object.entries(PSALM_COMBINATIONS)) {
+            if (JSON.stringify(combo.psalms || []) === stringifiedSelectedPsalms && 
+                JSON.stringify(combo.prophetSongs || []) === stringifiedSelectedProphetSongs) {
+                matchedCombinationName = combo.name;
+                break;
+            }
+        }
+        
+        if (matchedCombinationName) {
+            const subtitleEl = document.createElement('div');
+            subtitleEl.classList.add('section-metadata');
+            subtitleEl.style.marginTop = '-0.25rem';
+            subtitleEl.style.marginBottom = '1.5rem';
+            subtitleEl.style.color = 'var(--speaker-label-color)';
+            subtitleEl.innerHTML = `<i>Preset: ${matchedCombinationName}</i>`;
+            prayerDisplay.appendChild(subtitleEl);
+        }
+
+        const psalmIntroPrayers = prayers.filter(p => p.chapter === 'Psalms' && p.stanza === 'Intro');
+        if (psalmIntroPrayers.length > 0) {
+            addSectionTitleIfNeeded(psalmIntroPrayers[0]);
+            psalmIntroPrayers.forEach(prayer => {
+                const prayerCard = createPrayerCardElement(prayer, -1);
+                prayerDisplay.appendChild(prayerCard);
+                if (displayOptions.presentationMode !== 'slides' && lastSectionTitle && collapsedSections[lastSectionTitle]) {
+                    prayerCard.style.display = 'none';
+                }
+            });
+        }
+    }
+
+    if (psalmsRendered) {
+        renderSelectedPsalmsWithDoxology((psalmNum) => {
+            let athMetadata = null;
+            if (typeof ST_ATHANASIUS_PSALMS_GUIDE !== 'undefined') {
+                const athEntries = ST_ATHANASIUS_PSALMS_GUIDE.filter(e => e.psalms.includes(psalmNum));
+                if (athEntries.length > 0) {
+                    const descList = athEntries.map(e => e.prescription).join(' ');
+                    athMetadata = { athanasius: descList };
+                }
+            }
+            addSectionTitle(`→ Psalm ${psalmNum} | መዝሙር ዘዳዊት ${toGeez(psalmNum)}`, true, athMetadata);
+        });
+    }
+
+    // Conditionally render Prophet Songs
+    if (prophetSongsRendered) {
+        renderSelectedProphetSongs((song) => {
+            const title = `→ ${song.name} ${song.verseRange || ''}`;
+            addSectionTitle(title, true, { aka: song.aka, time: song.time, purpose: song.purpose });
+        });
+    }
+
+    // Render Conclusion if Psalms or Prophet Songs were rendered
+    if (psalmsRendered || prophetSongsRendered) {
+        const closingPrayers = prayers.filter(p => p.chapter === 'Psalms' && p.stanza === 'Closing');
+        if (closingPrayers.length > 0) {
+            addSectionTitleIfNeeded(closingPrayers[0]);
+            closingPrayers.forEach(prayer => {
+                const prayerCard = createPrayerCardElement(prayer, -1);
+                prayerDisplay.appendChild(prayerCard);
+                if (displayOptions.presentationMode !== 'slides' && lastSectionTitle && collapsedSections[lastSectionTitle]) {
+                    prayerCard.style.display = 'none';
+                }
+            });
+        }
+    }
+
+    // Render Se'atat Lectionary Scripture Readings
+    renderSelectedSeatatLectionary(addSectionTitle);
+
+    // Render Kidase (Divine Liturgy)
+    renderSelectedKidase(addSectionTitle);
+
+    // Render Supplicatory Prayers
+    if (displayOptions.showSupplications) {
+        const supplications = getSupplicatoryPrayers();
+        addSectionTitle("Supplications | ምሕላ");
+        supplications.forEach((prayer, index) => {
+            const prayerCard = createPrayerCardElement(prayer, index);
+            prayerDisplay.appendChild(prayerCard);
+            if (displayOptions.presentationMode !== 'slides' && lastSectionTitle && collapsedSections[lastSectionTitle]) {
+                prayerCard.style.display = 'none';
+            }
+        });
+    }
+
+    // Always render the standard prayer sequence at the very end
+    renderSequence();
+
+    // Final setup for slides and search
+    if (displayOptions.presentationMode === 'slides') {
+        setupSlides();
+        adjustSlideFontSize();
+    } else {
+        removeSlides();
+    }
+    updateSearchMatches();
+}
+
+
+function smoothRender(callback) {
+    prayerDisplay.classList.add('is-transitioning');
+    setTimeout(() => {
+        renderPrayers();
+        if (callback) callback();
+        prayerDisplay.classList.remove('is-transitioning');
+    }, 150);
+}
+
+
+let notificationTimeout;
+function showCopyNotification(message = 'Prayer copied to clipboard!', duration = 2000) {
+    clearTimeout(notificationTimeout);
+    copyNotification.textContent = message;
+    copyNotification.classList.add('show');
+    notificationTimeout = setTimeout(() => {
+        copyNotification.classList.remove('show');
+    }, duration);
+}
+
+
+function fallbackCopyTextToClipboard(text) {
+    const textArea = document.createElement("textarea");
+    textArea.value = text;
+    textArea.style.top = "0";
+    textArea.style.left = "0";
+    textArea.style.position = "fixed";
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    try {
+        const successful = document.execCommand('copy');
+        if (successful) {
+            showCopyNotification();
+        } else {
+            showCopyNotification('Failed to copy!', 3000);
+        }
+    } catch (err) {
+        showCopyNotification('Failed to copy!', 3000);
+    }
+    document.body.removeChild(textArea);
+}
+
+
+
+
+function copyPrayer(prayer) {
+    let textToCopy = ``;
+    textToCopy += `፨ ${getPrayerLabel(prayer)} ፨\n\n`;
+    const kidaseChapters = ['Kidan', 'order', 'Apostles', 'St.Mary', 'Chrysostom', 'The300', 'mary', 'apostles'];
+    const chapterStr = prayer.chapter || '';
+    const isNumericChapter = /^\d+$/.test(chapterStr);
+    const isKidaseCard = isNumericChapter || kidaseChapters.some(c => c.toLowerCase() === chapterStr.toLowerCase());
+    let seenNonKidaseSpanish = false;
+
+    languageOrder.forEach(langKey => {
+        const langCfg = LANGUAGE_REGISTRY[langKey] || { category: 'main' };
+        if (langCfg.category === 'unofficial' && !isScribeLoggedIn) return;
+
+        let rawText = (!isKidaseCard && langKey === 'spanish_pr') ? (prayer.spanish_pr || prayer.spanish) : prayer[langKey];
+        if (displayedLanguages[langKey] && rawText && rawText.trim()) {
+            // Check for actual content
+            if (!hasActualContent(rawText, langKey)) return;
+
+            if (!isKidaseCard && (langKey === 'spanish' || langKey === 'spanish_pr')) {
+                if (seenNonKidaseSpanish) return;
+                seenNonKidaseSpanish = true;
+            }
+
+            const headerLabel = (!isKidaseCard && (langKey === 'spanish' || langKey === 'spanish_pr'))
+                ? 'Español (Spanish)'
+                : languageLabels[langKey];
+            textToCopy += `--- ${headerLabel} ---\n`;
+            // Format for clipboard: replace <br> with newlines, strip HTML and replace placeholders
+            let cleanText = rawText.replace(/<br\s*\/?>/gi, '\n').replace(/<[^>]*>?/gm, '');
+            cleanText = formatPrayerText(cleanText, langKey, null, false, prayer.chapter, prayer.stanza);
+
+            cleanText = cleanText.replace(/<br\s*\/?>/gi, '\n').replace(/<[^>]*>?/gm, '');
+
+            // Append Ge'ez Phonetics for chants if option is on
+            if (langKey === 'geez_script' && displayOptions.showGeezPhoneticChants && isChantStanza(prayer)) {
+                const rawPhoneticText = prayer['geez_phonetic'];
+                if (rawPhoneticText && rawPhoneticText.trim()) {
+                    const phoneticText = filterGeezPhoneticForPeople(rawPhoneticText, prayer);
+                    if (phoneticText && phoneticText.trim()) {
+                        let cleanPhonetic = phoneticText.replace(/<br\s*\/?>/gi, '\n').replace(/<[^>]*>?/gm, '');
+                        cleanPhonetic = formatPrayerText(cleanPhonetic, 'geez_phonetic', null, false, prayer.chapter, prayer.stanza);
+                        cleanPhonetic = cleanPhonetic.replace(/<br\s*\/?>/gi, '\n').replace(/<[^>]*>?/gm, '');
+                        cleanText += `\n(${cleanPhonetic})`;
+                    }
+                }
+            }
+
+            textToCopy += `${cleanText}\n\n`;
+        }
+    });
+
+    if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(textToCopy).then(() => {
+            showCopyNotification();
+        }).catch(err => {
+            console.error('Async clipboard API failed, trying fallback: ', err);
+            fallbackCopyTextToClipboard(textToCopy);
+        });
+    } else {
+        fallbackCopyTextToClipboard(textToCopy);
+    }
+}
+
+function copyPsalm(verse, lxxChapter) {
+    let textToCopy = ``;
+    let labelText;
+    if (lxxChapter === 151) {
+        labelText = `Psalm 151:${verse.verseNum}`;
+    } else if (lxxChapter == verse.mtChapter && (!verse.mtVerseNum || verse.verseNum == verse.mtVerseNum)) {
+        labelText = `Psalm ${lxxChapter}:${verse.verseNum}`;
+    } else if (lxxChapter == verse.mtChapter) {
+        labelText = `Psalm ${lxxChapter}:${verse.verseNum} (${verse.mtVerseNum})`;
+    } else if (!verse.mtVerseNum || verse.verseNum == verse.mtVerseNum) {
+        labelText = `Psalm ${lxxChapter} (${verse.mtChapter}):${verse.verseNum}`;
+    } else {
+        labelText = `Psalm ${lxxChapter}:${verse.verseNum} (${verse.mtChapter}:${verse.mtVerseNum})`;
+    }
+
+    textToCopy += `፨ ${labelText} ፨\n\n`;
+
+    if (displayedLanguages.english && verse.nkjv) {
+        textToCopy += `--- English ---\n`;
+        textToCopy += `[${verse.verseNum}] ${verse.nkjv}\n\n`;
+    }
+    if (displayedLanguages.geez_script && verse.geez_psalms) {
+        textToCopy += `--- ግእዝ ---\n`;
+        textToCopy += `[${verse.verseNum}] ${verse.geez_psalms}\n\n`;
+    }
+    if (displayedLanguages.amharic_script && verse.am54) {
+        textToCopy += `--- አማርኛ ---\n`;
+        textToCopy += `[${verse.verseNum}] ${verse.am54}\n\n`;
+    }
+    if (displayedLanguages.tigrinya_script && verse.tigrinya_script) {
+        textToCopy += `--- ትግርኛ ---\n`;
+        textToCopy += `[${verse.verseNum}] ${verse.tigrinya_script}\n\n`;
+    }
+    if (displayedLanguages.coptic && verse.coptic) {
+        textToCopy += `--- ϯⲙⲉⲧⲣⲉⲙⲛ̀ⲭⲏⲙⲓ ---\n`;
+        textToCopy += `[${verse.verseNum}] ${verse.coptic}\n\n`;
+    }
+    if ((displayedLanguages.spanish || displayedLanguages.spanish_pr) && verse.rgv) {
+        textToCopy += `--- Español ---\n`;
+        // The rgv text can have HTML, need to strip it
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = verse.rgv;
+        const spanishText = tempDiv.textContent || tempDiv.innerText || "";
+        textToCopy += `[${verse.verseNum}] ${spanishText}\n\n`;
+    }
+
+    if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(textToCopy).then(() => {
+            showCopyNotification();
+        }).catch(err => {
+            console.error('Async clipboard API failed, trying fallback: ', err);
+            fallbackCopyTextToClipboard(textToCopy);
+        });
+    } else {
+        fallbackCopyTextToClipboard(textToCopy);
+    }
+}
+
+
+function updateFontStylesAndPreview() {
+    const ethiopicFont = ethiopicFontSelect.value;
+    const englishFont = englishFontSelect.value;
+
+    document.documentElement.style.setProperty('--geez-font-size', `${fontSizes.geez}px`);
+    document.documentElement.style.setProperty('--english-font-size', `${fontSizes.english}px`);
+    document.documentElement.style.setProperty('--ethiopic-font-family', ethiopicFont);
+    document.documentElement.style.setProperty('--english-font-family', englishFont);
+
+    const previewEnglish = fontPreview.querySelector('.preview-english');
+    const previewGeez = fontPreview.querySelector('.preview-geez');
+    const previewPhonetic = fontPreview.querySelector('.preview-phonetic');
+
+    previewEnglish.style.fontFamily = englishFont;
+    previewEnglish.style.fontSize = `${fontSizes.english}px`;
+    previewGeez.style.fontFamily = ethiopicFont;
+    previewGeez.style.fontSize = `${fontSizes.geez}px`;
+    previewPhonetic.style.fontFamily = englishFont;
+    previewPhonetic.style.fontSize = `${fontSizes.english}px`;
+}
+
+// --- Slides Mode Functionality ---
+function setupSlides() {
+    prayerDisplay.className = ''; // Clear existing classes
+    prayerDisplay.classList.add(`transition-${displayOptions.slideTransition}`);
+    // If a pending slide target was set (e.g. from "Enter Slides" button), resolve it
+    // by signature to survive DOM rebuilds from async re-renders.
+    if (_pendingSlideSignature) {
+        const allSlides = Array.from(prayerDisplay.querySelectorAll('.prayer-card, .section-title.collapsible'));
+        const targetCard = allSlides.find(c => c.dataset && c.dataset.prayerSignature === _pendingSlideSignature);
+        if (targetCard) {
+            const idx = allSlides.indexOf(targetCard);
+            if (idx !== -1) {
+                currentSlideIndex = idx;
+            }
+        }
+    } else if (_pendingSlideId) {
+        let targetCard = null;
+        if (_pendingSlidePredicate && typeof _pendingSlidePredicate === 'function') {
+            const matchingCards = Array.from(prayerDisplay.querySelectorAll(`.prayer-card[data-card-id="${_pendingSlideId}"]`));
+            targetCard = matchingCards.find(_pendingSlidePredicate) || matchingCards[0];
+        } else {
+            targetCard = prayerDisplay.querySelector(`.prayer-card[data-card-id="${_pendingSlideId}"]`);
+        }
+        if (targetCard) {
+            const allSlides = Array.from(prayerDisplay.querySelectorAll('.prayer-card, .section-title.collapsible'));
+            const idx = allSlides.indexOf(targetCard);
+            if (idx !== -1) {
+                currentSlideIndex = idx;
+            }
+        }
+        _pendingSlideId = null;
+        _pendingSlidePredicate = null;
+    }
+    showSlide(currentSlideIndex);
+}
+
+function removeSlides() {
+    prayerDisplay.style.transform = '';
+    prayerDisplay.className = '';
+    document.querySelectorAll('.prayer-card, .section-title.collapsible').forEach(el => el.classList.remove('active-slide'));
+    document.querySelectorAll('.language-text').forEach(p => p.style.fontSize = '');
+}
+
+function showSlide(index) {
+    const slides = prayerDisplay.querySelectorAll('.prayer-card, .section-title.collapsible');
+    if (index >= slides.length) currentSlideIndex = 0;
+    if (index < 0) currentSlideIndex = slides.length - 1;
+
+    if (displayOptions.slideTransition === 'fade' || displayOptions.slideTransition === 'none') {
+        slides.forEach((slide, i) => {
+            slide.classList.toggle('active-slide', i === currentSlideIndex);
+        });
+    } else { // Default is 'slide'
+        prayerDisplay.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
+    }
+    adjustSlideFontSize();
+}
+
+function nextSlide() {
+    const slides = prayerDisplay.querySelectorAll('.prayer-card, .section-title.collapsible');
+    if (slides.length > 0) {
+        currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+        showSlide(currentSlideIndex);
+    }
+}
+
+function prevSlide() {
+    const slides = prayerDisplay.querySelectorAll('.prayer-card, .section-title.collapsible');
+    if (slides.length > 0) {
+        currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
+        showSlide(currentSlideIndex);
+    }
+}
+
+/**
+ * Switch the Liturgy Day setting and navigate directly to a target prayer card.
+ * @param {string} newDay - 'sunday' | 'saturday' | 'weekday'
+ * @param {string} targetCardId - e.g. '2-74', '2-75', '3-119'
+ * @param {Function} [predicate] - Optional filter function for matching cards
+ */
+function switchKidaseDayAndNavigate(newDay, targetCardId, predicate) {
+    selectedKidaseDay = newDay;
+    if (kidaseDaySelector) {
+        kidaseDaySelector.value = newDay;
+    }
+
+    if (displayOptions.presentationMode === 'slides') {
+        _pendingSlideId = targetCardId;
+        _pendingSlidePredicate = predicate;
+    }
+
+    saveSettings();
+    smoothRender(() => {
+        if (displayOptions.presentationMode !== 'slides') {
+            navigateToCard(targetCardId, predicate);
+        }
+    });
+}
+
+/**
+ * Navigate to a prayer card by its chapter-stanza ID (e.g. 'The300-1', '4-33').
+ * Works in both scroll mode (scrollIntoView) and slides mode (jump to slide).
+ * @param {string} targetCardId - e.g. '2-74', '2-75', '3-119'
+ * @param {Function} [predicate] - Optional filter function for disambiguating multiple matching cards
+ */
+function navigateToCard(targetCardId, predicate) {
+    let targetCard = null;
+    if (predicate && typeof predicate === 'function') {
+        const matchingCards = Array.from(prayerDisplay.querySelectorAll(`.prayer-card[data-card-id="${targetCardId}"]`));
+        targetCard = matchingCards.find(predicate) || matchingCards[0];
+    } else {
+        targetCard = prayerDisplay.querySelector(`.prayer-card[data-card-id="${targetCardId}"]`);
+    }
+    if (!targetCard) return;
+
+    if (displayOptions.presentationMode === 'slides') {
+        // In slides mode: find the slide index and jump to it
+        const allSlides = Array.from(prayerDisplay.querySelectorAll('.prayer-card, .section-title.collapsible'));
+        const slideIdx = allSlides.indexOf(targetCard);
+        if (slideIdx !== -1) {
+            currentSlideIndex = slideIdx;
+            showSlide(currentSlideIndex);
+        }
+    } else {
+        // In scroll mode: expand collapsed sections, unhide card, scroll to it
+        // Ensure the target card's section is expanded
+        if (targetCard.style.display === 'none') {
+            // Find the parent section title and expand it
+            let prev = targetCard.previousElementSibling;
+            while (prev && !prev.classList.contains('section-title')) {
+                prev = prev.previousElementSibling;
+            }
+            if (prev && prev.classList.contains('collapsible') && prev.classList.contains('collapsed')) {
+                prev.click(); // Expand the section
+            }
+        }
+        // Small delay to allow DOM to settle after expansion
+        requestAnimationFrame(() => {
+            targetCard.scrollIntoView({ block: 'center', behavior: 'smooth' });
+            // Brief highlight effect
+            targetCard.classList.add('nav-highlight');
+            setTimeout(() => targetCard.classList.remove('nav-highlight'), 1500);
+        });
+    }
+}
+
+let slideFontSizeCache = new Map();
+let presizeIdleCallbackId = null;
+let resizeDebounceTimer = null;
+
+/**
+ * Cancels any pending background pre-sizing work.
+ */
+function cancelPendingPresize() {
+    if (presizeIdleCallbackId !== null) {
+        if (typeof cancelIdleCallback === 'function') {
+            cancelIdleCallback(presizeIdleCallbackId);
+        } else {
+            clearTimeout(presizeIdleCallbackId);
+        }
+        presizeIdleCallbackId = null;
+    }
+}
+
+/**
+ * Pre-sizes nearby slides in the background using requestIdleCallback.
+ * Expands outward from the current index: +1, -1, +2, -2, ...
+ * Each callback sizes one card to avoid blocking the main thread.
+ */
+function presizeNearbySlides(slides, centerIndex) {
+    // Build the list of card indices to pre-size, expanding outward
+    const toPresize = [];
+    for (let offset = 1; offset < slides.length; offset++) {
+        const ahead = centerIndex + offset;
+        const behind = centerIndex - offset;
+        if (ahead < slides.length) toPresize.push(ahead);
+        if (behind >= 0) toPresize.push(behind);
+    }
+
+    let queueIndex = 0;
+
+    function presizeNext(deadline) {
+        // Process cards while we have idle time (or at least one per callback)
+        while (queueIndex < toPresize.length) {
+            const card = slides[toPresize[queueIndex]];
+            queueIndex++;
+
+            // Only size prayer cards (skip section titles)
+            if (!card || !card.classList.contains('prayer-card')) continue;
+            if (card.style.display === 'none') continue;
+
+            // Skip if already cached
+            if (slideFontSizeCache.has(card)) continue;
+
+            sizeOneCard(card);
+
+            // If we've used our idle time, yield and come back
+            if (typeof deadline !== 'undefined' && deadline.timeRemaining() < 5) {
+                presizeIdleCallbackId = requestIdleCallbackCompat(presizeNext);
+                return;
+            }
+        }
+        // All done
+        presizeIdleCallbackId = null;
+    }
+
+    presizeIdleCallbackId = requestIdleCallbackCompat(presizeNext);
+}
+
+/**
+ * requestIdleCallback with setTimeout fallback for older browsers.
+ */
+function requestIdleCallbackCompat(callback) {
+    if (typeof requestIdleCallback === 'function') {
+        return requestIdleCallback(callback, { timeout: 2000 });
+    }
+    // Fallback: use setTimeout with a fake deadline
+    return setTimeout(() => {
+        callback({ timeRemaining: () => 50 });
+    }, 50);
+}
+
+/**
+ * Main orchestrator: sizes the active card synchronously, then pre-sizes
+ * nearby slides in the background. Replaces the old all-at-once approach.
+ */
+function adjustSlideFontSize() {
+    if (displayOptions.presentationMode !== 'slides' || !displayOptions.dynamicFontSizing) {
+        document.querySelectorAll('.language-text').forEach(p => { p.style.fontSize = ''; });
+        return;
+    }
+
+    // Cancel any pending background pre-sizing
+    cancelPendingPresize();
+
+    // Size ONLY the active card synchronously
+    const slides = prayerDisplay.querySelectorAll('.prayer-card, .section-title.collapsible');
+    const activeCard = slides[currentSlideIndex];
+    if (activeCard && activeCard.classList.contains('prayer-card')) {
+        sizeOneCard(activeCard);
+    }
+
+    // Pre-size nearby slides in background during idle time
+    presizeNearbySlides(slides, currentSlideIndex);
+}
+
+/**
+ * Clears the font size cache. Called on resize, re-render, or settings changes.
+ */
+function clearSlideFontSizeCache() {
+    slideFontSizeCache = new Map();
+}
+
+/**
+ * Sizes a single prayer card using the original binary search algorithm.
+ * Checks the cache first; stores results in cache after computation.
+ * This is synchronous — ~280ms per card is acceptable for the active card.
+ */
+function sizeOneCard(card) {
+    // Cache hit — apply cached sizes and return immediately
+    if (slideFontSizeCache.has(card)) {
+        const cached = slideFontSizeCache.get(card);
+        cached.sizes.forEach(item => {
+            item.textP.style.fontSize = item.size + 'px';
+        });
+        return;
+    }
+
+    const prayerContent = card.querySelector('.prayer-content');
+    if (!prayerContent) return;
+
+    const langSections = card.querySelectorAll('.language-section');
+    if (langSections.length === 0) return;
+
+    // Reset sizes
+    langSections.forEach(section => {
+        const textP = section.querySelector('p.language-text');
+        if (textP) textP.style.fontSize = '12px';
+    });
+
+    const isColumn = prayerContent.classList.contains('layout-column');
+    let bestSizes = [];
+
+    const HEIGHT_BUFFER = 48; // Pixels buffer to prevent clipping descenders/labels
+
+    if (isColumn) {
+        // Column Layout: Each column is independent
+        let minOverallBest = 250;
+        langSections.forEach(section => {
+            const textP = section.querySelector('p.language-text');
+            if (!textP) return;
+
+            let minSize = 12, maxSize = 250, bestSize = minSize;
+            while (minSize <= maxSize) {
+                let midSize = Math.floor((minSize + maxSize) / 2);
+                textP.style.fontSize = midSize + 'px';
+                if (textP.scrollHeight <= (prayerContent.clientHeight - HEIGHT_BUFFER) && textP.scrollWidth <= section.clientWidth) {
+                    bestSize = midSize;
+                    minSize = midSize + 1;
+                } else {
+                    maxSize = midSize - 1;
+                }
+            }
+            bestSizes.push({ textP, size: bestSize });
+            if (bestSize < minOverallBest) minOverallBest = bestSize;
+        });
+
+        if (displayOptions.forceUniformFontSize) {
+            bestSizes.forEach(item => { item.size = minOverallBest; item.textP.style.fontSize = minOverallBest + 'px'; });
+        } else {
+            bestSizes.forEach(item => item.textP.style.fontSize = item.size + 'px');
+        }
+
+    } else {
+        // Row Layout: Packed together, maximize to fill container height
+        if (displayOptions.forceUniformFontSize) {
+            let minSize = 12, maxSize = 250, bestSize = minSize;
+            while (minSize <= maxSize) {
+                let midSize = Math.floor((minSize + maxSize) / 2);
+                langSections.forEach(s => {
+                    const p = s.querySelector('p.language-text');
+                    if (p) p.style.fontSize = midSize + 'px';
+                });
+
+                const widthOverflow = Array.from(langSections).some(s => {
+                    const p = s.querySelector('p.language-text');
+                    return p && p.scrollWidth > s.clientWidth;
+                });
+                const heightOverflow = prayerContent.scrollHeight > (prayerContent.clientHeight - HEIGHT_BUFFER);
+
+                if (!widthOverflow && !heightOverflow) {
+                    bestSize = midSize;
+                    minSize = midSize + 1;
+                } else {
+                    maxSize = midSize - 1;
+                }
+            }
+            langSections.forEach(s => {
+                const p = s.querySelector('p.language-text');
+                if (p) {
+                    p.style.fontSize = bestSize + 'px';
+                    bestSizes.push({ textP: p, size: bestSize });
+                }
+            });
+        } else {
+            // Independent Growth Loop for rows to maximize space usage
+            let currentSizes = new Array(langSections.length).fill(12);
+            let growing = true;
+            const maxAvailableHeight = prayerContent.clientHeight;
+
+            if (maxAvailableHeight > 0) {
+                while (growing) {
+                    growing = false;
+                    for (let i = 0; i < langSections.length; i++) {
+                        const section = langSections[i];
+                        const textP = section.querySelector('p.language-text');
+                        if (!textP) continue;
+
+                        if (currentSizes[i] >= 300) continue;
+
+                        const nextSize = currentSizes[i] + 1;
+                        textP.style.fontSize = nextSize + 'px';
+
+                        // Check if this section overflows its width or the total container overflows height
+                        // Use a small buffer to prevent clipping of labels and descenders
+                        if (textP.scrollWidth <= section.clientWidth && prayerContent.scrollHeight <= (maxAvailableHeight - HEIGHT_BUFFER)) {
+                            currentSizes[i] = nextSize;
+                            growing = true;
+                        } else {
+                            textP.style.fontSize = currentSizes[i] + 'px'; // Revert
+                        }
+                    }
+                }
+            }
+            // Store final sizes for cache
+            for (let i = 0; i < langSections.length; i++) {
+                const textP = langSections[i].querySelector('p.language-text');
+                if (textP) bestSizes.push({ textP, size: currentSizes[i] });
+            }
+        }
+    }
+
+    // Store in cache
+    slideFontSizeCache.set(card, { sizes: bestSizes });
+}
+
+// --- Search Functionality ---
+function updateSearchMatches() {
+    searchMatches = prayerDisplay.querySelectorAll('.highlight');
+    searchCount.textContent = `${currentMatchIndex + 1}/${searchMatches.length}`;
+
+    searchMatches.forEach((match, index) => {
+        match.classList.toggle('current', index === currentMatchIndex);
+    });
+
+    if (currentMatchIndex > -1 && searchMatches[currentMatchIndex]) {
+        searchMatches[currentMatchIndex].scrollIntoView({
+            behavior: 'smooth',
+            block: 'center'
+        });
+    }
+}
+
+function performSearch() {
+    currentMatchIndex = -1;
+    renderPrayers();
+    if (searchInput.value) {
+        currentMatchIndex = 0;
+    }
+    updateSearchMatches();
+}
+
+function closeSearch() {
+    header.classList.remove('search-active');
+    searchInput.value = '';
+    performSearch();
+}
+
+// --- Sidebar Helpers ---
+function openLeftSidebar() {
+    isLeftSidebarCollapsed = false;
+    isRightSidebarCollapsed = true;
+    applyTheme();
+    saveSettings();
+}
+
+function collapseLeftSidebar() {
+    isLeftSidebarCollapsed = true;
+    applyTheme();
+    saveSettings();
+}
+
+function toggleLeftSidebar() {
+    if (isLeftSidebarCollapsed) {
+        openLeftSidebar();
+    } else {
+        collapseLeftSidebar();
+    }
+}
+
+function openRightSidebar() {
+    isRightSidebarCollapsed = false;
+    isLeftSidebarCollapsed = true;
+    applyTheme();
+    saveSettings();
+}
+
+function collapseRightSidebar() {
+    isRightSidebarCollapsed = true;
+    isLeftSidebarCollapsed = true;
+    applyTheme();
+    saveSettings();
+}
+
+function toggleRightSidebar() {
+    if (isRightSidebarCollapsed) {
+        openRightSidebar();
+    } else {
+        collapseRightSidebar();
+    }
+}
+
+function collapseSidebar() {
+    isLeftSidebarCollapsed = true;
+    isRightSidebarCollapsed = true;
+    applyTheme();
+    saveSettings();
+}
+
+// --- Psalm Functions ---
+async function loadBibleData() {
+    const loadFile = async (url, key) => {
+        try {
+            const response = await fetch(url);
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            const data = await response.json();
+            bibleData[key] = (typeof data === 'string') ? JSON.parse(data) : data;
+            
+            // Clean up RGV text formatting
+            if (key === 'rgv' && bibleData[key].verses) {
+                bibleData[key].verses.forEach(v => {
+                    if (v.text) {
+                        v.text = v.text.replace(/[‹›]/g, '').replace(/\[(.*?)\]/g, '<i>$1</i>');
+                    }
+                });
+            }
+            
+            console.log(`${key} Bible data loaded successfully.`);
+            return true;
+        } catch (error) {
+            console.error(`Failed to load ${key} Bible data from ${url}:`, error);
+            bibleData[key] = null;
+            return false;
+        }
+    };
+
+    const results = await Promise.all([
+        loadFile('bible/NKJV_New_King_James_English_Bible_1982AD.json', 'nkjv'),
+        loadFile('bible/አም54_Haile_Selassie_Amharic_Bible_1962AD_1954EC.json', 'am54'),
+        loadFile('bible/RGV_Reina_Valera_Gomez_Bible_2010AD.json', 'rgv'),
+        loadFile('bible/ግእዝ_Psalms_1-151_with_Songs_of_the_Prophets.json', 'geez_psalms'),
+        loadFile('bible/COPTIC2025_Psalms_Bohairic_Coptic_Scriptorium_Corpora_2025.json', 'coptic')
+        //        loadFile('bible/ግእዝ1988_Psalms_1-150_Geez_Bible_1988AD_1980EC_Corrected_Formatted.json', 'geez_psalms')
+    ]);
+
+    if (results.some(res => res === true)) {
+        bibleData.loaded = true;
+        refreshLectionaryPickers(); // Sync all pickers with actual counts
+    } else {
+        bibleData.loaded = false;
+        console.error("All Bible data files failed to load.");
+    }
+}
+
+function refreshLectionaryPickers() {
+    document.querySelectorAll('.lectionary-picker-container').forEach(container => {
+        if (typeof container.syncPicker === 'function') {
+            container.syncPicker();
+        }
+    });
+}
+
+function convertLxxToMt(lxxChapter) {
+    if (lxxChapter >= 1 && lxxChapter <= 8) return [lxxChapter];
+    if (lxxChapter === 9) return [9, 10];
+    if (lxxChapter >= 10 && lxxChapter <= 112) return [lxxChapter + 1];
+    if (lxxChapter === 113) return [114, 115];
+    if (lxxChapter === 114 || lxxChapter === 115) return [116];
+    if (lxxChapter >= 116 && lxxChapter <= 145) return [lxxChapter + 1];
+    if (lxxChapter === 146 || lxxChapter === 147) return [147];
+    if (lxxChapter >= 148 && lxxChapter <= 150) return [lxxChapter];
+    if (lxxChapter === 151) return [151];
+    return []; // Should not happen
+}
+
+function getMtFromLxx(lxxChapter, lxxVerse = 1) {
+    const v = Number(lxxVerse) || 1;
+    if (lxxChapter >= 1 && lxxChapter <= 8) return { mtChapter: lxxChapter, mtVerse: v };
+    if (lxxChapter === 9) return v <= 20 ? { mtChapter: 9, mtVerse: v } : { mtChapter: 10, mtVerse: v - 20 };
+    if (lxxChapter >= 10 && lxxChapter <= 112) return { mtChapter: lxxChapter + 1, mtVerse: v };
+    if (lxxChapter === 113) return v <= 8 ? { mtChapter: 114, mtVerse: v } : { mtChapter: 115, mtVerse: v - 8 };
+    if (lxxChapter === 114) return { mtChapter: 116, mtVerse: v };
+    if (lxxChapter === 115) return { mtChapter: 116, mtVerse: v + 9 };
+    if (lxxChapter >= 116 && lxxChapter <= 145) return { mtChapter: lxxChapter + 1, mtVerse: v };
+    if (lxxChapter === 146) return { mtChapter: 147, mtVerse: v };
+    if (lxxChapter === 147) return { mtChapter: 147, mtVerse: v + 11 };
+    if (lxxChapter >= 148 && lxxChapter <= 150) return { mtChapter: lxxChapter, mtVerse: v };
+    if (lxxChapter === 151) return { mtChapter: 151, mtVerse: v };
+    return { mtChapter: lxxChapter, mtVerse: v };
+}
+
+function convertMtToLxx(mtChapter, mtVerse) {
+    const hasVerse = (mtVerse !== undefined && mtVerse !== null && !isNaN(Number(mtVerse)));
+    const v = hasVerse ? Number(mtVerse) : 1;
+
+    let lxxChapter = mtChapter;
+    let lxxVerse = v;
+
+    if (mtChapter >= 1 && mtChapter <= 8) {
+        lxxChapter = mtChapter;
+        lxxVerse = v;
+    } else if (mtChapter === 9) {
+        lxxChapter = 9;
+        lxxVerse = v;
+    } else if (mtChapter === 10) {
+        lxxChapter = 9;
+        lxxVerse = v + 20;
+    } else if (mtChapter >= 11 && mtChapter <= 113) {
+        lxxChapter = mtChapter - 1;
+        lxxVerse = v;
+    } else if (mtChapter === 114) {
+        lxxChapter = 113;
+        lxxVerse = v;
+    } else if (mtChapter === 115) {
+        lxxChapter = 113;
+        lxxVerse = v + 8;
+    } else if (mtChapter === 116) {
+        if (!hasVerse || v <= 9) {
+            lxxChapter = 114;
+            lxxVerse = v;
+        } else {
+            lxxChapter = 115;
+            lxxVerse = v - 9;
+        }
+    } else if (mtChapter >= 117 && mtChapter <= 146) {
+        lxxChapter = mtChapter - 1;
+        lxxVerse = v;
+    } else if (mtChapter === 147) {
+        if (!hasVerse || v <= 11) {
+            lxxChapter = 146;
+            lxxVerse = v;
+        } else {
+            lxxChapter = 147;
+            lxxVerse = v - 11;
+        }
+    } else if (mtChapter >= 148 && mtChapter <= 150) {
+        lxxChapter = mtChapter;
+        lxxVerse = v;
+    } else if (mtChapter === 151) {
+        lxxChapter = 151;
+        lxxVerse = v;
+    }
+
+    if (!hasVerse) {
+        return lxxChapter;
+    }
+    return { lxxChapter, lxxVerse };
+}
+
+function populatePsalmSelector() {
+    psalmSelectorContainer.innerHTML = '';
+
+    const selectAllLabel = document.createElement('label');
+    selectAllLabel.style.fontWeight = 'bold';
+    const selectAllCheckbox = document.createElement('input');
+    selectAllCheckbox.type = 'checkbox';
+    selectAllCheckbox.id = 'select-all-psalms';
+    selectAllLabel.appendChild(selectAllCheckbox);
+    selectAllLabel.append(' Select All');
+    psalmSelectorContainer.appendChild(selectAllLabel);
+
+    const separator = document.createElement('hr');
+    separator.style.margin = '0.5rem 0';
+    psalmSelectorContainer.appendChild(separator);
+
+    for (let i = 1; i <= 150; i++) {
+        const label = document.createElement('label');
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.value = i;
+        checkbox.id = `psalm-${i}`;
+        if (selectedPsalms.includes(i)) {
+            checkbox.checked = true;
+        }
+        label.appendChild(checkbox);
+        label.append(` Psalm ${i} | መዝሙር ዘዳዊት ${toGeez(i)}`);
+        psalmSelectorContainer.appendChild(label);
+    }
+}
+
+function populateProphetSongsSelector() {
+    prophetSongsSelectorContainer.innerHTML = '';
+
+    const selectAllLabel = document.createElement('label');
+    selectAllLabel.style.fontWeight = 'bold';
+    const selectAllCheckbox = document.createElement('input');
+    selectAllCheckbox.type = 'checkbox';
+    selectAllCheckbox.id = 'select-all-prophet-songs';
+    selectAllLabel.appendChild(selectAllCheckbox);
+    selectAllLabel.append(' Select All');
+    prophetSongsSelectorContainer.appendChild(selectAllLabel);
+
+    const separator = document.createElement('hr');
+    separator.style.margin = '0.5rem 0';
+    prophetSongsSelectorContainer.appendChild(separator);
+
+    prophetSongs.forEach(song => {
+        const label = document.createElement('label');
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.value = song.key;
+        checkbox.id = `prophet-song-${song.key}`;
+        if (selectedProphetSongs.includes(song.key)) {
+            checkbox.checked = true;
+        }
+        label.appendChild(checkbox);
+        label.append(` ${song.name}`);
+        prophetSongsSelectorContainer.appendChild(label);
+    });
+
+    updateProphetSongsSummary();
+}
+
+function renderSelectedPsalmsWithDoxology(addSectionTitleCallback) {
+    if (selectedPsalms.length === 0 || !bibleData.loaded) return;
+
+    const getVerses = (data, isStructured) => {
+        if (!data) return [];
+        if (isStructured) {
+            if (data.books && Array.isArray(data.books)) {
+                return data.books.flatMap(book =>
+                    book.chapters ? book.chapters.flatMap(ch => (ch.verses || []).map((verseText, index) => ({
+                        book: book.title,
+                        chapter: ch.chapter,
+                        verse: index + 1,
+                        text: verseText
+                    }))) : []
+                );
+            }
+            if (data.verses && Array.isArray(data.verses)) {
+                return data.verses;
+            }
+        }
+        return Array.isArray(data) ? data : [];
+    };
+
+    const nkjvVersesAll = getVerses(bibleData.nkjv, false);
+    const am54VersesAll = getVerses(bibleData.am54, true);
+    const rgvVersesAll = getVerses(bibleData.rgv, true);
+    const geezPsalmsAll = getVerses(bibleData.geez_psalms, true);
+    const copticPsalmsAll = getVerses(bibleData.coptic, true);
+
+    const psalmBookData = {
+        nkjv: { name: 19, bookKey: 'book' },
+        am54: { name: 'መዝሙረ ዳዊት', bookKey: 'book' },
+        rgv: { name: 'Salmos', bookKey: 'book_name' }
+    };
+
+    let nkjvPsalms = nkjvVersesAll.filter(v => v[psalmBookData.nkjv.bookKey] === psalmBookData.nkjv.name);
+    let am54Psalms = am54VersesAll.filter(v => v[psalmBookData.am54.bookKey] === psalmBookData.am54.name);
+    let rgvPsalms = rgvVersesAll.filter(v => v[psalmBookData.rgv.bookKey] === psalmBookData.rgv.name);
+    
+    let tigrinyaPsalms = [];
+    let am2000Psalms = [];
+    let gezWeahaduPsalms = [];
+
+    if (useExternalBibleAPI && window.WeahaduBibleService && WeahaduBibleService.canon) {
+        const weahaduNkjv = WeahaduBibleService.cache.get('en-kjv-19-psalms.json');
+        if (weahaduNkjv) {
+            nkjvPsalms = weahaduNkjv.chapters.flatMap(ch => ch.verses.map(v => ({ chapter: ch.n, verse: parseInt(v.n), text: v.t })));
+        }
+        const weahaduAm = WeahaduBibleService.cache.get('am-2000-19-psalms.json');
+        if (weahaduAm) {
+            am2000Psalms = weahaduAm.chapters.flatMap(ch => ch.verses.map(v => ({ chapter: ch.n, verse: parseInt(v.n), text: v.t })));
+        }
+        const weahaduGez = WeahaduBibleService.cache.get('gez-1980-19-psalms.json');
+        if (weahaduGez) {
+            gezWeahaduPsalms = weahaduGez.chapters.flatMap(ch => ch.verses.map(v => ({ chapter: ch.n, verse: parseInt(v.n), text: v.t })));
+        }
+        const weahaduTi = WeahaduBibleService.cache.get('ti-1997-19-psalms.json');
+        if (weahaduTi) {
+             tigrinyaPsalms = weahaduTi.chapters.flatMap(ch => ch.verses.map(v => ({ chapter: ch.n, verse: parseInt(v.n), text: v.t })));
+        }
+    }
+
+    const doxologyPrayer = prayers.find(p => p.chapter === 'Psalms' && p.stanza === 'Response');
+
+    for (const lxxChapter of selectedPsalms) {
+        addSectionTitleCallback(lxxChapter);
+        let allVerses = [];
+
+        const geezPsalmChapter = geezPsalmsAll.find(c => c.id === lxxChapter);
+        const geezVerses = geezPsalmChapter ? geezPsalmChapter.verses : [];
+        const copticPsalmChapter = copticPsalmsAll.find(c => c.chapter === lxxChapter);
+        const copticVerses = copticPsalmChapter ? copticPsalmChapter.verses : [];
+        const am2000ChVerses = am2000Psalms.filter(v => v.chapter === lxxChapter);
+
+        let maxVerseNum = 0;
+        if (lxxChapter === 9) {
+            maxVerseNum = 38;
+        } else if (lxxChapter === 113) {
+            maxVerseNum = 26;
+        } else if (lxxChapter === 114) {
+            maxVerseNum = 9;
+        } else if (lxxChapter === 115) {
+            maxVerseNum = 10;
+        } else if (lxxChapter === 146) {
+            maxVerseNum = 11;
+        } else if (lxxChapter === 147) {
+            maxVerseNum = 9;
+        } else if (lxxChapter === 151) {
+            maxVerseNum = 8;
+        } else {
+            const { mtChapter } = getMtFromLxx(lxxChapter, 1);
+            const nkjvCh = nkjvPsalms.filter(v => v.chapter == mtChapter);
+            const am54Ch = am54Psalms.filter(v => v.chapter == mtChapter);
+            const rgvCh = rgvPsalms.filter(v => v.chapter == mtChapter);
+            const tiCh = tigrinyaPsalms.filter(v => v.chapter == mtChapter);
+            [...nkjvCh, ...am54Ch, ...rgvCh, ...tiCh].forEach(v => {
+                if (v && v.verse) {
+                    const verseParts = String(v.verse).split('-').map(Number);
+                    const endVerse = verseParts.length > 1 ? verseParts[1] : verseParts[0];
+                    if (endVerse > maxVerseNum) maxVerseNum = endVerse;
+                }
+            });
+        }
+
+        if (geezVerses.length > 0) {
+            const maxG = Math.max(...geezVerses.map(v => v.verse_number));
+            if (maxG > maxVerseNum) maxVerseNum = maxG;
+        }
+        if (copticVerses.length > 0) {
+            const maxC = Math.max(...copticVerses.map(v => Number(v.verse)));
+            if (maxC > maxVerseNum) maxVerseNum = maxC;
+        }
+        if (useExternalBibleAPI && am2000ChVerses.length > 0) {
+            const maxAm = Math.max(...am2000ChVerses.map(v => v.verse));
+            if (maxAm > maxVerseNum) maxVerseNum = maxAm;
+        }
+
+        const findVerse = (verses, vNum, key = 'verse') => verses.find(v => {
+            if (!v || v[key] === undefined) return false;
+            const val = v[key];
+            const parts = String(val).split('-').map(Number);
+            return vNum >= parts[0] && vNum <= (parts.length > 1 ? parts[1] : parts[0]);
+        });
+
+        for (let i = 1; i <= maxVerseNum; i++) {
+            const { mtChapter, mtVerse: mtVerseNum } = getMtFromLxx(lxxChapter, i);
+            let verseData = { verseNum: i, mtChapter: mtChapter, mtVerseNum: mtVerseNum };
+
+            if (lxxChapter !== 151) {
+                const nkjvVerse = findVerse(nkjvPsalms.filter(v => v.chapter == mtChapter), mtVerseNum);
+                if (nkjvVerse) verseData.nkjv = nkjvVerse.text;
+
+                const rgvVerse = findVerse(rgvPsalms.filter(v => v.chapter == mtChapter), mtVerseNum);
+                if (rgvVerse) verseData.rgv = rgvVerse.text;
+
+                if (useExternalBibleAPI && am2000Psalms.length > 0) {
+                    const amVerse = findVerse(am2000ChVerses, i);
+                    if (amVerse) verseData.am54 = amVerse.text;
+                } else {
+                    const amVerse = findVerse(am54Psalms.filter(v => v.chapter == mtChapter), mtVerseNum);
+                    if (amVerse) verseData.am54 = amVerse.text;
+                }
+
+                const tiChVerses = tigrinyaPsalms.filter(v => v.chapter == mtChapter);
+                let tiVerse = findVerse(tiChVerses, mtVerseNum);
+                if (!tiVerse && mtChapter === 116 && mtVerseNum === 19) {
+                    tiVerse = findVerse(tiChVerses, 18);
+                }
+                if (tiVerse) verseData.tigrinya_script = tiVerse.text;
+            }
+
+            let geezVerseText = '';
+            if (useExternalBibleAPI && gezWeahaduPsalms.length > 0) {
+                let gezCh = mtChapter;
+                let gezV = mtVerseNum;
+                if (lxxChapter === 113) { gezCh = 114; gezV = i; }
+                else if (lxxChapter === 114) { gezCh = 115; gezV = i; }
+                else if (lxxChapter === 115) { gezCh = 116; gezV = i; }
+                else if (lxxChapter === 146) { gezCh = 147; gezV = i; }
+                else if (lxxChapter === 147) { gezCh = 148; gezV = i; }
+                else if (lxxChapter >= 148 && lxxChapter <= 150) { gezCh = lxxChapter + 1; gezV = i; }
+                const gV = findVerse(gezWeahaduPsalms.filter(v => v.chapter == gezCh), gezV);
+                if (gV) geezVerseText = gV.text;
+            }
+            if (!geezVerseText && geezVerses.length > 0) {
+                if (lxxChapter === 115) {
+                    if (i <= 4) {
+                        const gV = findVerse(geezVerses, i, 'verse_number');
+                        if (gV) geezVerseText = gV.text;
+                    } else if (i === 5) {
+                        geezVerseText = 'ወእሁብ ብፅአትየ ለእግዚአብሔር፤ በቅድመ ኵሉ ሕዝብ።';
+                    } else if (i === 6) {
+                        const gV = findVerse(geezVerses, 5, 'verse_number');
+                        if (gV) geezVerseText = gV.text;
+                    } else if (i === 7) {
+                        const v6 = findVerse(geezVerses, 6, 'verse_number');
+                        const v7 = findVerse(geezVerses, 7, 'verse_number');
+                        geezVerseText = [v6?.text, v7?.text].filter(Boolean).join(' ');
+                    } else if (i === 8) {
+                        geezVerseText = 'ለከ እሠውዕ መሥዋዕተ ስብሓት፤';
+                    } else if (i === 9) {
+                        geezVerseText = 'ወእሁብ ብፅአትየ ለእግዚአብሔር፤ በቅድመ ኵሉ ሕዝብ።';
+                    } else if (i === 10) {
+                        const gV = findVerse(geezVerses, 9, 'verse_number');
+                        if (gV) geezVerseText = gV.text;
+                    }
+                } else {
+                    const gV = findVerse(geezVerses, i, 'verse_number');
+                    if (gV) geezVerseText = gV.text;
+                }
+            }
+            if (geezVerseText) verseData.geez_psalms = geezVerseText;
+
+            if (copticVerses.length > 0) {
+                const copticVerse = findVerse(copticVerses, String(i), 'verse');
+                if (copticVerse) verseData.coptic = copticVerse.text_coptic;
+            }
+
+            if (verseData.nkjv || verseData.rgv || verseData.am54 || verseData.tigrinya_script || verseData.geez_psalms || verseData.coptic) {
+                allVerses.push(verseData);
+            }
+        }
+
+        allVerses.forEach(verse => {
+            const activePsalmTranslations = {
+                english: displayedLanguages.english && verse.nkjv,
+                amharic_script: displayedLanguages.amharic_script && verse.am54,
+                spanish: displayedLanguages.spanish && verse.rgv,
+                spanish_pr: !displayedLanguages.spanish && displayedLanguages.spanish_pr && verse.rgv,
+                tigrinya_script: displayedLanguages.tigrinya_script && verse.tigrinya_script,
+                geez_script: displayedLanguages.geez_script && verse.geez_psalms,
+                coptic: displayedLanguages.coptic && verse.coptic
+            };
+
+            const activeLanguageCount = Object.values(activePsalmTranslations).filter(Boolean).length;
+            if (activeLanguageCount === 0) return;
+
+            const prayerCard = document.createElement('div');
+            prayerCard.classList.add('prayer-card', 'psalm-card');
+            prayerCard.dataset.cardId = `Psalms-${lxxChapter}:${verse.verseNum}`;
+            prayerCard.dataset.prayerSignature = `Psalms_${lxxChapter}_${verse.verseNum}_${(verse.nkjv || verse.geez_psalms || '').replace(/\s+/g, ' ').trim().slice(0, 50)}`;
+
+            // Handle initial collapse state
+            if (window.isRenderingCollapsed && displayOptions.presentationMode !== 'slides') {
+                prayerCard.style.display = 'none';
+            }
+
+            const prayerCardMainContent = document.createElement('div');
+            prayerCardMainContent.classList.add('prayer-card-main-content');
+
+            const prayerContent = document.createElement('div');
+            prayerContent.classList.add('prayer-content', displayOptions.layout === 'row' ? 'layout-row' : 'layout-column');
+            if (displayOptions.languageColors !== 'off') {
+                prayerContent.classList.add('colored-languages');
+            }
+            prayerContent.dataset.activeColumns = activeLanguageCount;
+
+            const langKeyToPsalmVerseProp = {
+                'english': 'nkjv', 'amharic_script': 'am54', 'spanish': 'rgv', 'spanish_pr': 'rgv', 'tigrinya_script': 'tigrinya_script', 'geez_script': 'geez_psalms', 'coptic': 'coptic'
+            };
+            const langKeyToIsEthiopic = {
+                'english': false, 'amharic_script': true, 'spanish': false, 'spanish_pr': false, 'geez_script': true, 'coptic': false
+            };
+            const langKeyToLangName = {
+                'english': 'English', 'amharic_script': 'አማርኛ', 'spanish': 'Español', 'spanish_pr': 'Español', 'geez_script': 'ግእዝ', 'coptic': 'ϯⲙⲉⲧⲣⲉⲙⲛ̀ⲭⲏⲙⲓ'
+            };
+
+            const firstVisibleLang = languageOrder.find(langKey => activePsalmTranslations[langKey]);
+
+            languageOrder.forEach(langKey => {
+                const prop = langKeyToPsalmVerseProp[langKey];
+                if (prop && activePsalmTranslations[langKey]) {
+                    const isFirstLanguage = (langKey === firstVisibleLang);
+                    prayerContent.appendChild(createPsalmVerseSection(langKeyToLangName[langKey], verse[prop], verse.verseNum, langKeyToIsEthiopic[langKey], langKey, isFirstLanguage));
+                }
+            });
+            prayerCardMainContent.appendChild(prayerContent);
+            const prayerFooter = document.createElement('div');
+            prayerFooter.classList.add('prayer-footer');
+            const prayerLabel = document.createElement('div');
+            prayerLabel.classList.add('prayer-label');
+
+            let labelText;
+            if (lxxChapter === 151) {
+                labelText = `Psalm 151:${verse.verseNum}`;
+            } else if (lxxChapter == verse.mtChapter && (!verse.mtVerseNum || verse.verseNum == verse.mtVerseNum)) {
+                labelText = `Psalm ${lxxChapter}:${verse.verseNum}`;
+            } else if (lxxChapter == verse.mtChapter) {
+                labelText = `Psalm ${lxxChapter}:${verse.verseNum} (${verse.mtVerseNum})`;
+            } else if (!verse.mtVerseNum || verse.verseNum == verse.mtVerseNum) {
+                labelText = `Psalm ${lxxChapter} (${verse.mtChapter}):${verse.verseNum}`;
+            } else {
+                labelText = `Psalm ${lxxChapter}:${verse.verseNum} (${verse.mtChapter}:${verse.mtVerseNum})`;
+            }
+            prayerLabel.textContent = labelText;
+
+            prayerFooter.appendChild(prayerLabel);
+            const prayerActions = document.createElement('div');
+            prayerActions.classList.add('prayer-actions');
+            const copyButton = document.createElement('button');
+            copyButton.classList.add('share-btn');
+            copyButton.innerHTML = shareIconSVG;
+            copyButton.title = 'Copy visible languages';
+            copyButton.addEventListener('click', () => copyPsalm(verse, lxxChapter));
+            prayerActions.appendChild(copyButton);
+            const enterSlidesBtn = document.createElement('button');
+            enterSlidesBtn.classList.add('enter-slides-mode-btn');
+            enterSlidesBtn.innerHTML = `<svg class="pres-mode-icon-slides" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v2h8v-2h5c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 14H3V5h18v12z"/></svg>`;
+            enterSlidesBtn.title = 'Enter Slides Mode';
+            enterSlidesBtn.addEventListener('click', (event) => {
+                const clickedCard = event.currentTarget.closest('.prayer-card');
+                const signature = clickedCard.dataset.prayerSignature;
+                const cardId = clickedCard.dataset.cardId;
+                togglePresentationMode({ signature, cardId });
+            });
+            prayerActions.appendChild(enterSlidesBtn);
+            const exitSlidesBtn = document.createElement('button');
+            exitSlidesBtn.classList.add('exit-slides-mode-btn');
+            exitSlidesBtn.innerHTML = '&times;';
+            exitSlidesBtn.title = 'Exit Slides Mode';
+            exitSlidesBtn.addEventListener('click', togglePresentationMode);
+            prayerActions.appendChild(exitSlidesBtn);
+            prayerFooter.appendChild(prayerActions);
+            prayerCardMainContent.appendChild(prayerFooter);
+            prayerCard.appendChild(prayerCardMainContent);
+            prayerDisplay.appendChild(prayerCard);
+        });
+
+        if (doxologyPrayer) {
+            const doxologyCard = createPrayerCardElement(doxologyPrayer, -1);
+            prayerDisplay.appendChild(doxologyCard);
+        }
+    }
+}
+
+
+/**
+ * Renders the selected Songs of the Prophets.
+ * This function is now more robust and handles different Bible data structures and reference types.
+ */
+function renderSelectedProphetSongs(addSectionTitleCallback) {
+    if (selectedProphetSongs.length === 0) return;
+
+    const doxologyPrayer = prayers.find(p => p.chapter === 'Psalms' && p.stanza === 'Response');
+
+    selectedProphetSongs.forEach(songKey => {
+        const song = prophetSongs.find(s => s.key === songKey);
+        if (!song) return;
+
+        addSectionTitleCallback(song);
+
+        if (song.refs.prayerKey) {
+            // This is a manually added prayer from songs.js
+            if (typeof songs !== 'undefined') {
+                const songVerses = songs.filter(p => p.chapter === 'ProphetSong' && p.stanza === song.refs.prayerKey);
+
+                if (songVerses && songVerses.length > 0) {
+                    songVerses.forEach(verseData => {
+                        const versePrayer = {
+                            english: verseData.english || '',
+                            spanish: verseData.spanish || '',
+                            spanish_pr: verseData.spanish_pr || verseData.spanish || '',
+                            amharic_script: verseData.amharic_script || '',
+                            geez_script: verseData.geez_script || '',
+                            geez_phonetic: verseData.geez_phonetic || '',
+                            tigrinya_script: verseData.tigrinya_script || '',
+                            tigrinya_phonetic: verseData.tigrinya_phonetic || '',
+                            reference: verseData.reference,
+                            chapter: verseData.chapter,
+                            stanza: verseData.stanza,
+                            instruction: verseData.instruction
+                        };
+
+                        // Extract verse number from the 'reference' string
+                        const verseMatch = (versePrayer.reference || '').match(/:(\d+)$/);
+                        if (verseMatch && verseMatch[1]) {
+                            versePrayer.verseNum = verseMatch[1];
+                        }
+
+                        const prayerCard = createPrayerCardElement(versePrayer, -1, false);
+                        prayerDisplay.appendChild(prayerCard);
+                    });
+                }
+            } else {
+                console.error("The 'songs.js' file is not loaded. Cannot render this prayer.");
+            }
+
+        } else if (bibleData.loaded) {
+            // This is a song from the Bible, requires fetching verses
+            let allVerses = [];
+            const nkjvRef = song.refs.nkjv;
+            const rgvRef = song.refs.rgv;
+            const am54Ref = song.refs.am54;
+
+            let nkjvVerses = bibleData.nkjv ? bibleData.nkjv.filter(v => {
+                if (!nkjvRef) return false;
+                if (nkjvRef.chapters) {
+                    return v.book === nkjvRef.book && nkjvRef.chapters.includes(v.chapter);
+                } else if (nkjvRef.chapter && nkjvRef.verses) {
+                    return v.book === nkjvRef.book && v.chapter === nkjvRef.chapter && v.verse >= nkjvRef.verses.start && v.verse <= nkjvRef.verses.end;
+                }
+                return false;
+            }) : [];
+
+            let rgvVerses = bibleData.rgv?.verses ? bibleData.rgv.verses.filter(v => {
+                if (!rgvRef) return false;
+                if (rgvRef.chapters) {
+                    return v.book_name === rgvRef.book && rgvRef.chapters.includes(v.chapter);
+                } else if (rgvRef.chapter && rgvRef.verses) {
+                    return v.book_name === rgvRef.book && v.chapter === rgvRef.chapter && v.verse >= rgvRef.verses.start && v.verse <= rgvRef.verses.end;
+                }
+                return false;
+            }) : [];
+
+            let am54Verses = [];
+            let geezVerses = [];
+            let tiVerses = [];
+
+            if (useExternalBibleAPI && window.WeahaduBibleService && WeahaduBibleService.canon && nkjvRef) {
+                const bookName = nkjvRef.bookName || nkjvRef.book;
+                const bookFile = WeahaduBibleService.getBookFile(bookName);
+                let chArray = nkjvRef.chapters || [nkjvRef.chapter];
+                let startV = nkjvRef.verses ? nkjvRef.verses.start : 1;
+                let endV = nkjvRef.verses ? nkjvRef.verses.end : 999;
+                
+                const processWeahaduBook = (bookData) => {
+                    if (!bookData || !bookData.chapters) return [];
+                    return bookData.chapters
+                        .filter(ch => chArray.includes(ch.n))
+                        .flatMap(ch => ch.verses
+                            .filter(v => parseInt(v.n) >= startV && parseInt(v.n) <= endV)
+                            .map(v => ({ book: nkjvRef.book, chapter: ch.n, verse: parseInt(v.n), text: v.t }))
+                        );
+                };
+                
+                let weahaduNkjv = processWeahaduBook(WeahaduBibleService.cache.get(`en-kjv-${bookFile}`));
+                if (weahaduNkjv.length > 0) nkjvVerses = weahaduNkjv;
+                
+                let weahaduAm = processWeahaduBook(WeahaduBibleService.cache.get(`am-2000-${bookFile}`));
+                if (weahaduAm.length > 0) am54Verses = weahaduAm;
+                
+                geezVerses = processWeahaduBook(WeahaduBibleService.cache.get(`gez-1980-${bookFile}`));
+                tiVerses = processWeahaduBook(WeahaduBibleService.cache.get(`ti-1997-${bookFile}`));
+            } else {
+                if (bibleData.am54?.books && am54Ref) {
+                    const am54Book = bibleData.am54.books.find(b => b.title === am54Ref.book);
+                    if (am54Book?.chapters) {
+                        am54Verses = am54Book.chapters
+                            .filter(c => (am54Ref.chapters && am54Ref.chapters.includes(c.chapter)) || c.chapter === am54Ref.chapter)
+                            .flatMap(c => (c.verses || []).map((text, verseIndex) => ({
+                                verse: verseIndex + 1,
+                                text: text,
+                                chapter: c.chapter
+                            })))
+                            .filter(v => !am54Ref.verses || (v.verse >= am54Ref.verses.start && v.verse <= am54Ref.verses.end));
+                    }
+                }
+            }
+
+            // Merge verses from different translations
+            const verseMap = new Map();
+
+            const populateMap = (verses, langKey) => {
+                if (!verses) return;
+                verses.forEach(v => {
+                    const uniqueKey = `${v.chapter}-${v.verse}`;
+                    if (!verseMap.has(uniqueKey)) {
+                        verseMap.set(uniqueKey, { verseNum: v.verse, chapter: v.chapter });
+                    }
+                    verseMap.get(uniqueKey)[langKey] = v.text;
+                });
+            };
+            populateMap(nkjvVerses, 'nkjv');
+            populateMap(rgvVerses, 'rgv');
+            populateMap(am54Verses, 'am54');
+            populateMap(geezVerses, 'geez_script');
+            populateMap(tiVerses, 'tigrinya_script');
+
+            allVerses = Array.from(verseMap.values()).sort((a, b) => a.chapter - b.chapter || a.verseNum - b.verseNum);
+
+            // Render verse cards
+            allVerses.forEach(verse => {
+                if (!verse.nkjv && !verse.rgv && !verse.am54 && !verse.geez_script && !verse.tigrinya_script) return;
+                const versePrayer = {
+                    english: verse.nkjv || '',
+                    spanish: verse.rgv || '',
+                    spanish_pr: verse.rgv || '',
+                    amharic_script: verse.am54 || '',
+                    geez_script: verse.geez_script || '',
+                    geez_phonetic: '',
+                    tigrinya_script: verse.tigrinya_script || '',
+                    tigrinya_phonetic: '',
+                    verseNum: verse.verseNum,
+                    reference: `${nkjvRef.bookName || nkjvRef.book} ${verse.chapter}:${verse.verseNum}`,
+                    chapter: 'ProphetSong',
+                    stanza: song.key
+                };
+
+                const prayerCard = createPrayerCardElement(versePrayer, -1);
+                prayerDisplay.appendChild(prayerCard);
+            });
+        }
+
+        // Render doxology (Conclusion/response) after each Song of the Prophets
+        if (doxologyPrayer) {
+            const doxologyCard = createPrayerCardElement(doxologyPrayer, -1);
+            prayerDisplay.appendChild(doxologyCard);
+        }
+    });
+}
+
+
+function createPsalmVerseSection(langName, text, verseNum, isEthiopic = false, langKey, isFirstLanguage = false) {
+    const langSection = document.createElement('div');
+    langSection.classList.add('language-section', `lang-${langKey}`);
+    langSection.dataset.langKey = langKey;
+
+    const langHeader = document.createElement('h4');
+    langHeader.textContent = langName;
+    if (isEthiopic) langHeader.classList.add('ethiopic-label');
+    if (!displayOptions.showLanguageLabels) langHeader.classList.add('hidden');
+
+    const langText = document.createElement('p');
+    langText.classList.add('language-text');
+    if (isEthiopic) langText.classList.add('lang-ethiopic-script');
+
+    // We pass the verseNum to formatPrayerText so it can intelligently place it (after superscription if one exists)
+    const formattedText = formatPrayerText(text || '', langKey, searchInput.value, isFirstLanguage, 'Psalms', verseNum);
+    langText.innerHTML = formattedText;
+
+    langSection.appendChild(langHeader);
+    langSection.appendChild(langText);
+
+    return langSection;
+}
+
+function getSeatatBibleVerses(bookKey, chapter, rangeString, customEnglish = null, customGeez = null) {
+    if (!bibleData.loaded) return [];
+
+    const mapping = BIBLE_BOOK_MAPPING[bookKey];
+    if (!mapping) return [];
+
+    let startVerse = 1, endVerse = 1;
+    if (String(rangeString).includes('-')) {
+        [startVerse, endVerse] = String(rangeString).split('-').map(Number);
+    } else {
+        startVerse = endVerse = Number(rangeString);
+    }
+
+    const verseResults = [];
+
+    for (let vNum = startVerse; vNum <= endVerse; vNum++) {
+        const verseObj = {
+            verseNum: vNum,
+            chapter: chapter,
+            book: bookKey,
+            reference: `${bookKey} ${chapter}:${vNum}`,
+            english: '',
+            amharic_script: '',
+            spanish: '',
+            spanish_pr: '',
+            geez_script: '', // Usually empty for NT
+            coptic: '',
+            tigrinya_script: ''
+        };
+
+        const { mtChapter, mtVerse } = (bookKey === 'Psalms') ? getMtFromLxx(chapter, vNum) : { mtChapter: chapter, mtVerse: vNum };
+
+        // NKJV
+        if (bibleData.nkjv) {
+            const v = bibleData.nkjv.find(v => v.book === mapping.nkjv && v.chapter === mtChapter && v.verse === mtVerse);
+            if (v) verseObj.english = v.text;
+        }
+
+        // AM54
+        if (bibleData.am54 && bibleData.am54.books) {
+            const book = bibleData.am54.books.find(b => b.title === mapping.am54);
+            if (book && book.chapters) {
+                const ch = book.chapters.find(c => Number(c.chapter) === mtChapter);
+                if (ch && ch.verses && ch.verses[mtVerse - 1]) {
+                    verseObj.amharic_script = ch.verses[mtVerse - 1];
+                }
+            }
+        }
+
+        // RGV
+        if (bibleData.rgv && bibleData.rgv.verses) {
+            const v = bibleData.rgv.verses.find(v => v.book_name === mapping.rgv && v.chapter === mtChapter && v.verse === mtVerse);
+            if (v) {
+                verseObj.spanish = v.text;
+                verseObj.spanish_pr = v.text;
+            }
+        }
+
+        // Ge'ez Psalms
+        if (bookKey === 'Psalms' && bibleData.geez_psalms) {
+            if (customGeez) {
+                const regex = new RegExp(`\\[${vNum}\\]\\s*([^\\[]+)`);
+                const match = customGeez.match(regex);
+                if (match && match[1]) {
+                    verseObj.geez_script = match[1].trim();
+                } else if (!customGeez.includes('[')) {
+                    verseObj.geez_script = customGeez;
+                }
+            } else {
+                const ch = bibleData.geez_psalms.find(c => c.id === chapter);
+                if (ch && ch.verses) {
+                    if (chapter === 115) {
+                        if (vNum <= 4) {
+                            const v = ch.verses.find(gv => gv.verse_number === vNum);
+                            if (v) verseObj.geez_script = v.text;
+                        } else if (vNum === 5) {
+                            verseObj.geez_script = 'ወእሁብ ብፅአትየ ለእግዚአብሔር፤ በቅድመ ኵሉ ሕዝብ።';
+                        } else if (vNum === 6) {
+                            const v = ch.verses.find(gv => gv.verse_number === 5);
+                            if (v) verseObj.geez_script = v.text;
+                        } else if (vNum === 7) {
+                            const v6 = ch.verses.find(gv => gv.verse_number === 6);
+                            const v7 = ch.verses.find(gv => gv.verse_number === 7);
+                            verseObj.geez_script = [v6?.text, v7?.text].filter(Boolean).join(' ');
+                        } else if (vNum === 8) {
+                            verseObj.geez_script = 'ለከ እሠውዕ መሥዋዕተ ስብሓት፤';
+                        } else if (vNum === 9) {
+                            verseObj.geez_script = 'ወእሁብ ብፅአትየ ለእግዚአብሔር፤ በቅድመ ኵሉ ሕዝብ።';
+                        } else if (vNum === 10) {
+                            const v = ch.verses.find(gv => gv.verse_number === 9);
+                            if (v) verseObj.geez_script = v.text;
+                        }
+                    } else {
+                        const v = ch.verses.find(gv => gv.verse_number === vNum);
+                        if (v) verseObj.geez_script = v.text;
+                    }
+                }
+            }
+        }
+
+        // Handle Custom English for Psalms portions
+        if (bookKey === 'Psalms' && customEnglish) {
+            // If customEnglish contains bracketed numbers, extract the right one
+            const regex = new RegExp(`\\[${vNum}\\]\\s*([^\\[]+)`);
+            const match = customEnglish.match(regex);
+            if (match && match[1]) {
+                verseObj.english = match[1].trim();
+            } else if (!customEnglish.includes('[')) {
+                // If no brackets, assume the whole string is for this verse (if it's a single verse range)
+                verseObj.english = customEnglish;
+            }
+        }
+
+        if (verseObj.english || verseObj.amharic_script || verseObj.spanish || verseObj.spanish_pr) {
+            verseResults.push(verseObj);
+        }
+    }
+    return verseResults;
+}
+
+function renderSelectedSeatatLectionary(addSectionTitleCallback) {
+    if (!showSeatatReadings || selectedSeatatLectionaryDay === 'None' || !SEATAT_LECTIONARY_DATA[selectedSeatatLectionaryDay]) return;
+
+    const readings = SEATAT_LECTIONARY_DATA[selectedSeatatLectionaryDay];
+
+    readings.forEach(reading => {
+        addSectionTitleCallback(reading.type);
+
+        let verses = getSeatatBibleVerses(reading.book, reading.chapter, reading.verses, reading.customEnglish, reading.customGeez);
+
+        // Handle Sunday special case for 1 Cor 16:1-3
+        if (reading.extra) {
+            const extraVerses = getSeatatBibleVerses(reading.extra.book, reading.extra.chapter, reading.extra.verses);
+            verses = [...verses, ...extraVerses];
+        }
+
+        if (reading.book === 'Psalms' && verses.length > 0) {
+            // Combine all Psalm verses into one card for Se'atat lectionary
+            const combined = {
+                chapter: 'SeatatLectionary',
+                stanza: reading.type,
+                reference: verses[0].reference + (verses.length > 1 ? '-' + verses[verses.length - 1].verseNum : ''),
+                english: verses.map(v => reading.customEnglish && reading.customEnglish.includes('[') ? v.english : `<sup>${v.verseNum}</sup> ${v.english}`).join(' '),
+                geez_script: verses.map(v => reading.customGeez && reading.customGeez.includes('[') ? v.geez_script : `<sup>${v.verseNum}</sup> ${v.geez_script}`).join(' '),
+                amharic_script: verses.map(v => `<sup>${v.verseNum}</sup> ${v.amharic_script}`).join(' '),
+                spanish: verses.map(v => `<sup>${v.verseNum}</sup> ${v.spanish}`).join(' '),
+                spanish_pr: verses.map(v => `<sup>${v.verseNum}</sup> ${v.spanish_pr}`).join(' '),
+                coptic: '',
+                tigrinya_script: ''
+            };
+            // If custom text already had [n] markers, we don't add <sup> tags to avoid duplication
+            if (reading.customEnglish && reading.customEnglish.includes('[')) {
+                combined.english = reading.customEnglish;
+            }
+            if (reading.customGeez && reading.customGeez.includes('[')) {
+                combined.geez_script = reading.customGeez;
+            }
+
+            const card = createPrayerCardElement(combined, -1);
+            prayerDisplay.appendChild(card);
+        } else {
+            verses.forEach(v => {
+                // Map keys for createPrayerCardElement
+                const prayerData = {
+                    ...v,
+                    chapter: 'SeatatLectionary',
+                    stanza: reading.type
+                };
+                const card = createPrayerCardElement(prayerData, -1, false);
+                prayerDisplay.appendChild(card);
+            });
+        }
+    });
+}
+
+
+function safeOn(el, event, handler, opts) {
+    if (!el) return;
+    if (typeof el.addEventListener === 'function') {
+        el.addEventListener(event, handler, opts);
+    } else if (el.length !== undefined) {
+        Array.from(el).forEach(node => {
+            if (node && typeof node.addEventListener === 'function') {
+                node.addEventListener(event, handler, opts);
+            }
+        });
+    }
+}
+
+// --- Miracles of Mary Modal Setup ---
+function updateSelectedMiracleUI() {
+    if (!selectedMiracleText) return;
+    if (selectedMiracleId === 'none') {
+        selectedMiracleText.textContent = 'None selected';
+        miraclePositionContainer.style.display = 'none';
+        const clearMiracleBtn = document.getElementById('clear-miracle-btn');
+        if (clearMiracleBtn) clearMiracleBtn.style.display = 'none';
+    } else {
+        const miracle = MIRACLES_OF_MARY?.find(m => m.id === selectedMiracleId);
+        if (miracle) {
+            let html = miracle.title;
+            if (miracle.incipit) {
+                const words = miracle.incipit.split(' ');
+                const first15 = words.slice(0, 15).join(' ');
+                const suffix = words.length > 15 ? '...' : '';
+                html += `<br><span class="geez-font" style="font-size: 1.1em; opacity: 0.8; display: block; margin-top: 4px;">${first15}${suffix}</span>`;
+            }
+            selectedMiracleText.innerHTML = html;
+            miraclePositionContainer.style.display = 'block';
+            const clearMiracleBtn = document.getElementById('clear-miracle-btn');
+            if (clearMiracleBtn) clearMiracleBtn.style.display = 'block';
+        } else {
+            selectedMiracleText.textContent = 'None selected';
+            miraclePositionContainer.style.display = 'none';
+            const clearMiracleBtn = document.getElementById('clear-miracle-btn');
+            if (clearMiracleBtn) clearMiracleBtn.style.display = 'none';
+        }
+    }
+}
+
+function renderMiracleModalList() {
+    if (!miracleListContainer || typeof MIRACLES_OF_MARY === 'undefined') return;
+    
+    const query = (miracleSearchInput.value || '').toLowerCase();
+    const showMostReadOnly = miracleMostReadToggle.checked;
+    
+    miracleListContainer.innerHTML = '';
+    
+    // Add "None" option first
+    const noneBtn = document.createElement('button');
+    noneBtn.className = 'settings-button';
+    noneBtn.style.textAlign = 'left';
+    noneBtn.style.width = '100%';
+    noneBtn.style.padding = '10px';
+    noneBtn.style.border = selectedMiracleId === 'none' ? '2px solid var(--primary-color)' : '1px solid var(--border-color)';
+    noneBtn.style.marginBottom = '5px';
+    noneBtn.textContent = 'None selected';
+    safeOn(noneBtn, 'click', () => {
+        selectedMiracleId = 'none';
+        updateSelectedMiracleUI();
+        saveSettings();
+        smoothRender();
+        miracleModal.style.display = 'none';
+    });
+    miracleListContainer.appendChild(noneBtn);
+
+    let filtered = MIRACLES_OF_MARY.filter(m => {
+        if (showMostReadOnly && !m.most_read) return false;
+        
+        if (query) {
+            const matchesTitle = m.title && m.title.toLowerCase().includes(query);
+            const matchesIncipit = m.incipit && m.incipit.toLowerCase().includes(query);
+            const matchesTranslation = m.translations && m.translations.some(t => t.text.toLowerCase().includes(query));
+            return matchesTitle || matchesIncipit || matchesTranslation;
+        }
+        return true;
+    });
+    
+    const countContainer = document.getElementById('miracle-count-text');
+    if (countContainer) {
+        countContainer.textContent = `${filtered.length} stories available`;
+    }
+
+    filtered.forEach(miracle => {
+        const btn = document.createElement('button');
+        btn.className = 'settings-button';
+        btn.style.textAlign = 'left';
+        btn.style.width = '100%';
+        btn.style.padding = '10px';
+        btn.style.border = selectedMiracleId === miracle.id ? '2px solid var(--primary-color)' : '1px solid var(--border-color)';
+        btn.style.marginBottom = '5px';
+        btn.style.display = 'block';
+        
+        let html = `<div style="font-weight: 600; font-size: 1.1rem; color: var(--primary-color); display: flex; justify-content: space-between; gap: 1rem;">
+                        <span>${miracle.title || 'Untitled'}</span>
+                        <span style="font-size: 0.75rem; font-weight: normal; opacity: 0.6; white-space: nowrap;">ID: ${miracle.id}</span>
+                    </div>`;
+        if (miracle.incipit) {
+            html += `<div style="font-family: 'Aboriginal Serif', serif; font-size: 0.95rem; margin-top: 5px; color: var(--text-color); opacity: 0.85;">${miracle.incipit}</div>`;
+        }
+        btn.innerHTML = html;
+        
+        safeOn(btn, 'click', () => {
+            selectedMiracleId = miracle.id;
+            selectedMiracleTranslationIndex = 0; // Reset translation index when a new miracle is picked
+            updateSelectedMiracleUI();
+            saveSettings();
+            smoothRender();
+            miracleModal.style.display = 'none';
+        });
+        
+        miracleListContainer.appendChild(btn);
+    });
+}
+
+
+function toggleLayout() {
+    displayOptions.layout = (displayOptions.layout === 'row') ? 'column' : 'row';
+    updateAllTogglesInSettingsPanel();
+    smoothRender();
+    saveSettings();
+}
+
+function togglePresentationMode(targetCardIdentifier) {
+    const isEnteringSlides = displayOptions.presentationMode !== 'slides';
+    displayOptions.presentationMode = isEnteringSlides ? 'slides' : 'scroll';
+
+    if (isEnteringSlides) {
+        displayOptions.showPrayerLabels = true; // Ensure labels are on for context
+        collapseSidebar();
+        // Set pending signature BEFORE renderPrayers so that setupSlides() can use it
+        if (targetCardIdentifier && targetCardIdentifier.signature) {
+            _pendingSlideSignature = targetCardIdentifier.signature;
+        }
+    } else {
+        _pendingSlideSignature = null;
+    }
+
+    applyTheme();
+    renderPrayers();
+    updateAllTogglesInSettingsPanel();
+    saveSettings();
+
+    if (isEnteringSlides) {
+        // setupSlides() inside renderPrayers() already resolved the signature.
+        // But do a final verification here in case it didn't find the target.
+        if (targetCardIdentifier) {
+            let targetCard = null;
+            if (targetCardIdentifier.signature) {
+                targetCard = Array.from(prayerDisplay.querySelectorAll('.prayer-card'))
+                    .find(c => c.dataset.prayerSignature === targetCardIdentifier.signature);
+            }
+            if (!targetCard && targetCardIdentifier.cardId) {
+                targetCard = prayerDisplay.querySelector(`.prayer-card[data-card-id="${targetCardIdentifier.cardId}"]`);
+            } else if (!targetCard && targetCardIdentifier.prayerIndex !== undefined && targetCardIdentifier.prayerIndex !== '-1' && targetCardIdentifier.prayerIndex !== -1) {
+                targetCard = prayerDisplay.querySelector(`.prayer-card[data-prayer-index="${targetCardIdentifier.prayerIndex}"]`);
+            }
+            if (targetCard) {
+                const allSlides = Array.from(prayerDisplay.querySelectorAll('.prayer-card, .section-title.collapsible'));
+                const slideIdx = allSlides.indexOf(targetCard);
+                if (slideIdx !== -1) {
+                    currentSlideIndex = slideIdx;
+                    showSlide(currentSlideIndex);
+                    return;
+                }
+            }
+        }
+        showSlide(currentSlideIndex);
+    } else {
+        _pendingSlideSignature = null;
+        // Exiting slides mode: scroll to the previously active card
+        setTimeout(() => {
+            const allSlides = Array.from(prayerDisplay.querySelectorAll('.prayer-card, .section-title.collapsible'));
+            const cardToView = allSlides[currentSlideIndex];
+            if (cardToView) {
+                cardToView.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }, 100); // A slight delay ensures the DOM is ready
+    }
+}
+
+// --- Custom Psalm Combinations Modal Logic ---
+function renderPsalmCombinationsModal() {
+    if (!psalmCombinationsAccordion) return;
+    psalmCombinationsAccordion.innerHTML = '';
+    
+    PSALM_CATEGORIES.forEach(category => {
+        const itemDiv = document.createElement('div');
+        itemDiv.className = 'accordion-item';
+        
+        // Split title and citation: e.g. "Weekly Psalter (St. Yared...)" -> Title: "Weekly Psalter", Citation: "(St. Yared...)"
+        const match = category.label.match(/^([^(]+)(?:\s+(\(.+\)))?$/);
+        const titleText = match ? match[1].trim() : category.label;
+        const citationText = match && match[2] ? match[2] : '';
+
+        const headerDiv = document.createElement('div');
+        headerDiv.className = 'accordion-header';
+        headerDiv.innerHTML = `
+            <div class="accordion-header-text">
+                <span class="accordion-title">${titleText}</span>
+                ${citationText ? `<span class="accordion-citation">${citationText}</span>` : ''}
+            </div>
+            <span class="accordion-icon">▼</span>
+        `;
+        
+        const contentDiv = document.createElement('div');
+        contentDiv.className = 'accordion-content';
+        
+        const innerDiv = document.createElement('div');
+        innerDiv.className = 'accordion-content-inner';
+        
+        category.items.forEach(comboKey => {
+            const combo = PSALM_COMBINATIONS[comboKey];
+            if (!combo) return;
+            
+            // Format dropdown label for rich display: "English Title | Transliteration | Ge'ez Title (Chapters)"
+            const parts = combo.dropdownLabel ? combo.dropdownLabel.split(' | ') : [combo.name];
+            const title = parts[0];
+            
+            let translit = '';
+            let geezTitle = '';
+            let chaptersText = '';
+
+            let rawChapters = '';
+            if (parts.length === 3) {
+                translit = parts[1];
+                const geezAndChapters = parts[2].split(' (');
+                geezTitle = geezAndChapters[0];
+                rawChapters = geezAndChapters.length > 1 ? geezAndChapters[1] : '';
+            } else if (parts.length === 2) {
+                // If it's "Title | Ge'ez (Chapters)"
+                const geezAndChapters = parts[1].split(' (');
+                geezTitle = geezAndChapters[0];
+                rawChapters = geezAndChapters.length > 1 ? geezAndChapters[1] : '';
+            } else {
+                // Fallback if no dropdownLabel or standard split
+                const nameParts = combo.name.split(' | ');
+                geezTitle = nameParts.length > 1 ? nameParts[1] : '';
+                
+                const first = combo.psalms[0];
+                const last = combo.psalms[combo.psalms.length - 1];
+                const isContiguous = combo.psalms.length === (last - first + 1);
+                
+                rawChapters = combo.psalms.length > 0 
+                    ? (isContiguous ? `${first}-${last}` : `${combo.psalms.join(', ')}`) 
+                    : 'Songs of the Prophets';
+            }
+
+            // Remove trailing ')' if present
+            if (rawChapters.endsWith(')')) {
+                rawChapters = rawChapters.slice(0, -1);
+            }
+
+            // Format chapters string
+            if (rawChapters) {
+                if (rawChapters === 'Songs of the Prophets') {
+                    chaptersText = rawChapters;
+                } else {
+                    chaptersText = `Psalms ${rawChapters}`;
+                }
+            }
+
+            const optionDiv = document.createElement('div');
+            optionDiv.className = 'combo-option';
+            optionDiv.dataset.value = comboKey;
+            
+            optionDiv.innerHTML = `
+                <div class="combo-header-row">
+                    <span class="combo-title">${title}</span>
+                    <span class="combo-chapters">${chaptersText}</span>
+                </div>
+                ${geezTitle ? `<span class="combo-geez ethiopic-label">${geezTitle}</span>` : ''}
+                ${translit ? `<span class="combo-translit">${translit}</span>` : ''}
+            `;
+            
+            safeOn(optionDiv, 'click', () => {
+                selectPsalmCombination(comboKey);
+                closeModal();
+            });
+            
+            innerDiv.appendChild(optionDiv);
+        });
+        
+        contentDiv.appendChild(innerDiv);
+        itemDiv.appendChild(headerDiv);
+        itemDiv.appendChild(contentDiv);
+        
+        // Accordion toggle logic
+        safeOn(headerDiv, 'click', () => {
+            const isActive = itemDiv.classList.contains('active');
+            
+            // Close all other accordions
+            document.querySelectorAll('.accordion-item').forEach(item => {
+                item.classList.remove('active');
+                item.querySelector('.accordion-content').style.maxHeight = null;
+            });
+            
+            if (!isActive) {
+                itemDiv.classList.add('active');
+                contentDiv.style.maxHeight = contentDiv.scrollHeight + "px";
+            }
+        });
+        
+        psalmCombinationsAccordion.appendChild(itemDiv);
+    });
+}
+
+function selectPsalmCombination(comboKey) {
+    if (comboKey && PSALM_COMBINATIONS[comboKey]) {
+        const combo = PSALM_COMBINATIONS[comboKey];
+        
+        // Update Psalms
+        selectedPsalms = [...(combo.psalms || [])];
+        const psalmCheckboxes = psalmSelectorContainer.querySelectorAll('input[type="checkbox"]');
+        psalmCheckboxes.forEach(cb => {
+            cb.checked = selectedPsalms.includes(Number(cb.value));
+        });
+        const selectAllPsalmCheckbox = document.getElementById('select-all-psalms');
+        if (selectAllPsalmCheckbox) {
+            selectAllPsalmCheckbox.checked = selectedPsalms.length === 150;
+        }
+        updatePsalmSummary();
+
+        // Update Prophet Songs
+        if (combo.prophetSongs !== undefined) {
+            selectedProphetSongs = [...combo.prophetSongs];
+            const prophetCheckboxes = prophetSongsSelectorContainer.querySelectorAll('input[type="checkbox"]');
+            prophetCheckboxes.forEach(cb => {
+                cb.checked = selectedProphetSongs.includes(cb.value);
+            });
+            const selectAllProphetCheckbox = document.getElementById('select-all-prophet-songs');
+            if (selectAllProphetCheckbox) {
+                selectAllProphetCheckbox.checked = selectedProphetSongs.length === prophetSongs.length;
+            }
+            updateProphetSongsSummary();
+        }
+
+        saveSettings();
+        smoothRender();
+    }
+}
+
+// Modal Listeners
+function openModal(modal) {
+    if (!modal) return;
+    if (window.innerWidth <= 900 && typeof collapseSidebar === 'function') {
+        collapseSidebar();
+    }
+    modal.style.display = 'block';
+    modal.style.zIndex = '3000';
+    if (modalBackdrop) {
+        modalBackdrop.style.display = 'block';
+        modalBackdrop.style.zIndex = '2999';
+    }
+    body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+    document.querySelectorAll('.modal').forEach(modal => {
+        modal.style.display = 'none';
+        modal.style.zIndex = '';
+    });
+    if (modalBackdrop) {
+        modalBackdrop.style.display = 'none';
+        modalBackdrop.style.zIndex = '';
+    }
+    body.style.overflow = 'auto';
+}
+
+let currentTypicalPsalmCallback = null;
+
+function openTypicalPsalmsModal(callback) {
+    currentTypicalPsalmCallback = callback;
+    openModal(typicalPsalmsModal);
+    modalBackdrop.style.zIndex = '1000';
+    typicalPsalmsModal.style.zIndex = '1001';
+    renderTypicalPsalmsModal();
+}
+
+function renderTypicalPsalmsModal() {
+    if (!typicalPsalmsList) return;
+    typicalPsalmsList.innerHTML = '';
+
+    TYPICAL_PSALMS.forEach((p, idx) => {
+        const optionDiv = document.createElement('div');
+        optionDiv.className = 'typical-psalm-option';
+        optionDiv.dataset.index = idx;
+
+        // Format citations
+        const masoretic = `${p.mc}:${p.ms}${p.me !== p.ms ? '-' + p.me : ''}`;
+        const lxx = `${p.lc}:${p.ls}${p.le !== p.ls ? '-' + p.le : ''}`;
+        const geezLxx = `${toGeezNumeral(p.lc)}:${toGeezNumeral(p.ls)}${p.le !== p.ls ? '-' + toGeezNumeral(p.le) : ''}`;
+
+        // Split Ge'ez to first 5 words as incipit
+        const geezWords = p.g.split(/\s+/);
+        const geezIncipit = geezWords.slice(0, 5).join(' ');
+        const gDisplay = geezWords.length > 5 ? `${geezIncipit}...` : p.g;
+
+        optionDiv.innerHTML = `
+            <div class="typical-psalm-row">
+                <div class="typical-psalm-left">
+                    <span class="typical-psalm-phonetic">${p.p}...</span>
+                    <span class="typical-psalm-geez ethiopic-label">${gDisplay}</span>
+                </div>
+                <div class="typical-psalm-right">
+                    <span class="typical-psalm-ref-nkjv">${masoretic} NKJV</span>
+                    <span class="typical-psalm-ref-lxx">${lxx} OSB</span>
+                    <span class="typical-psalm-ref-geez ethiopic-label">${geezLxx} ግእዝ</span>
+                </div>
+            </div>
+        `;
+
+        safeOn(optionDiv, 'click', () => {
+            if (currentTypicalPsalmCallback) {
+                currentTypicalPsalmCallback(idx);
+            }
+            closeModal();
+        });
+
+        typicalPsalmsList.appendChild(optionDiv);
+    });
+}
+
+
+// --- Drag and Drop Logic ---
+let dragSrcEl = null;
+
+function handleDragStart(e) {
+    dragSrcEl = this;
+    e.dataTransfer.effectAllowed = 'move';
+    e.dataTransfer.setData('text/plain', this.dataset.langKey);
+    this.classList.add('dragging');
+}
+
+function handleDragOver(e) {
+    e.preventDefault();
+    e.dataTransfer.dropEffect = 'move';
+}
+
+function handleDragEnter(e) {
+    this.classList.add('over');
+}
+
+function handleDragLeave(e) {
+    this.classList.remove('over');
+}
+
+function handleDragEnd(e) {
+    this.classList.remove('dragging');
+    languageOrderList.querySelectorAll('li').forEach(item => item.classList.remove('over'));
+}
+
+function handleDrop(e) {
+    e.stopPropagation();
+    if (dragSrcEl !== this) {
+        const dragLangKey = e.dataTransfer.getData('text/plain');
+        const dropLangKey = this.dataset.langKey;
+
+        const currentVisibleOrder = languageOrder.filter(key => displayedLanguages[key]);
+        const fromIndex = currentVisibleOrder.indexOf(dragLangKey);
+        const toIndex = currentVisibleOrder.indexOf(dropLangKey);
+
+        currentVisibleOrder.splice(fromIndex, 1);
+        currentVisibleOrder.splice(toIndex, 0, dragLangKey);
+
+        const newFullOrder = [...currentVisibleOrder];
+        languageOrder.forEach(key => {
+            if (!displayedLanguages[key]) newFullOrder.push(key);
+        });
+
+        languageOrder = newFullOrder;
+        saveSettings();
+        updateLanguageOrderList();
+        smoothRender();
+    }
+    this.classList.remove('over');
+    return false;
+}
+
+
+function addDragAndDropListeners() {
+    languageOrderList.querySelectorAll('li').forEach(item => {
+        safeOn(item, 'dragstart', handleDragStart, false);
+        safeOn(item, 'dragenter', handleDragEnter, false);
+        safeOn(item, 'dragover', handleDragOver, false);
+        safeOn(item, 'dragleave', handleDragLeave, false);
+        safeOn(item, 'drop', handleDrop, false);
+        safeOn(item, 'dragend', handleDragEnd, false);
+    });
+}
+
+
+// --- Swipe Gestures & Taps for Navigation ---
+let touchStartX = 0;
+let touchStartY = 0;
+let touchEndX = 0;
+let touchEndY = 0;
+
+function handleTouchStart(e) {
+    const touch = e.changedTouches[0];
+    if (displayOptions.presentationMode === 'slides' && !e.target.closest('.sidebar')) {
+        touchStartX = touch.screenX;
+        touchStartY = touch.screenY;
+        return;
+    }
+    if (e.target.closest('.sidebar:not(.collapsed)')) return;
+    touchStartX = touch.screenX;
+    touchStartY = touch.screenY;
+}
+
+function handleTouchEnd(e) {
+    if (touchStartX === 0) return;
+    const touch = e.changedTouches[0];
+    touchEndX = touch.screenX;
+    touchEndY = touch.screenY;
+
+    if (displayOptions.presentationMode === 'slides' && !e.target.closest('.sidebar')) {
+        handleSlideSwipe();
+    } else {
+        handleSidebarSwipe();
+    }
+    touchStartX = 0;
+    touchStartY = 0;
+    touchEndX = 0;
+    touchEndY = 0;
+}
+
+function handleSidebarSwipe() {
+    const deltaX = touchEndX - touchStartX;
+    const deltaY = touchEndY - touchStartY;
+    const swipeThreshold = 70;
+
+    // Ensure horizontal movement is dominant and exceeds threshold
+    if (Math.abs(deltaX) > Math.abs(deltaY) * 1.5 && Math.abs(deltaX) > swipeThreshold) {
+        if (deltaX < -swipeThreshold) { // Swipe Left
+            if (!isLeftSidebarCollapsed) {
+                collapseLeftSidebar();
+            } else if (isRightSidebarCollapsed) {
+                openRightSidebar();
+            }
+        } else if (deltaX > swipeThreshold) { // Swipe Right
+            if (!isRightSidebarCollapsed) {
+                collapseRightSidebar();
+            } else if (isLeftSidebarCollapsed) {
+                openLeftSidebar();
+            }
+        }
+    }
+}
+
+function handleSlideSwipe() {
+    const deltaX = touchEndX - touchStartX;
+    const deltaY = touchEndY - touchStartY;
+    const swipeThreshold = 50;
+
+    // Ensure horizontal movement is dominant
+    if (Math.abs(deltaX) > Math.abs(deltaY) * 1.5 && Math.abs(deltaX) > swipeThreshold) {
+        if (deltaX < -swipeThreshold) { // Swipe Left (next)
+            nextSlide();
+        } else if (deltaX > swipeThreshold) { // Swipe Right (prev)
+            prevSlide();
+        }
+    }
+}
+
+
+
+// Global Window Exposures
+if (typeof window !== 'undefined') {
+    window.togglePresentationMode = togglePresentationMode;
+    window.renderPsalmCombinationsModal = renderPsalmCombinationsModal;
+    window.toggleLayout = toggleLayout;
+    window.updateSelectedMiracleUI = updateSelectedMiracleUI;
+    window.renderMiracleModalList = renderMiracleModalList;
+    window.selectPsalmCombination = selectPsalmCombination;
+    window.openModal = openModal;
+    window.closeModal = closeModal;
+    window.openTypicalPsalmsModal = openTypicalPsalmsModal;
+    window.renderTypicalPsalmsModal = renderTypicalPsalmsModal;
+    window.executeHardRefresh = executeHardRefresh;
+}
+async function executeHardRefresh(btn) {
+        if (!btn) return;
+        btn.disabled = true;
+        btn.classList.add('updating');
+        const labelSpan = btn.querySelector('span');
+        const originalText = labelSpan ? labelSpan.textContent : 'Check for Updates';
+        if (labelSpan) labelSpan.textContent = 'Updating...';
+
+        try {
+            // 1. Tell all active/waiting/installing Service Workers to skipWaiting and update
+            if ('serviceWorker' in navigator) {
+                try {
+                    const registrations = await navigator.serviceWorker.getRegistrations();
+                    for (const reg of registrations) {
+                        if (reg.waiting) reg.waiting.postMessage('skipWaiting');
+                        if (reg.installing) reg.installing.postMessage('skipWaiting');
+                        await reg.update().catch(() => {});
+                        await reg.unregister().catch(() => {});
+                    }
+                } catch (swErr) {
+                    console.warn('Service worker update/unregister error:', swErr);
+                }
+            }
+
+            // 2. Clear all browser CacheStorage instances (purges all cached HTML, JS, CSS, JSON)
+            if ('caches' in window) {
+                try {
+                    const cacheNames = await caches.keys();
+                    await Promise.all(cacheNames.map(name => caches.delete(name)));
+                    console.log('Cleared CacheStorage:', cacheNames);
+                } catch (cacheErr) {
+                    console.warn('CacheStorage deletion error:', cacheErr);
+                }
+            }
+
+            if (labelSpan) labelSpan.textContent = 'Reloading...';
+
+            // 3. Force reload with cache-busting timestamp parameter to bypass HTTP disk cache
+            const currentUrl = new URL(window.location.href);
+            currentUrl.searchParams.set('_t', Date.now().toString());
+            window.location.replace(currentUrl.toString());
+        } catch (err) {
+            console.error('Hard refresh failed:', err);
+            if (labelSpan) labelSpan.textContent = originalText;
+            btn.disabled = false;
+            btn.classList.remove('updating');
+            window.location.reload();
+        }
+    }
+
+    
+
+function setupEventListeners() {
+    safeOn(hardRefreshButton, 'click', async () => { await executeHardRefresh(hardRefreshButton); });
+
+safeOn(sidebarToggle, 'click', toggleLeftSidebar);
+if (prayersPanelToggle) {
+    safeOn(prayersPanelToggle, 'click', toggleRightSidebar);
+}
+safeOn(sidebarBackdrop, 'click', collapseSidebar);
+
+// --- Prevent sliders from closing sidebar when dragging ---
+const stopSliderEventPropagation = (event) => {
+    event.stopPropagation();
+};
+
+// We define the events and attach them with the passive option.
+['mousedown', 'pointerdown'].forEach(eventType => {
+    safeOn(geezFontSizeSlider, eventType, stopSliderEventPropagation);
+    safeOn(englishFontSizeSlider, eventType, stopSliderEventPropagation);
+});
+safeOn(geezFontSizeSlider, 'touchstart', stopSliderEventPropagation, { passive: true });
+safeOn(englishFontSizeSlider, 'touchstart', stopSliderEventPropagation, { passive: true });
+
+// For touchmove, we add the { passive: true } option to resolve the violation.
+// This tells the browser our listener won't block scrolling, fixing the conflict.
+['touchmove', 'pointermove'].forEach(eventType => {
+    safeOn(geezFontSizeSlider, eventType, stopSliderEventPropagation, { passive: true });
+    safeOn(englishFontSizeSlider, eventType, stopSliderEventPropagation, { passive: true });
+});
+
+
+
+safeOn(themeToggle, 'click', () => {
+    currentTheme.mode = currentTheme.mode === 'light' ? 'dark' : 'light';
+    applyTheme();
+    saveSettings();
+});
+
+safeOn(paletteSelector, 'change', (event) => {
+    currentTheme.palette = event.target.value;
+    applyTheme();
+    saveSettings();
+});
+
+safeOn(geezFontSizeSlider, 'input', () => {
+    fontSizes.geez = geezFontSizeSlider.value;
+    if (fontSizes.locked) {
+        fontSizes.english = geezFontSizeSlider.value;
+        englishFontSizeSlider.value = geezFontSizeSlider.value;
+    }
+    updateFontStylesAndPreview();
+    clearTimeout(geezFontSizeSlider.timer);
+    geezFontSizeSlider.timer = setTimeout(saveSettings, 300);
+});
+
+safeOn(englishFontSizeSlider, 'input', () => {
+    fontSizes.english = englishFontSizeSlider.value;
+    if (fontSizes.locked) {
+        fontSizes.geez = englishFontSizeSlider.value;
+        geezFontSizeSlider.value = englishFontSizeSlider.value;
+    }
+    updateFontStylesAndPreview();
+    clearTimeout(englishFontSizeSlider.timer);
+    englishFontSizeSlider.timer = setTimeout(saveSettings, 300);
+});
+
+
+// --- Font Size Sliders ---
+const handleGeezFontChange = (event) => {
+    const newSize = event.target.value;
+    document.documentElement.style.setProperty('--geez-font-size', `${newSize}px`);
+    fontSizes.geez = newSize;
+    if (fontSizes.locked) {
+        document.documentElement.style.setProperty('--english-font-size', `${newSize}px`);
+        englishFontSizeSlider.value = newSize;
+        fontSizes.english = newSize;
+    }
+    saveSettings();
+};
+
+const handleEnglishFontChange = (event) => {
+    const newSize = event.target.value;
+    document.documentElement.style.setProperty('--english-font-size', `${newSize}px`);
+    fontSizes.english = newSize;
+    if (fontSizes.locked) {
+        document.documentElement.style.setProperty('--geez-font-size', `${newSize}px`);
+        geezFontSizeSlider.value = newSize;
+        fontSizes.geez = newSize;
+    }
+    saveSettings();
+};
+
+// Apply debounce with a 50ms delay
+safeOn(geezFontSizeSlider, 'input', debounce(handleGeezFontChange, 50));
+safeOn(englishFontSizeSlider, 'input', debounce(handleEnglishFontChange, 50));
+
+
+
+safeOn(lockFontSizesToggle, 'change', () => {
+    fontSizes.locked = lockFontSizesToggle.checked;
+    saveSettings();
+});
+
+safeOn(boldTextToggle, 'change', () => {
+    displayOptions.boldText = boldTextToggle.checked;
+    body.classList.toggle('bold-text', displayOptions.boldText);
+    saveSettings();
+});
+
+safeOn(ethiopicFontSelect, 'change', () => {
+    updateFontStylesAndPreview();
+    saveSettings();
+});
+
+safeOn(englishFontSelect, 'change', () => {
+    updateFontStylesAndPreview();
+    saveSettings();
+});
+
+safeOn(servantNameInput, 'input', () => {
+    customNames.servant = servantNameInput.value;
+    saveSettings();
+    renderPrayers();
+});
+
+safeOn(patriarchNameInput, 'input', () => {
+    customNames.patriarch = patriarchNameInput.value;
+    saveSettings();
+    renderPrayers();
+});
+
+safeOn(bishopNameInput, 'input', () => {
+    customNames.bishop = bishopNameInput.value;
+    saveSettings();
+    renderPrayers();
+});
+
+safeOn(attendingBishopsInput, 'input', () => {
+    customNames.attendingBishops = attendingBishopsInput.value;
+    saveSettings();
+    renderPrayers();
+});
+
+safeOn(churchNameInput, 'input', () => {
+    customNames.churchName = churchNameInput.value;
+    saveSettings();
+    renderPrayers();
+});
+
+safeOn(countryNameInput, 'input', () => {
+    customNames.country = countryNameInput.value;
+    saveSettings();
+    renderPrayers();
+});
+
+safeOn(headOfStateInput, 'input', () => {
+    customNames.headOfState = headOfStateInput.value;
+    saveSettings();
+    renderPrayers();
+});
+
+
+// --- Kidase (Liturgy) Event Listeners ---
+safeOn(kidaseModeToggle, 'change', () => {
+    isKidaseModeActive = kidaseModeToggle.checked;
+    kidaseSettings.style.display = isKidaseModeActive ? 'block' : 'none';
+    saveSettings();
+    smoothRender();
+});
+
+safeOn(showMatinsToggle, 'change', () => {
+    showMatins = showMatinsToggle.checked;
+    morningPsalmGospelSettings.style.display = showMatins ? 'block' : 'none';
+
+    saveSettings();
+    smoothRender();
+});
+
+safeOn(showTeklilToggle, 'change', () => {
+    showTeklil = showTeklilToggle.checked;
+    teklilNamesSettings.style.display = showTeklil ? 'block' : 'none';
+    
+    if (showTeklil) {
+        // Default Matins lectionary when Teklil is toggled ON
+        kidaseLectionaryRefs.morningPsalm = 'Psalms 19:5-5'; // 18:5 in Orthodox is 19:5 in NKJV
+        kidaseLectionaryRefs.morningGospel = 'Matthew 9:1-13';
+        
+        // Re-initialize pickers to update the UI with new defaults
+        initializeLectionaryPickers();
+    }
+
+    saveSettings();
+    smoothRender();
+});
+
+safeOn(bridegroomNameInput, 'input', () => {
+    bridegroomName = bridegroomNameInput.value;
+    saveSettings();
+    renderPrayers();
+});
+
+safeOn(brideNameInput, 'input', () => {
+    brideName = brideNameInput.value;
+    saveSettings();
+    renderPrayers();
+});
+
+
+
+safeOn(anaphoraSelector, 'change', () => {
+    selectedAnaphora = anaphoraSelector.value;
+    saveSettings();
+    smoothRender();
+});
+
+
+
+if (openMiracleModalBtn && miracleModal && closeMiracleModalBtn) {
+    updateSelectedMiracleUI(); // Initial UI update
+    
+    safeOn(openMiracleModalBtn, 'click', () => {
+        miracleModal.style.display = 'block';
+        renderMiracleModalList();
+    });
+    
+    safeOn(closeMiracleModalBtn, 'click', () => {
+        miracleModal.style.display = 'none';
+    });
+    
+    safeOn(miracleSearchInput, 'input', renderMiracleModalList);
+    safeOn(miracleMostReadToggle, 'change', renderMiracleModalList);
+}
+
+if (miraclePositionRadios) {
+    miraclePositionRadios.forEach(radio => {
+        if (radio.value === miraclePosition) {
+            radio.checked = true;
+        }
+        safeOn(radio, 'change', (e) => {
+            if (e.target.checked) {
+                miraclePosition = e.target.value;
+                saveSettings();
+                smoothRender();
+            }
+        });
+    });
+}
+// ------------------------------
+
+const showAnaphoraToggleEl = document.getElementById('show-anaphora-toggle');
+if (showAnaphoraToggleEl) {
+    safeOn(showAnaphoraToggleEl, 'change', () => {
+        showAnaphora = showAnaphoraToggleEl.checked;
+        const anaphoraSettingsEl = document.getElementById('anaphora-settings');
+        if (anaphoraSettingsEl) {
+            anaphoraSettingsEl.style.display = showAnaphora ? 'block' : 'none';
+        }
+        localStorage.setItem('showAnaphora', showAnaphora);
+        saveSettings();
+        smoothRender();
+    });
+}
+
+const showSeatatReadingsToggle = document.getElementById('show-seatat-readings-toggle');
+if (showSeatatReadingsToggle) {
+    safeOn(showSeatatReadingsToggle, 'change', () => {
+        showSeatatReadings = showSeatatReadingsToggle.checked;
+        const seatatReadingsSettings = document.getElementById('seatat-readings-settings');
+        if (seatatReadingsSettings) {
+            seatatReadingsSettings.style.display = showSeatatReadings ? 'block' : 'none';
+        }
+        localStorage.setItem('showSeatatReadings', showSeatatReadings);
+        saveSettings();
+        smoothRender();
+    });
+}
+
+safeOn(showVespersToggle, 'change', () => {
+    showVespers = showVespersToggle.checked;
+    vespersPsalmGospelSettings.style.display = showVespers ? 'block' : 'none';
+    saveSettings();
+    smoothRender();
+});
+
+if (kidaseDaySelector) {
+    safeOn(kidaseDaySelector, 'change', () => {
+        selectedKidaseDay = kidaseDaySelector.value;
+        saveSettings();
+        smoothRender();
+    });
+}
+
+safeOn(covenantPrayerSelector, 'change', () => {
+    selectedCovenantPrayer = covenantPrayerSelector.value;
+    saveSettings();
+    smoothRender();
+});
+
+safeOn(hideQuietPrayersToggle, 'change', () => {
+    hideQuietPrayers = hideQuietPrayersToggle.checked;
+    saveSettings();
+    smoothRender();
+});
+
+if (holyFiftyDaysToggle) {
+    safeOn(holyFiftyDaysToggle, 'change', () => {
+        isHolyFiftyDays = holyFiftyDaysToggle.checked;
+        saveSettings();
+        smoothRender();
+    });
+}
+
+
+
+safeOn(languageTogglesDiv, 'change', (event) => {
+    if (event.target.type === 'checkbox') {
+        const langKey = event.target.value;
+        if (displayedLanguages.hasOwnProperty(langKey)) {
+            displayedLanguages[langKey] = event.target.checked;
+        }
+        checkAndEnforceLayoutRules();
+        saveSettings();
+        updateLanguageOrderList();
+        smoothRender();
+    }
+});
+
+
+
+
+// Psalm Selector Listener using event delegation
+safeOn(psalmSelectorContainer, 'change', (event) => {
+    if (event.target.type === 'checkbox') {
+        if (event.target.id === 'select-all-psalms') {
+            const isChecked = event.target.checked;
+            const checkboxes = psalmSelectorContainer.querySelectorAll('input[type="checkbox"]');
+            
+            if (isChecked) {
+                selectedPsalms = Array.from({length: 150}, (_, i) => i + 1);
+            } else {
+                selectedPsalms = [];
+            }
+
+            checkboxes.forEach(cb => {
+                if (cb.id !== 'select-all-psalms') {
+                    cb.checked = isChecked;
+                }
+            });
+        } else {
+            const psalmNum = Number(event.target.value);
+            if (!isNaN(psalmNum)) {
+                if (event.target.checked) {
+                    if (!selectedPsalms.includes(psalmNum)) {
+                        selectedPsalms.push(psalmNum);
+                    }
+                } else {
+                    selectedPsalms = selectedPsalms.filter(p => p !== psalmNum);
+                }
+            }
+        }
+
+        updatePsalmSummary();
+        saveSettings();
+        smoothRender();
+    }
+});
+
+const psalmSequenceInput = document.getElementById('psalm-sequence-input');
+if (psalmSequenceInput) {
+    safeOn(psalmSequenceInput, 'change', (e) => {
+        const rawText = e.target.value;
+        const newSequence = rawText.split(',')
+            .map(s => Number(s.trim()))
+            .filter(n => !isNaN(n) && n > 0 && n <= 150);
+        
+        selectedPsalms = newSequence;
+        
+        const checkboxes = psalmSelectorContainer.querySelectorAll('input[type="checkbox"]');
+        checkboxes.forEach(cb => {
+            if (cb.id !== 'select-all-psalms') {
+                cb.checked = selectedPsalms.includes(Number(cb.value));
+            }
+        });
+        
+        const selectAllPsalmCheckbox = document.getElementById('select-all-psalms');
+        if (selectAllPsalmCheckbox) {
+            selectAllPsalmCheckbox.checked = selectedPsalms.length === 150;
+        }
+
+        updatePsalmSummary(); // To format it cleanly if they typed weird spaces
+        saveSettings();
+        smoothRender();
+    });
+}
+
+
+
+// Modal open/close listeners
+if (psalmCombinationsBtn) {
+    safeOn(psalmCombinationsBtn, 'click', () => {
+        console.log('psalmCombinationsBtn clicked!');
+        console.log('psalmCombinationsModal:', psalmCombinationsModal);
+        openModal(psalmCombinationsModal);
+        // Ensure backdrop is under this modal (openModal handles basic display)
+        modalBackdrop.style.zIndex = '1000'; 
+        psalmCombinationsModal.style.zIndex = '1001';
+    });
+}
+
+if (closePsalmCombinationsModal) {
+    safeOn(closePsalmCombinationsModal, 'click', () => {
+        closeModal();
+    });
+}
+
+if (closeTypicalPsalmsModalBtn) {
+    safeOn(closeTypicalPsalmsModalBtn, 'click', () => {
+        closeModal();
+    });
+}
+
+safeOn(clearPsalmsButton, 'click', () => {
+    selectedPsalms = [];
+    document.querySelectorAll('#psalm-selector-container input[type="checkbox"]').forEach(checkbox => {
+        checkbox.checked = false;
+    });
+    if (psalmCombinationsBtn) psalmCombinationsBtn.textContent = 'Typical Psalm Combinations...';
+    updatePsalmSummary();
+    saveSettings();
+    renderPrayers();
+});
+
+safeOn(prophetSongsSelectorContainer, 'change', (event) => {
+    if (event.target.type === 'checkbox') {
+        if (event.target.id === 'select-all-prophet-songs') {
+            const isChecked = event.target.checked;
+            const checkboxes = prophetSongsSelectorContainer.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(cb => {
+                if (cb.id !== 'select-all-prophet-songs') {
+                    cb.checked = isChecked;
+                }
+            });
+        }
+
+        selectedProphetSongs = Array.from(prophetSongsSelectorContainer.querySelectorAll('input[type="checkbox"]:checked'))
+            .map(cb => cb.value)
+            .filter(value => value !== 'on' && value !== 'auto-select'); // Filter out helper checkboxes
+
+        updateProphetSongsSummary();
+        saveSettings();
+        smoothRender();
+    }
+});
+
+safeOn(clearProphetSongsButton, 'click', () => {
+    selectedProphetSongs = [];
+    document.querySelectorAll('#prophet-songs-selector-container input[type="checkbox"]').forEach(checkbox => {
+        checkbox.checked = false;
+    });
+    updateProphetSongsSummary();
+    saveSettings();
+    renderPrayers();
+});
+
+
+// Display Options Listeners
+safeOn(presentationModeToggleHeader, 'click', () => {
+    currentSlideIndex = 0; // Reset to start when using the header toggle
+    togglePresentationMode();
+});
+safeOn(layoutToggleHeader, 'click', toggleLayout);
+
+safeOn(expandCollapseAllButton, 'click', () => {
+    areAllSectionsCollapsed = !areAllSectionsCollapsed;
+    const sections = document.querySelectorAll('.section-title.collapsible');
+    sections.forEach(section => {
+        const title = section.textContent;
+        const isCollapsed = areAllSectionsCollapsed;
+        section.classList.toggle('collapsed', isCollapsed);
+        collapsedSections[title] = isCollapsed;
+
+        let nextEl = section.nextElementSibling;
+        while (nextEl && !nextEl.classList.contains('section-title')) {
+            nextEl.style.display = isCollapsed ? 'none' : '';
+            nextEl = nextEl.nextElementSibling;
+        }
+    });
+    updateExpandCollapseAllIcon();
+    saveSettings();
+});
+
+if (shareLinkButton) {
+    safeOn(shareLinkButton, 'click', generateShortLink);
+}
+
+if (shareScripturesButton) {
+    safeOn(shareScripturesButton, 'click', shareScriptures);
+}
+
+safeOn(showLanguageLabelsToggle, 'change', () => {
+    displayOptions.showLanguageLabels = showLanguageLabelsToggle.checked;
+    renderPrayers();
+    saveSettings();
+});
+
+safeOn(showSpeakerLabelsToggle, 'change', () => {
+    displayOptions.showSpeakerLabels = showSpeakerLabelsToggle.checked;
+    renderPrayers();
+    saveSettings();
+});
+
+safeOn(paragraphModeToggle, 'change', () => {
+    displayOptions.paragraphMode = paragraphModeToggle.checked;
+    applyTheme();
+    renderPrayers();
+    saveSettings();
+});
+
+safeOn(showRubricationToggle, 'change', () => {
+    displayOptions.showRubrication = showRubricationToggle.checked;
+    applyTheme();
+    renderPrayers();
+    saveSettings();
+});
+
+safeOn(languageColorCodingSelect, 'change', () => {
+    displayOptions.languageColors = languageColorCodingSelect.value;
+    applyTheme();
+    renderPrayers();
+    saveSettings();
+});
+
+
+safeOn(dynamicFontSizingToggle, 'change', () => {
+    displayOptions.dynamicFontSizing = dynamicFontSizingToggle.checked;
+    if (displayOptions.presentationMode === 'slides') {
+        renderPrayers();
+    }
+    saveSettings();
+});
+
+safeOn(forceUniformFontSizeToggle, 'change', () => {
+    displayOptions.forceUniformFontSize = forceUniformFontSizeToggle.checked;
+    if (displayOptions.presentationMode === 'slides') {
+        adjustSlideFontSize();
+    }
+    saveSettings();
+});
+
+safeOn(slideTransitionSelect, 'change', () => {
+    displayOptions.slideTransition = slideTransitionSelect.value;
+    if (displayOptions.presentationMode === 'slides') {
+        setupSlides(); // Re-apply slide classes
+    }
+    saveSettings();
+});
+
+safeOn(anglicizeNamesToggle, 'change', () => {
+    displayOptions.anglicizeNames = anglicizeNamesToggle.checked;
+    renderPrayers();
+    saveSettings();
+});
+
+safeOn(showSupplicationsToggle, 'change', () => {
+    displayOptions.showSupplications = showSupplicationsToggle.checked;
+    smoothRender();
+    saveSettings();
+});
+
+
+safeOn(showDailyPrayerToggle, 'change', () => {
+    displayOptions.showDailyPrayer = showDailyPrayerToggle.checked;
+    smoothRender();
+    saveSettings();
+});
+
+if (showGateOfLightToggle) {
+    safeOn(showGateOfLightToggle, 'change', () => {
+        displayOptions.showGateOfLight = showGateOfLightToggle.checked;
+        smoothRender();
+        saveSettings();
+    });
+}
+
+if (showYewediswaMelaektToggle) {
+    safeOn(showYewediswaMelaektToggle, 'change', () => {
+        displayOptions.showYewediswaMelaekt = showYewediswaMelaektToggle.checked;
+        smoothRender();
+        saveSettings();
+    });
+}
+
+if (showGeezPhoneticChantsToggle) {
+    safeOn(showGeezPhoneticChantsToggle, 'change', () => {
+        displayOptions.showGeezPhoneticChants = showGeezPhoneticChantsToggle.checked;
+        smoothRender();
+        saveSettings();
+    });
+}
+
+if (showLoanwordOriginsToggle) {
+    safeOn(showLoanwordOriginsToggle, 'change', () => {
+        displayOptions.showLoanwordOrigins = showLoanwordOriginsToggle.checked;
+        renderPrayers();
+        saveSettings();
+    });
+}
+
+if (useExternalBibleAPIToggle) {
+    safeOn(useExternalBibleAPIToggle, 'change', () => {
+        useExternalBibleAPI = useExternalBibleAPIToggle.checked;
+        if (!bulkUpdatingSettings) {
+            saveSettings();
+            renderPrayers();
+        }
+    });
+}
+
+// Search Listeners
+safeOn(searchToggle, 'click', () => {
+    header.classList.add('search-active');
+    searchInput.focus();
+});
+safeOn(searchClose, 'click', closeSearch);
+safeOn(searchInput, 'input', performSearch);
+
+safeOn(searchNext, 'click', () => {
+    if (searchMatches.length === 0) return;
+    currentMatchIndex = (currentMatchIndex + 1) % searchMatches.length;
+    updateSearchMatches();
+});
+
+safeOn(searchPrev, 'click', () => {
+    if (searchMatches.length === 0) return;
+    currentMatchIndex = (currentMatchIndex - 1 + searchMatches.length) % searchMatches.length;
+    updateSearchMatches();
+});
+
+
+
+// Global listener for closing modals when clicking outside modal-content
+safeOn(document, 'click', (e) => {
+    if (e.target.classList.contains('modal')) {
+        closeModal();
+    }
+
+    // Loanword Origin Tooltip Handling
+    const loanwordEl = e.target.closest('.loanword-origin');
+    if (loanwordEl) {
+        e.preventDefault();
+        e.stopPropagation();
+        showLoanwordTooltip(loanwordEl);
+    } else if (!e.target.closest('.loanword-tooltip')) {
+        hideLoanwordTooltip();
+    }
+});
+
+safeOn(helpButton, 'click', () => openModal(helpModal));
+safeOn(feedbackButton, 'click', () => openModal(feedbackModal));
+safeOn(modalBackdrop, 'click', closeModal);
+document.querySelectorAll('.close-button').forEach(btn => safeOn(btn, 'click', closeModal));
+
+// Help Modal Feedback
+if (sendFeedbackButtonHelp) {
+    safeOn(sendFeedbackButtonHelp, 'click', () => {
+        const feedbackText = document.getElementById('feedback-textarea-help').value;
+        if (feedbackText.trim()) {
+            const mailtoLink = `mailto:vineofmary@gmail.com?subject=Feedback for Prayer App&body=${encodeURIComponent(feedbackText)}`;
+            window.location.href = mailtoLink;
+            showCopyNotification('Feedback sent!', 3000);
+            closeModal();
+        } else {
+            alert('Please enter your feedback before sending.');
+        }
+    });
+}
+
+// Feedback Modal Feedback
+if (sendFeedbackButtonModal) {
+    safeOn(sendFeedbackButtonModal, 'click', () => {
+        const feedbackText = document.getElementById('feedback-textarea').value;
+        if (feedbackText.trim()) {
+            const mailtoLink = `mailto:vineofmary@gmail.com?subject=Feedback for Prayer App&body=${encodeURIComponent(feedbackText)}`;
+            window.location.href = mailtoLink;
+            showCopyNotification('Feedback sent!', 3000);
+            closeModal();
+        } else {
+            alert('Please enter your feedback before sending.');
+        }
+    });
+}
+
+
+
+safeOn(mainContent, 'click', (e) => {
+    if (displayOptions.presentationMode !== 'slides') return;
+    if (e.target.closest('button, a, select, option, label, .info-panel, .info-toggle, .share-btn, .language-order-handle, .card-inline-lectionary-picker')) return;
+
+    const rect = mainContent.getBoundingClientRect();
+    const clickX = e.clientX - rect.left;
+    const oneThirdWidth = rect.width / 3;
+
+    if (clickX < oneThirdWidth) {
+        prevSlide();
+    } else if (clickX > oneThirdWidth * 2) {
+        nextSlide();
+    }
+});
+
+safeOn(document, 'keydown', (e) => {
+    if (e.key === 'Escape' && displayOptions.presentationMode === 'slides') {
+        togglePresentationMode();
+        return;
+    }
+
+    if (displayOptions.presentationMode === 'slides') {
+        if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === 'PageDown' || e.key === ' ') {
+            e.preventDefault();
+            nextSlide();
+        } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp' || e.key === 'PageUp') {
+            e.preventDefault();
+            prevSlide();
+        }
+    }
+});
+
+safeOn(document, 'touchstart', handleTouchStart, { passive: true });
+safeOn(document, 'touchend', handleTouchEnd, { passive: true });
+
+
+// --- Hide Header on Scroll ---
+let lastScrollTop = 0;
+safeOn(window, 'scroll', function () {
+    if (displayOptions.presentationMode === 'slides') {
+        header.classList.remove('header-hidden');
+        return;
+    }
+
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    if (scrollTop > lastScrollTop && scrollTop > header.offsetHeight) {
+        header.classList.add('header-hidden');
+    } else {
+        header.classList.remove('header-hidden');
+    }
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+}, false);
+
+
+}
+// --- Initial Load ---
+
+async function initApp() {
+
+    const splashScreen = document.getElementById('splash-screen');
+    const appContainer = document.getElementById('app-container');
+
+    if (sessionStorage.getItem('splashShown')) {
+        splashScreen.classList.add('hidden');
+        appContainer.classList.remove('hidden');
+    } else {
+        splashScreen.addEventListener('transitionend', () => {
+            splashScreen.classList.add('hidden');
+            appContainer.classList.remove('hidden');
+            sessionStorage.setItem('splashShown', 'true');
+        }, { once: true });
+
+        splashScreen.style.opacity = '0';
+    }
+
+    await loadSettings(); // Ensure settings are loaded before anything else
+
+    await loadBibleData(); // Load data on startup
+
+    isInitializing = false;
+    saveSettings();
+    syncStateToUrl();
+    updatePsalmSummary();
+    updateProphetSongsSummary();
+    updateLanguageOrderList();
+    applyTheme(); // Explicitly apply theme after settings are loaded
+    renderPrayers();
+
+    window.addEventListener('resize', () => {
+        checkAndEnforceLayoutRules();
+        if (displayOptions.presentationMode === 'slides') {
+            adjustSlideFontSize();
+        }
+    });
+
+    // Setup Bible Reading Navigation from Settings
+    document.querySelectorAll('.clickable-reading-title').forEach(title => {
+        title.addEventListener('click', () => {
+            const targetId = title.dataset.readingTarget;
+            if (!targetId) return;
+
+            // 1. Collapse sidebar first
+            collapseSidebar();
+
+            // 2. Wait for sidebar to close (300ms) and layout to settle
+            setTimeout(() => {
+                const card = document.querySelector(`.prayer-card[data-reading-type="${targetId}"]`);
+                if (card) {
+                    // 3. Ensure the section containing the card is expanded
+                    let prev = card.previousElementSibling;
+                    while (prev) {
+                        if (prev.classList.contains('section-title')) {
+                            if (prev.classList.contains('collapsed')) {
+                                prev.click(); // Trigger expansion
+                            }
+                            break;
+                        }
+                        prev = prev.previousElementSibling;
+                    }
+
+                    // 4. Perform the scroll in the next tick to ensure visibility shift is accounted for
+                    requestAnimationFrame(() => {
+                        card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        card.classList.add('highlight-reading');
+                        setTimeout(() => card.classList.remove('highlight-reading'), 2000);
+                    });
+                } else {
+                    // Feedback if not found
+                    const kidaseToggle = document.getElementById('kidase-mode-toggle');
+                    if (kidaseToggle && !kidaseToggle.checked) {
+                        showCopyNotification("Please enable 'Liturgy Mode' first.", 3000);
+                    } else {
+                        showCopyNotification("Reading card not found. Ensure it is enabled in settings.", 3000);
+                    }
+                }
+            }, 500);
+        });
+    });
+
+    // Setup Eucharist Settings Navigation
+    function attachSectionTitleJumpListeners() {
+        const anaphoraBtn = document.getElementById('anaphora-title-btn');
+        const melkaBtn = document.getElementById('melka-title-btn');
+        const miracleBtn = document.getElementById('miracle-title-btn');
+
+        function jumpToCard(cardId) {
+            collapseSidebar();
+            setTimeout(() => {
+                const card = document.querySelector(`.prayer-card[data-card-id="${cardId}"]`);
+                if (card) {
+                    let prev = card.previousElementSibling;
+                    while (prev) {
+                        if (prev.classList.contains('section-title')) {
+                            if (prev.classList.contains('collapsed')) {
+                                prev.click();
+                            }
+                            break;
+                        }
+                        prev = prev.previousElementSibling;
+                    }
+
+                    requestAnimationFrame(() => {
+                        card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        card.classList.add('highlight-reading');
+                        setTimeout(() => card.classList.remove('highlight-reading'), 2000);
+                    });
+                } else {
+                    const kidaseToggle = document.getElementById('kidase-mode-toggle');
+                    if (kidaseToggle && !kidaseToggle.checked) {
+                        showCopyNotification("Please enable 'Order of the Liturgy' first.", 3000);
+                    } else {
+                        showCopyNotification("Section not found in current view.", 3000);
+                    }
+                }
+            }, 500);
+        }
+
+        function getAnaphoraChapter() {
+            const anaphoraSelector = document.getElementById('anaphora-selector');
+            const val = anaphoraSelector ? anaphoraSelector.value : 'apostles';
+            return val === 'mary' ? 'St.Mary' : 'Apostles';
+        }
+
+        if (anaphoraBtn) {
+            anaphoraBtn.addEventListener('click', () => {
+                const chapter = getAnaphoraChapter();
+                jumpToCard(`${chapter}-1`);
+            });
+        }
+
+        if (melkaBtn) {
+            melkaBtn.addEventListener('click', () => {
+                const chapter = getAnaphoraChapter();
+                jumpToCard(`${chapter}-Melk’aKwirban-1`);
+            });
+        }
+
+        if (miracleBtn) {
+            miracleBtn.addEventListener('click', () => {
+                if (selectedMiracleId && selectedMiracleId !== 'none') {
+                    jumpToCard('Miracle-1');
+                } else {
+                    showCopyNotification("Please select a Miracle first.", 3000);
+                }
+            });
+        }
+        
+        const theotokiaBtn = document.getElementById('theotokia-title-btn');
+        if (theotokiaBtn) {
+            theotokiaBtn.addEventListener('click', () => {
+                jumpToCard('Daily-11');
+            });
+        }
+
+        const psalmsBtn = document.getElementById('psalms-title-btn');
+        if (psalmsBtn) {
+            psalmsBtn.addEventListener('click', () => {
+                jumpToCard('Psalms-Intro');
+            });
+        }
+
+        const prophetsBtn = document.getElementById('prophets-title-btn');
+        if (prophetsBtn) {
+            prophetsBtn.addEventListener('click', () => {
+                if (selectedProphetSongs && selectedProphetSongs.length > 0) {
+                    const firstSongKey = selectedProphetSongs[0];
+                    const song = prophetSongs.find(s => s.key === firstSongKey);
+                    if (song) {
+                        let card = null;
+                        if (song.refs && song.refs.prayerKey) {
+                             card = document.querySelector(`.prayer-card[data-card-id^="ProphetSong-${song.refs.prayerKey}"]`);
+                        } 
+                        if (!card) {
+                             card = document.querySelector(`.prayer-card[data-card-id^="${song.key}-"]`);
+                        }
+                        
+                        if (card) {
+                            jumpToCard(card.dataset.cardId);
+                        } else {
+                            showCopyNotification("Reading card not found. Ensure it is enabled in settings.", 3000);
+                        }
+                    }
+                } else {
+                    showCopyNotification("Please select a Song of the Prophets first.", 3000);
+                }
+            });
+        }
+    }
+    attachSectionTitleJumpListeners();
+
+    // Clear Miracle logic
+    const clearMiracleBtn = document.getElementById('clear-miracle-btn');
+    if (clearMiracleBtn) {
+        clearMiracleBtn.addEventListener('click', () => {
+            selectedMiracleId = 'none';
+            localStorage.setItem('selectedMiracleId', 'none');
+            const selectedMiracleText = document.getElementById('selected-miracle-text');
+            if (selectedMiracleText) selectedMiracleText.textContent = 'None selected';
+            clearMiracleBtn.style.display = 'none';
+            renderPrayers();
+        });
+    }
+
+    // PWA Service Worker Registration
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('./service-worker.js')
+                .then(reg => {
+                    console.log('Service worker registered successfully', reg);
+
+                    // Check for updates
+                    reg.onupdatefound = () => {
+                        const installingWorker = reg.installing;
+                        installingWorker.onstatechange = () => {
+                            if (installingWorker.state === 'installed') {
+                                if (navigator.serviceWorker.controller) {
+                                    // New content is available; please refresh.
+                                    console.log('New content is available; please refresh.');
+                                    // We could trigger a UI notification here
+                                } else {
+                                    // Content is cached for offline use.
+                                    console.log('Content is cached for offline use.');
+                                }
+                            }
+                        };
+                    };
+                })
+                .catch(err => console.log('Service worker registration failed: ', err));
+        });
+
+        // Handle the case where the service worker controller changes (e.g. after skipWaiting)
+        let refreshing = false;
+        navigator.serviceWorker.addEventListener('controllerchange', () => {
+            if (!refreshing) {
+                window.location.reload();
+                refreshing = true;
+            }
+        });
+    }
+
+    function renderServantsCorner() {
+        // Force exit from slide mode to ensure this view is always a scrollable list
+        if (displayOptions.presentationMode === 'slides') {
+            displayOptions.presentationMode = 'scroll';
+            applyTheme();
+            updateAllTogglesInSettingsPanel();
+            saveSettings();
+        }
+        // It's also crucial to clean up any lingering slide-specific classes/styles
+        removeSlides();
+
+        isServantsCornerActive = true;
+        prayerDisplay.innerHTML = '';
+
+        const headerContent = document.querySelector('.header-content');
+        const headerActions = document.querySelector('.header-actions');
+
+        // Hide original header content, but store it
+        headerContent.style.display = 'none';
+        headerActions.style.display = 'none';
+
+        // Create a new temporary header
+        const servantsHeader = document.createElement('div');
+        servantsHeader.id = 'servants-header';
+        servantsHeader.style.display = 'flex';
+        servantsHeader.style.justifyContent = 'space-between';
+        servantsHeader.style.alignItems = 'center';
+        servantsHeader.style.width = '100%';
+        servantsHeader.style.padding = '0 1rem';
+
+
+        const backButton = document.createElement('button');
+        backButton.innerHTML = '←';
+        backButton.style.fontSize = '1rem';
+        backButton.style.fontWeight = 'bold';
+        backButton.style.cursor = 'pointer';
+        backButton.style.border = 'none';
+        backButton.style.background = 'none';
+        backButton.style.color = 'var(--text-color)';
+        backButton.addEventListener('click', goBackToMainView);
+
+        const newTitle = document.createElement('h1');
+        newTitle.textContent = "Prayers for Servants | ጸሎታት ለአግብርት";
+        newTitle.classList.add('ethiopic-label');
+
+
+        servantsHeader.appendChild(backButton);
+        servantsHeader.appendChild(newTitle);
+
+        // Add a placeholder on the right to keep title centered
+        const placeholder = document.createElement('div');
+        placeholder.style.width = backButton.offsetWidth + 'px';
+        servantsHeader.appendChild(placeholder);
+
+
+        header.insertBefore(servantsHeader, header.firstChild);
+
+
+        servantsPrayers.forEach(prayer => {
+            const prayerCard = document.createElement('div');
+            prayerCard.classList.add('prayer-card');
+
+            const prayerCardMainContent = document.createElement('div');
+            prayerCardMainContent.classList.add('prayer-card-main-content');
+
+            const prayerContent = document.createElement('div');
+            prayerContent.classList.add('prayer-content', 'layout-row');
+
+            const langSection = document.createElement('div');
+            langSection.classList.add('language-section');
+
+            const langHeader = document.createElement('h4');
+            langHeader.textContent = prayer.title;
+            langHeader.style.borderBottom = 'none';
+            langHeader.style.marginBottom = '1.5rem'; // Increased margin
+            langHeader.style.fontSize = '1.2rem'; // Larger font size
+            langHeader.style.fontWeight = 'bold'; // Bold text
+            langHeader.style.color = 'var(--accent-color)'; // Accent color
+
+
+            const langText = document.createElement('p');
+            langText.classList.add('language-text');
+            langText.style.whiteSpace = 'pre-wrap';
+            langText.textContent = prayer.prayer.join('\n\n');
+
+            const reference = document.createElement('p');
+            reference.style.fontSize = '0.8rem';
+            reference.style.fontStyle = 'italic';
+            reference.style.opacity = '0.7';
+            reference.style.marginTop = '1rem';
+            reference.textContent = prayer.reference;
+
+            langSection.appendChild(langHeader);
+            langSection.appendChild(langText);
+            langSection.appendChild(reference);
+            prayerContent.appendChild(langSection);
+            prayerCardMainContent.appendChild(prayerContent);
+            prayerCard.appendChild(prayerCardMainContent);
+
+            if (isScribeModeActive) {
+                const editBtnCorner = document.createElement('button');
+                editBtnCorner.classList.add('edit-stanza-btn');
+                editBtnCorner.style.display = 'flex';
+                editBtnCorner.innerHTML = '&#9998;';
+                editBtnCorner.title = 'Edit Servant Prayer';
+                editBtnCorner.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    window.openScribeEditor(prayer);
+                });
+                prayerCard.appendChild(editBtnCorner);
+            }
+
+            prayerDisplay.appendChild(prayerCard);
+        });
+    }
+
+    function goBackToMainView() {
+        isServantsCornerActive = false;
+
+        const servantsHeader = document.getElementById('servants-header');
+        if (servantsHeader) {
+            servantsHeader.remove();
+        }
+
+        document.querySelector('.header-content').style.display = 'flex';
+        document.querySelector('.header-actions').style.display = 'flex';
+
+        if (isScribeModeActive) {
+            document.body.classList.add('scribe-mode-active');
+        }
+
+        renderPrayers();
+    }
+
+
+    bibleVerseSidebar.addEventListener('click', () => {
+        collapseSidebar();
+        setTimeout(renderServantsCorner, 350);
+    });
+
+    // --- Scribe System Logic ---
+    const scribeLoginLink = document.getElementById('scribe-login-link');
+    const scribeLoginBtn = document.getElementById('scribe-login-btn');
+    const scribeEmailInput = document.getElementById('scribe-email');
+    const scribePasswordInput = document.getElementById('scribe-password');
+    const scribeLoginError = document.getElementById('scribe-login-error');
+    const scribeEditorRef = document.getElementById('scribe-editor-ref');
+    const scribeEditorFields = document.getElementById('scribe-editor-fields');
+    const scribeSaveBtn = document.getElementById('scribe-save-btn');
+    const scribeStatusSelect = document.getElementById('scribe-status-select');
+
+    // Handle Login Click
+    scribeLoginLink.addEventListener('click', (e) => {
+        console.log('Scribe Login link clicked');
+        e.preventDefault();
+        if (isScribeLoggedIn) {
+            if (confirm('Logout from Scribe Mode?')) {
+                auth.signOut();
+            }
+        } else {
+            console.log('Opening scribe login modal');
+            openModal(scribeLoginModal);
+        }
+    });
+
+    const scribeLoginForm = document.getElementById('scribe-login-form');
+
+    // Handle Login Submission
+    if (scribeLoginForm) {
+        scribeLoginForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = scribeEmailInput.value;
+            const password = scribePasswordInput.value;
+            scribeLoginError.classList.add('hidden');
+
+            try {
+                await auth.signInWithEmailAndPassword(email, password);
+                closeModal();
+                scribeEmailInput.value = '';
+                scribePasswordInput.value = '';
+            } catch (error) {
+                scribeLoginError.textContent = error.message;
+                scribeLoginError.classList.remove('hidden');
+            }
+        });
+    }
+
+    // Listen for Auth State Changes
+    auth.onAuthStateChanged(user => {
+        if (user) {
+            isScribeLoggedIn = true;
+            currentScribeUser = user;
+            scribeLoginLink.textContent = 'Scribe Logout (' + user.email.split('@')[0] + ')';
+            document.body.classList.add('scribe-mode-active');
+            isScribeModeActive = true;
+
+            // Check if user is a verified Scribe in the database
+            checkScribePermissions(user.uid);
+
+            // Re-subscribe with Scribe permissions (includes drafts)
+            subscribeToPrayers();
+            subscribeToIconMetadata();
+
+            // Refresh UI immediately
+            updateLanguageToggles();
+            if (typeof updateAllTogglesInSettingsPanel === 'function') updateAllTogglesInSettingsPanel();
+            // Restore kidase mode visibility in settings (state is already managed by loadSettings)
+            if (kidaseGatedSection) kidaseGatedSection.style.display = 'block';
+
+            renderPrayers();
+        } else {
+            isScribeLoggedIn = false;
+            isScribeModeActive = false;
+            currentScribeUser = null;
+            scribeLoginLink.textContent = 'Scribe Login';
+            document.body.classList.remove('scribe-mode-active');
+
+            // Preserve kidase mode visibility for all users
+            if (kidaseGatedSection) kidaseGatedSection.style.display = 'block';
+
+            // Re-subscribe with normal permissions (published only)
+            subscribeToPrayers();
+            subscribeToIconMetadata();
+
+            // Refresh UI immediately
+            updateLanguageToggles();
+            if (typeof updateAllTogglesInSettingsPanel === 'function') updateAllTogglesInSettingsPanel();
+            renderPrayers();
+        }
+
+    });
+
+    async function checkScribePermissions(uid) {
+        try {
+            const scribeDoc = await db.collection('scribes').doc(uid).get();
+            if (!scribeDoc.exists) {
+                console.warn('User is not a verified Scribe. View-only mode.');
+            }
+        } catch (e) {
+            console.error('Error checking scribe permissions:', e);
+        }
+    }
+
+    let unsubscribePrayers = null;
+
+    // Live Subscription to Firestore Prayers
+    function subscribeToPrayers() {
+        // Cancel existing subscription if any
+        if (unsubscribePrayers) unsubscribePrayers();
+
+        unsubscribePrayers = db.collection('prayers')
+            .where('status', 'in', isScribeModeActive ? ['published', 'draft'] : ['published'])
+            .onSnapshot(snapshot => {
+                prayersFromFirestore = snapshot.docs.map(doc => ({
+                    id: doc.id,
+                    ...doc.data()
+                }));
+
+                // Merge firestore data into our local arrays
+                updateLocalPrayers();
+                updateLanguageToggles(); // Refresh sidebar indicators (Verified/Scribe status)
+                renderPrayers();
+            }, err => {
+                console.error('Firestore subscription error:', err);
+            });
+    }
+
+    function generateDocId(p) {
+        const chapter = p.chapter || 'Servant';
+        const stanza = p.stanza || p.title || 'stanza';
+        const ref = p.reference || 'ref';
+        const contentText = p.english || p.geez_script || p.amharic_script || '';
+        
+        let hash = 0;
+        for (let i = 0; i < contentText.length; i++) {
+            const char = contentText.charCodeAt(i);
+            hash = ((hash << 5) - hash) + char;
+            hash = hash & hash; // Convert to 32bit int
+        }
+        const contentHash = Math.abs(hash).toString(36);
+        
+        const rawId = `${chapter}_${stanza}_${ref}_${contentHash}`;
+        return rawId.replace(/[^a-zA-Z0-9]/g, '_').substring(0, 100);
+    }
+
+    function updateLocalPrayers() {
+        if (!prayersFromFirestore.length) return;
+
+        prayersFromFirestore.forEach(fsItem => {
+            const updateAllMatches = (array, criteria) => {
+                const matches = array.filter(criteria);
+                matches.forEach(m => Object.assign(m, fsItem));
+            };
+
+            if (fsItem.chapter === 'Servant') {
+                updateAllMatches(servantsPrayers, p => generateDocId(p) === fsItem.id);
+            } else if (fsItem.chapter === 'Psalms' || fsItem.chapter === 'ProphetSong' || fsItem.chapter === 'Bible') {
+                updateAllMatches(songs, p =>
+                    p.chapter === fsItem.chapter &&
+                    p.stanza == fsItem.stanza &&
+                    (generateDocId(p) === fsItem.id ||
+                     (p.reference && fsItem.reference && p.reference.trim() === fsItem.reference.trim()) ||
+                     songs.filter(s => s.chapter === fsItem.chapter && s.stanza == fsItem.stanza).length === 1)
+                );
+            } else {
+                const criteria = p => generateDocId(p) === fsItem.id;
+
+                updateAllMatches(prayers, criteria);
+
+                // Sync translated liturgy/Kidase data from Firestore
+                if (typeof kidaseData !== 'undefined') {
+                    updateAllMatches(kidaseData.order, criteria);
+                    updateAllMatches(kidaseData.apostles, criteria);
+                    updateAllMatches(kidaseData.mary, criteria);
+                }
+                
+                // Sync Teklil data from Firestore
+                if (typeof teklilData !== 'undefined') {
+                    updateAllMatches(teklilData.prayers, criteria);
+                }
+            }
+        });
+    }
+
+    // Initial subscription for all users
+    subscribeToPrayers();
+    subscribeToIconMetadata();
+
+    // Surgical Editor: Open Modal
+    window.openScribeEditor = function (prayer) {
+        console.log('Opening editor for:', prayer.chapter, prayer.stanza);
+
+        if (!prayer) {
+            console.warn('Scribe Error: Prayer not provided.');
+            return;
+        }
+
+        scribeEditorRef.textContent = `Editing: ${prayer.chapter} - ${prayer.stanza}`;
+        scribeEditorFields.innerHTML = '';
+
+        // Populate Metadata Fields
+        document.getElementById('edit-chapter').value = prayer.chapter || '';
+        document.getElementById('edit-stanza').value = prayer.stanza || '';
+        document.getElementById('edit-reference').value = prayer.reference || '';
+        document.getElementById('edit-instruction').value = prayer.instruction || '';
+
+        // Generate fields for all languages
+        const languages = [
+            'english', 'geez_script', 'geez_phonetic',
+            'amharic_script', 'amharic_phonetic',
+            'tigrinya_script', 'tigrinya_phonetic',
+            'spanish', 'french', 'arabic', 'greek', 'hebrew', 'malayalam',
+            'oromoo', 'syriac', 'armenian', 'coptic'
+        ];
+
+        languages.forEach(lang => {
+            if (prayer.hasOwnProperty(lang)) {
+                const group = document.createElement('div');
+                group.classList.add('editor-field-group');
+
+                const headerRow = document.createElement('div');
+                headerRow.classList.add('editor-field-header');
+
+                const label = document.createElement('label');
+                label.textContent = lang.replace('_', ' ').toUpperCase();
+
+                // Add Official/Verified Toggle for manual control
+                if (lang !== 'english') {
+                    const verifiedLabel = document.createElement('label');
+                    verifiedLabel.classList.add('verified-toggle-label');
+
+                    const checkbox = document.createElement('input');
+                    checkbox.type = 'checkbox';
+                    checkbox.id = `verify-${lang}`;
+                    checkbox.checked = prayer[`${lang}_is_official`] === true;
+
+                    verifiedLabel.appendChild(checkbox);
+                    verifiedLabel.appendChild(document.createTextNode(' Verified'));
+                    headerRow.appendChild(label);
+                    headerRow.appendChild(verifiedLabel);
+                } else {
+                    headerRow.appendChild(label);
+                }
+
+                const textarea = document.createElement('textarea');
+                textarea.id = `edit-${lang}`;
+                textarea.value = prayer[lang];
+
+                group.appendChild(headerRow);
+                group.appendChild(textarea);
+                scribeEditorFields.appendChild(group);
+            }
+        });
+
+        scribeStatusSelect.value = prayer.status || 'published';
+
+        // Store current IDs for the save handler
+        scribeSaveBtn.dataset.docId = prayer.id || generateDocId(prayer);
+
+        openModal(scribeEditorModal);
+    };
+
+    // --- Icon Metadata Logic ---
+    const iconMetadataModal = document.getElementById('icon-metadata-modal');
+    const scribeIconEditorModal = document.getElementById('scribe-icon-editor-modal');
+    const iconScribeEditSection = document.getElementById('icon-scribe-edit-section');
+    const editIconBtn = document.getElementById('edit-icon-btn');
+    const scribeSaveIconBtn = document.getElementById('scribe-save-icon-btn');
+
+    let currentIconKey = null;
+    let iconsFromFirestore = {};
+
+    // Event delegation for icon clicks (handles static and dynamic icons)
+    document.addEventListener('click', (e) => {
+        const icon = e.target.closest('.holy-trinity-icon, .section-icon, .hareg-ornament');
+        if (icon) {
+            const src = icon.getAttribute('src');
+            if (!src) return;
+            const iconFileName = src.split('/').pop();
+            console.log('Icon clicked:', iconFileName);
+            openIconMetadata(iconFileName);
+        }
+    });
+
+    // Subscribe to Icon Metadata in Firestore
+    function subscribeToIconMetadata() {
+        db.collection('icon_metadata').onSnapshot(snapshot => {
+            snapshot.docs.forEach(doc => {
+                iconsFromFirestore[doc.id] = doc.data();
+            });
+        });
+    }
+
+    window.openIconMetadata = function (iconKey) {
+        console.log('Opening icon metadata for:', iconKey);
+        currentIconKey = iconKey;
+        const baseData = ICON_METADATA[iconKey];
+
+        if (!baseData) {
+            console.warn('Metadata not found for key:', iconKey);
+            return;
+        }
+
+        const firestoreData = iconsFromFirestore[baseData.id || iconKey.replace(/\./g, '_')] || {};
+        const data = { ...baseData, ...firestoreData };
+
+        // Populate Modal
+        document.getElementById('icon-title-geez').textContent = data.title?.geez || '';
+        document.getElementById('icon-title-translit').textContent = data.title?.transliteration || '';
+        document.getElementById('icon-title-english').textContent = data.title?.english || '';
+
+        // Populate Images
+        const imagesContainer = document.getElementById('icon-original-images-container');
+        imagesContainer.innerHTML = ''; // Clear previous images
+
+        const imagePaths = Array.isArray(data.originalImage) ? data.originalImage : (data.originalImage ? [data.originalImage] : []);
+
+        if (imagePaths.length > 0) {
+            imagePaths.forEach(path => {
+                const img = document.createElement('img');
+                img.src = path;
+                img.alt = data.title?.english || 'Original Icon Image';
+                img.className = 'metadata-original-img';
+                imagesContainer.appendChild(img);
+            });
+            imagesContainer.style.display = 'flex';
+        } else {
+            imagesContainer.style.display = 'none';
+        }
+
+        document.getElementById('icon-desc-amharic').textContent = data.description?.amharic || '';
+        document.getElementById('icon-desc-english').textContent = data.description?.english || '';
+
+        // Bible References
+        const bibleRefsContainer = document.getElementById('icon-bible-refs');
+        bibleRefsContainer.innerHTML = '';
+        if (data.bibleReferences && data.bibleReferences.length > 0) {
+            const label = document.createElement('strong');
+            label.textContent = 'Bible References: ';
+            bibleRefsContainer.appendChild(label);
+            bibleRefsContainer.append(data.bibleReferences.join(', '));
+            bibleRefsContainer.style.display = 'block';
+        } else {
+            bibleRefsContainer.style.display = 'none';
+        }
+
+        // Source Citation with technical formatting and links
+        const sourceContainer = document.getElementById('icon-source-citation');
+        sourceContainer.innerHTML = '<strong>Source:</strong> ';
+        if (data.source) {
+            let sourceText = data.source;
+            if (data.link) {
+                const link = document.createElement('a');
+                link.href = data.link;
+                link.target = '_blank';
+                link.textContent = ' [Link]';
+                sourceContainer.append(sourceText);
+                sourceContainer.appendChild(link);
+            } else {
+                sourceContainer.append(sourceText);
+            }
+        }
+
+        // Show/Hide Scribe Edit Section
+        if (isScribeModeActive) {
+            iconScribeEditSection.classList.remove('hidden');
+        } else {
+            iconScribeEditSection.classList.add('hidden');
+        }
+
+        openModal(iconMetadataModal);
+    };
+
+    editIconBtn.addEventListener('click', () => {
+        const baseData = ICON_METADATA[currentIconKey];
+        const firestoreData = iconsFromFirestore[baseData?.id || currentIconKey] || {};
+        const data = { ...baseData, ...firestoreData };
+
+        document.getElementById('edit-icon-desc-amharic').value = data.description?.amharic || '';
+        document.getElementById('edit-icon-desc-english').value = data.description?.english || '';
+        document.getElementById('edit-icon-source').value = data.source || '';
+
+        closeModal();
+        setTimeout(() => openModal(scribeIconEditorModal), 300);
+    });
+
+    scribeSaveIconBtn.addEventListener('click', async () => {
+        const baseData = ICON_METADATA[currentIconKey];
+        const docId = baseData?.id || currentIconKey.replace(/\./g, '_');
+
+        const updatedData = {
+            description: {
+                amharic: document.getElementById('edit-icon-desc-amharic').value,
+                english: document.getElementById('edit-icon-desc-english').value
+            },
+            source: document.getElementById('edit-icon-source').value,
+            lastEditedBy: currentScribeUser?.uid || 'unknown',
+            lastEditedAt: firebase.firestore.FieldValue.serverTimestamp()
+        };
+
+        scribeSaveIconBtn.disabled = true;
+        scribeSaveIconBtn.textContent = 'Saving...';
+
+        try {
+            await db.collection('icon_metadata').doc(docId).set(updatedData, { merge: true });
+            closeModal();
+            showCopyNotification('Icon metadata updated successfully!');
+        } catch (error) {
+            alert('Error saving icon metadata: ' + error.message);
+        } finally {
+            scribeSaveIconBtn.disabled = false;
+            scribeSaveIconBtn.textContent = 'Save Icon Metadata';
+        }
+    });
+
+    // Save Changes to Firestore
+    scribeSaveBtn.addEventListener('click', async () => {
+        const docId = scribeSaveBtn.dataset.docId;
+
+        const updatedData = {
+            chapter: document.getElementById('edit-chapter').value,
+            stanza: document.getElementById('edit-stanza').value,
+            reference: document.getElementById('edit-reference').value,
+            instruction: document.getElementById('edit-instruction').value,
+            status: scribeStatusSelect.value,
+            lastEditedBy: currentScribeUser.uid,
+            lastEditedAt: firebase.firestore.FieldValue.serverTimestamp()
+        };
+
+        const languages = [
+            'english', 'geez_script', 'geez_phonetic',
+            'amharic_script', 'amharic_phonetic',
+            'tigrinya_script', 'tigrinya_phonetic', 'spanish', 'coptic',
+            'french', 'arabic', 'greek', 'hebrew', 'malayalam', 'oromoo', 'syriac', 'armenian'
+        ];
+
+        languages.forEach(lang => {
+            const el = document.getElementById(`edit-${lang}`);
+            if (el) {
+                updatedData[lang] = el.value;
+                // Read the manual checkbox state
+                const verifyCheckbox = document.getElementById(`verify-${lang}`);
+                if (verifyCheckbox) {
+                    updatedData[`${lang}_is_official`] = verifyCheckbox.checked;
+                }
+            }
+        });
+
+        scribeSaveBtn.disabled = true;
+        scribeSaveBtn.textContent = 'Saving...';
+
+        try {
+            if (docId) {
+                await db.collection('prayers').doc(docId).set(updatedData, { merge: true });
+            } else {
+                // Use metadata values for the new document ID
+                const customId = `${updatedData.chapter}_${updatedData.stanza}_${updatedData.reference}`.replace(/[^a-zA-Z0-9]/g, '_');
+                await db.collection('prayers').doc(customId).set(updatedData);
+            }
+            closeModal();
+            showCopyNotification('Scribe changes saved live!');
+        } catch (error) {
+            alert('Error saving: ' + error.message);
+        } finally {
+            scribeSaveBtn.disabled = false;
+            scribeSaveBtn.textContent = 'Save Changes';
+        }
+    });
+
+    // App Version & Changelog Logic
+    if (appVersionContainer) {
+        appVersionContainer.textContent = APP_VERSION;
+        appVersionContainer.addEventListener('click', () => {
+            openModal(changelogModal);
+            fetchGithubCommits();
+        });
+    }
+
+    async function fetchGithubCommits() {
+        if (!changelogList) return;
+
+        // Show loading state
+        changelogList.innerHTML = '<div class="changelog-loading">Fetching recent updates...</div>';
+
+        try {
+            const response = await fetch('https://api.github.com/repos/vineofmary/prayer/commits?per_page=10');
+            if (!response.ok) throw new Error('Private repository or API limit');
+
+            const commits = await response.json();
+            renderChangelog(commits.map(c => ({
+                date: c.commit.author.date,
+                message: c.commit.message.split('\n')[0],
+                author: c.commit.author.name,
+                url: c.html_url
+            })));
+        } catch (error) {
+            console.warn('GitHub API unavailable, using static fallback:', error);
+            renderChangelog(STATIC_CHANGELOG);
+        }
+    }
+
+    function renderChangelog(commits) {
+        if (!changelogList) return;
+        changelogList.innerHTML = '';
+
+        commits.forEach(commit => {
+            const date = new Date(commit.date).toLocaleDateString(undefined, {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric'
+            });
+
+            const item = document.createElement('div');
+            item.classList.add('changelog-item');
+
+            const dateEl = document.createElement('span');
+            dateEl.classList.add('commit-date');
+            dateEl.textContent = date;
+
+            const messageEl = document.createElement('div');
+            messageEl.classList.add('commit-message');
+            messageEl.textContent = commit.message;
+
+            const authorEl = document.createElement('div');
+            authorEl.classList.add('commit-author');
+            authorEl.textContent = `by ${commit.author}`;
+
+            item.appendChild(dateEl);
+            item.appendChild(messageEl);
+            item.appendChild(authorEl);
+
+            if (commit.url) {
+                item.style.cursor = 'pointer';
+                item.addEventListener('click', () => {
+                    window.open(commit.url, '_blank');
+                });
+            }
+
+            changelogList.appendChild(item);
+        });
+    }
+
+    // Eusebius Modal Logic
+    if (eusebiusInfoBtn) {
+        eusebiusInfoBtn.addEventListener('click', () => {
+            openModal(eusebiusModal);
+        });
+    }
+
+    // Eusebius Tabs Logic
+    const eusebiusTabBtns = document.querySelectorAll('.modal-tab-btn');
+    const eusebiusTabPanes = document.querySelectorAll('.modal-pane');
+
+    eusebiusTabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const lang = btn.getAttribute('data-lang');
+
+            // Toggle buttons
+            eusebiusTabBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            // Toggle panes
+            eusebiusTabPanes.forEach(p => p.classList.remove('active'));
+            document.getElementById(`eusebius-${lang}`).classList.add('active');
+        });
+    });
+
+    // Help Tabs Logic
+    const helpTabBtns = document.querySelectorAll('.help-tab-btn');
+    const helpTabPanes = document.querySelectorAll('.help-pane');
+
+    helpTabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const tab = btn.getAttribute('data-tab');
+
+            // Toggle buttons
+            helpTabBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            // Toggle panes
+            helpTabPanes.forEach(p => p.classList.remove('active'));
+            document.getElementById(`help-${tab}`).classList.add('active');
+        });
+    });
+
+    // Ephrem Story Modal Logic
+    if (ephremStoryInfoBtn) {
+        ephremStoryInfoBtn.addEventListener('click', () => {
+            // Update all servant name placeholders in the story modal
+            const storyNameSpans = ephremStoryModal.querySelectorAll('.story-servant-name');
+            storyNameSpans.forEach(span => {
+                span.textContent = customNames.servant || '{Names}';
+            });
+            openModal(ephremStoryModal);
+        });
+    }
+
+    // Se'atat Info Modal Logic
+    const seatatInfoBtn = document.getElementById('seatat-info-btn');
+    const seatatInfoModal = document.getElementById('seatat-info-modal');
+    const closeSeatatModal = document.getElementById('close-seatat-modal');
+    if (seatatInfoBtn && seatatInfoModal) {
+        seatatInfoBtn.addEventListener('click', () => {
+            openModal(seatatInfoModal);
+        });
+    }
+
+    // Modal Close Buttons
+    ['close-help-modal', 'close-feedback-modal', 'close-ephrem-modal', 'close-scribe-login-modal', 'close-scribe-editor-modal', 'close-icon-metadata-modal', 'close-scribe-icon-editor-modal', 'close-eusebius-modal', 'close-seatat-modal'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.addEventListener('click', closeModal);
+    });
+
+    // Story Tabs Logic
+    const tabBtns = document.querySelectorAll('.story-tab-btn');
+    const tabPanes = document.querySelectorAll('.story-day-pane');
+
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const day = btn.getAttribute('data-day');
+
+            // Toggle buttons
+            tabBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            // Toggle panes
+            tabPanes.forEach(p => p.classList.remove('active'));
+            document.getElementById(`story-${day}`).classList.add('active');
+        });
+    });
+
+    // (openTypicalPsalmsModal and renderTypicalPsalmsModal moved to global scope)
+
+    // Technical Context Collapsible Logic
+    const techToggleBtn = document.getElementById('toggle-technical-context');
+    const techContent = document.getElementById('technical-context-content');
+    if (techToggleBtn && techContent) {
+        techToggleBtn.addEventListener('click', () => {
+            const isCollapsed = techContent.classList.toggle('collapsed');
+            techToggleBtn.classList.toggle('active', !isCollapsed);
+        });
+    }
+
+    // Handle back/forward and manual hash changes
+    window.addEventListener('hashchange', () => {
+        if (loadStateFromUrl()) {
+            applyTheme();
+            updateLanguageToggles();
+            updateAllTogglesInSettingsPanel();
+            renderPrayers();
+            // Update UI inputs
+            servantNameInput.value = customNames.servant || '';
+            patriarchNameInput.value = customNames.patriarch || '';
+            bishopNameInput.value = customNames.bishop || '';
+            countryNameInput.value = customNames.country || '';
+            headOfStateInput.value = customNames.headOfState || '';
+            geezFontSizeSlider.value = fontSizes.geez || 16;
+            englishFontSizeSlider.value = fontSizes.english || 16;
+            lockFontSizesToggle.checked = fontSizes.locked;
+        }
+    });
+
+    initAthanasiusModal();
+}
+
+// St. Athanasius Psalter Guide Modal Logic
+let currentAthanasiusCategory = 'all';
+let currentAthanasiusQuery = '';
+
+function initAthanasiusModal() {
+    const btn = document.getElementById('athanasius-guide-btn') || athanasiusGuideBtn;
+    const modal = document.getElementById('athanasius-modal') || athanasiusModal;
+    if (!btn || !modal) return;
+
+    const handleOpen = (e) => {
+        if (e) {
+            e.stopPropagation();
+        }
+
+        openModal(modal);
+        renderAthanasiusModal();
+    };
+
+    btn.addEventListener('click', handleOpen);
+
+    const searchInputEl = document.getElementById('athanasius-search-input') || athanasiusSearchInput;
+    if (searchInputEl) {
+        searchInputEl.addEventListener('input', (e) => {
+            currentAthanasiusQuery = e.target.value.trim().toLowerCase();
+            renderAthanasiusPrescriptionsList();
+        });
+    }
+}
+
+function renderAthanasiusModal() {
+    renderAthanasiusCategoryChips();
+    renderAthanasiusPrescriptionsList();
+}
+
+function renderAthanasiusCategoryChips() {
+    if (!athanasiusCategoryChips || typeof ST_ATHANASIUS_CATEGORIES === 'undefined') return;
+
+    athanasiusCategoryChips.innerHTML = '';
+    ST_ATHANASIUS_CATEGORIES.forEach(cat => {
+        const chip = document.createElement('button');
+        chip.classList.add('athanasius-chip');
+        if (cat.id === currentAthanasiusCategory) {
+            chip.classList.add('active');
+        }
+        chip.innerHTML = `${cat.icon} ${cat.name}`;
+        chip.addEventListener('click', () => {
+            currentAthanasiusCategory = cat.id;
+            renderAthanasiusCategoryChips();
+            renderAthanasiusPrescriptionsList();
+        });
+        athanasiusCategoryChips.appendChild(chip);
+    });
+}
+
+function renderAthanasiusPrescriptionsList() {
+    if (!athanasiusPrescriptionsList || typeof ST_ATHANASIUS_PSALMS_GUIDE === 'undefined') return;
+
+    athanasiusPrescriptionsList.innerHTML = '';
+
+    const filtered = ST_ATHANASIUS_PSALMS_GUIDE.filter(item => {
+        // Category filter
+        if (currentAthanasiusCategory !== 'all' && item.category !== currentAthanasiusCategory) {
+            return false;
+        }
+
+        // Search query filter
+        if (currentAthanasiusQuery) {
+            const query = currentAthanasiusQuery;
+            const matchTitle = item.title.toLowerCase().includes(query);
+            const matchQuote = item.prescription.toLowerCase().includes(query);
+            const matchTags = item.tags && item.tags.some(t => t.toLowerCase().includes(query));
+            const matchPsalms = item.psalms && item.psalms.some(p => p.toString() === query || `psalm ${p}`.includes(query) || `ps ${p}`.includes(query));
+            return matchTitle || matchQuote || matchTags || matchPsalms;
+        }
+
+        return true;
+    });
+
+    if (athanasiusResultsCount) {
+        athanasiusResultsCount.innerHTML = `
+            <span>Showing ${filtered.length} prescription${filtered.length === 1 ? '' : 's'}</span>
+            ${filtered.length > 2 ? '<span class="athanasius-scroll-hint">Scroll down for more ↓</span>' : ''}
+        `;
+    }
+
+    if (filtered.length === 0) {
+        athanasiusPrescriptionsList.innerHTML = '<div style="padding: 2rem; text-align: center; opacity: 0.7;">No prescriptions found matching your search.</div>';
+        return;
+    }
+
+    filtered.forEach(entry => {
+        const card = document.createElement('div');
+        card.classList.add('athanasius-card');
+
+        const psalmsPillsHtml = entry.psalms.map(p => `<span class="athanasius-psalm-badge">${p}</span>`).join(' ');
+
+        card.innerHTML = `
+            <div class="athanasius-card-header">
+                <div class="athanasius-card-title">${entry.title}</div>
+            </div>
+            <div class="athanasius-card-quote">"${entry.prescription}"</div>
+            <div class="athanasius-card-footer">
+                <div class="athanasius-psalms-pills">
+                    <span class="athanasius-psalms-label">Prescribed Psalms:</span>
+                    ${psalmsPillsHtml}
+                </div>
+                <div class="athanasius-actions">
+                    <button class="ath-btn ath-set-btn" title="Set as current prayer and jump to prayer view">Pray Now</button>
+                    <button class="ath-btn ath-add-btn" title="Add these psalms to your active sequence">Add to Prayers</button>
+                </div>
+            </div>
+        `;
+
+        const setBtn = card.querySelector('.ath-set-btn');
+        const addBtn = card.querySelector('.ath-add-btn');
+
+        setBtn.addEventListener('click', () => {
+            applyAthanasiusPsalms(entry.psalms, 'set', setBtn);
+        });
+
+        addBtn.addEventListener('click', () => {
+            applyAthanasiusPsalms(entry.psalms, 'add', addBtn);
+        });
+
+        athanasiusPrescriptionsList.appendChild(card);
+    });
+}
+
+function applyAthanasiusPsalms(psalmsList, mode, btnElement) {
+    if (mode === 'add') {
+        let newSequence = [...selectedPsalms];
+        psalmsList.forEach(p => {
+            if (!newSequence.includes(p)) {
+                newSequence.push(p);
+            }
+        });
+
+        selectedPsalms = newSequence;
+
+        const psalmSequenceInput = document.getElementById('psalm-sequence-input');
+        if (psalmSequenceInput) {
+            psalmSequenceInput.value = selectedPsalms.join(', ');
+        }
+
+        const psalmSelectorContainer = document.getElementById('psalm-selector-container');
+        if (psalmSelectorContainer) {
+            const checkboxes = psalmSelectorContainer.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(cb => {
+                if (cb.id !== 'select-all-psalms') {
+                    cb.checked = selectedPsalms.includes(Number(cb.value));
+                }
+            });
+            const selectAllPsalmCheckbox = document.getElementById('select-all-psalms');
+            if (selectAllPsalmCheckbox) {
+                selectAllPsalmCheckbox.checked = selectedPsalms.length === 150;
+            }
+        }
+
+        updatePsalmSummary();
+        saveSettings();
+        smoothRender();
+
+        // Feedback: Keep modal open & display confirmation toast
+        if (btnElement) {
+            const originalText = btnElement.textContent;
+            btnElement.textContent = '✓ Added!';
+            btnElement.style.background = 'var(--accent-color)';
+            btnElement.style.color = '#fff';
+            setTimeout(() => {
+                btnElement.textContent = originalText;
+                btnElement.style.background = '';
+                btnElement.style.color = '';
+            }, 1500);
+        }
+
+        if (typeof showCopyNotification === 'function') {
+            showCopyNotification(`Added Psalm(s) ${psalmsList.join(', ')} to your prayers`, 2500);
+        }
+
+    } else if (mode === 'set') {
+        // "Pray Now" mode: set exclusive sequence, deselect Liturgy mode if active, close modal, and scroll to Psalms
+        selectedPsalms = [...psalmsList];
+
+        const psalmSequenceInput = document.getElementById('psalm-sequence-input');
+        if (psalmSequenceInput) {
+            psalmSequenceInput.value = selectedPsalms.join(', ');
+        }
+
+        const psalmSelectorContainer = document.getElementById('psalm-selector-container');
+        if (psalmSelectorContainer) {
+            const checkboxes = psalmSelectorContainer.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(cb => {
+                if (cb.id !== 'select-all-psalms') {
+                    cb.checked = selectedPsalms.includes(Number(cb.value));
+                }
+            });
+            const selectAllPsalmCheckbox = document.getElementById('select-all-psalms');
+            if (selectAllPsalmCheckbox) {
+                selectAllPsalmCheckbox.checked = selectedPsalms.length === 150;
+            }
+        }
+
+        // Deselect Liturgy Mode if active
+        if (typeof isKidaseModeActive !== 'undefined' && isKidaseModeActive) {
+            isKidaseModeActive = false;
+            const kidaseToggle = document.getElementById('kidase-mode-toggle');
+            if (kidaseToggle) {
+                kidaseToggle.checked = false;
+            }
+            if (typeof kidaseSettings !== 'undefined' && kidaseSettings) {
+                kidaseSettings.style.display = 'none';
+            }
+        }
+
+        updatePsalmSummary();
+        saveSettings();
+        smoothRender();
+
+        closeModal();
+
+        // Open/scroll directly to Psalms list in reader view
+        setTimeout(() => {
+            const targetEl = document.querySelector('.psalm-card') || document.querySelector('.sub-section-title');
+            if (targetEl) {
+                targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }, 150);
+    }
+}
+
+window.initMountOfMercyEngine = async function() {
+    if (window._mountOfMercyInitialized) return;
+    bindDOMElements();
+    setupEventListeners();
+    await initApp();
+    window._mountOfMercyInitialized = true;
+};
+
+// Autostart if DOM is already ready
+if (typeof document !== 'undefined') {
+    if (document.readyState === 'complete' || document.readyState === 'interactive') {
+        if (document.getElementById('prayer-display')) {
+            window.initMountOfMercyEngine();
+        }
+    } else {
+        document.addEventListener('DOMContentLoaded', () => {
+            if (document.getElementById('prayer-display')) {
+                window.initMountOfMercyEngine();
+            }
+        });
+    }
+}

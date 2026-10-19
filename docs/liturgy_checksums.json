@@ -1,0 +1,90 @@
+{
+  "app/src/main/assets/js/kidase.js": {
+    "sha256": "55d86b4d6b8dbb9da8bd31a9a9f795a8ac23b860b4b019a112732574c7b3b62c",
+    "sizeBytes": 4200571
+  },
+  "app/src/main/assets/js/prayers.js": {
+    "sha256": "6092ec854f65cde59821e9e68cce6a3d27177ddb03fece55c2b8b792c3040938",
+    "sizeBytes": 368462
+  },
+  "app/src/main/assets/js/miracles_of_mary.js": {
+    "sha256": "d47125d60ea9fe5bcfd61393e39ff3dd4c445c85c4eafae485db2b5991366417",
+    "sizeBytes": 2636341
+  },
+  "app/src/main/assets/js/songs.js": {
+    "sha256": "c9385f0db98b536dd7c996481e988805df16ba4d97d881a88d9f24337f6d2333",
+    "sizeBytes": 30262
+  },
+  "app/src/main/assets/js/typical_psalms.js": {
+    "sha256": "351f93ac587e6f1bfd0215b81fbf0587036926a1f8ab009ba68080bc142f9ceb",
+    "sizeBytes": 52670
+  },
+  "app/src/main/assets/js/st_athanasius_psalms.js": {
+    "sha256": "c2d70e699d35009ae803b696fc38d9e3c0849f4bf618c7f38a62efd306760d8d",
+    "sizeBytes": 42790
+  },
+  "app/src/main/assets/js/teklil.js": {
+    "sha256": "94a84fbf8571a6f932706aeaaeb9d81994e9838f99bb5c293aa4a337f3362039",
+    "sizeBytes": 25739
+  },
+  "app/src/main/assets/js/servants.js": {
+    "sha256": "d6f0007ff5d0ae49c79b337fc4d67e98892650b7c4a405132cf092a367c83525",
+    "sizeBytes": 2706
+  },
+  "app/src/main/assets/js/bible_service.js": {
+    "sha256": "783bb6f0e106c3af3bcd58c44edf3d428c7be527a41b1a78ce3843cf811fa8be",
+    "sizeBytes": 4341
+  },
+  "app/src/main/assets/bible/canon.json": {
+    "sha256": "e9e323a89ace3aa99b8bfd3c2e0411b12b7fbc2aa93c959dabb4762dfd2edf4a",
+    "sizeBytes": 16655
+  },
+  "app/src/main/assets/bible/editions.json": {
+    "sha256": "38b664e4356a33e3253868673065220ed05a85f94f84c0c23d6e19ed3c5968ed",
+    "sizeBytes": 4453
+  },
+  "app/src/main/assets/bible/revisions.json": {
+    "sha256": "2c4b2448d992c39b2b03b564d56b91ad66daefcfada8af26c0341880b76619dd",
+    "sizeBytes": 2867
+  },
+  "app/src/main/assets/bible/COPTIC2025_Psalms_Bohairic_Coptic_Scriptorium_Corpora_2025.json": {
+    "sha256": "7c3aa1661d4ce9b985d712969849dbd9dbea96491191b71cba0cc7aa1c0fb612",
+    "sizeBytes": 901376
+  },
+  "app/src/main/assets/bible/NKJV_New_King_James_English_Bible_1982AD.json": {
+    "sha256": "79ead3b0fae071b48d349c3cd011c84daf17abf5e70f01da8f0e8e5ac84ffbac",
+    "sizeBytes": 10254962
+  },
+  "app/src/main/assets/bible/RGV_Reina_Valera_Gomez_Bible_2010AD.json": {
+    "sha256": "daf57a29d0faf7c762643b0236c25e94c799238d70636232f8312d2afbada58d",
+    "sizeBytes": 6535563
+  },
+  "app/src/main/assets/bible/አም54_Haile_Selassie_Amharic_Bible_1962AD_1954EC.json": {
+    "sha256": "498e40cdfe554f89d03863de27b054b9ab0f608b9c38f50f43ada8c4af614f36",
+    "sizeBytes": 5708077
+  },
+  "app/src/main/assets/bible/ግእዝ1701-Psalterium_Davidis_Aethiopice_Ludolf_Psalms_of_David_1701AD_1694EC.json": {
+    "sha256": "7a94006e50b458f68a957862147f736a61f84e478aba6382988b49f0c4c1204b",
+    "sizeBytes": 55159
+  },
+  "app/src/main/assets/bible/ግእዝ1853_Dillmann_Octateuch_1853AD_with_Ludolf_Psalms_1701AD.json": {
+    "sha256": "af169f214595255dbb22de6f14836aee1af9cb909b4bd614f176aa09b7d00fb2",
+    "sizeBytes": 3042797
+  },
+  "app/src/main/assets/bible/ግእዝ1988_Psalms_1-150_Geez_Bible_1988AD_1980EC_Corrected_Formatted.json": {
+    "sha256": "b18267941d06a49fad4354fdb04e4f7cdd3e7ffa8fac198404a0313c36699830",
+    "sizeBytes": 554913
+  },
+  "app/src/main/assets/bible/ግእዝ1988_Psalms_1-30_Geez_Bible_1988AD_1980EC.json": {
+    "sha256": "f686cbd06f8bcb95bb5ba97014dbbc03e39c08bac99b208ff91c8903a680d0c0",
+    "sizeBytes": 93874
+  },
+  "app/src/main/assets/bible/ግእዝ_Genesis1_to_1Kings22_and_Psalms_Geez_Bible.json": {
+    "sha256": "0c88fcca0c09a152fe949173bbeb93ba35c18800c9b7f64379ce589d4d8a677d",
+    "sizeBytes": 3628793
+  },
+  "app/src/main/assets/bible/ግእዝ_Psalms_1-151_with_Songs_of_the_Prophets.json": {
+    "sha256": "e6d41c82c87a3b1a6c6fd5af8a3893df037edb1d044e1d808c4b5f670e684a32",
+    "sizeBytes": 555235
+  }
+}
