@@ -17,13 +17,8 @@ sdk:
   target: 36
 
 build_features:
-  compose: true
   build_config: true
   view_binding: false
-
-compose:
-  compiler_plugin: "org.jetbrains.kotlin.plugin.compose"
-  material_version: "material3"
 
 packaging:
   resources:
@@ -41,38 +36,12 @@ dependencies:
     scope: "implementation"
   - id: "com.google.android.material:material:1.12.0"
     scope: "implementation"
-  - id: "androidx.activity:activity-compose:1.9.3"
+  - id: "androidx.activity:activity:1.9.3"
+    scope: "implementation"
+  - id: "androidx.constraintlayout:constraintlayout:2.2.0"
     scope: "implementation"
 
-  # Jetpack Compose BOM & UI Components
-  - id: "androidx.compose:compose-bom:2024.12.01"
-    scope: "platform"
-  - id: "androidx.compose.ui:ui"
-    scope: "implementation"
-  - id: "androidx.compose.ui:ui-graphics"
-    scope: "implementation"
-  - id: "androidx.compose.ui:ui-tooling-preview"
-    scope: "implementation"
-  - id: "androidx.compose.material3:material3"
-    scope: "implementation"
-  - id: "androidx.compose.material:material-icons-extended"
-    scope: "implementation"
-  - id: "androidx.lifecycle:lifecycle-runtime-compose:2.8.7"
-    scope: "implementation"
-  - id: "androidx.lifecycle:lifecycle-viewmodel-compose:2.8.7"
-    scope: "implementation"
-  - id: "androidx.navigation:navigation-compose:2.8.5"
-    scope: "implementation"
-
-  # Coroutines & JSON
-  - id: "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0"
-    scope: "implementation"
-  - id: "org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.3"
-    scope: "implementation"
-
-  # Tooling & Tests
-  - id: "androidx.compose.ui:ui-tooling"
-    scope: "debug_implementation"
+  # Testing
   - id: "junit:junit:4.13.2"
     scope: "test_implementation"
   - id: "androidx.test.ext:junit:1.2.1"
@@ -83,10 +52,8 @@ dependencies:
 build_types:
   debug:
     debuggable: true
-    application_id_suffix: ".debug"
   release:
     debuggable: false
-    minify_enabled: true
-    shrink_resources: true
+    minify_enabled: false
     proguard_files:
       - "proguard-rules.pro"
