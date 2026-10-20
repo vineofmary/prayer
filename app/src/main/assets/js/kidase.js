@@ -10392,7 +10392,7 @@ const kidaseData = {
     },
     {
       "instruction": "For non-fasting periods",
-      "reference": "Introduction to the Morning Gospel (Psalms 81:1-2 in NKJV, Psalms 80:1-2 in Septuagint/Ge'ez)",
+      "reference": "Introduction to the Morning Gospel (Psalms 81:1-2 in KJV, Psalms 80:1-2 in Septuagint/Ge'ez)",
       "chapter": "3",
       "stanza": "192",
       "english": "(Psalms 80:1-2)\n፨ People: [1] Rejoice in God our helper; Rejoice greatly in the living God. [2] Take up a psalm and sound a timbrel, a pleasant psaltery with a harp;",
@@ -13772,7 +13772,7 @@ const kidaseData = {
     },
     {
       "instruction": "Inaudible Prayer",
-      "reference": "Psalms 27:8-9 in NKJV. Psalms 26:8-9 in Septuagint/Ge'ez",
+      "reference": "Psalms 27:8-9 in KJV. Psalms 26:8-9 in Septuagint/Ge'ez",
       "chapter": "3",
       "stanza": "9",
       "english": "Priest (Psalms 26): [8] my face seeks You; Your face, O Lord, I will seek.",
@@ -13792,7 +13792,7 @@ const kidaseData = {
     },
     {
       "instruction": "Inaudible Prayer",
-      "reference": "Psalms 27:8-9 in NKJV. Psalms 26:8-9 in Septuagint/Ge'ez",
+      "reference": "Psalms 27:8-9 in KJV. Psalms 26:8-9 in Septuagint/Ge'ez",
       "chapter": "3",
       "stanza": "9",
       "english": "Priest (Psalms 26): [9] Do not turn away Your face from me; Do not turn away from Your servant in wrath; Be my helper; do not utterly cast me away, Nor forsake me, O God my savior.",
@@ -14012,7 +14012,7 @@ const kidaseData = {
     },
     {
       "instruction": "Inaudible Prayer",
-      "reference": "Psalms 23 in NKJV. Psalms 22 in Septuagint/Ge'ez.",
+      "reference": "Psalms 23 in KJV. Psalms 22 in Septuagint/Ge'ez.",
       "chapter": "3",
       "stanza": "15",
       "english": "(Psalms 22)\nDeacon: [1] The LORD is my shepherd; I shall not want. [2] He makes me to lie down in green pastures; He leads me beside the still waters.",
@@ -14032,7 +14032,7 @@ const kidaseData = {
     },
     {
       "instruction": "Inaudible Prayer",
-      "reference": "Psalms 23 in NKJV. Psalms 22 in Septuagint/Ge'ez.",
+      "reference": "Psalms 23 in KJV. Psalms 22 in Septuagint/Ge'ez.",
       "chapter": "3",
       "stanza": "15",
       "english": "(Psalms 22)\nDeacon: [3] He restores my soul; He leads me in the paths of righteousness For His name's sake.",
@@ -14052,7 +14052,7 @@ const kidaseData = {
     },
     {
       "instruction": "Inaudible Prayer",
-      "reference": "Psalms 23 in NKJV. Psalms 22 in Septuagint/Ge'ez.",
+      "reference": "Psalms 23 in KJV. Psalms 22 in Septuagint/Ge'ez.",
       "chapter": "3",
       "stanza": "15",
       "english": "(Psalms 22)\nDeacon: [4] Yea, though I walk through the valley of the shadow of death, I will fear no evil, for You are with me; Your rod and Your staff, they comfort me.",
@@ -14072,7 +14072,7 @@ const kidaseData = {
     },
     {
       "instruction": "Inaudible Prayer",
-      "reference": "Psalms 23 in NKJV. Psalms 22 in Septuagint/Ge'ez.",
+      "reference": "Psalms 23 in KJV. Psalms 22 in Septuagint/Ge'ez.",
       "chapter": "3",
       "stanza": "15",
       "english": "(Psalms 22)\nDeacon: [5] You prepare a table before me in the presence of my enemies; You anoint my head with oil; Your cup runs over.",
@@ -14092,7 +14092,7 @@ const kidaseData = {
     },
     {
       "instruction": "Inaudible Prayer",
-      "reference": "Psalms 23 in NKJV. Psalms 22 in Septuagint/Ge'ez.",
+      "reference": "Psalms 23 in KJV. Psalms 22 in Septuagint/Ge'ez.",
       "chapter": "3",
       "stanza": "15",
       "english": "(Psalms 22)\nDeacon: [6] Surely goodness and mercy shall follow me All the days of my life; And I will dwell in the house of the Lord to the end of my days.",
@@ -14632,7 +14632,7 @@ const kidaseData = {
     },
     {
       "instruction": "",
-      "reference": "Psalms 117:1 in NKJV. Psalms 116:1 in Septuagint/Ge'ez",
+      "reference": "Psalms 117:1 in KJV. Psalms 116:1 in Septuagint/Ge'ez",
       "chapter": "3",
       "stanza": "28",
       "english": "(Psalms 117:1)\nPriest: Praise the Lord, all you nations.\n፨ People: And praise Him, all you people.",
@@ -14652,7 +14652,7 @@ const kidaseData = {
     },
     {
       "instruction": "",
-      "reference": "Psalms 117:2 in NKJV. Psalms 116:2 in Septuagint/Ge'ez",
+      "reference": "Psalms 117:2 in KJV. Psalms 116:2 in Septuagint/Ge'ez",
       "chapter": "3",
       "stanza": "28",
       "english": "(Psalms 117:2)\nPriest: For His merciful kindness is great towards us.\n፨ People: And the truth of the Lord endures forever.",
@@ -17292,7 +17292,7 @@ const kidaseData = {
     },
     {
       "instruction": "Inaudible Prayer",
-      "reference": "Psalms 66:15, 45:8, 141:2 in NKJV. Psalms 65:15, 44:9, 140:2 in Septuagint/Ge'ez",
+      "reference": "Psalms 66:15, 45:8, 141:2 in KJV. Psalms 65:15, 44:9, 140:2 in Septuagint/Ge'ez",
       "chapter": "3",
       "stanza": "105",
       "english": "Priest: I will offer unto You incense with rams (Psalms 65:15). All the garments smell of myrrh and aloes and cassia (Psalms 44:9). Let my prayer be set forth before You as incense (Psalms 140:2).",
@@ -22312,7 +22312,7 @@ const kidaseData = {
     },
     {
       "instruction": "For non-fasting periods",
-      "reference": "Introduction to the Gospel (Psalms 81:1-2 in NKJV, Psalms 80:1-2 in Septuagint/Ge'ez)",
+      "reference": "Introduction to the Gospel (Psalms 81:1-2 in KJV, Psalms 80:1-2 in Septuagint/Ge'ez)",
       "chapter": "3",
       "stanza": "192",
       "english": "(Psalms 80:1-2)\n፨ People: [1] Rejoice in God our helper; Rejoice greatly in the living God. [2] Take up a psalm and sound a timbrel, a pleasant psaltery with a harp;",
@@ -26034,7 +26034,7 @@ const kidaseData = {
     },
     {
       "instruction": "All shall prostrate (bow down) together.",
-      "reference": "Psalms 28:9 in NKJV. Psalms 27:9 in Septuagint/Ge'ez. Prayer of Benediction.",
+      "reference": "Psalms 28:9 in KJV. Psalms 27:9 in Septuagint/Ge'ez. Prayer of Benediction.",
       "chapter": "Apostles",
       "stanza": "21",
       "english": "Asst. Priest: O Lord, \"save Your people and bless Your inheritance; And shepard them and raise them up forever\" (Psalm 27:9).",
@@ -31016,7 +31016,7 @@ const kidaseData = {
     },
     {
       "instruction": "",
-      "reference": "Psalm 45:1 (NKJV)",
+      "reference": "Psalm 45:1 (KJV)",
       "chapter": "St.Mary",
       "stanza": "3",
       "english": "Priest: My heart is inditing a good matter; my heart is inditing a good matter; my heart is inditing a good matter.",
@@ -31836,7 +31836,7 @@ const kidaseData = {
     },
     {
       "instruction": "Inaudible Prayer",
-      "reference": "Psalms 28:9 in NKJV. Psalms 27:9 in Septuagint/Ge'ez. Prayer of Benediction.",
+      "reference": "Psalms 28:9 in KJV. Psalms 27:9 in Septuagint/Ge'ez. Prayer of Benediction.",
       "chapter": "Apostles",
       "stanza": "21",
       "english": "Asst. Priest: O Lord, \"save Your people and bless Your inheritance; And shepard them and raise them up forever\" (Psalm 27:9).",

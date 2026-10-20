@@ -348,6 +348,7 @@ export const RightSidebar: React.FC = () => {
             </button>
           </div>
           <div id="psalm-selector-container"></div>
+          <div id="psalms-translation-override-container"></div>
           <button id="psalm-combinations-btn" className="settings-button">Typical Psalm Combinations...</button>
           <button id="athanasius-guide-btn" className="settings-button">📜 St. Athanasius’ Guide</button>
 
@@ -363,6 +364,7 @@ export const RightSidebar: React.FC = () => {
             Add Songs of the Prophets
           </h3>
           <div id="prophet-songs-selector-container"></div>
+          <div id="prophet-songs-translation-override-container"></div>
           <div id="prophet-songs-summary" className="settings-summary"></div>
           <button id="clear-prophet-songs-button" className="settings-button">Clear Songs</button>
         </div>

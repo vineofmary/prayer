@@ -259,12 +259,19 @@ export const Modals: React.FC = () => {
 
             <div id="help-translations" className="help-pane">
               <h3>📖 Translations</h3>
-              <p>The English translations of the prayers in this app are a work-in-progress and not yet approved by clergy. This English translation is intended to be a more accurate improvement upon the few existing English resources. Several sources are actively being consulted, including:</p>
+              <p>The English translations of the daily and non-eucharistic liturgical prayers in this app are a work-in-progress and not yet formally approved by clergy. They are developed through a rigorous, multi-layered comparative harmonization—anchoring primarily to literal Ge&apos;ez manuscript fidelity while integrating the theological clarity of the 20th-century Amharic tradition and comparative Oriental Orthodox liturgical scholarship, cross-checked directly against original Ge&apos;ez, Amharic, Coptic, and Arabic texts. Sources actively consulted include:</p>
               <ul>
-                <li><a href="https://a.co/d/h5TO3sz" target="_blank" rel="noopener noreferrer">ውዳሴ ማርያም Widasie Maryam | The Praises of St. Mary: In Ge’ez & English, 3rd Edition</a> translated by Living Tewahdo Ministry in March 2024</li>
-                <li>Daily Prayers of the Ethiopian Orthodox <i>Täwaḥədo</i> Church, Revised Pocket Edition translated by Archdeacon Täsfa Mika’el Williams in May 2020</li>
-                <li><a href="https://a.co/d/3aUZYDE" target="_blank" rel="noopener noreferrer">Book of Prayer - መጽሐፈ ጸሎት: Theotokia (Weddase Mariam) / Selected Psalms, Litanies and Prayers</a> translated by Father Mebratu Kiros (PhD) in 2022</li>
-                <li><a href="https://www.ethiopianorthodox.org/amharic/yeqolotbet/lessons/daily.pdf" target="_blank" rel="noopener noreferrer">የየዘወትር ጸሎት (The Daily Prayer)</a> published by ethiopianorthodox.org</li>
+                <li><a href="https://www.ethiopianorthodox.org/amharic/holybooks/yebetekirstian%20tselot%20metshaf.pdf" target="_blank" rel="noopener noreferrer">“የቤተ ክርስቲያን ጸሎት” (Yä-Betä Krəstiyan Ṣälot)</a>, 2nd Edition, revised by Echegé Gebre-Giyorgis (later Patriarch Abune Basilyos), Liqe Liqawint Gebre-Mesqel, Aleqa Hiruy Eshete, and Memhir Mele&apos;ktu, published by Berhanena Selam Printing Press (Addis Ababa, 1938 AD; 1st Edition compiled by Abba Marqos, commissioned by Emperor Haile Selassie I, London, 1931 AD)</li>
+                <li><i>Legends of Our Lady Mary the Perpetual Virgin and Her Mother Hannâ</i> translated from Ge&apos;ez manuscripts by Sir E. A. Wallis Budge in 1922</li>
+                <li><i>Daily Prayers of the Ethiopian Orthodox Täwaḥədo Church, Revised Pocket Edition</i> translated by Archdeacon Täsfa Mika’el Williams in May 2020</li>
+                <li><a href="https://a.co/d/h5TO3sz" target="_blank" rel="noopener noreferrer">ውዳሴ ማርያም Widasie Maryam | The Praises of St. Mary: In Ge’ez &amp; English, 3rd Edition</a> translated by Living Tewahdo Ministry in March 2024</li>
+                <li><i>The Praise of Our Lady Mary (Weddase Maryam)</i> published online by Sewasiwe Birhan Saint Paul Ethiopian Orthodox Tewahedo Church (SPOT Church, Temple Hills, MD) in 2023</li>
+                <li>መሠረተ ግእዝ የግእዝ ንባብ መማሪያ መጽሐፍ ክፍል ፩ በሦስት ቋንቋዎች (The Foundation of Gə&apos;əz: Gə&apos;əz Reading Textbook, 1st Edition - In 3 languages) translated by ሊቀ ጠበብት ተክሌ ሲራክ (Liqe Tebebt Tekle Sirak) in 2023</li>
+                <li><a href="https://www.ethiopianorthodox.org/amharic/yeqolotbet/lessons/daily.pdf" target="_blank" rel="noopener noreferrer">የዘወትር ጸሎት (The Daily Prayer)</a> published by ethiopianorthodox.org</li>
+                <li><a href="https://a.co/d/3aUZYDE" target="_blank" rel="noopener noreferrer"><i>Book of Prayer - መጽሐፈ ጸሎት: Theotokia (Weddase Mariam) / Selected Psalms, Litanies and Prayers from the Ethiopic Book of the Hours, Missal, and other Liturgical Sources</i></a> translated by Father Mebratu Kiros (PhD) in 2022</li>
+                <li><i>Annual Psalmody: The Midnight Praises (Theotokias &amp; Psalis)</i> (English, Arabic, &amp; Coptic) published by St. Mark Coptic Orthodox Church (Jersey City, NJ) / Tasbeha.org in ~1988–1993</li>
+                <li><i>The Coptic Reader Application: The Annual Psalmody (Theotokia)</i> translated and published by the Coptic Orthodox Diocese of the Southern United States in 2012</li>
+                <li><a href="https://docs.google.com/document/d/1s_OJBJBn89wM9LeXhpUFQJbEA3P-IWUA/edit?usp=sharing&ouid=105972657992870961553&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer">Libro de Oraciones (Book of Prayers)</a> published by the Puerto Rico Debre Besrat Kidus Gebriel Iglesia Ortodoxa Tewahedo de Etiopía in 2025</li>
               </ul>
 
               <h4>Divine Liturgy (Kidasé)</h4>
@@ -316,7 +323,7 @@ export const Modals: React.FC = () => {
           <h2>Scribe's Entrance</h2>
           <p>Enter your credentials to enter the Scribe's Chamber.</p>
           <form className="scribe-login-form" id="scribe-login-form">
-            <input type="email" id="scribe-email" placeholder="Email" required />
+            <input type="email" id="scribe-email" placeholder="Email" required autoComplete="username" />
             <input type="password" id="scribe-password" placeholder="Password" required autoComplete="current-password" />
             <button type="submit" id="scribe-login-btn">Login</button>
             <p id="scribe-login-error" className="error-text hidden"></p>
@@ -580,6 +587,100 @@ export const Modals: React.FC = () => {
           </div>
           <div id="miracle-count-text" style={{ fontSize: '0.85rem', opacity: 0.8, marginBottom: '0.5rem', textAlign: 'right' }}></div>
           <div id="miracle-list-container" style={{ overflowY: 'auto', flexGrow: 1, border: '1px solid var(--border-color)', borderRadius: '4px', padding: '0.5rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}></div>
+        </div>
+      </div>
+
+      {/* Bible Translations & Editions Info Modal */}
+      <div id="bible-translations-info-modal" className="modal">
+        <div className="modal-content bible-translations-modal-content">
+          <span className="close-button" id="close-bible-translations-info-modal">&times;</span>
+          <h2>Bible Translations &amp; Editions</h2>
+          <div className="bible-translations-intro">
+            <strong>Mount of Mercy (ደብረ ምሕረት)</strong> is a non-commercial parish liturgical and educational service providing verse-by-verse Scripture projection and study alongside the prayers of the Ethiopian Orthodox Tewahedo Church. Below are the attributions and edition details for the Scripture texts available in this app.
+          </div>
+
+          <div className="bible-edition-section">
+            <h3>English</h3>
+            <div className="bible-edition-item">
+              <span className="bible-edition-badge">NKJV1982</span>
+              <strong>New King James Version (66 Books):</strong> Scripture quotations marked (NKJV) are taken from the New King James Version®. Copyright © 1982 by Thomas Nelson. Used for non-commercial parish liturgical display and educational reference. All rights reserved.
+            </div>
+            <div className="bible-edition-item">
+              <span className="bible-edition-badge">KJV1611</span>
+              <strong>King James Version (66 Books + Apocryphya):</strong> Authorized King James Version of the Holy Bible (1611 / 1769 Oxford standardized text).
+            </div>
+            <div className="bible-edition-item">
+              <span className="bible-edition-badge">OSB</span>
+              <strong>Orthodox Study Bible (Psalm Numbering Only):</strong> Septuagint (LXX) Psalm numbering is cited alongside Masoretic Psalm numbering.
+            </div>
+          </div>
+
+          <div className="bible-edition-section">
+            <h3>Ge&apos;ez | <span className="ethiopic-label">ግእዝ</span></h3>
+            <div className="bible-edition-item">
+              <span className="bible-edition-badge ethiopic-label">ግእዝ1980 (Septuagint)</span>
+              <strong>Psalms &amp; Songs of the Prophets (<span className="ethiopic-label">መዝሙረ ዳዊት ወመኃልየ ነቢያት</span>) from 1980 ዓ.ም. (1988 A.D.):</strong> Ge&apos;ez Psalms and Songs of the Prophets arranged according to the Septuagint (LXX) chapter and verse numbering.
+            </div>
+            <div className="bible-edition-item">
+              <span className="bible-edition-badge ethiopic-label">ግእዝ1980 (Masoretic)</span>
+              <strong>Ge&apos;ez Bible (89 Books) (<span className="ethiopic-label">መጽሐፍ ቅዱስ በግእዝ</span>) from 1980 ዓ.ም. (1988 A.D.):</strong> Compiled by the Ethiopian Orthodox Tewahedo Church Scholars&apos; Council (<span className="ethiopic-label">ሊቃውንት ጉባኤ</span>) and published with <i>Tensae Zegubae</i> Press and the Bible Society of Ethiopia (<span className="ethiopic-label">የኢትዮጵያ መጽሐፍ ቅዱስ ማኅበር</span>). Contains the broader EOTC canon which includes the 81-book canon (containing <i>Jubilees</i>, <i>Enoch</i>, 1–3 Ethiopic <i>Meqabyan</i>, <i>Ezra Sutuel</i>, <i>Ezra Kal&apos;e</i>, and <i>Teref Ermias</i>) plus <i>Josippon</i> (<span className="ethiopic-label">ዮሴፍ ወልደ ኮርዮን</span>) and all 8 Apostolic Church Order books of the broader New Testament (<span className="ethiopic-label">ሥርዓተ ጽዮን፣ ትእዛዝ፣ ግጽው፣ አብጥሊስ፣ ፩ ወ፪ ኪዳን፣ ዲድስቅልያ፣ ቀሌምንጦስ</span>). Its Proverbs and Psalms follow the Masoretic chapter and verse numbering.
+            </div>
+            <div className="bible-edition-item">
+              <span className="bible-edition-badge ethiopic-label">ግእዝ2014</span>
+              <strong>Ge&apos;ez New Testament (27 Books) (<span className="ethiopic-label">ሐዲስ ኪዳን በግእዝ</span>) from 2014 ዓ.ም. (2022 A.D.):</strong> Standardized critical edition prepared jointly by the Bible Society of Ethiopia (<span className="ethiopic-label">የኢትዮጵያ መጽሐፍ ቅዱስ ማኅበር</span>), the Ethiopian Orthodox Tewahedo Church, and partner churches. Copyright © Bible Society of Ethiopia.
+            </div>
+            <div className="bible-edition-item">
+              <span className="bible-edition-badge ethiopic-label">ግእዝ1694</span>
+              <strong>Psalterium Davidis Aethiopice (Psalms Only) from 1694 ዓ.ም. / 1701 A.D.:</strong> Historical critical edition of the Ge&apos;ez Psalms of David edited by Hiob Ludolf and Abba Gorgoryos (Germany, 1701 A.D.).
+            </div>
+            <div className="bible-edition-item">
+              <span className="bible-edition-badge ethiopic-label">ግእዝ1845</span>
+              <strong>Biblia Veteris Testamenti Aethiopica (8 Books) from 1845 ዓ.ም. / 1853 A.D.:</strong> Historical critical edition of the Ge&apos;ez Octateuch (first 8 books of the Bible), edited by August Dillmann (Germany, 1853 A.D.).
+            </div>
+          </div>
+
+          <div className="bible-edition-section">
+            <h3>Amharic | <span className="ethiopic-label">አማርኛ</span></h3>
+            <div className="bible-edition-item">
+              <span className="bible-edition-badge ethiopic-label">አም2000</span>
+              <strong>Millennium 89-book Amharic Bible (<span className="ethiopic-label">ሰማንያ አሐዱ መጽሐፍ ቅዱስ</span>) from 2000 ዓ.ም. / 2007 A.D.:</strong> Translated from Ge&apos;ez and the Septuagint (LXX) by the Joint Commission of the Ethiopian Orthodox Tewahedo Church and the Bible Society of Ethiopia, containing the broader EOTC canon (including <i>Jubilees</i>, <i>Enoch</i>, 1–3 Ethiopic <i>Meqabyan</i>, <i>Josippon</i>, and the 8 Apostolic Church Order books). Copyright © <span className="ethiopic-label">የኢትዮጵያ መጽሐፍ ቅዱስ ማኅበር</span> / Bible Society of Ethiopia (<a href="https://ethiopia.global.bible" target="_blank" rel="noopener noreferrer">ethiopia.global.bible</a>).
+            </div>
+            <div className="bible-edition-item">
+              <span className="bible-edition-badge ethiopic-label">አም1954</span>
+              <strong>Haile Selassie I 66-book Amharic Bible (<span className="ethiopic-label">መጽሐፍ ቅዱስ — ቀዳማዊ ኃይለ ሥላሴ</span>, 1954 ዓ.ም. / 1962 A.D.):</strong> Revised Amharic translation originally published in 1954 E.C. under the patronage of Emperor Haile Selassie I and the Ethiopian Orthodox Tewahedo Church; digital editions maintained by the Bible Society of Ethiopia.
+            </div>
+          </div>
+
+          <div className="bible-edition-section">
+            <h3>Tigrinya | <span className="ethiopic-label">ትግርኛ</span></h3>
+            <div className="bible-edition-item">
+              <span className="bible-edition-badge">1997 ዓ.ም.</span>
+              <strong>Tigrinya Bible (66 Books) (<span className="ethiopic-label">መጽሓፍ ቅዱስ</span>, 1997 ዓ.ም. / 2004–2005 A.D.):</strong> Published by the Bible Society of Ethiopia and the Bible Society of Eritrea in partnership with the United Bible Societies (UBS). Copyright © Bible Society of Ethiopia / Bible Society of Eritrea.
+            </div>
+          </div>
+
+          <div className="bible-edition-section">
+            <h3>Spanish | Español</h3>
+            <div className="bible-edition-item">
+              <span className="bible-edition-badge">2010 RVG</span>
+              <strong>Reina Valera Gómez (66 Books) from 2010 A.D.:</strong> Translated and revised by Dr. Humberto Gómez Caballero (Matamoros, Tamaulipas, México). Used for non-commercial ministry and liturgical reference.
+            </div>
+          </div>
+
+          <div className="bible-edition-section">
+            <h3>Coptic | ϯⲙⲉⲧⲣⲉⲙⲛ̀ⲭⲏⲙⲓ</h3>
+            <div className="bible-edition-item">
+              <span className="bible-edition-badge">2025 Bohairic</span>
+              <strong>Bohairic Coptic Psalter (Psalms Only) from 2025 A.D.:</strong> Digitized Bohairic Coptic Psalms corpus provided by the <a href="https://copticscriptorium.org" target="_blank" rel="noopener noreferrer">Coptic Scriptorium</a> project under the Creative Commons Attribution 4.0 International License (CC BY 4.0).
+            </div>
+          </div>
+
+          <div className="bible-fair-use-box">
+            <h4>Non-Commercial Liturgical &amp; Educational Use Notice</h4>
+            <p style={{ margin: 0 }}>
+              This application is 100% free, contains no advertisements, subscriptions, or commercial monetization, and is maintained by parish volunteers for liturgical projection, worship, and catechetical study. Scripture passages are displayed in liturgical cards one verse/slide at a time.
+            </p>
+          </div>
         </div>
       </div>
 

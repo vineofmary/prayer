@@ -1,6 +1,6 @@
 <div align="center">
 
-_**TL;DR: A multi-language web app to aid Orthodox Christians in daily prayer; try it out [here](https://mount-of-mercy-974361367981.us-west1.run.app/).**_
+_**TL;DR: A multi-language web and Android app to aid Orthodox Christians in daily prayer and the Divine Liturgy; try it out [here](https://mount-of-mercy-974361367981.us-west1.run.app/).**_
 
 > “Pray without ceasing” ፨ “ወጸልዩ ወትረ”
 >
@@ -12,105 +12,119 @@ _**TL;DR: A multi-language web app to aid Orthodox Christians in daily prayer; t
 
 # 🙏 The Mount of Mercy | ደብረ ምሕረት
 
-This web app is designed to aid Orthodox Christians and catachumens towards a life of unceasing prayer. It provides access to essential daily prayers and the Divine Liturgy (Kidasé) in multiple languages, including Ge'ez, Amharic, Tigrinya, English, and Spanish with phonetic transliterations to assist in learning and pronunciation.
+This application is designed to aid Orthodox Christians and catechumens towards a life of unceasing prayer. It provides access to essential daily prayers, the Hours (*Tselote Se’atat*), the Sacrament of Crowning (*Teklil*), and the Divine Liturgy (*Kidasé*) across multiple languages—including **Ge'ez, Amharic, Tigrinya, English, Spanish (Puerto Rican EOTC & General), French, and Coptic**—with phonetic transliterations to assist in learning and pronunciation.
 
-This spiritual service is made with love for the glory of God and is managed by servants of the Oakland Debre Meheret Saint Michael Ethiopian Orthodox Tewahedo Church (EOTC) under the auspices of His Grace Archbishop Theophilus in the EOTC Diocese of Northern California, Nevada, and Arizona.
+This spiritual service is made with love for the glory of God and is managed by servants of the Oakland Debre Meheret Saint Michael Ethiopian Orthodox Tewahedo Church (EOTC) under the spiritual guidance of Father Nebiyou Elias and under the auspices of His Grace Archbishop Theophilus in the EOTC Diocese of Northern California, Nevada, and Arizona.
 
-## ⚠️ This is a Beta Version / Work-in-Progress!
+## ⚠️ Beta Version / Work-in-Progress
 
-This web app is currently in a **beta** stage and is very much a work-in-progress. We are continuously working to improve this spiritual service and appreciate your patience with any technical issues that may occur. Your feedback is invaluable to us! Please use the "Share Feedback" button within the app to let us know your thoughts, suggestions, or any bugs you encounter.
+This application is currently in a **beta** stage and is actively maintained. We appreciate your patience with any technical issues that may occur. Your feedback is invaluable—please use the **Share Feedback** button within the app to share your thoughts, suggestions, or bug reports.
 
-## 👉 How to Use this App?
+## 👉 How to Use this App
 
-### Trying it Out
+### Web Browser
 
-You can try out the app directly in your web browser on your desktop or mobile device by visiting this temporary staging site: https://mount-of-mercy-974361367981.us-west1.run.app/
+You can use the app directly in your desktop or mobile browser by visiting:
+https://mount-of-mercy-974361367981.us-west1.run.app/
 
-### Adding to Your Home Screen
+### Installing as an App (Mobile & Desktop)
 
-For easy access and offline use, you can add this web page to your mobile home screen:
+For offline access and a full-screen experience, you can install the Progressive Web App (PWA) or run the native Android app:
 
-* **iOS (Safari):** Tap the "Share" icon and then select "Add to Home Screen".
-* **Android (Chrome):** Tap the three-dots menu and select "Install App" or "Add to Home screen".
+* **iOS (Safari):** Tap the **Share** icon and select **Add to Home Screen**.
+* **Android (Chrome / Play Store):** Tap the three-dots menu and select **Install App** / **Add to Home screen** (or install via the Google Play Store internal testing track).
+* **Desktop (Chrome / Safari):** Click the **Install** icon in the address bar (Chrome) or select **File → Add to Dock** (macOS Safari).
 
-## 📖 A Note on Translations
+---
 
-The English translations provided are a work in progress, intended to be a more accurate improvement upon the few existing English resources. We have consulted several sources, including:
+## 📖 A Note on Translations & Methodology
 
-*   *ውዳሴ ማርያም Widasie Maryam | The Praises of St. Mary: In Ge’ez & English, 3rd Edition* translated by Living Tewahdo Ministry in March 2024
-*   *Daily Prayers of the Ethiopian Orthodox Täwahedo Church, Revised Pocket Edition* translated by Archdeacon Täsfa Mika’el Williams in May 2020
-*   *Book of Prayer - መጽሐፈ ጸሎት: Theotokia (Weddase Mariam) / Selected Psalms, Litanies and Prayers from the Ethiopic Book of the Hours, Missal, and other Liturgical Sources* translated by Father Mebratu Kiros (PhD) in 2022
-*   *የዘወትር ጸሎት (The Daily Prayer)* published by ethiopianorthodox.org
-*   *መሠረተ ግእዝ የግእዝ ንባብ መማሪያ መጽሐፍ ክፍል ፩ በሦስት ቋንቋዎች (The Foundation of Ge'ez: Ge'ez Reading Textbook, 1st Edition - In 3 languages)* translated by ሊቀ ጠበብት ተክሌ ሲራክ (Liqe Tebebt Tekle Sirak)
+The English translations of the daily and non-eucharistic liturgical prayers in this app are a work-in-progress and not yet formally approved by clergy. They are developed through a multi-layered comparative harmonization—anchoring primarily to literal Ge'ez manuscript fidelity while integrating the theological clarity of the 20th-century Amharic tradition and comparative Oriental Orthodox liturgical scholarship, cross-checked directly against original Ge'ez, Amharic, Coptic, and Arabic texts.
 
+### Daily Prayers & *Theotokia* (*Weddase Maryam*) Sources
+
+* *“የቤተ ክርስቲያን ጸሎት” (Yä-Betä Krəstiyan Ṣälot)*, 2nd Edition, revised by Echegé Gebre-Giyorgis (later Patriarch Abune Basilyos), Liqe Liqawint Gebre-Mesqel, Aleqa Hiruy Eshete, and Memhir Mele'ktu, published by Berhanena Selam Printing Press (Addis Ababa, 1938 AD; 1st Edition compiled by Abba Marqos, commissioned by Emperor Haile Selassie I, London, 1931 AD)
+* *Legends of Our Lady Mary the Perpetual Virgin and Her Mother Hannâ* translated from Ge'ez manuscripts by Sir E. A. Wallis Budge in 1922
+* *Daily Prayers of the Ethiopian Orthodox Täwaḥədo Church, Revised Pocket Edition* translated by Archdeacon Täsfa Mika’el Williams in May 2020
+* *ውዳሴ ማርያም Widasie Maryam | The Praises of St. Mary: In Ge’ez & English, 3rd Edition* translated by Living Tewahdo Ministry in March 2024
+* *The Praise of Our Lady Mary (Weddase Maryam)* published online by Sewasiwe Birhan Saint Paul Ethiopian Orthodox Tewahedo Church (SPOT Church, Temple Hills, MD) in 2023
+* *መሠረተ ግእዝ የግእዝ ንባብ መማሪያ መጽሐፍ ክፍል ፩ በሦስት ቋንቋዎች (The Foundation of Gə'əz: Gə'əz Reading Textbook, 1st Edition - In 3 languages)* translated by ሊቀ ጠበብት ተክሌ ሲራክ (Liqe Tebebt Tekle Sirak) in 2023
+* *የዘወትር ጸሎት (The Daily Prayer)* published by ethiopianorthodox.org
+* *Book of Prayer - መጽሐፈ ጸሎት: Theotokia (Weddase Mariam) / Selected Psalms, Litanies and Prayers from the Ethiopic Book of the Hours, Missal, and other Liturgical Sources* translated by Father Mebratu Kiros (PhD) in 2022
+* *Annual Psalmody: The Midnight Praises (Theotokias & Psalis)* (English, Arabic, & Coptic) published by St. Mark Coptic Orthodox Church (Jersey City, NJ) / Tasbeha.org (~1988–1993)
+* *The Coptic Reader Application: The Annual Psalmody (Theotokia)* translated and published by the Coptic Orthodox Diocese of the Southern United States in 2012
+* *Libro de Oraciones (Book of Prayers)* published by the Puerto Rico Debre Besrat Kidus Gebriel Iglesia Ortodoxa Tewahedo de Etiopía in 2025
+
+### Divine Liturgy (*Kidasé*) & *Miracles of Mary* Sources
+
+* **Ge'ez, Amharic, & English:** *“መጽሐፈ ቅዳሴ በግእዝ፣ በአማርኛና በእንግሊዝኛ (Metshafe Kidasie beGe'ez, beAmarigna'na, beEngleezgna): The Liturgy of the Ethiopian Orthodox Church”* published by Tensae Publishing House (Addis Ababa, Ethiopia, 2010)
+* **Ge'ez Transcription:** *Digitized Liturgical Ge'ez Text* transcribed by wandering poetry students (ቆሎ ተማሪ - *Qolo Temari*) in Bahir Dar, Ethiopia (October 2024, CC BY-NC 4.0)
+* **Tigrinya:** *“መጽሐፈ ቅዳሴ። በግዕዝ ምስ ምልክቱን በትግርኛን (Metshafe Kidasie beGe'ez, mis milktun beTigrignan)”* published by ኤርትራ ኦርቶዶክስ ተዋሕዶ ሲኖዶስ (Eritrean Orthodox Tewahdo Synod, Asmera, Eritrea, 1993)
+* **Arabic & English Translations:** *“The Liturgy of the Ethiopian Church”* by Fr. Marcos Daoud and H.E. Blatta Marsie Hazen, published by The Egyptian Book Press (Cairo, Egypt, 1959)
+* **Miracles of Mary Data & Translations:** [Princeton Ethiopian, Eritrean, and Egyptian Miracles of Mary (PEMM) Project](https://pemm.princeton.edu/) (Data via [Zenodo](https://zenodo.org/record/8247393))
+
+---
 
 ## ✨ Features
 
-This app is built with modern web technologies to provide a rich and customizable user experience.
+### Liturgical & Daily Prayer Modules (Right Sidebar)
 
-### Core Features:
+* **Daily Prayer (`ዘዘወትር ጸሎት`):** Foundational daily prayers of the Ethiopian Orthodox Tewahedo Church.
+* **Sunset / Vespers (`ጸሎተ ሠርክ`) & Morning / Matins (`ጸሎተ ነግህ`):** Configurable with Evening and Morning Psalm (*Misbak*) and Gospel lectionary pickers.
+* **_Tselote Se’atat_ Readings (`ምንባባተ ሰዓታት`):** Appointed daily Scripture readings for the Prayer of the Hours according to the certified tradition of *Debre Abay Abune Samuel Ze-Waldiba* Monastery.
+* **Crowning / Holy Matrimony (`ሥርዓተ ተክሊል`):** Complete matrimonial service with dynamic insertion of the Bridegroom's and Bride's baptismal names.
+* **Order of the Liturgy (`ሥርዓተ ቅዳሴ`) & Eucharistic Prayer (`አኰቴተ ቍርባን`):**
+  * **Liturgical Customizations:** Select the Day of *Kidasé* (Sunday/Major Feasts, Saturday/First Sabbath, or Weekday Mon–Fri), Time of the Covenant Prayer (*Kidan* at Dawn, Midnight, or Sunset), Quiet Prayers (`ጸሎት በልኁሳስ`), Holy Fifty Days (`እምትንሣኤ እስከ በዓለ ፶`), and Ge'ez Phonetics for Chants.
+  * **Interactive Lectionary Pickers:** Select the Pauline Epistle, Universal Epistle (with dynamic author attribution), Acts of the Apostles, Liturgy Psalm (*Misbak*, including a searchable *Typical Liturgy Psalm Chants* modal), and Liturgy Gospel—accessible from both the Right Sidebar and inline on Liturgy prayer card footers.
+  * **Anaphoras & _Melk'a_:** Includes the Anaphora of the Apostles (`ዘሐዋርያት`) and the Anaphora of Our Lady Mary (`ዘእግዝእትነ ማርያም`), integrated with *Melk'a Qurban* (`መልክአ ቍርባን`).
+  * **Miracles of Mary (`ተአምረ ማርያም`):** Browse, search, and filter stories from the PEMM dataset (including stories most read in church) to insert dynamically after the Anaphora or at Matins.
+* **Theotokia & Marian Hymns:**
+  * Complete 7-day *Praise of Mary* (`ውዳሴ ማርያም`) in Ge'ez and Ge'ez phonetics with ongoing multi-lingual translations, plus *The Gate of Light* (`አንቀጸ ብርሃን`), *The Angels Praise Mary* (`ይዌድስዋ መላእክት ለማርያም`), and *Supplications* (`ምሕላ`).
 
-* **Multi-Lingual Support:** Display prayers in Ge'ez, Amharic, Tigrinya, English, and Spanish.
-* **Divine Liturgy (Kidasé) Mode:** Access the Order of the Liturgy and selected Anaphoras (e.g., Anaphora of the Apostles). We are actively working on adding more Anaphoras and full translations in all supported languages.
-* **Integrated Bible Support:** Full support for the Psalms and Songs of the Prophets in multiple versions, including Ge'ez (1954 ዓ፡ም), Amharic (1954 ዓ፡ም), English (NKJV), Spanish (RGV), and Coptic (Bohairic).
-* **Phonetic Transliteration & Interactive Tooltips:** 
-    * Ge'ez, Amharic, and Tigrinya phonetic scripts are available to aid in pronunciation and learning.
-    * **Loanword Etymology:** Discover the origins and meanings of ancient loanwords (from Greek, Hebrew, Aramaic, Syriac etc.) directly within the liturgical text via interactive tooltips.
-* **Rich Metadata & Historical Context:** 
-    * **Eusebius Psalm Arrangement:** A detailed, multi-lingual modal (English, Ge'ez, Greek) explaining the ancient arrangement of the Psalter.
-    * **St. Ephrem the Syrian:** A tabbed narrative modal exploring the story of St. Ephrem and the composition of the *Weddase Maryam*.
-    * **Iconographic Citations:** Detailed metadata for sacred icons, including original manuscript sources, historical descriptions, and biblical references.
-* **Customizable Display:**
-    * **Themes:** Choose from Traditional, Sepia, Oceanic, and High-Contrast color palettes with both light and dark modes.
-    * **Fonts:** Adjust font sizes for both Ethiopic and English scripts independently or lock them together. Select from multiple Ethiopic and English font families.
-    * **Language Selection & Order:** Toggle which languages are visible and re-order them using a drag-and-drop interface.
-    * **Layouts:** Switch between a card view, a column view, or a row view for displaying the prayer text.
-    * **Language Color-Coding:** Assign distinct colors (Pastel, Vibrant, or Greyscale) to each language for easier reading.
-* **Scribe's Chamber:** A secure backend interface (via Firebase) allowing authorized servants to edit prayer text, icon metadata, and references directly within the app.
-* **Presentation Mode:** A full-screen "slides" or "scroll" mode for services or group prayer, with options for dynamic font sizing and slide transitions.
-* **Progressive Web App (PWA):** Install the app on your mobile device or desktop for an app-like experience with offline access.
-* **Search Functionality:** Robust search with navigation through matches across all displayed languages.
-* **Copy to Clipboard:** Easily copy and share prayers or specific verses with others.
+### Multi-Edition Bible & Psalter Engine
 
-### Advanced Display Options:
+* **Global & Per-Reading Bible Edition Selector:** Configure global defaults in the Left Sidebar and override translations per individual reading in the Right Sidebar (dynamically shown for active languages):
+  * **English:** `NKJV1982` (New King James Version) and `KJV1611` (King James Version), with Septuagint (`OSB`) Psalm numbering cited alongside Masoretic numbering.
+  * **Ge'ez (`ግእዝ`):** `ግእዝ1980 (Septuagint)` (Psalms & Songs of the Prophets), `ግእዝ1980 (Masoretic)` (89-book broader EOTC canon including *Jubilees*, *Enoch*, 1–3 Ethiopic *Meqabyan*, *Josippon*, and all 8 Apostolic Church Order books), `ግእዝ2014` (2022 AD New Testament), `ግእዝ1694` (1701 AD Ludolf Psalter), and `ግእዝ1845` (1853 AD Dillmann Octateuch & Canticles).
+  * **Amharic (`አማርኛ`):** `አም2000` (2000 E.C. / 2007 AD Millennium 89-book broader canon Bible) and `አም1954` (1954 E.C. / 1962 AD Haile Selassie I 66-book Bible).
+  * **Tigrinya (`ትግርኛ`):** `1997 ዓ.ም.` (2004–2005 AD Tigrinya Bible).
+  * **Spanish (`Español`):** `2010 RVG` (Reina Valera Gómez).
+  * **Coptic (`ϯⲙⲉⲧⲣⲉⲙⲛ̀ⲭⲏⲙⲓ`):** `2025 Bohairic` (Coptic Scriptorium Bohairic Psalter).
+* **Typical Psalm Combinations & Custom Sequences:** Choose from a categorized accordion modal of traditional monastic, *Yaredawi*, royal (*Nigus*), liturgical hour, and feast-day Psalm combinations, or enter a custom Psalm sequence order.
+* **📜 St. Athanasius’ Guide to the Psalms:** Searchable prescription modal based on St. Athanasius' *Letter to Marcellinus on the Interpretation of the Psalms* (c. 360 AD), allowing users to filter and apply Psalms by spiritual trial, emotion, or category.
 
-* **Prayer & Speaker Labels:** Toggle the visibility of prayer references and speaker labels (e.g., "Leader", "Reader", "Priest", "People").
-* **Rubrication & Anglicization:** 
-    * **Colored Holy Names (Beta):** Enable traditional red-text rubrication for Holy Names.
-    * **Anglicized Names (Beta):** Display italicized, Anglicized versions of names (e.g., *Iyesus*, *Maryam*) within English translations.
-* **Paragraph Mode:** Toggle between verse-by-verse and paragraph layouts for single-language views.
+### Display, Study & Sharing Features (Left Sidebar)
+
+* **Customizable Display & Themes:** Traditional, Brown (Sepia), Ocean, Legacy, and Simple (High-Contrast) palettes in Light and Dark modes; independent or locked Ge'ez and English font sizing; language color-coding (Soft, Bright, Grey); and card/column/row layouts.
+* **Presentation Mode:** Full-screen **Slides** or **Scroll** mode for parish projection or personal prayer, featuring on-demand dynamic font scaling and slide transitions.
+* **Phonetic Transliteration & Loanword Etymology:** Ge'ez, Amharic, and Tigrinya phonetic scripts, plus interactive tooltips highlighting ancient Greek, Coptic, Hebrew, and Syriac loanwords in Ge'ez.
+* **Rich Historical & Iconographic Modals:**
+  * **Eusebius Psalm Arrangement (c. 335 AD):** Multi-lingual modal (English, Ge'ez, Greek) with 14th-century Mt. Sinai manuscript imagery.
+  * **St. Ephrem the Syrian Potter:** 7-day narrative modal from PEMM Manuscript ID 14.
+  * **Sacred Icon Metadata:** Interactive inspection of Ethiopian manuscript illuminations with historical descriptions, sources, and biblical references.
+* **Share Link & Share Link with Scriptures:** Generate short links that preserve your exact language, translation, font, theme, and liturgical configurations, or copy the link alongside formatted Liturgy Scripture citations and incipits.
+* **Scribe's Chamber:** Authenticated Firebase editor for authorized scribes to refine prayer texts and icon metadata, backed by automated Firestore synchronization and SHA-256 dataset integrity verification.
+
+---
 
 ## 💻 Technical Overview
 
-The app is built using HTML, CSS, and vanilla JavaScript, focusing on a responsive and performant user experience. 
-
-* **Backend:** Leverages **Firebase (Authentication and Firestore)** for the Scribe's Chamber, enabling real-time data updates and secure content management.
-* **Data Storage:** Prayer data is managed via a combination of local JavaScript objects and remote Firestore collections. Bible data is stored in optimized JSON assets.
-* **Performance:** Uses the Web Animations API for smooth UI transitions and a Service Worker for reliable offline functionality as a Progressive Web App (PWA).
+* **Web & Mobile Architecture:** Built with HTML5, CSS3, and vanilla JavaScript, packaged both as an offline-capable **Progressive Web App (PWA)** (with network-first Service Worker cache busting) and a native **Android Application** (`app.mountofmercy.prayer`) hosting the bundled liturgical assets via `WebViewAssetLoader` with edge-to-edge window inset support.
+* **Backend & Integrity:** Uses **Firebase (Authentication & Firestore)** for short-link state persistence and the Scribe's Chamber, paired with automated GitHub Actions workflows and `npm run verify:integrity` SHA-256 checksum verification across all 23 liturgical and scriptural datasets.
 
 ## 🚀 Future Plans & Possibilities
 
 * **Expanded Content:**
-    * Continue adding more prayers. 
-      * The Prayers of the Hours (e.g., The Praise of Mary) for all days of the week.
-      * The Divine Liturgy (e.g., expanding to all 14 Anaphoras like Anaphora of Our Lady Mary, Anaphora of St. John Chrysostom, etc., with full language coverage).
-    * Add a user-friendly prescription guide for the Psalms and Songs of the Prophets according to Saint Athanasius' "Letter to Marcellinus on the Interpretation of the Psalms." 
-    * Implement a dedicated side-by-side Bible viewer for full book browsing.
-    * Fix bugginess of the Scribe's Chamber so that surgical / typo fixes can be made by authorized scribes within the app.
+  * Complete the multi-layered English translations for the remaining days of the *Praise of Mary* (*Weddase Maryam*) and *The Gate of Light* (*Anqetse Birhan*).
+  * Expand the Divine Liturgy module to include all 14 Anaphoras (such as St. John Chrysostom, St. Dioscorus, St. Cyril, etc.) with full multi-lingual coverage.
+  * Add authoritative translations in **Afaan Oromoo** and review unofficial translations in **Spanish, French, Arabic, Greek, Hebrew, Syriac, and Armenian**.
+  * Implement a dedicated side-by-side full-Bible reader for browsing all 89 books of the broader EOTC canon.
 * **Audio & Media:**
-    * Improve branding, particularly the welcome splash screen and app icon/logo.
-    * Add more sacred images from manuscripts with their respective metadata and citations.
-    * Add background instrumental Ethiopian harp (Begena/Krar) music and professional audio recordings or pronounciations of select prayers.
+  * Add traditional Ethiopian harp (*Begena* / *Krar*) background accompaniment and audio recordings for liturgical chants and pronunciation.
+  * Continue expanding manuscript icon illuminations and historical citations.
 * **Enhanced UI/UX:**
-    * Introduce a new and intuitive home screen with options to enter the different sections of the app (e.g., `Kidasé`, `Se'atat`, Bible, Learn, etc). 
-      * Improve the settings panel and customization experience so it's less overwhelming and long.
-        * Consider utilizing collapsable panels on both the left and right side of the screens, similar to Coptic Reader.
-      * For the new "Learn" section of the app, add Quizlet-style learning games and a Biblehub-style interlinear features to aid in learning the Ge'ez language.
-    * Add an announcement feature which allows the user to quickly type and display a custom, full-screen announcement (e.g., "License Plate 1234567 MOVE YOUR CAR!")
-    * Introduce preset modes for "Individual" vs. "Group" prayer.
-    * Implement "Deacon Mode" and "Priest Mode" views for liturgical roles.
-* **App Store Release:** Prepare for release on the Google Play Store and Apple App Store.
-    * Add tests for accessibility and usability.
+  * Add an interactive "Learn Ge'ez" module with vocabulary games and BibleHub-style interlinear tools.
+  * Add preset role views ("Individual" vs. "Group" prayer, and "Deacon" / "Priest" / "People" liturgical views) and a quick full-screen parish announcement banner.
 
 <hr/>
 

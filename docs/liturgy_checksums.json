@@ -1,11 +1,11 @@
 {
   "app/src/main/assets/js/kidase.js": {
-    "sha256": "55d86b4d6b8dbb9da8bd31a9a9f795a8ac23b860b4b019a112732574c7b3b62c",
-    "sizeBytes": 4200571
+    "sha256": "e9d4bf188cf8ca351bcfa12546a7ae5909a16982163eb5323f7e45ca4d2eaa51",
+    "sizeBytes": 4200556
   },
   "app/src/main/assets/js/prayers.js": {
-    "sha256": "6092ec854f65cde59821e9e68cce6a3d27177ddb03fece55c2b8b792c3040938",
-    "sizeBytes": 368462
+    "sha256": "66c499d434b9a378e2c51acd2298828dadbcb5f1b43012b52fbcf17417550cd0",
+    "sizeBytes": 368460
   },
   "app/src/main/assets/js/miracles_of_mary.js": {
     "sha256": "d47125d60ea9fe5bcfd61393e39ff3dd4c445c85c4eafae485db2b5991366417",
@@ -16,8 +16,8 @@
     "sizeBytes": 30262
   },
   "app/src/main/assets/js/typical_psalms.js": {
-    "sha256": "351f93ac587e6f1bfd0215b81fbf0587036926a1f8ab009ba68080bc142f9ceb",
-    "sizeBytes": 52670
+    "sha256": "49807d46e4808cc31819daf50c764c2e93ce139b6f8636da639093363d8cdedb",
+    "sizeBytes": 52667
   },
   "app/src/main/assets/js/st_athanasius_psalms.js": {
     "sha256": "c2d70e699d35009ae803b696fc38d9e3c0849f4bf618c7f38a62efd306760d8d",
@@ -32,8 +32,8 @@
     "sizeBytes": 2706
   },
   "app/src/main/assets/js/bible_service.js": {
-    "sha256": "783bb6f0e106c3af3bcd58c44edf3d428c7be527a41b1a78ce3843cf811fa8be",
-    "sizeBytes": 4341
+    "sha256": "a5969f7ef1d2e67150bb6a32b657de205bb0b030137cfc18a657016aa1174b13",
+    "sizeBytes": 11892
   },
   "app/src/main/assets/bible/canon.json": {
     "sha256": "e9e323a89ace3aa99b8bfd3c2e0411b12b7fbc2aa93c959dabb4762dfd2edf4a",
@@ -50,10 +50,6 @@
   "app/src/main/assets/bible/COPTIC2025_Psalms_Bohairic_Coptic_Scriptorium_Corpora_2025.json": {
     "sha256": "7c3aa1661d4ce9b985d712969849dbd9dbea96491191b71cba0cc7aa1c0fb612",
     "sizeBytes": 901376
-  },
-  "app/src/main/assets/bible/NKJV_New_King_James_English_Bible_1982AD.json": {
-    "sha256": "79ead3b0fae071b48d349c3cd011c84daf17abf5e70f01da8f0e8e5ac84ffbac",
-    "sizeBytes": 10254962
   },
   "app/src/main/assets/bible/RGV_Reina_Valera_Gomez_Bible_2010AD.json": {
     "sha256": "daf57a29d0faf7c762643b0236c25e94c799238d70636232f8312d2afbada58d",
@@ -86,5 +82,13 @@
   "app/src/main/assets/bible/ግእዝ_Psalms_1-151_with_Songs_of_the_Prophets.json": {
     "sha256": "e6d41c82c87a3b1a6c6fd5af8a3893df037edb1d044e1d808c4b5f670e684a32",
     "sizeBytes": 555235
+  },
+  "app/src/main/assets/bible/KJV_King_James_English_Bible.json": {
+    "sha256": "5b4b6997ae03b9a061862d7d667df29e5ce649207a8ed1bdcf0f84d967071eea",
+    "sizeBytes": 6029009
+  },
+  "app/src/main/assets/bible/NKJV_New_King_James_English_Bible_1982AD.json": {
+    "sha256": "79ead3b0fae071b48d349c3cd011c84daf17abf5e70f01da8f0e8e5ac84ffbac",
+    "sizeBytes": 10254962
   }
 }

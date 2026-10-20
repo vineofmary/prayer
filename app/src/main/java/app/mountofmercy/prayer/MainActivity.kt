@@ -4,9 +4,13 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.View
+import android.webkit.ConsoleMessage
+import android.webkit.MimeTypeMap
 import android.webkit.WebChromeClient
 import android.webkit.WebResourceRequest
+import android.webkit.WebResourceResponse
 import android.webkit.WebSettings
 import android.webkit.WebView
 import android.webkit.WebViewClient
@@ -14,6 +18,7 @@ import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import java.io.ByteArrayInputStream
 
 /**
  * Main Android Activity for The Mount of Mercy (ደብረ ምሕረት).
@@ -28,6 +33,11 @@ import androidx.core.view.WindowInsetsCompat
 class MainActivity : AppCompatActivity() {
 
     private lateinit var webView: WebView
+
+    companion object {
+        private const val ASSET_HOST = "appassets.androidplatform.net"
+        private const val START_URL = "https://$ASSET_HOST/index.html"
+    }
 
     @SuppressLint("SetJavaScriptEnabled")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -66,8 +76,33 @@ class MainActivity : AppCompatActivity() {
             WebView.setWebContentsDebuggingEnabled(true)
         }
 
-        // Load the complete standalone web app from bundled assets (100% offline)
-        webView.loadUrl("file:///android_asset/index.html")
+        // Load the complete standalone web app from bundled assets via virtual HTTPS origin
+        // so Fetch API, JSON bible loading, and localStorage work identically to web.
+        webView.loadUrl(START_URL)
+    }
+
+    private fun resolveMimeType(path: String): String {
+        val ext = path.substringAfterLast('.', "").lowercase()
+        return when (ext) {
+            "html", "htm" -> "text/html"
+            "js", "mjs" -> "application/javascript"
+            "css" -> "text/css"
+            "json" -> "application/json"
+            "svg" -> "image/svg+xml"
+            "png" -> "image/png"
+            "jpg", "jpeg" -> "image/jpeg"
+            "webp" -> "image/webp"
+            "gif" -> "image/gif"
+            "ico" -> "image/x-icon"
+            "ttf" -> "font/ttf"
+            "otf" -> "font/otf"
+            "woff" -> "font/woff"
+            "woff2" -> "font/woff2"
+            "mp3" -> "audio/mpeg"
+            "wav" -> "audio/wav"
+            "ogg" -> "audio/ogg"
+            else -> MimeTypeMap.getSingleton().getMimeTypeFromExtension(ext) ?: "application/octet-stream"
+        }
     }
 
     @SuppressLint("SetJavaScriptEnabled")
@@ -102,11 +137,50 @@ class MainActivity : AppCompatActivity() {
         // Hardware acceleration
         webView.setLayerType(View.LAYER_TYPE_HARDWARE, null)
 
-        // Keep all navigation inside the app; delegate only external web links
+        // Serve bundled assets over virtual HTTPS origin and delegate external links
         webView.webViewClient = object : WebViewClient() {
+            override fun shouldInterceptRequest(
+                view: WebView?,
+                request: WebResourceRequest?
+            ): WebResourceResponse? {
+                val uri = request?.url ?: return null
+                if (uri.host != ASSET_HOST) {
+                    return super.shouldInterceptRequest(view, request)
+                }
+                val rawPath = Uri.decode(uri.encodedPath ?: "").removePrefix("/")
+                val assetPath = if (rawPath.isEmpty()) "index.html" else rawPath
+                return try {
+                    val inputStream = assets.open(assetPath)
+                    val mimeType = resolveMimeType(assetPath)
+                    val encoding = if (mimeType.startsWith("text/") || mimeType == "application/javascript" || mimeType == "application/json") "UTF-8" else null
+                    WebResourceResponse(
+                        mimeType,
+                        encoding,
+                        200,
+                        "OK",
+                        mapOf("Access-Control-Allow-Origin" to "*"),
+                        inputStream
+                    )
+                } catch (e: Exception) {
+                    Log.w("WebViewAssets", "Asset not found: $assetPath")
+                    WebResourceResponse(
+                        "text/plain",
+                        "UTF-8",
+                        404,
+                        "Not Found",
+                        mapOf("Access-Control-Allow-Origin" to "*"),
+                        ByteArrayInputStream(ByteArray(0))
+                    )
+                }
+            }
+
             override fun shouldOverrideUrlLoading(view: WebView?, request: WebResourceRequest?): Boolean {
                 val url = request?.url?.toString() ?: return false
-                if (url.startsWith("file:///android_asset/") || url.startsWith("http://localhost")) {
+                if (
+                    url.startsWith("https://$ASSET_HOST/") ||
+                    url.startsWith("file:///android_asset/") ||
+                    url.startsWith("http://localhost")
+                ) {
                     return false
                 }
                 return try {
@@ -119,7 +193,19 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        webView.webChromeClient = WebChromeClient()
+        webView.webChromeClient = object : WebChromeClient() {
+            override fun onConsoleMessage(consoleMessage: ConsoleMessage?): Boolean {
+                consoleMessage?.let { msg ->
+                    val formatted = "[${msg.sourceId()}:${msg.lineNumber()}] ${msg.message()}"
+                    when (msg.messageLevel()) {
+                        ConsoleMessage.MessageLevel.ERROR -> Log.e("WebViewConsole", formatted)
+                        ConsoleMessage.MessageLevel.WARNING -> Log.w("WebViewConsole", formatted)
+                        else -> Log.d("WebViewConsole", formatted)
+                    }
+                }
+                return super.onConsoleMessage(consoleMessage)
+            }
+        }
     }
 
     override fun onResume() {
