@@ -26,7 +26,7 @@ export const RightSidebar: React.FC = () => {
           >
             <div className="kidase-lectionary-item" style={{ marginTop: '0.5rem' }}>
               <h5 className="settings-subtitle clickable-reading-title" data-reading-target="eveningPsalm">
-                Evening Psalm (KJV) | ምስባክ ዘሠርክ
+                Evening Psalm (NKJV) | ምስባክ ዘሠርክ
               </h5>
               <div id="evening-psalm-ref-container" className="lectionary-picker-container"></div>
             </div>
@@ -127,7 +127,7 @@ export const RightSidebar: React.FC = () => {
           >
             <div className="kidase-lectionary-item" style={{ marginTop: '0.5rem' }}>
               <h5 className="settings-subtitle clickable-reading-title" data-reading-target="morningPsalm">
-                Morning Psalm (KJV) | ምስባክ ዘነግህ
+                Morning Psalm (NKJV) | ምስባክ ዘነግህ
               </h5>
               <div id="morning-psalm-ref-container" className="lectionary-picker-container"></div>
             </div>
@@ -177,7 +177,7 @@ export const RightSidebar: React.FC = () => {
             <hr className="lectionary-separator" />
             <div className="kidase-lectionary-item">
               <h5 className="settings-subtitle clickable-reading-title" data-reading-target="psalm">
-                Liturgy Psalm (KJV) | ምስባክ ዘቅዳሴ
+                Liturgy Psalm (NKJV) | ምስባክ ዘቅዳሴ
               </h5>
               <div id="kidase-psalm-ref-container" className="lectionary-picker-container"></div>
             </div>
@@ -348,6 +348,7 @@ export const RightSidebar: React.FC = () => {
             </button>
           </div>
           <div id="psalm-selector-container"></div>
+          <div id="psalms-translation-override-container"></div>
           <button id="psalm-combinations-btn" className="settings-button">Typical Psalm Combinations...</button>
           <button id="athanasius-guide-btn" className="settings-button">📜 St. Athanasius’ Guide</button>
 
@@ -363,6 +364,7 @@ export const RightSidebar: React.FC = () => {
             Add Songs of the Prophets
           </h3>
           <div id="prophet-songs-selector-container"></div>
+          <div id="prophet-songs-translation-override-container"></div>
           <div id="prophet-songs-summary" className="settings-summary"></div>
           <button id="clear-prophet-songs-button" className="settings-button">Clear Songs</button>
         </div>

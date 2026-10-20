@@ -3949,5 +3949,158 @@ body.presentation-mode-slides .day-nav-group .day-nav-btn {
     line-height: 1.5;
 }
 
+/* Compact Per-Reading Bible Translation Override Bar */
+.reading-translation-overrides {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    margin-top: 0.4rem;
+    margin-bottom: 0.25rem;
+    flex-wrap: wrap;
+}
+
+.card-inline-lectionary-picker .reading-translation-overrides {
+    margin-top: 0.35rem;
+    margin-bottom: 0;
+}
+
+.translation-override-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    background: var(--hover-color);
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+    padding: 0.18rem 0.45rem;
+    font-size: 0.75rem;
+    line-height: 1.2;
+    flex: 1 1 auto;
+    min-width: 0;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.card-inline-lectionary-picker .translation-override-pill {
+    flex: 0 1 auto;
+    padding: 0.14rem 0.42rem;
+}
+
+.translation-override-pill-label {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.72rem;
+    font-weight: 600;
+    line-height: 1.2;
+    opacity: 0.8;
+    white-space: nowrap;
+    margin: 0;
+    padding: 0;
+}
+
+.translation-override-select {
+    background: transparent;
+    border: none;
+    color: var(--text-color);
+    font-size: 0.74rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin: 0 !important;
+    padding: 0 0.15rem !important;
+    height: auto !important;
+    width: auto !important;
+    cursor: pointer;
+    outline: none;
+    min-width: 0;
+    max-width: 100%;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+}
+
+.translation-override-select option {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* Bible Translations & Editions Info Modal */
+.bible-translations-modal-content {
+    max-width: 680px;
+    max-height: 85vh;
+    overflow-y: auto;
+    line-height: 1.55;
+}
+
+.bible-translations-modal-content h2 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: var(--accent-color);
+}
+
+.bible-translations-intro {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin-bottom: 1rem;
+    padding: 0.75rem 0.9rem;
+    background: var(--hover-color);
+    border-left: 3px solid var(--accent-color);
+    border-radius: 6px;
+}
+
+.bible-edition-section {
+    margin-bottom: 1.15rem;
+    padding-bottom: 0.85rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.bible-edition-section:last-of-type {
+    border-bottom: none;
+}
+
+.bible-edition-section h3 {
+    font-size: 1rem;
+    margin: 0 0 0.5rem 0;
+    color: var(--accent-color);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.bible-edition-item {
+    margin-bottom: 0.65rem;
+    font-size: 0.86rem;
+}
+
+.bible-edition-item:last-child {
+    margin-bottom: 0;
+}
+
+.bible-edition-badge {
+    display: inline-block;
+    font-weight: 700;
+    font-size: 0.76rem;
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+    background: var(--hover-color);
+    border: 1px solid var(--border-color);
+    margin-right: 0.35rem;
+}
+
+.bible-fair-use-box {
+    margin-top: 1rem;
+    padding: 0.85rem 1rem;
+    background: var(--hover-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 0.82rem;
+    opacity: 0.9;
+}
+
+.bible-fair-use-box h4 {
+    margin: 0 0 0.4rem 0;
+    font-size: 0.9rem;
+    color: var(--accent-color);
+}
+
+
+
 
 

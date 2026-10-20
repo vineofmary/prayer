@@ -32,8 +32,8 @@
     "sizeBytes": 2706
   },
   "app/src/main/assets/js/bible_service.js": {
-    "sha256": "7076a9608cdc1dc135dacde3d29bd18d69de9fe8c1cdefcf9509dbde3bbb02b2",
-    "sizeBytes": 7474
+    "sha256": "a5969f7ef1d2e67150bb6a32b657de205bb0b030137cfc18a657016aa1174b13",
+    "sizeBytes": 11892
   },
   "app/src/main/assets/bible/canon.json": {
     "sha256": "e9e323a89ace3aa99b8bfd3c2e0411b12b7fbc2aa93c959dabb4762dfd2edf4a",
@@ -86,5 +86,9 @@
   "app/src/main/assets/bible/KJV_King_James_English_Bible.json": {
     "sha256": "5b4b6997ae03b9a061862d7d667df29e5ce649207a8ed1bdcf0f84d967071eea",
     "sizeBytes": 6029009
+  },
+  "app/src/main/assets/bible/NKJV_New_King_James_English_Bible_1982AD.json": {
+    "sha256": "79ead3b0fae071b48d349c3cd011c84daf17abf5e70f01da8f0e8e5ac84ffbac",
+    "sizeBytes": 10254962
   }
 }
