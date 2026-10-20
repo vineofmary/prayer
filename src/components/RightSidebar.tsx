@@ -26,7 +26,7 @@ export const RightSidebar: React.FC = () => {
           >
             <div className="kidase-lectionary-item" style={{ marginTop: '0.5rem' }}>
               <h5 className="settings-subtitle clickable-reading-title" data-reading-target="eveningPsalm">
-                Evening Psalm (NKJV) | ምስባክ ዘሠርክ
+                Evening Psalm (KJV) | ምስባክ ዘሠርክ
               </h5>
               <div id="evening-psalm-ref-container" className="lectionary-picker-container"></div>
             </div>
@@ -127,7 +127,7 @@ export const RightSidebar: React.FC = () => {
           >
             <div className="kidase-lectionary-item" style={{ marginTop: '0.5rem' }}>
               <h5 className="settings-subtitle clickable-reading-title" data-reading-target="morningPsalm">
-                Morning Psalm (NKJV) | ምስባክ ዘነግህ
+                Morning Psalm (KJV) | ምስባክ ዘነግህ
               </h5>
               <div id="morning-psalm-ref-container" className="lectionary-picker-container"></div>
             </div>
@@ -177,7 +177,7 @@ export const RightSidebar: React.FC = () => {
             <hr className="lectionary-separator" />
             <div className="kidase-lectionary-item">
               <h5 className="settings-subtitle clickable-reading-title" data-reading-target="psalm">
-                Liturgy Psalm (NKJV) | ምስባክ ዘቅዳሴ
+                Liturgy Psalm (KJV) | ምስባክ ዘቅዳሴ
               </h5>
               <div id="kidase-psalm-ref-container" className="lectionary-picker-container"></div>
             </div>

@@ -537,37 +537,37 @@ function getSeatatLiturgicalDay() {
 }
 
 const BIBLE_BOOK_MAPPING = {
-    'Matthew': { nkjv: 40, am54: 'የማቴዎስ ወንጌል', rgv: 'Mateo', geez: 'ማቴዎስ' },
-    'Mark': { nkjv: 41, am54: 'የማርቆስ ወንጌል', rgv: 'Marcos', geez: 'ማርቆስ' },
-    'Luke': { nkjv: 42, am54: 'የሉቃስ ወንጌል', rgv: 'Lucas', geez: 'ሉቃስ' },
-    'John': { nkjv: 43, am54: 'የዮሐንስ ወንጌል', rgv: 'Juan', geez: 'ዮሐንስ' },
-    'Acts': { nkjv: 44, am54: 'የሐዋርያት ሥራ', rgv: 'Hechos', geez: 'ግብረ ሐዋርያት' },
-    'Romans': { nkjv: 45, am54: 'ወደ ሮሜ ሰዎች', rgv: 'Romanos', geez: 'ሮሜ' },
-    '1 Corinthians': { nkjv: 46, am54: '1ኛ ወደ ቆሮንቶስ ሰዎች', rgv: '1 Corintios', geez: 'ቆሮንቶስ ቀዳማዊ' },
-    '2 Corinthians': { nkjv: 47, am54: '2ኛ ወደ ቆሮንቶስ ሰዎች', rgv: '2 Corintios', geez: 'ቆሮንቶስ ዳግማዊ' },
-    'Galatians': { nkjv: 48, am54: 'ወደ ገላትያ ሰዎች', rgv: 'Gálatas', geez: 'ገላትያ' },
-    'Ephesians': { nkjv: 49, am54: 'ወደ ኤፌሶን ሰዎች', rgv: 'Efesios', geez: 'ኤፌሶን' },
-    'Philippians': { nkjv: 50, am54: 'ወደ ፊልጵስዩስ ሰዎች', rgv: 'Filipenses', geez: 'ፊልጵስዩስ' },
-    'Colossians': { nkjv: 51, am54: 'ወደ ቆላስይስ ሰዎች', rgv: 'Colosenses', geez: 'ቆላስይስ' },
-    '1 Thessalonians': { nkjv: 52, am54: '1ኛ ወደ ተሰሎንቄ ሰዎች', rgv: '1 Tesalonicenses', geez: 'ተሰሎንቄ ቀዳማዊ' },
-    '2 Thessalonians': { nkjv: 53, am54: '2ኛ ወደ ተሰሎንቄ ሰዎች', rgv: '2 Tesalonicenses', geez: 'ተሰሎንቄ ዳግማዊ' },
-    '1 Timothy': { nkjv: 54, am54: '1ኛ ወደ ጢሞቴዎስ', rgv: '1 Timoteo', geez: 'ጢሞቴዎስ ቀዳማዊ' },
-    '2 Timothy': { nkjv: 55, am54: '2ኛ ወደ ጢሞቴዎስ', rgv: '2 Timoteo', geez: 'ጢሞቴዎስ ዳግማዊ' },
-    'Titus': { nkjv: 56, am54: 'ወደ ቲቶ', rgv: 'Tito', geez: 'ቲቶ' },
-    'Philemon': { nkjv: 57, am54: 'ወደ ፊልሞና', rgv: 'Filemón', geez: 'ፊልሞና' },
-    'Hebrews': { nkjv: 58, am54: 'ወደ ዕብራውያን', rgv: 'Hebreos', geez: 'ዕብራውያን' },
-    'James': { nkjv: 59, am54: 'የያዕቆብ መልእክት', rgv: 'Santiago', geez: 'ያዕቆብ' },
-    '1 Peter': { nkjv: 60, am54: '1ኛ የጴጥሮስ መልእክት', rgv: '1 Pedro', geez: 'ጴጥሮስ ቀዳማዊ' },
-    '2 Peter': { nkjv: 61, am54: '2ኛ የጴጥሮስ መልእክት', rgv: '2 Pedro', geez: 'ጴጥሮስ ዳግማዊ' },
-    '1 John': { nkjv: 62, am54: '1ኛ የዮሐንስ መልእክት', rgv: '1 Juan', geez: 'ዮሐንስ ቀዳማዊ' },
-    '2 John': { nkjv: 63, am54: '2ኛ የዮሐንስ መልእክት', rgv: '2 Juan', geez: 'ዮሐንስ ዳግማዊ' },
-    '3 John': { nkjv: 64, am54: '3ኛ የዮሐንስ መልእክት', rgv: '3 Juan', geez: 'ዮሐንስ ሣልሳዊ' },
-    'Jude': { nkjv: 65, am54: 'የይሁዳ መልእክት', rgv: 'Judas', geez: 'ይሁዳ' },
-    'Revelation': { nkjv: 66, am54: 'የዮሐንስ ራእይ', rgv: 'Apocalipsis', geez: 'ራእይ' },
-    'Psalms': { nkjv: 19, am54: 'መዝሙረ ዳዊት', rgv: 'Salmos', geez: 'መዝሙረ ዳዊት' },
-    'Psalm': { nkjv: 19, am54: 'መዝሙረ ዳዊት', rgv: 'Salmos', geez: 'መዝሙረ ዳዊት' },
-    'Leviticus': { nkjv: 3, am54: 'ኦሪት ዘሌዋውያን', rgv: 'Levítico', geez: 'ዘሌዋውያን' },
-    'Jeremiah': { nkjv: 24, am54: 'ትንቢተ ኤርምያስ', rgv: 'Jeremías', geez: 'ኤርምያስ' }
+    'Matthew': { kjv: 40, nkjv: 40, am54: 'የማቴዎስ ወንጌል', rgv: 'Mateo', geez: 'ማቴዎስ' },
+    'Mark': { kjv: 41, nkjv: 41, am54: 'የማርቆስ ወንጌል', rgv: 'Marcos', geez: 'ማርቆስ' },
+    'Luke': { kjv: 42, nkjv: 42, am54: 'የሉቃስ ወንጌል', rgv: 'Lucas', geez: 'ሉቃስ' },
+    'John': { kjv: 43, nkjv: 43, am54: 'የዮሐንስ ወንጌል', rgv: 'Juan', geez: 'ዮሐንስ' },
+    'Acts': { kjv: 44, nkjv: 44, am54: 'የሐዋርያት ሥራ', rgv: 'Hechos', geez: 'ግብረ ሐዋርያት' },
+    'Romans': { kjv: 45, nkjv: 45, am54: 'ወደ ሮሜ ሰዎች', rgv: 'Romanos', geez: 'ሮሜ' },
+    '1 Corinthians': { kjv: 46, nkjv: 46, am54: '1ኛ ወደ ቆሮንቶስ ሰዎች', rgv: '1 Corintios', geez: 'ቆሮንቶስ ቀዳማዊ' },
+    '2 Corinthians': { kjv: 47, nkjv: 47, am54: '2ኛ ወደ ቆሮንቶስ ሰዎች', rgv: '2 Corintios', geez: 'ቆሮንቶስ ዳግማዊ' },
+    'Galatians': { kjv: 48, nkjv: 48, am54: 'ወደ ገላትያ ሰዎች', rgv: 'Gálatas', geez: 'ገላትያ' },
+    'Ephesians': { kjv: 49, nkjv: 49, am54: 'ወደ ኤፌሶን ሰዎች', rgv: 'Efesios', geez: 'ኤፌሶን' },
+    'Philippians': { kjv: 50, nkjv: 50, am54: 'ወደ ፊልጵስዩስ ሰዎች', rgv: 'Filipenses', geez: 'ፊልጵስዩስ' },
+    'Colossians': { kjv: 51, nkjv: 51, am54: 'ወደ ቆላስይስ ሰዎች', rgv: 'Colosenses', geez: 'ቆላስይስ' },
+    '1 Thessalonians': { kjv: 52, nkjv: 52, am54: '1ኛ ወደ ተሰሎንቄ ሰዎች', rgv: '1 Tesalonicenses', geez: 'ተሰሎንቄ ቀዳማዊ' },
+    '2 Thessalonians': { kjv: 53, nkjv: 53, am54: '2ኛ ወደ ተሰሎንቄ ሰዎች', rgv: '2 Tesalonicenses', geez: 'ተሰሎንቄ ዳግማዊ' },
+    '1 Timothy': { kjv: 54, nkjv: 54, am54: '1ኛ ወደ ጢሞቴዎስ', rgv: '1 Timoteo', geez: 'ጢሞቴዎስ ቀዳማዊ' },
+    '2 Timothy': { kjv: 55, nkjv: 55, am54: '2ኛ ወደ ጢሞቴዎስ', rgv: '2 Timoteo', geez: 'ጢሞቴዎስ ዳግማዊ' },
+    'Titus': { kjv: 56, nkjv: 56, am54: 'ወደ ቲቶ', rgv: 'Tito', geez: 'ቲቶ' },
+    'Philemon': { kjv: 57, nkjv: 57, am54: 'ወደ ፊልሞና', rgv: 'Filemón', geez: 'ፊልሞና' },
+    'Hebrews': { kjv: 58, nkjv: 58, am54: 'ወደ ዕብራውያን', rgv: 'Hebreos', geez: 'ዕብራውያን' },
+    'James': { kjv: 59, nkjv: 59, am54: 'የያዕቆብ መልእክት', rgv: 'Santiago', geez: 'ያዕቆብ' },
+    '1 Peter': { kjv: 60, nkjv: 60, am54: '1ኛ የጴጥሮስ መልእክት', rgv: '1 Pedro', geez: 'ጴጥሮስ ቀዳማዊ' },
+    '2 Peter': { kjv: 61, nkjv: 61, am54: '2ኛ የጴጥሮስ መልእክት', rgv: '2 Pedro', geez: 'ጴጥሮስ ዳግማዊ' },
+    '1 John': { kjv: 62, nkjv: 62, am54: '1ኛ የዮሐንስ መልእክት', rgv: '1 Juan', geez: 'ዮሐንስ ቀዳማዊ' },
+    '2 John': { kjv: 63, nkjv: 63, am54: '2ኛ የዮሐንስ መልእክት', rgv: '2 Juan', geez: 'ዮሐንስ ዳግማዊ' },
+    '3 John': { kjv: 64, nkjv: 64, am54: '3ኛ የዮሐንስ መልእክት', rgv: '3 Juan', geez: 'ዮሐንስ ሣልሳዊ' },
+    'Jude': { kjv: 65, nkjv: 65, am54: 'የይሁዳ መልእክት', rgv: 'Judas', geez: 'ይሁዳ' },
+    'Revelation': { kjv: 66, nkjv: 66, am54: 'የዮሐንስ ራእይ', rgv: 'Apocalipsis', geez: 'ራእይ' },
+    'Psalms': { kjv: 19, nkjv: 19, am54: 'መዝሙረ ዳዊት', rgv: 'Salmos', geez: 'መዝሙረ ዳዊት' },
+    'Psalm': { kjv: 19, nkjv: 19, am54: 'መዝሙረ ዳዊት', rgv: 'Salmos', geez: 'መዝሙረ ዳዊት' },
+    'Leviticus': { kjv: 3, nkjv: 3, am54: 'ኦሪት ዘሌዋውያን', rgv: 'Levítico', geez: 'ዘሌዋውያን' },
+    'Jeremiah': { kjv: 24, nkjv: 24, am54: 'ትንቢተ ኤርምያስ', rgv: 'Jeremías', geez: 'ኤርምያስ' }
 };
 
 // TYPICAL_PSALMS moved to js/typical_psalms.js
@@ -656,22 +656,22 @@ const SEATAT_LECTIONARY_DATA = {
 };
 
 const prophetSongs = [
-    { key: 'songOfSongs', author: 'Solomon', name: 'Prayer of Songs of King Solomon | ማሓለየ ማሓለይ ዘሰሎሞን', verseRange: '(Songs of Songs 1:1-5:16)', time: 'Saturday', purpose: 'Spiritual communion and expression of divine love.', refs: { nkjv: { book: 22, bookName: 'Song of Solomon', chapters: [1, 2, 3, 4, 5] }, rgv: { book: 'Canción de canciones', chapters: [1, 2, 3, 4, 5] }, am54: { book: 'መኃልየ መኃልይ ዘሰሎሞን', chapters: ['1', '2', '3', '4', '5'] } } },
-    { key: 'firstSongOfMoses', author: 'Moses', name: 'First Prayer of Moses the Prophet | ጸሎተ ሙሴ ቀዳማዊ', verseRange: '(Exodus 15:1–19)', time: 'Monday – 9 a.m.', purpose: 'For sickness, hopelessness, and feeling of weakness.', refs: { nkjv: { book: 2, bookName: 'Exodus', chapter: 15, verses: { start: 1, end: 19 } }, rgv: { book: 'Éxodo', chapter: 15, verses: { start: 1, end: 19 } }, am54: { book: 'ኦሪት ዘጸአት', chapter: '15', verses: { start: 1, end: 19 } } } },
-    { key: 'secondSongOfMoses', author: 'Moses', name: 'Second Prayer of Moses the Prophet | ጸሎተ ሙሴ ካልእ', verseRange: '(Deuteronomy 32:1–21)', time: 'Monday – Noon', purpose: 'For sickness, hopelessness, and feeling of weakness.', refs: { nkjv: { book: 5, bookName: 'Deuteronomy', chapter: 32, verses: { start: 1, end: 21 } }, rgv: { book: 'Deuteronomio', chapter: 32, verses: { start: 1, end: 21 } }, am54: { book: 'ኦሪት ዘዳግም', chapter: '32', verses: { start: 1, end: 21 } } } },
-    { key: 'thirdSongOfMoses', author: 'Moses', name: 'Third Prayer of Moses the Prophet | ጸሎተ ሙሴ ሣልስ', verseRange: '(Deuteronomy 32:22–43)', time: 'Monday – 3 p.m.', purpose: 'For sickness, hopelessness, feeling of weakness; also for safe maternity.', refs: { nkjv: { book: 5, bookName: 'Deuteronomy', chapter: 32, verses: { start: 22, end: 43 } }, rgv: { book: 'Deuteronomio', chapter: 32, verses: { start: 22, end: 43 } }, am54: { book: 'ኦሪት ዘዳግም', chapter: '32', verses: { start: 22, end: 43 } } } },
-    { key: 'prayerOfHannah', author: 'Hannah', name: 'Prayer of Hannah the Mother of Samuel the Prophet | ጸሎተ ሐና እመ ሳሙኤል ነቢይ', verseRange: '(1 Kingdoms 2:1-10 LXX, 1 Samuel 2:1–10 NKJV)', time: 'Tuesday – 9 a.m.', purpose: 'For safe maternity and for sudden sickness.', refs: { nkjv: { book: 9, bookName: '1 Samuel', chapter: 2, verses: { start: 1, end: 10 } }, rgv: { book: '1 Samuel', chapter: 2, verses: { start: 1, end: 10 } }, am54: { book: 'መጽሐፈ ሳሙኤል ቀዳማዊ', chapter: '2', verses: { start: 1, end: 10 } } } },
-    { key: 'prayerOfHezekiah', author: 'Hezekiah', name: 'Prayer of King Hezekiah | ጸሎተ ሕዝቅያስ', verseRange: '(Isaiah 38:10–20)', time: 'Tuesday – Noon', purpose: 'For sudden sickness, for safe maternity, and for trouble in finding missing property or ideas.', refs: { nkjv: { book: 23, bookName: 'Isaiah', chapter: 38, verses: { start: 10, end: 20 } }, rgv: { book: 'Isaías', chapter: 38, verses: { start: 10, end: 20 } }, am54: { book: 'ትንቢተ ኢሳይያስ', chapter: '38', verses: { start: 10, end: 20 } } } },
+    { key: 'songOfSongs', author: 'Solomon', name: 'Prayer of Songs of King Solomon | ማሓለየ ማሓለይ ዘሰሎሞን', verseRange: '(Songs of Songs 1:1-5:16)', time: 'Saturday', purpose: 'Spiritual communion and expression of divine love.', refs: { kjv: { book: 22, bookName: 'Song of Solomon', chapters: [1, 2, 3, 4, 5] }, rgv: { book: 'Canción de canciones', chapters: [1, 2, 3, 4, 5] }, am54: { book: 'መኃልየ መኃልይ ዘሰሎሞን', chapters: ['1', '2', '3', '4', '5'] } } },
+    { key: 'firstSongOfMoses', author: 'Moses', name: 'First Prayer of Moses the Prophet | ጸሎተ ሙሴ ቀዳማዊ', verseRange: '(Exodus 15:1–19)', time: 'Monday – 9 a.m.', purpose: 'For sickness, hopelessness, and feeling of weakness.', refs: { kjv: { book: 2, bookName: 'Exodus', chapter: 15, verses: { start: 1, end: 19 } }, rgv: { book: 'Éxodo', chapter: 15, verses: { start: 1, end: 19 } }, am54: { book: 'ኦሪት ዘጸአት', chapter: '15', verses: { start: 1, end: 19 } } } },
+    { key: 'secondSongOfMoses', author: 'Moses', name: 'Second Prayer of Moses the Prophet | ጸሎተ ሙሴ ካልእ', verseRange: '(Deuteronomy 32:1–21)', time: 'Monday – Noon', purpose: 'For sickness, hopelessness, and feeling of weakness.', refs: { kjv: { book: 5, bookName: 'Deuteronomy', chapter: 32, verses: { start: 1, end: 21 } }, rgv: { book: 'Deuteronomio', chapter: 32, verses: { start: 1, end: 21 } }, am54: { book: 'ኦሪት ዘዳግም', chapter: '32', verses: { start: 1, end: 21 } } } },
+    { key: 'thirdSongOfMoses', author: 'Moses', name: 'Third Prayer of Moses the Prophet | ጸሎተ ሙሴ ሣልስ', verseRange: '(Deuteronomy 32:22–43)', time: 'Monday – 3 p.m.', purpose: 'For sickness, hopelessness, feeling of weakness; also for safe maternity.', refs: { kjv: { book: 5, bookName: 'Deuteronomy', chapter: 32, verses: { start: 22, end: 43 } }, rgv: { book: 'Deuteronomio', chapter: 32, verses: { start: 22, end: 43 } }, am54: { book: 'ኦሪት ዘዳግም', chapter: '32', verses: { start: 22, end: 43 } } } },
+    { key: 'prayerOfHannah', author: 'Hannah', name: 'Prayer of Hannah the Mother of Samuel the Prophet | ጸሎተ ሐና እመ ሳሙኤል ነቢይ', verseRange: '(1 Kingdoms 2:1-10 LXX, 1 Samuel 2:1–10 KJV)', time: 'Tuesday – 9 a.m.', purpose: 'For safe maternity and for sudden sickness.', refs: { kjv: { book: 9, bookName: '1 Samuel', chapter: 2, verses: { start: 1, end: 10 } }, rgv: { book: '1 Samuel', chapter: 2, verses: { start: 1, end: 10 } }, am54: { book: 'መጽሐፈ ሳሙኤል ቀዳማዊ', chapter: '2', verses: { start: 1, end: 10 } } } },
+    { key: 'prayerOfHezekiah', author: 'Hezekiah', name: 'Prayer of King Hezekiah | ጸሎተ ሕዝቅያስ', verseRange: '(Isaiah 38:10–20)', time: 'Tuesday – Noon', purpose: 'For sudden sickness, for safe maternity, and for trouble in finding missing property or ideas.', refs: { kjv: { book: 23, bookName: 'Isaiah', chapter: 38, verses: { start: 10, end: 20 } }, rgv: { book: 'Isaías', chapter: 38, verses: { start: 10, end: 20 } }, am54: { book: 'ትንቢተ ኢሳይያስ', chapter: '38', verses: { start: 10, end: 20 } } } },
     { key: 'prayerOfManasseh', author: 'Manasseh', name: 'Prayer of King Manasseh | ጸሎተ ምናሴ', verseRange: '(2 Chronicles 36 LXX)', time: 'Tuesday – 3 p.m.', purpose: 'For sickness or trouble in finding missing property or ideas.', refs: { prayerKey: 'Manasseh' } },
     { key: 'prayerOfJonah', author: 'Jonah', name: 'Prayer of Jonah the Prophet | ጸሎተ ዮናስ ነቢይ', verseRange: '(Jonah 2:2–9)', time: 'Wednesday – 9 a.m.', purpose: 'For sickness or trouble in finding missing property or ideas.', refs: { prayerKey: 'Jonah' } },
     { key: 'firstPrayerOfThreeYouths', author: 'Three Youths', name: 'First Prayer of the Three Youths | ጸሎተ ፫ ደቂቅ ቀዳማዊ', verseRange: '(Daniel 3:26–45 LXX)', aka: 'The Prayer/Song of Azarias', time: 'Wednesday – Noon', purpose: 'For protecting oneself and wealth from evil.', refs: { prayerKey: 'ThreeYouths1' } },
     { key: 'secondPrayerOfThreeYouths', author: 'Three Youths', name: 'Second Prayer of the Three Youths | ጸሎተ ፫ ደቂቅ ካልእ', verseRange: '(Daniel 3:52–56 LXX)', aka: 'The Blessing of Ananias, Azarias, and Misael', time: 'Thursday – 9 a.m.', purpose: 'Used during moments of frustration.', refs: { prayerKey: 'ThreeYouths2' } },
     { key: 'thirdPrayerOfThreeYouths', author: 'Three Youths', name: 'Third Prayer of the Three Youths | ጸሎተ ፫ ደቂቅ ሣልስ', verseRange: '(Daniel 3:57–88 LXX)', aka: 'The Song of the Three Holy Children', time: 'Wednesday – 3 p.m.', purpose: 'Used during moments of frustration.', refs: { prayerKey: 'ThreeYouths3' } },
-    { key: 'prayerOfHabakkuk', author: 'Habakkuk', name: 'Prayer of Habakkuk the Prophet | ጸሎተ ዕንባቆም ነቢይ', verseRange: '(Habakkuk 3:1–19)', time: 'Thursday – Noon', purpose: 'For finding missing property or ideas.', refs: { nkjv: { book: 35, bookName: 'Habakkuk', chapter: 3, verses: { start: 1, end: 19 } }, rgv: { book: 'Habacuc', chapter: 3, verses: { start: 1, end: 19 } }, am54: { book: 'ትንቢተ ዕንባቆም', chapter: '3', verses: { start: 1, end: 19 } } } },
-    { key: 'prayerOfIsaiah', author: 'Isaiah', name: 'Prayer of Isaiah the Prophet | ጸሎተ ኢሳይያስ ነቢይ', verseRange: '(Isaiah 26:9–20)', time: 'Thursday – 3 p.m.', purpose: 'For achieving a brighter tomorrow.', refs: { nkjv: { book: 23, bookName: 'Isaiah', chapter: 26, verses: { start: 9, end: 20 } }, rgv: { book: 'Isaías', chapter: 26, verses: { start: 9, end: 20 } }, am54: { book: 'ትንቢተ ኢሳይያስ', chapter: '26', verses: { start: 9, end: 20 } } } },
-    { key: 'prayerOfMary', author: 'Mary', name: 'Prayer of Mary the Bearer of God | ጸሎተ ማርያም ወላዲተ አምላክ', verseRange: '(Luke 1:46–55)', aka: 'The Magnificat', time: 'Friday – 9 a.m.', purpose: 'For those who are grieving.', refs: { nkjv: { book: 42, bookName: 'Luke', chapter: 1, verses: { start: 46, end: 55 } }, rgv: { book: 'Lucas', chapter: 1, verses: { start: 46, end: 55 } }, am54: { book: 'የሉቃስ ወንጌል', chapter: '1', verses: { start: 46, end: 55 } } } },
-    { key: 'songOfZachariah', author: 'Zachariah', name: 'Prayer of Zachariah the Prophet | ጸሎተ ዘካርያስ ነቢይ', verseRange: '(Luke 1:68–79)', aka: 'The Benedictus', time: 'Friday – Noon', purpose: 'For offering a worthy service to God.', refs: { nkjv: { book: 42, bookName: 'Luke', chapter: 1, verses: { start: 68, end: 79 } }, rgv: { book: 'Lucas', chapter: 1, verses: { start: 68, end: 79 } }, am54: { book: 'የሉቃስ ወንጌል', chapter: '1', verses: { start: 68, end: 79 } } } },
-    { key: 'prayerOfSimeon', author: 'Simeon', name: 'Prayer of Simeon the Elder | ጸሎተ ስምዖን አረጋዊ', verseRange: '(Luke 2:29–32)', aka: 'Nunc dimittis', time: 'Friday – 3 p.m.', purpose: 'For building up faith in God.', refs: { nkjv: { book: 42, bookName: 'Luke', chapter: 2, verses: { start: 29, end: 32 } }, rgv: { book: 'Lucas', chapter: 2, verses: { start: 29, end: 32 } }, am54: { book: 'የሉቃስ ወንጌል', chapter: '2', verses: { start: 29, end: 32 } } } },
+    { key: 'prayerOfHabakkuk', author: 'Habakkuk', name: 'Prayer of Habakkuk the Prophet | ጸሎተ ዕንባቆም ነቢይ', verseRange: '(Habakkuk 3:1–19)', time: 'Thursday – Noon', purpose: 'For finding missing property or ideas.', refs: { kjv: { book: 35, bookName: 'Habakkuk', chapter: 3, verses: { start: 1, end: 19 } }, rgv: { book: 'Habacuc', chapter: 3, verses: { start: 1, end: 19 } }, am54: { book: 'ትንቢተ ዕንባቆም', chapter: '3', verses: { start: 1, end: 19 } } } },
+    { key: 'prayerOfIsaiah', author: 'Isaiah', name: 'Prayer of Isaiah the Prophet | ጸሎተ ኢሳይያስ ነቢይ', verseRange: '(Isaiah 26:9–20)', time: 'Thursday – 3 p.m.', purpose: 'For achieving a brighter tomorrow.', refs: { kjv: { book: 23, bookName: 'Isaiah', chapter: 26, verses: { start: 9, end: 20 } }, rgv: { book: 'Isaías', chapter: 26, verses: { start: 9, end: 20 } }, am54: { book: 'ትንቢተ ኢሳይያስ', chapter: '26', verses: { start: 9, end: 20 } } } },
+    { key: 'prayerOfMary', author: 'Mary', name: 'Prayer of Mary the Bearer of God | ጸሎተ ማርያም ወላዲተ አምላክ', verseRange: '(Luke 1:46–55)', aka: 'The Magnificat', time: 'Friday – 9 a.m.', purpose: 'For those who are grieving.', refs: { kjv: { book: 42, bookName: 'Luke', chapter: 1, verses: { start: 46, end: 55 } }, rgv: { book: 'Lucas', chapter: 1, verses: { start: 46, end: 55 } }, am54: { book: 'የሉቃስ ወንጌል', chapter: '1', verses: { start: 46, end: 55 } } } },
+    { key: 'songOfZachariah', author: 'Zachariah', name: 'Prayer of Zachariah the Prophet | ጸሎተ ዘካርያስ ነቢይ', verseRange: '(Luke 1:68–79)', aka: 'The Benedictus', time: 'Friday – Noon', purpose: 'For offering a worthy service to God.', refs: { kjv: { book: 42, bookName: 'Luke', chapter: 1, verses: { start: 68, end: 79 } }, rgv: { book: 'Lucas', chapter: 1, verses: { start: 68, end: 79 } }, am54: { book: 'የሉቃስ ወንጌል', chapter: '1', verses: { start: 68, end: 79 } } } },
+    { key: 'prayerOfSimeon', author: 'Simeon', name: 'Prayer of Simeon the Elder | ጸሎተ ስምዖን አረጋዊ', verseRange: '(Luke 2:29–32)', aka: 'Nunc dimittis', time: 'Friday – 3 p.m.', purpose: 'For building up faith in God.', refs: { kjv: { book: 42, bookName: 'Luke', chapter: 2, verses: { start: 29, end: 32 } }, rgv: { book: 'Lucas', chapter: 2, verses: { start: 29, end: 32 } }, am54: { book: 'የሉቃስ ወንጌል', chapter: '2', verses: { start: 29, end: 32 } } } },
 ];
 
 
@@ -1610,7 +1610,7 @@ async function shareScriptures() {
             const bookCfg = BIBLE_BOOK_MAPPING[lookupName];
             let geezBook = bookCfg ? bookCfg.geez : book;
             
-            const engRef = `${book} ${chapter}:${actualEndVerse} (NKJV)`;
+            const engRef = `${book} ${chapter}:${actualEndVerse} (KJV)`;
             let citationLine = engRef;
             
             let misbak = null;
@@ -1648,10 +1648,11 @@ async function shareScriptures() {
                 }
                 
                 const engTextArray = [];
-                const nkjvBookName = bookCfg ? bookCfg.nkjv : "Psalms";
-                if (bibleData.nkjv) {
+                const englishBible = bibleData.kjv || bibleData.nkjv;
+                const engBookName = bookCfg ? (bookCfg.kjv || bookCfg.nkjv) : 19;
+                if (englishBible) {
                     for (let vNum = startVerse; vNum <= endVerse; vNum++) {
-                        const v = bibleData.nkjv.find(v => v.book === nkjvBookName && v.chapter === chapter && v.verse === vNum);
+                        const v = englishBible.find(v => (v.book === engBookName || v.book === 19 || v.book === "Psalms") && v.chapter === chapter && v.verse === vNum);
                         if (v) {
                             engTextArray.push(String(v.text).replace(/<[^>]+>/g, ''));
                         }
@@ -2227,10 +2228,12 @@ function getBibleVersesFromRef(ref) {
         usedWeahadu = !!(nkjv || am2000 || gez1980 || ti1997);
     }
 
-    // 1. English (NKJV) - Flat list
-    if (!results.english && bookCfg && bibleData.nkjv) {
-        results.english = bibleData.nkjv
-            .filter(v => v.book === bookCfg.nkjv && v.chapter === chapterNum && v.verse >= startVerse && v.verse <= endVerse)
+    // 1. English (KJV) - Flat list
+    const englishBible = bibleData.kjv || bibleData.nkjv;
+    if (!results.english && bookCfg && englishBible) {
+        const engBookId = bookCfg.kjv || bookCfg.nkjv;
+        results.english = englishBible
+            .filter(v => v.book === engBookId && v.chapter === chapterNum && v.verse >= startVerse && v.verse <= endVerse)
             .map(v => ({ verseNum: v.verse, text: v.text }));
     }
 
@@ -2466,10 +2469,11 @@ function getActualVerseCount(bookName, chapterNum) {
     const bookCfg = BIBLE_BOOK_MAPPING[lookupName];
     if (!bookCfg) return null;
 
-    // Try NKJV (flat array)
-    if (bibleData.nkjv) {
-        const nkjvName = bookCfg.nkjv;
-        const chapterVerses = bibleData.nkjv.filter(v => v.book === nkjvName && v.chapter === chapterNum);
+    // Try KJV (flat array)
+    const englishBible = bibleData.kjv || bibleData.nkjv;
+    if (englishBible) {
+        const engName = bookCfg.kjv || bookCfg.nkjv;
+        const chapterVerses = englishBible.filter(v => (v.book === engName || v.book === 19) && v.chapter === chapterNum);
         if (chapterVerses.length > 0) {
             return Math.max(...chapterVerses.map(v => v.verse));
         }
@@ -2620,7 +2624,7 @@ function createLectionaryPicker(containerOrId, lectionaryKey, bookOptions = [], 
         if (lectionaryKey === 'psalm') {
             const nkjvLabel = document.createElement('span');
             nkjvLabel.className = 'psalm-nkjv-label';
-            nkjvLabel.textContent = 'NKJV';
+            nkjvLabel.textContent = 'KJV';
             pickerRow.appendChild(nkjvLabel);
         } else if (bookOptions.length > 1) {
             bookSelect = document.createElement('select');
@@ -3245,7 +3249,7 @@ function formatPrayerText(text, langKey, query, isFirstLanguage, chapter = null,
         } else if (langKey === 'english') {
             // Match leading English superscriptions for Psalms and specific other categories
             // Restricted to verse 1 to avoid misidentifying leading italicized words in later verses
-            // Handles nested <i> tags and stray trailing </i> tags found in some NKJV data
+            // Handles nested <i> tags and stray trailing </i> tags found in some KJV data
             const nkjvSuperscriptionRegex = /^((?:<i>(?:<i>.*?<\/i>|.)*?<\/i>(?:\s*<\/i>)*\s*)+)/;
             if (Number(verseNum) === 1 && nkjvSuperscriptionRegex.test(processedText)) {
                 processedText = processedText.replace(nkjvSuperscriptionRegex, '<span class="psalm-superscription">$1</span><br>' + supTag);
@@ -3288,8 +3292,8 @@ function formatPrayerText(text, langKey, query, isFirstLanguage, chapter = null,
         }).trim();
     }
 
-    // Format standalone Scripture / Psalm headers on top line (e.g. Psalm 33:16-17 (NKJV) or መዝሙር ዘዳዊት ፴፫፥፲፮-፲፯ (ግእዝ፲፱፻፹))
-    const scriptureHeaderRegex = /^\s*(?:<[^>]+>)*\s*((?:Psalm|Psalms|መዝሙር|መዝሙረ|Salmo|Salmos)\s+[^<\n\r]+?\((?:NKJV|OSB|አም\d+|ግእዝ\d+|RVG|VRG|GNT)\))\s*(?:<[^>]+>)*\s*(?:\r?\n|<br\s*\/?>|$)/i;
+    // Format standalone Scripture / Psalm headers on top line (e.g. Psalm 33:16-17 (KJV) or መዝሙር ዘዳዊት ፴፫፥፲፮-፲፯ (ግእዝ፲፱፻፹))
+    const scriptureHeaderRegex = /^\s*(?:<[^>]+>)*\s*((?:Psalm|Psalms|መዝሙር|መዝሙረ|Salmo|Salmos)\s+[^<\n\r]+?\((?:KJV|NKJV|OSB|አም\d+|ግእዝ\d+|RVG|VRG|GNT)\))\s*(?:<[^>]+>)*\s*(?:\r?\n|<br\s*\/?>|$)/i;
     if (scriptureHeaderRegex.test(processedText)) {
         processedText = processedText.replace(scriptureHeaderRegex, (match, headerMatch) => {
             if (displayOptions.showSpeakerLabels) {
@@ -4466,18 +4470,18 @@ function renderSelectedKidase(addSectionTitleCallback) {
                                     if (typical) {
                                         const lxxRange = `${typical.ls}${typical.le !== typical.ls ? '-' + typical.le : ''}`;
                                         const mcRange = `${typical.ms}${typical.me !== typical.ms ? '-' + typical.me : ''}`;
-                                        header = `Mezmure Dawīt ${typical.lc}:${lxxRange} OSB (${typical.mc}:${mcRange} NKJV)`;
+                                        header = `Mezmure Dawīt ${typical.lc}:${lxxRange} OSB (${typical.mc}:${mcRange} KJV)`;
                                     } else {
                                         header = `Mezmure Dawīt ${chapter}:${rangeSuffix} (Ge'ez Phonetic)`;
                                     }
                                 } else if (langKey === 'english') {
-                                    // English Column: Psalm 94:7-8 OSB (95:7-8 NKJV) OR Psalm 12:5 (NKJV)
+                                    // English Column: Psalm 94:7-8 OSB (95:7-8 KJV) OR Psalm 12:5 (KJV)
                                     if (typical) {
                                         const lxxRange = `${typical.ls}${typical.le !== typical.ls ? '-' + typical.le : ''}`;
                                         const mcRange = `${typical.ms}${typical.me !== typical.ms ? '-' + typical.me : ''}`;
-                                        header = `Psalm ${typical.lc}:${lxxRange} OSB (${typical.mc}:${mcRange} NKJV)`;
+                                        header = `Psalm ${typical.lc}:${lxxRange} OSB (${typical.mc}:${mcRange} KJV)`;
                                     } else {
-                                        header = `Psalm ${chapter}:${rangeSuffix} (NKJV)`;
+                                        header = `Psalm ${chapter}:${rangeSuffix} (KJV)`;
                                     }
                                 } else if (bookCfg) {
                                     // Others (Amharic, etc.)
@@ -4545,7 +4549,7 @@ function renderSelectedKidase(addSectionTitleCallback) {
                                                 } else if (langKey === 'amharic_script') {
                                                     header = `${bookCfg.am54} ${range} (አም1954)`;
                                                 } else if (langKey === 'english') {
-                                                    header = `${bookName} ${range} (NKJV)`;
+                                                    header = `${bookName} ${range} (KJV)`;
                                                 } else if (langKey === 'spanish' || langKey === 'spanish_pr') {
                                                     header = `${bookCfg.rgv} ${range} (RVG)`;
                                                 }
@@ -4768,8 +4772,9 @@ async function renderPrayers() {
             if (typeof selectedProphetSongs !== 'undefined') {
                 selectedProphetSongs.forEach(songKey => {
                     const song = typeof prophetSongs !== 'undefined' ? prophetSongs.find(s => s.key === songKey) : null;
-                    if (song && !song.refs?.prayerKey && song.refs?.nkjv) {
-                        const bookName = song.refs.nkjv.bookName || song.refs.nkjv.book;
+                    const engSongRef = song?.refs?.kjv || song?.refs?.nkjv;
+                    if (song && !song.refs?.prayerKey && engSongRef) {
+                        const bookName = engSongRef.bookName || engSongRef.book;
                         refsToPreload.push(`${bookName} 1:1`);
                     }
                 });
@@ -5318,9 +5323,9 @@ function copyPsalm(verse, lxxChapter) {
 
     textToCopy += `፨ ${labelText} ፨\n\n`;
 
-    if (displayedLanguages.english && verse.nkjv) {
+    if (displayedLanguages.english && (verse.kjv || verse.nkjv)) {
         textToCopy += `--- English ---\n`;
-        textToCopy += `[${verse.verseNum}] ${verse.nkjv}\n\n`;
+        textToCopy += `[${verse.verseNum}] ${verse.kjv || verse.nkjv}\n\n`;
     }
     if (displayedLanguages.geez_script && verse.geez_psalms) {
         textToCopy += `--- ግእዝ ---\n`;
@@ -5880,7 +5885,7 @@ async function loadBibleData() {
     };
 
     const results = await Promise.all([
-        loadFile('bible/NKJV_New_King_James_English_Bible_1982AD.json', 'nkjv'),
+        loadFile('bible/KJV_King_James_English_Bible.json', 'kjv'),
         loadFile('bible/አም54_Haile_Selassie_Amharic_Bible_1962AD_1954EC.json', 'am54'),
         loadFile('bible/RGV_Reina_Valera_Gomez_Bible_2010AD.json', 'rgv'),
         loadFile('bible/ግእዝ_Psalms_1-151_with_Songs_of_the_Prophets.json', 'geez_psalms'),
@@ -5888,6 +5893,7 @@ async function loadBibleData() {
         //        loadFile('bible/ግእዝ1988_Psalms_1-150_Geez_Bible_1988AD_1980EC_Corrected_Formatted.json', 'geez_psalms')
     ]);
 
+    if (bibleData.kjv && !bibleData.nkjv) bibleData.nkjv = bibleData.kjv;
     if (results.some(res => res === true)) {
         bibleData.loaded = true;
         refreshLectionaryPickers(); // Sync all pickers with actual counts
@@ -6079,14 +6085,15 @@ function renderSelectedPsalmsWithDoxology(addSectionTitleCallback) {
         return Array.isArray(data) ? data : [];
     };
 
-    const nkjvVersesAll = getVerses(bibleData.nkjv, false);
+    const nkjvVersesAll = getVerses(bibleData.kjv || bibleData.nkjv, false);
     const am54VersesAll = getVerses(bibleData.am54, true);
     const rgvVersesAll = getVerses(bibleData.rgv, true);
     const geezPsalmsAll = getVerses(bibleData.geez_psalms, true);
     const copticPsalmsAll = getVerses(bibleData.coptic, true);
 
     const psalmBookData = {
-        nkjv: { name: 19, bookKey: 'book' },
+        kjv: { name: 19, bookKey: "book" },
+        nkjv: { name: 19, bookKey: "book" },
         am54: { name: 'መዝሙረ ዳዊት', bookKey: 'book' },
         rgv: { name: 'Salmos', bookKey: 'book_name' }
     };
@@ -6186,7 +6193,7 @@ function renderSelectedPsalmsWithDoxology(addSectionTitleCallback) {
 
             if (lxxChapter !== 151) {
                 const nkjvVerse = findVerse(nkjvPsalms.filter(v => v.chapter == mtChapter), mtVerseNum);
-                if (nkjvVerse) verseData.nkjv = nkjvVerse.text;
+                if (nkjvVerse) { verseData.nkjv = nkjvVerse.text; verseData.kjv = nkjvVerse.text; }
 
                 const rgvVerse = findVerse(rgvPsalms.filter(v => v.chapter == mtChapter), mtVerseNum);
                 if (rgvVerse) verseData.rgv = rgvVerse.text;
@@ -6426,11 +6433,12 @@ function renderSelectedProphetSongs(addSectionTitleCallback) {
         } else if (bibleData.loaded) {
             // This is a song from the Bible, requires fetching verses
             let allVerses = [];
-            const nkjvRef = song.refs.nkjv;
+            const nkjvRef = song.refs.kjv || song.refs.nkjv;
             const rgvRef = song.refs.rgv;
             const am54Ref = song.refs.am54;
 
-            let nkjvVerses = bibleData.nkjv ? bibleData.nkjv.filter(v => {
+            const englishBible = bibleData.kjv || bibleData.nkjv;
+            let nkjvVerses = englishBible ? englishBible.filter(v => {
                 if (!nkjvRef) return false;
                 if (nkjvRef.chapters) {
                     return v.book === nkjvRef.book && nkjvRef.chapters.includes(v.chapter);
@@ -6604,9 +6612,11 @@ function getSeatatBibleVerses(bookKey, chapter, rangeString, customEnglish = nul
 
         const { mtChapter, mtVerse } = (bookKey === 'Psalms') ? getMtFromLxx(chapter, vNum) : { mtChapter: chapter, mtVerse: vNum };
 
-        // NKJV
-        if (bibleData.nkjv) {
-            const v = bibleData.nkjv.find(v => v.book === mapping.nkjv && v.chapter === mtChapter && v.verse === mtVerse);
+        // KJV
+        const englishBible = bibleData.kjv || bibleData.nkjv;
+        if (englishBible) {
+            const engBookId = mapping.kjv || mapping.nkjv;
+            const v = englishBible.find(v => (v.book === engBookId || v.book === 19) && v.chapter === mtChapter && v.verse === mtVerse);
             if (v) verseObj.english = v.text;
         }
 
@@ -6945,7 +6955,7 @@ showTeklilToggle.addEventListener('change', () => {
     
     if (showTeklil) {
         // Default Matins lectionary when Teklil is toggled ON
-        kidaseLectionaryRefs.morningPsalm = 'Psalms 19:5-5'; // 18:5 in Orthodox is 19:5 in NKJV
+        kidaseLectionaryRefs.morningPsalm = 'Psalms 19:5-5'; // 18:5 in Orthodox is 19:5 in KJV
         kidaseLectionaryRefs.morningGospel = 'Matthew 9:1-13';
         
         // Re-initialize pickers to update the UI with new defaults
@@ -7780,7 +7790,7 @@ function renderTypicalPsalmsModal() {
                     <span class="typical-psalm-geez ethiopic-label">${gDisplay}</span>
                 </div>
                 <div class="typical-psalm-right">
-                    <span class="typical-psalm-ref-nkjv">${masoretic} NKJV</span>
+                    <span class="typical-psalm-ref-nkjv">${masoretic} KJV</span>
                     <span class="typical-psalm-ref-lxx">${lxx} OSB</span>
                     <span class="typical-psalm-ref-geez ethiopic-label">${geezLxx} ግእዝ</span>
                 </div>

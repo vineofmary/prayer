@@ -204,8 +204,35 @@
                             <label title="Show original Greek/Coptic forms in Ge'ez loanwords."><input
                                     type="checkbox" id="show-loanword-origins"> <span>Show Loanword Origins
                                     (Beta)</span></label>
-                            <label id="external-bible-api-label" title="Use the locally bundled 80 Weahadu Bible translations for Kidase and Psalms."><input
-                                    type="checkbox" id="use-external-bible-api"> <span>EOTCOpenSource Bible Translations</span></label>
+                            <div class="bible-translations-container" style="margin-top: 0.75rem; border-top: 1px solid var(--border-color); padding-top: 0.75rem;">
+                                <h4 class="settings-subtitle" style="margin-bottom: 0.5rem; font-weight: 600;">Bible Translations | ቅዱሳት መጻሕፍት ትርጉማት</h4>
+                                <label id="external-bible-api-label" style="display: none;"><input type="checkbox" id="use-external-bible-api" checked> <span>EOTCOpenSource Bible Translations</span></label>
+                                
+                                <div class="bible-setting-row" style="margin-bottom: 0.6rem;">
+                                    <label style="font-size: 0.85rem; font-weight: 500; display: block; margin-bottom: 0.2rem;">English</label>
+                                    <div style="display: flex; align-items: center; gap: 0.4rem;">
+                                        <input type="checkbox" id="bible-trans-en-kjv" checked disabled style="cursor: not-allowed;">
+                                        <span style="font-size: 0.82rem; opacity: 0.9;">King James Version (KJV) <span style="font-size: 0.72rem; opacity: 0.65;">• Public Domain</span></span>
+                                    </div>
+                                </div>
+
+                                <div class="bible-setting-row" style="margin-bottom: 0.6rem;">
+                                    <label for="global-amharic-translation-select" style="font-size: 0.85rem; font-weight: 500; display: block; margin-bottom: 0.2rem;">Amharic | አማርኛ</label>
+                                    <select id="global-amharic-translation-select" class="settings-select" style="width: 100%; font-size: 0.85rem;">
+                                        <option value="am-2000">AM 2000 | ሰማንያ አሐዱ የ2000 ዓ.ም</option>
+                                        <option value="am54">AM 1954 | ቀዳማዊ ኃይለ ሥላሴ 1954 ዓ.ም</option>
+                                    </select>
+                                </div>
+
+                                <div class="bible-setting-row" style="margin-bottom: 0.6rem;">
+                                    <label for="global-geez-translation-select" style="font-size: 0.85rem; font-weight: 500; display: block; margin-bottom: 0.2rem;">Ancient Ethiopic | ግእዝ</label>
+                                    <select id="global-geez-translation-select" class="settings-select" style="width: 100%; font-size: 0.85rem;">
+                                        <option value="gez-1980">Ge'ez 1980 | መጽሐፍ ቅዱስ በግእዝ 1980 ዓ.ም</option>
+                                        <option value="gez-2014">Ge'ez 2014 | መጽሐፍ ቅዱስ በግእዝ 2014 ዓ.ም (NT)</option>
+                                        <option value="gez-1988-formatted">Ge'ez 1980 (Formatted) | ግእዝ 1980 ዓ.ም (Formatted)</option>
+                                    </select>
+                                </div>
+                            </div>
                         </div>
                         <h4 class="settings-subtitle">Slide Transition</h4>
                         <select id="slide-transition-select">
@@ -290,7 +317,7 @@
                             style="display: none; margin-bottom: 1rem; margin-left: 1rem; border-left: 1px solid var(--border-color); padding-left: 0.5rem;">
                             <div class="kidase-lectionary-item" style="margin-top: 0.5rem;">
                                 <h5 class="settings-subtitle clickable-reading-title"
-                                    data-reading-target="eveningPsalm">Evening Psalm (NKJV) | ምስባክ ዘሠርክ</h5>
+                                    data-reading-target="eveningPsalm">Evening Psalm (KJV) | ምስባክ ዘሠርክ</h5>
                                 <div id="evening-psalm-ref-container" class="lectionary-picker-container"></div>
                             </div>
                             <hr class="lectionary-separator">
@@ -358,7 +385,7 @@
                             style="display: none; margin-bottom: 1rem; margin-left: 1rem; border-left: 1px solid var(--border-color); padding-left: 0.5rem;">
                             <div class="kidase-lectionary-item" style="margin-top: 0.5rem;">
                                 <h5 class="settings-subtitle clickable-reading-title"
-                                    data-reading-target="morningPsalm">Morning Psalm (NKJV) | ምስባክ ዘነግህ</h5>
+                                    data-reading-target="morningPsalm">Morning Psalm (KJV) | ምስባክ ዘነግህ</h5>
                                 <div id="morning-psalm-ref-container" class="lectionary-picker-container"></div>
                             </div>
                             <hr class="lectionary-separator">
@@ -395,7 +422,7 @@
                             <hr class="lectionary-separator">
                             <div class="kidase-lectionary-item">
                                 <h5 class="settings-subtitle clickable-reading-title" data-reading-target="psalm">
-                                    Liturgy Psalm (NKJV) | ምስባክ ዘቅዳሴ</h5>
+                                    Liturgy Psalm (KJV) | ምስባክ ዘቅዳሴ</h5>
                                 <div id="kidase-psalm-ref-container" class="lectionary-picker-container"></div>
                             </div>
                             <hr class="lectionary-separator">

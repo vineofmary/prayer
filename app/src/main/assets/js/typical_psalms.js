@@ -6,9 +6,9 @@
  * Legend for abbreviations in each psalm entry:
  * - p:  Phonetic / Transliteration (Ge'ez in Latin characters) incipit
  * - g:  Ge'ez script full text
- * - mc: Masoretic Chapter (Modern / Western / NKJV psalm chapter)
- * - ms: Masoretic Start Verse (Modern / Western / NKJV start verse)
- * - me: Masoretic End Verse (Modern / Western / NKJV end verse)
+ * - mc: Masoretic Chapter (Modern / Western / KJV psalm chapter)
+ * - ms: Masoretic Start Verse (Modern / Western / KJV start verse)
+ * - me: Masoretic End Verse (Modern / Western / KJV end verse)
  * - lc: Liturgical Chapter (LXX / Septuagint / Orthodox Tewahedo psalm chapter)
  * - ls: Liturgical Start Verse (LXX / Septuagint / Orthodox Tewahedo start verse)
  * - le: Liturgical End Verse (LXX / Septuagint / Orthodox Tewahedo end verse)

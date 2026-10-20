@@ -17,7 +17,7 @@ const urlsToCache = [
   './js/script.js?v=36',
   './icons/icon-192x192.png',
   './icons/icon-512x512.png',
-  './bible/NKJV_New_King_James_English_Bible_1982AD.json',
+  './bible/KJV_King_James_English_Bible.json',
   './bible/አም54_Haile_Selassie_Amharic_Bible_1962AD_1954EC.json',
   './bible/RGV_Reina_Valera_Gomez_Bible_2010AD.json',
   './bible/ግእዝ_Psalms_1-151_with_Songs_of_the_Prophets.json',

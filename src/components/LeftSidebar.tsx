@@ -115,9 +115,37 @@ export const LeftSidebar: React.FC = () => {
             <label title="Show original Greek/Coptic forms in Ge'ez loanwords.">
               <input type="checkbox" id="show-loanword-origins" /> <span>Show Loanword Origins (Beta)</span>
             </label>
-            <label id="external-bible-api-label" title="Use the locally bundled 80 Weahadu Bible translations for Kidase and Psalms.">
-              <input type="checkbox" id="use-external-bible-api" /> <span>EOTCOpenSource Bible Translations</span>
-            </label>
+            <div className="bible-translations-container" style={{ marginTop: '0.75rem', borderTop: '1px solid var(--border-color)', paddingTop: '0.75rem' }}>
+              <h4 className="settings-subtitle" style={{ marginBottom: '0.5rem', fontWeight: 600 }}>Bible Translations | ቅዱሳት መጻሕፍት ትርጉማት</h4>
+              <label id="external-bible-api-label" style={{ display: 'none' }}>
+                <input type="checkbox" id="use-external-bible-api" defaultChecked /> <span>EOTCOpenSource Bible Translations</span>
+              </label>
+
+              <div className="bible-setting-row" style={{ marginBottom: '0.6rem' }}>
+                <label style={{ fontSize: '0.85rem', fontWeight: 500, display: 'block', marginBottom: '0.2rem' }}>English</label>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                  <input type="checkbox" id="bible-trans-en-kjv" defaultChecked disabled style={{ cursor: 'not-allowed' }} />
+                  <span style={{ fontSize: '0.82rem', opacity: 0.9 }}>King James Version (KJV) <span style={{ fontSize: '0.72rem', opacity: 0.65 }}>• Public Domain</span></span>
+                </div>
+              </div>
+
+              <div className="bible-setting-row" style={{ marginBottom: '0.6rem' }}>
+                <label htmlFor="global-amharic-translation-select" style={{ fontSize: '0.85rem', fontWeight: 500, display: 'block', marginBottom: '0.2rem' }}>Amharic | አማርኛ</label>
+                <select id="global-amharic-translation-select" className="settings-select" style={{ width: '100%', fontSize: '0.85rem' }}>
+                  <option value="am-2000">AM 2000 | ሰማንያ አሐዱ የ2000 ዓ.ም</option>
+                  <option value="am54">AM 1954 | ቀዳማዊ ኃይለ ሥላሴ 1954 ዓ.ም</option>
+                </select>
+              </div>
+
+              <div className="bible-setting-row" style={{ marginBottom: '0.6rem' }}>
+                <label htmlFor="global-geez-translation-select" style={{ fontSize: '0.85rem', fontWeight: 500, display: 'block', marginBottom: '0.2rem' }}>Ancient Ethiopic | ግእዝ</label>
+                <select id="global-geez-translation-select" className="settings-select" style={{ width: '100%', fontSize: '0.85rem' }}>
+                  <option value="gez-1980">Ge'ez 1980 | መጽሐፍ ቅዱስ በግእዝ 1980 ዓ.ም</option>
+                  <option value="gez-2014">Ge'ez 2014 | መጽሐፍ ቅዱስ በግእዝ 2014 ዓ.ም (NT)</option>
+                  <option value="gez-1988-formatted">Ge'ez 1980 (Formatted) | ግእዝ 1980 ዓ.ም (Formatted)</option>
+                </select>
+              </div>
+            </div>
           </div>
           <h4 className="settings-subtitle">Slide Transition</h4>
           <select id="slide-transition-select" defaultValue="slide" aria-label="Slide Transition">

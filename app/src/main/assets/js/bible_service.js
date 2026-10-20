@@ -22,11 +22,72 @@ const WeahaduBibleService = {
 
     async fetchBook(edition, bookName) {
         await this.init();
-        const bookFile = this.getBookFile(bookName);
+        let bName = (bookName === 'Psalm') ? 'Psalms' : bookName;
+        const bookFile = this.getBookFile(bName);
         if (!bookFile) return null;
 
         const cacheKey = `${edition}-${bookFile}`;
         if (this.cache.has(cacheKey)) return this.cache.get(cacheKey);
+
+        // Special handling for Formatted Ge'ez Psalms
+        if (edition === 'gez-1988-formatted') {
+            if (bName === 'Psalms') {
+                try {
+                    const response = await fetch('bible/ግእዝ1988_Psalms_1-150_Geez_Bible_1988AD_1980EC_Corrected_Formatted.json');
+                    if (response.ok) {
+                        const raw = await response.json();
+                        const formattedData = {
+                            edition: 'gez-1988-formatted',
+                            book: 'PSA',
+                            chapters: raw.map(item => ({
+                                n: item.id,
+                                verses: (item.verses || []).map(v => ({ n: v.verse_number, t: v.text }))
+                            }))
+                        };
+                        this.cache.set(cacheKey, formattedData);
+                        return formattedData;
+                    }
+                } catch (err) {
+                    console.error("Failed to fetch formatted Ge'ez Psalms, falling back to gez-1980:", err);
+                }
+            }
+            // Fallback to gez-1980 for other books
+            const fallback = await this.fetchBook('gez-1980', bName);
+            if (fallback) {
+                this.cache.set(cacheKey, fallback);
+                return fallback;
+            }
+        }
+
+        // Special handling for Haile Selassie 1954 Amharic (am54)
+        if (edition === 'am54') {
+            try {
+                let am54Raw = (window.bibleData && window.bibleData.am54) ? window.bibleData.am54 : null;
+                if (!am54Raw) {
+                    const response = await fetch('bible/አም54_Haile_Selassie_Amharic_Bible_1962AD_1954EC.json');
+                    if (response.ok) am54Raw = await response.json();
+                }
+                if (am54Raw && am54Raw.books) {
+                    const bookCfg = (typeof BIBLE_BOOK_MAPPING !== 'undefined') ? BIBLE_BOOK_MAPPING[bName] : null;
+                    const amTitle = bookCfg ? bookCfg.am54 : bName;
+                    const bookObj = am54Raw.books.find(b => b.title === amTitle);
+                    if (bookObj && bookObj.chapters) {
+                        const am54Data = {
+                            edition: 'am54',
+                            book: bName,
+                            chapters: bookObj.chapters.map(c => ({
+                                n: c.chapter,
+                                verses: (c.verses || []).map((t, idx) => ({ n: idx + 1, t: t }))
+                            }))
+                        };
+                        this.cache.set(cacheKey, am54Data);
+                        return am54Data;
+                    }
+                }
+            } catch (err) {
+                console.error("Failed to fetch am54 book, falling back:", err);
+            }
+        }
 
         try {
             const response = await fetch(`bible/${edition}/books/${bookFile}`);
@@ -82,10 +143,15 @@ const WeahaduBibleService = {
         if (!bookFile) return null;
         
         const cacheKey = `${edition}-${bookFile}`;
-        const bookData = this.cache.get(cacheKey);
-        if (!bookData || !bookData.chapters) return null;
+        let bookData = this.cache.get(cacheKey);
 
-        const chapterData = bookData.chapters.find(c => c.n === ref.chapter);
+        // Fallback for gez-1988-formatted non-psalms
+        if (!bookData && edition === 'gez-1988-formatted') {
+            bookData = this.cache.get(`gez-1980-${bookFile}`);
+        }
+        if (!bookData) return null;
+
+        const chapterData = bookData.chapters ? bookData.chapters.find(c => c.n === ref.chapter) : null;
         if (!chapterData || !chapterData.verses) return null;
 
         return chapterData.verses

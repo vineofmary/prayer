@@ -1111,7 +1111,7 @@ Líder: Ante el trono de Nuestro Señor.
   },
   {
     "instruction": ``,
-    "reference": `Monday Praise of Mary. Isaiah 9:6 NKJV (9:5 OSB)`,
+    "reference": `Monday Praise of Mary. Isaiah 9:6 KJV (9:5 OSB)`,
     "chapter": `Mon`,
     "stanza": `4`,
     "english": `፨ Reader: Isaiah the prophet saw, through the spirit of prophecy, the mystery of Emmanuel,`,
@@ -1125,7 +1125,7 @@ Líder: Ante el trono de Nuestro Señor.
   },
   {
     "instruction": ``,
-    "reference": `Monday Praise of Mary. Isaiah 9:6 NKJV (9:5 OSB)`,
+    "reference": `Monday Praise of Mary. Isaiah 9:6 KJV (9:5 OSB)`,
     "chapter": `Mon`,
     "stanza": `4`,
     "english": `and therefore he cried out saying, “unto us a Child is born, unto us a Son is given.” O holy one (Mary), pray for us.`,

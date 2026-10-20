@@ -117,7 +117,7 @@ const ICON_METADATA = {
         originalImage: [
             'img/Magdala-17th-century-kidane-mihret-original-unedited.png'
         ],
-        bibleReferences: ['Psalm 44:11-12 LXX (45:10-11 NKJV)'],
+        bibleReferences: ['Psalm 44:11-12 LXX (45:10-11 KJV)'],
         source: 'British Library, "Orient" Collection, Manuscript No. 641 (f. 15r). King Tewodros’s Royal Library, Magdala.',
         link: 'https://pemm.princeton.edu/en-us/paintings/BLorient641_657'
     }
