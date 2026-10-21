@@ -2082,6 +2082,7 @@ function checkAndEnforceLayoutRules() {
 
 
 function updateLayoutToggleIcon() {
+    if (!layoutIconColumn || !layoutIconRow) return;
     const isRowLayout = displayOptions.layout === 'row';
     if (isRowLayout) {
         layoutIconColumn.style.display = 'none';
@@ -2089,6 +2090,10 @@ function updateLayoutToggleIcon() {
     } else {
         layoutIconColumn.style.display = 'block';
         layoutIconRow.style.display = 'none';
+    }
+    const labelEl = document.getElementById('layout-toggle-label');
+    if (labelEl) {
+        labelEl.textContent = isRowLayout ? 'Layout: Row (Click for Column)' : 'Layout: Column (Click for Row)';
     }
 }
 

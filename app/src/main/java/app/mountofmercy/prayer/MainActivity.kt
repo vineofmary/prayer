@@ -1,13 +1,18 @@
 package app.mountofmercy.prayer
 
+import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.view.WindowManager
 import android.webkit.ConsoleMessage
+import android.webkit.JavascriptInterface
 import android.webkit.MimeTypeMap
+import android.webkit.PermissionRequest
 import android.webkit.WebChromeClient
 import android.webkit.WebResourceRequest
 import android.webkit.WebResourceResponse
@@ -15,7 +20,9 @@ import android.webkit.WebSettings
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.activity.OnBackPressedCallback
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import java.io.ByteArrayInputStream
@@ -25,7 +32,7 @@ import java.io.ByteArrayInputStream
  *
  * Hosts the full, authentic liturgical web application from local assets with 100% precision.
  * Preserves all prayers, Ge'ez, Amharic, Tigrinya, English, and Puerto Rican Spanish scriptures,
- * audio chants, rubrics, dark/traditional themes, presentation modes, and search.
+ * audio chants, rubrics, dark/traditional themes, presentation modes, search, and Targuma live captioning.
  *
  * Correctly applies window insets to avoid overlapping with status bar, clock, battery indicator,
  * camera cutout, or system navigation bars.
@@ -33,6 +40,29 @@ import java.io.ByteArrayInputStream
 class MainActivity : AppCompatActivity() {
 
     private lateinit var webView: WebView
+    private var pendingWebPermissionRequest: PermissionRequest? = null
+
+    private val requestAudioPermissionLauncher = registerForActivityResult(
+        ActivityResultContracts.RequestPermission()
+    ) { isGranted: Boolean ->
+        val request = pendingWebPermissionRequest
+        pendingWebPermissionRequest = null
+        if (request != null) {
+            if (isGranted) {
+                request.grant(request.resources)
+            } else {
+                request.deny()
+            }
+        }
+        if (::webView.isInitialized) {
+            webView.post {
+                webView.evaluateJavascript(
+                    "window.onAndroidAudioPermissionResult && window.onAndroidAudioPermissionResult($isGranted);",
+                    null
+                )
+            }
+        }
+    }
 
     companion object {
         private const val ASSET_HOST = "appassets.androidplatform.net"
@@ -137,6 +167,49 @@ class MainActivity : AppCompatActivity() {
         // Hardware acceleration
         webView.setLayerType(View.LAYER_TYPE_HARDWARE, null)
 
+        // Expose native Targuma helper bridge (keeping screen awake & runtime audio permission helper)
+        webView.addJavascriptInterface(object {
+            @Suppress("unused")
+            @JavascriptInterface
+            fun setKeepScreenOn(keepOn: Boolean) {
+                runOnUiThread {
+                    if (keepOn) {
+                        window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
+                    } else {
+                        window.clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
+                    }
+                }
+            }
+
+            @Suppress("unused")
+            @JavascriptInterface
+            fun hasAudioPermission(): Boolean {
+                return ContextCompat.checkSelfPermission(
+                    this@MainActivity,
+                    Manifest.permission.RECORD_AUDIO
+                ) == PackageManager.PERMISSION_GRANTED
+            }
+
+            @Suppress("unused")
+            @JavascriptInterface
+            fun requestAudioPermission() {
+                runOnUiThread {
+                    if (ContextCompat.checkSelfPermission(
+                            this@MainActivity,
+                            Manifest.permission.RECORD_AUDIO
+                        ) == PackageManager.PERMISSION_GRANTED
+                    ) {
+                        webView.evaluateJavascript(
+                            "window.onAndroidAudioPermissionResult && window.onAndroidAudioPermissionResult(true);",
+                            null
+                        )
+                    } else {
+                        requestAudioPermissionLauncher.launch(Manifest.permission.RECORD_AUDIO)
+                    }
+                }
+            }
+        }, "AndroidTargumaBridge")
+
         // Serve bundled assets over virtual HTTPS origin and delegate external links
         webView.webViewClient = object : WebViewClient() {
             override fun shouldInterceptRequest(
@@ -194,6 +267,27 @@ class MainActivity : AppCompatActivity() {
         }
 
         webView.webChromeClient = object : WebChromeClient() {
+            override fun onPermissionRequest(request: PermissionRequest?) {
+                if (request == null) return
+                val wantsAudio = request.resources.contains(PermissionRequest.RESOURCE_AUDIO_CAPTURE)
+                if (wantsAudio) {
+                    runOnUiThread {
+                        if (ContextCompat.checkSelfPermission(
+                                this@MainActivity,
+                                Manifest.permission.RECORD_AUDIO
+                            ) == PackageManager.PERMISSION_GRANTED
+                        ) {
+                            request.grant(request.resources)
+                        } else {
+                            pendingWebPermissionRequest = request
+                            requestAudioPermissionLauncher.launch(Manifest.permission.RECORD_AUDIO)
+                        }
+                    }
+                } else {
+                    super.onPermissionRequest(request)
+                }
+            }
+
             override fun onConsoleMessage(consoleMessage: ConsoleMessage?): Boolean {
                 consoleMessage?.let { msg ->
                     val formatted = "[${msg.sourceId()}:${msg.lineNumber()}] ${msg.message()}"
