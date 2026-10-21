@@ -52,6 +52,22 @@ export const LeftSidebar: React.FC = () => {
           <label style={{ marginTop: '1rem', display: 'block' }}>
             <input type="checkbox" id="show-language-labels" /> <span>Language Labels</span>
           </label>
+          <button
+            type="button"
+            id="layout-toggle-header"
+            className="settings-button sidebar-layout-toggle-btn"
+            title="Toggle Row/Column Layout"
+            aria-label="Toggle Row/Column Layout"
+            style={{ marginTop: '0.65rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}
+          >
+            <svg className="layout-icon-column" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+              <path d="M4 18h17v-2H4v2zM4 13h17v-2H4v2zM4 6v2h17V6H4z" />
+            </svg>
+            <svg className="layout-icon-row" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20" style={{ display: 'none' }}>
+              <path d="M11 18h2v-2h-2v2zm-4 0h2v-2H7v2zm8 0h2v-2h-2v2zm-8-4h2v-2H7v2zm4 0h2v-2h-2v2zm4 0h2v-2h-2v2zm-8-4h2V8H7v2zm4 0h2V8h-2v2zm4 0h2V8h-2v2zM7 6h2V4H7v2zm4 0h2V4h-2v2zm4 0h2V4h-2v2z" />
+            </svg>
+            <span id="layout-toggle-label">Toggle Row/Column Layout</span>
+          </button>
         </div>
 
         <div className="setting-group">
