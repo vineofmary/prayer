@@ -2614,7 +2614,7 @@ function getActualVerseCount(bookName, chapterNum) {
     const englishBible = bibleData.kjv || bibleData.nkjv;
     if (englishBible) {
         const engName = bookCfg.kjv || bookCfg.nkjv;
-        const chapterVerses = englishBible.filter(v => (v.book === engName || v.book === 19) && v.chapter === chapterNum);
+        const chapterVerses = englishBible.filter(v => v.book === engName && v.chapter === chapterNum);
         if (chapterVerses.length > 0) {
             return Math.max(...chapterVerses.map(v => v.verse));
         }
@@ -7093,7 +7093,7 @@ function getSeatatBibleVerses(bookKey, chapter, rangeString, customEnglish = nul
         const englishBible = (engOverride === 'kjv' ? bibleData.kjv : bibleData.nkjv) || bibleData.nkjv || bibleData.kjv;
         if (englishBible) {
             const engBookId = mapping[engOverride] || mapping.nkjv || mapping.kjv;
-            const v = englishBible.find(v => (v.book === engBookId || v.book === 19) && v.chapter === mtChapter && v.verse === mtVerse);
+            const v = englishBible.find(v => v.book === engBookId && v.chapter === mtChapter && v.verse === mtVerse);
             if (v) verseObj.english = v.text;
         }
 
