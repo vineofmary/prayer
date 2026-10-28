@@ -493,6 +493,7 @@ function getDefaultReadingTranslationOverrides(amDefault = 'am-2000', gezDefault
 }
 let readingTranslationOverrides = getDefaultReadingTranslationOverrides();
 let isInitializing = true;
+let bulkUpdatingSettings = false;
 let kidaseLectionaryRefs = {
     morningPsalm: 'Psalms 34:7-8',
     morningGospel: 'Matthew 24:30-36',
@@ -1982,7 +1983,8 @@ async function loadSettings() {
         selectedAnaphora = localStorage.getItem('selectedAnaphora') || defaultSettings.selectedAnaphora;
         showSeatatReadings = localStorage.getItem('showSeatatReadings') === 'true';
         showMatins = localStorage.getItem('showMatins') !== null ? localStorage.getItem('showMatins') === 'true' : defaultSettings.showMatins;
-        useExternalBibleAPI = localStorage.getItem('useExternalBibleAPI') !== null ? localStorage.getItem('useExternalBibleAPI') === 'true' : defaultSettings.useExternalBibleAPI;
+        useExternalBibleAPI = true;
+        localStorage.setItem('useExternalBibleAPI', 'true');
         const savedGlobalEng = localStorage.getItem('globalEnglishTranslation');
         globalEnglishTranslation = (savedGlobalEng === 'kjv' || savedGlobalEng === 'nkjv') ? savedGlobalEng : defaultSettings.globalEnglishTranslation;
         globalAmharicTranslation = localStorage.getItem('globalAmharicTranslation') || defaultSettings.globalAmharicTranslation;
@@ -2427,6 +2429,13 @@ function getBibleVersesFromRef(ref, readingKey = null) {
                 .filter(v => v.verse_number >= lxxStartV && v.verse_number <= lxxEndV)
                 .map(v => ({ verseNum: v.verse_number, text: v.text }));
         }
+    }
+
+    if (results.geez_script && !results.geez_phonetic && typeof transliterateGeezToPhonetic === 'function') {
+        results.geez_phonetic = results.geez_script.map(v => ({
+            verseNum: v.verseNum,
+            text: transliterateGeezToPhonetic(v.text)
+        }));
     }
 
     return results;
@@ -5120,6 +5129,15 @@ async function renderPrayers() {
             for (const key in kidaseLectionaryRefs) {
                 refsToPreload.push(kidaseLectionaryRefs[key]);
             }
+            if (showTeklil) {
+                refsToPreload.push('Ephesians 5:25-33');
+            }
+            if (showSeatatReadings && selectedSeatatLectionaryDay && typeof SEATAT_LECTIONARY_DATA !== 'undefined' && SEATAT_LECTIONARY_DATA[selectedSeatatLectionaryDay]) {
+                SEATAT_LECTIONARY_DATA[selectedSeatatLectionaryDay].forEach(r => {
+                    if (r.book && r.chapter) refsToPreload.push(`${r.book} ${r.chapter}:1`);
+                    if (r.extra && r.extra.book && r.extra.chapter) refsToPreload.push(`${r.extra.book} ${r.extra.chapter}:1`);
+                });
+            }
             if (typeof selectedProphetSongs !== 'undefined') {
                 selectedProphetSongs.forEach(songKey => {
                     const song = typeof prophetSongs !== 'undefined' ? prophetSongs.find(s => s.key === songKey) : null;
@@ -7071,6 +7089,8 @@ function getSeatatBibleVerses(bookKey, chapter, rangeString, customEnglish = nul
 
     const verseResults = [];
     const engOverride = getReadingTranslationOverride(readingKey, 'english');
+    const amOverride = getReadingTranslationOverride(readingKey, 'amharic');
+    const geezOverride = getReadingTranslationOverride(readingKey, 'geez');
 
     for (let vNum = startVerse; vNum <= endVerse; vNum++) {
         const verseObj = {
@@ -7082,23 +7102,44 @@ function getSeatatBibleVerses(bookKey, chapter, rangeString, customEnglish = nul
             amharic_script: '',
             spanish: '',
             spanish_pr: '',
-            geez_script: '', // Usually empty for NT
+            geez_script: '',
             coptic: '',
             tigrinya_script: ''
         };
 
         const { mtChapter, mtVerse } = (bookKey === 'Psalms') ? getMtFromLxx(chapter, vNum) : { mtChapter: chapter, mtVerse: vNum };
 
+        if (useExternalBibleAPI && window.WeahaduBibleService && WeahaduBibleService.canon) {
+            const refStr = `${bookKey} ${mtChapter}:${mtVerse}`;
+            const lxxRefStr = `${bookKey} ${chapter}:${vNum}`;
+            if (engOverride === 'kjv') {
+                const kjvV = WeahaduBibleService.getVersesSync('en-kjv', refStr);
+                if (kjvV && kjvV[0]) verseObj.english = kjvV[0].t;
+            }
+            const amRef = (bookKey === 'Psalms' && amOverride !== 'am54') ? lxxRefStr : refStr;
+            const amV = WeahaduBibleService.getVersesSync(amOverride, amRef);
+            if (amV && amV[0]) verseObj.amharic_script = amV[0].t;
+
+            if (bookKey !== 'Psalms') {
+                const gezEdition = (geezOverride === 'gez-2014' || geezOverride === 'gez-1980') ? geezOverride : (globalGeezTranslation || 'gez-1980');
+                const gezV = WeahaduBibleService.getVersesSync(gezEdition, refStr);
+                if (gezV && gezV[0]) verseObj.geez_script = gezV[0].t;
+            }
+
+            const tiV = WeahaduBibleService.getVersesSync('ti-1997', refStr);
+            if (tiV && tiV[0]) verseObj.tigrinya_script = tiV[0].t;
+        }
+
         // English (NKJV default or KJV)
         const englishBible = (engOverride === 'kjv' ? bibleData.kjv : bibleData.nkjv) || bibleData.nkjv || bibleData.kjv;
-        if (englishBible) {
+        if (!verseObj.english && englishBible) {
             const engBookId = mapping[engOverride] || mapping.nkjv || mapping.kjv;
             const v = englishBible.find(v => v.book === engBookId && v.chapter === mtChapter && v.verse === mtVerse);
             if (v) verseObj.english = v.text;
         }
 
         // AM54
-        if (bibleData.am54 && bibleData.am54.books) {
+        if (!verseObj.amharic_script && bibleData.am54 && bibleData.am54.books) {
             const book = bibleData.am54.books.find(b => b.title === mapping.am54);
             if (book && book.chapters) {
                 const ch = book.chapters.find(c => Number(c.chapter) === mtChapter);
@@ -7172,7 +7213,7 @@ function getSeatatBibleVerses(bookKey, chapter, rangeString, customEnglish = nul
             }
         }
 
-        if (verseObj.english || verseObj.amharic_script || verseObj.spanish || verseObj.spanish_pr) {
+        if (verseObj.english || verseObj.amharic_script || verseObj.geez_script || verseObj.tigrinya_script || verseObj.spanish || verseObj.spanish_pr) {
             verseResults.push(verseObj);
         }
     }
@@ -9881,7 +9922,7 @@ function applyAthanasiusPsalms(psalmsList, mode, btnElement) {
 if (useExternalBibleAPIToggle) {
     useExternalBibleAPIToggle.addEventListener('change', () => {
         useExternalBibleAPI = useExternalBibleAPIToggle.checked;
-        if (!bulkUpdatingSettings) {
+        if (!isInitializing && !bulkUpdatingSettings) {
             saveSettings();
             renderPrayers();
         }
@@ -9896,7 +9937,7 @@ if (globalEnglishTranslationSelect) {
             readingTranslationOverrides[rKey].english = globalEnglishTranslation;
         });
         syncAllTranslationOverrideRows();
-        if (!bulkUpdatingSettings) {
+        if (!isInitializing && !bulkUpdatingSettings) {
             saveSettings();
             renderPrayers();
         }
@@ -9911,7 +9952,7 @@ if (globalAmharicTranslationSelect) {
             readingTranslationOverrides[rKey].amharic = globalAmharicTranslation;
         });
         syncAllTranslationOverrideRows();
-        if (!bulkUpdatingSettings) {
+        if (!isInitializing && !bulkUpdatingSettings) {
             saveSettings();
             renderPrayers();
         }
@@ -9935,7 +9976,7 @@ if (globalGeezTranslationSelect) {
             }
         });
         syncAllTranslationOverrideRows();
-        if (!bulkUpdatingSettings) {
+        if (!isInitializing && !bulkUpdatingSettings) {
             saveSettings();
             renderPrayers();
         }

@@ -1,4 +1,4 @@
-const CACHE_NAME = 'divine-liturgy-cache-v35';
+const CACHE_NAME = 'divine-liturgy-cache-v36';
 const urlsToCache = [
   './',
   './index.html',
@@ -14,7 +14,7 @@ const urlsToCache = [
   './js/st_athanasius_psalms.js?v=2',
   './js/bible_service.js',
   './js/miracles_of_mary.js',
-  './js/script.js?v=36',
+  './js/script.js?v=39',
   './icons/icon-192x192.png',
   './icons/icon-512x512.png',
   './bible/KJV_King_James_English_Bible.json',
