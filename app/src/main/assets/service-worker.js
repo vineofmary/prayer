@@ -1,4 +1,4 @@
-const CACHE_NAME = 'divine-liturgy-cache-v36';
+const CACHE_NAME = 'divine-liturgy-cache-v37';
 const urlsToCache = [
   './',
   './index.html',
@@ -12,16 +12,12 @@ const urlsToCache = [
   './js/teklil.js?v=2',
   './js/typical_psalms.js?v=3',
   './js/st_athanasius_psalms.js?v=2',
-  './js/bible_service.js',
+  './js/bible_service.js?v=2',
   './js/miracles_of_mary.js',
-  './js/script.js?v=39',
+  './js/script.js?v=40',
   './icons/icon-192x192.png',
   './icons/icon-512x512.png',
-  './bible/KJV_King_James_English_Bible.json',
-  './bible/አም54_Haile_Selassie_Amharic_Bible_1962AD_1954EC.json',
-  './bible/RGV_Reina_Valera_Gomez_Bible_2010AD.json',
-  './bible/ግእዝ_Psalms_1-151_with_Songs_of_the_Prophets.json',
-  './bible/COPTIC2025_Psalms_Bohairic_Coptic_Scriptorium_Corpora_2025.json'
+  './bible/ግእዝ_Psalms_1-151_with_Songs_of_the_Prophets.json'
 ];
 
 self.addEventListener('install', event => {
@@ -69,7 +65,28 @@ self.addEventListener('fetch', event => {
     return;
   }
 
-  // Cache-First with Network Update for versioned static assets (JS, CSS, images, JSON)
+  // Immutable Cache-First for static Bible JSON files to avoid cloning multi-MB buffers on every hit
+  const isBibleJson = url.pathname.includes('/bible/') && url.pathname.endsWith('.json');
+  if (isBibleJson) {
+    event.respondWith(
+      caches.open(CACHE_NAME).then(cache => {
+        return cache.match(event.request).then(cachedResponse => {
+          if (cachedResponse) {
+            return cachedResponse;
+          }
+          return fetch(event.request).then(networkResponse => {
+            if (networkResponse && networkResponse.status === 200 && event.request.url.startsWith('http')) {
+              cache.put(event.request, networkResponse.clone());
+            }
+            return networkResponse;
+          });
+        });
+      })
+    );
+    return;
+  }
+
+  // Cache-First with Network Update for versioned static assets (JS, CSS, images)
   event.respondWith(
     caches.open(CACHE_NAME).then(cache => {
       return cache.match(event.request).then(response => {
