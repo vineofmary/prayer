@@ -10017,3 +10017,39 @@ if (typeof document !== 'undefined') {
         });
     }
 }
+
+// --- Testing & Debugging Export Bridge ---
+const appCoreExports = {
+    toGeez,
+    toGeezNumeral,
+    convertLxxToMt,
+    getMtFromLxx,
+    convertMtToLxx,
+    getEnglishEditionCitation,
+    getAmharicEditionCitation,
+    getGeezEditionCitation,
+    slugifyTitle,
+    toBase64,
+    fromBase64,
+    serializeCollapsedSections,
+    deserializeCollapsedSections,
+    applyLoanwordOrigins,
+    applyAnglicization,
+    applyRubrication,
+    filterGeezPhoneticForPeople,
+    hasActualContent,
+    isChantStanza,
+    getUniversalEpistleAuthor,
+    getGospelAuthor,
+    getSeatatLiturgicalDay,
+    getDefaultReadingTranslationOverrides,
+};
+
+if (typeof window !== 'undefined') {
+    window.__mountOfMercy = appCoreExports;
+}
+
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = appCoreExports;
+}
+

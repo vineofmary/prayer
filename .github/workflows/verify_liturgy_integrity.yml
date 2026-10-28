@@ -19,5 +19,11 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Run Automated Unit Tests
+        run: npm test
+
       - name: Verify Cryptographic Hashes
         run: node scripts/verify_liturgy_integrity.js
