@@ -79,6 +79,7 @@ export const LeftSidebar: React.FC = () => {
             <option value="legacy">Legacy</option>
             <option value="high-contrast">Simple</option>
           </select>
+          <button type="button" id="theme-toggle" className="settings-button sidebar-theme-toggle-btn" title="Toggle Dark Mode" aria-label="Toggle Theme"></button>
 
           <h4 className="settings-subtitle" style={{ marginTop: '1.5rem' }}>Language Color-Coding</h4>
           <select id="language-color-coding-select" defaultValue="off" aria-label="Language Color Coding">
@@ -206,6 +207,10 @@ export const LeftSidebar: React.FC = () => {
           <p className="share-hint"><i>Copies link along with all selected Liturgy mode Bible readings to clipboard.</i></p>
           <hr className="settings-divider" />
           <button id="feedback-button">Share Feedback</button>
+          <button type="button" id="help-button" className="settings-button sidebar-help-btn" title="Help & User Guide" aria-label="Help">
+            <span className="help-btn-icon" aria-hidden="true">?</span>
+            <span>Help &amp; User Guide</span>
+          </button>
           <div className="scribe-entry-point">
             <button id="scribe-login-link">Scribe Login</button>
           </div>

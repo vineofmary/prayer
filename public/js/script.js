@@ -1382,8 +1382,12 @@ function applyTheme() {
         body.classList.add('paragraph-mode');
     }
 
-    themeToggle.innerHTML = currentTheme.mode === 'light' ? moonIcon : sunIcon;
-    themeToggle.title = currentTheme.mode === 'light' ? 'Toggle Dark Mode' : 'Toggle Light Mode';
+    if (themeToggle) {
+        const modeLabel = currentTheme.mode === 'light' ? 'Switch to Dark Mode' : 'Switch to Light Mode';
+        const modeIcon = currentTheme.mode === 'light' ? moonIcon : sunIcon;
+        themeToggle.innerHTML = `<span class="theme-toggle-icon">${modeIcon}</span><span class="theme-toggle-label">${modeLabel}</span>`;
+        themeToggle.title = modeLabel;
+    }
 }
 
 // --- Deep Hashing (URL State Persistence) ---
@@ -10000,6 +10004,9 @@ window.initMountOfMercyEngine = async function() {
     if (typeof window.initTargumaFeature === 'function') {
         window.initTargumaFeature();
     }
+    if (typeof window.initLearningFeature === 'function') {
+        window.initLearningFeature();
+    }
     window._mountOfMercyInitialized = true;
 };
 
@@ -10043,6 +10050,19 @@ const appCoreExports = {
     getGospelAuthor,
     getSeatatLiturgicalDay,
     getDefaultReadingTranslationOverrides,
+    transliterateGeezToPhonetic,
+    getBibleVersesFromRef,
+    getActiveLectionaryReadingsSnapshot: () => ({
+        isKidaseModeActive,
+        showMatins,
+        showVespers,
+        showSeatatReadings,
+        selectedSeatatLectionaryDay,
+        selectedWidaseMaryamDay,
+        selectedAnaphora,
+        kidaseLectionaryRefs: { ...kidaseLectionaryRefs },
+        selectedPsalms: Array.isArray(selectedPsalms) ? [...selectedPsalms] : []
+    })
 };
 
 if (typeof window !== 'undefined') {

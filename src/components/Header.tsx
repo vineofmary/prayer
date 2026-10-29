@@ -42,6 +42,12 @@ export const Header: React.FC = () => {
           </svg>
         </button>
 
+        <button id="learning-mode-toggle-header" title="Learning Games & Ge'ez Reader" aria-label="Toggle Learning Games Mode">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+            <path d="M18 12.22V9l-5-2.5V5h2V3h-2V1h-2v2H9v2h2v1.5L6 9v3.22L2 14v8h8v-5h4v5h8v-8l-4-1.78zM12 13.5c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z" />
+          </svg>
+        </button>
+
         <button id="expand-collapse-all-button" title="Collapse All" aria-label="Collapse All Sections">
           <svg className="icon-collapse-all" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="currentColor">
             <path d="M0 0h24v24H0V0z" fill="none" />
@@ -52,9 +58,6 @@ export const Header: React.FC = () => {
             <path d="M12 5.83L15.17 9l1.41-1.41L12 3 7.41 7.59 8.83 9 12 5.83zm0 12.34L8.83 15l-1.41 1.41L12 21l4.59-4.59L15.17 15 12 18.17z" />
           </svg>
         </button>
-
-        <button id="theme-toggle" title="Toggle Dark Mode" aria-label="Toggle Theme"></button>
-        <button id="help-button" title="Help" aria-label="Help">?</button>
 
         <button id="prayers-panel-toggle" title="Select Prayers" aria-label="Open Liturgy and Prayers Menu">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24px" height="24px">

@@ -1512,6 +1512,10 @@
 
         const prayerDisplayEl = document.getElementById('prayer-display');
 
+        if (state.isActive && typeof window.toggleLearningMode === 'function') {
+            window.toggleLearningMode(false);
+        }
+
         if (state.isActive && typeof displayOptions !== 'undefined' && displayOptions.presentationMode === 'slides') {
             if (typeof window.togglePresentationMode === 'function') {
                 window.togglePresentationMode();

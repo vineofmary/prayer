@@ -14,6 +14,8 @@ const urlsToCache = [
   './js/st_athanasius_psalms.js?v=2',
   './js/bible_service.js',
   './js/miracles_of_mary.js',
+  './js/geez_lexicon.js?v=1',
+  './js/learning_service.js?v=1',
   './js/script.js?v=36',
   './icons/icon-192x192.png',
   './icons/icon-512x512.png',
