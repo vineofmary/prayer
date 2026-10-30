@@ -54,4 +54,56 @@ describe('Text Processing & Liturgical Formatting', () => {
       expect(filtered).toBeTruthy();
     });
   });
+
+  describe('applyLoanwordOrigins & LOANWORD_MAPPING', () => {
+    it('exports LOANWORD_MAPPING and sets window.LOANWORD_MAPPING', () => {
+      expect(app.LOANWORD_MAPPING).toBeDefined();
+      expect(window.LOANWORD_MAPPING).toBeDefined();
+      expect(app.LOANWORD_MAPPING['ክርስቶስ']).toBeDefined();
+      expect(app.LOANWORD_MAPPING['ክርስቶስ'].lang).toBe('Greek');
+      expect(app.LOANWORD_MAPPING['ኢየሱስ'].meaning).toContain('Salvation');
+      expect(app.LOANWORD_MAPPING['ሃሌ ሉያ'].lang).toBe('Hebrew');
+      expect(app.LOANWORD_MAPPING['ሃሌሉያ']).toBeDefined();
+      expect(app.LOANWORD_MAPPING['ወንጌለ']).toBeDefined();
+      expect(app.LOANWORD_MAPPING['ታቦተ']).toBeDefined();
+      expect(app.LOANWORD_MAPPING['መልከ ጼዴቅ']).toBeDefined();
+      expect(app.LOANWORD_MAPPING['ሙሴ']).toBeDefined();
+    });
+
+    it('wraps loanwords with tooltip markup and data attributes in Ge\'ez text', () => {
+      // Simulate showLoanwordOrigins enabled in global settings
+      window.displayOptions = { showLoanwordOrigins: true };
+
+      const sampleText = 'ዲያቆን፤ ሃሌ ሉያ ቁሙ ወአጽምኡ ወንጌለ ቅዱሰ፥ ዜናሁ ለእግዚእነ ወመድኃኒነ ኢየሱስ ክርስቶስ።';
+      const result = app.applyLoanwordOrigins(sampleText, 'geez_script');
+
+      expect(result).toContain('data-word="ክርስቶስ"');
+      expect(result).toContain('data-word="ኢየሱስ"');
+      expect(result).toContain('data-word="ሃሌ ሉያ"');
+      expect(result).toContain('data-word="ወንጌለ"');
+      expect(result).toContain('loanword-origin');
+    });
+
+    it('matches single-word compound variants like ሃሌሉያ and ኤጲስቆጶስ', () => {
+      window.displayOptions = { showLoanwordOrigins: true };
+
+      const sample1 = 'ሃሌሉያ ዮሴፍ ወኒቆዲሞስ ገነዝዎ ለኢየሱስ';
+      const result1 = app.applyLoanwordOrigins(sample1, 'geez_script');
+      expect(result1).toContain('data-word="ሃሌሉያ"');
+
+      const sample2 = 'ኤጲስቆጶስ እንደ እግዚአብሔር መጋቢ';
+      const result2 = app.applyLoanwordOrigins(sample2, 'geez_script');
+      expect(result2).toContain('data-word="ኤጲስቆጶስ"');
+    });
+
+    it('processes geez_psalms language key when enabled', () => {
+      window.displayOptions = { showLoanwordOrigins: true };
+
+      const psalmVerse = 'መዝሙር ዘዳዊት ሃሌ ሉያ።';
+      const result = app.applyLoanwordOrigins(psalmVerse, 'geez_psalms');
+      expect(result).toContain('data-word="ዳዊት"');
+      expect(result).toContain('data-word="ሃሌ ሉያ"');
+    });
+  });
 });
+

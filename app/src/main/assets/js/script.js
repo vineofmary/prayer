@@ -817,18 +817,29 @@ const LOANWORD_MAPPING = {
 
     // Additional Liturgical & Theological Terms
     "ሃሌ ሉያ": { lang: "Hebrew", original: "(\u05d4\u05b7\u05dc\u05b0\u05dc\u05d5\u05bc-\u05d9\u05b8\u05d4\u05bc)", phonetic: "ha-le-lu-yah", meaning: "Praise the Lord", geez: "ስብሐት ለእግዚአብሔር" },
+    "ሃሌሉያ": { lang: "Hebrew", original: "(\u05d4\u05b7\u05dc\u05b0\u05dc\u05d5\u05bc-\u05d9\u05b8\u05d4\u05bc)", phonetic: "ha-le-lu-yah", meaning: "Praise the Lord", geez: "ስብሐት ለእግዚአብሔር" },
     "አሜን": { lang: "Hebrew", original: "(\u05d0\u05b8\u05de\u05b5\u05df)", phonetic: "a-men", meaning: "Verily / So be it", geez: "ለይኩን (በአማን)" },
     "ወንጌል": { lang: "Greek", original: "(\u03b5\u1f50\u03b1\u03b3\u03b3\u03ad\u03bb\u03b9\u03bf\u03bd)", phonetic: "ev-an-ge-li-on", meaning: "Good News / Gospel", geez: "ብሥራት" },
+    "ወንጌለ": { lang: "Greek", original: "(\u03b5\u1f50\u03b1\u03b3\u03b3\u03ad\u03bb\u03b9\u03bf\u03bd)", phonetic: "ev-an-ge-li-on", meaning: "Good News / Gospel (construct/accusative)", geez: "ብሥራት" },
     "ኦሪት": { lang: "Aramaic", original: "(\u05d0\u05d5\u05b9\u05e8\u05b8\u05d9\u05b0\u05ea\u05b8\u05d0)", phonetic: "o-ray-ta", meaning: "Law / Instruction", geez: "ሕግ" },
+    "ኦሪተ": { lang: "Aramaic", original: "(\u05d0\u05d5\u05b9\u05e8\u05b8\u05d9\u05b0\u05ea\u05b8\u05d0)", phonetic: "o-ray-ta", meaning: "Law / Instruction (construct/accusative)", geez: "ሕግ" },
     "ታቦት": { lang: "Hebrew", original: "(\u05ea\u05bc\u05b5\u05d9\u05d1\u05b8\u05d4)", phonetic: "tey-vah", meaning: "Ark / Chest", geez: "ሣጥን (ማኅደር)" },
+    "ታቦተ": { lang: "Hebrew", original: "(\u05ea\u05bc\u05b5\u05d9\u05d1\u05b8\u05d4)", phonetic: "tey-vah", meaning: "Ark / Chest (construct/accusative)", geez: "ሣጥን (ማኅደር)" },
     "መሲሕ": { lang: "Hebrew", original: "(\u05de\u05b8\u05e9\u05b4\u05c1\u05d9\u05d7\u05b7)", phonetic: "ma-shi-ach", meaning: "Anointed One", geez: "ቅቡዕ" },
+    "መሲሐ": { lang: "Hebrew", original: "(\u05de\u05b8\u05e9\u05b4\u05c1\u05d9\u05d7\u05b7)", phonetic: "ma-shi-ach", meaning: "Anointed One (accusative)", geez: "ቅቡዕ" },
     "ሰይጣን": { lang: "Hebrew", original: "(\u05e9\u05c2\u05b8\u05d8\u05b8\u05df)", phonetic: "sa-tan", meaning: "Adversary / Accuser", geez: "ጸላኢ (ጋኔን)" },
     "ቀሲስ": { lang: "Syriac", original: "(\u072a\u072b\u072a\u072b\u0710)", phonetic: "qa-shshi-sha", meaning: "Elder / Priest", geez: "ካህን (ሊቅ)" },
     "ዲያቆን": { lang: "Greek", original: "(\u03b4\u03b9\u03ac\u03ba\u03bf\u03bd\u03bf\u03c2)", phonetic: "di-a-ko-nos", meaning: "Servant / Minister", geez: "ላእክ" },
     "ኤጲስ ቆጶስ": { lang: "Greek", original: "(\u1f10\u03c0\u03af\u03c3\u03ba\u03bf\u03c0\u03bf\u03c2)", phonetic: "e-pis-ko-pos", meaning: "Overseer / Bishop", geez: "ጳጳስ (ሐዋርያ)" },
+    "ኤጲስቆጶስ": { lang: "Greek", original: "(\u1f10\u03c0\u03af\u03c3\u03ba\u03bf\u03c0\u03bf\u03c2)", phonetic: "e-pis-ko-pos", meaning: "Overseer / Bishop", geez: "ጳጳስ (ሐዋርያ)" },
     "ፓትርያርክ": { lang: "Greek", original: "(\u03c0\u03b1\u03c4\u03c1\u03b9\u03ac\u03c1\u03c7\u03b7\u03c2)", phonetic: "pa-tri-ar-khes", meaning: "Chief Father / Patriarch", geez: "ርእሰ አበው" },
+    "ጳጳስ": { lang: "Greek", original: "(πάππας)", phonetic: "pap-pas", meaning: "Father / Pope / Metropolitan", geez: "አባት" },
+    "ሰንበት": { lang: "Hebrew", original: "(\u05e9\u05b7\u05c1\u05d1\u05b8\u05bc\u05ea)", phonetic: "shab-bat", meaning: "Cessation / Sabbath Rest", geez: "ዕረፍት" },
+    "ፋሲካ": { lang: "Aramaic", original: "(\u05e4\u05b7\u05bc\u05e1\u05b0\u05d7\u05b8\u05d0)", phonetic: "pas-kha", meaning: "Passover / Pascha", geez: "ዕልፈት" },
 
     // Names & Entities
+    "አዳም": { lang: "Hebrew", original: "(\u05d0\u05b8\u05d3\u05b8\u05dd)", phonetic: "a-dam", meaning: "Man / Earthborn", geez: "ቀዳሚ ብእሲ" },
+    "ሔዋን": { lang: "Hebrew", original: "(\u05d7\u05b7\u05d5\u05b8\u05bc\u05d4)", phonetic: "cha-vah", meaning: "Life / Mother of all living", geez: "ሕይወት" },
     "ኢየሱስ": { lang: "Hebrew", original: "(\u05d9\u05b5\u05e9\u05c1\u05d5\u05bc\u05e2\u05b7)", phonetic: "ye-shu-a", meaning: "Yahweh is Salvation", geez: "መድኃኒት" },
     "ክርስቶስ": { lang: "Greek", original: "(\u03a7\u03c1\u03b9\u03c3\u03c4\u03cc\u03c2)", phonetic: "khris-tos", meaning: "Anointed One", geez: "መሲሕ (ቅቡዕ)" },
     "አማኑኤል": { lang: "Hebrew", original: "(\u05e2\u05b4\u05de\u05bc\u05b8\u05e0\u05d5\u05bc\u05d0\u05b5\u05dc)", phonetic: "im-ma-nu-el", meaning: "God with us", geez: "እግዚአብሔር ምስሌነ" },
@@ -845,27 +856,46 @@ const LOANWORD_MAPPING = {
     "አብርሃም": { lang: "Hebrew", original: "(\u05d0\u05b7\u05d1\u05b0\u05e8\u05b8\u05d4\u05b8\u05dd)", phonetic: "av-ra-ham", meaning: "Father of a Multitude", geez: "አበ ብዙኃን" },
     "ይስሐቅ": { lang: "Hebrew", original: "(\u05d9\u05b4\u05e6\u05b0\u05d7\u05b8\u05e7)", phonetic: "yits-chak", meaning: "He will laugh", geez: "ስሕቅ" },
     "ያዕቆብ": { lang: "Hebrew", original: "(\u05d9\u05b7\u05e2\u05b2\u05e7\u05b9\u05d1)", phonetic: "ya-a-kov", meaning: "Supplanter", geez: "አታላይ" },
+    "ሙሴ": { lang: "Hebrew", original: "(\u05de\u05b4\u05e9\u05b6\u05c1\u05d4)", phonetic: "mo-sheh", meaning: "Drawn out (of the water)", geez: "ዘተስሕበ እማይ" },
+    "አሮን": { lang: "Hebrew", original: "(\u05d0\u05b7\u05d4\u05b2\u05e8\u05b9\u05df)", phonetic: "a-ha-ron", meaning: "Exalted / Light-bringer", geez: "ካህን" },
+    "መልከ ጼዴቅ": { lang: "Hebrew", original: "(\u05de\u05b7\u05dc\u05b0\u05db\u05b4\u05bc\u05d9-\u05e6\u05b6\u05d3\u05b6\u05e7)", phonetic: "mal-ki-tse-dek", meaning: "King of Righteousness", geez: "ንጉሠ ጽድቅ" },
+    "መልከጼዴቅ": { lang: "Hebrew", original: "(\u05de\u05b7\u05dc\u05b0\u05db\u05b4\u05bc\u05d9-\u05e6\u05b6\u05d3\u05b6\u05e7)", phonetic: "mal-ki-tse-dek", meaning: "King of Righteousness", geez: "ንጉሠ ጽድቅ" },
     "ዮሴፍ": { lang: "Hebrew", original: "(\u05d9\u05d5\u05b9\u05e1\u05b5\u05e3)", phonetic: "yo-sef", meaning: "He will add", geez: "ይስክ (ይጨምር)" },
     "ዳዊት": { lang: "Hebrew", original: "(\u05d3\u05bc\u05b8\u05d5\u05b4\u05d3)", phonetic: "da-vid", meaning: "Beloved", geez: "ፍቁር" },
     "ሰሎሞን": { lang: "Hebrew", original: "(\u05e9\u05b0\u05c1\u05dc\u05b9\u05de\u05b9\u05d4)", phonetic: "shlo-mo", meaning: "Peaceable", geez: "ሰላማዊ" },
+    "ዮሐንስ": { lang: "Hebrew", original: "(\u05d9\u05d5\u05b9\u05d7\u05b8\u05e0\u05b8\u05df)", phonetic: "yo-cha-nan", meaning: "Yahweh is Gracious", geez: "ጸጋ እግዚአብሔር" },
+    "ዘካርያስ": { lang: "Hebrew", original: "(\u05d6\u05b0\u05db\u05b4\u05e8\u05b0\u05d9\u05b8\u05d4)", phonetic: "ze-khar-yah", meaning: "Yahweh Remembers", geez: "ተዘከረ እግዚአብሔር" },
+    "ኤልሳቤጥ": { lang: "Hebrew", original: "(\u05d0\u05b1\u05dc\u05b4\u05d9\u05e9\u05b6\u05c1\u05d1\u05b7\u05e2)", phonetic: "e-li-she-va", meaning: "God is my Oath", geez: "መሐላየ እግዚአብሔር" },
+    "እስጢፋኖስ": { lang: "Greek", original: "(Στέφανος)", phonetic: "ste-pha-nos", meaning: "Crown / Wreath", geez: "አክሊል" },
     "ጳውሎስ": { lang: "Latin", original: "(Paulus)", phonetic: "pau-lus", meaning: "Small / Humble", geez: "ንኡስ (ትሑት)" },
     "ጴጥሮስ": { lang: "Greek", original: "(\u03a0\u03ad\u03c4\u03c1\u03bf\u03c2)", phonetic: "pe-tros", meaning: "Rock / Stone", geez: "ኰኵሕ (ዕብን)" }
 };
 
+// Expose globally so geez_lexicon.js can look up loanwords
+if (typeof window !== 'undefined') {
+    window.LOANWORD_MAPPING = LOANWORD_MAPPING;
+}
+
 function applyLoanwordOrigins(text, langKey) {
-    if (!displayOptions.showLoanwordOrigins || (langKey !== 'geez_script' && langKey !== 'geez_phonetic')) {
+    const isEnabled = (typeof window !== 'undefined' && window.displayOptions && window.displayOptions.showLoanwordOrigins !== undefined)
+        ? window.displayOptions.showLoanwordOrigins
+        : (typeof displayOptions !== 'undefined' && displayOptions.showLoanwordOrigins);
+    if (!isEnabled || (langKey !== 'geez_script' && langKey !== 'geez_phonetic' && langKey !== 'geez_psalms')) {
         return text;
     }
 
     let transformedText = text;
 
     // Build a single regex to match all loanwords in one pass to avoid nested replacements
+    // Allow space or Ge'ez word divider '፡' within multi-word loanwords
     const sortedKeys = Object.keys(LOANWORD_MAPPING).sort((a, b) => b.length - a.length);
-    const pattern = sortedKeys.map(k => k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|');
+    const pattern = sortedKeys.map(k => k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/ /g, '[\\s፡]')).join('|');
     const regex = new RegExp(`(${pattern})([\\s\\:\\፡\\፡\\፤\\፨\\።]?)`, 'g');
 
     transformedText = transformedText.replace(regex, (match, p1, p2) => {
-        const data = LOANWORD_MAPPING[p1];
+        const lookupKey = p1.replace(/፡/g, ' ');
+        const data = LOANWORD_MAPPING[p1] || LOANWORD_MAPPING[lookupKey] || LOANWORD_MAPPING[p1.replace(/\s+/g, '')];
+        if (!data) return match;
         return `<span class="loanword-origin" 
             data-word="${p1}" 
             data-lang="${data.lang}"
@@ -10191,6 +10221,7 @@ const appCoreExports = {
     serializeCollapsedSections,
     deserializeCollapsedSections,
     applyLoanwordOrigins,
+    LOANWORD_MAPPING,
     applyAnglicization,
     applyRubrication,
     filterGeezPhoneticForPeople,

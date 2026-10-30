@@ -1433,6 +1433,22 @@
                         isCurated: true
                     };
                 }
+                if (typeof window !== 'undefined' && window.LOANWORD_MAPPING && window.LOANWORD_MAPPING[candidate]) {
+                    const lw = window.LOANWORD_MAPPING[candidate];
+                    return {
+                        geez: clean,
+                        phonetic: (typeof window.transliterateGeezToPhonetic === 'function')
+                            ? window.transliterateGeezToPhonetic(clean)
+                            : `${pRule.phonetic}${lw.phonetic}`,
+                        meaning: `${pRule.meaning} ${lw.meaning}`,
+                        root: `${lw.lang} ${lw.original}`,
+                        pos: `${pRule.grammar} + Loanword (${lw.lang})`,
+                        breakdown: `${pRule.prefix}- (${pRule.meaning}) + ${candidate} (${lw.meaning})`,
+                        cognates: `Origin: ${lw.lang} ${lw.original}`,
+                        note: `Ancient ${lw.lang} liturgical loanword with prefix '${pRule.prefix}-'. Native Ge'ez: ${lw.geez}`,
+                        isCurated: true
+                    };
+                }
                 detectedPrefix = pRule;
                 stem = candidate;
                 break;
@@ -1458,6 +1474,24 @@
                         breakdown: `${prefixBreakdown}${candidate} (${base.meaning}) + -${sRule.suffix} (${sRule.meaning})`,
                         cognates: base.cognates,
                         note: base.note,
+                        isCurated: true
+                    };
+                }
+                if (typeof window !== 'undefined' && window.LOANWORD_MAPPING && window.LOANWORD_MAPPING[candidate]) {
+                    const lw = window.LOANWORD_MAPPING[candidate];
+                    const prefixMeaning = detectedPrefix ? `${detectedPrefix.meaning} ` : '';
+                    const prefixBreakdown = detectedPrefix ? `${detectedPrefix.prefix}- (${detectedPrefix.meaning}) + ` : '';
+                    return {
+                        geez: clean,
+                        phonetic: (typeof window.transliterateGeezToPhonetic === 'function')
+                            ? window.transliterateGeezToPhonetic(clean)
+                            : lw.phonetic,
+                        meaning: `${prefixMeaning}${sRule.meaning} ${lw.meaning}`,
+                        root: `${lw.lang} ${lw.original}`,
+                        pos: `Loanword (${lw.lang}) + ${sRule.grammar}`,
+                        breakdown: `${prefixBreakdown}${candidate} (${lw.meaning}) + -${sRule.suffix} (${sRule.meaning})`,
+                        cognates: `Origin: ${lw.lang} ${lw.original}`,
+                        note: `Ancient ${lw.lang} liturgical loanword with suffix '-${sRule.suffix}'. Native Ge'ez: ${lw.geez}`,
                         isCurated: true
                     };
                 }

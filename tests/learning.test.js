@@ -119,6 +119,24 @@ describe('Learning & Games Module, Interlinear Ge\'ez, and Header/Sidebar Reorga
       expect(dynamicWord.breakdown).toContain('ሰላም');
       expect(dynamicWord.breakdown).toContain('-ነ');
     });
+
+    it('resolves loanwords and prefixed loanwords using LOANWORD_MAPPING', () => {
+      const kristos = lexicon.analyzeGeezWord('ክርስቶስ');
+      expect(kristos).not.toBeNull();
+      expect(kristos.pos).toContain('Loanword (Greek)');
+      expect(kristos.meaning).toContain('Anointed One');
+
+      const beKristos = lexicon.analyzeGeezWord('በክርስቶስ');
+      expect(beKristos).not.toBeNull();
+      expect(beKristos.breakdown).toContain('በ-');
+      expect(beKristos.breakdown).toContain('ክርስቶስ');
+      expect(beKristos.meaning).toContain('in / by / with');
+
+      const leMaryam = lexicon.analyzeGeezWord('ለማርያም');
+      expect(leMaryam).not.toBeNull();
+      expect(leMaryam.breakdown).toContain('ለ-');
+      expect(leMaryam.breakdown).toContain('ማርያም');
+    });
   });
 
   describe('Procedural Classroom Jeopardy & Tailoring to Selected Liturgical Readings', () => {
