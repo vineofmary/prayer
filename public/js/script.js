@@ -444,383 +444,383 @@ const PSALM_COMBINATIONS = {
         prophetSongs: []
     },
     'coptic_midnight_1': {
-        name: 'Midnight (1st Watch) | መንፈቀ ሌሊት (፩ኛ ሰዓት)',
-        dropdownLabel: 'Midnight (1st Watch) | Menfeqe Lelit | መንፈቀ ሌሊት ፩ኛ (50, 3, 6, 12, 69, 85, 90, 116-118)',
+        name: 'Midnight (1st Watch) | መንፈቀ ሌሊት (፩)',
+        dropdownLabel: 'Midnight (1st Watch) | Menfeqe Lelit | መንፈቀ ሌሊት ፩ (50, 3, 6, 12, 69, 85, 90, 116-118)',
         psalms: [50, 3, 6, 12, 69, 85, 90, 116, 117, 118],
         prophetSongs: []
     },
     'coptic_midnight_2': {
-        name: 'Midnight (2nd Watch) | መንፈቀ ሌሊት (፪ኛ ሰዓት)',
-        dropdownLabel: 'Midnight (2nd Watch) | Menfeqe Lelit | መንፈቀ ሌሊት ፪ኛ (50, 119-133)',
+        name: 'Midnight (2nd Watch) | መንፈቀ ሌሊት (፪)',
+        dropdownLabel: 'Midnight (2nd Watch) | Menfeqe Lelit | መንፈቀ ሌሊት ፪ (50, 119-133)',
         psalms: [50, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133],
         prophetSongs: []
     },
     'coptic_midnight_3': {
-        name: 'Midnight (3rd Watch) | መንፈቀ ሌሊት (፫ኛ ሰዓት)',
-        dropdownLabel: 'Midnight (3rd Watch) | Menfeqe Lelit | መንፈቀ ሌሊት ፫ኛ (50, 134-142, 144-150)',
+        name: 'Midnight (3rd Watch) | መንፈቀ ሌሊት (፫)',
+        dropdownLabel: 'Midnight (3rd Watch) | Menfeqe Lelit | መንፈቀ ሌሊት ፫ (50, 134-142, 144-150)',
         psalms: [50, 134, 135, 136, 137, 138, 139, 140, 141, 142, 144, 145, 146, 147, 148, 149, 150],
         prophetSongs: []
     },
     'month_d1_morning': {
-        name: 'Morning of the 1st Day',
-        dropdownLabel: 'Morning of the 1st Day | ፩ኛ ቀን ጧት (1-4)',
+        name: 'Morning of the 1st Day | ዕለት ፩ ነግህ',
+        dropdownLabel: 'Morning of the 1st Day | ዕለት ፩ ነግህ (1-4)',
         psalms: [1, 2, 3, 4],
         prophetSongs: []
     },
     'month_d1_evening': {
-        name: 'Evening of the 1st Day',
-        dropdownLabel: 'Evening of the 1st Day | ፩ኛ ቀን ማታ (5-8)',
+        name: 'Evening of the 1st Day | ዕለት ፩ ሠርክ',
+        dropdownLabel: 'Evening of the 1st Day | ዕለት ፩ ሠርክ (5-8)',
         psalms: [5, 6, 7, 8],
         prophetSongs: []
     },
     'month_d2_morning': {
-        name: 'Morning of the 2nd Day',
-        dropdownLabel: 'Morning of the 2nd Day | ፪ኛ ቀን ጧት (9)',
+        name: 'Morning of the 2nd Day | ዕለት ፪ ነግህ',
+        dropdownLabel: 'Morning of the 2nd Day | ዕለት ፪ ነግህ (9)',
         psalms: [9],
         prophetSongs: []
     },
     'month_d2_evening': {
-        name: 'Evening of the 2nd Day',
-        dropdownLabel: 'Evening of the 2nd Day | ፪ኛ ቀን ማታ (10-13)',
+        name: 'Evening of the 2nd Day | ዕለት ፪ ሠርክ',
+        dropdownLabel: 'Evening of the 2nd Day | ዕለት ፪ ሠርክ (10-13)',
         psalms: [10, 11, 12, 13],
         prophetSongs: []
     },
     'month_d3_morning': {
-        name: 'Morning of the 3rd Day',
-        dropdownLabel: 'Morning of the 3rd Day | ፫ኛ ቀን ጧት (14-16)',
+        name: 'Morning of the 3rd Day | ዕለት ፫ ነግህ',
+        dropdownLabel: 'Morning of the 3rd Day | ዕለት ፫ ነግህ (14-16)',
         psalms: [14, 15, 16],
         prophetSongs: []
     },
     'month_d3_evening': {
-        name: 'Evening of the 3rd Day',
-        dropdownLabel: 'Evening of the 3rd Day | ፫ኛ ቀን ማታ (17)',
+        name: 'Evening of the 3rd Day | ዕለት ፫ ሠርክ',
+        dropdownLabel: 'Evening of the 3rd Day | ዕለት ፫ ሠርክ (17)',
         psalms: [17],
         prophetSongs: []
     },
     'month_d4_morning': {
-        name: 'Morning of the 4th Day',
-        dropdownLabel: 'Morning of the 4th Day | ፬ኛ ቀን ጧት (18-19)',
+        name: 'Morning of the 4th Day | ዕለት ፬ ነግህ',
+        dropdownLabel: 'Morning of the 4th Day | ዕለት ፬ ነግህ (18-19)',
         psalms: [18, 19],
         prophetSongs: []
     },
     'month_d4_evening': {
-        name: 'Evening of the 4th Day',
-        dropdownLabel: 'Evening of the 4th Day | ፬ኛ ቀን ማታ (20-21)',
+        name: 'Evening of the 4th Day | ዕለት ፬ ሠርክ',
+        dropdownLabel: 'Evening of the 4th Day | ዕለት ፬ ሠርክ (20-21)',
         psalms: [20, 21],
         prophetSongs: []
     },
     'month_d5_morning': {
-        name: 'Morning of the 5th Day',
-        dropdownLabel: 'Morning of the 5th Day | ፭ኛ ቀን ጧት (22-24)',
+        name: 'Morning of the 5th Day | ዕለት ፭ ነግህ',
+        dropdownLabel: 'Morning of the 5th Day | ዕለት ፭ ነግህ (22-24)',
         psalms: [22, 23, 24],
         prophetSongs: []
     },
     'month_d5_evening': {
-        name: 'Evening of the 5th Day',
-        dropdownLabel: 'Evening of the 5th Day | ፭ኛ ቀን ማታ (25-28)',
+        name: 'Evening of the 5th Day | ዕለት ፭ ሠርክ',
+        dropdownLabel: 'Evening of the 5th Day | ዕለት ፭ ሠርክ (25-28)',
         psalms: [25, 26, 27, 28],
         prophetSongs: []
     },
     'month_d6_morning': {
-        name: 'Morning of the 6th Day',
-        dropdownLabel: 'Morning of the 6th Day | ፮ኛ ቀን ጧት (29-30)',
+        name: 'Morning of the 6th Day | ዕለት ፮ ነግህ',
+        dropdownLabel: 'Morning of the 6th Day | ዕለት ፮ ነግህ (29-30)',
         psalms: [29, 30],
         prophetSongs: []
     },
     'month_d6_evening': {
-        name: 'Evening of the 6th Day',
-        dropdownLabel: 'Evening of the 6th Day | ፮ኛ ቀን ማታ (31-32)',
+        name: 'Evening of the 6th Day | ዕለት ፮ ሠርክ',
+        dropdownLabel: 'Evening of the 6th Day | ዕለት ፮ ሠርክ (31-32)',
         psalms: [31, 32],
         prophetSongs: []
     },
     'month_d7_morning': {
-        name: 'Morning of the 7th Day',
-        dropdownLabel: 'Morning of the 7th Day | ፯ኛ ቀን ጧት (33-34)',
+        name: 'Morning of the 7th Day | ዕለት ፯ ነግህ',
+        dropdownLabel: 'Morning of the 7th Day | ዕለት ፯ ነግህ (33-34)',
         psalms: [33, 34],
         prophetSongs: []
     },
     'month_d7_evening': {
-        name: 'Evening of the 7th Day',
-        dropdownLabel: 'Evening of the 7th Day | ፯ኛ ቀን ማታ (35-36)',
+        name: 'Evening of the 7th Day | ዕለት ፯ ሠርክ',
+        dropdownLabel: 'Evening of the 7th Day | ዕለት ፯ ሠርክ (35-36)',
         psalms: [35, 36],
         prophetSongs: []
     },
     'month_d8_morning': {
-        name: 'Morning of the 8th Day',
-        dropdownLabel: 'Morning of the 8th Day | ፰ኛ ቀን ጧት (37-38)',
+        name: 'Morning of the 8th Day | ዕለት ፰ ነግህ',
+        dropdownLabel: 'Morning of the 8th Day | ዕለት ፰ ነግህ (37-38)',
         psalms: [37, 38],
         prophetSongs: []
     },
     'month_d8_evening': {
-        name: 'Evening of the 8th Day',
-        dropdownLabel: 'Evening of the 8th Day | ፰ኛ ቀን ማታ (39-40)',
+        name: 'Evening of the 8th Day | ዕለት ፰ ሠርክ',
+        dropdownLabel: 'Evening of the 8th Day | ዕለት ፰ ሠርክ (39-40)',
         psalms: [39, 40],
         prophetSongs: []
     },
     'month_d9_morning': {
-        name: 'Morning of the 9th Day',
-        dropdownLabel: 'Morning of the 9th Day | ፱ኛ ቀን ጧት (41-43)',
+        name: 'Morning of the 9th Day | ዕለት ፱ ነግህ',
+        dropdownLabel: 'Morning of the 9th Day | ዕለት ፱ ነግህ (41-43)',
         psalms: [41, 42, 43],
         prophetSongs: []
     },
     'month_d9_evening': {
-        name: 'Evening of the 9th Day',
-        dropdownLabel: 'Evening of the 9th Day | ፱ኛ ቀን ማታ (44-45)',
+        name: 'Evening of the 9th Day | ዕለት ፱ ሠርክ',
+        dropdownLabel: 'Evening of the 9th Day | ዕለት ፱ ሠርክ (44-45)',
         psalms: [44, 45],
         prophetSongs: []
     },
     'month_d10_morning': {
-        name: 'Morning of the 10th Day',
-        dropdownLabel: 'Morning of the 10th Day | ፲ኛ ቀን ጧት (46-48)',
+        name: 'Morning of the 10th Day | ዕለት ፲ ነግህ',
+        dropdownLabel: 'Morning of the 10th Day | ዕለት ፲ ነግህ (46-48)',
         psalms: [46, 47, 48],
         prophetSongs: []
     },
     'month_d10_evening': {
-        name: 'Evening of the 10th Day',
-        dropdownLabel: 'Evening of the 10th Day | ፲ኛ ቀን ማታ (49-51)',
+        name: 'Evening of the 10th Day | ዕለት ፲ ሠርክ',
+        dropdownLabel: 'Evening of the 10th Day | ዕለት ፲ ሠርክ (49-51)',
         psalms: [49, 50, 51],
         prophetSongs: []
     },
     'month_d11_morning': {
-        name: 'Morning of the 11th Day',
-        dropdownLabel: 'Morning of the 11th Day | ፲፩ኛ ቀን ጧት (52-54)',
+        name: 'Morning of the 11th Day | ዕለት ፲፩ ነግህ',
+        dropdownLabel: 'Morning of the 11th Day | ዕለት ፲፩ ነግህ (52-54)',
         psalms: [52, 53, 54],
         prophetSongs: []
     },
     'month_d11_evening': {
-        name: 'Evening of the 11th Day',
-        dropdownLabel: 'Evening of the 11th Day | ፲፩ኛ ቀን ማታ (55-57)',
+        name: 'Evening of the 11th Day | ዕለት ፲፩ ሠርክ',
+        dropdownLabel: 'Evening of the 11th Day | ዕለት ፲፩ ሠርክ (55-57)',
         psalms: [55, 56, 57],
         prophetSongs: []
     },
     'month_d12_morning': {
-        name: 'Morning of the 12th Day',
-        dropdownLabel: 'Morning of the 12th Day | ፲፪ኛ ቀን ጧት (58-59)',
+        name: 'Morning of the 12th Day | ዕለት ፲፪ ነግህ',
+        dropdownLabel: 'Morning of the 12th Day | ዕለት ፲፪ ነግህ (58-59)',
         psalms: [58, 59],
         prophetSongs: []
     },
     'month_d12_evening': {
-        name: 'Evening of the 12th Day',
-        dropdownLabel: 'Evening of the 12th Day | ፲፪ኛ ቀን ማታ (60-62)',
+        name: 'Evening of the 12th Day | ዕለት ፲፪ ሠርክ',
+        dropdownLabel: 'Evening of the 12th Day | ዕለት ፲፪ ሠርክ (60-62)',
         psalms: [60, 61, 62],
         prophetSongs: []
     },
     'month_d13_morning': {
-        name: 'Morning of the 13th Day',
-        dropdownLabel: 'Morning of the 13th Day | ፲፫ኛ ቀን ጧት (63-65)',
+        name: 'Morning of the 13th Day | ዕለት ፲፫ ነግህ',
+        dropdownLabel: 'Morning of the 13th Day | ዕለት ፲፫ ነግህ (63-65)',
         psalms: [63, 64, 65],
         prophetSongs: []
     },
     'month_d13_evening': {
-        name: 'Evening of the 13th Day',
-        dropdownLabel: 'Evening of the 13th Day | ፲፫ኛ ቀን ማታ (66-67)',
+        name: 'Evening of the 13th Day | ዕለት ፲፫ ሠርክ',
+        dropdownLabel: 'Evening of the 13th Day | ዕለት ፲፫ ሠርክ (66-67)',
         psalms: [66, 67],
         prophetSongs: []
     },
     'month_d14_morning': {
-        name: 'Morning of the 14th Day',
-        dropdownLabel: 'Morning of the 14th Day | ፲፬ኛ ቀን ጧት (68-69)',
+        name: 'Morning of the 14th Day | ዕለት ፲፬ ነግህ',
+        dropdownLabel: 'Morning of the 14th Day | ዕለት ፲፬ ነግህ (68-69)',
         psalms: [68, 69],
         prophetSongs: []
     },
     'month_d14_evening': {
-        name: 'Evening of the 14th Day',
-        dropdownLabel: 'Evening of the 14th Day | ፲፬ኛ ቀን ማታ (70-71)',
+        name: 'Evening of the 14th Day | ዕለት ፲፬ ሠርክ',
+        dropdownLabel: 'Evening of the 14th Day | ዕለት ፲፬ ሠርክ (70-71)',
         psalms: [70, 71],
         prophetSongs: []
     },
     'month_d15_morning': {
-        name: 'Morning of the 15th Day',
-        dropdownLabel: 'Morning of the 15th Day | ፲፭ኛ ቀን ጧት (72-73)',
+        name: 'Morning of the 15th Day | ዕለት ፲፭ ነግህ',
+        dropdownLabel: 'Morning of the 15th Day | ዕለት ፲፭ ነግህ (72-73)',
         psalms: [72, 73],
         prophetSongs: []
     },
     'month_d15_evening': {
-        name: 'Evening of the 15th Day',
-        dropdownLabel: 'Evening of the 15th Day | ፲፭ኛ ቀን ማታ (74-76)',
+        name: 'Evening of the 15th Day | ዕለት ፲፭ ሠርክ',
+        dropdownLabel: 'Evening of the 15th Day | ዕለት ፲፭ ሠርክ (74-76)',
         psalms: [74, 75, 76],
         prophetSongs: []
     },
     'month_d16_morning': {
-        name: 'Morning of the 16th Day',
-        dropdownLabel: 'Morning of the 16th Day | ፲፮ኛ ቀን ጧት (77)',
+        name: 'Morning of the 16th Day | ዕለት ፲፮ ነግህ',
+        dropdownLabel: 'Morning of the 16th Day | ዕለት ፲፮ ነግህ (77)',
         psalms: [77],
         prophetSongs: []
     },
     'month_d16_evening': {
-        name: 'Evening of the 16th Day',
-        dropdownLabel: 'Evening of the 16th Day | ፲፮ኛ ቀን ማታ (78)',
+        name: 'Evening of the 16th Day | ዕለት ፲፮ ሠርክ',
+        dropdownLabel: 'Evening of the 16th Day | ዕለት ፲፮ ሠርክ (78)',
         psalms: [78],
         prophetSongs: []
     },
     'month_d17_morning': {
-        name: 'Morning of the 17th Day',
-        dropdownLabel: 'Morning of the 17th Day | ፲፯ኛ ቀን ጧት (79-81)',
+        name: 'Morning of the 17th Day | ዕለት ፲፯ ነግህ',
+        dropdownLabel: 'Morning of the 17th Day | ዕለት ፲፯ ነግህ (79-81)',
         psalms: [79, 80, 81],
         prophetSongs: []
     },
     'month_d17_evening': {
-        name: 'Evening of the 17th Day',
-        dropdownLabel: 'Evening of the 17th Day | ፲፯ኛ ቀን ማታ (82-84)',
+        name: 'Evening of the 17th Day | ዕለት ፲፯ ሠርክ',
+        dropdownLabel: 'Evening of the 17th Day | ዕለት ፲፯ ሠርክ (82-84)',
         psalms: [82, 83, 84],
         prophetSongs: []
     },
     'month_d18_morning': {
-        name: 'Morning of the 18th Day',
-        dropdownLabel: 'Morning of the 18th Day | ፲፰ኛ ቀን ጧት (85-87)',
+        name: 'Morning of the 18th Day | ዕለት ፲፰ ነግህ',
+        dropdownLabel: 'Morning of the 18th Day | ዕለት ፲፰ ነግህ (85-87)',
         psalms: [85, 86, 87],
         prophetSongs: []
     },
     'month_d18_evening': {
-        name: 'Evening of the 18th Day',
-        dropdownLabel: 'Evening of the 18th Day | ፲፰ኛ ቀን ማታ (88)',
+        name: 'Evening of the 18th Day | ዕለት ፲፰ ሠርክ',
+        dropdownLabel: 'Evening of the 18th Day | ዕለት ፲፰ ሠርክ (88)',
         psalms: [88],
         prophetSongs: []
     },
     'month_d19_morning': {
-        name: 'Morning of the 19th Day',
-        dropdownLabel: 'Morning of the 19th Day | ፲፱ኛ ቀን ጧት (89-91)',
+        name: 'Morning of the 19th Day | ዕለት ፲፱ ነግህ',
+        dropdownLabel: 'Morning of the 19th Day | ዕለት ፲፱ ነግህ (89-91)',
         psalms: [89, 90, 91],
         prophetSongs: []
     },
     'month_d19_evening': {
-        name: 'Evening of the 19th Day',
-        dropdownLabel: 'Evening of the 19th Day | ፲፱ኛ ቀን ማታ (92-94)',
+        name: 'Evening of the 19th Day | ዕለት ፲፱ ሠርክ',
+        dropdownLabel: 'Evening of the 19th Day | ዕለት ፲፱ ሠርክ (92-94)',
         psalms: [92, 93, 94],
         prophetSongs: []
     },
     'month_d20_morning': {
-        name: 'Morning of the 20th Day',
-        dropdownLabel: 'Morning of the 20th Day | ፳ኛ ቀን ጧት (95-97)',
+        name: 'Morning of the 20th Day | ዕለት ፳ ነግህ',
+        dropdownLabel: 'Morning of the 20th Day | ዕለት ፳ ነግህ (95-97)',
         psalms: [95, 96, 97],
         prophetSongs: []
     },
     'month_d20_evening': {
-        name: 'Evening of the 20th Day',
-        dropdownLabel: 'Evening of the 20th Day | ፳ኛ ቀን ማታ (98-101)',
+        name: 'Evening of the 20th Day | ዕለት ፳ ሠርክ',
+        dropdownLabel: 'Evening of the 20th Day | ዕለት ፳ ሠርክ (98-101)',
         psalms: [98, 99, 100, 101],
         prophetSongs: []
     },
     'month_d21_morning': {
-        name: 'Morning of the 21st Day',
-        dropdownLabel: 'Morning of the 21st Day | ፳፩ኛ ቀን ጧት (102-103)',
+        name: 'Morning of the 21st Day | ዕለት ፳፩ ነግህ',
+        dropdownLabel: 'Morning of the 21st Day | ዕለት ፳፩ ነግህ (102-103)',
         psalms: [102, 103],
         prophetSongs: []
     },
     'month_d21_evening': {
-        name: 'Evening of the 21st Day',
-        dropdownLabel: 'Evening of the 21st Day | ፳፩ኛ ቀን ማታ (104)',
+        name: 'Evening of the 21st Day | ዕለት ፳፩ ሠርክ',
+        dropdownLabel: 'Evening of the 21st Day | ዕለት ፳፩ ሠርክ (104)',
         psalms: [104],
         prophetSongs: []
     },
     'month_d22_morning': {
-        name: 'Morning of the 22nd Day',
-        dropdownLabel: 'Morning of the 22nd Day | ፳፪ኛ ቀን ጧት (105)',
+        name: 'Morning of the 22nd Day | ዕለት ፳፪ ነግህ',
+        dropdownLabel: 'Morning of the 22nd Day | ዕለት ፳፪ ነግህ (105)',
         psalms: [105],
         prophetSongs: []
     },
     'month_d22_evening': {
-        name: 'Evening of the 22nd Day',
-        dropdownLabel: 'Evening of the 22nd Day | ፳፪ኛ ቀን ማታ (106)',
+        name: 'Evening of the 22nd Day | ዕለት ፳፪ ሠርክ',
+        dropdownLabel: 'Evening of the 22nd Day | ዕለት ፳፪ ሠርክ (106)',
         psalms: [106],
         prophetSongs: []
     },
     'month_d23_morning': {
-        name: 'Morning of the 23rd Day',
-        dropdownLabel: 'Morning of the 23rd Day | ፳፫ኛ ቀን ጧት (107-109)',
+        name: 'Morning of the 23rd Day | ዕለት ፳፫ ነግህ',
+        dropdownLabel: 'Morning of the 23rd Day | ዕለት ፳፫ ነግህ (107-109)',
         psalms: [107, 108, 109],
         prophetSongs: []
     },
     'month_d23_evening': {
-        name: 'Evening of the 23rd Day',
-        dropdownLabel: 'Evening of the 23rd Day | ፳፫ኛ ቀን ማታ (110-113)',
+        name: 'Evening of the 23rd Day | ዕለት ፳፫ ሠርክ',
+        dropdownLabel: 'Evening of the 23rd Day | ዕለት ፳፫ ሠርክ (110-113)',
         psalms: [110, 111, 112, 113],
         prophetSongs: []
     },
     'month_d24_morning': {
-        name: 'Morning of the 24th Day',
-        dropdownLabel: 'Morning of the 24th Day | ፳፬ኛ ቀን ጧት (114-117)',
+        name: 'Morning of the 24th Day | ዕለት ፳፬ ነግህ',
+        dropdownLabel: 'Morning of the 24th Day | ዕለት ፳፬ ነግህ (114-117)',
         psalms: [114, 115, 116, 117],
         prophetSongs: []
     },
     'month_d24_evening': {
-        name: 'Evening of the 24th Day',
-        dropdownLabel: 'Evening of the 24th Day | ፳፬ኛ ቀን ማታ (118:1-56)',
+        name: 'Evening of the 24th Day | ዕለት ፳፬ ሠርክ',
+        dropdownLabel: 'Evening of the 24th Day | ዕለት ፳፬ ሠርክ (118:1-56)',
         psalms: [118],
         verseRanges: { 118: { start: 1, end: 56 } },
         prophetSongs: []
     },
     'month_d25_morning': {
-        name: 'Morning of the 25th Day',
-        dropdownLabel: 'Morning of the 25th Day | ፳፭ኛ ቀን ጧት (118:57-112)',
+        name: 'Morning of the 25th Day | ዕለት ፳፭ ነግህ',
+        dropdownLabel: 'Morning of the 25th Day | ዕለት ፳፭ ነግህ (118:57-112)',
         psalms: [118],
         verseRanges: { 118: { start: 57, end: 112 } },
         prophetSongs: []
     },
     'month_d25_evening': {
-        name: 'Evening of the 25th Day',
-        dropdownLabel: 'Evening of the 25th Day | ፳፭ኛ ቀን ማታ (118:113-176)',
+        name: 'Evening of the 25th Day | ዕለት ፳፭ ሠርክ',
+        dropdownLabel: 'Evening of the 25th Day | ዕለት ፳፭ ሠርክ (118:113-176)',
         psalms: [118],
         verseRanges: { 118: { start: 113, end: 176 } },
         prophetSongs: []
     },
     'month_d26_morning': {
-        name: 'Morning of the 26th Day',
-        dropdownLabel: 'Morning of the 26th Day | ፳፮ኛ ቀን ጧት (119-123)',
+        name: 'Morning of the 26th Day | ዕለት ፳፮ ነግህ',
+        dropdownLabel: 'Morning of the 26th Day | ዕለት ፳፮ ነግህ (119-123)',
         psalms: [119, 120, 121, 122, 123],
         prophetSongs: []
     },
     'month_d26_evening': {
-        name: 'Evening of the 26th Day',
-        dropdownLabel: 'Evening of the 26th Day | ፳፮ኛ ቀን ማታ (124-127)',
+        name: 'Evening of the 26th Day | ዕለት ፳፮ ሠርክ',
+        dropdownLabel: 'Evening of the 26th Day | ዕለት ፳፮ ሠርክ (124-127)',
         psalms: [124, 125, 126, 127],
         prophetSongs: []
     },
     'month_d27_morning': {
-        name: 'Morning of the 27th Day',
-        dropdownLabel: 'Morning of the 27th Day | ፳፯ኛ ቀን ጧት (128-131)',
+        name: 'Morning of the 27th Day | ዕለት ፳፯ ነግህ',
+        dropdownLabel: 'Morning of the 27th Day | ዕለት ፳፯ ነግህ (128-131)',
         psalms: [128, 129, 130, 131],
         prophetSongs: []
     },
     'month_d27_evening': {
-        name: 'Evening of the 27th Day',
-        dropdownLabel: 'Evening of the 27th Day | ፳፯ኛ ቀን ማታ (132-134)',
+        name: 'Evening of the 27th Day | ዕለት ፳፯ ሠርክ',
+        dropdownLabel: 'Evening of the 27th Day | ዕለት ፳፯ ሠርክ (132-134)',
         psalms: [132, 133, 134],
         prophetSongs: []
     },
     'month_d28_morning': {
-        name: 'Morning of the 28th Day',
-        dropdownLabel: 'Morning of the 28th Day | ፳፰ኛ ቀን ጧት (135-136)',
+        name: 'Morning of the 28th Day | ዕለት ፳፰ ነግህ',
+        dropdownLabel: 'Morning of the 28th Day | ዕለት ፳፰ ነግህ (135-136)',
         psalms: [135, 136],
         prophetSongs: []
     },
     'month_d28_evening': {
-        name: 'Evening of the 28th Day',
-        dropdownLabel: 'Evening of the 28th Day | ፳፰ኛ ቀን ማታ (137-138)',
+        name: 'Evening of the 28th Day | ዕለት ፳፰ ሠርክ',
+        dropdownLabel: 'Evening of the 28th Day | ዕለት ፳፰ ሠርክ (137-138)',
         psalms: [137, 138],
         prophetSongs: []
     },
     'month_d29_morning': {
-        name: 'Morning of the 29th Day',
-        dropdownLabel: 'Morning of the 29th Day | ፳፱ኛ ቀን ጧት (139-141)',
+        name: 'Morning of the 29th Day | ዕለት ፳፱ ነግህ',
+        dropdownLabel: 'Morning of the 29th Day | ዕለት ፳፱ ነግህ (139-141)',
         psalms: [139, 140, 141],
         prophetSongs: []
     },
     'month_d29_evening': {
-        name: 'Evening of the 29th Day',
-        dropdownLabel: 'Evening of the 29th Day | ፳፱ኛ ቀን ማታ (142-143)',
+        name: 'Evening of the 29th Day | ዕለት ፳፱ ሠርክ',
+        dropdownLabel: 'Evening of the 29th Day | ዕለት ፳፱ ሠርክ (142-143)',
         psalms: [142, 143],
         prophetSongs: []
     },
     'month_d30_morning': {
-        name: 'Morning of the 30th Day',
-        dropdownLabel: 'Morning of the 30th Day | ፴ኛ ቀን ጧት (144-147)',
+        name: 'Morning of the 30th Day | ዕለት ፴ ነግህ',
+        dropdownLabel: 'Morning of the 30th Day | ዕለት ፴ ነግህ (144-147)',
         psalms: [144, 145, 146, 147],
         prophetSongs: []
     },
     'month_d30_evening': {
-        name: 'Evening of the 30th Day',
-        dropdownLabel: 'Evening of the 30th Day | ፴ኛ ቀን ማታ (148-150)',
+        name: 'Evening of the 30th Day | ዕለት ፴ ሠርክ',
+        dropdownLabel: 'Evening of the 30th Day | ዕለት ፴ ሠርክ (148-150)',
         psalms: [148, 149, 150],
         prophetSongs: []
     },
@@ -862,49 +862,49 @@ const PSALM_COMBINATIONS = {
     },
     'trinity_athanasius': {
         name: 'Trinity (St. Athanasius) | ምሥጢረ ሥላሴ',
-        dropdownLabel: 'Mystery of the Trinity | Mistire Silassie | ምሥጢረ ሥላሴ (44, 99, 109)',
+        dropdownLabel: 'Trinity | Mistire Silassie | ምሥጢረ ሥላሴ (44, 99, 109)',
         psalms: [44, 99, 109],
         prophetSongs: []
     },
     'incarnation_athanasius': {
         name: 'Incarnation (St. Athanasius) | ምሥጢረ ሥጋዌ',
-        dropdownLabel: 'Mystery of the Incarnation | Mistire Sigawe | ምሥጢረ ሥጋዌ (32, 44, 49, 86, 106, 109, 117)',
+        dropdownLabel: 'Incarnation | Mistire Sigawe | ምሥጢረ ሥጋዌ (32, 44, 49, 86, 106, 109, 117)',
         psalms: [32, 44, 49, 86, 106, 109, 117],
         prophetSongs: []
     },
     'penance_athanasius': {
         name: 'Penance (St. Athanasius) | ምሥጢረ ንስሐ',
-        dropdownLabel: 'Mystery of Penance | Mistire Nisiha | ምሥጢረ ንስሐ (9, 50, 74, 91, 104-107, 110, 117, 135, 137)',
+        dropdownLabel: 'Penance | Mistire Nisiha | ምሥጢረ ንስሐ (9, 50, 74, 91, 104-107, 110, 117, 135, 137)',
         psalms: [9, 50, 74, 91, 104, 105, 106, 107, 110, 117, 135, 137],
         prophetSongs: []
     },
     'communion_athanasius': {
         name: 'Communion (St. Athanasius) | ምሥጢረ ቁርባን',
-        dropdownLabel: 'Mystery of Communion | Mistire Qurban | ምሥጢረ ቁርባን (2, 21, 68, 71, 87, 137)',
+        dropdownLabel: 'Communion | Mistire Qurban | ምሥጢረ ቁርባን (2, 21, 68, 71, 87, 137)',
         psalms: [2, 21, 68, 71, 87, 137],
         prophetSongs: []
     },
     'resurrection_athanasius': {
         name: 'Resurrection (St. Athanasius) | ምሥጢረ ትንሣኤ',
-        dropdownLabel: 'Mystery of the Resurrection | Mistire Tinsaie | ምሥጢረ ትንሣኤ (9, 15, 23, 46, 49, 65, 71, 81, 109)',
+        dropdownLabel: 'Resurrection | Mistire Tinsaie | ምሥጢረ ትንሣኤ (9, 15, 23, 46, 49, 65, 71, 81, 109)',
         psalms: [9, 15, 23, 46, 49, 65, 71, 81, 109],
         prophetSongs: []
     },
     'baptism_cyril': {
         name: 'Baptism (St. Cyril) | ምሥጢረ ጥምቀት',
-        dropdownLabel: 'Mystery of Baptism | Mistire Timqet | ምሥጢረ ጥምቀት (31, 45, 81, 138)',
+        dropdownLabel: 'Baptism | Mistire Timqet | ምሥጢረ ጥምቀት (31, 45, 81, 138)',
         psalms: [31, 45, 81, 138],
         prophetSongs: []
     },
     'chrismation_cyril': {
         name: 'Chrismation (St. Cyril) | ምሥጢረ ሜሮን',
-        dropdownLabel: 'Mystery of Chrismation | Mistire Meron | ምሥጢረ ሜሮን (44)',
+        dropdownLabel: 'Chrismation | Mistire Meron | ምሥጢረ ሜሮን (44)',
         psalms: [44],
         prophetSongs: []
     },
     'communion_cyril': {
         name: 'Communion (St. Cyril) | ምሥጢረ ቁርባን',
-        dropdownLabel: 'Mystery of Communion | Mistire Qurban | ምሥጢረ ቁርባን (22, 26, 33, 103)',
+        dropdownLabel: 'Communion | Mistire Qurban | ምሥጢረ ቁርባን (22, 26, 33, 103)',
         psalms: [22, 26, 33, 103],
         prophetSongs: []
     }
@@ -954,12 +954,12 @@ const PSALM_CATEGORIES = [
     },
     {
         id: 'mysteries_athanasius',
-        label: 'Catechetical Psalter of St. Athanasius (Letter to Marcellinus, c. 360 AD)',
+        label: 'Catechetical Psalters (St. Athanasius of Alexandria, Letter to Marcellinus, c. 360 AD)',
         items: ['trinity_athanasius', 'incarnation_athanasius', 'penance_athanasius', 'communion_athanasius', 'resurrection_athanasius']
     },
     {
         id: 'mysteries_cyril',
-        label: 'Mystagogical Psalter of St. Cyril of Jerusalem (Catechetical Lectures, c. 350 AD)',
+        label: 'Mystagogical Psalters (St. Cyril of Jerusalem, Catechetical Lectures, c. 350 AD)',
         items: ['baptism_cyril', 'chrismation_cyril', 'communion_cyril']
     }
 ];

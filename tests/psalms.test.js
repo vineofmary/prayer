@@ -137,9 +137,13 @@ describe('Psalter & Canon Mapping (Septuagint LXX <-> Masoretic MT)', () => {
       expect(app.PSALM_COMBINATIONS.pentecost.psalms).toEqual([48, 68, 104, 145]);
     });
 
-    it('organizes St. Athanasius and St. Cyril psalters into their respective PSALM_CATEGORIES', () => {
+    it('organizes St. Athanasius and St. Cyril psalters into their respective PSALM_CATEGORIES with simplified titles', () => {
       const athCategory = app.PSALM_CATEGORIES.find(c => c.id === 'mysteries_athanasius');
       expect(athCategory).toBeDefined();
+      expect(athCategory.label).toBe('Catechetical Psalters (St. Athanasius of Alexandria, Letter to Marcellinus, c. 360 AD)');
+      const athMatch = athCategory.label.match(/^([^(]+)(?:\s+(\(.+\)))?$/);
+      expect(athMatch[1].trim()).toBe('Catechetical Psalters');
+      expect(athMatch[2]).toBe('(St. Athanasius of Alexandria, Letter to Marcellinus, c. 360 AD)');
       expect(athCategory.items).toEqual([
         'trinity_athanasius',
         'incarnation_athanasius',
@@ -150,11 +154,22 @@ describe('Psalter & Canon Mapping (Septuagint LXX <-> Masoretic MT)', () => {
 
       const cyrilCategory = app.PSALM_CATEGORIES.find(c => c.id === 'mysteries_cyril');
       expect(cyrilCategory).toBeDefined();
+      expect(cyrilCategory.label).toBe('Mystagogical Psalters (St. Cyril of Jerusalem, Catechetical Lectures, c. 350 AD)');
+      const cyrilMatch = cyrilCategory.label.match(/^([^(]+)(?:\s+(\(.+\)))?$/);
+      expect(cyrilMatch[1].trim()).toBe('Mystagogical Psalters');
+      expect(cyrilMatch[2]).toBe('(St. Cyril of Jerusalem, Catechetical Lectures, c. 350 AD)');
       expect(cyrilCategory.items).toEqual([
         'baptism_cyril',
         'chrismation_cyril',
         'communion_cyril'
       ]);
+
+      // Verify entries omit "Mystery of..." in English title but retain "ምሥጢረ..." in Ge'ez subtitle
+      expect(app.PSALM_COMBINATIONS.trinity_athanasius.dropdownLabel).toBe('Trinity | Mistire Silassie | ምሥጢረ ሥላሴ (44, 99, 109)');
+      expect(app.PSALM_COMBINATIONS.incarnation_athanasius.dropdownLabel).toBe('Incarnation | Mistire Sigawe | ምሥጢረ ሥጋዌ (32, 44, 49, 86, 106, 109, 117)');
+      expect(app.PSALM_COMBINATIONS.baptism_cyril.dropdownLabel).toBe('Baptism | Mistire Timqet | ምሥጢረ ጥምቀት (31, 45, 81, 138)');
+      expect(app.PSALM_COMBINATIONS.chrismation_cyril.dropdownLabel).toBe('Chrismation | Mistire Meron | ምሥጢረ ሜሮን (44)');
+      expect(app.PSALM_COMBINATIONS.communion_cyril.dropdownLabel).toBe('Communion | Mistire Qurban | ምሥጢረ ቁርባን (22, 26, 33, 103)');
     });
 
     it('orders PSALM_CATEGORIES with Nigus below General, Monthly below Weekly, and Coptic Agpeya below Hourly', () => {
@@ -206,6 +221,17 @@ describe('Psalter & Canon Mapping (Septuagint LXX <-> Masoretic MT)', () => {
       expect(app.PSALM_COMBINATIONS.coptic_midnight_1.psalms).toEqual([50, 3, 6, 12, 69, 85, 90, 116, 117, 118]);
       expect(app.PSALM_COMBINATIONS.coptic_midnight_2.psalms).toEqual([50, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133]);
       expect(app.PSALM_COMBINATIONS.coptic_midnight_3.psalms).toEqual([50, 134, 135, 136, 137, 138, 139, 140, 141, 142, 144, 145, 146, 147, 148, 149, 150]);
+
+      // Verify Ge'ez numeral formatting in Midnight watches (no Amharic -ኛ)
+      expect(app.PSALM_COMBINATIONS.coptic_midnight_1.name).toBe('Midnight (1st Watch) | መንፈቀ ሌሊት (፩)');
+      expect(app.PSALM_COMBINATIONS.coptic_midnight_1.dropdownLabel).toContain('መንፈቀ ሌሊት ፩');
+      expect(app.PSALM_COMBINATIONS.coptic_midnight_1.dropdownLabel).not.toContain('፩ኛ');
+      expect(app.PSALM_COMBINATIONS.coptic_midnight_2.name).toBe('Midnight (2nd Watch) | መንፈቀ ሌሊት (፪)');
+      expect(app.PSALM_COMBINATIONS.coptic_midnight_2.dropdownLabel).toContain('መንፈቀ ሌሊት ፪');
+      expect(app.PSALM_COMBINATIONS.coptic_midnight_2.dropdownLabel).not.toContain('፪ኛ');
+      expect(app.PSALM_COMBINATIONS.coptic_midnight_3.name).toBe('Midnight (3rd Watch) | መንፈቀ ሌሊት (፫)');
+      expect(app.PSALM_COMBINATIONS.coptic_midnight_3.dropdownLabel).toContain('መንፈቀ ሌሊት ፫');
+      expect(app.PSALM_COMBINATIONS.coptic_midnight_3.dropdownLabel).not.toContain('፫ኛ');
     });
 
     it('includes the 30-day Monthly Psalter (60 entries) covering LXX Psalms 1-150 with Psalm 118 verse ranges', () => {
@@ -239,6 +265,23 @@ describe('Psalter & Canon Mapping (Septuagint LXX <-> Masoretic MT)', () => {
       expect(app.PSALM_COMBINATIONS.month_d25_evening.verseRanges).toEqual({ 118: { start: 113, end: 176 } });
       expect(app.PSALM_COMBINATIONS.month_d30_morning.psalms).toEqual([144, 145, 146, 147]); // MT 145-147 -> LXX 144-147
       expect(app.PSALM_COMBINATIONS.month_d30_evening.psalms).toEqual([148, 149, 150]);
+
+      // Verify all 60 entries have pure Ge'ez subtitles (ዕለት ... ነግህ/ሠርክ) and no Amharic -ኛ, ቀን, ጧት, ማታ
+      for (let d = 1; d <= 30; d++) {
+        const morningCombo = app.PSALM_COMBINATIONS[`month_d${d}_morning`];
+        const eveningCombo = app.PSALM_COMBINATIONS[`month_d${d}_evening`];
+        expect(morningCombo.name).toMatch(/\| ዕለት .+ ነግህ$/);
+        expect(morningCombo.dropdownLabel).toMatch(/\| ዕለት .+ ነግህ \(/);
+        expect(morningCombo.dropdownLabel).not.toContain('ኛ');
+        expect(morningCombo.dropdownLabel).not.toContain('ቀን');
+        expect(morningCombo.dropdownLabel).not.toContain('ጧት');
+
+        expect(eveningCombo.name).toMatch(/\| ዕለት .+ ሠርክ$/);
+        expect(eveningCombo.dropdownLabel).toMatch(/\| ዕለት .+ ሠርክ \(/);
+        expect(eveningCombo.dropdownLabel).not.toContain('ኛ');
+        expect(eveningCombo.dropdownLabel).not.toContain('ቀን');
+        expect(eveningCombo.dropdownLabel).not.toContain('ማታ');
+      }
     });
 
     it('distinguishes Psalm 118 sub-range presets when selecting combinations', () => {
