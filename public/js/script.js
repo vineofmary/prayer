@@ -448,6 +448,12 @@ const PSALM_COMBINATIONS = {
         psalms: [32, 44, 49, 86, 106, 109, 117],
         prophetSongs: []
     },
+    'penance_athanasius': {
+        name: 'Penance (St. Athanasius) | ምሥጢረ ንስሐ',
+        dropdownLabel: 'Mystery of Penance | Mistire Nisiha | ምሥጢረ ንስሐ (9, 50, 74, 91, 104-107, 110, 117, 135, 137)',
+        psalms: [9, 50, 74, 91, 104, 105, 106, 107, 110, 117, 135, 137],
+        prophetSongs: []
+    },
     'communion_athanasius': {
         name: 'Communion (St. Athanasius) | ምሥጢረ ቁርባን',
         dropdownLabel: 'Mystery of Communion | Mistire Qurban | ምሥጢረ ቁርባን (2, 21, 68, 71, 87, 137)',
@@ -464,6 +470,12 @@ const PSALM_COMBINATIONS = {
         name: 'Baptism (St. Cyril) | ምሥጢረ ጥምቀት',
         dropdownLabel: 'Mystery of Baptism | Mistire Timqet | ምሥጢረ ጥምቀት (31, 45, 81, 138)',
         psalms: [31, 45, 81, 138],
+        prophetSongs: []
+    },
+    'chrismation_cyril': {
+        name: 'Chrismation (St. Cyril) | ምሥጢረ ሜሮን',
+        dropdownLabel: 'Mystery of Chrismation | Mistire Meron | ምሥጢረ ሜሮን (44)',
+        psalms: [44],
         prophetSongs: []
     },
     'communion_cyril': {
@@ -508,12 +520,12 @@ const PSALM_CATEGORIES = [
     {
         id: 'mysteries_athanasius',
         label: 'Catechetical Psalter of St. Athanasius (Letter to Marcellinus, c. 360 AD)',
-        items: ['trinity_athanasius', 'incarnation_athanasius', 'communion_athanasius', 'resurrection_athanasius']
+        items: ['trinity_athanasius', 'incarnation_athanasius', 'penance_athanasius', 'communion_athanasius', 'resurrection_athanasius']
     },
     {
         id: 'mysteries_cyril',
         label: 'Mystagogical Psalter of St. Cyril of Jerusalem (Catechetical Lectures, c. 350 AD)',
-        items: ['baptism_cyril', 'communion_cyril']
+        items: ['baptism_cyril', 'chrismation_cyril', 'communion_cyril']
     }
 ];
 // --- State Variables ---
@@ -7601,6 +7613,8 @@ function renderPsalmCombinationsModal() {
             if (rawChapters) {
                 if (rawChapters === 'Songs of the Prophets') {
                     chaptersText = rawChapters;
+                } else if (/^\d+$/.test(rawChapters.trim())) {
+                    chaptersText = `Psalm ${rawChapters.trim()}`;
                 } else {
                     chaptersText = `Psalms ${rawChapters}`;
                 }

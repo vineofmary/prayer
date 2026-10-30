@@ -117,12 +117,14 @@ describe('Psalter & Canon Mapping (Septuagint LXX <-> Masoretic MT)', () => {
     it('includes St. Athanasius Catechetical Psalter combinations with exact LXX numbers', () => {
       expect(app.PSALM_COMBINATIONS.trinity_athanasius.psalms).toEqual([44, 99, 109]);
       expect(app.PSALM_COMBINATIONS.incarnation_athanasius.psalms).toEqual([32, 44, 49, 86, 106, 109, 117]);
+      expect(app.PSALM_COMBINATIONS.penance_athanasius.psalms).toEqual([9, 50, 74, 91, 104, 105, 106, 107, 110, 117, 135, 137]);
       expect(app.PSALM_COMBINATIONS.communion_athanasius.psalms).toEqual([2, 21, 68, 71, 87, 137]);
       expect(app.PSALM_COMBINATIONS.resurrection_athanasius.psalms).toEqual([9, 15, 23, 46, 49, 65, 71, 81, 109]);
     });
 
     it('includes St. Cyril of Jerusalem Mystagogical Psalter combinations with exact LXX numbers', () => {
       expect(app.PSALM_COMBINATIONS.baptism_cyril.psalms).toEqual([31, 45, 81, 138]);
+      expect(app.PSALM_COMBINATIONS.chrismation_cyril.psalms).toEqual([44]);
       expect(app.PSALM_COMBINATIONS.communion_cyril.psalms).toEqual([22, 26, 33, 103]);
     });
 
@@ -141,6 +143,7 @@ describe('Psalter & Canon Mapping (Septuagint LXX <-> Masoretic MT)', () => {
       expect(athCategory.items).toEqual([
         'trinity_athanasius',
         'incarnation_athanasius',
+        'penance_athanasius',
         'communion_athanasius',
         'resurrection_athanasius'
       ]);
@@ -149,6 +152,7 @@ describe('Psalter & Canon Mapping (Septuagint LXX <-> Masoretic MT)', () => {
       expect(cyrilCategory).toBeDefined();
       expect(cyrilCategory.items).toEqual([
         'baptism_cyril',
+        'chrismation_cyril',
         'communion_cyril'
       ]);
     });
