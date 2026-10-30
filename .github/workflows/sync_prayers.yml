@@ -9,22 +9,24 @@ on:
 jobs:
   sync:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
         with:
-          # Required to trigger subsequent workflows if needed, or to allow auto-commit to work correctly
+          # Required to allow auto-commit action to push to main
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
 
       - name: Install Dependencies
-        run: npm install firebase-admin
-        
+        run: npm ci
+
       - name: Run Sync Script
         env:
           FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
@@ -34,5 +36,5 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "chore: Auto-sync published prayers from Firestore"
-          file_pattern: app/src/main/assets/js/prayers.js
+          file_pattern: app/src/main/assets/js/prayers.js public/js/prayers.js docs/liturgy_checksums.json
           branch: main
