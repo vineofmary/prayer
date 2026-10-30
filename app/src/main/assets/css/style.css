@@ -3058,6 +3058,19 @@ body.presentation-mode-slides .hareg-ornament {
     gap: 0.5rem;
 }
 
+.accordion-category-description {
+    font-size: 0.85rem;
+    line-height: 1.45;
+    font-style: italic;
+    color: var(--speaker-label-color);
+    opacity: 0.88;
+    padding: 0.5rem 0.75rem;
+    margin-bottom: 0.25rem;
+    border-left: 3px solid var(--accent-color);
+    background-color: var(--hover-color);
+    border-radius: 0 6px 6px 0;
+}
+
 .combo-option {
     padding: 0.85rem 1rem;
     border-radius: 6px;

@@ -156,5 +156,103 @@ describe('Psalter & Canon Mapping (Septuagint LXX <-> Masoretic MT)', () => {
         'communion_cyril'
       ]);
     });
+
+    it('orders PSALM_CATEGORIES with Nigus below General, Monthly below Weekly, and Coptic Agpeya below Hourly', () => {
+      const categoryIds = app.PSALM_CATEGORIES.map(c => c.id);
+      expect(categoryIds).toEqual([
+        'general',
+        'nigus',
+        'desert_fathers',
+        'weekly',
+        'monthly',
+        'hourly',
+        'hourly_coptic',
+        'feasts',
+        'mysteries_athanasius',
+        'mysteries_cyril'
+      ]);
+    });
+
+    it('includes Coptic Agpeya Hours with Psalm 50 at the start of every hour, Ge\'ez titles, separate Midnight watches, and Veil', () => {
+      const copticCategory = app.PSALM_CATEGORIES.find(c => c.id === 'hourly_coptic');
+      expect(copticCategory).toBeDefined();
+      expect(copticCategory.items).toEqual([
+        'coptic_1st',
+        'coptic_3rd',
+        'coptic_6th',
+        'coptic_9th',
+        'coptic_11th',
+        'coptic_12th',
+        'coptic_veil',
+        'coptic_midnight_1',
+        'coptic_midnight_2',
+        'coptic_midnight_3'
+      ]);
+
+      for (const key of copticCategory.items) {
+        const combo = app.PSALM_COMBINATIONS[key];
+        expect(combo).toBeDefined();
+        expect(combo.psalms[0]).toBe(50);
+      }
+
+      expect(app.PSALM_COMBINATIONS.coptic_1st.name).toBe('Dawn / Prime (1st Hour) | ነግህ');
+      expect(app.PSALM_COMBINATIONS.coptic_1st.psalms).toEqual([50, 1, 2, 3, 4, 5, 6, 8, 11, 12, 14, 15, 18, 24, 26, 62, 66, 69, 112, 142]);
+      expect(app.PSALM_COMBINATIONS.coptic_3rd.psalms).toEqual([50, 19, 22, 23, 25, 28, 29, 33, 40, 42, 44, 45, 46]);
+      expect(app.PSALM_COMBINATIONS.coptic_6th.psalms).toEqual([50, 53, 56, 60, 62, 66, 69, 83, 84, 85, 86, 90]);
+      expect(app.PSALM_COMBINATIONS.coptic_9th.psalms).toEqual([50, 95, 96, 97, 98, 99, 100, 109, 110, 111, 112, 114, 115]);
+      expect(app.PSALM_COMBINATIONS.coptic_11th.psalms).toEqual([50, 116, 117, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128]);
+      expect(app.PSALM_COMBINATIONS.coptic_12th.psalms).toEqual([50, 129, 130, 131, 132, 133, 136, 137, 140, 141, 145, 146, 147]);
+      expect(app.PSALM_COMBINATIONS.coptic_veil.verseRanges).toEqual({ 118: { start: 153, end: 176 } });
+      expect(app.PSALM_COMBINATIONS.coptic_midnight_1.psalms).toEqual([50, 3, 6, 12, 69, 85, 90, 116, 117, 118]);
+      expect(app.PSALM_COMBINATIONS.coptic_midnight_2.psalms).toEqual([50, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133]);
+      expect(app.PSALM_COMBINATIONS.coptic_midnight_3.psalms).toEqual([50, 134, 135, 136, 137, 138, 139, 140, 141, 142, 144, 145, 146, 147, 148, 149, 150]);
+    });
+
+    it('includes the 30-day Monthly Psalter (60 entries) covering LXX Psalms 1-150 with Psalm 118 verse ranges', () => {
+      const monthlyCategory = app.PSALM_CATEGORIES.find(c => c.id === 'monthly');
+      expect(monthlyCategory).toBeDefined();
+      expect(monthlyCategory.description).toContain('all 150 Psalms of David are prayed through within one month');
+      expect(monthlyCategory.items).toHaveLength(60);
+
+      // Verify all 150 LXX chapters are covered in ascending order across the 60 entries
+      const uniqueChapters = [];
+      for (const key of monthlyCategory.items) {
+        const combo = app.PSALM_COMBINATIONS[key];
+        expect(combo).toBeDefined();
+        for (const ch of combo.psalms) {
+          if (uniqueChapters[uniqueChapters.length - 1] !== ch) {
+            uniqueChapters.push(ch);
+          }
+        }
+      }
+      expect(uniqueChapters).toEqual(Array.from({ length: 150 }, (_, i) => i + 1));
+
+      // Verify LXX boundary conversions & Psalm 118 verse ranges
+      expect(app.PSALM_COMBINATIONS.month_d2_morning.psalms).toEqual([9]); // MT 9-10 -> LXX 9
+      expect(app.PSALM_COMBINATIONS.month_d23_evening.psalms).toEqual([110, 111, 112, 113]); // MT 111-115 -> LXX 110-113
+      expect(app.PSALM_COMBINATIONS.month_d24_morning.psalms).toEqual([114, 115, 116, 117]); // MT 116-118 -> LXX 114-117
+      expect(app.PSALM_COMBINATIONS.month_d24_evening.psalms).toEqual([118]);
+      expect(app.PSALM_COMBINATIONS.month_d24_evening.verseRanges).toEqual({ 118: { start: 1, end: 56 } });
+      expect(app.PSALM_COMBINATIONS.month_d25_morning.psalms).toEqual([118]);
+      expect(app.PSALM_COMBINATIONS.month_d25_morning.verseRanges).toEqual({ 118: { start: 57, end: 112 } });
+      expect(app.PSALM_COMBINATIONS.month_d25_evening.psalms).toEqual([118]);
+      expect(app.PSALM_COMBINATIONS.month_d25_evening.verseRanges).toEqual({ 118: { start: 113, end: 176 } });
+      expect(app.PSALM_COMBINATIONS.month_d30_morning.psalms).toEqual([144, 145, 146, 147]); // MT 145-147 -> LXX 144-147
+      expect(app.PSALM_COMBINATIONS.month_d30_evening.psalms).toEqual([148, 149, 150]);
+    });
+
+    it('distinguishes Psalm 118 sub-range presets when selecting combinations', () => {
+      app.selectPsalmCombination('month_d24_evening');
+      expect(app.getActiveLectionaryReadingsSnapshot().selectedPsalms).toEqual([118]);
+      expect(app.getActiveLectionaryReadingsSnapshot().selectedPsalmVerseRanges).toEqual({ 118: { start: 1, end: 56 } });
+
+      app.selectPsalmCombination('month_d25_morning');
+      expect(app.getActiveLectionaryReadingsSnapshot().selectedPsalms).toEqual([118]);
+      expect(app.getActiveLectionaryReadingsSnapshot().selectedPsalmVerseRanges).toEqual({ 118: { start: 57, end: 112 } });
+
+      app.selectPsalmCombination('month_d25_evening');
+      expect(app.getActiveLectionaryReadingsSnapshot().selectedPsalms).toEqual([118]);
+      expect(app.getActiveLectionaryReadingsSnapshot().selectedPsalmVerseRanges).toEqual({ 118: { start: 113, end: 176 } });
+    });
   });
 });

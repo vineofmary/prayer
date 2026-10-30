@@ -302,6 +302,430 @@ const PSALM_COMBINATIONS = {
         psalms: [23, 140, 14, 145, 66],
         prophetSongs: ['prayerOfSimeon']
     },
+    'coptic_1st': {
+        name: 'Dawn / Prime (1st Hour) | ነግህ',
+        dropdownLabel: 'Dawn / Prime (1st Hour) | Negih | ነግህ (50, 1-6, 8, 11, 12, 14, 15, 18, 24, 26, 62, 66, 69, 112, 142)',
+        psalms: [50, 1, 2, 3, 4, 5, 6, 8, 11, 12, 14, 15, 18, 24, 26, 62, 66, 69, 112, 142],
+        prophetSongs: []
+    },
+    'coptic_3rd': {
+        name: 'Terce (3rd Hour) | ሠለስት',
+        dropdownLabel: 'Terce (3rd Hour) | Selest | ሠለስት (50, 19, 22, 23, 25, 28, 29, 33, 40, 42, 44-46)',
+        psalms: [50, 19, 22, 23, 25, 28, 29, 33, 40, 42, 44, 45, 46],
+        prophetSongs: []
+    },
+    'coptic_6th': {
+        name: 'Midday / Sext (6th Hour) | ቀትር',
+        dropdownLabel: 'Midday / Sext (6th Hour) | Qetir | ቀትር (50, 53, 56, 60, 62, 66, 69, 83-86, 90)',
+        psalms: [50, 53, 56, 60, 62, 66, 69, 83, 84, 85, 86, 90],
+        prophetSongs: []
+    },
+    'coptic_9th': {
+        name: 'None (9th Hour) | ተሲያት',
+        dropdownLabel: 'None (9th Hour) | Tesiyat | ተሲያት (50, 95-100, 109-112, 114, 115)',
+        psalms: [50, 95, 96, 97, 98, 99, 100, 109, 110, 111, 112, 114, 115],
+        prophetSongs: []
+    },
+    'coptic_11th': {
+        name: 'Evening / Vespers (11th Hour) | ሠርክ',
+        dropdownLabel: 'Evening / Vespers (11th Hour) | Serk | ሠርክ (50, 116, 117, 119-128)',
+        psalms: [50, 116, 117, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128],
+        prophetSongs: []
+    },
+    'coptic_12th': {
+        name: 'Sleep / Compline (12th Hour) | ንዋም',
+        dropdownLabel: 'Sleep / Compline (12th Hour) | Niwam | ንዋም (50, 129-133, 136, 137, 140, 141, 145-147)',
+        psalms: [50, 129, 130, 131, 132, 133, 136, 137, 140, 141, 145, 146, 147],
+        prophetSongs: []
+    },
+    'coptic_veil': {
+        name: 'Veil (Monastic) | ጸሎተ መንጦላዕት',
+        dropdownLabel: 'Prayer of the Veil | Tselote Mentola\'it | ጸሎተ መንጦላዕት (50, 4, 6, 12, 15, 24, 26, 66, 69, 22, 29, 42, 56, 85, 90, 96, 109, 114, 115, 120, 128-133, 136, 140, 145, 118:153-176)',
+        psalms: [50, 4, 6, 12, 15, 24, 26, 66, 69, 22, 29, 42, 56, 85, 90, 96, 109, 114, 115, 120, 128, 129, 130, 131, 132, 133, 136, 140, 145, 118],
+        verseRanges: { 118: { start: 153, end: 176 } },
+        prophetSongs: []
+    },
+    'coptic_midnight_1': {
+        name: 'Midnight (1st Watch) | መንፈቀ ሌሊት (፩ኛ ሰዓት)',
+        dropdownLabel: 'Midnight (1st Watch) | Menfeqe Lelit | መንፈቀ ሌሊት ፩ኛ (50, 3, 6, 12, 69, 85, 90, 116-118)',
+        psalms: [50, 3, 6, 12, 69, 85, 90, 116, 117, 118],
+        prophetSongs: []
+    },
+    'coptic_midnight_2': {
+        name: 'Midnight (2nd Watch) | መንፈቀ ሌሊት (፪ኛ ሰዓት)',
+        dropdownLabel: 'Midnight (2nd Watch) | Menfeqe Lelit | መንፈቀ ሌሊት ፪ኛ (50, 119-133)',
+        psalms: [50, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133],
+        prophetSongs: []
+    },
+    'coptic_midnight_3': {
+        name: 'Midnight (3rd Watch) | መንፈቀ ሌሊት (፫ኛ ሰዓት)',
+        dropdownLabel: 'Midnight (3rd Watch) | Menfeqe Lelit | መንፈቀ ሌሊት ፫ኛ (50, 134-142, 144-150)',
+        psalms: [50, 134, 135, 136, 137, 138, 139, 140, 141, 142, 144, 145, 146, 147, 148, 149, 150],
+        prophetSongs: []
+    },
+    'month_d1_morning': {
+        name: 'Morning of the 1st Day',
+        dropdownLabel: 'Morning of the 1st Day | ፩ኛ ቀን ጧት (1-4)',
+        psalms: [1, 2, 3, 4],
+        prophetSongs: []
+    },
+    'month_d1_evening': {
+        name: 'Evening of the 1st Day',
+        dropdownLabel: 'Evening of the 1st Day | ፩ኛ ቀን ማታ (5-8)',
+        psalms: [5, 6, 7, 8],
+        prophetSongs: []
+    },
+    'month_d2_morning': {
+        name: 'Morning of the 2nd Day',
+        dropdownLabel: 'Morning of the 2nd Day | ፪ኛ ቀን ጧት (9)',
+        psalms: [9],
+        prophetSongs: []
+    },
+    'month_d2_evening': {
+        name: 'Evening of the 2nd Day',
+        dropdownLabel: 'Evening of the 2nd Day | ፪ኛ ቀን ማታ (10-13)',
+        psalms: [10, 11, 12, 13],
+        prophetSongs: []
+    },
+    'month_d3_morning': {
+        name: 'Morning of the 3rd Day',
+        dropdownLabel: 'Morning of the 3rd Day | ፫ኛ ቀን ጧት (14-16)',
+        psalms: [14, 15, 16],
+        prophetSongs: []
+    },
+    'month_d3_evening': {
+        name: 'Evening of the 3rd Day',
+        dropdownLabel: 'Evening of the 3rd Day | ፫ኛ ቀን ማታ (17)',
+        psalms: [17],
+        prophetSongs: []
+    },
+    'month_d4_morning': {
+        name: 'Morning of the 4th Day',
+        dropdownLabel: 'Morning of the 4th Day | ፬ኛ ቀን ጧት (18-19)',
+        psalms: [18, 19],
+        prophetSongs: []
+    },
+    'month_d4_evening': {
+        name: 'Evening of the 4th Day',
+        dropdownLabel: 'Evening of the 4th Day | ፬ኛ ቀን ማታ (20-21)',
+        psalms: [20, 21],
+        prophetSongs: []
+    },
+    'month_d5_morning': {
+        name: 'Morning of the 5th Day',
+        dropdownLabel: 'Morning of the 5th Day | ፭ኛ ቀን ጧት (22-24)',
+        psalms: [22, 23, 24],
+        prophetSongs: []
+    },
+    'month_d5_evening': {
+        name: 'Evening of the 5th Day',
+        dropdownLabel: 'Evening of the 5th Day | ፭ኛ ቀን ማታ (25-28)',
+        psalms: [25, 26, 27, 28],
+        prophetSongs: []
+    },
+    'month_d6_morning': {
+        name: 'Morning of the 6th Day',
+        dropdownLabel: 'Morning of the 6th Day | ፮ኛ ቀን ጧት (29-30)',
+        psalms: [29, 30],
+        prophetSongs: []
+    },
+    'month_d6_evening': {
+        name: 'Evening of the 6th Day',
+        dropdownLabel: 'Evening of the 6th Day | ፮ኛ ቀን ማታ (31-32)',
+        psalms: [31, 32],
+        prophetSongs: []
+    },
+    'month_d7_morning': {
+        name: 'Morning of the 7th Day',
+        dropdownLabel: 'Morning of the 7th Day | ፯ኛ ቀን ጧት (33-34)',
+        psalms: [33, 34],
+        prophetSongs: []
+    },
+    'month_d7_evening': {
+        name: 'Evening of the 7th Day',
+        dropdownLabel: 'Evening of the 7th Day | ፯ኛ ቀን ማታ (35-36)',
+        psalms: [35, 36],
+        prophetSongs: []
+    },
+    'month_d8_morning': {
+        name: 'Morning of the 8th Day',
+        dropdownLabel: 'Morning of the 8th Day | ፰ኛ ቀን ጧት (37-38)',
+        psalms: [37, 38],
+        prophetSongs: []
+    },
+    'month_d8_evening': {
+        name: 'Evening of the 8th Day',
+        dropdownLabel: 'Evening of the 8th Day | ፰ኛ ቀን ማታ (39-40)',
+        psalms: [39, 40],
+        prophetSongs: []
+    },
+    'month_d9_morning': {
+        name: 'Morning of the 9th Day',
+        dropdownLabel: 'Morning of the 9th Day | ፱ኛ ቀን ጧት (41-43)',
+        psalms: [41, 42, 43],
+        prophetSongs: []
+    },
+    'month_d9_evening': {
+        name: 'Evening of the 9th Day',
+        dropdownLabel: 'Evening of the 9th Day | ፱ኛ ቀን ማታ (44-45)',
+        psalms: [44, 45],
+        prophetSongs: []
+    },
+    'month_d10_morning': {
+        name: 'Morning of the 10th Day',
+        dropdownLabel: 'Morning of the 10th Day | ፲ኛ ቀን ጧት (46-48)',
+        psalms: [46, 47, 48],
+        prophetSongs: []
+    },
+    'month_d10_evening': {
+        name: 'Evening of the 10th Day',
+        dropdownLabel: 'Evening of the 10th Day | ፲ኛ ቀን ማታ (49-51)',
+        psalms: [49, 50, 51],
+        prophetSongs: []
+    },
+    'month_d11_morning': {
+        name: 'Morning of the 11th Day',
+        dropdownLabel: 'Morning of the 11th Day | ፲፩ኛ ቀን ጧት (52-54)',
+        psalms: [52, 53, 54],
+        prophetSongs: []
+    },
+    'month_d11_evening': {
+        name: 'Evening of the 11th Day',
+        dropdownLabel: 'Evening of the 11th Day | ፲፩ኛ ቀን ማታ (55-57)',
+        psalms: [55, 56, 57],
+        prophetSongs: []
+    },
+    'month_d12_morning': {
+        name: 'Morning of the 12th Day',
+        dropdownLabel: 'Morning of the 12th Day | ፲፪ኛ ቀን ጧት (58-59)',
+        psalms: [58, 59],
+        prophetSongs: []
+    },
+    'month_d12_evening': {
+        name: 'Evening of the 12th Day',
+        dropdownLabel: 'Evening of the 12th Day | ፲፪ኛ ቀን ማታ (60-62)',
+        psalms: [60, 61, 62],
+        prophetSongs: []
+    },
+    'month_d13_morning': {
+        name: 'Morning of the 13th Day',
+        dropdownLabel: 'Morning of the 13th Day | ፲፫ኛ ቀን ጧት (63-65)',
+        psalms: [63, 64, 65],
+        prophetSongs: []
+    },
+    'month_d13_evening': {
+        name: 'Evening of the 13th Day',
+        dropdownLabel: 'Evening of the 13th Day | ፲፫ኛ ቀን ማታ (66-67)',
+        psalms: [66, 67],
+        prophetSongs: []
+    },
+    'month_d14_morning': {
+        name: 'Morning of the 14th Day',
+        dropdownLabel: 'Morning of the 14th Day | ፲፬ኛ ቀን ጧት (68-69)',
+        psalms: [68, 69],
+        prophetSongs: []
+    },
+    'month_d14_evening': {
+        name: 'Evening of the 14th Day',
+        dropdownLabel: 'Evening of the 14th Day | ፲፬ኛ ቀን ማታ (70-71)',
+        psalms: [70, 71],
+        prophetSongs: []
+    },
+    'month_d15_morning': {
+        name: 'Morning of the 15th Day',
+        dropdownLabel: 'Morning of the 15th Day | ፲፭ኛ ቀን ጧት (72-73)',
+        psalms: [72, 73],
+        prophetSongs: []
+    },
+    'month_d15_evening': {
+        name: 'Evening of the 15th Day',
+        dropdownLabel: 'Evening of the 15th Day | ፲፭ኛ ቀን ማታ (74-76)',
+        psalms: [74, 75, 76],
+        prophetSongs: []
+    },
+    'month_d16_morning': {
+        name: 'Morning of the 16th Day',
+        dropdownLabel: 'Morning of the 16th Day | ፲፮ኛ ቀን ጧት (77)',
+        psalms: [77],
+        prophetSongs: []
+    },
+    'month_d16_evening': {
+        name: 'Evening of the 16th Day',
+        dropdownLabel: 'Evening of the 16th Day | ፲፮ኛ ቀን ማታ (78)',
+        psalms: [78],
+        prophetSongs: []
+    },
+    'month_d17_morning': {
+        name: 'Morning of the 17th Day',
+        dropdownLabel: 'Morning of the 17th Day | ፲፯ኛ ቀን ጧት (79-81)',
+        psalms: [79, 80, 81],
+        prophetSongs: []
+    },
+    'month_d17_evening': {
+        name: 'Evening of the 17th Day',
+        dropdownLabel: 'Evening of the 17th Day | ፲፯ኛ ቀን ማታ (82-84)',
+        psalms: [82, 83, 84],
+        prophetSongs: []
+    },
+    'month_d18_morning': {
+        name: 'Morning of the 18th Day',
+        dropdownLabel: 'Morning of the 18th Day | ፲፰ኛ ቀን ጧት (85-87)',
+        psalms: [85, 86, 87],
+        prophetSongs: []
+    },
+    'month_d18_evening': {
+        name: 'Evening of the 18th Day',
+        dropdownLabel: 'Evening of the 18th Day | ፲፰ኛ ቀን ማታ (88)',
+        psalms: [88],
+        prophetSongs: []
+    },
+    'month_d19_morning': {
+        name: 'Morning of the 19th Day',
+        dropdownLabel: 'Morning of the 19th Day | ፲፱ኛ ቀን ጧት (89-91)',
+        psalms: [89, 90, 91],
+        prophetSongs: []
+    },
+    'month_d19_evening': {
+        name: 'Evening of the 19th Day',
+        dropdownLabel: 'Evening of the 19th Day | ፲፱ኛ ቀን ማታ (92-94)',
+        psalms: [92, 93, 94],
+        prophetSongs: []
+    },
+    'month_d20_morning': {
+        name: 'Morning of the 20th Day',
+        dropdownLabel: 'Morning of the 20th Day | ፳ኛ ቀን ጧት (95-97)',
+        psalms: [95, 96, 97],
+        prophetSongs: []
+    },
+    'month_d20_evening': {
+        name: 'Evening of the 20th Day',
+        dropdownLabel: 'Evening of the 20th Day | ፳ኛ ቀን ማታ (98-101)',
+        psalms: [98, 99, 100, 101],
+        prophetSongs: []
+    },
+    'month_d21_morning': {
+        name: 'Morning of the 21st Day',
+        dropdownLabel: 'Morning of the 21st Day | ፳፩ኛ ቀን ጧት (102-103)',
+        psalms: [102, 103],
+        prophetSongs: []
+    },
+    'month_d21_evening': {
+        name: 'Evening of the 21st Day',
+        dropdownLabel: 'Evening of the 21st Day | ፳፩ኛ ቀን ማታ (104)',
+        psalms: [104],
+        prophetSongs: []
+    },
+    'month_d22_morning': {
+        name: 'Morning of the 22nd Day',
+        dropdownLabel: 'Morning of the 22nd Day | ፳፪ኛ ቀን ጧት (105)',
+        psalms: [105],
+        prophetSongs: []
+    },
+    'month_d22_evening': {
+        name: 'Evening of the 22nd Day',
+        dropdownLabel: 'Evening of the 22nd Day | ፳፪ኛ ቀን ማታ (106)',
+        psalms: [106],
+        prophetSongs: []
+    },
+    'month_d23_morning': {
+        name: 'Morning of the 23rd Day',
+        dropdownLabel: 'Morning of the 23rd Day | ፳፫ኛ ቀን ጧት (107-109)',
+        psalms: [107, 108, 109],
+        prophetSongs: []
+    },
+    'month_d23_evening': {
+        name: 'Evening of the 23rd Day',
+        dropdownLabel: 'Evening of the 23rd Day | ፳፫ኛ ቀን ማታ (110-113)',
+        psalms: [110, 111, 112, 113],
+        prophetSongs: []
+    },
+    'month_d24_morning': {
+        name: 'Morning of the 24th Day',
+        dropdownLabel: 'Morning of the 24th Day | ፳፬ኛ ቀን ጧት (114-117)',
+        psalms: [114, 115, 116, 117],
+        prophetSongs: []
+    },
+    'month_d24_evening': {
+        name: 'Evening of the 24th Day',
+        dropdownLabel: 'Evening of the 24th Day | ፳፬ኛ ቀን ማታ (118:1-56)',
+        psalms: [118],
+        verseRanges: { 118: { start: 1, end: 56 } },
+        prophetSongs: []
+    },
+    'month_d25_morning': {
+        name: 'Morning of the 25th Day',
+        dropdownLabel: 'Morning of the 25th Day | ፳፭ኛ ቀን ጧት (118:57-112)',
+        psalms: [118],
+        verseRanges: { 118: { start: 57, end: 112 } },
+        prophetSongs: []
+    },
+    'month_d25_evening': {
+        name: 'Evening of the 25th Day',
+        dropdownLabel: 'Evening of the 25th Day | ፳፭ኛ ቀን ማታ (118:113-176)',
+        psalms: [118],
+        verseRanges: { 118: { start: 113, end: 176 } },
+        prophetSongs: []
+    },
+    'month_d26_morning': {
+        name: 'Morning of the 26th Day',
+        dropdownLabel: 'Morning of the 26th Day | ፳፮ኛ ቀን ጧት (119-123)',
+        psalms: [119, 120, 121, 122, 123],
+        prophetSongs: []
+    },
+    'month_d26_evening': {
+        name: 'Evening of the 26th Day',
+        dropdownLabel: 'Evening of the 26th Day | ፳፮ኛ ቀን ማታ (124-127)',
+        psalms: [124, 125, 126, 127],
+        prophetSongs: []
+    },
+    'month_d27_morning': {
+        name: 'Morning of the 27th Day',
+        dropdownLabel: 'Morning of the 27th Day | ፳፯ኛ ቀን ጧት (128-131)',
+        psalms: [128, 129, 130, 131],
+        prophetSongs: []
+    },
+    'month_d27_evening': {
+        name: 'Evening of the 27th Day',
+        dropdownLabel: 'Evening of the 27th Day | ፳፯ኛ ቀን ማታ (132-134)',
+        psalms: [132, 133, 134],
+        prophetSongs: []
+    },
+    'month_d28_morning': {
+        name: 'Morning of the 28th Day',
+        dropdownLabel: 'Morning of the 28th Day | ፳፰ኛ ቀን ጧት (135-136)',
+        psalms: [135, 136],
+        prophetSongs: []
+    },
+    'month_d28_evening': {
+        name: 'Evening of the 28th Day',
+        dropdownLabel: 'Evening of the 28th Day | ፳፰ኛ ቀን ማታ (137-138)',
+        psalms: [137, 138],
+        prophetSongs: []
+    },
+    'month_d29_morning': {
+        name: 'Morning of the 29th Day',
+        dropdownLabel: 'Morning of the 29th Day | ፳፱ኛ ቀን ጧት (139-141)',
+        psalms: [139, 140, 141],
+        prophetSongs: []
+    },
+    'month_d29_evening': {
+        name: 'Evening of the 29th Day',
+        dropdownLabel: 'Evening of the 29th Day | ፳፱ኛ ቀን ማታ (142-143)',
+        psalms: [142, 143],
+        prophetSongs: []
+    },
+    'month_d30_morning': {
+        name: 'Morning of the 30th Day',
+        dropdownLabel: 'Morning of the 30th Day | ፴ኛ ቀን ጧት (144-147)',
+        psalms: [144, 145, 146, 147],
+        prophetSongs: []
+    },
+    'month_d30_evening': {
+        name: 'Evening of the 30th Day',
+        dropdownLabel: 'Evening of the 30th Day | ፴ኛ ቀን ማታ (148-150)',
+        psalms: [148, 149, 150],
+        prophetSongs: []
+    },
     'nativity': {
         name: 'Nativity | ልደት',
         dropdownLabel: 'Nativity | Lidet | ልደት (19, 45, 85, 89, 110, 132)',
@@ -395,6 +819,11 @@ const PSALM_CATEGORIES = [
         items: ['daily']
     },
     {
+        id: 'nigus',
+        label: 'Nigus / Sibhat Psalter (St. Yared of Aksum, c. 6th century)',
+        items: ['nigus1', 'nigus2', 'nigus3', 'nigus4', 'nigus5', 'nigus6', 'nigus7', 'nigus8', 'nigus9', 'nigus10', 'nigus11', 'nigus12', 'nigus13', 'nigus14', 'nigus15']
+    },
+    {
         id: 'desert_fathers',
         label: 'Daily Psalter (Desert Fathers & Mothers, c. 4th century)',
         items: ['all']
@@ -405,14 +834,20 @@ const PSALM_CATEGORIES = [
         items: ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
     },
     {
-        id: 'nigus',
-        label: 'Nigus / Sibhat Psalter (St. Yared of Aksum, c. 6th century)',
-        items: ['nigus1', 'nigus2', 'nigus3', 'nigus4', 'nigus5', 'nigus6', 'nigus7', 'nigus8', 'nigus9', 'nigus10', 'nigus11', 'nigus12', 'nigus13', 'nigus14', 'nigus15']
+        id: 'monthly',
+        label: 'Monthly Psalter (Echegé Gebre-Giyorgis of Debre Libanos, 1938 AD)',
+        description: 'The Psalms of David to be recited at morning and evening prayer are written below; they are arranged so that all 150 Psalms of David are prayed through within one month. The division of the Psalms follows the order of the Holy Bible.',
+        items: Array.from({ length: 30 }, (_, i) => [`month_d${i + 1}_morning`, `month_d${i + 1}_evening`]).flat()
     },
     {
         id: 'hourly',
         label: 'Hourly Psalters (Echegé Gebre-Giyorgis of Debre Libanos, 1938 AD)',
         items: ['dawn', 'sunset']
+    },
+    {
+        id: 'hourly_coptic',
+        label: 'Hourly Psalters (Coptic Agpeya, c. 11th century)',
+        items: ['coptic_1st', 'coptic_3rd', 'coptic_6th', 'coptic_9th', 'coptic_11th', 'coptic_12th', 'coptic_veil', 'coptic_midnight_1', 'coptic_midnight_2', 'coptic_midnight_3']
     },
     {
         id: 'feasts',
@@ -504,6 +939,7 @@ let displayOptions = {};
 let displayedLanguages = {};
 let fontSizes = {};
 let selectedPsalms = [];
+let selectedPsalmVerseRanges = {};
 let selectedProphetSongs = [];
 let selectedSeatatLectionaryDay = 'None';
 let selectedWidaseMaryamDay = 'monday';
@@ -1223,7 +1659,10 @@ function toGeez(n) {
 function updatePsalmSummary() {
     const psalmSequenceInput = document.getElementById('psalm-sequence-input');
     if (psalmSequenceInput) {
-        psalmSequenceInput.value = selectedPsalms.join(', ');
+        psalmSequenceInput.value = selectedPsalms.map(p => {
+            const range = selectedPsalmVerseRanges && selectedPsalmVerseRanges[p];
+            return range ? `${p}:${range.start}-${range.end}` : String(p);
+        }).join(', ');
     }
     syncPsalmCombinationsButton();
 }
@@ -1248,11 +1687,13 @@ function syncPsalmCombinationsButton() {
     let matchedCombination = "";
     const stringifiedSelectedPsalms = JSON.stringify(selectedPsalms);
     const stringifiedSelectedProphetSongs = JSON.stringify(selectedProphetSongs);
+    const stringifiedSelectedVerseRanges = JSON.stringify(selectedPsalmVerseRanges || {});
 
     if (selectedPsalms.length > 0 || selectedProphetSongs.length > 0) {
         for (const [key, combo] of Object.entries(PSALM_COMBINATIONS)) {
             if (JSON.stringify(combo.psalms || []) === stringifiedSelectedPsalms && 
-                JSON.stringify(combo.prophetSongs || []) === stringifiedSelectedProphetSongs) {
+                JSON.stringify(combo.prophetSongs || []) === stringifiedSelectedProphetSongs &&
+                JSON.stringify(combo.verseRanges || {}) === stringifiedSelectedVerseRanges) {
                 matchedCombination = key;
                 break;
             }
@@ -1474,6 +1915,7 @@ function buildUrlStateObject(forShortLink = false) {
         hq: hideQuietPrayers,
         h50: isHolyFiftyDays,
         ps: selectedPsalms,
+        pvr: selectedPsalmVerseRanges,
         ss: selectedProphetSongs,
         sd: selectedSeatatLectionaryDay,
         wd: selectedWidaseMaryamDay,
@@ -1609,6 +2051,11 @@ async function loadStateFromUrl() {
         if (state.hq !== undefined) hideQuietPrayers = state.hq;
         if (state.h50 !== undefined) isHolyFiftyDays = state.h50;
         if (state.ps !== undefined) selectedPsalms = state.ps;
+        if (state.pvr !== undefined) {
+            selectedPsalmVerseRanges = state.pvr || {};
+        } else if (state.ps !== undefined) {
+            selectedPsalmVerseRanges = {};
+        }
         if (state.ss !== undefined) selectedProphetSongs = state.ss;
         if (state.sd !== undefined) selectedSeatatLectionaryDay = state.sd;
         if (state.wd !== undefined) selectedWidaseMaryamDay = state.wd;
@@ -1881,6 +2328,7 @@ function saveSettings() {
     localStorage.setItem('displayedLanguages', JSON.stringify(displayedLanguages));
     localStorage.setItem('languageOrder', JSON.stringify(languageOrder));
     localStorage.setItem('selectedPsalms', JSON.stringify(selectedPsalms));
+    localStorage.setItem('selectedPsalmVerseRanges', JSON.stringify(selectedPsalmVerseRanges));
     localStorage.setItem('selectedProphetSongs', JSON.stringify(selectedProphetSongs));
     localStorage.setItem('selectedSeatatLectionaryDay', selectedSeatatLectionaryDay);
     localStorage.setItem('selectedWidaseMaryamDay', selectedWidaseMaryamDay);
@@ -1972,6 +2420,7 @@ async function loadSettings() {
         ethiopicFont: "'Noto Sans Ethiopic', sans-serif",
         englishFont: "'Merriweather', serif",
         selectedPsalms: [12, 15, 22, 50, 90, 102, 135], // Default LXX Psalms
+        selectedPsalmVerseRanges: {},
         selectedProphetSongs: [],
         selectedSeatatLectionaryDay: getSeatatLiturgicalDay(),
         selectedWidaseMaryamDay: getSeatatLiturgicalDay(),
@@ -2028,6 +2477,7 @@ async function loadSettings() {
         ethiopicFontSelect.value = defaultSettings.ethiopicFont;
         englishFontSelect.value = defaultSettings.englishFont;
         selectedPsalms = defaultSettings.selectedPsalms;
+        selectedPsalmVerseRanges = defaultSettings.selectedPsalmVerseRanges;
         selectedProphetSongs = defaultSettings.selectedProphetSongs;
         selectedSeatatLectionaryDay = defaultSettings.selectedSeatatLectionaryDay;
         selectedWidaseMaryamDay = defaultSettings.selectedWidaseMaryamDay;
@@ -2072,6 +2522,7 @@ async function loadSettings() {
         }
 
         selectedPsalms = JSON.parse(localStorage.getItem('selectedPsalms')) || defaultSettings.selectedPsalms;
+        selectedPsalmVerseRanges = JSON.parse(localStorage.getItem('selectedPsalmVerseRanges')) || defaultSettings.selectedPsalmVerseRanges;
         selectedProphetSongs = JSON.parse(localStorage.getItem('selectedProphetSongs')) || defaultSettings.selectedProphetSongs;
         selectedSeatatLectionaryDay = localStorage.getItem('selectedSeatatLectionaryDay') || defaultSettings.selectedSeatatLectionaryDay;
         selectedWidaseMaryamDay = localStorage.getItem('selectedWidaseMaryamDay') || defaultSettings.selectedWidaseMaryamDay;
@@ -5632,9 +6083,11 @@ function _renderPrayersSync() {
         const stringifiedSelectedPsalms = JSON.stringify(selectedPsalms);
         const stringifiedSelectedProphetSongs = JSON.stringify(selectedProphetSongs);
         let matchedCombinationName = null;
+        const stringifiedSelectedVerseRanges = JSON.stringify(selectedPsalmVerseRanges || {});
         for (const [key, combo] of Object.entries(PSALM_COMBINATIONS)) {
             if (JSON.stringify(combo.psalms || []) === stringifiedSelectedPsalms && 
-                JSON.stringify(combo.prophetSongs || []) === stringifiedSelectedProphetSongs) {
+                JSON.stringify(combo.prophetSongs || []) === stringifiedSelectedProphetSongs &&
+                JSON.stringify(combo.verseRanges || {}) === stringifiedSelectedVerseRanges) {
                 matchedCombinationName = combo.name;
                 break;
             }
@@ -5664,7 +6117,7 @@ function _renderPrayersSync() {
     }
 
     if (psalmsRendered) {
-        renderSelectedPsalmsWithDoxology((psalmNum) => {
+        renderSelectedPsalmsWithDoxology((psalmNum, verseRange) => {
             let athMetadata = null;
             if (typeof ST_ATHANASIUS_PSALMS_GUIDE !== 'undefined') {
                 const athEntries = ST_ATHANASIUS_PSALMS_GUIDE.filter(e => e.psalms.includes(psalmNum));
@@ -5673,7 +6126,9 @@ function _renderPrayersSync() {
                     athMetadata = { athanasius: descList };
                 }
             }
-            addSectionTitle(`→ Psalm ${psalmNum} | መዝሙር ዘዳዊት ${toGeez(psalmNum)}`, true, athMetadata);
+            const engRangeSuffix = verseRange ? `:${verseRange.start}-${verseRange.end}` : '';
+            const geezRangeSuffix = verseRange ? `፥${toGeez(verseRange.start)}-${toGeez(verseRange.end)}` : '';
+            addSectionTitle(`→ Psalm ${psalmNum}${engRangeSuffix} | መዝሙር ዘዳዊት ${toGeez(psalmNum)}${geezRangeSuffix}`, true, athMetadata);
         });
     }
 
@@ -6815,7 +7270,8 @@ function renderSelectedPsalmsWithDoxology(addSectionTitleCallback) {
     const doxologyPrayer = prayers.find(p => p.chapter === 'Psalms' && p.stanza === 'Response');
 
     for (const lxxChapter of selectedPsalms) {
-        addSectionTitleCallback(lxxChapter);
+        const verseRange = (selectedPsalmVerseRanges && selectedPsalmVerseRanges[lxxChapter]) || null;
+        addSectionTitleCallback(lxxChapter, verseRange);
         let allVerses = [];
 
         const geezPsalmChapter = geezPsalmsAll.find(c => c.id === lxxChapter);
@@ -6929,7 +7385,10 @@ function renderSelectedPsalmsWithDoxology(addSectionTitleCallback) {
             return gV ? gV.text : '';
         };
 
-        for (let i = 1; i <= maxVerseNum; i++) {
+        const startVerseNum = verseRange && verseRange.start ? Math.max(1, verseRange.start) : 1;
+        const endVerseNum = verseRange && verseRange.end ? Math.min(maxVerseNum, verseRange.end) : maxVerseNum;
+
+        for (let i = startVerseNum; i <= endVerseNum; i++) {
             const { mtChapter, mtVerse: mtVerseNum } = getMtFromLxx(lxxChapter, i);
             let verseData = { verseNum: i, mtChapter: mtChapter, mtVerseNum: mtVerseNum };
 
@@ -8067,6 +8526,7 @@ function togglePresentationMode(targetCardIdentifier) {
 // Psalm Selector Listener using event delegation
 psalmSelectorContainer.addEventListener('change', (event) => {
     if (event.target.type === 'checkbox') {
+        selectedPsalmVerseRanges = {};
         if (event.target.id === 'select-all-psalms') {
             const isChecked = event.target.checked;
             const checkboxes = psalmSelectorContainer.querySelectorAll('input[type="checkbox"]');
@@ -8105,12 +8565,31 @@ const psalmSequenceInput = document.getElementById('psalm-sequence-input');
 if (psalmSequenceInput) {
     psalmSequenceInput.addEventListener('change', (e) => {
         const rawText = e.target.value;
-        const newSequence = rawText.split(',')
-            .map(s => Number(s.trim()))
-            .filter(n => !isNaN(n) && n > 0 && n <= 150);
+        const newSequence = [];
+        const newRanges = {};
+        rawText.split(',').forEach(part => {
+            const trimmed = part.trim();
+            if (!trimmed) return;
+            const rangeMatch = trimmed.match(/^(\d+):(\d+)-(\d+)$/);
+            if (rangeMatch) {
+                const ch = Number(rangeMatch[1]);
+                const start = Number(rangeMatch[2]);
+                const end = Number(rangeMatch[3]);
+                if (ch > 0 && ch <= 150 && start > 0 && end >= start) {
+                    newSequence.push(ch);
+                    newRanges[ch] = { start, end };
+                }
+            } else {
+                const n = Number(trimmed);
+                if (!isNaN(n) && n > 0 && n <= 150) {
+                    newSequence.push(n);
+                }
+            }
+        });
         
         selectedPsalms = newSequence;
-        
+        selectedPsalmVerseRanges = newRanges;
+
         const checkboxes = psalmSelectorContainer.querySelectorAll('input[type="checkbox"]');
         checkboxes.forEach(cb => {
             if (cb.id !== 'select-all-psalms') {
@@ -8158,7 +8637,14 @@ function renderPsalmCombinationsModal() {
         
         const innerDiv = document.createElement('div');
         innerDiv.className = 'accordion-content-inner';
-        
+
+        if (category.description) {
+            const descDiv = document.createElement('div');
+            descDiv.className = 'accordion-category-description';
+            descDiv.textContent = category.description;
+            innerDiv.appendChild(descDiv);
+        }
+
         category.items.forEach(comboKey => {
             const combo = PSALM_COMBINATIONS[comboKey];
             if (!combo) return;
@@ -8205,7 +8691,7 @@ function renderPsalmCombinationsModal() {
             if (rawChapters) {
                 if (rawChapters === 'Songs of the Prophets') {
                     chaptersText = rawChapters;
-                } else if (/^\d+$/.test(rawChapters.trim())) {
+                } else if (/^\d+(?::\d+-\d+)?$/.test(rawChapters.trim())) {
                     chaptersText = `Psalm ${rawChapters.trim()}`;
                 } else {
                     chaptersText = `Psalms ${rawChapters}`;
@@ -8261,8 +8747,9 @@ function selectPsalmCombination(comboKey) {
     if (comboKey && PSALM_COMBINATIONS[comboKey]) {
         const combo = PSALM_COMBINATIONS[comboKey];
         
-        // Update Psalms
+        // Update Psalms and optional verse ranges
         selectedPsalms = [...(combo.psalms || [])];
+        selectedPsalmVerseRanges = combo.verseRanges ? JSON.parse(JSON.stringify(combo.verseRanges)) : {};
         const psalmCheckboxes = psalmSelectorContainer.querySelectorAll('input[type="checkbox"]');
         psalmCheckboxes.forEach(cb => {
             cb.checked = selectedPsalms.includes(Number(cb.value));
@@ -8318,6 +8805,7 @@ if (closeTypicalPsalmsModalBtn) {
 
 clearPsalmsButton.addEventListener('click', () => {
     selectedPsalms = [];
+    selectedPsalmVerseRanges = {};
     document.querySelectorAll('#psalm-selector-container input[type="checkbox"]').forEach(checkbox => {
         checkbox.checked = false;
     });
@@ -10109,6 +10597,7 @@ function applyAthanasiusPsalms(psalmsList, mode, btnElement) {
         });
 
         selectedPsalms = newSequence;
+        selectedPsalmVerseRanges = {};
 
         const psalmSequenceInput = document.getElementById('psalm-sequence-input');
         if (psalmSequenceInput) {
@@ -10153,6 +10642,7 @@ function applyAthanasiusPsalms(psalmsList, mode, btnElement) {
     } else if (mode === 'set') {
         // "Pray Now" mode: set exclusive sequence, deselect Liturgy mode if active, close modal, and scroll to Psalms
         selectedPsalms = [...psalmsList];
+        selectedPsalmVerseRanges = {};
 
         const psalmSequenceInput = document.getElementById('psalm-sequence-input');
         if (psalmSequenceInput) {
@@ -10269,6 +10759,9 @@ if (globalGeezTranslationSelect) {
 const appCoreExports = {
     PSALM_COMBINATIONS,
     PSALM_CATEGORIES,
+    selectPsalmCombination,
+    renderPsalmCombinationsModal,
+    renderSelectedPsalmsWithDoxology,
     toGeez,
     toGeezNumeral,
     convertLxxToMt,
@@ -10304,7 +10797,8 @@ const appCoreExports = {
         selectedWidaseMaryamDay,
         selectedAnaphora,
         kidaseLectionaryRefs: { ...kidaseLectionaryRefs },
-        selectedPsalms: Array.isArray(selectedPsalms) ? [...selectedPsalms] : []
+        selectedPsalms: Array.isArray(selectedPsalms) ? [...selectedPsalms] : [],
+        selectedPsalmVerseRanges: selectedPsalmVerseRanges ? JSON.parse(JSON.stringify(selectedPsalmVerseRanges)) : {}
     })
 };
 
