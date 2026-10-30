@@ -435,6 +435,42 @@ const PSALM_COMBINATIONS = {
         dropdownLabel: 'Pentecost | Peraqlitos | ጰራቅሊቶስ (48, 68, 104, 145)',
         psalms: [48, 68, 104, 145],
         prophetSongs: []
+    },
+    'trinity_athanasius': {
+        name: 'Trinity (St. Athanasius) | ምሥጢረ ሥላሴ',
+        dropdownLabel: 'Mystery of the Trinity | Mistire Silassie | ምሥጢረ ሥላሴ (44, 99, 109)',
+        psalms: [44, 99, 109],
+        prophetSongs: []
+    },
+    'incarnation_athanasius': {
+        name: 'Incarnation (St. Athanasius) | ምሥጢረ ሥጋዌ',
+        dropdownLabel: 'Mystery of the Incarnation | Mistire Sigawe | ምሥጢረ ሥጋዌ (32, 44, 49, 86, 106, 109, 117)',
+        psalms: [32, 44, 49, 86, 106, 109, 117],
+        prophetSongs: []
+    },
+    'communion_athanasius': {
+        name: 'Communion (St. Athanasius) | ምሥጢረ ቁርባን',
+        dropdownLabel: 'Mystery of Communion | Mistire Qurban | ምሥጢረ ቁርባን (2, 21, 68, 71, 87, 137)',
+        psalms: [2, 21, 68, 71, 87, 137],
+        prophetSongs: []
+    },
+    'resurrection_athanasius': {
+        name: 'Resurrection (St. Athanasius) | ምሥጢረ ትንሣኤ',
+        dropdownLabel: 'Mystery of the Resurrection | Mistire Tinsaie | ምሥጢረ ትንሣኤ (9, 15, 23, 46, 49, 65, 71, 81, 109)',
+        psalms: [9, 15, 23, 46, 49, 65, 71, 81, 109],
+        prophetSongs: []
+    },
+    'baptism_cyril': {
+        name: 'Baptism (St. Cyril) | ምሥጢረ ጥምቀት',
+        dropdownLabel: 'Mystery of Baptism | Mistire Timqet | ምሥጢረ ጥምቀት (31, 45, 81, 138)',
+        psalms: [31, 45, 81, 138],
+        prophetSongs: []
+    },
+    'communion_cyril': {
+        name: 'Communion (St. Cyril) | ምሥጢረ ቁርባን',
+        dropdownLabel: 'Mystery of Communion | Mistire Qurban | ምሥጢረ ቁርባን (22, 26, 33, 103)',
+        psalms: [22, 26, 33, 103],
+        prophetSongs: []
     }
 };
 
@@ -468,6 +504,16 @@ const PSALM_CATEGORIES = [
         id: 'feasts',
         label: 'Feast Day Psalters (Echegé Gebre-Giyorgis of Debre Libanos, 1938 AD)',
         items: ['nativity', 'baptism', 'crucifixion', 'resurrection', 'ascension', 'pentecost']
+    },
+    {
+        id: 'mysteries_athanasius',
+        label: 'Catechetical Psalter of St. Athanasius (Letter to Marcellinus, c. 360 AD)',
+        items: ['trinity_athanasius', 'incarnation_athanasius', 'communion_athanasius', 'resurrection_athanasius']
+    },
+    {
+        id: 'mysteries_cyril',
+        label: 'Mystagogical Psalter of St. Cyril of Jerusalem (Catechetical Lectures, c. 350 AD)',
+        items: ['baptism_cyril', 'communion_cyril']
     }
 ];
 // --- State Variables ---
@@ -10057,6 +10103,8 @@ if (typeof document !== 'undefined') {
 
 // --- Testing & Debugging Export Bridge ---
 const appCoreExports = {
+    PSALM_COMBINATIONS,
+    PSALM_CATEGORIES,
     toGeez,
     toGeezNumeral,
     convertLxxToMt,

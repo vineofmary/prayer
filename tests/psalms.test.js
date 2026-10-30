@@ -112,4 +112,45 @@ describe('Psalter & Canon Mapping (Septuagint LXX <-> Masoretic MT)', () => {
       expect(app.convertMtToLxx(119)).toBe(118);
     });
   });
+
+  describe('Catechetical & Mystagogical Psalters (PSALM_COMBINATIONS & PSALM_CATEGORIES)', () => {
+    it('includes St. Athanasius Catechetical Psalter combinations with exact LXX numbers', () => {
+      expect(app.PSALM_COMBINATIONS.trinity_athanasius.psalms).toEqual([44, 99, 109]);
+      expect(app.PSALM_COMBINATIONS.incarnation_athanasius.psalms).toEqual([32, 44, 49, 86, 106, 109, 117]);
+      expect(app.PSALM_COMBINATIONS.communion_athanasius.psalms).toEqual([2, 21, 68, 71, 87, 137]);
+      expect(app.PSALM_COMBINATIONS.resurrection_athanasius.psalms).toEqual([9, 15, 23, 46, 49, 65, 71, 81, 109]);
+    });
+
+    it('includes St. Cyril of Jerusalem Mystagogical Psalter combinations with exact LXX numbers', () => {
+      expect(app.PSALM_COMBINATIONS.baptism_cyril.psalms).toEqual([31, 45, 81, 138]);
+      expect(app.PSALM_COMBINATIONS.communion_cyril.psalms).toEqual([22, 26, 33, 103]);
+    });
+
+    it('preserves EOTC 1938 AD Feast Day Psalter combinations', () => {
+      expect(app.PSALM_COMBINATIONS.nativity.psalms).toEqual([19, 45, 85, 89, 110, 132]);
+      expect(app.PSALM_COMBINATIONS.baptism.psalms).toEqual([42, 77, 114, 74, 85, 118]);
+      expect(app.PSALM_COMBINATIONS.crucifixion.psalms).toEqual([22, 40, 54, 69, 88]);
+      expect(app.PSALM_COMBINATIONS.resurrection.psalms).toEqual([2, 57, 111, 113, 114, 118]);
+      expect(app.PSALM_COMBINATIONS.ascension.psalms).toEqual([8, 15, 21, 24, 47, 108]);
+      expect(app.PSALM_COMBINATIONS.pentecost.psalms).toEqual([48, 68, 104, 145]);
+    });
+
+    it('organizes St. Athanasius and St. Cyril psalters into their respective PSALM_CATEGORIES', () => {
+      const athCategory = app.PSALM_CATEGORIES.find(c => c.id === 'mysteries_athanasius');
+      expect(athCategory).toBeDefined();
+      expect(athCategory.items).toEqual([
+        'trinity_athanasius',
+        'incarnation_athanasius',
+        'communion_athanasius',
+        'resurrection_athanasius'
+      ]);
+
+      const cyrilCategory = app.PSALM_CATEGORIES.find(c => c.id === 'mysteries_cyril');
+      expect(cyrilCategory).toBeDefined();
+      expect(cyrilCategory.items).toEqual([
+        'baptism_cyril',
+        'communion_cyril'
+      ]);
+    });
+  });
 });
