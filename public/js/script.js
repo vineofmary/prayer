@@ -10303,6 +10303,26 @@ if (showYewediswaMelaektToggle) {
     });
 }
 
+document.querySelectorAll('input[name="praise-of-mary-day"]').forEach(radio => {
+    safeOn(radio, 'change', (e) => {
+        if (e.target.checked) {
+            selectedWidaseMaryamDay = e.target.value;
+            saveSettings();
+            smoothRender();
+        }
+    });
+});
+
+document.querySelectorAll('input[name="seatat-lectionary-day"]').forEach(radio => {
+    safeOn(radio, 'change', (e) => {
+        if (e.target.checked) {
+            selectedSeatatLectionaryDay = e.target.value;
+            saveSettings();
+            smoothRender();
+        }
+    });
+});
+
 if (showGeezPhoneticChantsToggle) {
     safeOn(showGeezPhoneticChantsToggle, 'change', () => {
         displayOptions.showGeezPhoneticChants = showGeezPhoneticChantsToggle.checked;
