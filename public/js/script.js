@@ -43,7 +43,10 @@ let header, leftSidebar, rightSidebar, mainContent, sidebarToggle, prayersPanelT
     showLoanwordOriginsToggle, useExternalBibleAPIToggle, useExternalBibleAPILabel,
     globalEnglishTranslationSelect, globalAmharicTranslationSelect, globalGeezTranslationSelect,
     bibleTranslationsInfoBtn, bibleTranslationsInfoModal, closeBibleTranslationsInfoModal,
-    expandCollapseAllButton,
+    expandCollapseAllButton, expandCollapseAllLabel, prayerFloatingControls, bottomNavBar,
+    headerSubtitleAttribution, liturgicalCalendarBar, calendarInfoModal, closeCalendarInfoModal,
+    calendarInfoTitle, calendarInfoBody, showHaregOrnamentToggle, showTrinitarianInvocationToggle, showPrepPsalmsToggle,
+    searchScopeSelect, searchResultsDrawer, miracleVoiceDetectBtn, miracleVoiceStatus, miracleVoiceSuggestions,
     feedbackButton, helpModal, feedbackModal, ephremStoryModal, ephremStoryInfoBtn, closeEphremModal,
     eusebiusModal, eusebiusInfoBtn, closeEusebiusModal, psalmCombinationsBtn, psalmCombinationsModal,
     closePsalmCombinationsModal, psalmCombinationsAccordion, typicalPsalmsModal, closeTypicalPsalmsModalBtn,
@@ -121,6 +124,8 @@ function bindDOMElements() {
     searchCount = document.getElementById('search-count');
     searchPrev = document.getElementById('search-prev');
     searchNext = document.getElementById('search-next');
+    searchScopeSelect = document.getElementById('search-scope-select');
+    searchResultsDrawer = document.getElementById('search-results-drawer');
     helpButton = document.getElementById('help-button');
     showSupplicationsToggle = document.getElementById('show-supplications-toggle');
     showDailyPrayerToggle = document.getElementById('show-daily-prayer-toggle');
@@ -128,6 +133,9 @@ function bindDOMElements() {
     showYewediswaMelaektToggle = document.getElementById('show-yewediswa-melaekt-toggle');
     showGeezPhoneticChantsToggle = document.getElementById('show-geez-phonetic-chants');
     showLoanwordOriginsToggle = document.getElementById('show-loanword-origins');
+    showHaregOrnamentToggle = document.getElementById('show-hareg-ornament-toggle');
+    showTrinitarianInvocationToggle = document.getElementById('show-trinitarian-invocation-toggle');
+    showPrepPsalmsToggle = document.getElementById('show-prep-psalms-toggle');
     useExternalBibleAPIToggle = document.getElementById('use-external-bible-api');
     useExternalBibleAPILabel = document.getElementById('external-bible-api-label');
     globalEnglishTranslationSelect = document.getElementById('global-english-translation-select');
@@ -137,6 +145,18 @@ function bindDOMElements() {
     bibleTranslationsInfoModal = document.getElementById('bible-translations-info-modal');
     closeBibleTranslationsInfoModal = document.getElementById('close-bible-translations-info-modal');
     expandCollapseAllButton = document.getElementById('expand-collapse-all-button');
+    expandCollapseAllLabel = document.getElementById('expand-collapse-all-label');
+    prayerFloatingControls = document.getElementById('prayer-floating-controls');
+    bottomNavBar = document.getElementById('bottom-nav-bar');
+    headerSubtitleAttribution = document.getElementById('header-subtitle-attribution');
+    liturgicalCalendarBar = document.getElementById('liturgical-calendar-bar');
+    calendarInfoModal = document.getElementById('calendar-info-modal');
+    closeCalendarInfoModal = document.getElementById('close-calendar-info-modal');
+    calendarInfoTitle = document.getElementById('calendar-info-title');
+    calendarInfoBody = document.getElementById('calendar-info-body');
+    miracleVoiceDetectBtn = document.getElementById('miracle-voice-detect-btn');
+    miracleVoiceStatus = document.getElementById('miracle-voice-status');
+    miracleVoiceSuggestions = document.getElementById('miracle-voice-suggestions');
     feedbackButton = document.getElementById('feedback-button');
     helpModal = document.getElementById('help-modal');
     feedbackModal = document.getElementById('feedback-modal');
@@ -964,9 +984,10 @@ const PSALM_CATEGORIES = [
     }
 ];
 // --- State Variables ---
-const SETTINGS_VERSION = '4.2.5'; // Update this to force refresh load settings
-const APP_VERSION = '0.8.5-beta';
+const SETTINGS_VERSION = '4.5.1'; // Update this to force refresh load settings
+const APP_VERSION = '0.9.0-beta';
 const STATIC_CHANGELOG = [
+    { date: '2026-10-30', message: 'feat: add 5-tab navigation, Ethiopian calendar & liturgical hours, and Pray/Liturgy workflows', author: 'vineofmary' },
     { date: '2026-10-17', message: 'feat: add Puerto Rican Spanish liturgy translation and update refresh button', author: 'vineofmary' },
     { date: '2026-04-26', message: 'fix: clear verse prayer content when language data is empty', author: 'vineofmary' },
     { date: '2026-04-26', message: 'fix: constrain language-specific rubrication colors to legacy theme', author: 'vineofmary' },
@@ -974,6 +995,10 @@ const STATIC_CHANGELOG = [
     { date: '2026-04-26', message: 'refactor: optimize layout and font-size scaling for presentation mode', author: 'vineofmary' },
     { date: '2026-04-26', message: 'feat: add toggle setting for Ge\'ez phonetics for chants', author: 'vineofmary' }
 ];
+const PREP_PSALMS_LIST = [24, 60, 101, 102, 129, 130];
+let activePrimaryTab = 'pray'; // 'pray' | 'liturgy' | 'learn' | 'targuma' | 'search'
+let prayTabProfile = null;
+let liturgyTabProfile = null;
 let currentTheme = {};
 let isLeftSidebarCollapsed = false;
 let isRightSidebarCollapsed = true;
@@ -992,14 +1017,15 @@ let selectedMiracleId = 'none';
 let miraclePosition = 'anaphora';
 let selectedMiracleTranslationIndex = 0;
 let showSeatatReadings = false;
-let showMatins = true;
+let showPrepPsalms = false;
+let showMatins = false;
 let showTeklil = false;
 let bridegroomName = '';
 let brideName = '';
 let showVespers = false;
 let selectedKidaseDay = 'sunday';
 let selectedCovenantPrayer = 'morning';
-let showAnaphora = true;
+let showAnaphora = false;
 let hideQuietPrayers = false;
 let isHolyFiftyDays = false;
 let useExternalBibleAPI = true;
@@ -1088,7 +1114,7 @@ let currentSlideIndex = 0;
 let _pendingSlideSignature = null; // Persists target slide identity across async re-renders
 let _pendingSlideId = null; // Used for jump-to buttons that trigger a DOM rebuild
 let _pendingSlidePredicate = null;
-let areAllSectionsCollapsed = false;
+let areAllSectionsCollapsed = true;
 
 function getSeatatLiturgicalDay() {
     const now = new Date();
@@ -1905,6 +1931,13 @@ function applyTheme() {
         body.classList.add('bold-text');
     }
 
+    // Handle Traditional Vine Header (Hareg) visibility immediately
+    const showHareg = displayOptions.showHaregOrnament !== undefined ? displayOptions.showHaregOrnament : (window.innerWidth < 900);
+    body.classList.toggle('hide-hareg-ornament', !showHareg);
+    document.querySelectorAll('.hareg-ornament, .hareg-header, .hareg-footer').forEach(el => {
+        el.style.display = showHareg ? '' : 'none';
+    });
+
     // Handle Paragraph Mode
     const activeLanguageCount = Object.values(displayedLanguages).filter(Boolean).length;
     if (displayOptions.paragraphMode && activeLanguageCount === 1 && displayOptions.presentationMode === 'scroll') {
@@ -2344,6 +2377,295 @@ async function shareScriptures() {
     }
 }
 
+function getDefaultProphetSongForTimeOfDay() {
+    const hour = new Date().getHours();
+    // Morning/daytime (< 17:00) defaults to Prayer of Zechariah (Benedictus); Evening (>= 17:00) defaults to Prayer of Simeon (Nunc Dimittis)
+    return hour < 17 ? ['songOfZachariah'] : ['prayerOfSimeon'];
+}
+
+function getPrayTabDefaultProfile() {
+    return {
+        showDailyPrayer: true,
+        selectedWidaseMaryamDay: getSeatatLiturgicalDay(),
+        showGateOfLight: false,
+        showYewediswaMelaekt: true,
+        selectedPsalms: [50],
+        selectedPsalmVerseRanges: {},
+        selectedProphetSongs: getDefaultProphetSongForTimeOfDay(),
+        showSeatatReadings: false,
+        selectedSeatatLectionaryDay: getSeatatLiturgicalDay(),
+        showVespers: false,
+        showPrepPsalms: false,
+        showMatins: false,
+        isKidaseModeActive: false,
+        showAnaphora: false,
+        selectedAnaphora: 'apostles',
+        selectedMiracleId: 'none',
+        showSupplications: false,
+        showGeezPhoneticChants: false,
+        areAllSectionsCollapsed: true,
+        collapsedSections: {}
+    };
+}
+
+function getLiturgyTabDefaultProfile() {
+    const all15ProphetSongs = (typeof PSALM_COMBINATIONS !== 'undefined' && PSALM_COMBINATIONS.sunday && PSALM_COMBINATIONS.sunday.prophetSongs)
+        ? [...PSALM_COMBINATIONS.sunday.prophetSongs]
+        : ['songOfMoses1', 'songOfMoses2', 'songOfMoses3', 'songOfHannah', 'prayerOfHezekiah', 'prayerOfManasseh', 'prayerOfJonah', 'songOfThreeYouths1', 'songOfThreeYouths2', 'songOfThreeYouths3', 'prayerOfHabakkuk', 'songOfIsaiah', 'prayerOfMary', 'songOfZachariah', 'prayerOfSimeon'];
+    return {
+        showDailyPrayer: true,
+        selectedWidaseMaryamDay: 'None',
+        showGateOfLight: false,
+        showYewediswaMelaekt: false,
+        selectedPsalms: [],
+        selectedPsalmVerseRanges: {},
+        selectedProphetSongs: all15ProphetSongs,
+        showSeatatReadings: true,
+        selectedSeatatLectionaryDay: getSeatatLiturgicalDay(),
+        showVespers: true,
+        showPrepPsalms: true,
+        showMatins: true,
+        isKidaseModeActive: true,
+        showAnaphora: true,
+        selectedAnaphora: 'apostles',
+        selectedMiracleId: 'none',
+        showSupplications: false,
+        showGeezPhoneticChants: true,
+        areAllSectionsCollapsed: false,
+        collapsedSections: {
+            "Daily Prayer | ዘዘወትር ጸሎት": true,
+            "<i>Vespers</i> — Sunset Prayer | ጸሎተ ሠርክ": true,
+            "Songs of the Prophets | መኃልየ ነቢያት": true,
+            "<i>Se'atat</i> Readings | ምንባባተ ሰዓታት": true,
+            "Pre-Liturgy Psalms | መዝሙር ዘዳዊት ዘቅድመ ቅዳሴ": true,
+            "<i>Matins</i> — Morning Prayer | ጸሎተ ነግህ": false,
+            "→ Prayer of the Gospel | ጸሎተ ወንጌል": true,
+            "→ <i>Kidan</i> — Prayer of the Covenant | ጸሎተ ኪዳን": true,
+            "<i>Ḳidasé</i> — Liturgy | ቅዳሴ": false,
+            "→ Order of the Liturgy | ሥርዓተ ቅዳሴ": true,
+            "→ Anaphora of the Apostles | ቅዳሴ ሐዋርያት": true,
+            "→ Anaphora of Mary | ቅዳሴ ማርያም": true
+        }
+    };
+}
+
+function captureCurrentTabProfile() {
+    return {
+        showDailyPrayer: displayOptions.showDailyPrayer,
+        selectedWidaseMaryamDay,
+        showGateOfLight: displayOptions.showGateOfLight,
+        showYewediswaMelaekt: displayOptions.showYewediswaMelaekt,
+        selectedPsalms: [...selectedPsalms],
+        selectedPsalmVerseRanges: JSON.parse(JSON.stringify(selectedPsalmVerseRanges || {})),
+        selectedProphetSongs: [...selectedProphetSongs],
+        showSeatatReadings,
+        selectedSeatatLectionaryDay,
+        showVespers,
+        showPrepPsalms,
+        showMatins,
+        isKidaseModeActive,
+        showAnaphora,
+        selectedAnaphora,
+        selectedMiracleId,
+        showSupplications: displayOptions.showSupplications,
+        showGeezPhoneticChants: displayOptions.showGeezPhoneticChants,
+        areAllSectionsCollapsed,
+        collapsedSections: JSON.parse(JSON.stringify(collapsedSections || {}))
+    };
+}
+
+function applyTabProfile(profile) {
+    if (!profile) return;
+    displayOptions.showDailyPrayer = profile.showDailyPrayer !== undefined ? profile.showDailyPrayer : true;
+    selectedWidaseMaryamDay = profile.selectedWidaseMaryamDay || 'None';
+    displayOptions.showGateOfLight = !!profile.showGateOfLight;
+    displayOptions.showYewediswaMelaekt = profile.showYewediswaMelaekt !== false;
+    selectedPsalms = Array.isArray(profile.selectedPsalms) ? [...profile.selectedPsalms] : [];
+    selectedPsalmVerseRanges = profile.selectedPsalmVerseRanges ? JSON.parse(JSON.stringify(profile.selectedPsalmVerseRanges)) : {};
+    selectedProphetSongs = Array.isArray(profile.selectedProphetSongs) ? [...profile.selectedProphetSongs] : [];
+    showSeatatReadings = !!profile.showSeatatReadings;
+    selectedSeatatLectionaryDay = profile.selectedSeatatLectionaryDay || getSeatatLiturgicalDay();
+    showVespers = !!profile.showVespers;
+    showPrepPsalms = !!profile.showPrepPsalms;
+    showMatins = !!profile.showMatins;
+    isKidaseModeActive = !!profile.isKidaseModeActive;
+    showAnaphora = !!profile.showAnaphora;
+    selectedAnaphora = profile.selectedAnaphora || 'apostles';
+    selectedMiracleId = profile.selectedMiracleId || 'none';
+    displayOptions.showSupplications = !!profile.showSupplications;
+    displayOptions.showGeezPhoneticChants = !!profile.showGeezPhoneticChants;
+    areAllSectionsCollapsed = profile.areAllSectionsCollapsed !== undefined ? profile.areAllSectionsCollapsed : true;
+    collapsedSections = profile.collapsedSections ? JSON.parse(JSON.stringify(profile.collapsedSections)) : {};
+
+    // Sync checkboxes in Psalm & Prophet Songs selectors
+    if (psalmSelectorContainer) {
+        psalmSelectorContainer.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+            if (cb.id === 'select-all-psalms') {
+                cb.checked = selectedPsalms.length === 150;
+            } else {
+                cb.checked = selectedPsalms.includes(Number(cb.value));
+            }
+        });
+    }
+    if (prophetSongsSelectorContainer && typeof prophetSongs !== 'undefined') {
+        prophetSongsSelectorContainer.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+            if (cb.id === 'select-all-prophet-songs') {
+                cb.checked = selectedProphetSongs.length === prophetSongs.length;
+            } else {
+                cb.checked = selectedProphetSongs.includes(cb.value);
+            }
+        });
+    }
+    updatePsalmSummary();
+    updateProphetSongsSummary();
+    updateSelectedMiracleUI();
+    updateAllTogglesInSettingsPanel();
+}
+
+function updatePrimaryNavTabsUI(tabOverride) {
+    const targetTab = tabOverride || activePrimaryTab;
+    document.querySelectorAll('.primary-nav-tab, .header-nav-tab, .bottom-nav-item').forEach(btn => {
+        const navTarget = btn.getAttribute('data-nav-tab');
+        if (!navTarget) return;
+        const isActive = navTarget === targetTab;
+        btn.classList.toggle('active', isActive);
+        btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+    });
+    if (prayerFloatingControls) {
+        const showFloating = (targetTab === 'pray' || targetTab === 'liturgy') && !isServantsCornerActive;
+        prayerFloatingControls.style.display = showFloating ? 'flex' : 'none';
+    }
+}
+
+function syncPrimaryNavTabIndicators(tabOverride) {
+    updatePrimaryNavTabsUI(tabOverride);
+}
+
+function syncActiveTabFromLiturgyToggles() {
+    const anyLiturgyCoreActive = Boolean(
+        isKidaseModeActive ||
+        showAnaphora ||
+        (kidaseModeToggle && kidaseModeToggle.checked) ||
+        (showAnaphoraToggle && showAnaphoraToggle.checked)
+    );
+    if (activePrimaryTab === 'pray' && anyLiturgyCoreActive) {
+        activePrimaryTab = 'liturgy';
+        updatePrimaryNavTabsUI('liturgy');
+        localStorage.setItem('activePrimaryTab', activePrimaryTab);
+    } else if (activePrimaryTab === 'liturgy' && !anyLiturgyCoreActive) {
+        activePrimaryTab = 'pray';
+        updatePrimaryNavTabsUI('pray');
+        localStorage.setItem('activePrimaryTab', activePrimaryTab);
+    }
+}
+
+function switchPrimaryTab(tabName) {
+    if (!tabName) return;
+
+    const isOverlayOpen = Boolean(
+        (window.learningService && window.learningService.isLearningMode) ||
+        (window.targumaService && window.targumaService.isTargumaMode) ||
+        (header && header.classList.contains('search-active'))
+    );
+    const isReclickingActiveTab = !isOverlayOpen && activePrimaryTab === tabName;
+
+    // Save current Pray or Liturgy profile before leaving it (unless re-clicking active tab to reset it)
+    if (!isReclickingActiveTab) {
+        if (activePrimaryTab === 'pray') {
+            prayTabProfile = captureCurrentTabProfile();
+            localStorage.setItem('prayTabProfile', JSON.stringify(prayTabProfile));
+        } else if (activePrimaryTab === 'liturgy') {
+            liturgyTabProfile = captureCurrentTabProfile();
+            localStorage.setItem('liturgyTabProfile', JSON.stringify(liturgyTabProfile));
+        }
+    }
+
+    // Close active overlay modes if switching to Pray or Liturgy
+    if (tabName === 'pray' || tabName === 'liturgy') {
+        if (window.learningService && window.learningService.isLearningMode && typeof window.learningService.exitLearningMode === 'function') {
+            window.learningService.exitLearningMode();
+        }
+        if (window.targumaService && window.targumaService.isTargumaMode && typeof window.targumaService.exitTargumaMode === 'function') {
+            window.targumaService.exitTargumaMode();
+        }
+        if (header && header.classList.contains('search-active')) {
+            closeSearch(true);
+        }
+
+        activePrimaryTab = tabName;
+        localStorage.setItem('activePrimaryTab', activePrimaryTab);
+
+        if (tabName === 'pray') {
+            if (isReclickingActiveTab || !prayTabProfile) {
+                prayTabProfile = getPrayTabDefaultProfile();
+                localStorage.setItem('prayTabProfile', JSON.stringify(prayTabProfile));
+            }
+            applyTabProfile(prayTabProfile);
+        } else {
+            if (isReclickingActiveTab || !liturgyTabProfile) {
+                liturgyTabProfile = getLiturgyTabDefaultProfile();
+                localStorage.setItem('liturgyTabProfile', JSON.stringify(liturgyTabProfile));
+            }
+            applyTabProfile(liturgyTabProfile);
+        }
+
+        updatePrimaryNavTabsUI();
+        saveSettings();
+        smoothRender();
+        return;
+    }
+
+    if (tabName === 'learn') {
+        if (window.targumaService && window.targumaService.isTargumaMode && typeof window.targumaService.exitTargumaMode === 'function') {
+            window.targumaService.exitTargumaMode();
+        }
+        if (header && header.classList.contains('search-active')) {
+            closeSearch(true);
+        }
+        if (window.learningService && typeof window.learningService.toggleLearningMode === 'function') {
+            window.learningService.toggleLearningMode();
+        }
+        const isLearnActive = !!(window.learningService && window.learningService.isLearningMode);
+        updatePrimaryNavTabsUI(isLearnActive ? 'learn' : activePrimaryTab);
+        return;
+    }
+
+    if (tabName === 'targuma') {
+        if (window.learningService && window.learningService.isLearningMode && typeof window.learningService.exitLearningMode === 'function') {
+            window.learningService.exitLearningMode();
+        }
+        if (header && header.classList.contains('search-active')) {
+            closeSearch(true);
+        }
+        if (window.targumaService && typeof window.targumaService.toggleTargumaMode === 'function') {
+            window.targumaService.toggleTargumaMode();
+        }
+        const isTargumaActive = !!(window.targumaService && window.targumaService.isTargumaMode);
+        updatePrimaryNavTabsUI(isTargumaActive ? 'targuma' : activePrimaryTab);
+        return;
+    }
+
+    if (tabName === 'search') {
+        if (window.learningService && window.learningService.isLearningMode && typeof window.learningService.exitLearningMode === 'function') {
+            window.learningService.exitLearningMode();
+        }
+        if (window.targumaService && window.targumaService.isTargumaMode && typeof window.targumaService.exitTargumaMode === 'function') {
+            window.targumaService.exitTargumaMode();
+        }
+        if (header) {
+            const isSearchOpen = header.classList.toggle('search-active');
+            if (isSearchOpen) {
+                header.classList.remove('header-hidden');
+                updatePrimaryNavTabsUI('search');
+                if (searchInput) searchInput.focus();
+            } else {
+                closeSearch();
+            }
+        }
+        return;
+    }
+}
+
 function saveSettings() {
     if (isInitializing) return;
     localStorage.setItem('settingsVersion', SETTINGS_VERSION);
@@ -2368,6 +2690,7 @@ function saveSettings() {
     localStorage.setItem('selectedMiracleTranslationIndex', selectedMiracleTranslationIndex);
     localStorage.setItem('showAnaphora', showAnaphora);
     localStorage.setItem('showSeatatReadings', showSeatatReadings);
+    localStorage.setItem('showPrepPsalms', showPrepPsalms);
     localStorage.setItem('showMatins', showMatins);
     localStorage.setItem('showTeklil', showTeklil);
     localStorage.setItem('useExternalBibleAPI', useExternalBibleAPI);
@@ -2385,6 +2708,17 @@ function saveSettings() {
     localStorage.setItem('kidaseLectionaryRefs', JSON.stringify(kidaseLectionaryRefs));
     localStorage.setItem('customNames', JSON.stringify(customNames));
     localStorage.setItem('collapsedSections', JSON.stringify(collapsedSections));
+    localStorage.setItem('areAllSectionsCollapsed', areAllSectionsCollapsed);
+    if (activePrimaryTab === 'pray' || activePrimaryTab === 'liturgy') {
+        localStorage.setItem('activePrimaryTab', activePrimaryTab);
+        if (activePrimaryTab === 'pray') {
+            prayTabProfile = captureCurrentTabProfile();
+            localStorage.setItem('prayTabProfile', JSON.stringify(prayTabProfile));
+        } else if (activePrimaryTab === 'liturgy') {
+            liturgyTabProfile = captureCurrentTabProfile();
+            localStorage.setItem('liturgyTabProfile', JSON.stringify(liturgyTabProfile));
+        }
+    }
     syncStateToUrl();
 }
 
@@ -2393,25 +2727,10 @@ async function loadSettings() {
     const isMobile = window.innerWidth < 900;
     const savedVersion = localStorage.getItem('settingsVersion');
 
-    // Auto-generate default languages from the registry
+    // For all new users (both mobile and desktop), default to English and Ge'ez side-by-side (English first)
     const defaultLanguages = {};
     Object.keys(LANGUAGE_REGISTRY).forEach(id => {
-        const cfg = LANGUAGE_REGISTRY[id];
-        if (isMobile) {
-            // For new mobile users, only initially display English and Ge'ez
-            defaultLanguages[id] = (id === 'english' || id === 'geez_script');
-        } else {
-            // For desktop, turn on main scripts but leave auto-translations and phonetics off
-            if (id === 'spanish_pr') {
-                defaultLanguages[id] = false;
-            } else if (cfg.category === 'main' && !cfg.isAuto && !id.includes('phonetic')) {
-                defaultLanguages[id] = true;
-            } else if (id === 'spanish') {
-                defaultLanguages[id] = true;
-            } else {
-                defaultLanguages[id] = false;
-            }
-        }
+        defaultLanguages[id] = (id === 'english' || id === 'geez_script');
     });
 
     const defaultSettings = {
@@ -2421,9 +2740,9 @@ async function loadSettings() {
             presentationMode: 'scroll',
             viewMode: 'card',
             layout: 'column',
-            horizontalScroll: true,
+            horizontalScroll: false,
             showPrayerLabels: true,
-            showLanguageLabels: true,
+            showLanguageLabels: false,
             showSpeakerLabels: true,
             showRubrication: true,
             dynamicFontSizing: true,
@@ -2433,10 +2752,12 @@ async function loadSettings() {
             languageColors: 'vibrant',
             boldText: false,
             anglicizeNames: false,
-            showSupplications: true,
+            showSupplications: false,
             showDailyPrayer: true,
+            showTrinitarianInvocation: false,
             showGeezPhoneticChants: false,
             showLoanwordOrigins: false,
+            showHaregOrnament: isMobile,
             showGateOfLight: false,
             showYewediswaMelaekt: true
         },
@@ -2448,15 +2769,16 @@ async function loadSettings() {
         },
         ethiopicFont: "'Noto Sans Ethiopic', sans-serif",
         englishFont: "'Merriweather', serif",
-        selectedPsalms: [12, 15, 22, 50, 90, 102, 135], // Default LXX Psalms
+        selectedPsalms: [50], // Default Pray Tab Psalm: Psalm 50
         selectedPsalmVerseRanges: {},
-        selectedProphetSongs: [],
+        selectedProphetSongs: getDefaultProphetSongForTimeOfDay(),
         selectedSeatatLectionaryDay: getSeatatLiturgicalDay(),
         selectedWidaseMaryamDay: getSeatatLiturgicalDay(),
         isKidaseModeActive: false,
         selectedAnaphora: 'apostles',
         showSeatatReadings: false,
-        showMatins: true,
+        showPrepPsalms: false,
+        showMatins: false,
         useExternalBibleAPI: true,
         globalEnglishTranslation: 'nkjv',
         globalAmharicTranslation: 'am-2000',
@@ -2468,12 +2790,13 @@ async function loadSettings() {
         showVespers: false,
         selectedKidaseDay: 'sunday',
         selectedCovenantPrayer: 'morning',
-        showAnaphora: true,
+        showAnaphora: false,
         selectedMiracleId: 'none',
         miraclePosition: 'anaphora',
         selectedMiracleTranslationIndex: 0,
         hideQuietPrayers: false,
         isHolyFiftyDays: false,
+        areAllSectionsCollapsed: true,
         // Default Custom Names
         customNames: {
             servant: '{Names}',
@@ -2498,7 +2821,8 @@ async function loadSettings() {
 
     if (savedVersion !== SETTINGS_VERSION) {
         // Clear old settings and start fresh if version mismatch
-        isSidebarCollapsed = defaultSettings.sidebarCollapsed;
+        isLeftSidebarCollapsed = defaultSettings.sidebarCollapsed;
+        isRightSidebarCollapsed = true;
         currentTheme = defaultSettings.theme;
         displayOptions = defaultSettings.displayOptions;
         displayedLanguages = defaultSettings.displayedLanguages;
@@ -2512,6 +2836,11 @@ async function loadSettings() {
         selectedWidaseMaryamDay = defaultSettings.selectedWidaseMaryamDay;
         isKidaseModeActive = defaultSettings.isKidaseModeActive;
         selectedAnaphora = defaultSettings.selectedAnaphora;
+        showSeatatReadings = defaultSettings.showSeatatReadings;
+        showPrepPsalms = defaultSettings.showPrepPsalms;
+        showMatins = defaultSettings.showMatins;
+        showVespers = defaultSettings.showVespers;
+        showAnaphora = defaultSettings.showAnaphora;
         selectedKidaseDay = defaultSettings.selectedKidaseDay;
         selectedCovenantPrayer = defaultSettings.selectedCovenantPrayer;
         hideQuietPrayers = defaultSettings.hideQuietPrayers;
@@ -2523,6 +2852,10 @@ async function loadSettings() {
         readingTranslationOverrides = defaultSettings.readingTranslationOverrides;
         customNames = defaultSettings.customNames; // Use defaults
         collapsedSections = defaultSettings.collapsedSections;
+        areAllSectionsCollapsed = defaultSettings.areAllSectionsCollapsed;
+        activePrimaryTab = 'pray';
+        prayTabProfile = getPrayTabDefaultProfile();
+        liturgyTabProfile = getLiturgyTabDefaultProfile();
     } else {
         // Load saved settings and merge with defaults to ensure all keys exist
         currentTheme = JSON.parse(localStorage.getItem('theme')) || defaultSettings.theme;
@@ -2558,6 +2891,7 @@ async function loadSettings() {
         isKidaseModeActive = localStorage.getItem('isKidaseModeActive') === 'true';
         selectedAnaphora = localStorage.getItem('selectedAnaphora') || defaultSettings.selectedAnaphora;
         showSeatatReadings = localStorage.getItem('showSeatatReadings') === 'true';
+        showPrepPsalms = localStorage.getItem('showPrepPsalms') === 'true';
         showMatins = localStorage.getItem('showMatins') !== null ? localStorage.getItem('showMatins') === 'true' : defaultSettings.showMatins;
         useExternalBibleAPI = localStorage.getItem('useExternalBibleAPI') !== null ? localStorage.getItem('useExternalBibleAPI') === 'true' : defaultSettings.useExternalBibleAPI;
         globalEnglishTranslation = localStorage.getItem('globalEnglishTranslation') || defaultSettings.globalEnglishTranslation;
@@ -2585,6 +2919,28 @@ async function loadSettings() {
         const savedCustomNames = JSON.parse(localStorage.getItem('customNames')) || {};
         customNames = { ...defaultSettings.customNames, ...savedCustomNames };
         collapsedSections = JSON.parse(localStorage.getItem('collapsedSections')) || defaultSettings.collapsedSections;
+        areAllSectionsCollapsed = localStorage.getItem('areAllSectionsCollapsed') !== null
+            ? localStorage.getItem('areAllSectionsCollapsed') === 'true'
+            : defaultSettings.areAllSectionsCollapsed;
+        const savedActiveTab = localStorage.getItem('activePrimaryTab');
+        activePrimaryTab = (savedActiveTab === 'liturgy' || savedActiveTab === 'pray')
+            ? savedActiveTab
+            : ((isKidaseModeActive || showAnaphora) ? 'liturgy' : 'pray');
+        try {
+            prayTabProfile = JSON.parse(localStorage.getItem('prayTabProfile')) || getPrayTabDefaultProfile();
+        } catch (e) {
+            prayTabProfile = getPrayTabDefaultProfile();
+        }
+        try {
+            liturgyTabProfile = JSON.parse(localStorage.getItem('liturgyTabProfile')) || getLiturgyTabDefaultProfile();
+        } catch (e) {
+            liturgyTabProfile = getLiturgyTabDefaultProfile();
+        }
+        if (activePrimaryTab === 'liturgy') {
+            applyTabProfile(liturgyTabProfile);
+        } else {
+            applyTabProfile(prayTabProfile);
+        }
     }
 
     // Override settings from URL if present
@@ -2662,6 +3018,7 @@ function updateLayoutToggleIcon() {
 }
 
 function updatePresentationModeToggleIcon() {
+    if (!presModeIconSlides || !presModeIconScroll) return;
     const isSlidesMode = displayOptions.presentationMode === 'slides';
     if (isSlidesMode) {
         presModeIconSlides.style.display = 'none';
@@ -2670,19 +3027,36 @@ function updatePresentationModeToggleIcon() {
         presModeIconSlides.style.display = 'block';
         presModeIconScroll.style.display = 'none';
     }
+    const labelEl = document.getElementById('presentation-mode-label') || document.getElementById('presentation-mode-toggle-label');
+    if (labelEl) {
+        labelEl.textContent = isSlidesMode ? 'Scroll' : 'Slides';
+    }
 }
 
 function updateExpandCollapseAllIcon() {
+    if (!expandCollapseAllButton) return;
     const collapseIcon = expandCollapseAllButton.querySelector('.icon-collapse-all');
     const expandIcon = expandCollapseAllButton.querySelector('.icon-expand-all');
+
+    // Sync state from live collapsible section headers if rendered
+    if (prayerDisplay) {
+        const collapsibleHeaders = prayerDisplay.querySelectorAll('.section-title.collapsible');
+        if (collapsibleHeaders.length > 0) {
+            const allCurrentlyCollapsed = Array.from(collapsibleHeaders).every(el => el.classList.contains('collapsed'));
+            areAllSectionsCollapsed = allCurrentlyCollapsed;
+        }
+    }
+
     if (areAllSectionsCollapsed) {
-        collapseIcon.style.display = 'none';
-        expandIcon.style.display = 'block';
-        expandCollapseAllButton.title = 'Expand All';
+        if (collapseIcon) collapseIcon.style.display = 'none';
+        if (expandIcon) expandIcon.style.display = 'block';
+        expandCollapseAllButton.title = 'Expand All Sections';
+        if (expandCollapseAllLabel) expandCollapseAllLabel.textContent = 'Expand All';
     } else {
-        collapseIcon.style.display = 'block';
-        expandIcon.style.display = 'none';
-        expandCollapseAllButton.title = 'Collapse All';
+        if (collapseIcon) collapseIcon.style.display = 'block';
+        if (expandIcon) expandIcon.style.display = 'none';
+        expandCollapseAllButton.title = 'Collapse All Sections';
+        if (expandCollapseAllLabel) expandCollapseAllLabel.textContent = 'Collapse All';
     }
 }
 
@@ -2702,10 +3076,20 @@ function updateAllTogglesInSettingsPanel() {
     anglicizeNamesToggle.checked = displayOptions.anglicizeNames;
     showSupplicationsToggle.checked = displayOptions.showSupplications;
     showDailyPrayerToggle.checked = displayOptions.showDailyPrayer;
+    if (showTrinitarianInvocationToggle) showTrinitarianInvocationToggle.checked = !!displayOptions.showTrinitarianInvocation;
     if (showGateOfLightToggle) showGateOfLightToggle.checked = displayOptions.showGateOfLight;
     if (showYewediswaMelaektToggle) showYewediswaMelaektToggle.checked = displayOptions.showYewediswaMelaekt !== false;
     if (showGeezPhoneticChantsToggle) showGeezPhoneticChantsToggle.checked = displayOptions.showGeezPhoneticChants;
     if (showLoanwordOriginsToggle) showLoanwordOriginsToggle.checked = displayOptions.showLoanwordOrigins;
+    if (showHaregOrnamentToggle) showHaregOrnamentToggle.checked = displayOptions.showHaregOrnament !== undefined ? displayOptions.showHaregOrnament : (window.innerWidth < 900);
+    if (showPrepPsalmsToggle) showPrepPsalmsToggle.checked = showPrepPsalms;
+
+    // Apply Traditional Vine (Hareg) visibility
+    const showHareg = displayOptions.showHaregOrnament !== undefined ? displayOptions.showHaregOrnament : (window.innerWidth < 900);
+    body.classList.toggle('hide-hareg-ornament', !showHareg);
+    document.querySelectorAll('.hareg-ornament, .hareg-header, .hareg-footer').forEach(el => {
+        el.style.display = showHareg ? '' : 'none';
+    });
 
     // Seatat Lectionary Selector
     const lectionaryRadios = document.querySelectorAll('input[name="seatat-lectionary-day"]');
@@ -2748,6 +3132,9 @@ function updateAllTogglesInSettingsPanel() {
     vespersPsalmGospelSettings.style.display = showVespers ? 'block' : 'none';
     if (kidaseDaySelector) kidaseDaySelector.value = selectedKidaseDay;
     covenantPrayerSelector.value = selectedCovenantPrayer;
+    updatePrimaryNavTabsUI();
+    updatePresentationModeToggleIcon();
+    updateExpandCollapseAllIcon();
     hideQuietPrayersToggle.checked = hideQuietPrayers;
     if (holyFiftyDaysToggle) holyFiftyDaysToggle.checked = isHolyFiftyDays;
 
@@ -2786,7 +3173,7 @@ function updateLanguageToggles() {
         // Handle "Seeking Scribes" graying out
         if (cfg.isSeekingScribe) {
             // Check if there is ANY translation for this language in the current view
-            const hasTranslations = prayers.some(p => p[id] && p[id].trim()) ||
+            const hasTranslations = (typeof prayers !== 'undefined' && Array.isArray(prayers) && prayers.some(p => p[id] && p[id].trim())) ||
                 prayersFromFirestore.some(p => p[id] && p[id].trim());
 
             if (!hasTranslations) {
@@ -3290,6 +3677,10 @@ function syncAllLectionaryPickers(lectionaryKey, originContainer = null) {
             c.syncPicker(true);
         }
     });
+}
+
+function getEnglishEditionCitation(engCode) {
+    return engCode === 'kjv' ? 'KJV' : 'NKJV';
 }
 
 function getAmharicEditionCitation(amCode) {
@@ -3850,14 +4241,15 @@ function createLectionaryPicker(containerOrId, lectionaryKey, bookOptions = [], 
 }
 
 function initializeLectionaryPickers() {
-    createLectionaryPicker('morning-psalm-ref-container', 'morningPsalm', ['Psalms'], TYPICAL_PSALMS);
+    const tp = typeof TYPICAL_PSALMS !== 'undefined' ? TYPICAL_PSALMS : null;
+    createLectionaryPicker('morning-psalm-ref-container', 'morningPsalm', ['Psalms'], tp);
     createLectionaryPicker('morning-gospel-ref-container', 'morningGospel', ['Matthew', 'Mark', 'Luke', 'John']);
-    createLectionaryPicker('evening-psalm-ref-container', 'eveningPsalm', ['Psalms'], TYPICAL_PSALMS);
+    createLectionaryPicker('evening-psalm-ref-container', 'eveningPsalm', ['Psalms'], tp);
     createLectionaryPicker('evening-gospel-ref-container', 'eveningGospel', ['Matthew', 'Mark', 'Luke', 'John']);
     createLectionaryPicker('kidase-pauline-ref-container', 'pauline', ['Romans', '1 Corinthians', '2 Corinthians', 'Galatians', 'Ephesians', 'Philippians', 'Colossians', '1 Thessalonians', '2 Thessalonians', '1 Timothy', '2 Timothy', 'Titus', 'Philemon', 'Hebrews']);
     createLectionaryPicker('kidase-universal-ref-container', 'universal', ['James', '1 Peter', '2 Peter', '1 John', '2 John', '3 John', 'Jude', 'Revelation']);
     createLectionaryPicker('kidase-acts-ref-container', 'acts', ['Acts']);
-    createLectionaryPicker('kidase-psalm-ref-container', 'psalm', ['Psalms'], TYPICAL_PSALMS);
+    createLectionaryPicker('kidase-psalm-ref-container', 'psalm', ['Psalms'], tp);
     createLectionaryPicker('kidase-gospel-ref-container', 'gospel', ['Matthew', 'Mark', 'Luke', 'John']);
 }
 
@@ -3895,17 +4287,393 @@ function replaceKidasePlaceholders(text, langKey, isFirstLanguage) {
 }
 
 
-function getGeezDateInfo() {
-    // Basic implementation for now - could be expanded with a real calendar conversion
+const ETHIOPIAN_MONTHS_INFO = [
+    { num: 1, name: 'Meskerem', geez: 'መስከረም', westernRange: 'Sep 11 – Oct 10 (Sep 12 in leap year)', meaning: 'Beginning of the New Year (Enkutatash) and end of the rainy season; celebrates the Feast of the Finding of the True Cross (Meskel on Meskerem 17).' },
+    { num: 2, name: 'Tikimt', geez: 'ጥቅምት', westernRange: 'Oct 11 – Nov 9 (Oct 12 in leap year)', meaning: 'Season of flowers (Tsige), commemorating the Flight of the Holy Family into Egypt.' },
+    { num: 3, name: 'Hidar', geez: 'ኅዳር', westernRange: 'Nov 10 – Dec 9 (Nov 11 in leap year)', meaning: 'Month of the Fast of the Prophets (Tsome Nebiyat) beginning Hidar 15 and Hidar Tsion (Hidar 21).' },
+    { num: 4, name: 'Tahsas', geez: 'ታኅሣሥ', westernRange: 'Dec 10 – Jan 8 (Dec 11 in leap year)', meaning: 'Month of Advent culminating in the glorious Feast of the Nativity of Our Lord (Genna on Tahsas 29 /28).' },
+    { num: 5, name: 'Tir', geez: 'ጥር', westernRange: 'Jan 9 – Feb 7 (Jan 10 in leap year)', meaning: 'Month of the Baptism of Our Lord (Timkat on Tir 11), Wedding at Cana (Tir 12), and Dormition of St. Mary (Asterio Maryam on Tir 21).' },
+    { num: 6, name: 'Yekatit', geez: 'የካቲት', westernRange: 'Feb 8 – Mar 9', meaning: 'Season often marking the beginning of the Fast of Nineveh and the Great Fast (Abiy Tsom), and the Covenant of Mercy (Kidane Mihret on Yekatit 16).' },
+    { num: 7, name: 'Megabit', geez: 'መጋቢት', westernRange: 'Mar 10 – Apr 8', meaning: 'Heart of the Great Fast (Lent) and the Feast of the Annunciation & Glorious Cross (Megabit 29 & 10).' },
+    { num: 8, name: 'Miazia', geez: 'ሚያዝያ', westernRange: 'Apr 9 – May 8', meaning: 'Paschal season of Holy Week (Himamat), the Resurrection (Fasika), and St. George the Martyr (Miazia 23).' },
+    { num: 9, name: 'Ginbot', geez: 'ግንቦት', westernRange: 'May 9 – Jun 7', meaning: 'Joyous Season of the Nativity of the Blessed Virgin Mary (Lideta on Ginbot 1) and the Ascension & Pentecost.' },
+    { num: 10, name: 'Sene', geez: 'ሰኔ', westernRange: 'Jun 8 – Jul 7', meaning: 'Month of the Fast of the Apostles (Tsome Hawaryat) and the Dedication of the Church of St. Mary (Sene 20/21).' },
+    { num: 11, name: 'Hamle', geez: 'ሐምሌ', westernRange: 'Jul 8 – Aug 6', meaning: 'Rainy season (Kiremt); Feast of Sts. Peter and Paul (Hamle 5) and Holy Trinity (Hamle 7).' },
+    { num: 12, name: 'Nehase', geez: 'ነሐሴ', westernRange: 'Aug 7 – Sep 5', meaning: 'Month of the Fast of the Assumption (Filseta, Nehase 1–15), the Transfiguration on Mount Tabor (Debre Tabor on Nehase 13), and the Assumption of St. Mary (Nehase 16).' },
+    { num: 13, name: 'Pagumen', geez: 'ጳጉሜን', westernRange: 'Sep 6 – Sep 10 (Sep 11 in leap year)', meaning: 'The 13th month ("Epagomenal days") consisting of 5 days (6 days every 4th year in the Year of St. Luke), dedicated to eschatological remembrance and preparation for the New Year.' }
+];
+
+// Monthly Feasts (1–30) of the Ethiopian Orthodox Tewahedo Church (sourced from geez.org/Calendars/)
+const ETHIOPIAN_MONTHLY_FEASTS = [
+    { day: 1, geezDay: '፩', name: 'Lideta (Nativity of St. Mary), St. Raguel the Archangel, Prophet Elias & St. Bartholomew', geez: 'ልደታ ለማርያም፣ ቅዱስ ራጉኤል፣ ኤልያስ ነቢይ' },
+    { day: 2, geezDay: '፪', name: 'St. Thaddaeus the Apostle, Abba Guba & Walka Michael', geez: 'ታዴዎስ ሐዋርያ፣ አባ ጉባ' },
+    { day: 3, geezDay: '፫', name: 'Ba\'eta (Entrance of St. Mary into the Temple), St. Phanuel the Archangel & Abune Zena Markos', geez: 'በዓታ ለማርያም፣ ቅዱስ ፋኑኤል፣ አቡነ ዜና ማርቆስ' },
+    { day: 4, geezDay: '፬', name: 'St. John the Evangelist (Son of Thunder / ወልደ ነጎድጓድ) & St. Andrew the Apostle', geez: 'ዮሐንስ ወልደ ነጎድጓድ፣ እንድርያስ ሐዋርያ' },
+    { day: 5, geezDay: '፭', name: 'Sts. Peter & Paul (Petros we-Pawlos) & Abune Gebre Menfes Kidus (Abo)', geez: 'ጴጥሮስ ወጳውሎስ፣ አቡነ ገብረ መንፈስ ቅዱስ' },
+    { day: 6, geezDay: '፮', name: 'Our Lady of Debre Quesquam (Flight into Egypt), St. Mary of Arwe & St. Barbara', geez: 'ቁስቋም ማርያም፣ ቅድስት አርሴማ' },
+    { day: 7, geezDay: '፯', name: 'Agzi\'abher Ab (The Most Holy Trinity / ሥላሴ)', geez: 'ቅድስት ሥላሴ' },
+    { day: 8, geezDay: '፰', name: 'The Four Living Creatures (Arba\'etu Ensisa), Abba Kiros & St. Matthias', geez: 'አርባዕቱ እንስሳ፣ አባ ኪሮስ' },
+    { day: 9, geezDay: '፱', name: 'St. Thomas the Apostle, the 318 Fathers of Nicaea & the Nine Saints (Tese\'atu Kidusan)', geez: 'ቶማስ ሐዋርያ፣ ሠለስቱ ምዕት፣ ተሰዓቱ ቅዱሳን' },
+    { day: 10, geezDay: '፲', name: 'Finding of the Holy Cross of Our Lord (Meskel / ነገረ መስቀሉ)', geez: 'በዓለ መስቀሉ ለእግዚእነ' },
+    { day: 11, geezDay: '፲፩', name: 'Sts. Joachim & Anna (Hanna we-Yacob), St. Fasilides & St. Yared the Melodist', geez: 'ሐና ወኢያቄም፣ ቅዱስ ያሬድ፣ ቅዱስ ፋሲለደስ' },
+    { day: 12, geezDay: '፲፪', name: 'St. Michael the Archangel, St. Matthew the Evangelist, St. John Chrysostom & St. Kristos Semra', geez: 'ቅዱስ ሚካኤል፣ ማቴዎስ ወንጌላዊ፣ ቅድስት ክርስቶስ ሠምራ' },
+    { day: 13, geezDay: '፲፫', name: 'Egzi\'abher Ab (God the Father), St. Ruphael the Archangel & the Myriad Angelic Hosts (A\'elaf)', geez: 'እግዚአብሔር አብ፣ ቅዱስ ሩፋኤል፣ አእላፍ መላእክት' },
+    { day: 14, geezDay: '፲፬', name: 'Abune Aregawi (Zemika\'el) & St. Gebre Kristos', geez: 'አቡነ አረጋዊ፣ ቅዱስ ገብረ ክርስቶስ' },
+    { day: 15, geezDay: '፲፭', name: 'St. Cyriacus (Qirqos) & His Mother St. Julitta (Iyalota)', geez: 'ቅዱስ ቂርቆስ ወእሙ ኢየሉጣ' },
+    { day: 16, geezDay: '፲፮', name: 'Kidane Mihret (Covenant of Mercy of Our Lady Mary)', geez: 'ኪዳነ ምሕረት' },
+    { day: 17, geezDay: '፲፯', name: 'St. Stephen the Protomartyr (Estifanos) & Abba Gerima', geez: 'ቅዱስ እስጢፋኖስ፣ አባ ገሪማ' },
+    { day: 18, geezDay: '፲፰', name: 'St. Philip the Apostle & Abune Ewostatewos (Eustathius)', geez: 'ፊልጶስ ሐዋርያ፣ አቡነ ኤዎስጣቴዎስ' },
+    { day: 19, geezDay: '፲፱', name: 'St. Gabriel the Archangel', geez: 'ቅዱስ ገብርኤል ሊቀ መላእክት' },
+    { day: 20, geezDay: '፳', name: 'Hnstata (Building of the First Church of St. Mary at Philippi) & Prophet Elisha', geez: 'ሕንፀታ ለቤተ ክርስቲያን፣ ኤልሳዕ ነቢይ' },
+    { day: 21, geezDay: '፳፩', name: 'Our Lady Mary the Mother of God (Egzi\'etne Maryam)', geez: 'እግዝእትነ ማርያም ወላዲተ አምላክ' },
+    { day: 22, geezDay: '፳፪', name: 'St. Urael the Archangel, St. Deksios (Ildefonsus) & St. Luke the Evangelist (Bisrategna)', geez: 'ቅዱስ ዑራኤል፣ ቅዱስ ደቅስዮስ፣ ሉቃስ ወንጌላዊ' },
+    { day: 23, geezDay: '፳፫', name: 'St. George the Great Martyr (Kidus Giyorgis) & King Solomon', geez: 'ቅዱስ ጊዮርጊስ ሊቀ ሰማዕታት' },
+    { day: 24, geezDay: '፳፬', name: 'Abune Tekle Haymanot & the Twenty-Four Heavenly Priests (Kahinate Semay)', geez: 'አቡነ ተክለ ሃይማኖት፣ ካህናተ ሰማይ' },
+    { day: 25, geezDay: '፳፭', name: 'St. Merkorios (Mercurius of Two Swords)', geez: 'ቅዱስ መርቆሬዎስ' },
+    { day: 26, geezDay: '፳፮', name: 'St. Joseph the Betrothed, Abba Salama (Frumentius) & Thomas', geez: 'ቅዱስ ዮሴፍ አረጋዊ፣ አባ ሰላማ ከሣቴ ብርሃን' },
+    { day: 27, geezDay: '፳፯', name: 'Medhane Alem (Savior of the World — Crucifixion of Our Lord)', geez: 'መድኃኔ ዓለም' },
+    { day: 28, geezDay: '፳፰', name: 'Emmanuel (አማኑኤል) & the Holy Patriarchs Abraham, Isaac, and Jacob', geez: 'አማኑኤል፣ አብርሃም ይስሐቅ ወያዕቆብ' },
+    { day: 29, geezDay: '፳፱', name: 'Bale Wold (Feast of God the Son — Incarnation, Nativity & Resurrection)', geez: 'በዓለ ወልድ' },
+    { day: 30, geezDay: '፴', name: 'St. Mark the Evangelist & St. John the Baptist', geez: 'ማርቆስ ወንጌላዊ፣ ዮሐንስ መጥምቅ' }
+];
+
+const LITURGICAL_HOURS_GUIDE = [
+    {
+        canonicalHour: '1st Hour (Prime / ነግህ)',
+        copticKey: 'coptic_1st',
+        ethiopianKey: 'dawn',
+        rangeLabel: '6:00 AM – 9:00 AM',
+        mystery: 'Our Lord Jesus Christ was bound and led from Caiaphas to stand before Pontius Pilate at daybreak; it also commemorates His glorious Resurrection at dawn and the creation of light.',
+        geezTerm: 'ጸሎተ ነግህ (፩ ሰዓት)'
+    },
+    {
+        canonicalHour: '3rd Hour (Terce / ሠለስት)',
+        copticKey: 'coptic_3rd',
+        ethiopianKey: 'dawn',
+        rangeLabel: '9:00 AM – 12:00 PM',
+        mystery: 'At the Third Hour (9:00 AM), Our Lord was condemned and scourged by Pilate\'s soldiers, and on the Day of Pentecost the Holy Spirit descended upon the Apostles in the Upper Room of Zion.',
+        geezTerm: 'ጸሎተ ሠለስት (፫ ሰዓት)'
+    },
+    {
+        canonicalHour: '6th Hour (Sext / ቀትር)',
+        copticKey: 'coptic_6th',
+        ethiopianKey: 'dawn',
+        rangeLabel: '12:00 PM – 3:00 PM',
+        mystery: 'At the Sixth Hour (12:00 Noon), Our Lord Jesus Christ was nailed to the Holy Cross at Golgotha for our salvation, and darkness covered the whole earth from the sixth hour until the ninth hour.',
+        geezTerm: 'ጸሎተ ቀትር (፮ ሰዓት)'
+    },
+    {
+        canonicalHour: '9th Hour (None / ተሰዓት)',
+        copticKey: 'coptic_9th',
+        ethiopianKey: 'sunset',
+        rangeLabel: '3:00 PM – 5:00 PM',
+        mystery: 'At the Ninth Hour (3:00 PM), Our Lord cried out on the Cross, bowed His head, and yielded up His spirit in the flesh, opening the gates of Paradise to the penitent thief.',
+        geezTerm: 'ጸሎተ ተሰዓት (፱ ሰዓት)'
+    },
+    {
+        canonicalHour: '11th Hour (Vespers / ሠርክ)',
+        copticKey: 'coptic_11th',
+        ethiopianKey: 'sunset',
+        rangeLabel: '5:00 PM – 6:00 PM',
+        mystery: 'At the Eleventh Hour (5:00 PM), Righteous Joseph of Arimathea and Nicodemus took down the holy Body of Our Lord from the Cross, wrapped Him in pure linen with spices, and gave thanks.',
+        geezTerm: 'ጸሎተ ሠርክ (፲፩ ሰዓት)'
+    },
+    {
+        canonicalHour: '12th Hour (Compline / ንዋም)',
+        copticKey: 'coptic_12th',
+        ethiopianKey: 'sunset',
+        rangeLabel: '6:00 PM – 12:00 AM',
+        mystery: 'At the Twelfth Hour (6:00 PM), Our Lord\'s body was laid in the new tomb and a great stone was rolled across the entrance; we remember our own repose and pray for forgiveness before sleep.',
+        geezTerm: 'ጸሎተ ንዋም (፲፪ ሰዓት)'
+    },
+    {
+        canonicalHour: 'Midnight (Nocturns / መንፈቀ ሌሊት)',
+        copticKey: 'coptic_midnight_1',
+        ethiopianKey: 'dawn',
+        rangeLabel: '12:00 AM – 6:00 AM',
+        mystery: 'At Midnight, the Bridegroom comes (Matthew 25:6); we keep vigil with the angels and praise Our Lord who rose from the dead in the stillness of the night.',
+        geezTerm: 'ጸሎተ መንፈቀ ሌሊት'
+    }
+];
+
+function computeEthiopianDate(dateObj = new Date()) {
+    // Convert Gregorian Date to Julian Day Number (JDN), then to Ethiopian Calendar
+    const year = dateObj.getFullYear();
+    const month = dateObj.getMonth() + 1; // 1-12
+    const day = dateObj.getDate();
+
+    const a = Math.floor((14 - month) / 12);
+    const y = year + 4800 - a;
+    const m = month + 12 * a - 3;
+    const jdn = day + Math.floor((153 * m + 2) / 5) + 365 * y + Math.floor(y / 4) - Math.floor(y / 100) + Math.floor(y / 400) - 32045;
+
+    // Ethiopic epoch JDN = 1723856
+    const r = (jdn - 1723856) % 1461;
+    const n = (r % 365) + 365 * Math.floor(r / 1460);
+    const ethYear = 4 * Math.floor((jdn - 1723856) / 1461) + Math.floor(r / 365) - Math.floor(r / 1460);
+    const ethMonth = Math.floor(n / 30) + 1; // 1-13
+    const ethDay = (n % 30) + 1; // 1-30
+
+    const monthInfo = ETHIOPIAN_MONTHS_INFO[ethMonth - 1] || ETHIOPIAN_MONTHS_INFO[0];
+    const evangelists = [
+        { name: 'Yohannes (St. John)', geez: 'ዘዮሐንስ' },
+        { name: 'Mateos (St. Matthew)', geez: 'ዘማቴዎስ' },
+        { name: 'Markos (St. Mark)', geez: 'ዘማርቆስ' },
+        { name: 'Luqas (St. Luke — Leap Year)', geez: 'ዘሉቃስ' }
+    ];
+    const ameteAlem = ethYear + 5500;
+    const evangelist = evangelists[ameteAlem % 4];
+    const dayOfWeekNamesGeez = ['እሑድ', 'ሰኑይ', 'ሠሉስ', 'ረቡዕ', 'ሐሙስ', 'ዓርብ', 'ቀዳሚት'];
+
     return {
-        month: "Current",
-        date: "Today",
-        year: "Year",
-        dayOfWeekGeez: "ዕለተ",
-        geezMonth: "ወርኅ",
-        geezDate: "ዕለት",
-        geezYear: "ዓመት"
+        ethYear,
+        ethMonth,
+        ethDay,
+        ameteAlem,
+        evangelist,
+        monthName: monthInfo.name,
+        geezMonth: monthInfo.geez,
+        geezDate: toGeezNumeral(ethDay),
+        geezYear: toGeezNumeral(ethYear),
+        dayOfWeekGeez: dayOfWeekNamesGeez[dateObj.getDay()],
+        month: monthInfo.name,
+        date: String(ethDay),
+        year: String(ethYear)
     };
+}
+
+function getGeezDateInfo() {
+    return computeEthiopianDate(new Date());
+}
+
+function getOrdinalSuffix(n) {
+    const s = ['th', 'st', 'nd', 'rd'];
+    const v = n % 100;
+    return n + (s[(v - 20) % 10] || s[v] || s[0]);
+}
+
+function getLiturgicalHourInfo(dateObj = new Date()) {
+    const h = dateObj.getHours();
+    // Liturgical day hours: 6:00 AM is the start of the 1st Hour; 6:00 PM is the start of the 1st Night Watch
+    let hourNum = ((h - 6 + 24) % 12) + 1;
+    const isDaytime = h >= 6 && h < 18;
+    const hourLabel = (h >= 0 && h < 6)
+        ? `Night Watch (${getOrdinalSuffix(hourNum)} Hr)`
+        : `${getOrdinalSuffix(hourNum)} Hour`;
+
+    // Determine primary and adjacent canonical hours for "Pray Now" buttons
+    let primaryCanonical = LITURGICAL_HOURS_GUIDE[0];
+    let secondaryCanonical = null;
+
+    if (h >= 6 && h < 9) {
+        primaryCanonical = LITURGICAL_HOURS_GUIDE[0]; // 1st Hour
+        if (h >= 7) secondaryCanonical = LITURGICAL_HOURS_GUIDE[1]; // 3rd Hour next
+    } else if (h >= 9 && h < 12) {
+        primaryCanonical = LITURGICAL_HOURS_GUIDE[1]; // 3rd Hour
+        if (h >= 10) secondaryCanonical = LITURGICAL_HOURS_GUIDE[2]; // 6th Hour next
+    } else if (h >= 12 && h < 15) {
+        primaryCanonical = LITURGICAL_HOURS_GUIDE[2]; // 6th Hour
+        if (h >= 13) secondaryCanonical = LITURGICAL_HOURS_GUIDE[3]; // 9th Hour next
+    } else if (h >= 15 && h < 17) {
+        primaryCanonical = LITURGICAL_HOURS_GUIDE[3]; // 9th Hour
+        if (h >= 16) secondaryCanonical = LITURGICAL_HOURS_GUIDE[4]; // 11th Hour next
+    } else if (h >= 17 && h < 18) {
+        primaryCanonical = LITURGICAL_HOURS_GUIDE[4]; // 11th Hour (Vespers)
+        secondaryCanonical = LITURGICAL_HOURS_GUIDE[5]; // 12th Hour next
+    } else if (h >= 18 && h < 24) {
+        primaryCanonical = LITURGICAL_HOURS_GUIDE[5]; // 12th Hour (Compline)
+        secondaryCanonical = LITURGICAL_HOURS_GUIDE[6]; // Midnight next
+    } else {
+        primaryCanonical = LITURGICAL_HOURS_GUIDE[6]; // Midnight
+        secondaryCanonical = LITURGICAL_HOURS_GUIDE[0]; // 1st Hour next
+    }
+
+    return {
+        hourNum,
+        isDaytime,
+        hourLabel,
+        primaryCanonical,
+        secondaryCanonical
+    };
+}
+
+function renderLiturgicalCalendarBar() {
+    if (!liturgicalCalendarBar) return;
+    const now = new Date();
+    const eth = computeEthiopianDate(now);
+    const hrInfo = getLiturgicalHourInfo(now);
+
+    const westernDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    const westernMonths = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    const wDayName = westernDays[now.getDay()];
+    const wMonthName = westernMonths[now.getMonth()];
+    const wDayNum = now.getDate();
+    const wYear = now.getFullYear();
+
+    liturgicalCalendarBar.innerHTML = `
+        <button type="button" class="calendar-chip-link" data-cal-action="hour" title="Click to view the mystery of this Liturgical Hour and pray its Psalms">${hrInfo.hourLabel}</button>
+        <span class="cal-dot">•</span>
+        <button type="button" class="calendar-chip-link" data-cal-action="month" title="Click to learn about the Ethiopian Calendar months">${eth.monthName}</button>
+        <button type="button" class="calendar-chip-link" data-cal-action="feast" title="Click to view today's & monthly Feast Days (1–30)">${eth.ethDay}</button><span class="cal-sep">,</span>
+        <button type="button" class="calendar-chip-link" data-cal-action="year" title="Click to learn about Year of Mercy (Amete Mihret)">${eth.ethYear}<span class="cal-year-mercy-label"> Year of Mercy</span></button>
+        <span class="cal-dot cal-western-date-sep">•</span>
+        <span class="cal-western-date">${wDayName}, ${wMonthName} ${wDayNum}, ${wYear}</span>
+    `;
+
+    liturgicalCalendarBar.querySelectorAll('.calendar-chip-link').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            openCalendarInfoModal(btn.getAttribute('data-cal-action'));
+        });
+    });
+}
+
+function openCalendarInfoModal(actionType) {
+    if (!calendarInfoModal || !calendarInfoTitle || !calendarInfoBody) return;
+    const now = new Date();
+    const eth = computeEthiopianDate(now);
+    const hrInfo = getLiturgicalHourInfo(now);
+
+    if (actionType === 'hour') {
+        calendarInfoTitle.innerHTML = `Liturgical Hour: ${hrInfo.hourLabel}`;
+        const pCan = hrInfo.primaryCanonical;
+        const sCan = hrInfo.secondaryCanonical;
+        let actionBtnsHtml = `
+            <div class="cal-modal-action-box">
+                <p style="margin: 0 0 0.5rem 0; font-size: 0.9rem; opacity: 0.9;"><strong>Ready to pray the Psalms of this hour?</strong></p>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                    <button type="button" class="settings-button cal-pray-hour-btn" data-combo-key="${pCan.copticKey}" style="background-color: var(--primary-color); color: var(--bg-color); font-weight: 600;">
+                        Pray ${pCan.canonicalHour} Now
+                    </button>
+                    ${sCan ? `<button type="button" class="settings-button cal-pray-hour-btn" data-combo-key="${sCan.copticKey}">
+                        Pray ${sCan.canonicalHour}
+                    </button>` : ''}
+                </div>
+            </div>
+        `;
+
+        const hoursListHtml = LITURGICAL_HOURS_GUIDE.map(item => {
+            const isCurrent = item.canonicalHour === pCan.canonicalHour;
+            return `
+                <div class="cal-hour-card ${isCurrent ? 'active-hour-card' : ''}">
+                    <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 0.5rem; flex-wrap: wrap;">
+                        <strong>${item.canonicalHour}</strong>
+                        <span style="font-size: 0.8rem; opacity: 0.75;">${item.rangeLabel} • ${item.geezTerm}</span>
+                    </div>
+                    <p style="margin: 0.35rem 0 0 0; font-size: 0.9rem; line-height: 1.45;">${item.mystery}</p>
+                </div>
+            `;
+        }).join('');
+
+        calendarInfoBody.innerHTML = `
+            ${actionBtnsHtml}
+            <p style="font-size: 0.92rem; line-height: 1.5; margin-bottom: 0.75rem;">
+                In the Orthodox Tewahedo tradition, the liturgical day is measured from sunrise (6:00 AM = 1st Hour) and sanctifies every watch of the day by remembering the saving Passion, Death, and Resurrection of Our Lord Jesus Christ, alongside the descent of the Holy Spirit.
+            </p>
+            <div class="cal-hours-list">${hoursListHtml}</div>
+        `;
+
+        calendarInfoBody.querySelectorAll('.cal-pray-hour-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const comboKey = btn.getAttribute('data-combo-key');
+                if (activePrimaryTab !== 'pray') {
+                    switchPrimaryTab('pray');
+                }
+                selectPsalmCombination(comboKey);
+                closeModal();
+                setTimeout(() => {
+                    const psalmsHeader = Array.from(prayerDisplay.querySelectorAll('.section-title')).find(h => h.textContent.includes('Psalms | መዝሙር ዘዳዊት'));
+                    if (psalmsHeader) {
+                        psalmsHeader.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }, 250);
+            });
+        });
+    } else if (actionType === 'month') {
+        const currentMonthObj = ETHIOPIAN_MONTHS_INFO[eth.ethMonth - 1] || ETHIOPIAN_MONTHS_INFO[0];
+        calendarInfoTitle.innerHTML = `Ethiopian Month: ${currentMonthObj.name} (${currentMonthObj.geez})`;
+        const monthsRows = ETHIOPIAN_MONTHS_INFO.map(m => {
+            const isCurrent = m.num === eth.ethMonth;
+            return `
+                <div class="cal-hour-card ${isCurrent ? 'active-hour-card' : ''}">
+                    <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap;">
+                        <strong>${m.num}. ${m.name} (${m.geez})</strong>
+                        <span style="font-size: 0.8rem; opacity: 0.75;">${m.westernRange}</span>
+                    </div>
+                    <p style="margin: 0.3rem 0 0 0; font-size: 0.88rem; line-height: 1.4;">${m.meaning}</p>
+                </div>
+            `;
+        }).join('');
+        calendarInfoBody.innerHTML = `
+            <p style="font-size: 0.92rem; line-height: 1.5; margin-bottom: 0.75rem;">
+                The Ge'ez (Ethiopian) Calendar preserves the ancient Alexandrian solar-liturgical reckoning of <strong>13 months</strong>: twelve months of exactly <strong>30 days each</strong>, followed by <strong>Pagumen (ጳጉሜን)</strong>—a 13th month of 5 days (or 6 days in a leap year). New Year begins on <strong>Meskerem 1</strong> (September 11, or September 12 preceding a Gregorian leap year).
+            </p>
+            <div class="cal-hours-list">${monthsRows}</div>
+        `;
+    } else if (actionType === 'feast') {
+        const todayFeast = ETHIOPIAN_MONTHLY_FEASTS.find(f => f.day === eth.ethDay) || ETHIOPIAN_MONTHLY_FEASTS[0];
+        calendarInfoTitle.innerHTML = `Monthly Feast Days — Day ${eth.ethDay} (${eth.geezDate})`;
+        const allFeastsHtml = ETHIOPIAN_MONTHLY_FEASTS.map(f => {
+            const isToday = f.day === eth.ethDay;
+            return `
+                <div class="cal-hour-card ${isToday ? 'active-hour-card' : ''}">
+                    <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 0.5rem;">
+                        <strong>Day ${f.day} (${f.geezDay}) — ${f.name}</strong>
+                    </div>
+                    <div style="font-size: 0.85rem; opacity: 0.85; margin-top: 0.2rem;">${f.geez}</div>
+                </div>
+            `;
+        }).join('');
+        calendarInfoBody.innerHTML = `
+            <div class="cal-today-feast-highlight">
+                <div class="feast-icon-placeholder">
+                    <span>Icon coming soon</span>
+                </div>
+                <div class="feast-today-details">
+                    <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.8;">Today's Commemoration (${eth.monthName} ${eth.ethDay})</div>
+                    <h4 style="margin: 0.25rem 0; color: var(--primary-color);">${todayFeast.name}</h4>
+                    <div style="font-size: 0.95rem; margin-bottom: 0.35rem;">${todayFeast.geez}</div>
+                    <p style="margin: 0; font-size: 0.85rem; opacity: 0.85;">You may remember today's saint(s) and feast in your personal supplications and intercessions.</p>
+                </div>
+            </div>
+            <h4 style="margin: 1rem 0 0.5rem 0;">All 30 Monthly Commemorations (ወርኃዊ በዓላት)</h4>
+            <div class="cal-hours-list">${allFeastsHtml}</div>
+        `;
+    } else if (actionType === 'year') {
+        calendarInfoTitle.innerHTML = `${eth.ethYear} Year of Mercy (ዓመተ ምሕረት)`;
+        calendarInfoBody.innerHTML = `
+            <div class="cal-hour-card active-hour-card" style="margin-bottom: 0.85rem;">
+                <strong>Current Liturgical Year: ${eth.ethYear} Amete Mihret (${eth.geezYear} ዓ.ም.)</strong>
+                <div style="margin-top: 0.3rem; font-size: 0.9rem;">
+                    • <strong>Evangelist of the Year:</strong> ${eth.evangelist.name} (${eth.evangelist.geez})<br>
+                    • <strong>Amete Alem (Era of the World):</strong> ${eth.ameteAlem} A.A. (5500 years before Christ + ${eth.ethYear})
+                </div>
+            </div>
+            <p style="font-size: 0.92rem; line-height: 1.55;">
+                <strong>What does "Year of Mercy" (ዓመተ ምሕረት / Amete Mihret) mean?</strong><br>
+                <em>Amete Mihret</em> literally translates to <strong>"Year of Mercy"</strong> (referencing Isaiah 61:2 and Luke 4:19, <em>"to proclaim the acceptable year of the Lord"</em>). While before the Incarnation of Christ humanity counted 5,500 years of <em>Amete Alem</em> / <em>Amete Fida</em> (Years of Judgment/Debt), from the saving Incarnation of Our Lord Jesus Christ we count the <strong>Years of Mercy</strong>.
+            </p>
+            <p style="font-size: 0.92rem; line-height: 1.55;">
+                <strong>Why is the Ethiopian Calendar 7–8 years behind the Western Calendar?</strong><br>
+                The Ethiopian Orthodox Tewahedo Church preserves the ancient Alexandrian calculation of Julius Africanus and Annianus of Alexandria, which places the Annunciation and Incarnation of Christ 7 to 8 years later than the calculation revised in 525 AD by the Roman monk Dionysius Exiguus (which became the Western Gregorian calendar). Because the Ethiopian New Year begins in September (Meskerem 1), the difference is <strong>7 years</strong> from September 11 to December 31, and <strong>8 years</strong> from January 1 to September 10.
+            </p>
+            <p style="font-size: 0.92rem; line-height: 1.55;">
+                <strong>The Four-Year Evangelist Cycle:</strong><br>
+                Each year in the 4-year cycle is dedicated to one of the four Gospel writers in canonical order: <strong>Matthew (ማቴዎስ)</strong>, <strong>Mark (ማርቆስ)</strong>, <strong>Luke (ሉቃስ)</strong>, and <strong>John (ዮሐንስ)</strong>. Every fourth year—the Year of St. Luke—adds a 6th day to Pagumen.
+            </p>
+        `;
+    }
+
+    const wipDisclaimerHtml = `
+        <div class="calendar-modal-wip-badge" style="background: rgba(218, 165, 32, 0.12); border: 1px dashed var(--accent-color); border-radius: 6px; padding: 0.5rem 0.75rem; margin-bottom: 0.85rem; font-size: 0.82rem; line-height: 1.4; color: var(--text-color); display: flex; align-items: center; gap: 0.5rem;">
+            <span style="font-size: 1.1rem; flex-shrink: 0;">⚠️</span>
+            <span><strong>Work in Progress:</strong> The contents and explanations in this guide are actively being curated and are currently incomplete.</span>
+        </div>
+    `;
+    calendarInfoBody.insertAdjacentHTML('afterbegin', wipDisclaimerHtml);
+
+    openModal(calendarInfoModal);
 }
 
 function getUniversalEpistleAuthor(langKey) {
@@ -4468,11 +5236,17 @@ function createPrayerCardElement(prayer, prayerIndex, isKidase = false) {
     const isNumericChapter = /^\d+$/.test(chapterStr);
     const isKidaseCard = isKidase || isNumericChapter || kidaseChapters.some(c => c.toLowerCase() === chapterStr.toLowerCase());
 
+    const isTheotokiaPlaceholderEligible = ['Sun', 'Mon', 'Tue', 'Wed', 'Thurs', 'Fri', 'Sat', 'Anqetse Birhan', 'Angels'].includes(prayer.chapter);
+
     const getCardLangText = (langKey) => {
         if (!isKidaseCard && langKey === 'spanish_pr') {
             return prayer.spanish_pr || prayer.spanish;
         }
-        return prayer[langKey];
+        const val = prayer[langKey];
+        if (langKey === 'english' && isTheotokiaPlaceholderEligible && (!val || !val.trim())) {
+            return '<i class="coming-soon-placeholder">English coming soon</i>';
+        }
+        return val;
     };
 
     // Filter languages that actually have content for THIS specific card
@@ -4915,9 +5689,11 @@ function renderSelectedMiracle(addSectionTitleCallback, renderKidaseSectionCallb
 
 let collapsedSections = {};
 
-function renderSelectedKidase(addSectionTitleCallback) {
+function renderSelectedKidase(addSectionTitleCallback, options = {}) {
     if (typeof kidaseData === 'undefined') return;
-    if (!showVespers && !showMatins && !showTeklil && !isKidaseModeActive && !showAnaphora) return;
+    const renderVespersHere = !options.skipVespers && showVespers;
+    const renderPostSeatatHere = !options.onlyVespers && (showPrepPsalms || showMatins || showTeklil || isKidaseModeActive || showAnaphora);
+    if (!renderVespersHere && !renderPostSeatatHere) return;
 
     const allOrderPrayers = kidaseData.order;
 
@@ -4949,9 +5725,9 @@ function renderSelectedKidase(addSectionTitleCallback) {
     // 3. Render Sections
 
     // A. Vespers (Evening Prayers)
-    if (showVespers) {
-        addSectionTitleCallback("<i>Vespers</i> — Sunset Prayer | ጸሎተ ሠርክ", false);
-        addSectionTitleCallback("→ Prayer of the Gospel | ጸሎተ ወንጌል");
+    if (renderVespersHere) {
+        addSectionTitleCallback("<i>Vespers</i> — Sunset Prayer | ጸሎተ ሠርክ", true, null, { isParentGroup: true, defaultCollapsed: true });
+        addSectionTitleCallback("→ Prayer of the Gospel | ጸሎተ ወንጌል", true, null, { defaultCollapsed: true });
         
         // Deep clone the chunk and swap morning placeholders for evening placeholders
         const eveningGospelChunk = JSON.parse(JSON.stringify(morningGospelChunk)).map(p => {
@@ -4979,13 +5755,23 @@ function renderSelectedKidase(addSectionTitleCallback) {
         });
 
         renderKidaseSection(eveningGospelChunk);
-        addSectionTitleCallback("→ <i>Kidan</i> — Prayer of the Covenant | ጸሎተ ኪዳን");
+        addSectionTitleCallback("→ <i>Kidan</i> — Prayer of the Covenant | ጸሎተ ኪዳን", true, null, { defaultCollapsed: true });
         renderKidaseSection(preLiturgyKidanChunk);
+    }
+
+    if (options.onlyVespers) return;
+
+    // A2. Pre-Liturgy Psalms before Liturgy (መዝሙር ዘዳዊት ዘቅድመ ቅዳሴ: LXX Psalms 24, 60, 101, 102, 129, 130)
+    if (showPrepPsalms && bibleData.loaded) {
+        addSectionTitleCallback("Pre-Liturgy Psalms | መዝሙር ዘዳዊት ዘቅድመ ቅዳሴ", true, null, { isParentGroup: true, defaultCollapsed: true });
+        renderSelectedPsalmsWithDoxology((psalmNum) => {
+            addSectionTitleCallback(`→ Psalm ${psalmNum} | መዝሙር ዘዳዊት ${toGeez(psalmNum)}`, true, null, { defaultCollapsed: true });
+        }, PREP_PSALMS_LIST);
     }
 
     // B. Crowning (Matrimony / Teklil) - Render standalone if Matins is not active
     if (showTeklil && !showMatins && typeof teklilData !== 'undefined') {
-        addSectionTitleCallback("<i>Teklil</i> — Crowning (Matrimony) | ተክሊል", false);
+        addSectionTitleCallback("<i>Teklil</i> — Crowning (Matrimony) | ተክሊል", false, null, { resetParentGroup: true });
         
         // 1. Render main block of Teklil (up to Thanksgiving) - Stanzas 1 to 75
         const mainTeklil = teklilData.prayers.filter(p => parseInt(p.stanza) <= 75);
@@ -5066,14 +5852,14 @@ function renderSelectedKidase(addSectionTitleCallback) {
 
     // C. Matins (Morning Prayers)
     if (showMatins) {
-        addSectionTitleCallback("<i>Matins</i> — Morning Prayer | ጸሎተ ነግህ", false);
+        addSectionTitleCallback("<i>Matins</i> — Morning Prayer | ጸሎተ ነግህ", true, null, { isParentGroup: true, defaultCollapsed: false });
 
         if (miraclePosition === 'matins') {
             renderSelectedMiracle(addSectionTitleCallback, renderKidaseSection);
         }
 
         if (showTeklil && typeof teklilData !== 'undefined') {
-            addSectionTitleCallback("→ <i>Teklil</i> — Crowning (Matrimony) | ተክሊል");
+            addSectionTitleCallback("→ <i>Teklil</i> — Crowning (Matrimony) | ተክሊል", true, null, { defaultCollapsed: false });
             
             // 1. Render main block of Teklil (up to Thanksgiving) - Stanzas 1 to 75
             const mainTeklil = teklilData.prayers.filter(p => parseInt(p.stanza) <= 75);
@@ -5142,13 +5928,13 @@ function renderSelectedKidase(addSectionTitleCallback) {
             renderKidaseSection(blessing);
         }
 
-        addSectionTitleCallback("→ Prayer of the Gospel | ጸሎተ ወንጌል");
+        addSectionTitleCallback("→ Prayer of the Gospel | ጸሎተ ወንጌል", true, null, { defaultCollapsed: true });
         renderKidaseSection(morningGospelChunk);
-        addSectionTitleCallback("→ <i>Kidan</i> — Prayer of the Covenant | ጸሎተ ኪዳን");
+        addSectionTitleCallback("→ <i>Kidan</i> — Prayer of the Covenant | ጸሎተ ኪዳን", true, null, { defaultCollapsed: true });
         renderKidaseSection(preLiturgyKidanChunk);
 
         if (showTeklil && typeof teklilData !== 'undefined') {
-            addSectionTitleCallback("→ <i>Teklil</i> — Exhortation | ምክር");
+            addSectionTitleCallback("→ <i>Teklil</i> — Exhortation | ምክር", true, null, { defaultCollapsed: true });
             
             // 5. Exhortation specific liturgy insertions (4-6 to 4-12, 4-23 to 4-31, The300-1 to 10)
             const exhortationLiturgy = allOrderPrayers.filter(p => 
@@ -5164,10 +5950,18 @@ function renderSelectedKidase(addSectionTitleCallback) {
         }
     }
 
+    let hasRenderedLiturgyParentTitle = false;
+    const ensureLiturgyParentTitle = () => {
+        if (!hasRenderedLiturgyParentTitle) {
+            addSectionTitleCallback("<i>Ḳidasé</i> — Liturgy | ቅዳሴ", true, null, { isParentGroup: true, resetParentGroup: true, defaultCollapsed: false });
+            hasRenderedLiturgyParentTitle = true;
+        }
+    };
+
     // D. Order of the Liturgy | ሥርዓተ ቅዳሴ
     if (isKidaseModeActive) {
-        addSectionTitleCallback("<i>Ḳidasé</i> — Liturgy | ቅዳሴ", false);
-        addSectionTitleCallback("→ Order of the Liturgy | ሥርዓተ ቅዳሴ");
+        ensureLiturgyParentTitle();
+        addSectionTitleCallback("→ Order of the Liturgy | ሥርዓተ ቅዳሴ", true, null, { defaultCollapsed: true });
         mainLiturgyArray.push(...allOrderPrayers.slice(liturgyStart));
         renderKidaseSection(mainLiturgyArray, true); // true means apply version filtering to any embedded Kidan
     }
@@ -5181,10 +5975,8 @@ function renderSelectedKidase(addSectionTitleCallback) {
 
         const anaphora = anaphoraMap[selectedAnaphora];
         if (anaphora) {
-            if (!isKidaseModeActive) {
-                addSectionTitleCallback("<i>Ḳidasé</i> — Liturgy | ቅዳሴ", false);
-            }
-            addSectionTitleCallback(anaphora.name);
+            ensureLiturgyParentTitle();
+            addSectionTitleCallback(anaphora.name, true, null, { defaultCollapsed: true });
             renderKidaseSection(anaphora.data);
         }
 
@@ -5704,6 +6496,16 @@ async function renderPrayers() {
             if (typeof BIBLE_BOOK_MAPPING !== 'undefined') {
                  refsToPreload.push("Psalms 1:1");
             }
+            if (showSeatatReadings && selectedSeatatLectionaryDay !== 'None' && typeof SEATAT_LECTIONARY_DATA !== 'undefined' && SEATAT_LECTIONARY_DATA[selectedSeatatLectionaryDay]) {
+                SEATAT_LECTIONARY_DATA[selectedSeatatLectionaryDay].forEach(r => {
+                    if (r && r.book && r.chapter && r.verses) {
+                        refsToPreload.push(`${r.book} ${r.chapter}:${r.verses}`);
+                    }
+                    if (r && r.extra && r.extra.book && r.extra.chapter && r.extra.verses) {
+                        refsToPreload.push(`${r.extra.book} ${r.extra.chapter}:${r.extra.verses}`);
+                    }
+                });
+            }
             const langsToPreload = new Set(['en-kjv', 'am-2000', 'am54', 'gez-1980', 'gez-1980-formatted', 'ti-1997']);
             if (globalAmharicTranslation) langsToPreload.add(globalAmharicTranslation);
             if (globalGeezTranslation) langsToPreload.add(globalGeezTranslation);
@@ -5729,6 +6531,7 @@ async function renderPrayers() {
 }
 
 function _renderPrayersSync() {
+    if (!prayerDisplay || typeof prayers === 'undefined' || !Array.isArray(prayers)) return;
     prayerDisplay.innerHTML = '';
     const activeLanguageCount = Object.values(displayedLanguages).filter(Boolean).length;
     if (activeLanguageCount === 0) {
@@ -5738,7 +6541,10 @@ function _renderPrayersSync() {
 
     let lastSectionTitle = null;
     let currentNonCollapsibleTitleHtml = null;
-    const addSectionTitle = (title, isCollapsible = true, metadata = null) => {
+    let currentParentGroupKey = null;
+    let isCurrentParentGroupCollapsed = false;
+
+    const addSectionTitle = (title, isCollapsible = true, metadata = null, options = {}) => {
         if (title && title !== lastSectionTitle) {
             if (title === "→ Prayer of Saint Ephraim: The Praises of Mary | ውዳሴ ማርያም") {
                 hasRenderedPraiseOfMaryMainTitle = true;
@@ -5758,18 +6564,46 @@ function _renderPrayersSync() {
                 indentLevel = 1;
                 actualTitle = actualTitle.substring(2);
             }
+            if (options && typeof options.indentLevel === 'number') {
+                indentLevel = options.indentLevel;
+            }
+
+            if (indentLevel === 0 || (options && options.resetParentGroup)) {
+                if (options && options.isParentGroup) {
+                    currentParentGroupKey = title;
+                } else {
+                    currentParentGroupKey = null;
+                    isCurrentParentGroupCollapsed = false;
+                }
+            }
+
+            const stateKey = (indentLevel > 0 && currentParentGroupKey)
+                ? `${currentParentGroupKey}::${title}`
+                : title;
+
+            titleEl.dataset.indentLevel = String(indentLevel);
+            titleEl.dataset.stateKey = stateKey;
+            if (options && options.isParentGroup) {
+                titleEl.classList.add('parent-section-group');
+                titleEl.dataset.isParentGroup = 'true';
+            }
             
             const titleContent = document.createElement('div');
             titleContent.classList.add('sub-title-content');
-            titleContent.innerHTML = actualTitle.replace(/\(Theotokia\)/g, '<i>(Theotokia)</i>');
+            let formattedActualTitle = actualTitle.replace(/\(Theotokia\)/g, '<i>(Theotokia)</i>');
+            const betaTheotokiaDays = ['Monday | ዘሰኑይ', 'Tuesday | ዘሠሉስ', 'Wednesday | ዘረቡዕ', 'Thursday | ዘሐሙስ', 'Friday | ዘዓርብ', 'Saturday | ዘቀዳሚት'];
+            if (betaTheotokiaDays.includes(actualTitle) || actualTitle.includes('Anqetse Birhan')) {
+                formattedActualTitle += ' <span class="theotokia-beta-badge" title="English translation in progress">BETA</span>';
+            }
+            titleContent.innerHTML = formattedActualTitle;
 
             if (!isCollapsible) {
                 titleEl.classList.add('non-collapsible');
-                currentNonCollapsibleTitleHtml = actualTitle.replace(/\(Theotokia\)/g, '<i>(Theotokia)</i>');
+                currentNonCollapsibleTitleHtml = formattedActualTitle;
                 titleEl.appendChild(titleContent);
             } else {
                 titleEl.classList.add('collapsible');
-                if (currentNonCollapsibleTitleHtml) {
+                if (currentNonCollapsibleTitleHtml && !(options && options.isParentGroup)) {
                     const parentHeader = document.createElement('div');
                     parentHeader.classList.add('parent-title-header');
                     parentHeader.innerHTML = currentNonCollapsibleTitleHtml;
@@ -5794,11 +6628,29 @@ function _renderPrayersSync() {
                 titleEl.classList.add('sub-section-title');
             }
 
-            if (isCollapsible) {
-                const slug = slugifyTitle(title);
-                const isCollapsed = areAllSectionsCollapsed || collapsedSections[title] || collapsedSections[slug];
+            const slug = slugifyTitle(stateKey);
+            const legacySlug = slugifyTitle(title);
+            let isInitiallyCollapsed;
+            if (typeof collapsedSections[stateKey] === 'boolean') {
+                isInitiallyCollapsed = collapsedSections[stateKey];
+            } else if (typeof collapsedSections[title] === 'boolean') {
+                isInitiallyCollapsed = collapsedSections[title];
+            } else if (typeof collapsedSections[slug] === 'boolean') {
+                isInitiallyCollapsed = collapsedSections[slug];
+            } else if (typeof collapsedSections[legacySlug] === 'boolean') {
+                isInitiallyCollapsed = collapsedSections[legacySlug];
+            } else if (options && typeof options.defaultCollapsed === 'boolean') {
+                isInitiallyCollapsed = options.defaultCollapsed;
+            } else {
+                isInitiallyCollapsed = Boolean(areAllSectionsCollapsed);
+            }
 
-                if (isCollapsed) {
+            if (options && options.isParentGroup) {
+                isCurrentParentGroupCollapsed = isInitiallyCollapsed;
+            }
+
+            if (isCollapsible) {
+                if (isInitiallyCollapsed) {
                     titleEl.classList.add('collapsed');
                 }
                 titleEl.addEventListener('click', () => {
@@ -5807,16 +6659,53 @@ function _renderPrayersSync() {
                         return;
                     }
 
-                    // The button's own listener will stop propagation
                     const isCollapsed = titleEl.classList.toggle('collapsed');
-                    collapsedSections[title] = isCollapsed;
+                    collapsedSections[stateKey] = isCollapsed;
+                    if (stateKey === title) {
+                        collapsedSections[title] = isCollapsed;
+                    }
+                    if (!isCollapsed) {
+                        areAllSectionsCollapsed = false;
+                    }
                     saveSettings();
 
-                    let nextEl = titleEl.nextElementSibling;
-                    while (nextEl && !nextEl.classList.contains('section-title')) {
-                        nextEl.style.display = isCollapsed ? 'none' : '';
-                        nextEl = nextEl.nextElementSibling;
+                    if (titleEl.dataset.isParentGroup === 'true') {
+                        let nextEl = titleEl.nextElementSibling;
+                        let currentChildSeen = false;
+                        let currentChildCollapsed = false;
+                        while (nextEl) {
+                            if (nextEl.classList.contains('section-title')) {
+                                const nextIndent = parseInt(nextEl.dataset.indentLevel || '0', 10);
+                                if (nextIndent === 0) break;
+                                currentChildSeen = true;
+                                currentChildCollapsed = nextEl.classList.contains('collapsed');
+                                nextEl.style.display = isCollapsed ? 'none' : '';
+                            } else {
+                                if (currentChildSeen) {
+                                    nextEl.style.display = (isCollapsed || currentChildCollapsed) ? 'none' : '';
+                                } else {
+                                    nextEl.style.display = isCollapsed ? 'none' : '';
+                                }
+                            }
+                            nextEl = nextEl.nextElementSibling;
+                        }
+                    } else {
+                        let nextEl = titleEl.nextElementSibling;
+                        while (nextEl && !nextEl.classList.contains('section-title')) {
+                            if (nextEl.classList.contains('expand-daily-prayer-preview-btn')) {
+                                nextEl.style.display = isCollapsed ? '' : 'none';
+                            } else if (nextEl.dataset && nextEl.dataset.dailyPreviewRole === 'first' && activePrimaryTab === 'pray') {
+                                nextEl.style.display = '';
+                            } else if (nextEl.dataset && nextEl.dataset.dailyPreviewRole === 'sneak-peek' && activePrimaryTab === 'pray') {
+                                nextEl.style.display = '';
+                                nextEl.classList.toggle('daily-prayer-sneak-peek-card', isCollapsed);
+                            } else {
+                                nextEl.style.display = isCollapsed ? 'none' : '';
+                            }
+                            nextEl = nextEl.nextElementSibling;
+                        }
                     }
+                    updateExpandCollapseAllIcon();
                 });
             }
 
@@ -5831,14 +6720,15 @@ function _renderPrayersSync() {
             });
             titleEl.appendChild(exitSlidesBtn);
 
+            if (indentLevel > 0 && isCurrentParentGroupCollapsed && displayOptions.presentationMode !== 'slides') {
+                titleEl.style.display = 'none';
+            }
+
             prayerDisplay.appendChild(titleEl);
 
-            // NEW: Initial visibility state based on collapse status
-            const slug = slugifyTitle(title);
-            const isInitiallyCollapsed = areAllSectionsCollapsed || collapsedSections[title] || collapsedSections[slug];
-
             // This is a marker to help createPrayerCardElement know if it should be hidden
-            titleEl.dataset.isCollapsed = isInitiallyCollapsed;
+            const effectiveCollapsed = (indentLevel > 0 && isCurrentParentGroupCollapsed) || isInitiallyCollapsed;
+            titleEl.dataset.isCollapsed = effectiveCollapsed;
 
             if (metadata) {
                 const metadataEl = document.createElement('div');
@@ -5858,46 +6748,46 @@ function _renderPrayersSync() {
                 iconImg.src = 'img/Silus-Kidus.svg';
                 iconImg.alt = 'Holy Trinity Icon';
                 iconImg.classList.add('holy-trinity-icon'); // Add a class for styling
-                if (isInitiallyCollapsed) iconImg.style.display = 'none';
+                if (effectiveCollapsed) iconImg.style.display = 'none';
                 prayerDisplay.appendChild(iconImg);
             } else if (title === "→ Prayer of Saint Ephraim: The Praises of Mary | ውዳሴ ማርያም") {
                 const iconImg = document.createElement('img');
                 iconImg.src = 'img/Mary-Blesses-Ephraim.svg';
                 iconImg.alt = 'Mary Blesses Ephraim Icon';
                 iconImg.classList.add('section-icon');
-                if (isInitiallyCollapsed) iconImg.style.display = 'none';
+                if (effectiveCollapsed) iconImg.style.display = 'none';
                 prayerDisplay.appendChild(iconImg);
             } else if (title === "→ → → Thursday | ዘሐሙስ") {
                 const iconImg = document.createElement('img');
                 iconImg.src = 'img/Ephraim-and-Mary-on-Thursday.svg';
                 iconImg.alt = 'Ephraim and Mary on Thursday Icon';
                 iconImg.classList.add('section-icon');
-                if (isInitiallyCollapsed) iconImg.style.display = 'none';
+                if (effectiveCollapsed) iconImg.style.display = 'none';
                 prayerDisplay.appendChild(iconImg);
             } else if (title === "→ Prayer of Abba Giyorgis: The Angels Praise Mary | ይዌድስዋ መላእክት ለማርያም") {
                 const iconImg = document.createElement('img');
                 iconImg.src = 'img/Mary-with-her-beloved-Son.svg';
                 iconImg.alt = 'Mary with her beloved Son Icon';
                 iconImg.classList.add('section-icon');
-                if (isInitiallyCollapsed) iconImg.style.display = 'none';
+                if (effectiveCollapsed) iconImg.style.display = 'none';
                 prayerDisplay.appendChild(iconImg);
             } else if (title === "→ Opening Prayer | ነዓ ኀቤየ ዳዊት") {
                 const iconImg = document.createElement('img');
                 iconImg.src = 'img/Covenant-of-Mercy.svg';
                 iconImg.alt = 'Covenant of Mercy Icon';
                 iconImg.classList.add('section-icon');
-                if (isInitiallyCollapsed) iconImg.style.display = 'none';
+                if (effectiveCollapsed) iconImg.style.display = 'none';
                 prayerDisplay.appendChild(iconImg);
             } else if (title === "→ Closing Prayer | ሰአሊ ለነ ማርያም") {
                 const iconImg = document.createElement('img');
                 iconImg.src = 'img/Covenant-of-Mercy-with-Psalm.svg';
                 iconImg.alt = 'Covenant of Mercy with Psalm Icon';
                 iconImg.classList.add('section-icon');
-                if (isInitiallyCollapsed) iconImg.style.display = 'none';
+                if (effectiveCollapsed) iconImg.style.display = 'none';
                 prayerDisplay.appendChild(iconImg);
             }
-            lastSectionTitle = title;
-            window.isRenderingCollapsed = isInitiallyCollapsed;
+            lastSectionTitle = stateKey;
+            window.isRenderingCollapsed = effectiveCollapsed;
         }
     };
 
@@ -5930,6 +6820,11 @@ function _renderPrayersSync() {
 
     const mainPrayers = prayers.filter(p => {
         if (p.chapter === 'Psalms' || p.chapter === 'ProphetSong') return false;
+
+        // Hide Trinitarian Invocation card (Daily-0) by default unless explicitly toggled on in Advanced Display Options
+        if (p.chapter === 'Daily' && String(p.stanza) === '0') {
+            return Boolean(displayOptions.showTrinitarianInvocation);
+        }
 
         // Include Daily stanzas 11 and 12 (Praise of Mary intro cards) if any Praise of Mary day is selected
         if (p.chapter === 'Daily' && (p.stanza === '11' || p.stanza === '12')) {
@@ -5990,7 +6885,7 @@ function _renderPrayersSync() {
         const isPraiseOfMaryDay = ['Sun', 'Mon', 'Tue', 'Wed', 'Thurs', 'Fri', 'Sat'].includes(prayer.chapter);
 
         if (isTheotokia && !hasRenderedTheotokiaTitle && selectedWidaseMaryamDay !== 'None') {
-            addSectionTitle("<i>Theotokia</i> — The Praises of the Mother of God", false);
+            addSectionTitle("<i>Theotokia</i> — The Praises of the Mother of God", false, null, { resetParentGroup: true });
             hasRenderedTheotokiaTitle = true;
         }
 
@@ -6008,19 +6903,58 @@ function _renderPrayersSync() {
             const prayerCard = createPrayerCardElement(prayer, prayerIndex);
             prayerDisplay.appendChild(prayerCard);
 
-            // Apply initial collapsed state after the card is added
-            if (displayOptions.presentationMode !== 'slides' && lastSectionTitle && collapsedSections[lastSectionTitle]) {
-                prayerCard.style.display = 'none';
+            const isDailyFirstCard = prayer.chapter === 'Daily' && prayer.stanza === '1' && (prayer.english || '').includes('I seal my face');
+            const isDailySneakPeekCard = prayer.chapter === 'Daily' && prayer.stanza === '1' && (prayer.english || '').startsWith('In the Holy Trinity');
+            if (isDailyFirstCard) {
+                prayerCard.dataset.dailyPreviewRole = 'first';
+            } else if (isDailySneakPeekCard) {
+                prayerCard.dataset.dailyPreviewRole = 'sneak-peek';
+            }
+
+            const isCurrentSectionCollapsed = Boolean(window.isRenderingCollapsed);
+            if (displayOptions.presentationMode !== 'slides' && isCurrentSectionCollapsed) {
+                // On the Pray tab, keep the 1st Daily card ("I seal my face...") visible and the 2nd ("In the Holy Trinity...") as a sneak peek
+                if (isDailyFirstCard && activePrimaryTab === 'pray') {
+                    prayerCard.style.display = '';
+                } else if (isDailySneakPeekCard && activePrimaryTab === 'pray') {
+                    prayerCard.style.display = '';
+                    prayerCard.classList.add('daily-prayer-sneak-peek-card');
+                    const expandPreviewBtn = document.createElement('button');
+                    expandPreviewBtn.type = 'button';
+                    expandPreviewBtn.className = 'expand-daily-prayer-preview-btn';
+                    expandPreviewBtn.textContent = 'Expand Full Daily Prayer';
+                    expandPreviewBtn.addEventListener('click', () => {
+                        let prev = expandPreviewBtn.previousElementSibling;
+                        while (prev && !prev.classList.contains('section-title')) {
+                            prev = prev.previousElementSibling;
+                        }
+                        if (prev && prev.classList.contains('collapsed')) {
+                            prev.click();
+                        }
+                    });
+                    prayerDisplay.appendChild(expandPreviewBtn);
+                } else {
+                    prayerCard.style.display = 'none';
+                }
             }
         }
     });
+
+    // Render Vespers (Sunset Prayer) BEFORE Songs of the Prophets & Se'atat when toggled ON
+    if (showVespers) {
+        renderSelectedKidase(addSectionTitle, { onlyVespers: true });
+    }
 
     // Conditionally render Psalm-related prayers
     const psalmsRendered = selectedPsalms.length > 0 && bibleData.loaded;
     const prophetSongsRendered = selectedProphetSongs.length > 0;
 
     if (psalmsRendered || prophetSongsRendered) {
-        addSectionTitle("Psalms | መዝሙር ዘዳዊት", false);
+        const psalmsOrProphetsTitle = (!psalmsRendered && prophetSongsRendered)
+            ? "Songs of the Prophets | መኃልየ ነቢያት"
+            : "Psalms | መዝሙር ዘዳዊት";
+        const isProphetsOnlyGroup = (!psalmsRendered && prophetSongsRendered);
+        addSectionTitle(psalmsOrProphetsTitle, isProphetsOnlyGroup, null, isProphetsOnlyGroup ? { isParentGroup: true, defaultCollapsed: true } : { resetParentGroup: true });
 
         // Inject preset combination subtitle if matched
         const stringifiedSelectedPsalms = JSON.stringify(selectedPsalms);
@@ -6043,16 +6977,19 @@ function _renderPrayersSync() {
             subtitleEl.style.marginBottom = '1.5rem';
             subtitleEl.style.color = 'var(--speaker-label-color)';
             subtitleEl.innerHTML = `<i>Preset: ${matchedCombinationName}</i>`;
+            if (isCurrentParentGroupCollapsed && displayOptions.presentationMode !== 'slides') {
+                subtitleEl.style.display = 'none';
+            }
             prayerDisplay.appendChild(subtitleEl);
         }
 
         const psalmIntroPrayers = prayers.filter(p => p.chapter === 'Psalms' && p.stanza === 'Intro');
         if (psalmIntroPrayers.length > 0) {
-            addSectionTitleIfNeeded(psalmIntroPrayers[0]);
+            addSectionTitle(getSectionTitle(psalmIntroPrayers[0]), true, null, { defaultCollapsed: true });
             psalmIntroPrayers.forEach(prayer => {
                 const prayerCard = createPrayerCardElement(prayer, -1);
                 prayerDisplay.appendChild(prayerCard);
-                if (displayOptions.presentationMode !== 'slides' && lastSectionTitle && collapsedSections[lastSectionTitle]) {
+                if (displayOptions.presentationMode !== 'slides' && window.isRenderingCollapsed) {
                     prayerCard.style.display = 'none';
                 }
             });
@@ -6071,7 +7008,7 @@ function _renderPrayersSync() {
             }
             const engRangeSuffix = verseRange ? `:${verseRange.start}-${verseRange.end}` : '';
             const geezRangeSuffix = verseRange ? `፥${toGeez(verseRange.start)}-${toGeez(verseRange.end)}` : '';
-            addSectionTitle(`→ Psalm ${psalmNum}${engRangeSuffix} | መዝሙር ዘዳዊት ${toGeez(psalmNum)}${geezRangeSuffix}`, true, athMetadata);
+            addSectionTitle(`→ Psalm ${psalmNum}${engRangeSuffix} | መዝሙር ዘዳዊት ${toGeez(psalmNum)}${geezRangeSuffix}`, true, athMetadata, { defaultCollapsed: true });
         });
     }
 
@@ -6079,7 +7016,7 @@ function _renderPrayersSync() {
     if (prophetSongsRendered) {
         renderSelectedProphetSongs((song) => {
             const title = `→ ${song.name} ${song.verseRange || ''}`;
-            addSectionTitle(title, true, { aka: song.aka, time: song.time, purpose: song.purpose });
+            addSectionTitle(title, true, { aka: song.aka, time: song.time, purpose: song.purpose }, { defaultCollapsed: true });
         });
     }
 
@@ -6087,11 +7024,11 @@ function _renderPrayersSync() {
     if (psalmsRendered || prophetSongsRendered) {
         const closingPrayers = prayers.filter(p => p.chapter === 'Psalms' && p.stanza === 'Closing');
         if (closingPrayers.length > 0) {
-            addSectionTitleIfNeeded(closingPrayers[0]);
+            addSectionTitle(getSectionTitle(closingPrayers[0]), true, null, { defaultCollapsed: true });
             closingPrayers.forEach(prayer => {
                 const prayerCard = createPrayerCardElement(prayer, -1);
                 prayerDisplay.appendChild(prayerCard);
-                if (displayOptions.presentationMode !== 'slides' && lastSectionTitle && collapsedSections[lastSectionTitle]) {
+                if (displayOptions.presentationMode !== 'slides' && window.isRenderingCollapsed) {
                     prayerCard.style.display = 'none';
                 }
             });
@@ -6101,8 +7038,8 @@ function _renderPrayersSync() {
     // Render Se'atat Lectionary Scripture Readings
     renderSelectedSeatatLectionary(addSectionTitle);
 
-    // Render Kidase (Divine Liturgy)
-    renderSelectedKidase(addSectionTitle);
+    // Render Preparatory Psalms, Matins, Order of the Liturgy, and Anaphora (Vespers already rendered above)
+    renderSelectedKidase(addSectionTitle, { skipVespers: true });
 
     // Render Supplicatory Prayers
     if (displayOptions.showSupplications) {
@@ -6127,6 +7064,7 @@ function _renderPrayersSync() {
     } else {
         removeSlides();
     }
+    updateExpandCollapseAllIcon();
     updateSearchMatches();
 }
 
@@ -6709,33 +7647,172 @@ function sizeOneCard(card) {
 // --- Search Functionality ---
 function updateSearchMatches() {
     searchMatches = prayerDisplay.querySelectorAll('.highlight');
-    searchCount.textContent = `${currentMatchIndex + 1}/${searchMatches.length}`;
+    if (searchCount) {
+        searchCount.textContent = searchMatches.length > 0 ? `${currentMatchIndex + 1}/${searchMatches.length}` : '0/0';
+    }
 
     searchMatches.forEach((match, index) => {
         match.classList.toggle('current', index === currentMatchIndex);
     });
 
     if (currentMatchIndex > -1 && searchMatches[currentMatchIndex]) {
-        searchMatches[currentMatchIndex].scrollIntoView({
+        const currentEl = searchMatches[currentMatchIndex];
+        const parentCard = currentEl.closest('.prayer-card');
+        if (parentCard && parentCard.style.display === 'none') {
+            parentCard.style.display = '';
+        }
+        currentEl.scrollIntoView({
             behavior: 'smooth',
             block: 'center'
         });
     }
 }
 
+function renderGlobalCorpusSearchResults(query) {
+    if (!searchResultsDrawer) return;
+    const trimmed = (query || '').trim().toLowerCase();
+    if (!trimmed || (searchScopeSelect && searchScopeSelect.value !== 'all')) {
+        searchResultsDrawer.style.display = 'none';
+        searchResultsDrawer.innerHTML = '';
+        return;
+    }
+
+    const tokens = trimmed.split(/\s+/).filter(Boolean);
+    const results = [];
+    const maxResults = 35;
+
+    if (typeof prayers !== 'undefined' && Array.isArray(prayers)) {
+        for (const p of prayers) {
+            const combined = `${p.english || ''} ${p.geez_script || ''} ${p.amharic_script || ''} ${p.reference || ''} ${p.chapter || ''}`.toLowerCase();
+            if (tokens.every(tok => combined.includes(tok))) {
+                results.push({
+                    category: p.chapter === 'Daily' ? 'Daily Prayer' : `Theotokia (${p.chapter})`,
+                    title: p.reference || `${p.chapter} ${p.stanza || ''}`,
+                    snippet: (p.english || p.geez_script || p.amharic_script || '').substring(0, 140),
+                    action: () => {
+                        if (p.chapter === 'Daily') {
+                            displayOptions.showDailyPrayer = true;
+                        } else if (['Sun', 'Mon', 'Tue', 'Wed', 'Thurs', 'Fri', 'Sat'].includes(p.chapter)) {
+                            selectedWidaseMaryamDay = p.chapter;
+                        } else if (p.chapter === 'Angels') {
+                            displayOptions.showYewediswaMelaekt = true;
+                        } else if (p.chapter === 'Anqetse Birhan') {
+                            displayOptions.showGateOfLight = true;
+                        }
+                        areAllSectionsCollapsed = false;
+                        collapsedSections = {};
+                        updateAllTogglesInSettingsPanel();
+                        saveSettings();
+                        renderPrayers();
+                        updateSearchMatches();
+                        searchResultsDrawer.style.display = 'none';
+                    }
+                });
+                if (results.length >= maxResults) break;
+            }
+        }
+    }
+
+    if (results.length < maxResults && typeof MIRACLES_OF_MARY !== 'undefined') {
+        for (const m of MIRACLES_OF_MARY) {
+            const trText = (m.translations || []).map(t => t.text).join(' ');
+            const combined = `${m.title || ''} ${m.incipit || ''} ${trText}`.toLowerCase();
+            if (tokens.every(tok => combined.includes(tok))) {
+                results.push({
+                    category: `Miracle of Mary #${m.id}`,
+                    title: m.title || `Miracle ${m.id}`,
+                    snippet: (m.translations && m.translations[0] ? m.translations[0].text : '').substring(0, 140),
+                    action: () => {
+                        selectedMiracleId = m.id;
+                        areAllSectionsCollapsed = false;
+                        collapsedSections = {};
+                        updateSelectedMiracleUI();
+                        saveSettings();
+                        renderPrayers();
+                        updateSearchMatches();
+                        searchResultsDrawer.style.display = 'none';
+                    }
+                });
+                if (results.length >= maxResults) break;
+            }
+        }
+    }
+
+    if (results.length < maxResults && typeof kidaseData !== 'undefined' && Array.isArray(kidaseData.order)) {
+        for (const k of kidaseData.order) {
+            const combined = `${k.english || ''} ${k.geez_script || ''} ${k.amharic_script || ''} ${k.reference || ''}`.toLowerCase();
+            if (tokens.every(tok => combined.includes(tok))) {
+                results.push({
+                    category: 'Divine Liturgy (Kidase)',
+                    title: k.reference || `Kidase ${k.chapter}:${k.stanza}`,
+                    snippet: (k.english || k.geez_script || '').substring(0, 140),
+                    action: () => {
+                        isKidaseModeActive = true;
+                        areAllSectionsCollapsed = false;
+                        collapsedSections = {};
+                        updateAllTogglesInSettingsPanel();
+                        saveSettings();
+                        renderPrayers();
+                        updateSearchMatches();
+                        searchResultsDrawer.style.display = 'none';
+                    }
+                });
+                if (results.length >= maxResults) break;
+            }
+        }
+    }
+
+    searchResultsDrawer.style.display = 'block';
+    if (results.length === 0) {
+        searchResultsDrawer.innerHTML = `<div class="search-drawer-empty">No matches found across the entire app for "${query}".</div>`;
+        return;
+    }
+
+    searchResultsDrawer.innerHTML = `<div class="search-drawer-header">Entire App Results (${results.length}${results.length >= maxResults ? '+' : ''}) — Click to open &amp; jump:</div>`;
+    results.forEach(r => {
+        const item = document.createElement('button');
+        item.type = 'button';
+        item.className = 'search-drawer-item';
+        item.innerHTML = `
+            <div class="search-drawer-item-top">
+                <span class="search-drawer-cat">${r.category}</span>
+                <span class="search-drawer-title">${r.title}</span>
+            </div>
+            <div class="search-drawer-snippet">${r.snippet}...</div>
+        `;
+        item.addEventListener('click', r.action);
+        searchResultsDrawer.appendChild(item);
+    });
+}
+
 function performSearch() {
     currentMatchIndex = -1;
     renderPrayers();
-    if (searchInput.value) {
+    if (searchInput && searchInput.value) {
         currentMatchIndex = 0;
+        renderGlobalCorpusSearchResults(searchInput.value);
+    } else if (searchResultsDrawer) {
+        searchResultsDrawer.style.display = 'none';
+        searchResultsDrawer.innerHTML = '';
     }
     updateSearchMatches();
 }
 
-function closeSearch() {
-    header.classList.remove('search-active');
-    searchInput.value = '';
-    performSearch();
+function closeSearch(skipPerformSearch) {
+    if (header) header.classList.remove('search-active');
+    if (searchInput) searchInput.value = '';
+    if (searchResultsDrawer) {
+        searchResultsDrawer.classList.add('hidden');
+        searchResultsDrawer.style.display = 'none';
+        searchResultsDrawer.innerHTML = '';
+    }
+    if (activePrimaryTab !== 'pray' && activePrimaryTab !== 'liturgy') {
+        activePrimaryTab = (isKidaseModeActive || showAnaphora) ? 'liturgy' : 'pray';
+    }
+    updatePrimaryNavTabsUI(activePrimaryTab);
+    if (!skipPerformSearch) {
+        performSearch();
+    }
 }
 
 // --- Sidebar Helpers ---
@@ -7010,8 +8087,9 @@ function populateProphetSongsSelector() {
     updateProphetSongsSummary();
 }
 
-function renderSelectedPsalmsWithDoxology(addSectionTitleCallback) {
-    if (selectedPsalms.length === 0 || !bibleData.loaded) return;
+function renderSelectedPsalmsWithDoxology(addSectionTitleCallback, customPsalmsList = null) {
+    const psalmsToRender = customPsalmsList || selectedPsalms;
+    if (psalmsToRender.length === 0 || !bibleData.loaded) return;
 
     const engOverride = getReadingTranslationOverride('psalmsOfDavid', 'english');
     const amOverride = getReadingTranslationOverride('psalmsOfDavid', 'amharic');
@@ -7089,8 +8167,8 @@ function renderSelectedPsalmsWithDoxology(addSectionTitleCallback) {
 
     const doxologyPrayer = prayers.find(p => p.chapter === 'Psalms' && p.stanza === 'Response');
 
-    for (const lxxChapter of selectedPsalms) {
-        const verseRange = (selectedPsalmVerseRanges && selectedPsalmVerseRanges[lxxChapter]) || null;
+    for (const lxxChapter of psalmsToRender) {
+        const verseRange = (!customPsalmsList && selectedPsalmVerseRanges && selectedPsalmVerseRanges[lxxChapter]) || null;
         addSectionTitleCallback(lxxChapter, verseRange);
         let allVerses = [];
 
@@ -7636,6 +8714,8 @@ function getSeatatBibleVerses(bookKey, chapter, rangeString, customEnglish = nul
     const mapping = BIBLE_BOOK_MAPPING[bookKey];
     if (!mapping) return [];
     const engOverride = getReadingTranslationOverride(readingKey, 'english');
+    const amOverride = getReadingTranslationOverride(readingKey, 'amharic');
+    const geezOverride = getReadingTranslationOverride(readingKey, 'geez');
 
     let startVerse = 1, endVerse = 1;
     if (String(rangeString).includes('-')) {
@@ -7644,52 +8724,91 @@ function getSeatatBibleVerses(bookKey, chapter, rangeString, customEnglish = nul
         startVerse = endVerse = Number(rangeString);
     }
 
+    // Query WeahaduBibleService for full multi-language coverage (Ge'ez, Amharic, Tigrinya, English)
+    const refStr = `${bookKey} ${chapter}:${rangeString}`;
+    let weahaduGeezMap = {};
+    let weahaduAmMap = {};
+    let weahaduTiMap = {};
+    let weahaduEngMap = {};
+
+    if (useExternalBibleAPI && window.WeahaduBibleService && WeahaduBibleService.canon) {
+        const mtStart = (bookKey === 'Psalms') ? getMtFromLxx(chapter, startVerse) : { mtChapter: chapter, mtVerse: startVerse };
+        const mtEnd = (bookKey === 'Psalms') ? getMtFromLxx(chapter, endVerse) : { mtChapter: chapter, mtVerse: endVerse };
+        const mtRef = (mtStart.mtVerse !== mtEnd.mtVerse)
+            ? `${bookKey} ${mtStart.mtChapter}:${mtStart.mtVerse}-${mtEnd.mtVerse}`
+            : `${bookKey} ${mtStart.mtChapter}:${mtStart.mtVerse}`;
+        const lxxRef = `${bookKey} ${chapter}:${rangeString}`;
+
+        const geezRefToUse = (bookKey === 'Psalms' && (geezOverride === 'gez-1980-formatted' || geezOverride === 'gez-1694')) ? lxxRef : mtRef;
+        const amRefToUse = (amOverride === 'am54') ? mtRef : lxxRef;
+
+        const gVerses = WeahaduBibleService.getVersesSync(geezOverride || 'gez-1980', geezRefToUse) || WeahaduBibleService.getVersesSync('gez-1980', mtRef);
+        const aVerses = WeahaduBibleService.getVersesSync(amOverride || 'am-2000', amRefToUse) || WeahaduBibleService.getVersesSync('am-2000', mtRef);
+        const tVerses = WeahaduBibleService.getVersesSync('ti-1997', mtRef);
+        const eVerses = (engOverride === 'kjv') ? WeahaduBibleService.getVersesSync('en-kjv', mtRef) : null;
+
+        if (Array.isArray(gVerses)) gVerses.forEach((v, idx) => { weahaduGeezMap[startVerse + idx] = v.t; weahaduGeezMap[parseInt(v.n, 10)] = v.t; });
+        if (Array.isArray(aVerses)) aVerses.forEach((v, idx) => { weahaduAmMap[startVerse + idx] = v.t; weahaduAmMap[parseInt(v.n, 10)] = v.t; });
+        if (Array.isArray(tVerses)) tVerses.forEach((v, idx) => { weahaduTiMap[startVerse + idx] = v.t; weahaduTiMap[parseInt(v.n, 10)] = v.t; });
+        if (Array.isArray(eVerses)) eVerses.forEach((v, idx) => { weahaduEngMap[startVerse + idx] = v.t; weahaduEngMap[parseInt(v.n, 10)] = v.t; });
+    }
+
     const verseResults = [];
 
     for (let vNum = startVerse; vNum <= endVerse; vNum++) {
+        const { mtChapter, mtVerse } = (bookKey === 'Psalms') ? getMtFromLxx(chapter, vNum) : { mtChapter: chapter, mtVerse: vNum };
+
         const verseObj = {
             verseNum: vNum,
             chapter: chapter,
             book: bookKey,
             reference: `${bookKey} ${chapter}:${vNum}`,
-            english: '',
-            amharic_script: '',
+            english: weahaduEngMap[vNum] || weahaduEngMap[mtVerse] || '',
+            amharic_script: weahaduAmMap[vNum] || weahaduAmMap[mtVerse] || '',
             spanish: '',
             spanish_pr: '',
-            geez_script: '', // Usually empty for NT
+            geez_script: weahaduGeezMap[vNum] || weahaduGeezMap[mtVerse] || '',
+            geez_phonetic: '',
             coptic: '',
-            tigrinya_script: ''
+            tigrinya_script: weahaduTiMap[vNum] || weahaduTiMap[mtVerse] || ''
         };
-
-        const { mtChapter, mtVerse } = (bookKey === 'Psalms') ? getMtFromLxx(chapter, vNum) : { mtChapter: chapter, mtVerse: vNum };
 
         // English (NKJV or KJV)
         const englishBible = engOverride === 'kjv'
             ? (bibleData.kjv || bibleData.nkjv)
             : (bibleData.nkjv || bibleData.kjv);
-        if (englishBible) {
+        if (!verseObj.english && englishBible) {
             const engBookId = mapping.nkjv || mapping.kjv;
             const v = englishBible.find(v => v.book === engBookId && v.chapter === mtChapter && v.verse === mtVerse);
             if (v) verseObj.english = v.text;
         }
 
-        // AM54
-        if (bibleData.am54 && bibleData.am54.books) {
+        // AM54 fallback
+        if (!verseObj.amharic_script && bibleData.am54 && bibleData.am54.books) {
             const book = bibleData.am54.books.find(b => b.title === mapping.am54);
             if (book && book.chapters) {
-                const ch = book.chapters.find(c => Number(c.chapter) === mtChapter);
+                const ch = book.chapters.find(c => Number(c.chapter) === mtChapter) || book.chapters[mtChapter - 1];
                 if (ch && ch.verses && ch.verses[mtVerse - 1]) {
                     verseObj.amharic_script = ch.verses[mtVerse - 1];
                 }
             }
         }
 
-        // RGV
+        // RGV (Spanish)
         if (bibleData.rgv && bibleData.rgv.verses) {
             const v = bibleData.rgv.verses.find(v => v.book_name === mapping.rgv && v.chapter === mtChapter && v.verse === mtVerse);
             if (v) {
                 verseObj.spanish = v.text;
                 verseObj.spanish_pr = v.text;
+            }
+        }
+
+        // Coptic Psalms
+        if (bookKey === 'Psalms' && bibleData.coptic) {
+            const copticCh = bibleData.coptic.find(c => Number(c.chapter) === chapter);
+            if (copticCh && Array.isArray(copticCh.verses)) {
+                const cv = copticCh.verses.find(v => Number(v.verse) === vNum);
+                if (cv && cv.text) verseObj.coptic = cv.text;
             }
         }
 
@@ -7703,7 +8822,7 @@ function getSeatatBibleVerses(bookKey, chapter, rangeString, customEnglish = nul
                 } else if (!customGeez.includes('[')) {
                     verseObj.geez_script = customGeez;
                 }
-            } else {
+            } else if (!verseObj.geez_script) {
                 const ch = bibleData.geez_psalms.find(c => c.id === chapter);
                 if (ch && ch.verses) {
                     if (chapter === 115) {
@@ -7737,18 +8856,20 @@ function getSeatatBibleVerses(bookKey, chapter, rangeString, customEnglish = nul
 
         // Handle Custom English for Psalms portions
         if (bookKey === 'Psalms' && customEnglish) {
-            // If customEnglish contains bracketed numbers, extract the right one
             const regex = new RegExp(`\\[${vNum}\\]\\s*([^\\[]+)`);
             const match = customEnglish.match(regex);
             if (match && match[1]) {
                 verseObj.english = match[1].trim();
             } else if (!customEnglish.includes('[')) {
-                // If no brackets, assume the whole string is for this verse (if it's a single verse range)
                 verseObj.english = customEnglish;
             }
         }
 
-        if (verseObj.english || verseObj.amharic_script || verseObj.spanish || verseObj.spanish_pr) {
+        if (verseObj.geez_script && typeof transliterateGeezToPhonetic === 'function') {
+            verseObj.geez_phonetic = transliterateGeezToPhonetic(verseObj.geez_script);
+        }
+
+        if (verseObj.english || verseObj.geez_script || verseObj.amharic_script || verseObj.tigrinya_script || verseObj.spanish || verseObj.spanish_pr) {
             verseResults.push(verseObj);
         }
     }
@@ -7759,9 +8880,11 @@ function renderSelectedSeatatLectionary(addSectionTitleCallback) {
     if (!showSeatatReadings || selectedSeatatLectionaryDay === 'None' || !SEATAT_LECTIONARY_DATA[selectedSeatatLectionaryDay]) return;
 
     const readings = SEATAT_LECTIONARY_DATA[selectedSeatatLectionaryDay];
+    addSectionTitleCallback("<i>Se'atat</i> Readings | ምንባባተ ሰዓታት", true, null, { isParentGroup: true, defaultCollapsed: true });
 
     readings.forEach(reading => {
-        addSectionTitleCallback(reading.type);
+        const childTitle = reading.type.startsWith('→ ') ? reading.type : `→ ${reading.type}`;
+        addSectionTitleCallback(childTitle, true, null, { defaultCollapsed: true });
 
         let verses = getSeatatBibleVerses(reading.book, reading.chapter, reading.verses, reading.customEnglish, reading.customGeez);
 
@@ -7777,13 +8900,14 @@ function renderSelectedSeatatLectionary(addSectionTitleCallback) {
                 chapter: 'SeatatLectionary',
                 stanza: reading.type,
                 reference: verses[0].reference + (verses.length > 1 ? '-' + verses[verses.length - 1].verseNum : ''),
-                english: verses.map(v => reading.customEnglish && reading.customEnglish.includes('[') ? v.english : `<sup>${v.verseNum}</sup> ${v.english}`).join(' '),
-                geez_script: verses.map(v => reading.customGeez && reading.customGeez.includes('[') ? v.geez_script : `<sup>${v.verseNum}</sup> ${v.geez_script}`).join(' '),
-                amharic_script: verses.map(v => `<sup>${v.verseNum}</sup> ${v.amharic_script}`).join(' '),
-                spanish: verses.map(v => `<sup>${v.verseNum}</sup> ${v.spanish}`).join(' '),
-                spanish_pr: verses.map(v => `<sup>${v.verseNum}</sup> ${v.spanish_pr}`).join(' '),
-                coptic: '',
-                tigrinya_script: ''
+                english: verses.map(v => reading.customEnglish && reading.customEnglish.includes('[') ? v.english : (v.english ? `<sup>${v.verseNum}</sup> ${v.english}` : '')).filter(Boolean).join(' '),
+                geez_script: verses.map(v => reading.customGeez && reading.customGeez.includes('[') ? v.geez_script : (v.geez_script ? `<sup>${toGeezNumeral(v.verseNum)}</sup> ${v.geez_script}` : '')).filter(Boolean).join(' '),
+                geez_phonetic: verses.map(v => v.geez_phonetic ? `<sup>${v.verseNum}</sup> ${v.geez_phonetic}` : '').filter(Boolean).join(' '),
+                amharic_script: verses.map(v => v.amharic_script ? `<sup>${v.verseNum}</sup> ${v.amharic_script}` : '').filter(Boolean).join(' '),
+                tigrinya_script: verses.map(v => v.tigrinya_script ? `<sup>${v.verseNum}</sup> ${v.tigrinya_script}` : '').filter(Boolean).join(' '),
+                spanish: verses.map(v => v.spanish ? `<sup>${v.verseNum}</sup> ${v.spanish}` : '').filter(Boolean).join(' '),
+                spanish_pr: verses.map(v => v.spanish_pr ? `<sup>${v.verseNum}</sup> ${v.spanish_pr}` : '').filter(Boolean).join(' '),
+                coptic: verses.map(v => v.coptic ? `<sup>${v.verseNum}</sup> ${v.coptic}` : '').filter(Boolean).join(' ')
             };
             // If custom text already had [n] markers, we don't add <sup> tags to avoid duplication
             if (reading.customEnglish && reading.customEnglish.includes('[')) {
@@ -7855,10 +8979,84 @@ function updateSelectedMiracleUI() {
     }
 }
 
+const MIRACLE_BILINGUAL_KEYWORDS = {
+    'ውሻ': ['dog', 'dogs', 'thirst', 'water', 'shoe'],
+    'ከልብ': ['dog', 'dogs', 'water'],
+    'ውሃ': ['water', 'thirst', 'river', 'drink'],
+    'ማይ': ['water', 'thirst', 'river'],
+    'ስዕል': ['icon', 'picture', 'image', 'painting'],
+    'ሥዕል': ['icon', 'picture', 'image', 'painting'],
+    'በላዕተ': ['cannibal', 'belate', 'seb', 'souls', 'sinner'],
+    'ሰብእ': ['cannibal', 'souls'],
+    'ደቅስዮስ': ['deqseyos', 'dexius', 'ildefonsus', 'toledo', 'vestment', 'throne'],
+    'ቶሌዶ': ['toledo', 'deqseyos', 'dexius'],
+    'መነኩሴ': ['monk', 'abbot', 'monastery'],
+    'መነኮስ': ['monk', 'abbot', 'monastery'],
+    'ሽፍታ': ['robber', 'thief', 'bandit', 'highwayman'],
+    'ሌባ': ['robber', 'thief', 'bandit'],
+    'ፈረስ': ['horse', 'knight', 'cavalry'],
+    'እሳት': ['fire', 'flame', 'burn'],
+    'ባሕር': ['sea', 'ocean', 'ship', 'drown', 'boat'],
+    'መርከብ': ['ship', 'boat', 'sea', 'sailor'],
+    'አንበሳ': ['lion', 'beast'],
+    'እባብ': ['serpent', 'snake', 'dragon'],
+    'ዘንዶ': ['dragon', 'serpent'],
+    'ካህን': ['priest', 'cleric', 'bishop'],
+    'ዲያቆን': ['deacon']
+};
+
+function matchMiraclesByText(rawQuery, showMostReadOnly = false) {
+    if (typeof MIRACLES_OF_MARY === 'undefined') return [];
+    const trimmed = (rawQuery || '').trim().toLowerCase();
+    if (!trimmed) {
+        return MIRACLES_OF_MARY.filter(m => !showMostReadOnly || m.most_read);
+    }
+
+    const rawTokens = trimmed.split(/[\s,.;:!?()]+/).filter(Boolean);
+    const expandedTokenGroups = rawTokens.map(tok => {
+        const group = [tok];
+        Object.entries(MIRACLE_BILINGUAL_KEYWORDS).forEach(([ethKey, engList]) => {
+            if (tok.includes(ethKey) || ethKey.includes(tok)) {
+                group.push(...engList);
+            }
+        });
+        return group;
+    });
+
+    const scored = [];
+    for (const m of MIRACLES_OF_MARY) {
+        if (showMostReadOnly && !m.most_read) continue;
+        const titleLower = (m.title || '').toLowerCase();
+        const incipitLower = (m.incipit || '').toLowerCase();
+        const trLower = (m.translations || []).map(t => (t.text || '').toLowerCase()).join(' ');
+        const fullHaystack = `${m.id || ''} ${titleLower} ${incipitLower} ${trLower}`;
+
+        let matchedGroups = 0;
+        let score = 0;
+        for (const group of expandedTokenGroups) {
+            const groupMatched = group.some(term => fullHaystack.includes(term));
+            if (groupMatched) {
+                matchedGroups++;
+                if (group.some(term => titleLower.includes(term))) score += 5;
+                if (group.some(term => incipitLower.includes(term))) score += 3;
+                score += 1;
+            }
+        }
+
+        if (matchedGroups === expandedTokenGroups.length || (expandedTokenGroups.length >= 4 && matchedGroups >= Math.ceil(expandedTokenGroups.length * 0.6))) {
+            scored.push({ miracle: m, score: score + matchedGroups * 2 });
+        }
+    }
+
+    scored.sort((a, b) => b.score - a.score);
+    return scored.map(s => s.miracle);
+}
+window.matchMiraclesByText = matchMiraclesByText;
+
 function renderMiracleModalList() {
     if (!miracleListContainer || typeof MIRACLES_OF_MARY === 'undefined') return;
     
-    const query = (miracleSearchInput.value || '').toLowerCase();
+    const query = (miracleSearchInput.value || '').trim();
     const showMostReadOnly = miracleMostReadToggle.checked;
     
     miracleListContainer.innerHTML = '';
@@ -7881,17 +9079,7 @@ function renderMiracleModalList() {
     });
     miracleListContainer.appendChild(noneBtn);
 
-    let filtered = MIRACLES_OF_MARY.filter(m => {
-        if (showMostReadOnly && !m.most_read) return false;
-        
-        if (query) {
-            const matchesTitle = m.title && m.title.toLowerCase().includes(query);
-            const matchesIncipit = m.incipit && m.incipit.toLowerCase().includes(query);
-            const matchesTranslation = m.translations && m.translations.some(t => t.text.toLowerCase().includes(query));
-            return matchesTitle || matchesIncipit || matchesTranslation;
-        }
-        return true;
-    });
+    const filtered = matchMiraclesByText(query, showMostReadOnly);
     
     const countContainer = document.getElementById('miracle-count-text');
     if (countContainer) {
@@ -7908,15 +9096,12 @@ function renderMiracleModalList() {
         btn.style.marginBottom = '5px';
         btn.style.display = 'block';
         
-        let html = `<div style="font-weight: 600; font-size: 1.1rem; color: var(--primary-color); display: flex; justify-content: space-between; gap: 1rem;">
+        // Intentionally omit Ge'ez incipit in the pop-up list per user feedback to prevent visual clutter
+        btn.innerHTML = `<div style="font-weight: 600; font-size: 1.05rem; color: var(--primary-color); display: flex; justify-content: space-between; align-items: center; gap: 1rem;">
                         <span>${miracle.title || 'Untitled'}</span>
                         <span style="font-size: 0.75rem; font-weight: normal; opacity: 0.6; white-space: nowrap;">ID: ${miracle.id}</span>
                     </div>`;
-        if (miracle.incipit) {
-            html += `<div style="font-family: 'Aboriginal Serif', serif; font-size: 0.95rem; margin-top: 5px; color: var(--text-color); opacity: 0.85;">${miracle.incipit}</div>`;
-        }
-        btn.innerHTML = html;
-        
+
         safeOn(btn, 'click', () => {
             selectedMiracleId = miracle.id;
             selectedMiracleTranslationIndex = 0; // Reset translation index when a new miracle is picked
@@ -8623,9 +9808,18 @@ safeOn(headOfStateInput, 'input', () => {
 safeOn(kidaseModeToggle, 'change', () => {
     isKidaseModeActive = kidaseModeToggle.checked;
     kidaseSettings.style.display = isKidaseModeActive ? 'block' : 'none';
+    syncActiveTabFromLiturgyToggles();
     saveSettings();
     smoothRender();
 });
+
+if (showPrepPsalmsToggle) {
+    safeOn(showPrepPsalmsToggle, 'change', () => {
+        showPrepPsalms = showPrepPsalmsToggle.checked;
+        saveSettings();
+        smoothRender();
+    });
+}
 
 safeOn(showMatinsToggle, 'change', () => {
     showMatins = showMatinsToggle.checked;
@@ -8690,6 +9884,16 @@ if (openMiracleModalBtn && miracleModal && closeMiracleModalBtn) {
     safeOn(miracleMostReadToggle, 'change', renderMiracleModalList);
 }
 
+if (miracleVoiceDetectBtn) {
+    safeOn(miracleVoiceDetectBtn, 'click', () => {
+        if (window.targumaService && typeof window.targumaService.toggleMiracleLiveIdentification === 'function') {
+            window.targumaService.toggleMiracleLiveIdentification();
+        } else {
+            showCopyNotification('Starting Targuma AI Live Miracle Identification...', 2500);
+        }
+    });
+}
+
 if (miraclePositionRadios) {
     miraclePositionRadios.forEach(radio => {
         if (radio.value === miraclePosition) {
@@ -8714,6 +9918,7 @@ if (showAnaphoraToggleEl) {
         if (anaphoraSettingsEl) {
             anaphoraSettingsEl.style.display = showAnaphora ? 'block' : 'none';
         }
+        syncActiveTabFromLiturgyToggles();
         localStorage.setItem('showAnaphora', showAnaphora);
         saveSettings();
         smoothRender();
@@ -8951,17 +10156,37 @@ safeOn(presentationModeToggleHeader, 'click', () => {
 safeOn(layoutToggleHeader, 'click', toggleLayout);
 
 safeOn(expandCollapseAllButton, 'click', () => {
-    areAllSectionsCollapsed = !areAllSectionsCollapsed;
     const sections = document.querySelectorAll('.section-title.collapsible');
+    let anyExpanded = false;
+    sections.forEach(s => {
+        if (!s.classList.contains('collapsed')) anyExpanded = true;
+    });
+    const shouldCollapseAll = anyExpanded;
+    areAllSectionsCollapsed = shouldCollapseAll;
+    if (!shouldCollapseAll) {
+        collapsedSections = {};
+    }
+    let withinParentGroup = false;
     sections.forEach(section => {
-        const title = section.textContent;
-        const isCollapsed = areAllSectionsCollapsed;
-        section.classList.toggle('collapsed', isCollapsed);
-        collapsedSections[title] = isCollapsed;
+        const stateKey = section.dataset.stateKey || section.textContent;
+        const indentLevel = parseInt(section.dataset.indentLevel || '0', 10);
+        if (indentLevel === 0) {
+            withinParentGroup = section.dataset.isParentGroup === 'true';
+        }
+        section.classList.toggle('collapsed', shouldCollapseAll);
+        collapsedSections[stateKey] = shouldCollapseAll;
+        if (indentLevel > 0 && withinParentGroup) {
+            section.style.display = shouldCollapseAll ? 'none' : '';
+        }
 
         let nextEl = section.nextElementSibling;
         while (nextEl && !nextEl.classList.contains('section-title')) {
-            nextEl.style.display = isCollapsed ? 'none' : '';
+            if (nextEl.classList.contains('expand-daily-prayer-preview-btn')) {
+                nextEl.style.display = 'none';
+            } else {
+                nextEl.classList.remove('daily-prayer-sneak-peek-card');
+                nextEl.style.display = shouldCollapseAll ? 'none' : '';
+            }
             nextEl = nextEl.nextElementSibling;
         }
     });
@@ -9053,6 +10278,14 @@ safeOn(showDailyPrayerToggle, 'change', () => {
     smoothRender();
     saveSettings();
 });
+
+if (showTrinitarianInvocationToggle) {
+    safeOn(showTrinitarianInvocationToggle, 'change', () => {
+        displayOptions.showTrinitarianInvocation = showTrinitarianInvocationToggle.checked;
+        smoothRender();
+        saveSettings();
+    });
+}
 
 if (showGateOfLightToggle) {
     safeOn(showGateOfLightToggle, 'change', () => {
@@ -9163,13 +10396,48 @@ if (closeBibleTranslationsInfoModal) {
     });
 }
 
-// Search Listeners
-safeOn(searchToggle, 'click', () => {
-    header.classList.add('search-active');
-    searchInput.focus();
+if (showHaregOrnamentToggle) {
+    safeOn(showHaregOrnamentToggle, 'change', () => {
+        displayOptions.showHaregOrnament = showHaregOrnamentToggle.checked;
+        applyTheme();
+        saveSettings();
+    });
+}
+
+if (closeCalendarInfoModal) {
+    safeOn(closeCalendarInfoModal, 'click', () => {
+        closeModal();
+    });
+}
+
+// Header Subtitle Attribution -> Opens Help Modal on Auspices & Disclaimer Tab
+if (headerSubtitleAttribution && helpModal) {
+    safeOn(headerSubtitleAttribution, 'click', () => {
+        openModal(helpModal);
+        const auspicesTabBtn = helpModal.querySelector('.help-tab-btn[data-tab="auspices"], .tab-button[data-tab="auspices"]');
+        if (auspicesTabBtn) {
+            auspicesTabBtn.click();
+        }
+    });
+}
+
+// Primary 5-Destination Navigation Bar (Desktop Header + Mobile Bottom Bar)
+document.querySelectorAll('.primary-nav-tab, .header-nav-tab, .bottom-nav-item').forEach(btn => {
+    safeOn(btn, 'click', (e) => {
+        e.preventDefault();
+        const navTarget = btn.getAttribute('data-nav-tab');
+        if (navTarget) {
+            switchPrimaryTab(navTarget);
+        }
+    });
 });
-safeOn(searchClose, 'click', closeSearch);
+
+// Search Listeners
+safeOn(searchClose, 'click', () => closeSearch());
 safeOn(searchInput, 'input', performSearch);
+if (searchScopeSelect) {
+    safeOn(searchScopeSelect, 'change', performSearch);
+}
 
 safeOn(searchNext, 'click', () => {
     if (searchMatches.length === 0) return;
@@ -9275,19 +10543,26 @@ safeOn(document, 'touchstart', handleTouchStart, { passive: true });
 safeOn(document, 'touchend', handleTouchEnd, { passive: true });
 
 
-// --- Hide Header on Scroll ---
+// --- Hide Header, Mobile Bottom Nav Bar, and Floating Controls on Scroll ---
 let lastScrollTop = 0;
 safeOn(window, 'scroll', function () {
     if (displayOptions.presentationMode === 'slides') {
         header.classList.remove('header-hidden');
+        if (bottomNavBar) bottomNavBar.classList.remove('nav-hidden');
+        if (prayerFloatingControls) prayerFloatingControls.classList.remove('floating-hidden');
         return;
     }
 
     let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    if (scrollTop > lastScrollTop && scrollTop > header.offsetHeight) {
+    const isScrollingDown = scrollTop > lastScrollTop && scrollTop > header.offsetHeight;
+    if (isScrollingDown) {
         header.classList.add('header-hidden');
+        if (bottomNavBar) bottomNavBar.classList.add('nav-hidden');
+        if (prayerFloatingControls) prayerFloatingControls.classList.add('floating-hidden');
     } else {
         header.classList.remove('header-hidden');
+        if (bottomNavBar) bottomNavBar.classList.remove('nav-hidden');
+        if (prayerFloatingControls) prayerFloatingControls.classList.remove('floating-hidden');
     }
     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
 }, false);
@@ -9315,6 +10590,9 @@ async function initApp() {
     }
 
     await loadSettings(); // Ensure settings are loaded before anything else
+
+    renderLiturgicalCalendarBar();
+    setInterval(renderLiturgicalCalendarBar, 60000);
 
     await loadBibleData(); // Load data on startup
 
@@ -9782,7 +11060,7 @@ async function initApp() {
         }
     }
 
-    let unsubscribePrayers = null;
+    var unsubscribePrayers = null;
 
     // Live Subscription to Firestore Prayers
     function subscribeToPrayers() {
@@ -10590,15 +11868,16 @@ window.initMountOfMercyEngine = async function() {
     window._mountOfMercyInitialized = true;
 };
 
-// Autostart if DOM is already ready
+// Autostart if DOM is already ready and prayer data scripts are present
 if (typeof document !== 'undefined') {
+    bindDOMElements();
     if (document.readyState === 'complete' || document.readyState === 'interactive') {
-        if (document.getElementById('prayer-display')) {
+        if (typeof prayers !== 'undefined' && document.getElementById('prayer-display')) {
             window.initMountOfMercyEngine();
         }
     } else {
         document.addEventListener('DOMContentLoaded', () => {
-            if (document.getElementById('prayer-display')) {
+            if (typeof prayers !== 'undefined' && document.getElementById('prayer-display')) {
                 window.initMountOfMercyEngine();
             }
         });
@@ -10638,11 +11917,19 @@ const appCoreExports = {
     getDefaultReadingTranslationOverrides,
     transliterateGeezToPhonetic,
     getBibleVersesFromRef,
+    computeEthiopianDate,
+    getLiturgicalHourInfo,
+    ETHIOPIAN_MONTHLY_FEASTS,
+    ETHIOPIAN_MONTHS_INFO,
+    matchMiraclesByText,
+    getPrayTabDefaultProfile,
+    getLiturgyTabDefaultProfile,
     getActiveLectionaryReadingsSnapshot: () => ({
         isKidaseModeActive,
         showMatins,
         showVespers,
         showSeatatReadings,
+        showPrepPsalms,
         selectedSeatatLectionaryDay,
         selectedWidaseMaryamDay,
         selectedAnaphora,

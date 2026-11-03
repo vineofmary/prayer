@@ -26,12 +26,17 @@ describe('Learning & Games Module, Interlinear Ge\'ez, and Header/Sidebar Reorga
   });
 
   describe('Top Bar & Left Settings Panel Reorganization', () => {
-    it('places the Church/Home Learning & Games button (#learning-mode-toggle-header) in the top header actions', () => {
+    it('places the text-only Learn tab button (#learning-mode-toggle-header) in the top header actions and hamburger icon on #prayers-panel-toggle', () => {
       const headerBtn = document.querySelector('.header-actions #learning-mode-toggle-header');
       expect(headerBtn).not.toBeNull();
-      const svgPath = headerBtn.querySelector('svg path');
-      expect(svgPath).not.toBeNull();
-      expect(svgPath.getAttribute('d')).toContain('M18 12.22V9');
+      expect(headerBtn.textContent.trim()).toBe('Learn');
+      expect(headerBtn.querySelector('svg')).toBeNull();
+
+      const rightMenuBtn = document.getElementById('prayers-panel-toggle');
+      expect(rightMenuBtn).not.toBeNull();
+      const menuPath = rightMenuBtn.querySelector('svg path');
+      expect(menuPath).not.toBeNull();
+      expect(menuPath.getAttribute('d')).toContain('M3 18h18v-2H3v2z');
     });
 
     it('moves the Toggle Light/Dark Mode button (#theme-toggle) out of the top header and into Pick Theme in #left-sidebar', () => {
@@ -190,35 +195,42 @@ describe('Learning & Games Module, Interlinear Ge\'ez, and Header/Sidebar Reorga
       expect(learningView.querySelector('.learning-title')).toBeNull();
       expect(learningView.querySelector('.learning-brand-badge')).toBeNull();
 
-      // Plushy Oakland parish mascot icon with entry squish animation
-      const mascotBtn = learningView.querySelector('#learning-plushy-mascot-btn');
-      expect(mascotBtn).not.toBeNull();
-      const mascotImg = mascotBtn.querySelector('.learning-plushy-icon');
-      expect(mascotImg).not.toBeNull();
-      expect(mascotImg.getAttribute('src')).toContain('img/oakland_dmkm-eotc.png');
-      expect(mascotImg.classList.contains('plushy-squish-anim')).toBe(true);
+      // Simplified header: no mascot icon, exit X button, or FX toggle button
+      expect(learningView.querySelector('#learning-plushy-mascot-btn')).toBeNull();
+      expect(learningView.querySelector('#learning-exit-btn')).toBeNull();
+      expect(learningView.querySelector('#learning-fx-toggle-btn')).toBeNull();
 
-      // Compact class dropdown instead of 4 wide pills
+      // Compact age-range-only class dropdown (no patron saint names)
       const classSelect = learningView.querySelector('#learning-class-select');
       expect(classSelect).not.toBeNull();
       const options = Array.from(classSelect.querySelectorAll('option'));
       expect(options).toHaveLength(4);
-      expect(options[0].textContent).toBe("St. Kirkos' Kids (Under 7)");
-      expect(options[3].textContent).toBe("St. Michael's Kids (Ages 13+)");
+      expect(options[0].textContent).toBe('Under 7');
+      expect(options[1].textContent).toBe('Ages 7–9');
+      expect(options[2].textContent).toBe('Ages 10–12');
+      expect(options[3].textContent).toBe('Ages 13+');
+
+      // Vibe dropdown without emojis and with updated names
+      const vibeSelect = learningView.querySelector('#learning-vibe-select');
+      expect(vibeSelect).not.toBeNull();
+      const vibeOptions = Array.from(vibeSelect.querySelectorAll('option')).map(o => o.textContent);
+      expect(vibeOptions).toEqual(['Vibe: Heavenly', 'Vibe: App Theme', 'Vibe: Matcha', 'Vibe: Plushy']);
 
       // Classroom TV Display button hidden unless external display / HDMI is connected
       expect(learningView.querySelector('#learning-tv-toggle-btn')).toBeNull();
 
       const state = learning.getState();
       expect(state.selectedClassId).toBe('st_michael');
-      expect(state.activeTab).toBe('blitz');
+      expect(state.activeTab).toBe('jeopardy');
 
-      // Hides Kidase Order tab across all classes
+      // Hides Kidase Order tab across all classes and places Jeopardy first
       const tabBtns = Array.from(learningView.querySelectorAll('.learning-tab-btn'));
       const labels = tabBtns.map(btn => btn.querySelector('.tab-label').textContent);
-      expect(labels).toEqual(['Trivia', 'Jeopardy', 'Match It', "Ge'ez Reader"]);
+      expect(labels).toEqual(['Jeopardy', 'Trivia', 'Matchy', 'Chanty']);
 
-      // Trivia button copy updates: "Reveal Clue" and "Next →"
+      // Switch to Trivia tab to verify button copy updates: "Reveal Clue" and "Next →"
+      const blitzTabBtn = learningView.querySelector('.learning-tab-btn[data-tab="blitz"]');
+      if (blitzTabBtn) blitzTabBtn.click();
       const revealBtn = learningView.querySelector('#blitz-reveal-phonetic-btn');
       expect(revealBtn).not.toBeNull();
       expect(revealBtn.textContent).toBe('Reveal Clue');
@@ -238,29 +250,29 @@ describe('Learning & Games Module, Interlinear Ge\'ez, and Header/Sidebar Reorga
       let tabIds = tabBtns.map(btn => btn.getAttribute('data-tab'));
       expect(tabIds).toEqual(['blitz', 'matcher']);
 
-      // Select St. Arsema's Kids (7–9): Trivia, Jeopardy, Match It
+      // Select St. Arsema's Kids (7–9): Jeopardy, Trivia, Matchy
       classSelect = learningView.querySelector('#learning-class-select');
       classSelect.value = 'st_arsema';
       classSelect.dispatchEvent(new Event('change'));
       tabBtns = Array.from(learningView.querySelectorAll('.learning-tab-btn'));
       tabIds = tabBtns.map(btn => btn.getAttribute('data-tab'));
-      expect(tabIds).toEqual(['blitz', 'jeopardy', 'matcher']);
+      expect(tabIds).toEqual(['jeopardy', 'blitz', 'matcher']);
 
-      // Select St. John's Kids (10–12): Trivia, Jeopardy, Match It
+      // Select St. John's Kids (10–12): Jeopardy, Trivia, Matchy
       classSelect = learningView.querySelector('#learning-class-select');
       classSelect.value = 'st_john';
       classSelect.dispatchEvent(new Event('change'));
       tabBtns = Array.from(learningView.querySelectorAll('.learning-tab-btn'));
       tabIds = tabBtns.map(btn => btn.getAttribute('data-tab'));
-      expect(tabIds).toEqual(['blitz', 'jeopardy', 'matcher']);
+      expect(tabIds).toEqual(['jeopardy', 'blitz', 'matcher']);
 
-      // Return to St. Michael's Kids (13+): Trivia, Jeopardy, Match It, Ge'ez Reader
+      // Return to St. Michael's Kids (13+): Jeopardy, Trivia, Matchy, Chanty
       classSelect = learningView.querySelector('#learning-class-select');
       classSelect.value = 'st_michael';
       classSelect.dispatchEvent(new Event('change'));
       tabBtns = Array.from(learningView.querySelectorAll('.learning-tab-btn'));
       tabIds = tabBtns.map(btn => btn.getAttribute('data-tab'));
-      expect(tabIds).toEqual(['blitz', 'jeopardy', 'matcher', 'interlinear']);
+      expect(tabIds).toEqual(['jeopardy', 'blitz', 'matcher', 'interlinear']);
     });
 
     it('renders team scoreboard below stage body with default 2 teams and "Your Turn" badge', () => {

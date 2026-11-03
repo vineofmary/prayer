@@ -121,6 +121,8 @@ export const LeftSidebar: React.FC = () => {
         <div className="setting-group">
           <h3 className="settings-subtitle">Advanced Display Options</h3>
           <div id="display-options-toggles">
+            <label><input type="checkbox" id="show-hareg-ornament-toggle" defaultChecked /> <span>Traditional Vine Header (Hareg)</span></label>
+            <label><input type="checkbox" id="show-trinitarian-invocation-toggle" /> <span>Trinitarian Invocation</span></label>
             <label><input type="checkbox" id="show-speaker-labels" /> <span>Speaker Labels (Beta)</span></label>
             <label><input type="checkbox" id="paragraph-mode" /> <span>Paragraph Mode (Single Language only)</span></label>
             <label id="dynamic-font-sizing-label" style={{ display: 'none' }}>

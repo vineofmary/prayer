@@ -162,6 +162,31 @@ const WeahaduBibleService = {
         }
 
         // 4. Standard Modular Editions ('en-kjv', 'am-2000', 'gez-1980', 'gez-2014', 'ti-1997')
+        const filePrefixNum = parseInt(bookFile, 10);
+        if (normEdition === 'gez-2014') {
+            // gez-2014 only contains the 27 New Testament books (files 59-matthew.json through 85-revelation.json);
+            // immediately fall back to gez-1980 for Old Testament / Deuterocanon without making a 404 network request
+            if (!isNaN(filePrefixNum) && (filePrefixNum < 59 || filePrefixNum > 85)) {
+                const fallback = await this.fetchBook('gez-1980', bName);
+                if (fallback) {
+                    this.cache.set(cacheKey, fallback);
+                    return fallback;
+                }
+                return null;
+            }
+        }
+        if (normEdition === 'ti-1997') {
+            // ti-1997 only contains the 66 Protestant-canon books (01-39 and 59-85); skip 40-58 and 86-99
+            if (!isNaN(filePrefixNum) && ((filePrefixNum >= 40 && filePrefixNum <= 58) || filePrefixNum >= 86)) {
+                return null;
+            }
+        }
+        if (normEdition === 'am-2000') {
+            // am-2000 does not have standalone files for 42, 47, 48, 52, 56, 95-99
+            if (!isNaN(filePrefixNum) && ([42, 47, 48, 52, 56].includes(filePrefixNum) || filePrefixNum >= 95)) {
+                return null;
+            }
+        }
         try {
             const response = await fetch(`bible/${normEdition}/books/${bookFile}`);
             if (!response.ok) {

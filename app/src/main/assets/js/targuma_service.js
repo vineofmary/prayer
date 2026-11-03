@@ -411,6 +411,7 @@
         }
 
         renderCaptionsStage(true);
+        evaluateMiracleLiveMatch(cleanSource, cleanTarget);
 
         if (state.roomMode === 'broadcast') {
             publishToFirestoreRoom();
@@ -1532,6 +1533,21 @@
             prayerDisplayEl.classList.toggle('hidden', state.isActive);
         }
 
+        document.querySelectorAll('.primary-nav-tab, .header-nav-tab, .bottom-nav-item').forEach(btn => {
+            const navTarget = btn.getAttribute('data-nav-tab');
+            if (!navTarget) return;
+            if (state.isActive) {
+                btn.classList.toggle('active', navTarget === 'targuma');
+            } else if (!document.body.classList.contains('learning-mode-active')) {
+                const fallbackTab = (typeof activePrimaryTab !== 'undefined' && (activePrimaryTab === 'pray' || activePrimaryTab === 'liturgy')) ? activePrimaryTab : 'pray';
+                btn.classList.toggle('active', navTarget === fallbackTab);
+            }
+        });
+        const floatingEl = document.getElementById('prayer-floating-controls');
+        if (floatingEl) {
+            floatingEl.style.display = (state.isActive || document.body.classList.contains('learning-mode-active')) ? 'none' : 'flex';
+        }
+
         if (!state.isActive) {
             stopLocalListening(false);
             disconnectFirestoreRoom();
@@ -1546,10 +1562,83 @@
         updateTargumaControlsUI();
     }
 
+    // --- Live Miracle of Mary Identification (via Targuma AI) ---
+    let isMiracleLiveDetectActive = false;
+    let accumulatedMiracleTranscript = '';
+
+    function evaluateMiracleLiveMatch(sourceText, targetText) {
+        const banner = document.getElementById('miracle-live-match-banner');
+        const miracleModal = document.getElementById('miracle-modal');
+        const isModalVisible = miracleModal && miracleModal.style.display === 'block';
+        if (!isMiracleLiveDetectActive && !isModalVisible) return;
+
+        const combinedChunk = `${sourceText || ''} ${targetText || ''}`.trim();
+        if (!combinedChunk) return;
+
+        accumulatedMiracleTranscript = `${accumulatedMiracleTranscript} ${combinedChunk}`.trim().slice(-400);
+        if (typeof window.matchMiraclesByText !== 'function') return;
+
+        const matches = window.matchMiraclesByText(accumulatedMiracleTranscript, false);
+        if (banner) {
+            banner.style.display = 'block';
+            if (matches && matches.length > 0) {
+                const topMatches = matches.slice(0, 3);
+                banner.innerHTML = `
+                    <div class="miracle-live-banner-header">Targuma AI Live Match Suggestions (Tap to select):</div>
+                    <div class="miracle-live-banner-chips">
+                        ${topMatches.map(m => `<button type="button" class="miracle-live-match-chip" data-miracle-id="${m.id}">${escapeHtml(m.title || ('Miracle #' + m.id))}</button>`).join('')}
+                    </div>
+                `;
+                banner.querySelectorAll('.miracle-live-match-chip').forEach(chip => {
+                    chip.addEventListener('click', () => {
+                        const searchInput = document.getElementById('miracle-search-input');
+                        if (searchInput) {
+                            searchInput.value = chip.textContent || '';
+                            searchInput.dispatchEvent(new Event('input'));
+                        }
+                    });
+                });
+            } else {
+                banner.innerHTML = `<div class="miracle-live-banner-header">Listening for Miracle of Mary keywords... (${escapeHtml(combinedChunk.slice(0, 60))})</div>`;
+            }
+        }
+    }
+
+    function toggleMiracleLiveIdentification() {
+        const btn = document.getElementById('miracle-voice-detect-btn');
+        const banner = document.getElementById('miracle-live-match-banner');
+        isMiracleLiveDetectActive = !isMiracleLiveDetectActive;
+
+        if (isMiracleLiveDetectActive) {
+            accumulatedMiracleTranscript = '';
+            if (btn) {
+                btn.classList.add('listening');
+                const span = btn.querySelector('span');
+                if (span) span.textContent = 'Listening for Miracle... (Tap to Stop)';
+            }
+            if (banner) {
+                banner.style.display = 'block';
+                banner.innerHTML = '<div class="miracle-live-banner-header">Targuma AI is listening to the reader (Amharic, Tigrinya, Ge\'ez, or English)...</div>';
+            }
+            if (!state.isListening) {
+                startLocalListening();
+            }
+        } else {
+            if (btn) {
+                btn.classList.remove('listening');
+                const span = btn.querySelector('span');
+                if (span) span.textContent = 'Identify Live Reading (Targuma AI)';
+            }
+            if (!state.isActive && state.isListening) {
+                stopLocalListening(false);
+            }
+        }
+    }
+
     function initTargumaButton() {
         loadTargumaSettings();
         const headerBtn = document.getElementById('targuma-mode-toggle-header');
-        if (headerBtn && !headerBtn.dataset.targumaBound) {
+        if (headerBtn && !headerBtn.dataset.targumaBound && !headerBtn.classList.contains('primary-nav-tab') && !headerBtn.classList.contains('header-nav-tab')) {
             headerBtn.dataset.targumaBound = 'true';
             headerBtn.addEventListener('click', () => {
                 toggleTargumaMode();
@@ -1568,8 +1657,17 @@
         } catch (e) {}
     }
 
+    const TargumaServiceAPI = {
+        get isTargumaMode() { return state.isActive; },
+        exitTargumaMode: () => toggleTargumaMode(false),
+        toggleTargumaMode,
+        toggleMiracleLiveIdentification,
+        initTargumaFeature: initTargumaButton
+    };
+
     window.toggleTargumaMode = toggleTargumaMode;
     window.initTargumaFeature = initTargumaButton;
+    window.targumaService = TargumaServiceAPI;
 
     if (document.readyState === 'complete' || document.readyState === 'interactive') {
         setTimeout(initTargumaButton, 0);

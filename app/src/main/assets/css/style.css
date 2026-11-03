@@ -36,7 +36,7 @@
 :root {
     --transition-speed: 0.3s;
     --sidebar-width: 350px;
-    --header-height: 61px;
+    --header-height: 70px;
     --column-gap: 1.25rem;
     --mobile-column-gap: 0.75rem;
     --english-font-size: 16px;
@@ -414,22 +414,21 @@ body.bold-text .language-text {
 }
 
 header {
-/* background-color: var(--card-background);*/
-/* border-bottom: 1px solid var(--border-color);*/
     background-color: var(--card-background, #ffffff);
-border-bottom: 1px solid var(--border-color, #eee);
-padding: 0 1.5rem;
-    height: var(--header-height);
+    border-bottom: 1px solid var(--border-color, #eee);
+    padding: 0.35rem 1.25rem;
+    min-height: var(--header-height);
+    height: auto;
+    box-sizing: border-box;
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    z-index: 10;
-    position: fixed; /* Changed to fixed */
+    z-index: 100;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    /* transition: transform 0.3s ease-in-out;*/
+    flex-direction: column;
+    justify-content: center;
     transition: transform 0.3s ease-in-out, background-color var(--transition-speed) ease;
 }
 
@@ -437,16 +436,26 @@ header.header-hidden {
     transform: translateY(-100%);
 }
 
+.header-top-row {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    box-sizing: border-box;
+}
+
 .header-content {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    flex-shrink: 0;
+    gap: 0.75rem;
+    flex: 1 1 auto;
+    min-width: 0;
 }
 
 h1 {
     margin: 0;
-    font-size: 1.25rem;
+    font-size: 1.22rem;
     color: var(--accent-color);
     white-space: nowrap;
     transition: opacity var(--transition-speed) ease;
@@ -477,108 +486,96 @@ h1 {
 .header-actions {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.35rem;
+    flex-shrink: 0;
 }
 
-#sidebar-toggle, #prayers-panel-toggle, #theme-toggle, #search-toggle, #help-button, #targuma-mode-toggle-header, #learning-mode-toggle-header, #presentation-mode-toggle-header, #search-close, #expand-collapse-all-button {
+#sidebar-toggle, #prayers-panel-toggle, #theme-toggle, #help-button {
     background: none;
     border: none;
     font-size: 1.5rem;
     cursor: pointer;
     color: var(--text-color);
-    padding: 0.25rem 0.5rem;
-    border-radius: 4px;
+    padding: 0.3rem 0.45rem;
+    border-radius: 6px;
     line-height: 1;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
 }
-#sidebar-toggle:hover, #prayers-panel-toggle:hover, #theme-toggle:hover, #search-toggle:hover, #help-button:hover, #targuma-mode-toggle-header:hover, #learning-mode-toggle-header:hover, #presentation-mode-toggle-header:hover, #search-close:hover, #expand-collapse-all-button:hover {
+#sidebar-toggle:hover, #prayers-panel-toggle:hover, #theme-toggle:hover, #help-button:hover {
     background-color: var(--hover-color);
 }
-#sidebar-toggle svg, #prayers-panel-toggle svg, #theme-toggle svg, #search-toggle svg, #targuma-mode-toggle-header svg, #learning-mode-toggle-header svg, #presentation-mode-toggle-header svg, #expand-collapse-all-button svg {
+#sidebar-toggle svg, #prayers-panel-toggle svg, #theme-toggle svg {
     width: 24px;
     height: 24px;
     fill: currentColor;
-}
-#targuma-mode-toggle-header.targuma-header-active,
-#learning-mode-toggle-header.learning-header-active {
-    color: var(--accent-color);
-    background-color: var(--hover-color);
-    box-shadow: inset 0 0 0 1.5px var(--accent-color);
 }
 #help-button {
     font-weight: bold;
     font-size: 1.2rem;
 }
-#search-close {
-    display: none;
-    font-size: 2rem;
-    font-weight: 300;
-}
 
 /* Search Bar */
 #search-container {
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.35rem;
+    flex: 1 1 auto;
+    min-width: 0;
+    position: relative;
+}
+
+header.search-active #search-container {
+    display: flex;
+}
+
+.search-bar-controls {
     display: flex;
     align-items: center;
-    gap: 0.25rem;
-    flex-grow: 1;
-    justify-content: flex-end;
+    gap: 0.4rem;
+    width: 100%;
 }
+
 #search-input {
-    display: none; /* Hidden by default */
+    display: block;
+    flex: 1 1 auto;
+    min-width: 120px;
     border: 1px solid var(--border-color);
     background-color: var(--background-color);
     color: var(--text-color);
-    padding: 0.3rem 0.6rem;
-    border-radius: 20px;
-    width: 0;
-    transition: width 0.3s ease-in-out, padding 0.3s ease-in-out;
+    padding: 0.38rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.9rem;
 }
 
 header.search-active .header-content,
-header.search-active #targuma-mode-toggle-header,
-header.search-active #learning-mode-toggle-header,
-header.search-active #presentation-mode-toggle-header,
-header.search-active #theme-toggle,
-header.search-active #help-button {
-    display: none;
-}
-
-header.search-active #search-toggle { display: none; }
-header.search-active #search-close { display: flex; }
-
-header.search-active #search-input {
-    display: block;
-    width: 100%;
-    padding: 0.3rem 0.6rem;
+header.search-active .header-nav-tab {
+    display: none !important;
 }
 
 #search-count {
-    display: none;
     font-size: 0.8rem;
-    padding: 0 0.5rem;
-    opacity: 0.7;
-}
-
-header.search-active #search-count {
-    display: block;
+    padding: 0 0.35rem;
+    opacity: 0.75;
+    white-space: nowrap;
 }
 
 #search-prev, #search-next {
-    display: none;
-    background: none;
-    border: none;
+    background: var(--hover-color);
+    border: 1px solid var(--border-color);
     cursor: pointer;
     color: var(--text-color);
-    padding: 0.2rem;
-    border-radius: 4px;
-}
-header.search-active #search-prev, header.search-active #search-next {
-    display: block;
+    padding: 0.25rem 0.45rem;
+    border-radius: 6px;
+    font-size: 0.78rem;
+    line-height: 1;
 }
 #search-prev:hover, #search-next:hover {
-    background-color: var(--hover-color);
+    background-color: var(--accent-color);
+    color: var(--accent-text-color, #fff);
 }
 
 .container {
@@ -2039,29 +2036,24 @@ body.presentation-mode-slides .prayer-content.layout-row .language-section {
     }
 
     header {
-        padding: 0 0.5rem 0 1rem;
-        gap: 0.5rem;
+        padding: 0.3rem 0.5rem;
     }
 
     .header-content h1 {
         display: block;
         opacity: 1;
+        font-size: 1.05rem;
     }
 
-    header:not(.sidebar-visible-in-mobile) .header-content h1 {
-        display: none;
-    }
-
-    header.search-active .header-content,
-    header.search-active .header-actions:not(#search-close) {
-        display: none;
+    header.search-active .header-content {
+        display: none !important;
     }
     header.search-active #search-container {
         justify-content: flex-start;
-        padding-right: 0.5rem;
+        padding-right: 0.25rem;
     }
 
-    #search-input { padding: 0.4rem 0.8rem; }
+    #search-input { padding: 0.38rem 0.7rem; }
 
     .sidebar {
         position: fixed;
@@ -3297,6 +3289,841 @@ body.presentation-mode-slides .hareg-ornament {
 .clear-psalm-chant-btn:hover {
     opacity: 1;
 }
+
+/* ==========================================================================
+   UI Overhaul: Header Attribution, Liturgical Calendar Bar, 5-Tab Nav,
+   Floating Controls, Daily Prayer Preview, Auspices & Modals
+   ========================================================================== */
+
+.header-title-block,
+.header-center-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    min-width: 0;
+    flex: 1 1 auto;
+}
+
+.header-title-line {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    column-gap: 0.65rem;
+    row-gap: 0.1rem;
+    min-width: 0;
+}
+
+.header-title-line h1 {
+    margin: 0;
+    line-height: 1.15;
+    font-size: 1.2rem;
+    color: var(--accent-color);
+}
+
+.header-title-link {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    font-family: inherit;
+    color: inherit;
+    line-height: inherit;
+    text-align: inherit;
+    cursor: pointer;
+    display: inline;
+    border-radius: 0;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.header-title-link:hover {
+    opacity: 0.85;
+}
+
+.header-title-link:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+.header-subtitle-attribution {
+    background: none;
+    border: none;
+    padding: 0.08rem 0.35rem;
+    margin: 0;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.015em;
+    color: var(--text-color);
+    opacity: 0.82;
+    cursor: pointer;
+    border-radius: 4px;
+    border-bottom: 1px dashed var(--accent-color);
+    transition: background-color 0.2s ease, opacity 0.2s ease, color 0.2s ease;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+.header-subtitle-attribution:hover {
+    background-color: var(--hover-color);
+    color: var(--accent-color);
+    opacity: 1;
+}
+
+.liturgical-calendar-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.15rem;
+    font-size: 0.74rem;
+    color: var(--text-color);
+    opacity: 0.9;
+    margin-top: 0.18rem;
+    line-height: 1.25;
+}
+
+.calendar-chip-link,
+.calendar-bar-link {
+    background: none;
+    border: none;
+    padding: 0.06rem 0.28rem;
+    margin: 0;
+    font: inherit;
+    color: var(--accent-color);
+    font-weight: 700;
+    cursor: pointer;
+    border-bottom: 1px dotted var(--accent-color);
+    border-radius: 4px;
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.calendar-chip-link:hover,
+.calendar-bar-link:hover {
+    background-color: var(--hover-color);
+}
+
+.cal-sep,
+.calendar-bar-sep {
+    opacity: 0.75;
+    padding: 0 0.08rem;
+}
+
+.cal-dot {
+    opacity: 0.55;
+    padding: 0 0.25rem;
+}
+
+/* Desktop 5-Destination Header Navigation */
+.header-desktop-nav {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.header-nav-tab {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    padding: 0.38rem 0.72rem;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    background: transparent;
+    color: var(--text-color);
+    font-size: 0.84rem;
+    font-weight: 600;
+    line-height: 1.1;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.header-nav-tab svg {
+    width: 18px !important;
+    height: 18px !important;
+    flex-shrink: 0;
+    fill: currentColor;
+}
+
+.header-nav-tab:hover {
+    background-color: var(--hover-color);
+}
+
+.header-nav-tab.active,
+#targuma-mode-toggle-header.targuma-header-active,
+#learning-mode-toggle-header.learning-header-active {
+    background-color: var(--hover-color);
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+    box-shadow: inset 0 0 0 1px var(--accent-color);
+}
+
+.nav-icon-with-badge {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-beta-badge,
+.bottom-nav-beta {
+    font-size: 0.52rem;
+    font-weight: 800;
+    letter-spacing: 0.03em;
+    padding: 0.08rem 0.28rem;
+    border-radius: 999px;
+    background-color: var(--accent-color);
+    color: var(--accent-text-color, #ffffff);
+    line-height: 1;
+    margin-left: 0.2rem;
+    text-transform: uppercase;
+}
+
+.bottom-nav-item .nav-beta-badge {
+    position: absolute;
+    top: -5px;
+    right: -20px;
+    margin-left: 0;
+    font-size: 0.46rem;
+    padding: 0.06rem 0.22rem;
+}
+
+/* Floating Collapse/Expand All + Slides Mode Overlay Chip */
+.prayer-floating-controls {
+    position: sticky;
+    top: calc(var(--header-height) + 0.5rem);
+    z-index: 85;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.45rem;
+    pointer-events: none;
+    margin-bottom: -2.1rem;
+    padding-right: 0.25rem;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.prayer-floating-controls.floating-hidden {
+    transform: translateY(-140%);
+    opacity: 0;
+}
+
+body.presentation-mode-slides .prayer-floating-controls,
+body.slides-mode .prayer-floating-controls,
+body.learning-mode-active .prayer-floating-controls,
+body.targuma-mode-active .prayer-floating-controls {
+    display: none !important;
+}
+
+.floating-control-pill,
+.floating-pill-btn {
+    pointer-events: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.32rem;
+    padding: 0.34rem 0.72rem;
+    border-radius: 999px;
+    border: 1px solid var(--border-color);
+    background-color: var(--card-background);
+    color: var(--text-color);
+    font-size: 0.78rem;
+    font-weight: 600;
+    line-height: 1.1;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16);
+    cursor: pointer;
+    backdrop-filter: blur(8px);
+    opacity: 0.95;
+    transition: all 0.2s ease;
+}
+
+.floating-control-pill svg,
+.floating-pill-btn svg {
+    width: 15px !important;
+    height: 15px !important;
+    fill: currentColor;
+    flex-shrink: 0;
+}
+
+.floating-control-pill:hover,
+.floating-pill-btn:hover {
+    opacity: 1;
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+    transform: translateY(-1px);
+}
+
+.floating-pill-label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* Mobile 5-Destination Bottom Navigation Bar */
+.bottom-nav-bar {
+    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 60px;
+    background-color: var(--card-background);
+    border-top: 1px solid var(--border-color);
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.12);
+    z-index: 950;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 0.25rem;
+    transition: transform 0.3s ease;
+}
+
+.bottom-nav-bar.nav-hidden {
+    transform: translateY(100%);
+}
+
+body.presentation-mode-slides .bottom-nav-bar,
+body.slides-mode .bottom-nav-bar {
+    display: none !important;
+}
+
+.bottom-nav-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.18rem;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    opacity: 0.72;
+    font-size: 0.68rem;
+    font-weight: 600;
+    padding: 0.35rem 0.2rem;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.2s ease, opacity 0.2s ease, transform 0.15s ease;
+}
+
+.bottom-nav-item svg {
+    width: 21px;
+    height: 21px;
+    fill: currentColor;
+}
+
+.bottom-nav-item.active {
+    opacity: 1;
+    color: var(--accent-color);
+}
+
+.bottom-nav-item.active::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    width: 22px;
+    height: 2.5px;
+    border-radius: 2px;
+    background-color: var(--accent-color);
+}
+
+@media (max-width: 899px) {
+    .header-nav-tab,
+    .header-desktop-nav {
+        display: none !important;
+    }
+
+    .header-title-block {
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .header-title-line {
+        justify-content: flex-start;
+        column-gap: 0.45rem;
+    }
+
+    .header-title-line h1 {
+        font-size: 1.05rem;
+    }
+
+    .header-subtitle-attribution {
+        font-size: 0.68rem;
+        padding: 0.04rem 0.25rem;
+    }
+
+    .liturgical-calendar-bar {
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        white-space: nowrap;
+        overflow-x: auto;
+        scrollbar-width: none;
+        font-size: 0.68rem;
+        margin-top: 0.1rem;
+        max-width: 100%;
+    }
+
+    .liturgical-calendar-bar::-webkit-scrollbar {
+        display: none;
+    }
+
+    .cal-year-mercy-label,
+    .cal-western-date,
+    .cal-western-date-sep {
+        display: none !important;
+    }
+
+    .bottom-nav-bar {
+        display: flex;
+    }
+
+    .main-content {
+        padding-bottom: 4.5rem;
+    }
+
+    .prayer-floating-controls {
+        margin-bottom: -1.7rem;
+        top: calc(var(--header-height) + 0.35rem);
+    }
+}
+
+/* Collapsible Traditional Vine Header (Hareg) Toggle */
+body.hide-hareg-ornament .hareg-header,
+body.hide-hareg-ornament .hareg-footer {
+    display: none !important;
+}
+
+/* Daily Prayer First-Card Preview + Sneak Peek of Card 2 */
+.daily-prayer-sneak-peek-card {
+    max-height: 6.5rem;
+    overflow: hidden;
+    position: relative;
+    opacity: 0.68;
+    pointer-events: none;
+    margin-bottom: 0.25rem !important;
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.95) 25%, rgba(0, 0, 0, 0) 100%);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.95) 25%, rgba(0, 0, 0, 0) 100%);
+}
+
+.expand-daily-prayer-preview-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0.65rem 1rem;
+    margin: -0.25rem 0 1.15rem 0;
+    border-radius: 8px;
+    border: 1px dashed var(--accent-color);
+    background-color: var(--card-background);
+    color: var(--accent-color);
+    font-size: 0.88rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    transition: all 0.2s ease;
+}
+
+.expand-daily-prayer-preview-btn:hover {
+    background-color: var(--hover-color);
+    transform: translateY(-1px);
+}
+
+/* English Coming Soon Placeholder & Theotokia Beta Badge */
+.english-coming-soon-placeholder {
+    font-style: italic;
+    opacity: 0.58;
+    color: var(--text-color);
+}
+
+.theotokia-beta-badge {
+    display: inline-block;
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    padding: 0.1rem 0.38rem;
+    margin-left: 0.4rem;
+    border-radius: 999px;
+    background-color: rgba(212, 175, 55, 0.2);
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+    vertical-align: middle;
+}
+
+/* Reworked Search Bar & Global Search Results Drawer */
+.search-bar-row {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    width: 100%;
+}
+
+.search-scope-select {
+    width: auto !important;
+    margin: 0 !important;
+    padding: 0.35rem 0.55rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background-color: var(--card-background);
+    color: var(--text-color);
+    font-size: 0.8rem;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.search-close-btn,
+.search-close-pill {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2rem;
+    padding: 0.36rem 0.75rem !important;
+    border-radius: 999px !important;
+    background-color: var(--accent-color) !important;
+    color: var(--accent-text-color, #fff) !important;
+    font-size: 0.8rem !important;
+    font-weight: 700 !important;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.search-results-drawer {
+    position: absolute;
+    top: calc(100% + 0.4rem);
+    left: 0;
+    right: 0;
+    z-index: 250;
+    max-height: 60vh;
+    overflow-y: auto;
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25);
+    padding: 0.5rem;
+}
+
+.search-drawer-header {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    padding: 0.25rem 0.5rem 0.45rem;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 0.35rem;
+}
+
+.search-drawer-empty {
+    padding: 0.75rem;
+    font-size: 0.85rem;
+    opacity: 0.75;
+    text-align: center;
+}
+
+.search-drawer-item,
+.global-search-result-item {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 0.55rem 0.65rem;
+    margin-bottom: 0.3rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    cursor: pointer;
+    transition: background-color 0.15s ease, border-color 0.15s ease;
+    box-sizing: border-box;
+}
+
+.search-drawer-item:hover,
+.global-search-result-item:hover {
+    background-color: var(--hover-color);
+    border-color: var(--accent-color);
+}
+
+.search-drawer-item-top,
+.gsr-category {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.15rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    text-transform: uppercase;
+}
+
+.search-drawer-title,
+.gsr-title {
+    font-size: 0.84rem;
+    font-weight: 700;
+    margin-bottom: 0.15rem;
+}
+
+.search-drawer-snippet,
+.gsr-snippet {
+    font-size: 0.78rem;
+    opacity: 0.85;
+    line-height: 1.35;
+}
+
+/* Auspices & Hierarchy Attribution Grid */
+.hierarchy-cards-grid,
+.auspices-hierarchy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0 1.25rem;
+}
+
+.hierarchy-card,
+.auspices-leader-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1rem 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    background-color: var(--background-color);
+}
+
+.hierarchy-portrait-wrap,
+.auspices-portrait-wrap {
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    border: 2px solid var(--accent-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-bottom: 0.6rem;
+    background: transparent;
+    position: relative;
+}
+
+.hierarchy-portrait-img,
+.auspices-portrait {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0.85;
+}
+
+.hierarchy-photo-badge {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.72);
+    color: #fff;
+    font-size: 0.56rem;
+    font-weight: 700;
+    padding: 0.15rem 0.2rem;
+    text-align: center;
+}
+
+.hierarchy-card-title,
+.auspices-leader-name {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin: 0.15rem 0;
+}
+
+.hierarchy-card-role,
+.auspices-leader-role {
+    font-size: 0.78rem;
+    opacity: 0.84;
+    line-height: 1.35;
+}
+
+.spiritual-father-attribution-box,
+.auspices-spiritual-father-box {
+    padding: 0.85rem 1rem;
+    border-left: 3px solid var(--accent-color);
+    background-color: var(--background-color);
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 1.25rem;
+    font-size: 0.88rem;
+    line-height: 1.5;
+}
+
+.disclaimer-section-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.disclaimer-item h4,
+.auspices-disclaimer-section h4 {
+    color: var(--accent-color);
+    margin: 0.5rem 0 0.25rem;
+    font-size: 0.94rem;
+}
+
+.disclaimer-item p,
+.auspices-disclaimer-section p {
+    font-size: 0.86rem;
+    line-height: 1.5;
+    margin: 0;
+    opacity: 0.9;
+}
+
+/* Liturgical Calendar & Canonical Hours Modal */
+.calendar-info-modal-content {
+    max-width: 620px;
+}
+
+.cal-modal-action-box,
+.calendar-modal-action-box {
+    padding: 0.85rem 1rem;
+    border: 1px solid var(--accent-color);
+    border-radius: 8px;
+    background-color: var(--background-color);
+    margin-bottom: 1rem;
+}
+
+.cal-pray-hour-btn,
+.calendar-pray-now-btn {
+    width: auto !important;
+    margin: 0 !important;
+    padding: 0.45rem 0.95rem;
+    border-radius: 999px;
+    border: 1px solid var(--accent-color);
+    background-color: var(--accent-color);
+    color: var(--accent-text-color, #fff);
+    font-size: 0.84rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: opacity 0.2s ease, transform 0.15s ease;
+}
+
+.cal-pray-hour-btn:hover,
+.calendar-pray-now-btn:hover {
+    opacity: 0.92;
+    transform: translateY(-1px);
+}
+
+.cal-hours-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    max-height: 46vh;
+    overflow-y: auto;
+    padding-right: 0.2rem;
+}
+
+.cal-hour-card {
+    padding: 0.65rem 0.85rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--background-color);
+}
+
+.cal-hour-card.active-hour-card {
+    border: 1.5px solid var(--accent-color);
+    background-color: var(--hover-color);
+}
+
+.cal-today-feast-highlight,
+.calendar-feast-highlight-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.9rem;
+    border: 2px solid var(--accent-color);
+    border-radius: 10px;
+    background-color: var(--background-color);
+    margin-bottom: 0.85rem;
+}
+
+.feast-icon-placeholder,
+.calendar-icon-placeholder {
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    border: 1px dashed var(--accent-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    font-size: 0.68rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    text-align: center;
+    padding: 0.35rem;
+}
+
+.feast-today-details {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Miracle Modal Live Voice Detection */
+.miracle-voice-detect-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.45rem 0.85rem;
+    border-radius: 999px;
+    border: 1px solid var(--accent-color);
+    background-color: var(--card-background);
+    color: var(--accent-color);
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.miracle-voice-detect-btn.listening {
+    background-color: var(--accent-color);
+    color: var(--accent-text-color, #fff);
+}
+
+.miracle-live-match-banner {
+    padding: 0.65rem 0.85rem;
+    margin-bottom: 0.75rem;
+    border-radius: 8px;
+    border: 1px solid var(--accent-color);
+    background-color: rgba(212, 175, 55, 0.12);
+}
+
+.miracle-live-banner-header {
+    font-size: 0.78rem;
+    font-weight: 700;
+    margin-bottom: 0.35rem;
+    color: var(--accent-color);
+}
+
+.miracle-live-banner-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.miracle-live-match-chip {
+    padding: 0.3rem 0.65rem;
+    border-radius: 999px;
+    border: 1px solid var(--primary-color);
+    background-color: var(--card-background);
+    color: var(--primary-color);
+    font-size: 0.78rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
 
 
 @media (max-width: 900px) {
@@ -4952,9 +5779,9 @@ body.learning-mode-active .main-content {
 .learning-header-top {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     gap: 0.6rem;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     padding-bottom: 0.6rem;
     border-bottom: 1px solid var(--border-color);
 }
@@ -4968,26 +5795,27 @@ body.learning-mode-active .main-content {
 
 /* Sunday School Class Selector Dropdown */
 .learning-class-selector {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 0.45rem;
-    flex: 1 1 190px;
+    flex: 0 1 auto;
     min-width: 0;
 }
 
 .learning-class-select {
-    width: 100% !important;
-    max-width: 310px;
-    min-width: 0;
+    width: auto !important;
+    max-width: 160px;
+    min-width: 110px;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
 }
 
 .learning-vibe-select {
+    width: auto !important;
     max-width: 175px;
-    font-size: 0.82rem !important;
-    padding: 0.36rem 0.55rem !important;
+    font-size: 0.86rem !important;
+    padding: 0.42rem 0.65rem !important;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
@@ -5289,6 +6117,40 @@ body.learning-mode-active .main-content {
     width: 100%;
     max-width: 100%;
     min-width: 0;
+}
+
+.interlinear-select-nav-row {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex: 1 1 auto;
+    min-width: 0;
+    max-width: 100%;
+}
+
+.learning-nav-arrow-btn {
+    flex: 0 0 auto;
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background: var(--background-color);
+    color: var(--text-color);
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.learning-nav-arrow-btn:hover {
+    background: var(--hover-color);
+    border-color: var(--accent-color);
+    color: var(--accent-color);
 }
 
 .learning-checkbox-label {

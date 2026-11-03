@@ -112,6 +112,10 @@ export const RightSidebar: React.FC = () => {
             <input type="text" id="bride-name-input" placeholder="e.g. Wolete Mariam" />
           </div>
 
+          <label style={{ display: 'block', marginBottom: '0.5rem' }} title="Pre-Liturgy Psalms before the Divine Liturgy (LXX Psalms 24, 60, 101, 102, 129, 130)">
+            <input type="checkbox" id="show-prep-psalms-toggle" /> <span>Pre-Liturgy Psalms | መዝሙር ዘዳዊት ዘቅድመ ቅዳሴ</span>
+          </label>
+
           <label style={{ display: 'block', marginBottom: '0.5rem' }}>
             <input type="checkbox" id="show-matins" /> <span>Morning Prayer | ጸሎተ ነግህ</span>
           </label>

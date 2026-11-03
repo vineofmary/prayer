@@ -161,8 +161,9 @@ class MainActivity : AppCompatActivity() {
         // Audio recitation autoplay permissions
         settings.mediaPlaybackRequiresUserGesture = false
 
-        // Cache configuration for fast offline startup
-        settings.cacheMode = WebSettings.LOAD_DEFAULT
+        // Cache configuration: always load fresh local assets
+        settings.cacheMode = WebSettings.LOAD_NO_CACHE
+        webView.clearCache(true)
 
         // Hardware acceleration
         webView.setLayerType(View.LAYER_TYPE_HARDWARE, null)

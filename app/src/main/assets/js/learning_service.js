@@ -35,14 +35,14 @@
 
     const state = {
         isActive: false,
-        activeTab: 'blitz', // 'blitz' | 'jeopardy' | 'matcher' | 'interlinear'
+        activeTab: 'jeopardy', // 'jeopardy' | 'blitz' | 'matcher' | 'interlinear'
         selectedClassId: 'st_michael', // 'st_kirkos' | 'st_arsema' | 'st_john' | 'st_michael'
         tvProjectionMode: false,
         hdmiConnected: false,
         teamCount: 2,
-        gameTheme: 'default', // 'default' | 'st_john_meadow' | 'creation_sky' | 'oakland_plushy'
+        gameTheme: 'creation_sky', // 'creation_sky' (Heavenly) | 'default' | 'st_john_meadow' | 'oakland_plushy'
         celebrationEffects: true,
-        pendingFx: null, // 'correct' | 'wrong' | 'entry' | null
+        pendingFx: null, // 'correct' | 'wrong' | null
 
         // Interlinear state
         selectedPassageId: 'trinitarian_invocation',
@@ -92,14 +92,6 @@
         blitzSelectedAnswer: null
     };
 
-    function isExternalDisplayConnected() {
-        if (state.hdmiConnected) return true;
-        if (typeof window !== 'undefined' && window.screen && window.screen.isExtended === true) {
-            return true;
-        }
-        return false;
-    }
-
     function getLexicon() {
         if (typeof window !== 'undefined' && window.GeezLexiconService) {
             return window.GeezLexiconService;
@@ -142,9 +134,7 @@
                 if (typeof parsed.gameTheme === 'string') {
                     state.gameTheme = parsed.gameTheme;
                 }
-                if (typeof parsed.celebrationEffects === 'boolean') {
-                    state.celebrationEffects = parsed.celebrationEffects;
-                }
+                state.celebrationEffects = true;
                 if (Array.isArray(parsed.teams) && parsed.teams.length >= 4) state.teams = parsed.teams;
                 if (Array.isArray(parsed.selectedCategoryIds) && parsed.selectedCategoryIds.length >= 3) {
                     state.selectedCategoryIds = parsed.selectedCategoryIds;
@@ -173,6 +163,16 @@
                 selectedCategoryIds: state.selectedCategoryIds
             }));
         } catch (e) {}
+    }
+
+    function isExternalDisplayConnected() {
+        try {
+            if (state.hdmiConnected) return true;
+            if (typeof window !== 'undefined' && window.screen && window.screen.isExtended === true) {
+                return true;
+            }
+        } catch (e) {}
+        return false;
     }
 
     function recordPlayedClueId(clueId) {
@@ -605,32 +605,32 @@
 
         const allowedTabs = (classMeta && Array.isArray(classMeta.allowedTabs))
             ? classMeta.allowedTabs
-            : ['blitz', 'jeopardy', 'matcher', 'interlinear'];
+            : ['jeopardy', 'blitz', 'matcher', 'interlinear'];
         if (!allowedTabs.includes(state.activeTab)) {
-            state.activeTab = allowedTabs[0] || 'blitz';
+            state.activeTab = allowedTabs.includes('jeopardy') ? 'jeopardy' : (allowedTabs[0] || 'blitz');
         }
 
         const classOptionsHtml = lex.SUNDAY_SCHOOL_CLASSES.map(cls => {
             const selAttr = state.selectedClassId === cls.id ? 'selected' : '';
             return '<option value="' + escapeHtml(cls.id) + '" ' + selAttr + '>' +
-                escapeHtml(cls.name) + ' (' + escapeHtml(cls.ageRange) + ')</option>';
+                escapeHtml(cls.ageRange) + '</option>';
         }).join('');
 
         const gameThemeOptionsHtml = [
-            { id: 'default', label: '🎨 Vibe: App Theme' },
-            { id: 'st_john_meadow', label: "🌿 Vibe: St. John's Class" },
-            { id: 'creation_sky', label: '☁️ Vibe: Heavenly Clouds' },
-            { id: 'oakland_plushy', label: '🏛️ Vibe: Oakland Plushy' }
+            { id: 'creation_sky', label: 'Vibe: Heavenly' },
+            { id: 'default', label: 'Vibe: App Theme' },
+            { id: 'st_john_meadow', label: 'Vibe: Matcha' },
+            { id: 'oakland_plushy', label: 'Vibe: Plushy' }
         ].map(th => {
-            const selAttr = (state.gameTheme || 'default') === th.id ? 'selected' : '';
+            const selAttr = (state.gameTheme || 'creation_sky') === th.id ? 'selected' : '';
             return '<option value="' + escapeHtml(th.id) + '" ' + selAttr + '>' + escapeHtml(th.label) + '</option>';
         }).join('');
 
         const allTabs = [
-            { id: 'blitz', label: 'Trivia' },
             { id: 'jeopardy', label: 'Jeopardy' },
-            { id: 'matcher', label: 'Match It' },
-            { id: 'interlinear', label: "Ge'ez Reader" }
+            { id: 'blitz', label: 'Trivia' },
+            { id: 'matcher', label: 'Matchy' },
+            { id: 'interlinear', label: 'Chanty' }
         ];
 
         const tabsNavHtml = allTabs
@@ -657,14 +657,8 @@
         container.innerHTML = `
             <div class="learning-header-bar">
                 <div class="learning-header-top">
-                    <div class="learning-brand">
-                        <button type="button" id="learning-plushy-mascot-btn" class="learning-plushy-mascot-btn" title="Oakland Debre Mewi'e Kidus Michael EOTC — Tap to bounce!" aria-label="Parish Mascot">
-                            <img src="img/oakland_dmkm-eotc.png" alt="Oakland Parish" class="learning-plushy-icon" />
-                        </button>
-                    </div>
-
-                    <div class="learning-class-selector" role="group" aria-label="Select Sunday School Class">
-                        <select id="learning-class-select" class="learning-select learning-class-select" aria-label="Select Sunday School Class">
+                    <div class="learning-class-selector" role="group" aria-label="Select Age Range">
+                        <select id="learning-class-select" class="learning-select learning-class-select" aria-label="Select Age Range">
                             ${classOptionsHtml}
                         </select>
                     </div>
@@ -673,13 +667,7 @@
                         <select id="learning-vibe-select" class="learning-select learning-vibe-select" aria-label="Game Mode Vibe Theme" title="Choose Game Mode Visual Vibe">
                             ${gameThemeOptionsHtml}
                         </select>
-                        <button type="button" id="learning-fx-toggle-btn" class="learning-action-btn learning-fx-toggle-btn ${state.celebrationEffects ? 'active' : ''}" title="${state.celebrationEffects ? 'Answer Animations: ON' : 'Answer Animations: OFF'}" aria-label="Toggle Answer Animations">
-                            🎉
-                        </button>
                         ${tvBtnHtml}
-                        <button type="button" id="learning-exit-btn" class="learning-exit-btn" title="Return to Prayer Reader" aria-label="Exit Learning Mode">
-                            ✕
-                        </button>
                     </div>
                 </div>
 
@@ -775,7 +763,7 @@
         let pedagogicalNote = activePassage.pedagogicalNote;
 
         const prayerList = (typeof prayers !== 'undefined' && Array.isArray(prayers))
-            ? prayers.filter(p => p && p.geez_script && p.english).slice(0, 60)
+            ? prayers.filter(p => p && p.geez_script && p.english).slice(0, 78)
             : [];
 
         if (state.useCustomPrayerStanza && prayerList.length > 0) {
@@ -783,7 +771,9 @@
             headerTitle = (pObj.reference || 'Liturgical Prayer') + ' (Stanza ' + (pObj.stanza || 1) + ')';
             fullEnglish = pObj.english;
             pedagogicalNote = 'Dynamic Interlinear Mode: Tap any Ge\'ez word above to decompose its prefix, root, suffix, and see where else it appears in the Liturgy!';
-            const rawTokens = pObj.geez_script.split(/\s+/).filter(Boolean);
+            const rawTokens = pObj.geez_script
+                .split(/\s+/)
+                .filter(tok => tok && tok.replace(/[፡።፣፤፥፦፧፨"“”'’()[\]:-]/g, '').trim().length > 0);
             wordsToRender = rawTokens.map(tok => {
                 const analyzed = lex.analyzeGeezWord(tok);
                 return {
@@ -796,7 +786,7 @@
         }
 
         const inspected = state.inspectedWordObj;
-        const concordanceList = inspected ? lex.findWordConcordance(inspected.geez, 4) : [];
+        const concordanceList = inspected ? lex.findWordConcordance(inspected.geez, 6) : [];
 
         const curatedOptionsHtml = passages.map(p => {
             const selAttr = (!state.useCustomPrayerStanza && state.selectedPassageId === p.id) ? 'selected' : '';
@@ -874,7 +864,7 @@
                     </div>
 
                     <div class="inspector-concordance-col">
-                        <h4>Where Else Do We Pray "<span class="ethiopic-label">${escapeHtml(inspected.geez)}</span>"? (${concordanceList.length} matches)</h4>
+                        <h4>Where Else Do We Pray "<span class="ethiopic-label">${escapeHtml(inspected.geez)}</span>"?</h4>
                         ${concordanceSectionHtml}
                     </div>
                 </div>
@@ -885,13 +875,17 @@
             <div class="interlinear-workspace">
                 <div class="interlinear-toolbar">
                     <div class="interlinear-selector-group">
-                        <label for="interlinear-passage-select"><strong>Select Prayer Passage:</strong></label>
-                        <select id="interlinear-passage-select" class="learning-select">
-                            <optgroup label="Curated Word-by-Word Passages">
-                                ${curatedOptionsHtml}
-                            </optgroup>
-                            ${customOptionsGroupHtml}
-                        </select>
+                        <label for="interlinear-passage-select"><strong>Select Prayer:</strong></label>
+                        <div class="interlinear-select-nav-row">
+                            <button type="button" id="interlinear-prev-btn" class="learning-nav-arrow-btn" aria-label="Previous prayer" title="Previous Prayer">&#8592;</button>
+                            <select id="interlinear-passage-select" class="learning-select">
+                                <optgroup label="Curated Word-by-Word Passages">
+                                    ${curatedOptionsHtml}
+                                </optgroup>
+                                ${customOptionsGroupHtml}
+                            </select>
+                            <button type="button" id="interlinear-next-btn" class="learning-nav-arrow-btn" aria-label="Next prayer" title="Next Prayer">&#8594;</button>
+                        </div>
                     </div>
 
                     <div class="interlinear-toggles-group">
@@ -972,8 +966,8 @@
         }).join('');
 
         const bannerContentHtml = isAllSolved
-            ? '<strong>🎉 Blessed Work (' + escapeHtml(classMeta.name) + ')!</strong> You matched all ' + totalPairs + ' liturgical terms! Tap "Shuffle New Round" to keep practicing!'
-            : '<strong>Liturgical Insight:</strong> ' + escapeHtml(state.lastMatchedNote);
+            ? '<strong>🎉 Blessed Work (' + escapeHtml(classMeta.ageRange) + ')!</strong> You matched all ' + totalPairs + ' liturgical terms! Tap "Shuffle New Round" to keep practicing!'
+            : '<strong>Instructions:</strong> ' + escapeHtml(state.lastMatchedNote);
 
         return `
             <div class="matcher-workspace">
@@ -983,14 +977,14 @@
 
                 <div class="matcher-board-columns">
                     <div class="matcher-column">
-                        <h3 class="matcher-col-title ethiopic-label">ግእዝ (Ge'ez Script)</h3>
+                        <h3 class="matcher-col-title ethiopic-label">ግእዝ (Ge'ez)</h3>
                         <div class="matcher-cards-stack">
                             ${leftCardsHtml}
                         </div>
                     </div>
 
                     <div class="matcher-column">
-                        <h3 class="matcher-col-title">English Meaning ${state.showMatcherPhonetics ? '&amp; Phonetics' : ''}</h3>
+                        <h3 class="matcher-col-title">English</h3>
                         <div class="matcher-cards-stack">
                             ${rightCardsHtml}
                         </div>
@@ -999,7 +993,7 @@
 
                 <div class="game-top-controls matcher-bottom-controls">
                     <div class="game-pack-selector">
-                        <label for="matcher-pack-select"><strong>Vocabulary Pack:</strong></label>
+                        <label for="matcher-pack-select"><strong>Vocab Pack:</strong></label>
                         <select id="matcher-pack-select" class="learning-select">
                             ${packOptionsHtml}
                         </select>
@@ -1465,6 +1459,28 @@
         }
 
         const passageSelect = container.querySelector('#interlinear-passage-select');
+        const stepInterlinearPassage = (delta) => {
+            if (!passageSelect) return;
+            const options = Array.from(passageSelect.options).map(o => o.value).filter(Boolean);
+            if (options.length === 0) return;
+            const currentVal = state.useCustomPrayerStanza
+                ? ('custom_' + state.customPrayerIndex)
+                : state.selectedPassageId;
+            let idx = options.indexOf(currentVal);
+            if (idx < 0) idx = 0;
+            const nextIdx = (idx + delta + options.length) % options.length;
+            const nextVal = options[nextIdx];
+            if (nextVal.startsWith('custom_')) {
+                state.useCustomPrayerStanza = true;
+                state.customPrayerIndex = parseInt(nextVal.replace('custom_', ''), 10) || 0;
+            } else {
+                state.useCustomPrayerStanza = false;
+                state.selectedPassageId = nextVal;
+            }
+            state.inspectedWordObj = null;
+            renderLearningView();
+        };
+
         if (passageSelect) {
             passageSelect.addEventListener('change', () => {
                 const val = passageSelect.value;
@@ -1478,6 +1494,16 @@
                 state.inspectedWordObj = null;
                 renderLearningView();
             });
+        }
+
+        const prevPassageBtn = container.querySelector('#interlinear-prev-btn');
+        if (prevPassageBtn) {
+            prevPassageBtn.addEventListener('click', () => stepInterlinearPassage(-1));
+        }
+
+        const nextPassageBtn = container.querySelector('#interlinear-next-btn');
+        if (nextPassageBtn) {
+            nextPassageBtn.addEventListener('click', () => stepInterlinearPassage(1));
         }
 
         const interPhonToggle = container.querySelector('#interlinear-phonetics-toggle');
@@ -1547,7 +1573,9 @@
                 evaluateMatcherSelection();
                 renderLearningView();
             });
-        });
+        }
+
+        );
 
         const scramblePackSelect = container.querySelector('#scramble-pack-select');
         if (scramblePackSelect) {
@@ -1830,6 +1858,21 @@
             headerBtn.classList.toggle('learning-header-active', state.isActive);
         }
 
+        document.querySelectorAll('.primary-nav-tab, .header-nav-tab, .bottom-nav-item').forEach(btn => {
+            const navTarget = btn.getAttribute('data-nav-tab');
+            if (!navTarget) return;
+            if (state.isActive) {
+                btn.classList.toggle('active', navTarget === 'learn');
+            } else if (!document.body.classList.contains('targuma-mode-active')) {
+                const fallbackTab = (typeof activePrimaryTab !== 'undefined' && (activePrimaryTab === 'pray' || activePrimaryTab === 'liturgy')) ? activePrimaryTab : 'pray';
+                btn.classList.toggle('active', navTarget === fallbackTab);
+            }
+        });
+        const floatingEl = document.getElementById('prayer-floating-controls');
+        if (floatingEl) {
+            floatingEl.style.display = (state.isActive || document.body.classList.contains('targuma-mode-active')) ? 'none' : 'flex';
+        }
+
         if (state.isActive) {
             if (!state.matcherCards || !state.matcherCards.left || state.matcherCards.left.length === 0) {
                 initMatcherRound();
@@ -1855,7 +1898,7 @@
     function initLearningFeature() {
         loadLearningSettings();
         const headerBtn = document.getElementById('learning-mode-toggle-header');
-        if (headerBtn && !headerBtn.dataset.learningBound) {
+        if (headerBtn && !headerBtn.dataset.learningBound && !headerBtn.classList.contains('primary-nav-tab') && !headerBtn.classList.contains('header-nav-tab')) {
             headerBtn.dataset.learningBound = 'true';
             headerBtn.addEventListener('click', () => {
                 toggleLearningMode();
@@ -1864,6 +1907,8 @@
     }
 
     const LearningServiceAPI = {
+        get isLearningMode() { return state.isActive; },
+        exitLearningMode: () => toggleLearningMode(false),
         toggleLearningMode,
         initLearningFeature,
         buildProceduralJeopardyBoard,
@@ -1876,6 +1921,7 @@
     if (typeof window !== 'undefined') {
         window.toggleLearningMode = toggleLearningMode;
         window.initLearningFeature = initLearningFeature;
+        window.learningService = LearningServiceAPI;
         window.MountOfMercyLearning = LearningServiceAPI;
     }
 

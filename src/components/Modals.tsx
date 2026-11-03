@@ -231,13 +231,14 @@ export const Modals: React.FC = () => {
 
           <div className="modal-tabs help-tabs">
             <button className="help-tab-btn active" data-tab="general">General</button>
+            <button className="help-tab-btn" data-tab="auspices">Disclaimers</button>
             <button className="help-tab-btn" data-tab="translations">Translations</button>
             <button className="help-tab-btn" data-tab="beta">Feedback</button>
           </div>
 
           <div className="help-tab-content">
             <div id="help-general" className="help-pane active">
-              <p>This web app is designed to aid Orthodox Christians and catachumens towards a life of unceasing prayer. It provides access to essential daily prayers and the Divine Liturgy (Kidasé) in multiple languages, including Amharic, English, Ge'ez, Spanish, and Tigrinya with phonetic transliterations to assist in learning and pronunciation.</p>
+              <p>This web app is designed to aid Orthodox Christians and catechumens towards a life of unceasing prayer. It provides access to essential daily prayers and the Divine Liturgy (Kidasé) in multiple languages, including Amharic, English, Ge'ez, Spanish, and Tigrinya with phonetic transliterations to assist in learning and pronunciation.</p>
               <h3>📱 Install App to Your Phone</h3>
               <p>For easy access and offline use, you can install this web app to your mobile home screen:</p>
               <ul>
@@ -255,6 +256,97 @@ export const Modals: React.FC = () => {
                 </li>
                 <li><strong>Safari (macOS):</strong> Go to "File" in the menu bar and select "Add to Dock".</li>
               </ul>
+            </div>
+
+            <div id="help-auspices" className="help-pane">
+              <h3>⛪ Church Hierarchy</h3>
+              <p style={{ fontSize: '0.9rem', opacity: 0.9, lineHeight: 1.5 }}>
+                <strong>Mount of Mercy (ደብረ ምሕረት)</strong> is prepared and maintained by servants of the <strong>Foundation of Life Sunday School (መሰረተ ሕይወት የሰንበት ትምህርት ቤት)</strong> at <strong>Oakland Debre Mihret Saint Michael Ethiopian Orthodox Tewahedo Church (DMKM EOTC)</strong>. We serve within the canonical hierarchy of the EOTC:
+              </p>
+
+              <div className="hierarchy-cards-grid">
+                <div className="hierarchy-card">
+                  <div className="hierarchy-portrait-wrap">
+                    <img src="/img/Mary-with-her-beloved-Son.svg" alt="Placeholder Icon — His Holiness Abune Mathias I" className="hierarchy-portrait-img" />
+                    <span className="hierarchy-photo-badge">Photo coming soon</span>
+                  </div>
+                  <div className="hierarchy-card-title">His Holiness Abune Mathias I</div>
+                  <div className="hierarchy-card-role">Patriarch of Ethiopia, Archbishop of Axum, and Echege of the See of St. Tekle Haymanot</div>
+                </div>
+
+                <div className="hierarchy-card">
+                  <div className="hierarchy-portrait-wrap">
+                    <img src="/img/Mary-with-her-beloved-Son.svg" alt="Placeholder Icon — His Grace Archbishop Abune Theophilus" className="hierarchy-portrait-img" />
+                    <span className="hierarchy-photo-badge">Photo coming soon</span>
+                  </div>
+                  <div className="hierarchy-card-title">His Grace Abune Theophilus</div>
+                  <div className="hierarchy-card-role">Archbishop of the Diocese of Northern California, Nevada, and Arizona</div>
+                </div>
+
+                <div className="hierarchy-card">
+                  <div className="hierarchy-portrait-wrap">
+                    <img src="/img/Mary-with-her-beloved-Son.svg" alt="Placeholder Icon — Parish Qomos" className="hierarchy-portrait-img" />
+                    <span className="hierarchy-photo-badge">Photo coming soon</span>
+                  </div>
+                  <div className="hierarchy-card-title">Qomos Abba Tesfa-Maryam</div>
+                  <div className="hierarchy-card-role">Administrator and Archpriest of Oakland DMKM EOTC</div>
+                </div>
+              </div>
+
+              <div className="spiritual-father-attribution-box">
+                This service is made with love for the glory of God and His saints under the spiritual guidance of <strong>Liqe Siyuman Kesis Nebiyou Elias Abebe</strong>.
+              </div>
+
+              <hr className="settings-divider" style={{ margin: '1.25rem 0' }} />
+
+              <h3>⚖️ Copyright &amp; Disclaimer</h3>
+              <p style={{ fontSize: '0.88rem', opacity: 0.85 }}>
+                This section explains the ecclesial standing of Mount of Mercy, where its content comes from, and how it is offered to the faithful.
+              </p>
+
+              <div className="disclaimer-section-list">
+                <div className="disclaimer-item">
+                  <h4>1. Representation of Hierarchy &amp; Not an Official Synod Publication</h4>
+                  <p>
+                    The names and portraits of His Holiness the Patriarch, His Grace the Diocesan Archbishop, and the Qomos of our parish are displayed solely to honor and communicate the canonical hierarchy and auspices under which our parish and Sunday School operate. Their inclusion does <strong>not</strong> constitute a formal endorsement, certification, or official publication of this software application by the Holy Synod of the Ethiopian Orthodox Tewahedo Church.
+                  </p>
+                </div>
+
+                <div className="disclaimer-item">
+                  <h4>2. Spiritual Guidance &amp; Rule of Prayer</h4>
+                  <p>
+                    Mount of Mercy is an independent parish Sunday School service project. Nothing in this app replaces the liturgical life of the Church or the personal guidance of a priest. When establishing a personal rule of prayer, fasting, or Psalm recitation, please consult your priest or father of confession (<i>Yenisiha Abat</i>).
+                  </p>
+                </div>
+
+                <div className="disclaimer-item">
+                  <h4>3. Texts of the Church &amp; Working Translations</h4>
+                  <p>
+                    The Daily Prayers, Praise of Mary (<i>Widase Maryam</i>), Book of Hours (<i>Tselote Se&apos;atat</i>), Psalter (<i>Mezmure Dawit</i>), and Divine Liturgy (<i>Kidase</i>) are the sacred heritage of the Ethiopian Orthodox Tewahedo Church. While Ge&apos;ez and traditional Amharic/Tigrinya texts follow published Church editions, the accompanying English and Spanish translations and phonetic transliterations are offered for prayer and catechetical study and make no claim to final synodal critical-edition status.
+                  </p>
+                </div>
+
+                <div className="disclaimer-item">
+                  <h4>4. Calendar, Liturgical Hours &amp; Feast Dates</h4>
+                  <p>
+                    Dates for Ethiopian months, feasts, fasts, and liturgical hours are calculated algorithmically according to the traditional Ethiopic computation (<i>Bahire Hasab</i>). If any calculated date or commemoration differs from what your local parish or the Holy Synod announces, always follow the Church&apos;s announcement.
+                  </p>
+                </div>
+
+                <div className="disclaimer-item">
+                  <h4>5. AI Translations &amp; Live Captions (Targuma Mode)</h4>
+                  <p>
+                    Live sermon transcriptions, translations, and Miracle of Mary suggestions generated by AI in Targuma Mode may contain errors or omissions. They are not official teachings of the Ethiopian Orthodox Tewahedo Church and do not replace the instruction of the clergy.
+                  </p>
+                </div>
+
+                <div className="disclaimer-item">
+                  <h4>6. Non-Commercial Service &amp; Contact</h4>
+                  <p>
+                    Mount of Mercy is 100% free and non-commercial, with no advertisements or subscriptions. If you notice any textual error or have questions regarding attributions, please use the <strong>Feedback</strong> tab or email <strong>KidaseCreator@gmail.com</strong>.
+                  </p>
+                </div>
+              </div>
             </div>
 
             <div id="help-translations" className="help-pane">
@@ -578,8 +670,27 @@ export const Modals: React.FC = () => {
           <h2 style={{ marginBottom: '0.5rem', fontFamily: "'Aboriginal Serif', serif", textAlign: 'center' }}>
             Miracle of Mary | ተአምረ ማርያም
           </h2>
-          <div style={{ marginBottom: '1rem' }}>
-            <input type="text" id="miracle-search-input" className="settings-select" placeholder="Search by title or incipit..." style={{ width: '100%', padding: '0.5rem', boxSizing: 'border-box', marginBottom: '0.5rem' }} />
+          <div style={{ marginBottom: '0.75rem' }}>
+            <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '0.5rem' }}>
+              <input
+                type="text"
+                id="miracle-search-input"
+                className="settings-select"
+                placeholder="Search by any words in English, Amharic, or Ge'ez..."
+                style={{ flex: 1, padding: '0.5rem', boxSizing: 'border-box', margin: 0 }}
+              />
+              <button
+                type="button"
+                id="miracle-voice-detect-btn"
+                className="settings-button miracle-voice-detect-btn"
+                title="Listen to the reader and automatically identify the Miracle of Mary story"
+                style={{ width: 'auto', margin: 0, padding: '0.45rem 0.75rem', whiteSpace: 'nowrap', display: 'flex', alignItems: 'center', gap: '0.35rem' }}
+              >
+                <span aria-hidden="true">🎙️</span>
+                <span id="miracle-voice-detect-label">Identify by Voice</span>
+              </button>
+            </div>
+            <div id="miracle-voice-status" className="miracle-voice-status hidden"></div>
             <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.9rem' }}>
               <input type="checkbox" id="miracle-most-read-toggle" defaultChecked />
               Show only stories most read in church
@@ -587,6 +698,15 @@ export const Modals: React.FC = () => {
           </div>
           <div id="miracle-count-text" style={{ fontSize: '0.85rem', opacity: 0.8, marginBottom: '0.5rem', textAlign: 'right' }}></div>
           <div id="miracle-list-container" style={{ overflowY: 'auto', flexGrow: 1, border: '1px solid var(--border-color)', borderRadius: '4px', padding: '0.5rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}></div>
+        </div>
+      </div>
+
+      {/* Liturgical Hour & Ethiopian Calendar Info Modal */}
+      <div id="calendar-info-modal" className="modal">
+        <div className="modal-content calendar-info-modal-content" style={{ maxWidth: '620px', maxHeight: '84vh', overflowY: 'auto' }}>
+          <span className="close-button" id="close-calendar-info-modal">&times;</span>
+          <h2 id="calendar-info-title" style={{ marginTop: 0, marginBottom: '0.65rem', color: 'var(--accent-color)' }}></h2>
+          <div id="calendar-info-body"></div>
         </div>
       </div>
 
