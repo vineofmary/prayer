@@ -2976,7 +2976,6 @@ async function loadSettings() {
     populatePsalmSelector();
     renderPsalmCombinationsModal();
     populateProphetSongsSelector();
-    renderPrayers();
 }
 
 function checkAndEnforceLayoutRules() {
@@ -6468,12 +6467,24 @@ async function renderPrayers() {
     isRendering = true;
 
     try {
+        if (prayerDisplay && prayerDisplay.children.length === 0) {
+            _renderPrayersSync();
+        }
+
+        await ensureActiveBibleDataLoaded();
+
         if (useExternalBibleAPI && window.WeahaduBibleService) {
             const refsToPreload = [];
-            for (const key in kidaseLectionaryRefs) {
-                refsToPreload.push(kidaseLectionaryRefs[key]);
+            if (isKidaseModeActive) {
+                for (const key in kidaseLectionaryRefs) {
+                    if (!showMatins && (key === 'morningPsalm' || key === 'morningGospel')) continue;
+                    if (!showVespers && (key === 'vespersPsalm' || key === 'vespersGospel')) continue;
+                    if (kidaseLectionaryRefs[key]) {
+                        refsToPreload.push(kidaseLectionaryRefs[key]);
+                    }
+                }
             }
-            if (typeof selectedProphetSongs !== 'undefined') {
+            if (typeof selectedProphetSongs !== 'undefined' && selectedProphetSongs.length > 0) {
                 selectedProphetSongs.forEach(songKey => {
                     const song = typeof prophetSongs !== 'undefined' ? prophetSongs.find(s => s.key === songKey) : null;
                     const engSongRef = song?.refs?.kjv || song?.refs?.nkjv;
@@ -6493,8 +6504,8 @@ async function renderPrayers() {
                     }
                 });
             }
-            if (typeof BIBLE_BOOK_MAPPING !== 'undefined') {
-                 refsToPreload.push("Psalms 1:1");
+            if (typeof BIBLE_BOOK_MAPPING !== 'undefined' && ((selectedPsalms && selectedPsalms.length > 0) || (isKidaseModeActive && showPrepPsalms))) {
+                refsToPreload.push("Psalms 1:1");
             }
             if (showSeatatReadings && selectedSeatatLectionaryDay !== 'None' && typeof SEATAT_LECTIONARY_DATA !== 'undefined' && SEATAT_LECTIONARY_DATA[selectedSeatatLectionaryDay]) {
                 SEATAT_LECTIONARY_DATA[selectedSeatatLectionaryDay].forEach(r => {
@@ -6506,27 +6517,52 @@ async function renderPrayers() {
                     }
                 });
             }
-            const langsToPreload = new Set(['en-kjv', 'am-2000', 'am54', 'gez-1980', 'gez-1980-formatted', 'ti-1997']);
-            if (globalAmharicTranslation) langsToPreload.add(globalAmharicTranslation);
-            if (globalGeezTranslation) langsToPreload.add(globalGeezTranslation);
+
+            const langsToPreload = new Set();
+            const wantEng = Boolean(displayedLanguages.english);
+            const wantAm = Boolean(displayedLanguages.amharic_script || displayedLanguages.amharic_phonetic);
+            const wantGez = Boolean(displayedLanguages.geez_script || displayedLanguages.geez_phonetic);
+            const wantTi = Boolean(displayedLanguages.tigrinya_script || displayedLanguages.tigrinya_phonetic);
+
+            if (wantEng) {
+                langsToPreload.add('en-kjv');
+            }
+            if (wantAm) {
+                langsToPreload.add(globalAmharicTranslation || 'am54');
+            }
+            if (wantGez) {
+                langsToPreload.add('gez-1980');
+                langsToPreload.add('gez-1980-formatted');
+                if (globalGeezTranslation) langsToPreload.add(globalGeezTranslation);
+            }
+            if (wantTi) {
+                langsToPreload.add('ti-1997');
+            }
             if (readingTranslationOverrides) {
                 Object.values(readingTranslationOverrides).forEach(ov => {
-                    if (ov && ov.amharic) langsToPreload.add(ov.amharic);
-                    if (ov && ov.geez) langsToPreload.add(ov.geez);
+                    if (wantAm && ov && ov.amharic) langsToPreload.add(ov.amharic);
+                    if (wantGez && ov && ov.geez) langsToPreload.add(ov.geez);
                 });
             }
-            await WeahaduBibleService.preloadBooks(Array.from(langsToPreload), refsToPreload);
+
+            if (langsToPreload.size > 0 && refsToPreload.length > 0) {
+                await WeahaduBibleService.preloadBooks(Array.from(langsToPreload), refsToPreload);
+            }
         }
     } catch (e) {
         console.error("Failed to preload Weahadu books", e);
     }
-    
-    _renderPrayersSync();
-    
-    isRendering = false;
-    if (pendingRender) {
-        pendingRender = false;
-        renderPrayers();
+
+    try {
+        _renderPrayersSync();
+    } catch (err) {
+        console.error("Error during _renderPrayersSync:", err);
+    } finally {
+        isRendering = false;
+        if (pendingRender) {
+            pendingRender = false;
+            renderPrayers();
+        }
     }
 }
 
@@ -7867,8 +7903,30 @@ function collapseSidebar() {
 }
 
 // --- Psalm Functions ---
-async function loadBibleData() {
-    const loadFile = async (url, key) => {
+const BIBLE_FILE_SOURCES = {
+    nkjv: 'bible/NKJV_New_King_James_English_Bible_1982AD.json',
+    kjv: 'bible/KJV_King_James_English_Bible.json',
+    am54: 'bible/አም54_Haile_Selassie_Amharic_Bible_1962AD_1954EC.json',
+    rgv: 'bible/RGV_Reina_Valera_Gomez_Bible_2010AD.json',
+    geez_psalms: 'bible/ግእዝ_Psalms_1-151_with_Songs_of_the_Prophets.json',
+    coptic: 'bible/COPTIC2025_Psalms_Bohairic_Coptic_Scriptorium_Corpora_2025.json'
+};
+
+const _bibleFileLoadPromises = {};
+
+async function loadSingleBibleFile(key) {
+    if (bibleData[key]) return true;
+    if (key === 'am54' && window.WeahaduBibleService && window.WeahaduBibleService.am54Raw) {
+        bibleData.am54 = window.WeahaduBibleService.am54Raw;
+        return true;
+    }
+    if (_bibleFileLoadPromises[key]) {
+        return await _bibleFileLoadPromises[key];
+    }
+    const url = BIBLE_FILE_SOURCES[key];
+    if (!url) return false;
+
+    _bibleFileLoadPromises[key] = (async () => {
         try {
             const response = await fetch(url);
             if (!response.ok) {
@@ -7876,44 +7934,81 @@ async function loadBibleData() {
             }
             const data = await response.json();
             bibleData[key] = (typeof data === 'string') ? JSON.parse(data) : data;
-            
-            // Clean up RGV text formatting
-            if (key === 'rgv' && bibleData[key].verses) {
+
+            if (key === 'am54' && window.WeahaduBibleService) {
+                window.WeahaduBibleService.am54Raw = bibleData.am54;
+            }
+            if (key === 'geez_psalms' && window.WeahaduBibleService) {
+                window.WeahaduBibleService.geezPsalmsFormattedRaw = bibleData.geez_psalms;
+            }
+
+            // Clean up RGV text formatting once at load time
+            if (key === 'rgv' && bibleData[key] && bibleData[key].verses) {
                 bibleData[key].verses.forEach(v => {
                     if (v.text) {
                         v.text = v.text.replace(/[‹›]/g, '').replace(/\[(.*?)\]/g, '<i>$1</i>');
                     }
                 });
             }
-            
+
             console.log(`${key} Bible data loaded successfully.`);
             return true;
         } catch (error) {
             console.error(`Failed to load ${key} Bible data from ${url}:`, error);
             bibleData[key] = null;
             return false;
+        } finally {
+            delete _bibleFileLoadPromises[key];
         }
-    };
+    })();
 
-    const results = await Promise.all([
-        loadFile('bible/NKJV_New_King_James_English_Bible_1982AD.json', 'nkjv'),
-        loadFile('bible/KJV_King_James_English_Bible.json', 'kjv'),
-        loadFile('bible/አም54_Haile_Selassie_Amharic_Bible_1962AD_1954EC.json', 'am54'),
-        loadFile('bible/RGV_Reina_Valera_Gomez_Bible_2010AD.json', 'rgv'),
-        loadFile('bible/ግእዝ_Psalms_1-151_with_Songs_of_the_Prophets.json', 'geez_psalms'),
-        loadFile('bible/COPTIC2025_Psalms_Bohairic_Coptic_Scriptorium_Corpora_2025.json', 'coptic')
-        //        loadFile('bible/ግእዝ1988_Psalms_1-150_Geez_Bible_1988AD_1980EC_Corrected_Formatted.json', 'geez_psalms')
-    ]);
+    return await _bibleFileLoadPromises[key];
+}
 
-    if (bibleData.nkjv && !bibleData.kjv) bibleData.kjv = bibleData.nkjv;
-    if (bibleData.kjv && !bibleData.nkjv) bibleData.nkjv = bibleData.kjv;
-    if (results.some(res => res === true)) {
-        bibleData.loaded = true;
-        refreshLectionaryPickers(); // Sync all pickers with actual counts
-    } else {
-        bibleData.loaded = false;
-        console.error("All Bible data files failed to load.");
+async function ensureActiveBibleDataLoaded() {
+    const keysToLoad = new Set(['geez_psalms']);
+
+    const needsEnglish = Boolean(displayedLanguages.english);
+    if (needsEnglish) {
+        let wantKjv = (globalEnglishTranslation === 'kjv');
+        let wantNkjv = (globalEnglishTranslation !== 'kjv');
+        if (readingTranslationOverrides) {
+            Object.values(readingTranslationOverrides).forEach(ov => {
+                if (ov && ov.english === 'kjv') wantKjv = true;
+                if (ov && ov.english === 'nkjv') wantNkjv = true;
+            });
+        }
+        if (wantNkjv) keysToLoad.add('nkjv');
+        if (wantKjv) keysToLoad.add('kjv');
+        if (!wantNkjv && !wantKjv) keysToLoad.add('nkjv');
     }
+
+    if (displayedLanguages.amharic_script || displayedLanguages.amharic_phonetic) {
+        keysToLoad.add('am54');
+    }
+    if (displayedLanguages.spanish || displayedLanguages.spanish_pr) {
+        keysToLoad.add('rgv');
+    }
+    if (displayedLanguages.coptic) {
+        keysToLoad.add('coptic');
+    }
+
+    // Load sequentially so mobile Safari never holds multiple un-GC'd multi-MB JSON strings at once
+    const results = [];
+    for (const k of keysToLoad) {
+        results.push(await loadSingleBibleFile(k));
+    }
+
+    if (results.some(res => res === true) || bibleData.geez_psalms || bibleData.nkjv || bibleData.kjv) {
+        bibleData.loaded = true;
+        refreshLectionaryPickers();
+    } else if (!bibleData.loaded) {
+        bibleData.loaded = false;
+    }
+}
+
+async function loadBibleData() {
+    await ensureActiveBibleDataLoaded();
 }
 
 function refreshLectionaryPickers() {
@@ -8087,6 +8182,71 @@ function populateProphetSongsSelector() {
     updateProphetSongsSummary();
 }
 
+// WeakMap cache so we never re-flatten 81-book Bibles on every renderPrayers() call
+const _psalmsChapterIndexCache = new WeakMap();
+
+function getIndexedPsalmsForBible(data, formatType) {
+    if (!data || typeof data !== 'object') return new Map();
+    if (_psalmsChapterIndexCache.has(data)) {
+        return _psalmsChapterIndexCache.get(data);
+    }
+
+    const byChapter = new Map();
+    const pushVerse = (chNum, verseObj) => {
+        const c = Number(chNum);
+        if (!byChapter.has(c)) byChapter.set(c, []);
+        byChapter.get(c).push(verseObj);
+    };
+
+    if (formatType === 'nkjv' && Array.isArray(data)) {
+        for (let i = 0; i < data.length; i++) {
+            const v = data[i];
+            if (v && v.book === 19) {
+                pushVerse(v.chapter, v);
+            }
+        }
+    } else if (formatType === 'am54' && data.books && Array.isArray(data.books)) {
+        const psalmsBook = data.books.find(b => b.title === 'መዝሙረ ዳዊት');
+        if (psalmsBook && Array.isArray(psalmsBook.chapters)) {
+            for (const ch of psalmsBook.chapters) {
+                const chNum = Number(ch.chapter);
+                const verses = ch.verses || [];
+                for (let idx = 0; idx < verses.length; idx++) {
+                    pushVerse(chNum, {
+                        book: 'መዝሙረ ዳዊት',
+                        chapter: chNum,
+                        verse: idx + 1,
+                        text: verses[idx]
+                    });
+                }
+            }
+        }
+    } else if (formatType === 'rgv' && data.verses && Array.isArray(data.verses)) {
+        for (let i = 0; i < data.verses.length; i++) {
+            const v = data.verses[i];
+            if (v && v.book_name === 'Salmos') {
+                pushVerse(v.chapter, v);
+            }
+        }
+    } else if (formatType === 'weahadu' && data.chapters && Array.isArray(data.chapters)) {
+        for (const ch of data.chapters) {
+            const chNum = Number(ch.n);
+            const verses = ch.verses || [];
+            for (let i = 0; i < verses.length; i++) {
+                const v = verses[i];
+                pushVerse(chNum, {
+                    chapter: chNum,
+                    verse: parseInt(v.n, 10),
+                    text: v.t
+                });
+            }
+        }
+    }
+
+    _psalmsChapterIndexCache.set(data, byChapter);
+    return byChapter;
+}
+
 function renderSelectedPsalmsWithDoxology(addSectionTitleCallback, customPsalmsList = null) {
     const psalmsToRender = customPsalmsList || selectedPsalms;
     if (psalmsToRender.length === 0 || !bibleData.loaded) return;
@@ -8095,73 +8255,58 @@ function renderSelectedPsalmsWithDoxology(addSectionTitleCallback, customPsalmsL
     const amOverride = getReadingTranslationOverride('psalmsOfDavid', 'amharic');
     const geezOverride = getReadingTranslationOverride('psalmsOfDavid', 'geez');
 
-    const getVerses = (data, isStructured) => {
-        if (!data) return [];
-        if (isStructured) {
-            if (data.books && Array.isArray(data.books)) {
-                return data.books.flatMap(book =>
-                    book.chapters ? book.chapters.flatMap(ch => (ch.verses || []).map((verseText, index) => ({
-                        book: book.title,
-                        chapter: ch.chapter,
-                        verse: index + 1,
-                        text: verseText
-                    }))) : []
-                );
-            }
-            if (data.verses && Array.isArray(data.verses)) {
-                return data.verses;
-            }
-        }
-        return Array.isArray(data) ? data : [];
-    };
+    const wantEnglish = Boolean(displayedLanguages.english);
+    const wantAmharic = Boolean(displayedLanguages.amharic_script || displayedLanguages.amharic_phonetic);
+    const wantSpanish = Boolean(displayedLanguages.spanish || displayedLanguages.spanish_pr);
+    const wantTigrinya = Boolean(displayedLanguages.tigrinya_script || displayedLanguages.tigrinya_phonetic);
+    const wantGeez = Boolean(displayedLanguages.geez_script || displayedLanguages.geez_phonetic);
+    const wantCoptic = Boolean(displayedLanguages.coptic);
 
     const selectedEngBible = engOverride === 'kjv'
         ? (bibleData.kjv || bibleData.nkjv)
         : (bibleData.nkjv || bibleData.kjv);
-    const nkjvVersesAll = getVerses(selectedEngBible, false);
-    const am54VersesAll = getVerses(bibleData.am54, true);
-    const rgvVersesAll = getVerses(bibleData.rgv, true);
-    const geezPsalmsAll = getVerses(bibleData.geez_psalms, true);
-    const copticPsalmsAll = getVerses(bibleData.coptic, true);
 
-    const psalmBookData = {
-        kjv: { name: 19, bookKey: "book" },
-        nkjv: { name: 19, bookKey: "book" },
-        am54: { name: 'መዝሙረ ዳዊት', bookKey: 'book' },
-        rgv: { name: 'Salmos', bookKey: 'book_name' }
-    };
+    let nkjvByChapter = wantEnglish
+        ? getIndexedPsalmsForBible(selectedEngBible, 'nkjv')
+        : getIndexedPsalmsForBible(bibleData.nkjv || bibleData.kjv, 'nkjv');
+    const am54ByChapter = wantAmharic ? getIndexedPsalmsForBible(bibleData.am54, 'am54') : new Map();
+    const rgvByChapter = wantSpanish ? getIndexedPsalmsForBible(bibleData.rgv, 'rgv') : new Map();
+    const geezPsalmsAll = Array.isArray(bibleData.geez_psalms) ? bibleData.geez_psalms : [];
+    const copticPsalmsAll = (wantCoptic && Array.isArray(bibleData.coptic)) ? bibleData.coptic : [];
 
-    let nkjvPsalms = nkjvVersesAll.filter(v => v[psalmBookData.nkjv.bookKey] === psalmBookData.nkjv.name);
-    let am54Psalms = am54VersesAll.filter(v => v[psalmBookData.am54.bookKey] === psalmBookData.am54.name);
-    let rgvPsalms = rgvVersesAll.filter(v => v[psalmBookData.rgv.bookKey] === psalmBookData.rgv.name);
-
-    let tigrinyaPsalms = [];
-    let am2000Psalms = [];
-    let gezWeahaduPsalms = [];
-    let gezLudolfPsalms = [];
+    let tigrinyaByChapter = new Map();
+    let am2000ByChapter = new Map();
+    let gezWeahaduByChapter = new Map();
+    let gezLudolfByChapter = new Map();
 
     if (useExternalBibleAPI && window.WeahaduBibleService && WeahaduBibleService.canon) {
-        if (engOverride === 'kjv') {
+        if (wantEnglish && engOverride === 'kjv') {
             const weahaduNkjv = WeahaduBibleService.cache.get('en-kjv-19-psalms.json');
             if (weahaduNkjv) {
-                nkjvPsalms = weahaduNkjv.chapters.flatMap(ch => ch.verses.map(v => ({ chapter: ch.n, verse: parseInt(v.n), text: v.t })));
+                nkjvByChapter = getIndexedPsalmsForBible(weahaduNkjv, 'weahadu');
             }
         }
-        const weahaduAm = WeahaduBibleService.cache.get('am-2000-19-psalms.json');
-        if (weahaduAm) {
-            am2000Psalms = weahaduAm.chapters.flatMap(ch => ch.verses.map(v => ({ chapter: ch.n, verse: parseInt(v.n), text: v.t })));
+        if (wantAmharic) {
+            const weahaduAm = WeahaduBibleService.cache.get('am-2000-19-psalms.json');
+            if (weahaduAm) {
+                am2000ByChapter = getIndexedPsalmsForBible(weahaduAm, 'weahadu');
+            }
         }
-        const weahaduGez = WeahaduBibleService.cache.get('gez-1980-19-psalms.json');
-        if (weahaduGez) {
-            gezWeahaduPsalms = weahaduGez.chapters.flatMap(ch => ch.verses.map(v => ({ chapter: ch.n, verse: parseInt(v.n), text: v.t })));
+        if (wantGeez) {
+            const weahaduGez = WeahaduBibleService.cache.get('gez-1980-19-psalms.json');
+            if (weahaduGez) {
+                gezWeahaduByChapter = getIndexedPsalmsForBible(weahaduGez, 'weahadu');
+            }
+            const weahaduLudolf = WeahaduBibleService.cache.get('gez-1694-19-psalms.json');
+            if (weahaduLudolf) {
+                gezLudolfByChapter = getIndexedPsalmsForBible(weahaduLudolf, 'weahadu');
+            }
         }
-        const weahaduLudolf = WeahaduBibleService.cache.get('gez-1694-19-psalms.json');
-        if (weahaduLudolf) {
-            gezLudolfPsalms = weahaduLudolf.chapters.flatMap(ch => ch.verses.map(v => ({ chapter: ch.n, verse: parseInt(v.n), text: v.t })));
-        }
-        const weahaduTi = WeahaduBibleService.cache.get('ti-1997-19-psalms.json');
-        if (weahaduTi) {
-             tigrinyaPsalms = weahaduTi.chapters.flatMap(ch => ch.verses.map(v => ({ chapter: ch.n, verse: parseInt(v.n), text: v.t })));
+        if (wantTigrinya) {
+            const weahaduTi = WeahaduBibleService.cache.get('ti-1997-19-psalms.json');
+            if (weahaduTi) {
+                tigrinyaByChapter = getIndexedPsalmsForBible(weahaduTi, 'weahadu');
+            }
         }
     }
 
@@ -8176,8 +8321,8 @@ function renderSelectedPsalmsWithDoxology(addSectionTitleCallback, customPsalmsL
         const geezVerses = geezPsalmChapter ? geezPsalmChapter.verses : [];
         const copticPsalmChapter = copticPsalmsAll.find(c => c.chapter === lxxChapter);
         const copticVerses = copticPsalmChapter ? copticPsalmChapter.verses : [];
-        const am2000ChVerses = am2000Psalms.filter(v => v.chapter === lxxChapter);
-        const ludolfChVerses = gezLudolfPsalms.filter(v => v.chapter === lxxChapter);
+        const am2000ChVerses = am2000ByChapter.get(lxxChapter) || [];
+        const ludolfChVerses = gezLudolfByChapter.get(lxxChapter) || [];
 
         let maxVerseNum = 0;
         if (lxxChapter === 9) {
@@ -8196,10 +8341,10 @@ function renderSelectedPsalmsWithDoxology(addSectionTitleCallback, customPsalmsL
             maxVerseNum = 8;
         } else {
             const { mtChapter } = getMtFromLxx(lxxChapter, 1);
-            const nkjvCh = nkjvPsalms.filter(v => v.chapter == mtChapter);
-            const am54Ch = am54Psalms.filter(v => v.chapter == mtChapter);
-            const rgvCh = rgvPsalms.filter(v => v.chapter == mtChapter);
-            const tiCh = tigrinyaPsalms.filter(v => v.chapter == mtChapter);
+            const nkjvCh = nkjvByChapter.get(mtChapter) || [];
+            const am54Ch = am54ByChapter.get(mtChapter) || [];
+            const rgvCh = rgvByChapter.get(mtChapter) || [];
+            const tiCh = tigrinyaByChapter.get(mtChapter) || [];
             [...nkjvCh, ...am54Ch, ...rgvCh, ...tiCh].forEach(v => {
                 if (v && v.verse) {
                     const verseParts = String(v.verse).split('-').map(Number);
@@ -8263,7 +8408,7 @@ function renderSelectedPsalmsWithDoxology(addSectionTitleCallback, customPsalmsL
         };
 
         const getUnformattedGeez1980PsalmVerse = (i, mtChapter, mtVerseNum) => {
-            if (gezWeahaduPsalms.length === 0) return '';
+            if (gezWeahaduByChapter.size === 0) return '';
             let gezCh = mtChapter;
             let gezV = mtVerseNum;
             if (lxxChapter === 113) { gezCh = 114; gezV = i; }
@@ -8272,7 +8417,7 @@ function renderSelectedPsalmsWithDoxology(addSectionTitleCallback, customPsalmsL
             else if (lxxChapter === 146) { gezCh = 147; gezV = i; }
             else if (lxxChapter === 147) { gezCh = 148; gezV = i; }
             else if (lxxChapter >= 148 && lxxChapter <= 150) { gezCh = lxxChapter + 1; gezV = i; }
-            const gV = findVerse(gezWeahaduPsalms.filter(v => v.chapter == gezCh), gezV);
+            const gV = findVerse(gezWeahaduByChapter.get(gezCh) || [], gezV);
             return gV ? gV.text : '';
         };
 
@@ -8284,44 +8429,53 @@ function renderSelectedPsalmsWithDoxology(addSectionTitleCallback, customPsalmsL
             let verseData = { verseNum: i, mtChapter: mtChapter, mtVerseNum: mtVerseNum };
 
             if (lxxChapter !== 151) {
-                const nkjvVerse = findVerse(nkjvPsalms.filter(v => v.chapter == mtChapter), mtVerseNum);
-                if (nkjvVerse) { verseData.nkjv = nkjvVerse.text; verseData.kjv = nkjvVerse.text; }
+                if (wantEnglish) {
+                    const nkjvVerse = findVerse(nkjvByChapter.get(mtChapter) || [], mtVerseNum);
+                    if (nkjvVerse) { verseData.nkjv = nkjvVerse.text; verseData.kjv = nkjvVerse.text; }
+                }
 
-                const rgvVerse = findVerse(rgvPsalms.filter(v => v.chapter == mtChapter), mtVerseNum);
-                if (rgvVerse) verseData.rgv = rgvVerse.text;
+                if (wantSpanish) {
+                    const rgvVerse = findVerse(rgvByChapter.get(mtChapter) || [], mtVerseNum);
+                    if (rgvVerse) verseData.rgv = rgvVerse.text;
+                }
 
-                if (useExternalBibleAPI && amOverride === 'am-2000' && am2000Psalms.length > 0) {
-                    const amVerse = findVerse(am2000ChVerses, i);
-                    if (amVerse) verseData.am54 = amVerse.text;
+                if (wantAmharic) {
+                    if (useExternalBibleAPI && amOverride === 'am-2000' && am2000ChVerses.length > 0) {
+                        const amVerse = findVerse(am2000ChVerses, i);
+                        if (amVerse) verseData.am54 = amVerse.text;
+                    } else {
+                        const amVerse = findVerse(am54ByChapter.get(mtChapter) || [], mtVerseNum);
+                        if (amVerse) verseData.am54 = amVerse.text;
+                    }
+                }
+
+                if (wantTigrinya) {
+                    const tiChVerses = tigrinyaByChapter.get(mtChapter) || [];
+                    let tiVerse = findVerse(tiChVerses, mtVerseNum);
+                    if (!tiVerse && mtChapter === 116 && mtVerseNum === 19) {
+                        tiVerse = findVerse(tiChVerses, 18);
+                    }
+                    if (tiVerse) verseData.tigrinya_script = tiVerse.text;
+                }
+            }
+
+            if (wantGeez) {
+                let geezVerseText = '';
+                if (geezOverride === 'gez-1694' && ludolfChVerses.length > 0) {
+                    const lV = findVerse(ludolfChVerses, i);
+                    if (lV) geezVerseText = lV.text;
+                } else if (geezOverride === 'gez-1980' && useExternalBibleAPI && gezWeahaduByChapter.size > 0) {
+                    geezVerseText = getUnformattedGeez1980PsalmVerse(i, mtChapter, mtVerseNum);
                 } else {
-                    const amVerse = findVerse(am54Psalms.filter(v => v.chapter == mtChapter), mtVerseNum);
-                    if (amVerse) verseData.am54 = amVerse.text;
+                    geezVerseText = getFormattedGeezPsalmVerse(i);
                 }
-
-                const tiChVerses = tigrinyaPsalms.filter(v => v.chapter == mtChapter);
-                let tiVerse = findVerse(tiChVerses, mtVerseNum);
-                if (!tiVerse && mtChapter === 116 && mtVerseNum === 19) {
-                    tiVerse = findVerse(tiChVerses, 18);
+                if (!geezVerseText) {
+                    geezVerseText = getFormattedGeezPsalmVerse(i) || getUnformattedGeez1980PsalmVerse(i, mtChapter, mtVerseNum);
                 }
-                if (tiVerse) verseData.tigrinya_script = tiVerse.text;
+                if (geezVerseText) verseData.geez_psalms = geezVerseText;
             }
 
-            let geezVerseText = '';
-            if (geezOverride === 'gez-1694' && ludolfChVerses.length > 0) {
-                const lV = findVerse(ludolfChVerses, i);
-                if (lV) geezVerseText = lV.text;
-            } else if (geezOverride === 'gez-1980' && useExternalBibleAPI && gezWeahaduPsalms.length > 0) {
-                geezVerseText = getUnformattedGeez1980PsalmVerse(i, mtChapter, mtVerseNum);
-            } else {
-                // Default: 'gez-1980-formatted' from ግእዝ_Psalms_1-151_with_Songs_of_the_Prophets.json
-                geezVerseText = getFormattedGeezPsalmVerse(i);
-            }
-            if (!geezVerseText) {
-                geezVerseText = getFormattedGeezPsalmVerse(i) || getUnformattedGeez1980PsalmVerse(i, mtChapter, mtVerseNum);
-            }
-            if (geezVerseText) verseData.geez_psalms = geezVerseText;
-
-            if (copticVerses.length > 0) {
+            if (wantCoptic && copticVerses.length > 0) {
                 const copticVerse = findVerse(copticVerses, String(i), 'verse');
                 if (copticVerse) verseData.coptic = copticVerse.text_coptic;
             }
@@ -10810,14 +10964,12 @@ async function initApp() {
                     // Check for updates
                     reg.onupdatefound = () => {
                         const installingWorker = reg.installing;
+                        if (!installingWorker) return;
                         installingWorker.onstatechange = () => {
                             if (installingWorker.state === 'installed') {
                                 if (navigator.serviceWorker.controller) {
-                                    // New content is available; please refresh.
                                     console.log('New content is available; please refresh.');
-                                    // We could trigger a UI notification here
                                 } else {
-                                    // Content is cached for offline use.
                                     console.log('Content is cached for offline use.');
                                 }
                             }
@@ -10825,15 +10977,6 @@ async function initApp() {
                     };
                 })
                 .catch(err => console.log('Service worker registration failed: ', err));
-        });
-
-        // Handle the case where the service worker controller changes (e.g. after skipWaiting)
-        let refreshing = false;
-        navigator.serviceWorker.addEventListener('controllerchange', () => {
-            if (!refreshing) {
-                window.location.reload();
-                refreshing = true;
-            }
         });
     }
 
@@ -11161,9 +11304,7 @@ async function initApp() {
         });
     }
 
-    // Initial subscription for all users
-    subscribeToPrayers();
-    subscribeToIconMetadata();
+    // Subscriptions are managed via auth.onAuthStateChanged above
 
     // Surgical Editor: Open Modal
     window.openScribeEditor = function (prayer) {
@@ -11876,6 +12017,7 @@ function applyAthanasiusPsalms(psalmsList, mode, btnElement) {
 
 window.initMountOfMercyEngine = async function() {
     if (window._mountOfMercyInitialized) return;
+    window._mountOfMercyInitialized = true;
     bindDOMElements();
     setupEventListeners();
     await initApp();
@@ -11885,7 +12027,6 @@ window.initMountOfMercyEngine = async function() {
     if (typeof window.initLearningFeature === 'function') {
         window.initLearningFeature();
     }
-    window._mountOfMercyInitialized = true;
 };
 
 // Autostart if DOM is already ready and prayer data scripts are present

@@ -4,8 +4,8 @@
     "sizeBytes": 4200556
   },
   "app/src/main/assets/js/prayers.js": {
-    "sha256": "66c499d434b9a378e2c51acd2298828dadbcb5f1b43012b52fbcf17417550cd0",
-    "sizeBytes": 368460
+    "sha256": "de73cc537733571effb770f03ad3e756bcf53230a5ae07eb51f1059b9e2af917",
+    "sizeBytes": 369368
   },
   "app/src/main/assets/js/miracles_of_mary.js": {
     "sha256": "d47125d60ea9fe5bcfd61393e39ff3dd4c445c85c4eafae485db2b5991366417",
@@ -32,8 +32,8 @@
     "sizeBytes": 2706
   },
   "app/src/main/assets/js/bible_service.js": {
-    "sha256": "91886b8725a9558e80d91a1ff72d6a63ac15724e62eb6fc6188466cd55c6a29f",
-    "sizeBytes": 14715
+    "sha256": "c69d35510989ec4dcb024b8448913863900e88d77dc308ceb8d7c66ce77a3912",
+    "sizeBytes": 15980
   },
   "app/src/main/assets/bible/canon.json": {
     "sha256": "e9e323a89ace3aa99b8bfd3c2e0411b12b7fbc2aa93c959dabb4762dfd2edf4a",

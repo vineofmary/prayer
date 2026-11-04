@@ -1226,6 +1226,7 @@
                         <span class="j-clue-category">${escapeHtml(active.categoryTitle)} • <strong>${pointValue} Points</strong></span>
                         ${clue.isDailyDouble ? '<span class="j-daily-double-badge">✨ ዕጥፍ ጸጋ • DOUBLE GRACE CLUE (2× Points)!</span>' : ''}
                         <span class="j-clue-turn">Answering: <strong>${escapeHtml(activeTeam.name)}</strong></span>
+                        <button type="button" id="j-clue-close-x-btn" class="j-clue-close-x-btn" title="Close Clue" aria-label="Close Clue">✕</button>
                     </div>
 
                     <div class="j-clue-prompt-text">
@@ -1756,6 +1757,32 @@
                 state.activeTeamIndex = (state.activeTeamIndex + 1) % state.teamCount;
                 state.activeClue = null;
                 renderLearningView();
+            });
+        }
+
+        const closeClueXBtn = container.querySelector('#j-clue-close-x-btn');
+        if (closeClueXBtn && state.activeClue) {
+            closeClueXBtn.addEventListener('click', () => {
+                if (state.activeClue.revealedAnswer) {
+                    state.activeClue.clue.answered = true;
+                    state.activeTeamIndex = (state.activeTeamIndex + 1) % state.teamCount;
+                }
+                state.activeClue = null;
+                renderLearningView();
+            });
+        }
+
+        const clueModalBackdrop = container.querySelector('#jeopardy-clue-modal');
+        if (clueModalBackdrop && state.activeClue) {
+            clueModalBackdrop.addEventListener('click', (ev) => {
+                if (ev.target === clueModalBackdrop) {
+                    if (state.activeClue.revealedAnswer) {
+                        state.activeClue.clue.answered = true;
+                        state.activeTeamIndex = (state.activeTeamIndex + 1) % state.teamCount;
+                    }
+                    state.activeClue = null;
+                    renderLearningView();
+                }
             });
         }
 

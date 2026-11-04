@@ -1,18 +1,32 @@
 const WeahaduBibleService = {
     cache: new Map(),
+    inFlight: new Map(),
     canon: null,
+    canonPromise: null,
+    am54Raw: null,
+    am54Promise: null,
     dillmannRaw: null,
+    dillmannPromise: null,
     geezPsalmsFormattedRaw: null,
+    geezPsalmsPromise: null,
 
     async init() {
-        if (!this.canon) {
+        if (this.canon) return;
+        if (this.canonPromise) {
+            await this.canonPromise;
+            return;
+        }
+        this.canonPromise = (async () => {
             try {
                 const response = await fetch('bible/canon.json');
                 this.canon = await response.json();
             } catch (e) {
                 console.error("Failed to load Weahadu canon:", e);
+            } finally {
+                this.canonPromise = null;
             }
-        }
+        })();
+        await this.canonPromise;
     },
 
     getBookFile(bookName) {
@@ -54,6 +68,35 @@ const WeahaduBibleService = {
         };
     },
 
+    async _loadAm54Raw() {
+        if (window.bibleData && window.bibleData.am54) {
+            this.am54Raw = window.bibleData.am54;
+            return this.am54Raw;
+        }
+        if (this.am54Raw) return this.am54Raw;
+        if (this.am54Promise) return await this.am54Promise;
+
+        this.am54Promise = (async () => {
+            try {
+                const response = await fetch('bible/አም54_Haile_Selassie_Amharic_Bible_1962AD_1954EC.json');
+                if (response.ok) {
+                    const parsed = await response.json();
+                    this.am54Raw = (typeof parsed === 'string') ? JSON.parse(parsed) : parsed;
+                    if (window.bibleData && !window.bibleData.am54) {
+                        window.bibleData.am54 = this.am54Raw;
+                    }
+                    return this.am54Raw;
+                }
+            } catch (err) {
+                console.error("Failed to fetch am54 raw JSON:", err);
+            } finally {
+                this.am54Promise = null;
+            }
+            return null;
+        })();
+        return await this.am54Promise;
+    },
+
     async fetchBook(edition, bookName) {
         await this.init();
         let normEdition = (edition === 'gez-1988-formatted') ? 'gez-1980-formatted' : edition;
@@ -63,7 +106,18 @@ const WeahaduBibleService = {
 
         const cacheKey = `${normEdition}-${bookFile}`;
         if (this.cache.has(cacheKey)) return this.cache.get(cacheKey);
+        if (this.inFlight.has(cacheKey)) return await this.inFlight.get(cacheKey);
 
+        const fetchPromise = this._fetchBookInternal(normEdition, bName, bookFile, cacheKey);
+        this.inFlight.set(cacheKey, fetchPromise);
+        try {
+            return await fetchPromise;
+        } finally {
+            this.inFlight.delete(cacheKey);
+        }
+    },
+
+    async _fetchBookInternal(normEdition, bName, bookFile, cacheKey) {
         // 1. Formatted 1980 E.C. Ge'ez Psalms (LXX numbering 1-151)
         if (normEdition === 'gez-1980-formatted') {
             if (bName === 'Psalms') {
@@ -72,11 +126,16 @@ const WeahaduBibleService = {
                         ? window.bibleData.geez_psalms
                         : this.geezPsalmsFormattedRaw;
                     if (!raw) {
-                        const response = await fetch('bible/ግእዝ_Psalms_1-151_with_Songs_of_the_Prophets.json');
-                        if (response.ok) {
-                            raw = await response.json();
-                            this.geezPsalmsFormattedRaw = raw;
+                        if (!this.geezPsalmsPromise) {
+                            this.geezPsalmsPromise = (async () => {
+                                const response = await fetch('bible/ግእዝ_Psalms_1-151_with_Songs_of_the_Prophets.json');
+                                if (response.ok) {
+                                    this.geezPsalmsFormattedRaw = await response.json();
+                                }
+                                return this.geezPsalmsFormattedRaw;
+                            })().finally(() => { this.geezPsalmsPromise = null; });
                         }
+                        raw = await this.geezPsalmsPromise;
                     }
                     const formattedData = this.buildFormattedGeezPsalmsData(raw);
                     if (formattedData) {
@@ -99,10 +158,16 @@ const WeahaduBibleService = {
         if (normEdition === 'gez-1694' || normEdition === 'gez-1845') {
             try {
                 if (!this.dillmannRaw) {
-                    const response = await fetch('bible/ግእዝ1853_Dillmann_Octateuch_1853AD_with_Ludolf_Psalms_1701AD.json');
-                    if (response.ok) {
-                        this.dillmannRaw = await response.json();
+                    if (!this.dillmannPromise) {
+                        this.dillmannPromise = (async () => {
+                            const response = await fetch('bible/ግእዝ1853_Dillmann_Octateuch_1853AD_with_Ludolf_Psalms_1701AD.json');
+                            if (response.ok) {
+                                this.dillmannRaw = await response.json();
+                            }
+                            return this.dillmannRaw;
+                        })().finally(() => { this.dillmannPromise = null; });
                     }
+                    await this.dillmannPromise;
                 }
                 if (Array.isArray(this.dillmannRaw)) {
                     const bookObj = this.dillmannRaw.find(b => b.title === bName);
@@ -140,11 +205,7 @@ const WeahaduBibleService = {
         // 3. Haile Selassie 1954 E.C. Amharic ('am54')
         if (normEdition === 'am54') {
             try {
-                let am54Raw = (window.bibleData && window.bibleData.am54) ? window.bibleData.am54 : null;
-                if (!am54Raw) {
-                    const response = await fetch('bible/አም54_Haile_Selassie_Amharic_Bible_1962AD_1954EC.json');
-                    if (response.ok) am54Raw = await response.json();
-                }
+                const am54Raw = await this._loadAm54Raw();
                 const am54Data = this.buildAm54BookData(am54Raw, bName);
                 if (am54Data) {
                     this.cache.set(cacheKey, am54Data);
@@ -257,9 +318,12 @@ const WeahaduBibleService = {
             if (bookData) this.cache.set(cacheKey, bookData);
         }
 
-        if (!bookData && normEdition === 'am54' && window.bibleData && window.bibleData.am54) {
-            bookData = this.buildAm54BookData(window.bibleData.am54, bName);
-            if (bookData) this.cache.set(cacheKey, bookData);
+        if (!bookData && normEdition === 'am54') {
+            const rawAm54 = (window.bibleData && window.bibleData.am54) || this.am54Raw;
+            if (rawAm54) {
+                bookData = this.buildAm54BookData(rawAm54, bName);
+                if (bookData) this.cache.set(cacheKey, bookData);
+            }
         }
 
         if (!bookData && ['gez-1980-formatted', 'gez-2014', 'gez-1694', 'gez-1845'].includes(normEdition)) {
@@ -280,12 +344,19 @@ const WeahaduBibleService = {
 
     async preloadBooks(editions, refs) {
         await this.init();
+        const seenPairs = new Set();
         const promises = [];
         for (const refString of refs) {
+            if (!refString) continue;
             const ref = this.parseReference(refString);
             if (ref) {
+                const bName = (ref.book === 'Psalm') ? 'Psalms' : ref.book;
                 for (const ed of editions) {
-                    promises.push(this.fetchBook(ed, ref.book));
+                    if (!ed) continue;
+                    const pairKey = `${ed}::${bName}`;
+                    if (seenPairs.has(pairKey)) continue;
+                    seenPairs.add(pairKey);
+                    promises.push(this.fetchBook(ed, bName));
                 }
             }
         }

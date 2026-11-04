@@ -1,9 +1,9 @@
-const CACHE_NAME = 'divine-liturgy-cache-v37';
+const CACHE_NAME = 'divine-liturgy-cache-v38';
 const urlsToCache = [
   './',
   './index.html',
   './manifest.json',
-  './css/style.css?v=32',
+  './css/style.css?v=34',
   './js/icons.js?v=10',
   './js/prayers.js?v=10',
   './js/songs.js?v=10',
@@ -12,14 +12,13 @@ const urlsToCache = [
   './js/teklil.js?v=2',
   './js/typical_psalms.js?v=3',
   './js/st_athanasius_psalms.js?v=2',
-  './js/bible_service.js?v=2',
+  './js/bible_service.js?v=4',
   './js/miracles_of_mary.js',
   './js/geez_lexicon.js?v=1',
-  './js/learning_service.js?v=1',
-  './js/script.js?v=40',
+  './js/learning_service.js?v=3',
+  './js/script.js?v=43',
   './icons/icon-192x192.png',
-  './icons/icon-512x512.png',
-  './bible/ግእዝ_Psalms_1-151_with_Songs_of_the_Prophets.json'
+  './icons/icon-512x512.png'
 ];
 
 self.addEventListener('install', event => {

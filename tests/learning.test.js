@@ -368,5 +368,78 @@ describe('Learning & Games Module, Interlinear Ge\'ez, and Header/Sidebar Reorga
       expect(learningView.querySelector('.blitz-pack-tag')).toBeNull();
       expect(learningView.querySelector('.jeopardy-board-info')).toBeNull();
     });
+
+    it('renders mobile-safe Jeopardy clue modal with top-bar close button, backdrop dismiss, and responsive CSS rules', () => {
+      const learningView = document.getElementById('learning-view');
+
+      // Switch to Ages 13+ (st_michael -> 5 columns) and Jeopardy tab
+      const classSelect = learningView.querySelector('#learning-class-select');
+      expect(classSelect).not.toBeNull();
+      classSelect.value = 'st_michael';
+      classSelect.dispatchEvent(new Event('change'));
+
+      const jeopardyTabBtn = learningView.querySelector('[data-tab="jeopardy"]');
+      expect(jeopardyTabBtn).not.toBeNull();
+      jeopardyTabBtn.click();
+
+      const boardGrid = learningView.querySelector('.jeopardy-board-grid.cols-5');
+      expect(boardGrid).not.toBeNull();
+
+      // Open a clue modal
+      const firstCell = learningView.querySelector('[data-jeopardy-col="0"][data-jeopardy-row="0"]');
+      expect(firstCell).not.toBeNull();
+      firstCell.click();
+
+      let modal = learningView.querySelector('#jeopardy-clue-modal');
+      expect(modal).not.toBeNull();
+
+      // Verify top-bar close button exists
+      const closeXBtn = modal.querySelector('#j-clue-close-x-btn');
+      expect(closeXBtn).not.toBeNull();
+
+      // Expand 4 multiple-choice options and select an option
+      const showOptsBtn = modal.querySelector('#j-clue-show-options-btn');
+      expect(showOptsBtn).not.toBeNull();
+      showOptsBtn.click();
+
+      modal = learningView.querySelector('#jeopardy-clue-modal');
+      const optBtns = modal.querySelectorAll('[data-jeopardy-opt]');
+      expect(optBtns.length).toBe(4);
+      optBtns[0].click();
+
+      // Verify both top bar and Close (No Points) button are present after answer reveal
+      modal = learningView.querySelector('#jeopardy-clue-modal');
+      expect(modal.querySelector('.j-clue-top-bar')).not.toBeNull();
+      expect(modal.querySelector('.j-clue-answer-box')).not.toBeNull();
+      const noAwardBtn = modal.querySelector('#j-clue-no-award-btn');
+      expect(noAwardBtn).not.toBeNull();
+      expect(noAwardBtn.textContent).toContain('Close (No Points)');
+
+      // Verify clicking Close (No Points) dismisses the modal
+      noAwardBtn.click();
+      expect(learningView.querySelector('#jeopardy-clue-modal')).toBeNull();
+
+      // Verify CSS contains minmax(0, 1fr) for 5-column mobile board and viewport-bounded modal card
+      const cssContent = fs.readFileSync(path.resolve(__dirname, '../app/src/main/assets/css/style.css'), 'utf8');
+      expect(cssContent).toContain('repeat(5, minmax(0, 1fr))');
+      expect(cssContent).toContain('max-height: calc(100dvh - 1.5rem)');
+      expect(cssContent).toContain('@media (max-width: 600px)');
+    });
+
+    it('keeps service worker and Bible loader memory-safe on iOS Safari startup', () => {
+      const swAssets = fs.readFileSync(path.resolve(__dirname, '../app/src/main/assets/service-worker.js'), 'utf8');
+      const swPublic = fs.readFileSync(path.resolve(__dirname, '../public/service-worker.js'), 'utf8');
+      expect(swAssets).toBe(swPublic);
+      // Service worker install pre-cache must not eagerly download multi-MB full Bibles
+      expect(swAssets).not.toContain('KJV_King_James_English_Bible.json');
+      expect(swAssets).not.toContain('አም54_Haile_Selassie_Amharic_Bible_1962AD_1954EC.json');
+      expect(swAssets).not.toContain('RGV_Reina_Valera_Gomez_Bible_2010AD.json');
+
+      const scriptAssets = fs.readFileSync(path.resolve(__dirname, '../app/src/main/assets/js/script.js'), 'utf8');
+      const scriptPublic = fs.readFileSync(path.resolve(__dirname, '../public/js/script.js'), 'utf8');
+      expect(scriptAssets).toBe(scriptPublic);
+      // Must not force window.location.reload() on serviceWorker controllerchange during startup
+      expect(scriptAssets).not.toContain("navigator.serviceWorker.addEventListener('controllerchange'");
+    });
   });
 });
