@@ -3595,26 +3595,27 @@ body.slides-mode .bottom-nav-bar {
 
 .bottom-nav-item {
     flex: 1;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 0.18rem;
+    gap: 0;
     background: none;
     border: none;
     color: var(--text-color);
     opacity: 0.72;
     font-size: 0.68rem;
     font-weight: 600;
-    padding: 0.35rem 0.2rem;
+    padding: 0;
     cursor: pointer;
     position: relative;
     transition: color 0.2s ease, opacity 0.2s ease, transform 0.15s ease;
 }
 
 .bottom-nav-item svg {
-    width: 21px;
-    height: 21px;
+    width: 42px;
+    height: 42px;
     fill: currentColor;
 }
 
@@ -3627,10 +3628,21 @@ body.slides-mode .bottom-nav-bar {
     content: '';
     position: absolute;
     top: 2px;
-    width: 22px;
+    width: 38px;
     height: 2.5px;
     border-radius: 2px;
     background-color: var(--accent-color);
+}
+
+.prayer-view-preset-summary {
+    margin-top: 0.25rem;
+    margin-bottom: -1.75rem;
+    color: var(--speaker-label-color);
+}
+
+body.presentation-mode-slides .prayer-view-preset-summary,
+body.slides-mode .prayer-view-preset-summary {
+    display: none !important;
 }
 
 @media (max-width: 899px) {

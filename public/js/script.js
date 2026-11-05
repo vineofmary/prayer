@@ -6632,6 +6632,60 @@ async function renderPrayers() {
     }
 }
 
+function getActivePrayerViewPresetSummary() {
+    if (activePrimaryTab === 'pray') {
+        const def = getPrayTabDefaultProfile();
+        const isDefaultPrayView =
+            Boolean(displayOptions && displayOptions.showDailyPrayer) === Boolean(def.showDailyPrayer) &&
+            selectedWidaseMaryamDay === def.selectedWidaseMaryamDay &&
+            Boolean(displayOptions && displayOptions.showGateOfLight) === Boolean(def.showGateOfLight) &&
+            Boolean(displayOptions && displayOptions.showYewediswaMelaekt !== false) === Boolean(def.showYewediswaMelaekt) &&
+            JSON.stringify(selectedPsalms || []) === JSON.stringify(def.selectedPsalms || []) &&
+            JSON.stringify(selectedPsalmVerseRanges || {}) === JSON.stringify(def.selectedPsalmVerseRanges || {}) &&
+            JSON.stringify(selectedProphetSongs || []) === JSON.stringify(def.selectedProphetSongs || []) &&
+            Boolean(showSeatatReadings) === Boolean(def.showSeatatReadings) &&
+            Boolean(showVespers) === Boolean(def.showVespers) &&
+            Boolean(showPrepPsalms) === Boolean(def.showPrepPsalms) &&
+            Boolean(showMatins) === Boolean(def.showMatins) &&
+            Boolean(showTeklil) === false &&
+            Boolean(isKidaseModeActive) === Boolean(def.isKidaseModeActive) &&
+            Boolean(showAnaphora) === Boolean(def.showAnaphora) &&
+            (selectedMiracleId || 'none') === (def.selectedMiracleId || 'none') &&
+            Boolean(displayOptions && displayOptions.showSupplications) === Boolean(def.showSupplications);
+
+        if (!isDefaultPrayView) return null;
+        return 'Preset for Prayer: Daily Prayer, Theotokia, Psalter';
+    }
+
+    if (activePrimaryTab === 'liturgy') {
+        const def = getLiturgyTabDefaultProfile();
+        const isDefaultLiturgyView =
+            Boolean(displayOptions && displayOptions.showDailyPrayer) === Boolean(def.showDailyPrayer) &&
+            selectedWidaseMaryamDay === def.selectedWidaseMaryamDay &&
+            Boolean(displayOptions && displayOptions.showGateOfLight) === Boolean(def.showGateOfLight) &&
+            Boolean(displayOptions && displayOptions.showYewediswaMelaekt !== false) === Boolean(def.showYewediswaMelaekt) &&
+            JSON.stringify(selectedPsalms || []) === JSON.stringify(def.selectedPsalms || []) &&
+            JSON.stringify(selectedPsalmVerseRanges || {}) === JSON.stringify(def.selectedPsalmVerseRanges || {}) &&
+            JSON.stringify(selectedProphetSongs || []) === JSON.stringify(def.selectedProphetSongs || []) &&
+            Boolean(showSeatatReadings) === Boolean(def.showSeatatReadings) &&
+            selectedSeatatLectionaryDay === def.selectedSeatatLectionaryDay &&
+            Boolean(showVespers) === Boolean(def.showVespers) &&
+            Boolean(showPrepPsalms) === Boolean(def.showPrepPsalms) &&
+            Boolean(showMatins) === Boolean(def.showMatins) &&
+            Boolean(showTeklil) === false &&
+            Boolean(isKidaseModeActive) === Boolean(def.isKidaseModeActive) &&
+            Boolean(showAnaphora) === Boolean(def.showAnaphora) &&
+            selectedAnaphora === def.selectedAnaphora &&
+            (selectedMiracleId || 'none') === (def.selectedMiracleId || 'none') &&
+            Boolean(displayOptions && displayOptions.showSupplications) === Boolean(def.showSupplications);
+
+        if (!isDefaultLiturgyView) return null;
+        return 'Preset for Liturgy: Daily Prayer, Vespers, Songs of the Prophets, Se\u2019atat Readings, Pre-Liturgy Psalms, Matins, Order of the Liturgy, Anaphora of the Apostles';
+    }
+
+    return null;
+}
+
 function _renderPrayersSync() {
     if (!prayerDisplay || typeof prayers === 'undefined' || !Array.isArray(prayers)) return;
     prayerDisplay.innerHTML = '';
@@ -6639,6 +6693,14 @@ function _renderPrayersSync() {
     if (activeLanguageCount === 0) {
         prayerDisplay.innerHTML = `<div class="empty-state-message"><p>Please select a language from the settings panel to begin.</p></div>`;
         return;
+    }
+
+    const presetSummaryText = getActivePrayerViewPresetSummary();
+    if (presetSummaryText && displayOptions.presentationMode !== 'slides') {
+        const presetSummaryEl = document.createElement('div');
+        presetSummaryEl.className = 'section-metadata prayer-view-preset-summary';
+        presetSummaryEl.innerHTML = `<i>${presetSummaryText}</i>`;
+        prayerDisplay.appendChild(presetSummaryEl);
     }
 
     let lastSectionTitle = null;
