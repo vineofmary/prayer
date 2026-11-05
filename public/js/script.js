@@ -984,7 +984,7 @@ const PSALM_CATEGORIES = [
     }
 ];
 // --- State Variables ---
-const SETTINGS_VERSION = '4.5.2'; // Update this to force refresh load settings
+const SETTINGS_VERSION = '4.5.4'; // Update this to force refresh load settings
 const APP_VERSION = '0.9.0-beta';
 const STATIC_CHANGELOG = [
     { date: '2026-10-30', message: 'feat: add 5-tab navigation, Ethiopian calendar & liturgical hours, and Pray/Liturgy workflows', author: 'vineofmary' },
@@ -1977,11 +1977,14 @@ function fromBase64(str) {
 function buildUrlStateObject(forShortLink = false) {
     return {
         v: '2', // State Version
+        sv_ver: forShortLink ? undefined : SETTINGS_VERSION,
+        tab: activePrimaryTab,
         k: isKidaseModeActive,
         skd: selectedKidaseDay,
         sa: showAnaphora,
         a: selectedAnaphora,
         ssr: showSeatatReadings,
+        spp: showPrepPsalms,
         mi: selectedMiracleId,
         mp: miraclePosition,
         mit: selectedMiracleTranslationIndex,
@@ -2058,6 +2061,10 @@ const SECTION_SLUGS = {
 function slugifyTitle(title) {
     if (!title) return "";
     if (SECTION_SLUGS[title]) return SECTION_SLUGS[title];
+    if (title.includes('::')) {
+        const [parentPart, childPart] = title.split('::');
+        return `${slugifyTitle(parentPart)}__${slugifyTitle(childPart)}`;
+    }
     return title.split('|')[0].trim().toLowerCase().replace(/[^a-z0-9]/g, '').substring(0, 12);
 }
 
@@ -2065,8 +2072,8 @@ function serializeCollapsedSections() {
     if (areAllSectionsCollapsed) return {}; // No need to list them all if ac flag is true
     const serialized = {};
     Object.entries(collapsedSections).forEach(([title, isCollapsed]) => {
-        if (isCollapsed) {
-            serialized[slugifyTitle(title)] = true;
+        if (typeof isCollapsed === 'boolean') {
+            serialized[slugifyTitle(title)] = isCollapsed;
         }
     });
     return serialized;
@@ -2084,7 +2091,7 @@ function deserializeCollapsedSections(serialized, version) {
     return serialized;
 }
 
-async function loadStateFromUrl() {
+async function loadStateFromUrl(isVersionMismatch = false) {
     const hash = window.location.hash;
     if (!hash) return false;
 
@@ -2098,6 +2105,13 @@ async function loadStateFromUrl() {
             if (!jsonStr) return false;
             state = JSON.parse(jsonStr);
             v = state.v || '1';
+            // If settings version was bumped, ignore stale auto-synced #s= URL hashes from older app versions
+            if (isVersionMismatch && state.sv_ver !== SETTINGS_VERSION) {
+                if (typeof history !== 'undefined' && typeof history.replaceState === 'function') {
+                    history.replaceState(null, null, window.location.pathname + window.location.search);
+                }
+                return false;
+            }
         } else if (hash.startsWith('#id=')) {
             const id = hash.substring(4);
             const doc = await db.collection('short_links').doc(id).get();
@@ -2119,6 +2133,7 @@ async function loadStateFromUrl() {
         if (state.sa !== undefined) showAnaphora = state.sa;
         if (state.a !== undefined) selectedAnaphora = state.a;
         if (state.ssr !== undefined) showSeatatReadings = state.ssr;
+        if (state.spp !== undefined) showPrepPsalms = state.spp;
         if (state.mi !== undefined) selectedMiracleId = state.mi;
         if (state.mp !== undefined) miraclePosition = state.mp;
         if (state.mit !== undefined) selectedMiracleTranslationIndex = state.mit;
@@ -2140,6 +2155,12 @@ async function loadStateFromUrl() {
         if (state.bgn !== undefined) bridegroomName = state.bgn;
         if (state.bn !== undefined) brideName = state.bn;
         if (state.sv !== undefined) showVespers = state.sv;
+
+        if (state.tab === 'pray' || state.tab === 'liturgy') {
+            activePrimaryTab = state.tab;
+        } else if (state.k !== undefined || state.sa !== undefined) {
+            activePrimaryTab = (isKidaseModeActive || showAnaphora) ? 'liturgy' : 'pray';
+        }
 
         if (state.l !== undefined && Array.isArray(state.l)) {
             Object.keys(displayedLanguages).forEach(lang => displayedLanguages[lang] = state.l.includes(lang));
@@ -2186,10 +2207,24 @@ async function loadStateFromUrl() {
 
         if (state.ac !== undefined) areAllSectionsCollapsed = state.ac;
         if (state.cs !== undefined && typeof state.cs === 'object' && Object.keys(state.cs).length > 0) {
-            collapsedSections = deserializeCollapsedSections(state.cs, v);
+            const deserializedCs = deserializeCollapsedSections(state.cs, v);
+            if (activePrimaryTab === 'liturgy') {
+                collapsedSections = {
+                    ...getLiturgyTabDefaultProfile().collapsedSections,
+                    ...deserializedCs
+                };
+            } else {
+                collapsedSections = deserializedCs;
+            }
         } else if (activePrimaryTab === 'liturgy' && liturgyTabProfile && liturgyTabProfile.collapsedSections) {
             collapsedSections = JSON.parse(JSON.stringify(liturgyTabProfile.collapsedSections));
             areAllSectionsCollapsed = false;
+        }
+
+        if (activePrimaryTab === 'liturgy') {
+            liturgyTabProfile = captureCurrentTabProfile();
+        } else if (activePrimaryTab === 'pray') {
+            prayTabProfile = captureCurrentTabProfile();
         }
 
         if (state.lm === true && window.learningService && typeof window.learningService.openLearnFromUrlRoute === 'function') {
@@ -2423,7 +2458,7 @@ function getPrayTabDefaultProfile() {
 function getLiturgyTabDefaultProfile() {
     const all15ProphetSongs = (typeof PSALM_COMBINATIONS !== 'undefined' && PSALM_COMBINATIONS.sunday && PSALM_COMBINATIONS.sunday.prophetSongs)
         ? [...PSALM_COMBINATIONS.sunday.prophetSongs]
-        : ['songOfMoses1', 'songOfMoses2', 'songOfMoses3', 'songOfHannah', 'prayerOfHezekiah', 'prayerOfManasseh', 'prayerOfJonah', 'songOfThreeYouths1', 'songOfThreeYouths2', 'songOfThreeYouths3', 'prayerOfHabakkuk', 'songOfIsaiah', 'prayerOfMary', 'songOfZachariah', 'prayerOfSimeon'];
+        : ['firstSongOfMoses', 'secondSongOfMoses', 'thirdSongOfMoses', 'prayerOfHannah', 'prayerOfHezekiah', 'prayerOfManasseh', 'prayerOfJonah', 'firstSongOfThreeYouths', 'secondSongOfThreeYouths', 'thirdSongOfThreeYouths', 'prayerOfHabakkuk', 'prayerOfIsaiah', 'magnificat', 'songOfZachariah', 'prayerOfSimeon'];
     return {
         showDailyPrayer: true,
         selectedWidaseMaryamDay: 'None',
@@ -2630,14 +2665,19 @@ function switchPrimaryTab(tabName) {
             }
             applyTabProfile(prayTabProfile);
         } else {
-            liturgyTabProfile = getLiturgyTabDefaultProfile();
-            localStorage.setItem('liturgyTabProfile', JSON.stringify(liturgyTabProfile));
+            if (isReclickingActiveTab || !liturgyTabProfile) {
+                liturgyTabProfile = getLiturgyTabDefaultProfile();
+                localStorage.setItem('liturgyTabProfile', JSON.stringify(liturgyTabProfile));
+            }
             applyTabProfile(liturgyTabProfile);
         }
 
         updatePrimaryNavTabsUI();
         saveSettings();
-        smoothRender();
+        if (isReclickingActiveTab && typeof window.scrollTo === 'function') {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        renderPrayers();
         return;
     }
 
@@ -2970,7 +3010,7 @@ async function loadSettings() {
     }
 
     // Override settings from URL if present
-    await loadStateFromUrl();
+    await loadStateFromUrl(savedVersion !== SETTINGS_VERSION);
 
     // Set UI elements from the loaded/default settings
     servantNameInput.value = customNames.servant;
@@ -3058,13 +3098,13 @@ function updatePresentationModeToggleIcon() {
     }
 }
 
-function updateExpandCollapseAllIcon() {
+function updateExpandCollapseAllIcon(syncFromDom = false) {
     if (!expandCollapseAllButton) return;
     const collapseIcon = expandCollapseAllButton.querySelector('.icon-collapse-all');
     const expandIcon = expandCollapseAllButton.querySelector('.icon-expand-all');
 
-    // Sync state from live collapsible section headers if rendered
-    if (prayerDisplay) {
+    // Only sync state from live collapsible section headers after a render or user click
+    if (syncFromDom && prayerDisplay) {
         const collapsibleHeaders = prayerDisplay.querySelectorAll('.section-title.collapsible');
         if (collapsibleHeaders.length > 0) {
             const allCurrentlyCollapsed = Array.from(collapsibleHeaders).every(el => el.classList.contains('collapsed'));
@@ -4099,29 +4139,29 @@ function createLectionaryPicker(containerOrId, lectionaryKey, bookOptions = [], 
             }
         }
 
+        if (skipReRender) return;
+
         kidaseLectionaryRefs[lectionaryKey] = `${book} ${ch}:${start}-${end}`;
+        if (isCardInline && prayerDisplay) {
+            prayerDisplay.querySelectorAll('.section-title.collapsible').forEach(hdr => {
+                const hdrKey = hdr.dataset.stateKey;
+                if (hdrKey) {
+                    collapsedSections[hdrKey] = hdr.classList.contains('collapsed');
+                }
+            });
+        }
         saveSettings();
         syncAllLectionaryPickers(lectionaryKey, container);
 
-        if (isCardInline) {
-            // Keep sections expanded so prayer view does not collapse in scroll mode
-            areAllSectionsCollapsed = false;
-            Object.keys(collapsedSections).forEach(k => {
-                collapsedSections[k] = false;
-            });
-        }
+        const targetCard = container.closest('.prayer-card');
+        const targetReadingType = targetCard ? targetCard.dataset.readingType : null;
 
-        if (!skipReRender) {
-            const targetCard = container.closest('.prayer-card');
-            const targetReadingType = targetCard ? targetCard.dataset.readingType : null;
+        renderPrayers();
 
-            renderPrayers();
-
-            if (isCardInline && targetReadingType && displayOptions.presentationMode !== 'slides') {
-                const reRenderedCard = document.querySelector(`.prayer-card[data-reading-type="${targetReadingType}"]`);
-                if (reRenderedCard) {
-                    reRenderedCard.scrollIntoView({ block: 'center', behavior: 'instant' });
-                }
+        if (isCardInline && targetReadingType && displayOptions.presentationMode !== 'slides') {
+            const reRenderedCard = document.querySelector(`.prayer-card[data-reading-type="${targetReadingType}"]`);
+            if (reRenderedCard) {
+                reRenderedCard.scrollIntoView({ block: 'center', behavior: 'instant' });
             }
         }
     };
@@ -4200,7 +4240,7 @@ function createLectionaryPicker(containerOrId, lectionaryKey, bookOptions = [], 
     });
 
     // Restore shortened text on blur if End is still selected
-    endField.sel.addEventListener('blur', () => updateRefs());
+    endField.sel.addEventListener('blur', () => updateRefs(true));
 
     const syncPicker = (skipUpdateRefs = false) => {
         const currentRef = kidaseLectionaryRefs[lectionaryKey] || "";
@@ -6493,7 +6533,7 @@ async function renderPrayers() {
     isRendering = true;
 
     try {
-        if (prayerDisplay && prayerDisplay.children.length === 0) {
+        if (prayerDisplay && (prayerDisplay.children.length === 0 || bibleData.loaded)) {
             _renderPrayersSync();
         }
 
@@ -6722,6 +6762,14 @@ function _renderPrayersSync() {
                     }
 
                     const isCollapsed = titleEl.classList.toggle('collapsed');
+                    if (prayerDisplay) {
+                        prayerDisplay.querySelectorAll('.section-title.collapsible').forEach(hdr => {
+                            const hdrKey = hdr.dataset.stateKey;
+                            if (hdrKey) {
+                                collapsedSections[hdrKey] = hdr.classList.contains('collapsed');
+                            }
+                        });
+                    }
                     collapsedSections[stateKey] = isCollapsed;
                     if (stateKey === title) {
                         collapsedSections[title] = isCollapsed;
@@ -6767,7 +6815,7 @@ function _renderPrayersSync() {
                             nextEl = nextEl.nextElementSibling;
                         }
                     }
-                    updateExpandCollapseAllIcon();
+                    updateExpandCollapseAllIcon(true);
                 });
             }
 
@@ -6855,7 +6903,7 @@ function _renderPrayersSync() {
 
     const addSectionTitleIfNeeded = (prayer) => {
         const title = getSectionTitle(prayer);
-        addSectionTitle(title, true);
+        addSectionTitle(title, true, null, { defaultCollapsed: true });
     };
 
     // Reset rendering context at start of renderPrayers
@@ -6952,7 +7000,7 @@ function _renderPrayersSync() {
         }
 
         if (isPraiseOfMaryDay && !hasRenderedPraiseOfMaryMainTitle && selectedWidaseMaryamDay !== 'None') {
-            addSectionTitle("→ Prayer of Saint Ephraim: The Praises of Mary | ውዳሴ ማርያም", true);
+            addSectionTitle("→ Prayer of Saint Ephraim: The Praises of Mary | ውዳሴ ማርያም", true, null, { defaultCollapsed: true });
             hasRenderedPraiseOfMaryMainTitle = true;
         }
 
@@ -7126,7 +7174,7 @@ function _renderPrayersSync() {
     } else {
         removeSlides();
     }
-    updateExpandCollapseAllIcon();
+    updateExpandCollapseAllIcon(true);
     updateSearchMatches();
 }
 
@@ -10362,7 +10410,12 @@ safeOn(expandCollapseAllButton, 'click', () => {
         let nextEl = section.nextElementSibling;
         while (nextEl && !nextEl.classList.contains('section-title')) {
             if (nextEl.classList.contains('expand-daily-prayer-preview-btn')) {
-                nextEl.style.display = 'none';
+                nextEl.style.display = (shouldCollapseAll && activePrimaryTab === 'pray') ? '' : 'none';
+            } else if (nextEl.dataset && nextEl.dataset.dailyPreviewRole === 'first' && activePrimaryTab === 'pray') {
+                nextEl.style.display = '';
+            } else if (nextEl.dataset && nextEl.dataset.dailyPreviewRole === 'sneak-peek' && activePrimaryTab === 'pray') {
+                nextEl.style.display = '';
+                nextEl.classList.toggle('daily-prayer-sneak-peek-card', shouldCollapseAll);
             } else {
                 nextEl.classList.remove('daily-prayer-sneak-peek-card');
                 nextEl.style.display = shouldCollapseAll ? 'none' : '';
@@ -10370,7 +10423,7 @@ safeOn(expandCollapseAllButton, 'click', () => {
             nextEl = nextEl.nextElementSibling;
         }
     });
-    updateExpandCollapseAllIcon();
+    updateExpandCollapseAllIcon(true);
     saveSettings();
 });
 
@@ -12119,10 +12172,22 @@ const appCoreExports = {
     matchMiraclesByText,
     getPrayTabDefaultProfile,
     getLiturgyTabDefaultProfile,
+    captureCurrentTabProfile,
+    applyTabProfile,
+    switchPrimaryTab,
+    renderPrayers,
+    _renderPrayersSync,
+    createLectionaryPicker,
+    refreshLectionaryPickers,
+    loadSettings,
+    saveSettings,
     buildUrlStateObject,
     syncStateToUrl,
     loadStateFromUrl,
     getActiveLectionaryReadingsSnapshot: () => ({
+        activePrimaryTab,
+        areAllSectionsCollapsed,
+        collapsedSections: JSON.parse(JSON.stringify(collapsedSections || {})),
         isKidaseModeActive,
         showMatins,
         showVespers,
