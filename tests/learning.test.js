@@ -469,6 +469,15 @@ describe('Learning & Games Module, Interlinear Ge\'ez, and Header/Sidebar Reorga
 
       const learnHeaderBtn = document.querySelector('[data-nav-tab="learn"]');
       expect(learnHeaderBtn.classList.contains('active')).toBe(true);
+
+      // Verify dynamic URL state includes lm (Learning Mode) and lt (active sub-tab)
+      const urlState = app.buildUrlStateObject();
+      expect(urlState.lm).toBe(true);
+      expect(urlState.lt).toBe('jeopardy');
+
+      // Exiting learning mode sets lm to false in URL state
+      learning.toggleLearningMode(false);
+      expect(app.buildUrlStateObject().lm).toBe(false);
     });
   });
 });

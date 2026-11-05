@@ -1392,6 +1392,9 @@
                 state.activeTab = tabBtn.getAttribute('data-tab');
                 saveLearningSettings();
                 renderLearningView();
+                if (typeof window.syncStateToUrl === 'function') {
+                    window.syncStateToUrl();
+                }
             });
         });
 
@@ -1871,13 +1874,34 @@
         return false;
     }
 
-    function openLearnFromUrlRoute() {
+    function syncLearnUrlState(isEntering) {
         try {
-            if (typeof window !== 'undefined' && window.location && /^\/learn\/+$/i.test(window.location.pathname || '')) {
-                if (typeof history !== 'undefined' && typeof history.replaceState === 'function') {
-                    history.replaceState(null, null, '/learn' + (window.location.search || '') + (window.location.hash || ''));
+            if (typeof window === 'undefined' || !window.location || typeof history === 'undefined' || typeof history.replaceState !== 'function') {
+                return;
+            }
+            const isWebOrigin = window.location.protocol === 'http:' || window.location.protocol === 'https:';
+            const isAndroidWebView = window.location.hostname === 'appassets.androidplatform.net';
+            if (!isWebOrigin || isAndroidWebView) {
+                return;
+            }
+            const currentPath = window.location.pathname || '/';
+            const currentSearch = window.location.search || '';
+            const rawHash = window.location.hash || '';
+            const cleanHash = /^#\/?learn(\?|$)/i.test(rawHash) ? '' : rawHash;
+            if (isEntering) {
+                if (currentPath !== '/learn') {
+                    history.replaceState(null, null, '/learn' + currentSearch + cleanHash);
+                }
+            } else {
+                if (/^\/learn(\/|$)/i.test(currentPath) || /^#\/?learn(\?|$)/i.test(rawHash)) {
+                    history.replaceState(null, null, '/' + currentSearch + cleanHash);
                 }
             }
+        } catch (e) {}
+    }
+
+    function openLearnFromUrlRoute(preferredSubTab) {
+        try {
             const splashScreen = document.getElementById('splash-screen');
             const appContainer = document.getElementById('app-container');
             if (splashScreen) splashScreen.classList.add('hidden');
@@ -1888,8 +1912,9 @@
         } catch (e) {}
 
         loadLearningSettings();
-        state.activeTab = 'jeopardy';
-        if (state.selectedClassId === 'st_kirkos') {
+        const validSubTabs = ['jeopardy', 'blitz', 'matcher', 'interlinear'];
+        state.activeTab = (preferredSubTab && validSubTabs.includes(preferredSubTab)) ? preferredSubTab : 'jeopardy';
+        if (state.activeTab === 'jeopardy' && state.selectedClassId === 'st_kirkos') {
             state.selectedClassId = 'st_michael';
         }
         saveLearningSettings();
@@ -1912,11 +1937,9 @@
             if (typeof collapseSidebar === 'function') {
                 collapseSidebar();
             }
-        } else if (isLearnUrlRoute() && typeof history !== 'undefined' && typeof history.replaceState === 'function') {
-            try {
-                const cleanHash = /^#\/?learn(\?|$)/i.test(window.location.hash || '') ? '' : (window.location.hash || '');
-                history.replaceState(null, null, '/' + (window.location.search || '') + cleanHash);
-            } catch (e) {}
+            syncLearnUrlState(true);
+        } else {
+            syncLearnUrlState(false);
         }
 
         const prayerDisplayEl = document.getElementById('prayer-display');
@@ -1973,6 +1996,10 @@
             }
             window.scrollTo(0, 0);
         }
+
+        if (typeof window !== 'undefined' && typeof window.syncStateToUrl === 'function') {
+            window.syncStateToUrl();
+        }
     }
 
     function initLearningFeature() {
@@ -2005,6 +2032,7 @@
         toggleLearningMode,
         isLearnUrlRoute,
         openLearnFromUrlRoute,
+        syncLearnUrlState,
         initLearningFeature,
         buildProceduralJeopardyBoard,
         generateSelectedReadingsClues,

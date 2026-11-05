@@ -984,7 +984,7 @@ const PSALM_CATEGORIES = [
     }
 ];
 // --- State Variables ---
-const SETTINGS_VERSION = '4.5.1'; // Update this to force refresh load settings
+const SETTINGS_VERSION = '4.5.2'; // Update this to force refresh load settings
 const APP_VERSION = '0.9.0-beta';
 const STATIC_CHANGELOG = [
     { date: '2026-10-30', message: 'feat: add 5-tab navigation, Ethiopian calendar & liturgical hours, and Pray/Liturgy workflows', author: 'vineofmary' },
@@ -2015,7 +2015,11 @@ function buildUrlStateObject(forShortLink = false) {
         gg: globalGeezTranslation,
         rto: readingTranslationOverrides,
         cs: forShortLink ? {} : serializeCollapsedSections(),
-        ac: forShortLink ? true : areAllSectionsCollapsed
+        ac: forShortLink ? true : areAllSectionsCollapsed,
+        lm: Boolean(window.learningService && window.learningService.isLearningMode),
+        lt: (window.learningService && typeof window.learningService.getState === 'function' && window.learningService.getState())
+            ? window.learningService.getState().activeTab
+            : undefined
     };
 }
 
@@ -2031,6 +2035,7 @@ function syncStateToUrl() {
         console.error("Failed to sync state to URL:", e);
     }
 }
+window.syncStateToUrl = syncStateToUrl;
 
 const SECTION_SLUGS = {
     "Daily Prayer | ዘዘወትር ጸሎት": "dp",
@@ -2180,8 +2185,15 @@ async function loadStateFromUrl() {
         }
 
         if (state.ac !== undefined) areAllSectionsCollapsed = state.ac;
-        if (state.cs !== undefined) {
+        if (state.cs !== undefined && typeof state.cs === 'object' && Object.keys(state.cs).length > 0) {
             collapsedSections = deserializeCollapsedSections(state.cs, v);
+        } else if (activePrimaryTab === 'liturgy' && liturgyTabProfile && liturgyTabProfile.collapsedSections) {
+            collapsedSections = JSON.parse(JSON.stringify(liturgyTabProfile.collapsedSections));
+            areAllSectionsCollapsed = false;
+        }
+
+        if (state.lm === true && window.learningService && typeof window.learningService.openLearnFromUrlRoute === 'function') {
+            window.learningService.openLearnFromUrlRoute(state.lt);
         }
 
         console.log("State successfully loaded from URL (V" + v + ")");
@@ -2436,12 +2448,18 @@ function getLiturgyTabDefaultProfile() {
             "Daily Prayer | ዘዘወትር ጸሎት": true,
             "<i>Vespers</i> — Sunset Prayer | ጸሎተ ሠርክ": true,
             "Songs of the Prophets | መኃልየ ነቢያት": true,
+            "Psalms | መዝሙር ዘዳዊት": true,
             "<i>Se'atat</i> Readings | ምንባባተ ሰዓታት": true,
             "Pre-Liturgy Psalms | መዝሙር ዘዳዊት ዘቅድመ ቅዳሴ": true,
             "<i>Matins</i> — Morning Prayer | ጸሎተ ነግህ": false,
+            "<i>Matins</i> — Morning Prayer | ጸሎተ ነግህ::→ Prayer of the Gospel | ጸሎተ ወንጌል": true,
+            "<i>Matins</i> — Morning Prayer | ጸሎተ ነግህ::→ <i>Kidan</i> — Prayer of the Covenant | ጸሎተ ኪዳን": true,
             "→ Prayer of the Gospel | ጸሎተ ወንጌል": true,
             "→ <i>Kidan</i> — Prayer of the Covenant | ጸሎተ ኪዳን": true,
             "<i>Ḳidasé</i> — Liturgy | ቅዳሴ": false,
+            "<i>Ḳidasé</i> — Liturgy | ቅዳሴ::→ Order of the Liturgy | ሥርዓተ ቅዳሴ": true,
+            "<i>Ḳidasé</i> — Liturgy | ቅዳሴ::→ Anaphora of the Apostles | ቅዳሴ ሐዋርያት": true,
+            "<i>Ḳidasé</i> — Liturgy | ቅዳሴ::→ Anaphora of Mary | ቅዳሴ ማርያም": true,
             "→ Order of the Liturgy | ሥርዓተ ቅዳሴ": true,
             "→ Anaphora of the Apostles | ቅዳሴ ሐዋርያት": true,
             "→ Anaphora of Mary | ቅዳሴ ማርያም": true
@@ -2494,8 +2512,16 @@ function applyTabProfile(profile) {
     selectedMiracleId = profile.selectedMiracleId || 'none';
     displayOptions.showSupplications = !!profile.showSupplications;
     displayOptions.showGeezPhoneticChants = !!profile.showGeezPhoneticChants;
-    areAllSectionsCollapsed = profile.areAllSectionsCollapsed !== undefined ? profile.areAllSectionsCollapsed : true;
-    collapsedSections = profile.collapsedSections ? JSON.parse(JSON.stringify(profile.collapsedSections)) : {};
+    const defaultLitCollapsed = getLiturgyTabDefaultProfile().collapsedSections;
+    if (profile.isKidaseModeActive || profile.showAnaphora) {
+        areAllSectionsCollapsed = profile.areAllSectionsCollapsed !== undefined ? profile.areAllSectionsCollapsed : false;
+        collapsedSections = (profile.collapsedSections && Object.keys(profile.collapsedSections).length > 0)
+            ? { ...defaultLitCollapsed, ...JSON.parse(JSON.stringify(profile.collapsedSections)) }
+            : JSON.parse(JSON.stringify(defaultLitCollapsed));
+    } else {
+        areAllSectionsCollapsed = profile.areAllSectionsCollapsed !== undefined ? profile.areAllSectionsCollapsed : true;
+        collapsedSections = profile.collapsedSections ? JSON.parse(JSON.stringify(profile.collapsedSections)) : {};
+    }
 
     // Sync checkboxes in Psalm & Prophet Songs selectors
     if (psalmSelectorContainer) {
@@ -2604,10 +2630,8 @@ function switchPrimaryTab(tabName) {
             }
             applyTabProfile(prayTabProfile);
         } else {
-            if (isReclickingActiveTab || !liturgyTabProfile) {
-                liturgyTabProfile = getLiturgyTabDefaultProfile();
-                localStorage.setItem('liturgyTabProfile', JSON.stringify(liturgyTabProfile));
-            }
+            liturgyTabProfile = getLiturgyTabDefaultProfile();
+            localStorage.setItem('liturgyTabProfile', JSON.stringify(liturgyTabProfile));
             applyTabProfile(liturgyTabProfile);
         }
 
@@ -7073,24 +7097,24 @@ function _renderPrayersSync() {
         }
     }
 
+    // Render Supplicatory Prayers immediately at the end of the Closing Prayer of the Psalms (before Se'atat & Liturgy sections)
+    if (displayOptions.showSupplications) {
+        const supplications = getSupplicatoryPrayers();
+        addSectionTitle("Supplications | ምሕላ", true, null, { resetParentGroup: true, defaultCollapsed: true });
+        supplications.forEach((prayer, index) => {
+            const prayerCard = createPrayerCardElement(prayer, index);
+            prayerDisplay.appendChild(prayerCard);
+            if (displayOptions.presentationMode !== 'slides' && window.isRenderingCollapsed) {
+                prayerCard.style.display = 'none';
+            }
+        });
+    }
+
     // Render Se'atat Lectionary Scripture Readings
     renderSelectedSeatatLectionary(addSectionTitle);
 
     // Render Preparatory Psalms, Matins, Order of the Liturgy, and Anaphora (Vespers already rendered above)
     renderSelectedKidase(addSectionTitle, { skipVespers: true });
-
-    // Render Supplicatory Prayers
-    if (displayOptions.showSupplications) {
-        const supplications = getSupplicatoryPrayers();
-        addSectionTitle("Supplications | ምሕላ");
-        supplications.forEach((prayer, index) => {
-            const prayerCard = createPrayerCardElement(prayer, index);
-            prayerDisplay.appendChild(prayerCard);
-            if (displayOptions.presentationMode !== 'slides' && lastSectionTitle && collapsedSections[lastSectionTitle]) {
-                prayerCard.style.display = 'none';
-            }
-        });
-    }
 
     // Always render the standard prayer sequence at the very end
     renderSequence();
@@ -12095,6 +12119,9 @@ const appCoreExports = {
     matchMiraclesByText,
     getPrayTabDefaultProfile,
     getLiturgyTabDefaultProfile,
+    buildUrlStateObject,
+    syncStateToUrl,
+    loadStateFromUrl,
     getActiveLectionaryReadingsSnapshot: () => ({
         isKidaseModeActive,
         showMatins,

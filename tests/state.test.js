@@ -60,4 +60,29 @@ describe('State Serialization & Unicode URL Encoding', () => {
       expect(app.slugifyTitle(null)).toBe('');
     });
   });
+
+  describe('Liturgy Tab Default Collapse Profile', () => {
+    it('collapses top-level pre-liturgy sections and keeps Matins & Kidase expanded one level with sub-sections collapsed', () => {
+      const litProfile = app.getLiturgyTabDefaultProfile();
+      expect(litProfile.areAllSectionsCollapsed).toBe(false);
+      const cs = litProfile.collapsedSections;
+
+      // Completely collapsed sections
+      expect(cs['Daily Prayer | ዘዘወትር ጸሎት']).toBe(true);
+      expect(cs['<i>Vespers</i> — Sunset Prayer | ጸሎተ ሠርክ']).toBe(true);
+      expect(cs['Songs of the Prophets | መኃልየ ነቢያት']).toBe(true);
+      expect(cs["<i>Se'atat</i> Readings | ምንባባተ ሰዓታት"]).toBe(true);
+      expect(cs['Pre-Liturgy Psalms | መዝሙር ዘዳዊት ዘቅድመ ቅዳሴ']).toBe(true);
+
+      // Expanded one level (parent expanded = false, sub-sections collapsed = true)
+      expect(cs['<i>Matins</i> — Morning Prayer | ጸሎተ ነግህ']).toBe(false);
+      expect(cs['<i>Matins</i> — Morning Prayer | ጸሎተ ነግህ::→ Prayer of the Gospel | ጸሎተ ወንጌል']).toBe(true);
+      expect(cs['<i>Matins</i> — Morning Prayer | ጸሎተ ነግህ::→ <i>Kidan</i> — Prayer of the Covenant | ጸሎተ ኪዳን']).toBe(true);
+
+      expect(cs['<i>Ḳidasé</i> — Liturgy | ቅዳሴ']).toBe(false);
+      expect(cs['<i>Ḳidasé</i> — Liturgy | ቅዳሴ::→ Order of the Liturgy | ሥርዓተ ቅዳሴ']).toBe(true);
+      expect(cs['<i>Ḳidasé</i> — Liturgy | ቅዳሴ::→ Anaphora of the Apostles | ቅዳሴ ሐዋርያት']).toBe(true);
+      expect(cs['<i>Ḳidasé</i> — Liturgy | ቅዳሴ::→ Anaphora of Mary | ቅዳሴ ማርያም']).toBe(true);
+    });
+  });
 });
