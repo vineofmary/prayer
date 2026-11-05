@@ -1851,8 +1851,52 @@
     }
 
     // ========================================================================
-    // MODE TOGGLE & HEADER INTEGRATION
+    // MODE TOGGLE, URL ROUTING & HEADER INTEGRATION
     // ========================================================================
+    function isLearnUrlRoute(loc) {
+        try {
+            const targetLoc = loc || (typeof window !== 'undefined' ? window.location : null);
+            if (!targetLoc) return false;
+            const pathname = String(targetLoc.pathname || '').toLowerCase();
+            if (/^\/learn(\/|$)/.test(pathname)) return true;
+            const hash = String(targetLoc.hash || '').toLowerCase();
+            if (hash === '#learn' || hash === '#/learn' || hash.startsWith('#learn?') || hash.startsWith('#/learn?')) return true;
+            const search = String(targetLoc.search || '');
+            if (search) {
+                const params = new URLSearchParams(search);
+                const tabParam = (params.get('tab') || params.get('mode') || '').toLowerCase();
+                if (tabParam === 'learn' || tabParam === 'jeopardy') return true;
+            }
+        } catch (e) {}
+        return false;
+    }
+
+    function openLearnFromUrlRoute() {
+        try {
+            if (typeof window !== 'undefined' && window.location && /^\/learn\/+$/i.test(window.location.pathname || '')) {
+                if (typeof history !== 'undefined' && typeof history.replaceState === 'function') {
+                    history.replaceState(null, null, '/learn' + (window.location.search || '') + (window.location.hash || ''));
+                }
+            }
+            const splashScreen = document.getElementById('splash-screen');
+            const appContainer = document.getElementById('app-container');
+            if (splashScreen) splashScreen.classList.add('hidden');
+            if (appContainer) appContainer.classList.remove('hidden');
+            if (typeof sessionStorage !== 'undefined') {
+                sessionStorage.setItem('splashShown', 'true');
+            }
+        } catch (e) {}
+
+        loadLearningSettings();
+        state.activeTab = 'jeopardy';
+        if (state.selectedClassId === 'st_kirkos') {
+            state.selectedClassId = 'st_michael';
+        }
+        saveLearningSettings();
+        state.jeopardyBoard = [];
+        toggleLearningMode(true);
+    }
+
     function toggleLearningMode(forceState) {
         loadLearningSettings();
         const container = ensureLearningDOM();
@@ -1868,6 +1912,11 @@
             if (typeof collapseSidebar === 'function') {
                 collapseSidebar();
             }
+        } else if (isLearnUrlRoute() && typeof history !== 'undefined' && typeof history.replaceState === 'function') {
+            try {
+                const cleanHash = /^#\/?learn(\?|$)/i.test(window.location.hash || '') ? '' : (window.location.hash || '');
+                history.replaceState(null, null, '/' + (window.location.search || '') + cleanHash);
+            } catch (e) {}
         }
 
         const prayerDisplayEl = document.getElementById('prayer-display');
@@ -1889,10 +1938,14 @@
             const navTarget = btn.getAttribute('data-nav-tab');
             if (!navTarget) return;
             if (state.isActive) {
-                btn.classList.toggle('active', navTarget === 'learn');
+                const isLearn = navTarget === 'learn';
+                btn.classList.toggle('active', isLearn);
+                btn.setAttribute('aria-selected', isLearn ? 'true' : 'false');
             } else if (!document.body.classList.contains('targuma-mode-active')) {
                 const fallbackTab = (typeof activePrimaryTab !== 'undefined' && (activePrimaryTab === 'pray' || activePrimaryTab === 'liturgy')) ? activePrimaryTab : 'pray';
-                btn.classList.toggle('active', navTarget === fallbackTab);
+                const isFallback = navTarget === fallbackTab;
+                btn.classList.toggle('active', isFallback);
+                btn.setAttribute('aria-selected', isFallback ? 'true' : 'false');
             }
         });
         const floatingEl = document.getElementById('prayer-floating-controls');
@@ -1931,12 +1984,27 @@
                 toggleLearningMode();
             });
         }
+        if (typeof window !== 'undefined' && !window._momLearnRouteListenersBound) {
+            window._momLearnRouteListenersBound = true;
+            const handleRouteChange = () => {
+                if (isLearnUrlRoute()) {
+                    openLearnFromUrlRoute();
+                }
+            };
+            window.addEventListener('popstate', handleRouteChange);
+            window.addEventListener('hashchange', handleRouteChange);
+        }
+        if (isLearnUrlRoute()) {
+            openLearnFromUrlRoute();
+        }
     }
 
     const LearningServiceAPI = {
         get isLearningMode() { return state.isActive; },
         exitLearningMode: () => toggleLearningMode(false),
         toggleLearningMode,
+        isLearnUrlRoute,
+        openLearnFromUrlRoute,
         initLearningFeature,
         buildProceduralJeopardyBoard,
         generateSelectedReadingsClues,

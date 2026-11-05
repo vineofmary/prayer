@@ -2523,7 +2523,9 @@ function applyTabProfile(profile) {
 }
 
 function updatePrimaryNavTabsUI(tabOverride) {
-    const targetTab = tabOverride || activePrimaryTab;
+    const isLearnOpen = Boolean(window.learningService && window.learningService.isLearningMode);
+    const isTargumaOpen = Boolean(window.targumaService && window.targumaService.isTargumaMode);
+    const targetTab = tabOverride || (isLearnOpen ? 'learn' : (isTargumaOpen ? 'targuma' : activePrimaryTab));
     document.querySelectorAll('.primary-nav-tab, .header-nav-tab, .bottom-nav-item').forEach(btn => {
         const navTarget = btn.getAttribute('data-nav-tab');
         if (!navTarget) return;
@@ -2532,7 +2534,7 @@ function updatePrimaryNavTabsUI(tabOverride) {
         btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
     });
     if (prayerFloatingControls) {
-        const showFloating = (targetTab === 'pray' || targetTab === 'liturgy') && !isServantsCornerActive;
+        const showFloating = (targetTab === 'pray' || targetTab === 'liturgy') && !isServantsCornerActive && !isLearnOpen && !isTargumaOpen;
         prayerFloatingControls.style.display = showFloating ? 'flex' : 'none';
     }
 }
@@ -10749,10 +10751,14 @@ async function initApp() {
 
     const splashScreen = document.getElementById('splash-screen');
     const appContainer = document.getElementById('app-container');
+    const isDirectLearnRoute = (window.learningService && typeof window.learningService.isLearnUrlRoute === 'function' && window.learningService.isLearnUrlRoute()) ||
+        /^\/learn(\/|$)/i.test(window.location.pathname || '') ||
+        /^#\/?learn(\?|$)/i.test(window.location.hash || '');
 
-    if (sessionStorage.getItem('splashShown')) {
-        splashScreen.classList.add('hidden');
-        appContainer.classList.remove('hidden');
+    if (isDirectLearnRoute || sessionStorage.getItem('splashShown')) {
+        if (splashScreen) splashScreen.classList.add('hidden');
+        if (appContainer) appContainer.classList.remove('hidden');
+        sessionStorage.setItem('splashShown', 'true');
     } else {
         splashScreen.addEventListener('transitionend', () => {
             splashScreen.classList.add('hidden');
@@ -10778,6 +10784,10 @@ async function initApp() {
     updateLanguageOrderList();
     applyTheme(); // Explicitly apply theme after settings are loaded
     renderPrayers();
+
+    if (isDirectLearnRoute && window.learningService && typeof window.learningService.openLearnFromUrlRoute === 'function') {
+        window.learningService.openLearnFromUrlRoute();
+    }
 
     window.addEventListener('resize', () => {
         checkAndEnforceLayoutRules();

@@ -67,6 +67,17 @@ class MainActivity : AppCompatActivity() {
     companion object {
         private const val ASSET_HOST = "appassets.androidplatform.net"
         private const val START_URL = "https://$ASSET_HOST/index.html"
+        private const val LEARN_URL = "https://$ASSET_HOST/learn"
+    }
+
+    private fun resolveLaunchUrl(launchIntent: Intent?): String {
+        val dataUri = launchIntent?.data ?: return START_URL
+        val path = dataUri.path?.lowercase() ?: ""
+        return if (path == "/learn" || path.startsWith("/learn/")) {
+            LEARN_URL
+        } else {
+            START_URL
+        }
     }
 
     @SuppressLint("SetJavaScriptEnabled")
@@ -108,7 +119,15 @@ class MainActivity : AppCompatActivity() {
 
         // Load the complete standalone web app from bundled assets via virtual HTTPS origin
         // so Fetch API, JSON bible loading, and localStorage work identically to web.
-        webView.loadUrl(START_URL)
+        webView.loadUrl(resolveLaunchUrl(intent))
+    }
+
+    override fun onNewIntent(intent: Intent) {
+        super.onNewIntent(intent)
+        setIntent(intent)
+        if (::webView.isInitialized && resolveLaunchUrl(intent) == LEARN_URL) {
+            webView.loadUrl(LEARN_URL)
+        }
     }
 
     private fun resolveMimeType(path: String): String {
@@ -221,8 +240,8 @@ class MainActivity : AppCompatActivity() {
                 if (uri.host != ASSET_HOST) {
                     return super.shouldInterceptRequest(view, request)
                 }
-                val rawPath = Uri.decode(uri.encodedPath ?: "").removePrefix("/")
-                val assetPath = if (rawPath.isEmpty()) "index.html" else rawPath
+                val rawPath = Uri.decode(uri.encodedPath ?: "").trim('/')
+                val assetPath = if (rawPath.isEmpty() || !rawPath.contains('.')) "index.html" else rawPath
                 return try {
                     val inputStream = assets.open(assetPath)
                     val mimeType = resolveMimeType(assetPath)

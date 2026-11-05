@@ -441,5 +441,34 @@ describe('Learning & Games Module, Interlinear Ge\'ez, and Header/Sidebar Reorga
       // Must not force window.location.reload() on serviceWorker controllerchange during startup
       expect(scriptAssets).not.toContain("navigator.serviceWorker.addEventListener('controllerchange'");
     });
+
+    it('routes /learn directly to the Learn tab with Jeopardy opened immediately', () => {
+      expect(learning.isLearnUrlRoute({ pathname: '/learn', hash: '', search: '' })).toBe(true);
+      expect(learning.isLearnUrlRoute({ pathname: '/learn/', hash: '', search: '' })).toBe(true);
+      expect(learning.isLearnUrlRoute({ pathname: '/', hash: '#learn', search: '' })).toBe(true);
+      expect(learning.isLearnUrlRoute({ pathname: '/', hash: '', search: '?tab=learn' })).toBe(true);
+      expect(learning.isLearnUrlRoute({ pathname: '/', hash: '', search: '' })).toBe(false);
+
+      // Even if a user previously saved a non-Jeopardy tab or Under-7 class, /learn opens Jeopardy immediately
+      learning.toggleLearningMode(false);
+      localStorage.setItem('mom_learning_settings_v1', JSON.stringify({
+        selectedClassId: 'st_kirkos',
+        activeTab: 'matcher'
+      }));
+
+      learning.openLearnFromUrlRoute();
+
+      const state = learning.getState();
+      expect(learning.isLearningMode).toBe(true);
+      expect(state.activeTab).toBe('jeopardy');
+      expect(state.selectedClassId).toBe('st_michael');
+
+      const learningView = document.getElementById('learning-view');
+      expect(learningView.classList.contains('hidden')).toBe(false);
+      expect(learningView.querySelector('.jeopardy-board-grid')).not.toBeNull();
+
+      const learnHeaderBtn = document.querySelector('[data-nav-tab="learn"]');
+      expect(learnHeaderBtn.classList.contains('active')).toBe(true);
+    });
   });
 });
