@@ -1679,21 +1679,21 @@ const rubricGoldRegex = {
 
 // --- Speaker Label Data ---
 const speakerKeywords = {
-    english: ["Deacon or Priest", "Priest or Deacon", "Priest", "Asst. Priest", "Deacon", "People", "Subdeacon", "All", "ALL", "Leader", "Reader", "Bridegroom", "Bride"],
-    geez_script: ["ካህን", "ካህን ንፍቅ", "ዲያቆን", "ሕዝብ", "ንፍቀ ዲያቆን", "ኵሎሙ", "መሪሕ", "አንባቢ", "ሙሽራው", "ሙሽራዋ"],
-    amharic_script: ["ካህን", "ካህን ንፍቅ", "ዲያቆን", "ሕዝብ", "ንፍቀ ዲያቆን", "ሁሉም", "መሪ", "አንባቢ", "ሙሽራው", "ሙሽራዋ"],
-    amharic_phonetic: ["kahn", "kahin", "diyakon", "ḥizb", "hizb", "hulumu", "meri", "anbabi", "Priest", "Deacon", "People", "Leader"],
+    english: ["Deacon or Priest", "Priest or Deacon", "Asst. Priest", "Asst Priest", "Asst. Priests", "Asst. Deacon", "Asst Deacon", "Priest", "Deacon", "Subdeacon", "People", "Clergy", "All", "ALL", "Leader", "Reader", "Bridegroom", "Bride"],
+    geez_script: ["ካህን ንፍቅ", "ንፍቅ ካህን", "ንፍቀ ዲያቆን", "ንፍቅ ዲያቆን", "ዲያቆን ንፍቅ", "ን.ዲያቆን", "ን. ዲያቆን", "ካህናት", "ካህን", "ዲያቆን", "ሕዝብ", "ኵሎሙ", "መሪሕ", "አንባቢ", "ሙሽራው", "ሙሽራዋ"],
+    amharic_script: ["ካህን ንፍቅ", "ንፍቅ ካህን", "ንፍቀ ዲያቆን", "ንፍቅ ዲያቆን", "ዲያቆን ንፍቅ", "ን.ዲያቆን", "ን. ዲያቆን", "ካህናት", "ካህን", "ዲያቆን", "ሕዝብ", "ሁሉም", "መሪ", "አንባቢ", "ሙሽራው", "ሙሽራዋ"],
+    amharic_phonetic: ["kahn nfḳ", "nfḳ kahn", "nfḳe dīyaḳon", "nfḳ dīyaḳon", "dīyaḳon nfḳ", "n.dīyaḳon", "n. dīyaḳon", "kahnat", "kahn", "kahin", "dīyaḳon", "dīyakon", "diyakon", "ḥizb", "hizb", "ḥzb", "hzb", "hulumu", "hulum", "meri", "merī", "anbabi", "anbabī", "Asst. Priest", "Asst Priest", "Asst. Priests", "Subdeacon", "Priest", "Deacon", "People", "All", "ALL", "Leader"],
     oromoo: ["Lubbuu", "Luba", "Diyaaqonii", "Uummata", "Hunda", "Garsee"],
-    tigrinya_script: ["ካህን", "ካህን ንፍቅ", "ዲያቆን", "ሕዝብ", "ንፍቀ ዲያቆን", "ኩሉኹም", "መራሒ", "ነባቢ", "መርዓዊ", "መርዓት"],
-    tigrinya_phonetic: ["kahn", "kahin", "diyakon", "ḥizb", "hizb", "kulukhum", "merahi", "meraḥī", "nebabi", "Priest", "Deacon", "People", "Leader"],
+    tigrinya_script: ["ካህን ንፍቅ", "ንፍቅ ካህን", "ንፍቀ ዲያቆን", "ንፍቅ ዲያቆን", "ዲያቆን ንፍቅ", "ን.ዲያቆን", "ን. ዲያቆን", "ካህናት", "ካህን", "ዲያቆን", "ሕዝብ", "ኩሉኹም", "መራሒ", "ነባቢ", "መርዓዊ", "መርዓት"],
+    tigrinya_phonetic: ["kahn nfḳ", "nfḳ kahn", "nfḳe dīyaḳon", "nfḳ dīyaḳon", "dīyaḳon nfḳ", "n.dīyaḳon", "n. dīyaḳon", "kahnat", "kahn", "kahin", "dīyaḳon", "dīyakon", "diyakon", "ḥizb", "hizb", "ḥzb", "hzb", "kulukhum", "merahi", "meraḥī", "nebabi", "nebabī", "Asst. Priest", "Asst Priest", "Subdeacon", "Priest", "Deacon", "People", "All", "ALL", "Leader"],
     spanish: ["Sacerdote Asistente y Pueblo", "Asistente. Sacerdote", "Asistente. Diácono", "Diácono o Sacerdote", "Sacerdote o Diácono", "Sacerdotes auxiliares", "Sacerdote Asistente", "Sacerdote asistente", "Sacerdote auxiliar", "Sacerdote Celebrante", "Sacerdote celebrante", "Diácono Asistente", "Diácono asistente", "Diácono auxiliar", "Asistente del diácono", "Obispo/Patriarca", "Clérigos", "Clero", "Sacerdotes", "Sacerdote", "Diácono", "Pueblo", "Subdiácono", "Todos", "TODOS", "Líder", "Gente", "Lector", "Novio", "Novia"],
     spanish_pr: ["Sacerdote Asistente y Pueblo", "Asistente. Sacerdote", "Asistente. Diácono", "Diácono o Sacerdote", "Sacerdote o Diácono", "Sacerdotes auxiliares", "Sacerdote Asistente", "Sacerdote asistente", "Sacerdote auxiliar", "Sacerdote Celebrante", "Sacerdote celebrante", "Diácono Asistente", "Diácono asistente", "Diácono auxiliar", "Asistente del diácono", "Obispo/Patriarca", "Clérigos", "Clero", "Sacerdotes", "Sacerdote", "Diácono", "Pueblo", "Subdiácono", "Todos", "TODOS", "Líder", "Gente", "Lector", "Novio", "Novia"],
     french: ["Prêtre", "Diacre", "Peuple", "Sous-diacre", "Tous", "Leader", "Lecteur", "Marié", "Mariée"],
     arabic: ["الكاهن", "الشعب", "الشماس", "القارئ", "الجميع", "الرب", "الناس"],
     greek: ["Ιερέας", "Διάκονος", "Λαός", "Λαοί", "Όλοι", "Αναγνώστης"],
     hebrew: ["כהן", "כוهاء", "עם", "אנשים", "דיאקון"],
-    malayalam: ["പുരോഹിതൻ", "ജനതകൾ", "ആളുകൾ", "ജനങ്ങൾ", "ശെമ്മാശൻ"],
-    geez_phonetic: ["kwlomu", "ḥzb", "hzb", "merīḥ", "meriḥ", "merih", "kahn", "kahin", "diyakon", "dīyakon", "ḥizb", "hizb", "kwllomu", "kullomu", "meraḥi", "meraḥī", "anbabi", "anbabī", "nebabi", "nebabī", "Kahn", "Kahin", "Asst. Kahn", "Diyakon", "Dīyakon", "Nfq Diyakon", "Ḥizb", "Hizb", "Kwllomu", "Kullomu", "Kwlomu", "Merīḥ", "Meriḥ", "Merih", "Meraḥi", "Meraḥī", "Anbabi", "Anbabī", "Nebabi", "Nebabī", "Priest", "Asst. Priest", "Deacon", "People", "Subdeacon", "All", "ALL", "Leader", "Reader", "Bridegroom", "Bride"]
+    malayalam: ["ഡീക്കൺ അല്ലെങ്കിൽ പുരോഹിതൻ", "അസിസ്റ്റന്റ് പുരോഹിതൻ", "അസി. പുരോഹിതൻ", "പുരോഹിതൻ", "ജനതകൾ", "ആളുകൾ", "ജനങ്ങൾ", "ശെമ്മാശൻ"],
+    geez_phonetic: ["kahn nfḳ", "nfḳ kahn", "nfḳe dīyaḳon", "nfḳ dīyaḳon", "dīyaḳon nfḳ", "n.dīyaḳon", "n. dīyaḳon", "kahnat", "kwlomu", "ḥzb", "hzb", "merīḥ", "meriḥ", "merih", "kahn", "kahin", "dīyaḳon", "diyakon", "dīyakon", "ḥizb", "hizb", "kwllomu", "kullomu", "meraḥi", "meraḥī", "anbabi", "anbabī", "nebabi", "nebabī", "Kahn", "Kahin", "Asst. Kahn", "Diyakon", "Dīyakon", "Nfq Diyakon", "Ḥizb", "Hizb", "Kwllomu", "Kullomu", "Kwlomu", "Merīḥ", "Meriḥ", "Merih", "Meraḥi", "Meraḥī", "Anbabi", "Anbabī", "Nebabi", "Nebabī", "Priest", "Asst. Priest", "Asst Priest", "Asst. Priests", "Deacon", "People", "Subdeacon", "All", "ALL", "Leader", "Reader", "Bridegroom", "Bride"]
 };
 
 function toGeez(n) {
@@ -5050,13 +5050,19 @@ function formatPrayerText(text, langKey, query, isFirstLanguage, chapter = null,
     if (keywords) {
         const sortedKeywords = [...keywords].sort((a, b) => b.length - a.length);
         const escapedKeywords = sortedKeywords.map(k => k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
-        const regex = new RegExp(`(፨\\s*)?(${escapedKeywords.join('|')})(?:\\s*(?:or|and|ወይም|ወ|o|y|ou|et|\\/|-)\\s*(?:${escapedKeywords.join('|')}))*(?:\\s*(?:<span class="parenthetical-text">)?\\([^)]*\\)(?:<\\/span>)?)*([:፡።፤፣])`, 'gi');
-        processedText = processedText.replace(regex, (match) => {
+        const keywordUnion = escapedKeywords.join('|');
+        const lineStartPrefix = `(?:^|(?:\\r?\\n|<br\\s*\\/?>)\\s*)(?:(?:<span[^>]*>\\{[^}]*\\}<\\/span>|\\{[^}]*\\})\\s*)*`;
+        const speakerBody = `(?:፨\\s*)?(?:${keywordUnion})(?:\\s*(?:or|and|ወይም|ወ|o|y|ou|et|\\/|-)\\s*(?:${keywordUnion}))*(?:\\s*(?:<span class="parenthetical-text">)?\\([^)]*\\)(?:<\\/span>)?)*(?:\\s*(?:<span[^>]*>)?\\{[^}]*\\}(?:<\\/span>)?)*[:፡፤፣]`;
+        const explicitEthiopicPrefixSpeaker = `፨\\s*(?:${keywordUnion})(?:\\s*(?:or|and|ወይም|ወ|o|y|ou|et|\\/|-)\\s*(?:${keywordUnion}))*(?:\\s*(?:<span class="parenthetical-text">)?\\([^)]*\\)(?:<\\/span>)?)*(?:\\s*(?:<span[^>]*>)?\\{[^}]*\\}(?:<\\/span>)?)*[:፡፤፣]`;
+        const regex = new RegExp(`(${lineStartPrefix})(${speakerBody})|()(${explicitEthiopicPrefixSpeaker})`, 'gi');
+        processedText = processedText.replace(regex, (match, prefix1, body1, prefix2, body2) => {
+            const prefix = prefix1 ?? prefix2 ?? '';
+            const body = body1 || body2;
             if (displayOptions.showSpeakerLabels) {
-                const cleanMatch = match.replace(/<\/?span[^>]*>/g, '');
-                return `<span class="speaker-label">${cleanMatch}</span>`;
+                const cleanBody = body.replace(/<\/?span[^>]*>/g, '');
+                return `${prefix}<span class="speaker-label">${cleanBody}</span>`;
             }
-            return '';
+            return prefix;
         }).trim();
     }
 
