@@ -260,6 +260,96 @@ describe('State Serialization & Unicode URL Encoding', () => {
       expect(getHeader('<i>Matins</i> — Morning Prayer | ጸሎተ ነግህ::→ Prayer of the Gospel | ጸሎተ ወንጌል')?.classList.contains('collapsed')).toBe(true);
       expect(getHeader('<i>Ḳidasé</i> — Liturgy | ቅዳሴ')?.classList.contains('collapsed')).toBe(false);
       expect(getHeader('<i>Ḳidasé</i> — Liturgy | ቅዳሴ::→ Order of the Liturgy | ሥርዓተ ቅዳሴ')?.classList.contains('collapsed')).toBe(true);
+    }, 15000);
+
+    it('defers card-inline lectionary dropdown updates until the Go button is clicked and stays on the reading slide in Slides Mode', () => {
+      // Use a focused Liturgy profile (Order of the Liturgy only) for fast DOM rendering in Happy-DOM
+      app.applyTabProfile({
+        ...app.getLiturgyTabDefaultProfile(),
+        showDailyPrayer: false,
+        showGateOfLight: false,
+        showYewediswaMelaekt: false,
+        showVespers: false,
+        showMatins: false,
+        showPrepPsalms: false,
+        showSeatatReadings: false,
+        showAnaphora: false,
+        showSupplications: false,
+        selectedPsalms: [],
+        selectedProphetSongs: [],
+        isKidaseModeActive: true
+      });
+      app._renderPrayersSync();
+      const prayerDisplay = document.getElementById('prayer-display');
+
+      // Find the Pauline Epistle opening slide and the card right before it
+      let allSlides = Array.from(prayerDisplay.querySelectorAll('.prayer-card, .section-title.collapsible'));
+      let paulineCard = prayerDisplay.querySelector('.prayer-card[data-reading-type="pauline"]');
+      expect(paulineCard).toBeTruthy();
+      const paulineSlideIdx = allSlides.indexOf(paulineCard);
+      expect(paulineSlideIdx).toBeGreaterThan(0);
+
+      // Enter slides mode from the card right before Pauline Epistle
+      const prevCard = allSlides[paulineSlideIdx - 1];
+      app.togglePresentationMode({
+        signature: prevCard.dataset.prayerSignature,
+        cardId: prevCard.dataset.cardId,
+        prayerIndex: prevCard.dataset.prayerIndex
+      });
+      expect(app.getActiveLectionaryReadingsSnapshot().presentationMode).toBe('slides');
+
+      // Advance one slide to the Pauline reading slide
+      app.nextSlide();
+      allSlides = Array.from(prayerDisplay.querySelectorAll('.prayer-card, .section-title.collapsible'));
+      paulineCard = prayerDisplay.querySelector('.prayer-card[data-reading-type="pauline"]');
+      const activePaulineIdx = allSlides.indexOf(paulineCard);
+      expect(app.getActiveLectionaryReadingsSnapshot().currentSlideIndex).toBe(activePaulineIdx);
+
+      const inlinePicker = paulineCard.querySelector('.card-inline-lectionary-picker');
+      expect(inlinePicker).toBeTruthy();
+      const goBtn = inlinePicker.querySelector('.lectionary-go-btn');
+      expect(goBtn).toBeTruthy();
+      expect(goBtn.classList.contains('has-pending-changes')).toBe(false);
+
+      const initialRef = app.getActiveLectionaryReadingsSnapshot().kidaseLectionaryRefs.pauline;
+      const selects = inlinePicker.querySelectorAll('.lectionary-picker-single-row select');
+      expect(selects.length).toBe(4); // Book, Ch, Start, End
+      const [bookSel, chSel, startSel, endSel] = selects;
+
+      // Change Book to Galatians -> should NOT re-render or jump slides yet
+      bookSel.value = 'Galatians';
+      bookSel.dispatchEvent(new Event('change'));
+      expect(app.getActiveLectionaryReadingsSnapshot().kidaseLectionaryRefs.pauline).toBe(initialRef);
+      expect(app.getActiveLectionaryReadingsSnapshot().currentSlideIndex).toBe(activePaulineIdx);
+      expect(goBtn.classList.contains('has-pending-changes')).toBe(true);
+      // DOM card was NOT wiped/replaced while user is still configuring dropdowns
+      expect(prayerDisplay.contains(paulineCard)).toBe(true);
+
+      // Change Chapter to 2, Start to 1, End to 5 -> still deferred
+      chSel.value = '2';
+      chSel.dispatchEvent(new Event('change'));
+      startSel.value = '1';
+      startSel.dispatchEvent(new Event('change'));
+      endSel.value = '5';
+      endSel.dispatchEvent(new Event('change'));
+      expect(app.getActiveLectionaryReadingsSnapshot().kidaseLectionaryRefs.pauline).toBe(initialRef);
+      expect(app.getActiveLectionaryReadingsSnapshot().currentSlideIndex).toBe(activePaulineIdx);
+
+      // Now click the Go button -> commits ref, re-renders, and jumps directly to the updated Pauline slide
+      goBtn.click();
+      app._renderPrayersSync();
+
+      const afterSnap = app.getActiveLectionaryReadingsSnapshot();
+      expect(afterSnap.kidaseLectionaryRefs.pauline).toBe('Galatians 2:1-5');
+
+      allSlides = Array.from(prayerDisplay.querySelectorAll('.prayer-card, .section-title.collapsible'));
+      const updatedPaulineCard = prayerDisplay.querySelector('.prayer-card[data-reading-type="pauline"]');
+      expect(updatedPaulineCard).toBeTruthy();
+      const updatedPaulineIdx = allSlides.indexOf(updatedPaulineCard);
+      expect(afterSnap.currentSlideIndex).toBe(updatedPaulineIdx);
+
+      // Exit slides mode to restore clean state
+      app.togglePresentationMode();
     });
   });
 });

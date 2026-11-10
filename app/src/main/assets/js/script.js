@@ -1114,6 +1114,7 @@ let currentSlideIndex = 0;
 let _pendingSlideSignature = null; // Persists target slide identity across async re-renders
 let _pendingSlideId = null; // Used for jump-to buttons that trigger a DOM rebuild
 let _pendingSlidePredicate = null;
+let _pendingSlideReadingType = null; // Persists target reading opening slide across async re-renders
 let areAllSectionsCollapsed = true;
 
 function getSeatatLiturgicalDay() {
@@ -3646,6 +3647,16 @@ function getActualVerseCount(bookName, chapterNum) {
         }
     }
 
+    // Try WeahaduBibleService cache
+    if (window.WeahaduBibleService && window.WeahaduBibleService.canon) {
+        for (const ed of ['en-kjv', 'am-2000', 'gez-1980', 'gez-2014', 'ti-1997']) {
+            const verses = window.WeahaduBibleService.getVersesSync(ed, `${lookupName} ${chapterNum}:1-999`);
+            if (verses && verses.length > 0) {
+                return Math.max(...verses.map(v => parseInt(v.n, 10)).filter(n => !isNaN(n)));
+            }
+        }
+    }
+
     return null;
 }
 
@@ -3814,7 +3825,8 @@ function updateTranslationOverrideVisibility(targetRow = null) {
     });
 }
 
-function createTranslationOverrideRow(readingKey) {
+function createTranslationOverrideRow(readingKey, options = {}) {
+    const { isCardInline = false, onPendingChange = null } = options;
     const row = document.createElement('div');
     row.className = 'reading-translation-overrides';
     row.dataset.readingKey = readingKey;
@@ -3882,18 +3894,40 @@ function createTranslationOverrideRow(readingKey) {
     geezPill.appendChild(geezLabel);
     geezPill.appendChild(geezSelect);
 
-    const handleChange = () => {
+    row.hasPendingChanges = () => (
+        engSelect.value !== getReadingTranslationOverride(readingKey, 'english') ||
+        amSelect.value !== getReadingTranslationOverride(readingKey, 'amharic') ||
+        geezSelect.value !== getReadingTranslationOverride(readingKey, 'geez')
+    );
+
+    row.commitOverrides = () => {
         if (!readingTranslationOverrides[readingKey]) {
             readingTranslationOverrides[readingKey] = {};
         }
         readingTranslationOverrides[readingKey].english = engSelect.value;
         readingTranslationOverrides[readingKey].amharic = amSelect.value;
         readingTranslationOverrides[readingKey].geez = geezSelect.value;
-        saveSettings();
         syncAllTranslationOverrideRows(readingKey, row);
+    };
+
+    const handleChange = () => {
+        if (isCardInline) {
+            if (typeof onPendingChange === 'function') {
+                onPendingChange();
+            }
+            return;
+        }
+        row.commitOverrides();
+        saveSettings();
 
         const targetCard = row.closest('.prayer-card');
-        const targetReadingType = targetCard ? targetCard.dataset.readingType : null;
+        const targetReadingType = targetCard ? targetCard.dataset.readingType : readingKey;
+        if (displayOptions.presentationMode === 'slides' && targetReadingType) {
+            _pendingSlideReadingType = targetReadingType;
+            _pendingSlideSignature = null;
+            _pendingSlideId = null;
+            _pendingSlidePredicate = null;
+        }
         renderPrayers();
         if (targetCard && targetReadingType && displayOptions.presentationMode !== 'slides') {
             setTimeout(() => {
@@ -3937,6 +3971,8 @@ function syncAllTranslationOverrideRows(readingKey = null, originRow = null) {
         : '.reading-translation-overrides';
     document.querySelectorAll(selector).forEach(row => {
         if (row === originRow) return;
+        const parentPicker = row.closest('.lectionary-picker-container');
+        if (parentPicker && parentPicker.dataset.hasPendingChanges === 'true') return;
         const rKey = row.dataset.readingKey;
         const enSel = row.querySelector('select[data-override-lang="english"]');
         const amSel = row.querySelector('select[data-override-lang="amharic"]');
@@ -3955,6 +3991,7 @@ function createLectionaryPicker(containerOrId, lectionaryKey, bookOptions = [], 
 
     container.classList.add('lectionary-picker-container');
     container.dataset.lectionaryKey = lectionaryKey;
+    container.dataset.hasPendingChanges = 'false';
 
     container.innerHTML = ''; // Clear
 
@@ -3962,6 +3999,8 @@ function createLectionaryPicker(containerOrId, lectionaryKey, bookOptions = [], 
 
     let typicalBtn = null;
     let bookSelect = null;
+    let goBtn = null;
+    let overrideRow = null;
 
     const createField = (label, className) => {
         const field = document.createElement('div');
@@ -4007,6 +4046,19 @@ function createLectionaryPicker(containerOrId, lectionaryKey, bookOptions = [], 
         pickerRow.appendChild(startField.field);
         pickerRow.appendChild(endField.field);
 
+        goBtn = document.createElement('button');
+        goBtn.type = 'button';
+        goBtn.className = 'settings-button lectionary-go-btn';
+        goBtn.innerHTML = `<span>Go</span><svg class="lectionary-go-icon" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>`;
+        goBtn.title = 'Load and present selected Bible passage';
+        goBtn.setAttribute('aria-label', 'Go to selected Bible passage');
+        goBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            updateRefs(false);
+        });
+        pickerRow.appendChild(goBtn);
+
         if (typicalPsalms) {
             typicalBtn = document.createElement('button');
             typicalBtn.className = 'settings-button typical-psalms-btn';
@@ -4023,7 +4075,7 @@ function createLectionaryPicker(containerOrId, lectionaryKey, bookOptions = [], 
                     populateSelect(startField.sel, metadata.maxVerses, data.ms);
                     populateSelect(endField.sel, metadata.maxVerses, data.me, true);
 
-                    updateRefs();
+                    updateRefs(false);
                     syncPicker(true);
                 });
             });
@@ -4040,7 +4092,7 @@ function createLectionaryPicker(containerOrId, lectionaryKey, bookOptions = [], 
                 populateSelect(chapterField.sel, metadata.chapters, 1);
                 populateSelect(startField.sel, metadata.maxVerses, 1);
                 populateSelect(endField.sel, metadata.maxVerses, 'End', true);
-                updateRefs();
+                updateRefs(false);
                 typicalBtn.textContent = 'Typical Psalms...';
                 typicalBtn.classList.remove('selected');
             });
@@ -4090,7 +4142,7 @@ function createLectionaryPicker(containerOrId, lectionaryKey, bookOptions = [], 
                     populateSelect(startField.sel, metadata.maxVerses, data.ms);
                     populateSelect(endField.sel, metadata.maxVerses, data.me, true);
 
-                    updateRefs();
+                    updateRefs(false);
                     syncPicker();
                 });
             });
@@ -4106,7 +4158,7 @@ function createLectionaryPicker(containerOrId, lectionaryKey, bookOptions = [], 
                 populateSelect(chapterField.sel, metadata.chapters, 1);
                 populateSelect(startField.sel, metadata.maxVerses, 1);
                 populateSelect(endField.sel, metadata.maxVerses, 'End', true);
-                updateRefs();
+                updateRefs(false);
                 typicalBtn.innerHTML = 'Typical Psalm Chants...';
                 typicalBtn.classList.remove('selected');
             });
@@ -4115,13 +4167,18 @@ function createLectionaryPicker(containerOrId, lectionaryKey, bookOptions = [], 
         }
     }
 
-    container.appendChild(createTranslationOverrideRow(lectionaryKey));
+    overrideRow = createTranslationOverrideRow(lectionaryKey, {
+        isCardInline,
+        onPendingChange: () => updateRefs(true)
+    });
+    container.appendChild(overrideRow);
 
     const updateRefs = (skipReRender = false) => {
         const book = bookOptions.length === 1 ? bookOptions[0] : (bookSelect ? bookSelect.value : bookOptions[0]);
         const ch = parseInt(chapterField.sel.value);
         const start = startField.sel.value;
         const end = endField.sel.value;
+        const candidateRef = `${book} ${ch}:${start}-${end}`;
 
         // Sync "End" option display text
         const endOptions = endField.sel.options;
@@ -4139,9 +4196,28 @@ function createLectionaryPicker(containerOrId, lectionaryKey, bookOptions = [], 
             }
         }
 
+        if (isCardInline && goBtn) {
+            const savedRaw = kidaseLectionaryRefs[lectionaryKey] || '';
+            const savedMatch = savedRaw.match(/^(.+?)\s+(\d+):(\d+)(?:-(\d+|End))?$/);
+            const normalizedSaved = savedMatch ? `${savedMatch[1].trim()} ${parseInt(savedMatch[2], 10)}:${savedMatch[3]}-${savedMatch[4] || 'End'}` : savedRaw;
+            const refChanged = candidateRef !== normalizedSaved;
+            const overridesChanged = Boolean(overrideRow && typeof overrideRow.hasPendingChanges === 'function' && overrideRow.hasPendingChanges());
+            const hasPending = refChanged || overridesChanged;
+            goBtn.classList.toggle('has-pending-changes', hasPending);
+            container.dataset.hasPendingChanges = hasPending ? 'true' : 'false';
+        }
+
         if (skipReRender) return;
 
-        kidaseLectionaryRefs[lectionaryKey] = `${book} ${ch}:${start}-${end}`;
+        container.dataset.hasPendingChanges = 'false';
+        if (goBtn) {
+            goBtn.classList.remove('has-pending-changes');
+        }
+        if (overrideRow && typeof overrideRow.commitOverrides === 'function') {
+            overrideRow.commitOverrides();
+        }
+
+        kidaseLectionaryRefs[lectionaryKey] = candidateRef;
         if (isCardInline && prayerDisplay) {
             prayerDisplay.querySelectorAll('.section-title.collapsible').forEach(hdr => {
                 const hdrKey = hdr.dataset.stateKey;
@@ -4154,15 +4230,39 @@ function createLectionaryPicker(containerOrId, lectionaryKey, bookOptions = [], 
         syncAllLectionaryPickers(lectionaryKey, container);
 
         const targetCard = container.closest('.prayer-card');
-        const targetReadingType = targetCard ? targetCard.dataset.readingType : null;
+        const targetReadingType = (targetCard && targetCard.dataset.readingType) ? targetCard.dataset.readingType : lectionaryKey;
 
-        renderPrayers();
+        if (displayOptions.presentationMode === 'slides') {
+            _pendingSlideReadingType = targetReadingType;
+            _pendingSlideSignature = null;
+            _pendingSlideId = null;
+            _pendingSlidePredicate = null;
+        }
 
-        if (isCardInline && targetReadingType && displayOptions.presentationMode !== 'slides') {
-            const reRenderedCard = document.querySelector(`.prayer-card[data-reading-type="${targetReadingType}"]`);
-            if (reRenderedCard) {
-                reRenderedCard.scrollIntoView({ block: 'center', behavior: 'instant' });
+        const renderPromise = renderPrayers();
+
+        const finalizeNavigation = () => {
+            if (displayOptions.presentationMode === 'slides') {
+                const reRenderedCard = prayerDisplay ? prayerDisplay.querySelector(`.prayer-card[data-reading-type="${targetReadingType}"]`) : null;
+                if (reRenderedCard) {
+                    const allSlides = Array.from(prayerDisplay.querySelectorAll('.prayer-card, .section-title.collapsible'));
+                    const idx = allSlides.indexOf(reRenderedCard);
+                    if (idx !== -1 && currentSlideIndex !== idx) {
+                        currentSlideIndex = idx;
+                        showSlide(currentSlideIndex);
+                    }
+                }
+            } else if (isCardInline && targetReadingType) {
+                const reRenderedCard = document.querySelector(`.prayer-card[data-reading-type="${targetReadingType}"]`);
+                if (reRenderedCard) {
+                    reRenderedCard.scrollIntoView({ block: 'center', behavior: 'instant' });
+                }
             }
+        };
+
+        finalizeNavigation();
+        if (renderPromise && typeof renderPromise.then === 'function') {
+            renderPromise.then(finalizeNavigation);
         }
     };
 
@@ -4178,16 +4278,21 @@ function createLectionaryPicker(containerOrId, lectionaryKey, bookOptions = [], 
             const opt = document.createElement('option');
             opt.value = i;
             opt.textContent = `${i}  ${toGeezNumeral(i)}`;
-            if (i == cappedSelected) opt.selected = true;
             select.appendChild(opt);
+            if (i == cappedSelected) opt.selected = true;
         }
 
         if (isEndField) {
             const endOpt = document.createElement('option');
             endOpt.value = 'End';
             endOpt.textContent = 'End | ፍጻሜ';
-            if (selected === 'End') endOpt.selected = true;
             select.appendChild(endOpt);
+            if (selected === 'End') endOpt.selected = true;
+        }
+
+        const targetVal = (isEndField && selected === 'End') ? 'End' : String(cappedSelected);
+        if (targetVal) {
+            select.value = targetVal;
         }
     };
 
@@ -4201,7 +4306,13 @@ function createLectionaryPicker(containerOrId, lectionaryKey, bookOptions = [], 
             populateSelect(chapterField.sel, metadata.chapters, 1);
             populateSelect(startField.sel, actualMax, 1);
             populateSelect(endField.sel, actualMax, 'End', true);
-            updateRefs();
+
+            if (isCardInline && useExternalBibleAPI && window.WeahaduBibleService) {
+                const langs = ['en-kjv', globalAmharicTranslation || 'am-2000', 'gez-1980', globalGeezTranslation || 'gez-1980', 'ti-1997'];
+                window.WeahaduBibleService.preloadBooks(langs, [`${book} 1:1`]).catch(() => {});
+            }
+
+            updateRefs(isCardInline);
         });
     }
 
@@ -4217,11 +4328,32 @@ function createLectionaryPicker(containerOrId, lectionaryKey, bookOptions = [], 
         populateSelect(startField.sel, actualMax, currentStart);
         populateSelect(endField.sel, actualMax, currentEnd, true);
 
-        updateRefs();
+        const sVal = parseInt(startField.sel.value, 10);
+        const eVal = endField.sel.value === 'End' ? Infinity : parseInt(endField.sel.value, 10);
+        if (!isNaN(sVal) && !isNaN(eVal) && sVal > eVal) {
+            endField.sel.value = String(sVal);
+        }
+
+        updateRefs(isCardInline);
     });
 
-    startField.sel.addEventListener('change', () => updateRefs());
-    endField.sel.addEventListener('change', () => updateRefs());
+    startField.sel.addEventListener('change', () => {
+        const sVal = parseInt(startField.sel.value, 10);
+        const eVal = endField.sel.value === 'End' ? Infinity : parseInt(endField.sel.value, 10);
+        if (!isNaN(sVal) && !isNaN(eVal) && sVal > eVal) {
+            endField.sel.value = String(sVal);
+        }
+        updateRefs(isCardInline);
+    });
+
+    endField.sel.addEventListener('change', () => {
+        const sVal = parseInt(startField.sel.value, 10);
+        const eVal = endField.sel.value === 'End' ? Infinity : parseInt(endField.sel.value, 10);
+        if (!isNaN(sVal) && !isNaN(eVal) && eVal < sVal) {
+            startField.sel.value = String(eVal);
+        }
+        updateRefs(isCardInline);
+    });
 
     // Restore full "End" text when the user clicks to choose
     endField.sel.addEventListener('mousedown', () => {
@@ -4295,6 +4427,10 @@ function createLectionaryPicker(containerOrId, lectionaryKey, bookOptions = [], 
 
         if (!skipUpdateRefs) {
             updateRefs(true);
+        }
+        container.dataset.hasPendingChanges = 'false';
+        if (goBtn) {
+            goBtn.classList.remove('has-pending-changes');
         }
     };
 
@@ -5507,7 +5643,8 @@ function createPrayerCardElement(prayer, prayerIndex, isKidase = false) {
         const signature = clickedCard.dataset.prayerSignature;
         const cardId = clickedCard.dataset.cardId;
         const prayerIdx = clickedCard.dataset.prayerIndex;
-        togglePresentationMode({ signature, cardId, prayerIndex: prayerIdx });
+        const readingType = clickedCard.dataset.readingType;
+        togglePresentationMode({ signature, cardId, prayerIndex: prayerIdx, readingType });
     });
     prayerActions.appendChild(enterSlidesBtn);
 
@@ -6376,6 +6513,25 @@ function renderSelectedKidase(addSectionTitleCallback, options = {}) {
             }
 
             const card = createPrayerCardElement(p, -1, true);
+            if (activeCfg) {
+                card.dataset.readingType = activeCfg.id;
+                const pickerFooter = document.createElement('div');
+                pickerFooter.classList.add('card-inline-lectionary-picker');
+
+                const bookOpts = (activeCfg.id === 'pauline') ? ['Romans', '1 Corinthians', '2 Corinthians', 'Galatians', 'Ephesians', 'Philippians', 'Colossians', '1 Thessalonians', '2 Thessalonians', '1 Timothy', '2 Timothy', 'Titus', 'Philemon', 'Hebrews']
+                    : (activeCfg.id === 'universal') ? ['James', '1 Peter', '2 Peter', '1 John', '2 John', '3 John', 'Jude', 'Revelation']
+                    : (activeCfg.id === 'acts') ? ['Acts']
+                    : ['Matthew', 'Mark', 'Luke', 'John'];
+
+                createLectionaryPicker(pickerFooter, activeCfg.id, bookOpts, null);
+                const pFooter = card.querySelector('.prayer-footer');
+                const pActions = card.querySelector('.prayer-actions');
+                if (pFooter && pActions) {
+                    pFooter.insertBefore(pickerFooter, pActions);
+                } else {
+                    card.appendChild(pickerFooter);
+                }
+            }
 
             // Add cross-navigation buttons for creed cards & day-variant liturgy chants
             const cardId = `${p.chapter}-${p.stanza}`;
@@ -6547,10 +6703,10 @@ async function renderPrayers() {
 
         if (useExternalBibleAPI && window.WeahaduBibleService) {
             const refsToPreload = [];
-            if (isKidaseModeActive) {
+            if (isKidaseModeActive || showMatins || showVespers) {
                 for (const key in kidaseLectionaryRefs) {
                     if (!showMatins && (key === 'morningPsalm' || key === 'morningGospel')) continue;
-                    if (!showVespers && (key === 'vespersPsalm' || key === 'vespersGospel')) continue;
+                    if (!showVespers && (key === 'vespersPsalm' || key === 'vespersGospel' || key === 'eveningPsalm' || key === 'eveningGospel')) continue;
                     if (kidaseLectionaryRefs[key]) {
                         refsToPreload.push(kidaseLectionaryRefs[key]);
                     }
@@ -6600,7 +6756,7 @@ async function renderPrayers() {
                 langsToPreload.add('en-kjv');
             }
             if (wantAm) {
-                langsToPreload.add(globalAmharicTranslation || 'am54');
+                langsToPreload.add(globalAmharicTranslation || 'am-2000');
             }
             if (wantGez) {
                 langsToPreload.add('gez-1980');
@@ -6634,6 +6790,11 @@ async function renderPrayers() {
         if (pendingRender) {
             pendingRender = false;
             renderPrayers();
+        } else {
+            _pendingSlideSignature = null;
+            _pendingSlideId = null;
+            _pendingSlidePredicate = null;
+            _pendingSlideReadingType = null;
         }
     }
 }
@@ -6694,6 +6855,17 @@ function getActivePrayerViewPresetSummary() {
 
 function _renderPrayersSync() {
     if (!prayerDisplay || typeof prayers === 'undefined' || !Array.isArray(prayers)) return;
+    if (displayOptions.presentationMode === 'slides' && !_pendingSlideReadingType && !_pendingSlideSignature && !_pendingSlideId) {
+        const existingSlides = prayerDisplay.querySelectorAll('.prayer-card, .section-title.collapsible');
+        const currentSlide = existingSlides[currentSlideIndex];
+        if (currentSlide && currentSlide.dataset) {
+            if (currentSlide.dataset.readingType) {
+                _pendingSlideReadingType = currentSlide.dataset.readingType;
+            } else if (currentSlide.dataset.prayerSignature) {
+                _pendingSlideSignature = currentSlide.dataset.prayerSignature;
+            }
+        }
+    }
     prayerDisplay.innerHTML = '';
     const activeLanguageCount = Object.values(displayedLanguages).filter(Boolean).length;
     if (activeLanguageCount === 0) {
@@ -7440,9 +7612,18 @@ function updateFontStylesAndPreview() {
 function setupSlides() {
     prayerDisplay.className = ''; // Clear existing classes
     prayerDisplay.classList.add(`transition-${displayOptions.slideTransition}`);
-    // If a pending slide target was set (e.g. from "Enter Slides" button), resolve it
-    // by signature to survive DOM rebuilds from async re-renders.
-    if (_pendingSlideSignature) {
+    // If a pending slide target was set (e.g. from "Enter Slides" button or Lectionary "Go" button),
+    // resolve it so it survives DOM rebuilds from async re-renders.
+    if (_pendingSlideReadingType) {
+        const targetCard = prayerDisplay.querySelector(`.prayer-card[data-reading-type="${_pendingSlideReadingType}"]`);
+        if (targetCard) {
+            const allSlides = Array.from(prayerDisplay.querySelectorAll('.prayer-card, .section-title.collapsible'));
+            const idx = allSlides.indexOf(targetCard);
+            if (idx !== -1) {
+                currentSlideIndex = idx;
+            }
+        }
+    } else if (_pendingSlideSignature) {
         const allSlides = Array.from(prayerDisplay.querySelectorAll('.prayer-card, .section-title.collapsible'));
         const targetCard = allSlides.find(c => c.dataset && c.dataset.prayerSignature === _pendingSlideSignature);
         if (targetCard) {
@@ -7466,8 +7647,6 @@ function setupSlides() {
                 currentSlideIndex = idx;
             }
         }
-        _pendingSlideId = null;
-        _pendingSlidePredicate = null;
     }
     showSlide(currentSlideIndex);
 }
@@ -7495,6 +7674,10 @@ function showSlide(index) {
 }
 
 function nextSlide() {
+    _pendingSlideSignature = null;
+    _pendingSlideReadingType = null;
+    _pendingSlideId = null;
+    _pendingSlidePredicate = null;
     const slides = prayerDisplay.querySelectorAll('.prayer-card, .section-title.collapsible');
     if (slides.length > 0) {
         currentSlideIndex = (currentSlideIndex + 1) % slides.length;
@@ -7503,6 +7686,10 @@ function nextSlide() {
 }
 
 function prevSlide() {
+    _pendingSlideSignature = null;
+    _pendingSlideReadingType = null;
+    _pendingSlideId = null;
+    _pendingSlidePredicate = null;
     const slides = prayerDisplay.querySelectorAll('.prayer-card, .section-title.collapsible');
     if (slides.length > 0) {
         currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
@@ -7523,6 +7710,8 @@ function switchKidaseDayAndNavigate(newDay, targetCardId, predicate) {
     }
 
     if (displayOptions.presentationMode === 'slides') {
+        _pendingSlideSignature = null;
+        _pendingSlideReadingType = null;
         _pendingSlideId = targetCardId;
         _pendingSlidePredicate = predicate;
     }
@@ -7552,6 +7741,8 @@ function navigateToCard(targetCardId, predicate) {
     if (!targetCard) return;
 
     if (displayOptions.presentationMode === 'slides') {
+        _pendingSlideSignature = null;
+        _pendingSlideReadingType = null;
         // In slides mode: find the slide index and jump to it
         const allSlides = Array.from(prayerDisplay.querySelectorAll('.prayer-card, .section-title.collapsible'));
         const slideIdx = allSlides.indexOf(targetCard);
@@ -8070,7 +8261,10 @@ async function loadSingleBibleFile(key) {
 
     _bibleFileLoadPromises[key] = (async () => {
         try {
-            const response = await fetch(url);
+            const fetchFn = (typeof window !== 'undefined' && typeof window.fetch === 'function')
+                ? window.fetch.bind(window)
+                : fetch;
+            const response = await fetchFn(url);
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
@@ -9426,12 +9620,18 @@ function togglePresentationMode(targetCardIdentifier) {
     if (isEnteringSlides) {
         displayOptions.showPrayerLabels = true; // Ensure labels are on for context
         collapseSidebar();
-        // Set pending signature BEFORE renderPrayers so that setupSlides() can use it
-        if (targetCardIdentifier && targetCardIdentifier.signature) {
-            _pendingSlideSignature = targetCardIdentifier.signature;
+        // Set pending target BEFORE renderPrayers so that setupSlides() can use it
+        if (targetCardIdentifier) {
+            if (targetCardIdentifier.readingType) {
+                _pendingSlideReadingType = targetCardIdentifier.readingType;
+            }
+            if (targetCardIdentifier.signature) {
+                _pendingSlideSignature = targetCardIdentifier.signature;
+            }
         }
     } else {
         _pendingSlideSignature = null;
+        _pendingSlideReadingType = null;
     }
 
     applyTheme();
@@ -9440,11 +9640,14 @@ function togglePresentationMode(targetCardIdentifier) {
     saveSettings();
 
     if (isEnteringSlides) {
-        // setupSlides() inside renderPrayers() already resolved the signature.
+        // setupSlides() inside renderPrayers() already resolved the target.
         // But do a final verification here in case it didn't find the target.
         if (targetCardIdentifier) {
             let targetCard = null;
-            if (targetCardIdentifier.signature) {
+            if (targetCardIdentifier.readingType) {
+                targetCard = prayerDisplay.querySelector(`.prayer-card[data-reading-type="${targetCardIdentifier.readingType}"]`);
+            }
+            if (!targetCard && targetCardIdentifier.signature) {
                 targetCard = Array.from(prayerDisplay.querySelectorAll('.prayer-card'))
                     .find(c => c.dataset.prayerSignature === targetCardIdentifier.signature);
             }
@@ -9466,6 +9669,7 @@ function togglePresentationMode(targetCardIdentifier) {
         showSlide(currentSlideIndex);
     } else {
         _pendingSlideSignature = null;
+        _pendingSlideReadingType = null;
         // Exiting slides mode: scroll to the previously active card
         setTimeout(() => {
             const allSlides = Array.from(prayerDisplay.querySelectorAll('.prayer-card, .section-title.collapsible'));
@@ -9805,6 +10009,11 @@ let touchEndX = 0;
 let touchEndY = 0;
 
 function handleTouchStart(e) {
+    if (e.target && e.target.closest && e.target.closest('select, option, button, label, .card-inline-lectionary-picker')) {
+        touchStartX = 0;
+        touchStartY = 0;
+        return;
+    }
     const touch = e.changedTouches[0];
     if (displayOptions.presentationMode === 'slides' && !e.target.closest('.sidebar')) {
         touchStartX = touch.screenX;
@@ -9818,6 +10027,11 @@ function handleTouchStart(e) {
 
 function handleTouchEnd(e) {
     if (touchStartX === 0) return;
+    if (e.target && e.target.closest && e.target.closest('select, option, button, label, .card-inline-lectionary-picker')) {
+        touchStartX = 0;
+        touchStartY = 0;
+        return;
+    }
     const touch = e.changedTouches[0];
     touchEndX = touch.screenX;
     touchEndY = touch.screenY;
@@ -12243,6 +12457,9 @@ const appCoreExports = {
     captureCurrentTabProfile,
     applyTabProfile,
     switchPrimaryTab,
+    togglePresentationMode,
+    nextSlide,
+    prevSlide,
     renderPrayers,
     _renderPrayersSync,
     createLectionaryPicker,
@@ -12254,6 +12471,8 @@ const appCoreExports = {
     loadStateFromUrl,
     getActiveLectionaryReadingsSnapshot: () => ({
         activePrimaryTab,
+        presentationMode: displayOptions ? displayOptions.presentationMode : 'scroll',
+        currentSlideIndex,
         areAllSectionsCollapsed,
         collapsedSections: JSON.parse(JSON.stringify(collapsedSections || {})),
         isKidaseModeActive,
@@ -12265,6 +12484,7 @@ const appCoreExports = {
         selectedWidaseMaryamDay,
         selectedAnaphora,
         kidaseLectionaryRefs: { ...kidaseLectionaryRefs },
+        readingTranslationOverrides: JSON.parse(JSON.stringify(readingTranslationOverrides || {})),
         selectedPsalms: Array.isArray(selectedPsalms) ? [...selectedPsalms] : [],
         selectedPsalmVerseRanges: selectedPsalmVerseRanges ? JSON.parse(JSON.stringify(selectedPsalmVerseRanges)) : {}
     })

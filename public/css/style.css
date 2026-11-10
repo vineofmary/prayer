@@ -4223,9 +4223,23 @@ body.hide-hareg-ornament .hareg-footer {
 .card-inline-lectionary-picker .lectionary-picker-single-row {
     display: flex;
     align-items: center;
-    flex-wrap: nowrap;
-    gap: 0.65rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.35rem 0.5rem;
     max-width: 100%;
+}
+
+@media (max-width: 900px) {
+    .prayer-footer {
+        flex-wrap: wrap;
+        gap: 0.35rem;
+    }
+
+    .prayer-footer .card-inline-lectionary-picker {
+        flex: 1 1 100%;
+        order: -1;
+        width: 100%;
+    }
 }
 
 .card-inline-lectionary-picker .psalm-nkjv-label {
@@ -4320,6 +4334,41 @@ body.hide-hareg-ornament .hareg-footer {
     flex-shrink: 0;
     max-width: 50px;
     margin-left: 0.15rem;
+}
+
+.card-inline-lectionary-picker .lectionary-go-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 0.15rem 0.55rem;
+    border-radius: 4px;
+    height: 24px;
+    width: auto;
+    margin-top: 0;
+    margin-left: 0.15rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+    line-height: 1;
+    cursor: pointer;
+    transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
+}
+
+.card-inline-lectionary-picker .lectionary-go-btn.has-pending-changes {
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.25);
+}
+
+.card-inline-lectionary-picker .lectionary-go-btn:active {
+    transform: scale(0.96);
+}
+
+.card-inline-lectionary-picker .lectionary-go-icon {
+    flex-shrink: 0;
 }
 
 /* Slide mode adjustments for card inline picker */
