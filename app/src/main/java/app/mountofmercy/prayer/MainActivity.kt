@@ -89,12 +89,24 @@ class MainActivity : AppCompatActivity() {
         webView = findViewById(R.id.main_webview)
 
         // Handle edge-to-edge window insets: pad root layout so the header buttons
-        // sit cleanly below the clock, battery, camera cutout, and status bar icons
+        // sit cleanly below the clock, battery, camera cutout, and status bar icons.
+        // In landscape gesture-navigation mode, trim the oversized bottom gesture inset
+        // so the slide footer sits right above the thin gesture indicator pill.
         ViewCompat.setOnApplyWindowInsetsListener(rootLayout) { view, windowInsets ->
             val insets = windowInsets.getInsets(
                 WindowInsetsCompat.Type.systemBars() or WindowInsetsCompat.Type.displayCutout()
             )
-            view.setPadding(insets.left, insets.top, insets.right, insets.bottom)
+            val tappableBottom = windowInsets.getInsets(
+                WindowInsetsCompat.Type.tappableElement()
+            ).bottom
+            val isLandscape = view.resources.configuration.orientation ==
+                android.content.res.Configuration.ORIENTATION_LANDSCAPE
+            val bottomPadding = if (isLandscape && tappableBottom == 0 && insets.bottom > 0) {
+                (insets.bottom * 0.35f).toInt()
+            } else {
+                insets.bottom
+            }
+            view.setPadding(insets.left, insets.top, insets.right, bottomPadding)
             windowInsets
         }
 

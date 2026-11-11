@@ -4229,7 +4229,7 @@ body.hide-hareg-ornament .hareg-footer {
     max-width: 100%;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 900px) and (orientation: portrait) {
     .prayer-footer {
         flex-wrap: wrap;
         gap: 0.35rem;
@@ -4239,6 +4239,90 @@ body.hide-hareg-ornament .hareg-footer {
         flex: 1 1 100%;
         order: -1;
         width: 100%;
+    }
+}
+
+/* Compact footer & maximize prayer text area in mobile landscape Slides Mode */
+@media (orientation: landscape) and (max-height: 550px) {
+    body.presentation-mode-slides .prayer-card-main-content {
+        padding: 0.2rem 1rem 0;
+    }
+
+    body.presentation-mode-slides .prayer-footer {
+        padding-top: 1px;
+        padding-bottom: 0;
+        margin-top: 0;
+        min-height: 0;
+        line-height: 1;
+        flex-wrap: nowrap;
+        gap: 0.35rem;
+    }
+
+    body.presentation-mode-slides .prayer-label {
+        font-size: 0.65rem;
+        line-height: 1;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 45%;
+    }
+
+    body.presentation-mode-slides .prayer-actions {
+        gap: 0.15rem;
+        flex-shrink: 0;
+        line-height: 1;
+    }
+
+    body.presentation-mode-slides .share-btn,
+    body.presentation-mode-slides .info-toggle,
+    body.presentation-mode-slides .exit-slides-mode-btn {
+        padding: 0 0.1rem;
+        height: 15px;
+        min-height: 0;
+        line-height: 1;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    body.presentation-mode-slides .share-btn svg,
+    body.presentation-mode-slides .info-toggle {
+        width: 13px;
+        height: 13px;
+        font-size: 0.8rem;
+    }
+
+    body.presentation-mode-slides .exit-slides-mode-btn {
+        font-size: 0.95rem;
+    }
+
+    body.presentation-mode-slides .card-inline-lectionary-picker {
+        flex: 1 1 auto;
+        order: 0;
+        width: auto;
+        gap: 0.1rem;
+        padding-bottom: 4px;
+    }
+
+    body.presentation-mode-slides .card-inline-lectionary-picker .lectionary-picker-single-row {
+        flex-wrap: nowrap;
+        gap: 0.15rem 0.3rem;
+    }
+
+    body.presentation-mode-slides .card-inline-lectionary-picker .lectionary-picker-book-select,
+    body.presentation-mode-slides .card-inline-lectionary-picker .picker-field select,
+    body.presentation-mode-slides .card-inline-lectionary-picker .typical-psalms-btn,
+    body.presentation-mode-slides .card-inline-lectionary-picker .clear-psalm-chant-btn,
+    body.presentation-mode-slides .card-inline-lectionary-picker .lectionary-go-btn {
+        height: 20px;
+        min-height: 20px;
+        padding-top: 0;
+        padding-bottom: 0;
+        font-size: 0.68rem;
+    }
+
+    body.presentation-mode-slides .card-inline-lectionary-picker .reading-translation-overrides {
+        display: none;
     }
 }
 

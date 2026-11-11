@@ -7910,7 +7910,8 @@ function sizeOneCard(card) {
     const isColumn = prayerContent.classList.contains('layout-column');
     let bestSizes = [];
 
-    const HEIGHT_BUFFER = 48; // Pixels buffer to prevent clipping descenders/labels
+    const isCompactLandscape = typeof window !== 'undefined' && window.innerHeight <= 550 && window.innerWidth > window.innerHeight;
+    const HEIGHT_BUFFER = isCompactLandscape ? 10 : 48; // Pixels buffer to prevent clipping descenders/labels
 
     if (isColumn) {
         // Column Layout: Each column is independent
