@@ -293,7 +293,9 @@
         if (psMatch && typeof TYPICAL_PSALMS !== 'undefined' && Array.isArray(TYPICAL_PSALMS)) {
             const mtCh = parseInt(psMatch[1], 10);
             const mtStart = parseInt(psMatch[2], 10);
-            const foundTyp = TYPICAL_PSALMS.find(p => p.mc === mtCh && p.ms === mtStart);
+            const preferredId = snapshot && snapshot.selectedTypicalPsalmIds && snapshot.selectedTypicalPsalmIds.psalm;
+            const foundTyp = (preferredId && TYPICAL_PSALMS.find(p => p.id === preferredId && p.mc === mtCh && p.ms === mtStart))
+                || TYPICAL_PSALMS.find(p => p.mc === mtCh && p.ms === mtStart);
             if (foundTyp && foundTyp.g) {
                 typicalIncipit = ' ("' + foundTyp.g.slice(0, 45) + '...")';
             }

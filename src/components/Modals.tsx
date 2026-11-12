@@ -622,7 +622,16 @@ export const Modals: React.FC = () => {
             <span className="close-button" id="close-typical-psalms-modal">&times;</span>
           </div>
           <div className="typical-psalms-modal-instructions">
-            Select a liturgical Psalm chant (misbak) from the list below. The phonetic Ge'ez incipits are listed alphabetically.
+            Select a liturgical Psalm chant (misbak) from the list below. Search by phonetic Ge'ez, Ge'ez script, or Psalm number.
+          </div>
+          <div className="typical-psalms-search-container">
+            <input
+              type="text"
+              id="typical-psalms-search-input"
+              placeholder="Search by phonetic incipit, Ge'ez text, or Psalm ref (e.g. 44:9, 45:9, ፵፬)..."
+              aria-label="Search Typical Psalm Chants"
+            />
+            <div id="typical-psalms-results-count" className="typical-psalms-results-count"></div>
           </div>
           <div id="typical-psalms-list" className="typical-psalms-modal-body"></div>
         </div>

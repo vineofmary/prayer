@@ -50,7 +50,7 @@ let header, leftSidebar, rightSidebar, mainContent, sidebarToggle, prayersPanelT
     feedbackButton, helpModal, feedbackModal, ephremStoryModal, ephremStoryInfoBtn, closeEphremModal,
     eusebiusModal, eusebiusInfoBtn, closeEusebiusModal, psalmCombinationsBtn, psalmCombinationsModal,
     closePsalmCombinationsModal, psalmCombinationsAccordion, typicalPsalmsModal, closeTypicalPsalmsModalBtn,
-    typicalPsalmsList, scribeLoginModal, scribeEditorModal, changelogModal, changelogList, closeChangelogModal,
+    typicalPsalmsSearchInput, typicalPsalmsResultsCount, typicalPsalmsList, scribeLoginModal, scribeEditorModal, changelogModal, changelogList, closeChangelogModal,
     athanasiusModal, athanasiusGuideBtn, closeAthanasiusModal, athanasiusSearchInput, athanasiusCategoryChips,
     athanasiusResultsCount, athanasiusPrescriptionsList, appVersionContainer, modalBackdrop,
     sendFeedbackButtonHelp, sendFeedbackButtonModal, fontPreview, psalmSelectorContainer, psalmSummary,
@@ -172,6 +172,8 @@ function bindDOMElements() {
     psalmCombinationsAccordion = document.getElementById('psalm-combinations-accordion');
     typicalPsalmsModal = document.getElementById('typical-psalms-modal');
     closeTypicalPsalmsModalBtn = document.getElementById('close-typical-psalms-modal');
+    typicalPsalmsSearchInput = document.getElementById('typical-psalms-search-input');
+    typicalPsalmsResultsCount = document.getElementById('typical-psalms-results-count');
     typicalPsalmsList = document.getElementById('typical-psalms-list');
     scribeLoginModal = document.getElementById('scribe-login-modal');
     scribeEditorModal = document.getElementById('scribe-editor-modal');
@@ -1072,6 +1074,8 @@ function getDefaultReadingTranslationOverrides(engCode = 'nkjv', amCode = 'am-20
 let readingTranslationOverrides = getDefaultReadingTranslationOverrides();
 let isInitializing = true;
 let kidaseLectionaryRefs = { ...DEFAULT_KIDASE_LECTIONARY_REFS };
+let selectedTypicalPsalmIds = {};
+let currentTypicalPsalmsSearchQuery = '';
 let customNames = {};
 let bibleData = { nkjv: null, kjv: null, am54: null, rgv: null, geez_psalms: null, coptic: null, loaded: false };
 
@@ -1248,6 +1252,7 @@ function syncLiturgicalSelectionsToEffectiveDate({ render = true } = {}) {
     dailyLectionaryPeriodOverride = null;
     dailyLectionaryDayOffset = 0;
     kidaseLectionaryRefs = { ...computed.refs };
+    selectedTypicalPsalmIds = {};
     selectedKidaseDay = computed.kidaseDay;
     selectedCovenantPrayer = computed.covenantTime;
     selectedSeatatLectionaryDay = computed.litDayName;
@@ -1318,6 +1323,7 @@ function selectKidaseReadingSet(setIndex, { render = true } = {}) {
     kidaseLectionaryRefs.acts = computed.refs.acts;
     kidaseLectionaryRefs.psalm = computed.refs.psalm;
     kidaseLectionaryRefs.gospel = computed.refs.gospel;
+    delete selectedTypicalPsalmIds.psalm;
     if (typeof refreshLectionaryPickers === 'function') {
         refreshLectionaryPickers();
     }
@@ -2284,6 +2290,7 @@ function buildUrlStateObject(forShortLink = false) {
         sd: selectedSeatatLectionaryDay,
         wd: selectedWidaseMaryamDay,
         lr: kidaseLectionaryRefs,
+        tpi: (selectedTypicalPsalmIds && Object.keys(selectedTypicalPsalmIds).length > 0) ? selectedTypicalPsalmIds : undefined,
         sm: showMatins,
         st: showTeklil,
         bgn: bridegroomName,
@@ -2444,6 +2451,11 @@ async function loadStateFromUrl(isVersionMismatch = false) {
         if (state.sd !== undefined) selectedSeatatLectionaryDay = state.sd;
         if (state.wd !== undefined) selectedWidaseMaryamDay = state.wd;
         if (state.lr !== undefined) kidaseLectionaryRefs = { ...kidaseLectionaryRefs, ...state.lr };
+        if (state.tpi !== undefined) {
+            selectedTypicalPsalmIds = state.tpi || {};
+        } else if (state.lr !== undefined) {
+            selectedTypicalPsalmIds = {};
+        }
         if (state.sm !== undefined) showMatins = state.sm;
         if (state.st !== undefined) showTeklil = state.st;
         if (state.bgn !== undefined) bridegroomName = state.bgn;
@@ -2645,7 +2657,7 @@ async function shareScriptures() {
             
             let misbak = null;
             if (r.isPsalm && typeof TYPICAL_PSALMS !== 'undefined') {
-                misbak = TYPICAL_PSALMS.find(p => p.mc === chapter && p.ms === startVerse && p.me === endVerse);
+                misbak = findTypicalPsalm(book, chapter, startVerse, endVerse, r.key);
             }
             
             if (r.isPsalm) {
@@ -3080,6 +3092,7 @@ function saveSettings() {
     localStorage.setItem('hideQuietPrayers', hideQuietPrayers);
     localStorage.setItem('isHolyFiftyDays', isHolyFiftyDays);
     localStorage.setItem('kidaseLectionaryRefs', JSON.stringify(kidaseLectionaryRefs));
+    localStorage.setItem('selectedTypicalPsalmIds', JSON.stringify(selectedTypicalPsalmIds || {}));
     localStorage.setItem('selectedKidaseReadingSetIndex', String(selectedKidaseReadingSetIndex || 0));
     if (customDateTimeOverride) {
         localStorage.setItem('customDateTimeOverride', customDateTimeOverride);
@@ -3234,6 +3247,7 @@ async function loadSettings() {
         globalGeezTranslation = defaultSettings.globalGeezTranslation;
         readingTranslationOverrides = defaultSettings.readingTranslationOverrides;
         kidaseLectionaryRefs = { ...defaultSettings.kidaseLectionaryRefs };
+        selectedTypicalPsalmIds = {};
         selectedKidaseReadingSetIndex = 0;
         customNames = defaultSettings.customNames; // Use defaults
         collapsedSections = defaultSettings.collapsedSections;
@@ -3318,10 +3332,12 @@ async function loadSettings() {
         isHolyFiftyDays = localStorage.getItem('isHolyFiftyDays') !== null ? localStorage.getItem('isHolyFiftyDays') === 'true' : defaultSettings.isHolyFiftyDays;
         if (isNewLiturgicalDay && initialComputed.entry) {
             kidaseLectionaryRefs = { ...defaultSettings.kidaseLectionaryRefs };
+            selectedTypicalPsalmIds = {};
             selectedKidaseReadingSetIndex = 0;
         } else {
             const savedKidaseLectionaryRefs = JSON.parse(localStorage.getItem('kidaseLectionaryRefs')) || {};
             kidaseLectionaryRefs = { ...defaultSettings.kidaseLectionaryRefs, ...savedKidaseLectionaryRefs };
+            selectedTypicalPsalmIds = JSON.parse(localStorage.getItem('selectedTypicalPsalmIds')) || {};
             selectedKidaseReadingSetIndex = parseInt(localStorage.getItem('selectedKidaseReadingSetIndex') || '0', 10) || 0;
         }
         const savedCustomNames = JSON.parse(localStorage.getItem('customNames')) || {};
@@ -3914,9 +3930,7 @@ function getBibleVersesFromRef(ref, readingKey = null) {
 
         let lxxRef = gezRef;
         if (bookName === 'Psalms' || bookName === 'Psalm') {
-            const exactTypical = (typeof TYPICAL_PSALMS !== 'undefined')
-                ? TYPICAL_PSALMS.find(p => p.mc === chapterNum && p.ms === startVerse && p.me === endVerse)
-                : null;
+            const exactTypical = findTypicalPsalm(bookName, chapterNum, startVerse, endVerse, readingKey);
             if (exactTypical) {
                 const amEnd = (exactTypical.ls !== exactTypical.le) ? `-${exactTypical.le}` : '';
                 lxxRef = `Psalms ${exactTypical.lc}:${exactTypical.ls}${amEnd}`;
@@ -4051,11 +4065,36 @@ function getBibleVersesFromRef(ref, readingKey = null) {
     return results;
 }
 
-function findTypicalPsalm(book, chapter, start, end) {
+function setSelectedTypicalPsalmId(readingKey, chantId) {
+    if (!readingKey) return;
+    if (!selectedTypicalPsalmIds) selectedTypicalPsalmIds = {};
+    if (chantId) {
+        selectedTypicalPsalmIds[readingKey] = chantId;
+    } else {
+        delete selectedTypicalPsalmIds[readingKey];
+    }
+}
+
+function findTypicalPsalm(book, chapter, start, end, readingKey = null) {
     if ((book !== 'Psalms' && book !== 'Psalm') || typeof TYPICAL_PSALMS === 'undefined') return null;
+    if (readingKey && selectedTypicalPsalmIds && selectedTypicalPsalmIds[readingKey]) {
+        const preferred = TYPICAL_PSALMS.find(p =>
+            p.id === selectedTypicalPsalmIds[readingKey] &&
+            p.mc === chapter &&
+            p.ms === start &&
+            (p.me === end || end === 999 || Math.abs(p.me - end) <= 1)
+        );
+        if (preferred) return preferred;
+    }
     const exact = TYPICAL_PSALMS.find(p => p.mc === chapter && p.ms === start && p.me === end);
     if (exact) return exact;
-    return TYPICAL_PSALMS.find(p => p.mc === chapter && ((p.ms === start && Math.abs(p.me - end) <= 1) || (p.ms >= start && p.me <= end))) || null;
+    return TYPICAL_PSALMS.find(p =>
+        p.mc === chapter && (
+            (p.ms === start && Math.abs(p.me - end) <= 1) ||
+            (p.ms >= start && p.me <= end) ||
+            (start >= p.ms && end <= p.me && (p.me - p.ms) <= 2)
+        )
+    ) || null;
 }
 
 function getPsalmVerses(chapterNum, start, end, langKey) {
@@ -4677,8 +4716,9 @@ function createLectionaryPicker(containerOrId, lectionaryKey, bookOptions = [], 
                     populateSelect(chapterField.sel, metadata.chapters, data.mc);
                     populateSelect(startField.sel, metadata.maxVerses, data.ms);
                     populateSelect(endField.sel, metadata.maxVerses, data.me, true);
+                    setSelectedTypicalPsalmId(lectionaryKey, data && data.id ? data.id : null);
 
-                    updateRefs(false);
+                    updateRefs(false, { preserveChantId: true });
                     syncPicker(true);
                 });
             });
@@ -4695,6 +4735,7 @@ function createLectionaryPicker(containerOrId, lectionaryKey, bookOptions = [], 
                 populateSelect(chapterField.sel, metadata.chapters, 1);
                 populateSelect(startField.sel, metadata.maxVerses, 1);
                 populateSelect(endField.sel, metadata.maxVerses, 'End', true);
+                setSelectedTypicalPsalmId(lectionaryKey, null);
                 updateRefs(false);
                 typicalBtn.textContent = 'Typical Psalms...';
                 typicalBtn.classList.remove('selected');
@@ -4744,8 +4785,9 @@ function createLectionaryPicker(containerOrId, lectionaryKey, bookOptions = [], 
                     populateSelect(chapterField.sel, metadata.chapters, data.mc);
                     populateSelect(startField.sel, metadata.maxVerses, data.ms);
                     populateSelect(endField.sel, metadata.maxVerses, data.me, true);
+                    setSelectedTypicalPsalmId(lectionaryKey, data && data.id ? data.id : null);
 
-                    updateRefs(false);
+                    updateRefs(false, { preserveChantId: true });
                     syncPicker();
                 });
             });
@@ -4761,6 +4803,7 @@ function createLectionaryPicker(containerOrId, lectionaryKey, bookOptions = [], 
                 populateSelect(chapterField.sel, metadata.chapters, 1);
                 populateSelect(startField.sel, metadata.maxVerses, 1);
                 populateSelect(endField.sel, metadata.maxVerses, 'End', true);
+                setSelectedTypicalPsalmId(lectionaryKey, null);
                 updateRefs(false);
                 typicalBtn.innerHTML = 'Typical Psalm Chants...';
                 typicalBtn.classList.remove('selected');
@@ -4776,7 +4819,7 @@ function createLectionaryPicker(containerOrId, lectionaryKey, bookOptions = [], 
     });
     container.appendChild(overrideRow);
 
-    const updateRefs = (skipReRender = false) => {
+    const updateRefs = (skipReRender = false, { preserveChantId = false } = {}) => {
         const book = bookOptions.length === 1 ? bookOptions[0] : (bookSelect ? bookSelect.value : bookOptions[0]);
         const ch = parseInt(chapterField.sel.value);
         const start = startField.sel.value;
@@ -4811,6 +4854,10 @@ function createLectionaryPicker(containerOrId, lectionaryKey, bookOptions = [], 
         }
 
         if (skipReRender) return;
+
+        if (!preserveChantId) {
+            setSelectedTypicalPsalmId(lectionaryKey, null);
+        }
 
         container.dataset.hasPendingChanges = 'false';
         if (goBtn) {
@@ -5018,10 +5065,19 @@ function createLectionaryPicker(containerOrId, lectionaryKey, bookOptions = [], 
 
         if (typicalBtn && typicalPsalms) {
             const numericEnd = (end === 'End') ? actualMax : parseInt(end);
-            const foundIdx = typicalPsalms.findIndex(p =>
-                (book === 'Psalms' || book === 'Psalm') &&
-                p.mc === ch && p.ms === parseInt(start) && p.me === numericEnd
-            );
+            const preferredId = selectedTypicalPsalmIds && selectedTypicalPsalmIds[lectionaryKey];
+            let foundIdx = -1;
+            if ((book === 'Psalms' || book === 'Psalm') && preferredId) {
+                foundIdx = typicalPsalms.findIndex(p =>
+                    p.id === preferredId && p.mc === ch && p.ms === parseInt(start) && p.me === numericEnd
+                );
+            }
+            if (foundIdx === -1) {
+                foundIdx = typicalPsalms.findIndex(p =>
+                    (book === 'Psalms' || book === 'Psalm') &&
+                    p.mc === ch && p.ms === parseInt(start) && p.me === numericEnd
+                );
+            }
             if (foundIdx !== -1) {
                 const chantMatch = typicalPsalms[foundIdx];
                 typicalBtn.innerHTML = `<span class="chant-btn-phonetic">${chantMatch.p.split(/\s+/).slice(0, 4).join(' ')}...</span><span class="chant-btn-geez ethiopic-label">${chantMatch.g.split(/\s+/).slice(0, 4).join(' ')}...</span>`;
@@ -7186,7 +7242,7 @@ function renderSelectedKidase(addSectionTitleCallback, options = {}) {
                         if (bookName === 'Psalms' || bookName === 'Psalm') {
                             // Combine all verses into one card for Psalm chants
                             const versePrayer = { ...p };
-                            const typical = findTypicalPsalm(bookName, chapter, start, end);
+                            const typical = findTypicalPsalm(bookName, chapter, start, end, activeCfg.id);
                             const geezOverride = getReadingTranslationOverride(activeCfg.id, 'geez');
                             const useTypicalGeezChant = typical && geezOverride === 'gez-1980-formatted';
 
@@ -11262,23 +11318,140 @@ function closeModal() {
 }
 
 let currentTypicalPsalmCallback = null;
+let _typicalPsalmsSearchBound = false;
+
+function normalizeGeezSearchHomophones(str) {
+    return String(str || '')
+        .replace(/[።፡፥፤፣፦፧፨:\-\n\r\t.,;!?'"«»“”]/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim()
+        .replace(/[ሐኀ]/g, 'ሀ').replace(/[ሑኁ]/g, 'ሁ').replace(/[ሒኂ]/g, 'ሂ').replace(/[ሓኃ]/g, 'ሃ').replace(/[ሔኄ]/g, 'ሄ').replace(/[ሕኅ]/g, 'ህ').replace(/[ሖኆ]/g, 'ሆ')
+        .replace(/ሠ/g, 'ሰ').replace(/ሡ/g, 'ሱ').replace(/ሢ/g, 'ሲ').replace(/ሣ/g, 'ሳ').replace(/ሤ/g, 'ሴ').replace(/ሥ/g, 'ስ').replace(/ሦ/g, 'ሶ')
+        .replace(/[ዐ]/g, 'አ').replace(/ዑ/g, 'ኡ').replace(/ዒ/g, 'ኢ').replace(/[ዓኣ]/g, 'አ').replace(/ዔ/g, 'ኤ').replace(/ዕ/g, 'እ').replace(/ዖ/g, 'ኦ')
+        .replace(/ፀ/g, 'ጸ').replace(/ፁ/g, 'ጹ').replace(/ጺ/g, 'ጺ').replace(/ፃ/g, 'ጻ').replace(/ፄ/g, 'ጼ').replace(/ፅ/g, 'ጽ').replace(/ፆ/g, 'ጾ')
+        .replace(/ኵ/g, 'ኩ').replace(/ኰ/g, 'ኮ').replace(/ቍ/g, 'ቁ').replace(/ቈ/g, 'ቆ').replace(/ጐ/g, 'ጎ').replace(/ጕ/g, 'ጉ');
+}
+
+function filterTypicalPsalms(query = '') {
+    if (typeof TYPICAL_PSALMS === 'undefined' || !Array.isArray(TYPICAL_PSALMS)) return [];
+    const rawQ = String(query || '').trim();
+    if (!rawQ) {
+        return TYPICAL_PSALMS.map((p, idx) => ({ item: p, index: idx }));
+    }
+    const qLower = rawQ.toLowerCase();
+    const refStripped = qLower
+        .replace(/^(?:psalms?|ps\.?|መዝሙረ\s*ዳዊት|መዝሙር|መዝ)\s*/i, '')
+        .replace(/\s*(?:kjv|nkjv|osb|lxx|mt|ግእዝ)\s*$/i, '')
+        .trim();
+    const qGeezHomo = normalizeGeezSearchHomophones(rawQ);
+    const isNumericChapterOnly = /^\d+$/.test(refStripped);
+
+    const results = [];
+    TYPICAL_PSALMS.forEach((p, idx) => {
+        const masoretic = `${p.mc}:${p.ms}${p.me !== p.ms ? '-' + p.me : ''}`;
+        const lxx = `${p.lc}:${p.ls}${p.le !== p.ls ? '-' + p.le : ''}`;
+        const geezLxxColon = `${toGeezNumeral(p.lc)}:${toGeezNumeral(p.ls)}${p.le !== p.ls ? '-' + toGeezNumeral(p.le) : ''}`;
+        const geezLxxEth = `${toGeezNumeral(p.lc)}፥${toGeezNumeral(p.ls)}${p.le !== p.ls ? '-' + toGeezNumeral(p.le) : ''}`;
+        const geezChOnly = toGeezNumeral(p.lc);
+
+        if (isNumericChapterOnly) {
+            const chNum = parseInt(refStripped, 10);
+            if (p.mc === chNum || p.lc === chNum) {
+                results.push({ item: p, index: idx });
+                return;
+            }
+        }
+
+        if (refStripped && (
+            masoretic.startsWith(refStripped) ||
+            lxx.startsWith(refStripped) ||
+            `${p.mc}:${p.ms}-${p.me}`.startsWith(refStripped) ||
+            `${p.lc}:${p.ls}-${p.le}`.startsWith(refStripped) ||
+            geezLxxColon.includes(refStripped) ||
+            geezLxxEth.includes(refStripped) ||
+            geezChOnly === refStripped
+        )) {
+            results.push({ item: p, index: idx });
+            return;
+        }
+
+        if (p.p && p.p.toLowerCase().includes(qLower)) {
+            results.push({ item: p, index: idx });
+            return;
+        }
+
+        if (p.g && (p.g.includes(rawQ) || (qGeezHomo && normalizeGeezSearchHomophones(p.g).includes(qGeezHomo)))) {
+            results.push({ item: p, index: idx });
+            return;
+        }
+
+        if (p.g && typeof transliterateGeezToPhonetic === 'function') {
+            const fullPhon = transliterateGeezToPhonetic(p.g).toLowerCase();
+            if (fullPhon.includes(qLower)) {
+                results.push({ item: p, index: idx });
+            }
+        }
+    });
+    return results;
+}
+
+function ensureTypicalPsalmsSearchBound() {
+    const searchEl = document.getElementById('typical-psalms-search-input') || typicalPsalmsSearchInput;
+    if (!searchEl || searchEl.dataset.boundTypicalSearch === 'true') return searchEl;
+    searchEl.dataset.boundTypicalSearch = 'true';
+    searchEl.addEventListener('input', (e) => {
+        currentTypicalPsalmsSearchQuery = e.target.value;
+        renderTypicalPsalmsModal(currentTypicalPsalmsSearchQuery);
+    });
+    _typicalPsalmsSearchBound = true;
+    return searchEl;
+}
 
 function openTypicalPsalmsModal(callback) {
     currentTypicalPsalmCallback = callback;
-    openModal(typicalPsalmsModal);
-    modalBackdrop.style.zIndex = '1000';
-    typicalPsalmsModal.style.zIndex = '1001';
-    renderTypicalPsalmsModal();
+    currentTypicalPsalmsSearchQuery = '';
+    const modalEl = document.getElementById('typical-psalms-modal') || typicalPsalmsModal;
+    openModal(modalEl);
+    if (modalBackdrop) modalBackdrop.style.zIndex = '1000';
+    if (modalEl) modalEl.style.zIndex = '1001';
+    const searchEl = ensureTypicalPsalmsSearchBound();
+    if (searchEl) {
+        searchEl.value = '';
+    }
+    renderTypicalPsalmsModal('');
 }
 
-function renderTypicalPsalmsModal() {
-    if (!typicalPsalmsList) return;
-    typicalPsalmsList.innerHTML = '';
+function renderTypicalPsalmsModal(queryOverride) {
+    const listEl = document.getElementById('typical-psalms-list') || typicalPsalmsList;
+    if (!listEl) return;
+    ensureTypicalPsalmsSearchBound();
+    if (typeof queryOverride === 'string') {
+        currentTypicalPsalmsSearchQuery = queryOverride;
+    }
+    listEl.innerHTML = '';
 
-    TYPICAL_PSALMS.forEach((p, idx) => {
+    const totalCount = (typeof TYPICAL_PSALMS !== 'undefined' && Array.isArray(TYPICAL_PSALMS)) ? TYPICAL_PSALMS.length : 0;
+    const filtered = filterTypicalPsalms(currentTypicalPsalmsSearchQuery);
+    const countEl = document.getElementById('typical-psalms-results-count') || typicalPsalmsResultsCount;
+    if (countEl) {
+        countEl.textContent = currentTypicalPsalmsSearchQuery.trim()
+            ? `Showing ${filtered.length} of ${totalCount} chants`
+            : `${totalCount} liturgical Psalm chants (Misbak)`;
+    }
+
+    if (filtered.length === 0) {
+        const emptyDiv = document.createElement('div');
+        emptyDiv.className = 'typical-psalms-empty';
+        emptyDiv.textContent = 'No matching Psalm chants found.';
+        listEl.appendChild(emptyDiv);
+        return;
+    }
+
+    filtered.forEach(({ item: p, index: idx }) => {
         const optionDiv = document.createElement('div');
         optionDiv.className = 'typical-psalm-option';
         optionDiv.dataset.index = idx;
+        if (p.id) optionDiv.dataset.chantId = p.id;
 
         // Format citations
         const masoretic = `${p.mc}:${p.ms}${p.me !== p.ms ? '-' + p.me : ''}`;
@@ -11311,7 +11484,7 @@ function renderTypicalPsalmsModal() {
             closeModal();
         });
 
-        typicalPsalmsList.appendChild(optionDiv);
+        listEl.appendChild(optionDiv);
     });
 }
 
@@ -13860,6 +14033,11 @@ const appCoreExports = {
     getActivePrayerViewPresetSummary,
     createLectionaryPicker,
     refreshLectionaryPickers,
+    findTypicalPsalm,
+    setSelectedTypicalPsalmId,
+    filterTypicalPsalms,
+    openTypicalPsalmsModal,
+    renderTypicalPsalmsModal,
     renderLiturgicalCalendarBar,
     openCalendarInfoModal,
     loadSettings,
@@ -13889,6 +14067,7 @@ const appCoreExports = {
         selectedWidaseMaryamDay,
         selectedAnaphora,
         kidaseLectionaryRefs: { ...kidaseLectionaryRefs },
+        selectedTypicalPsalmIds: { ...(selectedTypicalPsalmIds || {}) },
         readingTranslationOverrides: JSON.parse(JSON.stringify(readingTranslationOverrides || {})),
         selectedPsalms: Array.isArray(selectedPsalms) ? [...selectedPsalms] : [],
         selectedPsalmVerseRanges: selectedPsalmVerseRanges ? JSON.parse(JSON.stringify(selectedPsalmVerseRanges)) : {}

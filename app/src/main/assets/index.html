@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#000000">
     <title>The Mount of Mercy | ደብረ ምሕረት</title>
-    <link rel="stylesheet" href="css/style.css?v=38">
+    <link rel="stylesheet" href="css/style.css?v=39">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Abyssinica+SIL&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Lato&family=Roboto&display=swap"
@@ -1525,7 +1525,11 @@
                     <span class="close-button" id="close-typical-psalms-modal">&times;</span>
                 </div>
                 <div class="typical-psalms-modal-instructions">
-                    Select a liturgical Psalm chant (misbak) from the list below. The phonetic Ge'ez incipits are listed alphabetically.
+                    Select a liturgical Psalm chant (misbak) from the list below. Search by phonetic Ge'ez, Ge'ez script, or Psalm number.
+                </div>
+                <div class="typical-psalms-search-container">
+                    <input type="text" id="typical-psalms-search-input" placeholder="Search by phonetic incipit, Ge'ez text, or Psalm ref (e.g. 44:9, 45:9, ፵፬)..." aria-label="Search Typical Psalm Chants">
+                    <div id="typical-psalms-results-count" class="typical-psalms-results-count"></div>
                 </div>
                 <div id="typical-psalms-list" class="typical-psalms-modal-body">
                     <!-- Dynamically populated by JS -->
@@ -1614,17 +1618,17 @@
     <script src="js/servants.js?v=10"></script>
     <script src="js/kidase.js?v=11"></script>
     <script src="js/teklil.js?v=2"></script>
-    <script src="js/typical_psalms.js?v=3"></script>
+    <script src="js/typical_psalms.js?v=4"></script>
     <script src="js/eotc_lectionary.js?v=3"></script>
     <script src="js/st_athanasius_psalms.js?v=2"></script>
     <script src="js/bible_service.js?v=4"></script>
     <script src="js/miracles_of_mary.js"></script>
 
     <!-- UI Interaction and Data Scripts -->
-    <script src="js/script.js?v=51"></script>
+    <script src="js/script.js?v=52"></script>
     <script src="js/targuma_service.js?v=2"></script>
     <script src="js/geez_lexicon.js?v=1"></script>
-    <script src="js/learning_service.js?v=4"></script>
+    <script src="js/learning_service.js?v=5"></script>
 </body>
 
 </html>
