@@ -40,6 +40,10 @@ export const RightSidebar: React.FC = () => {
           </div>
 
           <label style={{ display: 'block', marginBottom: '0.5rem' }}>
+            <input type="checkbox" id="show-daily-lectionary-toggle" /> <span>Daily Readings | ምንባባት ዘለለዕለቱ</span>
+          </label>
+
+          <label style={{ display: 'block', marginBottom: '0.5rem' }}>
             <input type="checkbox" id="show-seatat-readings-toggle" /> <span><i>Se'atat</i> Readings | ምንባባተ ሰዓታት</span>
           </label>
           <div
@@ -157,6 +161,7 @@ export const RightSidebar: React.FC = () => {
             }}
           >
             <h4 className="settings-subtitle" style={{ marginTop: '0.5rem' }}>SELECT LECTIONARY</h4>
+            <div id="kidase-reading-set-container" style={{ display: 'none', marginBottom: '0.65rem' }}></div>
 
             <div className="kidase-lectionary-item">
               <h5 className="settings-subtitle clickable-reading-title" data-reading-target="pauline">

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#000000">
     <title>The Mount of Mercy | ደብረ ምሕረት</title>
-    <link rel="stylesheet" href="css/style.css?v=34">
+    <link rel="stylesheet" href="css/style.css?v=38">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Abyssinica+SIL&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Lato&family=Roboto&display=swap"
@@ -334,6 +334,9 @@
                         </div>
 
                         <label style="display: block; margin-bottom: 0.5rem;"><input type="checkbox"
+                                id="show-daily-lectionary-toggle"> <span>Daily Readings | ምንባባት ዘለለዕለቱ</span></label>
+
+                        <label style="display: block; margin-bottom: 0.5rem;"><input type="checkbox"
                                 id="show-seatat-readings-toggle"> <span><i>Se'atat</i> Readings | ምንባባተ ሰዓታት</span></label>
                         <div id="seatat-readings-settings"
                             style="display: none; margin-left: 1rem; border-left: 1px solid var(--border-color); padding-left: 0.5rem; margin-bottom: 1rem;">
@@ -409,6 +412,7 @@
                         <div id="kidase-settings"
                             style="display: none; margin-left: 1rem; border-left: 2px solid var(--accent-color); padding-left: 1rem;">
                             <h4 class="settings-subtitle" style="margin-top: 0.5rem;">SELECT LECTIONARY</h4>
+                            <div id="kidase-reading-set-container" style="display: none; margin-bottom: 0.65rem;"></div>
 
                             <div class="kidase-lectionary-item">
                                 <h5 class="settings-subtitle clickable-reading-title" data-reading-target="pauline">
@@ -1611,12 +1615,13 @@
     <script src="js/kidase.js?v=11"></script>
     <script src="js/teklil.js?v=2"></script>
     <script src="js/typical_psalms.js?v=3"></script>
+    <script src="js/eotc_lectionary.js?v=3"></script>
     <script src="js/st_athanasius_psalms.js?v=2"></script>
     <script src="js/bible_service.js?v=4"></script>
     <script src="js/miracles_of_mary.js"></script>
 
     <!-- UI Interaction and Data Scripts -->
-    <script src="js/script.js?v=46"></script>
+    <script src="js/script.js?v=51"></script>
     <script src="js/targuma_service.js?v=2"></script>
     <script src="js/geez_lexicon.js?v=1"></script>
     <script src="js/learning_service.js?v=4"></script>

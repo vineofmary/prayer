@@ -78,26 +78,25 @@ describe('State Serialization & Unicode URL Encoding', () => {
   });
 
   describe('Pray & Liturgy Tab Default Profiles & Re-click Reset Behavior', () => {
-    it('collapses top-level pre-liturgy sections and keeps Matins & Kidase expanded one level with sub-sections collapsed', () => {
+    it('collapses all top-level and nested sections by default on the Liturgy tab', () => {
       const litProfile = app.getLiturgyTabDefaultProfile();
-      expect(litProfile.areAllSectionsCollapsed).toBe(false);
+      expect(litProfile.areAllSectionsCollapsed).toBe(true);
       expect(litProfile.selectedProphetSongs).toHaveLength(15);
       expect(litProfile.selectedProphetSongs[0]).toBe('firstSongOfMoses');
       const cs = litProfile.collapsedSections;
 
-      // Completely collapsed sections
+      // All top-level and nested sections collapsed by default
       expect(cs['Daily Prayer | ዘዘወትር ጸሎት']).toBe(true);
       expect(cs['<i>Vespers</i> — Sunset Prayer | ጸሎተ ሠርክ']).toBe(true);
       expect(cs['Songs of the Prophets | መኃልየ ነቢያት']).toBe(true);
       expect(cs["<i>Se'atat</i> Readings | ምንባባተ ሰዓታት"]).toBe(true);
       expect(cs['Pre-Liturgy Psalms | መዝሙር ዘዳዊት ዘቅድመ ቅዳሴ']).toBe(true);
 
-      // Expanded one level (parent expanded = false, sub-sections collapsed = true)
-      expect(cs['<i>Matins</i> — Morning Prayer | ጸሎተ ነግህ']).toBe(false);
+      expect(cs['<i>Matins</i> — Morning Prayer | ጸሎተ ነግህ']).toBe(true);
       expect(cs['<i>Matins</i> — Morning Prayer | ጸሎተ ነግህ::→ Prayer of the Gospel | ጸሎተ ወንጌል']).toBe(true);
       expect(cs['<i>Matins</i> — Morning Prayer | ጸሎተ ነግህ::→ <i>Kidan</i> — Prayer of the Covenant | ጸሎተ ኪዳን']).toBe(true);
 
-      expect(cs['<i>Ḳidasé</i> — Liturgy | ቅዳሴ']).toBe(false);
+      expect(cs['<i>Ḳidasé</i> — Liturgy | ቅዳሴ']).toBe(true);
       expect(cs['<i>Ḳidasé</i> — Liturgy | ቅዳሴ::→ Order of the Liturgy | ሥርዓተ ቅዳሴ']).toBe(true);
       expect(cs['<i>Ḳidasé</i> — Liturgy | ቅዳሴ::→ Anaphora of the Apostles | ቅዳሴ ሐዋርያት']).toBe(true);
       expect(cs['<i>Ḳidasé</i> — Liturgy | ቅዳሴ::→ Anaphora of Mary | ቅዳሴ ማርያም']).toBe(true);
@@ -111,11 +110,13 @@ describe('State Serialization & Unicode URL Encoding', () => {
       expect(snap.areAllSectionsCollapsed).toBe(true);
       expect(snap.isKidaseModeActive).toBe(false);
       expect(snap.selectedPsalms).toEqual([50]);
+      expect(app.getActivePrayerViewPresetSummary()).toBe('Preset for Prayer: Daily Prayer, Theotokia, Psalter, Readings');
 
       // 2. Switch to Liturgy tab
       app.switchPrimaryTab('liturgy');
       snap = app.getActiveLectionaryReadingsSnapshot();
       expect(snap.activePrimaryTab).toBe('liturgy');
+      expect(snap.areAllSectionsCollapsed).toBe(true);
       expect(snap.isKidaseModeActive).toBe(true);
       expect(snap.showPrepPsalms).toBe(true);
       expect(snap.showVespers).toBe(true);
@@ -123,8 +124,8 @@ describe('State Serialization & Unicode URL Encoding', () => {
       expect(snap.showSeatatReadings).toBe(true);
       expect(snap.collapsedSections['Daily Prayer | ዘዘወትር ጸሎት']).toBe(true);
       expect(snap.collapsedSections['<i>Vespers</i> — Sunset Prayer | ጸሎተ ሠርክ']).toBe(true);
-      expect(snap.collapsedSections['<i>Matins</i> — Morning Prayer | ጸሎተ ነግህ']).toBe(false);
-      expect(snap.collapsedSections['<i>Ḳidasé</i> — Liturgy | ቅዳሴ']).toBe(false);
+      expect(snap.collapsedSections['<i>Matins</i> — Morning Prayer | ጸሎተ ነግህ']).toBe(true);
+      expect(snap.collapsedSections['<i>Ḳidasé</i> — Liturgy | ቅዳሴ']).toBe(true);
 
       // 3. Switch back to Pray tab -> must remain collapsed (not overwritten by Liturgy DOM)
       app.switchPrimaryTab('pray');
@@ -137,19 +138,20 @@ describe('State Serialization & Unicode URL Encoding', () => {
       // 4. Re-click Pray tab while already on Pray tab -> resets to Pray defaults
       app.switchPrimaryTab('pray');
       snap = app.getActiveLectionaryReadingsSnapshot();
-      expect(snap.activePrimaryTab).toBe('pray');
+      expect(snap.activePrimaryTab).toBe( 'pray');
       expect(snap.areAllSectionsCollapsed).toBe(true);
       expect(snap.collapsedSections).toEqual({});
 
-      // 5. Switch to Liturgy and re-click Liturgy -> resets to Liturgy defaults
+      // 5. Switch to Liturgy and re-click Liturgy -> resets to Liturgy defaults (all collapsed)
       app.switchPrimaryTab('liturgy');
       app.switchPrimaryTab('liturgy');
       snap = app.getActiveLectionaryReadingsSnapshot();
       expect(snap.activePrimaryTab).toBe('liturgy');
+      expect(snap.areAllSectionsCollapsed).toBe(true);
       expect(snap.collapsedSections['Daily Prayer | ዘዘወትር ጸሎት']).toBe(true);
-      expect(snap.collapsedSections['<i>Matins</i> — Morning Prayer | ጸሎተ ነግህ']).toBe(false);
+      expect(snap.collapsedSections['<i>Matins</i> — Morning Prayer | ጸሎተ ነግህ']).toBe(true);
       expect(snap.collapsedSections['<i>Matins</i> — Morning Prayer | ጸሎተ ነግህ::→ Prayer of the Gospel | ጸሎተ ወንጌል']).toBe(true);
-      expect(snap.collapsedSections['<i>Ḳidasé</i> — Liturgy | ቅዳሴ']).toBe(false);
+      expect(snap.collapsedSections['<i>Ḳidasé</i> — Liturgy | ቅዳሴ']).toBe(true);
       expect(snap.collapsedSections['<i>Ḳidasé</i> — Liturgy | ቅዳሴ::→ Order of the Liturgy | ሥርዓተ ቅዳሴ']).toBe(true);
     });
 
@@ -192,7 +194,7 @@ describe('State Serialization & Unicode URL Encoding', () => {
       prayHeaders = Array.from(prayerDisplay.querySelectorAll('.section-title.collapsible'));
       expect(prayHeaders.every(h => h.classList.contains('collapsed'))).toBe(true);
 
-      // 3. Switch to Liturgy tab -> verify exact 1-level expansion and collapsed sections
+      // 3. Switch to Liturgy tab -> verify all sections (including Matins & Kidase) are collapsed by default
       app.switchPrimaryTab('liturgy');
       app._renderPrayersSync();
       const getHeader = (stateKey) => prayerDisplay.querySelector(`.section-title[data-state-key="${CSS.escape(stateKey)}"]`);
@@ -230,35 +232,35 @@ describe('State Serialization & Unicode URL Encoding', () => {
       expect(getHeader('Daily Prayer | ዘዘወትር ጸሎት')?.classList.contains('collapsed')).toBe(true);
       expect(prayerDisplay.querySelector('.holy-trinity-icon')?.style.display).toBe('none');
 
-      // Matins & Kidase expanded 1 level; their sub-sections visible and collapsed
-      expect(matinsHdr?.classList.contains('collapsed')).toBe(false);
+      // Matins & Kidase and their sub-sections are all collapsed and hidden under collapsed parents
+      expect(matinsHdr?.classList.contains('collapsed')).toBe(true);
       expect(matinsGospelHdr?.classList.contains('collapsed')).toBe(true);
-      expect(matinsGospelHdr?.style.display).not.toBe('none');
+      expect(matinsGospelHdr?.style.display).toBe('none');
       expect(matinsKidanHdr?.classList.contains('collapsed')).toBe(true);
-      expect(matinsKidanHdr?.style.display).not.toBe('none');
+      expect(matinsKidanHdr?.style.display).toBe('none');
 
-      expect(kidaseHdr?.classList.contains('collapsed')).toBe(false);
+      expect(kidaseHdr?.classList.contains('collapsed')).toBe(true);
       expect(kidaseOrderHdr?.classList.contains('collapsed')).toBe(true);
-      expect(kidaseOrderHdr?.style.display).not.toBe('none');
+      expect(kidaseOrderHdr?.style.display).toBe('none');
       expect(kidaseAnaphoraHdr?.classList.contains('collapsed')).toBe(true);
-      expect(kidaseAnaphoraHdr?.style.display).not.toBe('none');
+      expect(kidaseAnaphoraHdr?.style.display).toBe('none');
 
-      // 4. Modify Liturgy collapse states (expand Daily Prayer, collapse Matins), then re-click Liturgy tab
+      // 4. Modify Liturgy collapse states (expand Daily Prayer and Matins), then re-click Liturgy tab
       const currentDailyHdr = getHeader('Daily Prayer | ዘዘወትር ጸሎት');
       const currentMatinsHdr = getHeader('<i>Matins</i> — Morning Prayer | ጸሎተ ነግህ');
       currentDailyHdr.click();
       currentMatinsHdr.click();
       expect(currentDailyHdr.classList.contains('collapsed')).toBe(false);
-      expect(currentMatinsHdr.classList.contains('collapsed')).toBe(true);
+      expect(currentMatinsHdr.classList.contains('collapsed')).toBe(false);
 
-      // Re-click Liturgy tab -> resets to exact default Liturgy view (Daily Prayer collapsed, Holy Trinity icon hidden)
+      // Re-click Liturgy tab -> resets to exact default Liturgy view (all sections collapsed)
       app.switchPrimaryTab('liturgy');
       app._renderPrayersSync();
       expect(getHeader('Daily Prayer | ዘዘወትር ጸሎት')?.classList.contains('collapsed')).toBe(true);
       expect(prayerDisplay.querySelector('.holy-trinity-icon')?.style.display).toBe('none');
-      expect(getHeader('<i>Matins</i> — Morning Prayer | ጸሎተ ነግህ')?.classList.contains('collapsed')).toBe(false);
+      expect(getHeader('<i>Matins</i> — Morning Prayer | ጸሎተ ነግህ')?.classList.contains('collapsed')).toBe(true);
       expect(getHeader('<i>Matins</i> — Morning Prayer | ጸሎተ ነግህ::→ Prayer of the Gospel | ጸሎተ ወንጌል')?.classList.contains('collapsed')).toBe(true);
-      expect(getHeader('<i>Ḳidasé</i> — Liturgy | ቅዳሴ')?.classList.contains('collapsed')).toBe(false);
+      expect(getHeader('<i>Ḳidasé</i> — Liturgy | ቅዳሴ')?.classList.contains('collapsed')).toBe(true);
       expect(getHeader('<i>Ḳidasé</i> — Liturgy | ቅዳሴ::→ Order of the Liturgy | ሥርዓተ ቅዳሴ')?.classList.contains('collapsed')).toBe(true);
     }, 15000);
 
