@@ -11,6 +11,7 @@
 build/
 .gradle/
 captures/
+app/release/
 
 # Local configuration
 #
