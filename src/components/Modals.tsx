@@ -266,28 +266,25 @@ export const Modals: React.FC = () => {
 
               <div className="hierarchy-cards-grid">
                 <div className="hierarchy-card">
-                  <div className="hierarchy-portrait-wrap">
-                    <img src="/img/Mary-with-her-beloved-Son.svg" alt="Placeholder Icon — His Holiness Abune Mathias I" className="hierarchy-portrait-img" />
-                    <span className="hierarchy-photo-badge">Photo coming soon</span>
-                  </div>
+                  <button type="button" className="hierarchy-portrait-wrap hierarchy-portrait-btn" aria-label="Expand full portrait of His Holiness Abune Mathias I" title="Click to view full portrait">
+                    <img src="/img/Abune-Mathias-I.png" alt="Portrait of His Holiness Abune Mathias I" className="hierarchy-portrait-img" loading="lazy" />
+                  </button>
                   <div className="hierarchy-card-title">His Holiness Abune Mathias I</div>
                   <div className="hierarchy-card-role">Patriarch of Ethiopia, Archbishop of Axum, and Echege of the See of St. Tekle Haymanot</div>
                 </div>
 
                 <div className="hierarchy-card">
-                  <div className="hierarchy-portrait-wrap">
-                    <img src="/img/Mary-with-her-beloved-Son.svg" alt="Placeholder Icon — His Grace Archbishop Abune Theophilus" className="hierarchy-portrait-img" />
-                    <span className="hierarchy-photo-badge">Photo coming soon</span>
-                  </div>
+                  <button type="button" className="hierarchy-portrait-wrap hierarchy-portrait-btn" aria-label="Expand full portrait of His Grace Abune Theophilus" title="Click to view full portrait">
+                    <img src="/img/Abune-Theophilus.png" alt="Portrait of His Grace Abune Theophilus" className="hierarchy-portrait-img" loading="lazy" />
+                  </button>
                   <div className="hierarchy-card-title">His Grace Abune Theophilus</div>
                   <div className="hierarchy-card-role">Archbishop of the Diocese of Northern California, Nevada, and Arizona</div>
                 </div>
 
                 <div className="hierarchy-card">
-                  <div className="hierarchy-portrait-wrap">
-                    <img src="/img/Mary-with-her-beloved-Son.svg" alt="Placeholder Icon — Parish Qomos" className="hierarchy-portrait-img" />
-                    <span className="hierarchy-photo-badge">Photo coming soon</span>
-                  </div>
+                  <button type="button" className="hierarchy-portrait-wrap hierarchy-portrait-btn" aria-label="Expand full portrait of Qomos Abba Tesfa-Maryam" title="Click to view full portrait">
+                    <img src="/img/Qomos-Abba-Tesfa-Maryam.png?v=2" alt="Portrait of Qomos Abba Tesfa-Maryam" className="hierarchy-portrait-img" loading="lazy" />
+                  </button>
                   <div className="hierarchy-card-title">Qomos Abba Tesfa-Maryam</div>
                   <div className="hierarchy-card-role">Administrator and Archpriest of Oakland DMKM EOTC</div>
                 </div>
@@ -809,6 +806,18 @@ export const Modals: React.FC = () => {
             <p style={{ margin: 0 }}>
               This application is 100% free, contains no advertisements, subscriptions, or commercial monetization, and is maintained by parish volunteers for liturgical projection, worship, and catechetical study. Scripture passages are displayed in liturgical cards one verse/slide at a time.
             </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Full-Portrait Lightbox Overlay */}
+      <div id="hierarchy-photo-lightbox" className="hierarchy-photo-lightbox" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="hierarchy-lightbox-title">
+        <div className="hierarchy-lightbox-dialog">
+          <button type="button" className="hierarchy-lightbox-close" id="close-hierarchy-lightbox" aria-label="Close full portrait">&times;</button>
+          <img id="hierarchy-lightbox-img" alt="" className="hierarchy-lightbox-img" />
+          <div className="hierarchy-lightbox-caption">
+            <div id="hierarchy-lightbox-title" className="hierarchy-lightbox-title"></div>
+            <div id="hierarchy-lightbox-role" className="hierarchy-lightbox-role"></div>
           </div>
         </div>
       </div>

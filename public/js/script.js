@@ -11346,6 +11346,7 @@ function openModal(modal) {
 }
 
 function closeModal() {
+    closeHierarchyPortraitLightbox();
     document.querySelectorAll('.modal').forEach(modal => {
         modal.style.display = 'none';
         modal.style.zIndex = '';
@@ -11355,6 +11356,117 @@ function closeModal() {
         modalBackdrop.style.zIndex = '';
     }
     body.style.overflow = 'auto';
+}
+
+let _lastHierarchyPortraitTrigger = null;
+
+function openHierarchyPortraitLightbox(src, titleText = '', roleText = '', altText = '', triggerEl = null) {
+    if (!src || typeof document === 'undefined') return false;
+    const lightbox = document.getElementById('hierarchy-photo-lightbox');
+    const lightboxImg = document.getElementById('hierarchy-lightbox-img');
+    const lightboxTitle = document.getElementById('hierarchy-lightbox-title');
+    const lightboxRole = document.getElementById('hierarchy-lightbox-role');
+    if (!lightbox || !lightboxImg) return false;
+
+    _lastHierarchyPortraitTrigger = triggerEl || null;
+    lightboxImg.setAttribute('src', src);
+    lightboxImg.alt = altText || (titleText ? `Portrait of ${titleText}` : 'Expanded portrait');
+
+    if (lightboxTitle) {
+        lightboxTitle.textContent = titleText || '';
+        lightboxTitle.style.display = titleText ? '' : 'none';
+    }
+    if (lightboxRole) {
+        lightboxRole.textContent = roleText || '';
+        lightboxRole.style.display = roleText ? '' : 'none';
+    }
+
+    lightbox.classList.add('is-open');
+    lightbox.setAttribute('aria-hidden', 'false');
+
+    const closeBtn = document.getElementById('close-hierarchy-lightbox');
+    if (closeBtn && typeof closeBtn.focus === 'function') {
+        closeBtn.focus();
+    }
+    return true;
+}
+
+function closeHierarchyPortraitLightbox() {
+    if (typeof document === 'undefined') return false;
+    const lightbox = document.getElementById('hierarchy-photo-lightbox');
+    if (!lightbox || !lightbox.classList.contains('is-open')) return false;
+
+    lightbox.classList.remove('is-open');
+    lightbox.setAttribute('aria-hidden', 'true');
+
+    const lightboxImg = document.getElementById('hierarchy-lightbox-img');
+    if (lightboxImg) {
+        lightboxImg.removeAttribute('src');
+        lightboxImg.alt = '';
+    }
+
+    if (
+        _lastHierarchyPortraitTrigger &&
+        typeof _lastHierarchyPortraitTrigger.focus === 'function' &&
+        document.contains(_lastHierarchyPortraitTrigger)
+    ) {
+        _lastHierarchyPortraitTrigger.focus();
+    }
+    _lastHierarchyPortraitTrigger = null;
+    return true;
+}
+
+function bindHierarchyPortraitLightboxEvents() {
+    if (typeof window === 'undefined' || typeof document === 'undefined') return;
+    if (window._hierarchyPortraitLightboxBound) return;
+    window._hierarchyPortraitLightboxBound = true;
+
+    document.addEventListener('click', (e) => {
+        const target = e.target;
+        if (!target || typeof target.closest !== 'function') return;
+
+        if (target.closest('#close-hierarchy-lightbox')) {
+            e.preventDefault();
+            closeHierarchyPortraitLightbox();
+            return;
+        }
+
+        const openLightbox = document.getElementById('hierarchy-photo-lightbox');
+        if (
+            openLightbox &&
+            openLightbox.classList.contains('is-open') &&
+            target.closest('#hierarchy-photo-lightbox') &&
+            !target.closest('.hierarchy-lightbox-img, .hierarchy-lightbox-caption')
+        ) {
+            closeHierarchyPortraitLightbox();
+            return;
+        }
+
+        const portraitWrap = target.closest('.hierarchy-portrait-wrap, .auspices-portrait-wrap');
+        if (portraitWrap) {
+            const img = portraitWrap.querySelector('img');
+            const src = portraitWrap.getAttribute('data-portrait-src') || (img ? img.getAttribute('src') : '');
+            if (!src) return;
+            const card = portraitWrap.closest('.hierarchy-card, .auspices-leader-card');
+            const titleEl = card ? card.querySelector('.hierarchy-card-title, .auspices-leader-name') : null;
+            const roleEl = card ? card.querySelector('.hierarchy-card-role, .auspices-leader-role') : null;
+            const titleText = portraitWrap.getAttribute('data-portrait-title') || (titleEl ? titleEl.textContent.trim() : '');
+            const roleText = portraitWrap.getAttribute('data-portrait-role') || (roleEl ? roleEl.textContent.trim() : '');
+            const altText = img ? (img.getAttribute('alt') || '') : '';
+            openHierarchyPortraitLightbox(src, titleText, roleText, altText, portraitWrap);
+        }
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            const lightbox = document.getElementById('hierarchy-photo-lightbox');
+            if (lightbox && lightbox.classList.contains('is-open')) {
+                e.preventDefault();
+                e.stopPropagation();
+                closeHierarchyPortraitLightbox();
+            }
+        }
+    });
 }
 
 let currentTypicalPsalmCallback = null;
@@ -13996,6 +14108,7 @@ window.initMountOfMercyEngine = async function() {
 // Autostart if DOM is already ready and prayer data scripts are present
 if (typeof document !== 'undefined') {
     bindDOMElements();
+    bindHierarchyPortraitLightboxEvents();
     if (document.readyState === 'complete' || document.readyState === 'interactive') {
         if (typeof prayers !== 'undefined' && document.getElementById('prayer-display')) {
             window.initMountOfMercyEngine();
@@ -14080,6 +14193,8 @@ const appCoreExports = {
     renderTypicalPsalmsModal,
     renderLiturgicalCalendarBar,
     openCalendarInfoModal,
+    openHierarchyPortraitLightbox,
+    closeHierarchyPortraitLightbox,
     loadSettings,
     saveSettings,
     buildUrlStateObject,

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#000000">
     <title>The Mount of Mercy | ደብረ ምሕረት</title>
-    <link rel="stylesheet" href="css/style.css?v=40">
+    <link rel="stylesheet" href="css/style.css?v=41">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Abyssinica+SIL&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Lato&family=Roboto&display=swap"
@@ -1070,28 +1070,25 @@
 
                         <div class="hierarchy-cards-grid">
                             <div class="hierarchy-card">
-                                <div class="hierarchy-portrait-wrap">
-                                    <img src="img/Mary-with-her-beloved-Son.svg" alt="Placeholder Icon — His Holiness Abune Mathias I" class="hierarchy-portrait-img">
-                                    <span class="hierarchy-photo-badge">Photo coming soon</span>
-                                </div>
+                                <button type="button" class="hierarchy-portrait-wrap hierarchy-portrait-btn" aria-label="Expand full portrait of His Holiness Abune Mathias I" title="Click to view full portrait">
+                                    <img src="img/Abune-Mathias-I.png" alt="Portrait of His Holiness Abune Mathias I" class="hierarchy-portrait-img" loading="lazy">
+                                </button>
                                 <div class="hierarchy-card-title">His Holiness Abune Mathias I</div>
                                 <div class="hierarchy-card-role">Patriarch of Ethiopia, Archbishop of Axum, and Echege of the See of St. Tekle Haymanot</div>
                             </div>
 
                             <div class="hierarchy-card">
-                                <div class="hierarchy-portrait-wrap">
-                                    <img src="img/Mary-with-her-beloved-Son.svg" alt="Placeholder Icon — His Grace Archbishop Abune Theophilus" class="hierarchy-portrait-img">
-                                    <span class="hierarchy-photo-badge">Photo coming soon</span>
-                                </div>
+                                <button type="button" class="hierarchy-portrait-wrap hierarchy-portrait-btn" aria-label="Expand full portrait of His Grace Abune Theophilus" title="Click to view full portrait">
+                                    <img src="img/Abune-Theophilus.png" alt="Portrait of His Grace Abune Theophilus" class="hierarchy-portrait-img" loading="lazy">
+                                </button>
                                 <div class="hierarchy-card-title">His Grace Abune Theophilus</div>
                                 <div class="hierarchy-card-role">Archbishop of the Diocese of Northern California, Nevada, and Arizona</div>
                             </div>
 
                             <div class="hierarchy-card">
-                                <div class="hierarchy-portrait-wrap">
-                                    <img src="img/Mary-with-her-beloved-Son.svg" alt="Placeholder Icon — Parish Qomos" class="hierarchy-portrait-img">
-                                    <span class="hierarchy-photo-badge">Photo coming soon</span>
-                                </div>
+                                <button type="button" class="hierarchy-portrait-wrap hierarchy-portrait-btn" aria-label="Expand full portrait of Qomos Abba Tesfa-Maryam" title="Click to view full portrait">
+                                    <img src="img/Qomos-Abba-Tesfa-Maryam.png?v=2" alt="Portrait of Qomos Abba Tesfa-Maryam" class="hierarchy-portrait-img" loading="lazy">
+                                </button>
                                 <div class="hierarchy-card-title">Qomos Abba Tesfa-Maryam</div>
                                 <div class="hierarchy-card-role">Administrator and Archpriest of Oakland DMKM EOTC</div>
                             </div>
@@ -1606,6 +1603,17 @@
             </div>
         </div>
 
+        <div id="hierarchy-photo-lightbox" class="hierarchy-photo-lightbox" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="hierarchy-lightbox-title">
+            <div class="hierarchy-lightbox-dialog">
+                <button type="button" class="hierarchy-lightbox-close" id="close-hierarchy-lightbox" aria-label="Close full portrait">&times;</button>
+                <img id="hierarchy-lightbox-img" alt="" class="hierarchy-lightbox-img">
+                <div class="hierarchy-lightbox-caption">
+                    <div id="hierarchy-lightbox-title" class="hierarchy-lightbox-title"></div>
+                    <div id="hierarchy-lightbox-role" class="hierarchy-lightbox-role"></div>
+                </div>
+            </div>
+        </div>
+
 
     <!-- Firebase SDKs (Compat) -->
     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
@@ -1626,7 +1634,7 @@
     <script src="js/miracles_of_mary.js"></script>
 
     <!-- UI Interaction and Data Scripts -->
-    <script src="js/script.js?v=54"></script>
+    <script src="js/script.js?v=55"></script>
     <script src="js/targuma_service.js?v=2"></script>
     <script src="js/geez_lexicon.js?v=1"></script>
     <script src="js/learning_service.js?v=5"></script>
