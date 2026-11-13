@@ -27,6 +27,7 @@ export const Header: React.FC = () => {
             <div id="liturgical-calendar-bar" className="liturgical-calendar-bar" aria-label="Liturgical Hour and Ethiopian Calendar">
               {/* Populated dynamically by script.js */}
             </div>
+            <div id="header-feast-mobile-line" className="header-feast-mobile-line" hidden aria-label="Liturgical Feast Day"></div>
           </div>
         </div>
 

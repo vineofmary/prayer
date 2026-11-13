@@ -44,7 +44,7 @@ let header, leftSidebar, rightSidebar, mainContent, sidebarToggle, prayersPanelT
     globalEnglishTranslationSelect, globalAmharicTranslationSelect, globalGeezTranslationSelect,
     bibleTranslationsInfoBtn, bibleTranslationsInfoModal, closeBibleTranslationsInfoModal,
     expandCollapseAllButton, expandCollapseAllLabel, prayerFloatingControls, bottomNavBar,
-    headerSubtitleAttribution, liturgicalCalendarBar, calendarInfoModal, closeCalendarInfoModal,
+    headerSubtitleAttribution, liturgicalCalendarBar, headerFeastMobileLine, calendarInfoModal, closeCalendarInfoModal,
     calendarInfoTitle, calendarInfoBody, showHaregOrnamentToggle, showTrinitarianInvocationToggle, showPrepPsalmsToggle,
     searchScopeSelect, searchResultsDrawer, miracleVoiceDetectBtn, miracleVoiceStatus, miracleVoiceSuggestions,
     feedbackButton, helpModal, feedbackModal, ephremStoryModal, ephremStoryInfoBtn, closeEphremModal,
@@ -150,6 +150,7 @@ function bindDOMElements() {
     bottomNavBar = document.getElementById('bottom-nav-bar');
     headerSubtitleAttribution = document.getElementById('header-subtitle-attribution');
     liturgicalCalendarBar = document.getElementById('liturgical-calendar-bar');
+    headerFeastMobileLine = document.getElementById('header-feast-mobile-line');
     calendarInfoModal = document.getElementById('calendar-info-modal');
     closeCalendarInfoModal = document.getElementById('close-calendar-info-modal');
     calendarInfoTitle = document.getElementById('calendar-info-title');
@@ -5171,35 +5172,35 @@ const ETHIOPIAN_MONTHS_INFO = [
 
 // Monthly Feasts (1–30) of the Ethiopian Orthodox Tewahedo Church (sourced from geez.org/Calendars/)
 const ETHIOPIAN_MONTHLY_FEASTS = [
-    { day: 1, geezDay: '፩', name: 'Lideta (Nativity of St. Mary), St. Raguel the Archangel, Prophet Elias & St. Bartholomew', geez: 'ልደታ ለማርያም፣ ቅዱስ ራጉኤል፣ ኤልያስ ነቢይ' },
+    { day: 1, geezDay: '፩', name: 'Nativity of St. Mary, St. Raguel, Prophet Elijah & St. Bartholomew', geez: 'ልደታ ለማርያም፣ ቅዱስ ራጉኤል፣ ኤልያስ ነቢይ' },
     { day: 2, geezDay: '፪', name: 'St. Thaddaeus the Apostle, Abba Guba & Walka Michael', geez: 'ታዴዎስ ሐዋርያ፣ አባ ጉባ' },
-    { day: 3, geezDay: '፫', name: 'Ba\'eta (Entrance of St. Mary into the Temple), St. Phanuel the Archangel & Abune Zena Markos', geez: 'በዓታ ለማርያም፣ ቅዱስ ፋኑኤል፣ አቡነ ዜና ማርቆስ' },
-    { day: 4, geezDay: '፬', name: 'St. John the Evangelist (Son of Thunder / ወልደ ነጎድጓድ) & St. Andrew the Apostle', geez: 'ዮሐንስ ወልደ ነጎድጓድ፣ እንድርያስ ሐዋርያ' },
-    { day: 5, geezDay: '፭', name: 'Sts. Peter & Paul (Petros we-Pawlos) & Abune Gebre Menfes Kidus (Abo)', geez: 'ጴጥሮስ ወጳውሎስ፣ አቡነ ገብረ መንፈስ ቅዱስ' },
-    { day: 6, geezDay: '፮', name: 'Our Lady of Debre Quesquam (Flight into Egypt), St. Mary of Arwe & St. Barbara', geez: 'ቁስቋም ማርያም፣ ቅድስት አርሴማ' },
-    { day: 7, geezDay: '፯', name: 'Agzi\'abher Ab (The Most Holy Trinity / ሥላሴ)', geez: 'ቅድስት ሥላሴ' },
-    { day: 8, geezDay: '፰', name: 'The Four Living Creatures (Arba\'etu Ensisa), Abba Kiros & St. Matthias', geez: 'አርባዕቱ እንስሳ፣ አባ ኪሮስ' },
-    { day: 9, geezDay: '፱', name: 'St. Thomas the Apostle, the 318 Fathers of Nicaea & the Nine Saints (Tese\'atu Kidusan)', geez: 'ቶማስ ሐዋርያ፣ ሠለስቱ ምዕት፣ ተሰዓቱ ቅዱሳን' },
-    { day: 10, geezDay: '፲', name: 'Finding of the Holy Cross of Our Lord (Meskel / ነገረ መስቀሉ)', geez: 'በዓለ መስቀሉ ለእግዚእነ' },
-    { day: 11, geezDay: '፲፩', name: 'Sts. Joachim & Anna (Hanna we-Yacob), St. Fasilides & St. Yared the Melodist', geez: 'ሐና ወኢያቄም፣ ቅዱስ ያሬድ፣ ቅዱስ ፋሲለደስ' },
-    { day: 12, geezDay: '፲፪', name: 'St. Michael the Archangel, St. Matthew the Evangelist, St. John Chrysostom & St. Kristos Semra', geez: 'ቅዱስ ሚካኤል፣ ማቴዎስ ወንጌላዊ፣ ቅድስት ክርስቶስ ሠምራ' },
-    { day: 13, geezDay: '፲፫', name: 'Egzi\'abher Ab (God the Father), St. Ruphael the Archangel & the Myriad Angelic Hosts (A\'elaf)', geez: 'እግዚአብሔር አብ፣ ቅዱስ ሩፋኤል፣ አእላፍ መላእክት' },
-    { day: 14, geezDay: '፲፬', name: 'Abune Aregawi (Zemika\'el) & St. Gebre Kristos', geez: 'አቡነ አረጋዊ፣ ቅዱስ ገብረ ክርስቶስ' },
-    { day: 15, geezDay: '፲፭', name: 'St. Cyriacus (Qirqos) & His Mother St. Julitta (Iyalota)', geez: 'ቅዱስ ቂርቆስ ወእሙ ኢየሉጣ' },
-    { day: 16, geezDay: '፲፮', name: 'Kidane Mihret (Covenant of Mercy of Our Lady Mary)', geez: 'ኪዳነ ምሕረት' },
-    { day: 17, geezDay: '፲፯', name: 'St. Stephen the Protomartyr (Estifanos) & Abba Gerima', geez: 'ቅዱስ እስጢፋኖስ፣ አባ ገሪማ' },
-    { day: 18, geezDay: '፲፰', name: 'St. Philip the Apostle & Abune Ewostatewos (Eustathius)', geez: 'ፊልጶስ ሐዋርያ፣ አቡነ ኤዎስጣቴዎስ' },
+    { day: 3, geezDay: '፫', name: 'Entrance of St. Mary into the Temple, St. Phanuel & Abune Zena Markos', geez: 'በዓታ ለማርያም፣ ቅዱስ ፋኑኤል፣ አቡነ ዜና ማርቆስ' },
+    { day: 4, geezDay: '፬', name: 'St. John, Son of Thunder & St. Andrew the Apostle', geez: 'ዮሐንስ ወልደ ነጎድጓድ፣ እንድርያስ ሐዋርያ' },
+    { day: 5, geezDay: '፭', name: 'Sts. Peter & Paul & Abune Gebre Menfes Kidus', geez: 'ጴጥሮስ ወጳውሎስ፣ አቡነ ገብረ መንፈስ ቅዱስ' },
+    { day: 6, geezDay: '፮', name: 'Return of the Holy Family from Egypt (Debre Quesquam) & St. Arsema', geez: 'ቁስቋም ማርያም፣ ቅድስት አርሴማ' },
+    { day: 7, geezDay: '፯', name: 'The Holy Trinity', geez: 'ቅድስት ሥላሴ' },
+    { day: 8, geezDay: '፰', name: 'The Four Heavenly Animals & Abba Kiros', geez: 'አርባዕቱ እንስሳ፣ አባ ኪሮስ' },
+    { day: 9, geezDay: '፱', name: 'St. Thomas the Apostle, the 318 Nicene Fathers & the Nine Saints', geez: 'ቶማስ ሐዋርያ፣ ሠለስቱ ምዕት፣ ተሰዓቱ ቅዱሳን' },
+    { day: 10, geezDay: '፲', name: 'Feast of the Cross of Our Lord', geez: 'በዓለ መስቀሉ ለእግዚእነ' },
+    { day: 11, geezDay: '፲፩', name: 'Sts. Anna & Joachim, St. Yared & St. Fasilides', geez: 'ሐና ወኢያቄም፣ ቅዱስ ያሬድ፣ ቅዱስ ፋሲለደስ' },
+    { day: 12, geezDay: '፲፪', name: 'St. Michael, St. Matthew the Evangelist & St. Kristos Semra', geez: 'ቅዱስ ሚካኤል፣ ማቴዎስ ወንጌላዊ፣ ቅድስት ክርስቶስ ሠምራ' },
+    { day: 13, geezDay: '፲፫', name: 'God the Father, St. Ruphael & the Myriad Angels', geez: 'እግዚአብሔር አብ፣ ቅዱስ ሩፋኤል፣ አእላፍ መላእክት' },
+    { day: 14, geezDay: '፲፬', name: 'Abune Aregawi & St. Gebre Kristos', geez: 'አቡነ አረጋዊ፣ ቅዱስ ገብረ ክርስቶስ' },
+    { day: 15, geezDay: '፲፭', name: 'St. Cyriacus & His Mother St. Julitta', geez: 'ቅዱስ ቂርቆስ ወእሙ ኢየሉጣ' },
+    { day: 16, geezDay: '፲፮', name: 'Covenant of Mercy (Our Lady Mary)', geez: 'ኪዳነ ምሕረት' },
+    { day: 17, geezDay: '፲፯', name: 'St. Stephen & Abba Gerima', geez: 'ቅዱስ እስጢፋኖስ፣ አባ ገሪማ' },
+    { day: 18, geezDay: '፲፰', name: 'St. Philip the Apostle & Abune Ewostatewos', geez: 'ፊልጶስ ሐዋርያ፣ አቡነ ኤዎስጣቴዎስ' },
     { day: 19, geezDay: '፲፱', name: 'St. Gabriel the Archangel', geez: 'ቅዱስ ገብርኤል ሊቀ መላእክት' },
-    { day: 20, geezDay: '፳', name: 'Hnstata (Building of the First Church of St. Mary at Philippi) & Prophet Elisha', geez: 'ሕንፀታ ለቤተ ክርስቲያን፣ ኤልሳዕ ነቢይ' },
-    { day: 21, geezDay: '፳፩', name: 'Our Lady Mary the Mother of God (Egzi\'etne Maryam)', geez: 'እግዝእትነ ማርያም ወላዲተ አምላክ' },
-    { day: 22, geezDay: '፳፪', name: 'St. Urael the Archangel, St. Deksios (Ildefonsus) & St. Luke the Evangelist (Bisrategna)', geez: 'ቅዱስ ዑራኤል፣ ቅዱስ ደቅስዮስ፣ ሉቃስ ወንጌላዊ' },
-    { day: 23, geezDay: '፳፫', name: 'St. George the Great Martyr (Kidus Giyorgis) & King Solomon', geez: 'ቅዱስ ጊዮርጊስ ሊቀ ሰማዕታት' },
-    { day: 24, geezDay: '፳፬', name: 'Abune Tekle Haymanot & the Twenty-Four Heavenly Priests (Kahinate Semay)', geez: 'አቡነ ተክለ ሃይማኖት፣ ካህናተ ሰማይ' },
-    { day: 25, geezDay: '፳፭', name: 'St. Merkorios (Mercurius of Two Swords)', geez: 'ቅዱስ መርቆሬዎስ' },
-    { day: 26, geezDay: '፳፮', name: 'St. Joseph the Betrothed, Abba Salama (Frumentius) & Thomas', geez: 'ቅዱስ ዮሴፍ አረጋዊ፣ አባ ሰላማ ከሣቴ ብርሃን' },
-    { day: 27, geezDay: '፳፯', name: 'Medhane Alem (Savior of the World — Crucifixion of Our Lord)', geez: 'መድኃኔ ዓለም' },
-    { day: 28, geezDay: '፳፰', name: 'Emmanuel (አማኑኤል) & the Holy Patriarchs Abraham, Isaac, and Jacob', geez: 'አማኑኤል፣ አብርሃም ይስሐቅ ወያዕቆብ' },
-    { day: 29, geezDay: '፳፱', name: 'Bale Wold (Feast of God the Son — Incarnation, Nativity & Resurrection)', geez: 'በዓለ ወልድ' },
+    { day: 20, geezDay: '፳', name: 'Building of the Church (First Church of St. Mary) & Prophet Elisha', geez: 'ሕንፀታ ለቤተ ክርስቲያን፣ ኤልሳዕ ነቢይ' },
+    { day: 21, geezDay: '፳፩', name: 'Our Lady Mary, Mother of God', geez: 'እግዝእትነ ማርያም ወላዲተ አምላክ' },
+    { day: 22, geezDay: '፳፪', name: 'St. Urael, St. Deksios & St. Luke the Evangelist', geez: 'ቅዱስ ዑራኤል፣ ቅዱስ ደቅስዮስ፣ ሉቃስ ወንጌላዊ' },
+    { day: 23, geezDay: '፳፫', name: 'St. George, Chief of Martyrs', geez: 'ቅዱስ ጊዮርጊስ ሊቀ ሰማዕታት' },
+    { day: 24, geezDay: '፳፬', name: 'Abune Tekle Haymanot & the 24 Priests of Heaven', geez: 'አቡነ ተክለ ሃይማኖት፣ ካህናተ ሰማይ' },
+    { day: 25, geezDay: '፳፭', name: 'St. Merkorios', geez: 'ቅዱስ መርቆሬዎስ' },
+    { day: 26, geezDay: '፳፮', name: 'St. Joseph the Elder & Abba Salama, Revealer of Light', geez: 'ቅዱስ ዮሴፍ አረጋዊ፣ አባ ሰላማ ከሣቴ ብርሃን' },
+    { day: 27, geezDay: '፳፯', name: 'Savior of the World (Crucifixion of Our Lord)', geez: 'መድኃኔ ዓለም' },
+    { day: 28, geezDay: '፳፰', name: 'Emmanuel & Abraham, Isaac, and Jacob', geez: 'አማኑኤል፣ አብርሃም ይስሐቅ ወያዕቆብ' },
+    { day: 29, geezDay: '፳፱', name: 'Feast of God the Son (Incarnation, Nativity & Resurrection)', geez: 'በዓለ ወልድ' },
     { day: 30, geezDay: '፴', name: 'St. Mark the Evangelist & St. John the Baptist', geez: 'ማርቆስ ወንጌላዊ፣ ዮሐንስ መጥምቅ' }
 ];
 
@@ -5384,6 +5385,13 @@ function renderLiturgicalCalendarBar() {
     const clockTooltip = isOverridden
         ? `Custom liturgical date & time active (${formattedOverrideStr}) — click to adjust or reset`
         : 'Override date & time for liturgical prayers and lectionary';
+    const feastInfo = getActiveEotcFeastLookup(eth.ethMonth, eth.ethDay);
+    const feastDisplayStr = feastInfo ? `${feastInfo.english} | ${feastInfo.geez}` : '';
+    const desktopFeastHtml = feastDisplayStr
+        ? `
+        <span class="cal-dot cal-feast-desktop-sep">•</span>
+        <span class="cal-feast-desktop" title="${feastDisplayStr}">${feastDisplayStr}</span>`
+        : '';
 
     liturgicalCalendarBar.innerHTML = `
         <button type="button" class="calendar-chip-link" data-cal-action="hour" title="Click to view the mystery of this Liturgical Hour and pray its Psalms">${hrInfo.hourLabel}</button>
@@ -5393,8 +5401,29 @@ function renderLiturgicalCalendarBar() {
         <button type="button" class="calendar-chip-link" data-cal-action="year" title="Click to learn about Year of Mercy (Amete Mihret)">${eth.ethYear}<span class="cal-year-mercy-label"> Year of Mercy</span></button>
         <button type="button" class="calendar-chip-link cal-datetime-override-btn${isOverridden ? ' is-overridden' : ''}" data-cal-action="datetime" aria-label="Override liturgical date and time" title="${clockTooltip}"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><polyline points="12 7 12 12 15.5 14"></polyline></svg></button>
         <span class="cal-dot cal-western-date-sep">•</span>
-        <span class="cal-western-date">${wDayName}, ${wMonthName} ${wDayNum}, ${wYear}</span>
+        <span class="cal-western-date">${wDayName}, ${wMonthName} ${wDayNum}, ${wYear}</span>${desktopFeastHtml}
     `;
+
+    let mobileFeastEl = document.getElementById('header-feast-mobile-line') || headerFeastMobileLine;
+    if (!mobileFeastEl && liturgicalCalendarBar.parentElement) {
+        mobileFeastEl = document.createElement('div');
+        mobileFeastEl.id = 'header-feast-mobile-line';
+        mobileFeastEl.className = 'header-feast-mobile-line';
+        mobileFeastEl.setAttribute('aria-label', 'Liturgical Feast Day');
+        liturgicalCalendarBar.insertAdjacentElement('afterend', mobileFeastEl);
+        headerFeastMobileLine = mobileFeastEl;
+    }
+    if (mobileFeastEl) {
+        if (feastDisplayStr) {
+            mobileFeastEl.textContent = feastDisplayStr;
+            mobileFeastEl.title = feastDisplayStr;
+            mobileFeastEl.hidden = false;
+        } else {
+            mobileFeastEl.textContent = '';
+            mobileFeastEl.removeAttribute('title');
+            mobileFeastEl.hidden = true;
+        }
+    }
 
     liturgicalCalendarBar.querySelectorAll('.calendar-chip-link').forEach(btn => {
         btn.addEventListener('click', (e) => {
@@ -7893,6 +7922,10 @@ function _renderPrayersSync() {
             if (betaTheotokiaDays.includes(actualTitle) || actualTitle.includes('Anqetse Birhan')) {
                 formattedActualTitle += ' <span class="theotokia-beta-badge" title="English translation in progress">BETA</span>';
             }
+            if (options && options.feastBadgeLabel) {
+                const badgeTitleAttr = options.feastBadgeTitle ? ` title="${String(options.feastBadgeTitle).replace(/"/g, '&quot;')}"` : '';
+                formattedActualTitle += ` <span class="theotokia-beta-badge festal-reading-badge"${badgeTitleAttr}>${options.feastBadgeLabel}</span>`;
+            }
             titleContent.innerHTML = formattedActualTitle;
 
             if (!isCollapsible) {
@@ -9500,9 +9533,9 @@ function formatDailyReadingSubsectionTitle(refStr, period = 'morning', { isMatin
 
     if (isMatins) {
         if (/^Psalms?\b/i.test(trimmed)) {
-            return `Matins - ${displayRef} | ምስባክ ዘነግህ`;
+            return `<i>Matins</i> (${displayRef}) | ምስባክ ዘነግህ`;
         }
-        return `Matins - ${displayRef} | ወንጌል ዘነግህ`;
+        return `<i>Matins</i> (${displayRef}) | ወንጌል ዘነግህ`;
     }
 
     let bookName = trimmed;
@@ -9574,10 +9607,17 @@ function stepDailyLectionaryDayOffset(delta, { reset = false, keepExpanded = fal
     }
 }
 
-function appendDailyLectionaryReadingCards(refStr, period, { isMatins = false } = {}, addSectionTitleCallback) {
+function appendDailyLectionaryReadingCards(refStr, period, { isMatins = false, feastInfo = null } = {}, addSectionTitleCallback) {
     const labelStr = formatDailyReadingSubsectionTitle(refStr, period, { isMatins });
     const childTitle = `→ ${labelStr}`;
-    addSectionTitleCallback(childTitle, true, null, { defaultCollapsed: true });
+    const titleOpts = { defaultCollapsed: true };
+    if (isMatins) {
+        titleOpts.feastBadgeLabel = 'FEAST';
+        titleOpts.feastBadgeTitle = feastInfo
+            ? `Appointed for today's Feast: ${feastInfo.english} | ${feastInfo.geez}`
+            : 'Appointed Festal Matins reading';
+    }
+    addSectionTitleCallback(childTitle, true, null, titleOpts);
 
     const bibleResults = getBibleVersesFromRef(refStr, 'dailyLectionary');
     if (!bibleResults) return;
@@ -9775,10 +9815,10 @@ function renderDailyLectionarySection(addSectionTitleCallback) {
         if (hasMatins) {
             if (entry.matins.psalmLxx) {
                 const mtPs = convertLxxRefHelper(entry.matins.psalmLxx);
-                if (mtPs) appendDailyLectionaryReadingCards(mtPs, 'morning', { isMatins: true }, addSectionTitleCallback);
+                if (mtPs) appendDailyLectionaryReadingCards(mtPs, 'morning', { isMatins: true, feastInfo }, addSectionTitleCallback);
             }
             if (entry.matins.gospel) {
-                appendDailyLectionaryReadingCards(entry.matins.gospel, 'morning', { isMatins: true }, addSectionTitleCallback);
+                appendDailyLectionaryReadingCards(entry.matins.gospel, 'morning', { isMatins: true, feastInfo }, addSectionTitleCallback);
             }
         }
     }

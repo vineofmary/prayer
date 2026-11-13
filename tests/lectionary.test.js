@@ -299,32 +299,65 @@ describe('Canonical 1938 AD EOTC Annual Lectionary (All 13 Months / 366 Days)', 
       app.setCustomDateTimeOverride(new Date(2026, 9, 15, 9, 0, 0));
       const clockBtnAfter = bar.querySelector('[data-cal-action="datetime"]');
       expect(clockBtnAfter.classList.contains('is-overridden')).toBe(true);
+
+      // Ordinary day (Tikimt 5, 2019 ዓ.ም.) -> no feast day line in header
+      const ordinaryDay = ethToGregDate(2019, 2, 5, { forWazemaEvening: false, hours: 9, minutes: 0 });
+      app.setCustomDateTimeOverride(ordinaryDay);
+      expect(bar.querySelector('.cal-feast-desktop')).toBeNull();
+      const mobileFeastOrd = document.getElementById('header-feast-mobile-line');
+      expect(mobileFeastOrd).toBeTruthy();
+      expect(mobileFeastOrd.hidden).toBe(true);
+
+      // Feast day (Tikimt 29, 2019 ዓ.ም.) -> displays "Feast of God the Son | በዓለ ወልድ" in desktop & mobile header elements
+      const tikimt29 = ethToGregDate(2019, 2, 29, { forWazemaEvening: false, hours: 9, minutes: 0 });
+      app.setCustomDateTimeOverride(tikimt29);
+      const desktopFeastEl = bar.querySelector('.cal-feast-desktop');
+      expect(desktopFeastEl).toBeTruthy();
+      expect(desktopFeastEl.textContent).toBe('Feast of God the Son | በዓለ ወልድ');
+      const mobileFeastEl = document.getElementById('header-feast-mobile-line');
+      expect(mobileFeastEl.hidden).toBe(false);
+      expect(mobileFeastEl.textContent).toBe('Feast of God the Son | በዓለ ወልድ');
     });
 
-    it('renders Morning/Sunset Daily Readings with 5 PM auto-switch, pill toggle, day arrows, Ge\'ez year, Feast subtitle, and Se\'atat-style subsection titles', () => {
+    it('renders Morning/Sunset Daily Readings with 5 PM auto-switch, pill toggle, day arrows, Ge\'ez year, Feast subtitle, and Se\'atat-style subsection titles', async () => {
       const toggleLabel = document.querySelector('#show-daily-lectionary-toggle')?.parentElement?.textContent || '';
       expect(toggleLabel).toContain('Daily Readings | ምንባባት ዘለለዕለቱ');
       expect(toggleLabel).not.toContain('ዘየዕለቱ');
 
       // 1. Before 5:00 PM (8:00 AM on Meskerem 1, 2019 ዓ.ም. — Feast of Ethiopian New Year / St. John the Baptist)
       const meskerem1Morning = ethToGregDate(2019, 1, 1, { forWazemaEvening: false, hours: 8, minutes: 0 });
-      app.setCustomDateTimeOverride(meskerem1Morning);
+      app.setCustomDateTimeOverride(meskerem1Morning, { render: false });
       app.setDailyLectionaryPeriod(null, { render: false });
       app.stepDailyLectionaryDayOffset(0, { reset: true, render: false });
 
       expect(app.getEffectiveDailyLectionaryPeriod()).toBe('morning');
       const morningCalls = [];
-      app.renderDailyLectionarySection((title, isCollapsible, meta) => morningCalls.push({ title, isCollapsible, meta }));
+      app.renderDailyLectionarySection((title, isCollapsible, meta, options) => morningCalls.push({ title, isCollapsible, meta, options }));
 
       expect(morningCalls[0].title).toBe('Morning Readings | ምንባባት ዘነግህ');
       expect(morningCalls[0].meta.date).toBe('Meskerem 1, 2019 ዓ.ም. | መስከረም ፩፣ ፳፻፲፱ ዓ.ም.');
-      expect(morningCalls[0].meta.feast).toContain('New Year');
+      expect(morningCalls[0].meta.feast).toBe('Head of the Year (New Year) & St. John the Baptist | ርእሰ ዐውደ ዓመት ወዮሐንስ መጥምቅ');
       expect(morningCalls[0].meta.customElement).toBeTruthy();
 
       const morningTitles = morningCalls.map(c => c.title);
-      expect(morningTitles).toContain('→ Matins - Psalm 65:11 | ምስባክ ዘነግህ');
-      expect(morningTitles).toContain('→ Matins - Luke 4:16-23 | ወንጌል ዘነግህ');
+      expect(morningTitles).toContain('→ <i>Matins</i> (Psalm 65:11) | ምስባክ ዘነግህ');
+      expect(morningTitles).toContain('→ <i>Matins</i> (Luke 4:16-23) | ወንጌል ዘነግህ');
+      expect(morningCalls[1].options?.feastBadgeLabel).toBe('FEAST');
+      expect(morningCalls[2].options?.feastBadgeLabel).toBe('FEAST');
       expect(morningTitles.some(t => t.includes('ዘሠርክ'))).toBe(false);
+
+      // Verify actual rendered DOM on a day with BOTH continuous Morning Readings and Festal Matins (Tikimt 29)
+      const tikimt29Morning = ethToGregDate(2019, 2, 29, { forWazemaEvening: false, hours: 8, minutes: 0 });
+      app.setCustomDateTimeOverride(tikimt29Morning, { render: false });
+      await app.renderPrayers();
+      const renderedSubsections = Array.from(document.querySelectorAll('#prayer-display .section-title.sub-section-title'));
+      const matinsHeaders = renderedSubsections.filter(el => el.innerHTML.includes('<i>Matins</i>'));
+      expect(matinsHeaders.length).toBeGreaterThanOrEqual(2);
+      for (const mh of matinsHeaders) {
+        const badge = mh.querySelector('.festal-reading-badge');
+        expect(badge).toBeTruthy();
+        expect(badge.textContent).toBe('FEAST');
+      }
 
       // 2. At/after 5:00 PM (5:15 PM local on Hidar 2, 2019 ዓ.ም.) -> auto-selects Sunset Readings
       const hidar2At515Pm = ethToGregDate(2019, 3, 2, { forWazemaEvening: false, hours: 17, minutes: 15 });

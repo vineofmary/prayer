@@ -3435,6 +3435,15 @@ body.presentation-mode-slides .hareg-ornament {
     line-height: 1.25;
 }
 
+.cal-feast-desktop {
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+.header-feast-mobile-line {
+    display: none;
+}
+
 .calendar-chip-link,
 .calendar-bar-link {
     background: none;
@@ -4234,8 +4243,27 @@ body.slides-mode .prayer-view-preset-summary {
 
     .cal-year-mercy-label,
     .cal-western-date,
-    .cal-western-date-sep {
+    .cal-western-date-sep,
+    .cal-feast-desktop,
+    .cal-feast-desktop-sep {
         display: none !important;
+    }
+
+    .header-feast-mobile-line:not([hidden]) {
+        display: block;
+        font-size: 0.66rem;
+        font-weight: 600;
+        color: var(--accent-color);
+        line-height: 1.25;
+        margin-top: 0.08rem;
+        max-width: 100%;
+        white-space: nowrap;
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+
+    .header-feast-mobile-line::-webkit-scrollbar {
+        display: none;
     }
 
     .bottom-nav-bar {
@@ -4312,6 +4340,10 @@ body.hide-hareg-ornament .hareg-footer {
     color: var(--accent-color);
     border: 1px solid var(--accent-color);
     vertical-align: middle;
+}
+
+.festal-reading-badge {
+    text-transform: uppercase;
 }
 
 /* Reworked Search Bar & Global Search Results Drawer */
