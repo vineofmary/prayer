@@ -42,6 +42,7 @@ const NMT_LANG_MAP = {
 };
 
 const LANG_NAMES = {
+  auto: "Ge'ez (ግእዝ), Amharic (አማርኛ), Tigrinya (ትግርኛ), or English",
   am: 'Amharic (አማርኛ)',
   ti: 'Tigrinya (ትግርኛ)',
   en: 'English',
@@ -499,7 +500,7 @@ async function handleTargumaHttp(req, res) {
   const startMs = Date.now();
 
   // Fast Cloud Translate V3 path for instant text retranslation
-  if (mode === 'nmt' && textInput && !audioBase64) {
+  if (mode === 'nmt' && textInput && !audioBase64 && sourceLang !== 'auto') {
     try {
       const translatedText = await fastCloudTranslate(textInput, sourceLang, targetLang);
       res.writeHead(200, { 'Content-Type': 'application/json' });
@@ -520,9 +521,15 @@ async function handleTargumaHttp(req, res) {
   const ctxSuffix = recentContext ? '\nPreceding context (do NOT repeat): "' + recentContext + '"' : '';
   if (audioBase64) {
     parts.push({ inlineData: { mimeType, data: audioBase64 } });
-    parts.push({
-      text: 'Transcribe ' + LANG_NAMES[sourceLang] + ' speech and translate into ' + LANG_NAMES[targetLang] + ' as one clear, natural clause.' + ctxSuffix
-    });
+    if (sourceLang === 'auto') {
+      parts.push({
+        text: 'Auto-detect the spoken language (Ge\'ez, Amharic, Tigrinya, or English), transcribe the spoken words into "sourceText", and translate into ' + LANG_NAMES[targetLang] + ' in "translatedText" as one clear, natural clause (if already in ' + LANG_NAMES[targetLang] + ', copy the clean transcription into "translatedText").' + ctxSuffix
+      });
+    } else {
+      parts.push({
+        text: 'Transcribe ' + LANG_NAMES[sourceLang] + ' speech and translate into ' + LANG_NAMES[targetLang] + ' as one clear, natural clause.' + ctxSuffix
+      });
+    }
   } else {
     parts.push({
       text: 'Translate spoken EOTC clause from ' + LANG_NAMES[sourceLang] + ' into ' + LANG_NAMES[targetLang] + '.' + ctxSuffix + '\nClause: "' + textInput + '"'

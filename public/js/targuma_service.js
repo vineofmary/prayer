@@ -346,7 +346,11 @@
         return btoa(binary);
     }
 
-    function evaluateVadEndpointState(vadState, frameRms, frameDurationMs) {
+    function evaluateVadEndpointState(vadState, frameRms, frameDurationMs, customThresholds) {
+        const minClauseSpeechMs = (customThresholds && customThresholds.minClauseSpeechMs) || VAD_MIN_CLAUSE_SPEECH_MS;
+        const breathPauseMs = (customThresholds && customThresholds.breathPauseMs) || VAD_BREATH_PAUSE_MS;
+        const maxSliceMs = (customThresholds && customThresholds.maxSliceMs) || VAD_MAX_SLICE_MS;
+
         const next = {
             spokenMs: vadState.spokenMs || 0,
             trailingPauseMs: vadState.trailingPauseMs || 0,
@@ -375,13 +379,13 @@
             next.spokenMs += frameDurationMs * 0.5;
         }
 
-        if (next.spokenMs >= VAD_MIN_CLAUSE_SPEECH_MS && next.trailingPauseMs >= VAD_BREATH_PAUSE_MS) {
+        if (next.spokenMs >= minClauseSpeechMs && next.trailingPauseMs >= breathPauseMs) {
             next.shouldFlush = true;
             next.keepOverlap = false;
-        } else if (next.totalMs >= VAD_MAX_SLICE_MS && next.spokenMs >= MIN_SUSTAINED_SPEECH_MS) {
+        } else if (next.totalMs >= maxSliceMs && next.spokenMs >= MIN_SUSTAINED_SPEECH_MS) {
             next.shouldFlush = true;
             next.keepOverlap = true;
-        } else if (next.totalMs >= VAD_MAX_SLICE_MS && next.spokenMs < MIN_SUSTAINED_SPEECH_MS) {
+        } else if (next.totalMs >= maxSliceMs && next.spokenMs < MIN_SUSTAINED_SPEECH_MS) {
             // Pure dead air: reset slice without cloud call
             next.totalMs = 0;
             next.spokenMs = 0;
@@ -703,6 +707,10 @@
 
     // --- Option A: Chirp 3 Immutable-Clause WebSocket Client ---
     function canUseChirp3WebSocket() {
+        if (isMiracleLiveDetectActive && !state.isActive) {
+            // Miracle modal uses multilingual auto-detect Gemini 3 Flash SSE so Ge'ez, Amharic, Tigrinya, and English all work seamlessly
+            return false;
+        }
         return Boolean(
             typeof WebSocket !== 'undefined' &&
             LANGUAGE_META[state.sourceLang] &&
@@ -842,6 +850,7 @@
 
         const mySeq = ++chunkSequenceCounter;
         const mySegId = 'sse_seg_' + mySeq + '_' + Date.now().toString(36);
+        const isMiracleOnlySession = isMiracleLiveDetectActive && !state.isActive;
         activeSseRequests++;
 
         const controller = new AbortController();
@@ -851,14 +860,16 @@
             const base64Audio = uint8ArrayToBase64(wavBytes);
             if (!base64Audio || !state.isListening) return;
 
+            const primarySourceLang = isMiracleOnlySession ? 'auto' : state.sourceLang;
+            const primaryTargetLang = isMiracleOnlySession ? 'en' : state.targetLang;
             const payload = JSON.stringify({
                 stream: true,
                 model: state.geminiModel || 'gemini-3-flash-preview',
-                sourceLang: state.sourceLang,
-                targetLang: state.targetLang,
+                sourceLang: primarySourceLang,
+                targetLang: primaryTargetLang,
                 audioBase64: base64Audio,
                 mimeType: 'audio/wav',
-                recentContext: state.recentContext
+                recentContext: isMiracleOnlySession ? [] : state.recentContext
             });
 
             let resp = null;
@@ -870,15 +881,39 @@
                     signal: controller.signal
                 });
             } catch (_) {
+                const fallbackPayload = isMiracleOnlySession
+                    ? JSON.stringify({
+                        stream: true,
+                        model: state.geminiModel || 'gemini-3-flash-preview',
+                        sourceLang: (state.sourceLang && state.sourceLang !== 'en') ? state.sourceLang : 'am',
+                        targetLang: 'en',
+                        audioBase64: base64Audio,
+                        mimeType: 'audio/wav',
+                        recentContext: []
+                    })
+                    : payload;
                 resp = await fetch(TARGUMA_FALLBACK_CF_URL, {
                     method: 'POST',
                     headers: { 'Content-Type': 'text/plain;charset=UTF-8' },
-                    body: payload,
+                    body: fallbackPayload,
                     signal: controller.signal
                 });
             }
 
             if (!resp || !resp.ok) return;
+
+            const handleClauseCompletion = (srcText, tgtText, latencyMs) => {
+                if (latencyMs) state.lastLatencyMs = latencyMs;
+                if (isMiracleOnlySession) {
+                    lastSpeechDetectedAt = Date.now();
+                    evaluateMiracleLiveMatch(srcText, tgtText);
+                } else {
+                    commitFinalizedCaption(mySegId, srcText, tgtText, {
+                        seq: mySeq,
+                        polished: true
+                    });
+                }
+            };
 
             const contentType = String(resp.headers.get('content-type') || '');
             if (contentType.includes('text/event-stream') && resp.body && typeof resp.body.getReader === 'function') {
@@ -900,24 +935,16 @@
                         if (!raw) continue;
                         try {
                             const evt = JSON.parse(raw);
-                            if (evt.type === 'done' && !evt.isSilence && evt.translatedText) {
-                                if (evt.latencyMs) state.lastLatencyMs = evt.latencyMs;
-                                commitFinalizedCaption(mySegId, evt.sourceText, evt.translatedText, {
-                                    seq: mySeq,
-                                    polished: true
-                                });
+                            if (evt.type === 'done' && !evt.isSilence && (evt.translatedText || evt.sourceText)) {
+                                handleClauseCompletion(evt.sourceText, evt.translatedText, evt.latencyMs);
                             }
                         } catch (_) {}
                     }
                 }
             } else {
                 const data = await resp.json();
-                if (data && !data.isSilence && data.translatedText) {
-                    if (data.latencyMs) state.lastLatencyMs = data.latencyMs;
-                    commitFinalizedCaption(mySegId, data.sourceText, data.translatedText, {
-                        seq: mySeq,
-                        polished: true
-                    });
+                if (data && !data.isSilence && (data.translatedText || data.sourceText)) {
+                    handleClauseCompletion(data.sourceText, data.translatedText, data.latencyMs);
                 }
             }
         } catch (err) {
@@ -978,7 +1005,10 @@
         // Route 2: Smart Clause-Aware VAD Ring Buffer -> Gemini Streaming SSE
         vadSliceSamples.push(int16Frame);
         vadSliceSampleCount += int16Frame.length;
-        vadTracker = evaluateVadEndpointState(vadTracker, rms, frameDurationMs);
+        const vadThresholds = (isMiracleLiveDetectActive && !state.isActive)
+            ? { minClauseSpeechMs: 1350, breathPauseMs: 240, maxSliceMs: 3400 }
+            : null;
+        vadTracker = evaluateVadEndpointState(vadTracker, rms, frameDurationMs, vadThresholds);
 
         if (vadTracker.totalMs === 0 && !vadTracker.shouldFlush) {
             while (vadSliceSamples.length > WS_PRE_SPEECH_LOOKBEHIND_FRAMES) {
@@ -1224,7 +1254,7 @@
         return true;
     }
 
-    async function startMultimodalAudioStream() {
+    async function startMultimodalAudioStream(overrideInputMode) {
         stopMultimodalAudioStream(false);
         lookbehindPcmFrames = [];
         vadSliceSamples = [];
@@ -1239,8 +1269,9 @@
             state.transportMode = 'sse_vad';
         }
 
+        const effectiveMode = overrideInputMode || state.audioInputMode || 'microphone';
         try {
-            const ok = await attachWebAudioPipeline(state.audioInputMode || 'microphone');
+            const ok = await attachWebAudioPipeline(effectiveMode);
             if (!ok) {
                 closeStreamWebSocket(true);
                 return false;
@@ -1308,10 +1339,16 @@
     }
 
     function updateMicLevelIndicator(rms) {
-        const dot = document.getElementById('targuma-live-dot');
-        if (!dot || !state.isListening) return;
         const boost = Math.min(1.65, 1 + rms * 4.2);
-        dot.style.transform = 'scale(' + boost.toFixed(2) + ')';
+        const scaleStr = state.isListening ? ('scale(' + boost.toFixed(2) + ')') : 'scale(1)';
+        const dot = document.getElementById('targuma-live-dot');
+        if (dot && state.isListening) {
+            dot.style.transform = scaleStr;
+        }
+        const miracleDot = document.getElementById('miracle-live-mic-dot');
+        if (miracleDot) {
+            miracleDot.style.transform = scaleStr;
+        }
     }
 
     function refreshStreamingStatusPill() {
@@ -1389,25 +1426,36 @@
 
     if (typeof window !== 'undefined') {
         window.onAndroidAudioPermissionResult = function (granted) {
-            if (granted && state.isActive) {
+            if (granted && (state.isActive || isMiracleLiveDetectActive)) {
                 startLocalListening();
             } else if (!granted) {
                 updateStatusBanner('Microphone permission was denied. Please enable Microphone access in Settings.', 'error');
+                if (isMiracleLiveDetectActive) {
+                    stopMiracleLiveIdentification('Microphone permission was denied. Please allow Microphone access in Settings.');
+                }
             }
         };
     }
 
     // --- Start / Stop Listening ---
     async function startLocalListening() {
-        if (state.audioInputMode === 'microphone' && window.AndroidTargumaBridge && typeof window.AndroidTargumaBridge.hasAudioPermission === 'function') {
+        const isMiracleOnlySession = isMiracleLiveDetectActive && !state.isActive;
+        const effectiveInputMode = isMiracleOnlySession ? 'microphone' : (state.audioInputMode || 'microphone');
+
+        if (effectiveInputMode === 'microphone' && window.AndroidTargumaBridge && typeof window.AndroidTargumaBridge.hasAudioPermission === 'function') {
             if (!window.AndroidTargumaBridge.hasAudioPermission()) {
                 updateStatusBanner('Requesting microphone permission...', 'listening');
+                if (isMiracleLiveDetectActive) {
+                    renderMiracleVoiceStatusUI('listening_initial', {
+                        customHeader: 'Requesting microphone permission...'
+                    });
+                }
                 window.AndroidTargumaBridge.requestAudioPermission();
                 return;
             }
         }
 
-        stopLocalListening(false);
+        stopLocalListening(false, true);
 
         state.isListening = true;
         state.lastLatencyMs = 0;
@@ -1416,13 +1464,16 @@
         renderCaptionsStage(false);
         refreshStreamingStatusPill();
 
-        const audioStreamStarted = await startMultimodalAudioStream();
+        const audioStreamStarted = await startMultimodalAudioStream(effectiveInputMode);
         if (!audioStreamStarted) {
             state.isListening = false;
             updateTargumaControlsUI();
             renderCaptionsStage(false);
-            if (state.audioInputMode === 'microphone') {
+            if (effectiveInputMode === 'microphone') {
                 updateStatusBanner('Could not access microphone. Please grant microphone permission and try again.', 'error');
+            }
+            if (isMiracleLiveDetectActive) {
+                stopMiracleLiveIdentification('Could not access microphone. Please allow microphone access in your browser or device settings and try again.');
             }
             return;
         }
@@ -1430,7 +1481,7 @@
         startIdleProtectionWatchdog();
     }
 
-    function stopLocalListening(updateBanner = true) {
+    function stopLocalListening(updateBanner = true, keepMiracleFlag = false) {
         state.isListening = false;
         state.liveDraft = null;
         stopIdleProtectionWatchdog();
@@ -1440,6 +1491,11 @@
         renderCaptionsStage(false);
         if (updateBanner) {
             updateStatusBanner(DEFAULT_IDLE_STATUS, 'idle');
+        }
+        if (!keepMiracleFlag && isMiracleLiveDetectActive && !state.isActive) {
+            isMiracleLiveDetectActive = false;
+            syncMiracleVoiceDetectButtonUI(false);
+            renderMiracleVoiceStatusUI('hidden');
         }
     }
 
@@ -2151,6 +2207,9 @@
         if (!container) return;
 
         const nextActive = typeof forceState === 'boolean' ? forceState : !state.isActive;
+        if (nextActive && isMiracleLiveDetectActive) {
+            stopMiracleLiveIdentification();
+        }
         state.isActive = nextActive;
 
         const prayerDisplayEl = document.getElementById('prayer-display');
@@ -2206,77 +2265,242 @@
 
     // --- Live Miracle of Mary Identification (via Targuma AI) ---
     let isMiracleLiveDetectActive = false;
-    let accumulatedMiracleTranscript = '';
+    let accumulatedMiracleSource = '';
+    let accumulatedMiracleEnglish = '';
 
-    function evaluateMiracleLiveMatch(sourceText, targetText) {
-        const banner = document.getElementById('miracle-live-match-banner');
-        const miracleModal = document.getElementById('miracle-modal');
-        const isModalVisible = miracleModal && miracleModal.style.display === 'block';
-        if (!isMiracleLiveDetectActive && !isModalVisible) return;
+    function getMiracleVoiceStatusContainer() {
+        if (typeof document === 'undefined') return null;
+        return document.getElementById('miracle-voice-status') || document.getElementById('miracle-live-match-banner');
+    }
 
-        const combinedChunk = ((sourceText || '') + ' ' + (targetText || '')).trim();
-        if (!combinedChunk) return;
+    function syncMiracleVoiceDetectButtonUI(isListening) {
+        if (typeof document === 'undefined') return;
+        const btn = document.getElementById('miracle-voice-detect-btn');
+        if (!btn) return;
+        const labelEl = document.getElementById('miracle-voice-detect-label');
+        const iconEl = Array.from(btn.children || []).find(ch => ch !== labelEl && ch.tagName === 'SPAN');
 
-        accumulatedMiracleTranscript = (accumulatedMiracleTranscript + ' ' + combinedChunk).trim().slice(-500);
-        if (typeof window.matchMiraclesByText !== 'function') return;
-
-        const matches = window.matchMiraclesByText(accumulatedMiracleTranscript, false);
-        if (banner) {
-            banner.style.display = 'block';
-            if (matches && matches.length > 0) {
-                const topMatches = matches.slice(0, 3);
-                const chipsHtml = topMatches.map(m => (
-                    '<button type="button" class="miracle-live-match-chip" data-miracle-id="' + escapeHtml(m.id) + '">' +
-                    escapeHtml(m.title || ('Miracle #' + m.id)) +
-                    '</button>'
-                )).join('');
-                banner.innerHTML =
-                    '<div class="miracle-live-banner-header">Targuma AI Live Match Suggestions (Tap to select):</div>' +
-                    '<div class="miracle-live-banner-chips">' + chipsHtml + '</div>';
-                banner.querySelectorAll('.miracle-live-match-chip').forEach(chip => {
-                    chip.addEventListener('click', () => {
-                        const searchInput = document.getElementById('miracle-search-input');
-                        if (searchInput) {
-                            searchInput.value = chip.textContent || '';
-                            searchInput.dispatchEvent(new Event('input'));
-                        }
-                    });
-                });
-            } else {
-                banner.innerHTML = '<div class="miracle-live-banner-header">Listening for Miracle of Mary keywords... (' + escapeHtml(combinedChunk.slice(0, 60)) + ')</div>';
+        if (isListening) {
+            btn.classList.add('listening');
+            btn.setAttribute('aria-pressed', 'true');
+            if (iconEl) {
+                iconEl.innerHTML = '<span id="miracle-live-mic-dot" class="miracle-live-mic-dot"></span>';
+            }
+            if (labelEl) {
+                labelEl.textContent = 'Stop Listening';
+            } else if (iconEl) {
+                iconEl.textContent = 'Stop Listening';
+            }
+        } else {
+            btn.classList.remove('listening');
+            btn.setAttribute('aria-pressed', 'false');
+            if (iconEl) {
+                iconEl.textContent = '🎙️';
+            }
+            if (labelEl) {
+                labelEl.textContent = 'Identify by Voice';
             }
         }
     }
 
-    function toggleMiracleLiveIdentification() {
-        const btn = document.getElementById('miracle-voice-detect-btn');
-        const banner = document.getElementById('miracle-live-match-banner');
-        isMiracleLiveDetectActive = !isMiracleLiveDetectActive;
+    function renderMiracleVoiceStatusUI(mode, payload = {}) {
+        const container = getMiracleVoiceStatusContainer();
+        if (!container) return;
 
-        if (isMiracleLiveDetectActive) {
-            accumulatedMiracleTranscript = '';
-            if (btn) {
-                btn.classList.add('listening');
-                const span = btn.querySelector('span');
-                if (span) span.textContent = 'Listening for Miracle... (Tap to Stop)';
-            }
-            if (banner) {
-                banner.style.display = 'block';
-                banner.innerHTML = '<div class="miracle-live-banner-header">Targuma AI is listening to the reader (Amharic, Tigrinya, Ge\'ez, or English)...</div>';
-            }
-            if (!state.isListening) {
-                startLocalListening();
-            }
-        } else {
-            if (btn) {
-                btn.classList.remove('listening');
-                const span = btn.querySelector('span');
-                if (span) span.textContent = 'Identify Live Reading (Targuma AI)';
-            }
-            if (!state.isActive && state.isListening) {
-                stopLocalListening(false);
+        if (mode === 'hidden') {
+            container.classList.add('hidden');
+            container.style.display = 'none';
+            container.innerHTML = '';
+            return;
+        }
+
+        container.classList.remove('hidden');
+        container.style.display = 'block';
+
+        if (mode === 'error') {
+            container.innerHTML =
+                '<div class="miracle-voice-status-error" role="alert">' +
+                escapeHtml(payload.message || 'Could not access microphone.') +
+                '</div>';
+            return;
+        }
+
+        if (mode === 'listening_initial') {
+            const headerText = payload.customHeader || "Listening to reader (Ge'ez, Amharic, Tigrinya, or English)…";
+            container.innerHTML =
+                '<div class="miracle-live-banner-header">' +
+                '<span class="miracle-live-status-pulse" aria-hidden="true"></span>' +
+                '<span>' + escapeHtml(headerText) + '</span>' +
+                '</div>' +
+                '<div class="miracle-live-banner-subtext">Hold your device near the reader — story matches appear automatically as the narrative begins.</div>';
+            return;
+        }
+
+        const snippetRaw = String(payload.snippet || '').trim();
+        const snippetDisplay = snippetRaw.length > 96 ? ('…' + snippetRaw.slice(-94)) : snippetRaw;
+
+        if (mode === 'preamble') {
+            container.innerHTML =
+                '<div class="miracle-live-banner-header">' +
+                '<span class="miracle-live-status-pulse" aria-hidden="true"></span>' +
+                '<span>Heard opening introduction — waiting for the specific Miracle story…</span>' +
+                '</div>' +
+                (snippetDisplay
+                    ? '<div class="miracle-live-heard-line">Heard: “' + escapeHtml(snippetDisplay) + '”</div>'
+                    : '');
+            return;
+        }
+
+        if (mode === 'matched' && Array.isArray(payload.matches) && payload.matches.length > 0) {
+            const chipsHtml = payload.matches.map((entry, idx) => {
+                const m = entry.miracle || entry;
+                const mId = String(m.id || '');
+                const badgeHtml = idx === 0
+                    ? '<span class="miracle-live-chip-rank">Best Match</span>'
+                    : '';
+                return (
+                    '<button type="button" class="miracle-live-match-chip' + (idx === 0 ? ' is-top-match' : '') + '" data-miracle-id="' + escapeHtml(mId) + '">' +
+                    '<span class="miracle-live-chip-main">' +
+                    badgeHtml +
+                    '<span class="miracle-live-chip-title">' + escapeHtml(m.title || ('Miracle #' + mId)) + '</span>' +
+                    '</span>' +
+                    '<span class="miracle-live-chip-id">ID: ' + escapeHtml(mId) + '</span>' +
+                    '</button>'
+                );
+            }).join('');
+
+            container.innerHTML =
+                '<div class="miracle-live-banner-toprow">' +
+                '<div class="miracle-live-banner-header">' +
+                '<span class="miracle-live-status-pulse" aria-hidden="true"></span>' +
+                '<span>Live Story Matches — tap to select:</span>' +
+                '</div>' +
+                '<button type="button" id="miracle-voice-reset-btn" class="miracle-voice-reset-btn" title="Clear heard words to match a different story">Reset</button>' +
+                '</div>' +
+                '<div class="miracle-live-banner-chips">' + chipsHtml + '</div>' +
+                (snippetDisplay
+                    ? '<div class="miracle-live-heard-line">Heard: “' + escapeHtml(snippetDisplay) + '”</div>'
+                    : '');
+
+            container.querySelectorAll('.miracle-live-match-chip').forEach(chip => {
+                chip.addEventListener('click', () => {
+                    const targetId = chip.getAttribute('data-miracle-id');
+                    if (targetId && typeof window.selectMiracleById === 'function') {
+                        window.selectMiracleById(targetId);
+                        return;
+                    }
+                    const searchInput = document.getElementById('miracle-search-input');
+                    if (searchInput) {
+                        const mostReadToggle = document.getElementById('miracle-most-read-toggle');
+                        if (mostReadToggle && mostReadToggle.checked) {
+                            mostReadToggle.checked = false;
+                        }
+                        const titleSpan = chip.querySelector('.miracle-live-chip-title');
+                        searchInput.value = titleSpan ? titleSpan.textContent : '';
+                        searchInput.dispatchEvent(new Event('input'));
+                    }
+                });
+            });
+
+            const resetBtn = container.querySelector('#miracle-voice-reset-btn');
+            if (resetBtn) {
+                resetBtn.addEventListener('click', () => {
+                    resetMiracleLiveTranscript();
+                });
             }
         }
+    }
+
+    function resetMiracleLiveTranscript() {
+        accumulatedMiracleSource = '';
+        accumulatedMiracleEnglish = '';
+        if (isMiracleLiveDetectActive) {
+            renderMiracleVoiceStatusUI('listening_initial');
+        }
+    }
+
+    function evaluateMiracleLiveMatch(sourceText, targetText) {
+        const miracleModal = typeof document !== 'undefined' ? document.getElementById('miracle-modal') : null;
+        const isModalVisible = miracleModal && miracleModal.style.display === 'block';
+        if (!isMiracleLiveDetectActive && !isModalVisible) return null;
+
+        const cleanSrc = String(sourceText || '').trim();
+        const cleanEng = sanitizeTargetLanguageText(targetText || '', 'en');
+        if (!cleanSrc && !cleanEng) return null;
+
+        if (cleanSrc) {
+            accumulatedMiracleSource = (accumulatedMiracleSource + ' ' + cleanSrc).trim().slice(-650);
+        }
+        if (cleanEng) {
+            accumulatedMiracleEnglish = (accumulatedMiracleEnglish + ' ' + cleanEng).trim().slice(-650);
+        }
+
+        const heardSnippet = cleanEng || cleanSrc;
+
+        if (typeof window !== 'undefined' && typeof window.rankMiraclesByLiveTranscript === 'function') {
+            const ranked = window.rankMiraclesByLiveTranscript(accumulatedMiracleSource, accumulatedMiracleEnglish, 4);
+            if (ranked && ranked.status === 'matched' && ranked.matches.length > 0) {
+                renderMiracleVoiceStatusUI('matched', {
+                    matches: ranked.matches,
+                    snippet: heardSnippet
+                });
+            } else {
+                renderMiracleVoiceStatusUI('preamble', {
+                    snippet: heardSnippet
+                });
+            }
+            return ranked;
+        }
+
+        if (typeof window !== 'undefined' && typeof window.matchMiraclesByText === 'function') {
+            const combined = (accumulatedMiracleSource + ' ' + accumulatedMiracleEnglish).trim();
+            const fallbackMatches = window.matchMiraclesByText(combined, false);
+            if (fallbackMatches && fallbackMatches.length > 0) {
+                renderMiracleVoiceStatusUI('matched', {
+                    matches: fallbackMatches.slice(0, 3).map(m => ({ miracle: m, score: 1 })),
+                    snippet: heardSnippet
+                });
+            } else {
+                renderMiracleVoiceStatusUI('preamble', { snippet: heardSnippet });
+            }
+        }
+        return null;
+    }
+
+    function stopMiracleLiveIdentification(errorMessage = '') {
+        const wasActive = isMiracleLiveDetectActive;
+        isMiracleLiveDetectActive = false;
+        accumulatedMiracleSource = '';
+        accumulatedMiracleEnglish = '';
+        syncMiracleVoiceDetectButtonUI(false);
+
+        if (errorMessage) {
+            renderMiracleVoiceStatusUI('error', { message: errorMessage });
+        } else {
+            renderMiracleVoiceStatusUI('hidden');
+        }
+
+        if (wasActive && !state.isActive && state.isListening) {
+            stopLocalListening(false, true);
+        }
+    }
+
+    function toggleMiracleLiveIdentification() {
+        if (isMiracleLiveDetectActive) {
+            stopMiracleLiveIdentification();
+            return false;
+        }
+
+        isMiracleLiveDetectActive = true;
+        accumulatedMiracleSource = '';
+        accumulatedMiracleEnglish = '';
+        syncMiracleVoiceDetectButtonUI(true);
+        renderMiracleVoiceStatusUI('listening_initial');
+
+        if (!state.isListening) {
+            startLocalListening();
+        }
+        return true;
     }
 
     function initTargumaButton() {
@@ -2303,10 +2527,14 @@
 
     const TargumaServiceAPI = {
         get isTargumaMode() { return state.isActive; },
+        get isMiracleLiveDetectActive() { return isMiracleLiveDetectActive; },
         get state() { return state; },
         exitTargumaMode: () => toggleTargumaMode(false),
         toggleTargumaMode,
         toggleMiracleLiveIdentification,
+        stopMiracleLiveIdentification,
+        resetMiracleLiveTranscript,
+        evaluateMiracleLiveMatch,
         initTargumaFeature: initTargumaButton,
         clearAllCaptions,
         // Exported streaming & DSP helpers for unit/replay testing

@@ -12,6 +12,10 @@ describe('Targuma Immutable-Clause Streaming Engine, Sanctuary UI & VAD Suite', 
     if (typeof localStorage !== 'undefined') {
       localStorage.clear();
     }
+    const miraclesPath = path.resolve(process.cwd(), 'app/src/main/assets/js/miracles_of_mary.js');
+    const miraclesCode = fs.readFileSync(miraclesPath, 'utf8');
+    window.MIRACLES_OF_MARY = new Function(`${miraclesCode}\nreturn MIRACLES_OF_MARY;`)();
+
     loadApp();
 
     const targumaPath = path.resolve(process.cwd(), 'app/src/main/assets/js/targuma_service.js');
@@ -295,5 +299,145 @@ describe('Targuma Immutable-Clause Streaming Engine, Sanctuary UI & VAD Suite', 
       targuma.toggleTargumaMode(false);
     });
   });
+
+  describe('Miracle of Mary Live Voice Identification', () => {
+    beforeEach(() => {
+      if (targuma && typeof targuma.stopMiracleLiveIdentification === 'function') {
+        targuma.stopMiracleLiveIdentification();
+      }
+    });
+
+    it('cleanly toggles #miracle-voice-detect-btn label and unhides #miracle-voice-status without garbled duplicate text', () => {
+      const openBtn = document.getElementById('open-miracle-modal-btn');
+      const modal = document.getElementById('miracle-modal');
+      const btn = document.getElementById('miracle-voice-detect-btn');
+      const label = document.getElementById('miracle-voice-detect-label');
+      const statusBox = document.getElementById('miracle-voice-status');
+      const closeBtn = document.getElementById('close-miracle-modal');
+
+      expect(btn).not.toBeNull();
+      expect(label).not.toBeNull();
+      expect(statusBox).not.toBeNull();
+      expect(label.textContent.trim()).toBe('Identify by Voice');
+      expect(statusBox.classList.contains('hidden')).toBe(true);
+
+      // Stub Android bridge permission request so JSDOM stays in active listening state without needing real hardware mic
+      const prevBridge = window.AndroidTargumaBridge;
+      window.AndroidTargumaBridge = {
+        hasAudioPermission: () => false,
+        requestAudioPermission: () => {}
+      };
+
+      try {
+        openBtn.click();
+        expect(modal.style.display).toBe('block');
+
+        btn.click();
+        expect(targuma.isMiracleLiveDetectActive).toBe(true);
+        expect(btn.classList.contains('listening')).toBe(true);
+        expect(label.textContent.trim()).toBe('Stop Listening');
+        expect(btn.textContent).not.toContain('Identify Live Reading (Targuma AI)');
+        expect(btn.textContent).not.toContain('Identify by Voice');
+        expect(statusBox.classList.contains('hidden')).toBe(false);
+
+        // Closing the modal automatically stops live voice detection and resets the button
+        closeBtn.click();
+        expect(modal.style.display).toBe('none');
+        expect(targuma.isMiracleLiveDetectActive).toBe(false);
+        expect(btn.classList.contains('listening')).toBe(false);
+        expect(label.textContent.trim()).toBe('Identify by Voice');
+        expect(statusBox.classList.contains('hidden')).toBe(true);
+      } finally {
+        window.AndroidTargumaBridge = prevBridge;
+      }
+    });
+
+    it('filters out universal Teamire Mariam opening preambles in English, Ge\'ez, and Amharic without false matches', () => {
+      expect(typeof window.rankMiraclesByLiveTranscript).toBe('function');
+
+      const engPreamble = window.rankMiraclesByLiveTranscript(
+        '',
+        'Listen my fathers and my brothers to a miracle performed by Our Lady the Holy Twofold Virgin Mary may her prayer and blessing be with us forever amen'
+      );
+      expect(engPreamble.status).toBe('preamble');
+      expect(engPreamble.matches.length).toBe(0);
+
+      const ethPreamble = window.rankMiraclesByLiveTranscript(
+        'ስምዑ አበዊነ ወአኃውየ ተአምረ እግዝእትነ ቅድስት ድንግል በክልኤ ማርያም ወላዲተ አምላክ ጸሎቷና በረከቷ ከሁላችን ጋር ይሁን አሜን',
+        'Listen our fathers and brothers to the miracle of Our Lady Holy Virgin Mary Mother of God'
+      );
+      expect(ethPreamble.status).toBe('preamble');
+      expect(ethPreamble.matches.length).toBe(0);
+    });
+
+    it('ranks specific Miracle stories accurately across English, Amharic, and Ge\'ez incipit clues', () => {
+      // 1. Dexius of Toledo (#13)
+      const dexius = window.rankMiraclesByLiveTranscript(
+        'ደቅስዮስ ኤጲስ ቆጶስ ዘሀገረ ቶሌዶ',
+        'There was a bishop named Dexius in the city of Toledo who received heavenly vestments'
+      );
+      expect(dexius.status).toBe('matched');
+      expect(dexius.matches[0].miracle.id).toBe('13');
+
+      // 2. Woman Gives Water to a Thirsty Dog (#236)
+      const thirstyDog = window.rankMiraclesByLiveTranscript(
+        'ለተጠማ ውሻ በጫማዋ ውሃ አጠጣችው',
+        'she filled her shoe with water and gave drink to the thirsty dog'
+      );
+      expect(thirstyDog.status).toBe('matched');
+      expect(thirstyDog.matches[0].miracle.id).toBe('236');
+
+      // 3. Cannibal of Qemer / Belate Seb (#125, most_read: false)
+      const cannibal = window.rankMiraclesByLiveTranscript(
+        'በላዕተ ሰብእ ዘሀገረ ቅምር',
+        'a man from Qemer who ate seventy-eight souls and gave a handful of water to a beggar'
+      );
+      expect(cannibal.status).toBe('matched');
+      expect(cannibal.matches[0].miracle.id).toBe('125');
+
+      // 4. Scribe with Golden Ink (#162, most_read: false)
+      const scribe = window.rankMiraclesByLiveTranscript(
+        'ጸሐፊ በወርቅ ቀለም ስሟን ይጽፍ ነበር',
+        'a scribe who always wrote the name of Mary in golden ink'
+      );
+      expect(scribe.status).toBe('matched');
+      expect(scribe.matches[0].miracle.id).toBe('162');
+
+      // 5. Artist falls from a ladder painting the devil (#33, most_read: false)
+      const painter = window.rankMiraclesByLiveTranscript(
+        '',
+        'an artist was standing high on a ladder painting the ugly devil when the scaffold fell and the icon stretched out its hand'
+      );
+      expect(painter.status).toBe('matched');
+      expect(painter.matches[0].miracle.id).toBe('33');
+    });
+
+    it('supports 1-tap selection of matched Miracles even when Show only most read toggle is checked', () => {
+      const openBtn = document.getElementById('open-miracle-modal-btn');
+      const modal = document.getElementById('miracle-modal');
+      const mostReadToggle = document.getElementById('miracle-most-read-toggle');
+      const statusBox = document.getElementById('miracle-voice-status');
+      const selectedMiracleText = document.getElementById('selected-miracle-text');
+
+      openBtn.click();
+      expect(modal.style.display).toBe('block');
+      expect(mostReadToggle.checked).toBe(true);
+
+      // Simulate live speech chunk arriving for Miracle #125 (Cannibal of Qemer, most_read = false)
+      targuma.evaluateMiracleLiveMatch(
+        'በላዕተ ሰብእ ዘሀገረ ቅምር',
+        'The cannibal of Qemer who ate seventy-eight people and gave a handful of water'
+      );
+
+      expect(statusBox.classList.contains('hidden')).toBe(false);
+      const topChip = statusBox.querySelector('.miracle-live-match-chip[data-miracle-id="125"]');
+      expect(topChip).not.toBeNull();
+
+      topChip.click();
+      expect(modal.style.display).toBe('none');
+      expect(selectedMiracleText.textContent).toContain('Qemer who ate 78 people');
+    });
+  });
 });
+
 

@@ -10916,16 +10916,29 @@ function safeOn(el, event, handler, opts) {
     }
 }
 
+function getMiraclesDataset() {
+    if (typeof MIRACLES_OF_MARY !== 'undefined' && Array.isArray(MIRACLES_OF_MARY)) {
+        return MIRACLES_OF_MARY;
+    }
+    if (typeof window !== 'undefined' && Array.isArray(window.MIRACLES_OF_MARY)) {
+        return window.MIRACLES_OF_MARY;
+    }
+    return null;
+}
+
 // --- Miracles of Mary Modal Setup ---
 function updateSelectedMiracleUI() {
-    if (!selectedMiracleText) return;
+    const selTextEl = selectedMiracleText || (typeof document !== 'undefined' ? document.getElementById('selected-miracle-text') : null);
+    const posContainerEl = miraclePositionContainer || (typeof document !== 'undefined' ? document.getElementById('miracle-position-container') : null);
+    if (!selTextEl) return;
     if (selectedMiracleId === 'none') {
-        selectedMiracleText.textContent = 'None selected';
-        miraclePositionContainer.style.display = 'none';
+        selTextEl.textContent = 'None selected';
+        if (posContainerEl) posContainerEl.style.display = 'none';
         const clearMiracleBtn = document.getElementById('clear-miracle-btn');
         if (clearMiracleBtn) clearMiracleBtn.style.display = 'none';
     } else {
-        const miracle = MIRACLES_OF_MARY?.find(m => m.id === selectedMiracleId);
+        const miraclesList = getMiraclesDataset();
+        const miracle = miraclesList?.find(m => m.id === selectedMiracleId);
         if (miracle) {
             let html = miracle.title;
             if (miracle.incipit) {
@@ -10934,13 +10947,13 @@ function updateSelectedMiracleUI() {
                 const suffix = words.length > 15 ? '...' : '';
                 html += `<br><span class="geez-font" style="font-size: 1.1em; opacity: 0.8; display: block; margin-top: 4px;">${first15}${suffix}</span>`;
             }
-            selectedMiracleText.innerHTML = html;
-            miraclePositionContainer.style.display = 'block';
+            selTextEl.innerHTML = html;
+            if (posContainerEl) posContainerEl.style.display = 'block';
             const clearMiracleBtn = document.getElementById('clear-miracle-btn');
             if (clearMiracleBtn) clearMiracleBtn.style.display = 'block';
         } else {
-            selectedMiracleText.textContent = 'None selected';
-            miraclePositionContainer.style.display = 'none';
+            selTextEl.textContent = 'None selected';
+            if (posContainerEl) posContainerEl.style.display = 'none';
             const clearMiracleBtn = document.getElementById('clear-miracle-btn');
             if (clearMiracleBtn) clearMiracleBtn.style.display = 'none';
         }
@@ -10948,36 +10961,69 @@ function updateSelectedMiracleUI() {
 }
 
 const MIRACLE_BILINGUAL_KEYWORDS = {
-    'ውሻ': ['dog', 'dogs', 'thirst', 'water', 'shoe'],
-    'ከልብ': ['dog', 'dogs', 'water'],
-    'ውሃ': ['water', 'thirst', 'river', 'drink'],
-    'ማይ': ['water', 'thirst', 'river'],
-    'ስዕል': ['icon', 'picture', 'image', 'painting'],
-    'ሥዕል': ['icon', 'picture', 'image', 'painting'],
-    'በላዕተ': ['cannibal', 'belate', 'seb', 'souls', 'sinner'],
+    'ውሻ': ['dog', 'dogs', 'thirst', 'thirsty', 'water', 'shoe'],
+    'ከልብ': ['dog', 'dogs', 'thirst', 'thirsty', 'water', 'shoe'],
+    'ኸልቢ': ['dog', 'dogs', 'thirst', 'thirsty', 'water', 'shoe'],
+    'ጫማ': ['shoe', 'shoes', 'sandal', 'water', 'dog'],
+    'አሣእን': ['shoe', 'shoes', 'sandal'],
+    'ሳእን': ['shoe', 'shoes', 'sandal'],
+    'ውሃ': ['water', 'thirst', 'river', 'drink', 'well'],
+    'ማይ': ['water', 'thirst', 'river', 'drink'],
+    'ስዕል': ['icon', 'picture', 'image', 'painting', 'portrait'],
+    'ሥዕል': ['icon', 'picture', 'image', 'painting', 'portrait'],
+    'በላዕተ': ['cannibal', 'belate', 'seb', 'qemer', '78', 'souls', 'sinner', 'beggar', 'handful'],
+    'በላዔ': ['cannibal', 'belate', 'seb', 'qemer', '78', 'souls', 'sinner', 'beggar'],
+    'ቅምር': ['qemer', 'cannibal', '78', 'souls', 'beggar'],
+    'ቀመር': ['qemer', 'cannibal', '78', 'souls', 'beggar'],
     'ሰብእ': ['cannibal', 'souls'],
-    'ደቅስዮስ': ['deqseyos', 'dexius', 'ildefonsus', 'toledo', 'vestment', 'throne'],
-    'ቶሌዶ': ['toledo', 'deqseyos', 'dexius'],
+    'ደቅስዮስ': ['deqseyos', 'dexius', 'ildefonsus', 'hildefonsus', 'toledo', 'vestment', 'apparel', 'chair', 'throne'],
+    'ቶሌዶ': ['toledo', 'deqseyos', 'dexius', 'vestment'],
+    'ጥልጥልያ': ['toledo', 'dexius'],
+    'ወርቅ': ['gold', 'golden', 'ink', 'scribe'],
+    'ቀለም': ['ink', 'golden', 'scribe', 'paint'],
+    'ጸሐፊ': ['scribe', 'wrote', 'write', 'golden', 'ink'],
+    'መሰላል': ['ladder', 'painter', 'artist', 'devil', 'painting', 'hand'],
+    'ሰዓሊ': ['painter', 'artist', 'painting', 'ladder', 'devil', 'icon'],
+    'ሠዓሊ': ['painter', 'artist', 'painting', 'ladder', 'devil', 'icon'],
+    'ርግብ': ['dove', 'doves', 'bird', 'raft'],
+    'አርጋብ': ['dove', 'doves', 'bird'],
+    'ጽጌረዳ': ['rose', 'roses', 'flower', 'crown', 'wreath'],
+    'አክሊል': ['crown', 'wreath', 'roses'],
+    'ወተት': ['milk', 'tongue', 'healed', 'lips'],
+    'ሐሊብ': ['milk', 'tongue', 'healed'],
+    'እመምኔት': ['abbess', 'nun', 'convent', 'pregnant'],
+    'ነጋዴ': ['merchant', 'pearl', 'pearls', 'jewel'],
+    'ዕንቁ': ['pearl', 'pearls', 'merchant', 'jewel'],
+    'አይሁድ': ['jew', 'jewish', 'boy', 'furnace', 'oven', 'fire'],
+    'እቶን': ['furnace', 'oven', 'fire', 'flame'],
     'መነኩሴ': ['monk', 'abbot', 'monastery'],
     'መነኮስ': ['monk', 'abbot', 'monastery'],
-    'ሽፍታ': ['robber', 'thief', 'bandit', 'highwayman'],
-    'ሌባ': ['robber', 'thief', 'bandit'],
+    'መነኮሳይት': ['nun', 'abbess', 'convent'],
+    'ሽፍታ': ['robber', 'robbers', 'thief', 'bandit', 'highwayman'],
+    'ሌባ': ['robber', 'thief', 'thieves', 'bandit'],
+    'ፈያት': ['robber', 'robbers', 'thief', 'bandit'],
     'ፈረስ': ['horse', 'knight', 'cavalry'],
-    'እሳት': ['fire', 'flame', 'burn'],
-    'ባሕር': ['sea', 'ocean', 'ship', 'drown', 'boat'],
+    'እሳት': ['fire', 'flame', 'burn', 'furnace'],
+    'ባሕር': ['sea', 'ocean', 'ship', 'drown', 'boat', 'waves'],
     'መርከብ': ['ship', 'boat', 'sea', 'sailor'],
     'አንበሳ': ['lion', 'beast'],
     'እባብ': ['serpent', 'snake', 'dragon'],
     'ዘንዶ': ['dragon', 'serpent'],
     'ካህን': ['priest', 'cleric', 'bishop'],
-    'ዲያቆን': ['deacon']
+    'ጳጳስ': ['bishop', 'patriarch'],
+    'ዲያቆን': ['deacon'],
+    'ዕውር': ['blind', 'sight', 'eyes'],
+    'እውር': ['blind', 'sight', 'eyes'],
+    'ለምጽ': ['leper', 'leprosy'],
+    'መካን': ['barren', 'child', 'son']
 };
 
 function matchMiraclesByText(rawQuery, showMostReadOnly = false) {
-    if (typeof MIRACLES_OF_MARY === 'undefined') return [];
+    const miraclesList = getMiraclesDataset();
+    if (!miraclesList) return [];
     const trimmed = (rawQuery || '').trim().toLowerCase();
     if (!trimmed) {
-        return MIRACLES_OF_MARY.filter(m => !showMostReadOnly || m.most_read);
+        return miraclesList.filter(m => !showMostReadOnly || m.most_read);
     }
 
     const rawTokens = trimmed.split(/[\s,.;:!?()]+/).filter(Boolean);
@@ -10992,7 +11038,7 @@ function matchMiraclesByText(rawQuery, showMostReadOnly = false) {
     });
 
     const scored = [];
-    for (const m of MIRACLES_OF_MARY) {
+    for (const m of miraclesList) {
         if (showMostReadOnly && !m.most_read) continue;
         const titleLower = (m.title || '').toLowerCase();
         const incipitLower = (m.incipit || '').toLowerCase();
@@ -11021,13 +11067,405 @@ function matchMiraclesByText(rawQuery, showMostReadOnly = false) {
 }
 window.matchMiraclesByText = matchMiraclesByText;
 
+const MIRACLE_ENGLISH_STOP_AND_PREAMBLE = new Set([
+    'a', 'an', 'the', 'and', 'or', 'but', 'if', 'in', 'on', 'at', 'to', 'for', 'of', 'with', 'by', 'from',
+    'as', 'is', 'am', 'are', 'was', 'were', 'be', 'been', 'being', 'have', 'has', 'had', 'having', 'do',
+    'does', 'did', 'doing', 'will', 'would', 'shall', 'should', 'can', 'could', 'may', 'might', 'must',
+    'that', 'this', 'these', 'those', 'it', 'its', 'he', 'him', 'his', 'she', 'her', 'hers', 'they', 'them',
+    'their', 'theirs', 'we', 'us', 'our', 'ours', 'you', 'your', 'yours', 'i', 'me', 'my', 'mine', 'who',
+    'whom', 'whose', 'which', 'what', 'when', 'where', 'why', 'how', 'not', 'no', 'nor', 'so', 'than',
+    'too', 'very', 'just', 'now', 'then', 'there', 'here', 'into', 'unto', 'upon', 'out', 'up', 'down',
+    'over', 'under', 'again', 'further', 'once', 'about', 'after', 'before', 'between', 'through', 'during',
+    'above', 'below', 'all', 'any', 'both', 'each', 'few', 'more', 'most', 'other', 'some', 'such', 'only',
+    'own', 'same', 'also', 'even', 'still', 'yet', 'ever', 'never', 'always', 'every',
+    // Generic narrative verbs & fillers
+    'one', 'certain', 'man', 'woman', 'person', 'people', 'named', 'call', 'called', 'live', 'lived',
+    'time', 'day', 'days', 'night', 'year', 'years', 'came', 'come', 'went', 'go', 'going', 'gone',
+    'said', 'say', 'saying', 'tell', 'told', 'spoke', 'speak', 'made', 'make', 'took', 'take', 'gave',
+    'give', 'given', 'saw', 'see', 'seen', 'knew', 'know', 'known', 'found', 'find', 'put', 'set',
+    'great', 'many', 'much', 'good', 'holy', 'blessed', 'saint', 'st',
+    // Universal Teamire Mariam opening preamble & closing blessing words
+    'listen', 'hear', 'hearken', 'incline', 'ear', 'ears', 'attention', 'father', 'fathers', 'brother',
+    'brothers', 'brethren', 'sister', 'sisters', 'beloved', 'christian', 'christians', 'congregation',
+    'faithful', 'miracle', 'miracles', 'wonder', 'wonders', 'sign', 'signs', 'perform', 'performed',
+    'wrought', 'work', 'worked', 'done', 'lady', 'mary', 'mariam', 'virgin', 'twofold', 'dual', 'pure',
+    'theotokos', 'bearer', 'mother', 'god', 'lord', 'jesus', 'christ', 'savior', 'saviour', 'son',
+    'prayer', 'prayers', 'blessing', 'blessings', 'intercession', 'intercessions', 'mercy', 'compassion',
+    'covenant', 'love', 'help', 'keep', 'protect', 'amen', 'forever', 'eternity', 'eternal', 'world',
+    'heaven', 'earth', 'grace', 'peace', 'praise', 'glory', 'honor', 'honour', 'salutation', 'book',
+    'read', 'reading', 'story', 'history', 'begin', 'beginning', 'name', 'spirit'
+]);
+
+const MIRACLE_IRREGULAR_STEMS = {
+    'men': 'man', 'women': 'woman', 'children': 'child', 'feet': 'foot', 'teeth': 'tooth',
+    'thieves': 'thief', 'robbers': 'robber', 'wolves': 'wolf', 'loaves': 'loaf', 'calves': 'calf',
+    'knives': 'knife', 'wives': 'wife', 'leaves': 'leaf', 'lives': 'life',
+    'fell': 'fall', 'fallen': 'fall', 'falling': 'fall',
+    'drank': 'drink', 'drunk': 'drink', 'drinking': 'drink',
+    'ate': 'eat', 'eaten': 'eat', 'eating': 'eat',
+    'stole': 'steal', 'stolen': 'steal', 'stealing': 'steal',
+    'wrote': 'write', 'written': 'write', 'writing': 'write',
+    'sang': 'sing', 'sung': 'sing', 'singing': 'sing',
+    'hanged': 'hang', 'hung': 'hang', 'hanging': 'hang',
+    'wept': 'weep', 'weeping': 'weep',
+    'prayed': 'pray', 'praying': 'pray',
+    'painted': 'paint', 'painting': 'paint',
+    'drowned': 'drown', 'drowning': 'drown',
+    'burned': 'burn', 'burnt': 'burn', 'burning': 'burn',
+    'thirsty': 'thirst', 'golden': 'gold',
+    'ildefonsus': 'dexius', 'hildefonsus': 'dexius', 'hildephonsus': 'dexius', 'deqseyos': 'dexius',
+    'teltelya': 'toledo'
+};
+
+const MIRACLE_ETHIOPIC_PREAMBLE_ROOTS = [
+    'ስምዑ', 'ስሙ', 'አድምጹ', 'አበውየ', 'አበዊነ', 'አኃውየ', 'አኀዊነ', 'አባቶቼ', 'ወንድሞቼ', 'እኅቶቼ', 'ምእመናን',
+    'ሕዝበ', 'ክርስቲያን', 'ተአምር', 'ተአምራት', 'ተአምሯ', 'ተአምረ', 'እግዝእትነ', 'እመቤታችን', 'ቅድስት', 'ድንግል',
+    'ማርያም', 'ወላዲተ', 'አምላክ', 'በክልኤ', 'ድንግልና', 'ጸሎቷ', 'ጸሎታ', 'በረከቷ', 'በረከታ', 'ምሕረቷ', 'ረድኤቷ',
+    'ቃል', 'ኪዳኗ', 'ፍቅሯ', 'አማላጅነቷ', 'ከሁላችን', 'ምስለ', 'ኵልነ', 'ጋር', 'ይሁን', 'ለዘለዓለሙ', 'ለዓለመ',
+    'ዓለም', 'አሜን', 'ወሀለወ', 'ሀለወ', 'ነበረ', 'አንድ', 'ብእሲ', 'ብእሲት', 'አሐዱ', 'ዘስሙ', 'በስመ', 'አብ',
+    'ወወልድ', 'ወመንፈስ', 'ቅዱስ', 'እግዚአብሔር', 'ጌታችን', 'ኢየሱስ', 'ክርስቶስ'
+];
+
+function stemMiracleEnglishToken(rawWord) {
+    if (!rawWord) return '';
+    let w = rawWord.toLowerCase().replace(/['’]s$/i, '').replace(/[^a-z0-9-]/g, '');
+    if (!w) return '';
+    if (MIRACLE_IRREGULAR_STEMS[w]) return MIRACLE_IRREGULAR_STEMS[w];
+    if (/^\d+$/.test(w)) return w;
+    if (w.length <= 3) return w;
+    if (w.endsWith('ies') && w.length >= 5) {
+        w = w.slice(0, -3) + 'y';
+    } else if (w.endsWith('ves') && w.length >= 5) {
+        w = w.slice(0, -3) + 'f';
+    } else if (w.endsWith('ing') && w.length >= 6) {
+        w = w.slice(0, -3);
+        if (w.length >= 4 && w[w.length - 1] === w[w.length - 2] && !/[lsz]/.test(w[w.length - 1])) {
+            w = w.slice(0, -1);
+        }
+    } else if (w.endsWith('ed') && w.length >= 5) {
+        w = w.slice(0, -2);
+        if (w.length >= 4 && w[w.length - 1] === w[w.length - 2] && !/[lsz]/.test(w[w.length - 1])) {
+            w = w.slice(0, -1);
+        }
+    } else if ((w.endsWith('ches') || w.endsWith('shes') || w.endsWith('xes') || w.endsWith('zes') || w.endsWith('sses')) && w.length >= 5) {
+        w = w.slice(0, -2);
+    } else if (w.endsWith('s') && !w.endsWith('ss') && !w.endsWith('us') && !w.endsWith('is') && w.length >= 4) {
+        w = w.slice(0, -1);
+    }
+    return MIRACLE_IRREGULAR_STEMS[w] || w;
+}
+
+function normalizeMiracleSpokenNumbers(text) {
+    if (!text) return '';
+    return String(text)
+        .replace(/\bseventy[\s-]+eight\b/gi, '78 seventy-eight')
+        .replace(/\b፸፰\b/g, '78')
+        .replace(/\bfifty\b/gi, '50 fifty')
+        .replace(/\bforty\b/gi, '40 forty')
+        .replace(/\bthirty\b/gi, '30 thirty')
+        .replace(/\btwelve\b/gi, '12 twelve')
+        .replace(/\bseven\b/gi, '7 seven')
+        .replace(/\bfive\b/gi, '5 five')
+        .replace(/\bthree\b/gi, '3 three');
+}
+
+function stripMiracleHtmlAndEditorialNotes(html) {
+    if (!html) return '';
+    return String(html)
+        .replace(/<p[^>]*>\s*Note:\s*This English translation[\s\S]*$/gi, ' ')
+        .replace(/\bNote:\s*This English translation[\s\S]*$/gi, ' ')
+        .replace(/<[^>]+>/g, ' ')
+        .replace(/&(rsquo|lsquo|#39);/gi, "'")
+        .replace(/&(rdquo|ldquo|quot);/gi, '"')
+        .replace(/&amp;/gi, ' and ')
+        .replace(/&nbsp;/gi, ' ');
+}
+
+let _miracleLiveSearchIndex = null;
+
+function getMiracleLiveSearchIndex() {
+    const miraclesList = getMiraclesDataset();
+    if (!miraclesList) return null;
+    if (_miracleLiveSearchIndex && _miracleLiveSearchIndex.count === miraclesList.length) {
+        return _miracleLiveSearchIndex;
+    }
+
+    const docFreq = Object.create(null);
+    const incipitDocFreq = Object.create(null);
+    const normGeez = typeof normalizeGeezSearchHomophones === 'function'
+        ? normalizeGeezSearchHomophones
+        : (s => String(s || ''));
+
+    const preambleGeezSet = new Set(MIRACLE_ETHIOPIC_PREAMBLE_ROOTS.map(w => normGeez(w)));
+    let totalBodyLen = 0;
+
+    const docs = miraclesList.map(miracle => {
+        const titleClean = normalizeMiracleSpokenNumbers(miracle.title || '');
+        const bodyClean = normalizeMiracleSpokenNumbers(
+            (miracle.translations || []).map(t => stripMiracleHtmlAndEditorialNotes(t.text || '')).join(' ')
+        );
+
+        const titleFreq = Object.create(null);
+        const bodyFreq = Object.create(null);
+        const seenInDoc = new Set();
+
+        const rawTitleWords = titleClean.toLowerCase().split(/[^a-z0-9]+/).filter(Boolean);
+        for (const rw of rawTitleWords) {
+            const stem = stemMiracleEnglishToken(rw);
+            if (!stem || (stem.length < 2 && !/^\d+$/.test(stem))) continue;
+            titleFreq[stem] = (titleFreq[stem] || 0) + 1;
+            seenInDoc.add(stem);
+        }
+
+        const rawBodyWords = bodyClean.toLowerCase().split(/[^a-z0-9]+/).filter(Boolean);
+        let bodyLen = 0;
+        for (const rw of rawBodyWords) {
+            const stem = stemMiracleEnglishToken(rw);
+            if (!stem || (stem.length < 2 && !/^\d+$/.test(stem))) continue;
+            bodyFreq[stem] = (bodyFreq[stem] || 0) + 1;
+            bodyLen++;
+            seenInDoc.add(stem);
+        }
+        totalBodyLen += bodyLen;
+
+        seenInDoc.forEach(stem => {
+            docFreq[stem] = (docFreq[stem] || 0) + 1;
+        });
+
+        const incipitNorm = normGeez(miracle.incipit || '');
+        const incipitTokens = new Set(
+            incipitNorm.split(/[\s፡።፣፤፥፦፧፨,.;:!?()]+/).filter(tok => tok.length >= 2 && !preambleGeezSet.has(tok))
+        );
+        incipitTokens.forEach(tok => {
+            incipitDocFreq[tok] = (incipitDocFreq[tok] || 0) + 1;
+        });
+
+        return {
+            miracle,
+            titleFreq,
+            bodyFreq,
+            bodyLen: bodyLen || 1,
+            incipitNorm,
+            incipitTokens
+        };
+    });
+
+    _miracleLiveSearchIndex = {
+        count: miraclesList.length,
+        avgBodyLen: docs.length > 0 ? (totalBodyLen / docs.length) : 250,
+        docFreq,
+        incipitDocFreq,
+        preambleGeezSet,
+        docs
+    };
+    return _miracleLiveSearchIndex;
+}
+
+/**
+ * Ranks Miracle of Mary stories from live multilingual speech transcripts
+ * (Ge'ez, Amharic, Tigrinya, or English) using BM25 + Title & Ge'ez incipit boosts,
+ * while ignoring universal Teamire Mariam opening preambles and editorial footnotes.
+ */
+function rankMiraclesByLiveTranscript(sourceTranscript, englishTranscript, limit = 4) {
+    const index = getMiracleLiveSearchIndex();
+    if (!index || index.count === 0) {
+        return { status: 'idle', matches: [], distinctiveTerms: [] };
+    }
+
+    const srcRaw = String(sourceTranscript || '').trim();
+    const engRaw = String(englishTranscript || '').trim();
+    const combinedRaw = `${srcRaw} ${engRaw}`.trim();
+    if (!combinedRaw) {
+        return { status: 'idle', matches: [], distinctiveTerms: [] };
+    }
+
+    const normGeez = typeof normalizeGeezSearchHomophones === 'function'
+        ? normalizeGeezSearchHomophones
+        : (s => String(s || ''));
+
+    // 1. Extract English stems (giving slightly higher weight to the latest spoken clause)
+    const normalizedEng = normalizeMiracleSpokenNumbers(`${engRaw} ${srcRaw}`);
+    const rawEngTokens = normalizedEng.toLowerCase().split(/[^a-z0-9]+/).filter(Boolean);
+    const queryStemWeights = Object.create(null);
+    const maxDocFreqCutoff = Math.ceil(index.count * 0.42);
+
+    rawEngTokens.forEach((rw, idx) => {
+        const stem = stemMiracleEnglishToken(rw);
+        if (!stem) return;
+        if (MIRACLE_ENGLISH_STOP_AND_PREAMBLE.has(rw) || MIRACLE_ENGLISH_STOP_AND_PREAMBLE.has(stem)) return;
+        if (stem.length < 3 && !/^\d+$/.test(stem)) return;
+        const df = index.docFreq[stem] || 0;
+        if (df === 0 || df > maxDocFreqCutoff) return;
+        // Recency factor between 1.0 and 1.35 so newer spoken sentences steer smoothly
+        const recency = 1 + 0.35 * (rawEngTokens.length > 1 ? (idx / (rawEngTokens.length - 1)) : 1);
+        queryStemWeights[stem] = Math.max(queryStemWeights[stem] || 0, recency);
+    });
+
+    // 2. Expand bilingual Ethiopic roots into English stems + Ge'ez incipit tokens
+    const srcTokens = srcRaw.split(/[\s፡።፣፤፥፦፧፨,.;:!?()]+/).filter(Boolean);
+    const queryGeezTokens = new Set();
+    const maxIncipitDf = Math.ceil(index.count * 0.25);
+
+    for (const tok of srcTokens) {
+        Object.entries(MIRACLE_BILINGUAL_KEYWORDS).forEach(([ethKey, engList]) => {
+            if (tok.includes(ethKey) || (tok.length >= 3 && ethKey.includes(tok))) {
+                for (const engWord of engList) {
+                    const stem = stemMiracleEnglishToken(engWord);
+                    const df = index.docFreq[stem] || 0;
+                    if (stem && df > 0 && df <= maxDocFreqCutoff) {
+                        queryStemWeights[stem] = Math.max(queryStemWeights[stem] || 0, 1.25);
+                    }
+                }
+            }
+        });
+
+        // Check if token contains Ethiopic characters for Ge'ez incipit matching
+        if (/[\u1200-\u137F]/.test(tok) && tok.length >= 2) {
+            const normTok = normGeez(tok);
+            const isPreamble = index.preambleGeezSet.has(normTok) ||
+                MIRACLE_ETHIOPIC_PREAMBLE_ROOTS.some(root => {
+                    const nr = normGeez(root);
+                    return normTok === nr || (nr.length >= 3 && normTok.includes(nr));
+                });
+            if (!isPreamble) {
+                const gDf = index.incipitDocFreq[normTok] || 0;
+                if (gDf > 0 && gDf <= maxIncipitDf) {
+                    queryGeezTokens.add(normTok);
+                }
+            }
+        }
+    }
+
+    const distinctiveStems = Object.keys(queryStemWeights);
+    const distinctiveTerms = [...distinctiveStems, ...Array.from(queryGeezTokens)];
+
+    if (distinctiveTerms.length === 0) {
+        return { status: 'preamble', matches: [], distinctiveTerms: [] };
+    }
+
+    // 3. Score all 440 miracles via BM25 + Title & Ge'ez Incipit field boosts
+    const N = index.count;
+    const k1 = 1.4;
+    const b = 0.65;
+    const avgLen = index.avgBodyLen;
+    const scored = [];
+
+    for (const doc of index.docs) {
+        let score = 0;
+        let titleMatchedCount = 0;
+        const matchedTerms = [];
+
+        for (const stem of distinctiveStems) {
+            const tTf = doc.titleFreq[stem] || 0;
+            const bTf = doc.bodyFreq[stem] || 0;
+            if (tTf === 0 && bTf === 0) continue;
+
+            const df = index.docFreq[stem] || 1;
+            const idf = Math.log(1 + (N - df + 0.5) / (df + 0.5));
+            const qWeight = queryStemWeights[stem] || 1;
+
+            let termScore = 0;
+            if (bTf > 0) {
+                const normTf = (bTf * (k1 + 1)) / (bTf + k1 * (1 - b + b * (doc.bodyLen / avgLen)));
+                termScore += idf * normTf;
+            }
+            if (tTf > 0) {
+                termScore += idf * 3.4;
+                titleMatchedCount++;
+            }
+            score += termScore * qWeight;
+            matchedTerms.push(stem);
+        }
+
+        queryGeezTokens.forEach(gTok => {
+            if (doc.incipitTokens.has(gTok)) {
+                const gDf = index.incipitDocFreq[gTok] || 1;
+                const gIdf = Math.log(1 + (N - gDf + 0.5) / (gDf + 0.5));
+                score += gIdf * 3.2;
+                matchedTerms.push(gTok);
+            }
+        });
+
+        if (matchedTerms.length >= 2) {
+            score *= (1 + Math.min(matchedTerms.length - 1, 5) * 0.14);
+        }
+        if (titleMatchedCount >= 2) {
+            score *= (1 + Math.min(titleMatchedCount - 1, 4) * 0.18);
+        }
+        if (score > 0 && doc.miracle.most_read) {
+            score += 0.75;
+        }
+
+        if (score >= 2.15) {
+            scored.push({
+                miracle: doc.miracle,
+                score: Math.round(score * 100) / 100,
+                matchedTerms
+            });
+        }
+    }
+
+    scored.sort((a, b) => b.score - a.score);
+    const topMatches = scored.slice(0, Math.max(1, limit));
+    return {
+        status: topMatches.length > 0 ? 'matched' : 'preamble',
+        matches: topMatches,
+        distinctiveTerms
+    };
+}
+window.rankMiraclesByLiveTranscript = rankMiraclesByLiveTranscript;
+
+function selectMiracleById(miracleId) {
+    const miraclesList = getMiraclesDataset();
+    if (!miraclesList) return false;
+    const targetId = String(miracleId || '').trim();
+    if (!targetId) return false;
+    const modalEl = miracleModal || (typeof document !== 'undefined' ? document.getElementById('miracle-modal') : null);
+
+    if (targetId === 'none') {
+        selectedMiracleId = 'none';
+        updateSelectedMiracleUI();
+        saveSettings();
+        smoothRender();
+        if (modalEl) modalEl.style.display = 'none';
+        if (typeof window !== 'undefined' && window.targumaService && typeof window.targumaService.stopMiracleLiveIdentification === 'function') {
+            window.targumaService.stopMiracleLiveIdentification();
+        }
+        return true;
+    }
+
+    const found = miraclesList.find(m => String(m.id) === targetId);
+    if (!found) return false;
+
+    selectedMiracleId = found.id;
+    selectedMiracleTranslationIndex = 0;
+    updateSelectedMiracleUI();
+    saveSettings();
+    smoothRender();
+    if (modalEl) {
+        modalEl.style.display = 'none';
+    }
+    if (typeof window !== 'undefined' && window.targumaService && typeof window.targumaService.stopMiracleLiveIdentification === 'function') {
+        window.targumaService.stopMiracleLiveIdentification();
+    }
+    if (typeof showCopyNotification === 'function') {
+        showCopyNotification(`Selected Miracle: ${found.title || ('#' + found.id)}`, 2400);
+    }
+    return true;
+}
+window.selectMiracleById = selectMiracleById;
+
 function renderMiracleModalList() {
-    if (!miracleListContainer || typeof MIRACLES_OF_MARY === 'undefined') return;
+    const miraclesList = getMiraclesDataset();
+    const listEl = miracleListContainer || (typeof document !== 'undefined' ? document.getElementById('miracle-list-container') : null);
+    const searchEl = miracleSearchInput || (typeof document !== 'undefined' ? document.getElementById('miracle-search-input') : null);
+    const mostReadEl = miracleMostReadToggle || (typeof document !== 'undefined' ? document.getElementById('miracle-most-read-toggle') : null);
+    if (!listEl || !miraclesList) return;
     
-    const query = (miracleSearchInput.value || '').trim();
-    const showMostReadOnly = miracleMostReadToggle.checked;
+    const query = (searchEl ? searchEl.value : '').trim();
+    const showMostReadOnly = mostReadEl ? mostReadEl.checked : false;
     
-    miracleListContainer.innerHTML = '';
+    listEl.innerHTML = '';
     
     // Add "None" option first
     const noneBtn = document.createElement('button');
@@ -11039,13 +11477,9 @@ function renderMiracleModalList() {
     noneBtn.style.marginBottom = '5px';
     noneBtn.textContent = 'None selected';
     safeOn(noneBtn, 'click', () => {
-        selectedMiracleId = 'none';
-        updateSelectedMiracleUI();
-        saveSettings();
-        smoothRender();
-        miracleModal.style.display = 'none';
+        selectMiracleById('none');
     });
-    miracleListContainer.appendChild(noneBtn);
+    listEl.appendChild(noneBtn);
 
     const filtered = matchMiraclesByText(query, showMostReadOnly);
     
@@ -11071,16 +11505,61 @@ function renderMiracleModalList() {
                     </div>`;
 
         safeOn(btn, 'click', () => {
-            selectedMiracleId = miracle.id;
-            selectedMiracleTranslationIndex = 0; // Reset translation index when a new miracle is picked
-            updateSelectedMiracleUI();
-            saveSettings();
-            smoothRender();
-            miracleModal.style.display = 'none';
+            selectMiracleById(miracle.id);
         });
         
-        miracleListContainer.appendChild(btn);
+        listEl.appendChild(btn);
     });
+}
+
+function bindMiracleModalEvents() {
+    if (typeof document === 'undefined') return;
+    const openBtn = document.getElementById('open-miracle-modal-btn') || openMiracleModalBtn;
+    const modalEl = document.getElementById('miracle-modal') || miracleModal;
+    const closeBtn = document.getElementById('close-miracle-modal') || closeMiracleModalBtn;
+    const searchEl = document.getElementById('miracle-search-input') || miracleSearchInput;
+    const mostReadEl = document.getElementById('miracle-most-read-toggle') || miracleMostReadToggle;
+    const voiceBtn = document.getElementById('miracle-voice-detect-btn') || miracleVoiceDetectBtn;
+
+    if (openBtn && modalEl && closeBtn && openBtn.dataset.miracleModalBound !== 'true') {
+        openBtn.dataset.miracleModalBound = 'true';
+        updateSelectedMiracleUI();
+
+        safeOn(openBtn, 'click', () => {
+            modalEl.style.display = 'block';
+            renderMiracleModalList();
+        });
+
+        safeOn(closeBtn, 'click', () => {
+            modalEl.style.display = 'none';
+            if (window.targumaService && typeof window.targumaService.stopMiracleLiveIdentification === 'function') {
+                window.targumaService.stopMiracleLiveIdentification();
+            }
+        });
+
+        safeOn(modalEl, 'click', (e) => {
+            if (e.target === modalEl) {
+                modalEl.style.display = 'none';
+                if (window.targumaService && typeof window.targumaService.stopMiracleLiveIdentification === 'function') {
+                    window.targumaService.stopMiracleLiveIdentification();
+                }
+            }
+        });
+
+        if (searchEl) safeOn(searchEl, 'input', renderMiracleModalList);
+        if (mostReadEl) safeOn(mostReadEl, 'change', renderMiracleModalList);
+    }
+
+    if (voiceBtn && voiceBtn.dataset.miracleVoiceBound !== 'true') {
+        voiceBtn.dataset.miracleVoiceBound = 'true';
+        safeOn(voiceBtn, 'click', () => {
+            if (window.targumaService && typeof window.targumaService.toggleMiracleLiveIdentification === 'function') {
+                window.targumaService.toggleMiracleLiveIdentification();
+            } else {
+                showCopyNotification('Starting Targuma AI Live Miracle Identification...', 2500);
+            }
+        });
+    }
 }
 
 
@@ -11347,6 +11826,9 @@ function openModal(modal) {
 
 function closeModal() {
     closeHierarchyPortraitLightbox();
+    if (typeof window !== 'undefined' && window.targumaService && typeof window.targumaService.stopMiracleLiveIdentification === 'function') {
+        window.targumaService.stopMiracleLiveIdentification();
+    }
     document.querySelectorAll('.modal').forEach(modal => {
         modal.style.display = 'none';
         modal.style.zIndex = '';
@@ -12645,31 +13127,7 @@ safeOn(anaphoraSelector, 'change', () => {
 
 
 
-if (openMiracleModalBtn && miracleModal && closeMiracleModalBtn) {
-    updateSelectedMiracleUI(); // Initial UI update
-    
-    safeOn(openMiracleModalBtn, 'click', () => {
-        miracleModal.style.display = 'block';
-        renderMiracleModalList();
-    });
-    
-    safeOn(closeMiracleModalBtn, 'click', () => {
-        miracleModal.style.display = 'none';
-    });
-    
-    safeOn(miracleSearchInput, 'input', renderMiracleModalList);
-    safeOn(miracleMostReadToggle, 'change', renderMiracleModalList);
-}
-
-if (miracleVoiceDetectBtn) {
-    safeOn(miracleVoiceDetectBtn, 'click', () => {
-        if (window.targumaService && typeof window.targumaService.toggleMiracleLiveIdentification === 'function') {
-            window.targumaService.toggleMiracleLiveIdentification();
-        } else {
-            showCopyNotification('Starting Targuma AI Live Miracle Identification...', 2500);
-        }
-    });
-}
+bindMiracleModalEvents();
 
 if (miraclePositionRadios) {
     miraclePositionRadios.forEach(radio => {
@@ -14673,6 +15131,7 @@ if (typeof document !== 'undefined') {
     bindDOMElements();
     bindHierarchyPortraitLightboxEvents();
     bindHistoricalPrefacesAndInfoModalEvents();
+    bindMiracleModalEvents();
     renderHistoricalPrefaces();
     if (document.readyState === 'complete' || document.readyState === 'interactive') {
         if (typeof prayers !== 'undefined' && document.getElementById('prayer-display')) {
@@ -14732,6 +15191,8 @@ const appCoreExports = {
     ETHIOPIAN_MONTHLY_FEASTS,
     ETHIOPIAN_MONTHS_INFO,
     matchMiraclesByText,
+    rankMiraclesByLiveTranscript,
+    selectMiracleById,
     getPrayTabDefaultProfile,
     getLiturgyTabDefaultProfile,
     captureCurrentTabProfile,
