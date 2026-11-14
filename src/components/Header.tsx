@@ -61,7 +61,6 @@ export const Header: React.FC = () => {
 
           <button id="targuma-mode-toggle-header" className="header-nav-tab primary-nav-tab" data-nav-tab="targuma" title="Targuma Mode (Live Sermon & Announcement Captions)" aria-label="Toggle Targuma Live Captions Mode">
             <span className="header-nav-label">Targuma</span>
-            <span className="nav-beta-badge">BETA</span>
           </button>
 
           <button id="search-toggle" className="header-nav-tab primary-nav-tab" data-nav-tab="search" title="Search" aria-label="Open Search">

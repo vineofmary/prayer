@@ -174,7 +174,7 @@ describe('Targuma Immutable-Clause Streaming Engine, Sanctuary UI & VAD Suite', 
   });
 
   describe('Clean Sanctuary Toolbar, Hidden Parish Sync & Replay Controls', () => {
-    it('does not render Mode & Parish TV Sync controls, moves Model picker into Settings drawer, and omits ms latency from status pill', () => {
+    it('does not render Mode & Parish TV Sync controls, moves Caption Size into primary bar, keeps Model picker in drawer with Gemini 3 Flash default, and hides idle status pill', () => {
       targuma.toggleTargumaMode(true);
 
       // Parish TV Sync must NOT exist in the visible DOM
@@ -182,31 +182,87 @@ describe('Targuma Immutable-Clause Streaming Engine, Sanctuary UI & VAD Suite', 
       expect(document.getElementById('targuma-room-code-input')).toBeNull();
       expect(document.getElementById('targuma-view').textContent).not.toContain('Mode & Parish TV Sync');
 
-      // Model selector lives inside the collapsible settings drawer, not cluttering the primary bar
+      // Title at top of Targuma page
+      expect(document.querySelector('.targuma-title-text').textContent).toBe('Targuma: Live Translations');
+
+      // Desktop header BETA badge removed
+      const headerTab = document.getElementById('targuma-mode-toggle-header');
+      expect(headerTab).not.toBeNull();
+      expect(headerTab.querySelector('.nav-beta-badge')).toBeNull();
+      const headerTsx = fs.readFileSync(path.resolve(process.cwd(), 'src/components/Header.tsx'), 'utf8');
+      expect(headerTsx).not.toContain('nav-beta-badge');
+
+      // Caption Size is in the primary bar, while Model stays in the collapsible settings drawer
       const primaryBar = document.querySelector('.targuma-toolbar-primary');
       const settingsDrawer = document.getElementById('targuma-toolbar-drawer');
+      expect(primaryBar.querySelector('#targuma-font-slider')).not.toBeNull();
+      expect(settingsDrawer.querySelector('#targuma-font-slider')).toBeNull();
       expect(primaryBar.querySelector('#targuma-model-select')).toBeNull();
       expect(settingsDrawer.querySelector('#targuma-model-select')).not.toBeNull();
 
-      // Status banner stays clean without technical millisecond numbers
+      // Default model is Gemini 3 Flash
+      expect(targuma.state.geminiModel).toBe('gemini-3-flash-preview');
+      expect(document.getElementById('targuma-model-select').value).toBe('gemini-3-flash-preview');
+
+      // Renamed labels and options in settings drawer
+      const drawerText = settingsDrawer.textContent;
+      expect(drawerText).toContain('Visible Lines');
+      expect(drawerText).not.toContain('Visible Clauses');
+      expect(Array.from(document.getElementById('targuma-lines-select').options).map(o => o.textContent)).toEqual([
+        '2 Lines',
+        '3 Lines',
+        '4 Lines'
+      ]);
+      expect(settingsDrawer.querySelector('label[for="targuma-icon-select"]').textContent).toBe('Icon');
+      expect(settingsDrawer.querySelector('label[for="targuma-model-select"]').textContent).toBe('Model');
+
+      // Removed wide double icons & renamed Covenant of Mercy
+      const iconSelect = document.getElementById('targuma-icon-select');
+      const iconValues = Array.from(iconSelect.options).map(o => o.value);
+      const iconLabels = Array.from(iconSelect.options).map(o => o.textContent);
+      expect(iconValues).not.toContain('ephraim_mary_thursday');
+      expect(iconValues).not.toContain('covenant_mercy');
+      expect(iconLabels).toContain('Covenant of Mercy');
+      expect(iconLabels).not.toContain('Covenant of Mercy with Psalm 44');
+
+      // Idle dynamic instruction pill is hidden and empty
+      const statusPill = document.getElementById('targuma-status-pill');
+      expect(statusPill.classList.contains('hidden')).toBe(true);
+      expect(statusPill.textContent.trim()).toBe('');
+
+      // Empty placeholder has English Psalm attribution and unparenthesized Ge'ez
+      const placeholderText = document.querySelector('.targuma-empty-placeholder').textContent.replace(/\s+/g, ' ').trim();
+      expect(placeholderText).toContain('“Listen, my daughter, and see, and incline your ear” — Psalm 44:10');
+      expect(placeholderText).toContain('ስምዒ ወለትየ ወርእዪ ወአጽምዒ እዝነኪ — መዝ ፵፬፡፲');
+      expect(placeholderText).not.toContain('(ስምዒ');
+
+      // Previous lines stay full brightness in CSS
+      const css = fs.readFileSync(path.resolve(process.cwd(), 'app/src/main/assets/css/style.css'), 'utf8');
+      expect(css).toMatch(/\.targuma-line-previous\s*\{[^}]*opacity:\s*1;/);
+
+      // Status banner appears cleanly during active listening without ms latency
       targuma.state.isListening = true;
       targuma.state.lastLatencyMs = 142;
       targuma.handleStreamingServerEvent({ type: 'ready' });
-      const statusText = document.getElementById('targuma-status-pill').textContent;
-      expect(statusText).toBe('Listening • አማርኛ → English');
-      expect(statusText).not.toContain('ms');
+      expect(statusPill.classList.contains('hidden')).toBe(false);
+      expect(statusPill.textContent).toBe('Listening • አማርኛ → English');
+      expect(statusPill.textContent).not.toContain('ms');
 
       targuma.state.isListening = false;
       targuma.toggleTargumaMode(false);
     });
 
-    it('renders Audio Input Source selector and toggles the File Replay bar in the settings drawer', () => {
+    it('renders Audio Input Source selector with updated option labels and keeps idle pill hidden when switching sources', () => {
       targuma.toggleTargumaMode(true);
       const sourceSelect = document.getElementById('targuma-audio-source-select');
       const replayBar = document.getElementById('targuma-file-replay-bar');
       const micLabel = document.getElementById('targuma-mic-btn-label');
+      const statusPill = document.getElementById('targuma-status-pill');
 
       expect(sourceSelect).not.toBeNull();
+      const sourceLabels = Array.from(sourceSelect.options).map(o => o.textContent);
+      expect(sourceLabels).toContain('Device Microphone');
+      expect(sourceLabels).toContain('Audio / Video File');
       expect(replayBar).not.toBeNull();
       expect(replayBar.classList.contains('hidden')).toBe(true);
 
@@ -215,10 +271,13 @@ describe('Targuma Immutable-Clause Streaming Engine, Sanctuary UI & VAD Suite', 
 
       expect(replayBar.classList.contains('hidden')).toBe(false);
       expect(micLabel.textContent).toBe('Start File Replay');
+      expect(statusPill.classList.contains('hidden')).toBe(true);
+      expect(statusPill.textContent.trim()).toBe('');
 
       sourceSelect.value = 'microphone';
       sourceSelect.dispatchEvent(new Event('change'));
       expect(replayBar.classList.contains('hidden')).toBe(true);
+      expect(statusPill.classList.contains('hidden')).toBe(true);
       targuma.toggleTargumaMode(false);
     });
 

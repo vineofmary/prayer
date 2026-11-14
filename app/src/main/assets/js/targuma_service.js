@@ -48,17 +48,17 @@
     const CLIENT_FETCH_TIMEOUT_MS = 8000;
     const MAX_DRAFT_DISPLAY_WORDS = 22;
 
-    // Clean model options (in Settings drawer; Gemini 2.5 Flash default)
+    // Clean model options (in Settings drawer; Gemini 3 Flash default)
     const GEMINI_MODELS = [
-        {
-            id: 'gemini-2.5-flash',
-            label: 'Gemini 2.5 Flash',
-            shortLabel: 'Gemini 2.5 Flash'
-        },
         {
             id: 'gemini-3-flash-preview',
             label: 'Gemini 3 Flash',
             shortLabel: 'Gemini 3 Flash'
+        },
+        {
+            id: 'gemini-2.5-flash',
+            label: 'Gemini 2.5 Flash',
+            shortLabel: 'Gemini 2.5 Flash'
         }
     ];
 
@@ -74,24 +74,14 @@
             titleEnglish: 'The Holy Trinity'
         },
         {
-            id: 'covenant_mercy',
-            src: 'img/Covenant-of-Mercy.svg',
-            titleEnglish: 'Covenant of Mercy'
-        },
-        {
             id: 'covenant_mercy_psalm',
             src: 'img/Covenant-of-Mercy-with-Psalm.svg',
-            titleEnglish: 'Covenant of Mercy with Psalm 44'
+            titleEnglish: 'Covenant of Mercy'
         },
         {
             id: 'mary_blesses_ephraim',
             src: 'img/Mary-Blesses-Ephraim.svg',
             titleEnglish: 'Our Lady Mary Blesses St. Ephrem'
-        },
-        {
-            id: 'ephraim_mary_thursday',
-            src: 'img/Ephraim-and-Mary-on-Thursday.svg',
-            titleEnglish: 'St. Ephrem Praises Our Lady'
         },
         {
             id: 'none',
@@ -195,7 +185,7 @@
         }
     ];
 
-    const DEFAULT_IDLE_STATUS = 'Tap "Start Listening" to see live captions in your language';
+    const DEFAULT_IDLE_STATUS = '';
 
     // --- State ---
     let state = {
@@ -203,7 +193,7 @@
         isListening: false,
         sourceLang: 'am',                      // 'am', 'ti', 'en', 'es'
         targetLang: 'en',                      // 'en', 'am', 'ti', 'es'
-        geminiModel: 'gemini-2.5-flash',       // Default: Gemini 2.5 Flash
+        geminiModel: 'gemini-3-flash-preview', // Default: Gemini 3 Flash
         displayMode: 'target',                 // 'target' or 'bilingual'
         maxLines: 3,                           // 2, 3, or 4 visible chronological clauses
         fontSizePx: 34,                        // Customizable caption font size (px)
@@ -421,13 +411,16 @@
                 if (parsed.geminiModel && GEMINI_MODELS.some(m => m.id === parsed.geminiModel)) {
                     state.geminiModel = parsed.geminiModel;
                 } else {
-                    state.geminiModel = 'gemini-2.5-flash';
+                    state.geminiModel = 'gemini-3-flash-preview';
                 }
                 if (parsed.displayMode === 'target' || parsed.displayMode === 'bilingual') state.displayMode = parsed.displayMode;
                 if ([2, 3, 4].includes(Number(parsed.maxLines))) state.maxLines = Number(parsed.maxLines);
                 if (parsed.fontSizePx >= 18 && parsed.fontSizePx <= 72) state.fontSizePx = Number(parsed.fontSizePx);
-                if (parsed.selectedIconId && TARGUMA_ICONS.some(i => i.id === parsed.selectedIconId)) {
-                    state.selectedIconId = parsed.selectedIconId;
+                const mappedIconId = parsed.selectedIconId === 'covenant_mercy' ? 'covenant_mercy_psalm' : parsed.selectedIconId;
+                if (mappedIconId && TARGUMA_ICONS.some(i => i.id === mappedIconId)) {
+                    state.selectedIconId = mappedIconId;
+                } else {
+                    state.selectedIconId = 'mary_with_son';
                 }
             } else {
                 state.fontSizePx = (typeof window !== 'undefined' && window.innerWidth < 768) ? 24 : 36;
@@ -739,7 +732,7 @@
                     sourceLang: state.sourceLang,
                     targetLang: state.targetLang,
                     sampleRate: TARGET_SAMPLE_RATE,
-                    model: state.geminiModel || 'gemini-2.5-flash',
+                    model: state.geminiModel || 'gemini-3-flash-preview',
                     enablePolish: true
                 });
                 ws.send(startMsg);
@@ -832,7 +825,7 @@
                     type: 'config',
                     sourceLang: state.sourceLang,
                     targetLang: state.targetLang,
-                    model: state.geminiModel || 'gemini-2.5-flash',
+                    model: state.geminiModel || 'gemini-3-flash-preview',
                     enablePolish: true
                 });
                 streamWs.send(cfgMsg);
@@ -860,7 +853,7 @@
 
             const payload = JSON.stringify({
                 stream: true,
-                model: state.geminiModel || 'gemini-2.5-flash',
+                model: state.geminiModel || 'gemini-3-flash-preview',
                 sourceLang: state.sourceLang,
                 targetLang: state.targetLang,
                 audioBase64: base64Audio,
@@ -1026,7 +1019,7 @@
             return formatGeminiTranslationToHtml(cleanText, targetLang, cleanText);
         }
 
-        const activeModel = state.geminiModel || 'gemini-2.5-flash';
+        const activeModel = state.geminiModel || 'gemini-3-flash-preview';
         const cacheKey = activeModel + ':' + sourceLang + ':' + targetLang + ':' + cleanText;
         if (translationCache.has(cacheKey)) {
             return translationCache.get(cacheKey);
@@ -1557,7 +1550,7 @@
         const modelOptionsHtml = GEMINI_MODELS.map(m => '<option value="' + m.id + '">' + m.label + '</option>').join('');
         const iconOptionsHtml = TARGUMA_ICONS.map(icon => '<option value="' + icon.id + '">' + icon.titleEnglish + '</option>').join('');
         const tabAudioOptionHtml = supportsTabAudioCapture()
-            ? '<option value="tab">Browser Tab Audio (YouTube Test)</option>'
+            ? '<option value="tab">Browser Tab Audio</option>'
             : '';
 
         container.innerHTML = `
@@ -1567,7 +1560,7 @@
                     <div class="targuma-brand-group">
                         <div class="targuma-brand-badge" title="Targuma Live Sermon & Announcement Interpreter">
                             <span class="targuma-live-dot" id="targuma-live-dot"></span>
-                            <span class="ethiopic-label targuma-title-text">ተርጉማ • Targuma</span>
+                            <span class="targuma-title-text">Targuma: Live Translations</span>
                         </div>
                         <button type="button" id="targuma-info-btn" class="targuma-info-btn" title="About Targuma" aria-label="About Targuma">
                             <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
@@ -1596,6 +1589,15 @@
                             <option value="ti">ትግርኛ (Tigrinya)</option>
                             <option value="es">Español (Spanish)</option>
                         </select>
+                    </div>
+
+                    <div class="targuma-caption-size-control">
+                        <label for="targuma-font-slider">Caption Size: <span id="targuma-font-size-val">${state.fontSizePx}px</span></label>
+                        <div class="targuma-slider-wrap">
+                            <button type="button" id="targuma-font-dec" class="targuma-mini-btn" aria-label="Decrease Caption Font Size">A-</button>
+                            <input type="range" id="targuma-font-slider" min="18" max="64" value="${state.fontSizePx}" />
+                            <button type="button" id="targuma-font-inc" class="targuma-mini-btn" aria-label="Increase Caption Font Size">A+</button>
+                        </div>
                     </div>
 
                     <div class="targuma-action-group">
@@ -1634,25 +1636,16 @@
                         </div>
 
                         <div class="targuma-setting-item">
-                            <label for="targuma-lines-select">Visible Clauses</label>
+                            <label for="targuma-lines-select">Visible Lines</label>
                             <select id="targuma-lines-select" class="targuma-select">
-                                <option value="2">2 Clauses</option>
-                                <option value="3">3 Clauses</option>
-                                <option value="4">4 Clauses</option>
+                                <option value="2">2 Lines</option>
+                                <option value="3">3 Lines</option>
+                                <option value="4">4 Lines</option>
                             </select>
                         </div>
 
                         <div class="targuma-setting-item">
-                            <label for="targuma-font-slider">Caption Size: <span id="targuma-font-size-val">${state.fontSizePx}px</span></label>
-                            <div class="targuma-slider-wrap">
-                                <button type="button" id="targuma-font-dec" class="targuma-mini-btn" aria-label="Decrease Caption Font Size">A-</button>
-                                <input type="range" id="targuma-font-slider" min="18" max="64" value="${state.fontSizePx}" />
-                                <button type="button" id="targuma-font-inc" class="targuma-mini-btn" aria-label="Increase Caption Font Size">A+</button>
-                            </div>
-                        </div>
-
-                        <div class="targuma-setting-item">
-                            <label for="targuma-icon-select">Sanctuary Icon</label>
+                            <label for="targuma-icon-select">Icon</label>
                             <select id="targuma-icon-select" class="targuma-select">
                                 ${iconOptionsHtml}
                             </select>
@@ -1660,15 +1653,15 @@
 
                         <div class="targuma-setting-item">
                             <label for="targuma-audio-source-select">Audio Input Source</label>
-                            <select id="targuma-audio-source-select" class="targuma-select" title="Select Microphone, YouTube Browser Tab, or Local Audio File">
-                                <option value="microphone">Live Microphone / Line-In</option>
+                            <select id="targuma-audio-source-select" class="targuma-select" title="Select Device Microphone, Browser Tab Audio, or Audio / Video File">
+                                <option value="microphone">Device Microphone</option>
                                 ${tabAudioOptionHtml}
-                                <option value="file">Audio / Video File Replay</option>
+                                <option value="file">Audio / Video File</option>
                             </select>
                         </div>
 
                         <div class="targuma-setting-item">
-                            <label for="targuma-model-select">Translation Model</label>
+                            <label for="targuma-model-select">Model</label>
                             <div class="targuma-model-stage-controls">
                                 <select id="targuma-model-select" class="targuma-select targuma-model-select" title="Select Gemini Model">
                                     ${modelOptionsHtml}
@@ -1700,9 +1693,7 @@
                 </div>
 
                 <div class="targuma-stage-main" id="targuma-stage-main">
-                    <div class="targuma-status-pill" id="targuma-status-pill">
-                        ${DEFAULT_IDLE_STATUS}
-                    </div>
+                    <div class="targuma-status-pill hidden" id="targuma-status-pill"></div>
 
                     <div class="targuma-captions-viewport" id="targuma-captions-viewport" style="--targuma-font-size: ${state.fontSizePx}px;">
                         <div class="targuma-captions-list" id="targuma-captions-list">
@@ -1829,13 +1820,7 @@
                     fileReplayBar.classList.toggle('hidden', state.audioInputMode !== 'file');
                 }
                 updateTargumaControlsUI();
-                if (state.audioInputMode === 'tab') {
-                    updateStatusBanner('Tab Audio ready — Tap "Capture Tab Audio" and pick your YouTube tab.', 'idle');
-                } else if (state.audioInputMode === 'file') {
-                    updateStatusBanner('Choose a sermon or Miracle of Mary clip below, then tap "Start File Replay".', 'idle');
-                } else {
-                    updateStatusBanner(DEFAULT_IDLE_STATUS, 'idle');
-                }
+                updateStatusBanner('', 'idle');
             });
         }
 
@@ -1979,7 +1964,10 @@
         const statusPill = document.getElementById('targuma-status-pill');
         if (toolbar) toolbar.classList.toggle('hidden', minimized);
         if (restoreBtn) restoreBtn.classList.toggle('hidden', !minimized);
-        if (statusPill) statusPill.classList.toggle('hidden', minimized);
+        if (statusPill) {
+            const hasText = Boolean(statusPill.textContent && statusPill.textContent.trim());
+            statusPill.classList.toggle('hidden', minimized || !hasText);
+        }
     }
 
     function updateStageIcon() {
@@ -2054,8 +2042,10 @@
     function updateStatusBanner(message, statusType) {
         const pill = document.getElementById('targuma-status-pill');
         if (!pill) return;
-        pill.textContent = message;
+        const text = String(message || '').trim();
+        pill.textContent = text;
         pill.dataset.status = statusType || 'idle';
+        pill.classList.toggle('hidden', !text || state.controlsMinimized);
     }
 
     // --- Render Balanced Sanctuary Clause Stage (2–4 Immutable Clauses + Subtle Listening Dots) ---
@@ -2075,8 +2065,8 @@
             listEl.innerHTML = `
                 <div class="targuma-empty-placeholder">
                     <p class="targuma-placeholder-primary">
-                        “Listen, my daughter, and see, and incline your ear”
-                        <span class="ethiopic-label targuma-placeholder-sub">(ስምዒ ወለትየ ወርእዪ ወአጽምዒ እዝነኪ — መዝ ፵፬፡፲)</span>
+                        “Listen, my daughter, and see, and incline your ear” — Psalm 44:10
+                        <span class="ethiopic-label targuma-placeholder-sub">ስምዒ ወለትየ ወርእዪ ወአጽምዒ እዝነኪ — መዝ ፵፬፡፲</span>
                     </p>
                 </div>
                 ${isStreamingActive ? `

@@ -199,7 +199,7 @@ async function translateClauseWithGemini({
   if (!cleanSource) return '';
   if (sourceLang === targetLang) return cleanSource;
 
-  const specKey = ALLOWED_MODELS[modelId] ? modelId : 'gemini-2.5-flash';
+  const specKey = ALLOWED_MODELS[modelId] ? modelId : 'gemini-3-flash-preview';
   const spec = ALLOWED_MODELS[specKey];
   const accessToken = await getVertexAccessToken();
 
@@ -477,7 +477,7 @@ async function handleTargumaHttp(req, res) {
     body = {};
   }
 
-  const requestedModel = ALLOWED_MODELS[body.model] ? body.model : 'gemini-2.5-flash';
+  const requestedModel = ALLOWED_MODELS[body.model] ? body.model : 'gemini-3-flash-preview';
   const modelSpec = ALLOWED_MODELS[requestedModel];
   const sourceLang = LANG_NAMES[body.sourceLang] ? body.sourceLang : 'am';
   const targetLang = LANG_NAMES[body.targetLang] ? body.targetLang : 'en';
@@ -679,7 +679,7 @@ function attachChirp3WebSocketServer(httpServer) {
     let sourceLang = 'am';
     let targetLang = 'en';
     let sampleRate = 16000;
-    let modelId = 'gemini-2.5-flash';
+    let modelId = 'gemini-3-flash-preview';
     let enablePolish = true;
     let isClosed = false;
 
@@ -1013,7 +1013,7 @@ function attachChirp3WebSocketServer(httpServer) {
           sourceLang = LANG_NAMES[msg.sourceLang] ? msg.sourceLang : 'am';
           targetLang = LANG_NAMES[msg.targetLang] ? msg.targetLang : 'en';
           sampleRate = Number(msg.sampleRate) || 16000;
-          modelId = ALLOWED_MODELS[msg.model] ? msg.model : 'gemini-2.5-flash';
+          modelId = ALLOWED_MODELS[msg.model] ? msg.model : 'gemini-3-flash-preview';
           enablePolish = msg.enablePolish !== false;
 
           const bcp47 = CHIRP3_LANG_MAP[sourceLang];

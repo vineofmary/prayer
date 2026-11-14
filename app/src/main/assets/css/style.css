@@ -5987,6 +5987,25 @@ body.targuma-mode-active .main-content {
     flex-wrap: nowrap;
 }
 
+.targuma-caption-size-control {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text-color);
+    white-space: nowrap;
+}
+
+.targuma-caption-size-control label {
+    opacity: 0.88;
+    margin: 0;
+}
+
+.targuma-caption-size-control .targuma-slider-wrap {
+    width: 148px;
+}
+
 .targuma-model-select {
     max-width: 220px;
     text-overflow: ellipsis;
@@ -6218,6 +6237,10 @@ body.targuma-mode-active .main-content {
     min-width: 0;
 }
 
+.targuma-status-pill.hidden {
+    display: none !important;
+}
+
 .targuma-status-pill {
     align-self: center;
     font-size: 0.82rem;
@@ -6284,7 +6307,7 @@ body.targuma-mode-active .main-content {
 }
 
 .targuma-line-previous {
-    opacity: 0.48;
+    opacity: 1;
     font-weight: 400;
     border-left-color: rgba(128, 128, 128, 0.2);
 }
@@ -6407,7 +6430,6 @@ body.targuma-mode-active .main-content {
 
 .targuma-empty-placeholder {
     padding: 1.5rem 1rem 0.65rem;
-    opacity: 0.88;
     text-align: center;
 }
 
@@ -6421,10 +6443,11 @@ body.targuma-mode-active .main-content {
 
 .targuma-placeholder-sub {
     display: block;
-    margin-top: 0.4rem;
-    font-size: 0.94rem;
-    font-style: normal;
-    opacity: 0.85;
+    margin-top: 0.45rem;
+    font-size: inherit;
+    font-style: inherit;
+    color: inherit;
+    opacity: 1;
 }
 
 .targuma-info-modal-content {
@@ -6493,6 +6516,10 @@ body.targuma-mode-active .main-content {
     .targuma-toolbar-primary {
         justify-content: flex-start;
         gap: 0.5rem;
+    }
+    .targuma-caption-size-control {
+        flex-wrap: wrap;
+        max-width: 100%;
     }
     /* Anchor Exit 'X' button cleanly in the top-right corner of the toolbar on mobile */
     .targuma-exit-btn {
