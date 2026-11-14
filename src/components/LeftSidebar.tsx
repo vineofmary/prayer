@@ -5,6 +5,50 @@ export const LeftSidebar: React.FC = () => {
     <aside id="left-sidebar" className="sidebar sidebar-left">
       <div className="settings-panel">
         <div className="setting-group">
+          <div className="title-with-info" style={{ marginBottom: '1rem' }}>
+            <h3>Select Languages</h3>
+            <button
+              type="button"
+              id="select-languages-info-btn"
+              className="info-toggle-btn"
+              title="About Language Translations"
+              aria-label="About Language Translations"
+            >
+              <svg viewBox="0 0 24 24" width="18" height="18">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" />
+              </svg>
+            </button>
+          </div>
+          <div id="language-toggles">
+            {/* Populated dynamically from LANGUAGE_REGISTRY */}
+          </div>
+        </div>
+
+        <div className="setting-group">
+          <h4 className="settings-subtitle">Language Order</h4>
+          <ul id="language-order-list"></ul>
+          <label style={{ marginTop: '1rem', display: 'block' }}>
+            <input type="checkbox" id="show-language-labels" /> <span>Language Labels</span>
+          </label>
+          <button
+            type="button"
+            id="layout-toggle-header"
+            className="settings-button sidebar-layout-toggle-btn"
+            title="Toggle Row/Column Layout"
+            aria-label="Toggle Row/Column Layout"
+            style={{ marginTop: '0.65rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}
+          >
+            <svg className="layout-icon-column" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+              <path d="M4 18h17v-2H4v2zM4 13h17v-2H4v2zM4 6v2h17V6H4z" />
+            </svg>
+            <svg className="layout-icon-row" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20" style={{ display: 'none' }}>
+              <path d="M11 18h2v-2h-2v2zm-4 0h2v-2H7v2zm8 0h2v-2h-2v2zm-8-4h2v-2H7v2zm4 0h2v-2h-2v2zm4 0h2v-2h-2v2zm-8-4h2V8H7v2zm4 0h2V8h-2v2zm4 0h2V8h-2v2zM7 6h2V4H7v2zm4 0h2V4h-2v2zm4 0h2V4h-2v2z" />
+            </svg>
+            <span id="layout-toggle-label">Toggle Row/Column Layout</span>
+          </button>
+        </div>
+
+        <div className="setting-group">
           <h3>Customize Fonts</h3>
           <h4 className="settings-subtitle">Font Preview</h4>
           <div id="font-preview">
@@ -37,37 +81,6 @@ export const LeftSidebar: React.FC = () => {
             <option value="'Merriweather', serif">Classic</option>
             <option value="'Roboto', sans-serif">Basic</option>
           </select>
-        </div>
-
-        <div className="setting-group">
-          <h3>Select Languages</h3>
-          <div id="language-toggles">
-            {/* Populated dynamically from LANGUAGE_REGISTRY */}
-          </div>
-        </div>
-
-        <div className="setting-group">
-          <h4 className="settings-subtitle">Language Order</h4>
-          <ul id="language-order-list"></ul>
-          <label style={{ marginTop: '1rem', display: 'block' }}>
-            <input type="checkbox" id="show-language-labels" /> <span>Language Labels</span>
-          </label>
-          <button
-            type="button"
-            id="layout-toggle-header"
-            className="settings-button sidebar-layout-toggle-btn"
-            title="Toggle Row/Column Layout"
-            aria-label="Toggle Row/Column Layout"
-            style={{ marginTop: '0.65rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}
-          >
-            <svg className="layout-icon-column" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
-              <path d="M4 18h17v-2H4v2zM4 13h17v-2H4v2zM4 6v2h17V6H4z" />
-            </svg>
-            <svg className="layout-icon-row" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20" style={{ display: 'none' }}>
-              <path d="M11 18h2v-2h-2v2zm-4 0h2v-2H7v2zm8 0h2v-2h-2v2zm-8-4h2v-2H7v2zm4 0h2v-2h-2v2zm4 0h2v-2h-2v2zm-8-4h2V8H7v2zm4 0h2V8h-2v2zm4 0h2V8h-2v2zM7 6h2V4H7v2zm4 0h2V4h-2v2zm4 0h2V4h-2v2z" />
-            </svg>
-            <span id="layout-toggle-label">Toggle Row/Column Layout</span>
-          </button>
         </div>
 
         <div className="setting-group">
@@ -185,12 +198,6 @@ export const LeftSidebar: React.FC = () => {
           <div id="unofficial-language-toggles"></div>
         </div>
 
-        <div className="setting-group" id="translations-notes-section">
-          <p className="settings-subtitle" style={{ fontSize: '0.7rem', marginTop: 0, opacity: 0.8, fontWeight: 'normal', fontStyle: 'italic', lineHeight: 1.4 }}>
-            *Includes unofficial translations (generated from English) via Google Translate APIs which require thorough review for theological accuracy, but is an important first step towards future officially approved translations of liturgical prayers.
-          </p>
-        </div>
-
         <div className="setting-group feedback-section">
           <button id="share-link-button" className="settings-button share-button">
             <svg viewBox="0 0 24 24" width="18" height="18" style={{ marginRight: '8px', verticalAlign: 'middle' }}>
@@ -198,7 +205,7 @@ export const LeftSidebar: React.FC = () => {
             </svg>
             <span>Share Link</span>
           </button>
-          <p className="share-hint"><i>Shares all your current settings and filters.</i></p>
+          <p className="share-hint"><i>Copy link to current prayers</i></p>
 
           <button id="share-scriptures-button" className="settings-button share-button" style={{ marginTop: '10px' }}>
             <svg viewBox="0 0 24 24" width="18" height="18" style={{ marginRight: '8px', verticalAlign: 'middle' }}>
@@ -206,16 +213,13 @@ export const LeftSidebar: React.FC = () => {
             </svg>
             <span>Share Link with Scriptures</span>
           </button>
-          <p className="share-hint"><i>Copies link along with all selected Liturgy mode Bible readings to clipboard.</i></p>
+          <p className="share-hint"><i>Copy link to current prayers with readings</i></p>
           <hr className="settings-divider" />
           <button id="feedback-button">Share Feedback</button>
           <button type="button" id="help-button" className="settings-button sidebar-help-btn" title="Help & User Guide" aria-label="Help">
             <span className="help-btn-icon" aria-hidden="true">?</span>
             <span>Help &amp; User Guide</span>
           </button>
-          <div className="scribe-entry-point">
-            <button id="scribe-login-link">Scribe Login</button>
-          </div>
         </div>
 
         <div className="bible-verse-sidebar">
@@ -231,7 +235,11 @@ export const LeftSidebar: React.FC = () => {
             </svg>
             <span>Check for Updates</span>
           </button>
-          <div id="app-version-container">v0.8.5-beta</div>
+          <div className="app-version-meta-row">
+            <div id="app-version-container">v0.8.5-beta</div>
+            <span className="app-version-meta-sep" aria-hidden="true">·</span>
+            <button type="button" id="scribe-login-link">Scribe Login</button>
+          </div>
         </div>
       </div>
     </aside>

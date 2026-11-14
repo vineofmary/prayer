@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#000000">
     <title>The Mount of Mercy | ደብረ ምሕረት</title>
-    <link rel="stylesheet" href="css/style.css?v=41">
+    <link rel="stylesheet" href="css/style.css?v=42">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Abyssinica+SIL&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Lato&family=Roboto&display=swap"
@@ -83,6 +83,36 @@
             <aside id="left-sidebar" class="sidebar sidebar-left">
                 <div class="settings-panel">
                     <div class="setting-group">
+                        <div class="title-with-info" style="margin-bottom: 1rem;">
+                            <h3>Select Languages</h3>
+                            <button type="button" id="select-languages-info-btn" class="info-toggle-btn" title="About Language Translations" aria-label="About Language Translations">
+                                <svg viewBox="0 0 24 24" width="18" height="18">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div id="language-toggles">
+                            <!-- Languages will be injected here dynamically from LANGUAGE_REGISTRY -->
+                        </div>
+                    </div>
+                    <div class="setting-group">
+                        <h4 class="settings-subtitle">Language Order</h4>
+                        <ul id="language-order-list">
+                        </ul>
+                        <label style="margin-top: 1rem; display: block;"><input type="checkbox"
+                                id="show-language-labels"> <span>Language Labels</span></label>
+                        <button type="button" id="layout-toggle-header" class="settings-button sidebar-layout-toggle-btn" title="Toggle Row/Column Layout" style="margin-top: 0.65rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+                            <svg class="layout-icon-column" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                                <path d="M4 18h17v-2H4v2zM4 13h17v-2H4v2zM4 6v2h17V6H4z" />
+                            </svg>
+                            <svg class="layout-icon-row" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20" style="display: none;">
+                                <path d="M11 18h2v-2h-2v2zm-4 0h2v-2H7v2zm8 0h2v-2h-2v2zm-8-4h2v-2H7v2zm4 0h2v-2h-2v2zm4 0h2v-2h-2v2zm-8-4h2V8H7v2zm4 0h2V8h-2v2zm4 0h2V8h-2v2zM7 6h2V4H7v2zm4 0h2V4h-2v2zm4 0h2V4h-2v2z" />
+                            </svg>
+                            <span id="layout-toggle-label">Toggle Row/Column Layout</span>
+                        </button>
+                    </div>
+
+                    <div class="setting-group">
                         <h3>Customize Fonts</h3>
                         <h4 class="settings-subtitle">Font Preview</h4>
                         <div id="font-preview">
@@ -115,29 +145,6 @@
                             <option value="'Merriweather', serif" selected>Classic</option>
                             <option value="'Roboto', sans-serif">Basic</option>
                         </select>
-                    </div>
-
-                    <div class="setting-group">
-                        <h3>Select Languages</h3>
-                        <div id="language-toggles">
-                            <!-- Languages will be injected here dynamically from LANGUAGE_REGISTRY -->
-                        </div>
-                    </div>
-                    <div class="setting-group">
-                        <h4 class="settings-subtitle">Language Order</h4>
-                        <ul id="language-order-list">
-                        </ul>
-                        <label style="margin-top: 1rem; display: block;"><input type="checkbox"
-                                id="show-language-labels"> <span>Language Labels</span></label>
-                        <button type="button" id="layout-toggle-header" class="settings-button sidebar-layout-toggle-btn" title="Toggle Row/Column Layout" style="margin-top: 0.65rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
-                            <svg class="layout-icon-column" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
-                                <path d="M4 18h17v-2H4v2zM4 13h17v-2H4v2zM4 6v2h17V6H4z" />
-                            </svg>
-                            <svg class="layout-icon-row" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20" style="display: none;">
-                                <path d="M11 18h2v-2h-2v2zm-4 0h2v-2H7v2zm8 0h2v-2h-2v2zm-8-4h2v-2H7v2zm4 0h2v-2h-2v2zm4 0h2v-2h-2v2zm-8-4h2V8H7v2zm4 0h2V8h-2v2zm4 0h2V8h-2v2zM7 6h2V4H7v2zm4 0h2V4h-2v2zm4 0h2V4h-2v2z" />
-                            </svg>
-                            <span id="layout-toggle-label">Toggle Row/Column Layout</span>
-                        </button>
                     </div>
 
                     <div class="setting-group">
@@ -251,15 +258,6 @@
                         </div>
                     </div>
 
-                    <div class="setting-group" id="translations-notes-section">
-                        <p class="settings-subtitle"
-                            style="font-size: 0.7rem; margin-top: 0; opacity: 0.8; font-weight: normal; font-style: italic; line-height: 1.4;">
-                            *Includes unofficial translations (generated from English) via Google Translate APIs which
-                            require thorough review for theological accuracy, but is an important first step towards
-                            future officially approved translations of liturgical prayers.
-                        </p>
-                    </div>
-
                     <div class="setting-group feedback-section">
                         <button id="share-link-button" class="settings-button share-button">
                             <svg viewBox="0 0 24 24" width="18" height="18"
@@ -269,7 +267,7 @@
                             </svg>
                             <span>Share Link</span>
                         </button>
-                        <p class="share-hint"><i>Shares all your current settings and filters.</i></p>
+                        <p class="share-hint"><i>Copy link to current prayers</i></p>
                         
                         <button id="share-scriptures-button" class="settings-button share-button" style="margin-top: 10px;">
                             <svg viewBox="0 0 24 24" width="18" height="18"
@@ -279,16 +277,13 @@
                             </svg>
                             <span>Share Link with Scriptures</span>
                         </button>
-                        <p class="share-hint"><i>Copies link along with all selected Liturgy mode Bible readings to clipboard.</i></p>
+                        <p class="share-hint"><i>Copy link to current prayers with readings</i></p>
                         <hr class="settings-divider">
                         <button id="feedback-button">Share Feedback</button>
                         <button type="button" id="help-button" class="settings-button sidebar-help-btn" title="Help & User Guide">
                             <span class="help-btn-icon" aria-hidden="true">?</span>
                             <span>Help &amp; User Guide</span>
                         </button>
-                        <div class="scribe-entry-point">
-                            <button id="scribe-login-link">Scribe Login</button>
-                        </div>
                     </div>
                     <div class="bible-verse-sidebar">
                         <p>“Pray without ceasing”</p>
@@ -303,7 +298,11 @@
                             </svg>
                             <span>Check for Updates</span>
                         </button>
-                        <div id="app-version-container">v0.8.5-beta</div>
+                        <div class="app-version-meta-row">
+                            <div id="app-version-container">v0.8.5-beta</div>
+                            <span class="app-version-meta-sep" aria-hidden="true">·</span>
+                            <button type="button" id="scribe-login-link">Scribe Login</button>
+                        </div>
                     </div>
                 </div>
             </aside>
@@ -342,7 +341,7 @@
                         <div id="seatat-readings-settings"
                             style="display: none; margin-left: 1rem; border-left: 1px solid var(--border-color); padding-left: 0.5rem; margin-bottom: 1rem;">
                             <div class="title-with-info" style="margin-top: 0.25rem; margin-bottom: 0.5rem;">
-                                <h4 class="settings-subtitle" style="margin: 0;">Scripture Readings* for <i>Tselote Se’atat</i></h4>
+                                <h4 class="settings-subtitle" style="margin: 0;">Scripture Readings for <i>Tselote Se’atat</i></h4>
                                 <button id="seatat-info-btn" class="info-toggle-btn"
                                     title="Scripture Readings for Tselote Se’atat">
                                     <svg viewBox="0 0 24 24" width="18" height="18">
@@ -371,11 +370,6 @@
                                             name="seatat-lectionary-day" value="None"> None | አልቦ</label>
                                 </div>
                             </div>
-                            <p class="settings-subtitle lectionary-disclaimer"
-                                style="font-size: 0.75rem; margin-top: 0.5rem; opacity: 0.8;">
-                                *According to the certified <i>Se'atat</i> liturgical tradition of <i>Debre Abay Abune
-                                    Samuel Ze-Waldiba</i> Monastery, for the Prayer—or Liturgy—of the Hours (ጸሎተ ሰዓታት).
-                            </p>
                         </div>
 
                         <label style="display: block; margin-bottom: 0.5rem;"><input type="checkbox"
@@ -548,9 +542,6 @@
                             <label style="display: block; margin-bottom: 0.5rem;"><input type="checkbox"
                                     id="show-supplications-toggle"> <span>Supplications | ምሕላ</span></label>
                         </div>
-                        <div style="font-size: 0.75rem; font-style: italic; opacity: 0.7; margin-top: 0.75rem; text-align: left;">
-                            Note: Theotokia prayers listed are complete in Ge'ez, but are in-progress for other languages.
-                        </div>
                     </div>
                     <div class="setting-group">
                         <div class="title-with-info">
@@ -662,10 +653,21 @@
         <div id="sidebar-backdrop"></div>
         <div id="copy-notification" class="notification">Copied to clipboard!</div>
 
+        <div id="select-languages-info-modal" class="modal">
+            <div class="modal-content" style="max-width: 500px;">
+                <span class="close-button" id="close-select-languages-info-modal">&times;</span>
+                <h3>Language Translations</h3>
+                <p>
+                    *Includes unofficial translations (generated from English) via Google Translate APIs which require thorough review for theological accuracy, but is an important first step towards future officially approved translations of liturgical prayers.
+                </p>
+            </div>
+        </div>
+
         <div id="seatat-info-modal" class="modal">
             <div class="modal-content" style="max-width: 500px;">
                 <span class="close-button" id="close-seatat-modal">&times;</span>
                 <h3>Tselote Se’atat Readings</h3>
+                <p class="modal-top-note">According to the certified <i>Se'atat</i> liturgical tradition of <i>Debre Abay Abune Samuel Ze-Waldiba</i> Monastery, for the Prayer—or Liturgy—of the Hours (<span class="ethiopic-label">ጸሎተ ሰዓታት</span>).</p>
                 <p>These are the appointed Scripture readings for the daily prayers of <i>Tselote Se'atat</i> (Horologion). Selecting a day will automatically insert the appropriate readings into the prayer view.</p>
             </div>
         </div>
@@ -767,6 +769,7 @@
             <div class="modal-content ephrem-story-content">
                 <span class="close-button" id="close-ephrem-modal">&times;</span>
                 <div class="story-body">
+                    <p class="modal-top-note">Note: Theotokia prayers listed are complete in Ge'ez, but are in-progress for other languages.</p>
                     <h2 class="story-inner-title">The Story of Saint Ephrem the Syrian Potter Who Composed the Praise
                         Hymn Called “Weddase Maryam” Over Seven Days</h2>
 
@@ -1027,13 +1030,11 @@
 
                 <div class="help-tab-content">
                     <div id="help-general" class="help-pane active">
-                        <p>This web app is designed to aid Orthodox Christians and catechumens towards a life of
-                            unceasing
-                            prayer. It provides access to essential daily prayers and the Divine Liturgy (Kidasé) in
-                            multiple languages, including Amharic,
-                            English, Ge'ez, Spanish, and Tigrinya with phonetic transliterations to assist in learning
-                            and
-                            pronunciation.</p>
+                        <p>This web app is designed to help bring Orthodox Christians and catechumens towards a life of
+                            unceasing prayer. It provides access to essential daily prayers, Theotokia, Psalms, and the
+                            Divine Liturgy (Kidasé) with lectionary readings in multiple languages, including Amharic,
+                            Coptic, English, French, Ge'ez, Spanish, and Tigrinya with phonetic transliterations to
+                            assist in learning and pronunciation.</p>
                         <h3>📱 Install App to Your Phone</h3>
                         <p>For easy access and offline use, you can install this web app to your mobile home screen:</p>
                         <ul>
@@ -1065,7 +1066,7 @@
                     <div id="help-auspices" class="help-pane">
                         <h3>⛪ Church Hierarchy</h3>
                         <p style="font-size: 0.9rem; opacity: 0.9; line-height: 1.5;">
-                            <strong>Mount of Mercy (ደብረ ምሕረት)</strong> is prepared and maintained by servants of the <strong>Foundation of Life Sunday School (መሰረተ ሕይወት የሰንበት ትምህርት ቤት)</strong> at <strong>Oakland Debre Mihret Saint Michael Ethiopian Orthodox Tewahedo Church (DMKM EOTC)</strong>. We serve within the canonical hierarchy of the EOTC:
+                            This app, <strong>Mount of Mercy (ደብረ ምሕረት)</strong>, is prepared and maintained by servants of the <strong>Foundation of Life Sunday School (መሰረተ ሕይወት የሰንበት ትምህርት ቤት)</strong> at <strong>Oakland Debre Mihret Saint Michael Ethiopian Orthodox Tewahedo Church (DMKM EOTC)</strong>, under the auspices of <strong>His Grace Archbishop Theophilus</strong> in the EOTC Diocese of Northern California, Nevada, and Arizona. We serve within the canonical hierarchy of the EOTC:
                         </p>
 
                         <div class="hierarchy-cards-grid">
@@ -1095,8 +1096,41 @@
                         </div>
 
                         <div class="spiritual-father-attribution-box">
-                            This service is made with love for the glory of God and His saints under the spiritual guidance of <strong>Liqe Siyuman Kesis Nebiyou Elias Abebe</strong>.
+                            This spiritual service is made with love, for the glory of God and His saints, under the spiritual guidance of <strong>Liqe Siyuman Kesis Nebiyou Elias Abebe</strong>, by the sinful and weak servants, Gebre-Selassie, Atsede-Maryam, and Habte-Gabriel. To all previous servants who labored to preserve, compile, translate, and publish the prayers of the Church, we offer our gratitude.
                         </div>
+
+                        <hr class="settings-divider" style="margin: 1.25rem 0;">
+
+                        <h3>📜 Historical Prefaces: “<span class="ethiopic-label">የቤተ ክርስቲያን ጸሎት</span>” (<i>Yä-Betä Krəstiyan Ṣälot</i>)</h3>
+                        <p class="historical-prefaces-intro">
+                            Written when the Ethiopian Orthodox Church first ministered in exile in London, these historical prefaces to one of this app's primary sources speak directly to today's global diaspora—affirming that prayer ought to be offered in languages the faithful understand and empowering the laity, as part of the royal priesthood of creation, to offer daily morning and evening prayers from their homes.
+                        </p>
+
+                        <section class="historical-prefaces-collapsible">
+                            <button type="button" id="toggle-historical-prefaces" class="technical-toggle-btn" aria-expanded="false" aria-controls="historical-prefaces-content">
+                                <span>Read the Introduction to the First Edition &amp; Preface to the Second Edition</span>
+                                <svg class="toggle-icon" viewBox="0 0 24 24" width="20" height="20">
+                                    <path d="M7 10l5 5 5-5z" fill="currentColor" />
+                                </svg>
+                            </button>
+                            <div id="historical-prefaces-content" class="technical-content-pane historical-prefaces-pane collapsed">
+                                <div class="historical-prefaces-controls">
+                                    <div class="historical-prefaces-doc-tabs" role="tablist" aria-label="Select historical document">
+                                        <button type="button" class="historical-doc-tab active" data-preface-doc="intro">Introduction to the First Edition</button>
+                                        <button type="button" class="historical-doc-tab" data-preface-doc="preface">Preface to the Second Edition</button>
+                                    </div>
+                                    <div class="historical-prefaces-lang-tabs" role="group" aria-label="Select language view">
+                                        <button type="button" class="historical-lang-btn active" data-preface-lang="english">English (AI-Translated)</button>
+                                        <button type="button" class="historical-lang-btn ethiopic-label" data-preface-lang="amharic">አማርኛ (Original)</button>
+                                        <button type="button" class="historical-lang-btn" data-preface-lang="side-by-side">Side-by-Side</button>
+                                    </div>
+                                </div>
+                                <p id="historical-prefaces-ai-note" class="historical-prefaces-ai-note">
+                                    <i>Note: The English translation is AI-generated from the original Amharic and Ge'ez text for historical and catechetical reference.</i>
+                                </p>
+                                <div id="historical-prefaces-body" class="historical-prefaces-body"></div>
+                            </div>
+                        </section>
 
                         <hr class="settings-divider" style="margin: 1.25rem 0;">
 
@@ -1134,8 +1168,12 @@
                     </div>
 
                     <div id="help-translations" class="help-pane">
+                        <div class="bible-verse-about patristic-quote-about">
+                            <p>“Action, then, comes by faith, as ‘if you do not believe’, Isaiah says, ‘you will not understand’ (Isaiah 7:9); and the truth brings about faith, for faith is established upon things truly real, that we may believe what really is, as it is, and believing what really is, as it is, we may always keep our conviction of it firm. Since, then, the conserver of our salvation is faith, it is necessary to take great care of it, that we may have a true comprehension of what is.”</p>
+                            <p class="citation">- Saint Irenaeus, Bishop of Lyons (“On the Apostolic Preaching” Preface, Section 3, c. 180 A.D.)</p>
+                        </div>
                         <h3>📖 Translations</h3>
-                        <p>The English translations of the daily and non-eucharistic liturgical prayers in this app are a work-in-progress and not yet formally approved by clergy. They are developed through a rigorous, multi-layered comparative harmonization—anchoring primarily to literal Ge'ez manuscript fidelity while integrating the theological clarity of the 20th-century Amharic tradition and comparative Oriental Orthodox liturgical scholarship, cross-checked directly against original Ge'ez, Amharic, Coptic, and Arabic texts. Sources actively consulted include:</p>
+                        <p>The English translations of the Daily Prayer and Theotokia in this app are a work-in-progress and not yet formally approved by clergy. They are rendered through a process of careful harmonization of the extant English, Ge'ez, Coptic, Amharic, Arabic, and Greek texts (listed below)—preferring to render the literal Ge'ez meaning in plain English wherever possible, so that we may simply 'believe what really is, as it is.' Upon completion, God willing, we hope to offer the Daily Prayer and Theotokia translations compiled in this app to our Bishop, Diocesan Fathers, and Scholars for formal approval.</p>
                         <ul>
                             <li><a href="https://www.ethiopianorthodox.org/amharic/holybooks/yebetekirstian%20tselot%20metshaf.pdf"
                                     target="_blank" rel="noopener noreferrer">“የቤተ ክርስቲያን ጸሎት” (Yä-Betä Krəstiyan Ṣälot)</a>,
@@ -1174,8 +1212,7 @@
                         </ul>
 
                         <h4>Divine Liturgy (Kidasé)</h4>
-                        <p>The liturgical texts are sourced from several authoritative trilingual and bilingual
-                            editions:</p>
+                        <p>The liturgical texts are sourced from several authoritative editions (listed below), with only minor enhancements (e.g., improved punctuations, typo corrections).</p>
                         <ul>
                             <li><strong>Ge'ez, Amharic, & English:</strong> <a
                                     href="https://drive.google.com/file/d/1rJnkR9fMNXvc874SuOMs2Tt1fhG3-8V_/view?usp=drive_link"
@@ -1201,7 +1238,7 @@
                                     target="_blank" rel="noopener noreferrer"><i>“The Liturgy of the Ethiopian
                                         Church”</i></a> by Fr. Marcos Daoud and H.E. Blatta Marsie Hazen, published by
                                 The Egyptian Book Press (Cairo, Egypt 1959).</li>
-                            <li><strong>Miracles of Mary Data & Translations:</strong> <a href="https://pemm.princeton.edu/" target="_blank">Princeton Ethiopian, Eritrean, and Egyptian Miracles of Mary (PEMM) Project</a> (Data via <a href="https://zenodo.org/record/8247393" target="_blank">Zenodo</a>)</li>
+                            <li><strong>Miracles of Mary Data & Translations:</strong> <a href="https://pemm.princeton.edu/" target="_blank" rel="noopener noreferrer">Princeton Ethiopian, Eritrean, and Egyptian Miracles of Mary (PEMM) Project</a> (Data via <a href="https://zenodo.org/record/8247393" target="_blank" rel="noopener noreferrer">Zenodo</a>)</li>
                         </ul>
 
                         <h4>Expanding Horizons</h4>
@@ -1209,7 +1246,7 @@
                             aspire to include unofficial yet reliable translations in <strong>Spanish, Greek, Hebrew,
                                 Aramaic/Syriac, and Armenian</strong> to foster deeper connections across Orthodox
                             traditions.</p>
-                        <p>If you are a scholar, deacon, priest, or coder who wish to collaborate, please contact us at
+                        <p>If you are a scholar, deacon, priest, or coder who wish to collaborate in this liturgical scholarship, please contact us at
                             <strong>KidaseCreator@gmail.com</strong>.
                         </p>
                     </div>
@@ -1225,14 +1262,6 @@
                             <button id="send-feedback-button-help" class="settings-button"
                                 style="width: auto; padding: 0.6rem 2rem;">Send Feedback</button>
                         </div>
-
-                        <p class="disclaimer"
-                            style="margin-top: 2rem; font-size: 0.85rem; opacity: 0.8; font-style: italic;">
-                            This service is made with love for the glory of God and is managed by servants of the
-                            Oakland Debre Meheret Saint Michael Ethiopian Orthodox Tewahedo Church (EOTC) under the
-                            spiritual guidance of Father Nebiyou Elias and under the auspices of His Grace Archbishop
-                            Theophilus in the EOTC Diocese of Northern California, Nevada, and Arizona.
-                        </p>
                     </div>
                 </div>
             </div>
@@ -1634,7 +1663,7 @@
     <script src="js/miracles_of_mary.js"></script>
 
     <!-- UI Interaction and Data Scripts -->
-    <script src="js/script.js?v=55"></script>
+    <script src="js/script.js?v=56"></script>
     <script src="js/targuma_service.js?v=2"></script>
     <script src="js/geez_lexicon.js?v=1"></script>
     <script src="js/learning_service.js?v=5"></script>

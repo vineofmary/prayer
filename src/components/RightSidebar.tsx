@@ -57,7 +57,7 @@ export const RightSidebar: React.FC = () => {
             }}
           >
             <div className="title-with-info" style={{ marginTop: '0.25rem', marginBottom: '0.5rem' }}>
-              <h4 className="settings-subtitle" style={{ margin: 0 }}>Scripture Readings* for <i>Tselote Se’atat</i></h4>
+              <h4 className="settings-subtitle" style={{ margin: 0 }}>Scripture Readings for <i>Tselote Se’atat</i></h4>
               <button id="seatat-info-btn" className="info-toggle-btn" title="Scripture Readings for Tselote Se’atat" aria-label="Scripture Readings for Se'atat info">
                 <svg viewBox="0 0 24 24" width="18" height="18">
                   <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" />
@@ -92,9 +92,6 @@ export const RightSidebar: React.FC = () => {
                 </label>
               </div>
             </div>
-            <p className="settings-subtitle lectionary-disclaimer" style={{ fontSize: '0.75rem', marginTop: '0.5rem', opacity: 0.8 }}>
-              *According to the certified <i>Se'atat</i> liturgical tradition of <i>Debre Abay Abune Samuel Ze-Waldiba</i> Monastery, for the Prayer—or Liturgy—of the Hours (ጸሎተ ሰዓታት).
-            </p>
           </div>
 
           <label style={{ display: 'block', marginBottom: '0.5rem' }}>
@@ -339,9 +336,6 @@ export const RightSidebar: React.FC = () => {
             <label style={{ display: 'block', marginBottom: '0.5rem' }}>
               <input type="checkbox" id="show-supplications-toggle" /> <span>Supplications | ምሕላ</span>
             </label>
-          </div>
-          <div style={{ fontSize: '0.75rem', fontStyle: 'italic', opacity: 0.7, marginTop: '0.75rem', textAlign: 'left' }}>
-            Note: Theotokia prayers listed are complete in Ge'ez, but are in-progress for other languages.
           </div>
         </div>
 

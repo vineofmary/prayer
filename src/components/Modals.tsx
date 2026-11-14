@@ -11,11 +11,25 @@ export const Modals: React.FC = () => {
         Copied to clipboard!
       </div>
 
+      {/* Select Languages Info Modal */}
+      <div id="select-languages-info-modal" className="modal">
+        <div className="modal-content" style={{ maxWidth: '500px' }}>
+          <span className="close-button" id="close-select-languages-info-modal">&times;</span>
+          <h3>Language Translations</h3>
+          <p>
+            *Includes unofficial translations (generated from English) via Google Translate APIs which require thorough review for theological accuracy, but is an important first step towards future officially approved translations of liturgical prayers.
+          </p>
+        </div>
+      </div>
+
       {/* Se'atat Info Modal */}
       <div id="seatat-info-modal" className="modal">
         <div className="modal-content" style={{ maxWidth: '500px' }}>
           <span className="close-button" id="close-seatat-modal">&times;</span>
           <h3>Tselote Se’atat Readings</h3>
+          <p className="modal-top-note">
+            According to the certified <i>Se'atat</i> liturgical tradition of <i>Debre Abay Abune Samuel Ze-Waldiba</i> Monastery, for the Prayer—or Liturgy—of the Hours (<span className="ethiopic-label">ጸሎተ ሰዓታት</span>).
+          </p>
           <p>
             These are the appointed Scripture readings for the daily prayers of <i>Tselote Se'atat</i> (Horologion). Selecting a day will automatically insert the appropriate readings into the prayer view.
           </p>
@@ -27,6 +41,9 @@ export const Modals: React.FC = () => {
         <div className="modal-content ephrem-story-content">
           <span className="close-button" id="close-ephrem-modal">&times;</span>
           <div className="story-body">
+            <p className="modal-top-note">
+              Note: Theotokia prayers listed are complete in Ge&apos;ez, but are in-progress for other languages.
+            </p>
             <h2 className="story-inner-title">
               The Story of Saint Ephrem the Syrian Potter Who Composed the Praise Hymn Called “Weddase Maryam” Over Seven Days
             </h2>
@@ -238,7 +255,7 @@ export const Modals: React.FC = () => {
 
           <div className="help-tab-content">
             <div id="help-general" className="help-pane active">
-              <p>This web app is designed to aid Orthodox Christians and catechumens towards a life of unceasing prayer. It provides access to essential daily prayers and the Divine Liturgy (Kidasé) in multiple languages, including Amharic, English, Ge'ez, Spanish, and Tigrinya with phonetic transliterations to assist in learning and pronunciation.</p>
+              <p>This web app is designed to help bring Orthodox Christians and catechumens towards a life of unceasing prayer. It provides access to essential daily prayers, Theotokia, Psalms, and the Divine Liturgy (Kidasé) with lectionary readings in multiple languages, including Amharic, Coptic, English, French, Ge&apos;ez, Spanish, and Tigrinya with phonetic transliterations to assist in learning and pronunciation.</p>
               <h3>📱 Install App to Your Phone</h3>
               <p>For easy access and offline use, you can install this web app to your mobile home screen:</p>
               <ul>
@@ -261,7 +278,7 @@ export const Modals: React.FC = () => {
             <div id="help-auspices" className="help-pane">
               <h3>⛪ Church Hierarchy</h3>
               <p style={{ fontSize: '0.9rem', opacity: 0.9, lineHeight: 1.5 }}>
-                <strong>Mount of Mercy (ደብረ ምሕረት)</strong> is prepared and maintained by servants of the <strong>Foundation of Life Sunday School (መሰረተ ሕይወት የሰንበት ትምህርት ቤት)</strong> at <strong>Oakland Debre Mihret Saint Michael Ethiopian Orthodox Tewahedo Church (DMKM EOTC)</strong>. We serve within the canonical hierarchy of the EOTC:
+                This app, <strong>Mount of Mercy (ደብረ ምሕረት)</strong>, is prepared and maintained by servants of the <strong>Foundation of Life Sunday School (መሰረተ ሕይወት የሰንበት ትምህርት ቤት)</strong> at <strong>Oakland Debre Mihret Saint Michael Ethiopian Orthodox Tewahedo Church (DMKM EOTC)</strong>, under the auspices of <strong>His Grace Archbishop Theophilus</strong> in the EOTC Diocese of Northern California, Nevada, and Arizona. We serve within the canonical hierarchy of the EOTC:
               </p>
 
               <div className="hierarchy-cards-grid">
@@ -291,8 +308,57 @@ export const Modals: React.FC = () => {
               </div>
 
               <div className="spiritual-father-attribution-box">
-                This service is made with love for the glory of God and His saints under the spiritual guidance of <strong>Liqe Siyuman Kesis Nebiyou Elias Abebe</strong>.
+                This spiritual service is made with love, for the glory of God and His saints, under the spiritual guidance of <strong>Liqe Siyuman Kesis Nebiyou Elias Abebe</strong>, by the sinful and weak servants, Gebre-Selassie, Atsede-Maryam, and Habte-Gabriel. To all previous servants who labored to preserve, compile, translate, and publish the prayers of the Church, we offer our gratitude.
               </div>
+
+              <hr className="settings-divider" style={{ margin: '1.25rem 0' }} />
+
+              <h3>📜 Historical Prefaces: “<span className="ethiopic-label">የቤተ ክርስቲያን ጸሎት</span>” (<i>Yä-Betä Krəstiyan Ṣälot</i>)</h3>
+              <p className="historical-prefaces-intro">
+                Written when the Ethiopian Orthodox Church first ministered in exile in London, these historical prefaces to one of this app&apos;s primary sources speak directly to today&apos;s global diaspora—affirming that prayer ought to be offered in languages the faithful understand and empowering the laity, as part of the royal priesthood of creation, to offer daily morning and evening prayers from their homes.
+              </p>
+
+              <section className="historical-prefaces-collapsible">
+                <button
+                  type="button"
+                  id="toggle-historical-prefaces"
+                  className="technical-toggle-btn"
+                  aria-expanded="false"
+                  aria-controls="historical-prefaces-content"
+                >
+                  <span>Read the Introduction to the First Edition &amp; Preface to the Second Edition</span>
+                  <svg className="toggle-icon" viewBox="0 0 24 24" width="20" height="20">
+                    <path d="M7 10l5 5 5-5z" fill="currentColor" />
+                  </svg>
+                </button>
+                <div id="historical-prefaces-content" className="technical-content-pane historical-prefaces-pane collapsed">
+                  <div className="historical-prefaces-controls">
+                    <div className="historical-prefaces-doc-tabs" role="tablist" aria-label="Select historical document">
+                      <button type="button" className="historical-doc-tab active" data-preface-doc="intro">
+                        Introduction to the First Edition
+                      </button>
+                      <button type="button" className="historical-doc-tab" data-preface-doc="preface">
+                        Preface to the Second Edition
+                      </button>
+                    </div>
+                    <div className="historical-prefaces-lang-tabs" role="group" aria-label="Select language view">
+                      <button type="button" className="historical-lang-btn active" data-preface-lang="english">
+                        English (AI-Translated)
+                      </button>
+                      <button type="button" className="historical-lang-btn ethiopic-label" data-preface-lang="amharic">
+                        አማርኛ (Original)
+                      </button>
+                      <button type="button" className="historical-lang-btn" data-preface-lang="side-by-side">
+                        Side-by-Side
+                      </button>
+                    </div>
+                  </div>
+                  <p id="historical-prefaces-ai-note" className="historical-prefaces-ai-note">
+                    <i>Note: The English translation is AI-generated from the original Amharic and Ge&apos;ez text for historical and catechetical reference.</i>
+                  </p>
+                  <div id="historical-prefaces-body" className="historical-prefaces-body"></div>
+                </div>
+              </section>
 
               <hr className="settings-divider" style={{ margin: '1.25rem 0' }} />
 
@@ -347,8 +413,14 @@ export const Modals: React.FC = () => {
             </div>
 
             <div id="help-translations" className="help-pane">
+              <div className="bible-verse-about patristic-quote-about">
+                <p>
+                  &ldquo;Action, then, comes by faith, as &lsquo;if you do not believe&rsquo;, Isaiah says, &lsquo;you will not understand&rsquo; (Isaiah 7:9); and the truth brings about faith, for faith is established upon things truly real, that we may believe what really is, as it is, and believing what really is, as it is, we may always keep our conviction of it firm. Since, then, the conserver of our salvation is faith, it is necessary to take great care of it, that we may have a true comprehension of what is.&rdquo;
+                </p>
+                <p className="citation">- Saint Irenaeus, Bishop of Lyons (&ldquo;On the Apostolic Preaching&rdquo; Preface, Section 3, c. 180 A.D.)</p>
+              </div>
               <h3>📖 Translations</h3>
-              <p>The English translations of the daily and non-eucharistic liturgical prayers in this app are a work-in-progress and not yet formally approved by clergy. They are developed through a rigorous, multi-layered comparative harmonization—anchoring primarily to literal Ge&apos;ez manuscript fidelity while integrating the theological clarity of the 20th-century Amharic tradition and comparative Oriental Orthodox liturgical scholarship, cross-checked directly against original Ge&apos;ez, Amharic, Coptic, and Arabic texts. Sources actively consulted include:</p>
+              <p>The English translations of the Daily Prayer and Theotokia in this app are a work-in-progress and not yet formally approved by clergy. They are rendered through a process of careful harmonization of the extant English, Ge&apos;ez, Coptic, Amharic, Arabic, and Greek texts (listed below)—preferring to render the literal Ge&apos;ez meaning in plain English wherever possible, so that we may simply &apos;believe what really is, as it is.&apos; Upon completion, God willing, we hope to offer the Daily Prayer and Theotokia translations compiled in this app to our Bishop, Diocesan Fathers, and Scholars for formal approval.</p>
               <ul>
                 <li><a href="https://www.ethiopianorthodox.org/amharic/holybooks/yebetekirstian%20tselot%20metshaf.pdf" target="_blank" rel="noopener noreferrer">“የቤተ ክርስቲያን ጸሎት” (Yä-Betä Krəstiyan Ṣälot)</a>, 2nd Edition, revised by Echegé Gebre-Giyorgis (later Patriarch Abune Basilyos), Liqe Liqawint Gebre-Mesqel, Aleqa Hiruy Eshete, and Memhir Mele&apos;ktu, published by Berhanena Selam Printing Press (Addis Ababa, 1938 AD; 1st Edition compiled by Abba Marqos, commissioned by Emperor Haile Selassie I, London, 1931 AD)</li>
                 <li><i>Legends of Our Lady Mary the Perpetual Virgin and Her Mother Hannâ</i> translated from Ge&apos;ez manuscripts by Sir E. A. Wallis Budge in 1922</li>
@@ -364,14 +436,18 @@ export const Modals: React.FC = () => {
               </ul>
 
               <h4>Divine Liturgy (Kidasé)</h4>
-              <p>The liturgical texts are sourced from several authoritative trilingual and bilingual editions:</p>
+              <p>The liturgical texts are sourced from several authoritative editions (listed below), with only minor enhancements (e.g., improved punctuations, typo corrections).</p>
               <ul>
-                <li><strong>Ge'ez, Amharic, & English:</strong> <i>“መጽሐፈ ቅዳሴ በግእዝ፣ በአማርኛና በእንግሊዝኛ: The Liturgy of the Ethiopian Orthodox Church”</i> published by Tensae Publishing House (Addis Ababa, Ethiopia, 2010).</li>
-                <li><strong>Ge'ez Transcription:</strong> <i>Digitized Liturgical Ge'ez Text</i> transcribed by wandering poetry students (<span className="ethiopic-label">ቆሎ ተማሪ</span> - <i>Qolo Temari</i>) in Bahir Dar, Ethiopia (October 2024).</li>
-                <li><strong>Tigrinya:</strong> <i>“መጽሐፈ ቅዳሴ። በግዕዝ ምስ ምልክቱን በትግርኛን”</i> published by Eritrean Orthodox Tewahdo Synod (Asmera, Eritrea 1993).</li>
-                <li><strong>Arabic & English Translations:</strong> <i>“The Liturgy of the Ethiopian Church”</i> by Fr. Marcos Daoud and H.E. Blatta Marsie Hazen (Cairo, Egypt 1959).</li>
-                <li><strong>Miracles of Mary Data & Translations:</strong> Princeton Ethiopian, Eritrean, and Egyptian Miracles of Mary (PEMM) Project.</li>
+                <li><strong>Ge&apos;ez, Amharic, &amp; English:</strong> <a href="https://drive.google.com/file/d/1rJnkR9fMNXvc874SuOMs2Tt1fhG3-8V_/view?usp=drive_link" target="_blank" rel="noopener noreferrer"><i>“መጽሐፈ ቅዳሴ በግእዝ፣ በአማርኛና በእንግሊዝኛ (Metshafe Kidasie beGe&apos;ez, beAmarigna&apos;na, beEngleezgna): The Liturgy of the Ethiopian Orthodox Church”</i></a> published by Tensae Publishing House (Addis Ababa, Ethiopia, 2010).</li>
+                <li><strong>Ge&apos;ez Transcription:</strong> <a href="https://drive.google.com/drive/folders/1svbvMVFW4GIcEFuonaNHHYwixjAEo3Eg?usp=drive_link" target="_blank" rel="noopener noreferrer"><i>Digitized Liturgical Ge&apos;ez Text</i></a> transcribed by wandering poetry students (<span className="ethiopic-label">ቆሎ ተማሪ</span> - <i>Qolo Temari</i>) in Bahir Dar, Ethiopia (October 2024). Licensed under <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC 4.0</a>.</li>
+                <li><strong>Tigrinya:</strong> <a href="https://drive.google.com/file/d/1MNPhpbj7eUrj7I0-mXXVcja42sF7RbYt/view?usp=drive_link" target="_blank" rel="noopener noreferrer"><i>“መጽሐፈ ቅዳሴ። በግዕዝ ምስ ምልክቱን በትግርኛን (Metshafe Kidasie beGe&apos;ez, mis milktun beTigrignan)”</i></a> published by ኤርትራ ኦርቶዶክስ ተዋሕዶ ሲኖዶስ (Eritrean Orthodox Tewahdo Synod) (Asmera, Eritrea 1993).</li>
+                <li><strong>Arabic &amp; English Translations:</strong> <a href="https://drive.google.com/file/d/1HkR7LD-G517w_5jLuypm9eJl0zNNvZm2/view?usp=drive_link" target="_blank" rel="noopener noreferrer"><i>“The Liturgy of the Ethiopian Church”</i></a> by Fr. Marcos Daoud and H.E. Blatta Marsie Hazen, published by The Egyptian Book Press (Cairo, Egypt 1959).</li>
+                <li><strong>Miracles of Mary Data &amp; Translations:</strong> <a href="https://pemm.princeton.edu/" target="_blank" rel="noopener noreferrer">Princeton Ethiopian, Eritrean, and Egyptian Miracles of Mary (PEMM) Project</a> (Data via <a href="https://zenodo.org/record/8247393" target="_blank" rel="noopener noreferrer">Zenodo</a>)</li>
               </ul>
+
+              <h4>Expanding Horizons</h4>
+              <p>We are actively seeking authoritative translations in <strong>Afaan Oromoo</strong> and aspire to include unofficial yet reliable translations in <strong>Spanish, Greek, Hebrew, Aramaic/Syriac, and Armenian</strong> to foster deeper connections across Orthodox traditions.</p>
+              <p>If you are a scholar, deacon, priest, or coder who wish to collaborate in this liturgical scholarship, please contact us at <strong>KidaseCreator@gmail.com</strong>.</p>
             </div>
 
             <div id="help-beta" className="help-pane">
@@ -382,10 +458,6 @@ export const Modals: React.FC = () => {
                 <textarea id="feedback-textarea-help" placeholder="Enter your feedback here..." style={{ width: '100%', minHeight: '120px', padding: '0.8rem', borderRadius: '8px', border: '1px solid var(--border-color)', background: 'var(--background-color)', color: 'var(--text-color)', marginBottom: '1rem' }}></textarea>
                 <button id="send-feedback-button-help" className="settings-button" style={{ width: 'auto', padding: '0.6rem 2rem' }}>Send Feedback</button>
               </div>
-
-              <p className="disclaimer" style={{ marginTop: '2rem', fontSize: '0.85rem', opacity: 0.8, fontStyle: 'italic' }}>
-                This service is made with love for the glory of God and is managed by servants of the Oakland Debre Meheret Saint Michael Ethiopian Orthodox Tewahedo Church (EOTC) under the spiritual guidance of Father Nebiyou Elias and under the auspices of His Grace Archbishop Theophilus in the EOTC Diocese of Northern California, Nevada, and Arizona.
-              </p>
             </div>
           </div>
         </div>

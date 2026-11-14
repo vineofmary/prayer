@@ -2250,22 +2250,37 @@ body.presentation-mode-slides .hareg-ornament {
 }
 
 /* --- Scribe System Styles --- */
-.scribe-entry-point {
-    margin-top: 3rem; /* Increased spacing */
-    opacity: 0.15;
-    transition: opacity 0.3s ease;
+.app-version-meta-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    flex-wrap: wrap;
 }
-.scribe-entry-point:hover {
-    opacity: 0.8;
+.app-version-meta-sep {
+    font-size: 0.75rem;
+    color: var(--text-color);
+    opacity: 0.35;
+    user-select: none;
 }
 #scribe-login-link {
+    display: inline-block;
     background: none;
     border: none;
     color: var(--text-color);
-    font-size: 0.7rem;
+    font-size: 0.75rem;
+    opacity: 0.4;
     cursor: pointer;
-    text-decoration: underline;
-    padding: 0;
+    text-decoration: none;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    font-family: inherit;
+}
+#scribe-login-link:hover {
+    opacity: 0.9;
+    background-color: var(--hover-color);
+    color: var(--accent-color);
 }
 
 .scribe-login-form {
@@ -2740,7 +2755,7 @@ body.presentation-mode-slides .hareg-ornament {
 }
 
 #app-version-container {
-    display: block;
+    display: inline-block;
     font-size: 0.75rem;
     color: var(--text-color);
     opacity: 0.4;
@@ -2748,7 +2763,7 @@ body.presentation-mode-slides .hareg-ornament {
     padding: 4px 8px;
     border-radius: 4px;
     transition: all 0.2s ease;
-    font-family: var(--english-font-family, serif);
+    font-family: inherit;
 }
 
 #app-version-container:hover {
@@ -8007,4 +8022,186 @@ body.dark-mode .iw-english {
         justify-content: center;
     }
 }
+
+/* --- Patristic Quote, Modal Top Notes & Historical Prefaces --- */
+.patristic-quote-about {
+    margin-top: 0.5rem;
+    margin-bottom: 1.35rem;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    background: var(--hover-color);
+}
+.patristic-quote-about p {
+    line-height: 1.55;
+    font-size: 0.9rem;
+}
+.patristic-quote-about .citation {
+    margin-top: 0.45rem;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.modal-top-note {
+    font-size: 0.82rem;
+    font-style: italic;
+    opacity: 0.85;
+    margin: 0 0 1rem 0;
+    padding: 0.55rem 0.8rem;
+    border-left: 3px solid var(--accent-color);
+    background-color: var(--hover-color);
+    border-radius: 0 6px 6px 0;
+    line-height: 1.45;
+}
+
+#help-modal .modal-content.wide-preface-modal {
+    max-width: 960px;
+    width: 92%;
+}
+
+.historical-prefaces-intro {
+    font-size: 0.88rem;
+    line-height: 1.55;
+    opacity: 0.9;
+    margin-bottom: 0.85rem;
+}
+
+.historical-prefaces-collapsible {
+    margin-bottom: 0.5rem;
+}
+
+.historical-prefaces-pane {
+    padding: 1rem 1.1rem;
+}
+
+.historical-prefaces-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-bottom: 0.85rem;
+}
+
+.historical-prefaces-doc-tabs,
+.historical-prefaces-lang-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    padding: 4px;
+    background: var(--hover-color);
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+}
+
+.historical-doc-tab,
+.historical-lang-btn {
+    flex: 1 1 auto;
+    background: transparent;
+    border: none;
+    color: var(--text-color);
+    padding: 0.45rem 0.65rem;
+    border-radius: 7px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    opacity: 0.75;
+    transition: all 0.2s ease;
+    text-align: center;
+}
+
+.historical-doc-tab:hover,
+.historical-lang-btn:hover {
+    opacity: 1;
+    background: rgba(128, 128, 128, 0.12);
+}
+
+.historical-doc-tab.active,
+.historical-lang-btn.active {
+    opacity: 1;
+    background: var(--accent-color);
+    color: var(--accent-text-color);
+}
+
+.historical-prefaces-ai-note {
+    font-size: 0.78rem;
+    opacity: 0.78;
+    margin: 0 0 0.9rem 0;
+    line-height: 1.4;
+}
+
+.historical-prefaces-body {
+    max-height: 55vh;
+    overflow-y: auto;
+    padding-right: 0.35rem;
+}
+
+.historical-preface-doc-title {
+    color: var(--accent-color) !important;
+    font-size: 1.05rem !important;
+    margin: 0.25rem 0 0.85rem 0 !important;
+}
+
+.historical-preface-subheading {
+    color: var(--accent-color) !important;
+    font-size: 0.95rem !important;
+    margin: 1rem 0 0.4rem 0 !important;
+}
+
+.historical-preface-paragraph {
+    font-size: 0.88rem;
+    line-height: 1.65;
+    margin: 0 0 0.8rem 0;
+}
+
+.historical-preface-note {
+    font-style: italic;
+    opacity: 0.85;
+}
+
+.historical-preface-page-badge {
+    display: inline-block;
+    font-size: 0.74rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    background: var(--hover-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 1px 5px;
+    margin-right: 0.25rem;
+}
+
+.historical-preface-list {
+    font-size: 0.87rem;
+    line-height: 1.55;
+    margin: 0 0 0.85rem 0;
+    padding-left: 1.35rem;
+}
+
+.historical-preface-sbs-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.15rem;
+    padding-bottom: 0.65rem;
+    margin-bottom: 0.65rem;
+    border-bottom: 1px dashed rgba(128, 128, 128, 0.22);
+    align-items: start;
+}
+
+.historical-preface-sbs-row:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.historical-preface-sbs-col .historical-preface-paragraph,
+.historical-preface-sbs-col .historical-preface-list,
+.historical-preface-sbs-col .historical-preface-subheading {
+    margin-bottom: 0;
+}
+
+@media (max-width: 680px) {
+    .historical-preface-sbs-row {
+        grid-template-columns: 1fr;
+        gap: 0.45rem;
+    }
+}
+
 

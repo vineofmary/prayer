@@ -11469,6 +11469,566 @@ function bindHierarchyPortraitLightboxEvents() {
     });
 }
 
+const HISTORICAL_PREFACES_DATA = {
+    intro: {
+        titleEn: 'Introduction to the First Edition',
+        titleAm: 'የመጀመሪያው ድርሰት መግቢያ።',
+        blocks: [
+            {
+                type: 'heading',
+                en: 'Regarding the Order of the Church.',
+                am: 'ስለ ቤተ ክርስቲያን ሥርዓት።'
+            },
+            {
+                type: 'paragraph',
+                en: '"Church" means a gathering place for Christians, a single congregation. In the Church, the Holy Scriptures are read, the Gospel is preached; the mysteries of Baptism and the Eucharist are all performed according to the order of the Gospel; and all priests and laity, with one heart and one spirit, praise their Heavenly Father through Christ (Colossians 3:16).',
+                am: 'ቤተ ክርስቲያን ማለት የክርስቲያን መሰብሰቢያ አንዲት ጉባኤ ማለት ነው። በቤተ ክርስቲያን ቅዱሳት መጻሕፍት ይነበቡባታል፣ ወንጌል ይሰበክባታል፤ ምሥጢራተ ጥምቀትና ምሥጢራተ ቍርባን ሁሉ እንደ ወንጌል ሥርዓት ይሠሩባታል፤ ካህናትም ምእመናንም ሁሉ በአንድ ልብ በአንድ መንፈስ ሆነው ሰማያዊ አባታቸውን እግዚአብሔርን በክርስቶስ ያመሰግኑባታል (ቈላ. ፫፥፲፮)።'
+            },
+            {
+                type: 'paragraph',
+                en: 'This is the benefit of priests and laity gathering and serving in unity in the Church. Our Lord Jesus Christ gave us hope, saying, "Where two or three are gathered together in my name, there am I in the midst of them" (Matthew 18:20). Therefore, the Church is where corporate prayer and corporate thanksgiving are offered; we have not found it written in the books that every person should enter the Church to pray their own individual prayer publicly while others are watching. Therefore, it is written in the Gospel of Matthew: "And when you pray, you shall not be like the hypocrites. For they love to pray standing in the synagogues and on the corners of the streets, that they may be seen by men. Assuredly, I say to you, they have their reward. But you, when you pray, go into your room, pray to your Father who is in the secret place; and your Father who sees in secret will reward you openly." (Matt. 6:5-6). This instructs that one\'s personal prayer should be prayed at home.',
+                am: 'ካህናትና ምእመናን አንድነት በቤተ ክርስቲያን በመሰብሰባቸው በማገልገላቸው የሚያራት ጥቅም ይህ ነው። "ሁለት ወይም ሶስት ሆነው በስሜ ወደተከማቹበት እኔ ከዚያ በመካከላቸው እሆናለሁ" ብሎ ጌታችን ኢየሱስ ክርስቶስ ተስፋ ሰጥቶናል (ማቴ. ፲፰፥፳)። እንኪያስ ቤተ ክርስቲያን የጉባኤ ጸሎትና የጉባኤ ምስጋና ይደረግባታል እንጂ፣ ሰው ሁሉ ለየራሱ ከቤተ ክርስቲያን ገብቶ ሰው እያየው በጉባኤ ሊጸልይ እንዲገባው ከመጻሕፍት ተጽፎ አላገኘንም። ስለዚህም በማቴዎስ ወንጌል እንዲህ ተብሎ ተጽፎአል፤ ‹በጸለይህም ጊዜ እንደ ግብዞች አትሁን በጉባኤ በአደባባይ ማዕዘን ቆመው ይጸልዩ ዘንድ ይወዳሉና ለሰው ሊታዩ ፤ እውነት እነግራችኋለሁ ዋጋቸውን እንደወሰዱ አንተ ግን በጸለይህ ጊዜ ወደ ቤትህ ግባ ደጅህንም ዝጋ ፤ በሥውር ለሚያይህ ለአባትህ ጸልይ በሥውር የሚያይህም አባትህ ዋጋህን በግልጽ ይሰጥሃል።› ብሏል (ማቴ. ፮፥፭-፮)። ይህም የራስን ጸሎት በቤት መጸለይ እንዲገባ ያስረዳል።'
+            },
+            {
+                type: 'paragraph',
+                en: 'In the Ethiopian Church, due to the Ge\'ez language, for a long time, the priests and the people have lived separated in prayer and thanksgiving within the Church. Because all the books were written in the Ge\'ez language, which they did not understand, the people, lacking someone to open it for them, would enter the church and depart praying their own individual prayers. This Ge\'ez language became a reason why the people could not praise with one heart and one mouth, could not hear the reading of the scriptures, could not grow in spiritual knowledge, and could not know the taste of its fruit.',
+                am: 'በኢትዮጵያ ቤተ ክርስቲያን በግዕዝ ቋንቋ ምክንያት ከብዙ ዘመን ጀምሮ ካህናቱና ሕዝቡ በቤተ ክርስቲያን ውስጥ በጸሎትና በምስጋና ተለይተው ይኖራሉ። ሕዝቡ ከካህናቱ ጋራ እግዚአብሔርን እንዳይለምኑና እንዳያመሰግኑ መጻሕፍቱ ሁሉ የተጻፉት በማያውቁት በግዕዝ ቋንቋ ስለ ነበረ የሚከፍትላቸው አጥተው ሕዝቡ ሁሉ ከቤተ ክርስቲያን ገብተው የራሳቸውን ጸሎት እየጸለዩ ይሄዳሉ። ይኸውም ግዕዝ ቋንቋ ሕዝቡ አንድ ልብ አንድ አፍ ሆነው እንዳያመሰግኑ ፤ የመጻሕፍቱንም ንባብ እንዳይሰሙና በመንፈሳዊ አእምሮ እንዳያድጉ የፍሬውንም ጣዕም እንዳያውቁ ምክንያት ሆኖ ይኖር ነበርና ነው።'
+            },
+            {
+                type: 'paragraph',
+                en: 'Our most beloved and honored fathers and brothers, the priests, you know what St. Paul said: that even now, if a language the people do not understand is spoken in the church, it is of no benefit. "How will he who occupies the place of the uninformed say \'Amen\' at your giving of thanks, since he does not understand what you say? For you indeed give thanks well, but the other is not edified." (1 Cor. 14:16-17).',
+                am: 'እጅግ የተወደዳችሁ ክቡራን አባቶቻችንና ወንድሞቻችን ካህናት አሁንም ቢሆን ሕዝብ የማይሰማው ቋንቋ ከቤተ ክርስቲያን ቢነገር ምንም ጥቅም እንደሌለው ቅዱስ ጳውሎስ የተናገረውን ታውቃላችሁ። "ባጠገብህ ቆሞ ያለው ሰው ያልተማረ ስለ ሆነ በአንተ ምስጋና ላይ እንዴት አሜን ይላል የምትለውን አያውቅምና እንድታመሰግንም አልገባውምና እነሆ አንተስ መልካም ታመሰግናለህ የዚያ ሰው ልቡ ግን እንዴት ይረዳል ።" (፩ ቆሮ. ፲፬፥፲፮-፲፯)'
+            },
+            {
+                type: 'paragraph',
+                en: 'Therefore, priests ought to pray, praise, preach, and teach in a language the people understand. The people should also follow the priests in praying and praising. Because the Church is one body and one spirit, there is no separation between the priests and the laity. We are all children of the priesthood and the kingdom. We have all tasted one heavenly grace. St. Peter also said: "But you are a chosen generation, a royal priesthood, a holy nation, His own special people, that you may proclaim the praises of Him who called you out of darkness into His marvelous light" (1 Pet. 2:9).',
+                am: 'ስለዚህም ካህናት ሕዝቡ በሚሰማው ቋንቋ ሊጸልዩና ሊያመሰግኑ ሊሰብኩና ሊያስተምሩ ይገባቸዋል። ሕዝቡም ቀሳውስቱን እየተከተሉ ሊጸልዩና ሊያመሰግኑ ይገባቸዋል። ቤተ ክርስቲያን አንድ አካል አንድ መንፈስ ስለ ሆነች በካህናትና በምእመናን መካከል መለያየት የለም። ሁላችን የክህነትና የመንግሥተ ልጆች ነን። ሁላችን አንዲት ሰማያዊት ጸጋን ቀምሰናል። ቅዱስ ጴጥሮስም እንዲህ ብሏል ፤ «እላንት ግን የተመረጠ የመንግሥትና የክህነት ወገን ናችሁ ፤ የተቀደሰች ዘር ፣ ለርስት የተለየ ሕዝብ ፤ ከጨለማ ወደማይነገር ወደ ብርሃኑ የጠራችሁን የእርሱን ሥራ ትገልጹ ዘንድ ።» (፩ ጴጥ. ፪፥፱)'
+            },
+            {
+                type: 'paragraph',
+                en: 'Therefore, there is no difference between the laity and the priests. "To Him who loved us and washed us from our sins in His own blood, and has made us kings and priests to His God and Father, to Him be glory and dominion forever and ever. Amen." (Rev. 1:6).',
+                am: 'ስለዚህም በምእመናንና በካህናት መካከል ልዩነት የለም። «ነገሥታትና ካህናት ያደረገን ፤ ለአባቱ ለእግዚአብሔር ለርሱም ክብር ምስጋና ይሁን ችሎታም ከዘላላም እስከ ዘላላም ድረስ አሜን ።» (ራእ. ፩፥፮)'
+            },
+            {
+                type: 'heading',
+                en: 'Regarding the Order of Bible Reading.',
+                am: 'ስለ መጽሐፍ ቅዱስ ንባብ ሥርዓት።'
+            },
+            {
+                type: 'paragraph',
+                en: 'We have divided the Bible reading into three parts so that it may be read daily, morning and evening, amidst the prayer. The division is as written below:',
+                am: 'የመጽሐፍ ቅዱስ ንባብ በየቀኑ ጧትና ማታ በጸሎት መካከል ገብቶ እንዲነበብ በሶስት ክፍል አድርገን ከፍለነዋል። አከፋፈሉም ከዚህ በታች እንደ ተጻፈው ነው።'
+            },
+            {
+                type: 'list',
+                ordered: false,
+                en: [
+                    'Books of the Old Testament for the first reading,',
+                    'Books of the New Testament for the second reading,',
+                    'The Gospel for the third reading.'
+                ],
+                am: [
+                    'መጻሕፍተ ብሉያትን ለመጀመሪያ ንባብ፣',
+                    'መጻሕፍተ ሐዲሳትን ለሁለተኛ ንባብ፣',
+                    'ወንጌልን ለሶስተኛ ንባብ፣'
+                ]
+            },
+            {
+                type: 'paragraph',
+                en: 'Observe their arrangement as written below. The Old Testament books are grouped together, and by reading their major sections every morning and evening, the entire set is completed once a year. The New Testament books are also grouped together, and by reading their major sections every morning and evening, they are completed four times a year. The Gospel, read every morning and evening, is completed seven times a year.',
+                am: 'አድርገን ከፍለናቸዋል። የነዚህንም አሠራራቸውን ከዚህ በታች እንደ ተጻፈው ተመልከት። መጻሕፍተ ብሉያት አንድ ወገን ሆነው ታላላቅ ክፍላቸው ጧትና ማታ ዘወትር እየተነበበ ባመት አንድ ጊዜ ይወጣል። መጻሕፍተ ሐዲሳትም አንድ ወገን ሆነው ታላላቅ ክፍላቸው ጧትና ማታ ዘወትር እየተነበበ ባመት አራት ጊዜ ይወጣል። ወንጌል ጧትና ማታ ዘወትር እየተነበበ ባመት ሰባት ጊዜ ይወጣል።'
+            },
+            {
+                type: 'paragraph',
+                en: 'What we call the New Testament books are:',
+                am: 'መጻሕፍተ ሐዲሳትም ያልናቸው፦'
+            },
+            {
+                type: 'list',
+                ordered: false,
+                en: [
+                    'The Acts of the Apostles (Gibre Hawaryat)',
+                    'The 14 Epistles of Paul',
+                    'The 1 Epistle of James',
+                    'The 2 Epistles of Peter',
+                    'The 3 Epistles of John',
+                    'The 1 Epistle of Jude'
+                ],
+                am: [
+                    'የሐዋርያት ሥራ (ግብረ ሐዋርያት)',
+                    'የጳውሎስ ፲፬ መልእክቶች፣',
+                    'የያዕቆብ ፩ መልእክት፣',
+                    'የጴጥሮስ ፪ መልእክቶች፣',
+                    'የዮሐንስ ፫ መልእክቶች፣',
+                    'የይሁዳ ፩ መልእክት - ናቸው።'
+                ]
+            },
+            {
+                type: 'paragraph',
+                en: 'We have arranged these as one group. The Revelation of John, however, we have selectively extracted portions from it to be read on various specific feasts; we did not assign it to be read regularly alongside the New Testament books. However, we have arranged for its entire section to be read on Holy Saturday (Qedame S\'ur) according to the order established in the Gibre Himamat (Book of the Passion).',
+                am: 'እሊህን አንድ ወገን አድርገን ሠርተናቸዋል። የዮሐንስ ራእይ ግን ለልዩ ልዩ በዓላት ይነበብ ዘንድ ከውስጡ ለቅመን አውጥተንለታል እንጂ፣ ዘወትር ከመጻሕፍተ ሐዲሳት ጋራ ሆኖ ይነበብ ዘንድ አልመደብነውም። ነገር ግን መላው ክፍሉ በቅዳሜ ስዑር እንዲነበብ በግብረ ሕማማት እንደ ተሠራው ሥርዓት አድርገን ሠርተነዋል።'
+            },
+            {
+                type: 'paragraph',
+                en: 'If you wish to know the Sunday readings, look at the Sunday readings section. There you will find the chapter and verse of the Bible to be read morning and evening; also, you will find the Misbak (chanted Psalm verse) to be preached on Sunday morning, with the chapter and verse of the Psalm.',
+                am: 'የእሑድ ንባብንም ታውቅ ዘንድ ብትወድ በእሑድ ንባብ ላይ ተመልከት። ከዚያ ጧትና ማታ የሚነበበውን የመጽሐፍ ቅዱስ ምዕራፍና ቁጥር ታገኛለህ፤ ደግሞ እሑድ ጧት የሚሰበከውን ምስባክ፣ የመዝሙሩን ምዕራፍና ቁጥር ታገኛለህ።'
+            },
+            {
+                type: 'paragraph',
+                en: 'If you wish to know the readings for the Holidays, look at the Holiday reading index. You will also find the Misbak preached for each holiday there. You will find the readings for the ordinary days in the daily reading index.',
+                am: 'የበዓላትንም ንባብ ታውቅ ዘንድ ብትወድ በበዓላት ንባብ ማውጫ ተመልከት። በየበዓላቱ የሚሰበከውንም ምስባክ ከዚያ ታገኘዋለህ። የዕለታትንም ንባብ በዕለታት ንባብ ማውጫ ታገኘዋለህ።'
+            },
+            {
+                type: 'paragraph',
+                en: 'Since the order of this book is very clear, it is not difficult to understand; to ensure there is no difficulty in finding the Bible readings, we have extracted and written a reading index for you.',
+                am: 'የዚህ መጽሐፍ ሥርዓቱ በጣም የተገለጸ ስለ ሆነ ማወቁ አያስቸግርም፤ የመጽሐፍ ቅዱስንም ንባብ ለማግኘት እንዳያስቸግር የንባብ ማውጫ አውጥተን ጽፈንላችኋል።'
+            },
+            {
+                type: 'paragraph',
+                en: 'We have done this to the extent that God gave us the strength and ability so that the Bible reading proceeds accurately.',
+                am: 'የመጽሐፍ ቅዱስ ንባብ በትክክል እንዲሄድ እግዚአብሔር ኃይልንና ችሎታን በሰጠን መጠን አደረግን።'
+            },
+            {
+                type: 'paragraph',
+                en: 'From the Psalms of David, without being excessive, readings are done in the morning and evening amidst the prayers. According to the established order, three Psalms or four Psalms should be read. We did this so that the order of prayer would proceed properly.',
+                am: 'ከዳዊትም መዝሙር ሳይበዛ ጧትና ማታ በጸሎት መካከል ይነበባል። እንደ ተወሰነው ሥርዓት ሦስት ሦስት መዝሙር፣ ወይም አራት አራት መዝሙር ይነበብ። እንዲህም ማድረጋችን የጸሎቱ ሥርዓት በትክክል እንዲሄድ ብለን ነው።'
+            },
+            {
+                type: 'paragraph',
+                en: 'Regarding hope and love for our country, Ethiopia, we have selected and extracted psalms written in the Bible and written them for you. Especially, so that our children will not forget our country, Ethiopia, and as a reminder for all priests and laity to remember her in their prayers when they gather in the church for prayer, we have taken the 136th Psalm of David (Psalm 137), which says "By the rivers of Babylon," and made it a psalm for Ethiopia. We have done this because all that was done before has become an example for us. Therefore, listen to what St. Paul said: "For whatever things were written before were written for our learning, that we through the patience and comfort of the Scriptures might have hope" (Romans 15:4). We have written this for you to the extent of the strength and ability God has given us, so behold, receive it in love.',
+                am: 'ስለ ተስፋና ስለ ሀገራችን ፍቅር ስለ ኢትዮጵያም መዝሙር በመጽሐፍ ቅዱስ ተጽፎ ያገኘነውን ለቅመን አውጥተን ጽፈንላችኋል። ይልቁንም ሀገራችንን ኢትዮጵያን ልጆቻችን ሁሉ እንዳይረሱዋት ቀሳውስትና ምእመናን ሁሉ በቤተ ክርስቲያን ስለ ጸሎት በተሰበሰቡ ጊዜ በጸሎታቸው እንዲያስቡዋት ለማሳሰቢያ እንዲሆን ብለን ከዳዊት መዝሙር ፻፴፮ኛውን (መዝ. ፻፴፯) "ውስተ አፍላገ ባቢሎን" የሚለውን ለኢትዮጵያ መዝሙር አድርገን ሠርተነዋል። ይህንንም ማድረጋችን አስቀድሞ የተደረገው ሁሉ ለኛ ምሳሌ ሆኗልና ነው። ስለዚህም ቅዱስ ጳውሎስ የተናገረውን ስሙ፤ «አስቀድሞ የተጻፈው ሁሉ ለእኛ ትምህርት ሊሆን ተጽፎአል፤ በትዕግሥትና በመጻሕፍት ቃል በመጽናናት ተስፋን እናገኝ ዘንድ» ብሏል (ሮሜ ፲፭፥፬)። እኛም ኃይልንና ችሎታን እግዚአብሔር በሰጠን መጠን ጽፈንላችኋልና እነሆ በፍቅር ተቀበሉት።'
+            },
+            {
+                type: 'heading',
+                en: 'The Reading Order Established for the Passion Week (Gibre Himamat).',
+                am: 'በግብረ ሕማማት የተሠራ የንባብ ሥርዓት።'
+            },
+            {
+                type: 'paragraph',
+                en: 'To know the readings of the Passion Week, we have created a Passion Week reading index (Gitzawe) to guide you. From Hosanna (Palm Sunday) to the feast of the Resurrection, we have extracted everything to be read daily and hourly from the Bible and written them by chapter and verse; it can be found there in the Passion Week reading index (Gitzawe). The person looking for it will find the chapter and verse written down. That chapter and verse will lead them to the Bible reading. The Misbak preached from the Psalms of David is also found written in sequence daily and hourly alongside the Passion Week reading.',
+                am: 'የግብረ ሕማማትንም ንባብ ለማወቅ የሚመራ የግብረ ሕማማት ንባብ ማውጫ (ግጻዌ) ሠርተናል። ከሆሳዕና ጀምሮ እስከ ትንሣኤ በዓል በየቀኑ በየሰዓቱ የሚነበበውን ሁሉ ከመጽሐፍ ቅዱስ ውስጥ ለቅመን አውጥተን በየምዕራፉና በየቁጥሩ ጽፈነዋልና፤ ከዚያ ከግብረ ሕማማት ንባብ ማውጫ (ግጻዌ) ይገኛል። የሚመለከተው ሰውም ምዕራፉንና ቁጥሩን ተጽፎ ያገኘዋል። ያም ምዕራፍና ቁጥር ወደ መጽሐፍ ቅዱስ ንባብ ይመራዋል። ከዳዊት መዝሙር የሚሰበከውም ምስባክ በየቀኑ በየሰዓቱ ከግብረ ሕማማት ንባብ ጋራ በተራ ተጽፎ ይገኛል።'
+            },
+            {
+                type: 'paragraph',
+                en: 'The readings for the Monday and Tuesday feasts of Ma\'edot (the days following Easter) are found written in the Passion Week reading index. We made the readings of the Passion Week to be read in Amharic so that our Church might hear and understand the suffering, death, and resurrection that our Lord Jesus Christ accepted on Friday to save the world that was dead in sin, and so that, burning with the love of Christ, she might grow in spiritual knowledge and the true faith.',
+                am: 'ከትንሣኤም በኋላ የሚከተለው የማዕዶት ሰኞና የማክሰኞ በዓል ንባብ በግብረ ሕማማት ንባብ ማውጫ ተጽፎ ይገኛል። የግብረ ሕማማቱም ንባብ ባማርኛ እንዲነበብ ማድረጋችን ጌታችን ኢየሱስ ክርስቶስ በኃጢአት ሞቶ ይኖር የነበረውን ዓለም ለማዳን ብሎ በዕለተ ዓርብ የተቀበለውን መከራውንና ሞቱን ትንሣኤውን ቤተ ክርስቲያናችን እንድትሰማውና እንድታስተውለው በክርስቶስ ፍቅር እየተቃጠለች በመንፈሳዊ ዕውቀትና በእውነተኛው ሃይማኖት እንድታድግ ብለን ነው።'
+            },
+            {
+                type: 'paragraph',
+                en: 'Since the Passion Week reading index is very clear, it is easy to understand and is not difficult. Moreover, there are many admonitions and many homilies ordered to be read within the Passion Week order. These are the books of John Chrysostom. There are also homilies and admonitions of other scholars, and all these should be read during the Passion Week.',
+                am: 'የግብረ ሕማማቱም ንባብ ማውጫ በጣም የተገለጸ ስለ ሆነ ለማስተዋል ቀላል ነውና የሚያስቸግር አይደለም። ደግሞ በግብረ ሕማማት ሥርዓት ውስጥ እንዲነበቡ የታዘዙ ብዙ ተግሣጾች ብዙ ድርሳኖች አሉ። እሊህም የዮሐንስ አፈ ወርቅ መጻሕፍት ናቸው። ደግሞም የሌሎች ሊቃውንት ድርሳኖችና ተግሣጾች ይገኛሉና እሊህ ሁሉ በሰሙነ ሕማማት ሊነበቡ ይገባቸዋል።'
+            },
+            {
+                type: 'heading',
+                en: 'Notice Regarding Holidays.',
+                am: 'ስለ በዓላት ማስታወቂያ።'
+            },
+            {
+                type: 'paragraph',
+                en: 'So that everyone may know the dates on which the holidays fall, we have extracted them from the Synaxarium (Senksar) according to its written order and written them by their names in the holidays section. On the day of a holiday, the ordinary reading is not assigned. This is because the holiday reading has been specially written along with its Misbak, with the intention that the holiday reading should be read. However, in the holiday index, if there is no specific reading assigned for the holiday, the reading from the ordinary daily index is read for it.',
+                am: 'በዓላት የሚውሉበትን ቀን ሰው ሁሉ እንዲያውቀው በማለት በስንክሳር እንደ ተጻፈው ሥርዓት ከስንክሳር ውስጥ ለቅመን አውጥተን በበዓላት ክፍል ውስጥ በየስማቸው ጽፈናቸዋል። በዓል በሆነበት ቀን የዘወትር ንባብ አልተሠራም። ምክንያቱም የበዓላት ንባብ ከነምስባኩ በተለይ ተጽፎአልና የበዓሉ ንባብ እንዲነበብ በማለት ነው። ነገር ግን በበዓላት ግጻዌ ለበዓሉ በተለይ የተሠራለት ምንባብ ባልኖረ ጊዜ ከዘወትሩ የዕለታት ግጻዌ ይነበብለታል።'
+            }
+        ]
+    },
+    preface: {
+        titleEn: 'Preface to the Second Edition',
+        titleAm: 'የሁለተኛው ድርሰት መቅድም ።',
+        blocks: [
+            {
+                type: 'paragraph',
+                page: 'Page 5',
+                en: 'Preface to the Second Edition. This prayer book has been compiled according to the law of the Fathers, so that the faithful may pray the morning and evening prayers in the church. Prayer means the word by which a person communicates with their Creator in faith, praising their Creator and begging for the forgiveness of sins. (Fetha Negest, Article 14, page 105).',
+                am: 'የሁለተኛው ድርሰት መቅድም። ይህ የጸሎት መጽሐፍ እንደ አበው ሕግ፣ ምእመናን የጧቱንና የማታውን ጸሎት በቤተ ክርስቲያን እንዲጸልዩበት ተሠርቷል። ጸሎት ማለት፣ ሰው ፈጣሪውን እያመሰገነና ሥርየተ ኃጢኣትን እየለመነ በሃይማኖት ከፈጣሪው ጋር የሚነጋገርበት ቃል ነው። (ፍ. ነገ. አን. ፲፬ ገጽ ፻፭።)'
+            },
+            {
+                type: 'paragraph',
+                en: 'The ancient fathers established an order for the faithful to pray every day at the 7 hours. The 7 hours are Negih (Morning), Selest (Third Hour), Keter (Noon), Tesiyat (Ninth Hour), Serk (Evening), Niwam (Compline/Sleep), and Menfeke Lelit (Midnight). Separated from these, it is permitted for the faithful to offer the prayer in the morning (Negih) and in the evening (Serk) in their homes or at the places where they hold their duties. For the priests, apart from this, there is another specially commanded order of prayer. Therefore, this book has been prepared to be a prayer manual for the laity.',
+                am: 'ምእመናን ሁለቀን በ፯ቱ ጊዜያት እንዲጸልዩ የቀድሞ አባቶች ሥርዓት ሠርተዋል። ፯ቱ ጊዜያት የሚባሉትም ነግህ፣ ሠለስት፣ ቀትር፣ ተሲያት፣ ሠርክ፣ ንዋም፣ መንፈቀ ሌሊት ናቸው። ከነዚህም ተለይቶ በነግህና በሠርክ ግን ምእመናን በቤታቸው፣ ወይም ተግባር በያዙላት ሥፍራ ሆነው ጸሎቱን (አቈጻሮውን) እንዲያደርሱ ተፈቅዷል። ለካህናትም ከዚህ በቀር ሌላ በተለይ የታዘዘ የጸሎት ሥርዓት አላቸው። ስለዚህም ይህ መጽሐፍ ለምእመናን መጸለያ እንዲሆን ተሠርቷል።'
+            },
+            {
+                type: 'paragraph',
+                en: 'The origin of this matter is as follows. In the year 1928 A.M. [1935/1936 AD] (which was the 6th year of the reign of Haile Selassie I), the Italian government, transgressing international law, unjustly initiated a war of aggression against Ethiopia. The Ethiopians, saying "Our God is our strength and our refuge," after the aggressive government (Italy) brought weapons that fly in the sky and roll on the ground and fought for 7 months... unable to succeed, began an illegal war, scattering poison gas prohibited by international law.',
+                am: 'የዚህም ጥንተ ነገሩ እንደሚከተለው ነው። በ፲፱፻፳፰ ዓ. ም. (ይኸውም ፮ኛ የቀዳማዊ ኃይለ ሥላሴ ዘመነ መንግሥት ነው።) የኢጣልያ መንግሥት ከዓለም ሕግ ተላልፎ በኢትዮጵያ ላይ ያለፍትሕ በግፍ ጦርነት አነሣ። ኢትዮጵያውያንም አምላክነሰ ኃይልነ ወፀወንነ እያሉ በግፍ የተነሣው መንግሥት (ኢጣልያ) በሰማይ የሚበረውን በምድር የሚሽከረከረውን መሣሪያ አምጥቶ ፯ ወር ከተዋጋ በኋላ ለማድረግ ባይሆንለት በዓለም ሕግ የተከለከለውን የመርዝ ጭስ እየበተነ የሕገ ወጥነት ጦርነት ያደርግ ጀመረ።'
+            },
+            {
+                type: 'paragraph',
+                en: 'As a result, when the attacks of the lawless enemy increased, to make the governments of the world aware of the injustice, the Emperor, taking a few of the nobles and scholars, crossed over to England. The rest of the Ethiopian people, organizing various leaders, began to defend their faith and freedom from the valleys and hills. The remaining people in the countryside and the city, due to old age or weakness, lived fighting an internal struggle, serving through prayer, counsel, and compassion.',
+                am: 'ከዚህ የተነሣ የዐላዊው ጠላት አጥቂነት ቢበዛ ግፉን ለዓለም መንግሥታት ለማስገንዘብ ንጉሠ ነገሥቱ ከባላባቶችና ከሊቃውንቱ ጥቂቶቹን ይዘው ወደ እንግሊዝ አገር ተሻገሩ። የቀረውም የኢትዮጵያ ሕዝብ አንዳንድ መሪ እያበጀ በየሸለቆውና በየኮረብታው ሆኖ ለሃይማኖቱና ለነፃነቱ ይከራከር ጀመር። በአርጅና ወይም በድካም ከገጠርና ከከተማ የቀረውም ሕዝብ በጸሎት፣ በምክር፣ በእዝናት እያገለገሉ ውስጣዊ ተጋድሎ ሲጋደሉ ኖሩ።'
+            },
+            {
+                type: 'paragraph',
+                en: 'The invading government began to advance and continue its atrocities only in areas accessible by motor roads. Because of this, churches were burned, and priests and laity were killed by bombs and bullets.',
+                am: 'ወራሪው መንግሥት የመኪና መንገድ በሚገኝባቸው አገሮች ብቻ ገብቶ የግፍ ሥራውን እየቀጠለ ይሄድ ጀመር። ከዚህም የተነሣ አብያተ ክርስቲያናት ተቃጠሉ፣ ካህናትና ምእመናን በቦምብ በጥይት ተገደሉ።'
+            },
+            {
+                type: 'paragraph',
+                page: 'Page 6',
+                en: 'Especially on Yekatit 12, 1929 A.M. [February 19, 1937 AD], an unprecedented massacre of people took place. The lawless (cursed) Graziani gathered the city\'s population in Addis Ababa by decree, and finding an excuse like the ancient Caesar Nero, began to have all the people slaughtered. The blood of innocent people flowed like a flood; and he burned the city. Because he ordered the people of the provinces to be killed, priests, deacons, children, elders, women, and widows were indiscriminately massacred everywhere; mothers and fathers with their children, teachers with their disciples were killed.',
+                am: 'ይልቁንም በየካቲት ፲፪ ቀን ፲፱፻፳፱ ዓ.ም. ከልክ ያለፈ የሰው እልቂት ተደረገ። ዕልው (ርጉም) ግራዚያኒ በአዲስ አበባ ላይ የከተማውን ሕዝብ በዓዋጅ ሰብስቦ እንደ ዱሮው እንደ ኔሮን ቄሣር ሰበብ ፈልጎ ሕዝቡን ሁሉ ያስፈጅ ጀመረ። የንጹሕ ሕዝብ ደም እንደ ጐርፍ ፈሰሰ ፤ ከተማውንም አቃጠለው። የየአውራጃውም ሕዝብ እንዲገደል ስላዘዘ ቄስ፣ ዲያቆን፣ ሕፃን፣ ሸማግሌ፣ ሴት፣ ባልቴት ፤ ሳይመረጥ በያለበት ይጨፈጨፍ ጀመር ፤ እናትና አባት ከነልጆቻቸው ፤ መምህራን ከነደቃ መዛሙርቶቻቸው ተገደሉ።'
+            },
+            {
+                type: 'paragraph',
+                en: 'Half were burned in the fire with their house doors locked. Half were torn apart by bombs wherever they were. Those who survived death were taken to exile where they lived in agony.',
+                am: 'ግማሹ በየቤቱ በር እየተዘጋበት በእሳት ነደደ። ግማሹም ደግሞ በያለበት በቦምብ ተቀረደደ። ከሞት የተረፈውም በሥቃይ ወደሚኖርበት ወደ ግዞት ተወሰደ።'
+            },
+            {
+                type: 'paragraph',
+                en: 'The number of Ethiopians killed everywhere by the order of the lawless government is estimated at up to 150,000. As an example, we will write below a few of the martyrs killed during this era of the lawless:',
+                am: 'በዐላዊው መንግሥት ትእዛዝ በያገሩ የተገደሉት የኢትዮጵያውያን ቁጥር እስከ ፻፶ ሺህ ድረስ ተሸልጓል። በዚሁ በዘመነ ዐላውያን የተገደሉትን ሰማዕታት ለምሳሌ ጥቂቶቹን ከዚህ ቀጥለን እንጽፋቸዋለን።'
+            },
+            {
+                type: 'list',
+                ordered: false,
+                en: [
+                    'On Hamle 22, 1928 A.M. [July 29, 1936 AD], the Bishop of Wollo, Abune Petros, witnessing to his Orthodox faith, was martyred in the market in Addis Ababa where the people were gathered.',
+                    'On Hidar 21, 1929 A.M. [November 30, 1936 AD], the Bishop of Illubabor, Abune Mikael, was killed while teaching the Gospel in his diocese in Gore.',
+                    'On Ginbot 12, 1929 A.M. [May 20, 1937 AD], the monks of Debre Libanos, saying "We believe in Christ our God" and witnessing to their faith, were crowned with martyrdom. The monastery was also looted.',
+                    'On Ginbot 28, 1929 A.M. [June 5, 1937 AD], the priests of Debre Bisrat Zena Markos were martyred. The Abbot, Memhir Wolde Mikael, was also killed within the church compound while teaching the Gospel. The survivors were taken to a harsh place of exile and tortured.',
+                    'On Sene 24, 1929 A.M. [July 1, 1937 AD], the Asebot Monastery was looted. The monks were killed and tortured. Those who survived death were taken to a harsh place of exile.',
+                    'On Hidar 25, 1930 A.M. [December 4, 1937 AD], the priests of Addis Alem were killed. The rest of Graziani\'s deeds and the atrocities of the Italians are found written in the chronicles of Ethiopian history.'
+                ],
+                am: [
+                    'ሐምሌ ፳፪ ቀን ፲፱፻፳፰ ዓ. ም. የወሎ ጳጳስ አቡነ ጴጥሮስ ኦርቶዶክሳዊት ሃይማኖታቸውን እየመሰከሩ ሕዝብ በተሰበሰበበት በአዲስ አበባ ገበያ ውስጥ በሰማዕትነት ተገደሉ።',
+                    'በኅዳር ፳፩ ቀን ፲፱፻፳፱ ዓ. ም. የኢሉባቡር ጳጳስ አቡነ ሚካኤል በሀገረ ስብከታቸው በጎሬ ወንጌልን ሲያስተምሩ ተገደሉ።',
+                    'በግንቦት ፲፪ ቀን ፲፱፻፳፱ ዓ. ም. የደብረ ሊባኖስ መነኰሳት ነአምን በክርስቶስ አምላክነ እያሉ ሃይማኖታቸውን እየመሰከሩ በሰማዕትነት ተከለሉ። ገዳሙም ተበረበረ።',
+                    'በግንቦት ፳፰ ቀን ፲፱፻፳፱ ዓ. ም. የደብረ ብሥራት ዚና ማርቆስ ካህናት በሰማዕትነት ተገደሉ። አበ ምኔቱ መምህር ወልደ ሚካኤልም ወንጌልን ሲያስተምሩ በቤተ ክርስቲያኑ ቅጽር ውስጥ ተገደሉ። የተረፉትም ወደ ክፉ የግዞት ቦታ ተወስደው ተሣቀዩ።',
+                    'በሰኔ ፳፬ ቀን ፲፱፻፳፱ ዓ. ም. የአሰቦት ገዳም ተበረበረ። መነኮሳቱ ተገደሉ፣ ተሣቀዩ። ከሞት የተረፉትም ወደ ክፉ የግዞት ቦታ ተወሰዱ።',
+                    'በኀዳር ፳፭ ቀን ፲፱፻፴ ዓ. ም. የአዲስ ዓለም ካህናት ተገደሉ። የቀረው የግራዚያኒ ሥራውና የኢጣሊያኖች ግፍ በኢትዮጵያ ዜና ዘመን ተጽፎ የሚገኝ ነው።'
+                ]
+            },
+            {
+                type: 'paragraph',
+                en: 'Now let us return to our original topic. After His Imperial Majesty Emperor Haile Selassie I went to England, the order of prayer and the Eucharist that used to be performed in Ethiopia...',
+                am: 'እንግዴህ ወደ ጥንተ ነገራችን እንመለስ። ግርማዊ ንጉሠ ነገሥት ቀዳማዊ አጼ ኃይለ ሥላሴ ወደ እንግሊዝ አገር ከሄዱ በኋላ በኢትዮጵያ ይደረግ የነበረው ሥርዓተ ጸሎትና ቊርባን...'
+            },
+            {
+                type: 'paragraph',
+                page: 'Page 7',
+                en: '...because of His thought that [the prayers] and Eucharist should not be lacking, even though it was a time of exile, since exile and distress, pain and death, sorrow and imprisonment, war and plague cannot hinder the love of Christ, so that the exiled faithful, remaining steadfast in His love, might continue to beseech Christ the God of peace just as they did in times of peace, saying "Stir up Your power, and come and save us, O God of hosts, restore us," and be comforted from their tribulation, He [the Emperor] wrote the following message by his own hand and sent it to Jerusalem to His Beatitude Echege Gebre Giorgis. The word is as follows:',
+                am: '...እንዳይጐድል ከማሰባቸው የተነሣ ምንም እንኳ የስደት ጊዜ ቢሆን የክርስቶስን ፍቅር ስደትና ጭንቀት፣ ሕማምና ሞት፣ ኀዘንና እሥራት ጦርና መቅሠፍት ሊያግደው አይችልምና በዚያ የተሰደዱ ምእመናን በፍቅሩ ጸንተው በሰላም ጊዜ ይለምኑት የነበረውን አምላከ ሰላም ክርስቶስን እንዲሁ በስደታቸው ጊዜ “አንሥእ ኃይለከ ወነዓ አድኅነነ አምላከ ኃያላን ሚጠነ” እያሉ እንዲለምኑና ከመከራቸውም እንዲጽናኑበት ስላሰቡ ከዚህ የሚከተለውን መልእክት በጃቸው ጽፈው ወደ ኢየሩሳሌም ለብፁዕ እጨጌ ገብረ ጊዮርጊስ ላኩላቸው። ቃሉም ይህ የሚከተለው ነው።'
+            },
+            {
+                type: 'note',
+                en: '(His Majesty\'s message was written only in Amharic. But now, we have translated it into Ge\'ez and written it together to honor the language of the clergy and for the sake of remembrance.)',
+                am: '(የግርማዊነታቸው መልእክት የተጻፈው በአማርኛ ብቻ ነበር። አሁን ግን ወደ ግዕዝ ተርጕመን በአንድነት መጻፋችን የቤተ ክህነትን ቋንቋ ስለ ማክበርና ለዝክረ ነገር እንዲሆን በማለት ነው።)'
+            },
+            {
+                type: 'paragraph',
+                en: 'Conquering Lion of the Tribe of Judah, Haile Selassie I, Elect of God, King of Kings of Ethiopia. May it reach my blessed father, Echege Gebre Giorgis.',
+                am: 'ሞዓ አንበሳ ዘእምነገደ ይሁዳ ቀዳማዊ ኃይለ ሥላሴ ሥዩመ እግዚአብሔር ንጉሠ ነገሥት ዘኢትዮጵያ። ይድረስ ከብፁዕ አባቴ ከእጨጌ ገብረ ጊዮርጊስ። (ለአብ ብፁዕ እጨጌ ገብረ ጊዮርጊስ።)'
+            },
+            {
+                type: 'paragraph',
+                en: 'How have you been? We, thank God, are well. As for our current situation, we are thinking of you, there is nothing causing us worry here. Rather, our presence here—sending our envoys to the meetings held from time to time in Geneva as permitted to us—is our main aid for the cause for which we came. Having understood that it is necessary to stay here and listen until the judgment of our Creator concludes the Ethiopian cause, we have determined to remain here in England until we know the definitive judgment of our Creator.',
+                am: 'እንደምን ሰንብተዋል እኛ እግዚአብሔር ይመስገን ደኅና ነን። (ሰላም ለከ፤ ወንሕነኒ ንሀሉ በሰላም ስብሐት ለእግዚአብሔር።) እስካሁንም ባለነው አኳኋን የምናስበው ለናንተ ነው እንጂ ወደኛ ምንም የሚያሳስብ የለም። (ወበእንተ ሀልዎትነሂ ዘይእዜ አልቦ ጻሕቅ በኀቤነ ዘእንበለ ዳዕሙ ንጽሕቅ ለክሙ።) ይልቁንም የኛ እዚህ መሆን በየጊዜው ጀኔቭ በሚደረገው ስብሰባ በፈቀድልን የኛን መልእክተኞቻችንን መላክ ለመጣንበት ጕዳይ ዋና ረዳታችን ስለ ሆነ (ወሀልዎትነሂ ዘዝየ እመ ተበዋሕነ ወእመኒ ኢተበዊሕነ ከመ ንፈኑ መልእክተነ ውስተ ዘጉባኤ ዘይትገበር በበጊዜሁ በጀኔቭ ባቁዕ ጥቀ ለግብረ ነገር ዘመጻእነ ቦቱ።) የፈጣሪያችን ፍርድ የኢትዮጵያን ጕዳይ እስካጠቃለለልን ድረስ እዚሁ ሆኖ ማዳመጥ የሚያስፈልግ መሆኑን ስለ ተረዳነው የፈጣሪያችንን ቁርጥ ፍርድ እስክናውቅ ድረስ በዚሁ በእንግሊዝ አገር ለመቆየት ቈርጠናል። (ወበእንተዝ በዘአእመርነ ከመ ጥቀ መፍቅድ ንንበር ዝየ ወናጽምዕ ዘይከውን፤ ዐቀምነ ምክረ ኅሉቀ ወምቱረ ለነቢር በዛቲ ሀገር ዘእንግልጣር፤ እስከ አመ ይትከሠት ውሳኔ ምክሩ ለአምላክነ፤ ወዓዲ እስከ አመ ያስተራትዕ ለነ ኵሎ መፍቅዳ ለኢትዮጵያ ፍትሐ መዊዖቱ ለአምላክነ።)'
+            },
+            {
+                type: 'paragraph',
+                page: 'Page 8',
+                en: 'Until the day the grace of God permits and releases us to come to Jerusalem, so that we may not suffer spiritual hardship and so that our growing children may not lose the foundation of their faith, I have sent Abba Hanna to bring one Tabot of the Covenant and 5 monks, along with the necessary sacred vessels and books given to him. Consult with Memhir Gerima and ensure they are sent to us so that they arrive before the beginning of the Great Lent.',
+                am: 'የእግዚአብሔርም ቸርነት ፈቅዶልንና አሰናብቶን ወደ ኢየሩሳሌም እስከምንመጣበት ቀን ድረስ የሃይማኖት ችግር እንዳያገኘን የሚያድጉትም ልጆቻችን የሃይማኖታቸውን መሠረት እንዳያጡት አስበን አንድ የኪዳን ጽላትና ፭ መነኰሳት የሚያስፈልጉትን ንዋየ ቅድሳትና መጻሕፍት ሰጥተውት ይዞ እንዲመጣ አባ ሐናን ልኬዋለሁና ከመምህር ገሪማ ጋር ተመካክራችሁ ዐቢይ ጾም ሳይገባ እንዲደርስ አድርጋችሁ እንድትልኩልን ይሁን። (ወናሁ ፈነውክዎ ለአባ ሐና ከመ ያምጽእ ለነ ፩ደ ጽላተ ሕግ ዘኪዳን ምስለ ፭ቱ መነኰሳት፤ ወዓዲ መጻሕፍተ ወንዋየ ቅድሳት በእንተ ዘጽሕቅነ ከመ ኢይብጻሕ ብነ ዕፀበ ሃይማኖት፤ ወደቂቅነሂ ወራዙት ከመ ኢያንቀልቅሉ እመሠረተ ሃይማኖቶሙ፤ እስከ ዕለት ዘንበጽሕ ባቲ ኀበ ኢየሩሳሌም በሠርሖተ ፈቃዱ ለእግዚአብሔር፤ ወበተሰናእዎትከ ምስለ አባ ገሪማ አስተፋጥን ከመ ትፈኑ ለነ እምቅድመ በእተ ጾም ዐቢይ።)'
+            },
+            {
+                type: 'paragraph',
+                en: 'For our people who are exiled along our borders in foreign territories, it is likely necessary to send someone likewise; so consult on this, select a willing monk, and wait until we notify you. Tir 13, 1929 A.M. [January 21, 1937 AD], London.',
+                am: 'በየጠረፋችንም ተሰደው በሰው ግዛት ላሉትም ሰዎቻችን እንደዚሁ ሰው መላክ አስፈላጊ ሳይሆን አይቀርምና እየተመካከራችሁበትና ፈቃዱ የሚሆን መነኵሴ እየመረጣችሁ እስክናስታውቃችሁ ድረስ መጠበቅ ነው። (ወከማሁ ለሕዝብነሂ ስዱዳን እለ ውስተ ብሔረ ባዕድ ዮጊ ይትፈቀድ ከመ ንፈኑ ሎሙ ብእሴ መምህረ። ወበእንተዝ ኅረዩ መነኰሰ ፈቃዳዌ በሥምረት ወበተሰናእም፤ ወእምከመ ረትዐትክሙ ይደሉ ትጽንሕዋ ለመልእክት ዘንሕነ ናኤምረክሙ።) ጥር ፲፫ ቀን ፲፱፻፳፱ ዓ. ም. ሎንዶን። (ተጽሕፈ አመ ፲ወ፫ ለጥር በ፲፻ወ፱፻፳ወ፱ ዓ.ም. ሎንዶን።)'
+            },
+            {
+                type: 'paragraph',
+                en: 'After His Beatitude Echege Gebre Giorgis received this message from His Imperial Majesty, he entrusted a Tabot named after the Savior of the World (Medhane Alem) into the hands of five monks, added the sacred vessels and books necessary for the Eucharist and prayer, and immediately sent them with haste to England. The names of the five monks are as follows:',
+                am: 'ብፁዕ እጨጌ ገብረ ጊዮርጊስም ይህ የግርማዊ ጃንሆይ መልእክት ከደረሰላቸው በኋላ በስመ መድኃኔ ዓለም የተጠራ ጽላት በአምስት መነኰሳት እጅ አስይዘው ለቍርባንና ለጸሎት የሚያስፈልጉትን ንዋያተ ቅድሳትና መጻሕፍት ጨምረው ወዲያው አፍጥነው ወደ እንግሊዝ አገር ላኩ። የአምስቱ መነኰሳትም ስም የሚከተለው ነው።'
+            },
+            {
+                type: 'list',
+                ordered: true,
+                en: [
+                    'Memhir Gebre Iyesus, monk and Qomos.',
+                    'Abba Hanna, monk.',
+                    'Abba Markos, monk.',
+                    'Abba Haile Buruk, monk.',
+                    'Abba Gebre Maryam, monk.'
+                ],
+                am: [
+                    '፩ኛ መምሕር ገብረ ኢየሱስ መነኰስ ወቆሞስ ።',
+                    '፪ኛ አባ ሐና መነኰስ ።',
+                    '፫ኛ አባ ማርቆስ መነኰስ ።',
+                    '፬ኛ አባ ኃይሌ ቡሩክ መነኰስ ።',
+                    '፭ኛ አባ ገብረ ማርያም መነኰስ ።'
+                ]
+            },
+            {
+                type: 'paragraph',
+                en: 'After these monks arrived in England, they blessed a prayer house and began to perform the order of prayer and the Eucharist according to the law of the Ethiopians. As a result, that church...',
+                am: 'እነዚህ መነኰሳት ወደ እንግሊዝ አገር ከደረሱ በኋላ አንድ የጸሎት ቤት ባርከው እንደ ኢትዮጵያውያን ሕግ የጸሎትና የቍርባን ሥርዓት ያደርጉ ጀመር። ከዚህም የተነሣ ያች ቤተ ክርስቲያን «በስደት ያለች ኦር...'
+            },
+            {
+                type: 'paragraph',
+                page: 'Page 9',
+                en: '...began to be called "The Exiled Orthodox Ethiopian Church." It started to expand and conduct its spiritual work. The faithful who were in exile in that country, continually hearing of the atrocities being committed in Ethiopia and living in sorrow, did not cease to remember their country in prayer. However, because there was no corporate prayer written in the Amharic language, it was a difficulty.',
+                am: '...ቶዶክሳዊት የኢትዮጵያ ቤተ ክርስቲያን» ተብላ ትጠራ ጀመር። መንፈሳዊ ሥራዋንም እያስፋፋች መሥራት ጀመርች። በዚያ አገር በስደት የነበሩት ምእመናንም በኢትዮጵያ ላይ ይደረግ የነበረውን ግፍ በየጊዜው እየሰሙ በኀዘን ስለሚኖሩ አገራቸውን በጸሎት ከማሰብ አያቋርጡም ነበር። ዳሩ ግን በአማርኛ ቋንቋ የተጻፈ ጸሎተ ማኅበር ስላልነበረ ችግር ሆነ።'
+            },
+            {
+                type: 'paragraph',
+                en: 'After this, His Imperial Majesty Emperor Haile Selassie I, with boundless diligence, to alleviate the difficulty of the faithful, ordered that a prayer book be compiled and prepared in appropriate measure from the Holy Scriptures according to the order of the Ethiopian Church. Abba Markos worked diligently, and this prayer book was quickly written and released. Immediately, the faithful began gathering in the church and praying the morning and evening prayers with it.',
+                am: 'ከዚህም በኋላ ግርማዊ ንጉሠ ነገሥት ቀዳማዊ አጼ ኃይለ ሥላሴ በማይወሰን ትጋታቸው የምእመናንን ችግር ለማቅለል ሲሉ አንድ የጸሎት መጽሐፍ እንደ ኢትዮጵያ ቤተ ክርስቲያን ሥርዓት ከቅዱሳት መጻሕፍት ተወጣጥቶ በመጠን ሆኖ እንዲሰናዳ አዘዙ። አባ ማርቆስ በትጋት ሠርተው ይህ የጸሎት መጽሐፍ በቶሎ ተጽፎ ወጣ። ወዲያው ምእመናን በቤተ ክርስቲያን እየተሰበሰቡ የጧቱንና የማታውን ጸሎት ይጸልዩበት ጀመር።'
+            },
+            {
+                type: 'paragraph',
+                en: 'Because the handwritten book could not reach everyone, in 1931 A.M. [1938/39 AD], the manuscript was reproduced using a lithograph machine. It was sent to those scattered in exile wherever they were. Even so, the faithful lived praying with this book, waiting at the gates for the mercy of God and the restoration of Ethiopia. When the time arrived, the light of freedom was revealed; the enemy\'s power was crushed. On Miyazya 28, 1933 A.M. [May 6, 1941 AD] (which is the 11th year of the reign of Emperor Haile Selassie I), His Imperial Majesty Emperor Haile Selassie I, holding the flag of freedom, returned in great majesty and sat upon his royal throne.',
+                am: 'በእጅ ተጽፎ የነበረው መጽሐፍ ለሁሉ የማያዳርስ ስለ ሆነ በ፲፱፻፴፩ ዓ. ም. የእጅ ጽሕፈቱ በሊቶግራፍ መኪና እንዲባዛ ተደረገ። በስደትም ለተበተኑት በያሉበት ተላከ። እንዲህም ሆኖ ምእመናን በዚህ መጽሐፍ እየጸለዩ የአግዚአብሔርን ምሕረት፣ የኢትዮጵያን ሚጠት እየጠበቁ ደጅ ሲጠኑ ኖሩ። ጊዜው ሲደርስ የነፃነት ብርሃን ተገለጸ ፤ የጠላት ኃይል ተደመሰሰ። ሚያዝያ ፳፰ ቀን ፲፱፻፴፫ ዓ. ም. (ይኸውም ፲፩ኛ የቀዳማዊ አጼ ኃይለ ሥላሴ ዘመነ መንግሥት) ግርማዊ ንጉሠ ነገሥት ቀዳማዊ አጼ ኃይለ ሥላሴ የነፃነትን ሰንደቅ ዓላማ ይዘው በታላቅ ግርማ ተመልሰው በመንበረ መንግሥትዎ ተቀመጡ።'
+            },
+            {
+                type: 'paragraph',
+                en: 'The exiled Orthodox Ethiopian Church also returned to her inheritance. The Tabot of Medhane Alem (Savior of the World), which was the altar of prayer and sacrifice during the era of exile, entered Addis Ababa on Nehasse 23, 1933 A.M. [August 29, 1941 AD], together with Her Imperial Majesty Empress Menen when she returned from England. Later, on Miyazya 27, 1941 A.M. [May 5, 1949 AD], it was planted in the church built in the compound of the Haile Selassie I Hospital, named Miskaye Hizunan Medhane Alem (Refuge of the Sorrowful, Savior of the World). Because the Ethiopian Church prayer book from the era of exile stands as a useful memorial for the faithful, it was examined by scholars to be printed and used as before.',
+                am: 'በስደት የነበረች ኦርቶዶክሳዊት የኢትዮጵያ ቤተ ክርስቲያንም ወደ ርስትዋ ተመለሰች። በዘመነ ስደት ምዕራገ ጸሎት ወመሥዋዕት የነበረው ታቦተ መድኃኔ ዓለም በነሐሴ ፳፫ ቀን ፲፱፻፴፫ ዓ. ም. ግርማዊት እቴጌ መነን ከእንግሊዝ አገር ወደ አዲስ አበባ በገቡበት ቀን አብሮ ገባ። ከዚያም በኋላ ሚያዝያ ፳፯ ቀን ፲፱፻፵፩ ዓ. ም. ምስካየ ኅዙናን መድኃኔ ዓለም ተብሎ በቀዳማዊ ኃይለ ሥላሴ ሆስፕታል ግቢ በታነጸው ቤተ ክርስቲያን ተተከለ። በዘመነ ስደት የነበረው የኢትዮጵያ ቤተ ክርስቲያን የጸሎት መጽሐፍ ለምእመናን ጠቃሚ መታሰቢያነቱ ቀዋሚ ስለ ሆነ በሊቃውንት ተመርምሮ እንዲታተምና እንደ ቀድሞው እንዲሠራበት ተደረገ።'
+            },
+            {
+                type: 'paragraph',
+                en: 'The first edition was translated from Ge\'ez and was in Amharic only. But now, it has been arranged to be written with the Ge\'ez included side-by-side. The book is divided into 14 sections. Up to the 10th section, it is written in both Ge\'ez and Amharic. What is beyond the 11th section, however, being the words of preaching and counsel... the reading index and various notices, is written in Amharic only.',
+                am: 'የመጀመሪያው ድርሰት ግዕዙ ተተርጕሞ በአማርኛ ብቻ ነበር። አሁን ግን ግዕዙ ሳይቀር በየወገኑ እንዲጻፍ ተደርጓል። መጽሐፉ በ፲፬ ክፍሎች ተመድቦ ተከፍሏል። እስከ ፲ኛው ክፍል ድረስ በግዕዝም በአማርኛም ተጽፏል። ከ፲፩ኛው ክፍል በላይ የሆነው ግን የስብከትና የምክር ቃል የንባብ ማውጫና ልዩ ልዩ ማስታወቂያ ስለሆነ በአማርኛ ብቻ ተጽፏል።'
+            },
+            {
+                type: 'paragraph',
+                page: 'Page 10',
+                en: 'And since the words of preaching and counsel are cited from the respective books; the location where they are found, the chapter and verse, are found written in each place.',
+                am: 'ይኸውም የስብከትና የምክር ቃል ከየመጻሕፍቱ የተጠቀሰ ስለ ሆነ ፤ የሚገኝበት ስፍራ ምዕራፉና ቁጥሩ በየቦታው ተጽፎ ይገኛል።'
+            },
+            {
+                type: 'paragraph',
+                en: 'The honored fathers, who are the pillars of the Church, have examined, adjusted, and corrected the words and the order of this book. They have testified and confirmed that it is appropriate for the prayer of the faithful. They are the following:',
+                am: 'የዚህንም መጽሐፍ ቃሉንና ሥርዓቱን የቤተ ክርስቲያን አዕማድ የሆኑ ክቡራን አባቶች እየመረመሩ አስተካክለው አርመውታል። ለምእመናን ጸሎት የሚገባ መሆኑንም መስክረው አጽንተውታል። እነርሱም የሚከተሉት ናቸው።'
+            },
+            {
+                type: 'list',
+                ordered: false,
+                en: [
+                    'His Beatitude Echege Gebre Giorgis; who was on the throne of Abune Tekle Haymanot.',
+                    'Liqe Liqawnt Gebre Meskel; of Ta\'eka Negest (Ba\'eta).',
+                    'Aleqa Heruy Eshetu; teacher and interpreter of the region of Gondar.',
+                    'Memhir Mel\'iktu; of Mekane Selassie. (Addis Ababa.)'
+                ],
+                am: [
+                    'ብፁዕ እጨጌ ገብረ ጊዮርጊስ ፤ ዘነበረ በመንበረ አቡነ ተክለ ሃይማኖት ።',
+                    'ሊቀ ሊቃውንት ገብረ መስቀል ፤ ዘታዕካ ነገሥት ።',
+                    'አለቃ ኅሩይ እሸቱ ፤ መምህር ወመፈክር ዘብሔረ ጎንደር ።',
+                    'መምህር መልእክቱ ፤ ዘመካነ ሥላሴ ። (አዲስ አበባ ።)'
+                ]
+            },
+            {
+                type: 'paragraph',
+                en: 'Because His Majesty Emperor Haile Selassie I, in his vast generosity, had this book written and printed for us, we offer our petition to God, saying \'Protect his reign and his army, subdue his enemies and adversaries.\'',
+                am: 'ይህን መጽሐፍ ጃንሆይ ቀዳማዊ አጼ ኃይለ ሥላሴ በሰፊው ችሮታቸው ስላጻፉልንና ስላሳተሙልን \'ዕቀብ ንግሦ ወሠራዊቶ ፣ አግርር ፀሮ ወጸላእቶ\' እያልን ልመናችንን ወደ እግዚአብሔር እናቀርባለን።'
+            },
+            {
+                type: 'paragraph',
+                en: 'To Abba Markos, who labored to prepare the first edition, and to all those who have now helped us in this work; we offer our gratitude.',
+                am: 'የመጀመሪያውን ድርሰት ለማስረዳት ለደከሙት ለአባ ማርቆስና አሁን ደግሞ በዚህ ሥራ ለረዱን ሁሉ ፤ ምስጋናችንን እናቀርባለን ።'
+            }
+        ]
+    }
+};
+
+let activeHistoricalPrefaceDoc = 'intro';
+let activeHistoricalPrefaceLang = 'english';
+
+function createPrefaceBlockElement(block, lang) {
+    const isAmharic = lang === 'amharic';
+    const content = isAmharic ? block.am : block.en;
+
+    if (block.type === 'heading') {
+        const h4 = document.createElement('h4');
+        h4.className = 'historical-preface-subheading' + (isAmharic ? ' ethiopic-label' : '');
+        h4.textContent = content;
+        return h4;
+    }
+
+    if (block.type === 'list' && Array.isArray(content)) {
+        const listEl = document.createElement(block.ordered ? 'ol' : 'ul');
+        listEl.className = 'historical-preface-list' + (isAmharic ? ' ethiopic-label' : '');
+        if (isAmharic && block.ordered) {
+            listEl.style.listStyleType = 'none';
+            listEl.style.paddingLeft = '0.5rem';
+        }
+        content.forEach(item => {
+            const li = document.createElement('li');
+            li.textContent = item;
+            listEl.appendChild(li);
+        });
+        return listEl;
+    }
+
+    const p = document.createElement('p');
+    p.className = 'historical-preface-paragraph'
+        + (block.type === 'note' ? ' historical-preface-note' : '')
+        + (isAmharic ? ' ethiopic-label' : '');
+
+    if (block.page) {
+        const badge = document.createElement('span');
+        badge.className = 'historical-preface-page-badge';
+        badge.textContent = `[${block.page}]`;
+        p.appendChild(badge);
+        p.appendChild(document.createTextNode(' '));
+    }
+
+    p.appendChild(document.createTextNode(content));
+    return p;
+}
+
+function updateHelpModalPrefaceWidth() {
+    if (typeof document === 'undefined') return;
+    const helpModalEl = document.getElementById('help-modal');
+    if (!helpModalEl) return;
+    const modalContentEl = helpModalEl.querySelector('.modal-content');
+    const auspicesPane = document.getElementById('help-auspices');
+    const prefacesPane = document.getElementById('historical-prefaces-content');
+    if (!modalContentEl) return;
+
+    const shouldBeWide = Boolean(
+        activeHistoricalPrefaceLang === 'side-by-side' &&
+        auspicesPane &&
+        auspicesPane.classList.contains('active') &&
+        prefacesPane &&
+        !prefacesPane.classList.contains('collapsed')
+    );
+    modalContentEl.classList.toggle('wide-preface-modal', shouldBeWide);
+}
+
+function renderHistoricalPrefaces(docKey, langMode) {
+    if (docKey && HISTORICAL_PREFACES_DATA[docKey]) {
+        activeHistoricalPrefaceDoc = docKey;
+    }
+    if (langMode && ['english', 'amharic', 'side-by-side'].includes(langMode)) {
+        activeHistoricalPrefaceLang = langMode;
+    }
+
+    if (typeof document === 'undefined') return;
+    const container = document.getElementById('historical-prefaces-body');
+    if (!container) return;
+
+    const aiNote = document.getElementById('historical-prefaces-ai-note');
+    if (aiNote) {
+        aiNote.style.display = activeHistoricalPrefaceLang === 'amharic' ? 'none' : '';
+    }
+
+    document.querySelectorAll('.historical-doc-tab').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-preface-doc') === activeHistoricalPrefaceDoc);
+    });
+    document.querySelectorAll('.historical-lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-preface-lang') === activeHistoricalPrefaceLang);
+    });
+
+    const docData = HISTORICAL_PREFACES_DATA[activeHistoricalPrefaceDoc];
+    container.innerHTML = '';
+    container.setAttribute('data-lang-mode', activeHistoricalPrefaceLang);
+
+    if (activeHistoricalPrefaceLang === 'side-by-side') {
+        const headerRow = document.createElement('div');
+        headerRow.className = 'historical-preface-sbs-row historical-preface-sbs-header';
+        const hEn = document.createElement('h4');
+        hEn.className = 'historical-preface-doc-title';
+        hEn.textContent = docData.titleEn;
+        const hAm = document.createElement('h4');
+        hAm.className = 'historical-preface-doc-title ethiopic-label';
+        hAm.textContent = docData.titleAm;
+        headerRow.appendChild(hEn);
+        headerRow.appendChild(hAm);
+        container.appendChild(headerRow);
+
+        docData.blocks.forEach(block => {
+            const row = document.createElement('div');
+            row.className = 'historical-preface-sbs-row';
+            const colEn = document.createElement('div');
+            colEn.className = 'historical-preface-sbs-col';
+            colEn.appendChild(createPrefaceBlockElement(block, 'english'));
+            const colAm = document.createElement('div');
+            colAm.className = 'historical-preface-sbs-col';
+            colAm.appendChild(createPrefaceBlockElement(block, 'amharic'));
+            row.appendChild(colEn);
+            row.appendChild(colAm);
+            container.appendChild(row);
+        });
+    } else {
+        const isAm = activeHistoricalPrefaceLang === 'amharic';
+        const titleEl = document.createElement('h4');
+        titleEl.className = 'historical-preface-doc-title' + (isAm ? ' ethiopic-label' : '');
+        titleEl.textContent = isAm ? docData.titleAm : docData.titleEn;
+        container.appendChild(titleEl);
+
+        docData.blocks.forEach(block => {
+            container.appendChild(createPrefaceBlockElement(block, activeHistoricalPrefaceLang));
+        });
+    }
+
+    updateHelpModalPrefaceWidth();
+}
+
+function bindHistoricalPrefacesAndInfoModalEvents() {
+    if (typeof window === 'undefined' || typeof document === 'undefined') return;
+    if (window._historicalPrefacesClickListener) {
+        document.removeEventListener('click', window._historicalPrefacesClickListener);
+    }
+
+    window._historicalPrefacesClickListener = (e) => {
+        const target = e.target;
+        if (!target || typeof target.closest !== 'function') return;
+
+        const toggleBtn = target.closest('#toggle-historical-prefaces');
+        if (toggleBtn) {
+            e.preventDefault();
+            const pane = document.getElementById('historical-prefaces-content');
+            if (pane) {
+                const isCollapsed = pane.classList.toggle('collapsed');
+                toggleBtn.classList.toggle('active', !isCollapsed);
+                toggleBtn.setAttribute('aria-expanded', isCollapsed ? 'false' : 'true');
+                if (!isCollapsed) {
+                    renderHistoricalPrefaces();
+                } else {
+                    updateHelpModalPrefaceWidth();
+                }
+            }
+            return;
+        }
+
+        const docTab = target.closest('.historical-doc-tab');
+        if (docTab) {
+            e.preventDefault();
+            const docKey = docTab.getAttribute('data-preface-doc');
+            renderHistoricalPrefaces(docKey, null);
+            return;
+        }
+
+        const langBtn = target.closest('.historical-lang-btn');
+        if (langBtn) {
+            e.preventDefault();
+            const langKey = langBtn.getAttribute('data-preface-lang');
+            renderHistoricalPrefaces(null, langKey);
+            return;
+        }
+
+        const helpTabBtn = target.closest('.help-tab-btn');
+        if (helpTabBtn) {
+            setTimeout(updateHelpModalPrefaceWidth, 0);
+        }
+
+        const selectLangInfoBtn = target.closest('#select-languages-info-btn');
+        if (selectLangInfoBtn) {
+            e.preventDefault();
+            e.stopPropagation();
+            const modalEl = document.getElementById('select-languages-info-modal');
+            if (modalEl) openModal(modalEl);
+            return;
+        }
+
+        const closeSelectLangModalBtn = target.closest('#close-select-languages-info-modal');
+        if (closeSelectLangModalBtn) {
+            e.preventDefault();
+            closeModal();
+        }
+    };
+
+    document.addEventListener('click', window._historicalPrefacesClickListener);
+}
+
 let currentTypicalPsalmCallback = null;
 let _typicalPsalmsSearchBound = false;
 
@@ -14095,6 +14655,9 @@ window.initMountOfMercyEngine = async function() {
     if (window._mountOfMercyInitialized) return;
     window._mountOfMercyInitialized = true;
     bindDOMElements();
+    bindHierarchyPortraitLightboxEvents();
+    bindHistoricalPrefacesAndInfoModalEvents();
+    renderHistoricalPrefaces();
     setupEventListeners();
     await initApp();
     if (typeof window.initTargumaFeature === 'function') {
@@ -14109,6 +14672,8 @@ window.initMountOfMercyEngine = async function() {
 if (typeof document !== 'undefined') {
     bindDOMElements();
     bindHierarchyPortraitLightboxEvents();
+    bindHistoricalPrefacesAndInfoModalEvents();
+    renderHistoricalPrefaces();
     if (document.readyState === 'complete' || document.readyState === 'interactive') {
         if (typeof prayers !== 'undefined' && document.getElementById('prayer-display')) {
             window.initMountOfMercyEngine();
@@ -14195,6 +14760,8 @@ const appCoreExports = {
     openCalendarInfoModal,
     openHierarchyPortraitLightbox,
     closeHierarchyPortraitLightbox,
+    HISTORICAL_PREFACES_DATA,
+    renderHistoricalPrefaces,
     loadSettings,
     saveSettings,
     buildUrlStateObject,
