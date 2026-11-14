@@ -68,27 +68,27 @@ exports.translatePrayer = onDocumentUpdated("prayers/{docId}", async (event) => 
 
 // ============================================================================
 // TARGUMA (ተርጉማ) — Vertex AI Gemini Live Sermon & Announcement Interpreter
-// Models:
-//   - gemini-3-flash-preview (Default: Ultra-Low Latency Gemini 3 Flash, 0 thinking)
-//   - gemini-2.5-flash (Fast Production Gemini 2.5 Flash, 0 thinking)
-// Supports both Multimodal Audio Chunks (audioBase64) and Text Transcripts (text)
+// Supports:
+//   1. Streaming SSE (`stream: true` via `:streamGenerateContent?alt=sse`)
+//   2. Ultra-Fast Cloud Translation V3 (`mode: "nmt"`)
+//   3. Backwards-compatible Unary JSON (`stream: false`)
 // ============================================================================
 const ALLOWED_MODELS = {
+  "gemini-2.5-flash": {
+    location: "us-central1",
+    thinkingConfig: { thinkingBudget: 0 },
+    fallbackChain: [
+      { modelId: "gemini-2.5-flash", location: "global", thinkingConfig: { thinkingBudget: 0 } },
+      { modelId: "gemini-3-flash-preview", location: "global", thinkingConfig: { thinkingBudget: 0 } },
+      { modelId: "gemini-2.5-flash", location: "us-east4", thinkingConfig: { thinkingBudget: 0 } }
+    ]
+  },
   "gemini-3-flash-preview": {
     location: "global",
     thinkingConfig: { thinkingBudget: 0 },
     fallbackChain: [
+      { modelId: "gemini-2.5-flash", location: "us-central1", thinkingConfig: { thinkingBudget: 0 } },
       { modelId: "gemini-2.5-flash", location: "global", thinkingConfig: { thinkingBudget: 0 } },
-      { modelId: "gemini-2.5-flash", location: "us-central1", thinkingConfig: { thinkingBudget: 0 } },
-      { modelId: "gemini-2.5-flash", location: "us-east4", thinkingConfig: { thinkingBudget: 0 } }
-    ]
-  },
-  "gemini-2.5-flash": {
-    location: "global",
-    thinkingConfig: { thinkingBudget: 0 },
-    fallbackChain: [
-      { modelId: "gemini-2.5-flash", location: "us-central1", thinkingConfig: { thinkingBudget: 0 } },
-      { modelId: "gemini-3-flash-preview", location: "global", thinkingConfig: { thinkingBudget: 0 } },
       { modelId: "gemini-2.5-flash", location: "us-east4", thinkingConfig: { thinkingBudget: 0 } }
     ]
   }
@@ -101,36 +101,23 @@ const LANG_NAMES = {
   es: "Spanish (Español)"
 };
 
+// Target-first property ordering yields first English/target words ~600ms earlier when streaming
 const TARGUMA_RESPONSE_SCHEMA = {
   type: "OBJECT",
+  propertyOrdering: ["isSilence", "translatedText", "sourceText"],
   properties: {
     isSilence: { type: "BOOLEAN" },
-    sourceText: { type: "STRING" },
-    translatedText: { type: "STRING" }
+    translatedText: { type: "STRING" },
+    sourceText: { type: "STRING" }
   },
-  required: ["isSilence", "sourceText", "translatedText"]
+  required: ["isSilence", "translatedText", "sourceText"]
 };
 
-const TARGUMA_SYSTEM_INSTRUCTION = `You are "Targuma" (ተርጉማ), a faithful real-time interpreter for an Ethiopian & Eritrean Orthodox Tewahedo Church (EOTC) parish ("The Mount of Mercy" / ደብረ ምሕረት).
-Your role is to transcribe and translate live spoken sermons and church announcements accurately, naturally, and with zero hallucination.
-
-CRITICAL RULES:
-1. ZERO HALLUCINATION & SILENCE DETECTION:
-   - Translate ONLY words that are clearly spoken in the input.
-   - NEVER guess, invent, or insert religious phrases that were not actually spoken.
-   - If the audio clip is muffled, distant, music/chanting, coughing, static, or too unclear to transcribe confidently, you MUST return:
-     {"isSilence": true, "sourceText": "", "translatedText": ""}
-2. STRICT TARGET LANGUAGE OUTPUT:
-   - "translatedText" MUST be written entirely in the requested target language.
-   - Never leave raw Ethiopic script (ፊደል) inside an English or Spanish "translatedText".
-3. GE'EZ & EOTC LITURGICAL TERMS (STYLE B — GOLD ITALIC + BRACKETED MEANING):
-   - Whenever the speaker utters a Ge'ez or EOTC liturgical/ecclesial term or blessing formula, ALWAYS format it in "translatedText" using asterisks and square brackets: *Phonetic Term* [Meaning].
-   - Examples to always format as *Phonetic* [Meaning]:
-     * *Qidase* [Divine Liturgy], *Qiddus Qurban* [Holy Communion], *Tabot* [Ark of the Covenant], *Suba'e* [Spiritual Retreat], *Nisiha* [Repentance], *Nisiha Abbat* [Confession Father], *Mahlet* [Liturgical Chanting], *Sebeka Gubae* [Parish Council], *Senbet Timhirt Bet* [Sunday School], *Kidane Mihret* [Covenant of Mercy], *Debre Mihret* [Mount of Mercy], *Weladite Amlak* [Mother of God], *Medhane Alem* [Savior of the World], *Egziabher* [Lord God], *Qale Hiwot Yasemalin* [May He let us hear the Word of Life], *Tselot* [Prayer], *Tsom* [Fasting], *Bereket* [Blessing], * Mihla* [Supplication].
-   - Also translate Divine and Sacred names faithfully (e.g. Jesus Christ, Holy Spirit, Holy Trinity, Our Lady Saint Mary, Virgin Mary, God, Lord) so the app can rubricate them in red.
-4. STRICT JSON OUTPUT:
-   Respond with ONLY a valid JSON object matching the schema:
-   {"isSilence": false, "sourceText": "<verbatim transcription in source language>", "translatedText": "<accurate translation in target language>"}`;
+const TARGUMA_SYSTEM_INSTRUCTION = `You are "Targuma" (ተርጉማ), real-time interpreter for an Ethiopian & Eritrean Orthodox Tewahedo Church (EOTC) parish ("The Mount of Mercy" / ደብረ ምሕረት).
+Rules:
+1. Translate ONLY clearly spoken speech accurately and naturally. Never invent religious phrases. If audio has no intelligible speech, return {"isSilence":true,"translatedText":"","sourceText":""}.
+2. Write "translatedText" strictly in the target language (zero raw Ethiopic script in English/Spanish).
+3. Format EOTC liturgical terms in "translatedText" as *Phonetic* [Meaning], e.g. *Qidase* [Divine Liturgy], *Qiddus Qurban* [Holy Communion], *Tabot* [Ark of the Covenant], *Suba'e* [Spiritual Retreat], *Nisiha* [Repentance], *Mahlet* [Liturgical Chanting], *Qale Hiwot Yasemalin* [May He let us hear the Word of Life], *Sebeka Gubae* [Parish Council], *Senbet Timhirt Bet* [Sunday School], *Kidane Mihret* [Covenant of Mercy], *Debre Mihret* [Mount of Mercy], *Teamire Mariam* [Miracles of Mary]. Translate sacred and hierarchical names faithfully (Our Lord Jesus Christ, Holy Spirit, Holy Trinity, Our Lady Saint Mary, Archangel Saint Michael, His Grace Abune).`;
 
 let cachedAuthClient = null;
 async function getVertexAccessToken() {
@@ -141,13 +128,45 @@ async function getVertexAccessToken() {
   return tokenResponse.token || tokenResponse;
 }
 
-async function callVertexGemini({ projectId, accessToken, modelId, location, parts, thinkingConfig, timeoutMs = 4200 }) {
+function extractPartialJsonField(rawPartialJson, fieldName) {
+  const marker = '"' + fieldName + '"';
+  const keyIdx = rawPartialJson.indexOf(marker);
+  if (keyIdx < 0) return "";
+  const colonIdx = rawPartialJson.indexOf(":", keyIdx + marker.length);
+  if (colonIdx < 0) return "";
+  const firstQuote = rawPartialJson.indexOf('"', colonIdx + 1);
+  if (firstQuote < 0) return "";
+
+  let out = "";
+  let escaped = false;
+  for (let i = firstQuote + 1; i < rawPartialJson.length; i++) {
+    const ch = rawPartialJson[i];
+    if (escaped) {
+      if (ch === "n") out += "\n";
+      else if (ch === "t") out += "\t";
+      else if (ch === '"') out += '"';
+      else if (ch === "\\") out += "\\";
+      else out += ch;
+      escaped = false;
+    } else if (ch === "\\") {
+      escaped = true;
+    } else if (ch === '"') {
+      break;
+    } else {
+      out += ch;
+    }
+  }
+  return out.trim();
+}
+
+async function callVertexGemini({ projectId, accessToken, modelId, location, parts, thinkingConfig, stream = false, timeoutMs = 4500 }) {
   const endpointHost =
     location === "global"
       ? "https://aiplatform.googleapis.com"
-      : `https://${location}-aiplatform.googleapis.com`;
+      : "https://" + location + "-aiplatform.googleapis.com";
 
-  const url = `${endpointHost}/v1/projects/${projectId}/locations/${location}/publishers/google/models/${modelId}:generateContent`;
+  const action = stream ? "streamGenerateContent?alt=sse" : "generateContent";
+  const url = endpointHost + "/v1/projects/" + projectId + "/locations/" + location + "/publishers/google/models/" + modelId + ":" + action;
 
   const vertexPayload = {
     systemInstruction: {
@@ -171,7 +190,7 @@ async function callVertexGemini({ projectId, accessToken, modelId, location, par
   return fetch(url, {
     method: "POST",
     headers: {
-      Authorization: `Bearer ${accessToken}`,
+      Authorization: "Bearer " + accessToken,
       "Content-Type": "application/json"
     },
     body: JSON.stringify(vertexPayload),
@@ -183,7 +202,7 @@ exports.targumaGemini = onRequest(
   {
     region: "us-central1",
     cors: true,
-    timeoutSeconds: 30,
+    timeoutSeconds: 60,
     memory: "512MiB",
     minInstances: 0,
     maxInstances: 60
@@ -219,17 +238,19 @@ exports.targumaGemini = onRequest(
         }
       }
 
-      const requestedModel = ALLOWED_MODELS[body.model] ? body.model : "gemini-3-flash-preview";
+      const requestedModel = ALLOWED_MODELS[body.model] ? body.model : "gemini-2.5-flash";
       const modelSpec = ALLOWED_MODELS[requestedModel];
       const sourceLang = LANG_NAMES[body.sourceLang] ? body.sourceLang : "am";
       const targetLang = LANG_NAMES[body.targetLang] ? body.targetLang : "en";
+      const wantStream = Boolean(body.stream);
+      const mode = String(body.mode || "gemini");
       const recentContext = Array.isArray(body.recentContext)
-        ? body.recentContext.slice(-2).join(" | ")
+        ? body.recentContext.slice(-3).join(" | ")
         : String(body.recentContext || "");
 
       const textInput = String(body.text || "").trim();
       const audioBase64 = String(body.audioBase64 || "").trim();
-      const mimeType = String(body.mimeType || "audio/webm").trim();
+      const mimeType = String(body.mimeType || "audio/wav").trim();
 
       if (!textInput && !audioBase64) {
         res.status(400).json({ error: "Either text or audioBase64 is required." });
@@ -237,9 +258,46 @@ exports.targumaGemini = onRequest(
       }
 
       const projectId = process.env.GCP_PROJECT || process.env.GCLOUD_PROJECT || "mount-of-mercy";
+      const startMs = Date.now();
+
+      // Fast Cloud Translation V3 path for instant draft / retranslation
+      if (mode === "nmt" && textInput && !audioBase64) {
+        if (sourceLang === targetLang) {
+          res.status(200).json({
+            model: "identity",
+            latencyMs: 0,
+            isSilence: false,
+            sourceText: textInput,
+            translatedText: textInput
+          });
+          return;
+        }
+        try {
+          const [nmtResp] = await translationClient.translateText({
+            parent: "projects/" + projectId + "/locations/us-central1",
+            contents: [textInput],
+            mimeType: "text/plain",
+            sourceLanguageCode: sourceLang,
+            targetLanguageCode: targetLang
+          });
+          const translatedText = String(nmtResp?.translations?.[0]?.translatedText || "").trim();
+          res.status(200).json({
+            model: "cloud-translate-v3",
+            latencyMs: Date.now() - startMs,
+            isSilence: false,
+            sourceText: textInput,
+            translatedText: translatedText
+          });
+          return;
+        } catch (nmtErr) {
+          console.warn("Cloud Translate fallback to Gemini:", nmtErr.message);
+        }
+      }
+
       const accessToken = await getVertexAccessToken();
 
       const parts = [];
+      const ctxSuffix = recentContext ? '\nPreceding context (do NOT repeat): "' + recentContext + '"' : "";
       if (audioBase64) {
         parts.push({
           inlineData: {
@@ -248,33 +306,134 @@ exports.targumaGemini = onRequest(
           }
         });
         parts.push({
-          text: `Transcribe the spoken ${LANG_NAMES[sourceLang]} speech in this audio clip and translate it into ${LANG_NAMES[targetLang]}.
-${recentContext ? `Immediate preceding phrase for sentence continuity only (do NOT repeat or re-translate this): "${recentContext}"` : ""}
-If there is no clear, intelligible human speech in this clip, return {"isSilence": true, "sourceText": "", "translatedText": ""}.
-Otherwise return {"isSilence": false, "sourceText": "<${LANG_NAMES[sourceLang]} transcription>", "translatedText": "<${LANG_NAMES[targetLang]} translation>"}.`
+          text: "Transcribe " + LANG_NAMES[sourceLang] + " speech and translate into " + LANG_NAMES[targetLang] + "." + ctxSuffix
         });
       } else {
         parts.push({
-          text: `Translate this spoken church sermon/announcement phrase from ${LANG_NAMES[sourceLang]} into ${LANG_NAMES[targetLang]}.
-${recentContext ? `Immediate preceding phrase for continuity only (do NOT repeat): "${recentContext}"` : ""}
-Phrase to translate: "${textInput}"
-Return JSON with "isSilence": false, "sourceText": "${textInput.replace(/"/g, '\\"')}", and "translatedText" written strictly in ${LANG_NAMES[targetLang]}.`
+          text: "Translate spoken church phrase from " + LANG_NAMES[sourceLang] + " into " + LANG_NAMES[targetLang] + "." + ctxSuffix + '\nPhrase: "' + textInput + '"'
         });
       }
 
       const attempts = [
-        { modelId: requestedModel, location: modelSpec.location, thinkingConfig: modelSpec.thinkingConfig, timeoutMs: 4200 },
-        ...modelSpec.fallbackChain.map((fb) => ({ ...fb, timeoutMs: 4200 }))
+        { modelId: requestedModel, location: modelSpec.location, thinkingConfig: modelSpec.thinkingConfig, timeoutMs: 4500 },
+        ...modelSpec.fallbackChain.map((fb) => ({ ...fb, timeoutMs: 4500 }))
       ];
 
-      const startMs = Date.now();
+      // Streaming SSE path (`stream: true`)
+      if (wantStream) {
+        res.setHeader("Content-Type", "text/event-stream; charset=utf-8");
+        res.setHeader("Cache-Control", "no-cache, no-transform");
+        res.setHeader("Connection", "keep-alive");
+        res.setHeader("X-Accel-Buffering", "no");
+        if (typeof res.flushHeaders === "function") {
+          res.flushHeaders();
+        }
+
+        let streamResp = null;
+        let activeModelUsed = requestedModel;
+        for (const attempt of attempts) {
+          try {
+            const resp = await callVertexGemini({
+              projectId,
+              accessToken,
+              modelId: attempt.modelId,
+              location: attempt.location,
+              parts,
+              thinkingConfig: attempt.thinkingConfig,
+              stream: true,
+              timeoutMs: attempt.timeoutMs
+            });
+            if (resp.ok && resp.body) {
+              streamResp = resp;
+              activeModelUsed = attempt.modelId;
+              break;
+            }
+          } catch (_) {}
+        }
+
+        if (!streamResp || !streamResp.body) {
+          const emptyDone = JSON.stringify({
+            type: "done",
+            isSilence: true,
+            sourceText: "",
+            translatedText: "",
+            latencyMs: Date.now() - startMs
+          });
+          res.write("data: " + emptyDone + "\n\n");
+          res.end();
+          return;
+        }
+
+        let accumulatedJson = "";
+        let lastEmittedDraft = "";
+        let sseBuffer = "";
+        const decoder = new TextDecoder();
+
+        try {
+          for await (const chunk of streamResp.body) {
+            sseBuffer += decoder.decode(chunk, { stream: true });
+            const lines = sseBuffer.split("\n");
+            sseBuffer = lines.pop() || "";
+
+            for (const line of lines) {
+              const trimmed = line.trim();
+              if (!trimmed.startsWith("data:")) continue;
+              const payloadStr = trimmed.slice(5).trim();
+              if (!payloadStr || payloadStr === "[DONE]") continue;
+              try {
+                const evt = JSON.parse(payloadStr);
+                const cParts = evt?.candidates?.[0]?.content?.parts || [];
+                for (const p of cParts) {
+                  if (typeof p.text === "string" && !p.thought) {
+                    accumulatedJson += p.text;
+                  }
+                }
+                if (accumulatedJson.includes('"isSilence":true') || accumulatedJson.includes('"isSilence": true')) {
+                  continue;
+                }
+                const partialTarget = extractPartialJsonField(accumulatedJson, "translatedText");
+                if (partialTarget && partialTarget !== lastEmittedDraft) {
+                  lastEmittedDraft = partialTarget;
+                  const partialSource = extractPartialJsonField(accumulatedJson, "sourceText");
+                  const draftPayload = JSON.stringify({
+                    type: "draft",
+                    translatedText: partialTarget,
+                    sourceText: partialSource,
+                    ttftMs: Date.now() - startMs
+                  });
+                  res.write("data: " + draftPayload + "\n\n");
+                }
+              } catch (_) {}
+            }
+          }
+        } catch (_) {}
+
+        let parsed = { isSilence: false, sourceText: textInput, translatedText: lastEmittedDraft };
+        try {
+          parsed = JSON.parse(accumulatedJson || "{}");
+        } catch (_) {}
+
+        const donePayload = JSON.stringify({
+          type: "done",
+          model: activeModelUsed,
+          latencyMs: Date.now() - startMs,
+          isSilence: Boolean(parsed.isSilence),
+          sourceText: String(parsed.sourceText || textInput || "").trim(),
+          translatedText: String(parsed.translatedText || lastEmittedDraft || "").trim()
+        });
+        res.write("data: " + donePayload + "\n\n");
+        res.end();
+        return;
+      }
+
+      // Unary JSON path (full fallback chain across ANY non-OK status)
       let activeModelUsed = requestedModel;
       let vertexResp = null;
       let lastErrText = "";
 
       for (const attempt of attempts) {
         try {
-          activeModelUsed = `${attempt.modelId}@${attempt.location}`;
+          activeModelUsed = attempt.modelId + "@" + attempt.location;
           const resp = await callVertexGemini({
             projectId,
             accessToken,
@@ -282,6 +441,7 @@ Return JSON with "isSilence": false, "sourceText": "${textInput.replace(/"/g, '\
             location: attempt.location,
             parts,
             thinkingConfig: attempt.thinkingConfig,
+            stream: false,
             timeoutMs: attempt.timeoutMs
           });
 
@@ -290,22 +450,14 @@ Return JSON with "isSilence": false, "sourceText": "${textInput.replace(/"/g, '\
             activeModelUsed = attempt.modelId;
             break;
           }
-
           lastErrText = await resp.text();
-          // Retry on 429 (Resource Exhausted) or 5xx
-          if (resp.status !== 429 && resp.status < 500) {
-            vertexResp = resp;
-            break;
-          }
         } catch (attemptErr) {
           lastErrText = attemptErr.message || String(attemptErr);
-          // Timeout / network error on this endpoint -> immediately try next fallback in chain
         }
       }
 
       if (!vertexResp || !vertexResp.ok) {
-        console.warn(`All Vertex attempts exhausted (${activeModelUsed}):`, lastErrText);
-        // Return a graceful 200 with isSilence: true rather than 429/504 so live captioning never crashes or logs errors
+        console.warn("All Vertex attempts exhausted (" + activeModelUsed + "):", lastErrText);
         res.status(200).json({
           model: activeModelUsed,
           latencyMs: Date.now() - startMs,

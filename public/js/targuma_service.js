@@ -1,45 +1,67 @@
 // ============================================================================
-// TARGUMA (ተርጉማ) — Live EOTC Sermon & Announcement Captioning Engine
+// TARGUMA (ተርጉማ) — Live EOTC Sermon & Announcement Captioning Engine (v3)
 // ============================================================================
-// Features:
-// 1. Ultra-Low Latency Gemini Flash Interpreter (Gemini 3 Flash default, Gemini 2.5 Flash)
-// 2. Bottom-Anchored Chronological Captions with Smooth Continuous FLIP Glide &
-//    Incoming Ellipsis Anchor (• • •) where the next line will appear
-// 3. Consistent Red/Gold/Italic EOTC Liturgical & Sacred Term Formatting across all models
-// 4. Strict Target-Language Output (never leaks source script in target-only mode)
-// 5. Desktop Left-Quarter Icon + Right 3/4 Caption Stage (or 100% width when icon hidden)
-// 6. Smart Cloud Cost Protection (Local VAD silence gate + 3-min silence auto-pause +
-//    background tab guard + 45-min max session guard)
+// Architecture:
+// 1. Primary Option A (Confident Immutable Clause Pipeline):
+//    - 16kHz LINEAR16 PCM WebAudio Stream -> Cloud Run WebSocket (`targuma-stream`)
+//    - Google Cloud Speech-to-Text V2 `chirp_3` (`am-ET`, `en-US`, `es-US`) with
+//      built-in sanctuary denoiser + adaptive prosodic breath-pause flushing +
+//      Amharic/Tigrinya run-on sentence syntactic clause segmentation
+//    - Single-shot Vertex AI Gemini 2.5 Flash (`thinkingBudget: 0`) + Cloud Translation V3
+//      parallel fallback so every clause arrives ALREADY polished and NEVER mutates on screen
+// 2. Automatic Option B Fallback (Tigrinya `ti` & Firewall/Offline-WS Resilience):
+//    - Continuous 16kHz PCM Ring Buffer + Natural Clause VAD Endpointer
+//    - Streaming Server-Sent Events (`:streamGenerateContent?alt=sse`) + Ordered Sequence Slots
+//      committing each completed clause cleanly without flickering partial words
+// 3. Multi-Source Live Testing:
+//    - Live Sanctuary Microphone, Browser Tab Audio (`getDisplayMedia` for YouTube testing),
+//      and Local Audio/Video File 1.0x Replay
 // ============================================================================
 
 (function () {
     'use strict';
 
-    const TARGUMA_GEMINI_ENDPOINT = 'https://us-central1-mount-of-mercy.cloudfunctions.net/targumaGemini';
+    const TARGUMA_STREAM_WS_URL = 'wss://targuma-stream-974361367981.us-central1.run.app/ws';
+    const TARGUMA_STREAM_HTTP_URL = 'https://targuma-stream-974361367981.us-central1.run.app/targumaGemini';
+    const TARGUMA_FALLBACK_CF_URL = 'https://us-central1-mount-of-mercy.cloudfunctions.net/targumaGemini';
 
-    // Cloud cost protection thresholds
+    // Cloud cost & session protection thresholds
     const SILENCE_AUTO_PAUSE_MS = 3 * 60 * 1000;      // Auto-pause after 3 minutes of silence
     const MAX_SESSION_DURATION_MS = 45 * 60 * 1000;   // Auto-pause after 45 minutes continuous session
-    const HIDDEN_TAB_AUTO_PAUSE_MS = 60 * 1000;       // Auto-pause 60s after phone locked / tab hidden in local mode
-    const SPEECH_RMS_THRESHOLD = 0.015;               // Local VAD threshold (0 cloud calls when below this)
-    const AUDIO_SLICE_DURATION_MS = 2600;             // 2.6s slice for low latency + full phrase context
-    const CLIENT_FETCH_TIMEOUT_MS = 6500;             // Client fetch timeout so queue never stalls
+    const HIDDEN_TAB_AUTO_PAUSE_MS = 60 * 1000;       // Auto-pause 60s after phone locked / tab hidden in local mic mode
 
-    // Clean model options (no emojis, no parenthetical descriptors; Gemini 3 Flash default)
+    // Audio & VAD thresholds (16kHz mono PCM, 100ms = 1600-sample frames)
+    const TARGET_SAMPLE_RATE = 16000;
+    const PCM_FRAME_SAMPLES = 1600;                   // 100ms frame = 3200 bytes Int16LE
+    const SPEECH_RMS_THRESHOLD = 0.011;               // Active speech energy threshold
+    const SPEECH_PAUSE_RMS_THRESHOLD = 0.0075;        // Breath/clause pause threshold
+    const MIN_SUSTAINED_SPEECH_MS = 160;              // Reject single-frame coughs/clicks (<160ms)
+    const WS_POST_SPEECH_HANGOVER_MS = 1200;          // Trailing quiet frames sent so Chirp 3 flushes breath pauses cleanly
+    const WS_PRE_SPEECH_LOOKBEHIND_FRAMES = 3;        // 300ms lookbehind so first consonant after silence is never clipped
+
+    // Option B (SSE VAD Ring Buffer) clause-level endpointing parameters
+    const VAD_MIN_CLAUSE_SPEECH_MS = 2000;            // Minimum spoken clause before slicing on a breath pause
+    const VAD_BREATH_PAUSE_MS = 280;                  // 280ms breath pause triggers clean clause dispatch
+    const VAD_MAX_SLICE_MS = 4600;                    // Max continuous speech before clause soft split
+    const VAD_OVERLAP_SAMPLES = Math.floor(TARGET_SAMPLE_RATE * 0.24); // 240ms overlap prevents mid-word cuts
+    const MAX_CONCURRENT_SSE_REQUESTS = 3;
+    const CLIENT_FETCH_TIMEOUT_MS = 8000;
+    const MAX_DRAFT_DISPLAY_WORDS = 22;
+
+    // Clean model options (in Settings drawer; Gemini 2.5 Flash default)
     const GEMINI_MODELS = [
-        {
-            id: 'gemini-3-flash-preview',
-            label: 'Gemini 3 Flash',
-            shortLabel: 'Gemini 3 Flash'
-        },
         {
             id: 'gemini-2.5-flash',
             label: 'Gemini 2.5 Flash',
             shortLabel: 'Gemini 2.5 Flash'
+        },
+        {
+            id: 'gemini-3-flash-preview',
+            label: 'Gemini 3 Flash',
+            shortLabel: 'Gemini 3 Flash'
         }
     ];
 
-    // Available Orthodox Icons for Sanctuary Stage (plus option to hide icon)
     const TARGUMA_ICONS = [
         {
             id: 'mary_with_son',
@@ -79,20 +101,25 @@
     ];
 
     const LANGUAGE_META = {
-        'am': { label: 'አማርኛ (Amharic)', short: 'አማርኛ', bcp47: 'am-ET', isEthiopic: true },
-        'ti': { label: 'ትግርኛ (Tigrinya)', short: 'ትግርኛ', bcp47: 'ti-ET', isEthiopic: true },
-        'en': { label: 'English', short: 'English', bcp47: 'en-US', isEthiopic: false },
-        'es': { label: 'Español (Spanish)', short: 'Español', bcp47: 'es-PR', isEthiopic: false }
+        'am': { label: 'አማርኛ (Amharic)', short: 'አማርኛ', bcp47: 'am-ET', isEthiopic: true, supportsChirp3Ws: true },
+        'ti': { label: 'ትግርኛ (Tigrinya)', short: 'ትግርኛ', bcp47: 'ti-ET', isEthiopic: true, supportsChirp3Ws: false },
+        'en': { label: 'English', short: 'English', bcp47: 'en-US', isEthiopic: false, supportsChirp3Ws: true },
+        'es': { label: 'Español (Spanish)', short: 'Español', bcp47: 'es-US', isEthiopic: false, supportsChirp3Ws: true }
     };
 
-    // Deterministic EOTC Liturgical Glossary so Gemini 2.5 Flash & Gemini 3 Flash
-    // both consistently apply gold italic + bracketed meaning formatting
+    // Deterministic EOTC Liturgical Glossary so every clause renders gold italic + bracketed meanings
     const EOTC_LITURGICAL_ENRICHER = [
         {
             sourceRegex: /ቅዳሴ/,
-            plainTargetRegex: /\b(Divine Liturgy|the Liturgy)\b/i,
+            plainTargetRegex: /\b(Divine Liturgy|the Liturgy|Qidase|Kidase)\b/i,
             phonetic: 'Qidase',
             meaning: 'Divine Liturgy'
+        },
+        {
+            sourceRegex: /ኪዳነ\s*ምሕረት|ኪዳነ\s*ምህረት/,
+            plainTargetRegex: /\b(Kidane Mihret)\b/i,
+            phonetic: 'Kidane Mihret',
+            meaning: 'Covenant of Mercy'
         },
         {
             sourceRegex: /ቁርባን|ርባን/,
@@ -155,6 +182,12 @@
             meaning: 'Mount of Mercy'
         },
         {
+            sourceRegex: /ተአምረ\s*ማርያም|ታምረ\s*ማርያም/,
+            plainTargetRegex: /\b(Miracles? of Mary|Teamire Mariam)\b/i,
+            phonetic: 'Teamire Mariam',
+            meaning: 'Miracles of Mary'
+        },
+        {
             sourceRegex: /ምሕላ|ምህላ/,
             plainTargetRegex: /\b(public supplication|supplication service|Mihla)\b/i,
             phonetic: 'Mihla',
@@ -170,32 +203,50 @@
         isListening: false,
         sourceLang: 'am',                      // 'am', 'ti', 'en', 'es'
         targetLang: 'en',                      // 'en', 'am', 'ti', 'es'
-        geminiModel: 'gemini-3-flash-preview', // Default: Gemini 3 Flash
+        geminiModel: 'gemini-2.5-flash',       // Default: Gemini 2.5 Flash
         displayMode: 'target',                 // 'target' or 'bilingual'
-        maxLines: 3,                           // 2, 3, or 4 visible chronological lines
-        fontSizePx: 32,                        // Customizable caption font size (px)
+        maxLines: 3,                           // 2, 3, or 4 visible chronological clauses
+        fontSizePx: 34,                        // Customizable caption font size (px)
         selectedIconId: 'mary_with_son',       // Icon ID or 'none' to hide icon
-        roomMode: 'local',                     // 'local', 'broadcast', 'viewer'
-        roomCode: 'oakland',                   // Parish broadcast room code
-        captions: [],                          // Chronological caption list (oldest at top -> newest at bottom)
-        recentContext: [],                     // Last 2 transcribed phrases for continuity
+        roomMode: 'local',                     // Personal sanctuary mode (Parish Sync UI hidden)
+        roomCode: 'oakland',
+        audioInputMode: 'microphone',          // 'microphone' | 'tab' | 'file'
+        transportMode: 'idle',                 // 'idle' | 'ws_chirp3' | 'sse_vad'
+        captions: [],                          // Immutable chronological clause list
+        liveDraft: null,                       // Unused in immutable-clause mode (kept null so words never flicker)
+        recentContext: [],                     // Last 3 transcribed clauses for homiletic continuity
         controlsMinimized: false,
         lastLatencyMs: 0
     };
 
-    // Audio, Sequence & Timer Handles
+    // Audio, WebSocket, VAD & Timer Handles
     let wakeLockSentinel = null;
     let firestoreUnsubscribe = null;
     let mediaStream = null;
-    let mediaRecorder = null;
     let audioContext = null;
+    let sourceAudioNode = null;
     let analyserNode = null;
-    let audioChunkTimer = null;
+    let pcmWorkletNode = null;
+    let scriptProcessorNode = null;
+    let silentSinkGain = null;
+    let fileMediaElementSource = null;
+    let replayObjectUrl = null;
     let levelMeterRaf = null;
-    let currentChunkMaxRms = 0;
-    let activeAudioRequests = 0;
+
+    // WebSocket Chirp 3 handles
+    let streamWs = null;
+    let streamWsReady = false;
+    let wsReconnectTimer = null;
+    let wsKeepAliveTimer = null;
+    let lookbehindPcmFrames = [];
+    let sustainedSpeechMs = 0;
+    let lastActiveVoiceFrameAt = 0;
+
+    // Option B (SSE VAD Ring Buffer) handles
+    let vadSliceSamples = [];
+    let vadSliceSampleCount = 0;
+    let activeSseRequests = 0;
     let chunkSequenceCounter = 0;
-    let lastRenderedSequence = 0;
 
     // Cloud Cost / Idle Protection Timers
     let lastSpeechDetectedAt = 0;
@@ -204,6 +255,160 @@
     let hiddenTabTimer = null;
 
     let translationCache = new Map();
+
+    // --- Pure DSP & Formatting Helpers ---
+    function downsampleFloat32ToInt16Pcm(float32Samples, inputSampleRate, targetSampleRate) {
+        if (!float32Samples || float32Samples.length === 0) {
+            return new Int16Array(0);
+        }
+        const inRate = Number(inputSampleRate) || TARGET_SAMPLE_RATE;
+        const outRate = Number(targetSampleRate) || TARGET_SAMPLE_RATE;
+
+        if (inRate === outRate) {
+            const out = new Int16Array(float32Samples.length);
+            for (let i = 0; i < float32Samples.length; i++) {
+                const s = Math.max(-1, Math.min(1, float32Samples[i]));
+                out[i] = s < 0 ? Math.round(s * 32768) : Math.round(s * 32767);
+            }
+            return out;
+        }
+
+        const ratio = inRate / outRate;
+        const outLength = Math.max(1, Math.floor(float32Samples.length / ratio));
+        const result = new Int16Array(outLength);
+        let offsetResult = 0;
+        let offsetBuffer = 0;
+
+        while (offsetResult < outLength) {
+            const nextOffsetBuffer = Math.min(
+                float32Samples.length,
+                Math.round((offsetResult + 1) * ratio)
+            );
+            let accum = 0;
+            let count = 0;
+            for (let i = offsetBuffer; i < nextOffsetBuffer; i++) {
+                accum += float32Samples[i];
+                count++;
+            }
+            const avg = count > 0 ? accum / count : (float32Samples[offsetBuffer] || 0);
+            const clamped = Math.max(-1, Math.min(1, avg));
+            result[offsetResult] = clamped < 0 ? Math.round(clamped * 32768) : Math.round(clamped * 32767);
+            offsetResult++;
+            offsetBuffer = nextOffsetBuffer;
+        }
+        return result;
+    }
+
+    function computeInt16Rms(int16Samples) {
+        if (!int16Samples || int16Samples.length === 0) return 0;
+        let sumSq = 0;
+        for (let i = 0; i < int16Samples.length; i++) {
+            const norm = int16Samples[i] / 32768;
+            sumSq += norm * norm;
+        }
+        return Math.sqrt(sumSq / int16Samples.length);
+    }
+
+    function encodePcm16ToWavBytes(int16Samples, sampleRate) {
+        const rate = Number(sampleRate) || TARGET_SAMPLE_RATE;
+        const numSamples = int16Samples ? int16Samples.length : 0;
+        const dataByteLength = numSamples * 2;
+        const buffer = new ArrayBuffer(44 + dataByteLength);
+        const view = new DataView(buffer);
+
+        function writeAscii(offset, str) {
+            for (let i = 0; i < str.length; i++) {
+                view.setUint8(offset + i, str.charCodeAt(i));
+            }
+        }
+
+        writeAscii(0, 'RIFF');
+        view.setUint32(4, 36 + dataByteLength, true);
+        writeAscii(8, 'WAVE');
+        writeAscii(12, 'fmt ');
+        view.setUint32(16, 16, true);          // Subchunk1Size (PCM)
+        view.setUint16(20, 1, true);           // AudioFormat = 1 (LINEAR16)
+        view.setUint16(22, 1, true);           // NumChannels = 1 (Mono)
+        view.setUint32(24, rate, true);        // SampleRate
+        view.setUint32(28, rate * 2, true);    // ByteRate
+        view.setUint16(32, 2, true);           // BlockAlign
+        view.setUint16(34, 16, true);          // BitsPerSample
+        writeAscii(36, 'data');
+        view.setUint32(40, dataByteLength, true);
+
+        for (let i = 0; i < numSamples; i++) {
+            view.setInt16(44 + i * 2, int16Samples[i], true);
+        }
+        return new Uint8Array(buffer);
+    }
+
+    function uint8ArrayToBase64(bytes) {
+        if (!bytes || bytes.length === 0) return '';
+        if (typeof Buffer !== 'undefined' && typeof Buffer.from === 'function') {
+            return Buffer.from(bytes.buffer, bytes.byteOffset, bytes.byteLength).toString('base64');
+        }
+        let binary = '';
+        const chunkSize = 0x8000;
+        for (let i = 0; i < bytes.length; i += chunkSize) {
+            const sub = bytes.subarray(i, Math.min(i + chunkSize, bytes.length));
+            binary += String.fromCharCode.apply(null, sub);
+        }
+        return btoa(binary);
+    }
+
+    function evaluateVadEndpointState(vadState, frameRms, frameDurationMs) {
+        const next = {
+            spokenMs: vadState.spokenMs || 0,
+            trailingPauseMs: vadState.trailingPauseMs || 0,
+            totalMs: (vadState.totalMs || 0) + frameDurationMs,
+            sustainedActiveMs: vadState.sustainedActiveMs || 0,
+            shouldFlush: false,
+            keepOverlap: false
+        };
+
+        if (frameRms >= SPEECH_RMS_THRESHOLD) {
+            next.sustainedActiveMs += frameDurationMs;
+            if (next.sustainedActiveMs >= MIN_SUSTAINED_SPEECH_MS) {
+                next.spokenMs += frameDurationMs;
+                next.trailingPauseMs = 0;
+            }
+        } else if (frameRms < SPEECH_PAUSE_RMS_THRESHOLD) {
+            next.sustainedActiveMs = 0;
+            if (next.spokenMs > 0) {
+                next.trailingPauseMs += frameDurationMs;
+            } else {
+                // Transient click/cough (<160ms) followed by silence: reset immediately
+                next.totalMs = 0;
+                next.trailingPauseMs = 0;
+            }
+        } else if (next.spokenMs > 0) {
+            next.spokenMs += frameDurationMs * 0.5;
+        }
+
+        if (next.spokenMs >= VAD_MIN_CLAUSE_SPEECH_MS && next.trailingPauseMs >= VAD_BREATH_PAUSE_MS) {
+            next.shouldFlush = true;
+            next.keepOverlap = false;
+        } else if (next.totalMs >= VAD_MAX_SLICE_MS && next.spokenMs >= MIN_SUSTAINED_SPEECH_MS) {
+            next.shouldFlush = true;
+            next.keepOverlap = true;
+        } else if (next.totalMs >= VAD_MAX_SLICE_MS && next.spokenMs < MIN_SUSTAINED_SPEECH_MS) {
+            // Pure dead air: reset slice without cloud call
+            next.totalMs = 0;
+            next.spokenMs = 0;
+            next.trailingPauseMs = 0;
+        }
+
+        return next;
+    }
+
+    function windowDraftWords(rawText, maxWords) {
+        const limit = maxWords || MAX_DRAFT_DISPLAY_WORDS;
+        const words = String(rawText || '').trim().split(/\s+/).filter(Boolean);
+        if (words.length <= limit) {
+            return words.join(' ');
+        }
+        return '… ' + words.slice(-limit).join(' ');
+    }
 
     // --- Load / Save Preferences ---
     function loadTargumaSettings() {
@@ -216,7 +421,7 @@
                 if (parsed.geminiModel && GEMINI_MODELS.some(m => m.id === parsed.geminiModel)) {
                     state.geminiModel = parsed.geminiModel;
                 } else {
-                    state.geminiModel = 'gemini-3-flash-preview';
+                    state.geminiModel = 'gemini-2.5-flash';
                 }
                 if (parsed.displayMode === 'target' || parsed.displayMode === 'bilingual') state.displayMode = parsed.displayMode;
                 if ([2, 3, 4].includes(Number(parsed.maxLines))) state.maxLines = Number(parsed.maxLines);
@@ -224,47 +429,49 @@
                 if (parsed.selectedIconId && TARGUMA_ICONS.some(i => i.id === parsed.selectedIconId)) {
                     state.selectedIconId = parsed.selectedIconId;
                 }
-                if (parsed.roomCode) state.roomCode = String(parsed.roomCode).trim().toLowerCase();
             } else {
-                state.fontSizePx = window.innerWidth < 768 ? 22 : 34;
+                state.fontSizePx = (typeof window !== 'undefined' && window.innerWidth < 768) ? 24 : 36;
             }
         } catch (e) {
             console.warn('Could not load Targuma settings:', e);
         }
+        state.roomMode = 'local';
         trimCaptionsToMaxLines();
     }
 
     function saveTargumaSettings() {
         try {
-            localStorage.setItem('mountOfMercy_targumaSettings', JSON.stringify({
+            const payload = JSON.stringify({
                 sourceLang: state.sourceLang,
                 targetLang: state.targetLang,
                 geminiModel: state.geminiModel,
                 displayMode: state.displayMode,
                 maxLines: state.maxLines,
                 fontSizePx: state.fontSizePx,
-                selectedIconId: state.selectedIconId,
-                roomCode: state.roomCode
-            }));
+                selectedIconId: state.selectedIconId
+            });
+            localStorage.setItem('mountOfMercy_targumaSettings', payload);
         } catch (e) {
             console.warn('Could not save Targuma settings:', e);
         }
     }
 
     function trimCaptionsToMaxLines() {
-        const n = state.maxLines || 3;
+        const keepLimit = Math.max(6, (state.maxLines || 3) + 3);
         if (!Array.isArray(state.captions)) {
             state.captions = [];
             return;
         }
-        if (state.captions.length > n) {
-            state.captions = state.captions.slice(-n);
+        if (state.captions.length > keepLimit) {
+            state.captions = state.captions.slice(-keepLimit);
         }
     }
 
     function clearAllCaptions() {
         state.captions = [];
+        state.liveDraft = null;
         state.recentContext = [];
+        chunkSequenceCounter = 0;
     }
 
     // --- Wake Lock Management (Web + Android Native Bridge) ---
@@ -273,7 +480,7 @@
             if (window.AndroidTargumaBridge && typeof window.AndroidTargumaBridge.setKeepScreenOn === 'function') {
                 window.AndroidTargumaBridge.setKeepScreenOn(true);
             }
-            if ('wakeLock' in navigator) {
+            if (typeof navigator !== 'undefined' && 'wakeLock' in navigator) {
                 wakeLockSentinel = await navigator.wakeLock.request('screen');
             }
         } catch (err) {
@@ -300,8 +507,13 @@
         let cleaned = String(rawText || '').trim();
         if (!cleaned) return '';
 
-        // If target language is English or Spanish (non-Ethiopic), strip any leaked Ethiopic characters
-        // so source Amharic/Tigrinya script NEVER appears inside an English-only or Spanish-only caption box
+        // Decode basic HTML entities that Cloud Translate V3 may emit
+        cleaned = cleaned
+            .replace(/&#39;/g, "'")
+            .replace(/&quot;/g, '"')
+            .replace(/&amp;/g, '&');
+
+        // Strip any leaked Ethiopic characters when target is English or Spanish
         if (!LANGUAGE_META[targetLang]?.isEthiopic) {
             cleaned = cleaned.replace(/[\u1200-\u137F]+/g, '').replace(/\s{2,}/g, ' ').trim();
         }
@@ -312,14 +524,11 @@
         let sanitized = sanitizeTargetLanguageText(rawTranslatedText, targetLang);
         if (!sanitized) return '';
 
-        // Deterministic EOTC Liturgical Enricher:
-        // If the model (e.g. Gemini 2.5 Flash) translated a Ge'ez/EOTC term into plain English without
-        // *Phonetic* [Meaning] markers, enrich it so both models produce identical gold/italic formatting
         if (targetLang === 'en' && !sanitized.includes('[')) {
             for (const rule of EOTC_LITURGICAL_ENRICHER) {
                 if ((sourceText && rule.sourceRegex.test(sourceText)) || rule.plainTargetRegex.test(sanitized)) {
                     if (rule.plainTargetRegex.test(sanitized)) {
-                        sanitized = sanitized.replace(rule.plainTargetRegex, `*${rule.phonetic}* [${rule.meaning}]`);
+                        sanitized = sanitized.replace(rule.plainTargetRegex, '*' + rule.phonetic + '* [' + rule.meaning + ']');
                     }
                 }
             }
@@ -329,13 +538,13 @@
 
         // Convert *Phonetic* [Meaning] into gold Style B span
         html = html.replace(/\*([^*]+)\*\s*\[([^\]]+)\]/g, (_, phonetic, meaning) => {
-            return `<span class="targuma-geez-term"><i>${phonetic.trim()}</i> <span class="targuma-geez-gloss">[${meaning.trim()}]</span></span>`;
+            return '<span class="targuma-geez-term"><i>' + phonetic.trim() + '</i> <span class="targuma-geez-gloss">[' + meaning.trim() + ']</span></span>';
         });
 
         // Convert remaining *italic* terms into gold italic span
         html = html.replace(/\*([^*]+)\*/g, '<span class="targuma-geez-term"><i>$1</i></span>');
 
-        // Apply full EOTC Sacred Rubrication (Red)
+        // Apply EOTC Sacred Rubrication (Red)
         html = highlightSacredTermsInCaption(html);
         return html;
     }
@@ -345,7 +554,7 @@
             return htmlText;
         }
         return htmlText.replace(
-            /\b(Lord and Savior Jesus Christ|Our Lord Jesus Christ|Jesus Christ|Iyesus Kristos|Jesucristo|Christ Jesus|Jesus|Jesús|Christ|Cristo|Medhane Alem|Savior of the World|Our Savior|Redeemer|Holy Trinity|Santísima Trinidad|Father,?\s+Son,?\s+and\s+Holy Spirit|Holy Spirit|Espíritu Santo|Our Lady Saint Mary|Our Lady|Nuestra Señora|Saint Mary|St\.\s*Mary|Santa María|Blessed Virgin Mary|Virgin Mary|Virgen María|Mother of God|Madre de Dios|Theotokos|Weladite Amlak|Kidane Mihret|Covenant of Mercy|Almighty God|Heavenly Father|Lord God|Egziabher|God|Dios|Lord|Señor|እግዚአብሔር|ኢየሱስ ክርስቶስ|መድኃኔዓለም|መንፈስ ቅዱስ|ቅድስት ሥላሴ|ቅድስት ድንግል ማርያም|ወላዲተ አምላክ|ኪዳነ ምሕረት|እመቤታችን)\b/g,
+            /\b(Lord and Savior Jesus Christ|Our Lord Jesus Christ|Jesus Christ|Iyesus Kristos|Jesucristo|Christ Jesus|Jesus|Jesús|Christ|Cristo|Medhane Alem|Savior of the World|Our Savior|Redeemer|Holy Trinity|Santísima Trinidad|Father,?\s+Son,?\s+and\s+Holy Spirit|Holy Spirit|Espíritu Santo|Our Lady Saint Mary|Our Lady|Nuestra Señora|Saint Mary|St\.\s*Mary|Santa María|Blessed Virgin Mary|Virgin Mary|Virgen María|Mother of God|Madre de Dios|Theotokos|Weladite Amlak|Kidane Mihret|Covenant of Mercy|Archangel Saint Michael|Saint Michael|St\.\s*Michael|San Miguel|His Grace Abune|Almighty God|Heavenly Father|Lord God|Egziabher|God|Dios|Lord|Señor|እግዚአብሔር|ኢየሱስ ክርስቶስ|መድኃኔዓለም|መንፈስ ቅዱስ|ቅድስት ሥላሴ|ቅድስት ድንግል ማርያም|ወላዲተ አምላክ|ኪዳነ ምሕረት|እመቤታችን|ቅዱስ ሚካኤል|ብፁዕ አቡነ)\b/g,
             '<span class="rubric-red">$1</span>'
         );
     }
@@ -357,14 +566,31 @@
             .replace(/>/g, '&gt;');
     }
 
-    // --- Append Caption at the Bottom with Smooth Continuous Upward Glide ---
-    function appendCaptionAtBottom(sourceText, translatedText) {
-        const cleanTarget = sanitizeTargetLanguageText(translatedText, state.targetLang);
-        if (!cleanTarget) return;
+    // --- Immutable Clause Commit & Ordered Sequence Slotting ---
+    // Note: Word-by-word drafts and post-display text mutations are intentionally disabled
+    // so once a clause appears on screen, it stays rock-solid for readers.
+    function updateLiveDraftCaption(segmentId, sourceText, rawTranslatedText) {
+        lastSpeechDetectedAt = Date.now();
+        if (sourceText || rawTranslatedText) {
+            evaluateMiracleLiveMatch(sourceText, rawTranslatedText);
+        }
+    }
 
+    function commitFinalizedCaption(segmentId, sourceText, rawTranslatedText, options = {}) {
+        const cleanTarget = sanitizeTargetLanguageText(rawTranslatedText, state.targetLang);
         const cleanSource = String(sourceText || '').trim();
+        state.liveDraft = null;
 
-        // Deduplicate if identical to the latest line at the bottom
+        if (!cleanTarget) {
+            return;
+        }
+
+        // Immutability guarantee: if this segmentId is already on screen, NEVER overwrite its wording!
+        if (segmentId && state.captions.some(c => c.id === segmentId)) {
+            return;
+        }
+
+        // Deduplicate against immediately preceding finalized clause
         if (state.captions.length > 0) {
             const latest = state.captions[state.captions.length - 1];
             if (latest.rawTarget === cleanTarget || (cleanSource && latest.sourceText === cleanSource)) {
@@ -372,44 +598,68 @@
             }
         }
 
-        // Split overly long paragraphs in Bilingual mode so each line stays compact and never requires scrolling
+        let seq;
+        if (typeof options.seq === 'number') {
+            seq = options.seq;
+            chunkSequenceCounter = Math.max(chunkSequenceCounter, Math.ceil(seq));
+        } else {
+            seq = ++chunkSequenceCounter;
+        }
+
+        // Split extra-long clauses (>24 target words) cleanly into two balanced sequential clauses
         const targetWords = cleanTarget.split(/\s+/);
-        if (targetWords.length > 26 && state.displayMode === 'bilingual') {
+        if (targetWords.length > 24) {
             const mid = Math.ceil(targetWords.length / 2);
-            const firstHalf = targetWords.slice(0, mid).join(' ');
-            const secondHalf = targetWords.slice(mid).join(' ');
-            insertChronologicalItem(cleanSource, firstHalf);
-            insertChronologicalItem('', secondHalf);
+            const baseId = segmentId || ('cap_' + Date.now());
+            insertOrderedCaptionBySeq(seq - 0.01, baseId + '_a', cleanSource, targetWords.slice(0, mid).join(' '), true);
+            insertOrderedCaptionBySeq(seq, baseId + '_b', '', targetWords.slice(mid).join(' '), true);
             return;
         }
 
-        insertChronologicalItem(cleanSource, cleanTarget);
+        const resolvedId = segmentId || ('cap_' + Date.now() + '_' + Math.random().toString(36).slice(2, 6));
+        insertOrderedCaptionBySeq(seq, resolvedId, cleanSource, cleanTarget, Boolean(options.polished));
     }
 
-    function insertChronologicalItem(cleanSource, cleanTarget) {
+    function insertOrderedCaptionBySeq(seq, segmentId, cleanSource, cleanTarget, polished = true) {
         const translatedHtml = formatGeminiTranslationToHtml(cleanTarget, state.targetLang, cleanSource);
         if (!translatedHtml) return;
 
         const newItem = {
-            id: 'cap_' + Date.now() + '_' + Math.random().toString(36).slice(2, 6),
+            id: segmentId,
+            seq: seq,
             sourceText: cleanSource,
             rawTarget: cleanTarget,
-            translatedHtml,
+            translatedHtml: translatedHtml,
+            polished: Boolean(polished),
             sourceLang: state.sourceLang,
             targetLang: state.targetLang,
             timestamp: Date.now()
         };
 
-        state.captions.push(newItem);
+        // Insert in chronological `seq` order rather than dropping out-of-order completions
+        let inserted = false;
+        for (let i = state.captions.length - 1; i >= 0; i--) {
+            const existingSeq = typeof state.captions[i].seq === 'number' ? state.captions[i].seq : -Infinity;
+            if (seq >= existingSeq) {
+                state.captions.splice(i + 1, 0, newItem);
+                inserted = true;
+                break;
+            }
+        }
+        if (!inserted) {
+            state.captions.unshift(newItem);
+        }
+
         trimCaptionsToMaxLines();
 
         if (cleanSource) {
             state.recentContext.push(cleanSource);
-            if (state.recentContext.length > 2) {
-                state.recentContext = state.recentContext.slice(-2);
+            if (state.recentContext.length > 3) {
+                state.recentContext = state.recentContext.slice(-3);
             }
         }
 
+        lastSpeechDetectedAt = Date.now();
         renderCaptionsStage(true);
         evaluateMiracleLiveMatch(cleanSource, cleanTarget);
 
@@ -418,91 +668,399 @@
         }
     }
 
-    // --- Multimodal Audio Chunk -> Vertex AI Gemini Flash (`targumaGemini`) ---
-    async function transcribeAndTranslateAudioChunk(audioBlob, mimeType) {
-        if (!audioBlob || audioBlob.size < 1200 || !state.isListening) return;
-        if (activeAudioRequests >= 2) return; // Prevent backpressure queue buildup
+    // Kept as a no-op for displayed clauses to uphold strict on-screen immutability
+    function polishExistingCaption() {
+        return;
+    }
+
+    function handleStreamingServerEvent(evt) {
+        if (!evt || typeof evt !== 'object') return;
+
+        if (evt.type === 'ready') {
+            streamWsReady = true;
+            state.transportMode = 'ws_chirp3';
+            refreshStreamingStatusPill();
+            return;
+        }
+
+        if (evt.type === 'fallback_required') {
+            streamWsReady = false;
+            state.transportMode = 'sse_vad';
+            closeStreamWebSocket(false);
+            refreshStreamingStatusPill();
+            return;
+        }
+
+        if (evt.type === 'draft') {
+            // Word-by-word drafts are intentionally not displayed on screen
+            updateLiveDraftCaption(evt.segmentId, evt.sourceText, evt.translatedText);
+            return;
+        }
+
+        if (evt.type === 'commit') {
+            if (evt.nmtMs) {
+                state.lastLatencyMs = Number(evt.nmtMs);
+            }
+            commitFinalizedCaption(evt.segmentId, evt.sourceText, evt.translatedText, {
+                seq: typeof evt.seq === 'number' ? evt.seq : undefined,
+                polished: Boolean(evt.polished)
+            });
+        }
+    }
+
+    // --- Option A: Chirp 3 Immutable-Clause WebSocket Client ---
+    function canUseChirp3WebSocket() {
+        return Boolean(
+            typeof WebSocket !== 'undefined' &&
+            LANGUAGE_META[state.sourceLang] &&
+            LANGUAGE_META[state.sourceLang].supportsChirp3Ws
+        );
+    }
+
+    function connectStreamWebSocket() {
+        closeStreamWebSocket(false);
+        if (!state.isListening || !canUseChirp3WebSocket()) {
+            state.transportMode = 'sse_vad';
+            return;
+        }
+
+        try {
+            const ws = new WebSocket(TARGUMA_STREAM_WS_URL);
+            ws.binaryType = 'arraybuffer';
+            streamWs = ws;
+
+            ws.onopen = () => {
+                if (ws !== streamWs || !state.isListening) {
+                    try { ws.close(); } catch (_) {}
+                    return;
+                }
+                const startMsg = JSON.stringify({
+                    type: 'start',
+                    sourceLang: state.sourceLang,
+                    targetLang: state.targetLang,
+                    sampleRate: TARGET_SAMPLE_RATE,
+                    model: state.geminiModel || 'gemini-2.5-flash',
+                    enablePolish: true
+                });
+                ws.send(startMsg);
+
+                wsKeepAliveTimer = setInterval(() => {
+                    if (ws === streamWs && ws.readyState === WebSocket.OPEN) {
+                        try {
+                            const pingMsg = JSON.stringify({ type: 'ping', ts: Date.now() });
+                            ws.send(pingMsg);
+                        } catch (_) {}
+                    }
+                }, 20000);
+            };
+
+            ws.onmessage = (ev) => {
+                if (ws !== streamWs || typeof ev.data !== 'string') return;
+                try {
+                    const parsed = JSON.parse(ev.data);
+                    handleStreamingServerEvent(parsed);
+                } catch (_) {}
+            };
+
+            ws.onerror = () => {
+                if (ws !== streamWs) return;
+                streamWsReady = false;
+                state.transportMode = 'sse_vad';
+                refreshStreamingStatusPill();
+            };
+
+            ws.onclose = () => {
+                if (ws !== streamWs) return;
+                streamWs = null;
+                streamWsReady = false;
+                if (wsKeepAliveTimer) {
+                    clearInterval(wsKeepAliveTimer);
+                    wsKeepAliveTimer = null;
+                }
+                if (state.isListening) {
+                    state.transportMode = 'sse_vad';
+                    refreshStreamingStatusPill();
+                    if (canUseChirp3WebSocket()) {
+                        wsReconnectTimer = setTimeout(() => {
+                            if (state.isListening && canUseChirp3WebSocket()) {
+                                connectStreamWebSocket();
+                            }
+                        }, 4000);
+                    }
+                }
+            };
+        } catch (err) {
+            streamWs = null;
+            streamWsReady = false;
+            state.transportMode = 'sse_vad';
+        }
+    }
+
+    function closeStreamWebSocket(sendStop = true) {
+        if (wsReconnectTimer) {
+            clearTimeout(wsReconnectTimer);
+            wsReconnectTimer = null;
+        }
+        if (wsKeepAliveTimer) {
+            clearInterval(wsKeepAliveTimer);
+            wsKeepAliveTimer = null;
+        }
+        if (streamWs) {
+            const old = streamWs;
+            streamWs = null;
+            streamWsReady = false;
+            try {
+                if (sendStop && old.readyState === WebSocket.OPEN) {
+                    const stopMsg = JSON.stringify({ type: 'stop' });
+                    old.send(stopMsg);
+                }
+                old.close();
+            } catch (_) {}
+        }
+    }
+
+    function sendWsConfigUpdate() {
+        if (streamWs && streamWs.readyState === WebSocket.OPEN && streamWsReady) {
+            if (!canUseChirp3WebSocket()) {
+                closeStreamWebSocket(true);
+                state.transportMode = 'sse_vad';
+                refreshStreamingStatusPill();
+                return;
+            }
+            try {
+                const cfgMsg = JSON.stringify({
+                    type: 'config',
+                    sourceLang: state.sourceLang,
+                    targetLang: state.targetLang,
+                    model: state.geminiModel || 'gemini-2.5-flash',
+                    enablePolish: true
+                });
+                streamWs.send(cfgMsg);
+            } catch (_) {}
+        } else if (state.isListening && canUseChirp3WebSocket()) {
+            connectStreamWebSocket();
+        }
+    }
+
+    // --- Option B: Pause-Aware Clause VAD WAV Slice -> Gemini Streaming SSE ---
+    async function streamWavSliceOverSse(wavBytes) {
+        if (!wavBytes || wavBytes.length < 1600 || !state.isListening) return;
+        if (activeSseRequests >= MAX_CONCURRENT_SSE_REQUESTS) return;
 
         const mySeq = ++chunkSequenceCounter;
-        activeAudioRequests++;
+        const mySegId = 'sse_seg_' + mySeq + '_' + Date.now().toString(36);
+        activeSseRequests++;
+
         const controller = new AbortController();
         const timeoutId = setTimeout(() => controller.abort(), CLIENT_FETCH_TIMEOUT_MS);
 
         try {
-            const base64Audio = await blobToBase64(audioBlob);
+            const base64Audio = uint8ArrayToBase64(wavBytes);
             if (!base64Audio || !state.isListening) return;
 
-            const activeModel = state.geminiModel || 'gemini-3-flash-preview';
-
-            // Using text/plain avoids CORS preflight OPTIONS round-trips on mobile & desktop
-            const resp = await fetch(TARGUMA_GEMINI_ENDPOINT, {
-                method: 'POST',
-                headers: { 'Content-Type': 'text/plain;charset=UTF-8' },
-                body: JSON.stringify({
-                    model: activeModel,
-                    sourceLang: state.sourceLang,
-                    targetLang: state.targetLang,
-                    audioBase64: base64Audio,
-                    mimeType: mimeType || audioBlob.type || 'audio/webm',
-                    recentContext: state.recentContext
-                }),
-                signal: controller.signal
+            const payload = JSON.stringify({
+                stream: true,
+                model: state.geminiModel || 'gemini-2.5-flash',
+                sourceLang: state.sourceLang,
+                targetLang: state.targetLang,
+                audioBase64: base64Audio,
+                mimeType: 'audio/wav',
+                recentContext: state.recentContext
             });
 
-            if (!resp.ok) return;
-            const data = await resp.json();
-            if (!data || data.isSilence || !data.translatedText) return;
-
-            // Drop out-of-order late packets so older sentences never appear after newer ones
-            if (mySeq < lastRenderedSequence) return;
-            lastRenderedSequence = mySeq;
-
-            if (data.latencyMs) {
-                state.lastLatencyMs = data.latencyMs;
+            let resp = null;
+            try {
+                resp = await fetch(TARGUMA_STREAM_HTTP_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'text/plain;charset=UTF-8' },
+                    body: payload,
+                    signal: controller.signal
+                });
+            } catch (_) {
+                resp = await fetch(TARGUMA_FALLBACK_CF_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'text/plain;charset=UTF-8' },
+                    body: payload,
+                    signal: controller.signal
+                });
             }
 
-            // Record valid human speech timestamp for idle watchdog
-            lastSpeechDetectedAt = Date.now();
-            appendCaptionAtBottom(data.sourceText, data.translatedText);
+            if (!resp || !resp.ok) return;
+
+            const contentType = String(resp.headers.get('content-type') || '');
+            if (contentType.includes('text/event-stream') && resp.body && typeof resp.body.getReader === 'function') {
+                const reader = resp.body.getReader();
+                const decoder = new TextDecoder();
+                let buf = '';
+
+                while (true) {
+                    const step = await reader.read();
+                    if (step.done) break;
+                    buf += decoder.decode(step.value, { stream: true });
+                    const lines = buf.split('\n');
+                    buf = lines.pop() || '';
+
+                    for (const line of lines) {
+                        const trimmed = line.trim();
+                        if (!trimmed.startsWith('data:')) continue;
+                        const raw = trimmed.slice(5).trim();
+                        if (!raw) continue;
+                        try {
+                            const evt = JSON.parse(raw);
+                            if (evt.type === 'done' && !evt.isSilence && evt.translatedText) {
+                                if (evt.latencyMs) state.lastLatencyMs = evt.latencyMs;
+                                commitFinalizedCaption(mySegId, evt.sourceText, evt.translatedText, {
+                                    seq: mySeq,
+                                    polished: true
+                                });
+                            }
+                        } catch (_) {}
+                    }
+                }
+            } else {
+                const data = await resp.json();
+                if (data && !data.isSilence && data.translatedText) {
+                    if (data.latencyMs) state.lastLatencyMs = data.latencyMs;
+                    commitFinalizedCaption(mySegId, data.sourceText, data.translatedText, {
+                        seq: mySeq,
+                        polished: true
+                    });
+                }
+            }
         } catch (err) {
             if (err && err.name !== 'AbortError') {
-                console.debug('Audio chunk translation notice:', err.message || err);
+                console.debug('SSE clause notice:', err.message || err);
             }
         } finally {
             clearTimeout(timeoutId);
-            activeAudioRequests = Math.max(0, activeAudioRequests - 1);
+            activeSseRequests = Math.max(0, activeSseRequests - 1);
         }
     }
 
-    // --- Text Retranslation when User Swaps Target Language ---
+    // --- Process Each 100ms 16kHz Int16 PCM Frame ---
+    let vadTracker = { spokenMs: 0, trailingPauseMs: 0, totalMs: 0, sustainedActiveMs: 0 };
+
+    function handlePcm16Frame(int16Frame) {
+        if (!state.isListening || !int16Frame || int16Frame.length === 0) return;
+
+        const frameDurationMs = (int16Frame.length / TARGET_SAMPLE_RATE) * 1000;
+        const rms = computeInt16Rms(int16Frame);
+        const now = Date.now();
+
+        if (rms >= SPEECH_RMS_THRESHOLD) {
+            sustainedSpeechMs += frameDurationMs;
+            if (sustainedSpeechMs >= MIN_SUSTAINED_SPEECH_MS) {
+                lastSpeechDetectedAt = now;
+                lastActiveVoiceFrameAt = now;
+            }
+        } else {
+            sustainedSpeechMs = 0;
+        }
+
+        // Route 1: Real-Time Chirp 3 Immutable-Clause WebSocket
+        if (streamWs && streamWs.readyState === WebSocket.OPEN && streamWsReady && canUseChirp3WebSocket()) {
+            const inVoiceOrHangover =
+                sustainedSpeechMs >= MIN_SUSTAINED_SPEECH_MS ||
+                (lastActiveVoiceFrameAt > 0 && (now - lastActiveVoiceFrameAt) <= WS_POST_SPEECH_HANGOVER_MS);
+
+            if (inVoiceOrHangover) {
+                if (lookbehindPcmFrames.length > 0) {
+                    for (const prev of lookbehindPcmFrames) {
+                        try { streamWs.send(prev.buffer.slice(prev.byteOffset, prev.byteOffset + prev.byteLength)); } catch (_) {}
+                    }
+                    lookbehindPcmFrames = [];
+                }
+                try {
+                    streamWs.send(int16Frame.buffer.slice(int16Frame.byteOffset, int16Frame.byteOffset + int16Frame.byteLength));
+                } catch (_) {}
+            } else {
+                lookbehindPcmFrames.push(int16Frame);
+                if (lookbehindPcmFrames.length > WS_PRE_SPEECH_LOOKBEHIND_FRAMES) {
+                    lookbehindPcmFrames.shift();
+                }
+            }
+            return;
+        }
+
+        // Route 2: Smart Clause-Aware VAD Ring Buffer -> Gemini Streaming SSE
+        vadSliceSamples.push(int16Frame);
+        vadSliceSampleCount += int16Frame.length;
+        vadTracker = evaluateVadEndpointState(vadTracker, rms, frameDurationMs);
+
+        if (vadTracker.totalMs === 0 && !vadTracker.shouldFlush) {
+            while (vadSliceSamples.length > WS_PRE_SPEECH_LOOKBEHIND_FRAMES) {
+                const dropped = vadSliceSamples.shift();
+                vadSliceSampleCount -= dropped.length;
+            }
+            return;
+        }
+
+        if (vadTracker.shouldFlush && vadSliceSampleCount > 0) {
+            const combined = new Int16Array(vadSliceSampleCount);
+            let offset = 0;
+            for (const chunk of vadSliceSamples) {
+                combined.set(chunk, offset);
+                offset += chunk.length;
+            }
+
+            if (vadTracker.keepOverlap && combined.length > VAD_OVERLAP_SAMPLES) {
+                const overlapTail = combined.slice(combined.length - VAD_OVERLAP_SAMPLES);
+                vadSliceSamples = [overlapTail];
+                vadSliceSampleCount = overlapTail.length;
+            } else {
+                vadSliceSamples = [];
+                vadSliceSampleCount = 0;
+            }
+
+            vadTracker = { spokenMs: 0, trailingPauseMs: 0, totalMs: 0, sustainedActiveMs: 0 };
+            const wavBytes = encodePcm16ToWavBytes(combined, TARGET_SAMPLE_RATE);
+            streamWavSliceOverSse(wavBytes);
+        }
+    }
+
+    // --- Fast Text Retranslation when User Swaps Target Language ---
     async function translateTargumaPhrase(rawText, sourceLang, targetLang) {
         const cleanText = String(rawText || '').trim();
         if (!cleanText) return '';
+        if (sourceLang === targetLang) {
+            return formatGeminiTranslationToHtml(cleanText, targetLang, cleanText);
+        }
 
-        const activeModel = state.geminiModel || 'gemini-3-flash-preview';
-        const cacheKey = `${activeModel}:${sourceLang}:${targetLang}:${cleanText}`;
+        const activeModel = state.geminiModel || 'gemini-2.5-flash';
+        const cacheKey = activeModel + ':' + sourceLang + ':' + targetLang + ':' + cleanText;
         if (translationCache.has(cacheKey)) {
             return translationCache.get(cacheKey);
         }
 
         try {
-            const resp = await fetch(TARGUMA_GEMINI_ENDPOINT, {
-                method: 'POST',
-                headers: { 'Content-Type': 'text/plain;charset=UTF-8' },
-                body: JSON.stringify({
-                    model: activeModel,
-                    sourceLang,
-                    targetLang,
-                    text: cleanText,
-                    recentContext: []
-                })
+            const bodyStr = JSON.stringify({
+                mode: 'nmt',
+                model: activeModel,
+                sourceLang,
+                targetLang,
+                text: cleanText
             });
 
-            if (resp.ok) {
+            let resp = null;
+            try {
+                resp = await fetch(TARGUMA_STREAM_HTTP_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'text/plain;charset=UTF-8' },
+                    body: bodyStr
+                });
+            } catch (_) {
+                resp = await fetch(TARGUMA_FALLBACK_CF_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'text/plain;charset=UTF-8' },
+                    body: bodyStr
+                });
+            }
+
+            if (resp && resp.ok) {
                 const data = await resp.json();
                 if (data && data.translatedText) {
                     const finalHtml = formatGeminiTranslationToHtml(data.translatedText, targetLang, cleanText);
-                    if (translationCache.size > 200) {
+                    if (translationCache.size > 300) {
                         const firstKey = translationCache.keys().next().value;
                         translationCache.delete(firstKey);
                     }
@@ -516,169 +1074,243 @@
         return '';
     }
 
-    function blobToBase64(blob) {
-        return new Promise((resolve) => {
-            const reader = new FileReader();
-            reader.onloadend = () => {
-                const res = String(reader.result || '');
-                const commaIdx = res.indexOf(',');
-                resolve(commaIdx >= 0 ? res.slice(commaIdx + 1) : res);
-            };
-            reader.onerror = () => resolve('');
-            reader.readAsDataURL(blob);
-        });
-    }
+    // --- Unified 16kHz PCM Audio Pipeline (Mic, Browser Tab YouTube Audio, or Local File Replay) ---
+    async function attachWebAudioPipeline(inputSourceMode) {
+        const AudioCtx = window.AudioContext || window.webkitAudioContext;
+        if (!AudioCtx) return false;
 
-    function getSupportedAudioMimeType() {
-        if (typeof MediaRecorder === 'undefined') return '';
-        const candidates = [
-            'audio/webm;codecs=opus',
-            'audio/webm',
-            'audio/mp4',
-            'audio/ogg;codecs=opus'
-        ];
-        for (const mime of candidates) {
-            if (typeof MediaRecorder.isTypeSupported === 'function' && MediaRecorder.isTypeSupported(mime)) {
-                return mime;
+        if (!audioContext || audioContext.state === 'closed') {
+            try {
+                audioContext = new AudioCtx({ sampleRate: TARGET_SAMPLE_RATE });
+            } catch (_) {
+                audioContext = new AudioCtx();
             }
         }
-        return '';
-    }
-
-    // --- Unified Low-Latency Multimodal Audio Streamer (Works on Pixel 9 Pro XL & Desktop!) ---
-    async function startMultimodalAudioStream() {
-        stopMultimodalAudioStream();
-        if (!navigator.mediaDevices || typeof navigator.mediaDevices.getUserMedia !== 'function') {
-            return false;
+        if (audioContext.state === 'suspended') {
+            try { await audioContext.resume(); } catch (_) {}
         }
 
-        try {
+        if (inputSourceMode === 'file') {
+            const audioEl = document.getElementById('targuma-replay-audio');
+            if (!audioEl || !audioEl.src) {
+                updateStatusBanner('Choose an audio or video clip in Settings below to start replay.', 'idle');
+                return false;
+            }
+            if (!fileMediaElementSource) {
+                fileMediaElementSource = audioContext.createMediaElementSource(audioEl);
+            }
+            sourceAudioNode = fileMediaElementSource;
+            try { sourceAudioNode.connect(audioContext.destination); } catch (_) {}
+            try { await audioEl.play(); } catch (_) {}
+        } else if (inputSourceMode === 'tab') {
+            if (!navigator.mediaDevices || typeof navigator.mediaDevices.getDisplayMedia !== 'function') {
+                updateStatusBanner('Browser Tab Audio capture requires a desktop browser (Chrome/Edge). Use File Replay on mobile.', 'error');
+                return false;
+            }
+            mediaStream = await navigator.mediaDevices.getDisplayMedia({
+                video: true,
+                audio: {
+                    echoCancellation: false,
+                    noiseSuppression: false,
+                    autoGainControl: false
+                }
+            });
+            const audioTracks = mediaStream.getAudioTracks();
+            if (!audioTracks || audioTracks.length === 0) {
+                mediaStream.getTracks().forEach(t => t.stop());
+                mediaStream = null;
+                updateStatusBanner('No tab audio shared. Select a browser tab and enable "Also share tab audio".', 'error');
+                return false;
+            }
+            audioTracks[0].addEventListener('ended', () => {
+                if (state.isListening) stopLocalListening(true);
+            });
+            const audioOnlyStream = new MediaStream(audioTracks);
+            sourceAudioNode = audioContext.createMediaStreamSource(audioOnlyStream);
+        } else {
+            if (!navigator.mediaDevices || typeof navigator.mediaDevices.getUserMedia !== 'function') {
+                return false;
+            }
             mediaStream = await navigator.mediaDevices.getUserMedia({
                 audio: {
                     channelCount: 1,
-                    sampleRate: 16000,
-                    echoCancellation: false,
+                    sampleRate: TARGET_SAMPLE_RATE,
+                    echoCancellation: true,
                     noiseSuppression: true,
                     autoGainControl: true
                 }
             });
+            sourceAudioNode = audioContext.createMediaStreamSource(mediaStream);
+        }
 
-            const AudioCtx = window.AudioContext || window.webkitAudioContext;
-            if (AudioCtx) {
-                audioContext = new AudioCtx();
-                const sourceNode = audioContext.createMediaStreamSource(mediaStream);
-                analyserNode = audioContext.createAnalyser();
-                analyserNode.fftSize = 512;
-                sourceNode.connect(analyserNode);
+        analyserNode = audioContext.createAnalyser();
+        analyserNode.fftSize = 512;
+        sourceAudioNode.connect(analyserNode);
 
-                const dataArray = new Uint8Array(analyserNode.frequencyBinCount);
-                const updateMeter = () => {
-                    if (!state.isListening || !analyserNode) return;
-                    analyserNode.getByteTimeDomainData(dataArray);
-                    let sumSquares = 0;
-                    for (let i = 0; i < dataArray.length; i++) {
-                        const norm = (dataArray[i] - 128) / 128;
-                        sumSquares += norm * norm;
-                    }
-                    const rms = Math.sqrt(sumSquares / dataArray.length);
-                    if (rms > currentChunkMaxRms) {
-                        currentChunkMaxRms = rms;
-                    }
-                    if (rms > SPEECH_RMS_THRESHOLD) {
-                        lastSpeechDetectedAt = Date.now();
-                    }
-                    updateMicLevelIndicator(rms);
-                    levelMeterRaf = requestAnimationFrame(updateMeter);
-                };
-                levelMeterRaf = requestAnimationFrame(updateMeter);
+        const meterBytes = new Uint8Array(analyserNode.frequencyBinCount);
+        const updateMeter = () => {
+            if (!state.isListening || !analyserNode) return;
+            analyserNode.getByteTimeDomainData(meterBytes);
+            let sumSq = 0;
+            for (let i = 0; i < meterBytes.length; i++) {
+                const norm = (meterBytes[i] - 128) / 128;
+                sumSq += norm * norm;
             }
+            updateMicLevelIndicator(Math.sqrt(sumSq / meterBytes.length));
+            levelMeterRaf = requestAnimationFrame(updateMeter);
+        };
+        levelMeterRaf = requestAnimationFrame(updateMeter);
 
-            if (typeof MediaRecorder !== 'undefined') {
-                const mimeType = getSupportedAudioMimeType();
+        const actualRate = audioContext.sampleRate || TARGET_SAMPLE_RATE;
+        let pendingInt16 = new Int16Array(0);
 
-                const recordSingleSlice = () => {
-                    if (!state.isListening || !mediaStream || !mediaStream.active) return;
-                    currentChunkMaxRms = 0;
-                    let chunks = [];
-                    let rec = null;
-                    try {
-                        const opts = mimeType
-                            ? { mimeType, audioBitsPerSecond: 24000 }
-                            : { audioBitsPerSecond: 24000 };
-                        rec = new MediaRecorder(mediaStream, opts);
-                    } catch (e) {
-                        rec = new MediaRecorder(mediaStream);
-                    }
-                    mediaRecorder = rec;
+        function pushFloat32Samples(floatChunk) {
+            const downsampled = downsampleFloat32ToInt16Pcm(floatChunk, actualRate, TARGET_SAMPLE_RATE);
+            if (downsampled.length === 0) return;
 
-                    rec.ondataavailable = (ev) => {
-                        if (ev.data && ev.data.size > 0) {
-                            chunks.push(ev.data);
-                        }
-                    };
+            const merged = new Int16Array(pendingInt16.length + downsampled.length);
+            merged.set(pendingInt16, 0);
+            merged.set(downsampled, pendingInt16.length);
 
-                    rec.onstop = () => {
-                        const peakRms = currentChunkMaxRms;
-                        // Local VAD Silence Gate: only send to Gemini if human speech energy was present
-                        if (chunks.length > 0 && peakRms >= SPEECH_RMS_THRESHOLD && state.isListening) {
-                            const blob = new Blob(chunks, { type: rec.mimeType || mimeType || 'audio/webm' });
-                            transcribeAndTranslateAudioChunk(blob, rec.mimeType || mimeType || 'audio/webm');
-                        }
-                        if (state.isListening && mediaStream && mediaStream.active) {
-                            recordSingleSlice();
-                        }
-                    };
+            let offset = 0;
+            while (offset + PCM_FRAME_SAMPLES <= merged.length) {
+                handlePcm16Frame(merged.slice(offset, offset + PCM_FRAME_SAMPLES));
+                offset += PCM_FRAME_SAMPLES;
+            }
+            pendingInt16 = merged.slice(offset);
+        }
 
-                    try {
-                        rec.start();
-                        audioChunkTimer = setTimeout(() => {
-                            if (rec && rec.state === 'recording') {
-                                try { rec.stop(); } catch (e) {}
-                            }
-                        }, AUDIO_SLICE_DURATION_MS);
-                    } catch (e) {
-                        console.warn('MediaRecorder start error:', e);
-                    }
+        silentSinkGain = audioContext.createGain();
+        silentSinkGain.gain.value = 0;
+        silentSinkGain.connect(audioContext.destination);
+
+        let workletAttached = false;
+        if (audioContext.audioWorklet && typeof Blob !== 'undefined' && typeof URL !== 'undefined' && typeof URL.createObjectURL === 'function') {
+            try {
+                const workletCode = [
+                    'class TargumaPcmProcessor extends AudioWorkletProcessor {',
+                    '  process(inputs) {',
+                    '    const ch = inputs && inputs[0] && inputs[0][0];',
+                    '    if (ch && ch.length > 0) {',
+                    '      this.port.postMessage(ch.slice(0));',
+                    '    }',
+                    '    return true;',
+                    '  }',
+                    '}',
+                    'registerProcessor("targuma-pcm-processor", TargumaPcmProcessor);'
+                ].join('\n');
+                const blobUrl = URL.createObjectURL(new Blob([workletCode], { type: 'application/javascript' }));
+                await audioContext.audioWorklet.addModule(blobUrl);
+                URL.revokeObjectURL(blobUrl);
+
+                pcmWorkletNode = new AudioWorkletNode(audioContext, 'targuma-pcm-processor');
+                pcmWorkletNode.port.onmessage = (ev) => {
+                    if (ev.data) pushFloat32Samples(ev.data);
                 };
+                sourceAudioNode.connect(pcmWorkletNode);
+                pcmWorkletNode.connect(silentSinkGain);
+                workletAttached = true;
+            } catch (_) {
+                workletAttached = false;
+            }
+        }
 
-                recordSingleSlice();
+        if (!workletAttached && typeof audioContext.createScriptProcessor === 'function') {
+            scriptProcessorNode = audioContext.createScriptProcessor(2048, 1, 1);
+            scriptProcessorNode.onaudioprocess = (ev) => {
+                if (!state.isListening) return;
+                const ch = ev.inputBuffer.getChannelData(0);
+                if (ch && ch.length > 0) {
+                    pushFloat32Samples(new Float32Array(ch));
+                }
+            };
+            sourceAudioNode.connect(scriptProcessorNode);
+            scriptProcessorNode.connect(silentSinkGain);
+        }
+
+        return true;
+    }
+
+    async function startMultimodalAudioStream() {
+        stopMultimodalAudioStream(false);
+        lookbehindPcmFrames = [];
+        vadSliceSamples = [];
+        vadSliceSampleCount = 0;
+        vadTracker = { spokenMs: 0, trailingPauseMs: 0, totalMs: 0, sustainedActiveMs: 0 };
+        sustainedSpeechMs = 0;
+        lastActiveVoiceFrameAt = 0;
+
+        if (canUseChirp3WebSocket()) {
+            connectStreamWebSocket();
+        } else {
+            state.transportMode = 'sse_vad';
+        }
+
+        try {
+            const ok = await attachWebAudioPipeline(state.audioInputMode || 'microphone');
+            if (!ok) {
+                closeStreamWebSocket(true);
+                return false;
             }
             return true;
         } catch (err) {
-            console.warn('Microphone getUserMedia error:', err);
+            console.warn('Audio capture start error:', err);
+            closeStreamWebSocket(true);
             return false;
         }
     }
 
-    function stopMultimodalAudioStream() {
-        clearTimeout(audioChunkTimer);
-        audioChunkTimer = null;
+    function stopMultimodalAudioStream(pauseReplayFile = true) {
+        closeStreamWebSocket(true);
+
         if (levelMeterRaf) {
             cancelAnimationFrame(levelMeterRaf);
             levelMeterRaf = null;
         }
-        if (mediaRecorder) {
+        if (pcmWorkletNode) {
             try {
-                mediaRecorder.onstop = null;
-                if (mediaRecorder.state === 'recording') {
-                    mediaRecorder.stop();
-                }
-            } catch (e) {}
-            mediaRecorder = null;
+                pcmWorkletNode.port.onmessage = null;
+                pcmWorkletNode.disconnect();
+            } catch (_) {}
+            pcmWorkletNode = null;
+        }
+        if (scriptProcessorNode) {
+            try {
+                scriptProcessorNode.onaudioprocess = null;
+                scriptProcessorNode.disconnect();
+            } catch (_) {}
+            scriptProcessorNode = null;
+        }
+        if (silentSinkGain) {
+            try { silentSinkGain.disconnect(); } catch (_) {}
+            silentSinkGain = null;
+        }
+        if (analyserNode) {
+            try { analyserNode.disconnect(); } catch (_) {}
+            analyserNode = null;
+        }
+        if (sourceAudioNode && sourceAudioNode !== fileMediaElementSource) {
+            try { sourceAudioNode.disconnect(); } catch (_) {}
+            sourceAudioNode = null;
         }
         if (mediaStream) {
             try {
                 mediaStream.getTracks().forEach(track => track.stop());
-            } catch (e) {}
+            } catch (_) {}
             mediaStream = null;
         }
-        if (audioContext) {
-            try {
-                audioContext.close();
-            } catch (e) {}
-            audioContext = null;
-            analyserNode = null;
+        if (pauseReplayFile && state.audioInputMode === 'file') {
+            const audioEl = document.getElementById('targuma-replay-audio');
+            if (audioEl && !audioEl.paused) {
+                try { audioEl.pause(); } catch (_) {}
+            }
         }
+        if (audioContext && state.audioInputMode !== 'file') {
+            try { audioContext.close(); } catch (_) {}
+            audioContext = null;
+            fileMediaElementSource = null;
+        }
+        state.transportMode = 'idle';
         updateMicLevelIndicator(0);
     }
 
@@ -686,7 +1318,17 @@
         const dot = document.getElementById('targuma-live-dot');
         if (!dot || !state.isListening) return;
         const boost = Math.min(1.65, 1 + rms * 4.2);
-        dot.style.transform = `scale(${boost.toFixed(2)})`;
+        dot.style.transform = 'scale(' + boost.toFixed(2) + ')';
+    }
+
+    function refreshStreamingStatusPill() {
+        if (!state.isListening) return;
+        const srcLabel = LANGUAGE_META[state.sourceLang]?.short || state.sourceLang;
+        const tgtLabel = LANGUAGE_META[state.targetLang]?.short || state.targetLang;
+        const sourcePrefix =
+            state.audioInputMode === 'tab' ? 'Listening to Tab Audio' :
+            state.audioInputMode === 'file' ? 'Replaying Audio' : 'Listening';
+        updateStatusBanner(sourcePrefix + ' • ' + srcLabel + ' → ' + tgtLabel, 'listening');
     }
 
     // --- Smart Idle & Forgotten-Listener Guardrail ---
@@ -699,19 +1341,17 @@
             if (!state.isListening) return;
             const now = Date.now();
 
-            // 1. Auto-pause after 3 minutes of silence (5 minutes if Media Team broadcast host)
             const silenceLimit = state.roomMode === 'broadcast' ? 5 * 60 * 1000 : SILENCE_AUTO_PAUSE_MS;
             if (now - lastSpeechDetectedAt >= silenceLimit) {
                 const mins = Math.round(silenceLimit / 60000);
                 stopLocalListening(false);
                 updateStatusBanner(
-                    `Listening paused automatically after ${mins} minutes of silence to save cloud resources. Tap "Start Listening" to resume.`,
+                    'Listening paused automatically after ' + mins + ' minutes of silence. Tap "Start Listening" to resume.',
                     'idle'
                 );
                 return;
             }
 
-            // 2. Auto-pause after 45 minutes of continuous session
             if (now - sessionStartedAt >= MAX_SESSION_DURATION_MS) {
                 stopLocalListening(false);
                 updateStatusBanner(
@@ -733,38 +1373,40 @@
         }
     }
 
-    // Pause personal microphone if user locks phone or hides browser tab for >60 seconds
-    document.addEventListener('visibilitychange', () => {
-        if (!state.isListening || state.roomMode === 'broadcast') return;
-        if (document.visibilityState === 'hidden') {
-            clearTimeout(hiddenTabTimer);
-            hiddenTabTimer = setTimeout(() => {
-                if (document.visibilityState === 'hidden' && state.isListening && state.roomMode !== 'broadcast') {
-                    stopLocalListening(false);
-                    updateStatusBanner(
-                        'Listening paused while app was in the background. Tap "Start Listening" to resume.',
-                        'idle'
-                    );
-                }
-            }, HIDDEN_TAB_AUTO_PAUSE_MS);
-        } else {
-            clearTimeout(hiddenTabTimer);
-            hiddenTabTimer = null;
-        }
-    });
+    if (typeof document !== 'undefined') {
+        document.addEventListener('visibilitychange', () => {
+            if (!state.isListening || state.roomMode === 'broadcast' || state.audioInputMode !== 'microphone') return;
+            if (document.visibilityState === 'hidden') {
+                clearTimeout(hiddenTabTimer);
+                hiddenTabTimer = setTimeout(() => {
+                    if (document.visibilityState === 'hidden' && state.isListening && state.roomMode !== 'broadcast' && state.audioInputMode === 'microphone') {
+                        stopLocalListening(false);
+                        updateStatusBanner(
+                            'Listening paused while app was in the background. Tap "Start Listening" to resume.',
+                            'idle'
+                        );
+                    }
+                }, HIDDEN_TAB_AUTO_PAUSE_MS);
+            } else {
+                clearTimeout(hiddenTabTimer);
+                hiddenTabTimer = null;
+            }
+        });
+    }
 
-    // --- Android Native Runtime Permission Callback ---
-    window.onAndroidAudioPermissionResult = function (granted) {
-        if (granted && state.isActive) {
-            startLocalListening();
-        } else if (!granted) {
-            updateStatusBanner('Microphone permission was denied. Please enable Microphone access in Settings.', 'error');
-        }
-    };
+    if (typeof window !== 'undefined') {
+        window.onAndroidAudioPermissionResult = function (granted) {
+            if (granted && state.isActive) {
+                startLocalListening();
+            } else if (!granted) {
+                updateStatusBanner('Microphone permission was denied. Please enable Microphone access in Settings.', 'error');
+            }
+        };
+    }
 
     // --- Start / Stop Listening ---
     async function startLocalListening() {
-        if (window.AndroidTargumaBridge && typeof window.AndroidTargumaBridge.hasAudioPermission === 'function') {
+        if (state.audioInputMode === 'microphone' && window.AndroidTargumaBridge && typeof window.AndroidTargumaBridge.hasAudioPermission === 'function') {
             if (!window.AndroidTargumaBridge.hasAudioPermission()) {
                 updateStatusBanner('Requesting microphone permission...', 'listening');
                 window.AndroidTargumaBridge.requestAudioPermission();
@@ -775,20 +1417,20 @@
         stopLocalListening(false);
 
         state.isListening = true;
+        state.lastLatencyMs = 0;
         requestWakeLock();
         updateTargumaControlsUI();
         renderCaptionsStage(false);
-        updateStatusBanner(
-            `Listening (${LANGUAGE_META[state.sourceLang].short} → ${LANGUAGE_META[state.targetLang].short})`,
-            'listening'
-        );
+        refreshStreamingStatusPill();
 
         const audioStreamStarted = await startMultimodalAudioStream();
         if (!audioStreamStarted) {
             state.isListening = false;
             updateTargumaControlsUI();
             renderCaptionsStage(false);
-            updateStatusBanner('Could not access microphone. Please grant microphone permission and try again.', 'error');
+            if (state.audioInputMode === 'microphone') {
+                updateStatusBanner('Could not access microphone. Please grant microphone permission and try again.', 'error');
+            }
             return;
         }
 
@@ -797,8 +1439,9 @@
 
     function stopLocalListening(updateBanner = true) {
         state.isListening = false;
+        state.liveDraft = null;
         stopIdleProtectionWatchdog();
-        stopMultimodalAudioStream();
+        stopMultimodalAudioStream(true);
         releaseWakeLock();
         updateTargumaControlsUI();
         renderCaptionsStage(false);
@@ -807,7 +1450,7 @@
         }
     }
 
-    // --- Live Parish Broadcast Room Mode (Firestore Real-time Sync) ---
+    // --- Optional URL-triggered Firestore Viewer Support (UI hidden per user preference) ---
     function getFirestoreRoomRef(roomCode) {
         if (typeof firebase === 'undefined' || !firebase.firestore) return null;
         const cleanCode = String(roomCode || 'oakland').trim().toLowerCase().replace(/[^a-z0-9_-]/g, '') || 'oakland';
@@ -819,11 +1462,12 @@
         const docRef = getFirestoreRoomRef(state.roomCode);
         if (!docRef) return;
 
-        const serializedCaptions = state.captions.map(c => ({
+        const visibleCaptions = state.captions.slice(-(state.maxLines || 3)).map(c => ({
             id: c.id,
             sourceText: c.sourceText,
             rawTarget: c.rawTarget,
             translatedHtml: c.translatedHtml,
+            polished: Boolean(c.polished),
             sourceLang: c.sourceLang,
             targetLang: c.targetLang,
             timestamp: c.timestamp
@@ -835,14 +1479,15 @@
             targetLang: state.targetLang,
             selectedIconId: state.selectedIconId,
             maxLines: state.maxLines,
-            captions: serializedCaptions,
+            captions: visibleCaptions,
+            liveDraft: null,
             updatedAt: Date.now()
         };
 
         try {
             await docRef.set(payload, { merge: true });
         } catch (err) {
-            console.debug('Firestore broadcast note:', err.message);
+            console.debug('Firestore sync note:', err.message);
         }
     }
 
@@ -853,23 +1498,19 @@
         state.roomCode = String(roomCode || state.roomCode || 'oakland').trim().toLowerCase();
         state.roomMode = 'viewer';
         requestWakeLock();
-        saveTargumaSettings();
         updateTargumaControlsUI();
 
         const docRef = getFirestoreRoomRef(state.roomCode);
         if (!docRef) {
-            updateStatusBanner('Firestore is unavailable offline.', 'error');
+            updateStatusBanner('Live stream unavailable offline.', 'error');
             return;
         }
 
-        updateStatusBanner(`Connected to Parish Room "${state.roomCode.toUpperCase()}" — Waiting for broadcast...`, 'viewer');
+        updateStatusBanner('Connected • Waiting for live captions...', 'viewer');
 
         firestoreUnsubscribe = docRef.onSnapshot((docSnap) => {
-            if (!docSnap.exists) {
-                updateStatusBanner(`Joined Parish Room "${state.roomCode.toUpperCase()}" — No active broadcast yet.`, 'viewer');
-                return;
-            }
-            const data = docSnap.data();
+            if (!docSnap.exists) return;
+            const data = docSnap.data() || {};
             if (Array.isArray(data.captions)) {
                 state.captions = data.captions.slice(-(state.maxLines || 3));
             } else if (Array.isArray(data.slots)) {
@@ -879,11 +1520,10 @@
                 state.selectedIconId = data.selectedIconId;
                 updateStageIcon();
             }
-            updateStatusBanner(`LIVE Parish Broadcast • Room: ${state.roomCode.toUpperCase()}`, 'listening');
+            updateStatusBanner('Live Sanctuary Captions', 'listening');
             renderCaptionsStage(true);
         }, (err) => {
             console.warn('Firestore viewer subscription error:', err);
-            updateStatusBanner(`Could not subscribe to room "${state.roomCode}": ${err.message}`, 'warn');
         });
     }
 
@@ -895,6 +1535,11 @@
     }
 
     // --- UI Construction & Rendering ---
+    function supportsTabAudioCapture() {
+        const isAndroidWebView = Boolean(window.AndroidTargumaBridge);
+        return Boolean(!isAndroidWebView && typeof navigator !== 'undefined' && navigator.mediaDevices && typeof navigator.mediaDevices.getDisplayMedia === 'function');
+    }
+
     function ensureTargumaDOM() {
         let container = document.getElementById('targuma-view');
         if (container) return container;
@@ -909,12 +1554,16 @@
 
         const currentIcon = TARGUMA_ICONS.find(i => i.id === state.selectedIconId) || TARGUMA_ICONS[0];
         const isIconHidden = state.selectedIconId === 'none';
+        const modelOptionsHtml = GEMINI_MODELS.map(m => '<option value="' + m.id + '">' + m.label + '</option>').join('');
+        const iconOptionsHtml = TARGUMA_ICONS.map(icon => '<option value="' + icon.id + '">' + icon.titleEnglish + '</option>').join('');
+        const tabAudioOptionHtml = supportsTabAudioCapture()
+            ? '<option value="tab">Browser Tab Audio (YouTube Test)</option>'
+            : '';
 
         container.innerHTML = `
-            <!-- Top Sanctuary Control Bar -->
+            <!-- Top Sanctuary Control Bar (Clean & Focused) -->
             <div class="targuma-toolbar" id="targuma-toolbar">
                 <div class="targuma-toolbar-row targuma-toolbar-primary">
-                    <!-- Brand + Info Button -->
                     <div class="targuma-brand-group">
                         <div class="targuma-brand-badge" title="Targuma Live Sermon & Announcement Interpreter">
                             <span class="targuma-live-dot" id="targuma-live-dot"></span>
@@ -927,7 +1576,6 @@
                         </button>
                     </div>
 
-                    <!-- Language Direction Selector + ⇄ Swap -->
                     <div class="targuma-lang-switcher">
                         <label class="targuma-sr-only" for="targuma-source-lang">Spoken Input Language</label>
                         <select id="targuma-source-lang" class="targuma-select" title="Spoken Language (Input)">
@@ -950,15 +1598,6 @@
                         </select>
                     </div>
 
-                    <!-- Gemini Model Selector (Clean options without emojis or parentheticals) -->
-                    <div class="targuma-model-switcher">
-                        <label class="targuma-sr-only" for="targuma-model-select">Gemini AI Model</label>
-                        <select id="targuma-model-select" class="targuma-select targuma-model-select" title="Select Gemini Model">
-                            ${GEMINI_MODELS.map(m => `<option value="${m.id}">${m.label}</option>`).join('')}
-                        </select>
-                    </div>
-
-                    <!-- Primary Action: Start/Pause Listening + Settings + Hide Controls + Exit -->
                     <div class="targuma-action-group">
                         <button type="button" id="targuma-mic-btn" class="targuma-mic-btn">
                             <svg class="targuma-mic-svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
@@ -967,7 +1606,7 @@
                             <span id="targuma-mic-btn-label">Start Listening</span>
                         </button>
 
-                        <button type="button" id="targuma-settings-toggle-btn" class="targuma-icon-btn" title="Customize Display, Icon, & Parish Broadcast" aria-label="Targuma Display Settings">
+                        <button type="button" id="targuma-settings-toggle-btn" class="targuma-icon-btn" title="Customize Display, Icon, Model & Audio Source" aria-label="Targuma Settings">
                             ⚙
                         </button>
 
@@ -983,10 +1622,9 @@
                     </div>
                 </div>
 
-                <!-- Collapsible Customization & Parish Broadcast Drawer -->
+                <!-- Collapsible Display & Audio Settings Drawer -->
                 <div class="targuma-toolbar-drawer hidden" id="targuma-toolbar-drawer">
                     <div class="targuma-drawer-grid">
-                        <!-- Display Mode: Target Language Only vs Bilingual Stacked -->
                         <div class="targuma-setting-item">
                             <label for="targuma-display-mode-select">Caption Style</label>
                             <select id="targuma-display-mode-select" class="targuma-select">
@@ -995,17 +1633,15 @@
                             </select>
                         </div>
 
-                        <!-- Visible Lines (2-4 Lines) -->
                         <div class="targuma-setting-item">
-                            <label for="targuma-lines-select">Visible Lines</label>
+                            <label for="targuma-lines-select">Visible Clauses</label>
                             <select id="targuma-lines-select" class="targuma-select">
-                                <option value="2">2 Lines</option>
-                                <option value="3">3 Lines</option>
-                                <option value="4">4 Lines</option>
+                                <option value="2">2 Clauses</option>
+                                <option value="3">3 Clauses</option>
+                                <option value="4">4 Clauses</option>
                             </select>
                         </div>
 
-                        <!-- Text Size Slider -->
                         <div class="targuma-setting-item">
                             <label for="targuma-font-slider">Caption Size: <span id="targuma-font-size-val">${state.fontSizePx}px</span></label>
                             <div class="targuma-slider-wrap">
@@ -1015,39 +1651,49 @@
                             </div>
                         </div>
 
-                        <!-- Orthodox Icon Selector (includes Hide Icon) -->
                         <div class="targuma-setting-item">
                             <label for="targuma-icon-select">Sanctuary Icon</label>
                             <select id="targuma-icon-select" class="targuma-select">
-                                ${TARGUMA_ICONS.map(icon => `<option value="${icon.id}">${icon.titleEnglish}</option>`).join('')}
+                                ${iconOptionsHtml}
                             </select>
                         </div>
 
-                        <!-- Parish Broadcast / Viewer Room Mode -->
-                        <div class="targuma-setting-item targuma-room-item">
-                            <label for="targuma-room-mode-select">Mode &amp; Parish TV Sync</label>
-                            <div class="targuma-room-controls">
-                                <select id="targuma-room-mode-select" class="targuma-select">
-                                    <option value="local">Personal Microphone</option>
-                                    <option value="broadcast">Media Team Host (Broadcast)</option>
-                                    <option value="viewer">Sanctuary TV / Viewer</option>
+                        <div class="targuma-setting-item">
+                            <label for="targuma-audio-source-select">Audio Input Source</label>
+                            <select id="targuma-audio-source-select" class="targuma-select" title="Select Microphone, YouTube Browser Tab, or Local Audio File">
+                                <option value="microphone">Live Microphone / Line-In</option>
+                                ${tabAudioOptionHtml}
+                                <option value="file">Audio / Video File Replay</option>
+                            </select>
+                        </div>
+
+                        <div class="targuma-setting-item">
+                            <label for="targuma-model-select">Translation Model</label>
+                            <div class="targuma-model-stage-controls">
+                                <select id="targuma-model-select" class="targuma-select targuma-model-select" title="Select Gemini Model">
+                                    ${modelOptionsHtml}
                                 </select>
-                                <input type="text" id="targuma-room-code-input" class="targuma-room-input" placeholder="Parish code (e.g. oakland)" value="${escapeHtml(state.roomCode)}" title="Parish Room Code" />
                                 <button type="button" id="targuma-clear-captions-btn" class="targuma-mini-btn" title="Clear Screen Captions">Clear</button>
                             </div>
                         </div>
                     </div>
+
+                    <!-- Local Audio / Video File Replay Bar (Visible when Audio Input Source = File Replay) -->
+                    <div class="targuma-file-replay-bar hidden" id="targuma-file-replay-bar">
+                        <label class="targuma-mini-btn targuma-file-upload-label" for="targuma-replay-file-input">
+                            Choose Sermon / Miracle Clip
+                        </label>
+                        <input type="file" id="targuma-replay-file-input" accept="audio/*,video/*" class="targuma-sr-only" />
+                        <span class="targuma-file-replay-name" id="targuma-file-replay-name">No clip selected</span>
+                        <audio id="targuma-replay-audio" controls preload="metadata" class="targuma-replay-audio"></audio>
+                    </div>
                 </div>
             </div>
 
-            <!-- Floating Button to Restore Toolbar when Controls are Hidden -->
             <button type="button" id="targuma-restore-toolbar-btn" class="targuma-restore-toolbar-btn hidden" title="Show Controls">
                 Show Controls
             </button>
 
-            <!-- Sanctuary Stage:
-                 Desktop: Left Quarter = Large Orthodox Icon | Right 3/4 = Caption Box (or 100% if icon hidden)
-                 Mobile: Top Orthodox Icon | Bottom Caption Box -->
             <div class="targuma-sanctuary-stage ${isIconHidden ? 'icon-hidden' : ''}" id="targuma-sanctuary-stage">
                 <div class="targuma-icon-frame ${isIconHidden ? 'hidden' : ''}" id="targuma-icon-frame">
                     <img id="targuma-stage-icon" src="${currentIcon.src || 'img/With-her-beloved-Son.png'}" alt="${escapeHtml(currentIcon.titleEnglish)}" class="targuma-stage-icon" title="Click to cycle Orthodox icon" />
@@ -1060,25 +1706,23 @@
 
                     <div class="targuma-captions-viewport" id="targuma-captions-viewport" style="--targuma-font-size: ${state.fontSizePx}px;">
                         <div class="targuma-captions-list" id="targuma-captions-list">
-                            <!-- Chronological captions + bottom ellipsis anchor rendered here -->
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Targuma "i" Info Modal -->
             <div id="targuma-info-modal" class="modal">
                 <div class="modal-content targuma-info-modal-content">
                     <span class="close-button" id="close-targuma-info-modal">&times;</span>
-                    <h3 class="ethiopic-label">ተርጉማ • About Targuma</h3>
+                    <h3>Targuma: Live Translated Captions</h3>
                     <p>
-                        <strong>Targuma (ተርጉማ)</strong> bridges the language barrier in our parishes by providing live captions and translations during Sunday sermons (<em>Sibket</em>), lectures, and church announcements so every member of the congregation can understand and participate.
+                        Targuma bridges the language barrier in our parishes by providing live captions and translations during sermons, readings, and announcements.
                     </p>
                     <p>
-                        <strong>How to Use:</strong> Choose the spoken language and your desired caption language, then tap <strong>Start Listening</strong>. You can adjust the text size, switch between <em>Target Language Only</em> and <em>Bilingual Stacked</em> view, or hide the icon and toolbar for Sanctuary TV displays.
+                        <strong>How to Use:</strong> Choose the spoken language and your desired caption language, then tap <strong>Start Listening</strong>. To broadcast translations directly to the phones of nearby parishioners, place one host device near the sound source and set it to &ldquo;Media Team Host (Broadcast)&rdquo; mode so nearby devices can join instantaneously.
                     </p>
                     <p>
-                        <strong>How It Works:</strong> Powered by Gemini AI, Targuma listens for spoken phrases, translates them in real time, and phonetically spells out woven Ge'ez liturgical terms with brief meanings in brackets. To protect cloud resources, listening automatically pauses after 3 minutes of silence.
+                        <strong>Historical Context:</strong> In the ancient Second Temple period and synagogue tradition, when Hebrew Scriptures were read aloud, an appointed priest or translator would translate the text live on the spot into the congregation's spoken lingua franca (Aramaic)—a practice known as a <em>Targum</em> (translation/interpretation), from which this feature takes its name.
                     </p>
                 </div>
             </div>
@@ -1118,8 +1762,11 @@
         const fontDec = container.querySelector('#targuma-font-dec');
         const fontInc = container.querySelector('#targuma-font-inc');
         const iconSelect = container.querySelector('#targuma-icon-select');
-        const roomModeSelect = container.querySelector('#targuma-room-mode-select');
-        const roomCodeInput = container.querySelector('#targuma-room-code-input');
+        const audioSourceSelect = container.querySelector('#targuma-audio-source-select');
+        const fileReplayBar = container.querySelector('#targuma-file-replay-bar');
+        const fileInput = container.querySelector('#targuma-replay-file-input');
+        const fileNameSpan = container.querySelector('#targuma-file-replay-name');
+        const replayAudio = container.querySelector('#targuma-replay-audio');
         const clearBtn = container.querySelector('#targuma-clear-captions-btn');
         const stageIcon = container.querySelector('#targuma-stage-icon');
 
@@ -1131,10 +1778,8 @@
             }
             saveTargumaSettings();
             if (state.isListening) {
-                updateStatusBanner(
-                    `Listening (${LANGUAGE_META[state.sourceLang].short} → ${LANGUAGE_META[state.targetLang].short})`,
-                    'listening'
-                );
+                sendWsConfigUpdate();
+                refreshStreamingStatusPill();
             }
         });
 
@@ -1146,10 +1791,8 @@
             }
             saveTargumaSettings();
             if (state.isListening) {
-                updateStatusBanner(
-                    `Listening (${LANGUAGE_META[state.sourceLang].short} → ${LANGUAGE_META[state.targetLang].short})`,
-                    'listening'
-                );
+                sendWsConfigUpdate();
+                refreshStreamingStatusPill();
             }
             retranslateExistingCaptions();
         });
@@ -1161,10 +1804,8 @@
             syncTargumaInputsFromState();
             saveTargumaSettings();
             if (state.isListening) {
-                updateStatusBanner(
-                    `Listening (${LANGUAGE_META[state.sourceLang].short} → ${LANGUAGE_META[state.targetLang].short})`,
-                    'listening'
-                );
+                sendWsConfigUpdate();
+                refreshStreamingStatusPill();
             }
             retranslateExistingCaptions();
         });
@@ -1173,6 +1814,49 @@
             modelSelect.addEventListener('change', () => {
                 state.geminiModel = modelSelect.value;
                 saveTargumaSettings();
+                if (state.isListening) {
+                    sendWsConfigUpdate();
+                }
+            });
+        }
+
+        if (audioSourceSelect) {
+            audioSourceSelect.addEventListener('change', () => {
+                const wasListening = state.isListening;
+                if (wasListening) stopLocalListening(false);
+                state.audioInputMode = audioSourceSelect.value || 'microphone';
+                if (fileReplayBar) {
+                    fileReplayBar.classList.toggle('hidden', state.audioInputMode !== 'file');
+                }
+                updateTargumaControlsUI();
+                if (state.audioInputMode === 'tab') {
+                    updateStatusBanner('Tab Audio ready — Tap "Capture Tab Audio" and pick your YouTube tab.', 'idle');
+                } else if (state.audioInputMode === 'file') {
+                    updateStatusBanner('Choose a sermon or Miracle of Mary clip below, then tap "Start File Replay".', 'idle');
+                } else {
+                    updateStatusBanner(DEFAULT_IDLE_STATUS, 'idle');
+                }
+            });
+        }
+
+        if (fileInput && replayAudio) {
+            fileInput.addEventListener('change', () => {
+                const file = fileInput.files && fileInput.files[0];
+                if (!file) return;
+                if (replayObjectUrl) {
+                    try { URL.revokeObjectURL(replayObjectUrl); } catch (_) {}
+                }
+                replayObjectUrl = URL.createObjectURL(file);
+                replayAudio.src = replayObjectUrl;
+                if (fileNameSpan) fileNameSpan.textContent = file.name;
+                updateStatusBanner('Loaded "' + file.name + '" — Tap "Start File Replay" to stream live captions.', 'idle');
+            });
+
+            replayAudio.addEventListener('ended', () => {
+                if (state.isListening && state.audioInputMode === 'file') {
+                    stopLocalListening(false);
+                    updateStatusBanner('Finished replaying audio clip.', 'idle');
+                }
             });
         }
 
@@ -1180,7 +1864,6 @@
             if (state.roomMode === 'viewer') {
                 state.roomMode = 'local';
                 disconnectFirestoreRoom();
-                roomModeSelect.value = 'local';
             }
             if (state.isListening) {
                 stopLocalListening(true);
@@ -1224,7 +1907,6 @@
             });
         }
 
-        // Clicking the Orthodox Icon cycles between visible Orthodox icons
         stageIcon.addEventListener('click', () => {
             const visibleIcons = TARGUMA_ICONS.filter(i => i.id !== 'none');
             const idx = visibleIcons.findIndex(i => i.id === state.selectedIconId);
@@ -1233,7 +1915,6 @@
             iconSelect.value = state.selectedIconId;
             updateStageIcon();
             saveTargumaSettings();
-            if (state.roomMode === 'broadcast') publishToFirestoreRoom();
         });
 
         displayModeSelect.addEventListener('change', () => {
@@ -1250,12 +1931,12 @@
         });
 
         function applyFontSize(newSize) {
-            state.fontSizePx = Math.max(18, Math.min(64, Number(newSize) || 32));
+            state.fontSizePx = Math.max(18, Math.min(64, Number(newSize) || 34));
             fontSlider.value = state.fontSizePx;
             const valSpan = container.querySelector('#targuma-font-size-val');
-            if (valSpan) valSpan.textContent = `${state.fontSizePx}px`;
+            if (valSpan) valSpan.textContent = state.fontSizePx + 'px';
             const viewport = container.querySelector('#targuma-captions-viewport');
-            if (viewport) viewport.style.setProperty('--targuma-font-size', `${state.fontSizePx}px`);
+            if (viewport) viewport.style.setProperty('--targuma-font-size', state.fontSizePx + 'px');
             saveTargumaSettings();
         }
 
@@ -1267,49 +1948,19 @@
             state.selectedIconId = iconSelect.value;
             updateStageIcon();
             saveTargumaSettings();
-            if (state.roomMode === 'broadcast') publishToFirestoreRoom();
         });
 
-        roomModeSelect.addEventListener('change', () => {
-            const newMode = roomModeSelect.value;
-            state.roomCode = (roomCodeInput.value || 'oakland').trim().toLowerCase();
-            saveTargumaSettings();
-
-            if (newMode === 'viewer') {
-                connectAsParishViewer(state.roomCode);
-            } else if (newMode === 'broadcast') {
-                disconnectFirestoreRoom();
-                state.roomMode = 'broadcast';
-                updateStatusBanner(`Broadcast Host Ready for Room "${state.roomCode.toUpperCase()}" — Tap "Start Listening" to broadcast`, 'listening');
-                publishToFirestoreRoom();
-            } else {
-                disconnectFirestoreRoom();
-                state.roomMode = 'local';
-                updateStatusBanner(DEFAULT_IDLE_STATUS, 'idle');
-            }
-            updateTargumaControlsUI();
-        });
-
-        roomCodeInput.addEventListener('change', () => {
-            state.roomCode = (roomCodeInput.value || 'oakland').trim().toLowerCase();
-            saveTargumaSettings();
-            if (state.roomMode === 'viewer') {
-                connectAsParishViewer(state.roomCode);
-            } else if (state.roomMode === 'broadcast') {
-                publishToFirestoreRoom();
-            }
-        });
-
-        clearBtn.addEventListener('click', () => {
-            clearAllCaptions();
-            renderCaptionsStage(false);
-            if (state.roomMode === 'broadcast') publishToFirestoreRoom();
-        });
+        if (clearBtn) {
+            clearBtn.addEventListener('click', () => {
+                clearAllCaptions();
+                renderCaptionsStage(false);
+            });
+        }
     }
 
     async function retranslateExistingCaptions() {
-        for (let i = 0; i < state.captions.length; i++) {
-            const item = state.captions[i];
+        const items = state.captions.slice();
+        await Promise.all(items.map(async (item) => {
             if (item && item.sourceText) {
                 const newHtml = await translateTargumaPhrase(item.sourceText, state.sourceLang, state.targetLang);
                 if (newHtml) {
@@ -1317,7 +1968,7 @@
                     item.translatedHtml = newHtml;
                 }
             }
-        }
+        }));
         renderCaptionsStage(false);
     }
 
@@ -1338,12 +1989,8 @@
         const frameEl = document.getElementById('targuma-icon-frame');
         const imgEl = document.getElementById('targuma-stage-icon');
 
-        if (stageEl) {
-            stageEl.classList.toggle('icon-hidden', isHidden);
-        }
-        if (frameEl) {
-            frameEl.classList.toggle('hidden', isHidden);
-        }
+        if (stageEl) stageEl.classList.toggle('icon-hidden', isHidden);
+        if (frameEl) frameEl.classList.toggle('hidden', isHidden);
         if (imgEl && !isHidden && iconObj.src) {
             imgEl.src = iconObj.src;
             imgEl.alt = iconObj.titleEnglish;
@@ -1362,8 +2009,8 @@
         const fontSlider = container.querySelector('#targuma-font-slider');
         const fontVal = container.querySelector('#targuma-font-size-val');
         const iconSelect = container.querySelector('#targuma-icon-select');
-        const roomModeSelect = container.querySelector('#targuma-room-mode-select');
-        const roomCodeInput = container.querySelector('#targuma-room-code-input');
+        const audioSourceSelect = container.querySelector('#targuma-audio-source-select');
+        const fileReplayBar = container.querySelector('#targuma-file-replay-bar');
 
         if (sourceSelect) sourceSelect.value = state.sourceLang;
         if (targetSelect) targetSelect.value = state.targetLang;
@@ -1371,10 +2018,10 @@
         if (displayModeSelect) displayModeSelect.value = state.displayMode;
         if (linesSelect) linesSelect.value = String(state.maxLines);
         if (fontSlider) fontSlider.value = String(state.fontSizePx);
-        if (fontVal) fontVal.textContent = `${state.fontSizePx}px`;
+        if (fontVal) fontVal.textContent = state.fontSizePx + 'px';
         if (iconSelect) iconSelect.value = state.selectedIconId;
-        if (roomModeSelect) roomModeSelect.value = state.roomMode;
-        if (roomCodeInput) roomCodeInput.value = state.roomCode;
+        if (audioSourceSelect) audioSourceSelect.value = state.audioInputMode;
+        if (fileReplayBar) fileReplayBar.classList.toggle('hidden', state.audioInputMode !== 'file');
         updateStageIcon();
     }
 
@@ -1386,7 +2033,15 @@
 
         if (micBtn && micLabel) {
             micBtn.classList.toggle('listening', state.isListening);
-            micLabel.textContent = state.isListening ? 'Pause Listening' : 'Start Listening';
+            if (state.isListening) {
+                micLabel.textContent = 'Pause Listening';
+            } else if (state.audioInputMode === 'tab') {
+                micLabel.textContent = 'Capture Tab Audio';
+            } else if (state.audioInputMode === 'file') {
+                micLabel.textContent = 'Start File Replay';
+            } else {
+                micLabel.textContent = 'Start Listening';
+            }
         }
         if (liveDot) {
             liveDot.classList.toggle('active', state.isListening || state.roomMode === 'viewer');
@@ -1403,13 +2058,12 @@
         pill.dataset.status = statusType || 'idle';
     }
 
-    // --- Render Bottom-Anchored Chronological Captions with Smooth FLIP Glide & Ellipsis Anchor ---
+    // --- Render Balanced Sanctuary Clause Stage (2–4 Immutable Clauses + Subtle Listening Dots) ---
     function renderCaptionsStage(animateGlide = false) {
         const listEl = document.getElementById('targuma-captions-list');
         const viewportEl = document.getElementById('targuma-captions-viewport');
         if (!listEl) return;
 
-        trimCaptionsToMaxLines();
         if (viewportEl) {
             viewportEl.classList.toggle('bilingual-mode', state.displayMode === 'bilingual');
             viewportEl.dataset.lines = String(state.maxLines);
@@ -1421,11 +2075,12 @@
             listEl.innerHTML = `
                 <div class="targuma-empty-placeholder">
                     <p class="targuma-placeholder-primary">
-                        “Listen, my daughter, and see, and incline your ear” <span class="ethiopic-label">(ስምዒ ወለትየ ወርእዪ ወአጽምዒ እዝነኪ — መዝ ፵፬፡፲)</span>
+                        “Listen, my daughter, and see, and incline your ear”
+                        <span class="ethiopic-label targuma-placeholder-sub">(ስምዒ ወለትየ ወርእዪ ወአጽምዒ እዝነኪ — መዝ ፵፬፡፲)</span>
                     </p>
                 </div>
                 ${isStreamingActive ? `
-                <div class="targuma-upcoming-ellipsis" aria-hidden="true" title="Next caption will appear here">
+                <div class="targuma-upcoming-ellipsis" aria-hidden="true" title="Listening for next clause">
                     <span class="targuma-ellipsis-dot"></span>
                     <span class="targuma-ellipsis-dot"></span>
                     <span class="targuma-ellipsis-dot"></span>
@@ -1434,7 +2089,6 @@
             return;
         }
 
-        // Record previous vertical positions by caption ID for smooth FLIP upward glide
         const prevRects = new Map();
         if (animateGlide) {
             listEl.querySelectorAll('.targuma-caption-line[data-cap-id]').forEach(el => {
@@ -1442,23 +2096,23 @@
             });
         }
 
-        const visible = state.captions.slice(-state.maxLines);
+        const visibleCommitted = state.captions.slice(-(state.maxLines || 3));
+
         let html = '';
-        visible.forEach((cap, idx) => {
-            const isNewest = idx === visible.length - 1;
-            const lineClass = isNewest ? 'targuma-line-latest' : 'targuma-line-previous';
-            html += `<div class="targuma-caption-line ${lineClass}" data-cap-id="${escapeHtml(cap.id)}">`;
+        visibleCommitted.forEach((cap, idx) => {
+            const isNewestVisible = idx === visibleCommitted.length - 1;
+            const lineClass = isNewestVisible ? 'targuma-line-latest' : 'targuma-line-previous';
+            html += '<div class="targuma-caption-line ' + lineClass + '" data-cap-id="' + escapeHtml(cap.id) + '">';
             if (state.displayMode === 'bilingual' && cap.sourceText) {
-                html += `<div class="targuma-line-source">${escapeHtml(cap.sourceText)}</div>`;
+                html += '<div class="targuma-line-source">' + escapeHtml(cap.sourceText) + '</div>';
             }
-            html += `<div class="targuma-line-target">${cap.translatedHtml}</div>`;
-            html += `</div>`;
+            html += '<div class="targuma-line-target">' + cap.translatedHtml + '</div>';
+            html += '</div>';
         });
 
-        // Subtle ellipsis row at the bottom showing where the next line will appear
         if (isStreamingActive) {
             html += `
-                <div class="targuma-upcoming-ellipsis" aria-hidden="true" title="Next caption will appear here">
+                <div class="targuma-upcoming-ellipsis" aria-hidden="true" title="Listening for next clause">
                     <span class="targuma-ellipsis-dot"></span>
                     <span class="targuma-ellipsis-dot"></span>
                     <span class="targuma-ellipsis-dot"></span>
@@ -1468,7 +2122,6 @@
 
         listEl.innerHTML = html;
 
-        // Apply smooth FLIP upward glide so existing lines glide gently up and the new bottom line fades in softly
         if (animateGlide) {
             listEl.querySelectorAll('.targuma-caption-line[data-cap-id]').forEach(el => {
                 const capId = el.dataset.capId;
@@ -1477,22 +2130,21 @@
                     const deltaY = prevRects.get(capId) - newTop;
                     if (Math.abs(deltaY) > 1) {
                         el.style.transition = 'none';
-                        el.style.transform = `translateY(${deltaY}px)`;
+                        el.style.transform = 'translateY(' + deltaY + 'px)';
                         requestAnimationFrame(() => {
                             requestAnimationFrame(() => {
-                                el.style.transition = 'transform 0.55s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.45s ease';
+                                el.style.transition = 'transform 0.52s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.48s ease';
                                 el.style.transform = 'translateY(0)';
                             });
                         });
                     }
                 } else {
-                    // Newest line entering at the bottom where the ellipsis was
                     el.style.transition = 'none';
                     el.style.opacity = '0';
-                    el.style.transform = 'translateY(12px)';
+                    el.style.transform = 'translateY(8px)';
                     requestAnimationFrame(() => {
                         requestAnimationFrame(() => {
-                            el.style.transition = 'transform 0.55s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.45s ease';
+                            el.style.transition = 'transform 0.52s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.48s ease';
                             el.style.opacity = '1';
                             el.style.transform = 'translateY(0)';
                         });
@@ -1572,10 +2224,10 @@
         const isModalVisible = miracleModal && miracleModal.style.display === 'block';
         if (!isMiracleLiveDetectActive && !isModalVisible) return;
 
-        const combinedChunk = `${sourceText || ''} ${targetText || ''}`.trim();
+        const combinedChunk = ((sourceText || '') + ' ' + (targetText || '')).trim();
         if (!combinedChunk) return;
 
-        accumulatedMiracleTranscript = `${accumulatedMiracleTranscript} ${combinedChunk}`.trim().slice(-400);
+        accumulatedMiracleTranscript = (accumulatedMiracleTranscript + ' ' + combinedChunk).trim().slice(-500);
         if (typeof window.matchMiraclesByText !== 'function') return;
 
         const matches = window.matchMiraclesByText(accumulatedMiracleTranscript, false);
@@ -1583,12 +2235,14 @@
             banner.style.display = 'block';
             if (matches && matches.length > 0) {
                 const topMatches = matches.slice(0, 3);
-                banner.innerHTML = `
-                    <div class="miracle-live-banner-header">Targuma AI Live Match Suggestions (Tap to select):</div>
-                    <div class="miracle-live-banner-chips">
-                        ${topMatches.map(m => `<button type="button" class="miracle-live-match-chip" data-miracle-id="${m.id}">${escapeHtml(m.title || ('Miracle #' + m.id))}</button>`).join('')}
-                    </div>
-                `;
+                const chipsHtml = topMatches.map(m => (
+                    '<button type="button" class="miracle-live-match-chip" data-miracle-id="' + escapeHtml(m.id) + '">' +
+                    escapeHtml(m.title || ('Miracle #' + m.id)) +
+                    '</button>'
+                )).join('');
+                banner.innerHTML =
+                    '<div class="miracle-live-banner-header">Targuma AI Live Match Suggestions (Tap to select):</div>' +
+                    '<div class="miracle-live-banner-chips">' + chipsHtml + '</div>';
                 banner.querySelectorAll('.miracle-live-match-chip').forEach(chip => {
                     chip.addEventListener('click', () => {
                         const searchInput = document.getElementById('miracle-search-input');
@@ -1599,7 +2253,7 @@
                     });
                 });
             } else {
-                banner.innerHTML = `<div class="miracle-live-banner-header">Listening for Miracle of Mary keywords... (${escapeHtml(combinedChunk.slice(0, 60))})</div>`;
+                banner.innerHTML = '<div class="miracle-live-banner-header">Listening for Miracle of Mary keywords... (' + escapeHtml(combinedChunk.slice(0, 60)) + ')</div>';
             }
         }
     }
@@ -1659,19 +2313,46 @@
 
     const TargumaServiceAPI = {
         get isTargumaMode() { return state.isActive; },
+        get state() { return state; },
         exitTargumaMode: () => toggleTargumaMode(false),
         toggleTargumaMode,
         toggleMiracleLiveIdentification,
-        initTargumaFeature: initTargumaButton
+        initTargumaFeature: initTargumaButton,
+        clearAllCaptions,
+        // Exported streaming & DSP helpers for unit/replay testing
+        downsampleFloat32ToInt16Pcm,
+        computeInt16Rms,
+        encodePcm16ToWavBytes,
+        evaluateVadEndpointState,
+        windowDraftWords,
+        sanitizeTargetLanguageText,
+        formatGeminiTranslationToHtml,
+        handleStreamingServerEvent,
+        commitFinalizedCaption,
+        insertOrderedCaptionBySeq,
+        polishExistingCaption,
+        updateLiveDraftCaption
     };
 
-    window.toggleTargumaMode = toggleTargumaMode;
-    window.initTargumaFeature = initTargumaButton;
-    window.targumaService = TargumaServiceAPI;
+    if (typeof globalThis !== 'undefined') {
+        globalThis.targumaService = TargumaServiceAPI;
+    }
 
-    if (document.readyState === 'complete' || document.readyState === 'interactive') {
-        setTimeout(initTargumaButton, 0);
-    } else {
-        document.addEventListener('DOMContentLoaded', initTargumaButton);
+    if (typeof window !== 'undefined') {
+        window.toggleTargumaMode = toggleTargumaMode;
+        window.initTargumaFeature = initTargumaButton;
+        window.targumaService = TargumaServiceAPI;
+    }
+
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = TargumaServiceAPI;
+    }
+
+    if (typeof document !== 'undefined') {
+        if (document.readyState === 'complete' || document.readyState === 'interactive') {
+            setTimeout(initTargumaButton, 0);
+        } else {
+            document.addEventListener('DOMContentLoaded', initTargumaButton);
+        }
     }
 })();

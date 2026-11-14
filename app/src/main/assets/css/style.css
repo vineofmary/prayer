@@ -6107,26 +6107,49 @@ body.targuma-mode-active .main-content {
     color: var(--accent-text-color, #fff);
 }
 
-.targuma-room-item {
-    grid-column: span 2;
-}
-
-.targuma-room-controls {
+.targuma-model-stage-controls {
     display: flex;
     align-items: center;
-    gap: 0.4rem;
+    gap: 0.45rem;
+    flex-wrap: nowrap;
+}
+
+.targuma-file-replay-bar {
+    margin-top: 0.7rem;
+    padding-top: 0.65rem;
+    border-top: 1px dashed var(--border-color);
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
     flex-wrap: wrap;
 }
 
-.targuma-room-input {
-    background: var(--background-color);
-    color: var(--text-color);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    padding: 0.36rem 0.55rem;
-    font-size: 0.84rem;
-    width: 130px !important;
-    margin: 0 !important;
+.targuma-file-replay-bar.hidden {
+    display: none !important;
+}
+
+.targuma-file-upload-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    cursor: pointer;
+    margin: 0;
+}
+
+.targuma-file-replay-name {
+    font-size: 0.8rem;
+    color: var(--speaker-label-color);
+    max-width: 240px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.targuma-replay-audio {
+    height: 32px;
+    flex: 1;
+    min-width: 210px;
+    max-width: 420px;
 }
 
 .targuma-restore-toolbar-btn {
@@ -6150,8 +6173,8 @@ body.targuma-mode-active .main-content {
 }
 
 /* Sanctuary Stage:
-   Mobile/Tablet: Top Orthodox Icon + Bottom Left-Aligned Caption Stage
-   Desktop (>=900px): Left Quarter (25%) Large Orthodox Icon + Right 3/4 (75%) Caption Box (or 100% when icon hidden) */
+   Mobile/Tablet: Top Orthodox Icon + Balanced Sanctuary Clause Stage
+   Desktop (>=900px): Left Quarter (25%) Large Orthodox Icon + Right 3/4 (75%) Balanced Clause Stage */
 .targuma-sanctuary-stage {
     width: 100%;
     max-width: 100%;
@@ -6191,19 +6214,21 @@ body.targuma-mode-active .main-content {
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    gap: 0.55rem;
+    gap: 0.6rem;
     min-width: 0;
 }
 
 .targuma-status-pill {
-    align-self: flex-start;
-    font-size: 0.8rem;
-    padding: 0.25rem 0.85rem;
+    align-self: center;
+    font-size: 0.82rem;
+    letter-spacing: 0.015em;
+    padding: 0.28rem 0.95rem;
     border-radius: 999px;
     background: var(--hover-color);
     border: 1px solid var(--border-color);
     color: var(--speaker-label-color);
     max-width: 100%;
+    text-align: center;
 }
 
 .targuma-status-pill[data-status="listening"] {
@@ -6217,19 +6242,21 @@ body.targuma-mode-active .main-content {
 }
 
 .targuma-captions-viewport {
+    --targuma-font-size: 34px;
     width: 100%;
     max-width: 100%;
     flex: 1;
     background: var(--card-background);
     border: 1.5px solid var(--border-color);
-    border-radius: 14px;
-    padding: 1.25rem 1.75rem;
-    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    padding: 1.75rem 2.25rem;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.09);
     box-sizing: border-box;
-    min-height: 220px;
+    min-height: 250px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
+    align-items: center;
     text-align: left;
     overflow: hidden;
 }
@@ -6237,42 +6264,62 @@ body.targuma-mode-active .main-content {
 .targuma-captions-list {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    gap: 0.7rem;
+    justify-content: center;
+    gap: 0.9rem;
     width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
     text-align: left;
 }
 
 .targuma-caption-line {
-    padding: 0.45rem 0.85rem;
-    border-radius: 8px;
+    padding: 0.68rem 1.15rem;
+    border-radius: 12px;
     border-left: 4px solid transparent;
-    transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.45s ease, border-color 0.25s ease, background-color 0.25s ease;
+    transition: transform 0.52s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.48s ease, border-color 0.35s ease, background-color 0.35s ease;
     will-change: transform, opacity;
-    line-height: 1.4;
+    line-height: 1.48;
+    letter-spacing: 0.01em;
     text-align: left;
 }
 
 .targuma-line-previous {
-    opacity: 0.68;
+    opacity: 0.48;
+    font-weight: 400;
+    border-left-color: rgba(128, 128, 128, 0.2);
+}
+
+.targuma-line-previous .targuma-line-target {
+    font-size: calc(var(--targuma-font-size) * 0.85);
+}
+
+.targuma-line-previous .targuma-line-source {
+    font-size: calc(var(--targuma-font-size) * 0.50);
 }
 
 .targuma-line-latest {
     opacity: 1;
     font-weight: 600;
     border-left-color: var(--accent-color);
-    background: rgba(128, 128, 128, 0.06);
+    background: rgba(128, 128, 128, 0.065);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
 }
 
-/* Subtle bottom ellipsis anchor showing where the next caption line will appear */
+/* Subtle breathing ellipsis dots showing Targuma is listening for the next confident clause */
 .targuma-upcoming-ellipsis {
     display: inline-flex;
     align-items: center;
-    gap: 0.38rem;
-    padding: 0.25rem 0.85rem 0.1rem;
+    gap: 0.4rem;
+    padding: 0.25rem 1.15rem 0.1rem;
     min-height: 1.4rem;
     align-self: flex-start;
-    opacity: 0.72;
+    opacity: 0.7;
+}
+
+.targuma-empty-placeholder + .targuma-upcoming-ellipsis {
+    align-self: center;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 .targuma-ellipsis-dot {
@@ -6281,70 +6328,74 @@ body.targuma-mode-active .main-content {
     border-radius: 50%;
     background: var(--accent-color);
     display: inline-block;
-    animation: targumaEllipsisWave 1.5s infinite ease-in-out;
+    animation: targumaEllipsisWave 1.8s infinite ease-in-out;
 }
 
 .targuma-ellipsis-dot:nth-child(2) {
-    animation-delay: 0.22s;
+    animation-delay: 0.26s;
 }
 
 .targuma-ellipsis-dot:nth-child(3) {
-    animation-delay: 0.44s;
+    animation-delay: 0.52s;
 }
 
 @keyframes targumaEllipsisWave {
     0%, 80%, 100% {
-        opacity: 0.28;
+        opacity: 0.26;
         transform: scale(0.85);
     }
     40% {
-        opacity: 0.95;
-        transform: scale(1.15);
+        opacity: 0.92;
+        transform: scale(1.14);
     }
 }
 
 .targuma-line-source {
-    font-size: calc(var(--targuma-font-size, 32px) * 0.56);
+    font-size: calc(var(--targuma-font-size) * 0.56);
     color: var(--speaker-label-color);
-    margin-bottom: 0.15rem;
+    margin-bottom: 0.22rem;
     font-family: 'Noto Sans Ethiopic', sans-serif;
-    line-height: 1.3;
+    line-height: 1.35;
     text-align: left;
 }
 
 .targuma-line-target {
-    font-size: var(--targuma-font-size, 32px);
+    font-size: var(--targuma-font-size);
     color: var(--text-color);
-    font-family: var(--english-font-family, 'Merriweather', serif);
+    font-family: 'Merriweather', Georgia, serif;
     word-break: break-word;
     text-align: left;
 }
 
-/* Compact auto-fit scaling in Bilingual Stacked mode so it never overflows or requires scrolling */
+/* Compact auto-fit scaling in Bilingual Stacked mode */
 .targuma-captions-viewport.bilingual-mode {
-    padding: 0.9rem 1.4rem;
+    padding: 1.15rem 1.65rem;
 }
 
 .targuma-captions-viewport.bilingual-mode .targuma-captions-list {
-    gap: 0.45rem;
+    gap: 0.55rem;
 }
 
 .targuma-captions-viewport.bilingual-mode .targuma-caption-line {
-    padding: 0.3rem 0.75rem;
-    line-height: 1.28;
+    padding: 0.45rem 0.95rem;
+    line-height: 1.34;
 }
 
 .targuma-captions-viewport.bilingual-mode .targuma-line-target {
-    font-size: calc(var(--targuma-font-size, 32px) * 0.82);
+    font-size: calc(var(--targuma-font-size) * 0.82);
+}
+
+.targuma-captions-viewport.bilingual-mode .targuma-line-previous .targuma-line-target {
+    font-size: calc(var(--targuma-font-size) * 0.72);
 }
 
 .targuma-captions-viewport.bilingual-mode .targuma-line-source {
-    font-size: calc(var(--targuma-font-size, 32px) * 0.52);
+    font-size: calc(var(--targuma-font-size) * 0.52);
 }
 
 /* Style B Ge'ez Phonetic + Bracketed Meaning Styling */
 .targuma-geez-term {
-    color: var(--rubric-gold, #e1ad01);
+    color: #d4a017;
     font-weight: 600;
 }
 
@@ -6355,16 +6406,25 @@ body.targuma-mode-active .main-content {
 }
 
 .targuma-empty-placeholder {
-    padding: 1rem 0.5rem;
-    opacity: 0.85;
-    text-align: left;
+    padding: 1.5rem 1rem 0.65rem;
+    opacity: 0.88;
+    text-align: center;
 }
 
 .targuma-placeholder-primary {
-    font-size: 1.05rem;
+    font-size: 1.12rem;
     font-style: italic;
+    line-height: 1.6;
     margin: 0;
     color: var(--accent-color);
+}
+
+.targuma-placeholder-sub {
+    display: block;
+    margin-top: 0.4rem;
+    font-size: 0.94rem;
+    font-style: normal;
+    opacity: 0.85;
 }
 
 .targuma-info-modal-content {
@@ -6389,7 +6449,7 @@ body.targuma-mode-active .main-content {
     border: 0;
 }
 
-/* Desktop Split Layout: Left Quarter (25%) Large Orthodox Icon + Right 3/4 (75%) Caption Box */
+/* Desktop Split Layout: Left Quarter (25%) Large Orthodox Icon + Right 3/4 (75%) Balanced Clause Stage */
 @media (min-width: 900px) {
     .targuma-sanctuary-stage {
         flex-direction: row;
@@ -6440,15 +6500,15 @@ body.targuma-mode-active .main-content {
         top: 0.55rem;
         right: 0.55rem;
     }
-    .targuma-room-item {
-        grid-column: span 1;
-    }
     .targuma-stage-icon {
         max-height: 22vh;
     }
     .targuma-captions-viewport {
-        padding: 0.85rem 0.95rem;
-        min-height: 165px;
+        padding: 1.1rem 1.05rem;
+        min-height: 190px;
+    }
+    .targuma-caption-line {
+        padding: 0.55rem 0.85rem;
     }
 }
 

@@ -38,6 +38,8 @@ service-account.json
 
 # Dependencies
 functions/node_modules/
+services/targuma-stream/node_modules/
+tools/.cache/
 node_modules/
 
 # Legacy app and data

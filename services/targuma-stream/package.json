@@ -1,0 +1,18 @@
+{
+  "name": "targuma-stream",
+  "version": "1.0.0",
+  "description": "Low-latency YouTube USM (Chirp 3) + Cloud Translation V3 + Vertex Gemini Flash streaming interpreter for Mount of Mercy Targuma",
+  "main": "server.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@google-cloud/speech": "^6.7.0",
+    "@google-cloud/translate": "^9.3.0",
+    "google-auth-library": "^9.15.1",
+    "ws": "^8.18.0"
+  }
+}
