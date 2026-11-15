@@ -159,6 +159,7 @@ class MainActivity : AppCompatActivity() {
             "otf" -> "font/otf"
             "woff" -> "font/woff"
             "woff2" -> "font/woff2"
+            "wasm" -> "application/wasm"
             "mp3" -> "audio/mpeg"
             "wav" -> "audio/wav"
             "ogg" -> "audio/ogg"

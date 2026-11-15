@@ -37,9 +37,10 @@ let header, leftSidebar, rightSidebar, mainContent, sidebarToggle, prayersPanelT
     presModeIconSlides, presModeIconScroll, layoutToggleHeader, layoutIconColumn, layoutIconRow,
     showLanguageLabelsToggle, showSpeakerLabelsToggle, paragraphModeToggle, showRubricationToggle,
     languageColorCodingSelect, dynamicFontSizingLabel, dynamicFontSizingToggle, forceUniformFontSizeLabel,
-    forceUniformFontSizeToggle, slideTransitionSelect, searchContainer, searchToggle, searchClose,
+    forceUniformFontSizeToggle, slideTransitionSelect, slideTrackerStyleSelect, searchContainer, searchToggle, searchClose,
     searchInput, searchCount, searchPrev, searchNext, helpButton, showSupplicationsToggle,
     showDailyPrayerToggle, showGateOfLightToggle, showYewediswaMelaektToggle, showGeezPhoneticChantsToggle,
+    showZaimaNotationToggle, zaimaNotationSettingRow, openLiturgyGuideBtn, kidaseGuideInfoBtn, zaimaNotationInfoBtn,
     showLoanwordOriginsToggle, useExternalBibleAPIToggle, useExternalBibleAPILabel,
     globalEnglishTranslationSelect, globalAmharicTranslationSelect, globalGeezTranslationSelect,
     bibleTranslationsInfoBtn, bibleTranslationsInfoModal, closeBibleTranslationsInfoModal,
@@ -117,6 +118,7 @@ function bindDOMElements() {
     forceUniformFontSizeLabel = document.getElementById('force-uniform-font-size-label');
     forceUniformFontSizeToggle = document.getElementById('force-uniform-font-size');
     slideTransitionSelect = document.getElementById('slide-transition-select');
+    slideTrackerStyleSelect = document.getElementById('slide-tracker-style-select');
     searchContainer = document.getElementById('search-container');
     searchToggle = document.getElementById('search-toggle');
     searchClose = document.getElementById('search-close');
@@ -132,6 +134,11 @@ function bindDOMElements() {
     showGateOfLightToggle = document.getElementById('show-gate-of-light-toggle');
     showYewediswaMelaektToggle = document.getElementById('show-yewediswa-melaekt-toggle');
     showGeezPhoneticChantsToggle = document.getElementById('show-geez-phonetic-chants');
+    showZaimaNotationToggle = document.getElementById('show-zaima-notation-toggle');
+    zaimaNotationSettingRow = document.getElementById('zaima-notation-setting-row');
+    openLiturgyGuideBtn = document.getElementById('open-liturgy-guide-btn');
+    kidaseGuideInfoBtn = document.getElementById('kidase-guide-info-btn');
+    zaimaNotationInfoBtn = document.getElementById('zaima-notation-info-btn');
     showLoanwordOriginsToggle = document.getElementById('show-loanword-origins');
     showHaregOrnamentToggle = document.getElementById('show-hareg-ornament-toggle');
     showTrinitarianInvocationToggle = document.getElementById('show-trinitarian-invocation-toggle');
@@ -3154,6 +3161,7 @@ async function loadSettings() {
             forceUniformFontSize: false,
             paragraphMode: false,
             slideTransition: 'fade',
+            slideTrackerStyle: 'dot_plus_glow',
             languageColors: 'vibrant',
             boldText: false,
             anglicizeNames: false,
@@ -3161,6 +3169,7 @@ async function loadSettings() {
             showDailyPrayer: true,
             showTrinitarianInvocation: false,
             showGeezPhoneticChants: false,
+            showZaimaNotation: false,
             showLoanwordOrigins: false,
             showHaregOrnament: isMobile,
             showGateOfLight: false,
@@ -3509,6 +3518,12 @@ function updateAllTogglesInSettingsPanel() {
     dynamicFontSizingToggle.checked = displayOptions.dynamicFontSizing;
     forceUniformFontSizeToggle.checked = displayOptions.forceUniformFontSize;
     slideTransitionSelect.value = displayOptions.slideTransition;
+    if (slideTrackerStyleSelect) {
+        slideTrackerStyleSelect.value = displayOptions.slideTrackerStyle || 'dot_plus_glow';
+    }
+    if (typeof window !== 'undefined' && window.liturgyTracker && typeof window.liturgyTracker.setTrackerStyle === 'function') {
+        window.liturgyTracker.setTrackerStyle(displayOptions.slideTrackerStyle || 'dot_plus_glow');
+    }
     boldTextToggle.checked = displayOptions.boldText;
     anglicizeNamesToggle.checked = displayOptions.anglicizeNames;
     showSupplicationsToggle.checked = displayOptions.showSupplications;
@@ -3517,6 +3532,8 @@ function updateAllTogglesInSettingsPanel() {
     if (showGateOfLightToggle) showGateOfLightToggle.checked = displayOptions.showGateOfLight;
     if (showYewediswaMelaektToggle) showYewediswaMelaektToggle.checked = displayOptions.showYewediswaMelaekt !== false;
     if (showGeezPhoneticChantsToggle) showGeezPhoneticChantsToggle.checked = displayOptions.showGeezPhoneticChants;
+    if (zaimaNotationSettingRow) zaimaNotationSettingRow.style.display = isScribeLoggedIn ? '' : 'none';
+    if (showZaimaNotationToggle) showZaimaNotationToggle.checked = !!(isScribeLoggedIn && displayOptions.showZaimaNotation);
     if (showLoanwordOriginsToggle) showLoanwordOriginsToggle.checked = displayOptions.showLoanwordOrigins;
     if (showHaregOrnamentToggle) showHaregOrnamentToggle.checked = displayOptions.showHaregOrnament !== undefined ? displayOptions.showHaregOrnament : (window.innerWidth < 900);
     if (showPrepPsalmsToggle) showPrepPsalmsToggle.checked = showPrepPsalms;
@@ -6525,6 +6542,18 @@ function createPrayerCardElement(prayer, prayerIndex, isKidase = false) {
 
         let content = formatPrayerText(getCardLangText(langKey), langKey, searchQuery, isFirstLanguage, prayer.chapter, prayer.verseNum);
 
+        // Decorate Ge'ez Script with St. Yared's Zaima Musical Notation (ምልክት & ቅርጽ) when enabled
+        if (
+            isScribeLoggedIn &&
+            langKey === 'geez_script' &&
+            displayOptions.showZaimaNotation &&
+            typeof window !== 'undefined' &&
+            window.ZAIMA_NOTATION_DATA &&
+            typeof window.ZAIMA_NOTATION_DATA.decorateGeezHtmlWithZaima === 'function'
+        ) {
+            content = window.ZAIMA_NOTATION_DATA.decorateGeezHtmlWithZaima(content, prayerCard.dataset.cardId || '');
+        }
+
         // Append Ge'ez Phonetics to Ge'ez Script if setting is active and this is a chant
         if (langKey === 'geez_script' && displayOptions.showGeezPhoneticChants && isChantStanza(prayer)) {
             const rawPhoneticText = prayer['geez_phonetic'];
@@ -6569,6 +6598,13 @@ function createPrayerCardElement(prayer, prayerIndex, isKidase = false) {
     infoToggle.innerHTML = '&#9432;';
     infoToggle.title = 'Show/Hide Details';
     prayerActions.appendChild(infoToggle);
+
+    if (displayOptions.presentationMode === 'slides' && typeof window !== 'undefined' && window.liturgyTracker && typeof window.liturgyTracker.createSlideAutoFollowControl === 'function') {
+        const autoFollowControl = window.liturgyTracker.createSlideAutoFollowControl();
+        if (autoFollowControl) {
+            prayerActions.appendChild(autoFollowControl);
+        }
+    }
 
     const copyButton = document.createElement('button');
     copyButton.classList.add('share-btn');
@@ -8648,6 +8684,9 @@ function setupSlides() {
         }
     }
     showSlide(currentSlideIndex);
+    if (typeof window !== 'undefined' && window.liturgyTracker && window.liturgyTracker.state && window.liturgyTracker.state.isActive && typeof window.liturgyTracker.rebuildActiveGraph === 'function') {
+        window.liturgyTracker.rebuildActiveGraph();
+    }
 }
 
 function removeSlides() {
@@ -8694,6 +8733,17 @@ function prevSlide() {
         currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
         showSlide(currentSlideIndex);
     }
+}
+
+function jumpToSlideByIndex(targetIndex) {
+    _pendingSlideSignature = null;
+    _pendingSlideReadingType = null;
+    _pendingSlideId = null;
+    _pendingSlidePredicate = null;
+    const slides = prayerDisplay.querySelectorAll('.prayer-card, .section-title.collapsible');
+    if (slides.length === 0) return;
+    currentSlideIndex = Math.max(0, Math.min(slides.length - 1, targetIndex));
+    showSlide(currentSlideIndex);
 }
 
 /**
@@ -8796,9 +8846,10 @@ function cancelPendingPresize() {
  * Each callback sizes one card to avoid blocking the main thread.
  */
 function presizeNearbySlides(slides, centerIndex) {
-    // Build the list of card indices to pre-size, expanding outward
+    // Build a bounded list of nearby card indices (±8 slides) to avoid layout churn across 1000+ cards
     const toPresize = [];
-    for (let offset = 1; offset < slides.length; offset++) {
+    const maxRadius = Math.min(8, slides.length);
+    for (let offset = 1; offset <= maxRadius; offset++) {
         const ahead = centerIndex + offset;
         const behind = centerIndex - offset;
         if (ahead < slides.length) toPresize.push(ahead);
@@ -8808,7 +8859,7 @@ function presizeNearbySlides(slides, centerIndex) {
     let queueIndex = 0;
 
     function presizeNext(deadline) {
-        // Process cards while we have idle time (or at least one per callback)
+        // Process at most 1 card per idle slice if deadline is tight to prevent >50ms violation warnings
         while (queueIndex < toPresize.length) {
             const card = slides[toPresize[queueIndex]];
             queueIndex++;
@@ -8822,9 +8873,13 @@ function presizeNearbySlides(slides, centerIndex) {
 
             sizeOneCard(card);
 
-            // If we've used our idle time, yield and come back
-            if (typeof deadline !== 'undefined' && deadline.timeRemaining() < 5) {
-                presizeIdleCallbackId = requestIdleCallbackCompat(presizeNext);
+            // Yield immediately after sizing a card if less than 20ms idle budget remains
+            if (typeof deadline === 'undefined' || deadline.timeRemaining() < 20) {
+                if (queueIndex < toPresize.length) {
+                    presizeIdleCallbackId = requestIdleCallbackCompat(presizeNext);
+                } else {
+                    presizeIdleCallbackId = null;
+                }
                 return;
             }
         }
@@ -8832,7 +8887,9 @@ function presizeNearbySlides(slides, centerIndex) {
         presizeIdleCallbackId = null;
     }
 
-    presizeIdleCallbackId = requestIdleCallbackCompat(presizeNext);
+    if (toPresize.length > 0) {
+        presizeIdleCallbackId = requestIdleCallbackCompat(presizeNext);
+    }
 }
 
 /**
@@ -8972,31 +9029,31 @@ function sizeOneCard(card) {
                 }
             });
         } else {
-            // Independent Growth Loop for rows to maximize space usage
+            // Fast Coarse-to-Fine Step Growth Loop for rows (~10x fewer reflows than +1px linear scan)
             let currentSizes = new Array(langSections.length).fill(12);
-            let growing = true;
             const maxAvailableHeight = prayerContent.clientHeight;
 
             if (maxAvailableHeight > 0) {
-                while (growing) {
-                    growing = false;
-                    for (let i = 0; i < langSections.length; i++) {
-                        const section = langSections[i];
-                        const textP = section.querySelector('p.language-text');
-                        if (!textP) continue;
+                const steps = [32, 16, 8, 4, 2, 1];
+                for (let sIdx = 0; sIdx < steps.length; sIdx++) {
+                    const step = steps[sIdx];
+                    let growing = true;
+                    while (growing) {
+                        growing = false;
+                        for (let i = 0; i < langSections.length; i++) {
+                            const section = langSections[i];
+                            const textP = section.querySelector('p.language-text');
+                            if (!textP || currentSizes[i] + step > 250) continue;
 
-                        if (currentSizes[i] >= 300) continue;
+                            const nextSize = currentSizes[i] + step;
+                            textP.style.fontSize = nextSize + 'px';
 
-                        const nextSize = currentSizes[i] + 1;
-                        textP.style.fontSize = nextSize + 'px';
-
-                        // Check if this section overflows its width or the total container overflows height
-                        // Use a small buffer to prevent clipping of labels and descenders
-                        if (textP.scrollWidth <= section.clientWidth && prayerContent.scrollHeight <= (maxAvailableHeight - HEIGHT_BUFFER)) {
-                            currentSizes[i] = nextSize;
-                            growing = true;
-                        } else {
-                            textP.style.fontSize = currentSizes[i] + 'px'; // Revert
+                            if (textP.scrollWidth <= section.clientWidth && prayerContent.scrollHeight <= (maxAvailableHeight - HEIGHT_BUFFER)) {
+                                currentSizes[i] = nextSize;
+                                growing = true;
+                            } else {
+                                textP.style.fontSize = currentSizes[i] + 'px';
+                            }
                         }
                     }
                 }
@@ -10375,6 +10432,12 @@ function renderSelectedPsalmsWithDoxology(addSectionTitleCallback, customPsalmsL
             prayerFooter.appendChild(prayerLabel);
             const prayerActions = document.createElement('div');
             prayerActions.classList.add('prayer-actions');
+            if (displayOptions.presentationMode === 'slides' && typeof window !== 'undefined' && window.liturgyTracker && typeof window.liturgyTracker.createSlideAutoFollowControl === 'function') {
+                const autoFollowControl = window.liturgyTracker.createSlideAutoFollowControl();
+                if (autoFollowControl) {
+                    prayerActions.appendChild(autoFollowControl);
+                }
+            }
             const copyButton = document.createElement('button');
             copyButton.classList.add('share-btn');
             copyButton.innerHTML = shareIconSVG;
@@ -11619,12 +11682,21 @@ function togglePresentationMode(targetCardIdentifier) {
                 if (slideIdx !== -1) {
                     currentSlideIndex = slideIdx;
                     showSlide(currentSlideIndex);
+                    if (typeof window !== 'undefined' && window.liturgyTracker && typeof window.liturgyTracker.notifyPresentationModeChanged === 'function') {
+                        window.liturgyTracker.notifyPresentationModeChanged(true);
+                    }
                     return;
                 }
             }
         }
         showSlide(currentSlideIndex);
+        if (typeof window !== 'undefined' && window.liturgyTracker && typeof window.liturgyTracker.notifyPresentationModeChanged === 'function') {
+            window.liturgyTracker.notifyPresentationModeChanged(true);
+        }
     } else {
+        if (typeof window !== 'undefined' && window.liturgyTracker && typeof window.liturgyTracker.notifyPresentationModeChanged === 'function') {
+            window.liturgyTracker.notifyPresentationModeChanged(false);
+        }
         _pendingSlideSignature = null;
         _pendingSlideReadingType = null;
         // Exiting slides mode: scroll to the previously active card
@@ -12826,6 +12898,9 @@ function handleSlideSwipe() {
 
     // Ensure horizontal movement is dominant
     if (Math.abs(deltaX) > Math.abs(deltaY) * 1.5 && Math.abs(deltaX) > swipeThreshold) {
+        if (typeof window !== 'undefined' && window.liturgyTracker && typeof window.liturgyTracker.notifyManualSlideNavigation === 'function') {
+            window.liturgyTracker.notifyManualSlideNavigation();
+        }
         if (deltaX < -swipeThreshold) { // Swipe Left (next)
             nextSlide();
         } else if (deltaX > swipeThreshold) { // Swipe Right (prev)
@@ -12839,6 +12914,9 @@ function handleSlideSwipe() {
 // Global Window Exposures
 if (typeof window !== 'undefined') {
     window.togglePresentationMode = togglePresentationMode;
+    window.jumpToSlideByIndex = jumpToSlideByIndex;
+    window.navigateToCard = navigateToCard;
+    window.switchKidaseDayAndNavigate = switchKidaseDayAndNavigate;
     window.renderPsalmCombinationsModal = renderPsalmCombinationsModal;
     window.toggleLayout = toggleLayout;
     window.updateSelectedMiracleUI = updateSelectedMiracleUI;
@@ -13500,6 +13578,14 @@ safeOn(slideTransitionSelect, 'change', () => {
     saveSettings();
 });
 
+safeOn(slideTrackerStyleSelect, 'change', () => {
+    displayOptions.slideTrackerStyle = slideTrackerStyleSelect.value;
+    if (typeof window !== 'undefined' && window.liturgyTracker && typeof window.liturgyTracker.setTrackerStyle === 'function') {
+        window.liturgyTracker.setTrackerStyle(displayOptions.slideTrackerStyle);
+    }
+    saveSettings();
+});
+
 safeOn(anglicizeNamesToggle, 'change', () => {
     displayOptions.anglicizeNames = anglicizeNamesToggle.checked;
     renderPrayers();
@@ -13568,6 +13654,42 @@ if (showGeezPhoneticChantsToggle) {
         displayOptions.showGeezPhoneticChants = showGeezPhoneticChantsToggle.checked;
         smoothRender();
         saveSettings();
+    });
+}
+
+if (showZaimaNotationToggle) {
+    safeOn(showZaimaNotationToggle, 'change', () => {
+        displayOptions.showZaimaNotation = showZaimaNotationToggle.checked;
+        smoothRender();
+        saveSettings();
+    });
+}
+
+if (openLiturgyGuideBtn) {
+    safeOn(openLiturgyGuideBtn, 'click', () => {
+        if (typeof window.openLiturgyGuideModal === 'function') {
+            window.openLiturgyGuideModal('map');
+        }
+    });
+}
+
+if (kidaseGuideInfoBtn) {
+    safeOn(kidaseGuideInfoBtn, 'click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        if (typeof window.openLiturgyGuideModal === 'function') {
+            window.openLiturgyGuideModal('map');
+        }
+    });
+}
+
+if (zaimaNotationInfoBtn) {
+    safeOn(zaimaNotationInfoBtn, 'click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        if (typeof window.openLiturgyGuideModal === 'function') {
+            window.openLiturgyGuideModal('zaima');
+        }
     });
 }
 
@@ -15201,6 +15323,9 @@ const appCoreExports = {
     togglePresentationMode,
     nextSlide,
     prevSlide,
+    jumpToSlideByIndex,
+    navigateToCard,
+    switchKidaseDayAndNavigate,
     renderPrayers,
     _renderPrayersSync,
     renderDailyLectionarySection,

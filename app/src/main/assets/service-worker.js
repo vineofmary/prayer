@@ -1,9 +1,9 @@
-const CACHE_NAME = 'divine-liturgy-cache-v55';
+const CACHE_NAME = 'divine-liturgy-cache-v57';
 const urlsToCache = [
   './',
   './index.html',
   './manifest.json',
-  './css/style.css?v=46',
+  './css/style.css?v=48',
   './js/icons.js?v=10',
   './js/prayers.js?v=10',
   './js/songs.js?v=10',
@@ -18,7 +18,13 @@ const urlsToCache = [
   './js/targuma_service.js?v=6',
   './js/geez_lexicon.js?v=1',
   './js/learning_service.js?v=5',
-  './js/script.js?v=57',
+  './js/zema_acoustic_model_data.js?v=2',
+  './js/zaima_notation_data.js?v=2',
+  './js/liturgy_guide_data.js?v=2',
+  './js/liturgy_tracker.js?v=2',
+  './js/liturgy_acoustic_worker.js',
+  './js/script.js?v=59',
+  './img/With-her-beloved-Son.png',
   './icons/icon-192x192.png',
   './icons/icon-512x512.png'
 ];

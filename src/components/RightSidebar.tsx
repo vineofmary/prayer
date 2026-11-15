@@ -145,9 +145,22 @@ export const RightSidebar: React.FC = () => {
             </div>
           </div>
 
-          <label style={{ display: 'block', marginBottom: '0.5rem' }}>
-            <input type="checkbox" id="kidase-mode-toggle" /> <span>Order of the Liturgy | ሥርዓተ ቅዳሴ</span>
-          </label>
+          <div className="title-with-info" style={{ marginBottom: '0.5rem' }}>
+            <label style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem', margin: 0 }}>
+              <input type="checkbox" id="kidase-mode-toggle" /> <span>Order of the Liturgy | ሥርዓተ ቅዳሴ</span>
+            </label>
+            <button
+              type="button"
+              id="kidase-guide-info-btn"
+              className="info-toggle-btn"
+              title="Heavenly Liturgy Map, 100 Essential Words & St. Yared Zaima Guide"
+              aria-label="Open Heavenly Liturgy Map and Guide"
+            >
+              <svg viewBox="0 0 24 24" width="18" height="18">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" />
+              </svg>
+            </button>
+          </div>
           <div
             id="kidase-settings"
             style={{
@@ -276,12 +289,37 @@ export const RightSidebar: React.FC = () => {
           <label style={{ display: 'block', marginBottom: '0.5rem' }}>
             <input type="checkbox" id="show-geez-phonetic-chants" /> <span>Ge'ez Phonetics for Chants</span>
           </label>
+          <div id="zaima-notation-setting-row" className="title-with-info" style={{ marginBottom: '0.5rem', display: 'none' }}>
+            <label style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem', margin: 0 }} title="Display St. Yared's multi-row Ethiopic musical notation (ምልክት & ቅርጽ) above certified Debre Abay Kidase chants">
+              <input type="checkbox" id="show-zaima-notation-toggle" /> <span>St. Yared Notation | የዜማ ምልክት (Beta)</span>
+            </label>
+            <button
+              type="button"
+              id="zaima-notation-info-btn"
+              className="info-toggle-btn"
+              title="About St. Yared's Zaima Musical Notation (ምልክት)"
+              aria-label="About St. Yared's Zaima Musical Notation"
+            >
+              <svg viewBox="0 0 24 24" width="18" height="18">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" />
+              </svg>
+            </button>
+          </div>
           <label style={{ display: 'block', marginBottom: '0.5rem' }}>
             <input type="checkbox" id="hide-quiet-prayers" /> <span>Quiet Prayers | ጸሎት በልኁሳስ</span>
           </label>
-          <label style={{ display: 'block', marginBottom: '0.5rem' }}>
+          <label style={{ display: 'block', marginBottom: '0.65rem' }}>
             <input type="checkbox" id="holy-fifty-days-toggle" /> <span>Holy 50 Days | እምትንሣኤ እስከ በዓለ ፶</span>
           </label>
+          <button
+            type="button"
+            id="open-liturgy-guide-btn"
+            className="settings-button"
+            style={{ width: '100%', marginTop: '0.25rem' }}
+            title="Open Heavenly Liturgy 11-Station Map, 100 Essential Words & St. Yared Zaima Guide"
+          >
+            📖 Liturgy Map, Glossary &amp; Zaima
+          </button>
         </div>
 
         <div className="setting-group">

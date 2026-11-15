@@ -191,6 +191,12 @@ export const LeftSidebar: React.FC = () => {
             <option value="fade">Fade</option>
             <option value="none">None</option>
           </select>
+          <h4 className="settings-subtitle" style={{ marginTop: '0.75rem' }}>Slide Chanting Tracker (Beta)</h4>
+          <select id="slide-tracker-style-select" defaultValue="dot_plus_glow" aria-label="Slide Chanting Tracker Style">
+            <option value="dot_plus_glow">Dual Red Dot + Subtle Glow</option>
+            <option value="dot_only">Dual Red Dot Only</option>
+            <option value="off">Slide Auto-Advance Only (No Dot)</option>
+          </select>
         </div>
 
         <div className="setting-group" id="unofficial-languages-section" style={{ display: 'none' }}>
