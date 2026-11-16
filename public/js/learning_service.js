@@ -320,7 +320,9 @@
         // 5. 500 pts: Selected Anaphora & Acts Reading synthesis
         const anaphoraName = snapshot && snapshot.selectedAnaphora === 'mary'
             ? 'The Anaphora of Our Lady Mary (ቅዳሴ ማርያም)'
-            : 'The Anaphora of the Apostles (ቅዳሴ ሐዋርያት)';
+            : (snapshot && snapshot.selectedAnaphora === 'jacob'
+                ? 'The Anaphora of St. Jacob of Serug (ቅዳሴ ያዕቆብ ዘሥሩግ)'
+                : 'The Anaphora of the Apostles (ቅዳሴ ሐዋርያት)');
         const actsRef = refs.acts || 'Acts 10:3-9';
         const synthAnswer = 'Read by the Assistant Priest (' + actsRef + ') • Selected Anaphora: ' + anaphoraName;
         clues.push({

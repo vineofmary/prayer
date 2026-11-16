@@ -105,9 +105,9 @@
             title: 'Institution & Invocation (Anaphora)',
             geez: 'ጸሎተ ሥርዓት ወምሕልላ (አኰቴተ ቍርባን)',
             phonetic: 'Akwetéte Ḳwrban',
-            summary: 'Entering the Eucharistic Prayer (one of the 14 EOTC Anaphoras, such as the Apostles or St. Mary), we lift up our hearts to the Lord ("Sursum Corda"), chant the Sanctus, commemorate Christ’s Institution of the Eucharist ("Take, eat; this is My body..."), and invoke the Holy Spirit (Epiclesis) to descend upon the bread and cup.',
+            summary: 'Entering the Eucharistic Prayer (one of the 14 EOTC Anaphoras, such as the Apostles, St. Mary, or St. Jacob of Serug), we lift up our hearts to the Lord ("Sursum Corda"), chant the Sanctus, commemorate Christ’s Institution of the Eucharist ("Take, eat; this is My body..."), and invoke the Holy Spirit (Epiclesis) to descend upon the bread and cup.',
             scripture: 'Matthew 26:26–30; 1 Corinthians 11:23–26',
-            cardCandidates: ['Apostles-1', 'St.Mary-1', 'Apostles-26'],
+            cardCandidates: ['Apostles-1', 'St.Mary-1', 'St.Jacob-1', 'Apostles-26'],
             geezMatch: 'አኰቴተ ቍርባን'
         },
         {
@@ -117,7 +117,7 @@
             phonetic: 'Tselote Nisiḥa',
             summary: 'Following the Fraction and prayers of repentance (Pilot / Nisiḥa) by the celebrant priest, clergy and congregation solemnly chant 41 times in supplication: "O Lord Christ, have compassion upon us" (እግዚኦ መሐረነ ክርስቶስ).',
             scripture: 'Matthew 9:36; Luke 18:13',
-            cardCandidates: ['Apostles-93', 'Apostles-82', 'St.Mary-118'],
+            cardCandidates: ['Apostles-93', 'Apostles-82', 'St.Mary-118', 'St.Jacob-80'],
             geezMatch: 'እግዚኦ መሐረነ ክርስቶስ'
         },
         {

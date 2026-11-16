@@ -1229,7 +1229,7 @@ function getDefaultKidaseRefsAndAnaphoraForDate(dateObj = getEffectiveDate(), se
             } else if (typeof resolveAppAnaphoraKey === 'function') {
                 anaphoraKey = resolveAppAnaphoraKey(entry.qidase.anaphora);
             } else {
-                anaphoraKey = entry.qidase.anaphora === 4 ? 'mary' : 'apostles';
+                anaphoraKey = entry.qidase.anaphora === 4 ? 'mary' : (entry.qidase.anaphora === 12 ? 'jacob' : 'apostles');
             }
         }
     }
@@ -2351,6 +2351,8 @@ const SECTION_SLUGS = {
     "Order of the Liturgy | ሥርዐተ ቅዳሴ": "ok",
     "Anaphora of the Apostles | አኰቴተ ቍርባን ዘሐዋርያት": "aa",
     "Anaphora of Our Lady Mary | አኰቴተ ቍርባን ዘእግዝእትነ ማርያም": "am",
+    "Anaphora of St. Jacob of Serug | ቅዳሴ ያዕቆብ ዘሥሩግ": "aj",
+    "→ Anaphora of St. Jacob of Serug | ቅዳሴ ያዕቆብ ዘሥሩግ": "aj",
     "Daily Readings | ምንባባት ዘለለዕለቱ": "dr",
     "Morning Readings | ምንባባት ዘነግህ": "dr",
     "Sunset Readings | ምንባባት ዘሠርክ": "dr",
@@ -2818,9 +2820,11 @@ function getLiturgyTabDefaultProfile() {
             "<i>Ḳidasé</i> — Liturgy | ቅዳሴ::→ Order of the Liturgy | ሥርዓተ ቅዳሴ": true,
             "<i>Ḳidasé</i> — Liturgy | ቅዳሴ::→ Anaphora of the Apostles | ቅዳሴ ሐዋርያት": true,
             "<i>Ḳidasé</i> — Liturgy | ቅዳሴ::→ Anaphora of Mary | ቅዳሴ ማርያም": true,
+            "<i>Ḳidasé</i> — Liturgy | ቅዳሴ::→ Anaphora of St. Jacob of Serug | ቅዳሴ ያዕቆብ ዘሥሩግ": true,
             "→ Order of the Liturgy | ሥርዓተ ቅዳሴ": true,
             "→ Anaphora of the Apostles | ቅዳሴ ሐዋርያት": true,
-            "→ Anaphora of Mary | ቅዳሴ ማርያም": true
+            "→ Anaphora of Mary | ቅዳሴ ማርያም": true,
+            "→ Anaphora of St. Jacob of Serug | ቅዳሴ ያዕቆብ ዘሥሩግ": true
         }
     };
 }
@@ -6186,7 +6190,7 @@ function formatPrayerText(text, langKey, query, isFirstLanguage, chapter = null,
 
 function getPrayerLabel(prayer, isKidase = false) {
     // Detect Kidase prayers (Liturgy)
-    const kidaseChapters = ['Kidan', 'order', 'Apostles', 'St.Mary', 'Chrysostom', 'The300', 'mary', 'apostles'];
+    const kidaseChapters = ['Kidan', 'order', 'Apostles', 'St.Mary', 'St.Jacob', 'Chrysostom', 'The300', 'mary', 'jacob', 'apostles'];
     const chapter = prayer.chapter || '';
     const isNumericChapter = /^\d+$/.test(chapter);
     const isKidaseChapter = isKidase || isNumericChapter || kidaseChapters.some(c => c.toLowerCase() === chapter.toLowerCase());
@@ -6197,6 +6201,8 @@ function getPrayerLabel(prayer, isKidase = false) {
             chapterPrefix = chapter; // Keep number as per user request
         } else if (chapter.toLowerCase() === 'st.mary' || chapter.toLowerCase() === 'mary') {
             chapterPrefix = 'Mary';
+        } else if (chapter.toLowerCase() === 'st.jacob' || chapter.toLowerCase() === 'jacob') {
+            chapterPrefix = 'Jacob';
         } else if (chapter.toLowerCase() === 'apostles') {
             chapterPrefix = 'Apostles';
         } else if (!chapter && isKidase) {
@@ -6398,7 +6404,7 @@ function filterGeezPhoneticForPeople(phoneticText, prayer) {
 function createPrayerCardElement(prayer, prayerIndex, isKidase = false) {
     const searchQuery = searchInput.value;
 
-    const kidaseChapters = ['Kidan', 'order', 'Apostles', 'St.Mary', 'Chrysostom', 'The300', 'mary', 'apostles'];
+    const kidaseChapters = ['Kidan', 'order', 'Apostles', 'St.Mary', 'St.Jacob', 'Chrysostom', 'The300', 'mary', 'jacob', 'apostles'];
     const chapterStr = prayer.chapter || '';
     const isNumericChapter = /^\d+$/.test(chapterStr);
     const isKidaseCard = isKidase || isNumericChapter || kidaseChapters.some(c => c.toLowerCase() === chapterStr.toLowerCase());
@@ -6644,7 +6650,7 @@ function createPrayerCardElement(prayer, prayerIndex, isKidase = false) {
     infoPanelContent.classList.add('info-panel-content');
 
     let infoHTML = "";
-    const isKidaseChapter = /^\d+$/.test(prayer.chapter) || ['Kidan', 'order', 'Apostles', 'St.Mary', 'Chrysostom', 'The300', 'mary', 'apostles'].some(c => c.toLowerCase() === (prayer.chapter || '').toLowerCase());
+    const isKidaseChapter = /^\d+$/.test(prayer.chapter) || ['Kidan', 'order', 'Apostles', 'St.Mary', 'St.Jacob', 'Chrysostom', 'The300', 'mary', 'jacob', 'apostles'].some(c => c.toLowerCase() === (prayer.chapter || '').toLowerCase());
     const isKidasePrayer = isKidase || (isKidaseChapter && prayer.chapter && prayer.stanza);
 
     if (!isKidasePrayer || prayer._isMiracle) {
@@ -7157,7 +7163,8 @@ function renderSelectedKidase(addSectionTitleCallback, options = {}) {
     if (showAnaphora) {
         const anaphoraMap = {
             'apostles': { name: '→ Anaphora of the Apostles | ቅዳሴ ሐዋርያት', data: kidaseData.apostles },
-            'mary': { name: '→ Anaphora of Mary | ቅዳሴ ማርያም', data: kidaseData.mary }
+            'mary': { name: '→ Anaphora of Mary | ቅዳሴ ማርያም', data: kidaseData.mary },
+            'jacob': { name: '→ Anaphora of St. Jacob of Serug | ቅዳሴ ያዕቆብ ዘሥሩግ', data: kidaseData.jacob }
         };
 
         const anaphora = anaphoraMap[selectedAnaphora];
@@ -7867,7 +7874,9 @@ function getActivePrayerViewPresetSummary() {
             Boolean(displayOptions && displayOptions.showSupplications) === Boolean(def.showSupplications);
 
         if (!isDefaultLiturgyView) return null;
-        const anaphoraLabel = def.selectedAnaphora === 'mary' ? 'Anaphora of Mary' : 'Anaphora of the Apostles';
+        const anaphoraLabel = def.selectedAnaphora === 'mary'
+            ? 'Anaphora of Mary'
+            : (def.selectedAnaphora === 'jacob' ? 'Anaphora of St. Jacob of Serug' : 'Anaphora of the Apostles');
         return `Preset for Liturgy: Daily Prayer, Vespers, Songs of the Prophets, Se\u2019atat Readings, Pre-Liturgy Psalms, Matins, Order of the Liturgy, ${anaphoraLabel}`;
     }
 
@@ -8503,7 +8512,7 @@ function fallbackCopyTextToClipboard(text) {
 function copyPrayer(prayer) {
     let textToCopy = ``;
     textToCopy += `፨ ${getPrayerLabel(prayer)} ፨\n\n`;
-    const kidaseChapters = ['Kidan', 'order', 'Apostles', 'St.Mary', 'Chrysostom', 'The300', 'mary', 'apostles'];
+    const kidaseChapters = ['Kidan', 'order', 'Apostles', 'St.Mary', 'St.Jacob', 'Chrysostom', 'The300', 'mary', 'jacob', 'apostles'];
     const chapterStr = prayer.chapter || '';
     const isNumericChapter = /^\d+$/.test(chapterStr);
     const isKidaseCard = isNumericChapter || kidaseChapters.some(c => c.toLowerCase() === chapterStr.toLowerCase());
@@ -14087,7 +14096,9 @@ async function initApp() {
         function getAnaphoraChapter() {
             const anaphoraSelector = document.getElementById('anaphora-selector');
             const val = anaphoraSelector ? anaphoraSelector.value : 'apostles';
-            return val === 'mary' ? 'St.Mary' : 'Apostles';
+            if (val === 'mary') return 'St.Mary';
+            if (val === 'jacob') return 'St.Jacob';
+            return 'Apostles';
         }
 
         if (anaphoraBtn) {
@@ -14510,6 +14521,7 @@ async function initApp() {
                     updateAllMatches(kidaseData.order, criteria);
                     updateAllMatches(kidaseData.apostles, criteria);
                     updateAllMatches(kidaseData.mary, criteria);
+                    if (kidaseData.jacob) updateAllMatches(kidaseData.jacob, criteria);
                 }
                 
                 // Sync Teklil data from Firestore

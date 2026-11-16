@@ -15,9 +15,9 @@
  *     (per EOTC tradition) and are converted to Masoretic / KJV numbering via
  *     `convertLxxPsalmRefToMt()` when populating `kidaseLectionaryRefs`.
  *   - Anaphora numbers 1..14 follow the canonical Metsehafe Qidase / Gitsawie key (`EOTC_ANAPHORAS`).
- *     Currently the app includes full text for Anaphora 1 (Apostles -> 'apostles')
- *     and Anaphora 4 (St. Mary -> 'mary'); other appointed Anaphoras temporarily
- *     default to 'apostles' until their texts are added.
+ *     Currently the app includes full text for Anaphora 1 (Apostles -> 'apostles'),
+ *     Anaphora 4 (St. Mary -> 'mary'), and Anaphora 12 (St. Jacob of Serug -> 'jacob');
+ *     other appointed Anaphoras temporarily default to 'apostles' until their texts are added.
  */
 
 const EOTC_ANAPHORAS = {
@@ -32,7 +32,7 @@ const EOTC_ANAPHORAS = {
     9:  { id: 9,  appKey: 'apostles', english: 'Anaphora of St. Epiphanius', geez: 'ቅዳሴ ኤጲፋንዮስ' },
     10: { id: 10, appKey: 'apostles', english: 'Anaphora of St. John Chrysostom', geez: 'ቅዳሴ ዮሐንስ አፈ ወርቅ' },
     11: { id: 11, appKey: 'apostles', english: 'Anaphora of St. Cyril', geez: 'ቅዳሴ ቄርሎስ' },
-    12: { id: 12, appKey: 'apostles', english: 'Anaphora of St. Jacob of Serough', geez: 'ቅዳሴ ያዕቆብ ዘሥሩግ' },
+    12: { id: 12, appKey: 'jacob',    english: 'Anaphora of St. Jacob of Serug', geez: 'ቅዳሴ ያዕቆብ ዘሥሩግ' },
     13: { id: 13, appKey: 'apostles', english: 'Anaphora of St. Dioscorus', geez: 'ቅዳሴ ዲዮስቆሮስ' },
     14: { id: 14, appKey: 'apostles', english: 'Anaphora of St. Gregory II (Wonderworker)', geez: 'ቅዳሴ ጎርጎርዮስ ካልዕ' }
 };

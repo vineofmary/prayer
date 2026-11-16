@@ -735,7 +735,7 @@
         if (t.includes('theotokia') || t.includes('praises of mary') || t.includes('ውዳሴ ማርያም') || t.includes('gate of light') || t.includes('አንቀጸ ብርሃን') || t.includes('angels praise')) {
             return 'theotokia';
         }
-        if (t.includes('anaphora') || t.includes('ቅዳሴ ሐዋርያት') || t.includes('ቅዳሴ ማርያም') || t.includes('አኰቴተ ቍርባን') || t.includes('melk') || t.includes('miracle') || /^apostles-|^st\.mary-|^mary-/i.test(cid)) {
+        if (t.includes('anaphora') || t.includes('ቅዳሴ ሐዋርያት') || t.includes('ቅዳሴ ማርያም') || t.includes('ቅዳሴ ያዕቆብ') || t.includes('አኰቴተ ቍርባን') || t.includes('melk') || t.includes('miracle') || /^apostles-|^st\.mary-|^mary-|^st\.jacob-|^jacob-/i.test(cid)) {
             return 'anaphora';
         }
         if (t.includes('pre-liturgy psalms') || t.includes('ቅድመ ቅዳሴ')) {
@@ -1006,24 +1006,31 @@
         if (!kidaseDataset) return branches;
 
         const selectedAnaphora = currentSettings.selectedAnaphora || 'apostles';
-        const otherKey = selectedAnaphora === 'mary' ? 'apostles' : 'mary';
-        const otherList = kidaseDataset[otherKey] || [];
+        const anaphoraLabels = {
+            apostles: 'Anaphora of the Apostles | ቅዳሴ ሐዋርያት',
+            mary: 'Anaphora of Mary | ቅዳሴ ማርያም',
+            jacob: 'Anaphora of St. Jacob of Serug | ቅዳሴ ያዕቆብ ዘሥሩግ'
+        };
+        const unselectedKeys = ['apostles', 'mary', 'jacob'].filter(k => k !== selectedAnaphora && Array.isArray(kidaseDataset[k]));
 
-        // Index distinctive opening stanzas of unselected Anaphora (excluding shared generic responses)
-        otherList.slice(0, 18).forEach((p, idx) => {
-            const cardId = `${p.chapter}-${p.stanza}`;
-            const geezClean = stripLiturgicalMarkup(p.geez_script || '');
-            if (isRepetitiveLiturgicalText(geezClean, geezClean.split(/\s+/).filter(Boolean).length, 10)) return;
-            const seq = buildMergedPrayerSequence(p, cardId);
-            if (seq.words.length >= 4) {
-                branches.unselectedAnaphora.push({
-                    anaphoraKey: otherKey,
-                    label: otherKey === 'mary' ? 'Anaphora of Mary | ቅዳሴ ማርያም' : 'Anaphora of the Apostles | ቅዳሴ ሐዋርያት',
-                    cardId,
-                    stanzaOffset: idx,
-                    seq
-                });
-            }
+        // Index distinctive opening stanzas of unselected Anaphoras (excluding shared generic responses)
+        unselectedKeys.forEach(otherKey => {
+            const otherList = kidaseDataset[otherKey] || [];
+            otherList.slice(0, 18).forEach((p, idx) => {
+                const cardId = `${p.chapter}-${p.stanza}`;
+                const geezClean = stripLiturgicalMarkup(p.geez_script || '');
+                if (isRepetitiveLiturgicalText(geezClean, geezClean.split(/\s+/).filter(Boolean).length, 10)) return;
+                const seq = buildMergedPrayerSequence(p, cardId);
+                if (seq.words.length >= 4) {
+                    branches.unselectedAnaphora.push({
+                        anaphoraKey: otherKey,
+                        label: anaphoraLabels[otherKey] || anaphoraLabels.apostles,
+                        cardId,
+                        stanzaOffset: idx,
+                        seq
+                    });
+                }
+            });
         });
 
         // Index shared Deacon cues & People's chants in Anaphora of the Apostles as universal fallback
@@ -2792,7 +2799,10 @@
                 sel.dispatchEvent(new Event('change', { bubbles: true }));
                 setTimeout(() => {
                     rebuildActiveGraph();
-                    jumpToCardIdInSlides(decision.cardId || (decision.anaphoraKey === 'mary' ? 'St.Mary-1' : 'Apostles-1'));
+                    const defaultCardId = decision.anaphoraKey === 'mary'
+                        ? 'St.Mary-1'
+                        : (decision.anaphoraKey === 'jacob' ? 'St.Jacob-1' : 'Apostles-1');
+                    jumpToCardIdInSlides(decision.cardId || defaultCardId);
                 }, 80);
                 return;
             }

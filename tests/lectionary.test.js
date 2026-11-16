@@ -175,13 +175,18 @@ describe('Canonical 1938 AD EOTC Annual Lectionary (All 13 Months / 366 Days)', 
       expect(window.getEotcLectionaryEntry(12, 22).evening).toContain('Hebrews 12');
     });
 
-    it('maps Anaphora 4 (St. Mary) to "mary" and defaults all other 13 Anaphoras (and null) to "apostles"', () => {
+    it('maps Anaphora 4 (St. Mary) to "mary", Anaphora 12 (St. Jacob of Serug) to "jacob", and defaults unbundled Anaphoras to "apostles"', () => {
       expect(window.resolveAppAnaphoraKey(4)).toBe('mary');
+      expect(window.resolveAppAnaphoraKey(12)).toBe('jacob');
       expect(window.resolveAppAnaphoraKey(1)).toBe('apostles');
       expect(window.resolveAppAnaphoraKey(null)).toBe('apostles');
-      for (const id of [2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]) {
+      for (const id of [2, 3, 5, 6, 7, 8, 9, 10, 11, 13, 14]) {
         expect(window.resolveAppAnaphoraKey(id)).toBe('apostles');
       }
+      // Feast of St. Michael the Archangel (Megabit 12 = 7/12) and Meskerem 3 (1/3) appoint Anaphora 12 (St. Jacob of Serug)
+      expect(window.getEotcLectionaryEntry(7, 12).qidase.anaphora).toBe(12);
+      expect(window.resolveAppAnaphoraKey(window.getEotcLectionaryEntry(7, 12).qidase.anaphora)).toBe('jacob');
+      expect(window.getEotcLectionaryEntry(1, 3).qidase.anaphora).toBe(12);
     });
   });
 

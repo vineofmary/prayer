@@ -205,6 +205,42 @@ describe('Kidase Audio Auto-Navigation, Sanctuary Interlude & Dual Red-Dot Track
       expect(step.anaphoraKey).toBe('mary');
     });
 
+    it('detects Anaphora of St. Jacob of Serug when Apostles is selected and triggers a 3s Co-Pilot prompt', () => {
+      const apostlesSlides = (kidaseDataObj.apostles || []).slice(0, 10);
+      const graph = tracker.buildLiturgicalSlideGraph(apostlesSlides);
+      const shadowBranches = tracker.buildShadowLiturgicalBranches(kidaseDataObj, {
+        selectedAnaphora: 'apostles',
+        selectedKidaseDay: 'saturday'
+      });
+      expect(shadowBranches.unselectedAnaphora.some(b => b.anaphoraKey === 'jacob')).toBe(true);
+
+      // Feed distinctive opening stanza of Anaphora of St. Jacob of Serug ("ተንሥኡ ዘእምንዋም..." / St.Jacob-2)
+      const jacobStanza2 = kidaseDataObj.jacob.find(p => p.chapter === 'St.Jacob' && p.stanza === '2');
+      expect(jacobStanza2).toBeDefined();
+      const jacobObs = tracker.createObservationProfile(`${jacobStanza2.geez_script} ${jacobStanza2.amharic_script || ''}`);
+
+      const step = tracker.evaluateLiturgicalStep({
+        obsProfile: jacobObs,
+        rms: 0.06,
+        phoneDensity: 0.5,
+        windowDurationMs: 500,
+        currentSlideIdx: 0,
+        graph,
+        shadowBranches,
+        trackerState: {
+          ...tracker.state,
+          autonomyMode: 'copilot',
+          anaphoraSwitchMode: 'prompt_3s',
+          unmatchedVoicedMs: 0,
+          suppressedTargets: new Map()
+        }
+      });
+
+      expect(step.action).toBe('prompt_copilot');
+      expect(step.branchType).toBe('anaphora');
+      expect(step.anaphoraKey).toBe('jacob');
+    });
+
     it('falls back to Anaphora of the Apostles congregation chants when recovering from an unbundled Anaphora interlude', () => {
       const orderSample = (kidaseDataObj.order || []).slice(0, 12);
       const graph = tracker.buildLiturgicalSlideGraph(orderSample);
