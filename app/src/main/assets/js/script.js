@@ -1982,8 +1982,8 @@ const speakerKeywords = {
     amharic_script: ["ካህን ንፍቅ", "ንፍቅ ካህን", "ንፍቀ ዲያቆን", "ንፍቅ ዲያቆን", "ዲያቆን ንፍቅ", "ን.ዲያቆን", "ን. ዲያቆን", "ካህናት", "ካህን", "ዲያቆን", "ሕዝብ", "ሁሉም", "መሪ", "አንባቢ", "ሙሽራው", "ሙሽራዋ"],
     amharic_phonetic: ["kahn nfḳ", "nfḳ kahn", "nfḳe dīyaḳon", "nfḳ dīyaḳon", "dīyaḳon nfḳ", "n.dīyaḳon", "n. dīyaḳon", "kahnat", "kahn", "kahin", "dīyaḳon", "dīyakon", "diyakon", "ḥizb", "hizb", "ḥzb", "hzb", "hulumu", "hulum", "meri", "merī", "anbabi", "anbabī", "Asst. Priest", "Asst Priest", "Asst. Priests", "Subdeacon", "Priest", "Deacon", "People", "All", "ALL", "Leader"],
     oromoo: ["Lubbuu", "Luba", "Diyaaqonii", "Uummata", "Hunda", "Garsee"],
-    tigrinya_script: ["ካህን ንፍቅ", "ንፍቅ ካህን", "ንፍቀ ዲያቆን", "ንፍቅ ዲያቆን", "ዲያቆን ንፍቅ", "ን.ዲያቆን", "ን. ዲያቆን", "ካህናት", "ካህን", "ዲያቆን", "ሕዝብ", "ኩሉኹም", "መራሒ", "ነባቢ", "መርዓዊ", "መርዓት"],
-    tigrinya_phonetic: ["kahn nfḳ", "nfḳ kahn", "nfḳe dīyaḳon", "nfḳ dīyaḳon", "dīyaḳon nfḳ", "n.dīyaḳon", "n. dīyaḳon", "kahnat", "kahn", "kahin", "dīyaḳon", "dīyakon", "diyakon", "ḥizb", "hizb", "ḥzb", "hzb", "kulukhum", "merahi", "meraḥī", "nebabi", "nebabī", "Asst. Priest", "Asst Priest", "Subdeacon", "Priest", "Deacon", "People", "All", "ALL", "Leader"],
+    tigrinya_script: ["ካህን ንፍቅ", "ንፍቅ ካህን", "ንፍቀ ዲያቆን", "ንፍቅ ዲያቆን", "ዲያቆን ንፍቅ", "ን.ዲያቆን", "ን. ዲያቆን", "ሊቀ ጳጳስ", "ጳጳስ", "ካህናት", "ካህን", "ዲያቆን", "ሕዝቢ", "ሕዝብ", "ኵሉኹም", "ኩሉኹም", "ኵሎሙ", "ኵሎም", "መራሒ", "ነባቢ", "መርዓዊ", "መርዓት"],
+    tigrinya_phonetic: ["kahn nfḳ", "nfḳ kahn", "nfḳe dīyaḳon", "nfḳ dīyaḳon", "dīyaḳon nfḳ", "n.dīyaḳon", "n. dīyaḳon", "līḳe p̣ap̣as", "līḳe papas", "p̣ap̣as", "papas", "kahnat", "kahn", "kahin", "dīyaḳon", "dīyakon", "diyakon", "ḥizb", "hizb", "ḥzbī", "ḥzb", "hzb", "kwlukhum", "kulukhum", "kwlomu", "kwlom", "merahi", "meraḥī", "nebabi", "nebabī", "Asst. Priest", "Asst Priest", "Subdeacon", "Priest", "Deacon", "People", "All", "ALL", "Leader"],
     spanish: ["Sacerdote Asistente y Pueblo", "Asistente. Sacerdote", "Asistente. Diácono", "Diácono o Sacerdote", "Sacerdote o Diácono", "Sacerdotes auxiliares", "Sacerdote Asistente", "Sacerdote asistente", "Sacerdote auxiliar", "Sacerdote Celebrante", "Sacerdote celebrante", "Diácono Asistente", "Diácono asistente", "Diácono auxiliar", "Asistente del diácono", "Obispo/Patriarca", "Clérigos", "Clero", "Sacerdotes", "Sacerdote", "Diácono", "Pueblo", "Subdiácono", "Todos", "TODOS", "Líder", "Gente", "Lector", "Novio", "Novia"],
     spanish_pr: ["Sacerdote Asistente y Pueblo", "Asistente. Sacerdote", "Asistente. Diácono", "Diácono o Sacerdote", "Sacerdote o Diácono", "Sacerdotes auxiliares", "Sacerdote Asistente", "Sacerdote asistente", "Sacerdote auxiliar", "Sacerdote Celebrante", "Sacerdote celebrante", "Diácono Asistente", "Diácono asistente", "Diácono auxiliar", "Asistente del diácono", "Obispo/Patriarca", "Clérigos", "Clero", "Sacerdotes", "Sacerdote", "Diácono", "Pueblo", "Subdiácono", "Todos", "TODOS", "Líder", "Gente", "Lector", "Novio", "Novia"],
     french: ["Prêtre", "Diacre", "Peuple", "Sous-diacre", "Tous", "Leader", "Lecteur", "Marié", "Mariée"],
@@ -6020,6 +6020,57 @@ function applyParentheticalFormatting(text) {
     });
 }
 
+const DEFAULT_CUSTOM_NAME_LOCALIZATIONS = {
+    patriarch: {
+        defaultRaw: 'Abba Mathias I (አባ ማትያስ ቀዳማዊ)',
+        byLang: {
+            geez_script: 'አባ ማትያስ ቀዳማዊ',
+            amharic_script: 'አባ ማትያስ ቀዳማዊ',
+            tigrinya_script: 'ኣባ ማትያስ ቀዳማዊ',
+            geez_phonetic: 'abba matyas ḳedamawī',
+            amharic_phonetic: 'abba matyas ḳedamawī',
+            tigrinya_phonetic: 'abba matyas ḳedamawī',
+            english: 'Abba Mathias I'
+        }
+    },
+    bishop: {
+        defaultRaw: 'Abba Theophilus (አባ ቴዎፍሎስ)',
+        byLang: {
+            geez_script: 'አባ ቴዎፍሎስ',
+            amharic_script: 'አባ ቴዎፍሎስ',
+            tigrinya_script: 'ኣባ ቴዎፍሎስ',
+            geez_phonetic: 'abba téwoflos',
+            amharic_phonetic: 'abba téwoflos',
+            tigrinya_phonetic: 'abba téwoflos',
+            english: 'Abba Theophilus'
+        }
+    },
+    country: {
+        defaultRaw: 'Ethiopia, Eritrea, and America',
+        byLang: {
+            geez_script: 'ኢትዮጵያ ወኤርትራ ወአሜሪካ',
+            amharic_script: 'ኢትዮጵያ፣ ኤርትራና አሜሪካ',
+            tigrinya_script: 'ኢትዮጵያን ኤርትራን ኣሜሪካን',
+            geez_phonetic: "ītyop̣ya we'értra we'amérīka",
+            amharic_phonetic: "ītyop̣ya, 'értrana 'amérīka",
+            tigrinya_phonetic: "ītyop̣yan 'értran 'amérīkan"
+        }
+    }
+};
+
+function resolveCustomNameForLang(field, rawValue, langKey) {
+    const val = rawValue || '';
+    if (!val) return '';
+    const spec = DEFAULT_CUSTOM_NAME_LOCALIZATIONS[field];
+    if (spec && val.trim() === spec.defaultRaw) {
+        if (spec.byLang[langKey]) return spec.byLang[langKey];
+        if (field === 'patriarch' || field === 'bishop') {
+            return spec.byLang.english || val;
+        }
+    }
+    return val;
+}
+
 function formatPrayerText(text, langKey, query, isFirstLanguage, chapter = null, verseNum = null) {
     let processedText = text;
 
@@ -6113,14 +6164,19 @@ function formatPrayerText(text, langKey, query, isFirstLanguage, chapter = null,
     // Apply Loanword Origins
     processedText = applyLoanwordOrigins(processedText, langKey);
 
-    // Replace custom name placeholders
+    // Replace custom name placeholders (script-aware when using default settings)
     processedText = processedText.replace(/\{\{Servant's Names\}\}/g, customNames.servant || '');
-    processedText = processedText.replace(/\{\{(?:PATRIARCH NAME|NOMBRE DEL PATRIARCA)\}\}/gi, customNames.patriarch || '');
-    processedText = processedText.replace(/\{\{(?:BISHOP NAME|NOMBRE DEL OBISPO)\}\}/gi, customNames.bishop || '');
-    processedText = processedText.replace(/\{\{(?:COUNTRY|PAÍS)\}\}/gi, customNames.country || '');
+    processedText = processedText.replace(/\{\{(?:PATRIARCH NAME|NOMBRE DEL PATRIARCA)\}\}/gi, resolveCustomNameForLang('patriarch', customNames.patriarch, langKey));
+    processedText = processedText.replace(/\{\{(?:BISHOP NAME|NOMBRE DEL OBISPO)\}\}/gi, resolveCustomNameForLang('bishop', customNames.bishop, langKey));
+    processedText = processedText.replace(/\{\{(?:COUNTRY|PAÍS)\}\}/gi, resolveCustomNameForLang('country', customNames.country, langKey));
     processedText = processedText.replace(/\{\{Leader \/ President \/ Emperor\}\}/g, customNames.headOfState || '');
     processedText = processedText.replace(/\{\{(?:BISHOP\(S\) IN ATTENDANCE|OBISPO\(S\) PRESENTE\(S\))\}\}/gi, customNames.attendingBishops || '');
     processedText = processedText.replace(/\{\{(?:CHURCH NAME|NOMBRE DE LA IGLESIA)\}\}/gi, customNames.churchName || '');
+
+    // Collapse duplicate adjacent honorifics when both prayer text and name include Abba / አባ / ኣባ
+    processedText = processedText
+        .replace(/(አባ|ኣባ)\s+(?:አባ|ኣባ)(?=[\s፣፤፥፦።!?)]|$)/g, '$1')
+        .replace(/\b(Abba)\s+Abba\b/gi, '$1');
 
     // Format enclosed prayer titles / references on their own line (e.g. ፨ THE SALUTATION OF SAINT GABRIEL ፨ or (Psalms 117:1))
     const innerTitleRegex = /^\s*(?:<[^>]+>)*\s*(?:(፨\s*[^፨\n\r]+?\s*፨)|(\({1,2}\s*[^()\n\r]+?\s*\){1,2}))\s*(?:<[^>]+>)*\s*(?:\r?\n|<br\s*\/?>|$)/i;
@@ -15304,6 +15360,11 @@ const appCoreExports = {
     LOANWORD_MAPPING,
     applyAnglicization,
     applyRubrication,
+    formatPrayerText,
+    resolveCustomNameForLang,
+    speakerKeywords,
+    setCustomNames: (next) => { customNames = { ...next }; },
+    getCustomNames: () => ({ ...customNames }),
     filterGeezPhoneticForPeople,
     hasActualContent,
     isChantStanza,

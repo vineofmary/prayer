@@ -36,8 +36,8 @@ const prayers = [
     "geez_phonetic": `፨ kwlomu: a'atb getsye wekwlentaye bet'imrte mesḳel. besme 'ab weweld wemenfes ḳdus 'aḥadu 'amlak.`,
     "amharic_script": `፨ ሁሉም፤ በጌታዬ በኢየሱስ ክርስቶስ ትእምርተ መስቀል ፈቴንና መላ ሰውነቴን ሦስት ጊዜ አማትባለሁ። አንድ አምላክ በሆኑ በአብ በወልድ በመንፈስ ቅዱስ ስም ንጹሕ ልዩ ክቡር ጽሩይ በሆኑ`,
     "amharic_phonetic": `፨ hulum: begétayé be'īyesus krstos t'imrte mesḳel feténna mela sewnetén sost gīzé 'amatbalehu. and 'amlak behonu be'ab beweld bemenfes ḳdus sm ntsuḥ lyu kbur tsruy behonu`,
-    "tigrinya_script": `፨ ኩሉኹም፤ ገጸይን ኩሉ ነብሰይን ብትምህርቲ መስቀል የማዕትብ ኣለኹ፤ ብስም ኣብን ወልድን መንፈስ ቅዱስን ሓደ ኣምላኽ።`,
-    "tigrinya_phonetic": `፨ kulukhum: getseyn kulu nebseyn btmhrtī mesḳel yema'itb 'alekhu: bsm 'abn weldn menfes ḳdusn ḥade 'amlakh.`,
+    "tigrinya_script": `፨ ኵሉኹም፤ ገጸይን ኵሉ ነብሰይን ብትምህርቲ መስቀል የማዕትብ ኣለኹ፤ ብስም ኣብን ወልድን መንፈስ ቅዱስን ሓደ ኣምላኽ።`,
+    "tigrinya_phonetic": `፨ kwlukhum: getseyn kwlu nebseyn btmhrtī mesḳel yema'itb 'alekhu: bsm 'abn weldn menfes ḳdusn ḥade 'amlakh.`,
     "spanish": `፨ Todos: Hago la señal de la cruz en mi rostro y por todo mi cuerpo. En el nombre del Padre, del Hijo y del Espíritu Santo, un solo Dios.`
   },
   {
@@ -66,7 +66,7 @@ const prayers = [
     "amharic_script": `ጠላቴ ሰይጣንን እክድሃለሁ ፣ በዚች በእናቴ በቤተክርስቲያን ፊት ቆሜ እክድሃለሁ ፣ ለዚህም ምስክሬ ማርያም ናት። በዚህም ዓለም በወዲያኛውም ዓለም እሷን አምባ መጠጊያ አድርጌ እክድሃለሁ።`,
     "amharic_phonetic": `ṭelaté seyṭann 'ikdhalehu , bezīch be'inaté bebétekrstīyan fīt ḳomé 'ikdhalehu , lezīhm mskré maryam nat. bezīhm 'alem bewedīyañawm 'alem 'iswan 'amba meṭegīya 'adrgé 'ikdhalehu.`,
     "tigrinya_script": `ኣብ ቅድሚ እዛ ኣደይ ዝኾነት ቅድስቲ ቤተ ክርስቲያን ሰይጣን እኽሕደካ ኣሎኹ፤ ንሳ ኸኣ ንዘልዓለም ምስክረይን ጸግዐይን ማርያም ኢያ።`,
-    "tigrinya_phonetic": `ab ḳdmī 'iza 'adey zkhonet ḳdstī béte krstīyan seyṭan 'ikhḥdeka 'alokhu: nsa khe'a nzel'alem mskreyn tseg'ayn maryam 'īya.`,
+    "tigrinya_phonetic": `'ab ḳdmī 'iza 'adey zkhonet ḳdstī béte krstīyan seyṭan 'ikhḥdeka 'alokhu: nsa khe'a nzel'alem mskreyn tseg'ayn maryam 'īya.`,
     "spanish": `Denuncio a Satanás frente a la Santa Madre Iglesia Ortodoxa. Y para esto Mariam de Zion es mi testigo por siempre y para siempre.`,
     "spanish_is_official": true
   },
@@ -81,7 +81,7 @@ const prayers = [
     "amharic_script": `አቤቱ እናመሠግንሃለን፣ አቤቱ እናከብርሃለን፣አቤቱ እንገዛልሃለን፣ አቤቱ ቅዱስ ስምህን እናመስግናለን፣`,
     "amharic_phonetic": `abétu 'inamesegnhalen, 'abétu 'inakebrhalen,'abétu 'ingezalhalen, 'abétu ḳdus smhn 'inamesgnalen,`,
     "tigrinya_script": `ኦ ጐይታ፤ ነመስግነካን ነኽብረካን ኣሎና። ኦ ጐይታ፤ ንባርኸካን ንእመነካን ኣሎና። ኦ ጐይታ፤ ንልምነካን ንማልደካን ኣሎና።`,
-    "tigrinya_phonetic": `o gweyta: nemesgnekan nekhbrekan 'alona. 'o gweyta: nbarkhekan n'imenekan 'alona. 'o gweyta: nlmnekan nmaldekan 'alona.`,
+    "tigrinya_phonetic": `'o gweyta: nemesgnekan nekhbrekan 'alona. 'o gweyta: nbarkhekan n'imenekan 'alona. 'o gweyta: nlmnekan nmaldekan 'alona.`,
     "spanish": `Te damos gracias, oh Señor, y te adoramos. Te bendecimos, Oh Señor, y en ti confiamos.`,
     "spanish_is_official": true
   },
@@ -95,8 +95,8 @@ const prayers = [
     "geez_phonetic": `ngenī leke 'igzī'o wentḳeney lesmke ḳdus. nsegd leke 'o zeleke ysegd kwlu brk weleke ytḳeney kwlu lsan.`,
     "amharic_script": `ጉልበት ሁሉ የሚሰግድልህ አቤቱ እንሰግድልሃለን፣ አንደበትም ሁሉ ለአንተ ይገዛል፣`,
     "amharic_phonetic": `gulbet hulu yemīsegdlh 'abétu 'insegdlhalen, 'andebetm hulu le'ante ygezal,`,
-    "tigrinya_script": `ኦ ጐይታ፤ ንግዝኣካን ንቐዱስ ስምካ እውን ነገልግል ኣሎና። ኩሉ ብርኪ ዝሰግደልካ ኩሉ ልሳን'ውን ዝግዛኣልካ፤ ኦ ጐይታ፤ ንሰግደልካ ኣሎና።`,
-    "tigrinya_phonetic": `o gweyta: ngz'akan nqhedus smka 'iwn negelgl 'alona. kulu brkī zsegdelka kulu lsan'wn zgza'alka: 'o gweyta: nsegdelka 'alona.`,
+    "tigrinya_script": `ኦ ጐይታ፤ ንግዝኣካን ንቐዱስ ስምካ እውን ነገልግል ኣሎና። ኵሉ ብርኪ ዝሰግደልካ ኵሉ ልሳን'ውን ዝግዛኣልካ፤ ኦ ጐይታ፤ ንሰግደልካ ኣሎና።`,
+    "tigrinya_phonetic": `'o gweyta: ngz'akan nqhedus smka 'iwn negelgl 'alona. kwlu brkī zsegdelka kwlu lsan'wn zgza'alka: 'o gweyta: nsegdelka 'alona.`,
     "spanish": `Te damos gracias, Oh Señor, y servimos tu Santo nombre. A Ti adoramos, ante quien todas las rodillas se doblan y todas las lenguas sirven.`,
     "spanish_is_official": true
   },
@@ -111,7 +111,7 @@ const prayers = [
     "amharic_script": `የአምላኮች አምላክ፣ የጌቶች ጌታ የንጉሦችም ንጉሥ አንተ ነህ። የሥጋም የነፍስም ፈጣሪ አንተ ነህ።`,
     "amharic_phonetic": `ye'amlakoch 'amlak, yegétoch géta yengusochm ngus 'ante neh. yesgam yenefsm feṭarī 'ante neh.`,
     "tigrinya_script": `ኣምላኽ ኣማልኽቲ፤ ጐይታ ጐይቶትን፤ ንጉሥ ነገሥታትን ንስኻ ኢኻ። ንኹሉ ሥጋን ንኹሉ ነፍስን ፈጣሪ ንስኻ ኢኻ።`,
-    "tigrinya_phonetic": `amlakh 'amalkhtī: gweyta gweytotn: ngus negestatn nskha 'īkha. nkhulu sgan nkhulu nefsn feṭarī nskha 'īkha.`,
+    "tigrinya_phonetic": `'amlakh 'amalkhtī: gweyta gweytotn: ngus negestatn nskha 'īkha. nkhulu sgan nkhulu nefsn feṭarī nskha 'īkha.`,
     "spanish": `Eres Dios de dioses, Señor de señores y Rey de reyes. Eres el Dios de todos los que tienen carne y alma.`,
     "spanish_is_official": true
   },
@@ -140,8 +140,8 @@ const prayers = [
     "geez_phonetic": `abune zebesemayat, ytḳedes smke. tmtsa'i mengstke weykun feḳadke bekeme besemay kemahu bemdr.`,
     "amharic_script": `አባታችን ሆይ፥ በሰማይ የምትኖር፥ ስምህ ይቀደስ፥ መንግሥትህ ትምጣ፥ ፈቃድህ በሰማይ እንደሆነ እንዲሁም በምድር ይሁን።`,
     "amharic_phonetic": `abatachn hoy; besemay yemtnor; smh yḳedes; mengsth tmṭa; feḳadh besemay 'indehone 'indīhum bemdr yhun.`,
-    "tigrinya_script": `ኣብ ሰማያት እትነብር ኣቦና ስምካ ይቀደስ፥ መንግስትኻ ትምጻእ፥ ፈቓድካ ከምቲ ኣብ ሰማያት ከምኡ'ውን ኣብ ምድሪ ይኹን፥`,
-    "tigrinya_phonetic": `ab semayat 'itnebr 'abona smka yḳedes; mengstkha tmtsa'i; feqhadka kemtī 'ab semayat kem'u'wn 'ab mdrī ykhun;`,
+    "tigrinya_script": `ኣብ ሰማያት እትነብር ኣቦና ስምካ ይቀደስ፥ መንግሥትኻ ትምጻእ፥ ፈቓድካ ከምቲ ኣብ ሰማያት ከምኡ'ውን ኣብ ምድሪ ይኹን፥`,
+    "tigrinya_phonetic": `'ab semayat 'itnebr 'abona smka yḳedes; mengstkha tmtsa'i; feqhadka kemtī 'ab semayat kem'u'wn 'ab mdrī ykhun;`,
     "spanish": `Padre nuestro que estás en los cielos, santificado sea tu nombre. Venga tu reino, Hágase tu voluntad en la tierra como en el cielo.`,
     "spanish_is_official": true
   },
@@ -170,7 +170,7 @@ const prayers = [
     "geez_phonetic": `ītab'ane 'igzī'o wste mensut, 'ala 'adhnene webalḥane, 'imkwlu 'ikuy 'isme zī'ake y'itī mengst hayl wesbḥat le'aleme 'alem. 'amén.`,
     "amharic_script": `አቤቱ ወደ ፈተና አታግባን፥ ከክፉ ሁሉ አድነን እንጂ፥ መንግሥት ያንተ ናትና። ኃይል፥ ክብር፥ ምስጋና ለዘለዓለም አሜን።`,
     "amharic_phonetic": `abétu wede fetena 'atagban; kekfu hulu 'adnen 'injī; mengst yante natna. hayl; kbr; msgana lezele'alem 'amén.`,
-    "tigrinya_script": `ካብ ክፉእ ኣድኅነና እምበር ኣብ ፈተና ኣይተእትወና፥ መንግስትን፡ ኃይልን ፡ክብርን ንዘለዓለም ናትካ እዩ፡ አሜን።`,
+    "tigrinya_script": `ካብ ክፉእ ኣድኅነና እምበር ኣብ ፈተና ኣይተእትወና፥ መንግሥትን፡ ኃይልን ፡ክብርን ንዘለዓለም ናትካ እዩ፡ ኣሜን።`,
     "tigrinya_phonetic": `kab kfu'i 'adhnena 'imber 'ab fetena 'ayte'itwena; mengstn  hayln  kbrn nzele'alem natka 'iyu  'amén.`,
     "spanish": `No nos dejes caer en tentación, y líbranos y rescátanos de todo mal; porque tuyo es el reino, el poder y la gloria, por los siglos de los siglos. Amén.`,
     "spanish_is_official": true
@@ -186,7 +186,7 @@ const prayers = [
     "amharic_script": `እመቤታችን ድንግል ማርያም ሆይ በመልአኩ በቅዱስ ገብርኤል ሰላምታ ሰላም እልሻለሁ`,
     "amharic_phonetic": `imebétachn dngl maryam hoy bemel'aku beḳdus gebr'él selamta selam 'ilshalehu`,
     "tigrinya_script": `ኦ እግዝእትየ ማርያም ብናይ ቅዱስ ገብርኤል መልኣኽ ሰላምታ ሰላም እብለኪ፡`,
-    "tigrinya_phonetic": `o 'igz'itye maryam bnay ḳdus gebr'él mel'akh selamta selam 'iblekī`,
+    "tigrinya_phonetic": `'o 'igz'itye maryam bnay ḳdus gebr'él mel'akh selamta selam 'iblekī `,
     "spanish": `O Santa Virgen Maria, en la paz del Ángel Gabriel, la paz sea contigo.`,
     "spanish_is_official": true
   },
@@ -200,8 +200,8 @@ const prayers = [
     "geez_phonetic": `dngl behlīnakī wedngl besgakī. 'ime 'igzī'abḥér tseba'ot selam lekī.`,
     "amharic_script": `በሃሳብሽ ድንግል ነሽ በሥጋሽም ድንግል ነሽ። የአሸናፈ የእግዚአብሔር እናት ሆይ ሰላምታ ላንቺ ይገባል።`,
     "amharic_phonetic": `behasabsh dngl nesh besgashm dngl nesh. ye'ashenafe ye'igzī'abḥér 'inat hoy selamta lanchī ygebal.`,
-    "tigrinya_script": `ብሕልናኺ ድንግል ኢኺ፡ ብሥጋኺ'ውን ድንግል ኢኺ። ኣደ እግዚአብሔር ፀባዖት (ጎይታ ሠራዊት) ሰላም እብለኪ ኣለኹ።`,
-    "tigrinya_phonetic": `bḥlnakhī dngl 'īkhī  bsgakhī'wn dngl 'īkhī. 'ade 'igzī'abḥér tseba'ot (goyta serawīt) selam 'iblekī 'alekhu.`,
+    "tigrinya_script": `ብኅሊናኺ ድንግል ኢኺ፡ ብሥጋኺ'ውን ድንግል ኢኺ። ኣደ እግዚኣብሔር ፀባዖት (ጐይታ ሠራዊት) ሰላም እብለኪ ኣለኹ።`,
+    "tigrinya_phonetic": `bhlīnakhī dngl 'īkhī  bsgakhī'wn dngl 'īkhī. 'ade 'igzī'abḥér tseba'ot (gweyta serawīt) selam 'iblekī 'alekhu.`,
     "spanish": `Eres virgen en espíritu, así como en cuerpo: O Madre del Dios perfecto, la paz sea contigo.`,
     "spanish_is_official": true
   },
@@ -215,8 +215,8 @@ const prayers = [
     "geez_phonetic": `burkt 'antī 'im'anst weburuk fré kerskī. tefesḥī fsḥt 'o ml'ite tsega 'igzī'abḥér mslékī.`,
     "amharic_script": `ከሴቶች ሁሉ ተለይተሽ አንቺ የተባረክሽ ነሽ የማኀፀንሽም ፍሬ የተባረከ ነው። ጸጋን የተመላሽ ሆይ ደስ ይበልሽ እግዚአብሔር ከአንቺ ጋር ነውና`,
     "amharic_phonetic": `kesétoch hulu teleytesh 'anchī yetebareksh nesh yemahatsenshm fré yetebareke new. tsegan yetemelash hoy des ybelsh 'igzī'abḥér ke'anchī gar newna`,
-    "tigrinya_script": `ንስኺ ካብ ኣንስቲ ብርኽቲ ኢኺ፡ ፍረ ከርሥኺ'ውን ብሩኽ እዩ። ኦ ምልእተ ጸጋ እግዚአብሔር ምሳኺ እዩ፡ ኦ ፍሥሕት ደስ ይበልኪ፡`,
-    "tigrinya_phonetic": `nskhī kab 'anstī brkhtī 'īkhī  fre kerskhī'wn brukh 'iyu. 'o ml'ite tsega 'igzī'abḥér msakhī 'iyu  'o fsḥt des ybelkī`,
+    "tigrinya_script": `ንስኺ ካብ ኣንስቲ ብርኽቲ ኢኺ፡ ፍረ ከርሥኺ'ውን ብሩኽ እዩ። ኦ ምልእተ ጸጋ እግዚኣብሔር ምሳኺ እዩ፡ ኦ ፍሥሕት ደስ ይበልኪ፡`,
+    "tigrinya_phonetic": `nskhī kab 'anstī brkhtī 'īkhī  fre kerskhī'wn brukh 'iyu. 'o ml'ite tsega 'igzī'abḥér msakhī 'iyu  'o fsḥt des ybelkī `,
     "spanish": `Bendita tú eres entre las mujeres y bendito es el Fruto de tu vientre. Alégrate, tú que estás llena de gracia, el Señor está contigo.`,
     "spanish_is_official": true
   },
@@ -230,8 +230,8 @@ const prayers = [
     "geez_phonetic": `se'alī wetselyī mḥret be'intī'ane habe fḳur weldkī 'īyesus krstos keme ysrey lene haṭaw'īne. 'amén.`,
     "amharic_script": `ከተወደደው ልጅሽ ከጌታችን ከመድኃኒታችን ከኢየሱስ ክርክቶስ ዘንድ ይቅርታን ለምኝልን ኃጢአታችንን ያስተሠርይልን ዘንድ ለዘለዓለሙ አሜን።`,
     "amharic_phonetic": `ketewededew ljsh kegétachn kemedhanītachn ke'īyesus krktos zend yḳrtan lemñln haṭī'atachnn yasteseryln zend lezele'alemu 'amén.`,
-    "tigrinya_script": `ኃጢኣትና ኪሠርየልና ናብ ፍቁር ወድኺ ኢየሱስ ክርስቶስ ምእንታና ምሕረት ለምንልና። አሜን።`,
-    "tigrinya_phonetic": `haṭī'atna kīseryelna nab fḳur wedkhī 'īyesus krstos m'intana mḥret lemnlna. 'amén.`,
+    "tigrinya_script": `ኃጢኣትና ክሠርየልና ናብ ፍቁር ወድኺ ኢየሱስ ክርስቶስ ምእንታና ምሕረት ለምንልና። ኣሜን።`,
+    "tigrinya_phonetic": `haṭī'atna kseryelna nab fḳur wedkhī 'īyesus krstos m'intana mḥret lemnlna. 'amén.`,
     "spanish": `Ruega y ora por nosotros a tu amado Hijo, Eyesus Kristos, para que tenga misericordia de nuestras almas y nos perdone nuestros pecados. Amén.`,
     "spanish_is_official": true
   },
@@ -245,8 +245,8 @@ const prayers = [
     "geez_phonetic": `ne'amn be'aḥadu 'amlak 'igzī'abḥér 'ab 'ahazé kwlu gebaré semayat wemdr zeyaster'ī weze'īyaster'ī.`,
     "amharic_script": `ሁለን በፈጠረ አንድ አምላክ በሚሆን በእግዚአብሔር አብ እናምናለን። ሰማይና ምድርን የፈጠረ የሚታየውንና የማይታየውን`,
     "amharic_phonetic": `hulen befeṭere 'and 'amlak bemīhon be'igzī'abḥér 'ab 'inamnalen. semayna mdrn yefeṭere yemītayewnna yemaytayewn`,
-    "tigrinya_script": `ኩሉ ብዝሓዘ ሰማይን ምድርን ዝረአን ዘይረአን ብዝፈጠረ ብሓደ እግዚኣብሔር ኣብ ንኣምን።`,
-    "tigrinya_phonetic": `kulu bzḥaze semayn mdrn zre'an zeyre'an bzfeṭere bḥade 'igzī'abḥér 'ab n'amn.`,
+    "tigrinya_script": `ኵሉ ብዝሓዘ ሰማይን ምድርን ዝረአን ዘይረአን ብዝፈጠረ ብሓደ እግዚኣብሔር ኣብ ንኣምን።`,
+    "tigrinya_phonetic": `kwlu bzḥaze semayn mdrn zre'an zeyre'an bzfeṭere bḥade 'igzī'abḥér 'ab n'amn.`,
     "spanish": `Creo en un solo Dios, Padre todopoderoso, Creador del Cielo y de la Tierra, de todo lo visible y lo invisible.`,
     "spanish_is_official": true
   },
@@ -261,7 +261,7 @@ const prayers = [
     "amharic_script": `ዓለም ሳይፈጠር ከእርሱ ጋር በነበረ አንድ የአብ ልጅ በሚሆን በአንድ ጌታ በኢየሱስ ክርስቶስ እናምናለን፣`,
     "amharic_phonetic": `alem sayfeṭer ke'irsu gar benebere 'and ye'ab lj bemīhon be'and géta be'īyesus krstos 'inamnalen,`,
     "tigrinya_script": `ብሓደ ጐይታ ብኢየሱስ ክርስቶስ ዓለም ፡ ከይተፈጥረ ምስኡ ፡ ህልው ፡ ብዝኾነ ወልደ ፡ ኣብ ዋህድ ፡ ውን ነኣምን።`,
-    "tigrinya_phonetic": `bḥade gweyta b'īyesus krstos 'alem   keytefeṭre  ms'u   hlw   bzkhone welde   'ab wahd   wn ne'amn.`,
+    "tigrinya_phonetic": `bḥade gweyta b'īyesus krstos 'alem   keytefeṭre ms'u   hlw   bzkhone welde   'ab wahd   wn ne'amn.`,
     "spanish": `Creo en un solo Señor Jesucristo, Hijo único de Dios, quien con El estuvo antes de la creación del mundo.`
   },
   {
@@ -275,7 +275,7 @@ const prayers = [
     "amharic_script": `ከብርሃን የተገኘ ብርሃን ከእውነተኛ አምላክየተገኘ አምላክ የተወለደ እንጂ ያልተፈጠረ በባሕርይው ከአብ ጋር የሚስተካከል`,
     "amharic_phonetic": `kebrhan yetegeñe brhan ke'iwneteña 'amlakyetegeñe 'amlak yetewelede 'injī yaltefeṭere bebaḥryw ke'ab gar yemīstekakel`,
     "tigrinya_script": `ካብ ብርሃን ዝተረኽበ ብርሃን፡ ካብ ሓቀኛ ኣምላኽ ዝተረኽበ ኣምላኽ፡ ዝተወልደ እምበር ፍጡር ዘይኮነ፡ ብመለኮቱ ምስ ኣብ ማዕረ ዝኾነ።`,
-    "tigrinya_phonetic": `kab brhan zterekhbe brhan  kab ḥaḳeña 'amlakh zterekhbe 'amlakh  ztewelde 'imber fṭur zeykone  bmelekotu ms 'ab ma'ire  zkhone.`,
+    "tigrinya_phonetic": `kab brhan zterekhbe brhan  kab ḥaḳeña 'amlakh zterekhbe 'amlakh  ztewelde 'imber fṭur zeykone  bmelekotu ms 'ab ma'ire zkhone.`,
     "spanish": `Luz de luz, Dios verdadero de Dios verdadero, engendrado, no creado, de la misma esencia del Padre.`,
     "spanish_is_official": true
   },
@@ -289,8 +289,8 @@ const prayers = [
     "geez_phonetic": `zebotu kwlu kone weze'inbeléhuse 'albo zekone we'īmntnī zebesemaynī wezebemdrnī`,
     "amharic_script": `ሁሉ በእርሱ የሆነ በሰማይ ካለው በምድርም ካለው ያለእርሱ ምንም ምን የሆነ የለም`,
     "amharic_phonetic": `hulu be'irsu yehone besemay kalew bemdrm kalew yale'irsu mnm mn yehone yelem`,
-    "tigrinya_script": `ኩሉ ብእኡ ዝተፈጥረ፡ ብዘይካኡ ግና ኣብዚ ምድሪ ዘሎ ይኹን ወይስ ኣብ ሰማይ ዘሎ ምንም ዝተፈጥረ የልቦን።`,
-    "tigrinya_phonetic": `kulu b'i'u ztefeṭre  bzeyka'u gna 'abzī mdrī zelo ykhun weys 'ab semay zelo mnm ztefeṭre yelbon.`,
+    "tigrinya_script": `ኵሉ ብእኡ ዝተፈጥረ፡ ብዘይካኡ ግና ኣብዚ ምድሪ ዘሎ ይኹን ወይስ ኣብ ሰማይ ዘሎ ምንም ዝተፈጥረ የልቦን።`,
+    "tigrinya_phonetic": `kwlu b'i'u ztefeṭre  bzeyka'u gna 'abzī mdrī zelo ykhun weys 'ab semay zelo mnm ztefeṭre yelbon.`,
     "spanish": `Por quien todo fue hecho, y sin El nada en el cielo ni en  la tierra fue hecho;`,
     "spanish_is_official": true
   },
@@ -304,7 +304,7 @@ const prayers = [
     "geez_phonetic": `zebe'intī'ane leseb'i webe'inte medhanītne werede 'imsemayat teseb'a wetesegewe 'imenfes ḳdus we'imaryam 'imḳdst dngl.`,
     "amharic_script": `ስለኛ ስለ ሰዎች ስለ መዳናችን ከሰማይ ወረደ፣ ከመንፈስ ቅዱስ የተነሳ ከቅድስት ድንግል ማርያም ፈጽሞ ሰው ሆነ።`,
     "amharic_phonetic": `sleña sle sewoch sle medanachn kesemay werede, kemenfes ḳdus yetenesa keḳdst dngl maryam fetsmo sew hone.`,
-    "tigrinya_script": `ምእንታና ምእንቲ ሰብ ምእንቲ ድኅነትና፡ ካብ ሰማያት ዝወረደ፡ብመንፈስ ቅዱስ ካብ ቅድስት ድንግል ማርያም ሥጋ  ለበሰ ሰብ ኮነ።`,
+    "tigrinya_script": `ምእንታና ምእንቲ ሰብ ምእንቲ ድኅነትና፡ ካብ ሰማያት ዝወረደ፡ብመንፈስ ቅዱስ ካብ ቅድስት ድንግል ማርያም ሥጋ ለበሰ ሰብ ኮነ።`,
     "tigrinya_phonetic": `m'intana m'intī seb m'intī dhnetna  kab semayat zwerede bmenfes ḳdus kab ḳdst dngl maryam sga lebese seb kone.`,
     "spanish": `Que por nosotros, los hombres, y por nuestra salvación, bajó del cielo, y fue encarnado por el Espíritu Santo, y por la Santa Virgen María.`,
     "spanish_is_official": true
@@ -320,7 +320,7 @@ const prayers = [
     "amharic_script": `ሰው ሆኖ በጴንጤናዊ ጲላጦስ  ዘመን ስለኛ ተሰቀለ፣ ታመመ፣ ሞተ፣ ተቀበረም፤ በሶስተኛውም ቀን ከሙታን ተለይቶ ተነሳ፤ በቅዱሳት መጻህፍት እንደተጻፈ`,
     "amharic_phonetic": `sew hono bep̣énṭénawī p̣īlaṭos  zemen sleña teseḳele, tameme, mote, teḳeberem: besosteñawm ḳen kemutan teleyto tenesa: beḳdusat metsahft 'indetetsafe`,
     "tigrinya_script": `ሰብ ኮይኑ ድማ ብዘመን ጴንጤናዊ ጲላጦስ ምእንታና ተሰቕለ፡ ሓመመ፡ መከራ መስቀል ተቐበለ፡ ሞተ፡ ተቐብረ፡ ኣብ ቅዱሳት መጻሕፍቲ ከም ዝተጻሕፈ፡`,
-    "tigrinya_phonetic": `seb koynu dma bzemen p̣énṭénawī p̣īlaṭos m'intana teseqhle  ḥameme  mekera mesḳel teqhebele  mote  teqhebre  'ab ḳdusat metsaḥftī kem ztetsaḥfe`,
+    "tigrinya_phonetic": `seb koynu dma bzemen p̣énṭénawī p̣īlaṭos m'intana teseqhle  ḥameme  mekera mesḳel teqhebele  mote  teqhebre  'ab ḳdusat metsaḥftī kem ztetsaḥfe `,
     "spanish": `Y se hizo hombre; Y por nuestra causa fue crucificado en tiempos de Poncio Pilato; padeció y fue sepultado. Y resucitó al tercer día, como fue escrito en las sagradas escrituras:`,
     "spanish_is_official": true
   },
@@ -363,8 +363,8 @@ const prayers = [
     "geez_phonetic": `wene'amn be'aḥatī ḳdst béte krstīyan 'inte la'ile kwlu guba'é zeḥawaryat. wene'amn be'aḥatī ṭmḳet lesryete haṭī'at`,
     "amharic_script": `ከሁሉ በላይ በምትሆን ሐዋርያት በሰበሰቧት በአንዲት ቅድስት ቤተ ክርስቲያንም እናምናለን። ኃጢአት ለማስተስረይ በአንዲት ጥምቀት እናምናለን፣`,
     "amharic_phonetic": `kehulu belay bemthon ḥawaryat besebesebwat be'andīt ḳdst béte krstīyanm 'inamnalen. haṭī'at lemastesrey be'andīt ṭmḳet 'inamnalen,`,
-    "tigrinya_script": `ልዕሊ ኩሉ ናይ ሓዋርያት ጉባኤ ብዝኾነት ብሓንቲ ቅድስት ቤተ ክርስቲያን ንኣምን። ንሕድገት ሓጢኣት ብሓንቲ ጥምቀትውን ንኣምን።`,
-    "tigrinya_phonetic": `l'ilī kulu nay ḥawaryat guba'é bzkhonet bḥantī ḳdst béte krstīyan n'amn. nḥdget ḥaṭī'at bḥantī ṭmḳetwn n'amn.`,
+    "tigrinya_script": `ልዕሊ ኵሉ ናይ ሐዋርያት ጉባኤ ብዝኾነት ብሓንቲ ቅድስት ቤተ ክርስቲያን ንኣምን። ንኅድገት ኃጢኣት ብሓንቲ ጥምቀትውን ንኣምን።`,
+    "tigrinya_phonetic": `l'ilī kwlu nay ḥawaryat guba'é bzkhonet bḥantī ḳdst béte krstīyan n'amn. nhdget haṭī'at bḥantī ṭmḳetwn n'amn.`,
     "spanish": `Creo en una Iglesia, Santa, Universal y Apostólica. Confieso que hay un solo bautismo para el perdón de los pecados.`,
     "spanish_is_official": true
   },
@@ -409,7 +409,7 @@ const prayers = [
     "amharic_script": `ክርስቶስ ላንተ እንሰግድልሃለን ከሰማያዊው ከቸር አባትህ ጋር አዳኝ ከሆነው ከመንፈስ ቅዱስም ጋር እንሰግድልሃለን ወደዚህ ዓለም መጥተህ አድነኸናልና።`,
     "amharic_phonetic": `krstos lante 'insegdlhalen kesemayawīw kecher 'abath gar 'adañ kehonew kemenfes ḳdusm gar 'insegdlhalen wedezīh 'alem meṭteh 'adnekhenalna.`,
     "tigrinya_script": `ኦ ክርስቶስ መጺእካ ኣድሒንካና ኢኻ እሞ ምስ መሓርን ሰማያውን ኣቦኻ ማህየዊ ምስ ዝኾነ ቅዱስ መንፈስካ ንሰግደልካ ኣሎና።`,
-    "tigrinya_phonetic": `o krstos metsī'ika 'adḥīnkana 'īkha 'imo ms meḥarn semayawn  'abokha mahyewī ms zkhone ḳdus menfeska nsegdelka 'alona.`,
+    "tigrinya_phonetic": `'o krstos metsī'ika 'adḥīnkana 'īkha 'imo ms meḥarn semayawn 'abokha mahyewī ms zkhone ḳdus menfeska nsegdelka 'alona.`,
     "spanish": `Te adoramos, Jesucristo, junto a tu Padre celestial y misericordioso, y al Espíritu Santo, el dador de vida, porque viniste y nos salvaste.`,
     "spanish_is_official": true
   },
@@ -468,8 +468,8 @@ const prayers = [
     "geez_phonetic": `mesḳel haylne mesḳel tsn'ine mesḳel bézane mesḳel medhanīte nefsne`,
     "amharic_script": `መስቀል ኃይላችን ነው፣ ኃይላችን መስቀል ነው። የሚያፀናን መስቀል ነው፣ መስቀል ቤዛችን ነው፣ መስቀል የነፍሳችን መዳኛ ነው`,
     "amharic_phonetic": `mesḳel haylachn new, haylachn mesḳel new. yemīyatsenan mesḳel new, mesḳel bézachn new, mesḳel yenefsachn medaña new`,
-    "tigrinya_script": `መስቀል ሓይልና እዩ፤ መስቀል ጽንዓትና እዩ፤ መስቀል ቤዛና እዩ፤ መስቀል መድሓኒት ነፍስና እዩ።`,
-    "tigrinya_phonetic": `mesḳel ḥaylna 'iyu: mesḳel tsn'atna 'iyu: mesḳel bézana 'iyu: mesḳel medḥanīt nefsna 'iyu.`,
+    "tigrinya_script": `መስቀል ኃይልና እዩ፤ መስቀል ጽንዓትና እዩ፤ መስቀል ቤዛና እዩ፤ መስቀል መድሓኒት ነፍስና እዩ።`,
+    "tigrinya_phonetic": `mesḳel haylna 'iyu: mesḳel tsn'atna 'iyu: mesḳel bézana 'iyu: mesḳel medḥanīt nefsna 'iyu.`,
     "spanish": `La Cruz es nuestra fuerza, la Cruz es nuestro amparo, la Cruz es nuestro rescate y la Cruz es el remedio de nuestras almas.`,
     "spanish_is_official": true
   },
@@ -483,8 +483,8 @@ const prayers = [
     "geez_phonetic": `ayhud kḥdu nḥnese 'amene we'ile 'amene behayle mesḳelu dhne.`,
     "amharic_script": `አይሁድ ይክዱታል እኛ ግን እናምነዋለን ያመነው እኛም በመስቀሉ እንድናለን።`,
     "amharic_phonetic": `ayhud ykdutal 'iña gn 'inamnewalen yamenew 'iñam bemesḳelu 'indnalen.`,
-    "tigrinya_script": `ኣይሁድ ከሓድዎ ንሕና ግና ኣመንና፤ እቶም ዝኣመንና ብሓይሊ መስቀሉ ደሓንና።`,
-    "tigrinya_phonetic": `ayhud keḥadwo nḥna gna 'amenna: 'itom z'amenna bḥaylī mesḳelu deḥanna.`,
+    "tigrinya_script": `ኣይሁድ ከሓድዎ ንሕና ግና ኣመንና፤ እቶም ዝኣመንና ብኃይሊ መስቀሉ ደሓንና።`,
+    "tigrinya_phonetic": `'ayhud keḥadwo nḥna gna 'amenna: 'itom z'amenna bhaylī mesḳelu deḥanna.`,
     "spanish": `Los judíos lo negaron, pero nosotros creemos en Él. Nosotros, los que hemos creído en Él, somos salvados por el poder de su Cruz.`,
     "spanish_is_official": true
   },
@@ -667,13 +667,13 @@ merī:  begétachn menber fīt tselotachnn 'asarkīln
 ፨ ḥzb: 'amén. `,
     "tigrinya_script": `መራሒ፤ እግዝእትነ ማርያም ጸሎትና ኣዕርግልና።
 ፨ ሕዝብ፤ ኣሜን።
-መራሒ፤ ሓጢኣትና እውን ኣስተሥርይልና።
+መራሒ፤ ኃጢኣትና እውን ኣስተሥርይልና።
 ፨ ሕዝብ፤ ኣሜን።
 መራሒ፤ ኣብ ቅድሚ መንበሩ ንጐይታና።
 ፨ ሕዝብ፤ ኣሜን።`,
     "tigrinya_phonetic": `meraḥī: 'igz'itne maryam tselotna 'a'irglna.
 ፨ ḥzb: 'amén.
-meraḥī: ḥaṭī'atna 'iwn 'astesrylna.
+meraḥī: haṭī'atna 'iwn 'astesrylna.
 ፨ ḥzb: 'amén.
 meraḥī: 'ab ḳdmī menberu ngweytana.
 ፨ ḥzb: 'amén.`,
@@ -765,9 +765,9 @@ Líder: Ante el trono de Nuestro Señor.
 ፨ ሕዝብ፤ ምሕረቱ ለዘላለም ነውና`,
     "amharic_phonetic": `merī, haṭī'atachnnm hulu letageseln 
 ፨ ḥzb: mḥretu lezelalem newna`,
-    "tigrinya_script": `መራሒ፤ ኩሉ ሓጢኣትና እውን ንዝተዓገሰና።
+    "tigrinya_script": `መራሒ፤ ኵሉ ኃጢኣትና እውን ንዝተዓገሰና።
 ፨ ሕዝብ፤ ምሕረቱ ንዘልዓለም ይነብር ኢዩ።`,
-    "tigrinya_phonetic": `meraḥī: kulu ḥaṭī'atna 'iwn nzte'agesena.
+    "tigrinya_phonetic": `meraḥī: kwlu haṭī'atna 'iwn nzte'agesena.
 ፨ ḥzb: mḥretu nzel'alem ynebr 'īyu.`,
     "spanish": `Líder: A aquel que soporta todos nuestros pecados.
 ፨ Gente: Porque su misericordia perdura para siempre.`
@@ -827,8 +827,8 @@ Líder: Ante el trono de Nuestro Señor.
     "geez_phonetic": `፨ kwlomu: nehab lotu sbḥate we'akwetéte le'igzī'abḥér l'ul: weleweladītu dngl: welemesḳelu kbur.`,
     "amharic_script": `፨ ሁሉም፤ ለእሱ ለልዑል እግዚአብሔርፍፁም ምስጋና ይገባል ለወለደችው ለድንግል ማርያም ምስጋና ይገባል ። ለኢየሱስ ክርሰቶስም መስቀል ምስጋና ይገባል።`,
     "amharic_phonetic": `፨ hulum: le'isu lel'ul 'igzī'abḥérftsum msgana ygebal leweledechw ledngl maryam msgana ygebal . le'īyesus krsetosm mesḳel msgana ygebal.`,
-    "tigrinya_script": `፨ ኩሉኹም፤ ንልዑል እግዚኣብሔር ክብርን ምስጋናን ነቐርበሉ፤ ከምኡ እውን ንወላዲቱ ድንግል፤ ንመስቀሉ ክቡር።`,
-    "tigrinya_phonetic": `፨ kulukhum: nl'ul 'igzī'abḥér kbrn msganan neqherbelu: kem'u 'iwn nweladītu dngl: nmesḳelu kbur.`,
+    "tigrinya_script": `፨ ኵሉኹም፤ ንልዑል እግዚኣብሔር ክብርን ምስጋናን ነቐርበሉ፤ ከምኡ እውን ንወላዲቱ ድንግል፤ ንመስቀሉ ክቡር።`,
+    "tigrinya_phonetic": `፨ kwlukhum: nl'ul 'igzī'abḥér kbrn msganan neqherbelu: kem'u 'iwn nweladītu dngl: nmesḳelu kbur.`,
     "spanish": `፨ Todos: ¡A Él demos gloria, dando gracias  al Dios Altísimo! ¡Y demos gracias a su Madre y a su honrosa Cruz!`
   },
   {
@@ -857,7 +857,7 @@ Líder: Ante el trono de Nuestro Señor.
     "amharic_script": `ሰላም ላንቺ ይሁን እያልን እንሰግድልሻለን እናታችን ማርያም ሆይ እንማልድሻለን`,
     "amharic_phonetic": `selam lanchī yhun 'iyaln 'insegdlshalen 'inatachn maryam hoy 'inmaldshalen`,
     "tigrinya_script": `እናሰገድና ሰላም ንብለኪ፤ ማርያም ኣዴና ንልምነኪ።`,
-    "tigrinya_phonetic": `inasegedna selam nblekī: maryam 'adéna nlmnekī.`,
+    "tigrinya_phonetic": `'inasegedna selam nblekī: maryam 'adéna nlmnekī.`,
     "spanish": `Que la paz esté contigo mientras nos inclinamos ante ti, Nuestra Madre María, ¡te suplicamos!`,
     "spanish_is_official": true
   },
@@ -871,8 +871,8 @@ Líder: Ante el trono de Nuestro Señor.
     "geez_phonetic": `im'arwé ne'awī temaḥatsene bkī. be'inte ḥana 'imkī we'īyaḳém 'abukī: mahberene yom dngl barkī.`,
     "amharic_script": `ከአዳኝ አውሬ ታድኝን ዘንድ ተማጽነንብሻል ስለ እናትሽ ስለ ሐና ብለሽ ስለ አባትሽ ስለ ኢያቄም ብለሽ ድንግል ማኀበራችንን ዛሬ ባርኪልን።`,
     "amharic_phonetic": `ke'adañ 'awré tadñn zend tematsnenbshal sle 'inatsh sle ḥana blesh sle 'abatsh sle 'īyaḳém blesh dngl mahaberachnn zaré barkīln.`,
-    "tigrinya_script": `ካብ ሃዳናይ ኣራዊት ንምሕጸን ብኣኺ። ምእንቲ ሃና ኣዴኺ ኢያቄም እውን ኣቦኺ። ንማሕበርና ድንግል ሎሚ ባርኺ።`,
-    "tigrinya_phonetic": `kab hadanay 'arawīt nmḥtsen b'akhī. m'intī hana 'adékhī 'īyaḳém 'iwn  'abokhī. nmaḥberna dngl lomī barkhī.`,
+    "tigrinya_script": `ካብ ሃዳናይ ኣራዊት ንምሕጸን ብኣኺ። ምእንቲ ሃና ኣዴኺ ኢያቄም እውን ኣቦኺ። ንማኅበርና ድንግል ሎሚ ባርኺ።`,
+    "tigrinya_phonetic": `kab hadanay 'arawīt nmḥtsen b'akhī. m'intī hana 'adékhī 'īyaḳém 'iwn 'abokhī. nmahberna dngl lomī barkhī.`,
     "spanish": `Confiamos en ti para que nos salves de los animales salvajes y depredadores. Por el bien de Ana, tu madre, y de tu padre Joaquín, oh Santa Virgen María, bendice hoy a nuestra congregación.`,
     "spanish_is_official": true
   },
@@ -904,8 +904,8 @@ Líder: Ante el trono de Nuestro Señor.
     "geez_phonetic": `፨ kwlomu: ta'abyo nefsye le'igzī'abḥér. wettḥasey menfesye be'amlakye wemedhanīye. 'isme r'iye ḥmama le'ametu`,
     "amharic_script": `፨ ሁሉም፤ ሰውነቴ እግዚአብሔርን ታከብረዋለች። ልቡናዬም በአምላኬ በመድኀኒቴ ሐሤት ታደርጋለች። የባርያውን ትሕትና ተመልክቶአልና።`,
     "amharic_phonetic": `፨ hulum: sewneté 'igzī'abḥérn takebrewalech. lbunayém be'amlaké bemedhanīté ḥasét tadergalech. yebaryawn tḥtna temelkto'alna.`,
-    "tigrinya_script": `፨ ኩሉኹም፤ ነፍሰይ ንእግዚኣብሔር ተዕብዮ፤ መንፈሰይ ከኣ ብኣምላኸይ በቲ መድኃንየይ ባህ ይብላ። ውርደት ባርያኡ ርእዩ እዩ እሞ፤`,
-    "tigrinya_phonetic": `፨ kulukhum: nefsey n'igzī'abḥér te'ibyo: menfesey ke'a b'amlakhey betī medhanyey bah ybla. wrdet barya'u r'iyu 'iyu 'imo:`,
+    "tigrinya_script": `፨ ኵሉኹም፤ ነፍሰይ ንእግዚኣብሔር ተዕብዮ፤ መንፈሰይ ከኣ ብኣምላኸይ በቲ መድኃንየይ ባህ ይብላ። ውርደት ባርያኡ ርእዩ እዩ እሞ፤`,
+    "tigrinya_phonetic": `፨ kwlukhum: nefsey n'igzī'abḥér te'ibyo: menfesey ke'a b'amlakhey betī medhanyey bah ybla. wrdet barya'u r'iyu 'iyu 'imo:`,
     "spanish": `፨ Todos: Y María dijo: ""Mi alma engrandece al Señor, y mi espíritu se regocija en Dios mi Salvador. Porque ha mirado la humildad de su sierva.`
   },
   {
@@ -918,8 +918,8 @@ Líder: Ante el trono de Nuestro Señor.
     "geez_phonetic": `wenahu 'imy'izése yastebets'unī kwlu twld. 'isme gebre līte hayle 'abīyate weḳdus smu.`,
     "amharic_script": `እነሆ፥ ከዛሬ ጀምሮ ትውልድ ሁሉ ብፅዕት ይሉኛል። ታላቅ ሥራን ሠርቶልኛልና፤ ስሙም ቅዱስ ነው።`,
     "amharic_phonetic": `ineho; kezaré jemro twld hulu bts'it yluñal. talaḳ sran sertolñalna: smum ḳdus new.`,
-    "tigrinya_script": `እንሆ ካብ ሕጂ ኵሎም ወለዶ ብፅዕቲ ኪብሉኒ ኢዮም። እቲ ዅሉ ዝኽእል ዓበይቲ ነገራት ገይሩለይ ኢዩ እሞ ስሙ ቅዱስ ኢዩ።`,
-    "tigrinya_phonetic": `inho kab ḥjī kwlom weledo bts'itī kīblunī 'īyom. 'itī ዅlu zkh'il 'abeytī negerat geyruley 'īyu 'imo smu ḳdus 'īyu.`,
+    "tigrinya_script": `እንሆ ካብ ሕጂ ኵሎም ወለዶ ብፅዕቲ ክብሉኒ ኢዮም። እቲ ዅሉ ዝኽእል ዓበይቲ ነገራት ገይሩለይ ኢዩ እሞ ስሙ ቅዱስ ኢዩ።`,
+    "tigrinya_phonetic": `'inho kab ḥjī kwlom weledo bts'itī kblunī 'īyom. 'itī khwlu zkh'il 'abeytī negerat geyruley 'īyu 'imo smu ḳdus 'īyu.`,
     "spanish": `Pues he aquí, desde ahora en adelante todas las generaciones me llamarán bienaventurada. Porque el Poderoso ha hecho grandes cosas por mí; y santo es su nombre.`,
     "spanish_is_official": true
   },
@@ -4777,8 +4777,8 @@ Líder: Ante el trono de Nuestro Señor.
     "geez_phonetic": `hbe dngl 'inte tefhret leb'isī zesmu yoséf ze'imbéte dawīt wesma ley'itī dngl maryam:`,
     "amharic_script": `ከዳዊት ወገን ለሚሆን ዮሴፍ ለሚባል ሰው ወደ ታጨችው ወደ አንዲት ድንግል ተላከ፤ የዚያችም ድንግል ስምዋ ማርያም ይባል ነበረ።`,
     "amharic_phonetic": `kedawīt wegen lemīhon yoséf lemībal sew wede tachechw wede 'andīt dngl telake: yezīyachm dngl smwa maryam ybal nebere.`,
-    "tigrinya_script": `ዮሴፍ ንዝበሃል ሰብ፥ ናብ ዝተሓፀየት ናብ ሓንቲ ድንግል፥ ካብ እግዚኣብሄር ተልኣኸ፤ ስም እታ ድንግል ከዓ ማርያም ይበሃል።`,
-    "tigrinya_phonetic": `yoséf nzbehal seb; nab zteḥatseyet nab ḥantī dngl; kab 'igzī'abhér tel'akhe: sm 'ita dngl ke'a maryam ybehal.`,
+    "tigrinya_script": `ዮሴፍ ንዝበሃል ሰብ፥ ናብ ዝተሓፀየት ናብ ሓንቲ ድንግል፥ ካብ እግዚኣብሔር ተልኣኸ፤ ስም እታ ድንግል ከዓ ማርያም ይበሃል።`,
+    "tigrinya_phonetic": `yoséf nzbehal seb; nab zteḥatseyet nab ḥantī dngl; kab 'igzī'abḥér tel'akhe: sm 'ita dngl ke'a maryam ybehal.`,
     "spanish": `a una virgen desposada con un hombre llamado José, de la casa de David. Y el nombre de la virgen era María.`,
     "spanish_is_official": true
   },
@@ -4792,8 +4792,8 @@ Líder: Ante el trono de Nuestro Señor.
     "geez_phonetic": `bo'a mel'ak hbéha weybéla tefesḥī fsḥt 'o ml'ite tsega 'igzī'abḥér mslékī burkt 'antī 'im'anst.`,
     "amharic_script": `መልአኩም ወደ እርስዋ ገብቶ፥ “ደስ ያለሽ፥ ጸጋንም የተመላሽ ሆይ፥ ደስ ይበልሽ፤ እግዚአብሔር ካንቺ ጋር ነው፤ ከሴቶች ተለይተሽ አንቺ የተባረክሽ ነሽ” አላት።`,
     "amharic_phonetic": `mel'akum wede 'irswa gebto; “des yalesh; tseganm yetemelash hoy; des ybelsh: 'igzī'abḥér kanchī gar new: kesétoch teleytesh 'anchī yetebareksh nesh” 'alat.`,
-    "tigrinya_script": `እቲ መልኣኽ ናብቲ ንሳ ዘላቶ ኣትዩ፥ “ኦ ምልእተ ፀጋ ደስ ይበልኪ! እግዚኣብሄር ምሳኺ እዩ፤ ንስኺ ኻብ ኣንስቲ ዝተባረኽኪ ኢኺ” በላ።`,
-    "tigrinya_phonetic": `itī mel'akh nabtī nsa zelato 'atyu; “'o ml'ite tsega des ybelkī! 'igzī'abhér msakhī 'iyu: nskhī khab 'anstī ztebarekhkī 'īkhī” bela.`,
+    "tigrinya_script": `እቲ መልኣኽ ናብቲ ንሳ ዘላቶ ኣትዩ፥ “ኦ ምልእተ ጸጋ ደስ ይበልኪ! እግዚኣብሔር ምሳኺ እዩ፤ ንስኺ ኻብ ኣንስቲ ዝተባረኽኪ ኢኺ” በላ።`,
+    "tigrinya_phonetic": `'itī mel'akh nabtī nsa zelato 'atyu; “'o ml'ite tsega des ybelkī! 'igzī'abḥér msakhī 'iyu: nskhī khab 'anstī ztebarekhkī 'īkhī” bela.`,
     "spanish": `Y entrando el ángel en donde ella estaba, dijo: «¡Alégrate, gozosa! ¡Oh llena de gracia! El Señor es contigo; ¡bendita tú entre las mujeres!»`,
     "spanish_is_official": true
   },
@@ -4822,8 +4822,8 @@ Líder: Ante el trono de Nuestro Señor.
     "geez_phonetic": `weybéla mel'ak 'ītfrhī maryam 'isme rekebkī mogese bhbe 'igzī'abḥér.`,
     "amharic_script": `መልአኩም እንዲህ አላት፥ “ማርያም ሆይ፥ በእግዚአብሔር ዘንድ ባለሟልነትን አግኝተሻልና አትፍሪ።`,
     "amharic_phonetic": `mel'akum 'indīh 'alat; “maryam hoy; be'igzī'abḥér zend balemwalnetn 'agñteshalna 'atfrī.`,
-    "tigrinya_script": `እቲ መልኣኽ ከዓ “ኦ ማርያም፥ ኣብ ቅድሚ እግዚኣብሄር ሞገስ ረኺብኪ ኢኺ እሞ ኣይትፍርሒ።`,
-    "tigrinya_phonetic": `itī mel'akh ke'a “'o maryam; 'ab ḳdmī 'igzī'abhér moges rekhībkī 'īkhī 'imo 'aytfrḥī.`,
+    "tigrinya_script": `እቲ መልኣኽ ከዓ “ኦ ማርያም፥ ኣብ ቅድሚ እግዚኣብሔር ሞገስ ረኺብኪ ኢኺ እሞ ኣይትፍርሒ።`,
+    "tigrinya_phonetic": `'itī mel'akh ke'a “'o maryam; 'ab ḳdmī 'igzī'abḥér moges rekhībkī 'īkhī 'imo 'aytfrḥī.`,
     "spanish": `Entonces el ángel le dijo: «María, no temas, porque has hallado gracia delante de Dios.`,
     "spanish_is_official": true
   },
@@ -4838,7 +4838,7 @@ Líder: Ante el trono de Nuestro Señor.
     "amharic_script": `እነሆ፥ ትፀንሻለሽ፤ ወንድ ልጅንም ትወልጃለሽ፤ ስሙንም ኢየሱስ ትይዋለሽ።`,
     "amharic_phonetic": `ineho; ttsenshalesh: wend ljnm tweljalesh: smunm 'īyesus tywalesh.`,
     "tigrinya_script": `እንሆ ኽትጠንሲ፥ ወዲውን ክትወልዲ ኢኺ፤ ስሙ ድማ ኢየሱስ ክትብልዮ ኢኺ።`,
-    "tigrinya_phonetic": `inho khtṭensī; wedīwn ktweldī 'īkhī: smu dma 'īyesus ktblyo 'īkhī.`,
+    "tigrinya_phonetic": `'inho khtṭensī; wedīwn ktweldī 'īkhī: smu dma 'īyesus ktblyo 'īkhī.`,
     "spanish": `Y he aquí, concebirás en tu vientre, y darás a luz un hijo, y llamarás su nombre Jesús.`,
     "spanish_is_official": true
   },
@@ -4852,8 +4852,8 @@ Líder: Ante el trono de Nuestro Señor.
     "geez_phonetic": `w'itu 'abīy weytsemey welde 'igzī'abḥér l'ul. weyhubo 'igzī'abḥér 'amlak menbere dawīt 'abuhu.`,
     "amharic_script": `እርሱም ታላቅ ነው፤ የልዑል እግዚአብሔር ልጅም ይባላል፤ እግዚአብሔር አምላክም የአባቱን የዳዊትን ዙፋን ይሰጠዋል።`,
     "amharic_phonetic": `irsum talaḳ new: yel'ul 'igzī'abḥér ljm ybalal: 'igzī'abḥér 'amlakm ye'abatun yedawītn zufan yseṭewal.`,
-    "tigrinya_script": `ንሱ ዓብዪ ክኸውን፥ ወዲ ልዑል እግዚኣብሄርውን ክብሃል እዩ። እግዚኣብሄር ኣምላኽ ድማ፥ ዙፋን ኣቦኡ ዳዊት ክህቦ እዩ።`,
-    "tigrinya_phonetic": `nsu 'abyī kkhewn; wedī l'ul 'igzī'abhérwn kbhal 'iyu. 'igzī'abhér 'amlakh dma; zufan 'abo'u dawīt khbo 'iyu.`,
+    "tigrinya_script": `ንሱ ዓብዪ ክኸውን፥ ወዲ ልዑል እግዚኣብሔርውን ክብሃል እዩ። እግዚኣብሔር ኣምላኽ ድማ፥ ዙፋን ኣቦኡ ዳዊት ክህቦ እዩ።`,
+    "tigrinya_phonetic": `nsu 'abyī kkhewn; wedī l'ul 'igzī'abḥérwn kbhal 'iyu. 'igzī'abḥér 'amlakh dma; zufan 'abo'u dawīt khbo 'iyu.`,
     "spanish": `Este será grande, y será llamado Hijo del Altísimo; y el Señor Dios le dará el trono de David su padre.`,
     "spanish_is_official": true
   },
@@ -4867,7 +4867,7 @@ Líder: Ante el trono de Nuestro Señor.
     "geez_phonetic": `weynegs lebéte ya'iḳob le'alem we'albo mahleḳt lemengstu.`,
     "amharic_script": `ለያዕቆብ ወገንም ለዘለዓለሙ ይነግሣል፤ ለመንግሥቱም ፍጻሜ የለውም።”`,
     "amharic_phonetic": `leya'iḳob wegenm lezele'alemu ynegsal: lemengstum ftsamé yelewm.”`,
-    "tigrinya_script": `ንሱ ኣብ ቤት ያእቆብ ንዘለኣለም ክነግስ እዩ። ንመንግስቱውን መወዳእታ የብሉን” በላ።`,
+    "tigrinya_script": `ንሱ ኣብ ቤት ያእቆብ ንዘለኣለም ክነግስ እዩ። ንመንግሥቱውን መወዳእታ የብሉን” በላ።`,
     "tigrinya_phonetic": `nsu 'ab bét ya'iḳob nzele'alem knegs 'iyu. nmengstuwn meweda'ita yeblun” bela.`,
     "spanish": `Y reinará sobre la casa de Jacob para siempre, y su reino no tendrá fin.`,
     "spanish_is_official": true
@@ -4897,8 +4897,8 @@ Líder: Ante el trono de Nuestro Señor.
     "geez_phonetic": `aws'o mel'ak weybéla menfes 'igzī'abḥér ḳdus ymets'i l'ilékī wehayle l'ul ytsellekī.`,
     "amharic_script": `መልአኩም መልሶ እንዲህ አላት፥ “መንፈስ ቅዱስ ያድርብሻል፤ የልዑል ኀይልም ይጋርድሻል፤`,
     "amharic_phonetic": `mel'akum melso 'indīh 'alat; “menfes ḳdus yadrbshal: yel'ul haylm ygardshal:`,
-    "tigrinya_script": `እቲ መልኣኽ መሊሱ ኸምዙይ በለ፦ “መንፈስ ቅዱስ ናባኺ ኽመፅእ እዩ፤ ሓይሊ ልዑል እግዚኣብሄርውን ከፅልለልኪ እዩ፤`,
-    "tigrinya_phonetic": `itī mel'akh melīsu khemzuy bele: “menfes ḳdus nabakhī khmets'i 'iyu: ḥaylī l'ul 'igzī'abhérwn ketsllelkī 'iyu:`,
+    "tigrinya_script": `እቲ መልኣኽ መሊሱ ኸምዙይ በለ፦ “መንፈስ ቅዱስ ናባኺ ኽመፅእ እዩ፤ ኃይሊ ልዑል እግዚኣብሔርውን ከፅልለልኪ እዩ፤`,
+    "tigrinya_phonetic": `'itī mel'akh melīsu khemzuy bele: “menfes ḳdus nabakhī khmets'i 'iyu: haylī l'ul 'igzī'abḥérwn ketsllelkī 'iyu:`,
     "spanish": `Y respondiendo el ángel, le dijo: El Espíritu Santo vendrá sobre ti, y el poder del Altísimo te cubrirá con su sombra;`,
     "spanish_is_official": true
   },
@@ -4912,8 +4912,8 @@ Líder: Ante el trono de Nuestro Señor.
     "geez_phonetic": `zenī ytweled 'imnékī ḳdus w'itu weysemey welde 'igzī'abḥér l'ul.`,
     "amharic_script": `ከአንቺ የሚወለደውም ቅዱስ ነው፤ የልዑል እግዚአብሔር ልጅም ይባላል።`,
     "amharic_phonetic": `ke'anchī yemīweledewm ḳdus new: yel'ul 'igzī'abḥér ljm ybalal.`,
-    "tigrinya_script": `ስለዙይ እቲ ኻባኺ ዝውለድ ቅዱስ እዩ፤ ወዲ እግዚኣብሄርውን ክብሃል እዩ።`,
-    "tigrinya_phonetic": `slezuy 'itī khabakhī zwled ḳdus 'iyu: wedī 'igzī'abhérwn kbhal 'iyu.`,
+    "tigrinya_script": `ስለዙይ እቲ ኻባኺ ዝውለድ ቅዱስ እዩ፤ ወዲ እግዚኣብሔርውን ክብሃል እዩ።`,
+    "tigrinya_phonetic": `slezuy 'itī khabakhī zwled ḳdus 'iyu: wedī 'igzī'abḥérwn kbhal 'iyu.`,
     "spanish": `Por lo cual también el Santo Ser que nacerá será llamado Hijo de Dios.`,
     "spanish_is_official": true
   },
@@ -4928,7 +4928,7 @@ Líder: Ante el trono de Nuestro Señor.
     "amharic_script": `እነሆ፥ ከዘመዶችሽ ወገን የምትሆን ኤልሣቤጥም እርስዋ እንኳ በእርጅናዋ ወንድ ልጅን ፀንሳለች፤ መካን ትባል የነበረችው ከፀነሰች እነሆ፥ ይህ ስድስተኛ ወር ነው።`,
     "amharic_phonetic": `ineho; kezemedochsh wegen yemthon 'élsabéṭm 'irswa 'inkwa be'irjnawa wend ljn tsensalech: mekan tbal yeneberechw ketsenesech 'ineho; yh sdsteña wer new.`,
     "tigrinya_script": `እንሆ እታ ዘመድኪ ኤልሳቤጥ እኳ፥ ኣብ እርጋና ወዲ ጠኒሳ ኣላ፤ እታ መኻን ዝተብሃለት እዙይ ሻድሻይ ወርሓ እዩ፤`,
-    "tigrinya_phonetic": `inho 'ita zemedkī 'élsabéṭ 'ikwa; 'ab 'irgana wedī ṭenīsa 'ala: 'ita mekhan ztebhalet 'izuy shadshay werḥa 'iyu:`,
+    "tigrinya_phonetic": `'inho 'ita zemedkī 'élsabéṭ 'ikwa; 'ab 'irgana wedī ṭenīsa 'ala: 'ita mekhan ztebhalet 'izuy shadshay werḥa 'iyu:`,
     "spanish": ``,
     "spanish_is_official": false
   },
@@ -4942,8 +4942,8 @@ Líder: Ante el trono de Nuestro Señor.
     "geez_phonetic": `isme 'albo neger zeyse'ano le'igzī'abḥér.`,
     "amharic_script": `ለእግዚአብሔር የሚሳነው ነገር የለምና”።`,
     "amharic_phonetic": `le'igzī'abḥér yemīsanew neger yelemna”.`,
-    "tigrinya_script": `ንእግዚኣብሄር ዝሰኣኖ ነገር የለንሞ।”`,
-    "tigrinya_phonetic": `n'igzī'abhér zse'ano neger yelenmo.”,`,
+    "tigrinya_script": `ንእግዚኣብሔር ዝሰኣኖ ነገር የለንሞ।”`,
+    "tigrinya_phonetic": `n'igzī'abḥér zse'ano neger yelenmo।”`,
     "spanish": `Porque para Dios nada hay imposible.”`,
     "spanish_is_official": true
   },
@@ -4957,8 +4957,8 @@ Líder: Ante el trono de Nuestro Señor.
     "geez_phonetic": `tbélo maryam lemel'ak neye 'amete le'igzī'abḥér ykunenī bekeme tbélenī.`,
     "amharic_script": `ማርያምም መልአኩን፥ “እነሆኝ፥ የእግዚአብሔር ባሪያው አለሁ፤ እንደ ቃልህ ይሁንልኝ” አለችው፤`,
     "amharic_phonetic": `maryamm mel'akun; “'inehoñ; ye'igzī'abḥér barīyaw 'alehu: 'inde ḳalh yhunlñ” 'alechw:`,
-    "tigrinya_script": `ማርያም ድማ “እኒሀኹ፥ ኣነ ባርያ እግዚኣብሄር እየ፤ ከምቲ ዝበልካኒ ይኹነለይ” በለቶ።`,
-    "tigrinya_phonetic": `maryam dma “'inīhakhu; 'ane barya 'igzī'abhér 'iye: kemtī zbelkanī ykhuneley” beleto.`,
+    "tigrinya_script": `ማርያም ድማ “እኒሀኹ፥ ኣነ ባርያ እግዚኣብሔር እየ፤ ከምቲ ዝበልካኒ ይኹነለይ” በለቶ።`,
+    "tigrinya_phonetic": `maryam dma “'inīhakhu; 'ane barya 'igzī'abḥér 'iye: kemtī zbelkanī ykhuneley” beleto.`,
     "spanish": `Entonces María dijo: «He aquí la sierva del Señor. Hágase en mí conforme a tu palabra».`,
     "spanish_is_official": true
   },

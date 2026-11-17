@@ -60,3 +60,4 @@ GEMINI.md
 dist/
 bun.lock
 debug.keystore.base64
+*.traineddata

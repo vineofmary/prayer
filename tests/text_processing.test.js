@@ -105,5 +105,99 @@ describe('Text Processing & Liturgical Formatting', () => {
       expect(result).toContain('data-word="ሃሌ ሉያ"');
     });
   });
+
+  describe('Script-aware custom name placeholders & Tigrayan Tigrinya speaker labels', () => {
+    it('substitutes script-appropriate defaults without mixed Latin/Ethiopic or duplicate Abba/ኣባ/አባ', () => {
+      const prev = app.getCustomNames();
+      try {
+        app.setCustomNames({
+          servant: '{Names}',
+          patriarch: 'Abba Mathias I (አባ ማትያስ ቀዳማዊ)',
+          bishop: 'Abba Theophilus (አባ ቴዎፍሎስ)',
+          country: 'Ethiopia, Eritrea, and America',
+          headOfState: '...'
+        });
+
+        const tigHierarchy = app.formatPrayerText(
+          'ካህን ንፍቅ፤ ብኣፍ ክቡር ርእሰ ሊቃነ ጳጳሳት ኣባ {{PATRIARCH NAME}}ን ብፁዕ ሊቀ ጳጳስና ኣባ {{BISHOP NAME}}ን።',
+          'tigrinya_script',
+          '',
+          false
+        );
+        expect(tigHierarchy).toContain('ኣባ ማትያስ ቀዳማዊን');
+        expect(tigHierarchy).toContain('ኣባ ቴዎፍሎስን');
+        expect(tigHierarchy).not.toContain('ኣባ ኣባ');
+        expect(tigHierarchy).not.toContain('Abba');
+
+        const tigCountry = app.formatPrayerText(
+          'ካህን፤ ኦ ጐይታ፥ ንሃገርና {{COUNTRY}} ዘክራ።',
+          'tigrinya_script',
+          '',
+          false
+        );
+        expect(tigCountry).toContain('ኢትዮጵያን ኤርትራን ኣሜሪካን');
+        expect(tigCountry).not.toContain('Ethiopia');
+
+        const geezCountry = app.formatPrayerText(
+          'ካህን፤ ተዘከራ እግዚኦ ለሀገሪትነ {{COUNTRY}}።',
+          'geez_script',
+          '',
+          false
+        );
+        expect(geezCountry).toContain('ኢትዮጵያ ወኤርትራ ወአሜሪካ');
+
+        const amCountry = app.formatPrayerText(
+          'ካህን፤ ሀገራችንን {{COUNTRY}} አስባት።',
+          'amharic_script',
+          '',
+          false
+        );
+        expect(amCountry).toContain('ኢትዮጵያ፣ ኤርትራና አሜሪካ');
+
+        const engHierarchy = app.formatPrayerText(
+          'Priest: May her prayer be with our Patriarch {{PATRIARCH NAME}}.',
+          'english',
+          '',
+          true
+        );
+        expect(engHierarchy).toContain('Patriarch Abba Mathias I.');
+        expect(engHierarchy).not.toContain('አባ ማትያስ');
+      } finally {
+        app.setCustomNames(prev);
+      }
+    });
+
+    it('preserves user-customized names verbatim while still collapsing duplicate honorifics', () => {
+      const prev = app.getCustomNames();
+      try {
+        app.setCustomNames({
+          ...prev,
+          patriarch: '',
+          bishop: 'ኣባ ጴጥሮስ',
+          country: 'ትግራይን ኢትዮጵያን'
+        });
+
+        const customTig = app.formatPrayerText(
+          'ዲያቆን ንፍቅ፤ ምእንቲ ኣብ ሃገር ኣቦታትና ዝተሸመ ብፁዕ ሊቀ ጳጳስና ኣባ {{BISHOP NAME}}፥ ንሃገርና {{COUNTRY}} ዘክራ።',
+          'tigrinya_script',
+          '',
+          false
+        );
+        expect(customTig).toContain('ኣባ ጴጥሮስ');
+        expect(customTig).not.toContain('ኣባ ኣባ');
+        expect(customTig).toContain('ትግራይን ኢትዮጵያን');
+      } finally {
+        app.setCustomNames(prev);
+      }
+    });
+
+    it('highlights normalized Tigrayan Tigrinya speaker labels (ኵሉኹም, ሊቀ ጳጳስ, ሕዝቢ)', () => {
+      expect(app.speakerKeywords.tigrinya_script).toContain('ኵሉኹም');
+      expect(app.speakerKeywords.tigrinya_script).toContain('ሊቀ ጳጳስ');
+      expect(app.speakerKeywords.tigrinya_script).toContain('ሕዝቢ');
+      expect(app.speakerKeywords.tigrinya_phonetic).toContain('kwlukhum');
+      expect(app.speakerKeywords.tigrinya_phonetic).toContain('līḳe p̣ap̣as');
+    });
+  });
 });
 
