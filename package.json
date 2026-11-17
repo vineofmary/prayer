@@ -10,6 +10,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "verify:integrity": "node scripts/verify_liturgy_integrity.js",
+    "update:checksums": "node scripts/verify_liturgy_integrity.js --update",
+    "prepare": "[ -z \"$CI\" ] && [ -d .git ] && git config core.hooksPath .githooks || true",
     "preview": "vite preview --host 0.0.0.0 --port 3000"
   },
   "dependencies": {

@@ -248,7 +248,7 @@ export const Modals: React.FC = () => {
 
           <div className="modal-tabs help-tabs">
             <button className="help-tab-btn active" data-tab="general">General</button>
-            <button className="help-tab-btn" data-tab="auspices">Disclaimers</button>
+            <button className="help-tab-btn" data-tab="auspices">About</button>
             <button className="help-tab-btn" data-tab="translations">Translations</button>
             <button className="help-tab-btn" data-tab="beta">Feedback</button>
           </div>
@@ -308,14 +308,14 @@ export const Modals: React.FC = () => {
               </div>
 
               <div className="spiritual-father-attribution-box">
-                This spiritual service is made with love, for the glory of God and His saints, under the spiritual guidance of <strong>Liqe Siyuman Kesis Nebiyou Elias Abebe</strong>, by the sinful and weak servants, Gebre-Selassie, Atsede-Maryam, and Habte-Gabriel. To all previous servants who labored to preserve, compile, translate, and publish the prayers of the Church, we offer our gratitude.
+                This spiritual service is made with love, for the glory of God and His saints, under the spiritual guidance of <strong>Liqe Siyuman Kesis Nebiyou Elias Abebe</strong>, by the sinful and weak servants, Gebre-Selassie, Atsede-Maryam, and Habte-Gabriel. We have prepared this for you to the extent of the strength and ability God has given us, so behold, receive it in love. To all previous servants who labored to preserve, compile, translate, and publish the prayers of the Church, we offer our gratitude.
               </div>
 
               <hr className="settings-divider" style={{ margin: '1.25rem 0' }} />
 
-              <h3>📜 Historical Prefaces: “<span className="ethiopic-label">የቤተ ክርስቲያን ጸሎት</span>” (<i>Yä-Betä Krəstiyan Ṣälot</i>)</h3>
+              <h3>🙏🏾 Church Prayer</h3>
               <p className="historical-prefaces-intro">
-                Written when the Ethiopian Orthodox Church first ministered in exile in London, these historical prefaces to one of this app&apos;s primary sources speak directly to today&apos;s global diaspora—affirming that prayer ought to be offered in languages the faithful understand and empowering the laity, as part of the royal priesthood of creation, to offer daily morning and evening prayers from their homes.
+                The historical prefaces below from one of this app&apos;s primary sources may resonate with today&apos;s EOTC diaspora all around the world because they were published under the auspices of Echegé Gebre-Giyorgis (who later became Patriarch Abune Basilyos) when the EOTC first ministered in exile in England in 1931 A.D. Their writings below affirm that prayer ought to be offered in languages the faithful understand and the laity, as part of &quot;the royal priesthood&quot; (1 Peter 2:9), may offer daily morning and evening personal prayers from their homes.
               </p>
 
               <section className="historical-prefaces-collapsible">
@@ -442,6 +442,8 @@ export const Modals: React.FC = () => {
                 <li><strong>Ge&apos;ez Transcription:</strong> <a href="https://drive.google.com/drive/folders/1svbvMVFW4GIcEFuonaNHHYwixjAEo3Eg?usp=drive_link" target="_blank" rel="noopener noreferrer"><i>Digitized Liturgical Ge&apos;ez Text</i></a> transcribed by wandering poetry students (<span className="ethiopic-label">ቆሎ ተማሪ</span> - <i>Qolo Temari</i>) in Bahir Dar, Ethiopia (October 2024). Licensed under <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC 4.0</a>.</li>
                 <li><strong>Tigrinya:</strong> <a href="https://drive.google.com/file/d/1MNPhpbj7eUrj7I0-mXXVcja42sF7RbYt/view?usp=drive_link" target="_blank" rel="noopener noreferrer"><i>“መጽሐፈ ቅዳሴ። በግዕዝ ምስ ምልክቱን በትግርኛን (Metshafe Kidasie beGe&apos;ez, mis milktun beTigrignan)”</i></a> published by ኤርትራ ኦርቶዶክስ ተዋሕዶ ሲኖዶስ (Eritrean Orthodox Tewahdo Synod) (Asmera, Eritrea 1993).</li>
                 <li><strong>Arabic &amp; English Translations:</strong> <a href="https://drive.google.com/file/d/1HkR7LD-G517w_5jLuypm9eJl0zNNvZm2/view?usp=drive_link" target="_blank" rel="noopener noreferrer"><i>“The Liturgy of the Ethiopian Church”</i></a> by Fr. Marcos Daoud and H.E. Blatta Marsie Hazen, published by The Egyptian Book Press (Cairo, Egypt 1959).</li>
+                <li><strong>Spanish (Puerto Rico) Translation:</strong> <i>“Liturgia de la Iglesia Ortodoxa Tewahedo de Etiopía En Español”</i> compiled and translated by the faithful of <strong>Debre Besrat Kidus Gebriel Iglesia Ortodoxa Tewahedo de Etiopía</strong> (Utuado, Puerto Rico — Archdiocese of the Caribbean and Latin America, under the pastoral leadership of His Eminence Archbishop Abuna Thaddaeus), primarily from the English edition of Fr. Marcos Daoud and H.E. Blatta Marsie Hazen.</li>
+                <li><strong>German Translation:</strong> <i>“Kidasse Hawariyat Deutsch”</i> (Order of the Liturgy &amp; Anaphora of the Apostles, 2010), prepared by the Ethiopian Orthodox Tewahedo Church <strong>Medhane Alem</strong> community in Germany.</li>
                 <li><strong>Miracles of Mary Data &amp; Translations:</strong> <a href="https://pemm.princeton.edu/" target="_blank" rel="noopener noreferrer">Princeton Ethiopian, Eritrean, and Egyptian Miracles of Mary (PEMM) Project</a> (Data via <a href="https://zenodo.org/record/8247393" target="_blank" rel="noopener noreferrer">Zenodo</a>)</li>
               </ul>
 

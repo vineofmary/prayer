@@ -12273,7 +12273,6 @@ const HISTORICAL_PREFACES_DATA = {
         blocks: [
             {
                 type: 'paragraph',
-                page: 'Page 5',
                 en: 'Preface to the Second Edition. This prayer book has been compiled according to the law of the Fathers, so that the faithful may pray the morning and evening prayers in the church. Prayer means the word by which a person communicates with their Creator in faith, praising their Creator and begging for the forgiveness of sins. (Fetha Negest, Article 14, page 105).',
                 am: 'የሁለተኛው ድርሰት መቅድም። ይህ የጸሎት መጽሐፍ እንደ አበው ሕግ፣ ምእመናን የጧቱንና የማታውን ጸሎት በቤተ ክርስቲያን እንዲጸልዩበት ተሠርቷል። ጸሎት ማለት፣ ሰው ፈጣሪውን እያመሰገነና ሥርየተ ኃጢኣትን እየለመነ በሃይማኖት ከፈጣሪው ጋር የሚነጋገርበት ቃል ነው። (ፍ. ነገ. አን. ፲፬ ገጽ ፻፭።)'
             },
@@ -12299,7 +12298,6 @@ const HISTORICAL_PREFACES_DATA = {
             },
             {
                 type: 'paragraph',
-                page: 'Page 6',
                 en: 'Especially on Yekatit 12, 1929 A.M. [February 19, 1937 AD], an unprecedented massacre of people took place. The lawless (cursed) Graziani gathered the city\'s population in Addis Ababa by decree, and finding an excuse like the ancient Caesar Nero, began to have all the people slaughtered. The blood of innocent people flowed like a flood; and he burned the city. Because he ordered the people of the provinces to be killed, priests, deacons, children, elders, women, and widows were indiscriminately massacred everywhere; mothers and fathers with their children, teachers with their disciples were killed.',
                 am: 'ይልቁንም በየካቲት ፲፪ ቀን ፲፱፻፳፱ ዓ.ም. ከልክ ያለፈ የሰው እልቂት ተደረገ። ዕልው (ርጉም) ግራዚያኒ በአዲስ አበባ ላይ የከተማውን ሕዝብ በዓዋጅ ሰብስቦ እንደ ዱሮው እንደ ኔሮን ቄሣር ሰበብ ፈልጎ ሕዝቡን ሁሉ ያስፈጅ ጀመረ። የንጹሕ ሕዝብ ደም እንደ ጐርፍ ፈሰሰ ፤ ከተማውንም አቃጠለው። የየአውራጃውም ሕዝብ እንዲገደል ስላዘዘ ቄስ፣ ዲያቆን፣ ሕፃን፣ ሸማግሌ፣ ሴት፣ ባልቴት ፤ ሳይመረጥ በያለበት ይጨፈጨፍ ጀመር ፤ እናትና አባት ከነልጆቻቸው ፤ መምህራን ከነደቃ መዛሙርቶቻቸው ተገደሉ።'
             },
@@ -12340,7 +12338,6 @@ const HISTORICAL_PREFACES_DATA = {
             },
             {
                 type: 'paragraph',
-                page: 'Page 7',
                 en: '...because of His thought that [the prayers] and Eucharist should not be lacking, even though it was a time of exile, since exile and distress, pain and death, sorrow and imprisonment, war and plague cannot hinder the love of Christ, so that the exiled faithful, remaining steadfast in His love, might continue to beseech Christ the God of peace just as they did in times of peace, saying "Stir up Your power, and come and save us, O God of hosts, restore us," and be comforted from their tribulation, He [the Emperor] wrote the following message by his own hand and sent it to Jerusalem to His Beatitude Echege Gebre Giorgis. The word is as follows:',
                 am: '...እንዳይጐድል ከማሰባቸው የተነሣ ምንም እንኳ የስደት ጊዜ ቢሆን የክርስቶስን ፍቅር ስደትና ጭንቀት፣ ሕማምና ሞት፣ ኀዘንና እሥራት ጦርና መቅሠፍት ሊያግደው አይችልምና በዚያ የተሰደዱ ምእመናን በፍቅሩ ጸንተው በሰላም ጊዜ ይለምኑት የነበረውን አምላከ ሰላም ክርስቶስን እንዲሁ በስደታቸው ጊዜ “አንሥእ ኃይለከ ወነዓ አድኅነነ አምላከ ኃያላን ሚጠነ” እያሉ እንዲለምኑና ከመከራቸውም እንዲጽናኑበት ስላሰቡ ከዚህ የሚከተለውን መልእክት በጃቸው ጽፈው ወደ ኢየሩሳሌም ለብፁዕ እጨጌ ገብረ ጊዮርጊስ ላኩላቸው። ቃሉም ይህ የሚከተለው ነው።'
             },
@@ -12361,7 +12358,6 @@ const HISTORICAL_PREFACES_DATA = {
             },
             {
                 type: 'paragraph',
-                page: 'Page 8',
                 en: 'Until the day the grace of God permits and releases us to come to Jerusalem, so that we may not suffer spiritual hardship and so that our growing children may not lose the foundation of their faith, I have sent Abba Hanna to bring one Tabot of the Covenant and 5 monks, along with the necessary sacred vessels and books given to him. Consult with Memhir Gerima and ensure they are sent to us so that they arrive before the beginning of the Great Lent.',
                 am: 'የእግዚአብሔርም ቸርነት ፈቅዶልንና አሰናብቶን ወደ ኢየሩሳሌም እስከምንመጣበት ቀን ድረስ የሃይማኖት ችግር እንዳያገኘን የሚያድጉትም ልጆቻችን የሃይማኖታቸውን መሠረት እንዳያጡት አስበን አንድ የኪዳን ጽላትና ፭ መነኰሳት የሚያስፈልጉትን ንዋየ ቅድሳትና መጻሕፍት ሰጥተውት ይዞ እንዲመጣ አባ ሐናን ልኬዋለሁና ከመምህር ገሪማ ጋር ተመካክራችሁ ዐቢይ ጾም ሳይገባ እንዲደርስ አድርጋችሁ እንድትልኩልን ይሁን። (ወናሁ ፈነውክዎ ለአባ ሐና ከመ ያምጽእ ለነ ፩ደ ጽላተ ሕግ ዘኪዳን ምስለ ፭ቱ መነኰሳት፤ ወዓዲ መጻሕፍተ ወንዋየ ቅድሳት በእንተ ዘጽሕቅነ ከመ ኢይብጻሕ ብነ ዕፀበ ሃይማኖት፤ ወደቂቅነሂ ወራዙት ከመ ኢያንቀልቅሉ እመሠረተ ሃይማኖቶሙ፤ እስከ ዕለት ዘንበጽሕ ባቲ ኀበ ኢየሩሳሌም በሠርሖተ ፈቃዱ ለእግዚአብሔር፤ ወበተሰናእዎትከ ምስለ አባ ገሪማ አስተፋጥን ከመ ትፈኑ ለነ እምቅድመ በእተ ጾም ዐቢይ።)'
             },
@@ -12400,7 +12396,6 @@ const HISTORICAL_PREFACES_DATA = {
             },
             {
                 type: 'paragraph',
-                page: 'Page 9',
                 en: '...began to be called "The Exiled Orthodox Ethiopian Church." It started to expand and conduct its spiritual work. The faithful who were in exile in that country, continually hearing of the atrocities being committed in Ethiopia and living in sorrow, did not cease to remember their country in prayer. However, because there was no corporate prayer written in the Amharic language, it was a difficulty.',
                 am: '...ቶዶክሳዊት የኢትዮጵያ ቤተ ክርስቲያን» ተብላ ትጠራ ጀመር። መንፈሳዊ ሥራዋንም እያስፋፋች መሥራት ጀመርች። በዚያ አገር በስደት የነበሩት ምእመናንም በኢትዮጵያ ላይ ይደረግ የነበረውን ግፍ በየጊዜው እየሰሙ በኀዘን ስለሚኖሩ አገራቸውን በጸሎት ከማሰብ አያቋርጡም ነበር። ዳሩ ግን በአማርኛ ቋንቋ የተጻፈ ጸሎተ ማኅበር ስላልነበረ ችግር ሆነ።'
             },
@@ -12426,7 +12421,6 @@ const HISTORICAL_PREFACES_DATA = {
             },
             {
                 type: 'paragraph',
-                page: 'Page 10',
                 en: 'And since the words of preaching and counsel are cited from the respective books; the location where they are found, the chapter and verse, are found written in each place.',
                 am: 'ይኸውም የስብከትና የምክር ቃል ከየመጻሕፍቱ የተጠቀሰ ስለ ሆነ ፤ የሚገኝበት ስፍራ ምዕራፉና ቁጥሩ በየቦታው ተጽፎ ይገኛል።'
             },

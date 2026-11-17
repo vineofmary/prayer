@@ -58,7 +58,7 @@ Before declaring any coding task complete or committing changes, **every Agent M
    ```bash
    npm run verify:integrity
    ```
-   Ensures SHA-256 dataset hashes match the gold master checksums in `docs/liturgy_checksums.json`.
+   Validates dataset syntax/structure, Android/Web parity, and SHA-256 hashes against `docs/liturgy_checksums.json`. When intentionally modifying prayer datasets, refresh checksums with `npm run update:checksums` (or rely on the `.githooks/pre-commit` hook).
 
 4. **Preserve WebView & Web Dual Compatibility:**
    - Mount of Mercy runs in two environments: Android Native Container (`MainActivity.kt` with `WebViewAssetLoader` serving `app/src/main/assets/`) and PWA (`public/` & `index.html`).

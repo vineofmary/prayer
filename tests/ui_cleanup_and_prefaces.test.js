@@ -25,7 +25,11 @@ describe('UI Cleanup, Relocated Notes & Historical Prefaces', () => {
     }
   });
 
-  it('updates About modal copy across General, Disclaimers, Translations, and Feedback tabs', () => {
+  it('updates About modal copy across General, About, Translations, and Feedback tabs', () => {
+    const auspicesTabBtn = document.querySelector('.help-tab-btn[data-tab="auspices"]');
+    expect(auspicesTabBtn).not.toBeNull();
+    expect(auspicesTabBtn.textContent.trim()).toBe('About');
+
     const generalText = document.getElementById('help-general').textContent.replace(/\s+/g, ' ');
     expect(generalText).toContain(
       "This web app is designed to help bring Orthodox Christians and catechumens towards a life of unceasing prayer. It provides access to essential daily prayers, Theotokia, Psalms, and the Divine Liturgy (Kidasé) with lectionary readings in multiple languages, including Amharic, Coptic, English, French, Ge'ez, Spanish, and Tigrinya with phonetic transliterations to assist in learning and pronunciation."
@@ -35,13 +39,17 @@ describe('UI Cleanup, Relocated Notes & Historical Prefaces', () => {
     expect(auspicesText).toContain(
       'This app, Mount of Mercy (ደብረ ምሕረት), is prepared and maintained by servants of the Foundation of Life Sunday School (መሰረተ ሕይወት የሰንበት ትምህርት ቤት) at Oakland Debre Mihret Saint Michael Ethiopian Orthodox Tewahedo Church (DMKM EOTC), under the auspices of His Grace Archbishop Theophilus in the EOTC Diocese of Northern California, Nevada, and Arizona. We serve within the canonical hierarchy of the EOTC:'
     );
+    expect(auspicesText).toContain('🙏🏾 Church Prayer');
+    expect(auspicesText).toContain(
+      'The historical prefaces below from one of this app\'s primary sources may resonate with today\'s EOTC diaspora all around the world because they were published under the auspices of Echegé Gebre-Giyorgis (who later became Patriarch Abune Basilyos) when the EOTC first ministered in exile in England in 1931 A.D. Their writings below affirm that prayer ought to be offered in languages the faithful understand and the laity, as part of "the royal priesthood" (1 Peter 2:9), may offer daily morning and evening personal prayers from their homes.'
+    );
 
     const attributionText = document
       .querySelector('#help-auspices .spiritual-father-attribution-box')
       .textContent.replace(/\s+/g, ' ')
       .trim();
     expect(attributionText).toBe(
-      'This spiritual service is made with love, for the glory of God and His saints, under the spiritual guidance of Liqe Siyuman Kesis Nebiyou Elias Abebe, by the sinful and weak servants, Gebre-Selassie, Atsede-Maryam, and Habte-Gabriel. To all previous servants who labored to preserve, compile, translate, and publish the prayers of the Church, we offer our gratitude.'
+      'This spiritual service is made with love, for the glory of God and His saints, under the spiritual guidance of Liqe Siyuman Kesis Nebiyou Elias Abebe, by the sinful and weak servants, Gebre-Selassie, Atsede-Maryam, and Habte-Gabriel. We have prepared this for you to the extent of the strength and ability God has given us, so behold, receive it in love. To all previous servants who labored to preserve, compile, translate, and publish the prayers of the Church, we offer our gratitude.'
     );
 
     const translationsPane = document.getElementById('help-translations');
@@ -58,6 +66,10 @@ describe('UI Cleanup, Relocated Notes & Historical Prefaces', () => {
     expect(translationsText).toContain(
       'The liturgical texts are sourced from several authoritative editions (listed below), with only minor enhancements (e.g., improved punctuations, typo corrections).'
     );
+    expect(translationsText).toContain('Spanish (Puerto Rico) Translation:');
+    expect(translationsText).toContain('Debre Besrat Kidus Gebriel Iglesia Ortodoxa Tewahedo de Etiopía');
+    expect(translationsText).toContain('German Translation:');
+    expect(translationsText).toContain('Medhane Alem');
     expect(translationsText).toContain(
       'If you are a scholar, deacon, priest, or coder who wish to collaborate in this liturgical scholarship, please contact us at KidaseCreator@gmail.com.'
     );
@@ -95,7 +107,7 @@ describe('UI Cleanup, Relocated Notes & Historical Prefaces', () => {
     expect(bodyEl.textContent).toContain('የመጀመሪያው ድርሰት መግቢያ።');
     expect(bodyEl.textContent).toContain('የመጽሐፍ ቅዱስ ንባብ');
 
-    // Switch to Disclaimers tab, 1938 Preface & Side-by-Side -> widens modal and renders paired rows
+    // Switch to About tab, 1938 Preface & Side-by-Side -> widens modal and renders paired rows without [Page N] badges
     document.getElementById('help-auspices').classList.add('active');
     const prefaceDocBtn = document.querySelector('.historical-doc-tab[data-preface-doc="preface"]');
     const sbsBtn = document.querySelector('.historical-lang-btn[data-preface-lang="side-by-side"]');
@@ -106,6 +118,8 @@ describe('UI Cleanup, Relocated Notes & Historical Prefaces', () => {
     expect(bodyEl.querySelectorAll('.historical-preface-sbs-row').length).toBe(
       app.HISTORICAL_PREFACES_DATA.preface.blocks.length + 1
     );
+    expect(bodyEl.querySelectorAll('.historical-preface-page-badge').length).toBe(0);
+    expect(bodyEl.textContent).not.toMatch(/\[Page \d+\]/);
     expect(bodyEl.textContent).toContain('Preface to the Second Edition');
     expect(bodyEl.textContent).toContain('የሁለተኛው ድርሰት መቅድም ።');
     expect(helpModalContent.classList.contains('wide-preface-modal')).toBe(true);

@@ -5,6 +5,13 @@ on:
     branches: [ main, feature/* ]
   pull_request:
     branches: [ main ]
+  schedule:
+    # Daily integrity & test audit at 21:00 UTC (1 hour after sync_prayers.yml)
+    - cron: '0 21 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   verify:
@@ -13,17 +20,89 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 20
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
+          cache: 'npm'
 
       - name: Install Dependencies
         run: npm ci
 
       - name: Run Automated Unit Tests
+        env:
+          NODE_OPTIONS: --max-old-space-size=4096
         run: npm test
 
-      - name: Verify Cryptographic Hashes
-        run: node scripts/verify_liturgy_integrity.js
+      - name: Verify Structural Integrity & Asset Parity
+        run: node scripts/verify_liturgy_integrity.js --structural
+
+      - name: Verify Locked Scripture & Bible Service Hashes
+        run: node scripts/verify_liturgy_integrity.js --verify-locked
+
+      - name: Verify Prayer Dataset Hashes
+        id: verify_hashes
+        shell: bash
+        run: |
+          set -euo pipefail
+          if node scripts/verify_liturgy_integrity.js; then
+            echo "checksums_updated=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          # Strictly fail on scheduled audits, pull requests, manual dispatch, feature branches, or non-owner pushes.
+          if [ "${{ github.event_name }}" != "push" ] || [ "${{ github.ref }}" != "refs/heads/main" ] || [ "${{ github.actor }}" != "${{ github.repository_owner }}" ]; then
+            echo "::error::Prayer or scripture dataset checksum mismatch detected outside an intentional main-branch prayer update."
+            exit 1
+          fi
+
+          BEFORE_SHA="${{ github.event.before }}"
+          if [ -z "$BEFORE_SHA" ] || [ "$BEFORE_SHA" = "0000000000000000000000000000000000000000" ] || ! git cat-file -e "${BEFORE_SHA}^{commit}" 2>/dev/null; then
+            CHANGED_FILES=$(git diff --name-only HEAD~1 HEAD)
+          else
+            CHANGED_FILES=$(git diff --name-only "$BEFORE_SHA" HEAD)
+          fi
+
+          MISMATCHES=$(node scripts/verify_liturgy_integrity.js --list-mismatches)
+          if [ -z "$MISMATCHES" ]; then
+            echo "checksums_updated=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          # Only auto-refresh when EVERY mismatched file is a prayer JS file modified in this push.
+          while IFS= read -r file; do
+            [ -z "$file" ] && continue
+            if [[ "$file" != app/src/main/assets/js/*.js ]] || [ "$file" = "app/src/main/assets/js/bible_service.js" ]; then
+              echo "::error::Unexpected checksum mismatch in locked file: $file"
+              exit 1
+            fi
+            if ! echo "$CHANGED_FILES" | grep -qxF "$file"; then
+              echo "::error::Checksum mismatch in $file, which was NOT modified in this push. Investigate unexpected drift!"
+              exit 1
+            fi
+          done <<< "$MISMATCHES"
+
+          echo "Intentional prayer dataset update(s) passed all unit tests and structural checks. Refreshing docs/liturgy_checksums.json..."
+          node scripts/verify_liturgy_integrity.js --update
+          echo "checksums_updated=true" >> "$GITHUB_OUTPUT"
+
+          {
+            echo "### Prayer Dataset Checksums Refreshed"
+            echo "All unit tests, syntax checks, and Android/Web parity checks passed for this prayer update:"
+            while IFS= read -r file; do
+              [ -z "$file" ] && continue
+              echo "- \`$file\`"
+            done <<< "$MISMATCHES"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Commit Updated Prayer Checksums
+        if: steps.verify_hashes.outputs.checksums_updated == 'true'
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: Update liturgy checksums [skip ci]"
+          file_pattern: docs/liturgy_checksums.json
+          branch: main

@@ -22,7 +22,7 @@ This app, **Mount of Mercy (ደብረ ምሕረት)**, is prepared and maintaine
 * **His Grace Abune Theophilus** — Archbishop of the Diocese of Northern California, Nevada, and Arizona
 * **Qomos Abba Tesfa-Maryam** — Administrator and Archpriest of Oakland DMKM EOTC
 
-> This spiritual service is made with love, for the glory of God and His saints, under the spiritual guidance of **Liqe Siyuman Kesis Nebiyou Elias Abebe**, by the sinful and weak servants, Gebre-Selassie, Atsede-Maryam, and Habte-Gabriel. To all previous servants who labored to preserve, compile, translate, and publish the prayers of the Church, we offer our gratitude.
+> This spiritual service is made with love, for the glory of God and His saints, under the spiritual guidance of **Liqe Siyuman Kesis Nebiyou Elias Abebe**, by the sinful and weak servants, Gebre-Selassie, Atsede-Maryam, and Habte-Gabriel. We have prepared this for you to the extent of the strength and ability God has given us, so behold, receive it in love. To all previous servants who labored to preserve, compile, translate, and publish the prayers of the Church, we offer our gratitude.
 
 ## ⚠️ Beta Version / Work-in-Progress
 
@@ -55,7 +55,7 @@ The English translations of the Daily Prayer and *Theotokia* in this app are a w
 
 ### Daily Prayers & *Theotokia* (*Weddase Maryam*) Sources
 
-* [*“የቤተ ክርስቲያን ጸሎት” (Yä-Betä Krəstiyan Ṣälot)*](https://www.ethiopianorthodox.org/amharic/holybooks/yebetekirstian%20tselot%20metshaf.pdf), 2nd Edition, revised by Echegé Gebre-Giyorgis (later Patriarch Abune Basilyos), Liqe Liqawint Gebre-Mesqel, Aleqa Hiruy Eshete, and Memhir Mele'ktu, published by Berhanena Selam Printing Press (Addis Ababa, 1938 AD; 1st Edition compiled by Abba Marqos, commissioned by Emperor Haile Selassie I, London, 1931 AD) — *Note: Both the 1931 Introduction and 1938 Preface are readable inside the app's About → Disclaimers tab in English, Amharic, and Side-by-Side views.*
+* [*“የቤተ ክርስቲያን ጸሎት” (Yä-Betä Krəstiyan Ṣälot)*](https://www.ethiopianorthodox.org/amharic/holybooks/yebetekirstian%20tselot%20metshaf.pdf), 2nd Edition, revised by Echegé Gebre-Giyorgis (later Patriarch Abune Basilyos), Liqe Liqawint Gebre-Mesqel, Aleqa Hiruy Eshete, and Memhir Mele'ktu, published by Berhanena Selam Printing Press (Addis Ababa, 1938 AD; 1st Edition compiled by Abba Marqos, commissioned by Emperor Haile Selassie I, London, 1931 AD) — *Note: Both the 1931 Introduction and 1938 Preface are readable inside the app's About → About tab in English, Amharic, and Side-by-Side views.*
 * *Legends of Our Lady Mary the Perpetual Virgin and Her Mother Hannâ* translated from Ge'ez manuscripts by Sir E. A. Wallis Budge in 1922
 * *Daily Prayers of the Ethiopian Orthodox Täwaḥədo Church, Revised Pocket Edition* translated by Archdeacon Täsfa Mika’el Williams in May 2020
 * [*ውዳሴ ማርያም Widasie Maryam | The Praises of St. Mary: In Ge’ez & English, 3rd Edition*](https://a.co/d/h5TO3sz) translated by Living Tewahdo Ministry in March 2024
@@ -75,6 +75,8 @@ The liturgical texts are sourced from several authoritative editions (listed bel
 * **Ge'ez Transcription:** [*Digitized Liturgical Ge'ez Text*](https://drive.google.com/drive/folders/1svbvMVFW4GIcEFuonaNHHYwixjAEo3Eg?usp=drive_link) transcribed by wandering poetry students (ቆሎ ተማሪ - *Qolo Temari*) in Bahir Dar, Ethiopia (October 2024). Licensed under [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/).
 * **Tigrinya:** [*“መጽሐፈ ቅዳሴ። በግዕዝ ምስ ምልክቱን በትግርኛን (Metshafe Kidasie beGe'ez, mis milktun beTigrignan)”*](https://drive.google.com/file/d/1MNPhpbj7eUrj7I0-mXXVcja42sF7RbYt/view?usp=drive_link) published by ኤርትራ ኦርቶዶክስ ተዋሕዶ ሲኖዶስ (Eritrean Orthodox Tewahdo Synod) (Asmera, Eritrea, 1993).
 * **Arabic & English Translations:** [*“The Liturgy of the Ethiopian Church”*](https://drive.google.com/file/d/1HkR7LD-G517w_5jLuypm9eJl0zNNvZm2/view?usp=drive_link) by Fr. Marcos Daoud and H.E. Blatta Marsie Hazen, published by The Egyptian Book Press (Cairo, Egypt, 1959).
+* **Spanish (Puerto Rico) Translation:** *“Liturgia de la Iglesia Ortodoxa Tewahedo de Etiopía En Español”* compiled and translated by the faithful of **Debre Besrat Kidus Gebriel Iglesia Ortodoxa Tewahedo de Etiopía** (Utuado, Puerto Rico — Archdiocese of the Caribbean and Latin America, under the pastoral leadership of His Eminence Archbishop Abuna Thaddaeus), primarily from the English edition of Fr. Marcos Daoud and H.E. Blatta Marsie Hazen.
+* **German Translation:** *“Kidasse Hawariyat Deutsch”* (Order of the Liturgy & Anaphora of the Apostles, 2010), prepared by the Ethiopian Orthodox Tewahedo Church **Medhane Alem** community in Germany.
 * **Miracles of Mary Data & Translations:** [Princeton Ethiopian, Eritrean, and Egyptian Miracles of Mary (PEMM) Project](https://pemm.princeton.edu/) (Data via [Zenodo](https://zenodo.org/record/8247393)).
 
 ### Collaborating

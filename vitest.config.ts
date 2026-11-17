@@ -6,5 +6,6 @@ export default defineConfig({
     globals: true,
     setupFiles: ['./tests/setup.js'],
     include: ['tests/**/*.{test,spec}.{js,ts}'],
+    execArgv: ['--max-old-space-size=4096'],
   },
 });

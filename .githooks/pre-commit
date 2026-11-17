@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+STAGED=$(git diff --cached --name-only --diff-filter=ACMR)
+if [ -z "$STAGED" ]; then
+  exit 0
+fi
+
+# Only run dataset check when liturgical JS or CSS/script assets are staged
+if ! echo "$STAGED" | grep -qE '^(app/src/main/assets/|public/)(js|css)/'; then
+  exit 0
+fi
+
+echo "🔍 Verifying liturgical dataset syntax & Android/Web asset parity..."
+node scripts/verify_liturgy_integrity.js --structural
+
+MISMATCHES=$(node scripts/verify_liturgy_integrity.js --list-mismatches)
+if [ -n "$MISMATCHES" ]; then
+  # Only auto-refresh checksums if staged prayer JS files were intentionally edited (not locked Bible JSONs)
+  if echo "$MISMATCHES" | grep -qE '^app/src/main/assets/bible/'; then
+    echo "❌ Locked Bible dataset mismatch detected. Run 'npm run update:checksums' intentionally if this was deliberate."
+    exit 1
+  fi
+
+  ALL_STAGED=true
+  while IFS= read -r file; do
+    [ -z "$file" ] && continue
+    if ! echo "$STAGED" | grep -qx "$file"; then
+      ALL_STAGED=false
+    fi
+  done <<< "$MISMATCHES"
+
+  if [ "$ALL_STAGED" = true ]; then
+    echo "🔄 Refreshing docs/liturgy_checksums.json for staged prayer dataset updates..."
+    node scripts/verify_liturgy_integrity.js --update
+    git add docs/liturgy_checksums.json
+  else
+    echo "❌ Unstaged prayer dataset(s) do not match docs/liturgy_checksums.json:"
+    echo "$MISMATCHES"
+    exit 1
+  fi
+fi
