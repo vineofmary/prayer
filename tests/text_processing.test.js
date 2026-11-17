@@ -199,5 +199,111 @@ describe('Text Processing & Liturgical Formatting', () => {
       expect(app.speakerKeywords.tigrinya_phonetic).toContain('līḳe p̣ap̣as');
     });
   });
+
+  describe('Official German & 1959 Marcos Daoud Arabic Support', () => {
+    it('registers German and Arabic in the main official language list without auto-translation flags', () => {
+      expect(app.LANGUAGE_REGISTRY.german).toEqual({
+        name: 'Deutsch (German)',
+        category: 'main',
+        isAuto: false
+      });
+      expect(app.LANGUAGE_REGISTRY.arabic).toEqual({
+        name: 'العربية (Arabic)',
+        category: 'main',
+        isAuto: false
+      });
+    });
+
+    it('localizes custom hierarchy & country placeholders in German and Arabic and collapses duplicate honorifics', () => {
+      const prev = app.getCustomNames();
+      try {
+        app.setCustomNames({
+          servant: '{Names}',
+          patriarch: 'Abba Mathias I (አባ ማትያስ ቀዳማዊ)',
+          bishop: 'Abba Theophilus (አባ ቴዎፍሎስ)',
+          country: 'Ethiopia, Eritrea, and America',
+          headOfState: '...'
+        });
+
+        const arHierarchyWithTitle = app.formatPrayerText(
+          'الكاهن المساعد: عن فم أبينا المكرم رئيس الأساقفة أنبا {{PATRIARCH NAME}} وأبينا المطران الطوباوي أنبا {{BISHOP NAME}}.',
+          'arabic',
+          '',
+          false
+        );
+        expect(arHierarchyWithTitle).toContain('أنبا متياس الأول');
+        expect(arHierarchyWithTitle).toContain('أنبا ثاؤفيلس');
+        expect(arHierarchyWithTitle).not.toContain('أنبا أنبا');
+        expect(arHierarchyWithTitle).not.toContain('Abba');
+
+        const arHierarchyBare = app.formatPrayerText(
+          'الكاهن: فلتكن صلاتها وبركتها مع بطريركنا {{PATRIARCH NAME}} ومطراننا {{BISHOP NAME}}.',
+          'arabic',
+          '',
+          false
+        );
+        expect(arHierarchyBare).toContain('مع بطريركنا أنبا متياس الأول');
+        expect(arHierarchyBare).toContain('ومطراننا أنبا ثاؤفيلس');
+
+        const arCountry = app.formatPrayerText(
+          'الكاهن: اذكر يا رب بلادنا {{COUNTRY}}.',
+          'arabic',
+          '',
+          false
+        );
+        expect(arCountry).toContain('إثيوبيا وإريتريا وأمريكا');
+
+        const deHierarchyAndCountry = app.formatPrayerText(
+          'Priester: Gedenke unseres Patriarchen Abba {{PATRIARCH NAME}}, unseres Erzbischofs {{BISHOP NAME}} und unseres Landes {{COUNTRY}}.',
+          'german',
+          '',
+          false
+        );
+        expect(deHierarchyAndCountry).toContain('Abba Mathias I.');
+        expect(deHierarchyAndCountry).not.toContain('Abba Abba');
+        expect(deHierarchyAndCountry).toContain('Abba Theophilus');
+        expect(deHierarchyAndCountry).toContain('Äthiopien, Eritrea und Amerika');
+      } finally {
+        app.setCustomNames(prev);
+      }
+    });
+
+    it('formats German and Arabic speaker labels, conjunctions, chant stanzas, and Gospel/Epistle authors', () => {
+      const prevOpts = app.getDisplayOptions();
+      try {
+        app.setDisplayOptions({ showSpeakerLabels: true });
+
+        const deFormatted = app.formatPrayerText(
+          'Diakon oder Priester: Betet.\nAssistierender Priester: Friede sei mit euch allen.',
+          'german',
+          '',
+          false
+        );
+        expect(deFormatted).toContain('<span class="speaker-label">Diakon oder Priester:</span>');
+        expect(deFormatted).toContain('<span class="speaker-label">Assistierender Priester:</span>');
+
+        const arFormatted = app.formatPrayerText(
+          'الشماس أو الكاهن: صلوا.\nالكاهن المساعد: السلام لجميعكم.',
+          'arabic',
+          '',
+          false
+        );
+        expect(arFormatted).toContain('<span class="speaker-label">الشماس أو الكاهن:</span>');
+        expect(arFormatted).toContain('<span class="speaker-label">الكاهن المساعد:</span>');
+      } finally {
+        app.setDisplayOptions(prevOpts);
+      }
+
+      expect(app.isChantStanza({ german: 'Volk: Amen.' })).toBe(true);
+      expect(app.isChantStanza({ arabic: 'الشعب: آمين.' })).toBe(true);
+      expect(app.isChantStanza({ german: '፨ Diakon (Volk wiederholt): Kyrie eleison.' })).toBe(true);
+      expect(app.isChantStanza({ arabic: '፨ الشماس (ويردد الشعب): يا رب ارحم.' })).toBe(true);
+
+      expect(app.getGospelAuthor('german', 'gospel')).toBeTruthy();
+      expect(app.getGospelAuthor('arabic', 'gospel')).toBeTruthy();
+      expect(app.getUniversalEpistleAuthor('german')).toBeTruthy();
+      expect(app.getUniversalEpistleAuthor('arabic')).toBeTruthy();
+    });
+  });
 });
 

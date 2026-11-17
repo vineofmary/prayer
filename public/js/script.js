@@ -1101,6 +1101,8 @@ const LANGUAGE_REGISTRY = {
     'spanish_pr': { name: 'Español - Puerto Rico (Spanish)', category: 'main', isAuto: false },
     'spanish': { name: 'Español - General (Spanish)*', category: 'main', isAuto: true },
     'french': { name: 'Français (French)*', category: 'main', isAuto: true },
+    'german': { name: 'Deutsch (German)', category: 'main', isAuto: false },
+    'arabic': { name: 'العربية (Arabic)', category: 'main', isAuto: false },
     'coptic': { name: 'ϯⲙⲉⲧⲣⲉⲙⲛ̀ⲭⲏⲙⲓ (Coptic)', category: 'main', isAuto: false },
     'syriac': { name: 'ܣܘܪܝܝܐ (Syriac)', category: 'unofficial', isAuto: false, isSeekingScribe: true },
     'armenian': { name: 'Հայերեն (Armenian)', category: 'unofficial', isAuto: false, isSeekingScribe: true },
@@ -1109,7 +1111,6 @@ const LANGUAGE_REGISTRY = {
     // (Note: Already moved above for grouping but keeping IDs consistent)
 
     // Unofficial Section (Advanced)
-    'arabic': { name: 'العربية (Arabic)*', category: 'unofficial', isAuto: true },
     'greek': { name: 'Ελληνικά (Greek)*', category: 'unofficial', isAuto: true },
     'hebrew': { name: 'עברית (Hebrew)*', category: 'unofficial', isAuto: true },
     'malayalam': { name: 'മലയാളം (Malayalam)*', category: 'unofficial', isAuto: true }
@@ -1121,7 +1122,7 @@ const languageLabels = Object.fromEntries(
 
 let languageOrder = [
     'english', 'geez_script', 'amharic_script', 'oromoo', 'tigrinya_script',
-    'spanish_pr', 'spanish', 'french', 'arabic', 'greek', 'hebrew', 'malayalam',
+    'spanish_pr', 'spanish', 'french', 'german', 'arabic', 'greek', 'hebrew', 'malayalam',
     'syriac', 'armenian', 'coptic',
     'geez_phonetic', 'amharic_phonetic', 'tigrinya_phonetic'
 ];
@@ -1987,7 +1988,8 @@ const speakerKeywords = {
     spanish: ["Sacerdote Asistente y Pueblo", "Asistente. Sacerdote", "Asistente. Diácono", "Diácono o Sacerdote", "Sacerdote o Diácono", "Sacerdotes auxiliares", "Sacerdote Asistente", "Sacerdote asistente", "Sacerdote auxiliar", "Sacerdote Celebrante", "Sacerdote celebrante", "Diácono Asistente", "Diácono asistente", "Diácono auxiliar", "Asistente del diácono", "Obispo/Patriarca", "Clérigos", "Clero", "Sacerdotes", "Sacerdote", "Diácono", "Pueblo", "Subdiácono", "Todos", "TODOS", "Líder", "Gente", "Lector", "Novio", "Novia"],
     spanish_pr: ["Sacerdote Asistente y Pueblo", "Asistente. Sacerdote", "Asistente. Diácono", "Diácono o Sacerdote", "Sacerdote o Diácono", "Sacerdotes auxiliares", "Sacerdote Asistente", "Sacerdote asistente", "Sacerdote auxiliar", "Sacerdote Celebrante", "Sacerdote celebrante", "Diácono Asistente", "Diácono asistente", "Diácono auxiliar", "Asistente del diácono", "Obispo/Patriarca", "Clérigos", "Clero", "Sacerdotes", "Sacerdote", "Diácono", "Pueblo", "Subdiácono", "Todos", "TODOS", "Líder", "Gente", "Lector", "Novio", "Novia"],
     french: ["Prêtre", "Diacre", "Peuple", "Sous-diacre", "Tous", "Leader", "Lecteur", "Marié", "Mariée"],
-    arabic: ["الكاهن", "الشعب", "الشماس", "القارئ", "الجميع", "الرب", "الناس"],
+    german: ["Diakon oder Priester", "Priester oder Diakon", "Assistierender Priester", "Assistierende Priester", "Ass. Priester", "Hilfspriester", "Assistierender Diakon", "Ass. Diakon", "Subdiakon", "Bischof oder Patriarch", "Erzbischof", "Bischof", "Klerus", "Priester", "Diakon", "Volk", "Alle", "ALLE", "Leiter", "Leser", "Bräutigam", "Braut"],
+    arabic: ["الشماس أو الكاهن", "الكاهن أو الشماس", "الأسقف أو البطريرك", "الكهنة المساعدون", "الكاهن المساعد", "الشماس المساعد", "رئيس الأساقفة", "البطريرك", "المطران", "الأسقف", "الإكليروس", "الكهنة", "الكاهن", "الشماس", "الشعب", "الجميع", "القارئ", "الرب", "الناس", "العريس", "العروس"],
     greek: ["Ιερέας", "Διάκονος", "Λαός", "Λαοί", "Όλοι", "Αναγνώστης"],
     hebrew: ["כהן", "כוهاء", "עם", "אנשים", "דיאקון"],
     malayalam: ["ഡീക്കൺ അല്ലെങ്കിൽ പുരോഹിതൻ", "അസിസ്റ്റന്റ് പുരോഹിതൻ", "അസി. പുരോഹിതൻ", "പുരോഹിതൻ", "ജനതകൾ", "ആളുകൾ", "ജനങ്ങൾ", "ശെമ്മാശൻ"],
@@ -5869,6 +5871,7 @@ function getUniversalEpistleAuthor(langKey) {
             spanish: 'Santiago',
             spanish_pr: 'Santiago',
             french: 'Jacques',
+            german: 'Jakobus',
             arabic: 'يعقوب',
             greek: 'Ιακώβου',
             hebrew: 'יעקב',
@@ -5885,6 +5888,7 @@ function getUniversalEpistleAuthor(langKey) {
             spanish: 'Pedro',
             spanish_pr: 'Pedro',
             french: 'Pierre',
+            german: 'Petrus',
             arabic: 'بطرس',
             greek: 'Πέτρου',
             hebrew: 'פטרוס',
@@ -5901,6 +5905,7 @@ function getUniversalEpistleAuthor(langKey) {
             spanish: 'Juan',
             spanish_pr: 'Juan',
             french: 'Jean',
+            german: 'Johannes',
             arabic: 'يوحنا',
             greek: 'Ιωάννη',
             hebrew: 'יוחנן',
@@ -5917,6 +5922,7 @@ function getUniversalEpistleAuthor(langKey) {
             spanish: 'Judas',
             spanish_pr: 'Judas',
             french: 'Jude',
+            german: 'Judas',
             arabic: 'يهوذا',
             greek: 'Ιούዳ',
             hebrew: 'יהודה',
@@ -5950,6 +5956,7 @@ function getGospelAuthor(langKey, lectionaryKey = 'gospel') {
             spanish: 'Mateo',
             spanish_pr: 'Mateo',
             french: 'Matthieu',
+            german: 'Matthäus',
             arabic: 'متى',
             greek: 'Ματθαίον',
             hebrew: 'מתי',
@@ -5966,6 +5973,7 @@ function getGospelAuthor(langKey, lectionaryKey = 'gospel') {
             spanish: 'Marcos',
             spanish_pr: 'Marcos',
             french: 'Marc',
+            german: 'Markus',
             arabic: 'مرقس',
             greek: 'Μάρκον',
             hebrew: 'מרקוס',
@@ -5982,6 +5990,7 @@ function getGospelAuthor(langKey, lectionaryKey = 'gospel') {
             spanish: 'Lucas',
             spanish_pr: 'Lucas',
             french: 'Luc',
+            german: 'Lukas',
             arabic: 'لوقا',
             greek: 'Loukan',
             hebrew: 'לוקס',
@@ -5998,6 +6007,7 @@ function getGospelAuthor(langKey, lectionaryKey = 'gospel') {
             spanish: 'Juan',
             spanish_pr: 'Juan',
             french: 'Jean',
+            german: 'Johannes',
             arabic: 'يوحنا',
             greek: 'Ιωάννη',
             hebrew: 'יוחנן',
@@ -6030,6 +6040,8 @@ const DEFAULT_CUSTOM_NAME_LOCALIZATIONS = {
             geez_phonetic: 'abba matyas ḳedamawī',
             amharic_phonetic: 'abba matyas ḳedamawī',
             tigrinya_phonetic: 'abba matyas ḳedamawī',
+            german: 'Abba Mathias I.',
+            arabic: 'أنبا متياس الأول',
             english: 'Abba Mathias I'
         }
     },
@@ -6042,6 +6054,8 @@ const DEFAULT_CUSTOM_NAME_LOCALIZATIONS = {
             geez_phonetic: 'abba téwoflos',
             amharic_phonetic: 'abba téwoflos',
             tigrinya_phonetic: 'abba téwoflos',
+            german: 'Abba Theophilus',
+            arabic: 'أنبا ثاؤفيلس',
             english: 'Abba Theophilus'
         }
     },
@@ -6053,7 +6067,9 @@ const DEFAULT_CUSTOM_NAME_LOCALIZATIONS = {
             tigrinya_script: 'ኢትዮጵያን ኤርትራን ኣሜሪካን',
             geez_phonetic: "ītyop̣ya we'értra we'amérīka",
             amharic_phonetic: "ītyop̣ya, 'értrana 'amérīka",
-            tigrinya_phonetic: "ītyop̣yan 'értran 'amérīkan"
+            tigrinya_phonetic: "ītyop̣yan 'értran 'amérīkan",
+            german: 'Äthiopien, Eritrea und Amerika',
+            arabic: 'إثيوبيا وإريتريا وأمريكا'
         }
     }
 };
@@ -6173,9 +6189,10 @@ function formatPrayerText(text, langKey, query, isFirstLanguage, chapter = null,
     processedText = processedText.replace(/\{\{(?:BISHOP\(S\) IN ATTENDANCE|OBISPO\(S\) PRESENTE\(S\))\}\}/gi, customNames.attendingBishops || '');
     processedText = processedText.replace(/\{\{(?:CHURCH NAME|NOMBRE DE LA IGLESIA)\}\}/gi, customNames.churchName || '');
 
-    // Collapse duplicate adjacent honorifics when both prayer text and name include Abba / አባ / ኣባ
+    // Collapse duplicate adjacent honorifics when both prayer text and name include Abba / አባ / ኣባ / أنبا
     processedText = processedText
         .replace(/(አባ|ኣባ)\s+(?:አባ|ኣባ)(?=[\s፣፤፥፦።!?)]|$)/g, '$1')
+        .replace(/(أنبا|أبونا)\s+(?:أنبا|أبونا)(?=[\s،؛:.!؟)]|$)/g, '$1')
         .replace(/\b(Abba)\s+Abba\b/gi, '$1');
 
     // Format enclosed prayer titles / references on their own line (e.g. ፨ THE SALUTATION OF SAINT GABRIEL ፨ or (Psalms 117:1))
@@ -6208,8 +6225,8 @@ function formatPrayerText(text, langKey, query, isFirstLanguage, chapter = null,
         const escapedKeywords = sortedKeywords.map(k => k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
         const keywordUnion = escapedKeywords.join('|');
         const lineStartPrefix = `(?:^|(?:\\r?\\n|<br\\s*\\/?>)\\s*)(?:(?:<span[^>]*>\\{[^}]*\\}<\\/span>|\\{[^}]*\\})\\s*)*`;
-        const speakerBody = `(?:፨\\s*)?(?:${keywordUnion})(?:\\s*(?:or|and|ወይም|ወ|o|y|ou|et|\\/|-)\\s*(?:${keywordUnion}))*(?:\\s*(?:<span class="parenthetical-text">)?\\([^)]*\\)(?:<\\/span>)?)*(?:\\s*(?:<span[^>]*>)?\\{[^}]*\\}(?:<\\/span>)?)*[:፡፤፣]`;
-        const explicitEthiopicPrefixSpeaker = `፨\\s*(?:${keywordUnion})(?:\\s*(?:or|and|ወይም|ወ|o|y|ou|et|\\/|-)\\s*(?:${keywordUnion}))*(?:\\s*(?:<span class="parenthetical-text">)?\\([^)]*\\)(?:<\\/span>)?)*(?:\\s*(?:<span[^>]*>)?\\{[^}]*\\}(?:<\\/span>)?)*[:፡፤፣]`;
+        const speakerBody = `(?:፨\\s*)?(?:${keywordUnion})(?:\\s*(?:or|and|oder|und|أو|و|ወይም|ወ|o|y|ou|et|\\/|-)\\s*(?:${keywordUnion}))*(?:\\s*(?:<span class="parenthetical-text">)?\\([^)]*\\)(?:<\\/span>)?)*(?:\\s*(?:<span[^>]*>)?\\{[^}]*\\}(?:<\\/span>)?)*[:፡፤፣]`;
+        const explicitEthiopicPrefixSpeaker = `፨\\s*(?:${keywordUnion})(?:\\s*(?:or|and|oder|und|أو|و|ወይም|ወ|o|y|ou|et|\\/|-)\\s*(?:${keywordUnion}))*(?:\\s*(?:<span class="parenthetical-text">)?\\([^)]*\\)(?:<\\/span>)?)*(?:\\s*(?:<span[^>]*>)?\\{[^}]*\\}(?:<\\/span>)?)*[:፡፤፣]`;
         const regex = new RegExp(`(${lineStartPrefix})(${speakerBody})|()(${explicitEthiopicPrefixSpeaker})`, 'gi');
         processedText = processedText.replace(regex, (match, prefix1, body1, prefix2, body2) => {
             const prefix = prefix1 ?? prefix2 ?? '';
@@ -6348,14 +6365,15 @@ function hasActualContent(text, langKey) {
     if (keywords) {
         // Sort keywords by length descending to match longer phrases first (e.g. "ካህን ንፍቅ" before "ካህን")
         const sortedKeywords = [...keywords].sort((a, b) => b.length - a.length);
+        const escapedKeywords = sortedKeywords.map(k => k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
         // Create regex to match keywords followed by common separators (including Ethiopic ones)
-        const regex = new RegExp(`(፨ )?(${sortedKeywords.join('|')})([:፡።፤፣\\s]*)`, 'g');
+        const regex = new RegExp(`(፨ )?(${escapedKeywords.join('|')})([:፡።፤፣\\s]*)`, 'g');
         cleanText = cleanText.replace(regex, '');
     }
 
     // Remove other common structural characters and whitespace
-    // Added Ethiopic full stop (።) and word separator (፡)
-    cleanText = cleanText.replace(/[፨:፡።፤፣\\s\\.\\!\\?\\-]/g, '').trim();
+    // Added Ethiopic full stop (።), word separator (፡), and Arabic punctuation (،؛؟)
+    cleanText = cleanText.replace(/[፨:፡።፤፣،؛؟\s\.\!\?\-]/g, '').trim();
 
     return cleanText.length > 0;
 }
@@ -6363,9 +6381,9 @@ function hasActualContent(text, langKey) {
 function isChantStanza(prayer) {
     if (!prayer) return false;
 
-    const PEOPLE_LABEL_REGEX = /^(?:፨\s*)?(?:People|ALL|All|Pueblo|Todos|Gente|ሕዝብ|ኵሎሙ|ሁሉም|ኩሉኹም|Ḥizb|Hizb|Kwllomu|Kullomu|Kwlomu|Hizbi|Ḥizbi|(?:Priest|Asst\.\s*Priest|Deacon|Subdeacon|Leader|Reader|Bridegroom|Bride|ካህን|ካህን\s*ንፍቅ|ዲያቆን|ንፍቀ\s*ዲያቆን|መሪሕ|መሪ|መራሒ|አንባቢ|ነባቢ|ሙሽራው|ሙሽራዋ|መርዓዊ|መርዓት|Sacerdote|Diácono|Subdiácono|Líder|Lector|Novio|Novia|Merīḥ|Meriḥ|Merih|Kahn|Kahin|Diyakon|Dīyakon|Meraḥi|Meraḥī)\s*\([^)]*(?:People|repeat|ከምኡ|ይበሉ|መልሰው|repite|kem'u)[^)]*\))(?:\s*\([^)]*\))?[:፡።፤፣]/i;
+    const PEOPLE_LABEL_REGEX = /^(?:፨\s*)?(?:People|ALL|All|Volk|Alle|الشعب|الجميع|Pueblo|Todos|Gente|ሕዝብ|ኵሎሙ|ሁሉም|ኩሉኹም|ኵሉኹም|Ḥizb|Hizb|Kwllomu|Kullomu|Kwlomu|Hizbi|Ḥizbi|(?:Priest|Asst\.\s*Priest|Deacon|Subdeacon|Leader|Reader|Bridegroom|Bride|Priester|Assistierender\s*Priester|Diakon|Subdiakon|Leiter|Leser|الكاهن|الكاهن\s*المساعد|الشماس|القارئ|ካህን|ካህን\s*ንፍቅ|ዲያቆን|ንፍቀ\s*ዲያቆን|መሪሕ|መሪ|መራሒ|አንባቢ|ነባቢ|ሙሽራው|ሙሽራዋ|መርዓዊ|መርዓት|Sacerdote|Diácono|Subdiácono|Líder|Lector|Novio|Novia|Merīḥ|Meriḥ|Merih|Kahn|Kahin|Diyakon|Dīyakon|Meraḥi|Meraḥī)\s*\([^)]*(?:People|repeat|wiederholt|ويردد|ከምኡ|ይበሉ|መልሰው|repite|kem'u)[^)]*\))(?:\s*\([^)]*\))?[:፡።፤፣]/i;
 
-    for (const langKey of ['english', 'geez_script', 'amharic_script', 'tigrinya_script', 'spanish', 'spanish_pr', 'geez_phonetic']) {
+    for (const langKey of ['english', 'geez_script', 'amharic_script', 'tigrinya_script', 'german', 'arabic', 'spanish', 'spanish_pr', 'geez_phonetic']) {
         if (prayer[langKey]) {
             const lines = prayer[langKey].split(/(?:<br\s*\/?>|\n)+/);
             for (let line of lines) {
@@ -6980,7 +6998,7 @@ function renderSelectedKidase(addSectionTitleCallback, options = {}) {
         
         // Deep clone the chunk and swap morning placeholders for evening placeholders
         const eveningGospelChunk = JSON.parse(JSON.stringify(morningGospelChunk)).map(p => {
-            const keys = ['english', 'geez_script', 'amharic_script', 'tigrinya_script', 'spanish', 'spanish_pr'];
+            const keys = ['english', 'geez_script', 'amharic_script', 'tigrinya_script', 'german', 'arabic', 'spanish', 'spanish_pr'];
             keys.forEach(k => {
                 if (p[k]) {
                     p[k] = p[k].replace('{{MORNING PSALMS READING}}', '{{EVENING PSALMS READING}}');
@@ -7323,7 +7341,7 @@ function renderSelectedKidase(addSectionTitleCallback, options = {}) {
 
             // Replace Teklil placeholders if they exist
             if (showTeklil) {
-                const keys = ['english', 'geez_script', 'amharic_script', 'tigrinya_script', 'spanish', 'spanish_pr'];
+                const keys = ['english', 'geez_script', 'amharic_script', 'tigrinya_script', 'german', 'arabic', 'spanish', 'spanish_pr'];
                 const groom = bridegroomName.trim() || "Bridegroom";
                 const bride = brideName.trim() || "Bride";
                 keys.forEach(k => {
@@ -14613,7 +14631,7 @@ async function initApp() {
             'english', 'geez_script', 'geez_phonetic',
             'amharic_script', 'amharic_phonetic',
             'tigrinya_script', 'tigrinya_phonetic',
-            'spanish', 'french', 'arabic', 'greek', 'hebrew', 'malayalam',
+            'spanish_pr', 'spanish', 'french', 'german', 'arabic', 'greek', 'hebrew', 'malayalam',
             'oromoo', 'syriac', 'armenian', 'coptic'
         ];
 
@@ -14834,8 +14852,8 @@ async function initApp() {
         const languages = [
             'english', 'geez_script', 'geez_phonetic',
             'amharic_script', 'amharic_phonetic',
-            'tigrinya_script', 'tigrinya_phonetic', 'spanish', 'coptic',
-            'french', 'arabic', 'greek', 'hebrew', 'malayalam', 'oromoo', 'syriac', 'armenian'
+            'tigrinya_script', 'tigrinya_phonetic', 'spanish_pr', 'spanish', 'coptic',
+            'french', 'german', 'arabic', 'greek', 'hebrew', 'malayalam', 'oromoo', 'syriac', 'armenian'
         ];
 
         languages.forEach(lang => {
@@ -15338,6 +15356,7 @@ if (typeof document !== 'undefined') {
 
 // --- Testing & Debugging Export Bridge ---
 const appCoreExports = {
+    LANGUAGE_REGISTRY,
     PSALM_COMBINATIONS,
     PSALM_CATEGORIES,
     selectPsalmCombination,
@@ -15365,6 +15384,8 @@ const appCoreExports = {
     speakerKeywords,
     setCustomNames: (next) => { customNames = { ...next }; },
     getCustomNames: () => ({ ...customNames }),
+    setDisplayOptions: (next) => { displayOptions = { ...displayOptions, ...next }; },
+    getDisplayOptions: () => ({ ...displayOptions }),
     filterGeezPhoneticForPeople,
     hasActualContent,
     isChantStanza,

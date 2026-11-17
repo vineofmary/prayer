@@ -259,6 +259,13 @@ body[class*="language-colors-"].theme-legacy-light .language-section.lang-french
     color: #c2185b !important; /* Dark Pink */
 }
 
+body[class*="language-colors-"].theme-legacy-dark .language-section.lang-german .language-text {
+    color: #ffd54f !important; /* Warm Amber */
+}
+body[class*="language-colors-"].theme-legacy-light .language-section.lang-german .language-text {
+    color: #b26a00 !important; /* Deep Amber */
+}
+
 body[class*="language-colors-"].theme-legacy-dark .language-section.lang-arabic .language-text {
     color: #00ffcc !important; /* Bright Teal */
 }
@@ -303,6 +310,7 @@ body[class*="theme-legacy-"] .language-section.lang-english .speaker-label {
 body[class*="theme-legacy-"] .language-section.lang-spanish .rubric-red,
 body[class*="theme-legacy-"] .language-section.lang-spanish_pr .rubric-red,
 body[class*="theme-legacy-"] .language-section.lang-french .rubric-red,
+body[class*="theme-legacy-"] .language-section.lang-german .rubric-red,
 body[class*="theme-legacy-"] .language-section.lang-arabic .rubric-red,
 body[class*="theme-legacy-"] .language-section.lang-greek .rubric-red,
 body[class*="theme-legacy-"] .language-section.lang-hebrew .rubric-red,
@@ -310,6 +318,7 @@ body[class*="theme-legacy-"] .language-section.lang-malayalam .rubric-red,
 body[class*="theme-legacy-"] .language-section.lang-spanish .rubric-gold,
 body[class*="theme-legacy-"] .language-section.lang-spanish_pr .rubric-gold,
 body[class*="theme-legacy-"] .language-section.lang-french .rubric-gold,
+body[class*="theme-legacy-"] .language-section.lang-german .rubric-gold,
 body[class*="theme-legacy-"] .language-section.lang-arabic .rubric-gold,
 body[class*="theme-legacy-"] .language-section.lang-greek .rubric-gold,
 body[class*="theme-legacy-"] .language-section.lang-hebrew .rubric-gold,
@@ -1024,6 +1033,20 @@ body.view-mode-unified .prayer-footer {
     width: 100%;
     padding: 0;
     border-radius: 4px;
+}
+
+/* Right-to-Left (RTL) script alignment for Arabic & Hebrew prayer columns */
+.language-section.lang-arabic,
+.language-section.lang-hebrew {
+    direction: rtl;
+    text-align: right;
+    unicode-bidi: isolate;
+}
+.language-section.lang-arabic .language-text,
+.language-section.lang-hebrew .language-text {
+    direction: rtl;
+    text-align: right;
+    line-height: 1.75;
 }
 
 /* Language Color Coding Styles */
