@@ -435,7 +435,8 @@ describe('Targuma Immutable-Clause Streaming Engine, Sanctuary UI & VAD Suite', 
 
       topChip.click();
       expect(modal.style.display).toBe('none');
-      expect(selectedMiracleText.textContent).toContain('Qemer who ate 78 people');
+      expect(selectedMiracleText.textContent).toContain('The noble man from Qemer');
+      expect(selectedMiracleText.textContent).toContain('ate 78 people');
     });
   });
 });

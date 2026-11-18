@@ -6761,6 +6761,11 @@ function createPrayerCardElement(prayer, prayerIndex, isKidase = false) {
         return true;
     });
 
+    // Miracle of Mary narrative cards are translated into English only; ensure they never render blank when English is unchecked globally
+    if (languagesToDisplay.length === 0 && prayer._isMiracleNarrative && prayer.english && prayer.english.trim()) {
+        languagesToDisplay.push('english');
+    }
+
     const cardVisibleLanguageCount = languagesToDisplay.length;
 
     const prayerCard = document.createElement('div');
@@ -6806,6 +6811,62 @@ function createPrayerCardElement(prayer, prayerIndex, isKidase = false) {
 
     const prayerCardMainContent = document.createElement('div');
     prayerCardMainContent.classList.add('prayer-card-main-content');
+
+    if (prayer._isMiracleHeader && prayer._miracleData) {
+        const mData = prayer._miracleData;
+        const headerBar = document.createElement('div');
+        headerBar.classList.add('miracle-card-header');
+
+        const titleWrap = document.createElement('div');
+        titleWrap.classList.add('miracle-card-title-group');
+
+        const titleMain = document.createElement('div');
+        titleMain.classList.add('miracle-card-title');
+        titleMain.textContent = `Miracle #${mData.id}: ${mData.title || mData.id}`;
+        titleWrap.appendChild(titleMain);
+
+        if (mData.title_amharic && (displayedLanguages.amharic_script || displayedLanguages.geez_script || displayedLanguages.tigrinya_script)) {
+            const titleAm = document.createElement('div');
+            titleAm.classList.add('miracle-card-title-amharic', 'lang-ethiopic-script');
+            titleAm.textContent = mData.title_amharic;
+            titleWrap.appendChild(titleAm);
+        }
+        headerBar.appendChild(titleWrap);
+
+        if (Array.isArray(mData.translations) && mData.translations.length > 1) {
+            const pickerWrap = document.createElement('label');
+            pickerWrap.classList.add('miracle-translation-picker');
+            pickerWrap.addEventListener('click', (e) => e.stopPropagation());
+            pickerWrap.addEventListener('mousedown', (e) => e.stopPropagation());
+
+            const pickerLabel = document.createElement('span');
+            pickerLabel.classList.add('miracle-translation-picker-label');
+            pickerLabel.textContent = 'Translation:';
+            pickerWrap.appendChild(pickerLabel);
+
+            const selectEl = document.createElement('select');
+            selectEl.classList.add('settings-select', 'miracle-translation-select');
+            selectEl.setAttribute('aria-label', 'Miracle Translation Version');
+            const activeIdx = Math.min(prayer._miracleTranslationIndex || 0, mData.translations.length - 1);
+            mData.translations.forEach((tr, idx) => {
+                const opt = document.createElement('option');
+                opt.value = String(idx);
+                opt.textContent = tr.author || `Version ${idx + 1}`;
+                if (idx === activeIdx) opt.selected = true;
+                selectEl.appendChild(opt);
+            });
+            selectEl.addEventListener('change', (e) => {
+                e.stopPropagation();
+                if (typeof window !== 'undefined' && typeof window.updateMiracleTranslation === 'function') {
+                    window.updateMiracleTranslation(e.target.value);
+                }
+            });
+            pickerWrap.appendChild(selectEl);
+            headerBar.appendChild(pickerWrap);
+        }
+
+        prayerCardMainContent.appendChild(headerBar);
+    }
 
     const prayerContent = document.createElement('div');
     prayerContent.classList.add('prayer-content', displayOptions.layout === 'row' ? 'layout-row' : 'layout-column');
@@ -6976,7 +7037,10 @@ function createPrayerCardElement(prayer, prayerIndex, isKidase = false) {
             infoHTML += `<p><strong>Instruction:</strong> ${prayer.instruction}</p>`;
         }
         if (prayer._isMiracle && prayer._miracleData) {
-            infoHTML += `<p><strong>Citation:</strong> Princeton Ethiopian, Eritrean, and Egyptian Miracles of Mary (PEMM) Project.</p>`;
+            if (prayer._miracleTranslator) {
+                infoHTML += `<p><strong>Translator:</strong> ${prayer._miracleTranslator}</p>`;
+            }
+            infoHTML += `<p><strong>Citation:</strong> Princeton Ethiopian, Eritrean, and Egyptian Miracles of Mary (PEMM) Project (Story #${prayer._miracleData.id}).</p>`;
             if (prayer._miracleData.incipit) {
                 infoHTML += `<p><strong>Ge'ez Incipit:</strong> <span class="geez-font">${prayer._miracleData.incipit}</span></p>`;
             }
@@ -7141,57 +7205,69 @@ window.updateMiracleTranslation = function(idx) {
     }
 };
 
+function extractMiracleNarrativeParagraphs(rawHtml) {
+    return String(rawHtml || '')
+        .split(/<\/p>\s*(?:<br\s*\/?>\s*)*<p[^>]*>|\n\s*\n/)
+        .map(p => p.replace(/^<p[^>]*>|<\/p>$/gi, '').trim())
+        .filter(Boolean);
+}
+
 function renderSelectedMiracle(addSectionTitleCallback, renderKidaseSectionCallback) {
     if (selectedMiracleId === 'none' || typeof MIRACLES_OF_MARY === 'undefined') return;
-    
+
     const miracle = MIRACLES_OF_MARY.find(m => m.id === selectedMiracleId);
     if (!miracle || !miracle.translations || miracle.translations.length === 0) return;
-    
+
     const translationIndex = Math.min(selectedMiracleTranslationIndex || 0, miracle.translations.length - 1);
     const translation = miracle.translations[translationIndex];
-    
+
     addSectionTitleCallback("→ Miracle of Mary | ተአምረ ማርያም");
-    
+
     const miracleCards = [];
-    
-    let textToSplit = translation.text.replace(/<br\s*\/?>/gi, '\n');
-    textToSplit = textToSplit.replace(/<\/p>\s*<p>/gi, '\n\n');
-    textToSplit = textToSplit.replace(/<[^>]+>/g, ''); 
-    
-    const paragraphs = textToSplit.split(/\n\s*\n/).filter(p => p.trim().length > 0);
-    
-    paragraphs.forEach((pText, i) => {
-        let reference = `Miracles of Mary`;
-        let instructionHtml = "";
-        let englishText = pText.trim();
-        let geezText = "";
-        
-        if (i === 0) {
-            reference = `Miracle: ${miracle.title || miracle.id} (Translated by ${translation.author})`;
-            if (miracle.translations.length > 1) {
-                instructionHtml = `
-                    <div style="margin-bottom: 0.5rem; text-align: center;">
-                        <label style="font-size: 0.8rem; opacity: 0.8;">Translation Version:</label>
-                        <select onchange="window.updateMiracleTranslation(this.value)" class="settings-select" style="display: inline-block; width: auto; padding: 2px 5px; font-size: 0.8rem; margin-left: 5px; min-width: 150px;">
-                            ${miracle.translations.map((t, idx) => `<option value="${idx}" ${idx === translationIndex ? 'selected' : ''}>${t.author}</option>`).join('')}
-                        </select>
-                    </div>
-                `;
-            }
-        }
-        
+    const narrativeParagraphs = extractMiracleNarrativeParagraphs(translation.text);
+    const storyLabel = `Miracle #${miracle.id}: ${miracle.title || miracle.id}`;
+    let stanzaNum = 1;
+
+    // 1. Segmented Narrative & Arke Cards (first card carries the visible story header & translation selector)
+    narrativeParagraphs.forEach((pText, i) => {
+        const partLabel = narrativeParagraphs.length > 1 ? ` (${i + 1}/${narrativeParagraphs.length})` : '';
+        const reference = i === 0
+            ? `${storyLabel}${partLabel} — Trans. ${translation.author}`
+            : `Miracle #${miracle.id}${partLabel}`;
+
         miracleCards.push({
             chapter: "Miracle",
-            stanza: `${i + 1}`,
-            english: pText.trim(),
-            geez_script: i === 0 ? (miracle.incipit || '') : '',
+            stanza: `${stanzaNum++}`,
+            english: pText,
             reference: reference,
-            instruction: instructionHtml,
+            instruction: "",
             _isMiracle: true,
-            _miracleData: miracle
+            _isMiracleHeader: i === 0,
+            _isMiracleNarrative: true,
+            _miracleData: miracle,
+            _miracleTranslator: translation.author,
+            _miracleTranslationIndex: translationIndex
         });
     });
-    
+
+    // 2. Standard EOTC Post-Miracle Congregational Praise (ስብሐት ለኪ ማርያም...)
+    miracleCards.push({
+        chapter: "Miracle",
+        stanza: `${stanzaNum++}`,
+        geez_script: "ኵሎሙ፤ ስብሐት ለኪ ማርያም በኁልቈ መላእክት ዘአርያም፤<br>ስብሐት ለኪ ማርያም በኁልቈ ጻድቃን ዘገዳም፤<br>ስብሐት ለኪ ማርያም በኁልቈ ርደቱ ለዝናም፤<br>ስብሐት ወክብር ወሰጊድ ለተአምርኪ ዮም፣ ወበተአምርኪ ተፈሥሐ ኵሉ ዓለም።",
+        geez_phonetic: "kwlomu: sbḥat lekī maryam beḫwlḳwe mela'ikt ze'aryam:<br>sbḥat lekī maryam beḫwlḳwe tsadḳan zegedam:<br>sbḥat lekī maryam beḫwlḳwe rdetu leznam:<br>sbḥat wekbr wesegīd lete'amrkī yom, webete'amrkī tefesḥa kwlu 'alem.",
+        amharic_script: "ሁሉም፤ ማርያም ሆይ በአርያም ባሉ መላእክት ቍጥር ምስጋና ይገባሻል፤<br>ማርያም ሆይ በገዳም ባሉ ጻድቃን ቍጥር ምስጋና ይገባሻል፤<br>ማርያም ሆይ በሚወርደው የዝናም ነጠብጣብ ቍጥር ምስጋና ይገባሻል፤<br>ዛሬ ለተአምርሽ ምስጋናና ክብር ስግደትም ይገባል፤ በተአምርሽም ዓለም ሁሉ ደስ ተሰኘ።",
+        tigrinya_script: "ኵሎም፤ ኦ ማርያም ብቝጽሪ መላእኽቲ ኣርያም ምስጋና ይግብኣኪ፤<br>ኦ ማርያም ብቝጽሪ ጻድቃን ገዳም ምስጋና ይግብኣኪ፤<br>ኦ ማርያም ብቝጽሪ ነጠብጣብ ዝናም ምስጋና ይግብኣኪ፤<br>ሎሚ ንተኣምርኪ ምስጋናን ክብርን ስግደትን ይግባእ፤ ብተኣምርኪ ድማ ኵሉ ዓለም ተሓጐሰ።",
+        english: "All: Glory to you, O Mary, according to the number of the angels of the highest heaven;<br>Glory to you, O Mary, according to the number of the righteous of the wilderness;<br>Glory to you, O Mary, according to the number of the drops of rain;<br>Glory, honor, and prostration to your miracle today, for through your miracle the whole world has rejoiced.",
+        reference: "Post-Miracle Praise | ስብሐት ለኪ ማርያም",
+        instruction: "",
+        _isMiracle: true,
+        _isMiracleFraming: 'closing_hymn',
+        _miracleData: miracle,
+        _miracleTranslator: translation.author,
+        _miracleTranslationIndex: translationIndex
+    });
+
     renderKidaseSectionCallback(miracleCards);
 }
 
@@ -8873,12 +8949,20 @@ function copyPrayer(prayer) {
     const isKidaseCard = isNumericChapter || kidaseChapters.some(c => c.toLowerCase() === chapterStr.toLowerCase());
     let seenNonKidaseSpanish = false;
 
+    const hasDisplayedLanguageForCopy = languageOrder.some(lk => {
+        const cfg = LANGUAGE_REGISTRY[lk] || { category: 'main' };
+        if (cfg.category === 'unofficial' && !isScribeLoggedIn) return false;
+        const rt = (!isKidaseCard && lk === 'spanish_pr') ? (prayer.spanish_pr || prayer.spanish) : prayer[lk];
+        return Boolean(displayedLanguages[lk] && rt && rt.trim() && hasActualContent(rt, lk));
+    });
+
     languageOrder.forEach(langKey => {
         const langCfg = LANGUAGE_REGISTRY[langKey] || { category: 'main' };
         if (langCfg.category === 'unofficial' && !isScribeLoggedIn) return;
 
         let rawText = (!isKidaseCard && langKey === 'spanish_pr') ? (prayer.spanish_pr || prayer.spanish) : prayer[langKey];
-        if (displayedLanguages[langKey] && rawText && rawText.trim()) {
+        const forceEnglishMiracleFallback = !hasDisplayedLanguageForCopy && prayer._isMiracleNarrative && langKey === 'english';
+        if ((displayedLanguages[langKey] || forceEnglishMiracleFallback) && rawText && rawText.trim()) {
             // Check for actual content
             if (!hasActualContent(rawText, langKey)) return;
 
@@ -11647,9 +11731,10 @@ function matchMiraclesByText(rawQuery, showMostReadOnly = false) {
     for (const m of miraclesList) {
         if (showMostReadOnly && !m.most_read) continue;
         const titleLower = (m.title || '').toLowerCase();
+        const titleAmharicLower = (m.title_amharic || '').toLowerCase();
         const incipitLower = (m.incipit || '').toLowerCase();
         const trLower = (m.translations || []).map(t => (t.text || '').toLowerCase()).join(' ');
-        const fullHaystack = `${m.id || ''} ${titleLower} ${incipitLower} ${trLower}`;
+        const fullHaystack = `${m.id || ''} ${titleLower} ${titleAmharicLower} ${incipitLower} ${trLower}`;
 
         let matchedGroups = 0;
         let score = 0;
@@ -11657,7 +11742,7 @@ function matchMiraclesByText(rawQuery, showMostReadOnly = false) {
             const groupMatched = group.some(term => fullHaystack.includes(term));
             if (groupMatched) {
                 matchedGroups++;
-                if (group.some(term => titleLower.includes(term))) score += 5;
+                if (group.some(term => titleLower.includes(term) || titleAmharicLower.includes(term))) score += 5;
                 if (group.some(term => incipitLower.includes(term))) score += 3;
                 score += 1;
             }
@@ -11719,8 +11804,8 @@ const MIRACLE_IRREGULAR_STEMS = {
     'drowned': 'drown', 'drowning': 'drown',
     'burned': 'burn', 'burnt': 'burn', 'burning': 'burn',
     'thirsty': 'thirst', 'golden': 'gold',
-    'ildefonsus': 'dexius', 'hildefonsus': 'dexius', 'hildephonsus': 'dexius', 'deqseyos': 'dexius',
-    'teltelya': 'toledo'
+    'ildefonsus': 'dexius', 'hildefonsus': 'dexius', 'hildephonsus': 'dexius', 'deqseyos': 'dexius', 'daqseyos': 'dexius', 'daqsis': 'dexius',
+    'teltelya': 'toledo', 'tolaytelya': 'toledo'
 };
 
 const MIRACLE_ETHIOPIC_PREAMBLE_ROOTS = [
@@ -11838,7 +11923,7 @@ function getMiracleLiveSearchIndex() {
             docFreq[stem] = (docFreq[stem] || 0) + 1;
         });
 
-        const incipitNorm = normGeez(miracle.incipit || '');
+        const incipitNorm = normGeez(`${miracle.incipit || ''} ${miracle.title_amharic || ''}`);
         const incipitTokens = new Set(
             incipitNorm.split(/[\s፡።፣፤፥፦፧፨,.;:!?()]+/).filter(tok => tok.length >= 2 && !preambleGeezSet.has(tok))
         );
@@ -15876,6 +15961,17 @@ const appCoreExports = {
     matchMiraclesByText,
     rankMiraclesByLiveTranscript,
     selectMiracleById,
+    extractMiracleNarrativeParagraphs,
+    renderSelectedMiracle,
+    createPrayerCardElement,
+    copyPrayer,
+    setDisplayedLanguages: (next) => { displayedLanguages = { ...displayedLanguages, ...next }; },
+    getDisplayedLanguages: () => ({ ...displayedLanguages }),
+    setMiracleSelectionState: (id, idx = 0, pos = 'matins') => {
+        selectedMiracleId = id;
+        selectedMiracleTranslationIndex = idx;
+        miraclePosition = pos;
+    },
     getPrayTabDefaultProfile,
     getLiturgyTabDefaultProfile,
     captureCurrentTabProfile,
