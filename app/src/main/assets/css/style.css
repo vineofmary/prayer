@@ -3962,34 +3962,47 @@ body.presentation-mode-slides .hareg-ornament {
     align-items: center;
     flex-wrap: wrap;
     gap: 0.25rem;
-    padding: 0.2rem 0.32rem;
-    border-radius: 999px;
+    padding: 0.2rem 0.35rem;
+    border-radius: 14px;
     border: 1px solid var(--border-color);
     background-color: var(--hover-color);
-    margin: 0.25rem 0 0.5rem;
+    margin: 0.25rem 0 0.45rem;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.lectionary-set-pill-compact {
+    margin: 0.1rem 0;
+    padding: 0.15rem 0.28rem;
+    gap: 0.2rem;
 }
 
 .lectionary-set-pill-label {
-    font-size: 0.72rem;
+    font-size: 0.7rem;
     font-weight: 700;
-    opacity: 0.75;
-    padding: 0 0.3rem;
+    opacity: 0.78;
+    padding: 0 0.28rem;
     text-transform: uppercase;
     letter-spacing: 0.03em;
     white-space: nowrap;
 }
 
 .lectionary-set-pill-btn {
-    padding: 0.18rem 0.58rem;
+    padding: 0.18rem 0.55rem;
     border-radius: 999px;
     border: 1px solid transparent;
     background: transparent;
     color: var(--text-color);
-    font-size: 0.76rem;
+    font-size: 0.75rem;
     font-weight: 600;
     white-space: nowrap;
     cursor: pointer;
     transition: all 0.15s ease;
+}
+
+.lectionary-set-pill-compact .lectionary-set-pill-btn {
+    padding: 0.13rem 0.45rem;
+    font-size: 0.71rem;
 }
 
 .lectionary-set-pill-btn:hover {
@@ -4000,6 +4013,30 @@ body.presentation-mode-slides .hareg-ornament {
     background-color: var(--accent-color);
     color: var(--accent-text-color, #ffffff);
     border-color: var(--accent-color);
+}
+
+.kidase-active-profile-caption {
+    font-size: 0.76rem;
+    opacity: 0.84;
+    line-height: 1.35;
+    margin-top: 0.1rem;
+    padding-left: 0.15rem;
+    color: var(--text-color);
+}
+
+.slide-only-lectionary-pill-wrap {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex: 1 1 auto;
+    min-width: 0;
+    pointer-events: auto;
+}
+
+body.presentation-mode-slides .slide-only-lectionary-pill-wrap {
+    display: inline-flex;
+    position: relative;
+    z-index: 10;
 }
 
 .cal-sep,
@@ -5143,8 +5180,10 @@ body.hide-hareg-ornament .hareg-footer {
 /* Card Inline Lectionary Picker (Footer) */
 .card-inline-lectionary-picker {
     display: inline-flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 0.25rem;
     margin: 0;
     padding: 0;
     background: transparent;
@@ -5154,6 +5193,11 @@ body.hide-hareg-ornament .hareg-footer {
     pointer-events: auto;
     flex: 1 1 auto;
     min-width: 0;
+}
+
+.card-inline-lectionary-picker > .lectionary-set-pill {
+    margin: 0.1rem 0 0.15rem;
+    justify-content: center;
 }
 
 .card-inline-lectionary-picker .lectionary-picker-single-row {
@@ -5171,7 +5215,8 @@ body.hide-hareg-ornament .hareg-footer {
         gap: 0.35rem;
     }
 
-    .prayer-footer .card-inline-lectionary-picker {
+    .prayer-footer .card-inline-lectionary-picker,
+    body.presentation-mode-slides .prayer-footer .slide-only-lectionary-pill-wrap {
         flex: 1 1 100%;
         order: -1;
         width: 100%;
@@ -5233,11 +5278,36 @@ body.hide-hareg-ornament .hareg-footer {
     }
 
     body.presentation-mode-slides .card-inline-lectionary-picker {
+        flex-direction: row;
+        flex-wrap: nowrap;
         flex: 1 1 auto;
         order: 0;
         width: auto;
-        gap: 0.1rem;
-        padding-bottom: 4px;
+        gap: 0.25rem;
+        padding-bottom: 3px;
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+
+    body.presentation-mode-slides .card-inline-lectionary-picker > .lectionary-set-pill,
+    body.presentation-mode-slides .slide-only-lectionary-pill-wrap .lectionary-set-pill {
+        flex-wrap: nowrap;
+        margin: 0;
+        padding: 1px 4px;
+        gap: 2px;
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+
+    body.presentation-mode-slides .lectionary-set-pill-label {
+        display: none;
+    }
+
+    body.presentation-mode-slides .lectionary-set-pill-btn {
+        padding: 1px 6px;
+        font-size: 0.64rem;
+        height: 18px;
+        line-height: 1;
     }
 
     body.presentation-mode-slides .card-inline-lectionary-picker .lectionary-picker-single-row {

@@ -11,7 +11,8 @@ function loadBrowserScriptIntoWindow(relPath) {
     `if (typeof typicalPsalms !== 'undefined') { window.typicalPsalms = typicalPsalms; globalThis.typicalPsalms = typicalPsalms; }\n` +
     `if (typeof TYPICAL_PSALMS !== 'undefined') { window.TYPICAL_PSALMS = TYPICAL_PSALMS; globalThis.TYPICAL_PSALMS = TYPICAL_PSALMS; }\n` +
     `if (typeof prayers !== 'undefined') { window.prayers = prayers; globalThis.prayers = prayers; }\n` +
-    `if (typeof songs !== 'undefined') { window.songs = songs; globalThis.songs = songs; }\n`
+    `if (typeof songs !== 'undefined') { window.songs = songs; globalThis.songs = songs; }\n` +
+    `if (typeof kidaseData !== 'undefined') { window.kidaseData = kidaseData; globalThis.kidaseData = kidaseData; }\n`
   );
   fn(window, document);
 }
@@ -200,7 +201,7 @@ describe('Canonical 1938 AD EOTC Annual Lectionary (All 13 Months / 366 Days)', 
     });
 
     it('treats 6:00 PM (18:00) as the start of the next liturgical day across Calendar, Wudasie, Se\'atat, and Qidase', () => {
-      // Saturday, Sep 26, 2026 at 5:59 PM -> still Saturday (Meskerem 16 = 1/16, A-4 Mary)
+      // Saturday, Sep 26, 2026 at 5:59 PM -> still Saturday (Meskerem 16 = 1/16, 2014 Gitsawe A-2 Our Lord -> defaults to 'apostles')
       const satBefore6pm = new Date(2026, 8, 26, 17, 59, 0);
       app.setCustomDateTimeOverride(satBefore6pm);
 
@@ -210,7 +211,9 @@ describe('Canonical 1938 AD EOTC Annual Lectionary (All 13 Months / 366 Days)', 
       expect(ethBefore.isWazemaEvening).toBe(false);
 
       let snap = app.getActiveLectionaryReadingsSnapshot();
-      expect(snap.selectedAnaphora).toBe('mary'); // 1/16 is A-4!
+      expect(snap.selectedAnaphora).toBe('apostles'); // 2014 1/16 is A-2 (Anaphora of Our Lord -> 'apostles' fallback)
+      expect(snap.kidaseLectionaryRefs.pauline).toBe('1 Corinthians 3:10-18');
+      expect(snap.kidaseLectionaryRefs.gospel).toBe('John 9:1-12');
 
       // Saturday, Sep 26, 2026 at 6:01 PM -> Sunday (Meskerem 17 = 1/17 Meskel!, A-10 -> defaults to 'apostles')
       const satAfter6pm = new Date(2026, 8, 26, 18, 1, 0);
@@ -226,10 +229,12 @@ describe('Canonical 1938 AD EOTC Annual Lectionary (All 13 Months / 366 Days)', 
 
       snap = app.getActiveLectionaryReadingsSnapshot();
       expect(snap.selectedAnaphora).toBe('apostles'); // 1/17 is A-10 -> defaults to 'apostles'
-      expect(snap.kidaseLectionaryRefs.morningPsalm).toBe('Psalms 84:6-7');
-      expect(snap.kidaseLectionaryRefs.morningGospel).toBe('Matthew 5:1-17');
+      expect(snap.kidaseLectionaryRefs.morningPsalm).toBe('Psalms 60:4-5'); // 2014 Matins Ps 59:4-5 LXX
+      expect(snap.kidaseLectionaryRefs.morningGospel).toBe('John 3:14-22');
       expect(snap.kidaseLectionaryRefs.pauline).toBe('1 Timothy 5:9-16');
       expect(snap.kidaseLectionaryRefs.gospel).toBe('Matthew 8:16-28');
+      expect(snap.kidaseLectionaryRefs.eveningPsalm).toBe('Psalms 56:6-7'); // 2014 Vespers Ps 55:6-7 LXX
+      expect(snap.kidaseLectionaryRefs.eveningGospel).toBe('John 7:1-6');
     });
 
     it('round-trips Ethiopian <-> Gregorian dates before and after 6:00 PM across the full year', () => {
@@ -251,37 +256,72 @@ describe('Canonical 1938 AD EOTC Annual Lectionary (All 13 Months / 366 Days)', 
   });
 
   describe('Ordinary Matins Fallback, Multi-Reading Set Switcher & Header Clock UI', () => {
-    it('keeps default Matins Misbak/Gospel on ordinary days (e.g. 1/3)', () => {
-      const greg = ethToGregDate(2019, 1, 3, { forWazemaEvening: false, hours: 7, minutes: 30 });
+    it('populates full 2013/14 Patriarchate Matins, Qidase & Vespers readings on ordinary weekdays (e.g. 1/3 in 2018 E.C.)', () => {
+      // Meskerem 3, 2018 E.C. is Saturday (ordinary fixed day -> Daily 2014 is primary)
+      const greg = ethToGregDate(2018, 1, 3, { forWazemaEvening: false, hours: 7, minutes: 30 });
       app.setCustomDateTimeOverride(greg);
 
       const snap = app.getActiveLectionaryReadingsSnapshot();
-      expect(snap.kidaseLectionaryRefs.morningPsalm).toBe('Psalms 34:7-8');
-      expect(snap.kidaseLectionaryRefs.morningGospel).toBe('Matthew 24:30-36');
+      expect(snap.kidaseLectionaryRefs.morningPsalm).toBe('Psalms 4:2-3');
+      expect(snap.kidaseLectionaryRefs.morningGospel).toBe('Matthew 3:7-10');
       expect(snap.kidaseLectionaryRefs.pauline).toBe('2 Thessalonians 3:13-End');
+      expect(snap.kidaseLectionaryRefs.gospel).toBe('Matthew 18:18-23');
+      expect(snap.kidaseLectionaryRefs.eveningPsalm).toBe('Psalms 55:17-18');
+      expect(snap.kidaseLectionaryRefs.eveningGospel).toBe('Matthew 11:15-20');
     });
 
-    it('switches Qidase reading sets cleanly on multi-reading feast days (e.g. 1/17 Meskel & 2/6)', () => {
+    it('switches Qidase reading profiles cleanly on multi-reading feast & Sunday days (e.g. 1/17 Meskel & 2/6)', () => {
+      // Meskerem 17, 2019 E.C. is a Sunday Meskel -> exposes Meskel (2014), Alternate (ዓዲ), Sunday (Meskel Sunday), and 1938 Ed.
       const meskelGreg = ethToGregDate(2019, 1, 17, { forWazemaEvening: false, hours: 8, minutes: 0 });
       app.setCustomDateTimeOverride(meskelGreg);
 
+      const meskelProfiles = app.getActiveKidaseProfilesForDate();
+      expect(meskelProfiles.map(p => p.shortLabel)).toEqual(
+        expect.arrayContaining(['Meskel (2014)', 'Alternate (ዓዲ)', 'Sunday (Meskel Sunday)'])
+      );
+
       let snap = app.getActiveLectionaryReadingsSnapshot();
-      expect(snap.kidaseLectionaryRefs.psalm).toBe('Psalms 60:3-5');
+      expect(snap.kidaseLectionaryRefs.psalm).toBe('Psalms 60:4-5');
       expect(snap.kidaseLectionaryRefs.gospel).toBe('Matthew 8:16-28');
 
-      // Switch to Set 2 on Meskel (1/17)
+      // Switch to Alternate (ዓዲ) on Meskel (1/17) -> Ps 131:6-7 LXX (Psalms 132:6-7) & John 19:25-28
       app.selectKidaseReadingSet(1);
       snap = app.getActiveLectionaryReadingsSnapshot();
       expect(snap.selectedKidaseReadingSetIndex).toBe(1);
-      expect(snap.kidaseLectionaryRefs.psalm).toBe('Psalms 32:6-7');
+      expect(snap.kidaseLectionaryRefs.psalm).toBe('Psalms 132:6-7');
       expect(snap.kidaseLectionaryRefs.gospel).toBe('John 19:25-28');
 
-      // Check 3-set day (Tikimt 6 = 2/6)
-      const tikimt6Greg = ethToGregDate(2019, 2, 6, { forWazemaEvening: false, hours: 8, minutes: 0 });
-      app.setCustomDateTimeOverride(tikimt6Greg);
+      // Switch to Meskel Sunday seasonal profile -> 1 Corinthians 1:10-End & Mark 8:27-End
       app.selectKidaseReadingSet(2);
       snap = app.getActiveLectionaryReadingsSnapshot();
       expect(snap.selectedKidaseReadingSetIndex).toBe(2);
+      expect(snap.kidaseLectionaryRefs.pauline).toBe('1 Corinthians 1:10-End');
+      expect(snap.kidaseLectionaryRefs.gospel).toBe('Mark 8:27-End');
+
+      // Check Tikimt 6 = 2/6 (2014 Primary A-4 St. Mary + 1938 Legacy alternates)
+      const tikimt6Greg = ethToGregDate(2019, 2, 6, { forWazemaEvening: false, hours: 8, minutes: 0 });
+      app.setCustomDateTimeOverride(tikimt6Greg);
+      snap = app.getActiveLectionaryReadingsSnapshot();
+      expect(snap.selectedAnaphora).toBe('mary');
+      expect(snap.kidaseLectionaryRefs.pauline).toBe('1 Timothy 5:5-10');
+      expect(snap.kidaseLectionaryRefs.gospel).toBe('Matthew 10:32-End');
+
+      const tikimt6Profiles = app.getActiveKidaseProfilesForDate();
+      // 1938 Legacy Set 2 for Prophetess Hannah on Tikimt 6 -> Ps 112:9 LXX (Psalms 113:9) & Luke 2:36-39
+      const legacySet2Idx = tikimt6Profiles.findIndex(p => p.shortLabel === '1938 Ed. (2)');
+      expect(legacySet2Idx).toBeGreaterThan(0);
+      app.selectKidaseReadingSet(legacySet2Idx);
+      snap = app.getActiveLectionaryReadingsSnapshot();
+      expect(snap.selectedKidaseReadingSetIndex).toBe(legacySet2Idx);
+      expect(snap.kidaseLectionaryRefs.psalm).toBe('Psalms 113:9');
+      expect(snap.kidaseLectionaryRefs.gospel).toBe('Luke 2:36-39');
+
+      // 1938 Legacy Set 3 is also preserved -> Psalms 102:3-5 & Luke 2:36-39
+      const legacySet3Idx = tikimt6Profiles.findIndex(p => p.refs.psalm === 'Psalms 102:3-5');
+      expect(legacySet3Idx).toBeGreaterThan(legacySet2Idx);
+      app.selectKidaseReadingSet(legacySet3Idx);
+      snap = app.getActiveLectionaryReadingsSnapshot();
+      expect(snap.selectedKidaseReadingSetIndex).toBe(legacySet3Idx);
       expect(snap.kidaseLectionaryRefs.psalm).toBe('Psalms 102:3-5');
       expect(snap.kidaseLectionaryRefs.gospel).toBe('Luke 2:36-39');
     });
@@ -625,5 +665,167 @@ describe('Canonical 1938 AD EOTC Annual Lectionary (All 13 Months / 366 Days)', 
       expect(chosenIdx).toBeGreaterThanOrEqual(0);
       expect(window.TYPICAL_PSALMS[chosenIdx].mc).toBe(142);
     });
+  });
+
+  describe('2013/14 Patriarchate Gitsawe Engine, Canonical Fasting & Scroll/Slides Parish Toggles', () => {
+    it('ships complete 2013/14 Fixed Daily (366 days), Seasonal Sundays (66 sections), and Nineveh + Abiy Tsom/Pascha fasts', () => {
+      expect(Object.keys(window.EOTC_GITSAWE_2014_DAILY).length).toBe(366);
+      expect(window.EOTC_GITSAWE_2014_SUNDAYS.length).toBe(66);
+      expect(window.EOTC_GITSAWE_2014_FASTS.nineveh.days.length).toBe(3);
+      expect(window.EOTC_GITSAWE_2014_FASTS.abiyTsom.days.length).toBe(53);
+    });
+
+    it('evaluates all 7 canonical EOTC fasts (ሰባቱ አጽዋማት), 50-day Paschal fast-free season, and Genna/Timket Wed/Fri overrides', () => {
+      const bh = window.computeEotcBahireHasab(2018);
+      expect(bh.moveableDates.nineveh).toEqual({ year: 2018, month: 5, day: 25 });
+      expect(bh.moveableDates.abiyTsom).toEqual({ year: 2018, month: 6, day: 9 });
+      expect(bh.moveableDates.tinsae).toEqual({ year: 2018, month: 8, day: 4 });
+      expect(bh.moveableDates.paraclete).toEqual({ year: 2018, month: 9, day: 23 });
+
+      // 1. Fast of Nineveh (Yekatit 25, 2018)
+      const ninevehDay1 = window.getEotcFastingStatus(2018, 5, 25);
+      expect(ninevehDay1.isFastingDay).toBe(true);
+      expect(ninevehDay1.primaryFast?.id).toBe('tsome_nenewe');
+      expect(ninevehDay1.specialFastId).toBe('nineveh');
+
+      // 2. Great Lent & Holy Week (Miyazia 1, 2018 = Holy Wednesday)
+      const holyWed = window.getEotcFastingStatus(2018, 8, 1);
+      expect(holyWed.isFastingDay).toBe(true);
+      expect(holyWed.primaryFast?.id).toBe('semone_himamat');
+
+      // 3. 50-Day Paschal Fast-Free Season (Miyazia 7, 2018 = Bright Wednesday -> NOT a fasting day!)
+      const brightWed = window.getEotcFastingStatus(2018, 8, 7);
+      expect(brightWed.isFastFreeSeason).toBe(true);
+      expect(brightWed.isFastingDay).toBe(false);
+
+      // 4. Fast of the Apostles (Ginbot 24, 2018 = Monday after Pentecost)
+      const apostlesDay1 = window.getEotcFastingStatus(2018, 9, 24);
+      expect(apostlesDay1.isFastingDay).toBe(true);
+      expect(apostlesDay1.primaryFast?.id).toBe('tsome_hawariyat');
+
+      // 5. Fast of the Assumption / Filseta (Nehasse 7, 2018)
+      const filsetaDay = window.getEotcFastingStatus(2018, 12, 7);
+      expect(filsetaDay.isFastingDay).toBe(true);
+      expect(filsetaDay.primaryFast?.id).toBe('tsome_filseta');
+
+      // 6. Fast of the Prophets / Advent + Paramony Gahad (Tahsas 28, 2018 -> Eve of Genna)
+      const gahadGenna = window.getEotcFastingStatus(2018, 4, 28);
+      expect(gahadGenna.isFastingDay).toBe(true);
+      expect(gahadGenna.activeFasts.map(f => f.id)).toEqual(expect.arrayContaining(['tsome_nebiyat', 'tsome_gahad']));
+
+      // 7. Genna (Tahsas 29) & Timket (Tir 11) are Fast-Free even if falling on Wednesday/Friday
+      const timketFri = window.getEotcFastingStatus(2018, 5, 11, 5);
+      expect(timketFri.isFastFreeSeason).toBe(true);
+      expect(timketFri.isFastingDay).toBe(false);
+
+      // 8. Ordinary Wednesday outside Paschal season -> Weekly Fast of Salvation (ጾመ ድኅነት)
+      const ordWed = window.getEotcFastingStatus(2018, 2, 4, 3);
+      expect(ordWed.isFastingDay).toBe(true);
+      expect(ordWed.primaryFast?.id).toBe('tsome_dihnet');
+    });
+
+    it('surfaces Zemene Tsige Tach Bet / Lay Bet Sunday Mezmur toggles, Pentecost -> Tinsae rubric, and Pascha Qidase', () => {
+      // Tikimt 15, 2019 E.C. is a Sunday in Zemene Tsige (3rd Sunday of Tsige -> offers Tach Bet Tsige 2 & Lay Bet Tsige 4 + Daily!)
+      const tsigeSun = ethToGregDate(2019, 2, 15, { forWazemaEvening: false, hours: 8, minutes: 0 });
+      app.setCustomDateTimeOverride(tsigeSun);
+      const tsigeProfiles = app.getActiveKidaseProfilesForDate();
+      const labels = tsigeProfiles.map(p => p.shortLabel);
+      expect(labels[0]).toBe('Sunday (Tsige 3)');
+      expect(labels).toContain('Tach Bet (Tsige 2)');
+      expect(labels).toContain('Lay Bet (Tsige 4)');
+      expect(labels).toContain('Daily (Tikimt 15)');
+
+      // Pentecost Sunday (Ginbot 23, 2018 E.C.) -> automatically resolves empty 8th Sunday liturgy to Tinsae Resurrection Qidase!
+      const pentecostProfiles = window.getEotcKidaseProfilesForDate(2018, 9, 23, 0, (lxx) => window.convertLxxPsalmRefToMt(lxx, app.getMtFromLxx));
+      expect(pentecostProfiles[0].id).toBe('sunday-pentecost-tinsae');
+      expect(pentecostProfiles[0].refs.pauline).toBe('1 Corinthians 15:20-41');
+      expect(pentecostProfiles[0].refs.gospel).toBe('John 20:1-19');
+
+      // Zewerede (1st Sunday of Great Lent, Yekatit 8, 2018 E.C., dayOffset = -1 before Monday of Lent!)
+      const zeweredeProfiles = window.getEotcKidaseProfilesForDate(2018, 6, 8, 0, (lxx) => window.convertLxxPsalmRefToMt(lxx, app.getMtFromLxx));
+      expect(zeweredeProfiles[0].shortLabel).toBe('Zewerede (1st Lent)');
+      expect(zeweredeProfiles[0].category).toBe('fast');
+    });
+
+    it('keeps 1938 continuous Bible Reading Plan on Pray tab while serving 2013/14 Gitsawe + Scroll & Slides toggles on Liturgy tab', async () => {
+      loadBrowserScriptIntoWindow('app/src/main/assets/js/kidase.js');
+      await window.WeahaduBibleService.fetchBook('en-kjv', 'Matthew');
+      await window.WeahaduBibleService.fetchBook('en-kjv', 'John');
+      await window.WeahaduBibleService.fetchBook('en-kjv', '1 Timothy');
+      await window.WeahaduBibleService.fetchBook('en-kjv', '1 Corinthians');
+      await window.WeahaduBibleService.fetchBook('en-kjv', 'Psalms');
+
+      // 1a. Ordinary day (Meskerem 18, 2019 E.C.) on Pray Tab -> continuous 1938 Bible Reading Plan (Genesis + Acts)!
+      const meskerem18Morning = ethToGregDate(2019, 1, 18, { forWazemaEvening: false, hours: 8, minutes: 0 });
+      app.setCustomDateTimeOverride(meskerem18Morning, { render: false });
+      app.setDailyLectionaryPeriod('morning', { render: false });
+      const ordPrayCalls = [];
+      app.renderDailyLectionarySection((title, isCollapsible, meta) => ordPrayCalls.push({ title, meta }));
+      const ordPrayTitles = ordPrayCalls.map(c => c.title).join(' | ');
+      expect(ordPrayTitles).toContain('Genesis');
+      expect(ordPrayTitles).toContain('Acts');
+
+      // 1b. Meskerem 17, 2019 E.C. (Sunday Meskel) at 8:00 AM -> Pray Tab uses 1938 Matins (Psalm 84:6-7 / Matthew 5:1-17)
+      // while Liturgy Tab uses 2013/14 Patriarchate Gitsawe (Psalms 60:4-5 / John 3:14-22 & Matthew 8:16-28)!
+      const meskelMorning = ethToGregDate(2019, 1, 17, { forWazemaEvening: false, hours: 8, minutes: 0 });
+      app.setCustomDateTimeOverride(meskelMorning, { render: false });
+
+      const prayCalls = [];
+      app.renderDailyLectionarySection((title, isCollapsible, meta) => prayCalls.push({ title, meta }));
+      const prayTitles = prayCalls.map(c => c.title).join(' | ');
+      expect(prayTitles).toContain('Psalm 84:6-7');
+      expect(prayTitles).toContain('Matthew 5:1-17');
+
+      // 2. Liturgy Tab in Scroll Mode renders Parish Lectionary pills on reading cards & Right Sidebar
+      app.switchPrimaryTab('liturgy');
+      app._renderPrayersSync();
+
+      const sidebarPill = document.querySelector('#kidase-reading-set-container .lectionary-set-pill');
+      expect(sidebarPill).toBeTruthy();
+      expect(sidebarPill.textContent).toContain('Meskel (2014)');
+      expect(sidebarPill.textContent).toContain('Alternate (ዓዲ)');
+      expect(sidebarPill.textContent).toContain('Sunday (Meskel Sunday)');
+
+      const gospelOpeningCard = document.querySelector('.prayer-card[data-reading-type="gospel"]');
+      expect(gospelOpeningCard).toBeTruthy();
+      expect(gospelOpeningCard.querySelector('.lectionary-set-pill')).toBeTruthy();
+      expect(gospelOpeningCard.textContent).toContain('Matthew 8:16-28');
+
+      // Multi-verse Gospel cards (verses 2..N) also carry compact .slide-only-lectionary-pill-wrap for Slides Mode!
+      const allGospelVerseCards = document.querySelectorAll('.prayer-card[data-reading-slot="gospel"]');
+      expect(allGospelVerseCards.length).toBeGreaterThan(3);
+      expect(allGospelVerseCards[2].querySelector('.slide-only-lectionary-pill-wrap .lectionary-set-pill')).toBeTruthy();
+
+      // 3. Enter Slides Mode on Gospel, advance to Verse 3, and click "Alternate (ዓዲ)" right from Verse 3's slide pill!
+      app.togglePresentationMode({ readingType: 'gospel' });
+      expect(app.getDisplayOptions().presentationMode).toBe('slides');
+      app.nextSlide();
+      app.nextSlide(); // Now on Verse 3 of Gospel (data-reading-slot="gospel", without data-reading-type!)
+
+      const slidesNow = document.querySelectorAll('#prayer-display .prayer-card, #prayer-display .section-title.collapsible');
+      const verse3Slide = slidesNow[app.getActiveLectionaryReadingsSnapshot().currentSlideIndex];
+      expect(verse3Slide.dataset.readingSlot).toBe('gospel');
+      expect(verse3Slide.dataset.readingType).toBeUndefined();
+
+      const altBtnOnVerse3 = Array.from(verse3Slide.querySelectorAll('.lectionary-set-pill-btn'))
+        .find(b => b.textContent === 'Alternate (ዓዲ)');
+      expect(altBtnOnVerse3).toBeTruthy();
+      altBtnOnVerse3.click();
+      // Wait for async renderPrayers() DOM rebuild triggered by pill click
+      await new Promise(resolve => setTimeout(resolve, 150));
+
+      // Verify Slides Mode switched to John 19:25-28 AND stayed anchored on the Gospel opening slide!
+      const snapAfter = app.getActiveLectionaryReadingsSnapshot();
+      expect(snapAfter.selectedKidaseReadingSetIndex).toBe(1);
+      expect(snapAfter.kidaseLectionaryRefs.gospel).toBe('John 19:25-28');
+
+      const slidesAfter = document.querySelectorAll('#prayer-display .prayer-card, #prayer-display .section-title.collapsible');
+      const activeSlideAfter = slidesAfter[snapAfter.currentSlideIndex];
+      expect(activeSlideAfter.dataset.readingType).toBe('gospel');
+      expect(activeSlideAfter.textContent).toContain('John 19:25-28');
+
+      // Clean up presentation mode back to scroll
+      app.togglePresentationMode();
+    }, 30000);
   });
 });

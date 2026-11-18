@@ -7,6 +7,7 @@ export function loadApp() {
   if (cachedExports) return cachedExports;
 
   const auxModules = [
+    'app/src/main/assets/js/eotc_gitsawe_2014.js',
     'app/src/main/assets/js/zema_acoustic_model_data.js',
     'app/src/main/assets/js/zaima_notation_data.js',
     'app/src/main/assets/js/liturgy_guide_data.js',

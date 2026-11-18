@@ -1192,47 +1192,110 @@ function convertLxxRefHelper(psalmLxxStr) {
     return null;
 }
 
+function resolveAppAnaphoraHelper(anaphoraNum) {
+    if (typeof window !== 'undefined' && typeof window.resolveAppAnaphoraKey === 'function') {
+        return window.resolveAppAnaphoraKey(anaphoraNum);
+    }
+    if (typeof resolveAppAnaphoraKey === 'function') {
+        return resolveAppAnaphoraKey(anaphoraNum);
+    }
+    return anaphoraNum === 4 ? 'mary' : (anaphoraNum === 12 ? 'jacob' : 'apostles');
+}
+
+function getActiveKidaseProfilesForDate(dateObj = getEffectiveDate()) {
+    const eth = computeEthiopianDate(dateObj);
+    const litDate = getLiturgicalDateObject(dateObj);
+    const legacyEntry = getActiveEotcLectionaryLookup(eth.ethMonth, eth.ethDay);
+
+    const gitsaweFn = (typeof window !== 'undefined' && typeof window.getEotcKidaseProfilesForDate === 'function')
+        ? window.getEotcKidaseProfilesForDate
+        : (typeof getEotcKidaseProfilesForDate === 'function' ? getEotcKidaseProfilesForDate : null);
+
+    if (gitsaweFn) {
+        const profiles = gitsaweFn(eth.ethYear, eth.ethMonth, eth.ethDay, litDate.getDay(), convertLxxRefHelper, legacyEntry);
+        if (Array.isArray(profiles) && profiles.length > 0) {
+            return profiles;
+        }
+    }
+
+    // Fallback if 2013/14 Gitsawe module is not loaded: synthesize profiles from 1938 EOTC_LECTIONARY
+    const fallbackProfiles = [];
+    if (legacyEntry && legacyEntry.qidase) {
+        const sets = Array.isArray(legacyEntry.qidase.sets) && legacyEntry.qidase.sets.length > 0
+            ? legacyEntry.qidase.sets
+            : [{}];
+        sets.forEach((s, idx) => {
+            const refs = { ...DEFAULT_KIDASE_LECTIONARY_REFS };
+            if (legacyEntry.matins) {
+                if (legacyEntry.matins.psalmLxx) {
+                    const mtMorningPs = convertLxxRefHelper(legacyEntry.matins.psalmLxx);
+                    if (mtMorningPs) refs.morningPsalm = mtMorningPs;
+                }
+                if (legacyEntry.matins.gospel) refs.morningGospel = legacyEntry.matins.gospel;
+            }
+            if (s.pauline || legacyEntry.qidase.pauline) refs.pauline = s.pauline || legacyEntry.qidase.pauline;
+            if (s.universal || legacyEntry.qidase.universal) refs.universal = s.universal || legacyEntry.qidase.universal;
+            if (s.acts || legacyEntry.qidase.acts) refs.acts = s.acts || legacyEntry.qidase.acts;
+            if (s.psalmLxx) {
+                const mtPs = convertLxxRefHelper(s.psalmLxx);
+                if (mtPs) refs.psalm = mtPs;
+            }
+            if (s.gospel) refs.gospel = s.gospel;
+            fallbackProfiles.push({
+                id: `legacy-1938-${idx}`,
+                category: 'legacy-1938',
+                shortLabel: sets.length > 1 ? `Set ${idx + 1}` : 'Default',
+                shortLabelGeez: '',
+                subtitle: '1938 E.C. Prayer Book Lectionary',
+                commemoration: '',
+                anaphoraId: legacyEntry.qidase.anaphora || 1,
+                anaphoraAlts: [],
+                liturgyTypeGeez: '',
+                psalmLxx: s.psalmLxx || '',
+                refs,
+                psalmMeta: {},
+                slotAlternates: {}
+            });
+        });
+    }
+    return fallbackProfiles;
+}
+
+function getActiveFastingStatusForDate(dateObj = getEffectiveDate()) {
+    const eth = computeEthiopianDate(dateObj);
+    const litDate = getLiturgicalDateObject(dateObj);
+    const fastFn = (typeof window !== 'undefined' && typeof window.getEotcFastingStatus === 'function')
+        ? window.getEotcFastingStatus
+        : (typeof getEotcFastingStatus === 'function' ? getEotcFastingStatus : null);
+    if (fastFn) {
+        return fastFn(eth.ethYear, eth.ethMonth, eth.ethDay, litDate.getDay());
+    }
+    return {
+        isFastingDay: litDate.getDay() === 3 || litDate.getDay() === 5,
+        activeFasts: [],
+        primaryFast: null,
+        isFastFreeSeason: false,
+        fastFreeReason: null,
+        fastFeastIds: [],
+        specialFastId: null,
+        specialFastDayOffset: null,
+        specialFastSection: null
+    };
+}
+
 function getDefaultKidaseRefsAndAnaphoraForDate(dateObj = getEffectiveDate(), setIndex = 0) {
     const eth = computeEthiopianDate(dateObj);
     const entry = getActiveEotcLectionaryLookup(eth.ethMonth, eth.ethDay);
+    const profiles = getActiveKidaseProfilesForDate(dateObj);
     const refs = { ...DEFAULT_KIDASE_LECTIONARY_REFS };
     let anaphoraKey = 'apostles';
-    let totalSets = 1;
-    let clampedSetIndex = 0;
+    const totalSets = Math.max(1, profiles.length);
+    const clampedSetIndex = Math.max(0, Math.min(totalSets - 1, Number(setIndex) || 0));
+    const chosenProfile = profiles[clampedSetIndex] || profiles[0] || null;
 
-    if (entry) {
-        if (entry.matins) {
-            if (entry.matins.psalmLxx) {
-                const mtMorningPs = convertLxxRefHelper(entry.matins.psalmLxx);
-                if (mtMorningPs) refs.morningPsalm = mtMorningPs;
-            }
-            if (entry.matins.gospel) {
-                refs.morningGospel = entry.matins.gospel;
-            }
-        }
-        if (entry.qidase) {
-            const sets = Array.isArray(entry.qidase.sets) && entry.qidase.sets.length > 0 ? entry.qidase.sets : [];
-            totalSets = Math.max(1, sets.length);
-            clampedSetIndex = Math.max(0, Math.min(totalSets - 1, Number(setIndex) || 0));
-            const chosenSet = sets[clampedSetIndex] || sets[0] || {};
-            if (chosenSet.pauline || entry.qidase.pauline) refs.pauline = chosenSet.pauline || entry.qidase.pauline;
-            if (chosenSet.universal || entry.qidase.universal) refs.universal = chosenSet.universal || entry.qidase.universal;
-            if (chosenSet.acts || entry.qidase.acts) refs.acts = chosenSet.acts || entry.qidase.acts;
-            if (chosenSet.psalmLxx) {
-                const mtPs = convertLxxRefHelper(chosenSet.psalmLxx);
-                if (mtPs) refs.psalm = mtPs;
-            }
-            if (chosenSet.gospel) {
-                refs.gospel = chosenSet.gospel;
-            }
-            if (typeof window !== 'undefined' && typeof window.resolveAppAnaphoraKey === 'function') {
-                anaphoraKey = window.resolveAppAnaphoraKey(entry.qidase.anaphora);
-            } else if (typeof resolveAppAnaphoraKey === 'function') {
-                anaphoraKey = resolveAppAnaphoraKey(entry.qidase.anaphora);
-            } else {
-                anaphoraKey = entry.qidase.anaphora === 4 ? 'mary' : (entry.qidase.anaphora === 12 ? 'jacob' : 'apostles');
-            }
-        }
+    if (chosenProfile && chosenProfile.refs) {
+        Object.assign(refs, chosenProfile.refs);
+        anaphoraKey = resolveAppAnaphoraHelper(chosenProfile.anaphoraId);
     }
 
     const litDayName = getSeatatLiturgicalDay(dateObj);
@@ -1243,6 +1306,8 @@ function getDefaultKidaseRefsAndAnaphoraForDate(dateObj = getEffectiveDate(), se
     return {
         eth,
         entry,
+        profiles,
+        chosenProfile,
         refs,
         anaphoraKey,
         kidaseDay,
@@ -1324,22 +1389,75 @@ function clearCustomDateTimeOverride({ render = true } = {}) {
     return true;
 }
 
-function selectKidaseReadingSet(setIndex, { render = true } = {}) {
+function selectKidaseReadingSet(setIndex, { render = true, targetReadingType = null } = {}) {
     const computed = getDefaultKidaseRefsAndAnaphoraForDate(getEffectiveDate(), setIndex);
     selectedKidaseReadingSetIndex = computed.setIndex;
+    kidaseLectionaryRefs.morningPsalm = computed.refs.morningPsalm;
+    kidaseLectionaryRefs.morningGospel = computed.refs.morningGospel;
     kidaseLectionaryRefs.pauline = computed.refs.pauline;
     kidaseLectionaryRefs.universal = computed.refs.universal;
     kidaseLectionaryRefs.acts = computed.refs.acts;
     kidaseLectionaryRefs.psalm = computed.refs.psalm;
     kidaseLectionaryRefs.gospel = computed.refs.gospel;
+    kidaseLectionaryRefs.eveningPsalm = computed.refs.eveningPsalm;
+    kidaseLectionaryRefs.eveningGospel = computed.refs.eveningGospel;
+    selectedAnaphora = computed.anaphoraKey;
+    if (liturgyTabProfile) {
+        liturgyTabProfile.selectedAnaphora = computed.anaphoraKey;
+        localStorage.setItem('liturgyTabProfile', JSON.stringify(liturgyTabProfile));
+    }
+    if (anaphoraSelector) {
+        anaphoraSelector.value = computed.anaphoraKey;
+    }
+    delete selectedTypicalPsalmIds.morningPsalm;
     delete selectedTypicalPsalmIds.psalm;
+    delete selectedTypicalPsalmIds.eveningPsalm;
+
+    let resolvedSlideReadingType = targetReadingType || null;
+    if (displayOptions.presentationMode === 'slides' && !resolvedSlideReadingType && prayerDisplay) {
+        const existingSlides = prayerDisplay.querySelectorAll('.prayer-card, .section-title.collapsible');
+        const currentSlide = existingSlides[currentSlideIndex];
+        if (currentSlide && currentSlide.dataset) {
+            resolvedSlideReadingType = currentSlide.dataset.readingType || currentSlide.dataset.readingSlot || null;
+        }
+    }
+    if (displayOptions.presentationMode === 'slides' && resolvedSlideReadingType) {
+        _pendingSlideReadingType = resolvedSlideReadingType;
+        _pendingSlideSignature = null;
+        _pendingSlideId = null;
+        _pendingSlidePredicate = null;
+    }
+
     if (typeof refreshLectionaryPickers === 'function') {
         refreshLectionaryPickers();
     }
     saveSettings();
     if (render && typeof renderPrayers === 'function') {
-        renderPrayers();
+        const finalizeAnchor = () => {
+            if (displayOptions.presentationMode === 'slides' && resolvedSlideReadingType && prayerDisplay) {
+                const reRenderedCard = prayerDisplay.querySelector(`.prayer-card[data-reading-type="${resolvedSlideReadingType}"]`);
+                if (reRenderedCard) {
+                    const allSlides = Array.from(prayerDisplay.querySelectorAll('.prayer-card, .section-title.collapsible'));
+                    const idx = allSlides.indexOf(reRenderedCard);
+                    if (idx !== -1) {
+                        currentSlideIndex = idx;
+                        showSlide(currentSlideIndex);
+                    }
+                }
+            } else if (displayOptions.presentationMode !== 'slides' && targetReadingType) {
+                const anchoredCard = document.querySelector(`.prayer-card[data-reading-type="${targetReadingType}"]`);
+                if (anchoredCard && typeof anchoredCard.scrollIntoView === 'function') {
+                    anchoredCard.scrollIntoView({ block: 'center', behavior: 'instant' });
+                }
+            }
+        };
+        const renderPromise = renderPrayers();
+        if (renderPromise && typeof renderPromise.then === 'function') {
+            return renderPromise.then(finalizeAnchor);
+        }
+        finalizeAnchor();
     }
+    return Promise.resolve();
 }
 
 const BIBLE_BOOK_MAPPING = {
@@ -7336,6 +7454,8 @@ function renderSelectedKidase(addSectionTitleCallback, options = {}) {
             return true;
         });
 
+        const activeKidaseComputed = getDefaultKidaseRefsAndAnaphoraForDate(getEffectiveDate(), selectedKidaseReadingSetIndex || 0);
+
         filtered.forEach((pOriginal, relativeIdx) => {
             const p = { ...pOriginal }; // clone to avoid modifying original array
 
@@ -7388,9 +7508,25 @@ function renderSelectedKidase(addSectionTitleCallback, options = {}) {
                         if (bookName === 'Psalms' || bookName === 'Psalm') {
                             // Combine all verses into one card for Psalm chants
                             const versePrayer = { ...p };
-                            const typical = findTypicalPsalm(bookName, chapter, start, end, activeCfg.id);
+                            let typical = findTypicalPsalm(bookName, chapter, start, end, activeCfg.id);
+                            if (!typical && activeKidaseComputed && activeKidaseComputed.chosenProfile) {
+                                const prof = activeKidaseComputed.chosenProfile;
+                                const profMeta = prof.psalmMeta && prof.psalmMeta[activeCfg.id];
+                                if (profMeta && prof.refs && prof.refs[activeCfg.id] === refStr) {
+                                    typical = {
+                                        lc: profMeta.lc,
+                                        ls: profMeta.ls,
+                                        le: profMeta.le,
+                                        mc: chapter,
+                                        ms: start,
+                                        me: end === 999 ? start : end,
+                                        g: profMeta.g || '',
+                                        p: profMeta.g ? transliterateGeezToPhonetic(profMeta.g) : ''
+                                    };
+                                }
+                            }
                             const geezOverride = getReadingTranslationOverride(activeCfg.id, 'geez');
-                            const useTypicalGeezChant = typical && geezOverride === 'gez-1980-formatted';
+                            const useTypicalGeezChant = typical && Boolean(typical.g) && geezOverride === 'gez-1980-formatted';
 
                             // Only populate languages that are currently enabled
                             const visibleLangs = languageOrder.filter(id => displayedLanguages[id]);
@@ -7491,6 +7627,7 @@ function renderSelectedKidase(addSectionTitleCallback, options = {}) {
 
                             const card = createPrayerCardElement(versePrayer, -1, true);
                             card.dataset.readingType = activeCfg.id;
+                            card.dataset.readingSlot = activeCfg.id;
 
                             const pickerFooter = document.createElement('div');
                             pickerFooter.classList.add('card-inline-lectionary-picker');
@@ -7563,6 +7700,7 @@ function renderSelectedKidase(addSectionTitleCallback, options = {}) {
                                     }
                                 });
                                 const card = createPrayerCardElement(versePrayer, -1, true);
+                                card.dataset.readingSlot = activeCfg.id;
                                 if (i === 0) {
                                     card.dataset.readingType = activeCfg.id;
                                     const pickerFooter = document.createElement('div');
@@ -7585,6 +7723,22 @@ function renderSelectedKidase(addSectionTitleCallback, options = {}) {
                                     } else {
                                         card.appendChild(pickerFooter);
                                     }
+                                } else {
+                                    // Attach a compact Slides-mode-only parish lectionary toggle pill on verses 2..N
+                                    // so worshippers in Slides mode can switch parish reading profiles from ANY verse slide
+                                    const slidePill = createKidaseReadingSetPillElement(activeCfg.id, { compact: true });
+                                    if (slidePill) {
+                                        const slideWrap = document.createElement('div');
+                                        slideWrap.className = 'slide-only-lectionary-pill-wrap';
+                                        slideWrap.appendChild(slidePill);
+                                        const pFooter = card.querySelector('.prayer-footer');
+                                        const pActions = card.querySelector('.prayer-actions');
+                                        if (pFooter && pActions) {
+                                            pFooter.insertBefore(slideWrap, pActions);
+                                        } else {
+                                            card.appendChild(slideWrap);
+                                        }
+                                    }
                                 }
                                 prayerDisplay.appendChild(card);
                             }
@@ -7597,15 +7751,22 @@ function renderSelectedKidase(addSectionTitleCallback, options = {}) {
             const card = createPrayerCardElement(p, -1, true);
             if (activeCfg) {
                 card.dataset.readingType = activeCfg.id;
+                card.dataset.readingSlot = activeCfg.id;
                 const pickerFooter = document.createElement('div');
                 pickerFooter.classList.add('card-inline-lectionary-picker');
 
                 const bookOpts = (activeCfg.id === 'pauline') ? ['Romans', '1 Corinthians', '2 Corinthians', 'Galatians', 'Ephesians', 'Philippians', 'Colossians', '1 Thessalonians', '2 Thessalonians', '1 Timothy', '2 Timothy', 'Titus', 'Philemon', 'Hebrews']
                     : (activeCfg.id === 'universal') ? ['James', '1 Peter', '2 Peter', '1 John', '2 John', '3 John', 'Jude', 'Revelation']
                     : (activeCfg.id === 'acts') ? ['Acts']
+                    : (activeCfg.id === 'morningPsalm' || activeCfg.id === 'psalm' || activeCfg.id === 'eveningPsalm') ? ['Psalms']
                     : ['Matthew', 'Mark', 'Luke', 'John'];
 
-                createLectionaryPicker(pickerFooter, activeCfg.id, bookOpts, null);
+                const setPill = createKidaseReadingSetPillElement(activeCfg.id);
+                const safeTypicalPsalms = (bookOpts[0] === 'Psalms' && typeof TYPICAL_PSALMS !== 'undefined') ? TYPICAL_PSALMS : null;
+                createLectionaryPicker(pickerFooter, activeCfg.id, bookOpts, safeTypicalPsalms);
+                if (setPill) {
+                    pickerFooter.insertBefore(setPill, pickerFooter.firstChild);
+                }
                 const pFooter = card.querySelector('.prayer-footer');
                 const pActions = card.querySelector('.prayer-actions');
                 if (pFooter && pActions) {
@@ -7963,8 +8124,9 @@ function _renderPrayersSync() {
         const existingSlides = prayerDisplay.querySelectorAll('.prayer-card, .section-title.collapsible');
         const currentSlide = existingSlides[currentSlideIndex];
         if (currentSlide && currentSlide.dataset) {
-            if (currentSlide.dataset.readingType) {
-                _pendingSlideReadingType = currentSlide.dataset.readingType;
+            const slideSlot = currentSlide.dataset.readingType || currentSlide.dataset.readingSlot;
+            if (slideSlot) {
+                _pendingSlideReadingType = slideSlot;
             } else if (currentSlide.dataset.prayerSignature) {
                 _pendingSlideSignature = currentSlide.dataset.prayerSignature;
             }
@@ -9487,51 +9649,59 @@ async function loadBibleData() {
     await ensureActiveBibleDataLoaded();
 }
 
-function createKidaseReadingSetPillElement(readingKey = null) {
-    const eth = computeEthiopianDate(getEffectiveDate());
-    const entry = getActiveEotcLectionaryLookup(eth.ethMonth, eth.ethDay);
-    if (!entry || !entry.qidase || !Array.isArray(entry.qidase.sets) || entry.qidase.sets.length <= 1) {
+function createKidaseReadingSetPillElement(readingKey = null, { compact = false } = {}) {
+    const profiles = getActiveKidaseProfilesForDate(getEffectiveDate());
+    if (!Array.isArray(profiles) || profiles.length <= 1) {
         return null;
     }
-    const sets = entry.qidase.sets;
-    if (readingKey) {
-        const variesPauline = sets.some(s => s.pauline && s.pauline !== sets[0].pauline);
-        const variesPsalm = sets.some(s => s.psalmLxx && s.psalmLxx !== sets[0].psalmLxx);
-        const variesGospel = sets.some(s => s.gospel && s.gospel !== sets[0].gospel);
-        const isRelevant = (readingKey === 'psalm' && (variesPsalm || variesGospel))
-            || (readingKey === 'gospel' && (variesGospel || variesPsalm))
-            || (readingKey === 'pauline' && variesPauline);
-        if (!isRelevant) return null;
+
+    if (readingKey === 'morningPsalm' || readingKey === 'morningGospel') {
+        const variesMatins = profiles.some(p =>
+            p.refs && (p.refs.morningPsalm !== profiles[0].refs.morningPsalm || p.refs.morningGospel !== profiles[0].refs.morningGospel)
+        );
+        if (!variesMatins) return null;
+    } else if (readingKey === 'eveningPsalm' || readingKey === 'eveningGospel') {
+        const variesVespers = profiles.some(p =>
+            p.refs && (p.refs.eveningPsalm !== profiles[0].refs.eveningPsalm || p.refs.eveningGospel !== profiles[0].refs.eveningGospel)
+        );
+        if (!variesVespers) return null;
     }
 
+    const activeIdx = Math.max(0, Math.min(profiles.length - 1, Number(selectedKidaseReadingSetIndex) || 0));
+
     const wrapper = document.createElement('div');
-    wrapper.className = 'lectionary-set-pill';
+    wrapper.className = compact ? 'lectionary-set-pill lectionary-set-pill-compact' : 'lectionary-set-pill';
     wrapper.setAttribute('role', 'tablist');
-    wrapper.setAttribute('aria-label', 'Appointed Reading Sets');
+    wrapper.setAttribute('aria-label', 'Parish Lectionary Reading Options');
 
     const labelSpan = document.createElement('span');
     labelSpan.className = 'lectionary-set-pill-label';
-    labelSpan.textContent = 'Reading Set:';
+    labelSpan.textContent = compact ? 'Lectionary:' : 'Parish Lectionary:';
     wrapper.appendChild(labelSpan);
 
-    sets.forEach((s, idx) => {
+    profiles.forEach((prof, idx) => {
         const btn = document.createElement('button');
         btn.type = 'button';
-        const isActive = idx === (selectedKidaseReadingSetIndex || 0);
+        const isActive = idx === activeIdx;
         btn.className = `lectionary-set-pill-btn${isActive ? ' active' : ''}`;
         btn.setAttribute('role', 'tab');
         btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
         btn.dataset.setIndex = String(idx);
+        if (prof.id) btn.dataset.profileId = prof.id;
+        if (prof.category) btn.dataset.profileCategory = prof.category;
+
         const summaryParts = [];
-        if (s.pauline) summaryParts.push(s.pauline);
-        if (s.psalmLxx) summaryParts.push(`Ps ${s.psalmLxx} LXX`);
-        if (s.gospel) summaryParts.push(s.gospel);
+        if (prof.subtitle) summaryParts.push(prof.subtitle);
+        if (prof.refs && prof.refs.pauline) summaryParts.push(prof.refs.pauline);
+        if (prof.psalmLxx) summaryParts.push(`Ps ${prof.psalmLxx} LXX`);
+        if (prof.refs && prof.refs.gospel) summaryParts.push(prof.refs.gospel);
+        if (prof.liturgyTypeGeez) summaryParts.push(prof.liturgyTypeGeez);
         btn.title = summaryParts.join(' • ');
-        btn.textContent = `Set ${idx + 1}`;
+        btn.textContent = prof.shortLabel || `Set ${idx + 1}`;
         btn.addEventListener('click', (e) => {
             e.preventDefault();
             e.stopPropagation();
-            selectKidaseReadingSet(idx);
+            selectKidaseReadingSet(idx, { targetReadingType: readingKey });
         });
         wrapper.appendChild(btn);
     });
@@ -9543,9 +9713,24 @@ function renderSidebarKidaseReadingSetPill() {
     const container = document.getElementById('kidase-reading-set-container');
     if (!container) return;
     container.innerHTML = '';
+    const profiles = getActiveKidaseProfilesForDate(getEffectiveDate());
     const pill = createKidaseReadingSetPillElement(null);
     if (pill) {
         container.appendChild(pill);
+        const activeIdx = Math.max(0, Math.min(profiles.length - 1, Number(selectedKidaseReadingSetIndex) || 0));
+        const activeProf = profiles[activeIdx];
+        if (activeProf && activeProf.subtitle) {
+            const caption = document.createElement('div');
+            caption.className = 'kidase-active-profile-caption ethiopic-label';
+            caption.textContent = activeProf.subtitle;
+            container.appendChild(caption);
+        }
+        container.style.display = 'block';
+    } else if (Array.isArray(profiles) && profiles.length === 1 && profiles[0].subtitle) {
+        const caption = document.createElement('div');
+        caption.className = 'kidase-active-profile-caption ethiopic-label';
+        caption.textContent = profiles[0].subtitle;
+        container.appendChild(caption);
         container.style.display = 'block';
     } else {
         container.style.display = 'none';
@@ -15391,6 +15576,8 @@ const appCoreExports = {
     setCustomDateTimeOverride,
     clearCustomDateTimeOverride,
     syncLiturgicalSelectionsToEffectiveDate,
+    getActiveKidaseProfilesForDate,
+    getActiveFastingStatusForDate,
     getDefaultKidaseRefsAndAnaphoraForDate,
     selectKidaseReadingSet,
     getDefaultReadingTranslationOverrides,

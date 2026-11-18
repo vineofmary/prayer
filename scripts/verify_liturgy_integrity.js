@@ -48,6 +48,8 @@ const PARITY_PAIRS = [
   ['app/src/main/assets/js/miracles_of_mary.js', 'public/js/miracles_of_mary.js'],
   ['app/src/main/assets/js/songs.js', 'public/js/songs.js'],
   ['app/src/main/assets/js/typical_psalms.js', 'public/js/typical_psalms.js'],
+  ['app/src/main/assets/js/eotc_lectionary.js', 'public/js/eotc_lectionary.js'],
+  ['app/src/main/assets/js/eotc_gitsawe_2014.js', 'public/js/eotc_gitsawe_2014.js'],
   ['app/src/main/assets/js/st_athanasius_psalms.js', 'public/js/st_athanasius_psalms.js'],
   ['app/src/main/assets/js/teklil.js', 'public/js/teklil.js'],
   ['app/src/main/assets/js/servants.js', 'public/js/servants.js'],
