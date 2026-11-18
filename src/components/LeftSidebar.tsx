@@ -138,6 +138,12 @@ export const LeftSidebar: React.FC = () => {
             <label><input type="checkbox" id="show-trinitarian-invocation-toggle" /> <span>Trinitarian Invocation</span></label>
             <label><input type="checkbox" id="show-speaker-labels" /> <span>Speaker Labels (Beta)</span></label>
             <label><input type="checkbox" id="paragraph-mode" /> <span>Paragraph Mode (Single Language only)</span></label>
+            <label id="scroll-card-borders-label" title="Show rectangular borders around each prayer card in Scroll Mode. When unchecked, cards use a minimal layout with vertical dividers between language columns.">
+              <input type="checkbox" id="scroll-card-borders-toggle" /> <span>Prayer Card Borders (Scroll Mode)</span>
+            </label>
+            <label id="prayer-footer-divider-label" title="Show the horizontal divider line above each prayer card footer.">
+              <input type="checkbox" id="prayer-footer-divider-toggle" defaultChecked /> <span>Prayer Card Footer Line</span>
+            </label>
             <label id="dynamic-font-sizing-label" style={{ display: 'none' }}>
               <input type="checkbox" id="dynamic-font-sizing" /> <span>Dynamic Font Sizing (Slides Mode)</span>
             </label>

@@ -379,5 +379,81 @@ describe('State Serialization & Unicode URL Encoding', () => {
       // Exit slides mode to restore clean state
       app.togglePresentationMode();
     });
+
+    it('defaults Scroll Mode to minimal borderless cards with vertical dividers and toggles card borders cleanly', async () => {
+      localStorage.clear();
+      await app.loadSettings();
+      app.setupEventListeners();
+
+      const borderToggle = document.getElementById('scroll-card-borders-toggle');
+      const borderLabel = document.getElementById('scroll-card-borders-label');
+      expect(borderToggle).toBeTruthy();
+      expect(borderLabel).toBeTruthy();
+
+      // Default Scroll Mode state: showScrollCardBorders = false, no .scroll-card-borders body class
+      expect(app.getDisplayOptions().presentationMode).toBe('scroll');
+      expect(app.getDisplayOptions().showScrollCardBorders).toBe(false);
+      expect(borderToggle.checked).toBe(false);
+      expect(borderLabel.style.display).toBe('block');
+      expect(document.body.classList.contains('scroll-card-borders')).toBe(false);
+
+      // Toggle ON rectangular card borders in Scroll Mode
+      borderToggle.checked = true;
+      borderToggle.dispatchEvent(new Event('change'));
+      expect(app.getDisplayOptions().showScrollCardBorders).toBe(true);
+      expect(document.body.classList.contains('scroll-card-borders')).toBe(true);
+
+      // Existing users whose saved displayOptions lack showScrollCardBorders default to false
+      localStorage.setItem('settingsVersion', '4.5.5');
+      localStorage.setItem('displayOptions', JSON.stringify({ presentationMode: 'scroll' }));
+      await app.loadSettings();
+      expect(app.getDisplayOptions().showScrollCardBorders).toBe(false);
+      expect(document.body.classList.contains('scroll-card-borders')).toBe(false);
+
+      // Verify saved showScrollCardBorders: true is restored on loadSettings()
+      localStorage.setItem('displayOptions', JSON.stringify({ showScrollCardBorders: true }));
+      await app.loadSettings();
+      expect(app.getDisplayOptions().showScrollCardBorders).toBe(true);
+      expect(document.getElementById('scroll-card-borders-toggle').checked).toBe(true);
+      expect(document.body.classList.contains('scroll-card-borders')).toBe(true);
+
+      // Slides Mode hides the Scroll Mode card borders setting label
+      app.setDisplayOptions({ presentationMode: 'slides' });
+      app.applyTheme();
+      expect(borderLabel.style.display).toBe('none');
+
+      // Restoring Scroll Mode shows the label again; toggling back OFF restores minimal default
+      app.setDisplayOptions({ presentationMode: 'scroll' });
+      app.applyTheme();
+      expect(borderLabel.style.display).toBe('block');
+      borderToggle.checked = false;
+      borderToggle.dispatchEvent(new Event('change'));
+      expect(app.getDisplayOptions().showScrollCardBorders).toBe(false);
+      expect(document.body.classList.contains('scroll-card-borders')).toBe(false);
+
+      // Prayer Card Footer Line toggle: defaults to true (visible), toggling OFF adds .hide-prayer-footer-divider
+      const footerLineToggle = document.getElementById('prayer-footer-divider-toggle');
+      expect(footerLineToggle).toBeTruthy();
+      expect(app.getDisplayOptions().showPrayerFooterDivider).toBe(true);
+      expect(footerLineToggle.checked).toBe(true);
+      expect(document.body.classList.contains('hide-prayer-footer-divider')).toBe(false);
+
+      footerLineToggle.checked = false;
+      footerLineToggle.dispatchEvent(new Event('change'));
+      expect(app.getDisplayOptions().showPrayerFooterDivider).toBe(false);
+      expect(document.body.classList.contains('hide-prayer-footer-divider')).toBe(true);
+
+      localStorage.setItem('settingsVersion', '4.5.5');
+      localStorage.setItem('displayOptions', JSON.stringify({ showPrayerFooterDivider: false }));
+      await app.loadSettings();
+      expect(app.getDisplayOptions().showPrayerFooterDivider).toBe(false);
+      expect(footerLineToggle.checked).toBe(false);
+      expect(document.body.classList.contains('hide-prayer-footer-divider')).toBe(true);
+
+      footerLineToggle.checked = true;
+      footerLineToggle.dispatchEvent(new Event('change'));
+      expect(app.getDisplayOptions().showPrayerFooterDivider).toBe(true);
+      expect(document.body.classList.contains('hide-prayer-footer-divider')).toBe(false);
+    });
   });
 });

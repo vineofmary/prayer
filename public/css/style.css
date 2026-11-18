@@ -954,6 +954,31 @@ body.view-mode-unified #prayer-display > .prayer-card:last-child {
     margin-bottom: 0;
 }
 
+/* Minimal Scroll Mode Styles (Default: no rectangular card border, vertical dividers between language columns) */
+body.view-mode-card:not(.presentation-mode-slides):not(.scroll-card-borders):not(.paragraph-mode):not(.scribe-mode-active) .prayer-card {
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+body.view-mode-card:not(.presentation-mode-slides):not(.scroll-card-borders):not(.paragraph-mode) .prayer-card-main-content {
+    padding: 0.5rem 0;
+}
+
+body.view-mode-card:not(.presentation-mode-slides):not(.scroll-card-borders):not(.paragraph-mode) .prayer-content.layout-column {
+    align-items: stretch;
+}
+
+body.view-mode-card:not(.presentation-mode-slides):not(.scroll-card-borders):not(.paragraph-mode) .prayer-content.layout-column .language-section:not(:last-child) {
+    border-right: 1px solid var(--border-color);
+    padding-right: var(--column-gap);
+}
+
+body.view-mode-card:not(.presentation-mode-slides):not(.scroll-card-borders):not(.paragraph-mode) .info-panel-content {
+    margin: 0.75rem 0 0;
+}
+
 /* Paragraph Mode Styles */
 body.paragraph-mode .prayer-card {
     background-color: transparent;
@@ -991,7 +1016,13 @@ body.paragraph-mode .holy-trinity-icon {
     justify-content: space-between;
     align-items: center;
     padding-top: 0.75rem;
+    border-top: 1px solid var(--border-color);
     margin-top: 1rem;
+}
+
+body.hide-prayer-footer-divider .prayer-footer,
+body.view-mode-unified .prayer-footer {
+    border-top: none;
 }
 
 .prayer-card.psalm-card .prayer-footer {
@@ -2157,6 +2188,11 @@ body.presentation-mode-slides .prayer-content.layout-row .language-section {
 .prayer-content[data-active-columns~="7"] .language-section {
     flex-basis: 80%;
 }
+
+    body.view-mode-card:not(.presentation-mode-slides):not(.scroll-card-borders):not(.paragraph-mode) .prayer-content.layout-column .language-section:not(:last-child) {
+        box-sizing: border-box;
+        padding-right: var(--mobile-column-gap);
+    }
 }
 
 /* Ensure the section title slide itself is a positioning context and takes full space */

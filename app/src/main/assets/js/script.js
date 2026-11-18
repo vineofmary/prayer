@@ -35,7 +35,8 @@ let header, leftSidebar, rightSidebar, mainContent, sidebarToggle, prayersPanelT
     boldTextToggle, ethiopicFontSelect, englishFontSelect, languageTogglesDiv, unofficialLanguageTogglesDiv,
     unofficialLanguagesSection, prayerDisplay, languageOrderList, copyNotification, presentationModeToggleHeader,
     presModeIconSlides, presModeIconScroll, layoutToggleHeader, layoutIconColumn, layoutIconRow,
-    showLanguageLabelsToggle, showSpeakerLabelsToggle, paragraphModeToggle, showRubricationToggle,
+    showLanguageLabelsToggle, showSpeakerLabelsToggle, paragraphModeToggle, scrollCardBordersLabel,
+    scrollCardBordersToggle, prayerFooterDividerToggle, showRubricationToggle,
     languageColorCodingSelect, dynamicFontSizingLabel, dynamicFontSizingToggle, forceUniformFontSizeLabel,
     forceUniformFontSizeToggle, slideTransitionSelect, slideTrackerStyleSelect, searchContainer, searchToggle, searchClose,
     searchInput, searchCount, searchPrev, searchNext, helpButton, showSupplicationsToggle,
@@ -111,6 +112,9 @@ function bindDOMElements() {
     showLanguageLabelsToggle = document.getElementById('show-language-labels');
     showSpeakerLabelsToggle = document.getElementById('show-speaker-labels');
     paragraphModeToggle = document.getElementById('paragraph-mode');
+    scrollCardBordersLabel = document.getElementById('scroll-card-borders-label');
+    scrollCardBordersToggle = document.getElementById('scroll-card-borders-toggle');
+    prayerFooterDividerToggle = document.getElementById('prayer-footer-divider-toggle');
     showRubricationToggle = document.getElementById('show-rubrication');
     languageColorCodingSelect = document.getElementById('language-color-coding-select');
     dynamicFontSizingLabel = document.getElementById('dynamic-font-sizing-label');
@@ -2408,11 +2412,13 @@ function applyTheme() {
     // Add presentation mode
     if (displayOptions.presentationMode === 'slides') {
         body.classList.add('presentation-mode-slides');
-        dynamicFontSizingLabel.style.display = 'block';
-        forceUniformFontSizeLabel.style.display = 'block';
+        if (dynamicFontSizingLabel) dynamicFontSizingLabel.style.display = 'block';
+        if (forceUniformFontSizeLabel) forceUniformFontSizeLabel.style.display = 'block';
+        if (scrollCardBordersLabel) scrollCardBordersLabel.style.display = 'none';
     } else {
-        dynamicFontSizingLabel.style.display = 'none';
-        forceUniformFontSizeLabel.style.display = 'none';
+        if (dynamicFontSizingLabel) dynamicFontSizingLabel.style.display = 'none';
+        if (forceUniformFontSizeLabel) forceUniformFontSizeLabel.style.display = 'none';
+        if (scrollCardBordersLabel) scrollCardBordersLabel.style.display = 'block';
     }
 
     // Handle sidebar state
@@ -2460,6 +2466,12 @@ function applyTheme() {
     document.querySelectorAll('.hareg-ornament, .hareg-header, .hareg-footer').forEach(el => {
         el.style.display = showHareg ? '' : 'none';
     });
+
+    // Handle Scroll Mode card borders vs minimal vertical-column-divider layout
+    body.classList.toggle('scroll-card-borders', Boolean(displayOptions.showScrollCardBorders));
+
+    // Handle prayer card footer horizontal divider visibility
+    body.classList.toggle('hide-prayer-footer-divider', displayOptions.showPrayerFooterDivider === false);
 
     // Handle Paragraph Mode
     const activeLanguageCount = Object.values(displayedLanguages).filter(Boolean).length;
@@ -3380,6 +3392,8 @@ async function loadSettings() {
         displayOptions: {
             presentationMode: 'scroll',
             viewMode: 'card',
+            showScrollCardBorders: false,
+            showPrayerFooterDivider: true,
             layout: 'column',
             horizontalScroll: false,
             showPrayerLabels: true,
@@ -3742,6 +3756,15 @@ function updateAllTogglesInSettingsPanel() {
     paragraphModeToggle.checked = displayOptions.paragraphMode;
     const activeLanguageCount = Object.values(displayedLanguages).filter(Boolean).length;
     paragraphModeToggle.parentElement.style.display = (activeLanguageCount === 1 && displayOptions.presentationMode === 'scroll') ? 'block' : 'none';
+    if (scrollCardBordersToggle) {
+        scrollCardBordersToggle.checked = Boolean(displayOptions.showScrollCardBorders);
+    }
+    if (scrollCardBordersLabel) {
+        scrollCardBordersLabel.style.display = displayOptions.presentationMode === 'slides' ? 'none' : 'block';
+    }
+    if (prayerFooterDividerToggle) {
+        prayerFooterDividerToggle.checked = displayOptions.showPrayerFooterDivider !== false;
+    }
     showRubricationToggle.checked = displayOptions.showRubrication;
     languageColorCodingSelect.value = displayOptions.languageColors;
     dynamicFontSizingToggle.checked = displayOptions.dynamicFontSizing;
@@ -14179,6 +14202,22 @@ safeOn(languageColorCodingSelect, 'change', () => {
     saveSettings();
 });
 
+if (scrollCardBordersToggle) {
+    safeOn(scrollCardBordersToggle, 'change', () => {
+        displayOptions.showScrollCardBorders = scrollCardBordersToggle.checked;
+        applyTheme();
+        saveSettings();
+    });
+}
+
+if (prayerFooterDividerToggle) {
+    safeOn(prayerFooterDividerToggle, 'change', () => {
+        displayOptions.showPrayerFooterDivider = prayerFooterDividerToggle.checked;
+        applyTheme();
+        saveSettings();
+    });
+}
+
 
 safeOn(dynamicFontSizingToggle, 'change', () => {
     displayOptions.dynamicFontSizing = dynamicFontSizingToggle.checked;
@@ -16011,6 +16050,8 @@ const appCoreExports = {
     renderHistoricalPrefaces,
     loadSettings,
     saveSettings,
+    applyTheme,
+    updateAllTogglesInSettingsPanel,
     setupEventListeners,
     buildUrlStateObject,
     syncStateToUrl,
