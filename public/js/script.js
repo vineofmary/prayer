@@ -1133,6 +1133,7 @@ let _pendingSlideSignature = null; // Persists target slide identity across asyn
 let _pendingSlideId = null; // Used for jump-to buttons that trigger a DOM rebuild
 let _pendingSlidePredicate = null;
 let _pendingSlideReadingType = null; // Persists target reading opening slide across async re-renders
+let _pendingSlideDailyReadingIndex = null; // Persists target Daily Readings opening slide across async re-renders
 let areAllSectionsCollapsed = true;
 let dailyLectionaryPeriodOverride = null; // null = auto (< 17:00 -> 'morning', >= 17:00 -> 'sunset'), or 'morning' | 'sunset'
 let dailyLectionaryDayOffset = 0;         // integer day offset scoped to the Daily Readings section
@@ -1387,6 +1388,110 @@ function clearCustomDateTimeOverride({ render = true } = {}) {
     localStorage.removeItem('customDateTimeOverride');
     syncLiturgicalSelectionsToEffectiveDate({ render });
     return true;
+}
+
+function applyLiturgicalDateChange(dateOrNull, { targetReadingType = null, targetDailyReadingIndex = null, keepDailyPeriod = false } = {}) {
+    let resolvedSlideReadingType = targetReadingType || null;
+    let resolvedDailyIndex = (targetDailyReadingIndex !== null && targetDailyReadingIndex !== undefined)
+        ? Number(targetDailyReadingIndex)
+        : null;
+
+    if (displayOptions.presentationMode === 'slides' && !resolvedSlideReadingType && resolvedDailyIndex === null && prayerDisplay) {
+        const existingSlides = prayerDisplay.querySelectorAll('.prayer-card, .section-title.collapsible');
+        const currentSlide = existingSlides[currentSlideIndex];
+        if (currentSlide && currentSlide.dataset) {
+            resolvedSlideReadingType = currentSlide.dataset.readingType || currentSlide.dataset.readingSlot || null;
+            if (!resolvedSlideReadingType && currentSlide.dataset.dailyReadingIndex !== undefined) {
+                resolvedDailyIndex = Number(currentSlide.dataset.dailyReadingIndex);
+            }
+        }
+    }
+
+    const preservedDailyPeriod = keepDailyPeriod ? dailyLectionaryPeriodOverride : null;
+
+    if (dateOrNull) {
+        setCustomDateTimeOverride(dateOrNull, { render: false });
+    } else {
+        clearCustomDateTimeOverride({ render: false });
+    }
+
+    if (keepDailyPeriod && (preservedDailyPeriod === 'morning' || preservedDailyPeriod === 'sunset')) {
+        dailyLectionaryPeriodOverride = preservedDailyPeriod;
+    }
+
+    if (resolvedDailyIndex !== null && !isNaN(resolvedDailyIndex)) {
+        collapsedSections["Morning Readings | ምንባባት ዘነግህ"] = false;
+        collapsedSections["Sunset Readings | ምንባባት ዘሠርክ"] = false;
+        collapsedSections["Daily Readings | ምንባባት ዘለለዕለቱ"] = false;
+        areAllSectionsCollapsed = false;
+    }
+
+    if (displayOptions.presentationMode === 'slides') {
+        _pendingSlideSignature = null;
+        _pendingSlideId = null;
+        _pendingSlidePredicate = null;
+        if (resolvedSlideReadingType) {
+            _pendingSlideReadingType = resolvedSlideReadingType;
+            _pendingSlideDailyReadingIndex = null;
+        } else if (resolvedDailyIndex !== null && !isNaN(resolvedDailyIndex)) {
+            _pendingSlideReadingType = null;
+            _pendingSlideDailyReadingIndex = resolvedDailyIndex;
+        }
+    }
+
+    if (typeof renderPrayers === 'function') {
+        const finalizeAnchor = () => {
+            if (displayOptions.presentationMode === 'slides' && prayerDisplay) {
+                let reRenderedCard = null;
+                if (resolvedSlideReadingType) {
+                    reRenderedCard = prayerDisplay.querySelector(`.prayer-card[data-reading-type="${resolvedSlideReadingType}"]`);
+                } else if (resolvedDailyIndex !== null && !isNaN(resolvedDailyIndex)) {
+                    reRenderedCard = prayerDisplay.querySelector(`.prayer-card[data-daily-reading-index="${resolvedDailyIndex}"]`)
+                        || prayerDisplay.querySelector('.prayer-card[data-daily-reading-opening="true"]');
+                }
+                if (reRenderedCard) {
+                    const allSlides = Array.from(prayerDisplay.querySelectorAll('.prayer-card, .section-title.collapsible'));
+                    const idx = allSlides.indexOf(reRenderedCard);
+                    if (idx !== -1) {
+                        currentSlideIndex = idx;
+                        showSlide(currentSlideIndex);
+                    }
+                }
+            } else if (displayOptions.presentationMode !== 'slides') {
+                if (resolvedSlideReadingType) {
+                    const anchoredCard = document.querySelector(`.prayer-card[data-reading-type="${resolvedSlideReadingType}"]`);
+                    if (anchoredCard && typeof anchoredCard.scrollIntoView === 'function') {
+                        anchoredCard.scrollIntoView({ block: 'center', behavior: 'instant' });
+                    }
+                } else if (resolvedDailyIndex !== null && !isNaN(resolvedDailyIndex) && prayerDisplay) {
+                    const targetCard = prayerDisplay.querySelector(`.prayer-card[data-daily-reading-index="${resolvedDailyIndex}"]`)
+                        || prayerDisplay.querySelector('.prayer-card[data-daily-reading-opening="true"]');
+                    if (targetCard) {
+                        // Ensure its parent Daily Reading subsection is expanded so the new day's opening card is visible
+                        let prev = targetCard.previousElementSibling;
+                        while (prev) {
+                            if (prev.classList.contains('section-title') && prev.classList.contains('sub-section-title')) {
+                                if (prev.classList.contains('collapsed') && typeof prev.click === 'function') {
+                                    prev.click();
+                                }
+                                break;
+                            }
+                            prev = prev.previousElementSibling;
+                        }
+                        if (typeof targetCard.scrollIntoView === 'function') {
+                            targetCard.scrollIntoView({ block: 'center', behavior: 'instant' });
+                        }
+                    }
+                }
+            }
+        };
+        const renderPromise = renderPrayers();
+        if (renderPromise && typeof renderPromise.then === 'function') {
+            return renderPromise.then(finalizeAnchor);
+        }
+        finalizeAnchor();
+    }
+    return Promise.resolve();
 }
 
 function selectKidaseReadingSet(setIndex, { render = true, targetReadingType = null } = {}) {
@@ -5575,9 +5680,11 @@ function renderLiturgicalCalendarBar() {
     });
 }
 
-function openCalendarInfoModal(actionType) {
+function openCalendarInfoModal(actionType, modalOptions = {}) {
     if (!calendarInfoModal || !calendarInfoTitle || !calendarInfoBody) return;
-    const now = getEffectiveDate();
+    const now = (modalOptions && modalOptions.initialDate instanceof Date && !isNaN(modalOptions.initialDate.getTime()))
+        ? new Date(modalOptions.initialDate.getTime())
+        : getEffectiveDate();
     const eth = computeEthiopianDate(now);
     const hrInfo = getLiturgicalHourInfo(now);
 
@@ -5642,7 +5749,7 @@ function openCalendarInfoModal(actionType) {
             </div>
             <div class="cal-dt-actions">
                 <button type="button" id="cal-dt-apply-btn" class="cal-dt-primary-btn">Apply Date &amp; Time</button>
-                <button type="button" id="cal-dt-reset-btn" class="cal-dt-secondary-btn" ${customDateTimeOverride ? '' : 'disabled'}>Reset to Live</button>
+                <button type="button" id="cal-dt-reset-btn" class="cal-dt-secondary-btn" ${(customDateTimeOverride || (modalOptions && modalOptions.targetDailyReadingIndex != null && dailyLectionaryDayOffset !== 0)) ? '' : 'disabled'}>Reset to Live</button>
             </div>
             <div class="cal-dt-transparency-footer">
                 Notice any issues with the lectionary? You can always refer to the original text <a href="#" id="cal-dt-toggle-scans-link" class="cal-dt-inline-link" aria-expanded="false">here</a> or let us know what looks wrong in the feedback section <a href="#" id="cal-dt-open-feedback-link" class="cal-dt-inline-link">here</a>.
@@ -5806,12 +5913,28 @@ function openCalendarInfoModal(actionType) {
 
         calendarInfoBody.querySelector('#cal-dt-apply-btn').addEventListener('click', () => {
             const chosen = buildCandidateDateFromGreg();
-            setCustomDateTimeOverride(chosen);
+            if (modalOptions && (modalOptions.targetReadingType || modalOptions.targetDailyReadingIndex != null)) {
+                applyLiturgicalDateChange(chosen, {
+                    targetReadingType: modalOptions.targetReadingType || null,
+                    targetDailyReadingIndex: modalOptions.targetDailyReadingIndex ?? null,
+                    keepDailyPeriod: Boolean(modalOptions.keepDailyPeriod)
+                });
+            } else {
+                setCustomDateTimeOverride(chosen);
+            }
             closeModal();
         });
 
         calendarInfoBody.querySelector('#cal-dt-reset-btn').addEventListener('click', () => {
-            clearCustomDateTimeOverride();
+            if (modalOptions && (modalOptions.targetReadingType || modalOptions.targetDailyReadingIndex != null)) {
+                applyLiturgicalDateChange(null, {
+                    targetReadingType: modalOptions.targetReadingType || null,
+                    targetDailyReadingIndex: modalOptions.targetDailyReadingIndex ?? null,
+                    keepDailyPeriod: Boolean(modalOptions.keepDailyPeriod)
+                });
+            } else {
+                clearCustomDateTimeOverride();
+            }
             closeModal();
         });
 
@@ -7632,11 +7755,8 @@ function renderSelectedKidase(addSectionTitleCallback, options = {}) {
                             const pickerFooter = document.createElement('div');
                             pickerFooter.classList.add('card-inline-lectionary-picker');
                             const setPill = createKidaseReadingSetPillElement(activeCfg.id);
-                            if (setPill) pickerFooter.appendChild(setPill);
                             createLectionaryPicker(pickerFooter, activeCfg.id, ['Psalms'], TYPICAL_PSALMS);
-                            if (setPill && !pickerFooter.contains(setPill)) {
-                                pickerFooter.insertBefore(setPill, pickerFooter.firstChild);
-                            }
+                            attachInlineReadingFooterControls(pickerFooter, activeCfg.id, setPill);
                             const pFooter = card.querySelector('.prayer-footer');
                             const pActions = card.querySelector('.prayer-actions');
                             if (pFooter && pActions) {
@@ -7713,9 +7833,7 @@ function renderSelectedKidase(addSectionTitleCallback, options = {}) {
 
                                     const setPill = createKidaseReadingSetPillElement(activeCfg.id);
                                     createLectionaryPicker(pickerFooter, activeCfg.id, bookOpts, null);
-                                    if (setPill) {
-                                        pickerFooter.insertBefore(setPill, pickerFooter.firstChild);
-                                    }
+                                    attachInlineReadingFooterControls(pickerFooter, activeCfg.id, setPill);
                                     const pFooter = card.querySelector('.prayer-footer');
                                     const pActions = card.querySelector('.prayer-actions');
                                     if (pFooter && pActions) {
@@ -7764,9 +7882,7 @@ function renderSelectedKidase(addSectionTitleCallback, options = {}) {
                 const setPill = createKidaseReadingSetPillElement(activeCfg.id);
                 const safeTypicalPsalms = (bookOpts[0] === 'Psalms' && typeof TYPICAL_PSALMS !== 'undefined') ? TYPICAL_PSALMS : null;
                 createLectionaryPicker(pickerFooter, activeCfg.id, bookOpts, safeTypicalPsalms);
-                if (setPill) {
-                    pickerFooter.insertBefore(setPill, pickerFooter.firstChild);
-                }
+                attachInlineReadingFooterControls(pickerFooter, activeCfg.id, setPill);
                 const pFooter = card.querySelector('.prayer-footer');
                 const pActions = card.querySelector('.prayer-actions');
                 if (pFooter && pActions) {
@@ -8055,6 +8171,7 @@ async function renderPrayers() {
             _pendingSlideId = null;
             _pendingSlidePredicate = null;
             _pendingSlideReadingType = null;
+            _pendingSlideDailyReadingIndex = null;
         }
     }
 }
@@ -8120,13 +8237,15 @@ function getActivePrayerViewPresetSummary() {
 
 function _renderPrayersSync() {
     if (!prayerDisplay || typeof prayers === 'undefined' || !Array.isArray(prayers)) return;
-    if (displayOptions.presentationMode === 'slides' && !_pendingSlideReadingType && !_pendingSlideSignature && !_pendingSlideId) {
+    if (displayOptions.presentationMode === 'slides' && !_pendingSlideReadingType && _pendingSlideDailyReadingIndex === null && !_pendingSlideSignature && !_pendingSlideId) {
         const existingSlides = prayerDisplay.querySelectorAll('.prayer-card, .section-title.collapsible');
         const currentSlide = existingSlides[currentSlideIndex];
         if (currentSlide && currentSlide.dataset) {
             const slideSlot = currentSlide.dataset.readingType || currentSlide.dataset.readingSlot;
             if (slideSlot) {
                 _pendingSlideReadingType = slideSlot;
+            } else if (currentSlide.dataset.dailyReadingIndex !== undefined) {
+                _pendingSlideDailyReadingIndex = Number(currentSlide.dataset.dailyReadingIndex);
             } else if (currentSlide.dataset.prayerSignature) {
                 _pendingSlideSignature = currentSlide.dataset.prayerSignature;
             }
@@ -8903,6 +9022,16 @@ function setupSlides() {
                 currentSlideIndex = idx;
             }
         }
+    } else if (_pendingSlideDailyReadingIndex !== null && !isNaN(_pendingSlideDailyReadingIndex)) {
+        const targetCard = prayerDisplay.querySelector(`.prayer-card[data-daily-reading-index="${_pendingSlideDailyReadingIndex}"]`)
+            || prayerDisplay.querySelector('.prayer-card[data-daily-reading-opening="true"]');
+        if (targetCard) {
+            const allSlides = Array.from(prayerDisplay.querySelectorAll('.prayer-card, .section-title.collapsible'));
+            const idx = allSlides.indexOf(targetCard);
+            if (idx !== -1) {
+                currentSlideIndex = idx;
+            }
+        }
     } else if (_pendingSlideSignature) {
         const allSlides = Array.from(prayerDisplay.querySelectorAll('.prayer-card, .section-title.collapsible'));
         const targetCard = allSlides.find(c => c.dataset && c.dataset.prayerSignature === _pendingSlideSignature);
@@ -8959,6 +9088,7 @@ function showSlide(index) {
 function nextSlide() {
     _pendingSlideSignature = null;
     _pendingSlideReadingType = null;
+    _pendingSlideDailyReadingIndex = null;
     _pendingSlideId = null;
     _pendingSlidePredicate = null;
     const slides = prayerDisplay.querySelectorAll('.prayer-card, .section-title.collapsible');
@@ -8971,6 +9101,7 @@ function nextSlide() {
 function prevSlide() {
     _pendingSlideSignature = null;
     _pendingSlideReadingType = null;
+    _pendingSlideDailyReadingIndex = null;
     _pendingSlideId = null;
     _pendingSlidePredicate = null;
     const slides = prayerDisplay.querySelectorAll('.prayer-card, .section-title.collapsible');
@@ -8983,6 +9114,7 @@ function prevSlide() {
 function jumpToSlideByIndex(targetIndex) {
     _pendingSlideSignature = null;
     _pendingSlideReadingType = null;
+    _pendingSlideDailyReadingIndex = null;
     _pendingSlideId = null;
     _pendingSlidePredicate = null;
     const slides = prayerDisplay.querySelectorAll('.prayer-card, .section-title.collapsible');
@@ -9709,6 +9841,120 @@ function createKidaseReadingSetPillElement(readingKey = null, { compact = false 
     return wrapper;
 }
 
+function createInlineLiturgicalDatePillElement({ readingType = null, dailyReadingIndex = null, displayDate = null } = {}) {
+    const effDate = (displayDate instanceof Date && !isNaN(displayDate.getTime()))
+        ? new Date(displayDate.getTime())
+        : getEffectiveDate();
+    const eth = computeEthiopianDate(effDate);
+    const isOverridden = Boolean(customDateTimeOverride) || (dailyReadingIndex !== null && dailyReadingIndex !== undefined && dailyLectionaryDayOffset !== 0);
+
+    const westernMonths = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    const wDateStr = `${westernMonths[effDate.getMonth()]} ${effDate.getDate()}, ${effDate.getFullYear()}`;
+    const fullEthTitle = `${eth.monthName} ${eth.ethDay}, ${eth.ethYear} ዓ.ም. (${wDateStr})`;
+
+    const wrapper = document.createElement('div');
+    wrapper.className = `inline-liturgical-date-pill${isOverridden ? ' is-overridden' : ''}`;
+    wrapper.setAttribute('role', 'group');
+    wrapper.setAttribute('aria-label', 'Liturgical Date Control');
+
+    const labelSpan = document.createElement('span');
+    labelSpan.className = 'inline-liturgical-date-label';
+    labelSpan.textContent = 'Date:';
+    wrapper.appendChild(labelSpan);
+
+    const prevBtn = document.createElement('button');
+    prevBtn.type = 'button';
+    prevBtn.className = 'inline-liturgical-date-step';
+    prevBtn.dataset.dir = '-1';
+    prevBtn.setAttribute('aria-label', 'Previous liturgical day');
+    prevBtn.title = 'Previous liturgical day';
+    prevBtn.innerHTML = '&#8249;';
+    prevBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const nextDate = new Date(effDate.getTime());
+        nextDate.setDate(nextDate.getDate() - 1);
+        applyLiturgicalDateChange(nextDate, {
+            targetReadingType: readingType,
+            targetDailyReadingIndex: dailyReadingIndex,
+            keepDailyPeriod: dailyReadingIndex !== null && dailyReadingIndex !== undefined
+        });
+    });
+
+    const dateBtn = document.createElement('button');
+    dateBtn.type = 'button';
+    dateBtn.className = 'inline-liturgical-date-btn';
+    dateBtn.title = `${fullEthTitle} — Click to choose liturgical date & time`;
+    dateBtn.setAttribute('aria-label', `Liturgical date ${eth.monthName} ${eth.ethDay}, ${eth.ethYear}. Click to change`);
+    dateBtn.innerHTML = `<span class="inline-liturgical-date-text">${eth.monthName} ${eth.ethDay}<span class="inline-liturgical-date-year">, ${eth.ethYear}</span></span>`;
+    dateBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        openCalendarInfoModal('datetime', {
+            targetReadingType: readingType,
+            targetDailyReadingIndex: dailyReadingIndex,
+            initialDate: effDate,
+            keepDailyPeriod: dailyReadingIndex !== null && dailyReadingIndex !== undefined
+        });
+    });
+
+    const nextBtn = document.createElement('button');
+    nextBtn.type = 'button';
+    nextBtn.className = 'inline-liturgical-date-step';
+    nextBtn.dataset.dir = '1';
+    nextBtn.setAttribute('aria-label', 'Next liturgical day');
+    nextBtn.title = 'Next liturgical day';
+    nextBtn.innerHTML = '&#8250;';
+    nextBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const nextDate = new Date(effDate.getTime());
+        nextDate.setDate(nextDate.getDate() + 1);
+        applyLiturgicalDateChange(nextDate, {
+            targetReadingType: readingType,
+            targetDailyReadingIndex: dailyReadingIndex,
+            keepDailyPeriod: dailyReadingIndex !== null && dailyReadingIndex !== undefined
+        });
+    });
+
+    wrapper.appendChild(prevBtn);
+    wrapper.appendChild(dateBtn);
+    wrapper.appendChild(nextBtn);
+
+    if (isOverridden) {
+        const resetBtn = document.createElement('button');
+        resetBtn.type = 'button';
+        resetBtn.className = 'inline-liturgical-date-reset';
+        resetBtn.setAttribute('aria-label', 'Reset to live liturgical date');
+        resetBtn.title = 'Reset to live date & time';
+        resetBtn.textContent = '↺';
+        resetBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            applyLiturgicalDateChange(null, {
+                targetReadingType: readingType,
+                targetDailyReadingIndex: dailyReadingIndex,
+                keepDailyPeriod: dailyReadingIndex !== null && dailyReadingIndex !== undefined
+            });
+        });
+        wrapper.appendChild(resetBtn);
+    }
+
+    return wrapper;
+}
+
+function attachInlineReadingFooterControls(pickerFooter, readingKey, setPill = null) {
+    if (!pickerFooter) return;
+    const datePill = createInlineLiturgicalDatePillElement({ readingType: readingKey });
+    const metaRow = document.createElement('div');
+    metaRow.className = 'lectionary-card-meta-row';
+    metaRow.appendChild(datePill);
+    if (setPill) {
+        metaRow.appendChild(setPill);
+    }
+    pickerFooter.insertBefore(metaRow, pickerFooter.firstChild);
+}
+
 function renderSidebarKidaseReadingSetPill() {
     const container = document.getElementById('kidase-reading-set-container');
     if (!container) return;
@@ -9932,7 +10178,7 @@ function stepDailyLectionaryDayOffset(delta, { reset = false, keepExpanded = fal
     }
 }
 
-function appendDailyLectionaryReadingCards(refStr, period, { isMatins = false, feastInfo = null } = {}, addSectionTitleCallback) {
+function appendDailyLectionaryReadingCards(refStr, period, { isMatins = false, feastInfo = null, dailyReadingIndex = null, targetDate = null } = {}, addSectionTitleCallback) {
     const labelStr = formatDailyReadingSubsectionTitle(refStr, period, { isMatins });
     const childTitle = `→ ${labelStr}`;
     const titleOpts = { defaultCollapsed: true };
@@ -9950,6 +10196,30 @@ function appendDailyLectionaryReadingCards(refStr, period, { isMatins = false, f
     const maxVerses = Math.max(0, ...verseCounts);
     if (maxVerses === 0) return;
 
+    const attachDailyOpeningDateFooter = (card) => {
+        if (!card) return;
+        card.dataset.dailyReadingOpening = 'true';
+        if (dailyReadingIndex !== null && dailyReadingIndex !== undefined) {
+            card.dataset.dailyReadingIndex = String(dailyReadingIndex);
+        }
+        const pickerFooter = document.createElement('div');
+        pickerFooter.className = 'card-inline-lectionary-picker card-inline-daily-date-only';
+        const metaRow = document.createElement('div');
+        metaRow.className = 'lectionary-card-meta-row';
+        metaRow.appendChild(createInlineLiturgicalDatePillElement({
+            dailyReadingIndex,
+            displayDate: targetDate
+        }));
+        pickerFooter.appendChild(metaRow);
+        const pFooter = card.querySelector('.prayer-footer');
+        const pActions = card.querySelector('.prayer-actions');
+        if (pFooter && pActions) {
+            pFooter.insertBefore(pickerFooter, pActions);
+        } else {
+            card.appendChild(pickerFooter);
+        }
+    };
+
     const isPsalm = /^Psalms?\s+/i.test(refStr);
     if (isPsalm) {
         const combined = {
@@ -9964,6 +10234,7 @@ function appendDailyLectionaryReadingCards(refStr, period, { isMatins = false, f
             combined.geez_phonetic = transliterateGeezToPhonetic(combined.geez_script);
         }
         const card = createPrayerCardElement(combined, -1, false);
+        attachDailyOpeningDateFooter(card);
         prayerDisplay.appendChild(card);
         if (displayOptions.presentationMode !== 'slides' && window.isRenderingCollapsed) {
             card.style.display = 'none';
@@ -9992,6 +10263,9 @@ function appendDailyLectionaryReadingCards(refStr, period, { isMatins = false, f
             prayerData[langKey] = `<sup>${dVN}</sup> ${v.text}`;
         });
         const card = createPrayerCardElement(prayerData, -1, false);
+        if (i === 0) {
+            attachDailyOpeningDateFooter(card);
+        }
         prayerDisplay.appendChild(card);
         if (displayOptions.presentationMode !== 'slides' && window.isRenderingCollapsed) {
             card.style.display = 'none';
@@ -10117,9 +10391,10 @@ function renderDailyLectionarySection(addSectionTitleCallback) {
         { isParentGroup: true, resetParentGroup: true, defaultCollapsed: true }
     );
 
+    let dailySubIdx = 0;
     if (period === 'sunset') {
         if (hasEvening) {
-            entry.evening.forEach(ref => appendDailyLectionaryReadingCards(ref, 'sunset', { isMatins: false }, addSectionTitleCallback));
+            entry.evening.forEach(ref => appendDailyLectionaryReadingCards(ref, 'sunset', { isMatins: false, dailyReadingIndex: dailySubIdx++, targetDate }, addSectionTitleCallback));
         } else {
             const noteCard = createPrayerCardElement({
                 chapter: 'DailyLectionary',
@@ -10135,15 +10410,15 @@ function renderDailyLectionarySection(addSectionTitleCallback) {
         }
     } else {
         if (hasMorning) {
-            entry.morning.forEach(ref => appendDailyLectionaryReadingCards(ref, 'morning', { isMatins: false }, addSectionTitleCallback));
+            entry.morning.forEach(ref => appendDailyLectionaryReadingCards(ref, 'morning', { isMatins: false, dailyReadingIndex: dailySubIdx++, targetDate }, addSectionTitleCallback));
         }
         if (hasMatins) {
             if (entry.matins.psalmLxx) {
                 const mtPs = convertLxxRefHelper(entry.matins.psalmLxx);
-                if (mtPs) appendDailyLectionaryReadingCards(mtPs, 'morning', { isMatins: true, feastInfo }, addSectionTitleCallback);
+                if (mtPs) appendDailyLectionaryReadingCards(mtPs, 'morning', { isMatins: true, feastInfo, dailyReadingIndex: dailySubIdx++, targetDate }, addSectionTitleCallback);
             }
             if (entry.matins.gospel) {
-                appendDailyLectionaryReadingCards(entry.matins.gospel, 'morning', { isMatins: true, feastInfo }, addSectionTitleCallback);
+                appendDailyLectionaryReadingCards(entry.matins.gospel, 'morning', { isMatins: true, feastInfo, dailyReadingIndex: dailySubIdx++, targetDate }, addSectionTitleCallback);
             }
         }
     }
@@ -14153,7 +14428,7 @@ if (sendFeedbackButtonModal) {
 
 safeOn(mainContent, 'click', (e) => {
     if (displayOptions.presentationMode !== 'slides') return;
-    if (e.target.closest('button, a, select, option, label, .info-panel, .info-toggle, .share-btn, .language-order-handle, .card-inline-lectionary-picker')) return;
+    if (e.target.closest('button, a, select, option, label, .info-panel, .info-toggle, .share-btn, .language-order-handle, .card-inline-lectionary-picker, .inline-liturgical-date-pill, .modal')) return;
 
     const rect = mainContent.getBoundingClientRect();
     const clickX = e.clientX - rect.left;
@@ -14167,6 +14442,15 @@ safeOn(mainContent, 'click', (e) => {
 });
 
 safeOn(document, 'keydown', (e) => {
+    const openModalEl = Array.from(document.querySelectorAll('.modal')).find(m => m.style.display === 'block');
+    if (e.key === 'Escape' && openModalEl) {
+        closeModal();
+        return;
+    }
+    if (openModalEl || (e.target && e.target.closest && e.target.closest('input, select, textarea'))) {
+        return;
+    }
+
     if (e.key === 'Escape' && displayOptions.presentationMode === 'slides') {
         togglePresentationMode();
         return;
@@ -15575,6 +15859,8 @@ const appCoreExports = {
     getLiturgicalDateObject,
     setCustomDateTimeOverride,
     clearCustomDateTimeOverride,
+    applyLiturgicalDateChange,
+    createInlineLiturgicalDatePillElement,
     syncLiturgicalSelectionsToEffectiveDate,
     getActiveKidaseProfilesForDate,
     getActiveFastingStatusForDate,

@@ -829,5 +829,106 @@ describe('Canonical 1938 AD EOTC Annual Lectionary (All 13 Months / 366 Days)', 
       // Clean up presentation mode back to scroll
       app.togglePresentationMode();
     }, 30000);
+
+    it('renders inline liturgical date control in opening Bible card footers (Scroll & Slides, single-profile & multi-profile, plus Daily Readings) and keeps slide anchor on date change', async () => {
+      loadBrowserScriptIntoWindow('app/src/main/assets/js/kidase.js');
+      for (const b of ['Matthew', 'Mark', 'Luke', 'John', 'Psalms', 'Genesis', 'Acts', 'Romans', '1 Timothy', '2 Corinthians']) {
+        await window.WeahaduBibleService.fetchBook('en-kjv', b);
+      }
+
+      // 1. Ordinary weekday with single profile on Liturgy tab -> date pill still renders in opening card footer even without Lectionary edition pill
+      const ordWeekday = ethToGregDate(2019, 1, 18, { forWazemaEvening: false, hours: 8, minutes: 0 }); // Meskerem 18, 2019 (Monday)
+      app.setCustomDateTimeOverride(ordWeekday, { render: false });
+      app.switchPrimaryTab('liturgy');
+      app._renderPrayersSync();
+
+      const gospelOpening = document.querySelector('.prayer-card[data-reading-type="gospel"]');
+      expect(gospelOpening).toBeTruthy();
+      const gospelDatePill = gospelOpening.querySelector('.inline-liturgical-date-pill');
+      expect(gospelDatePill).toBeTruthy();
+      expect(gospelDatePill.classList.contains('is-overridden')).toBe(true);
+      expect(gospelDatePill.querySelector('.inline-liturgical-date-text')?.textContent).toBe('Meskerem 18, 2019');
+      expect(gospelDatePill.querySelector('.inline-liturgical-date-reset')).toBeTruthy();
+
+      // Multi-verse Gospel verse 2 should NOT duplicate the date pill (only opening card has it)
+      const gospelCards = document.querySelectorAll('.prayer-card[data-reading-slot="gospel"]');
+      expect(gospelCards.length).toBeGreaterThan(1);
+      expect(gospelCards[1].querySelector('.inline-liturgical-date-pill')).toBeNull();
+
+      // 2. Enter Slides Mode on Gospel, step BACK (-1 day) to Meskerem 17 (Meskel), verify readings update & slide stays anchored on Gospel!
+      app.togglePresentationMode({ readingType: 'gospel' });
+      expect(app.getDisplayOptions().presentationMode).toBe('slides');
+
+      const prevBtn = document.querySelector('.prayer-card[data-reading-type="gospel"] .inline-liturgical-date-step[data-dir="-1"]');
+      expect(prevBtn).toBeTruthy();
+      prevBtn.click();
+      await new Promise(resolve => setTimeout(resolve, 150));
+
+      const snapMeskel = app.getActiveLectionaryReadingsSnapshot();
+      const ethMeskel = app.computeEthiopianDate(app.getEffectiveDate());
+      expect(ethMeskel.ethMonth).toBe(1);
+      expect(ethMeskel.ethDay).toBe(17);
+      expect(snapMeskel.kidaseLectionaryRefs.gospel).toBe('Matthew 8:16-28');
+
+      const slidesAfterStep = document.querySelectorAll('#prayer-display .prayer-card, #prayer-display .section-title.collapsible');
+      const anchoredSlide = slidesAfterStep[snapMeskel.currentSlideIndex];
+      expect(anchoredSlide.dataset.readingType).toBe('gospel');
+      expect(anchoredSlide.querySelector('.inline-liturgical-date-text')?.textContent).toBe('Meskerem 17, 2019');
+      // On Meskerem 17 (multi-profile feast day), BOTH Date pill and Lectionary edition pill live in .lectionary-card-meta-row
+      expect(anchoredSlide.querySelector('.lectionary-card-meta-row .inline-liturgical-date-pill')).toBeTruthy();
+      expect(anchoredSlide.querySelector('.lectionary-card-meta-row .lectionary-set-pill')).toBeTruthy();
+
+      // 3. Click the date button inside Slides Mode -> opens Date & Time modal; Escape closes modal WITHOUT exiting Slides Mode; Apply updates & stays anchored!
+      const dateModalTrigger = anchoredSlide.querySelector('.inline-liturgical-date-btn');
+      expect(dateModalTrigger).toBeTruthy();
+      dateModalTrigger.click();
+
+      const calModal = document.getElementById('calendar-info-modal');
+      expect(calModal?.style.display).toBe('block');
+
+      // ArrowRight & Escape while modal open must not navigate slides or exit Slides Mode
+      const idxBeforeKeys = app.getActiveLectionaryReadingsSnapshot().currentSlideIndex;
+      document.dispatchEvent(new window.KeyboardEvent('keydown', { key: 'ArrowRight', bubbles: true }));
+      expect(app.getActiveLectionaryReadingsSnapshot().currentSlideIndex).toBe(idxBeforeKeys);
+
+      document.dispatchEvent(new window.KeyboardEvent('keydown', { key: 'Escape', bubbles: true }));
+      expect(calModal?.style.display).toBe('none');
+      expect(app.getDisplayOptions().presentationMode).toBe('slides');
+
+      // Re-open from Gospel slide, change Ethiopian day to 18 (Meskerem 18), click Apply -> updates & stays on Gospel slide
+      document.querySelector('.prayer-card[data-reading-type="gospel"] .inline-liturgical-date-btn').click();
+      const ethDaySel = document.getElementById('cal-dt-eth-day');
+      ethDaySel.value = '18';
+      ethDaySel.dispatchEvent(new window.Event('change', { bubbles: true }));
+      document.getElementById('cal-dt-apply-btn').click();
+      await new Promise(resolve => setTimeout(resolve, 150));
+
+      expect(app.computeEthiopianDate(app.getEffectiveDate()).ethDay).toBe(18);
+      const snapAfterModal = app.getActiveLectionaryReadingsSnapshot();
+      const slidesAfterModal = document.querySelectorAll('#prayer-display .prayer-card, #prayer-display .section-title.collapsible');
+      expect(slidesAfterModal[snapAfterModal.currentSlideIndex].dataset.readingType).toBe('gospel');
+
+      // Exit Slides Mode before testing Pray Tab Daily Readings opening card footer
+      app.togglePresentationMode();
+
+      // 4. Pray Tab Daily Readings opening cards also include the inline liturgical date pill and step cleanly
+      app.switchPrimaryTab('pray');
+      app.setDailyLectionaryPeriod('morning', { render: false });
+      app._renderPrayersSync();
+
+      const dailyOpening = document.querySelector('.prayer-card[data-daily-reading-opening="true"]');
+      expect(dailyOpening).toBeTruthy();
+      const dailyDatePill = dailyOpening.querySelector('.inline-liturgical-date-pill');
+      expect(dailyDatePill).toBeTruthy();
+      expect(dailyDatePill.querySelector('.inline-liturgical-date-text')?.textContent).toBe('Meskerem 18, 2019');
+
+      dailyDatePill.querySelector('.inline-liturgical-date-step[data-dir="1"]').click();
+      await new Promise(resolve => setTimeout(resolve, 150));
+      expect(app.computeEthiopianDate(app.getEffectiveDate()).ethDay).toBe(19);
+      const dailyOpeningAfter = document.querySelector('.prayer-card[data-daily-reading-opening="true"]');
+      expect(dailyOpeningAfter?.querySelector('.inline-liturgical-date-text')?.textContent).toBe('Meskerem 19, 2019');
+
+      app.clearCustomDateTimeOverride({ render: false });
+    }, 30000);
   });
 });

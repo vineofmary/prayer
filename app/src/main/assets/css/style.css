@@ -5203,9 +5203,97 @@ body.hide-hareg-ornament .hareg-footer {
     min-width: 0;
 }
 
-.card-inline-lectionary-picker > .lectionary-set-pill {
-    margin: 0.1rem 0 0.15rem;
+.card-inline-lectionary-picker .lectionary-card-meta-row {
+    display: flex;
+    align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.25rem 0.45rem;
+    margin: 0.08rem 0 0.14rem;
+    max-width: 100%;
+}
+
+.card-inline-lectionary-picker .lectionary-card-meta-row > .lectionary-set-pill,
+.card-inline-lectionary-picker > .lectionary-set-pill {
+    margin: 0;
+    justify-content: center;
+}
+
+.inline-liturgical-date-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.14rem;
+    padding: 0.16rem 0.34rem;
+    border-radius: 14px;
+    border: 1px solid var(--border-color);
+    background-color: var(--hover-color);
+    max-width: 100%;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+.inline-liturgical-date-pill.is-overridden {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.22);
+}
+
+.inline-liturgical-date-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    opacity: 0.78;
+    padding: 0 0.2rem 0 0.15rem;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+}
+
+.inline-liturgical-date-step,
+.inline-liturgical-date-btn,
+.inline-liturgical-date-reset {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid transparent;
+    background: transparent;
+    color: var(--text-color);
+    border-radius: 999px;
+    cursor: pointer;
+    line-height: 1;
+    transition: all 0.15s ease;
+    white-space: nowrap;
+}
+
+.inline-liturgical-date-step {
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    font-size: 0.92rem;
+    font-weight: 700;
+}
+
+.inline-liturgical-date-btn {
+    padding: 0.16rem 0.44rem;
+    font-size: 0.74rem;
+    font-weight: 600;
+}
+
+.inline-liturgical-date-pill.is-overridden .inline-liturgical-date-btn {
+    color: var(--accent-color);
+}
+
+.inline-liturgical-date-reset {
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    font-size: 0.78rem;
+    font-weight: 700;
+    opacity: 0.85;
+}
+
+.inline-liturgical-date-step:hover,
+.inline-liturgical-date-btn:hover,
+.inline-liturgical-date-reset:hover {
+    border-color: var(--accent-color);
+    background-color: rgba(212, 175, 55, 0.1);
 }
 
 .card-inline-lectionary-picker .lectionary-picker-single-row {
@@ -5297,7 +5385,38 @@ body.hide-hareg-ornament .hareg-footer {
         scrollbar-width: none;
     }
 
-    body.presentation-mode-slides .card-inline-lectionary-picker > .lectionary-set-pill,
+    body.presentation-mode-slides .card-inline-lectionary-picker .lectionary-card-meta-row {
+        flex-wrap: nowrap;
+        margin: 0;
+        gap: 0.2rem;
+        flex-shrink: 0;
+    }
+
+    body.presentation-mode-slides .card-inline-lectionary-picker .inline-liturgical-date-pill {
+        padding: 1px 4px;
+        gap: 1px;
+        height: 20px;
+    }
+
+    body.presentation-mode-slides .inline-liturgical-date-label,
+    body.presentation-mode-slides .inline-liturgical-date-year {
+        display: none;
+    }
+
+    body.presentation-mode-slides .inline-liturgical-date-step,
+    body.presentation-mode-slides .inline-liturgical-date-reset {
+        width: 16px;
+        height: 16px;
+        font-size: 0.78rem;
+    }
+
+    body.presentation-mode-slides .inline-liturgical-date-btn {
+        padding: 1px 4px;
+        font-size: 0.64rem;
+        height: 16px;
+    }
+
+    body.presentation-mode-slides .card-inline-lectionary-picker .lectionary-set-pill,
     body.presentation-mode-slides .slide-only-lectionary-pill-wrap .lectionary-set-pill {
         flex-wrap: nowrap;
         margin: 0;
@@ -5487,7 +5606,38 @@ body.presentation-mode-slides .card-inline-lectionary-picker {
     gap: 0.22rem 0.4rem;
 }
 
-body.presentation-mode-slides .card-inline-lectionary-picker > .lectionary-set-pill {
+body.presentation-mode-slides .card-inline-lectionary-picker .lectionary-card-meta-row {
+    display: inline-flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    margin: 0;
+}
+
+body.presentation-mode-slides .card-inline-lectionary-picker .inline-liturgical-date-pill {
+    padding: 0.1rem 0.25rem;
+    gap: 0.1rem;
+}
+
+body.presentation-mode-slides .inline-liturgical-date-label,
+body.presentation-mode-slides .inline-liturgical-date-year {
+    display: none;
+}
+
+body.presentation-mode-slides .inline-liturgical-date-step,
+body.presentation-mode-slides .inline-liturgical-date-reset {
+    width: 18px;
+    height: 18px;
+    font-size: 0.82rem;
+}
+
+body.presentation-mode-slides .inline-liturgical-date-btn {
+    padding: 0.12rem 0.36rem;
+    font-size: 0.7rem;
+}
+
+body.presentation-mode-slides .card-inline-lectionary-picker .lectionary-set-pill {
     margin: 0;
     padding: 0.12rem 0.25rem;
     gap: 0.15rem;
