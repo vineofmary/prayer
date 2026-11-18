@@ -991,15 +991,10 @@ body.paragraph-mode .holy-trinity-icon {
     justify-content: space-between;
     align-items: center;
     padding-top: 0.75rem;
-    border-top: 1px solid var(--border-color);
     margin-top: 1rem;
-}
-body.view-mode-unified .prayer-footer {
-    border-top: none;
 }
 
 .prayer-card.psalm-card .prayer-footer {
-    border-top: none;
     justify-content: space-between;
 }
 
@@ -4376,7 +4371,6 @@ body:not(.presentation-mode-slides) .prayer-card.daily-prayer-preview-first-card
 
 body:not(.presentation-mode-slides) .prayer-card.daily-prayer-preview-first-card .prayer-footer {
     justify-content: flex-end;
-    border-top: none;
 }
 
 .daily-prayer-sneak-peek-card {
