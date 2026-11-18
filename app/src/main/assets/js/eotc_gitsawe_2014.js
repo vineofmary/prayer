@@ -761,7 +761,7 @@ function getEotcKidaseProfilesForDate(ethYear, ethMonth, ethDay, explicitWeekday
         if (!daily2014 || !daily2014.qidase) return;
         const hasAlt = Boolean(daily2014.qidase.alt);
         const primaryPillLabel = isPrimaryOnDay
-            ? (m === 1 && d === 17 ? 'Meskel (2014)' : (hasAlt ? '2014 Primary' : `2014 (${monthNameEn} ${d})`))
+            ? (m === 1 && d === 17 ? 'Meskel (2014 Edition)' : '2014 Edition')
             : dailyLabel;
         addProfile(_buildProfileFromDayNode({
             id: `daily-2014-${m}-${d}`,
@@ -900,7 +900,7 @@ function getEotcKidaseProfilesForDate(ethYear, ethMonth, ethDay, explicitWeekday
             addProfile({
                 id: `legacy-1938-${idx}`,
                 category: 'legacy-1938',
-                shortLabel: legacy.qidase.sets.length > 1 ? `1938 Ed. (${idx + 1})` : '1938 Ed.',
+                shortLabel: legacy.qidase.sets.length > 1 ? `1938 Edition (${idx + 1})` : '1938 Edition',
                 shortLabelGeez: '፲፱፻፴፰',
                 subtitle: `1938 E.C. Prayer Book Lectionary${legacy.qidase.sets.length > 1 ? ` — Set ${idx + 1}` : ''}`,
                 commemoration: '',

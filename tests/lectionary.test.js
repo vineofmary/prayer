@@ -277,7 +277,7 @@ describe('Canonical 1938 AD EOTC Annual Lectionary (All 13 Months / 366 Days)', 
 
       const meskelProfiles = app.getActiveKidaseProfilesForDate();
       expect(meskelProfiles.map(p => p.shortLabel)).toEqual(
-        expect.arrayContaining(['Meskel (2014)', 'Alternate (ዓዲ)', 'Sunday (Meskel Sunday)'])
+        expect.arrayContaining(['Meskel (2014 Edition)', 'Alternate (ዓዲ)', 'Sunday (Meskel Sunday)'])
       );
 
       let snap = app.getActiveLectionaryReadingsSnapshot();
@@ -307,8 +307,9 @@ describe('Canonical 1938 AD EOTC Annual Lectionary (All 13 Months / 366 Days)', 
       expect(snap.kidaseLectionaryRefs.gospel).toBe('Matthew 10:32-End');
 
       const tikimt6Profiles = app.getActiveKidaseProfilesForDate();
+      expect(tikimt6Profiles[0].shortLabel).toBe('2014 Edition');
       // 1938 Legacy Set 2 for Prophetess Hannah on Tikimt 6 -> Ps 112:9 LXX (Psalms 113:9) & Luke 2:36-39
-      const legacySet2Idx = tikimt6Profiles.findIndex(p => p.shortLabel === '1938 Ed. (2)');
+      const legacySet2Idx = tikimt6Profiles.findIndex(p => p.shortLabel === '1938 Edition (2)');
       expect(legacySet2Idx).toBeGreaterThan(0);
       app.selectKidaseReadingSet(legacySet2Idx);
       snap = app.getActiveLectionaryReadingsSnapshot();
@@ -782,7 +783,8 @@ describe('Canonical 1938 AD EOTC Annual Lectionary (All 13 Months / 366 Days)', 
 
       const sidebarPill = document.querySelector('#kidase-reading-set-container .lectionary-set-pill');
       expect(sidebarPill).toBeTruthy();
-      expect(sidebarPill.textContent).toContain('Meskel (2014)');
+      expect(sidebarPill.querySelector('.lectionary-set-pill-label')?.textContent).toBe('Lectionary:');
+      expect(sidebarPill.textContent).toContain('Meskel (2014 Edition)');
       expect(sidebarPill.textContent).toContain('Alternate (ዓዲ)');
       expect(sidebarPill.textContent).toContain('Sunday (Meskel Sunday)');
 

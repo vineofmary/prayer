@@ -9672,11 +9672,11 @@ function createKidaseReadingSetPillElement(readingKey = null, { compact = false 
     const wrapper = document.createElement('div');
     wrapper.className = compact ? 'lectionary-set-pill lectionary-set-pill-compact' : 'lectionary-set-pill';
     wrapper.setAttribute('role', 'tablist');
-    wrapper.setAttribute('aria-label', 'Parish Lectionary Reading Options');
+    wrapper.setAttribute('aria-label', 'Lectionary Edition Options');
 
     const labelSpan = document.createElement('span');
     labelSpan.className = 'lectionary-set-pill-label';
-    labelSpan.textContent = compact ? 'Lectionary:' : 'Parish Lectionary:';
+    labelSpan.textContent = 'Lectionary:';
     wrapper.appendChild(labelSpan);
 
     profiles.forEach((prof, idx) => {
