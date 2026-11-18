@@ -3,7 +3,12 @@ import fs from 'fs';
 import path from 'path';
 import { loadApp } from './helpers/loadApp.js';
 
-const { findConfidentClauseSplitIndex } = require('../services/targuma-stream/server.js');
+const {
+  findConfidentClauseSplitIndex,
+  containsProfanity: serverContainsProfanity,
+  maskProfanity: serverMaskProfanity,
+  translateImmutableClause
+} = require('../services/targuma-stream/server.js');
 
 describe('Targuma Immutable-Clause Streaming Engine, Sanctuary UI & VAD Suite', () => {
   let targuma;
@@ -437,6 +442,112 @@ describe('Targuma Immutable-Clause Streaming Engine, Sanctuary UI & VAD Suite', 
       expect(modal.style.display).toBe('none');
       expect(selectedMiracleText.textContent).toContain('The noble man from Qemer');
       expect(selectedMiracleText.textContent).toContain('ate 78 people');
+    });
+  });
+
+  describe('Profanity Safeguard (All Targuma Languages, Scriptural Preservation & Re-processing)', () => {
+    it('preserves scriptural, liturgical, and benign words across English, Spanish, Amharic, and Tigrinya', () => {
+      const safePhrases = [
+        'And I will bless them that bless thee, and curse him that curseth thee.',
+        'The gates of hell shall not prevail against the Church, nor eternal damnation.',
+        'He rode upon a colt, the foal of an ass, before the cock crowed twice.',
+        'Classic compassion and tithe offerings at the Tabernacle.',
+        'El versículo del tabernáculo habla de la disputa y las zorras en la viña.',
+        'ለተጠማ ውሻ ውሃ አጠጣችው፤ እናትህንና አባትህን አክብር።',
+        'በደላችንን ይቅር በለን፤ በዳይ አንሁን።',
+        'ዝሙትን ረሳሕን ሓሳዊን ተግባር ነጽሐ።'
+      ];
+
+      for (const phrase of safePhrases) {
+        expect(serverContainsProfanity(phrase)).toBe(false);
+        expect(serverMaskProfanity(phrase)).toBe(phrase);
+        expect(targuma.containsProfanity(phrase)).toBe(false);
+        expect(targuma.maskProfanity(phrase)).toBe(phrase);
+      }
+    });
+
+    it('masks vulgar profanity, modern expletives, and slurs with first-letter asterisks across en, es, am, and ti', () => {
+      expect(serverMaskProfanity('What the fuck is this shit?')).toBe('What the f*** is this s***?');
+      expect(serverMaskProfanity('No seas cabrón ni digas mierda, pendejo.')).toBe('No seas c***** ni digas m*****, p******.');
+      expect(serverMaskProfanity('አንተ ሸርሙጣ እና ቅዘናም ነህ።')).toBe('አንተ ሸ*** እና ቅ*** ነህ።');
+      expect(serverMaskProfanity('መዓኮር እና ሻርሙጣ አይባልም።')).toBe('መ*** እና ሻ*** አይባልም።');
+
+      // Client fail-safe inside sanitizeTargetLanguageText & commitFinalizedCaption (bilingual mode)
+      targuma.state.targetLang = 'en';
+      expect(targuma.sanitizeTargetLanguageText('Please fucking listen', 'en')).toBe('Please f****** listen');
+
+      targuma.commitFinalizedCaption(
+        'prof_test_1',
+        'አንተ ሸርሙጣ አትበል',
+        'Do not say bullshit in church'
+      );
+      expect(targuma.state.captions[0].sourceText).toBe('አንተ ሸ*** አትበል');
+      expect(targuma.state.captions[0].rawTarget).toBe('Do not say b******* in church');
+      expect(targuma.state.captions[0].translatedHtml).toContain('b*******');
+    });
+
+    it('re-processes flagged translations once with Gemini context before falling back to first-letter masking', async () => {
+      let reprocessCalls = 0;
+
+      // 1. Clean translation skips re-processing completely
+      const cleanRes = await translateImmutableClause(
+        {
+          sourceText: 'እግዚአብሔር ይመስገን',
+          sourceLang: 'am',
+          targetLang: 'en',
+          modelId: 'gemini-3-flash-preview',
+          enablePolish: true
+        },
+        {
+          translateFn: async () => 'Thanks be to God',
+          geminiFn: async () => 'Glory be to God',
+          reprocessFn: async () => {
+            reprocessCalls++;
+            return 'Should not be called';
+          }
+        }
+      );
+      expect(cleanRes.translatedText).toBe('Glory be to God');
+      expect(reprocessCalls).toBe(0);
+
+      // 2. Flagged NMT/Gemini glitch triggers one contextual re-process and returns clean text
+      const recoveredRes = await translateImmutableClause(
+        {
+          sourceText: 'በቃሉ ጸንቶ ቆመ',
+          sourceLang: 'am',
+          targetLang: 'en',
+          modelId: 'gemini-3-flash-preview',
+          enablePolish: false
+        },
+        {
+          translateFn: async () => 'He stood fucking firm in his word',
+          reprocessFn: async ({ candidateTranslation }) => {
+            reprocessCalls++;
+            expect(candidateTranslation).toContain('fucking');
+            return 'He stood steadfast in His word';
+          }
+        }
+      );
+      expect(reprocessCalls).toBe(1);
+      expect(recoveredRes.translatedText).toBe('He stood steadfast in His word');
+      expect(recoveredRes.reprocessed).toBe(true);
+      expect(recoveredRes.polished).toBe(true);
+
+      // 3. If re-processing still contains profanity (or fails), first-letter asterisk masking acts as fail-safe
+      const fallbackMaskedRes = await translateImmutableClause(
+        {
+          sourceText: 'Same language ASR shit',
+          sourceLang: 'en',
+          targetLang: 'en',
+          modelId: 'gemini-3-flash-preview',
+          enablePolish: true
+        },
+        {
+          reprocessFn: async () => 'Same language ASR shit'
+        }
+      );
+      expect(fallbackMaskedRes.translatedText).toBe('Same language ASR s***');
+      expect(fallbackMaskedRes.reprocessed).toBe(true);
     });
   });
 });

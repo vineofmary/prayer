@@ -117,7 +117,86 @@ const TARGUMA_SYSTEM_INSTRUCTION = `You are "Targuma" (ተርጉማ), real-time 
 Rules:
 1. Translate ONLY clearly spoken speech accurately and naturally. Never invent religious phrases. If audio has no intelligible speech, return {"isSilence":true,"translatedText":"","sourceText":""}.
 2. Write "translatedText" strictly in the target language (zero raw Ethiopic script in English/Spanish).
-3. Format EOTC liturgical terms in "translatedText" as *Phonetic* [Meaning], e.g. *Qidase* [Divine Liturgy], *Qiddus Qurban* [Holy Communion], *Tabot* [Ark of the Covenant], *Suba'e* [Spiritual Retreat], *Nisiha* [Repentance], *Mahlet* [Liturgical Chanting], *Qale Hiwot Yasemalin* [May He let us hear the Word of Life], *Sebeka Gubae* [Parish Council], *Senbet Timhirt Bet* [Sunday School], *Kidane Mihret* [Covenant of Mercy], *Debre Mihret* [Mount of Mercy], *Teamire Mariam* [Miracles of Mary]. Translate sacred and hierarchical names faithfully (Our Lord Jesus Christ, Holy Spirit, Holy Trinity, Our Lady Saint Mary, Archangel Saint Michael, His Grace Abune).`;
+3. Format EOTC liturgical terms in "translatedText" as *Phonetic* [Meaning], e.g. *Qidase* [Divine Liturgy], *Qiddus Qurban* [Holy Communion], *Tabot* [Ark of the Covenant], *Suba'e* [Spiritual Retreat], *Nisiha* [Repentance], *Mahlet* [Liturgical Chanting], *Qale Hiwot Yasemalin* [May He let us hear the Word of Life], *Sebeka Gubae* [Parish Council], *Senbet Timhirt Bet* [Sunday School], *Kidane Mihret* [Covenant of Mercy], *Debre Mihret* [Mount of Mercy], *Teamire Mariam* [Miracles of Mary]. Translate sacred and hierarchical names faithfully (Our Lord Jesus Christ, Holy Spirit, Holy Trinity, Our Lady Saint Mary, Archangel Saint Michael, His Grace Abune).
+4. Safeguard: Never emit vulgar profanity, modern expletives, or slurs due to background noise or phonetic misinterpretation; always choose accurate, context-appropriate EOTC phrasing.`;
+
+// --- Profanity Safeguard (All Targuma Languages: en, es, am, ti) ---
+const LATIN_PROFANITY_CORE =
+  "(?:" +
+  "(?:mother)?fuck(?:er|ers|ing|ed|s|head|wit|face|boy|off|tard)?|" +
+  "(?:bull|horse|dog|dip|bat|ape)?shit(?:s|ty|tier|tiest|ting|ted|head|face|hole|load|storm|show|e)?|" +
+  "bitch(?:es|ing|ed|y)?|" +
+  "cunt(?:s|y)?|" +
+  "(?:asshole|asshat|asswipe|dumbass|jackass|fatass|badass|smartass|kissass|kickass)(?:s|es)?|" +
+  "(?:cocksuck(?:er|ers|ing)|cockhead|dickhead|dickface|dickwad|dickless)|" +
+  "puss(?:y|ies)|" +
+  "slut(?:s|ty|tish)?|" +
+  "skank(?:s|y)?|" +
+  "(?:twat|wanker|tosser|bollocks|bugger)(?:s|ed|ing)?|" +
+  "douche(?:bag|bags)?|" +
+  "piss(?:ed|ing|es|er|head)?|" +
+  "goddamn(?:ed|it)?|" +
+  "(?:jerkoff|jackoff|handjob|blowjob|rimjob)s?|" +
+  "tits|titt(?:y|ies)|" +
+  "nigg(?:er|ers|a|as|ah|ahs)|" +
+  "fag(?:got|gots|s)?|" +
+  "dyke(?:s)?|" +
+  "trann(?:y|ies)|" +
+  "retard(?:ed|s)?|" +
+  "kike(?:s)?|spic(?:s)?|wetback(?:s)?|paki(?:s)?|" +
+  "(?:hijueputa|hijeputa|putamadre|putazo|putada|puta|putas|puto|putos)|" +
+  "(?:comemierda|mierda|mierdas)|" +
+  "(?:cabr[oó]n|cabrona|cabrones|cabronazo)|" +
+  "(?:pendej[oa]s?|pendejada|pendejadas)|" +
+  "(?:coj[oó]n|cojones|acojonad[oa]s?)|" +
+  "jod(?:er|id[oa]s?|iendo)|" +
+  "chinga(?:r|da|dos|das|do|dera)?|ching[oó]n|chingon(?:a|es|as)|chingue(?:n|s)?|" +
+  "(?:careverga|verga|vergas|vergazo)|" +
+  "(?:culer[oa]s?|culiad[oa]s?|culos?)|" +
+  "carajos?|" +
+  "(?:gilipollas|pollas?)|" +
+  "pinches?|" +
+  "(?:mam[oó]n|mamona|mamones|mamadas?)|" +
+  "(?:maric[oó]n|maricones|maricas?)|" +
+  "(?:malparid[oa]s?|pirobo|huev[oó]n|huevones|web[oó]n|weones)|" +
+  "coños?" +
+  ")";
+
+const ETHIOPIC_PROFANITY_CORE =
+  "(?:" +
+  "ሸርሙጣ|ሽርሙጣ|ሻርሙጣ|ሸርሙጦች|ሽርሙጦች|" +
+  "ቅዘናም|ቅዘን|ቀዘናም|ቀዘን|ቆዘነ|" +
+  "ልብዳ|ብዳ|ተበዳች|ተበዱ|ተበዳ|ተባዳ|ትበዳ|ይበዳ|የሚበዳ|በዳሁ|በዳህ|በዳሽ|" +
+  "እምስ|እምሲ|እምሷ|እምስሽ|" +
+  "ቁላው|ቁላህ|ቁላ|ቍላ|" +
+  "ሸሌዎች|ሸሌ|" +
+  "መዓኮርካ|መዓኮርኪ|መዓኮር" +
+  ")";
+
+const LATIN_PROFANITY_TEST_RE = new RegExp(`(?:^|[^A-Za-zÀ-ÖØ-öø-ÿ0-9_])${LATIN_PROFANITY_CORE}(?=$|[^A-Za-zÀ-ÖØ-öø-ÿ0-9_])`, "i");
+const LATIN_PROFANITY_REPLACE_RE = new RegExp(`(^|[^A-Za-zÀ-ÖØ-öø-ÿ0-9_])(${LATIN_PROFANITY_CORE})(?=$|[^A-Za-zÀ-ÖØ-öø-ÿ0-9_])`, "gi");
+const ETHIOPIC_PROFANITY_TEST_RE = new RegExp(`(?:^|[^\\u1200-\\u137F])${ETHIOPIC_PROFANITY_CORE}(?=$|[^\\u1200-\\u137F])`);
+const ETHIOPIC_PROFANITY_REPLACE_RE = new RegExp(`(^|[^\\u1200-\\u137F])(${ETHIOPIC_PROFANITY_CORE})(?=$|[^\\u1200-\\u137F])`, "g");
+
+function maskWordFirstLetter(word) {
+  const chars = Array.from(String(word || ""));
+  if (chars.length <= 1) return "*";
+  return chars[0] + "*".repeat(chars.length - 1);
+}
+
+function containsProfanity(text) {
+  const str = String(text || "");
+  if (!str) return false;
+  return LATIN_PROFANITY_TEST_RE.test(str) || ETHIOPIC_PROFANITY_TEST_RE.test(str);
+}
+
+function maskProfanity(text) {
+  const str = String(text || "");
+  if (!str) return "";
+  let out = str.replace(LATIN_PROFANITY_REPLACE_RE, (_, prefix, word) => prefix + maskWordFirstLetter(word));
+  out = out.replace(ETHIOPIC_PROFANITY_REPLACE_RE, (_, prefix, word) => prefix + maskWordFirstLetter(word));
+  return out;
+}
 
 let cachedAuthClient = null;
 async function getVertexAccessToken() {
@@ -263,12 +342,41 @@ exports.targumaGemini = onRequest(
       // Fast Cloud Translation V3 path for instant draft / retranslation
       if (mode === "nmt" && textInput && !audioBase64) {
         if (sourceLang === targetLang) {
+          let safeText = textInput;
+          if (containsProfanity(safeText)) {
+            try {
+              const accessToken = await getVertexAccessToken();
+              const reprocessParts = [{
+                text: `A live church caption produced: "${safeText}", which triggered a vulgar-profanity safeguard and may be a phonetic ASR mishearing in an Ethiopian/Eritrean Orthodox Tewahedo Church (EOTC) sermon or reading. Re-evaluate carefully in context and return the accurate, clean phrase in ${LANG_NAMES[targetLang] || targetLang} with zero vulgar profanity or slurs.`
+              }];
+              const resp = await callVertexGemini({
+                projectId,
+                accessToken,
+                modelId: requestedModel,
+                location: modelSpec.location,
+                parts: reprocessParts,
+                thinkingConfig: modelSpec.thinkingConfig,
+                stream: false,
+                timeoutMs: 2200
+              });
+              if (resp.ok) {
+                const vData = await resp.json();
+                const cParts = vData?.candidates?.[0]?.content?.parts || [];
+                const tPart = cParts.find((p) => typeof p.text === "string" && !p.thought) || cParts[cParts.length - 1];
+                const parsedClean = JSON.parse(tPart?.text || "{}");
+                if (parsedClean?.translatedText) {
+                  safeText = String(parsedClean.translatedText).trim();
+                }
+              }
+            } catch (_) {}
+            safeText = maskProfanity(safeText);
+          }
           res.status(200).json({
             model: "identity",
-            latencyMs: 0,
+            latencyMs: Date.now() - startMs,
             isSilence: false,
-            sourceText: textInput,
-            translatedText: textInput
+            sourceText: maskProfanity(textInput),
+            translatedText: safeText
           });
           return;
         }
@@ -280,12 +388,40 @@ exports.targumaGemini = onRequest(
             sourceLanguageCode: sourceLang,
             targetLanguageCode: targetLang
           });
-          const translatedText = String(nmtResp?.translations?.[0]?.translatedText || "").trim();
+          let translatedText = String(nmtResp?.translations?.[0]?.translatedText || "").trim();
+          if (translatedText && containsProfanity(translatedText)) {
+            try {
+              const accessToken = await getVertexAccessToken();
+              const reprocessParts = [{
+                text: `An initial translation of this EOTC church phrase (${LANG_NAMES[sourceLang] || sourceLang}) produced: "${translatedText}", which triggered a vulgar-profanity safeguard. Re-translate faithfully into ${LANG_NAMES[targetLang] || targetLang} within an EOTC liturgical/sermon context with zero vulgar profanity or slurs.\nPhrase: "${textInput}"`
+              }];
+              const resp = await callVertexGemini({
+                projectId,
+                accessToken,
+                modelId: requestedModel,
+                location: modelSpec.location,
+                parts: reprocessParts,
+                thinkingConfig: modelSpec.thinkingConfig,
+                stream: false,
+                timeoutMs: 2200
+              });
+              if (resp.ok) {
+                const vData = await resp.json();
+                const cParts = vData?.candidates?.[0]?.content?.parts || [];
+                const tPart = cParts.find((p) => typeof p.text === "string" && !p.thought) || cParts[cParts.length - 1];
+                const parsedClean = JSON.parse(tPart?.text || "{}");
+                if (parsedClean?.translatedText) {
+                  translatedText = String(parsedClean.translatedText).trim();
+                }
+              }
+            } catch (_) {}
+            translatedText = maskProfanity(translatedText);
+          }
           res.status(200).json({
             model: "cloud-translate-v3",
             latencyMs: Date.now() - startMs,
             isSilence: false,
-            sourceText: textInput,
+            sourceText: maskProfanity(textInput),
             translatedText: translatedText
           });
           return;
@@ -397,8 +533,8 @@ exports.targumaGemini = onRequest(
                   const partialSource = extractPartialJsonField(accumulatedJson, "sourceText");
                   const draftPayload = JSON.stringify({
                     type: "draft",
-                    translatedText: partialTarget,
-                    sourceText: partialSource,
+                    translatedText: maskProfanity(partialTarget),
+                    sourceText: maskProfanity(partialSource),
                     ttftMs: Date.now() - startMs
                   });
                   res.write("data: " + draftPayload + "\n\n");
@@ -413,13 +549,49 @@ exports.targumaGemini = onRequest(
           parsed = JSON.parse(accumulatedJson || "{}");
         } catch (_) {}
 
+        let finalSource = String(parsed.sourceText || textInput || "").trim();
+        let finalTranslated = String(parsed.translatedText || lastEmittedDraft || "").trim();
+        if (!parsed.isSilence && finalTranslated && containsProfanity(finalTranslated)) {
+          try {
+            const reprocessParts = [];
+            if (audioBase64) {
+              reprocessParts.push({ inlineData: { mimeType: mimeType, data: audioBase64 } });
+            }
+            reprocessParts.push({
+              text: `An initial translation produced: "${finalTranslated}", which triggered a vulgar-profanity safeguard (likely an ASR phonetic glitch or literal mistranslation). Re-evaluate the spoken EOTC church phrase (${LANG_NAMES[sourceLang] || sourceLang}) and produce an accurate, context-appropriate ${LANG_NAMES[targetLang] || targetLang} translation with zero vulgar profanity or slurs.` + (finalSource ? `\nTranscript: "${finalSource}"` : "")
+            });
+            const fbAttempt = attempts.find((a) => a.modelId === activeModelUsed) || attempts[0];
+            const reResp = await callVertexGemini({
+              projectId,
+              accessToken,
+              modelId: fbAttempt.modelId,
+              location: fbAttempt.location,
+              parts: reprocessParts,
+              thinkingConfig: fbAttempt.thinkingConfig,
+              stream: false,
+              timeoutMs: 2200
+            });
+            if (reResp.ok) {
+              const vData = await reResp.json();
+              const cParts = vData?.candidates?.[0]?.content?.parts || [];
+              const tPart = cParts.find((p) => typeof p.text === "string" && !p.thought) || cParts[cParts.length - 1];
+              const parsedClean = JSON.parse(tPart?.text || "{}");
+              if (parsedClean?.translatedText) {
+                finalTranslated = String(parsedClean.translatedText).trim();
+              }
+            }
+          } catch (_) {}
+        }
+        finalSource = maskProfanity(finalSource);
+        finalTranslated = maskProfanity(finalTranslated);
+
         const donePayload = JSON.stringify({
           type: "done",
           model: activeModelUsed,
           latencyMs: Date.now() - startMs,
           isSilence: Boolean(parsed.isSilence),
-          sourceText: String(parsed.sourceText || textInput || "").trim(),
-          translatedText: String(parsed.translatedText || lastEmittedDraft || "").trim()
+          sourceText: finalSource,
+          translatedText: finalTranslated
         });
         res.write("data: " + donePayload + "\n\n");
         res.end();
@@ -482,12 +654,48 @@ exports.targumaGemini = onRequest(
         parsed = { isSilence: false, sourceText: textInput, translatedText: rawJsonText };
       }
 
+      let finalSource = String(parsed.sourceText || textInput || "").trim();
+      let finalTranslated = String(parsed.translatedText || "").trim();
+      if (!parsed.isSilence && finalTranslated && containsProfanity(finalTranslated)) {
+        try {
+          const reprocessParts = [];
+          if (audioBase64) {
+            reprocessParts.push({ inlineData: { mimeType: mimeType, data: audioBase64 } });
+          }
+          reprocessParts.push({
+            text: `An initial translation produced: "${finalTranslated}", which triggered a vulgar-profanity safeguard (likely an ASR phonetic glitch or literal mistranslation). Re-evaluate the spoken EOTC church phrase (${LANG_NAMES[sourceLang] || sourceLang}) and produce an accurate, context-appropriate ${LANG_NAMES[targetLang] || targetLang} translation with zero vulgar profanity or slurs.` + (finalSource ? `\nTranscript: "${finalSource}"` : "")
+          });
+          const fbAttempt = attempts.find((a) => a.modelId === activeModelUsed) || attempts[0];
+          const reResp = await callVertexGemini({
+            projectId,
+            accessToken,
+            modelId: fbAttempt.modelId,
+            location: fbAttempt.location,
+            parts: reprocessParts,
+            thinkingConfig: fbAttempt.thinkingConfig,
+            stream: false,
+            timeoutMs: 2200
+          });
+          if (reResp.ok) {
+            const vData = await reResp.json();
+            const cParts = vData?.candidates?.[0]?.content?.parts || [];
+            const tPart = cParts.find((p) => typeof p.text === "string" && !p.thought) || cParts[cParts.length - 1];
+            const parsedClean = JSON.parse(tPart?.text || "{}");
+            if (parsedClean?.translatedText) {
+              finalTranslated = String(parsedClean.translatedText).trim();
+            }
+          }
+        } catch (_) {}
+      }
+      finalSource = maskProfanity(finalSource);
+      finalTranslated = maskProfanity(finalTranslated);
+
       res.status(200).json({
         model: activeModelUsed,
         latencyMs,
         isSilence: Boolean(parsed.isSilence),
-        sourceText: String(parsed.sourceText || textInput || "").trim(),
-        translatedText: String(parsed.translatedText || "").trim(),
+        sourceText: finalSource,
+        translatedText: finalTranslated,
         usage: vertexData?.usageMetadata || {}
       });
     } catch (err) {

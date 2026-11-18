@@ -499,6 +499,86 @@
         }
     }
 
+    // --- Profanity Safeguard (All Targuma Languages: en, es, am, ti) ---
+    // Client fail-safe matching server-side safeguard: preserves scriptural/theological terms
+    // while masking residual vulgar profanity, modern expletives, or slurs with first letter + asterisks.
+    const LATIN_PROFANITY_CORE =
+        '(?:' +
+        '(?:mother)?fuck(?:er|ers|ing|ed|s|head|wit|face|boy|off|tard)?|' +
+        '(?:bull|horse|dog|dip|bat|ape)?shit(?:s|ty|tier|tiest|ting|ted|head|face|hole|load|storm|show|e)?|' +
+        'bitch(?:es|ing|ed|y)?|' +
+        'cunt(?:s|y)?|' +
+        '(?:asshole|asshat|asswipe|dumbass|jackass|fatass|badass|smartass|kissass|kickass)(?:s|es)?|' +
+        '(?:cocksuck(?:er|ers|ing)|cockhead|dickhead|dickface|dickwad|dickless)|' +
+        'puss(?:y|ies)|' +
+        'slut(?:s|ty|tish)?|' +
+        'skank(?:s|y)?|' +
+        '(?:twat|wanker|tosser|bollocks|bugger)(?:s|ed|ing)?|' +
+        'douche(?:bag|bags)?|' +
+        'piss(?:ed|ing|es|er|head)?|' +
+        'goddamn(?:ed|it)?|' +
+        '(?:jerkoff|jackoff|handjob|blowjob|rimjob)s?|' +
+        'tits|titt(?:y|ies)|' +
+        'nigg(?:er|ers|a|as|ah|ahs)|' +
+        'fag(?:got|gots|s)?|' +
+        'dyke(?:s)?|' +
+        'trann(?:y|ies)|' +
+        'retard(?:ed|s)?|' +
+        'kike(?:s)?|spic(?:s)?|wetback(?:s)?|paki(?:s)?|' +
+        '(?:hijueputa|hijeputa|putamadre|putazo|putada|puta|putas|puto|putos)|' +
+        '(?:comemierda|mierda|mierdas)|' +
+        '(?:cabr[oó]n|cabrona|cabrones|cabronazo)|' +
+        '(?:pendej[oa]s?|pendejada|pendejadas)|' +
+        '(?:coj[oó]n|cojones|acojonad[oa]s?)|' +
+        'jod(?:er|id[oa]s?|iendo)|' +
+        'chinga(?:r|da|dos|das|do|dera)?|ching[oó]n|chingon(?:a|es|as)|chingue(?:n|s)?|' +
+        '(?:careverga|verga|vergas|vergazo)|' +
+        '(?:culer[oa]s?|culiad[oa]s?|culos?)|' +
+        'carajos?|' +
+        '(?:gilipollas|pollas?)|' +
+        'pinches?|' +
+        '(?:mam[oó]n|mamona|mamones|mamadas?)|' +
+        '(?:maric[oó]n|maricones|maricas?)|' +
+        '(?:malparid[oa]s?|pirobo|huev[oó]n|huevones|web[oó]n|weones)|' +
+        'coños?' +
+        ')';
+
+    const ETHIOPIC_PROFANITY_CORE =
+        '(?:' +
+        'ሸርሙጣ|ሽርሙጣ|ሻርሙጣ|ሸርሙጦች|ሽርሙጦች|' +
+        'ቅዘናም|ቅዘን|ቀዘናም|ቀዘን|ቆዘነ|' +
+        'ልብዳ|ብዳ|ተበዳች|ተበዱ|ተበዳ|ተባዳ|ትበዳ|ይበዳ|የሚበዳ|በዳሁ|በዳህ|በዳሽ|' +
+        'እምስ|እምሲ|እምሷ|እምስሽ|' +
+        'ቁላው|ቁላህ|ቁላ|ቍላ|' +
+        'ሸሌዎች|ሸሌ|' +
+        'መዓኮርካ|መዓኮርኪ|መዓኮር' +
+        ')';
+
+    const LATIN_PROFANITY_TEST_RE = new RegExp('(?:^|[^A-Za-zÀ-ÖØ-öø-ÿ0-9_])' + LATIN_PROFANITY_CORE + '(?=$|[^A-Za-zÀ-ÖØ-öø-ÿ0-9_])', 'i');
+    const LATIN_PROFANITY_REPLACE_RE = new RegExp('(^|[^A-Za-zÀ-ÖØ-öø-ÿ0-9_])(' + LATIN_PROFANITY_CORE + ')(?=$|[^A-Za-zÀ-ÖØ-öø-ÿ0-9_])', 'gi');
+    const ETHIOPIC_PROFANITY_TEST_RE = new RegExp('(?:^|[^\\u1200-\\u137F])' + ETHIOPIC_PROFANITY_CORE + '(?=$|[^\\u1200-\\u137F])');
+    const ETHIOPIC_PROFANITY_REPLACE_RE = new RegExp('(^|[^\\u1200-\\u137F])(' + ETHIOPIC_PROFANITY_CORE + ')(?=$|[^\\u1200-\\u137F])', 'g');
+
+    function maskWordFirstLetter(word) {
+        const chars = Array.from(String(word || ''));
+        if (chars.length <= 1) return '*';
+        return chars[0] + '*'.repeat(chars.length - 1);
+    }
+
+    function containsProfanity(text) {
+        const str = String(text || '');
+        if (!str) return false;
+        return LATIN_PROFANITY_TEST_RE.test(str) || ETHIOPIC_PROFANITY_TEST_RE.test(str);
+    }
+
+    function maskProfanity(text) {
+        const str = String(text || '');
+        if (!str) return '';
+        let out = str.replace(LATIN_PROFANITY_REPLACE_RE, (_, prefix, word) => prefix + maskWordFirstLetter(word));
+        out = out.replace(ETHIOPIC_PROFANITY_REPLACE_RE, (_, prefix, word) => prefix + maskWordFirstLetter(word));
+        return out;
+    }
+
     // --- Target-Language Sanitization & Style B + Rubric Formatting ---
     function sanitizeTargetLanguageText(rawText, targetLang) {
         let cleaned = String(rawText || '').trim();
@@ -514,7 +594,7 @@
         if (!LANGUAGE_META[targetLang]?.isEthiopic) {
             cleaned = cleaned.replace(/[\u1200-\u137F]+/g, '').replace(/\s{2,}/g, ' ').trim();
         }
-        return cleaned;
+        return maskProfanity(cleaned);
     }
 
     function formatGeminiTranslationToHtml(rawTranslatedText, targetLang, sourceText = '') {
@@ -575,7 +655,7 @@
 
     function commitFinalizedCaption(segmentId, sourceText, rawTranslatedText, options = {}) {
         const cleanTarget = sanitizeTargetLanguageText(rawTranslatedText, state.targetLang);
-        const cleanSource = String(sourceText || '').trim();
+        const cleanSource = maskProfanity(String(sourceText || '').trim());
         state.liveDraft = null;
 
         if (!cleanTarget) {
@@ -2543,6 +2623,8 @@
         encodePcm16ToWavBytes,
         evaluateVadEndpointState,
         windowDraftWords,
+        containsProfanity,
+        maskProfanity,
         sanitizeTargetLanguageText,
         formatGeminiTranslationToHtml,
         handleStreamingServerEvent,

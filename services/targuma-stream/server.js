@@ -86,7 +86,8 @@ const TARGUMA_CONCISE_SYSTEM_PROMPT = `You are "Targuma" (ተርጉማ), real-ti
 Rules:
 1. Translate ONLY spoken speech into clear, natural clause-sized phrasing. Never invent religious phrases. If audio has no clear speech, return {"isSilence":true,"translatedText":"","sourceText":""}.
 2. Write "translatedText" strictly in the target language (zero raw Ethiopic script in English/Spanish).
-3. Format EOTC liturgical terms in "translatedText" as *Phonetic* [Meaning], e.g. *Qidase* [Divine Liturgy], *Qiddus Qurban* [Holy Communion], *Tabot* [Ark of the Covenant], *Suba'e* [Spiritual Retreat], *Nisiha* [Repentance], *Mahlet* [Liturgical Chanting], *Qale Hiwot Yasemalin* [May He let us hear the Word of Life], *Sebeka Gubae* [Parish Council], *Senbet Timhirt Bet* [Sunday School], *Kidane Mihret* [Covenant of Mercy], *Debre Mihret* [Mount of Mercy], *Teamire Mariam* [Miracles of Mary]. Translate sacred names faithfully (Our Lord Jesus Christ, Holy Spirit, Holy Trinity, Our Lady Saint Mary, Archangel Saint Michael, His Grace Abune).`;
+3. Format EOTC liturgical terms in "translatedText" as *Phonetic* [Meaning], e.g. *Qidase* [Divine Liturgy], *Qiddus Qurban* [Holy Communion], *Tabot* [Ark of the Covenant], *Suba'e* [Spiritual Retreat], *Nisiha* [Repentance], *Mahlet* [Liturgical Chanting], *Qale Hiwot Yasemalin* [May He let us hear the Word of Life], *Sebeka Gubae* [Parish Council], *Senbet Timhirt Bet* [Sunday School], *Kidane Mihret* [Covenant of Mercy], *Debre Mihret* [Mount of Mercy], *Teamire Mariam* [Miracles of Mary]. Translate sacred names faithfully (Our Lord Jesus Christ, Holy Spirit, Holy Trinity, Our Lady Saint Mary, Archangel Saint Michael, His Grace Abune).
+4. Safeguard: Never emit vulgar profanity, modern expletives, or slurs caused by background noise or phonetic misinterpretation; interpret ambiguous sounds conservatively in an EOTC liturgical/sermon context.`;
 
 const TARGUMA_CLAUSE_SYSTEM_PROMPT = `You translate one live spoken clause at a time from an Ethiopian & Eritrean Orthodox Tewahedo Church (EOTC) sermon, Miracle of Mary reading, or announcement.
 Rules:
@@ -94,7 +95,8 @@ Rules:
 2. Because Amharic and Tigrinya often use long multi-clause SOV sentences, make this clause read smoothly as a clean, self-contained portion of the thought (connecting naturally to any preceding context without repeating words already translated in previous clauses, and without inventing unstated words).
 3. Never include raw Ethiopic script in English or Spanish output.
 4. Format EOTC liturgical terms as *Phonetic* [Meaning] (e.g. *Qidase* [Divine Liturgy], *Tabot* [Ark of the Covenant], *Qale Hiwot Yasemalin* [May He let us hear the Word of Life], *Kidane Mihret* [Covenant of Mercy], *Debre Mihret* [Mount of Mercy], *Teamire Mariam* [Miracles of Mary]) and translate sacred/hierarchical titles faithfully (His Grace Abune, Archangel Saint Michael, Our Lady Saint Mary).
-5. Respond with JSON: {"translatedText":"<clean clause translation>"}`;
+5. Safeguard: Never emit vulgar profanity, modern expletives, or slurs due to ASR phonetic glitches or literal idioms; always choose the accurate, context-appropriate EOTC phrasing.
+6. Respond with JSON: {"translatedText":"<clean clause translation>"}`;
 
 const CLAUSE_SCHEMA = {
   type: 'OBJECT',
@@ -103,6 +105,86 @@ const CLAUSE_SCHEMA = {
   },
   required: ['translatedText']
 };
+
+// --- Profanity Safeguard (All Targuma Languages: en, es, am, ti) ---
+// Strictly targets vulgar profanity, modern expletives, and slurs while preserving
+// scriptural/theological vocabulary (e.g. hell, damn, curse, ass/donkey, cock, prick, whore, harlot, bastard, zorra).
+const LATIN_PROFANITY_CORE =
+  '(?:' +
+  '(?:mother)?fuck(?:er|ers|ing|ed|s|head|wit|face|boy|off|tard)?|' +
+  '(?:bull|horse|dog|dip|bat|ape)?shit(?:s|ty|tier|tiest|ting|ted|head|face|hole|load|storm|show|e)?|' +
+  'bitch(?:es|ing|ed|y)?|' +
+  'cunt(?:s|y)?|' +
+  '(?:asshole|asshat|asswipe|dumbass|jackass|fatass|badass|smartass|kissass|kickass)(?:s|es)?|' +
+  '(?:cocksuck(?:er|ers|ing)|cockhead|dickhead|dickface|dickwad|dickless)|' +
+  'puss(?:y|ies)|' +
+  'slut(?:s|ty|tish)?|' +
+  'skank(?:s|y)?|' +
+  '(?:twat|wanker|tosser|bollocks|bugger)(?:s|ed|ing)?|' +
+  'douche(?:bag|bags)?|' +
+  'piss(?:ed|ing|es|er|head)?|' +
+  'goddamn(?:ed|it)?|' +
+  '(?:jerkoff|jackoff|handjob|blowjob|rimjob)s?|' +
+  'tits|titt(?:y|ies)|' +
+  'nigg(?:er|ers|a|as|ah|ahs)|' +
+  'fag(?:got|gots|s)?|' +
+  'dyke(?:s)?|' +
+  'trann(?:y|ies)|' +
+  'retard(?:ed|s)?|' +
+  'kike(?:s)?|spic(?:s)?|wetback(?:s)?|paki(?:s)?|' +
+  '(?:hijueputa|hijeputa|putamadre|putazo|putada|puta|putas|puto|putos)|' +
+  '(?:comemierda|mierda|mierdas)|' +
+  '(?:cabr[oó]n|cabrona|cabrones|cabronazo)|' +
+  '(?:pendej[oa]s?|pendejada|pendejadas)|' +
+  '(?:coj[oó]n|cojones|acojonad[oa]s?)|' +
+  'jod(?:er|id[oa]s?|iendo)|' +
+  'chinga(?:r|da|dos|das|do|dera)?|ching[oó]n|chingon(?:a|es|as)|chingue(?:n|s)?|' +
+  '(?:careverga|verga|vergas|vergazo)|' +
+  '(?:culer[oa]s?|culiad[oa]s?|culos?)|' +
+  'carajos?|' +
+  '(?:gilipollas|pollas?)|' +
+  'pinches?|' +
+  '(?:mam[oó]n|mamona|mamones|mamadas?)|' +
+  '(?:maric[oó]n|maricones|maricas?)|' +
+  '(?:malparid[oa]s?|pirobo|huev[oó]n|huevones|web[oó]n|weones)|' +
+  'coños?' +
+  ')';
+
+const ETHIOPIC_PROFANITY_CORE =
+  '(?:' +
+  'ሸርሙጣ|ሽርሙጣ|ሻርሙጣ|ሸርሙጦች|ሽርሙጦች|' +
+  'ቅዘናም|ቅዘን|ቀዘናም|ቀዘን|ቆዘነ|' +
+  'ልብዳ|ብዳ|ተበዳች|ተበዱ|ተበዳ|ተባዳ|ትበዳ|ይበዳ|የሚበዳ|በዳሁ|በዳህ|በዳሽ|' +
+  'እምስ|እምሲ|እምሷ|እምስሽ|' +
+  'ቁላው|ቁላህ|ቁላ|ቍላ|' +
+  'ሸሌዎች|ሸሌ|' +
+  'መዓኮርካ|መዓኮርኪ|መዓኮር' +
+  ')';
+
+const LATIN_PROFANITY_TEST_RE = new RegExp(`(?:^|[^A-Za-zÀ-ÖØ-öø-ÿ0-9_])${LATIN_PROFANITY_CORE}(?=$|[^A-Za-zÀ-ÖØ-öø-ÿ0-9_])`, 'i');
+const LATIN_PROFANITY_REPLACE_RE = new RegExp(`(^|[^A-Za-zÀ-ÖØ-öø-ÿ0-9_])(${LATIN_PROFANITY_CORE})(?=$|[^A-Za-zÀ-ÖØ-öø-ÿ0-9_])`, 'gi');
+const ETHIOPIC_PROFANITY_TEST_RE = new RegExp(`(?:^|[^\\u1200-\\u137F])${ETHIOPIC_PROFANITY_CORE}(?=$|[^\\u1200-\\u137F])`);
+const ETHIOPIC_PROFANITY_REPLACE_RE = new RegExp(`(^|[^\\u1200-\\u137F])(${ETHIOPIC_PROFANITY_CORE})(?=$|[^\\u1200-\\u137F])`, 'g');
+
+function maskWordFirstLetter(word) {
+  const chars = Array.from(String(word || ''));
+  if (chars.length <= 1) return '*';
+  return chars[0] + '*'.repeat(chars.length - 1);
+}
+
+function containsProfanity(text) {
+  const str = String(text || '');
+  if (!str) return false;
+  return LATIN_PROFANITY_TEST_RE.test(str) || ETHIOPIC_PROFANITY_TEST_RE.test(str);
+}
+
+function maskProfanity(text) {
+  const str = String(text || '');
+  if (!str) return '';
+  let out = str.replace(LATIN_PROFANITY_REPLACE_RE, (_, prefix, word) => prefix + maskWordFirstLetter(word));
+  out = out.replace(ETHIOPIC_PROFANITY_REPLACE_RE, (_, prefix, word) => prefix + maskWordFirstLetter(word));
+  return out;
+}
 
 // Amharic / Tigrinya / English / Spanish clause boundary vocabulary for splitting long run-on speech
 const CLAUSE_STARTER_WORDS = new Set([
@@ -255,10 +337,93 @@ Translate ONLY this current clause into natural ${LANG_NAMES[targetLang] || targ
   }
 }
 
+async function reprocessClauseForCleanContext({
+  sourceText,
+  sourceLang,
+  targetLang,
+  candidateTranslation,
+  recentSourceContext,
+  recentTargetContext,
+  modelId,
+  audioBase64,
+  mimeType,
+  timeoutMs
+}) {
+  const cleanSource = String(sourceText || '').trim();
+  const cleanCandidate = String(candidateTranslation || '').trim();
+  if (!cleanSource && !audioBase64) return '';
+
+  const specKey = ALLOWED_MODELS[modelId] ? modelId : 'gemini-3-flash-preview';
+  const spec = ALLOWED_MODELS[specKey];
+  const accessToken = await getVertexAccessToken();
+
+  const endpointHost =
+    spec.location === 'global'
+      ? 'https://aiplatform.googleapis.com'
+      : `https://${spec.location}-aiplatform.googleapis.com`;
+  const url = `${endpointHost}/v1/projects/${PROJECT_ID}/locations/${spec.location}/publishers/google/models/${specKey}:generateContent`;
+
+  let ctxBlock = '';
+  if (recentSourceContext && recentSourceContext.length > 0) {
+    ctxBlock += `Preceding spoken clauses: "${recentSourceContext.slice(-2).join(' | ')}"\n`;
+  }
+  if (recentTargetContext && recentTargetContext.length > 0) {
+    ctxBlock += `Preceding displayed captions: "${recentTargetContext.slice(-2).join(' | ')}"\n`;
+  }
+
+  const parts = [];
+  if (audioBase64) {
+    parts.push({ inlineData: { mimeType: mimeType || 'audio/wav', data: audioBase64 } });
+  }
+
+  const promptText = sourceLang === targetLang
+    ? `${ctxBlock}A live church speech transcript produced: "${cleanCandidate}", which triggered a vulgar-profanity safeguard and may be a phonetic ASR mishearing in an Ethiopian/Eritrean Orthodox Tewahedo Church (EOTC) sermon or reading.
+Re-evaluate carefully in context: if it was a phonetic mishearing of a benign or liturgical word, output the accurate clean phrase in ${LANG_NAMES[targetLang] || targetLang}. Never output vulgar profanity, modern expletives, or slurs.`
+    : `${ctxBlock}An initial translation of this EOTC church clause (${LANG_NAMES[sourceLang] || sourceLang}) produced: "${cleanCandidate}", which triggered a vulgar-profanity safeguard (often caused by a literal NMT mistake or phonetic ASR glitch).
+Source clause: "${cleanSource}"
+Re-translate faithfully into ${LANG_NAMES[targetLang] || targetLang} with accurate EOTC sermon/liturgical context and zero vulgar profanity, modern expletives, or slurs:`;
+
+  parts.push({ text: promptText });
+
+  const resp = await fetch(url, {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+      'Content-Type': 'application/json',
+      'x-goog-user-project': PROJECT_ID
+    },
+    body: JSON.stringify({
+      systemInstruction: { parts: [{ text: TARGUMA_CLAUSE_SYSTEM_PROMPT }] },
+      contents: [{ role: 'user', parts }],
+      generationConfig: {
+        temperature: 0.0,
+        maxOutputTokens: 160,
+        responseMimeType: 'application/json',
+        responseSchema: CLAUSE_SCHEMA,
+        thinkingConfig: spec.thinkingConfig
+      }
+    }),
+    signal: AbortSignal.timeout(timeoutMs || GEMINI_CLAUSE_DEADLINE_MS)
+  });
+
+  if (!resp.ok) return '';
+  const data = await resp.json();
+  const rParts = data?.candidates?.[0]?.content?.parts || [];
+  const textPart = rParts.find((p) => typeof p.text === 'string' && !p.thought) || rParts[rParts.length - 1];
+  if (!textPart?.text) return '';
+  try {
+    const parsed = JSON.parse(textPart.text);
+    return String(parsed.translatedText || '').trim();
+  } catch (_) {
+    return '';
+  }
+}
+
 /**
  * Single-shot immutable clause translation:
  * Fires Vertex AI Gemini Flash (`thinkingBudget: 0`) AND Cloud Translation V3 in parallel!
  * Returns ONE authoritative, liturgically formatted clause in ~550-650ms so displayed captions NEVER mutate.
+ * Includes profanity safeguard: re-processes once with Gemini on flagged output, then masks any residual profanity.
  */
 async function translateImmutableClause({
   sourceText,
@@ -268,38 +433,86 @@ async function translateImmutableClause({
   recentTargetContext,
   modelId,
   enablePolish
-}) {
+}, deps = {}) {
   const cleanSource = String(sourceText || '').trim();
   if (!cleanSource) return { translatedText: '', polished: false, translateMs: 0 };
+
+  const translateFn = deps.translateFn || fastCloudTranslate;
+  const geminiFn = deps.geminiFn || translateClauseWithGemini;
+  const reprocessFn = deps.reprocessFn || reprocessClauseForCleanContext;
+  const t0 = Date.now();
+
   if (sourceLang === targetLang) {
-    return { translatedText: cleanSource, polished: true, translateMs: 0 };
+    let finalText = cleanSource;
+    let reprocessed = false;
+    if (containsProfanity(finalText)) {
+      const cleaned = await reprocessFn({
+        sourceText: cleanSource,
+        sourceLang,
+        targetLang,
+        candidateTranslation: finalText,
+        recentSourceContext,
+        recentTargetContext,
+        modelId,
+        timeoutMs: GEMINI_CLAUSE_DEADLINE_MS
+      }).catch(() => '');
+      if (cleaned) {
+        finalText = cleaned;
+        reprocessed = true;
+      }
+      finalText = maskProfanity(finalText);
+    }
+    return { translatedText: finalText, polished: true, reprocessed, translateMs: Date.now() - t0 };
   }
 
-  const t0 = Date.now();
-  const nmtPromise = fastCloudTranslate(cleanSource, sourceLang, targetLang).catch(() => '');
+  const nmtPromise = translateFn(cleanSource, sourceLang, targetLang).catch(() => '');
+
+  let candidateText = '';
+  let polished = false;
 
   if (!enablePolish) {
-    const nmtText = await nmtPromise;
-    return { translatedText: nmtText, polished: false, translateMs: Date.now() - t0 };
+    candidateText = await nmtPromise;
+  } else {
+    const geminiPromise = geminiFn({
+      sourceText: cleanSource,
+      sourceLang,
+      targetLang,
+      recentSourceContext,
+      recentTargetContext,
+      modelId,
+      timeoutMs: GEMINI_CLAUSE_DEADLINE_MS
+    }).catch(() => '');
+
+    const geminiText = await geminiPromise;
+    if (geminiText) {
+      candidateText = geminiText;
+      polished = true;
+    } else {
+      candidateText = await nmtPromise;
+    }
   }
 
-  const geminiPromise = translateClauseWithGemini({
-    sourceText: cleanSource,
-    sourceLang,
-    targetLang,
-    recentSourceContext,
-    recentTargetContext,
-    modelId,
-    timeoutMs: GEMINI_CLAUSE_DEADLINE_MS
-  }).catch(() => '');
-
-  const geminiText = await geminiPromise;
-  if (geminiText) {
-    return { translatedText: geminiText, polished: true, translateMs: Date.now() - t0 };
+  let reprocessed = false;
+  if (candidateText && containsProfanity(candidateText)) {
+    const cleaned = await reprocessFn({
+      sourceText: cleanSource,
+      sourceLang,
+      targetLang,
+      candidateTranslation: candidateText,
+      recentSourceContext,
+      recentTargetContext,
+      modelId,
+      timeoutMs: GEMINI_CLAUSE_DEADLINE_MS
+    }).catch(() => '');
+    if (cleaned) {
+      candidateText = cleaned;
+      polished = true;
+      reprocessed = true;
+    }
+    candidateText = maskProfanity(candidateText);
   }
 
-  const fallbackNmt = await nmtPromise;
-  return { translatedText: fallbackNmt, polished: false, translateMs: Date.now() - t0 };
+  return { translatedText: candidateText, polished, reprocessed, translateMs: Date.now() - t0 };
 }
 
 // Compute RMS of 16-bit signed little-endian PCM buffer
@@ -502,13 +715,26 @@ async function handleTargumaHttp(req, res) {
   // Fast Cloud Translate V3 path for instant text retranslation
   if (mode === 'nmt' && textInput && !audioBase64 && sourceLang !== 'auto') {
     try {
-      const translatedText = await fastCloudTranslate(textInput, sourceLang, targetLang);
+      let translatedText = await fastCloudTranslate(textInput, sourceLang, targetLang);
+      if (translatedText && containsProfanity(translatedText)) {
+        const cleaned = await reprocessClauseForCleanContext({
+          sourceText: textInput,
+          sourceLang,
+          targetLang,
+          candidateTranslation: translatedText,
+          recentSourceContext: Array.isArray(body.recentContext) ? body.recentContext : [],
+          modelId: requestedModel,
+          timeoutMs: 2000
+        }).catch(() => '');
+        if (cleaned) translatedText = cleaned;
+        translatedText = maskProfanity(translatedText);
+      }
       res.writeHead(200, { 'Content-Type': 'application/json' });
       res.end(JSON.stringify({
         model: 'cloud-translate-v3',
         latencyMs: Date.now() - startMs,
         isSilence: false,
-        sourceText: textInput,
+        sourceText: maskProfanity(textInput),
         translatedText
       }));
       return;
@@ -617,13 +843,32 @@ async function handleTargumaHttp(req, res) {
       parsed = JSON.parse(accumulatedJson || '{}');
     } catch (_) {}
 
+    let finalSource = String(parsed.sourceText || textInput || '').trim();
+    let finalTranslated = String(parsed.translatedText || lastEmittedDraft || '').trim();
+    if (!parsed.isSilence && finalTranslated && containsProfanity(finalTranslated)) {
+      const cleaned = await reprocessClauseForCleanContext({
+        sourceText: finalSource,
+        sourceLang,
+        targetLang,
+        candidateTranslation: finalTranslated,
+        recentSourceContext: Array.isArray(body.recentContext) ? body.recentContext : [],
+        modelId: activeModelUsed,
+        audioBase64,
+        mimeType,
+        timeoutMs: 2200
+      }).catch(() => '');
+      if (cleaned) finalTranslated = cleaned;
+    }
+    finalSource = maskProfanity(finalSource);
+    finalTranslated = maskProfanity(finalTranslated);
+
     const finalPayload = JSON.stringify({
       type: 'done',
       model: activeModelUsed,
       latencyMs: Date.now() - startMs,
       isSilence: Boolean(parsed.isSilence),
-      sourceText: String(parsed.sourceText || textInput || '').trim(),
-      translatedText: String(parsed.translatedText || lastEmittedDraft || '').trim()
+      sourceText: finalSource,
+      translatedText: finalTranslated
     });
     res.write('data: ' + finalPayload + '\n\n');
     res.end();
@@ -665,13 +910,32 @@ async function handleTargumaHttp(req, res) {
     parsed = JSON.parse(textPart?.text || '{}');
   } catch (_) {}
 
+  let finalSource = String(parsed.sourceText || textInput || '').trim();
+  let finalTranslated = String(parsed.translatedText || '').trim();
+  if (!parsed.isSilence && finalTranslated && containsProfanity(finalTranslated)) {
+    const cleaned = await reprocessClauseForCleanContext({
+      sourceText: finalSource,
+      sourceLang,
+      targetLang,
+      candidateTranslation: finalTranslated,
+      recentSourceContext: Array.isArray(body.recentContext) ? body.recentContext : [],
+      modelId: activeModelUsed,
+      audioBase64,
+      mimeType,
+      timeoutMs: 2200
+    }).catch(() => '');
+    if (cleaned) finalTranslated = cleaned;
+  }
+  finalSource = maskProfanity(finalSource);
+  finalTranslated = maskProfanity(finalTranslated);
+
   res.writeHead(200, { 'Content-Type': 'application/json' });
   res.end(JSON.stringify({
     model: activeModelUsed,
     latencyMs: Date.now() - startMs,
     isSilence: Boolean(parsed.isSilence),
-    sourceText: String(parsed.sourceText || textInput || '').trim(),
-    translatedText: String(parsed.translatedText || '').trim(),
+    sourceText: finalSource,
+    translatedText: finalTranslated,
     usage: vertexData?.usageMetadata || {}
   }));
 }
@@ -767,7 +1031,8 @@ function attachChirp3WebSocketServer(httpServer) {
             });
 
             if (result.translatedText && !isClosed) {
-              recentSourceClauses.push(subSource);
+              const safeSource = maskProfanity(subSource);
+              recentSourceClauses.push(safeSource);
               if (recentSourceClauses.length > 4) recentSourceClauses = recentSourceClauses.slice(-4);
               recentTargetClauses.push(result.translatedText);
               if (recentTargetClauses.length > 4) recentTargetClauses = recentTargetClauses.slice(-4);
@@ -776,7 +1041,7 @@ function attachChirp3WebSocketServer(httpServer) {
                 type: 'commit',
                 seq: subSeq,
                 segmentId: subSegId,
-                sourceText: subSource,
+                sourceText: safeSource,
                 translatedText: result.translatedText,
                 polished: result.polished,
                 nmtMs: result.translateMs
@@ -1145,5 +1410,8 @@ if (require.main === module) {
 
 module.exports = {
   findConfidentClauseSplitIndex,
-  computePcm16Rms
+  computePcm16Rms,
+  containsProfanity,
+  maskProfanity,
+  translateImmutableClause
 };
