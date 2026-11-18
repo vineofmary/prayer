@@ -8511,10 +8511,12 @@ function _renderPrayersSync() {
                                 nextEl.style.display = isCollapsed ? '' : 'none';
                             } else if (nextEl.dataset && nextEl.dataset.dailyPreviewRole === 'first' && activePrimaryTab === 'pray') {
                                 nextEl.style.display = '';
+                                nextEl.classList.toggle('daily-prayer-preview-first-card', isCollapsed);
                             } else if (nextEl.dataset && nextEl.dataset.dailyPreviewRole === 'sneak-peek' && activePrimaryTab === 'pray') {
                                 nextEl.style.display = '';
                                 nextEl.classList.toggle('daily-prayer-sneak-peek-card', isCollapsed);
                             } else {
+                                nextEl.classList.remove('daily-prayer-sneak-peek-card', 'daily-prayer-preview-first-card');
                                 nextEl.style.display = isCollapsed ? 'none' : '';
                             }
                             nextEl = nextEl.nextElementSibling;
@@ -8738,6 +8740,7 @@ function _renderPrayersSync() {
                 // On the Pray tab, keep the 1st Daily card ("I seal my face...") visible and the 2nd ("In the Holy Trinity...") as a sneak peek
                 if (isDailyFirstCard && activePrimaryTab === 'pray') {
                     prayerCard.style.display = '';
+                    prayerCard.classList.add('daily-prayer-preview-first-card');
                 } else if (isDailySneakPeekCard && activePrimaryTab === 'pray') {
                     prayerCard.style.display = '';
                     prayerCard.classList.add('daily-prayer-sneak-peek-card');
@@ -14120,11 +14123,12 @@ safeOn(expandCollapseAllButton, 'click', () => {
                 nextEl.style.display = (shouldCollapseAll && activePrimaryTab === 'pray') ? '' : 'none';
             } else if (nextEl.dataset && nextEl.dataset.dailyPreviewRole === 'first' && activePrimaryTab === 'pray') {
                 nextEl.style.display = '';
+                nextEl.classList.toggle('daily-prayer-preview-first-card', shouldCollapseAll);
             } else if (nextEl.dataset && nextEl.dataset.dailyPreviewRole === 'sneak-peek' && activePrimaryTab === 'pray') {
                 nextEl.style.display = '';
                 nextEl.classList.toggle('daily-prayer-sneak-peek-card', shouldCollapseAll);
             } else {
-                nextEl.classList.remove('daily-prayer-sneak-peek-card');
+                nextEl.classList.remove('daily-prayer-sneak-peek-card', 'daily-prayer-preview-first-card');
                 nextEl.style.display = shouldCollapseAll ? 'none' : '';
             }
             nextEl = nextEl.nextElementSibling;
@@ -16007,6 +16011,7 @@ const appCoreExports = {
     renderHistoricalPrefaces,
     loadSettings,
     saveSettings,
+    setupEventListeners,
     buildUrlStateObject,
     syncStateToUrl,
     loadStateFromUrl,

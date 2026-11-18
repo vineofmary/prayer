@@ -174,25 +174,51 @@ describe('State Serialization & Unicode URL Encoding', () => {
       expect(prayHeaders.length).toBeGreaterThan(0);
       expect(prayHeaders.every(h => h.classList.contains('collapsed'))).toBe(true);
 
-      // Verify Daily Prayer sneak-peek card and expand button exist on Pray tab
+      // Verify Daily Prayer first-card preview class, sneak-peek card, and expand button exist on Pray tab
+      const firstDailyCard = prayerDisplay.querySelector('.prayer-card[data-daily-preview-role="first"]');
       const sneakPeekCard = prayerDisplay.querySelector('.daily-prayer-sneak-peek-card');
       const expandPreviewBtn = prayerDisplay.querySelector('.expand-daily-prayer-preview-btn');
+      expect(firstDailyCard).toBeTruthy();
+      expect(firstDailyCard.classList.contains('daily-prayer-preview-first-card')).toBe(true);
+      expect(firstDailyCard.querySelector('.prayer-label')?.textContent).toContain('Daily Prayer | ዘዘወትር ጸሎት - I Seal My Face...');
       expect(sneakPeekCard).toBeTruthy();
       expect(expandPreviewBtn).toBeTruthy();
 
-      // 2. Expand Daily Prayer and Praise of Mary on Pray tab, then re-click Pray tab
+      // 2. Expand Daily Prayer via preview button -> first card footer label becomes visible (preview class removed)
+      expandPreviewBtn.click();
+      expect(prayHeaders[0].classList.contains('collapsed')).toBe(false);
+      expect(firstDailyCard.classList.contains('daily-prayer-preview-first-card')).toBe(false);
+
+      // Collapse Daily Prayer back -> preview class returns
+      prayHeaders[0].click();
+      expect(prayHeaders[0].classList.contains('collapsed')).toBe(true);
+      expect(firstDailyCard.classList.contains('daily-prayer-preview-first-card')).toBe(true);
+
+      // Expand All -> preview class removed; Collapse All -> preview class restored
+      app.setupEventListeners();
+      const expandAllBtn = document.getElementById('expand-collapse-all-button');
+      if (expandAllBtn) {
+        expandAllBtn.click();
+        expect(firstDailyCard.classList.contains('daily-prayer-preview-first-card')).toBe(false);
+        expandAllBtn.click();
+        expect(firstDailyCard.classList.contains('daily-prayer-preview-first-card')).toBe(true);
+      }
+
+      // Expand Daily Prayer and Praise of Mary on Pray tab, then re-click Pray tab
       prayHeaders[0].click();
       expect(prayHeaders[0].classList.contains('collapsed')).toBe(false);
+      expect(firstDailyCard.classList.contains('daily-prayer-preview-first-card')).toBe(false);
       if (prayHeaders[1]) {
         prayHeaders[1].click();
         expect(prayHeaders[1].classList.contains('collapsed')).toBe(false);
       }
 
-      // Re-click Pray tab -> all collapsible headers must return to collapsed
+      // Re-click Pray tab -> all collapsible headers must return to collapsed and preview class restored
       app.switchPrimaryTab('pray');
       app._renderPrayersSync();
       prayHeaders = Array.from(prayerDisplay.querySelectorAll('.section-title.collapsible'));
       expect(prayHeaders.every(h => h.classList.contains('collapsed'))).toBe(true);
+      expect(prayerDisplay.querySelector('.prayer-card[data-daily-preview-role="first"]')?.classList.contains('daily-prayer-preview-first-card')).toBe(true);
 
       // 3. Switch to Liturgy tab -> verify all sections (including Matins & Kidase) are collapsed by default
       app.switchPrimaryTab('liturgy');
